@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpcompatinfo
+    reference="PHP5"
+    report="summary"
+    reportFileAppend="false"
+    cacheDriver="file"
+    recursive="false"
+    fileExtensions="php, inc, phtml"
+    consoleProgress="true"
+    verbose="false"
+    >
+
+    <cache id="file">
+        <options>
+            <save_path>/tmp</save_path>
+            <gc_probability>1</gc_probability>
+            <gc_maxlifetime>86400</gc_maxlifetime>
+        </options>
+    </cache>
+    
+    <excludes>
+        <exclude id="demo">
+            <directory name=".*\/Zend\/.*" />
+            <file name=".*\.php5" />
+            <extension name="xdebug" />
+            <interface name="SplSubject" />
+            <class name=".*Compat.*" />
+            <function name="ereg.*" />
+            <function name="debug_print_backtrace" />
+            <constant name="T_USE" />
+        </exclude>
+    </excludes>
+    
+</phpcompatinfo>
