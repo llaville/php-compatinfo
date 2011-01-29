@@ -370,7 +370,9 @@ abstract class PHP_CompatInfo_TokenWithScope extends PHP_Token
         $tokens = $this->tokenStream->tokens();
 
         while ($this->endTokenId === NULL && isset($tokens[$i])) {
-            if ($tokens[$i] instanceof PHP_Token_OPEN_CURLY) {
+            if ($tokens[$i] instanceof PHP_Token_OPEN_CURLY
+                || $tokens[$i] instanceof PHP_Token_CURLY_OPEN
+            ) {
                 $block++;
             }
 
