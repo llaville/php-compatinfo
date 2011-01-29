@@ -1134,7 +1134,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      *
      * @return void
      */
-    public function startScanSource($source)
+    protected function startScanSource($source)
     {
         $message = 'Audit started';
 
@@ -1163,7 +1163,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      *
      * @return void
      */
-    public function endScanSource()
+    protected function endScanSource()
     {
         list($min, $max) = $this->getVersions();
         $versions = $min . ' (min)';
@@ -1193,7 +1193,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      *
      * @return void
      */
-    public function startScanFile($file, $currentIndex, $maxIndex)
+    protected function startScanFile($file, $currentIndex, $maxIndex)
     {
         $this->setEvent(
             array(
@@ -1219,7 +1219,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      *
      * @return void
      */
-    public function endScanFile($file, $currentIndex, $maxIndex)
+    protected function endScanFile($file, $currentIndex, $maxIndex)
     {
         $summary = array();
 
@@ -1267,7 +1267,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      *
      * @return void
      */
-    public function startLoadReference($reference, $extensions)
+    protected function startLoadReference($reference, $extensions)
     {
         if (is_array($extensions)) {
             $extra = 'modules list: '. implode(', ', $extensions);
@@ -1297,7 +1297,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      *
      * @return void
      */
-    public function endLoadReference($reference, $successful, $failures)
+    protected function endLoadReference($reference, $successful, $failures)
     {
         $this->setEvent(
             array(
@@ -1320,7 +1320,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      *
      * @return void
      */
-    public function failLoadReference($warn)
+    protected function failLoadReference($warn)
     {
         $this->setEvent(
             array(
