@@ -49,6 +49,7 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                 'PHP_CompatInfo_Reference_Tokenizer' => 'PHP/CompatInfo/Reference/tokenizer.php',
                 'PHP_CompatInfo_Reference_Xdebug'    => 'PHP/CompatInfo/Reference/xdebug.php',
                 'PHP_CompatInfo_Reference_Xml'       => 'PHP/CompatInfo/Reference/xml.php',
+                'PHP_CompatInfo_Reference_Zlib'      => 'PHP/CompatInfo/Reference/zlib.php',
             );
             $path = dirname(dirname(dirname(dirname(__FILE__)))) . DIRECTORY_SEPARATOR;
         }
