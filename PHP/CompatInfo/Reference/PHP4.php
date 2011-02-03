@@ -35,6 +35,7 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                 'PHP_CompatInfo_Reference_Bz2'       => 'PHP/CompatInfo/Reference/bz2.php',
                 'PHP_CompatInfo_Reference_Calendar'  => 'PHP/CompatInfo/Reference/calendar.php',
                 'PHP_CompatInfo_Reference_Core'      => 'PHP/CompatInfo/Reference/core.php',
+                'PHP_CompatInfo_Reference_Ctype'     => 'PHP/CompatInfo/Reference/ctype.php',
                 'PHP_CompatInfo_Reference_Curl'      => 'PHP/CompatInfo/Reference/curl.php',
                 'PHP_CompatInfo_Reference_Date'      => 'PHP/CompatInfo/Reference/date.php',
                 'PHP_CompatInfo_Reference_Gd'        => 'PHP/CompatInfo/Reference/gd.php',
