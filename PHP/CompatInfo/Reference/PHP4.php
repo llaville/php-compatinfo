@@ -38,6 +38,7 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                 'PHP_CompatInfo_Reference_Ctype'     => 'PHP/CompatInfo/Reference/ctype.php',
                 'PHP_CompatInfo_Reference_Curl'      => 'PHP/CompatInfo/Reference/curl.php',
                 'PHP_CompatInfo_Reference_Date'      => 'PHP/CompatInfo/Reference/date.php',
+                'PHP_CompatInfo_Reference_Dom'       => 'PHP/CompatInfo/Reference/dom.php',
                 'PHP_CompatInfo_Reference_Gd'        => 'PHP/CompatInfo/Reference/gd.php',
                 'PHP_CompatInfo_Reference_Hash'      => 'PHP/CompatInfo/Reference/hash.php',
                 'PHP_CompatInfo_Reference_Libxml'    => 'PHP/CompatInfo/Reference/libxml.php',
