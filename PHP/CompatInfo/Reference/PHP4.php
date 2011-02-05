@@ -63,6 +63,8 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/dom.php',
                 'PHP_CompatInfo_Reference_Filter'
                     => 'PHP/CompatInfo/Reference/filter.php',
+                'PHP_CompatInfo_Reference_Ftp'
+                    => 'PHP/CompatInfo/Reference/ftp.php',
                 'PHP_CompatInfo_Reference_Gd'
                     => 'PHP/CompatInfo/Reference/gd.php',
                 'PHP_CompatInfo_Reference_Hash'
