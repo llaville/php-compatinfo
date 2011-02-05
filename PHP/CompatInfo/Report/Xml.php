@@ -2,14 +2,28 @@
 /**
  * Xml report
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Report.php';
 
+/**
+ * Xml report
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
 {
     /**
@@ -35,7 +49,7 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
             echo str_repeat(' ', $indent);
             echo '<file name="' . $filename . '">' . PHP_EOL;
 
-            // PHP required versions 
+            // PHP required versions
             $indent += $indentStep;
             echo str_repeat(' ', $indent);
             echo '<versions>' . PHP_EOL;
@@ -50,7 +64,7 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
             echo str_repeat(' ', $indent);
             echo '</versions>' . PHP_EOL;
             $indent -= $indentStep;
-            
+
             // all conditions found in $filename
             $ccn = $this->getCCN($elements['conditions']);
             if ($ccn > 0) {
@@ -61,7 +75,8 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                 foreach ($elements['conditions'] as $condition => $count) {
                     if ($count > 0) {
                         echo str_repeat(' ', $indent);
-                        echo '<condition name="' . $condition . '" count="' . $count . '" />' . PHP_EOL;
+                        echo '<condition name="' . $condition . 
+                            '" count="' . $count . '" />' . PHP_EOL;
                     }
                 }
                 $indent -= $indentStep;
@@ -69,7 +84,7 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                 echo '</conditions>' . PHP_EOL;
                 $indent -= $indentStep;
             }
-            
+
             // all extensions found in $filename
             if (count($elements['extensions']) > 0) {
                 $indent += $indentStep;

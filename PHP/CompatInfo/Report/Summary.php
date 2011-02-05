@@ -2,14 +2,28 @@
 /**
  * Summary report
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Report.php';
 
+/**
+ * Summary report
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
 {
     /**
@@ -61,46 +75,38 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
 
             foreach ($elements as $element => $data) {
                 switch ($element) {
-                    case 'extensions':
-                        $values = array_keys($data);
+                case 'extensions':
+                    $values = array_keys($data);
+                    foreach ($values as $key) {
+                        $count[$element][] = $key;
+                    }
+                    $$element += count($values);
+                    break;
+                case 'interfaces':
+                case 'classes':
+                case 'functions':
+                case 'constants':
+                    foreach ($data as $category => $items) {
+                        $values = array_keys($items);
                         foreach ($values as $key) {
                             $count[$element][] = $key;
                         }
                         $$element += count($values);
-                        break;
-                    case 'interfaces':
-                    case 'classes':
-                    case 'functions':
-                    case 'constants':
-                        foreach ($data as $category => $items) {
-                            $values = array_keys($items);
-                            foreach ($values as $key) {
-                                $count[$element][] = $key;
-                            }
-                            $$element += count($values);
-                        }
-                        break;
-                    case 'versions':
-                        if (version_compare(
-                            $data[0],
-                            $globalVersions[0],
-                            'gt')
-                        ) {
-                            $globalVersions[0] = $data[0];
-                        }
-                        if (version_compare(
-                            $data[1],
-                            $globalVersions[1],
-                            'gt')
-                        ) {
-                            $globalVersions[1] = $data[1];
-                        }
-                        break;
-                    case 'conditions':
-                        $ccn = $ccn | $this->getCCN($data);
-                        break;
-                    default:
-                        continue 2;
+                    }
+                    break;
+                case 'versions':
+                    $this->updateVersion(
+                        $data[0], $globalVersions[0]
+                    );
+                    $this->updateVersion(
+                        $data[1], $globalVersions[1]
+                    );
+                    break;
+                case 'conditions':
+                    $ccn = $ccn | $this->getCCN($data);
+                    break;
+                default:
+                    continue 2;
                 }
             }
 

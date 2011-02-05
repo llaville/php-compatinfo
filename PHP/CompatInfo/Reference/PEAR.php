@@ -2,14 +2,28 @@
 /**
  * Data dictionary for PEAR references
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Reference/PHP5.php';
 
+/**
+ * Data dictionary for PEAR references
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 class PHP_CompatInfo_Reference_PEAR extends PHP_CompatInfo_Reference_PHP5
 {
     /**
@@ -21,18 +35,20 @@ class PHP_CompatInfo_Reference_PEAR extends PHP_CompatInfo_Reference_PHP5
      */
     public static function autoload($className)
     {
-        static $classes = NULL;
-        static $path = NULL;
+        static $classes = null;
+        static $path    = null;
 
-        if ($classes === NULL) {
+        if ($classes === null) {
             $classes = array(
-                'PHP_CompatInfo_Reference_Net_Growl'   => 'PHP/CompatInfo/Reference/netgrowl.php',
+                'PHP_CompatInfo_Reference_Net_Growl'
+                    => 'PHP/CompatInfo/Reference/netgrowl.php',
             );
-            $path = dirname(dirname(dirname(dirname(__FILE__)))) . DIRECTORY_SEPARATOR;
+            $path = dirname(dirname(dirname(dirname(__FILE__))))
+                . DIRECTORY_SEPARATOR;
         }
 
         if (isset($classes[$className])) {
-            require $path . $classes[$className];
+            include $path . $classes[$className];
         }
     }
 
@@ -69,7 +85,17 @@ class PHP_CompatInfo_Reference_PEAR extends PHP_CompatInfo_Reference_PHP5
         }
     }
 
-
+    /**
+     * Gets all informations at once about:
+     * extensions, interfaces, classes, functions, constants
+     *
+     * @param string $extension OPTIONAL
+     * @param string $version   OPTIONAL PHP version
+     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     *
+     * @return array
+     */
+    /*      
     public function getAll($extension = null, $version = null)
     {
         $references = array(
@@ -78,20 +104,8 @@ class PHP_CompatInfo_Reference_PEAR extends PHP_CompatInfo_Reference_PHP5
             'classes'    => $this->getClasses($extension, $version),
             'functions'  => $this->getFunctions($extension, $version),
             'constants'  => $this->getConstants($extension, $version),
-            //'packages'   => $this->getPackages($extension, $version),
         );
         return $references;
     }
-
-    public function getClasses($extension = null, $version = null)
-    {
-        $phpClasses = parent::getClasses($extension, $version);
-
-        $pkgClasses = array(
-        );
-        $classes = array_merge($phpClasses, $pkgClasses);
-        return $classes;
-    }
-
-
+    */
 }

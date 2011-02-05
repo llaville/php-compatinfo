@@ -2,12 +2,26 @@
 /**
  * Base class for cache system
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
+/**
+ * Base class for cache system
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 class PHP_CompatInfo_Cache
 {
     /**
@@ -24,10 +38,10 @@ class PHP_CompatInfo_Cache
      */
     public static function autoload($className)
     {
-        static $classes = NULL;
-        static $path = NULL;
+        static $classes = null;
+        static $path    = null;
 
-        if ($classes === NULL) {
+        if ($classes === null) {
             $classes = array(
                 'PHP_CompatInfo_Cache_Null' => 'PHP/CompatInfo/Cache/Null.php',
                 'PHP_CompatInfo_Cache_File' => 'PHP/CompatInfo/Cache/File.php',
@@ -36,7 +50,7 @@ class PHP_CompatInfo_Cache
         }
 
         if (isset($classes[$className])) {
-            require $path . $classes[$className];
+            include $path . $classes[$className];
         }
     }
 
@@ -54,7 +68,7 @@ class PHP_CompatInfo_Cache
 
         if (!isset(self::$cache[$driver])) {
             $className = 'PHP_CompatInfo_Cache_' . ucfirst($driver);
-            
+
             if (!class_exists($className, true)) {
                 throw new PHP_CompatInfo_Exception(
                     'Cache driver "' . $driver . '" not found.'

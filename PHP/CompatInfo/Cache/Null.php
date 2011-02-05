@@ -2,17 +2,30 @@
 /**
  * Class that allow to disable cache system
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Cache/Interface.php';
 
+/**
+ * Class that allow to disable cache system
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 class PHP_CompatInfo_Cache_Null implements PHP_CompatInfo_Cache_Interface
 {
-
     /**
      * Tests if $source filename exists in the cache
      *

@@ -1,16 +1,30 @@
 <?php
 /**
- * All interfaces, classes, functions, constants about Xdebug extension
+ * Version informations about Xdebug extension
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
- * @link       http://xdebug.org/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Reference.php';
 
+/**
+ * All interfaces, classes, functions, constants about Xdebug extension
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ * @link     http://xdebug.org/
+ */
 class PHP_CompatInfo_Reference_Xdebug implements PHP_CompatInfo_Reference
 {
     /**

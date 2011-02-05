@@ -1,15 +1,40 @@
 <?php
 /**
- * Command Line Interpreter SAPI version of PHP_CompatInfo
+ * Command Line Interpreter version of PHP_CompatInfo
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'ezc/Base/base.php';
 
+/**
+ * The Command Line Interpreter version provides ability to
+ * - list references (extensions, interfaces, classes, functions, constants)
+ * - print map detail of a single file or an entire directory
+ *
+ * Many reports are available:
+ * - extension
+ * - interface
+ * - class
+ * - function
+ * - constant
+ * - source
+ * - xml
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 class PHP_CompatInfo_CLI
 {
     /**
@@ -22,26 +47,42 @@ class PHP_CompatInfo_CLI
     public static function autoload($className)
     {
         static $classes = null;
-        static $path = null;
+        static $path    = null;
 
         if ($classes === null) {
             $classes = array(
-                'PHP_CompatInfo'                  => 'PHP/CompatInfo.php',
-                'PHP_CompatInfo_Exception'        => 'PHP/CompatInfo/Exception.php',
-                'PHP_CompatInfo_Configuration'    => 'PHP/CompatInfo/Configuration.php',
-                'PHP_CompatInfo_Reference_PHP4'   => 'PHP/CompatInfo/Reference/PHP4.php',
-                'PHP_CompatInfo_Reference_PHP5'   => 'PHP/CompatInfo/Reference/PHP5.php',
-                'PHP_CompatInfo_Report_Reference' => 'PHP/CompatInfo/Report/Reference.php',
-                'PHP_CompatInfo_Report_Summary'   => 'PHP/CompatInfo/Report/Summary.php',
-                'PHP_CompatInfo_Report_Extension' => 'PHP/CompatInfo/Report/Extension.php',
-                'PHP_CompatInfo_Report_Interface' => 'PHP/CompatInfo/Report/Interface.php',
-                'PHP_CompatInfo_Report_Class'     => 'PHP/CompatInfo/Report/Class.php',
-                'PHP_CompatInfo_Report_Function'  => 'PHP/CompatInfo/Report/Function.php',
-                'PHP_CompatInfo_Report_Constant'  => 'PHP/CompatInfo/Report/Constant.php',
-                'PHP_CompatInfo_Report_Xml'       => 'PHP/CompatInfo/Report/Xml.php',
-                'PHP_CompatInfo_Report_Source'    => 'PHP/CompatInfo/Report/Source.php',
-                'PHP_CompatInfo_Listener_File'    => 'PHP/CompatInfo/Listener/File.php',
-                'PHP_CompatInfo_Listener_Growl'   => 'PHP/CompatInfo/Listener/Growl.php',
+                'PHP_CompatInfo'
+                    => 'PHP/CompatInfo.php',
+                'PHP_CompatInfo_Exception'
+                    => 'PHP/CompatInfo/Exception.php',
+                'PHP_CompatInfo_Configuration'
+                    => 'PHP/CompatInfo/Configuration.php',
+                'PHP_CompatInfo_Reference_PHP4'
+                    => 'PHP/CompatInfo/Reference/PHP4.php',
+                'PHP_CompatInfo_Reference_PHP5'
+                    => 'PHP/CompatInfo/Reference/PHP5.php',
+                'PHP_CompatInfo_Report_Reference'
+                    => 'PHP/CompatInfo/Report/Reference.php',
+                'PHP_CompatInfo_Report_Summary'
+                    => 'PHP/CompatInfo/Report/Summary.php',
+                'PHP_CompatInfo_Report_Extension'
+                    => 'PHP/CompatInfo/Report/Extension.php',
+                'PHP_CompatInfo_Report_Interface'
+                    => 'PHP/CompatInfo/Report/Interface.php',
+                'PHP_CompatInfo_Report_Class'
+                    => 'PHP/CompatInfo/Report/Class.php',
+                'PHP_CompatInfo_Report_Function'
+                    => 'PHP/CompatInfo/Report/Function.php',
+                'PHP_CompatInfo_Report_Constant'
+                    => 'PHP/CompatInfo/Report/Constant.php',
+                'PHP_CompatInfo_Report_Xml'
+                    => 'PHP/CompatInfo/Report/Xml.php',
+                'PHP_CompatInfo_Report_Source'
+                    => 'PHP/CompatInfo/Report/Source.php',
+                'PHP_CompatInfo_Listener_File'
+                    => 'PHP/CompatInfo/Listener/File.php',
+                'PHP_CompatInfo_Listener_Growl'
+                    => 'PHP/CompatInfo/Listener/Growl.php',
             );
             $path = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR;
         }
@@ -337,10 +378,14 @@ class PHP_CompatInfo_CLI
                     $excludes = $configuration->getExcludeConfiguration($patternID);
 
                     if (count($excludes) == 0) {
-                        $warnings[] = "Exclude pattern ID '$patternID' does not exist, or is empty";
+                        $warnings[] = "Exclude pattern ID '$patternID'" .
+                            " does not exist, or is empty";
                     } else {
+                        $haystack = array(
+                            'extension', 'interface', 'function', 'constant'
+                        );
                         foreach ($excludes as $key => $values) {
-                            if (in_array($key, array('extension', 'interface', 'function', 'constant'))) {
+                            if (in_array($key, $haystack)) {
                                 $options['exclude'][$key.'s'] = $values;
                             } elseif ('class' == $key) {
                                 $options['exclude']['classes'] = $values;
@@ -406,11 +451,12 @@ class PHP_CompatInfo_CLI
                 // sets listeners instances
                 $listeners = $configuration->getListenerConfiguration();
                 foreach ($listeners as $listener) {
-                    if (!class_exists($listener['class'], FALSE) &&
-                        $listener['file'] !== '') {
+                    if (!class_exists($listener['class'], false)
+                        && $listener['file'] !== ''
+                    ) {
                         include_once $listener['file'];
                     }
-                    if (class_exists($listener['class'], TRUE)) {
+                    if (class_exists($listener['class'], true)) {
                         if (count($listener['arguments']) == 0) {
                             $listener = new $listener['class'];
                         } else {
@@ -431,16 +477,21 @@ class PHP_CompatInfo_CLI
                 // sets plugins system
                 $plugins = $configuration->getPluginConfiguration();
                 foreach ($plugins as $plugin) {
-                    if (!class_exists($plugin['class'], FALSE) &&
-                        $plugin['file'] !== '') {
+                    if (!class_exists($plugin['class'], false)
+                        && $plugin['file'] !== ''
+                    ) {
                         include_once $plugin['file'];
                     }
-                    if (class_exists($plugin['class'], TRUE)) {
+                    if (class_exists($plugin['class'], true)) {
                         $pluginClass = new ReflectionClass($plugin['class']);
-                        $reference   = $pluginClass->newInstanceArgs($plugin['args']);
+                        $reference
+                            = $pluginClass->newInstanceArgs($plugin['args']);
 
-                        if (!$reference instanceof PHP_CompatInfo_Reference_PluginsAbstract) {
-                            $warnings[] = "Plugin '" . $plugin['class'] . "' is not valid";
+                        if (!$reference
+                            instanceof PHP_CompatInfo_Reference_PluginsAbstract
+                        ) {
+                            $warnings[] = "Plugin '" . $plugin['class'] .
+                                "' is not valid";
                         }
                         unset($reference);
                     }
@@ -512,7 +563,9 @@ class PHP_CompatInfo_CLI
             $options['recursive'] = $input->getOption('recursive')->value;
         }
         if ($input->getOption('file-extensions')->value) {
-            $fileExtensions = explode(',', $input->getOption('file-extensions')->value);
+            $fileExtensions = explode(
+                ',', $input->getOption('file-extensions')->value
+            );
             $options['fileExtensions'] = array_map('trim', $fileExtensions);
         }
 
@@ -544,7 +597,9 @@ class PHP_CompatInfo_CLI
     {
         $reportClassName = 'PHP_CompatInfo_Report_' . ucfirst($report);
         if (!class_exists($reportClassName, true)) {
-            throw new PHP_CompatInfo_Exception('Report type "'.$report.'" not found.');
+            throw new PHP_CompatInfo_Exception(
+                'Report type "' . $report . '" not found.'
+            );
         }
         $reportClass = new $reportClassName($source, $options, $warnings);
         return $reportClass;
@@ -604,27 +659,27 @@ EOT;
         );
 
         switch ($command) {
-            case 'print':
-                $params = array(
-                    'reference',
-                    'report',
-                    'report-file',
-                    'exclude-pattern',
-                    'recursive',
-                    'file-extensions',
-                );
-                break;
-            case 'list-all':
-            case 'list-extensions':
-            case 'list-interfaces':
-            case 'list-classes':
-            case 'list-functions':
-            case 'list-constants':
-                $params = array('reference', 'report-file');
-                break;
-            default:
-                $params = array('reference');
-                break;
+        case 'print':
+            $params = array(
+                'reference',
+                'report',
+                'report-file',
+                'exclude-pattern',
+                'recursive',
+                'file-extensions',
+            );
+            break;
+        case 'list-all':
+        case 'list-extensions':
+        case 'list-interfaces':
+        case 'list-classes':
+        case 'list-functions':
+        case 'list-constants':
+            $params = array('reference', 'report-file');
+            break;
+        default:
+            $params = array('reference');
+            break;
         }
         foreach ($input->getHelp(false, $params) as $param) {
             printf(

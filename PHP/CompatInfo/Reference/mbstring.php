@@ -1,16 +1,30 @@
 <?php
 /**
- * All interfaces, classes, functions, constants about mbstring extension
+ * Version informations about mbstring extension
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
- * @link       http://www.php.net/manual/en/book.mbstring.php
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Reference.php';
 
+/**
+ * All interfaces, classes, functions, constants about mbstring extension
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ * @link     http://www.php.net/manual/en/book.mbstring.php
+ */
 class PHP_CompatInfo_Reference_Mbstring implements PHP_CompatInfo_Reference
 {
     /**
@@ -226,7 +240,7 @@ class PHP_CompatInfo_Reference_Mbstring implements PHP_CompatInfo_Reference
                 'MB_CASE_UPPER'                  => array('4.0.6', ''),
                 'MB_CASE_LOWER'                  => array('4.0.6', ''),
                 'MB_CASE_TITLE'                  => array('4.0.6', ''),
-       );
+            );
             $constants = array_merge(
                 $constants,
                 $version4

@@ -1,5 +1,21 @@
 <?php
 /**
+ * PHP_CompatInfo check compatibility of PHP code and provides minimal and maximal
+ * version to run it.
+ * It adds the ability to reverse-engineer extensions, interfaces, classes, 
+ * functions (user or internal) and constants.
+ *
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
+
+/**
  * Check compatibility of chunk of PHP code
  *
  * @method array getExcludes()   getExcludes(category = null, $pattern = null)
@@ -15,14 +31,13 @@
  * @method array getConstants()  getConstants(category = null, $pattern = null)
  *         Returns informations on parsing results about constants
  *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
-
 class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 {
     /**
@@ -120,23 +135,29 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      */
     public static function autoload($className)
     {
-        static $classes = NULL;
-        static $path = NULL;
+        static $classes = null;
+        static $path    = null;
 
-        if ($classes === NULL) {
+        if ($classes === null) {
             //include 'PHP/Token/Stream/Autoload.php';
 
             $classes = array(
-                'PHP_CompatInfo_TokenStream'      => 'PHP/CompatInfo/TokenStream.php',
-
-                'PHP_CompatInfo_TokenParser'      => 'PHP/CompatInfo/TokenParser.php',
-                'PHP_CompatInfo_Token_STRING'     => 'PHP/CompatInfo/TokenParser.php',
+                'PHP_CompatInfo_TokenStream'
+                    => 'PHP/CompatInfo/TokenStream.php',
+                'PHP_CompatInfo_TokenParser'
+                    => 'PHP/CompatInfo/TokenParser.php',
+                'PHP_CompatInfo_Token_STRING'
+                    => 'PHP/CompatInfo/TokenParser.php',
                 'PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING'
-                                                  => 'PHP/CompatInfo/TokenParser.php',
-                'PHP_CompatInfo_Exception'        => 'PHP/CompatInfo/Exception.php',
-                'PHP_CompatInfo_Cache'            => 'PHP/CompatInfo/Cache.php',
-                'PHP_CompatInfo_Reference_PHP4'   => 'PHP/CompatInfo/Reference/PHP4.php',
-                'PHP_CompatInfo_Reference_PHP5'   => 'PHP/CompatInfo/Reference/PHP5.php',
+                    => 'PHP/CompatInfo/TokenParser.php',
+                'PHP_CompatInfo_Exception'
+                    => 'PHP/CompatInfo/Exception.php',
+                'PHP_CompatInfo_Cache'
+                    => 'PHP/CompatInfo/Cache.php',
+                'PHP_CompatInfo_Reference_PHP4'
+                    => 'PHP/CompatInfo/Reference/PHP4.php',
+                'PHP_CompatInfo_Reference_PHP5'
+                    => 'PHP/CompatInfo/Reference/PHP5.php',
             );
             $path = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR;
         }
@@ -260,7 +281,8 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     /**
      * Creates an external iterator to allow to get connected observers
      *
-     * @link http://www.php.net/manual/en/class.iteratoraggregate.php
+     * @return SplObserver
+     * @link   http://www.php.net/manual/en/class.iteratoraggregate.php
      */
     public function getIterator()
     {
@@ -292,7 +314,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     /**
      * Publish the most recent event
      *
-     * @param array $event
+     * @param array $event Event data
      *
      * @return void
      */
@@ -440,7 +462,9 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         } else {
             $excludes = array();
         }
-        $excludes[-1] = '\.(' . implode('|', $this->options['fileExtensions']) . ')$';
+        $excludes[-1] = '\.(' .
+            implode('|', $this->options['fileExtensions']) .
+            ')$';
 
         $files = self::getFilelist(
             $dataSource, $this->options['recursive'], $excludes
@@ -464,7 +488,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         $indexes       = count($files);
         $process       = ($indexes > 0);
 
-        foreach($files as $source) {
+        foreach ($files as $source) {
             $i++;
             $this->startScanFile($source, $i, $indexes);
             $this->scan($source);
@@ -649,6 +673,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      *
      * @param string $source OPTIONAL Source filename
      *
+     * @return array
      * @throws PHP_CompatInfo_Exception If source has not been parsed
      */
     public function toArray($source = null)
@@ -690,11 +715,9 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      */
     public function __call($name, $args)
     {
-        if (preg_match(
-            '/get(?>(Excludes|Includes|Interfaces|Classes|Functions|Constants))/',
-            $name,
-            $matches)) {
-
+        $pattern = '/get' .
+            '(?>(Excludes|Includes|Interfaces|Classes|Functions|Constants))/';
+        if (preg_match($pattern, $name, $matches)) {
             $group = strtolower($matches[1]);
 
             $category = (isset($args[0])) ? $args[0] : null;
@@ -796,8 +819,9 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 if (isset($category) && $category != $name) {
                     continue;
                 }
-                if (isset($results['functions']['Core'][$name]) &&
-                    $results['functions']['Core'][$name]['excluded'] === false) {
+                if (isset($results['functions']['Core'][$name])
+                    && $results['functions']['Core'][$name]['excluded'] === false
+                ) {
                     $ccl[$name] += $results['functions']['Core'][$name]['uses'];
                 }
             }
@@ -842,11 +866,12 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $extensions = null;
         }
 
-        if (!class_exists($plugin['class'], FALSE) &&
-            $plugin['file'] !== '') {
+        if (!class_exists($plugin['class'], false)
+            && $plugin['file'] !== ''
+        ) {
             include_once $plugin['file'];
         }
-        if (class_exists($plugin['class'], TRUE)) {
+        if (class_exists($plugin['class'], true)) {
             $arguments = $plugin['args'];
             array_unshift($arguments, $extensions);
 
@@ -919,8 +944,8 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     /**
      * Check method parameter values provided
      *
-     * @param string $category
-     * @param string $key
+     * @param string $category Value to check in $key group
+     * @param string $key      Key group
      *
      * @return bool
      */
@@ -929,44 +954,60 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         static $extensions;
 
         switch ($key) {
-            case 'interfaces':
-            case 'classes':
-            case 'constants':
-            case 'functions':
-                if (!isset($extensions)) {
-                    $extensions = array();
-                    foreach (array_values($this->reference['extensions']) as $name => $versions) {
-                        $extensions[] = $name;
-                    }
+        case 'interfaces':
+        case 'classes':
+        case 'constants':
+        case 'functions':
+            if (!isset($extensions)) {
+                $extensions = array();
+                foreach (array_values($this->reference['extensions'])
+                    as $name => $versions) {
+                    $extensions[] = $name;
                 }
-                $search = $extensions; ;
-                array_unshift($search, 'user');
-                break;
-            case 'includes':
-                $search = array(
-                    'require_once', 'require', 'include_once', 'include'
-                );
-                break;
-            case 'excludes':
-                $search = array(
-                    'extensions',
-                    'interfaces', 'classes', 'functions', 'constants'
-                );
-                break;
-            case 'conditions':
-                $search = array(
-                    'function_exists', 'extension_loaded', 'defined',
-                    'method_exists', 'class_exists', 'interface_exists'
-                );
-                break;
-            case 'reference':
-                $search = array('PHP4', 'PHP5');
-                break;
-            default:
-                return false;
+            }
+            $search = $extensions; ;
+            array_unshift($search, 'user');
+            break;
+        case 'includes':
+            $search = array(
+                'require_once', 'require', 'include_once', 'include'
+            );
+            break;
+        case 'excludes':
+            $search = array(
+                'extensions',
+                'interfaces', 'classes', 'functions', 'constants'
+            );
+            break;
+        case 'conditions':
+            $search = array(
+                'function_exists', 'extension_loaded', 'defined',
+                'method_exists', 'class_exists', 'interface_exists'
+            );
+            break;
+        case 'reference':
+            $search = array('PHP4', 'PHP5');
+            break;
+        default:
+            return false;
         }
         $valid = in_array($category, $search);
         return $valid;
+    }
+
+    /**
+     * Update the base version if current ref version is greater
+     *
+     * @param string $current Current version
+     * @param string &$base   Base version
+     *
+     * @return void
+     */
+    protected function updateVersion($current, &$base)
+    {
+        if (version_compare($current, $base, 'gt')) {
+            $base = $current;
+        }
     }
 
     /**
@@ -981,7 +1022,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      *
      * @return void
      */
-    private function getInfo($category, $defaultVersion, $haystack, $source)
+    protected function getInfo($category, $defaultVersion, $haystack, $source)
     {
         if (!is_array($haystack)) {
             return;
@@ -1010,20 +1051,12 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 $this->_versionsRef = $values[$key]['versions'];
             } else {
                 // parent or interface result from recursive call
-                if (version_compare(
-                    $values[$key]['versions'][0],
-                    $this->_versionsRef[0],
-                    'gt')
-                ) {
-                    $this->_versionsRef[0] = $values[$key]['versions'][0];
-                }
-                if (version_compare(
-                    $values[$key]['versions'][1],
-                    $this->_versionsRef[1],
-                    'gt')
-                ) {
-                    $this->_versionsRef[1] = $values[$key]['versions'][1];
-                }
+                $this->updateVersion(
+                    $values[$key]['versions'][0], $this->_versionsRef[0]
+                );
+                $this->updateVersion(
+                    $values[$key]['versions'][1], $this->_versionsRef[1]
+                );
             }
 
             if (!isset($this->{$category}[$extension])) {
@@ -1031,23 +1064,26 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             }
 
             if (isset($this->{$category}[$extension][$key])) {
-                $values[$key]['uses'] =
-                    $this->{$category}[$extension][$key]['uses'];
+                $values[$key]['uses']
+                    = $this->{$category}[$extension][$key]['uses'];
                 $values[$key]['sources'][] = $source;
             } else {
-                $values[$key]['uses']     = isset($data['uses']) ? count($data['uses']) : 1;
-                $values[$key]['sources']  = array($source);
+                $values[$key]['uses']
+                    = isset($data['uses']) ? count($data['uses']) : 1;
+                $values[$key]['sources'] = array($source);
 
                 if (isset($data['parent']) && !empty($data['parent'])) {
-                    $this->getInfo($category,
-                        '4.0.0', array($data['parent'] => ''), $source
+                    $this->getInfo(
+                        $category, '4.0.0',
+                        array($data['parent'] => ''), $source
                     );
                 }
 
                 if (isset($data['interfaces']) && is_array($data['interfaces'])) {
                     // when a user class implements interfaces, identify them
-                    $this->getInfo('interfaces',
-                        '5.0.0', array_flip($data['interfaces']), $source
+                    $this->getInfo(
+                        'interfaces', '5.0.0',
+                        array_flip($data['interfaces']), $source
                     );
                 }
             }
@@ -1084,7 +1120,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 }
             }
             if (isset($this->options['exclude'][$category])) {
-                foreach($this->options['exclude'][$category] as $excludePattern) {
+                foreach ($this->options['exclude'][$category] as $excludePattern) {
                     if (preg_match("/$excludePattern/", $key)) {
                         $this->excludes[$category][$key] = true;
                         $this->{$category}[$extension][$key]['excluded'] = true;
@@ -1094,36 +1130,20 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             }
 
             // updates the minimum and maximum versions of current source
-            if (version_compare(
-                $this->_versionsRef[0],
-                $this->versions[0],
-                'gt')
-            ) {
-                $this->versions[0] = $this->_versionsRef[0];
-            }
-            if (version_compare(
-                $this->_versionsRef[1],
-                $this->versions[1],
-                'gt')
-            ) {
-                $this->versions[1] = $this->_versionsRef[1];
-            }
+            $this->updateVersion(
+                $this->_versionsRef[0], $this->versions[0]
+            );
+            $this->updateVersion(
+                $this->_versionsRef[1], $this->versions[1]
+            );
 
             // updates the minimum and maximum versions of all data source
-            if (version_compare(
-                $this->_versionsRef[0],
-                $this->_versionsLatest[0],
-                'gt')
-            ) {
-                $this->_versionsLatest[0] = $this->_versionsRef[0];
-            }
-            if (version_compare(
-                $this->_versionsRef[1],
-                $this->_versionsLatest[1],
-                'gt')
-            ) {
-                $this->_versionsLatest[1] = $this->_versionsRef[1];
-            }
+            $this->updateVersion(
+                $this->_versionsRef[0], $this->_versionsLatest[0]
+            );
+            $this->updateVersion(
+                $this->_versionsRef[1], $this->_versionsLatest[1]
+            );
         }
     }
 

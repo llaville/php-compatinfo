@@ -1,16 +1,30 @@
 <?php
 /**
- * All interfaces, classes, functions, constants about hash extension
+ * Version informations about hash extension
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
- * @link       http://www.php.net/manual/en/book.hash.php
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Reference.php';
 
+/**
+ * All interfaces, classes, functions, constants about hash extension
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ * @link     http://www.php.net/manual/en/book.hash.php
+ */
 class PHP_CompatInfo_Reference_Hash implements PHP_CompatInfo_Reference
 {
     /**

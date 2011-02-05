@@ -2,21 +2,35 @@
 /**
  * Data dictionary for PHP4 references
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Reference/PluginsAbstract.php';
 
+/**
+ * Data dictionary for PHP4 references
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbstract
 {
     /**
      * @var array
      */
     protected $extensionReferences = array();
-    
+
     /**
      * Autoloader for PHP_CompatInfo_Reference_PHP4 or 5
      *
@@ -26,41 +40,63 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
      */
     public static function autoload($className)
     {
-        static $classes = NULL;
-        static $path = NULL;
+        static $classes = null;
+        static $path    = null;
 
-        if ($classes === NULL) {
+        if ($classes === null) {
             $classes = array(
-                'PHP_CompatInfo_Reference_Bcmath'    => 'PHP/CompatInfo/Reference/bcmath.php',
-                'PHP_CompatInfo_Reference_Bz2'       => 'PHP/CompatInfo/Reference/bz2.php',
-                'PHP_CompatInfo_Reference_Calendar'  => 'PHP/CompatInfo/Reference/calendar.php',
-                'PHP_CompatInfo_Reference_Core'      => 'PHP/CompatInfo/Reference/core.php',
-                'PHP_CompatInfo_Reference_Ctype'     => 'PHP/CompatInfo/Reference/ctype.php',
-                'PHP_CompatInfo_Reference_Curl'      => 'PHP/CompatInfo/Reference/curl.php',
-                'PHP_CompatInfo_Reference_Date'      => 'PHP/CompatInfo/Reference/date.php',
-                'PHP_CompatInfo_Reference_Dom'       => 'PHP/CompatInfo/Reference/dom.php',
-                'PHP_CompatInfo_Reference_Gd'        => 'PHP/CompatInfo/Reference/gd.php',
-                'PHP_CompatInfo_Reference_Hash'      => 'PHP/CompatInfo/Reference/hash.php',
-                'PHP_CompatInfo_Reference_Libxml'    => 'PHP/CompatInfo/Reference/libxml.php',
-                'PHP_CompatInfo_Reference_Mbstring'  => 'PHP/CompatInfo/Reference/mbstring.php',
-                'PHP_CompatInfo_Reference_Pcre'      => 'PHP/CompatInfo/Reference/pcre.php',
-                'PHP_CompatInfo_Reference_PDO'       => 'PHP/CompatInfo/Reference/pdo.php',
-                'PHP_CompatInfo_Reference_SPL'       => 'PHP/CompatInfo/Reference/spl.php',
-                'PHP_CompatInfo_Reference_Sockets'   => 'PHP/CompatInfo/Reference/sockets.php',
-                'PHP_CompatInfo_Reference_Standard'  => 'PHP/CompatInfo/Reference/standard.php',
-                'PHP_CompatInfo_Reference_Tokenizer' => 'PHP/CompatInfo/Reference/tokenizer.php',
-                'PHP_CompatInfo_Reference_Xdebug'    => 'PHP/CompatInfo/Reference/xdebug.php',
-                'PHP_CompatInfo_Reference_Xml'       => 'PHP/CompatInfo/Reference/xml.php',
-                'PHP_CompatInfo_Reference_Zlib'      => 'PHP/CompatInfo/Reference/zlib.php',
+                'PHP_CompatInfo_Reference_Bcmath'
+                    => 'PHP/CompatInfo/Reference/bcmath.php',
+                'PHP_CompatInfo_Reference_Bz2'
+                    => 'PHP/CompatInfo/Reference/bz2.php',
+                'PHP_CompatInfo_Reference_Calendar'
+                    => 'PHP/CompatInfo/Reference/calendar.php',
+                'PHP_CompatInfo_Reference_Core'
+                    => 'PHP/CompatInfo/Reference/core.php',
+                'PHP_CompatInfo_Reference_Ctype'
+                    => 'PHP/CompatInfo/Reference/ctype.php',
+                'PHP_CompatInfo_Reference_Curl'
+                    => 'PHP/CompatInfo/Reference/curl.php',
+                'PHP_CompatInfo_Reference_Date'
+                    => 'PHP/CompatInfo/Reference/date.php',
+                'PHP_CompatInfo_Reference_Dom'
+                    => 'PHP/CompatInfo/Reference/dom.php',
+                'PHP_CompatInfo_Reference_Gd'
+                    => 'PHP/CompatInfo/Reference/gd.php',
+                'PHP_CompatInfo_Reference_Hash'
+                    => 'PHP/CompatInfo/Reference/hash.php',
+                'PHP_CompatInfo_Reference_Libxml'
+                    => 'PHP/CompatInfo/Reference/libxml.php',
+                'PHP_CompatInfo_Reference_Mbstring'
+                    => 'PHP/CompatInfo/Reference/mbstring.php',
+                'PHP_CompatInfo_Reference_Pcre'
+                    => 'PHP/CompatInfo/Reference/pcre.php',
+                'PHP_CompatInfo_Reference_PDO'
+                    => 'PHP/CompatInfo/Reference/pdo.php',
+                'PHP_CompatInfo_Reference_SPL'
+                    => 'PHP/CompatInfo/Reference/spl.php',
+                'PHP_CompatInfo_Reference_Sockets'
+                    => 'PHP/CompatInfo/Reference/sockets.php',
+                'PHP_CompatInfo_Reference_Standard'
+                    => 'PHP/CompatInfo/Reference/standard.php',
+                'PHP_CompatInfo_Reference_Tokenizer'
+                    => 'PHP/CompatInfo/Reference/tokenizer.php',
+                'PHP_CompatInfo_Reference_Xdebug'
+                    => 'PHP/CompatInfo/Reference/xdebug.php',
+                'PHP_CompatInfo_Reference_Xml'
+                    => 'PHP/CompatInfo/Reference/xml.php',
+                'PHP_CompatInfo_Reference_Zlib'
+                    => 'PHP/CompatInfo/Reference/zlib.php',
             );
-            $path = dirname(dirname(dirname(dirname(__FILE__)))) . DIRECTORY_SEPARATOR;
+            $path = dirname(dirname(dirname(dirname(__FILE__)))) 
+                . DIRECTORY_SEPARATOR;
         }
 
         if (isset($classes[$className])) {
-            require $path . $classes[$className];
+            include $path . $classes[$className];
         }
     }
-    
+
     /**
      * Class constructor of PHP4 References
      *
@@ -70,7 +106,7 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
     public function __construct($extensions = null)
     {
         spl_autoload_register('self::autoload');
-    
+
         if (isset($extensions)) {
             $extensions = (array)$extensions;
         } else {
@@ -130,7 +166,7 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
             if (is_null($extension) || ($ext == $extension)) {
                 $ref = new $extRefClass;
                 $values = $ref->getExtensions($extension, $version);
-                
+
                 $extensions = array_merge(
                     $extensions,
                     $values

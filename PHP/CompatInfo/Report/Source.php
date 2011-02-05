@@ -2,14 +2,28 @@
 /**
  * Source tokens report
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Report.php';
 
+/**
+ * Source tokens report
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
 {
     /**
@@ -43,10 +57,10 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
 
         $this->generate($report, $base);
 
-        if (count($warnings) > 0 && $options['verbose'] === TRUE) {
+        if (count($warnings) > 0 && $options['verbose'] === true) {
             echo 'Warning messages : (' . count($warnings) . ')' . PHP_EOL;
             echo PHP_EOL;
-            foreach($warnings as $warning) {
+            foreach ($warnings as $warning) {
                 echo '  ' . $warning . PHP_EOL;
             }
         }

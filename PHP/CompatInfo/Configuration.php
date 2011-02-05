@@ -2,6 +2,19 @@
 /**
  * Wrapper for the PHP_CompatInfo XML configuration file
  *
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
+
+/**
+ * Wrapper for the PHP_CompatInfo XML configuration file
+ *
  * Example XML configuration file:
  * <code>
  * <?xml version="1.0" encoding="utf-8" ?>
@@ -110,12 +123,13 @@
  * </phpcompatinfo>
  * </code>
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
-
 class PHP_CompatInfo_Configuration
 {
     protected static $instance;
@@ -191,8 +205,9 @@ class PHP_CompatInfo_Configuration
                 $file = '';
             }
 
-            if ($plugin->childNodes->item(1) instanceof DOMElement &&
-                $plugin->childNodes->item(1)->tagName == 'arguments') {
+            if ($plugin->childNodes->item(1) instanceof DOMElement
+                && $plugin->childNodes->item(1)->tagName == 'arguments'
+            ) {
                 foreach ($plugin->childNodes->item(1)->childNodes as $argument) {
                     if ($argument instanceof DOMElement) {
                         $arguments[] = self::xmlToVariable($argument);
@@ -236,8 +251,9 @@ class PHP_CompatInfo_Configuration
                 $file = '';
             }
 
-            if ($listener->childNodes->item(1) instanceof DOMElement &&
-                $listener->childNodes->item(1)->tagName == 'arguments') {
+            if ($listener->childNodes->item(1) instanceof DOMElement
+                && $listener->childNodes->item(1)->tagName == 'arguments'
+            ) {
                 foreach ($listener->childNodes->item(1)->childNodes as $argument) {
                     if ($argument instanceof DOMElement) {
                         $arguments[] = self::xmlToVariable($argument);
@@ -381,7 +397,9 @@ class PHP_CompatInfo_Configuration
         }
 
         if ($root->hasAttribute('fileExtensions')) {
-            $fileExtensions = explode(',', (string)$root->getAttribute('fileExtensions'));
+            $fileExtensions = explode(
+                ',', (string)$root->getAttribute('fileExtensions')
+            );
             $result['fileExtensions'] = array_map('trim', $fileExtensions);
         }
 
@@ -476,73 +494,70 @@ class PHP_CompatInfo_Configuration
     /**
      * "Convert" a DOMElement object into a PHP variable
      *
-     * @param DOMElement $element
+     * @param DOMElement $element DOM element that corresponding to the variable
      *
      * @return mixed
      */
     public static function xmlToVariable(DOMElement $element)
     {
-        $variable = NULL;
+        $variable = null;
 
         switch ($element->tagName) {
-            case 'array': {
-                $variable = array();
+        case 'array':
+            $variable = array();
 
-                $doc  = new DOMDocument;
-                $node = $doc->importNode($element, true);
-                $doc->appendChild($node);
+            $doc  = new DOMDocument;
+            $node = $doc->importNode($element, true);
+            $doc->appendChild($node);
 
-                $xpath = new DOMXPath($doc);
+            $xpath = new DOMXPath($doc);
 
-                foreach ($xpath->query('//element[not(ancestor::element)]') as $element) {
-                    if ($element->childNodes->item(1) instanceof DOMElement) {
-                        $value = self::xmlToVariable($element->childNodes->item(1));
-                    } else {
-                        $value = NULL;
-                    }
-
-                    if ($element->hasAttribute('key')) {
-                        $variable[(string)$element->getAttribute('key')] = $value;
-                    } else {
-                        $variable[] = $value;
-                    }
-                }
-            }
-            break;
-
-            case 'object': {
-                $className = $element->getAttribute('class');
-
-                if ($element->hasChildNodes()) {
-                    $arguments       = $element->childNodes->item(1)->childNodes;
-                    $constructorArgs = array();
-
-                    foreach ($arguments as $argument) {
-                        if ($argument instanceof DOMElement) {
-                            $constructorArgs[] = self::xmlToVariable($argument);
-                        }
-                    }
-
-                    $class    = new ReflectionClass($className);
-                    $variable = $class->newInstanceArgs($constructorArgs);
+            foreach ($xpath->query('//element[not(ancestor::element)]')
+                as $element) {
+                if ($element->childNodes->item(1) instanceof DOMElement) {
+                    $value = self::xmlToVariable($element->childNodes->item(1));
                 } else {
-                    $variable = new $className;
+                    $value = null;
+                }
+
+                if ($element->hasAttribute('key')) {
+                    $variable[(string)$element->getAttribute('key')] = $value;
+                } else {
+                    $variable[] = $value;
                 }
             }
             break;
 
-            case 'boolean': {
-                $variable = $element->nodeValue == 'true' ? TRUE : FALSE;
+        case 'object':
+            $className = $element->getAttribute('class');
+
+            if ($element->hasChildNodes()) {
+                $arguments       = $element->childNodes->item(1)->childNodes;
+                $constructorArgs = array();
+
+                foreach ($arguments as $argument) {
+                    if ($argument instanceof DOMElement) {
+                        $constructorArgs[] = self::xmlToVariable($argument);
+                    }
+                }
+
+                $class    = new ReflectionClass($className);
+                $variable = $class->newInstanceArgs($constructorArgs);
+            } else {
+                $variable = new $className;
             }
             break;
 
-            case 'integer':
-            case 'double':
-            case 'string': {
-                $variable = $element->nodeValue;
+        case 'boolean':
+            $variable = $element->nodeValue == 'true' ? true : false;
+            break;
 
-                settype($variable, $element->tagName);
-            }
+        case 'integer':
+        case 'double':
+        case 'string':
+            $variable = $element->nodeValue;
+
+            settype($variable, $element->tagName);
             break;
         }
 

@@ -1,16 +1,30 @@
 <?php
 /**
- * All interfaces, classes, functions, constants about Net_Growl package
+ * Version informations about PEAR::Net_Growl package
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
- * @link       http://pear.php.net/package/Net_Growl/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Reference.php';
 
+/**
+ * All interfaces, classes, functions, constants about PEAR::Net_Growl package
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ * @link     http://pear.php.net/package/Net_Growl/
+ */
 class PHP_CompatInfo_Reference_Net_Growl implements PHP_CompatInfo_Reference
 {
     /**
@@ -51,7 +65,7 @@ class PHP_CompatInfo_Reference_Net_Growl implements PHP_CompatInfo_Reference
         );
         return $extensions;
     }
-    
+
     /**
      * Gets informations about interfaces
      *

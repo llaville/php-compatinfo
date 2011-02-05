@@ -1,12 +1,30 @@
 <?php
+/**
+ * Plugins Abstract
+ *
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 
 require_once 'PHP/CompatInfo/Reference.php';
 
 /**
- * Plugins Abstract
+ * Abstract base class for any plugins
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
-
-abstract class PHP_CompatInfo_Reference_PluginsAbstract 
+abstract class PHP_CompatInfo_Reference_PluginsAbstract
     implements PHP_CompatInfo_Reference
 {
     /**
@@ -17,28 +35,30 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
 
     /**
      * Tells if some extensions references could not be loaded
-     * 
+     *
      * @return bool
      */
     public function hasWarnings()
     {
         return (count($this->warnings) > 0);
     }
-    
+
     /**
-     * Returns list of warning messages emitted 
+     * Returns list of warning messages emitted
      * during loading of extensions references
-     * 
+     *
      * @return array
      */
     public function getWarnings()
     {
         return $this->warnings;
     }
-    
+
     /**
-     * @param string $ext  
-     * @param array  $arr
+     * Update data informations
+     *
+     * @param string $ext Extension name
+     * @param array  $arr Components of this extension
      *
      * @return array
      */
@@ -51,7 +71,7 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
         }
         return $values;
     }
-    
+
     /**
      * Gets all informations at once about:
      * extensions, interfaces, classes, functions, constants

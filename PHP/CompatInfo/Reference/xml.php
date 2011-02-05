@@ -1,16 +1,30 @@
 <?php
 /**
- * All interfaces, classes, functions, constants about xml extension
+ * Version informations about xml extension
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
- * @link       http://www.php.net/manual/en/book.xml.php
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Reference.php';
 
+/**
+ * All interfaces, classes, functions, constants about xml extension
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ * @link     http://www.php.net/manual/en/book.xml.php
+ */
 class PHP_CompatInfo_Reference_Xml implements PHP_CompatInfo_Reference
 {
     /**
@@ -150,17 +164,17 @@ class PHP_CompatInfo_Reference_Xml implements PHP_CompatInfo_Reference
                 'xml_set_character_data_handler' => array('4.0.0', ''),
                 'xml_set_default_handler'        => array('4.0.0', ''),
                 'xml_set_element_handler'        => array('4.0.0', ''),
-                'xml_set_end_namespace_decl_handler' 
+                'xml_set_end_namespace_decl_handler'
                                                  => array('4.0.5', ''),
-                'xml_set_external_entity_ref_handler' 
+                'xml_set_external_entity_ref_handler'
                                                  => array('4.0.0', ''),
                 'xml_set_notation_decl_handler'  => array('4.0.0', ''),
                 'xml_set_object'                 => array('4.0.0', ''),
-                'xml_set_processing_instruction_handler' 
+                'xml_set_processing_instruction_handler'
                                                  => array('4.0.0', ''),
-                'xml_set_start_namespace_decl_handler' 
+                'xml_set_start_namespace_decl_handler'
                                                  => array('4.0.5', ''),
-                'xml_set_unparsed_entity_decl_handler' 
+                'xml_set_unparsed_entity_decl_handler'
                                                  => array('4.0.0', ''),
             );
             $functions = array_merge(

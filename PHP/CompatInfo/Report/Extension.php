@@ -2,14 +2,28 @@
 /**
  * Extension report
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Report.php';
 
+/**
+ * Extension report
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
 {
     /**
@@ -56,7 +70,9 @@ class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
                 echo ' ';
                 echo $extension;
                 if (!empty($extVersion)) {
-                    echo str_repeat(' ', (54 - strlen($extension) - strlen($extVersion)));
+                    echo str_repeat(
+                        ' ', (54 - strlen($extension) - strlen($extVersion))
+                    );
                     echo $extVersion . '  ';
                 } else {
                     echo str_repeat(' ', (56 - strlen($extension)));
@@ -69,21 +85,12 @@ class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
                     continue;
                 }
 
-                if (version_compare(
-                    $items['versions'][0],
-                    $globalVersions[0],
-                    'gt')
-                ) {
-                    $globalVersions[0] = $items['versions'][0];
-                }
-                if (version_compare(
-                    $items['versions'][1],
-                    $globalVersions[1],
-                    'gt')
-                ) {
-                    $globalVersions[1] = $items['versions'][1];
-                }
-
+                $this->updateVersion(
+                    $items['versions'][0], $globalVersions[0]
+                );
+                $this->updateVersion(
+                    $items['versions'][1], $globalVersions[1]
+                );
             }
 
             echo str_repeat('-', $width).PHP_EOL;

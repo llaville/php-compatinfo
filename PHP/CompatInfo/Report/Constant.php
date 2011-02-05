@@ -2,14 +2,28 @@
 /**
  * Constant report
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 require_once 'PHP/CompatInfo/Report.php';
 
+/**
+ * Constant report
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 class PHP_CompatInfo_Report_Constant extends PHP_CompatInfo_Report
 {
     /**
@@ -71,28 +85,21 @@ class PHP_CompatInfo_Report_Constant extends PHP_CompatInfo_Report
                         . str_repeat(' ', (18 - strlen($extension)));
                     echo $versions
                         . str_repeat(' ', (16 - strlen($versions)));
-                    echo str_repeat(' ', (5 - strlen((string) $items[$constant]['uses'])))
-                        . $items[$constant]['uses'] . PHP_EOL;
+                    echo str_repeat(
+                        ' ', (5 - strlen((string) $items[$constant]['uses']))
+                    );
+                    echo $items[$constant]['uses'] . PHP_EOL;
 
                     if ($items[$constant]['excluded']) {
                         continue;
                     }
 
-                    if (version_compare(
-                        $items[$constant]['versions'][0],
-                        $globalVersions[0],
-                        'gt')
-                    ) {
-                        $globalVersions[0] = $items[$constant]['versions'][0];
-                    }
-                    if (version_compare(
-                        $items[$constant]['versions'][1],
-                        $globalVersions[1],
-                        'gt')
-                    ) {
-                        $globalVersions[1] = $items[$constant]['versions'][1];
-                    }
-
+                    $this->updateVersion(
+                        $items[$constant]['versions'][0], $globalVersions[0]
+                    );
+                    $this->updateVersion(
+                        $items[$constant]['versions'][1], $globalVersions[1]
+                    );
                 }
             }
 
