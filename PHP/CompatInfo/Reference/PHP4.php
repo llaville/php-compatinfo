@@ -71,6 +71,8 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/gettext.php',
                 'PHP_CompatInfo_Reference_Hash'
                     => 'PHP/CompatInfo/Reference/hash.php',
+                'PHP_CompatInfo_Reference_Iconv'
+                    => 'PHP/CompatInfo/Reference/iconv.php',
                 'PHP_CompatInfo_Reference_Libxml'
                     => 'PHP/CompatInfo/Reference/libxml.php',
                 'PHP_CompatInfo_Reference_Mbstring'
