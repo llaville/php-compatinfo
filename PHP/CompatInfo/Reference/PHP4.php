@@ -67,6 +67,8 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/ftp.php',
                 'PHP_CompatInfo_Reference_Gd'
                     => 'PHP/CompatInfo/Reference/gd.php',
+                'PHP_CompatInfo_Reference_Gettext'
+                    => 'PHP/CompatInfo/Reference/gettext.php',
                 'PHP_CompatInfo_Reference_Hash'
                     => 'PHP/CompatInfo/Reference/hash.php',
                 'PHP_CompatInfo_Reference_Libxml'
