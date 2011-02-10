@@ -79,6 +79,8 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/libxml.php',
                 'PHP_CompatInfo_Reference_Mbstring'
                     => 'PHP/CompatInfo/Reference/mbstring.php',
+                'PHP_CompatInfo_Reference_Mysql'
+                    => 'PHP/CompatInfo/Reference/mysql.php',
                 'PHP_CompatInfo_Reference_Openssl'
                     => 'PHP/CompatInfo/Reference/openssl.php',
                 'PHP_CompatInfo_Reference_Pcre'
