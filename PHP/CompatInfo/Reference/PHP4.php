@@ -93,6 +93,8 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/spl.php',
                 'PHP_CompatInfo_Reference_Session'
                     => 'PHP/CompatInfo/Reference/session.php',
+                'PHP_CompatInfo_Reference_SimpleXML'
+                    => 'PHP/CompatInfo/Reference/simplexml.php',
                 'PHP_CompatInfo_Reference_Sockets'
                     => 'PHP/CompatInfo/Reference/sockets.php',
                 'PHP_CompatInfo_Reference_Standard'
@@ -108,7 +110,7 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                 'PHP_CompatInfo_Reference_Zlib'
                     => 'PHP/CompatInfo/Reference/zlib.php',
             );
-            $path = dirname(dirname(dirname(dirname(__FILE__)))) 
+            $path = dirname(dirname(dirname(dirname(__FILE__))))
                 . DIRECTORY_SEPARATOR;
         }
 
