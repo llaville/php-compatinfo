@@ -105,6 +105,8 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/xdebug.php',
                 'PHP_CompatInfo_Reference_Xml'
                     => 'PHP/CompatInfo/Reference/xml.php',
+                'PHP_CompatInfo_Reference_Xmlreader'
+                    => 'PHP/CompatInfo/Reference/xmlreader.php',
                 'PHP_CompatInfo_Reference_Xsl'
                     => 'PHP/CompatInfo/Reference/xsl.php',
                 'PHP_CompatInfo_Reference_Zlib'
