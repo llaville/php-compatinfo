@@ -91,6 +91,8 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/pdo.php',
                 'PHP_CompatInfo_Reference_SPL'
                     => 'PHP/CompatInfo/Reference/spl.php',
+                'PHP_CompatInfo_Reference_SQLite'
+                    => 'PHP/CompatInfo/Reference/sqlite.php',
                 'PHP_CompatInfo_Reference_Session'
                     => 'PHP/CompatInfo/Reference/session.php',
                 'PHP_CompatInfo_Reference_SimpleXML'
