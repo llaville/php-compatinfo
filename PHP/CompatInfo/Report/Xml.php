@@ -39,7 +39,8 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
     public function generate($report, $base)
     {
         echo '<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL;
-        echo '<phpcompatinfo version="@package_version@">'.PHP_EOL;
+        echo '<phpcompatinfo version="@package_version@"' .
+            ' timestamp="' . date(DATE_W3C) . '">'.PHP_EOL;
 
         $indentStep = 4;
         $indent     = $indentStep;
