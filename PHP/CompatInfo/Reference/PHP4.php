@@ -101,6 +101,8 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/simplexml.php',
                 'PHP_CompatInfo_Reference_Sockets'
                     => 'PHP/CompatInfo/Reference/sockets.php',
+                'PHP_CompatInfo_Reference_Ssh2'
+                    => 'PHP/CompatInfo/Reference/ssh2.php',
                 'PHP_CompatInfo_Reference_Standard'
                     => 'PHP/CompatInfo/Reference/standard.php',
                 'PHP_CompatInfo_Reference_Tokenizer'
