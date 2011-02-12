@@ -105,6 +105,8 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/standard.php',
                 'PHP_CompatInfo_Reference_Tokenizer'
                     => 'PHP/CompatInfo/Reference/tokenizer.php',
+                'PHP_CompatInfo_Reference_Wddx'
+                    => 'PHP/CompatInfo/Reference/wddx.php',
                 'PHP_CompatInfo_Reference_Xdebug'
                     => 'PHP/CompatInfo/Reference/xdebug.php',
                 'PHP_CompatInfo_Reference_Xml'
