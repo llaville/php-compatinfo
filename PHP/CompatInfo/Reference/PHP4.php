@@ -89,6 +89,8 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/pcre.php',
                 'PHP_CompatInfo_Reference_PDO'
                     => 'PHP/CompatInfo/Reference/pdo.php',
+                'PHP_CompatInfo_Reference_Pgsql'
+                    => 'PHP/CompatInfo/Reference/pgsql.php',
                 'PHP_CompatInfo_Reference_SPL'
                     => 'PHP/CompatInfo/Reference/spl.php',
                 'PHP_CompatInfo_Reference_SQLite'
