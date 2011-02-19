@@ -56,6 +56,31 @@
             <xsl:apply-templates select="phpcompatinfo" mode="head" />
             <title>PHP_CompatInfo Summary Report</title>
             <link rel="stylesheet" type="text/css" href="phpci.css"/>
+            <script type="text/javascript" src="jquery-1.5.min.js" />
+            <script type="text/javascript">
+            $(document).ready(function() {
+                var toggleMinus = 'bullet_toggle_minus.png';
+                var togglePlus = 'bullet_toggle_plus.png';
+                var $subHead = $('table.summary tbody th:first-child');
+                $subHead.prepend('&lt;img src="' + togglePlus + '"alt="[+]" title="expand this section" /&gt;');
+                $('img', $subHead).addClass('clickable')
+                    .click(function() {
+                    var toggleSrc = $(this).attr('src');
+                    if ( toggleSrc == toggleMinus ) {
+                        $(this).attr('alt', "[+]");
+                        $(this).attr('title', "expand this section");
+                        $(this).attr('src', togglePlus)
+                            .parents('tr').siblings().fadeOut('fast')
+                    } else{
+                        $(this).attr('alt', "[-]");
+                        $(this).attr('title', "collapse this section");
+                        $(this).attr('src', toggleMinus)
+                            .parents('tr').siblings().fadeIn('fast')
+                    }
+                });
+                $subHead.parents('tr').siblings().fadeOut('fast');
+            }); 
+            </script>
         </head>
         <body>
         <h1>PHP_CompatInfo - Summary</h1>
@@ -121,17 +146,18 @@
     <xsl:template match="files">
         <table class="summary">
             <thead>
-                <tr><th rowspan="2">File</th><th colspan="2">Versions</th></tr>
+                <tr><th rowspan="2">Files</th><th colspan="2">Versions</th></tr>
                 <tr><th>Min</th><th>Max</th></tr>
             </thead>
             <tfoot>
                 <tr>
-                    <th>Total</th>
+                    <th>Total :</th>
                     <th><xsl:value-of select="//phpcompatinfo/versions/min" /></th>
                     <th><xsl:value-of select="//phpcompatinfo/versions/max" /></th>
                 </tr>
             </tfoot>
             <tbody>
+                <tr><th colspan="3"><xsl:value-of select="count(./*)" /> source(s)</th></tr>
                 <xsl:apply-templates />
             </tbody>
         </table>

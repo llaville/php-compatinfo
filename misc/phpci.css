@@ -31,6 +31,18 @@ table.summary th {
     padding-top: 5px;
     text-align: center;
 }
+table.summary tbody th {
+    text-align: left;
+    font-size: 1em;
+    color: #4A4000;
+}
+.clickable {
+    vertical-align: middle;
+}
+table.summary tfoot th:first-child {
+    text-align: right;
+    padding-right: 1em;
+}
 .footer {
     text-align: center;
     font-weight: bold;
