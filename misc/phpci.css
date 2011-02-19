@@ -42,9 +42,20 @@ h1,h2 {
 dt {
     font-weight: bold;
 }
-dd {
-    width: 20em;
+dd, table.counters {
+    width: 30em;
 }
-dd > span {
-    float: right;
+.counters td {
+    text-align:left;
+    width: 40%;
+    padding: 0;
+}
+.counters td + td {
+    text-align:right;
+    width: 30%;
+    padding-right: 1em;
+}
+.counters td + td + td {
+    text-align:left;
+    width: 30%
 }
