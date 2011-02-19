@@ -38,12 +38,18 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
      */
     public function generate($report, $base)
     {
+        $globalVersions = array('4.0.0', '');
+
         echo '<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL;
         echo '<phpcompatinfo version="@package_version@"' .
             ' timestamp="' . date(DATE_W3C) . '">'.PHP_EOL;
 
         $indentStep = 4;
         $indent     = $indentStep;
+
+        echo str_repeat(' ', $indent);
+        echo '<files>' . PHP_EOL;
+        $indent += $indentStep;
 
         foreach ($report as $filename => $elements) {
 
@@ -66,6 +72,13 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
             echo '</versions>' . PHP_EOL;
             $indent -= $indentStep;
 
+            $this->updateVersion(
+                $elements['versions'][0], $globalVersions[0]
+            );
+            $this->updateVersion(
+                $elements['versions'][1], $globalVersions[1]
+            );
+
             // all conditions found in $filename
             $ccn = $this->getCCN($elements['conditions']);
             if ($ccn > 0) {
@@ -76,7 +89,7 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                 foreach ($elements['conditions'] as $condition => $count) {
                     if ($count > 0) {
                         echo str_repeat(' ', $indent);
-                        echo '<condition name="' . $condition . 
+                        echo '<condition name="' . $condition .
                             '" count="' . $count . '" />' . PHP_EOL;
                     }
                 }
@@ -210,6 +223,23 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
             echo str_repeat(' ', $indent);
             echo '</file>'.PHP_EOL;
         }
+
+        $indent -= $indentStep;
+        echo str_repeat(' ', $indent);
+        echo '</files>' . PHP_EOL;
+
+        echo str_repeat(' ', $indent);
+        echo '<versions>' . PHP_EOL;
+        $indent += $indentStep;
+        echo str_repeat(' ', $indent);
+        echo '<min>' . $globalVersions[0] . '</min>' . PHP_EOL;
+        if (!empty($globalVersions[1])) {
+            echo str_repeat(' ', $indent);
+            echo '<max>' . $globalVersions[1] . '</max>' . PHP_EOL;
+        }
+        $indent -= $indentStep;
+        echo str_repeat(' ', $indent);
+        echo '</versions>' . PHP_EOL;
 
         echo '</phpcompatinfo>'.PHP_EOL;
     }
