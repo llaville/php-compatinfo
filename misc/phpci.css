@@ -9,9 +9,11 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 body {
+    background: url(Jigsaw.png) fixed top left no-repeat;
     font-family : Verdana, Arial;
     background-color: #4A4000;
     color: #F4F7D2;
+    padding: 1em 5% 4em 20%;
 }
 table.summary  {
     border-collapse: collapse;
