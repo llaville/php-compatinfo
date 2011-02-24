@@ -12,8 +12,6 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
-require_once 'PHP/CompatInfo/Cache/Interface.php';
-
 /**
  * Class that allow to disable cache system
  *

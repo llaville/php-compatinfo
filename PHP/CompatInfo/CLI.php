@@ -57,10 +57,18 @@ class PHP_CompatInfo_CLI
                     => 'PHP/CompatInfo/Exception.php',
                 'PHP_CompatInfo_Configuration'
                     => 'PHP/CompatInfo/Configuration.php',
+                'PHP_CompatInfo_Cache'
+                    => 'PHP/CompatInfo/Cache.php',
+                'PHP_CompatInfo_Reference'
+                    => 'PHP/CompatInfo/Reference.php',
+                'PHP_CompatInfo_Reference_PluginsAbstract'
+                    => 'PHP/CompatInfo/Reference/PluginsAbstract.php',
                 'PHP_CompatInfo_Reference_PHP4'
                     => 'PHP/CompatInfo/Reference/PHP4.php',
                 'PHP_CompatInfo_Reference_PHP5'
                     => 'PHP/CompatInfo/Reference/PHP5.php',
+                'PHP_CompatInfo_Report'
+                    => 'PHP/CompatInfo/Report.php',
                 'PHP_CompatInfo_Report_Reference'
                     => 'PHP/CompatInfo/Report/Reference.php',
                 'PHP_CompatInfo_Report_Summary'

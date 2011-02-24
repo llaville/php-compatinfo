@@ -12,8 +12,6 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
-require_once 'PHP/CompatInfo/Reference/PluginsAbstract.php';
-
 /**
  * Data dictionary for PHP4 references
  *

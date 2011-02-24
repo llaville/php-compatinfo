@@ -12,8 +12,6 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
-require_once 'PHP/CompatInfo/Reference.php';
-
 /**
  * All interfaces, classes, functions, constants about filter extension
  *

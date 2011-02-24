@@ -2,7 +2,7 @@
 /**
  * PHP_CompatInfo check compatibility of PHP code and provides minimal and maximal
  * version to run it.
- * It adds the ability to reverse-engineer extensions, interfaces, classes, 
+ * It adds the ability to reverse-engineer extensions, interfaces, classes,
  * functions (user or internal) and constants.
  *
  * PHP version 5
@@ -154,6 +154,10 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                     => 'PHP/CompatInfo/Exception.php',
                 'PHP_CompatInfo_Cache'
                     => 'PHP/CompatInfo/Cache.php',
+                'PHP_CompatInfo_Reference'
+                    => 'PHP/CompatInfo/Reference.php',
+                'PHP_CompatInfo_Reference_PluginsAbstract'
+                    => 'PHP/CompatInfo/Reference/PluginsAbstract.php',
                 'PHP_CompatInfo_Reference_PHP4'
                     => 'PHP/CompatInfo/Reference/PHP4.php',
                 'PHP_CompatInfo_Reference_PHP5'

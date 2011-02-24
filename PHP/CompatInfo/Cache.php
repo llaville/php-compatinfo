@@ -43,8 +43,12 @@ class PHP_CompatInfo_Cache
 
         if ($classes === null) {
             $classes = array(
-                'PHP_CompatInfo_Cache_Null' => 'PHP/CompatInfo/Cache/Null.php',
-                'PHP_CompatInfo_Cache_File' => 'PHP/CompatInfo/Cache/File.php',
+                'PHP_CompatInfo_Cache_Interface'
+                    => 'PHP/CompatInfo/Cache/Interface.php',
+                'PHP_CompatInfo_Cache_Null' 
+                    => 'PHP/CompatInfo/Cache/Null.php',
+                'PHP_CompatInfo_Cache_File' 
+                    => 'PHP/CompatInfo/Cache/File.php',
             );
             $path = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR;
         }

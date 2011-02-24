@@ -12,8 +12,6 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
-require_once 'PHP/CompatInfo/Reference/PHP4.php';
-
 /**
  * Data dictionary for PHP5 references
  *
