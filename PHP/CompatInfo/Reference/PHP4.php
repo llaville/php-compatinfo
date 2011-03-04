@@ -97,6 +97,8 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/sqlite.php',
                 'PHP_CompatInfo_Reference_Session'
                     => 'PHP/CompatInfo/Reference/session.php',
+                'PHP_CompatInfo_Reference_Shmop'
+                    => 'PHP/CompatInfo/Reference/shmop.php',
                 'PHP_CompatInfo_Reference_SimpleXML'
                     => 'PHP/CompatInfo/Reference/simplexml.php',
                 'PHP_CompatInfo_Reference_Sockets'
