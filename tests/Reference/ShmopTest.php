@@ -3,7 +3,7 @@
  */
 
 require_once 'GenericTest.php';
-require_once 'PHP/CompatInfo/Reference/pcntl.php';
+require_once 'PHP/CompatInfo/Reference/shmop.php';
 
 /**
  * Tests for the PHP_CompatInfo class, retrieving functions informations.
@@ -16,7 +16,7 @@ require_once 'PHP/CompatInfo/Reference/pcntl.php';
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 2.0.0beta2
  */
-class PHP_CompatInfo_Reference_PcntlTest extends PHP_CompatInfo_Reference_GenericTest
+class PHP_CompatInfo_Reference_ShmopTest extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
      * @covers PHP_CompatInfo_Reference_Pcntl::getFunctions
@@ -24,9 +24,9 @@ class PHP_CompatInfo_Reference_PcntlTest extends PHP_CompatInfo_Reference_Generi
      */
     protected function setUp()
     {
-        $ref = new PHP_CompatInfo_Reference_Pcntl();
+        $ref = new PHP_CompatInfo_Reference_Shmop();
         $this->ref = $ref->getAll();
-        $this->optionnalconstants = array('SI_NOINFO');
+        $this->optionnalconstants = array();
         $this->optionnalfunctions = array();
 
         foreach ($this->ref['extensions'] as $extname => $opt) {
