@@ -25,17 +25,7 @@ class PHP_CompatInfo_Reference_FileinfoTest extends PHP_CompatInfo_Reference_Gen
      */
     protected function setUp()
     {
-        $ref = new PHP_CompatInfo_Reference_Fileinfo();
-        $this->ref = $ref->getAll();
-        $this->optionnalconstants = array();
-        $this->optionnalfunctions = array();
-
-        foreach ($this->ref['extensions'] as $extname => $opt) {
-            if (!extension_loaded($extname)) {
-                $this->markTestSkipped(
-                  "The '$extname' extension is not available."
-                );
-            }
-        }
+        $this->obj = new PHP_CompatInfo_Reference_Fileinfo();
+        parent::setUp();
     }
 }

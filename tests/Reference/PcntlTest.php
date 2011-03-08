@@ -19,22 +19,16 @@ require_once 'PHP/CompatInfo/Reference/pcntl.php';
 class PHP_CompatInfo_Reference_PcntlTest extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
+     * @covers PHP_CompatInfo_Reference_Pcntl::getExtensions
      * @covers PHP_CompatInfo_Reference_Pcntl::getFunctions
      * @covers PHP_CompatInfo_Reference_Pcntl::getConstants
      */
     protected function setUp()
     {
-        $ref = new PHP_CompatInfo_Reference_Pcntl();
-        $this->ref = $ref->getAll();
-        $this->optionnalconstants = array('SI_NOINFO');
-        $this->optionnalfunctions = array();
-
-        foreach ($this->ref['extensions'] as $extname => $opt) {
-            if (!extension_loaded($extname)) {
-                $this->markTestSkipped(
-                  "The '$extname' extension is not available."
-                );
-            }
-        }
+        $this->optionnalconstants = array(
+            'SI_NOINFO'
+        );
+        $this->obj = new PHP_CompatInfo_Reference_Pcntl();
+        parent::setUp();
     }
 }

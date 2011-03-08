@@ -19,22 +19,13 @@ require_once 'PHP/CompatInfo/Reference/shmop.php';
 class PHP_CompatInfo_Reference_ShmopTest extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * @covers PHP_CompatInfo_Reference_Pcntl::getFunctions
-     * @covers PHP_CompatInfo_Reference_Pcntl::getConstants
+     * @covers PHP_CompatInfo_Reference_Shmop::getExtensions
+     * @covers PHP_CompatInfo_Reference_Shmop::getFunctions
+     * @covers PHP_CompatInfo_Reference_Shmop::getConstants
      */
     protected function setUp()
     {
-        $ref = new PHP_CompatInfo_Reference_Shmop();
-        $this->ref = $ref->getAll();
-        $this->optionnalconstants = array();
-        $this->optionnalfunctions = array();
-
-        foreach ($this->ref['extensions'] as $extname => $opt) {
-            if (!extension_loaded($extname)) {
-                $this->markTestSkipped(
-                  "The '$extname' extension is not available."
-                );
-            }
-        }
+        $this->obj = new PHP_CompatInfo_Reference_Shmop();
+        parent::setUp();
     }
 }
