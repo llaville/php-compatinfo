@@ -10,7 +10,15 @@ if (!defined('TEST_FILES_PATH')) {
     );
 }
 
-require_once 'PHP/CompatInfo.php';
+$dir = dirname(dirname(dirname(__FILE__)));
+
+if (file_exists($dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo.php')) {
+    // running from repository
+    include_once $dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo.php';
+} else {
+    // package installed
+    include_once 'Bartlett/PHP/CompatInfo.php';
+}
 
 /**
  * Tests for the PHP_CompatInfo package detection
@@ -49,7 +57,7 @@ class PHP_CompatInfo_PackageTest extends PHPUnit_Framework_TestCase
         // PEAR_PackageUpdate-0.5.0 package and PEAR_PackageUpdate Class
         $this->pci->parse(TEST_FILES_PATH . 'source7813.php');
 
-        $classes = $this->pci->getClasses('user');  
+        $classes = $this->pci->getClasses('user');
         $classes = array_keys($classes);
         sort($classes);
 
