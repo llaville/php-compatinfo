@@ -139,17 +139,20 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         static $path    = null;
 
         if ($classes === null) {
-            //include 'PHP/Token/Stream/Autoload.php';
 
             $classes = array(
-                'PHP_CompatInfo_TokenStream'
-                    => 'PHP/CompatInfo/TokenStream.php',
+                'PHP_Reflect'
+                    => 'PHP/Reflect.php',
                 'PHP_CompatInfo_TokenParser'
                     => 'PHP/CompatInfo/TokenParser.php',
+                'PHP_Reflect_Token_STRING'
+                    => 'PHP/Reflect/Token.php',
+                'PHP_Reflect_Token_CONSTANT_ENCAPSED_STRING'
+                    => 'PHP/Reflect/Token.php',
                 'PHP_CompatInfo_Token_STRING'
-                    => 'PHP/CompatInfo/TokenParser.php',
+                    => 'PHP/CompatInfo/Token/String.php',
                 'PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING'
-                    => 'PHP/CompatInfo/TokenParser.php',
+                    => 'PHP/CompatInfo/Token/ConstantEncapsedString.php',
                 'PHP_CompatInfo_Exception'
                     => 'PHP/CompatInfo/Exception.php',
                 'PHP_CompatInfo_Cache'
@@ -556,76 +559,54 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
              * @link http://www.php.net/manual/en/tokens.php
              *       List of Parser Tokens
              */
-
             $options = array(
-                'PHP_Token_STRING' => array(
-                    array('PHP_CompatInfo_TokenParser', 'parseTokenString'),
-                    'PHP_CompatInfo_Token_STRING'
-                ),
-                'PHP_Token_CONSTANT_ENCAPSED_STRING' => array(
-                    array('PHP_CompatInfo_TokenParser', 'parseTokenConstant'),
-                    'PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING'
-                ),
-                // already available in master branch of PHP_TokenStream,
-                // but still waiting for a stable release !
-                'PHP_Token_REQUIRE_ONCE' => array(
-                    array('PHP_CompatInfo_TokenParser', 'parseTokenIncludes'),
-                    'PHP_CompatInfo_Token_REQUIRE_ONCE'
-                ),
-                'PHP_Token_REQUIRE' => array(
-                    array('PHP_CompatInfo_TokenParser', 'parseTokenIncludes'),
-                    'PHP_CompatInfo_Token_REQUIRE'
-                ),
-                'PHP_Token_INCLUDE_ONCE' => array(
-                    array('PHP_CompatInfo_TokenParser', 'parseTokenIncludes'),
-                    'PHP_CompatInfo_Token_INCLUDE_ONCE'
-                ),
-                'PHP_Token_INCLUDE' => array(
-                    array('PHP_CompatInfo_TokenParser', 'parseTokenIncludes'),
-                    'PHP_CompatInfo_Token_INCLUDE'
-                ),
-                'PHP_Token_INTERFACE' => array(
-                    array('PHP_CompatInfo_TokenParser', 'parseTokenInterface'),
-                    'PHP_CompatInfo_Token_INTERFACE'
-                ),
-                'PHP_Token_CLASS' => array(
-                    array('PHP_CompatInfo_TokenParser', 'parseTokenClass'),
-                    'PHP_CompatInfo_Token_CLASS'
+                'containers' => array(
+                    'const' => 'constants',
+                    'core'  => 'internalFunctions',
                 ),
             );
-            $tokenStream = new PHP_CompatInfo_TokenStream($source, $options);
+            $reflect = new PHP_Reflect($options);
+
+            $reflect->connect(
+                'T_STRING',
+                'PHP_CompatInfo_Token_STRING',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenString')
+            );
+            $reflect->connect(
+                'T_CONSTANT_ENCAPSED_STRING',
+                'PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenConstant')
+            );
+            $reflect->scan($source);
 
             /**
              * @link http://www.php.net/manual/en/language.control-structures.php
              *       Control Structures
              */
-            $this->includes = $tokenStream->getIncludes(true);
+            $includes = $reflect->getIncludes(true);
+            foreach ($includes as $key => $values) {
+                $this->includes[$key] = array_keys($values);
+            }
 
             /**
              * @link http://www.php.net/manual/en/language.oop5.interfaces.php
              *       Object Interfaces
              */
-            $interfaces = array_merge_recursive(
-                $tokenStream->getInterfaces(),
-                (array)$tokenStream['allInterfaces']
-            );
+            $interfaces = $reflect->getInterfaces();
             $this->getInfo('interfaces', '5.0.0', $interfaces, $source);
 
             /**
              * @link http://www.php.net/manual/en/language.oop5.php
              *       Classes and Objects
              */
-            $classes = array_merge_recursive(
-                $tokenStream->getClasses(),
-                (array)$tokenStream['allClasses']
-            );
+            $classes = $reflect->getClasses();
             $this->getInfo('classes', '4.0.0', $classes, $source);
 
             /**
              * @link http://www.php.net/manual/en/language.constants.php
              *       Constants
              */
-            $constants = $tokenStream['constants'];
+            $constants = $reflect->getConstants();
             $this->getInfo('constants', '4.0.0', $constants, $source);
 
             /**
@@ -634,12 +615,14 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
              * @link http://www.php.net/manual/en/functions.internal.php
              *       Internal (built-in) functions
              */
+            $userFunctions = (array)$reflect->getFunctions();
+            $coreFunctions = (array)$reflect->getInternalFunctions();
+
             $functions = array_merge_recursive(
-                $tokenStream->getFunctions(),
-                (array)$tokenStream['internalFunctions']
+                $userFunctions,
+                $coreFunctions
             );
             $this->getInfo('functions', '4.0.0', $functions, $source);
-
         }
 
         $this->results[$source] = array(
