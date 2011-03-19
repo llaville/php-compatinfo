@@ -15,6 +15,8 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
+require_once dirname(__FILE__) . '/CompatInfo/Autoload.php';
+ 
 /**
  * Check compatibility of chunk of PHP code
  *
@@ -127,62 +129,12 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     protected $startTime;
 
     /**
-     * Autoloader for PHP_CompatInfo
-     *
-     * @param string $className Name of the class trying to load
-     *
-     * @return void
-     */
-    public static function autoload($className)
-    {
-        static $classes = null;
-        static $path    = null;
-
-        if ($classes === null) {
-
-            $classes = array(
-                'PHP_Reflect'
-                    => 'PHP/Reflect.php',
-                'PHP_CompatInfo_TokenParser'
-                    => 'PHP/CompatInfo/TokenParser.php',
-                'PHP_Reflect_Token_STRING'
-                    => 'PHP/Reflect/Token.php',
-                'PHP_Reflect_Token_CONSTANT_ENCAPSED_STRING'
-                    => 'PHP/Reflect/Token.php',
-                'PHP_CompatInfo_Token_STRING'
-                    => 'PHP/CompatInfo/Token/String.php',
-                'PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING'
-                    => 'PHP/CompatInfo/Token/ConstantEncapsedString.php',
-                'PHP_CompatInfo_Exception'
-                    => 'PHP/CompatInfo/Exception.php',
-                'PHP_CompatInfo_Cache'
-                    => 'PHP/CompatInfo/Cache.php',
-                'PHP_CompatInfo_Reference'
-                    => 'PHP/CompatInfo/Reference.php',
-                'PHP_CompatInfo_Reference_PluginsAbstract'
-                    => 'PHP/CompatInfo/Reference/PluginsAbstract.php',
-                'PHP_CompatInfo_Reference_PHP4'
-                    => 'PHP/CompatInfo/Reference/PHP4.php',
-                'PHP_CompatInfo_Reference_PHP5'
-                    => 'PHP/CompatInfo/Reference/PHP5.php',
-            );
-            $path = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR;
-        }
-
-        if (isset($classes[$className])) {
-            include $path . $classes[$className];
-        }
-    }
-
-    /**
      * Class constructor
      *
      * @param array $options Configure options
      */
     public function __construct(array $options = null)
     {
-        spl_autoload_register('PHP_CompatInfo::autoload');
-
         $this->_observers = new SplObjectStorage();
 
         $this->_versionsLatest = array('4.0.0', '');
