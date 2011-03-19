@@ -10,7 +10,9 @@ if (!defined('TEST_FILES_PATH')) {
     );
 }
 
-$dir = dirname(dirname(dirname(__FILE__)));
+require_once 'Bartlett/PHP/Reflect.php';
+
+$dir = dirname(dirname(__FILE__));
 
 if (file_exists($dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo.php')) {
     // running from repository
