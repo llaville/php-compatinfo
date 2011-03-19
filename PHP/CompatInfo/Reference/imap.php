@@ -311,9 +311,6 @@ class PHP_CompatInfo_Reference_Imap implements PHP_CompatInfo_Reference
                 'LATT_HASCHILDREN'          => array('4.0.0', ''),
                 'LATT_HASNOCHILDREN'        => array('4.0.0', ''),
                 'TYPEMODEL'                 => array('4.0.0', ''),
-                'IMAP_GC_ELT'               => array('4.0.0', ''),
-                'IMAP_GC_ENV'               => array('4.0.0', ''),
-                'IMAP_GC_TEXTS'             => array('4.0.0', ''),
             );
             $constants = array_merge(
                 $constants,
@@ -322,6 +319,9 @@ class PHP_CompatInfo_Reference_Imap implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'IMAP_GC_ELT'               => array('5.3.0', ''),
+                'IMAP_GC_ENV'               => array('5.3.0', ''),
+                'IMAP_GC_TEXTS'             => array('5.3.0', ''),
             );
             $constants = array_merge(
                 $constants,

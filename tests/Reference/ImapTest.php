@@ -43,9 +43,6 @@ class PHP_CompatInfo_Reference_ImapTest extends PHP_CompatInfo_Reference_Generic
             'imap_create',
             'imap_rename'
         );
-        $this->optionnalconstants = array(
-            'IMAP_GC_ELT'
-        );
         $this->obj = new PHP_CompatInfo_Reference_Imap();
         parent::setUp();
     }
