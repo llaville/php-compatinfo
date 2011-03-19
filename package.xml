@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.9.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -17,10 +17,10 @@ content of dictionary references.
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2011-02-24</date>
- <time>23:45:20</time>
+ <date>2011-03-15</date>
+ <time>23:17:32</time>
  <version>
-  <release>2.0.0RC2</release>
+  <release>2.0.0RC3</release>
   <api>2.0.0</api>
  </version>
  <stability>
@@ -34,248 +34,253 @@ Version 2 is a PHP5 rewrites
 PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-laville.org
 
 Additions and changes:
-- add 20 new references data dictionnaries related to extensions:
-  ctype, dom, filter, ftp, gettext, iconv, json, mysql, mysqli, openssl, pgsql, 
-  session, simplexml, sqlite, ssh2, wddx, xmlreader, xmlwriter, xsl, zlib
-- Don&apos;t overwrite PHP_CompatInfo 1.x previous installation
-- add a XSL transformation stylesheet to produce a summary XHTML page from XML report
-  (see directory misc/)
-  
-Bug fixes:
-- none
+- PHP_Reflect replace PHP_TokenStream as PHP parser
+- change base install directory
+- default config file phpcompatinfo.xml.dist is now locate into PEAR cfg_dir
 
-Bug fixes and changes related to PHP_TokenSteam code:
+Bug fixes:
 - none
  </notes>
  <contents>
-  <dir baseinstalldir="PHP_CompatInfo" name="/">
+  <dir baseinstalldir="Bartlett" name="/">
    <dir name="misc">
-    <file baseinstalldir="PHPCI" name="bullet_toggle_minus.png" role="php">
+    <file baseinstalldir="Bartlett" name="bullet_toggle_minus.png" role="data">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="PHPCI" name="bullet_toggle_plus.png" role="php">
+    <file baseinstalldir="Bartlett" name="bullet_toggle_plus.png" role="data">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="PHPCI" name="Jigsaw.png" role="php">
+    <file baseinstalldir="Bartlett" name="Jigsaw.png" role="data">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="PHPCI" name="jquery-1.5.min.js" role="php">
+    <file baseinstalldir="Bartlett" name="jquery-1.5.min.js" role="data">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="PHPCI" name="phpci.css" role="php">
+    <file baseinstalldir="Bartlett" name="phpci.css" role="data">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="PHPCI" name="summary.xsl" role="php">
+    <file baseinstalldir="Bartlett" name="summary.xsl" role="data">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
    </dir> <!-- /misc -->
    <dir name="PHP">
     <dir name="CompatInfo">
      <dir name="Cache">
-      <file baseinstalldir="PHPCI" name="File.php" role="php">
+      <file baseinstalldir="Bartlett" name="File.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="Interface.php" role="php">
+      <file baseinstalldir="Bartlett" name="Interface.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="Null.php" role="php">
+      <file baseinstalldir="Bartlett" name="Null.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
      </dir> <!-- /PHP/CompatInfo/Cache -->
      <dir name="Listener">
-      <file baseinstalldir="PHPCI" name="File.php" role="php">
+      <file baseinstalldir="Bartlett" name="File.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="Growl.php" role="php">
+      <file baseinstalldir="Bartlett" name="Growl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
      </dir> <!-- /PHP/CompatInfo/Listener -->
      <dir name="Reference">
-      <file baseinstalldir="PHPCI" name="bcmath.php" role="php">
+      <file baseinstalldir="Bartlett" name="bcmath.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="bz2.php" role="php">
+      <file baseinstalldir="Bartlett" name="bz2.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="calendar.php" role="php">
+      <file baseinstalldir="Bartlett" name="calendar.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="core.php" role="php">
+      <file baseinstalldir="Bartlett" name="core.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="ctype.php" role="php">
+      <file baseinstalldir="Bartlett" name="ctype.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="curl.php" role="php">
+      <file baseinstalldir="Bartlett" name="curl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="date.php" role="php">
+      <file baseinstalldir="Bartlett" name="date.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="dom.php" role="php">
+      <file baseinstalldir="Bartlett" name="dom.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="filter.php" role="php">
+      <file baseinstalldir="Bartlett" name="filter.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="ftp.php" role="php">
+      <file baseinstalldir="Bartlett" name="ftp.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="gd.php" role="php">
+      <file baseinstalldir="Bartlett" name="gd.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="gettext.php" role="php">
+      <file baseinstalldir="Bartlett" name="gettext.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="hash.php" role="php">
+      <file baseinstalldir="Bartlett" name="hash.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="iconv.php" role="php">
+      <file baseinstalldir="Bartlett" name="iconv.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="json.php" role="php">
+      <file baseinstalldir="Bartlett" name="json.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="libxml.php" role="php">
+      <file baseinstalldir="Bartlett" name="libxml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="mbstring.php" role="php">
+      <file baseinstalldir="Bartlett" name="mbstring.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="mysql.php" role="php">
+      <file baseinstalldir="Bartlett" name="mysql.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="mysqli.php" role="php">
+      <file baseinstalldir="Bartlett" name="mysqli.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="netgrowl.php" role="php">
+      <file baseinstalldir="Bartlett" name="netgrowl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="openssl.php" role="php">
+      <file baseinstalldir="Bartlett" name="openssl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="pcre.php" role="php">
+      <file baseinstalldir="Bartlett" name="pcntl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="pdo.php" role="php">
+      <file baseinstalldir="Bartlett" name="pcre.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="PEAR.php" role="php">
+      <file baseinstalldir="Bartlett" name="pdo.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="pgsql.php" role="php">
+      <file baseinstalldir="Bartlett" name="PEAR.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="PHP4.php" role="php">
+      <file baseinstalldir="Bartlett" name="pgsql.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="PHP5.php" role="php">
+      <file baseinstalldir="Bartlett" name="PHP4.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="PluginsAbstract.php" role="php">
+      <file baseinstalldir="Bartlett" name="PHP5.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="session.php" role="php">
+      <file baseinstalldir="Bartlett" name="PluginsAbstract.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="simplexml.php" role="php">
+      <file baseinstalldir="Bartlett" name="session.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="sockets.php" role="php">
+      <file baseinstalldir="Bartlett" name="shmop.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="spl.php" role="php">
+      <file baseinstalldir="Bartlett" name="simplexml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="sqlite.php" role="php">
+      <file baseinstalldir="Bartlett" name="sockets.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="ssh2.php" role="php">
+      <file baseinstalldir="Bartlett" name="spl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="standard.php" role="php">
+      <file baseinstalldir="Bartlett" name="sqlite.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="tokenizer.php" role="php">
+      <file baseinstalldir="Bartlett" name="ssh2.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="wddx.php" role="php">
+      <file baseinstalldir="Bartlett" name="standard.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="xdebug.php" role="php">
+      <file baseinstalldir="Bartlett" name="tokenizer.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="xml.php" role="php">
+      <file baseinstalldir="Bartlett" name="wddx.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="xmlreader.php" role="php">
+      <file baseinstalldir="Bartlett" name="xdebug.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="xmlwriter.php" role="php">
+      <file baseinstalldir="Bartlett" name="xml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="xsl.php" role="php">
+      <file baseinstalldir="Bartlett" name="xmlreader.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="zlib.php" role="php">
+      <file baseinstalldir="Bartlett" name="xmlwriter.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="xsl.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="zlib.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
      </dir> <!-- /PHP/CompatInfo/Reference -->
      <dir name="Report">
-      <file baseinstalldir="PHPCI" name="Class.php" role="php">
+      <file baseinstalldir="Bartlett" name="Class.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="Constant.php" role="php">
+      <file baseinstalldir="Bartlett" name="Constant.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="Extension.php" role="php">
+      <file baseinstalldir="Bartlett" name="Extension.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="Function.php" role="php">
+      <file baseinstalldir="Bartlett" name="Function.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="Interface.php" role="php">
+      <file baseinstalldir="Bartlett" name="Interface.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="Reference.php" role="php">
+      <file baseinstalldir="Bartlett" name="Reference.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="Source.php" role="php">
+      <file baseinstalldir="Bartlett" name="Source.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="Summary.php" role="php">
+      <file baseinstalldir="Bartlett" name="Summary.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="PHPCI" name="Xml.php" role="php">
+      <file baseinstalldir="Bartlett" name="Xml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
      </dir> <!-- /PHP/CompatInfo/Report -->
-     <file baseinstalldir="PHPCI" name="Cache.php" role="php">
+     <dir name="Token">
+      <file baseinstalldir="Bartlett" name="ConstantEncapsedString.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="String.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /PHP/CompatInfo/Token -->
+     <file baseinstalldir="Bartlett" name="Cache.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="CLI.php" role="php">
+     <file baseinstalldir="Bartlett" name="CLI.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="Configuration.php" role="php">
+     <file baseinstalldir="Bartlett" name="Configuration.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="Exception.php" role="php">
+     <file baseinstalldir="Bartlett" name="Exception.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="Reference.php" role="php">
+     <file baseinstalldir="Bartlett" name="Reference.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="Report.php" role="php">
+     <file baseinstalldir="Bartlett" name="Report.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="TokenParser.php" role="php">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="PHPCI" name="TokenStream.php" role="php">
+     <file baseinstalldir="Bartlett" name="TokenParser.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
     </dir> <!-- /PHP/CompatInfo -->
-    <file baseinstalldir="PHPCI" name="CompatInfo.php" role="php">
+    <file baseinstalldir="Bartlett" name="CompatInfo.php" role="php">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
    </dir> <!-- /PHP -->
@@ -283,6 +288,7 @@ Bug fixes and changes related to PHP_TokenSteam code:
     <file baseinstalldir="" name="phpci" role="script">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
      <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
+     <tasks:unixeol />
     </file>
     <file baseinstalldir="" name="phpci.bat" role="script">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
@@ -294,76 +300,79 @@ Bug fixes and changes related to PHP_TokenSteam code:
    <dir name="tests">
     <dir name="_files">
      <dir name="emptyDir">
-      <file baseinstalldir="PHPCI" name="dummy.txt" role="php">
+      <file baseinstalldir="Bartlett" name="dummy.txt" role="test">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
      </dir> <!-- /tests/_files/emptyDir -->
-     <file baseinstalldir="PHPCI" name="source1.php" role="php">
+     <file baseinstalldir="Bartlett" name="source1.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source2.php" role="php">
+     <file baseinstalldir="Bartlett" name="source2.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source3.php" role="php">
+     <file baseinstalldir="Bartlett" name="source3.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source1626.php" role="php">
+     <file baseinstalldir="Bartlett" name="source1626.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source3657.php" role="php">
+     <file baseinstalldir="Bartlett" name="source3657.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source6056.php" role="php">
+     <file baseinstalldir="Bartlett" name="source6056.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source6581.php" role="php">
+     <file baseinstalldir="Bartlett" name="source6581.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source7813.php" role="php">
+     <file baseinstalldir="Bartlett" name="source7813.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source10100.php" role="php">
+     <file baseinstalldir="Bartlett" name="source10100.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source13417.php" role="php">
+     <file baseinstalldir="Bartlett" name="source13417.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source13568.php" role="php">
+     <file baseinstalldir="Bartlett" name="source13568.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source13873.php" role="php">
+     <file baseinstalldir="Bartlett" name="source13873.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source14696.php" role="php">
+     <file baseinstalldir="Bartlett" name="source14696.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="PHPCI" name="source16302.php" role="php">
+     <file baseinstalldir="Bartlett" name="source16302.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
     </dir> <!-- /tests/_files -->
-    <file baseinstalldir="PHPCI" name="ClassTest.php" role="php">
+    <file baseinstalldir="Bartlett" name="ClassTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="PHPCI" name="ConstantTest.php" role="php">
+    <file baseinstalldir="Bartlett" name="ConstantTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="PHPCI" name="FunctionTest.php" role="php">
+    <file baseinstalldir="Bartlett" name="FunctionTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="PHPCI" name="IncludeTest.php" role="php">
+    <file baseinstalldir="Bartlett" name="IncludeTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="PHPCI" name="InterfaceTest.php" role="php">
+    <file baseinstalldir="Bartlett" name="InterfaceTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="PHPCI" name="IssueTest.php" role="php">
+    <file baseinstalldir="Bartlett" name="IssueTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="PHPCI" name="PackageTest.php" role="php">
+    <file baseinstalldir="Bartlett" name="PackageTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
    </dir> <!-- /tests -->
-   <file baseinstalldir="" name="phpcompatinfo.xml.dist" role="script">
+   <file baseinstalldir="" name="phpcompatinfo.xml.dist" role="cfg">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="Bartlett" name="README.markdown" role="doc">
     <tasks:replace from="@package_version@" to="version" type="package-info" />
    </file>
   </dir> <!-- / -->
@@ -387,9 +396,9 @@ Bug fixes and changes related to PHP_TokenSteam code:
     <min>1.6.1</min>
    </package>
    <package>
-    <name>PHP_TokenStream</name>
-    <channel>pear.phpunit.de</channel>
-    <min>1.0.1</min>
+    <name>PHP_Reflect</name>
+    <channel>bartlett.laurent-laville.org</channel>
+    <min>0.3.1</min>
    </package>
    <extension>
     <name>dom</name>
@@ -435,6 +444,31 @@ Bug fixes and changes related to PHP_TokenSteam code:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.0.0RC3</release>
+    <api>2.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2011-03-15</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Version 2 is a PHP5 rewrites
+
+PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-laville.org
+
+Additions and changes:
+- PHP_Reflect replace PHP_TokenStream as PHP parser
+- change base install directory
+- default config file phpcompatinfo.xml.dist is now locate into PEAR cfg_dir
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.0.0RC2</release>
