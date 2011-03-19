@@ -3,7 +3,16 @@
  */
 
 require_once 'GenericTest.php';
-require_once 'PHP/CompatInfo/Reference/enchant.php';
+
+$dir = dirname(dirname(dirname(__FILE__)));
+
+if (file_exists($dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo/Reference/enchant.php')) {
+    // running from repository
+    include_once $dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo/Reference/enchant.php';
+} else {
+    // package installed
+    include_once 'Bartlett/PHP/CompatInfo/Reference/enchant.php';
+}
 
 /**
  * Tests for the PHP_CompatInfo class, retrieving functions informations.
@@ -14,7 +23,7 @@ require_once 'PHP/CompatInfo/Reference/enchant.php';
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
- * @since      Class available since Release 2.0.0beta2
+ * @since      Class available since Release 2.0.0RC3
  */
 class PHP_CompatInfo_Reference_EnchantTest extends PHP_CompatInfo_Reference_GenericTest
 {

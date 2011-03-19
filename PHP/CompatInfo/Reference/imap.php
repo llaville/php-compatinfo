@@ -59,7 +59,7 @@ class PHP_CompatInfo_Reference_Imap implements PHP_CompatInfo_Reference
     public function getExtensions($extension = null, $version = null)
     {
         $extensions = array(
-            'imap' => array('4.1.0', '', '')
+            'imap' => array('4.0.0', '', '')
         );
         return $extensions;
     }

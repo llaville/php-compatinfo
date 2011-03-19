@@ -1,6 +1,6 @@
 <?php
 /**
- * Version informations about pcntl extension
+ * Version informations about fileinfo extension
  *
  * PHP version 5
  *
@@ -13,7 +13,7 @@
  */
 
 /**
- * All interfaces, classes, functions, constants about pcntl extension
+ * All interfaces, classes, functions, constants about fileinfo extension
  *
  * @category PHP
  * @package  PHP_CompatInfo
@@ -59,7 +59,7 @@ class PHP_CompatInfo_Reference_Fileinfo implements PHP_CompatInfo_Reference
     public function getExtensions($extension = null, $version = null)
     {
         $extensions = array(
-            'fileinfo' => array('5.3.0', '', '1.0.5-dev')
+            'fileinfo' => array('4.0.0', '', '1.0.5-dev')
         );
         return $extensions;
     }
@@ -145,7 +145,7 @@ class PHP_CompatInfo_Reference_Fileinfo implements PHP_CompatInfo_Reference
 
         if ((null == $version ) || ('4' == $version)) {
             $version4 = array(
-            	// Version 0.1.0
+                // Version 0.1.0
                 'finfo_buffer'            => array('4.0.0', ''),
                 'finfo_close'             => array('4.0.0', ''),
                 'finfo_file'              => array('4.0.0', ''),

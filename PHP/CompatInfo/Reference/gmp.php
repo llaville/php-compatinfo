@@ -1,6 +1,6 @@
 <?php
 /**
- * Version informations about pcntl extension
+ * Version informations about gmp extension
  *
  * PHP version 5
  *
@@ -13,7 +13,7 @@
  */
 
 /**
- * All interfaces, classes, functions, constants about pcntl extension
+ * All interfaces, classes, functions, constants about gmp extension
  *
  * @category PHP
  * @package  PHP_CompatInfo

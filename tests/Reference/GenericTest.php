@@ -2,7 +2,15 @@
 /**
  */
 
-require_once 'PHP/CompatInfo/Reference.php';
+$dir = dirname(dirname(dirname(__FILE__)));
+
+if (file_exists($dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo/Reference.php')) {
+    // running from repository
+    include_once $dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo/Reference.php';
+} else {
+    // package installed
+    include_once 'Bartlett/PHP/CompatInfo/Reference.php';
+}
 
 /**
  * Tests for the PHP_CompatInfo class, retrieving functions informations.
@@ -13,7 +21,7 @@ require_once 'PHP/CompatInfo/Reference.php';
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
- * @since      Class available since Release 2.0.0beta2
+ * @since      Class available since Release 2.0.0RC3
  */
 class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 {
@@ -30,13 +38,13 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
             $this->ref = $this->obj->getAll();
         }
         if (isset($this->ref['extensions'])) {
-	        foreach ($this->ref['extensions'] as $extname => $opt) {
-	            if (!extension_loaded($extname)) {
-	                $this->markTestSkipped(
-	                  "The '$extname' extension is not available."
-	                );
-	            }
-	        }
+            foreach ($this->ref['extensions'] as $extname => $opt) {
+                if (!extension_loaded($extname)) {
+                    $this->markTestSkipped(
+                      "The '$extname' extension is not available."
+                    );
+                }
+            }
         }
     }
 
@@ -155,7 +163,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
             return;
         }
 
-        $const     = get_defined_constants(true);
+        $const = get_defined_constants(true);
 
         foreach ($this->ref['extensions'] as $extname => $opt) {
             if (isset($const[$extname])) {

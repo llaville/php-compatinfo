@@ -1,19 +1,19 @@
 <?php
 /**
- * Version informations about ... extension
+ * Version informations about enchant extension
  *
  * PHP version 5
  *
  * @category PHP
  * @package  PHP_CompatInfo
- * @author   Laurent Laville <pear@laurent-laville.org>
+ * @author   Remi Collet <Remi@FamilleCollet.com>
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  SVN: $Id$
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 /**
- * All interfaces, classes, functions, constants about ... extension
+ * All interfaces, classes, functions, constants about enchant extension
  *
  * @category PHP
  * @package  PHP_CompatInfo
@@ -21,7 +21,7 @@
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
- * @link     http://fr2.php.net/manual/en/book.enchant.php
+ * @link     http://www.php.net/manual/en/book.enchant.php
  */
 class PHP_CompatInfo_Reference_Enchant implements PHP_CompatInfo_Reference
 {
@@ -137,7 +137,7 @@ class PHP_CompatInfo_Reference_Enchant implements PHP_CompatInfo_Reference
      *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
      *
      * @return array
-     * @link   http://fr2.php.net/manual/en/ref.enchant.php
+     * @link   http://www.php.net/manual/en/ref.enchant.php
      */
     public function getFunctions($extension = null, $version = null)
     {
