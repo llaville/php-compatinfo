@@ -2,16 +2,6 @@
 /**
  */
 
-$dir = dirname(dirname(dirname(__FILE__)));
-
-if (file_exists($dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo/Reference.php')) {
-    // running from repository
-    include_once $dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo/Reference.php';
-} else {
-    // package installed
-    include_once 'Bartlett/PHP/CompatInfo/Reference.php';
-}
-
 /**
  * Tests for the PHP_CompatInfo class, retrieving functions informations.
  *

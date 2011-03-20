@@ -12,7 +12,7 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
-require_once 'ezc/Base/base.php';
+require_once dirname(__FILE__) . '/Autoload.php';
 
 /**
  * The Command Line Interpreter version provides ability to
@@ -38,71 +38,6 @@ require_once 'ezc/Base/base.php';
 class PHP_CompatInfo_CLI
 {
     /**
-     * Autoloader for PHP_CompatInfo_CLI
-     *
-     * @param string $className Name of the class trying to load
-     *
-     * @return void
-     */
-    public static function autoload($className)
-    {
-        static $classes = null;
-        static $path    = null;
-
-        if ($classes === null) {
-            $classes = array(
-                'PHP_CompatInfo'
-                    => 'PHP/CompatInfo.php',
-                'PHP_CompatInfo_Exception'
-                    => 'PHP/CompatInfo/Exception.php',
-                'PHP_CompatInfo_Configuration'
-                    => 'PHP/CompatInfo/Configuration.php',
-                'PHP_CompatInfo_Cache'
-                    => 'PHP/CompatInfo/Cache.php',
-                'PHP_CompatInfo_Reference'
-                    => 'PHP/CompatInfo/Reference.php',
-                'PHP_CompatInfo_Reference_PluginsAbstract'
-                    => 'PHP/CompatInfo/Reference/PluginsAbstract.php',
-                'PHP_CompatInfo_Reference_PHP4'
-                    => 'PHP/CompatInfo/Reference/PHP4.php',
-                'PHP_CompatInfo_Reference_PHP5'
-                    => 'PHP/CompatInfo/Reference/PHP5.php',
-                'PHP_CompatInfo_Report'
-                    => 'PHP/CompatInfo/Report.php',
-                'PHP_CompatInfo_Report_Reference'
-                    => 'PHP/CompatInfo/Report/Reference.php',
-                'PHP_CompatInfo_Report_Summary'
-                    => 'PHP/CompatInfo/Report/Summary.php',
-                'PHP_CompatInfo_Report_Extension'
-                    => 'PHP/CompatInfo/Report/Extension.php',
-                'PHP_CompatInfo_Report_Interface'
-                    => 'PHP/CompatInfo/Report/Interface.php',
-                'PHP_CompatInfo_Report_Class'
-                    => 'PHP/CompatInfo/Report/Class.php',
-                'PHP_CompatInfo_Report_Function'
-                    => 'PHP/CompatInfo/Report/Function.php',
-                'PHP_CompatInfo_Report_Constant'
-                    => 'PHP/CompatInfo/Report/Constant.php',
-                'PHP_CompatInfo_Report_Xml'
-                    => 'PHP/CompatInfo/Report/Xml.php',
-                'PHP_CompatInfo_Report_Source'
-                    => 'PHP/CompatInfo/Report/Source.php',
-                'PHP_CompatInfo_Listener_File'
-                    => 'PHP/CompatInfo/Listener/File.php',
-                'PHP_CompatInfo_Listener_Growl'
-                    => 'PHP/CompatInfo/Listener/Growl.php',
-            );
-            $path = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR;
-        }
-
-        if (isset($classes[$className])) {
-            include $path . $classes[$className];
-        } else {
-            ezcBase::autoload($className);
-        }
-    }
-
-    /**
      * Handle console input and produce the appropriate report requested
      *
      * @return void
@@ -110,8 +45,6 @@ class PHP_CompatInfo_CLI
      */
     public static function main()
     {
-        spl_autoload_register('PHP_CompatInfo_CLI::autoload');
-
         $input = new ezcConsoleInput;
 
         $input->registerOption(
@@ -360,7 +293,14 @@ class PHP_CompatInfo_CLI
         if ($input->getOption('no-configuration')->value === false) {
             if ($input->getOption('configuration')->value === false) {
                 // use default configuration
-                $filename = 'phpcompatinfo.xml';
+                $dir = '@cfg_dir@' . DIRECTORY_SEPARATOR . 'PHP_CompatInfo';
+                if (strpos($dir, '@') === false) {
+                    // PEAR installer was used to install the package
+                } else {
+                    // manual install
+                    $dir = getcwd();
+                }
+                $filename = $dir . DIRECTORY_SEPARATOR . 'phpcompatinfo.xml';
                 if (file_exists($filename)) {
                     $config = $filename;
                 } elseif (file_exists($filename . '.dist')) {

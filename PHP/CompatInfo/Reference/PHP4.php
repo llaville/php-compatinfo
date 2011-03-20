@@ -12,6 +12,8 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
+require_once dirname(dirname(__FILE__)) . '/Autoload.php';
+
 /**
  * Data dictionary for PHP4 references
  *
@@ -30,118 +32,6 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
     protected $extensionReferences = array();
 
     /**
-     * Autoloader for PHP_CompatInfo_Reference_PHP4 or 5
-     *
-     * @param string $className Name of the class trying to load
-     *
-     * @return void
-     */
-    public static function autoload($className)
-    {
-        static $classes = null;
-        static $path    = null;
-
-        if ($classes === null) {
-            $classes = array(
-                'PHP_CompatInfo_Reference_Bcmath'
-                    => 'PHP/CompatInfo/Reference/bcmath.php',
-                'PHP_CompatInfo_Reference_Bz2'
-                    => 'PHP/CompatInfo/Reference/bz2.php',
-                'PHP_CompatInfo_Reference_Calendar'
-                    => 'PHP/CompatInfo/Reference/calendar.php',
-                'PHP_CompatInfo_Reference_Core'
-                    => 'PHP/CompatInfo/Reference/core.php',
-                'PHP_CompatInfo_Reference_Ctype'
-                    => 'PHP/CompatInfo/Reference/ctype.php',
-                'PHP_CompatInfo_Reference_Curl'
-                    => 'PHP/CompatInfo/Reference/curl.php',
-                'PHP_CompatInfo_Reference_Date'
-                    => 'PHP/CompatInfo/Reference/date.php',
-                'PHP_CompatInfo_Reference_Dom'
-                    => 'PHP/CompatInfo/Reference/dom.php',
-                'PHP_CompatInfo_Reference_Enchant'
-                    => 'PHP/CompatInfo/Reference/enchant.php',
-                'PHP_CompatInfo_Reference_Filter'
-                    => 'PHP/CompatInfo/Reference/filter.php',
-                'PHP_CompatInfo_Reference_Fileinfo'
-                    => 'PHP/CompatInfo/Reference/fileinfo.php',
-                'PHP_CompatInfo_Reference_Ftp'
-                    => 'PHP/CompatInfo/Reference/ftp.php',
-                'PHP_CompatInfo_Reference_Gd'
-                    => 'PHP/CompatInfo/Reference/gd.php',
-                'PHP_CompatInfo_Reference_Gettext'
-                    => 'PHP/CompatInfo/Reference/gettext.php',
-                'PHP_CompatInfo_Reference_Gmp'
-                    => 'PHP/CompatInfo/Reference/gmp.php',
-                'PHP_CompatInfo_Reference_Hash'
-                    => 'PHP/CompatInfo/Reference/hash.php',
-                'PHP_CompatInfo_Reference_Iconv'
-                    => 'PHP/CompatInfo/Reference/iconv.php',
-                'PHP_CompatInfo_Reference_Imap'
-                    => 'PHP/CompatInfo/Reference/imap.php',
-                'PHP_CompatInfo_Reference_Json'
-                    => 'PHP/CompatInfo/Reference/json.php',
-                'PHP_CompatInfo_Reference_Libxml'
-                    => 'PHP/CompatInfo/Reference/libxml.php',
-                'PHP_CompatInfo_Reference_Mbstring'
-                    => 'PHP/CompatInfo/Reference/mbstring.php',
-                'PHP_CompatInfo_Reference_Mysql'
-                    => 'PHP/CompatInfo/Reference/mysql.php',
-                'PHP_CompatInfo_Reference_Mysqli'
-                    => 'PHP/CompatInfo/Reference/mysqli.php',
-                'PHP_CompatInfo_Reference_Openssl'
-                    => 'PHP/CompatInfo/Reference/openssl.php',
-                'PHP_CompatInfo_Reference_Pcntl'
-                    => 'PHP/CompatInfo/Reference/pcntl.php',
-                'PHP_CompatInfo_Reference_Pcre'
-                    => 'PHP/CompatInfo/Reference/pcre.php',
-                'PHP_CompatInfo_Reference_PDO'
-                    => 'PHP/CompatInfo/Reference/pdo.php',
-                'PHP_CompatInfo_Reference_Pgsql'
-                    => 'PHP/CompatInfo/Reference/pgsql.php',
-                'PHP_CompatInfo_Reference_SPL'
-                    => 'PHP/CompatInfo/Reference/spl.php',
-                'PHP_CompatInfo_Reference_SQLite'
-                    => 'PHP/CompatInfo/Reference/sqlite.php',
-                'PHP_CompatInfo_Reference_Session'
-                    => 'PHP/CompatInfo/Reference/session.php',
-                'PHP_CompatInfo_Reference_Shmop'
-                    => 'PHP/CompatInfo/Reference/shmop.php',
-                'PHP_CompatInfo_Reference_SimpleXML'
-                    => 'PHP/CompatInfo/Reference/simplexml.php',
-                'PHP_CompatInfo_Reference_Sockets'
-                    => 'PHP/CompatInfo/Reference/sockets.php',
-                'PHP_CompatInfo_Reference_Ssh2'
-                    => 'PHP/CompatInfo/Reference/ssh2.php',
-                'PHP_CompatInfo_Reference_Standard'
-                    => 'PHP/CompatInfo/Reference/standard.php',
-                'PHP_CompatInfo_Reference_Tokenizer'
-                    => 'PHP/CompatInfo/Reference/tokenizer.php',
-                'PHP_CompatInfo_Reference_Wddx'
-                    => 'PHP/CompatInfo/Reference/wddx.php',
-                'PHP_CompatInfo_Reference_Xdebug'
-                    => 'PHP/CompatInfo/Reference/xdebug.php',
-                'PHP_CompatInfo_Reference_Xml'
-                    => 'PHP/CompatInfo/Reference/xml.php',
-                'PHP_CompatInfo_Reference_Xmlreader'
-                    => 'PHP/CompatInfo/Reference/xmlreader.php',
-                'PHP_CompatInfo_Reference_Xmlwriter'
-                    => 'PHP/CompatInfo/Reference/xmlwriter.php',
-                'PHP_CompatInfo_Reference_Xsl'
-                    => 'PHP/CompatInfo/Reference/xsl.php',
-                'PHP_CompatInfo_Reference_Zlib'
-                    => 'PHP/CompatInfo/Reference/zlib.php',
-            );
-            $path = dirname(dirname(dirname(dirname(__FILE__))))
-                . DIRECTORY_SEPARATOR;
-        }
-
-        if (isset($classes[$className])) {
-            include $path . $classes[$className];
-        }
-    }
-
-    /**
      * Class constructor of PHP4 References
      *
      * @param array $extensions OPTIONAL List of extensions to look for
@@ -149,8 +39,6 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
      */
     public function __construct($extensions = null)
     {
-        spl_autoload_register('self::autoload');
-
         if (isset($extensions)) {
             $extensions = (array)$extensions;
         } else {
