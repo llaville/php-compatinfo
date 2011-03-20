@@ -59,18 +59,26 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
                     => 'PHP/CompatInfo/Reference/date.php',
                 'PHP_CompatInfo_Reference_Dom'
                     => 'PHP/CompatInfo/Reference/dom.php',
+                'PHP_CompatInfo_Reference_Enchant'
+                    => 'PHP/CompatInfo/Reference/enchant.php',
                 'PHP_CompatInfo_Reference_Filter'
                     => 'PHP/CompatInfo/Reference/filter.php',
+                'PHP_CompatInfo_Reference_Fileinfo'
+                    => 'PHP/CompatInfo/Reference/fileinfo.php',
                 'PHP_CompatInfo_Reference_Ftp'
                     => 'PHP/CompatInfo/Reference/ftp.php',
                 'PHP_CompatInfo_Reference_Gd'
                     => 'PHP/CompatInfo/Reference/gd.php',
                 'PHP_CompatInfo_Reference_Gettext'
                     => 'PHP/CompatInfo/Reference/gettext.php',
+                'PHP_CompatInfo_Reference_Gmp'
+                    => 'PHP/CompatInfo/Reference/gmp.php',
                 'PHP_CompatInfo_Reference_Hash'
                     => 'PHP/CompatInfo/Reference/hash.php',
                 'PHP_CompatInfo_Reference_Iconv'
                     => 'PHP/CompatInfo/Reference/iconv.php',
+                'PHP_CompatInfo_Reference_Imap'
+                    => 'PHP/CompatInfo/Reference/imap.php',
                 'PHP_CompatInfo_Reference_Json'
                     => 'PHP/CompatInfo/Reference/json.php',
                 'PHP_CompatInfo_Reference_Libxml'
