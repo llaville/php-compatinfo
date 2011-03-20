@@ -293,7 +293,14 @@ class PHP_CompatInfo_CLI
         if ($input->getOption('no-configuration')->value === false) {
             if ($input->getOption('configuration')->value === false) {
                 // use default configuration
-                $filename = 'phpcompatinfo.xml';
+                $dir = '@cfg_dir@' . DIRECTORY_SEPARATOR . 'PHP_CompatInfo';
+                if (strpos($dir, '@') === false) {
+                    // PEAR installer was used to install the package
+                } else {
+                    // manual install
+                    $dir = getcwd();
+                }
+                $filename = $dir . DIRECTORY_SEPARATOR . 'phpcompatinfo.xml';
                 if (file_exists($filename)) {
                     $config = $filename;
                 } elseif (file_exists($filename . '.dist')) {
