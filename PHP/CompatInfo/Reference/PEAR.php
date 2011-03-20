@@ -12,6 +12,8 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
+require_once dirname(dirname(__FILE__)) . '/Autoload.php';
+
 /**
  * Data dictionary for PEAR references
  *
@@ -25,32 +27,6 @@
 class PHP_CompatInfo_Reference_PEAR extends PHP_CompatInfo_Reference_PHP5
 {
     /**
-     * Autoloader for PHP_CompatInfo_Reference_PEAR
-     *
-     * @param string $className Name of the class trying to load
-     *
-     * @return void
-     */
-    public static function autoload($className)
-    {
-        static $classes = null;
-        static $path    = null;
-
-        if ($classes === null) {
-            $classes = array(
-                'PHP_CompatInfo_Reference_Net_Growl'
-                    => 'PHP/CompatInfo/Reference/netgrowl.php',
-            );
-            $path = dirname(dirname(dirname(dirname(__FILE__))))
-                . DIRECTORY_SEPARATOR;
-        }
-
-        if (isset($classes[$className])) {
-            include $path . $classes[$className];
-        }
-    }
-
-    /**
      * Class constructor of PEAR References
      *
      * @param array $extensions OPTIONAL List of extensions/packages to look for
@@ -58,9 +34,6 @@ class PHP_CompatInfo_Reference_PEAR extends PHP_CompatInfo_Reference_PHP5
      */
     public function __construct($extensions = null)
     {
-        spl_autoload_register('PHP_CompatInfo_Reference_PHP4::autoload');
-        spl_autoload_register('PHP_CompatInfo_Reference_PEAR::autoload');
-
         if (isset($extensions)) {
             $extensions = (array)$extensions;
         } else {
@@ -93,7 +66,7 @@ class PHP_CompatInfo_Reference_PEAR extends PHP_CompatInfo_Reference_PHP5
      *
      * @return array
      */
-    /*      
+    /*
     public function getAll($extension = null, $version = null)
     {
         $references = array(

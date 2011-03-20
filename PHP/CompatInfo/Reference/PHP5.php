@@ -12,6 +12,8 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
+require_once dirname(dirname(__FILE__)) . '/Autoload.php';
+
 /**
  * Data dictionary for PHP5 references
  *
