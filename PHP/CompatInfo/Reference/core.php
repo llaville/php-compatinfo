@@ -131,7 +131,7 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
             $version5 = array(
                 'Closure'                        => array('5.3.0', ''),
                 'ErrorException'                 => array('5.1.0', ''),
-                'Exception'                      => array('5.0.0', ''),
+                'Exception'                      => array('5.1.0', ''),
             );
             $classes = array_merge(
                 $classes,

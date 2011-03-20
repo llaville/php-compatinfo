@@ -223,7 +223,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 
         $expected = array(
             'Foo_Exception' => array(
-                'versions' => array('5.0.0', ''),
+                'versions' => array('5.1.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source16302.php'),
                 'excluded' => false,
