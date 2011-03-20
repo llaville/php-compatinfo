@@ -10,18 +10,6 @@ if (!defined('TEST_FILES_PATH')) {
     );
 }
 
-require_once 'Bartlett/PHP/Reflect.php';
-
-$dir = dirname(dirname(__FILE__));
-
-if (file_exists($dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo.php')) {
-    // running from repository
-    include_once $dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo.php';
-} else {
-    // package installed
-    include_once 'Bartlett/PHP/CompatInfo.php';
-}
-
 /**
  * Tests for the PHP_CompatInfo class, retrieving constants informations.
  *

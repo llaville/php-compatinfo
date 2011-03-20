@@ -4,16 +4,6 @@
 
 require_once 'GenericTest.php';
 
-$dir = dirname(dirname(dirname(__FILE__)));
-
-if (file_exists($dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo/Reference/enchant.php')) {
-    // running from repository
-    include_once $dir . DIRECTORY_SEPARATOR . 'PHP/CompatInfo/Reference/enchant.php';
-} else {
-    // package installed
-    include_once 'Bartlett/PHP/CompatInfo/Reference/enchant.php';
-}
-
 /**
  * Tests for the PHP_CompatInfo class, retrieving functions informations.
  *
