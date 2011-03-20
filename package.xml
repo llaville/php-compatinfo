@@ -18,7 +18,7 @@ content of dictionary references.
   <active>yes</active>
  </lead>
  <date>2011-03-20</date>
- <time>15:40:03</time>
+ <time>17:45:25</time>
  <version>
   <release>2.0.0RC3</release>
   <api>2.0.0</api>
@@ -34,6 +34,9 @@ Version 2 is a PHP5 rewrites
 PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-laville.org
 
 Additions and changes:
+- add 6 new references data dictionnaries and unit tests related to extensions:
+  enchant, fileinfo, gmp, imap, pcntl, shmop (thanks to contributor [remicollet])
+- adds LICENSE file
 - PHP_Reflect replace PHP_TokenStream as PHP parser
 - change base install directory
 - default config file phpcompatinfo.xml.dist is now locate into PEAR cfg_dir
@@ -278,6 +281,7 @@ Bug fixes:
      </file>
      <file baseinstalldir="Bartlett" name="CLI.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:replace from="@cfg_dir@" to="cfg_dir" type="pear-config" />
      </file>
      <file baseinstalldir="Bartlett" name="Configuration.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
@@ -439,7 +443,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>0.3.1</min>
+    <min>0.4.0</min>
    </package>
    <extension>
     <name>dom</name>
@@ -502,6 +506,9 @@ Version 2 is a PHP5 rewrites
 PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-laville.org
 
 Additions and changes:
+- add 6 new references data dictionnaries and unit tests related to extensions:
+  enchant, fileinfo, gmp, imap, pcntl, shmop (thanks to contributor [remicollet])
+- adds LICENSE file
 - PHP_Reflect replace PHP_TokenStream as PHP parser
 - change base install directory
 - default config file phpcompatinfo.xml.dist is now locate into PEAR cfg_dir
