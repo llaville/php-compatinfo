@@ -18,7 +18,7 @@ content of dictionary references.
   <active>yes</active>
  </lead>
  <date>2011-03-20</date>
- <time>15:26:52</time>
+ <time>15:40:03</time>
  <version>
   <release>2.0.0RC3</release>
   <api>2.0.0</api>
@@ -407,6 +407,9 @@ Bug fixes:
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
    </dir> <!-- /tests -->
+   <file baseinstalldir="Bartlett" name="LICENSE" role="doc">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
    <file baseinstalldir="" name="phpcompatinfo.xml.dist" role="cfg">
     <tasks:replace from="@package_version@" to="version" type="package-info" />
    </file>
