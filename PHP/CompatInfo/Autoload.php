@@ -90,6 +90,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/date.php',
             'PHP_CompatInfo_Reference_Dom'
                 => 'PHP/CompatInfo/Reference/dom.php',
+            'PHP_CompatInfo_Reference_Ereg'
+                => 'PHP/CompatInfo/Reference/ereg.php',
             'PHP_CompatInfo_Reference_Enchant'
                 => 'PHP/CompatInfo/Reference/enchant.php',
             'PHP_CompatInfo_Reference_Filter'
