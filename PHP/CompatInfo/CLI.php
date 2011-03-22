@@ -45,239 +45,226 @@ class PHP_CompatInfo_CLI
      */
     public static function main()
     {
-        $input = new ezcConsoleInput;
-
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'help',
-                ezcConsoleInput::TYPE_NONE,
-                null,
-                false,
-                'Prints this usage information.',
-                '',
-                array(),
-                array(),
-                true,
-                false,
-                false
+        $input = new Console_CommandLine(
+            array(
+                'name'        => 'phpci',
+                'description' => 'PHPCompatInfo (cli) by Laurent Laville.',
+                'version'     => '@package_version@'
             )
         );
 
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'version',
-                ezcConsoleInput::TYPE_NONE,
-                null,
-                false,
-                'Prints the version and exits.',
-                '',
-                array(),
-                array(),
-                false,
-                false,
-                true
+        // common options to all sub-commands
+        $input->addOption(
+            'xmlFile',
+            array(
+                'long_name'   => '--configuration',
+                'action'      => 'StoreString',
+                'description' => 'Read configuration from XML file'
+            )
+        );
+        $input->addOption(
+            'noConfiguration',
+            array(
+                'long_name'   => '--no-configuration',
+                'action'      => 'StoreTrue',
+                'description' => 'Ignore default configuration file ' .
+                                 '(phpcompatinfo.xml)'
+            )
+        );
+        $input->addOption(
+            'iniSet',
+            array(
+                'long_name'   => '--ini-set',
+                'action'      => 'StoreString',
+                'description' => 'Sets a php.ini directive value'
+            )
+        );
+        $input->addOption(
+            'verbose',
+            array(
+                'short_name'  => '-v',
+                'long_name'   => '--verbose',
+                'action'      => 'StoreTrue',
+                'description' => 'Output more verbose information'
             )
         );
 
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'configuration',
-                ezcConsoleInput::TYPE_STRING,
-                null,
-                false,
-                'Read configuration from XML file.',
-                '',
-                array(),
-                array(),
-                true,
-                false,
-                false
+        // options relatives and common to sub-commands
+        $referenceOption = new Console_CommandLine_Option(
+            'reference',
+            array(
+                'long_name'   => '--reference',
+                'action'      => 'StoreString',
+                'description' => 'The name of the reference to use ' .
+                                 '("PHP4", "PHP5")',
+                'choices'     => array("PHP4", "PHP5"),
+            )
+        );
+        $reportOption = new Console_CommandLine_Option(
+            'report',
+            array(
+                'long_name'   => '--report',
+                'action'      => 'StoreString',
+                'description' => 'Type of report ' .
+                                 '("summary", "source", "xml",' .
+                                 ' "extension", "interface", "class",' .
+                                 ' "function", "constant")',
+                'choices'     => array(
+                    "summary", "source", "xml",
+                    "extension", "interface", "class", "function", "constant"
+                )
+            )
+        );
+        $reportFileOption = new Console_CommandLine_Option(
+            'reportFile',
+            array(
+                'long_name'   => '--report-file',
+                'action'      => 'StoreString',
+                'description' => 'Write the report to the specified file path',
+            )
+        );
+        $excludeIDOption = new Console_CommandLine_Option(
+            'excludeID',
+            array(
+                'long_name'   => '--exclude-pattern',
+                'action'      => 'StoreString',
+                'description' => 'Exclude components' .
+                                 ' from list referenced by ID provided'
+            )
+        );
+        $recursiveOption = new Console_CommandLine_Option(
+            'recursive',
+            array(
+                'short_name'  => '-R',
+                'long_name'   => '--recursive',
+                'action'      => 'StoreTrue',
+                'description' => 'Includes the contents of subdirectories'
+            )
+        );
+        $fileExtensionsOption = new Console_CommandLine_Option(
+            'fileExtensions',
+            array(
+                'long_name'   => '--file-extensions',
+                'action'      => 'StoreString',
+                'description' => 'A comma separated list of file extensions to check'
             )
         );
 
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'no-configuration',
-                ezcConsoleInput::TYPE_NONE,
-                null,
-                false,
-                'Ignore default configuration file (phpcompatinfo.xml).',
-                '',
-                array(),
-                array(),
-                false,
-                false,
-                false
+        // argument common to all list sub-commands
+        $extensionArgument = new Console_CommandLine_Argument(
+            'extension',
+            array(
+                'description' => '(optional) Limit output only to this extension',
+                'optional'    => true
             )
         );
 
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'exclude-pattern',
-                ezcConsoleInput::TYPE_STRING,
-                null,
-                false,
-                'Exclude components from list referenced by ID provided.',
-                '',
-                array(),
-                array(),
-                true,
-                false,
-                false
+        // print sub-command
+        $printCmd = $input->addCommand(
+            'print',
+            array(
+                'description' => 'Print a report of data source parsed.'
+            )
+        );
+        $printCmd->addOption($referenceOption);
+        $printCmd->addOption($reportOption);
+        $printCmd->addOption($reportFileOption);
+        $printCmd->addOption($excludeIDOption);
+        $printCmd->addOption($recursiveOption);
+        $printCmd->addOption($fileExtensionsOption);
+        $printCmd->addArgument(
+            'sourcePath',
+            array(
+                'description' => 'The data source to scan (file or directory).'
             )
         );
 
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'verbose',
-                ezcConsoleInput::TYPE_NONE,
-                null,
-                false,
-                'Output more verbose information.',
-                '',
-                array(),
-                array(),
-                true,
-                false,
-                false
+        // list sub-command
+        $listCmd = $input->addCommand(
+            'list',
+            array(
+                'description' => 'List all "elements" referenced in the data base.'
+            )
+        );
+        $listCmd->addOption($referenceOption);
+        $listCmd->addOption($reportFileOption);
+        $listCmd->addArgument(
+            'element',
+            array(
+                'description' => 'May be either ' .
+                                 '"extensions", ' .
+                                 '"interfaces", "classes", ' .
+                                 '"functions" or "constants"',
+                'multiple'    => true
             )
         );
 
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'reference',
-                ezcConsoleInput::TYPE_STRING,
-                null,
-                false,
-                'The name of the reference to use (PHP4, PHP5 ...).',
-                '',
-                array(),
-                array(),
-                true,
-                false,
-                false
+        // list-extensions sub-command
+        $listExtentionsCmd = $input->addCommand(
+            'list-extensions',
+            array(
+                'description' => 'List all extensions referenced in the data base.'
             )
         );
+        $listExtentionsCmd->addOption($referenceOption);
+        $listExtentionsCmd->addOption($reportFileOption);
+        $listExtentionsCmd->addArgument($extensionArgument);
 
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'report',
-                ezcConsoleInput::TYPE_STRING,
-                null,
-                false,
-                'Type of report (summary, source, function ...).',
-                '',
-                array(),
-                array(),
-                true,
-                false,
-                false
+        // list-interfaces sub-command
+        $listInterfacesCmd = $input->addCommand(
+            'list-interfaces',
+            array(
+                'description' => 'List all interfaces referenced in the data base.'
             )
         );
+        $listInterfacesCmd->addOption($referenceOption);
+        $listInterfacesCmd->addOption($reportFileOption);
+        $listInterfacesCmd->addArgument($extensionArgument);
 
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'report-file',
-                ezcConsoleInput::TYPE_STRING,
-                null,
-                false,
-                'Write the report to the specified file path.',
-                '',
-                array(),
-                array(),
-                true,
-                false,
-                false
+        // list-classes sub-command
+        $listClassesCmd = $input->addCommand(
+            'list-classes',
+            array(
+                'description' => 'List all classes referenced in the data base.'
             )
         );
+        $listClassesCmd->addOption($referenceOption);
+        $listClassesCmd->addOption($reportFileOption);
+        $listClassesCmd->addArgument($extensionArgument);
 
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'recursive',
-                ezcConsoleInput::TYPE_NONE,
-                null,
-                false,
-                'Includes the contents of subdirectories.',
-                '',
-                array(),
-                array(),
-                true,
-                false,
-                false
+        // list-functions sub-command
+        $listFunctionsCmd = $input->addCommand(
+            'list-functions',
+            array(
+                'description' => 'List all functions referenced in the data base.'
             )
         );
+        $listFunctionsCmd->addOption($referenceOption);
+        $listFunctionsCmd->addOption($reportFileOption);
+        $listFunctionsCmd->addArgument($extensionArgument);
 
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'file-extensions',
-                ezcConsoleInput::TYPE_STRING,
-                null,
-                false,
-                'A comma separated list of file extensions to check.',
-                '',
-                array(),
-                array(),
-                true,
-                false,
-                false
+        // list-constants sub-command
+        $listConstantsCmd = $input->addCommand(
+            'list-constants',
+            array(
+                'description' => 'List all constants referenced in the data base.'
             )
         );
+        $listConstantsCmd->addOption($referenceOption);
+        $listConstantsCmd->addOption($reportFileOption);
+        $listConstantsCmd->addArgument($extensionArgument);
 
-        $input->registerOption(
-            new ezcConsoleOption(
-                '',
-                'ini-set',
-                ezcConsoleInput::TYPE_STRING,
-                null,
-                false,
-                'Sets a php.ini directive value.',
-                '',
-                array(),
-                array(),
-                true,
-                false,
-                false
-            )
-        );
 
         try {
-            $input->process();
-        }
-        catch (ezcConsoleOptionException $e) {
-            print $e->getMessage() . PHP_EOL;
-            exit(1);
-        }
+            $result = $input->parse();
+            $command = $result->command_name;
 
-        $arguments = $input->getArguments();
-        $command   = array_shift($arguments);
-
-        if ($input->getOption('help')->value) {
             if (empty($command)) {
-                self::printHelp();
-            } else {
-                self::printModeHelp($command, $input);
+                $input->displayUsage(1);
             }
-            exit(0);
-
-        } elseif ($input->getOption('version')->value) {
-            self::printVersion();
-            exit(0);
         }
-
-        if (empty($command)) {
-            self::printHelp();
-            exit(1);
+        catch (Exception $e) {
+            $input->displayError($e->getMessage());
         }
 
         $warnings = array();
@@ -290,8 +277,8 @@ class PHP_CompatInfo_CLI
         );
         $report = '';
 
-        if ($input->getOption('no-configuration')->value === false) {
-            if ($input->getOption('configuration')->value === false) {
+        if ($result->options['noConfiguration'] !== true) {
+            if (!isset($result->options['xmlFile'])) {
                 // use default configuration
                 $dir = '@cfg_dir@' . DIRECTORY_SEPARATOR . 'PHP_CompatInfo';
                 if (strpos($dir, '@') === false) {
@@ -309,7 +296,7 @@ class PHP_CompatInfo_CLI
                     $config = false;
                 }
             } else {
-                $filename = $input->getOption('configuration')->value;
+                $filename = $result->options['xmlFile'];
                 if (file_exists($filename)) {
                     $config = realpath($filename);
                 } else {
@@ -320,10 +307,10 @@ class PHP_CompatInfo_CLI
                 // try to load the configuration file contents
                 $configuration = PHP_CompatInfo_Configuration::getInstance($config);
 
-                $patternID = $input->getOption('exclude-pattern')->value;
                 // check if components should be excluded
-                if ($patternID) {
-                    $excludes = $configuration->getExcludeConfiguration($patternID);
+                if (isset($result->command->options['excludeID'])) {
+                    $patternID = $result->command->options['excludeID'];
+                    $excludes  = $configuration->getExcludeConfiguration($patternID);
 
                     if (count($excludes) == 0) {
                         $warnings[] = "Exclude pattern ID '$patternID'" .
@@ -448,13 +435,20 @@ class PHP_CompatInfo_CLI
                     $options['referencePlugins'] = $plugins;
                 }
 
-            } elseif ($input->getOption('verbose')->value) {
+            } elseif (isset($result->options['verbose'])) {
                 $warnings[] = 'File "' . $filename . '" does not exist';
             }
         }
 
-        if ($input->getOption('ini-set')->value) {
-            $ini = explode('=', $input->getOption('ini-set')->value);
+        if (isset($result->command->options['reference'])) {
+            $options['reference'] = $result->command->options['reference'];
+        }
+        if (empty($options['reference'])) {
+            $input->displayError('You must supply at least a reference');
+        }
+
+        if (isset($result->options['iniSet'])) {
+            $ini = explode('=', $result->options['iniSet']);
 
             if (isset($ini[0])) {
                 if (isset($ini[1])) {
@@ -465,8 +459,8 @@ class PHP_CompatInfo_CLI
             }
         }
 
-        if ($input->getOption('report-file')->value) {
-            $reportFile       = $input->getOption('report-file')->value;
+        if (isset($result->command->options['reportFile'])) {
+            $reportFile       = $result->command->options['reportFile'];
             $reportFileAppend = false;
         }
 
@@ -486,43 +480,54 @@ class PHP_CompatInfo_CLI
             }
         }
 
-        if ($input->getOption('report')->value) {
-            $report = $input->getOption('report')->value;
+        if (isset($result->command->options['report'])) {
+            $report = $result->command->options['report'];
         }
 
         if ('print' == $command) {
-            $source = array_shift($arguments);
+            if (empty($report)) {
+                $input->displayError('You must supply at least a type of report');
+            }
+            $source = $result->command->args['sourcePath'];
+
+        } elseif ('list' == $command) {
+            $elements = $result->command->args['element'];
+            $source   = array_shift($elements);
+            $report   = 'reference';
+
         } elseif ('list' == substr($command, 0, 4)) {
-            $extension = array_shift($arguments);
+            $extension = $result->command->args['extension'];
             if (!is_null($extension)) {
                 $options['extensions'] = array($extension);
             }
             list(, $source) = explode('-', $command);
-            $report = 'reference';
-        } else {
-            self::printHelp();
-            exit(1);
+            $report   = 'reference';
+            $elements = array();
         }
 
-        if ($input->getOption('reference')->value) {
-            $options['reference'] = $input->getOption('reference')->value;
+        if (isset($result->command->options['recursive'])) {
+            $options['recursive'] = $result->command->options['recursive'];
         }
-        if ($input->getOption('recursive')->value) {
-            $options['recursive'] = $input->getOption('recursive')->value;
-        }
-        if ($input->getOption('file-extensions')->value) {
+        if (isset($result->command->options['fileExtensions'])) {
             $fileExtensions = explode(
-                ',', $input->getOption('file-extensions')->value
+                ',', $result->command->options['fileExtensions']
             );
             $options['fileExtensions'] = array_map('trim', $fileExtensions);
         }
 
-        if ($input->getOption('verbose')->value) {
-            $options['verbose'] = (bool)$input->getOption('verbose')->value;
+        if (isset($result->options['verbose'])) {
+            $options['verbose'] = $result->options['verbose'];
         }
 
         try {
             self::factory($report, $source, $options, $warnings);
+            if ($report == 'reference') {
+                $options['reportFileFlags'] = FILE_APPEND;
+                while (count($elements) > 0) {
+                    $source = array_shift($elements);
+                    self::factory($report, $source, $options, $warnings);
+                }
+            }
 
         } catch (PHP_CompatInfo_Exception $e) {
             print $e->getMessage() . PHP_EOL;
@@ -551,102 +556,6 @@ class PHP_CompatInfo_CLI
         }
         $reportClass = new $reportClassName($source, $options, $warnings);
         return $reportClass;
-    }
-
-    /**
-     * Prints the help
-     *
-     * @return void
-     */
-    protected static function printHelp()
-    {
-        self::printVersion();
-
-        print <<<EOT
-
-Usage: phpci <options> <command>
-
-  --help                Prints this usage information.
-  --version             Prints the version and exits.
-
-  --configuration       Read configuration from XML file.
-  --no-configuration    Ignore default configuration file (phpcompatinfo.xml).
-  --ini-set             Sets a php.ini directive value.
-
-  --verbose             Output more verbose information.
-
-For single command help type:
-    phpci --help <command>
-
-Available commands:
-  * print               Print a report of data source parsed.
-  * list-all            List all components referenced in the data base.
-  * list-extensions     List all extensions referenced in the data base.
-  * list-interfaces     List all interfaces referenced in the data base.
-  * list-classes        List all classes referenced in the data base.
-  * list-functions      List all functions referenced in the data base.
-  * list-constants      List all constants referenced in the data base.
-
-EOT;
-    }
-
-    /**
-     * Prints the help text for a single command
-     *
-     * @param string $command The command
-     * @param object $input   Instance of ezcConsoleInput (console input handler)
-     *
-     * @return void
-     */
-    protected static function printModeHelp($command, $input)
-    {
-        printf(
-            'Command line options and arguments for "%s"%s',
-            $command,
-            PHP_EOL
-        );
-
-        switch ($command) {
-        case 'print':
-            $params = array(
-                'reference',
-                'report',
-                'report-file',
-                'exclude-pattern',
-                'recursive',
-                'file-extensions',
-            );
-            break;
-        case 'list-all':
-        case 'list-extensions':
-        case 'list-interfaces':
-        case 'list-classes':
-        case 'list-functions':
-        case 'list-constants':
-            $params = array('reference', 'report-file');
-            break;
-        default:
-            $params = array('reference');
-            break;
-        }
-        foreach ($input->getHelp(false, $params) as $param) {
-            printf(
-                '  %-19s %s%s',
-                $param[0],
-                $param[1],
-                PHP_EOL
-            );
-        }
-    }
-
-    /**
-     * Prints the version
-     *
-     * @return void
-     */
-    protected static function printVersion()
-    {
-        print 'PHPCompatInfo (cli) @package_version@ by Laurent Laville.' . PHP_EOL;
     }
 
 }

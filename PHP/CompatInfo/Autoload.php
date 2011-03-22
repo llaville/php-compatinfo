@@ -177,6 +177,8 @@ function phpCompatInfo_autoload($className)
         include $path . $classes[$className];
     } elseif ('PHP_Reflect' == $className) {
         include 'Bartlett/PHP/Reflect.php';
+    } elseif (substr($className, 0, 19) == 'Console_CommandLine') {
+        include str_replace('_', '/', $className) . '.php';
     }
 }
 
