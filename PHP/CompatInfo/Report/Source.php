@@ -87,7 +87,8 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
         $width = 79;
 
         foreach ($report as $filename => $verbose) {
-            $tokenStream = new PHP_Token_Stream($filename);
+            $reflect = new PHP_Reflect();
+            $tokens = $reflect->scan($filename);
 
             echo PHP_EOL;
             echo 'BASE: ' . $base . PHP_EOL;
@@ -100,11 +101,11 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
                 echo 'LINE   TOKEN                          TEXT' . PHP_EOL;
                 echo str_repeat('-', $width).PHP_EOL;
 
-                foreach ($tokenStream->tokens() as $token) {
-                    if ($token instanceof PHP_Token_WHITESPACE) {
+                foreach ($tokens as $token) {
+                    if ($token[0] == 'T_WHITESPACE') {
                         $text = '';
                     } else {
-                        $text = str_replace(array("\r", "\n"), '', (string)$token);
+                        $text = str_replace(array("\r", "\n"), '', $token[1]);
 
                         if (strlen($text) > 40) {
                             $text = explode("\n", wordwrap($text, 40));
@@ -114,14 +115,14 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
 
                     printf(
                         "%5d  %-30s %s\n",
-                        $token->getLine(),
-                        str_replace('PHP_Token_', '', get_class($token)),
+                        $token[2],
+                        $token[0],
                         $text
                     );
                 }
             }
 
-            $total = $tokenStream->getLinesOfCode();
+            $total = $reflect->getLinesOfCode();
 
             echo str_repeat('-', $width).PHP_EOL;
             echo 'A TOTAL OF ' . $total['loc'] . ' LINE(S)';
