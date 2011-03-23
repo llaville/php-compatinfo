@@ -150,7 +150,7 @@ class PHP_CompatInfo_CLI
             )
         );
 
-        // argument common to all list sub-commands
+        // argument common to all list sub-commands except for list-references
         $extensionArgument = new Console_CommandLine_Argument(
             'extension',
             array(
@@ -178,6 +178,15 @@ class PHP_CompatInfo_CLI
                 'description' => 'The data source to scan (file or directory).'
             )
         );
+
+        // list-references sub-command
+        $listReferencesCmd = $input->addCommand(
+            'list-references',
+            array(
+                'description' => 'List all extensions supported.'
+            )
+        );
+        $listReferencesCmd->addOption($reportFileOption);
 
         // list sub-command
         $listCmd = $input->addCommand(
@@ -496,13 +505,17 @@ class PHP_CompatInfo_CLI
             $report   = 'reference';
 
         } elseif ('list' == substr($command, 0, 4)) {
-            $extension = $result->command->args['extension'];
-            if (!is_null($extension)) {
-                $options['extensions'] = array($extension);
-            }
             list(, $source) = explode('-', $command);
-            $report   = 'reference';
-            $elements = array();
+            if ($source == 'references') {
+                $report   = 'database';
+            } else {
+                $extension = $result->command->args['extension'];
+                if (!is_null($extension)) {
+                    $options['extensions'] = array($extension);
+                }
+                $report   = 'reference';
+                $elements = array();
+            }
         }
 
         if (isset($result->command->options['recursive'])) {
