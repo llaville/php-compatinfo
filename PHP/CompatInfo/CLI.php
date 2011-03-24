@@ -95,9 +95,8 @@ class PHP_CompatInfo_CLI
             array(
                 'long_name'   => '--reference',
                 'action'      => 'StoreString',
-                'description' => 'The name of the reference to use ' .
-                                 '("PHP4", "PHP5")',
-                'choices'     => array("PHP4", "PHP5"),
+                'description' => 'The name of the reference to use',
+                'choices'     => array('PHP4', 'PHP5'),
             )
         );
         $reportOption = new Console_CommandLine_Option(
@@ -105,13 +104,37 @@ class PHP_CompatInfo_CLI
             array(
                 'long_name'   => '--report',
                 'action'      => 'StoreString',
-                'description' => 'Type of report ' .
-                                 '("summary", "source", "xml",' .
-                                 ' "extension", "interface", "class",' .
-                                 ' "function", "constant")',
+                'description' => 'Type of report',
                 'choices'     => array(
-                    "summary", "source", "xml",
-                    "extension", "interface", "class", "function", "constant"
+                    'summary', 'source', 'xml',
+                    'extension', 'interface', 'class', 'function', 'constant'
+                )
+            )
+        );
+        $helpReferenceOption = new Console_CommandLine_Option(
+            'helpReference',
+            array(
+                'long_name'     => '--help-reference',
+                'action'        => 'List',
+                'description'   => 'List of reference available',
+                'action_params' => array(
+                    'list' => array(
+                        'PHP4', 'PHP5'
+                    ),
+                )
+            )
+        );
+        $helpReportOption = new Console_CommandLine_Option(
+            'helpReport',
+            array(
+                'long_name'     => '--help-report',
+                'action'        => 'List',
+                'description'   => 'List of report available',
+                'action_params' => array(
+                    'list' => array(
+                        'summary', 'source', 'xml',
+                        'extension', 'interface', 'class', 'function', 'constant'
+                    ),
                 )
             )
         );
@@ -172,6 +195,8 @@ class PHP_CompatInfo_CLI
         $printCmd->addOption($excludeIDOption);
         $printCmd->addOption($recursiveOption);
         $printCmd->addOption($fileExtensionsOption);
+        $printCmd->addOption($helpReferenceOption);
+        $printCmd->addOption($helpReportOption);
         $printCmd->addArgument(
             'sourcePath',
             array(
@@ -197,6 +222,7 @@ class PHP_CompatInfo_CLI
         );
         $listCmd->addOption($referenceOption);
         $listCmd->addOption($reportFileOption);
+        $listCmd->addOption($helpReferenceOption);
         $listCmd->addArgument(
             'element',
             array(
@@ -209,15 +235,16 @@ class PHP_CompatInfo_CLI
         );
 
         // list-extensions sub-command
-        $listExtentionsCmd = $input->addCommand(
+        $listExtensionsCmd = $input->addCommand(
             'list-extensions',
             array(
                 'description' => 'List all extensions referenced in the data base.'
             )
         );
-        $listExtentionsCmd->addOption($referenceOption);
-        $listExtentionsCmd->addOption($reportFileOption);
-        $listExtentionsCmd->addArgument($extensionArgument);
+        $listExtensionsCmd->addOption($referenceOption);
+        $listExtensionsCmd->addOption($reportFileOption);
+        $listExtensionsCmd->addOption($helpReferenceOption);
+        $listExtensionsCmd->addArgument($extensionArgument);
 
         // list-interfaces sub-command
         $listInterfacesCmd = $input->addCommand(
@@ -228,6 +255,7 @@ class PHP_CompatInfo_CLI
         );
         $listInterfacesCmd->addOption($referenceOption);
         $listInterfacesCmd->addOption($reportFileOption);
+        $listInterfacesCmd->addOption($helpReferenceOption);
         $listInterfacesCmd->addArgument($extensionArgument);
 
         // list-classes sub-command
@@ -239,6 +267,7 @@ class PHP_CompatInfo_CLI
         );
         $listClassesCmd->addOption($referenceOption);
         $listClassesCmd->addOption($reportFileOption);
+        $listClassesCmd->addOption($helpReferenceOption);
         $listClassesCmd->addArgument($extensionArgument);
 
         // list-functions sub-command
@@ -250,6 +279,7 @@ class PHP_CompatInfo_CLI
         );
         $listFunctionsCmd->addOption($referenceOption);
         $listFunctionsCmd->addOption($reportFileOption);
+        $listFunctionsCmd->addOption($helpReferenceOption);
         $listFunctionsCmd->addArgument($extensionArgument);
 
         // list-constants sub-command
@@ -261,6 +291,7 @@ class PHP_CompatInfo_CLI
         );
         $listConstantsCmd->addOption($referenceOption);
         $listConstantsCmd->addOption($reportFileOption);
+        $listConstantsCmd->addOption($helpReferenceOption);
         $listConstantsCmd->addArgument($extensionArgument);
 
 
