@@ -1,0 +1,167 @@
+
+This mini guide is intended to help new user that discover PHP_CompatInfo v2
+with a mini tour of its features.
+
+IMPORTANT: 
+A full user guide will replace it with the final stable version 2.0.0 (May 24 2011)
+
+
+Overview
+--------
+PHP_CompatInfo v2 like v1 is divided in two server API
+
+ * a CLI tool named "phpci" you can run from your PEAR install directory
+ * an API with many methods to retrieve informations 
+
+ 
+CLI tool phpci
+--------------
+The CLI version is handled by Console_CommandLine 1.1.3
+
+===============================================================================
+PHPCompatInfo (cli) by Laurent Laville.
+
+Usage:
+  phpci [options]
+  phpci [options] <command> [options] [args]
+
+Options:
+  --configuration=xmlFile  Read configuration from XML file
+  --no-configuration       Ignore default configuration file
+                           (phpcompatinfo.xml)
+  --ini-set=iniSet         Sets a php.ini directive value
+  -v, --verbose            Output more verbose information
+  -h, --help               show this help message and exit
+  --version                show the program version and exit
+
+Commands:
+  print            Print a report of data source parsed.
+  list-references  List all extensions supported.
+  list             List all "elements" referenced in the data base.
+  list-extensions  List all extensions referenced in the data base.
+  list-interfaces  List all interfaces referenced in the data base.
+  list-classes     List all classes referenced in the data base.
+  list-functions   List all functions referenced in the data base.
+  list-constants   List all constants referenced in the data base.
+===============================================================================
+
+phpci used either an XML configuration file (default is located in cfg_dir 
+of your PEAR installation and named "phpcompatinfo.xml.dist") or the switches
+
+Sub-command help are also available. Try:  phpci <command> --help 
+
+TIP: To avoid to loose your XML config file, make a copy to "phpcompatinfo.xml"
+It will be search in cfg_dir and used unless you specify inverse with --no-configuration switch
+
+NOTE: you can use a free name and location, but you should use --configuration switch
+
+
+== Sub commands
+
+ 1. print
+ 
+    To parse a source file or directory (recursively or not) and return results
+    in different reports; See --help-report to know available list 
+    
+    To restrict scan to PHP4 elements, use the "--reference PHP4" option
+    Default PHP5 with return both PHP4+PHP5 elements (--reference PHP5)
+    
+    To parse files with differents extensions that "php, inc, phtml" (default behavior),
+    use the "--file-extensions" option.
+    
+    Example:  $ phpci print --reference PHP5 --file-extensions php,inc,phtml,php4,php5 /path/to/source  
+    
+    To exclude elements from parsing you need an XML config file (see default phpcompatinfo.xml.dist file)
+    
+    Example : $ phpci print --exclude-pattern demo  /path/to/source 
+    
+    NOTE: A "E" in front of an element in any report means that this element was excluded from PHP min,max versions scope
+    
+    
+ 2. list-references
+
+    Give a list of all extensions currently supported (data base references) 
+    whatever extension is loaded or not on your platform.
+    
+    A "L" in front of extension name means that this one is actually loaded
+
+ 3. list 
+    
+    A combination of other following list command
+
+    Exemple:  
+            $ phpci list classes interfaces 
+    is equivalent to two commands:
+            $ phpci list-classes
+            $ phpci list-interfaces               
+
+ 4. list-extensions 
+
+    Produces a report of extensions available with their versions and PHP mini and maxi supported
+    TIP: You can filter/limit result on a single extension, that is impossible with the list command
+
+    Example 1:  $ phpci list-extensions
+    Example 2:  $ phpci list-extensions  SPL
+    
+ 5. list-interfaces   
+
+    Produces a report of interfaces available with their versions and PHP mini and maxi supported
+    TIP: You can filter/limit result on a single extension, that is impossible with the list command
+ 
+    Example 1:  $ phpci list-interfaces        // get interfaces of all extensions 
+    Example 2:  $ phpci list-interfaces SPL    // get only interfaces from SPL extension   
+    
+ 6. list-classes 
+ 
+    Produces a report of classes available with their versions and PHP mini and maxi supported
+    TIP: You can filter/limit result on a single extension, that is impossible with the list command
+ 
+    Example 1:  $ phpci list-classes          // get classes of all extensions 
+    Example 2:  $ phpci list-classes dom      // get only classes from dom extension   
+    
+ 7. list-functions
+    
+    Produces a report of functions available with their versions and PHP mini and maxi supported
+    TIP: You can filter/limit result on a single extension, that is impossible with the list command
+
+    Example 1:  $ phpci list-functions          // get functions of all extensions 
+    Example 2:  $ phpci list-functions Core     // get only functions from the core (PHP itself)
+    
+ 8. list-constants
+    
+    Produces a report of constants available with their versions and PHP mini and maxi supported
+    TIP: You can filter/limit result on a single extension, that is impossible with the list command
+
+    Example 1:  $ phpci list-constants          // get constants of all extensions 
+    Example 2:  $ phpci list-constants xdebug   // get only constants from xdebug extension
+    
+
+API usage
+---------
+
+Here are a pattern of script to use 
+
+<?php
+require_once 'Bartlett/PHP/CompatInfo.php';
+
+try {
+    $pci = new PHP_CompatInfo($options);
+    $pci->parse($source);
+
+    $allResultsAtOnce = $pci->toArray();
+
+} catch (PHP_CompatInfo_Exception $e) {
+    echo 'Exception ' . $e->getCode() . PHP_EOL;
+    echo $e->getMessage();
+}
+?>
+
+Methods available:
+
+* getExcludes()    return list of elements excluded from scan 
+* getIncludes()    return list of included files used in source scanned
+* getExtensions()  return list of extensions used in source scanned
+* getInterfaces()  return list of interfaces declared or used in source scanned
+* getClasses()     return list of classes declared or used in source scanned
+* getFunctions()   return list of functions (user/internal/extension) used in source scanned
+* getConstants()   return list of constants (user/internal/extension) used in source scanned

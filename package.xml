@@ -17,8 +17,14 @@ content of dictionary references.
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2011-03-23</date>
- <time>23:15:04</time>
+ <contributor>
+  <name>Remi Collet</name>
+  <user>remicollet</user>
+  <email />
+  <active>yes</active>
+ </contributor>
+ <date>2011-03-24</date>
+ <time>22:59:55</time>
  <version>
   <release>2.0.0RC3</release>
   <api>2.0.0</api>
@@ -37,6 +43,7 @@ Additions and changes:
 - add 7 new references data dictionnaries and unit tests related to extensions:
   enchant, ereg,  fileinfo, gmp, imap, pcntl, shmop (thanks to contributor [remicollet])
 - adds LICENSE file
+- adds HOWTO file, a mini guide to help users
 - PHP_Reflect replaces PHP_TokenStream as PHP parser
 - Console_CommandLine replaces ezcConsoleInput
 - adds new sub-command list-references to know which extensions are supported
@@ -422,6 +429,9 @@ Bug fixes:
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
    </dir> <!-- /tests -->
+   <file baseinstalldir="Bartlett" name="HOWTO.txt" role="doc">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
    <file baseinstalldir="Bartlett" name="LICENSE" role="doc">
     <tasks:replace from="@package_version@" to="version" type="package-info" />
    </file>
@@ -514,7 +524,7 @@ Bug fixes:
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2011-03-23</date>
+   <date>2011-03-24</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Version 2 is a PHP5 rewrites
@@ -525,6 +535,7 @@ Additions and changes:
 - add 7 new references data dictionnaries and unit tests related to extensions:
   enchant, ereg,  fileinfo, gmp, imap, pcntl, shmop (thanks to contributor [remicollet])
 - adds LICENSE file
+- adds HOWTO file, a mini guide to help users
 - PHP_Reflect replaces PHP_TokenStream as PHP parser
 - Console_CommandLine replaces ezcConsoleInput
 - adds new sub-command list-references to know which extensions are supported
