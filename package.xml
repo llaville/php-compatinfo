@@ -449,7 +449,7 @@ Bug fixes:
     <min>5.2.0</min>
    </php>
    <pearinstaller>
-    <min>1.9.1</min>
+    <min>1.9.2</min>
    </pearinstaller>
    <package>
     <name>Base</name>
