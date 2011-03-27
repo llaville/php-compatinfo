@@ -122,6 +122,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/mbstring.php',
             'PHP_CompatInfo_Reference_Mcrypt'
                 => 'PHP/CompatInfo/Reference/mcrypt.php',
+            'PHP_CompatInfo_Reference_Mhash'
+                => 'PHP/CompatInfo/Reference/mhash.php',
             'PHP_CompatInfo_Reference_Mysql'
                 => 'PHP/CompatInfo/Reference/mysql.php',
             'PHP_CompatInfo_Reference_Mysqli'
