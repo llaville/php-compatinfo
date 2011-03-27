@@ -113,6 +113,11 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
         }
 
         foreach ($this->ref['extensions'] as $extname => $opt) {
+            $ext = get_extension_funcs($extname);
+            if (!is_array($ext)) {
+                // At least, for sqlite3 (PHP Bug ?)
+                continue;
+            }
             // Test if each functions are in reference
             foreach (get_extension_funcs($extname) as $fctname) {
                 if (!in_array($fctname, $this->ignoredfunctions)) {

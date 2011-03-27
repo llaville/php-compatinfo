@@ -146,6 +146,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/spl.php',
             'PHP_CompatInfo_Reference_SQLite'
                 => 'PHP/CompatInfo/Reference/sqlite.php',
+            'PHP_CompatInfo_Reference_Sqlite3'
+                => 'PHP/CompatInfo/Reference/sqlite3.php',
             'PHP_CompatInfo_Reference_Session'
                 => 'PHP/CompatInfo/Reference/session.php',
             'PHP_CompatInfo_Reference_Shmop'
