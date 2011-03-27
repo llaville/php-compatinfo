@@ -138,6 +138,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/pdo.php',
             'PHP_CompatInfo_Reference_Pgsql'
                 => 'PHP/CompatInfo/Reference/pgsql.php',
+            'PHP_CompatInfo_Reference_Phar'
+                => 'PHP/CompatInfo/Reference/phar.php',
             'PHP_CompatInfo_Reference_SPL'
                 => 'PHP/CompatInfo/Reference/spl.php',
             'PHP_CompatInfo_Reference_SQLite'
