@@ -516,6 +516,15 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                     'const' => 'constants',
                     'core'  => 'internalFunctions',
                 ),
+                'properties' => array(
+                    'interface'    => array('methods'),
+                    'class'        => array('methods'),
+                    'function'     => array(),
+                    'require_once' => array(),
+                    'require'      => array(),
+                    'include_once' => array(),
+                    'include'      => array(),
+                )
             );
             $reflect = new PHP_Reflect($options);
 
