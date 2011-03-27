@@ -517,8 +517,8 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                     'core'  => 'internalFunctions',
                 ),
                 'properties' => array(
-                    'interface'    => array('methods'),
-                    'class'        => array('methods'),
+                    'interface'    => array('methods', 'parent'),
+                    'class'        => array('methods', 'parent', 'interfaces'),
                     'function'     => array(),
                     'require_once' => array(),
                     'require'      => array(),
