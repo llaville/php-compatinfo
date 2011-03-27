@@ -159,11 +159,13 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
             if (isset($const[$extname])) {
                 // Test if each constants are in reference
                 foreach ($const[$extname] as $constname => $value) {
-                    $this->assertArrayHasKey(
-                        $constname,
-                        $this->ref['constants'],
-                        "Defined constant '$constname' not known in Reference."
-                    );
+	                if (!in_array($constname, $this->ignoredconstants)) {
+	                    $this->assertArrayHasKey(
+	                        $constname,
+	                        $this->ref['constants'],
+	                        "Defined constant '$constname' not known in Reference."
+	                    );
+	                }
                 }
             }
         }
