@@ -373,7 +373,10 @@ class PHP_CompatInfo_Configuration
         }
 
         if ($root->hasAttribute('report')) {
-            $result['report'] = (string)$root->getAttribute('report');
+            $reports = explode(
+                ',', (string)$root->getAttribute('report')
+            );
+            $result['report'] = array_map('trim', $reports);
         }
 
         if ($root->hasAttribute('reportFile')) {
