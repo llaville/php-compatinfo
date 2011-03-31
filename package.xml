@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2011-03-26</date>
- <time>15:50:51</time>
+ <date>2011-03-31</date>
+ <time>18:34:43</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -40,11 +40,14 @@ Version 2 is a PHP5 rewrites
 PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-laville.org
 
 Additions and changes:
-- multiple reporting is available, use either:
+- add 5 new references data dictionnaries related to extensions:
+  Mhash, Mcrypt, Phar, Readline, sqlite3
+- printing multiple reports feature is available. Use either:
   * phpci --report summary --report function /path/to/source
-  * or just simple  phpci --report summary function C:\www\github\php-compat-info\PHP\CompatInfo\CLI.php
+  * or just simple  phpci --report summary function /path/to/source
   * with XML config file, adds a comma separate valid report types in &apos;report&apos; property of tag &lt;phpcompatinfo&gt;
-
+- reduced amount of memory used by PHP_Reflect to return only necessary properties
+  
 Bug fixes:
 - none
  </notes>
@@ -158,6 +161,12 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="mbstring.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
+      <file baseinstalldir="Bartlett" name="mcrypt.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="mhash.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="mysql.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -185,6 +194,9 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="pgsql.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
+      <file baseinstalldir="Bartlett" name="phar.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="PHP4.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -192,6 +204,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="PluginsAbstract.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="readline.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="session.php" role="php">
@@ -210,6 +225,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="sqlite.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="sqlite3.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="ssh2.php" role="php">
@@ -346,10 +364,25 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="ImapTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="McryptTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="MhashTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="PcntlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="PharTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="ReadlineTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="ShmopTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="Sqlite3Test.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
     </dir> <!-- /tests/Reference -->
@@ -519,7 +552,7 @@ Bug fixes:
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2011-03-26</date>
+   <date>2011-03-31</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Version 2 is a PHP5 rewrites
@@ -527,11 +560,14 @@ Version 2 is a PHP5 rewrites
 PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-laville.org
 
 Additions and changes:
-- multiple reporting is available, use either:
+- add 5 new references data dictionnaries related to extensions:
+  Mhash, Mcrypt, Phar, Readline, sqlite3
+- printing multiple reports feature is available. Use either:
   * phpci --report summary --report function /path/to/source
-  * or just simple  phpci --report summary function C:\www\github\php-compat-info\PHP\CompatInfo\CLI.php
+  * or just simple  phpci --report summary function /path/to/source
   * with XML config file, adds a comma separate valid report types in &apos;report&apos; property of tag &lt;phpcompatinfo&gt;
-
+- reduced amount of memory used by PHP_Reflect to return only necessary properties
+  
 Bug fixes:
 - none
    </notes>
