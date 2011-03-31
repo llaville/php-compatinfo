@@ -55,7 +55,7 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
 
         $this->generate($report, $base);
 
-        if (count($warnings) > 0 && $options['verbose'] === true) {
+        if (count($warnings) > 0 && $options['verbose'] > 0) {
             echo 'Warning messages : (' . count($warnings) . ')' . PHP_EOL;
             echo PHP_EOL;
             foreach ($warnings as $warning) {
@@ -96,7 +96,7 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
             echo str_repeat('-', $width).PHP_EOL;
             echo 'PHP COMPAT INFO SOURCE SUMMARY' . PHP_EOL;
 
-            if ($verbose) {
+            if ($verbose == 1) {
                 echo str_repeat('-', $width).PHP_EOL;
                 echo 'LINE   TOKEN                          TEXT' . PHP_EOL;
                 echo str_repeat('-', $width).PHP_EOL;

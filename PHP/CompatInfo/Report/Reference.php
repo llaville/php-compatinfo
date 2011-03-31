@@ -89,7 +89,7 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
             $warnings = $reference->getWarnings();
         }
 
-        if (count($warnings) > 0 && $options['verbose'] === true) {
+        if (count($warnings) > 0 && $options['verbose'] > 0) {
             echo 'Warning messages : (' . count($warnings) . ')' . PHP_EOL;
             echo PHP_EOL;
             foreach ($warnings as $warning) {

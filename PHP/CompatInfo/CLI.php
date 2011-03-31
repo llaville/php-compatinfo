@@ -84,7 +84,7 @@ class PHP_CompatInfo_CLI
             array(
                 'short_name'  => '-v',
                 'long_name'   => '--verbose',
-                'action'      => 'StoreTrue',
+                'action'      => 'Counter',
                 'description' => 'Output more verbose information'
             )
         );

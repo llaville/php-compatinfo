@@ -57,7 +57,7 @@ abstract class PHP_CompatInfo_Report
 
         $this->generate($report, $base);
 
-        if (count($allWarnings) > 0 && $options['verbose'] === true) {
+        if (count($allWarnings) > 0 && $options['verbose'] > 0) {
             echo 'Warning messages : (' . count($allWarnings) . ')' . PHP_EOL;
             echo PHP_EOL;
             foreach ($allWarnings as $warn) {
