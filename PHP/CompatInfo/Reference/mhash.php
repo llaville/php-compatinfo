@@ -175,7 +175,7 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
      *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
      *
      * @return array
-     * @link   http://fr2.php.net/manual/fr/mhash.constants.php
+     * @link   http://www.php.net/manual/fr/mhash.constants.php
      */
     public function getConstants($extension = null, $version = null)
     {
@@ -190,16 +190,16 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
                 'MHASH_HAVAL128'        => array('4.0.0', '5.3.0'),
                 'MHASH_HAVAL160'        => array('4.0.0', '5.3.0'),
                 'MHASH_HAVAL192'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL225'        => array('4.0.0', '5.3.0'),
+                'MHASH_HAVAL224'        => array('4.0.0', '5.3.0'),
                 'MHASH_HAVAL256'        => array('4.0.0', '5.3.0'),
                 'MHASH_MD2'             => array('4.0.0', '5.3.0'),
                 'MHASH_MD4'             => array('4.0.0', '5.3.0'),
                 'MHASH_MD5'             => array('4.0.0', '5.3.0'),
                 'MHASH_RIPEMD128'       => array('4.0.0', '5.3.0'),
+                'MHASH_RIPEMD160'       => array('4.0.0', '5.3.0'),
                 'MHASH_RIPEMD256'       => array('4.0.0', '5.3.0'),
                 'MHASH_RIPEMD320'       => array('4.0.0', '5.3.0'),
                 'MHASH_SHA1'            => array('4.0.0', '5.3.0'),
-                'MHASH_SHA192'          => array('4.0.0', '5.3.0'),
                 'MHASH_SHA224'          => array('4.0.0', '5.3.0'),
                 'MHASH_SHA256'          => array('4.0.0', '5.3.0'),
                 'MHASH_SHA384'          => array('4.0.0', '5.3.0'),
@@ -209,7 +209,7 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
                 'MHASH_TIGER'           => array('4.0.0', '5.3.0'),
                 'MHASH_TIGER128'        => array('4.0.0', '5.3.0'),
                 'MHASH_TIGER160'        => array('4.0.0', '5.3.0'),
-                'MHASH_WHIRLPOOL '      => array('4.0.0', '5.3.0'),
+                'MHASH_WHIRLPOOL'       => array('4.0.0', '5.3.0'),
             );
             $constants = array_merge(
                 $constants,
