@@ -17,10 +17,15 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 {
     protected $obj = NULL;
     protected $ref = NULL;
-    protected $optionnalconstants = array();
-    protected $optionnalfunctions = array();
-    protected $ignoredfunctions = array();
-    protected $ignoredconstants= array();
+    
+    // Could be defined in Reference but missing (system dependant)
+    protected $optionnalconstants   = array();
+    protected $optionnalfunctions   = array();
+    protected $optionnalclasses     = array();
+    
+    // Could be present but missing in Refence (alias, ...)
+    protected $ignoredfunctions     = array();
+    protected $ignoredconstants     = array();
 
     protected function setUp()
     {
@@ -108,6 +113,11 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
         }
 
         foreach ($this->ref['extensions'] as $extname => $opt) {
+            $ext = get_extension_funcs($extname);
+            if (!is_array($ext)) {
+                // At least, for sqlite3 (PHP Bug ?)
+                continue;
+            }
             // Test if each functions are in reference
             foreach (get_extension_funcs($extname) as $fctname) {
                 if (!in_array($fctname, $this->ignoredfunctions)) {
@@ -147,6 +157,29 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
     /**
      * @depends testReference
      */
+    public function testgetClassesFromReference()
+    {
+        if (is_null($this->ref)) {
+            return;
+        }
+
+        // Test than all referenced constant exists
+        foreach ($this->ref['classes'] as $constname => $range) {
+            list($min, $max) = $range;
+            if (!in_array($constname, $this->optionnalclasses)
+                && (empty($min) || version_compare(PHP_VERSION,$min)>=0)
+                && (empty($max) || version_compare(PHP_VERSION,$max)<0)) {
+                $this->assertTrue(
+                    class_exists($constname, false),
+                    "Class '$constname', found in Reference, doesnt exists."
+                );
+            }
+        }
+    }
+
+    /**
+     * @depends testReference
+     */
     public function testgetConstantsFromExtension()
     {
         if (is_null($this->ref)) {
@@ -159,11 +192,13 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
             if (isset($const[$extname])) {
                 // Test if each constants are in reference
                 foreach ($const[$extname] as $constname => $value) {
-                    $this->assertArrayHasKey(
-                        $constname,
-                        $this->ref['constants'],
-                        "Defined constant '$constname' not known in Reference."
-                    );
+	                if (!in_array($constname, $this->ignoredconstants)) {
+	                    $this->assertArrayHasKey(
+	                        $constname,
+	                        $this->ref['constants'],
+	                        "Defined constant '$constname' not known in Reference."
+	                    );
+	                }
                 }
             }
         }

@@ -120,6 +120,10 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/libxml.php',
             'PHP_CompatInfo_Reference_Mbstring'
                 => 'PHP/CompatInfo/Reference/mbstring.php',
+            'PHP_CompatInfo_Reference_Mcrypt'
+                => 'PHP/CompatInfo/Reference/mcrypt.php',
+            'PHP_CompatInfo_Reference_Mhash'
+                => 'PHP/CompatInfo/Reference/mhash.php',
             'PHP_CompatInfo_Reference_Mysql'
                 => 'PHP/CompatInfo/Reference/mysql.php',
             'PHP_CompatInfo_Reference_Mysqli'
@@ -134,10 +138,16 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/pdo.php',
             'PHP_CompatInfo_Reference_Pgsql'
                 => 'PHP/CompatInfo/Reference/pgsql.php',
+            'PHP_CompatInfo_Reference_Phar'
+                => 'PHP/CompatInfo/Reference/phar.php',
+            'PHP_CompatInfo_Reference_Readline'
+                => 'PHP/CompatInfo/Reference/readline.php',
             'PHP_CompatInfo_Reference_SPL'
                 => 'PHP/CompatInfo/Reference/spl.php',
             'PHP_CompatInfo_Reference_SQLite'
                 => 'PHP/CompatInfo/Reference/sqlite.php',
+            'PHP_CompatInfo_Reference_Sqlite3'
+                => 'PHP/CompatInfo/Reference/sqlite3.php',
             'PHP_CompatInfo_Reference_Session'
                 => 'PHP/CompatInfo/Reference/session.php',
             'PHP_CompatInfo_Reference_Shmop'
