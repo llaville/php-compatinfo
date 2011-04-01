@@ -145,10 +145,9 @@ class PHP_CompatInfo_Reference_Recode implements PHP_CompatInfo_Reference
 
         if ((null == $version ) || ('4' == $version)) {
             $version4 = array(
-                'recode_file'              => array('4.0.0', ''),
-                'recode_string'            => array('4.0.0', ''),
-                'recode'      				=> array('4.0.0', ''),
-                
+                'recode_file'               => array('4.0.0', ''),
+                'recode_string'             => array('4.0.0', ''),
+                'recode'                    => array('4.0.0', ''),
             );
             $functions = array_merge(
                 $functions,
