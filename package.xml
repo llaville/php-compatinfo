@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2011-04-02</date>
- <time>10:46:37</time>
+ <time>15:07:29</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -50,7 +50,7 @@ Additions and changes:
 - reduced amount of memory used by PHP_Reflect to return only necessary properties
   
 Bug fixes:
-- none
+- list-references command did not displayed extensions with mixed cases like (PDO, SQLite, SimpleXML)
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -589,7 +589,7 @@ Additions and changes:
 - reduced amount of memory used by PHP_Reflect to return only necessary properties
   
 Bug fixes:
-- none
+- list-references command did not displayed extensions with mixed cases like (PDO, SQLite, SimpleXML)
    </notes>
   </release>
   <release>
