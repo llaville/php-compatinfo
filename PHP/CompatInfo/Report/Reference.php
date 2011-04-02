@@ -80,7 +80,7 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
 
         foreach ($lists as $list) {
             $this->_list = $list;
-            $this->generate($report, false);
+            $this->generate($report, false, $options['verbose']);
         }
 
         if (is_array($warnings)) {

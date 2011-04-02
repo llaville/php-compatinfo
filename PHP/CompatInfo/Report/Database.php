@@ -75,7 +75,7 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
             ob_start();
         }
 
-        $this->generate($report, false);
+        $this->generate($report, false, $options['verbose']);
 
         if (is_array($warnings)) {
             $warnings = array_merge($warnings, $reference->getWarnings());
