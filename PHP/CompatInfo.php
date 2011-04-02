@@ -995,7 +995,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             list ($extension, $values) = each($ref);
 
             if (is_array($data)) {
-                // PHP TokenStream results
+                // PHP Reflect results
                 $this->_versionsRef = $values[$key]['versions'];
             } else {
                 // parent or interface result from recursive call
@@ -1049,11 +1049,20 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                     if ($extension === $k) {
                         $this->extensions[$extension] = array(
                             'versions' => $v,
-                            'excluded' => false
+                            'excluded' => false,
+                            'uses'     => 0,
+                            'sources'  => array()
                         );
                         break;
                     }
                 }
+            }
+            if ($extension != 'user') {
+                $this->extensions[$extension]['uses']   += $values[$key]['uses'];
+                $sources = array_merge(
+                    $this->extensions[$extension]['sources'], $values[$key]['sources']
+                );
+                $this->extensions[$extension]['sources'] = array_unique($sources);
             }
 
             // mark elements in excludes list

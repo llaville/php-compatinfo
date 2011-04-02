@@ -41,13 +41,13 @@ class PHP_CompatInfo_TokenParser
             if ($class) {
                 $classes = $subject->getClasses();
                 $classMethod = array_key_exists(
-                    $name, $classes[$class]['methods']
+                    $name, (array)$classes[$class]['methods']
                 );
             }
             else if ($interface) {
                 $interfaces = $subject->getInterfaces();
                 $interfaceMethod = array_key_exists(
-                    $name, $interfaces[$interface]['methods']
+                    $name, (array)$interfaces[$interface]['methods']
                 );
             }
             if ($classMethod === FALSE && $interfaceMethod === FALSE) {

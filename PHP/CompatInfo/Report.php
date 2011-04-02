@@ -27,6 +27,26 @@ require_once 'PHP/Timer.php';
 abstract class PHP_CompatInfo_Report
 {
     /**
+     * @var int Report character width (default to 79)
+     */
+    protected $width = 79;
+
+    /**
+     * @var array PHP Minimum and Maximum versions
+     */
+    protected $globalVersions;
+
+    /**
+     * @var int Total of elements excluded from scope due to rulesets
+     */
+    protected $totalExcludes;
+
+    /**
+     * @var array Elements found on scope
+     */
+    protected $total;
+
+    /**
      * Class constructor for each report
      *
      * @param string $source   Data source
@@ -55,7 +75,7 @@ abstract class PHP_CompatInfo_Report
             ob_start();
         }
 
-        $this->generate($report, $base);
+        $this->generate($report, $base, $options['verbose']);
 
         if (count($allWarnings) > 0 && $options['verbose'] > 0) {
             echo 'Warning messages : (' . count($allWarnings) . ')' . PHP_EOL;
@@ -84,12 +104,13 @@ abstract class PHP_CompatInfo_Report
      * Abstract function to implement on each report to produce results of type
      * reference, extension, interface, class, function, constant
      *
-     * @param array  $report Report data to produce
-     * @param string $base   Base directory of data source
+     * @param array  $report  Report data to produce
+     * @param string $base    Base directory of data source
+     * @param int    $verbose Verbose level (0: none, 1: warnings, ...)
      *
      * @return void
      */
-    abstract public function generate($report, $base);
+    abstract public function generate($report, $base, $verbose);
 
     /**
      * Returns conditional code number

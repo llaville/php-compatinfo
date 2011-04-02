@@ -77,29 +77,28 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
     /**
      * Prints a source tokens report
      *
-     * @param array  $report Report data to produce
-     * @param string $base   Base directory of data source
+     * @param array  $report  Report data to produce
+     * @param string $base    Base directory of data source
+     * @param int    $verbose Verbose level (0: none, 1: warnings, ...)
      *
      * @return void
      */
-    public function generate($report, $base)
+    public function generate($report, $base, $verbose)
     {
-        $width = 79;
-
         foreach ($report as $filename => $verbose) {
             $reflect = new PHP_Reflect();
-            $tokens = $reflect->scan($filename);
+            $tokens  = $reflect->scan($filename);
 
             echo PHP_EOL;
             echo 'BASE: ' . $base . PHP_EOL;
             echo str_replace($base, 'FILE: ', $filename) . PHP_EOL;
-            echo str_repeat('-', $width).PHP_EOL;
-            echo 'PHP COMPAT INFO SOURCE SUMMARY' . PHP_EOL;
+            echo str_repeat('-', $this->width)           . PHP_EOL;
+            echo 'PHP COMPAT INFO SOURCE SUMMARY'        . PHP_EOL;
 
             if ($verbose == 1) {
-                echo str_repeat('-', $width).PHP_EOL;
+                echo str_repeat('-', $this->width) . PHP_EOL;
                 echo 'LINE   TOKEN                          TEXT' . PHP_EOL;
-                echo str_repeat('-', $width).PHP_EOL;
+                echo str_repeat('-', $this->width).PHP_EOL;
 
                 foreach ($tokens as $token) {
                     if ($token[0] == 'T_WHITESPACE') {
@@ -124,14 +123,14 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
 
             $total = $reflect->getLinesOfCode();
 
-            echo str_repeat('-', $width).PHP_EOL;
+            echo str_repeat('-', $this->width) . PHP_EOL;
             echo 'A TOTAL OF ' . $total['loc'] . ' LINE(S)';
             echo ' WITH ' . $total['cloc'] . ' COMMENT LINE(S)';
             echo ' AND ' . $total['ncloc'] . ' CODE LINE(S)'
                 . PHP_EOL;
-            echo str_repeat('-', $width).PHP_EOL;
-            echo PHP_Timer::resourceUsage() . PHP_EOL;
-            echo str_repeat('-', $width).PHP_EOL;
+            echo str_repeat('-', $this->width) . PHP_EOL;
+            echo PHP_Timer::resourceUsage()    . PHP_EOL;
+            echo str_repeat('-', $this->width) . PHP_EOL;
         }
         echo PHP_EOL;
     }

@@ -27,91 +27,177 @@ class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
     /**
      * Prints an extension report
      *
-     * @param array  $report Report data to produce
-     * @param string $base   Base directory of data source
+     * @param array  $report  Report data to produce
+     * @param string $base    Base directory of data source
+     * @param int    $verbose Verbose level (0: none, 1: warnings, ...)
      *
      * @return void
      */
-    public function generate($report, $base)
+    public function generate($report, $base, $verbose)
     {
-        $width = 79;
+        if ($verbose < 3) {
+            // summary report
 
-        foreach ($report as $filename => $elements) {
-            $total          = array();
-            $totalExcludes  = 0;
-            $globalVersions = array('4.0.0', '');
+            $files = array_keys($report);
 
-            echo PHP_EOL;
-            echo 'BASE: ' . $base . PHP_EOL;
-            echo str_replace($base, 'FILE: ', $filename) . PHP_EOL;
-            echo str_repeat('-', $width).PHP_EOL;
-            echo 'PHP COMPAT INFO EXTENSION SUMMARY' . PHP_EOL;
-            echo str_repeat('-', $width).PHP_EOL;
-            echo '  EXTENSION' . str_repeat(' ', ($width - 39))
-                . 'PECL   VERSION         COUNT'.PHP_EOL;
-            echo str_repeat('-', $width).PHP_EOL;
+            $extensions = array();
+            $conditions = array();
 
-            $extensions = array_keys($elements['extensions']);
-            $total = array_merge($total, $extensions);
-
-            foreach ($elements['extensions'] as $extension => $items) {
-                if ($items['excluded']) {
-                    echo 'E';
-                    $totalExcludes++;
-                } else {
-                    echo ' ';
+            foreach ($files as $filename) {
+                foreach ($report[$filename]['extensions'] as $key => $values) {
+                    if (!isset($extensions[$key])) {
+                        $extensions[$key] = $values;
+                    } else {
+                        $extensions[$key]['uses'] += $values['uses'];
+                        $extensions[$key]['sources'] = array_merge(
+                            $extensions[$key]['sources'], 
+                            $values['sources']
+                        );
+                    }
                 }
-
-                $extVersion = array_pop($items['versions']);
-
-                $versions = implode('  ', $items['versions']);
-                echo ' ';
-                echo $extension;
-                if (!empty($extVersion)) {
-                    echo str_repeat(
-                        ' ', (54 - strlen($extension) - strlen($extVersion))
-                    );
-                    echo $extVersion . '  ';
-                } else {
-                    echo str_repeat(' ', (56 - strlen($extension)));
+                foreach ($report[$filename]['conditions'] as $key => $values) {
+                    if (!isset($conditions[$key])) {
+                        $conditions[$key] = $values;
+                    }
                 }
-                echo $versions
-                    . str_repeat(' ', (16 - strlen($versions)));
-                echo str_repeat(' ', (5 - strlen('1'))) . '1' . PHP_EOL;
-
-                if ($items['excluded']) {
-                    continue;
-                }
-
-                $this->updateVersion(
-                    $items['versions'][0], $globalVersions[0]
-                );
-                $this->updateVersion(
-                    $items['versions'][1], $globalVersions[1]
-                );
             }
 
-            echo str_repeat('-', $width).PHP_EOL;
-            echo 'A TOTAL OF ' . count($total) .' EXTENSION(S) WERE FOUND';
-            if ($totalExcludes > 0) {
-                echo ' AND ' . $totalExcludes . ' EXCLUDED FROM PARSING';
+            $this->total          = array();
+            $this->totalExcludes  = 0;
+            $this->globalVersions = array('4.0.0', '');
+
+            $this->printTHead($base, false, $extensions);
+            $this->printTBody($extensions, ($verbose == 2), $base);
+            $this->printTFoot($conditions);
+
+        } else {
+            // group by files report
+
+            foreach ($report as $filename => $elements) {
+                $this->total    = array();
+                $this->totalExcludes  = 0;
+                $this->globalVersions = array('4.0.0', '');
+
+                $this->printTHead($base, $filename, $elements['extensions']);
+                $this->printTBody($elements['extensions'], false, $base);
+                $this->printTFoot($elements['conditions']);
             }
-            echo PHP_EOL;
-            $ccn = $this->getCCN($elements['conditions']);
-            if ($ccn > 0) {
-                echo 'WITH CONDITIONAL CODE LEVEL ' . $ccn . PHP_EOL;
-            }
-            if (count($total) > 0) {
-                echo 'REQUIRED PHP ' . $globalVersions[0] .  ' (MIN) ';
-                if (!empty($globalVersions[1])) {
-                    echo $globalVersions[1] . ' (MAX)';
-                }
-                echo PHP_EOL;
-            }
-            echo str_repeat('-', $width).PHP_EOL;
-            echo PHP_Timer::resourceUsage() . PHP_EOL;
-            echo str_repeat('-', $width).PHP_EOL;
         }
         echo PHP_EOL;
     }
+
+    /**
+     * Prints header of report
+     *
+     * @param string $base       Base directory of data source
+     * @param string $filename   Current file
+     * @param array  $extensions List of extensions to print
+     *
+     * @return void
+     */
+    private function printTHead($base, $filename, $extensions)
+    {
+        echo PHP_EOL;
+        echo 'BASE: ' . $base . PHP_EOL;
+        if ($filename) {
+            echo str_replace($base, 'FILE: ', $filename) . PHP_EOL;
+        }
+        echo str_repeat('-', $this->width)       . PHP_EOL;
+        echo 'PHP COMPAT INFO EXTENSION SUMMARY' . PHP_EOL;
+        echo str_repeat('-', $this->width)       . PHP_EOL;
+        echo '  EXTENSION' . str_repeat(' ', ($this->width - 39))
+            . 'PECL   VERSION         COUNT'     . PHP_EOL;
+        echo str_repeat('-', $this->width)       . PHP_EOL;
+
+        $keys = array_keys($extensions);
+        $this->total = array_merge($this->total, $keys);
+    }
+
+    /**
+     * Prints footer of report
+     *
+     * @param array $conditions List of conditions found on current file
+     *
+     * @return void
+     */
+    private function printTFoot($conditions)
+    {
+        echo str_repeat('-', $this->width) . PHP_EOL;
+        echo 'A TOTAL OF ' . count($this->total) .' EXTENSION(S) WERE FOUND';
+        if ($this->totalExcludes > 0) {
+            echo ' AND ' . $this->totalExcludes . ' EXCLUDED FROM PARSING';
+        }
+        echo PHP_EOL;
+        $ccn = $this->getCCN($conditions);
+        if ($ccn > 0) {
+            echo 'WITH CONDITIONAL CODE LEVEL ' . $ccn . PHP_EOL;
+        }
+        if (count($this->total) > 0) {
+            echo 'REQUIRED PHP ' . $this->globalVersions[0] .  ' (MIN) ';
+            if (!empty($this->globalVersions[1])) {
+                echo $this->globalVersions[1] . ' (MAX)';
+            }
+            echo PHP_EOL;
+        }
+        echo str_repeat('-', $this->width) . PHP_EOL;
+        echo PHP_Timer::resourceUsage()    . PHP_EOL;
+        echo str_repeat('-', $this->width) . PHP_EOL;
+    }
+
+    /**
+     * Prints body of report
+     *
+     * @param array  $elements List of extensions to print
+     * @param string $filename Current file
+     * @param string $base     Base directory of data source
+     *
+     * @return void
+     */
+    private function printTBody($elements, $filename, $base)
+    {
+        foreach ($elements as $extension => $items) {
+            if ($items['excluded']) {
+                echo 'E';
+                $this->totalExcludes++;
+            } else {
+                echo ' ';
+            }
+
+            $extVersion = array_pop($items['versions']);
+
+            $versions = implode('  ', $items['versions']);
+            echo ' ';
+            echo $extension;
+            if (!empty($extVersion)) {
+                echo str_repeat(
+                    ' ', (54 - strlen($extension) - strlen($extVersion))
+                );
+                echo $extVersion . '  ';
+            } else {
+                echo str_repeat(' ', (56 - strlen($extension)));
+            }
+            echo $versions
+                . str_repeat(' ', (16 - strlen($versions)));
+            echo str_repeat(' ', (5 - strlen($items['uses']))) . $items['uses']
+                . PHP_EOL;
+
+            if ($filename) {
+                foreach ($items['sources'] as $source) {
+                    echo '    ' . str_replace($base, '', $source) . PHP_EOL;
+                }
+            }
+
+            if ($items['excluded']) {
+                continue;
+            }
+
+            $this->updateVersion(
+                $items['versions'][0], $this->globalVersions[0]
+            );
+            $this->updateVersion(
+                $items['versions'][1], $this->globalVersions[1]
+            );
+        }
+    }
+
 }

@@ -19,7 +19,7 @@
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version  Release: @package_version@
+ * @version  Release: 2.0.0RC3
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
@@ -29,18 +29,19 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
      * constants), in a proprietary XML format.
      * All components are displayed together, grouped by file
      *
-     * @param array  $report Report data to produce
-     * @param string $base   Base directory of data source
+     * @param array  $report  Report data to produce
+     * @param string $base    Base directory of data source
+     * @param int    $verbose Verbose level (0: none, 1: warnings, ...)
      *
      * @return void
      */
-    public function generate($report, $base)
+    public function generate($report, $base, $verbose)
     {
         $globalVersions = array('4.0.0', '');
 
-        echo '<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL;
-        echo '<phpcompatinfo version="@package_version@"' .
-            ' timestamp="' . date(DATE_W3C) . '">'.PHP_EOL;
+        echo '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
+        echo '<phpcompatinfo version="2.0.0RC3"' .
+            ' timestamp="' . date(DATE_W3C) . '">'    . PHP_EOL;
 
         $indentStep = 4;
         $indent     = $indentStep;
@@ -239,6 +240,6 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
         echo str_repeat(' ', $indent);
         echo '</versions>' . PHP_EOL;
 
-        echo '</phpcompatinfo>'.PHP_EOL;
+        echo '</phpcompatinfo>' . PHP_EOL;
     }
 }

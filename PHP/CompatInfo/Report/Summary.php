@@ -25,43 +25,120 @@
 class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
 {
     /**
+     * Conditional Code number_format
+     * @var int
+     */
+    protected $ccn;
+    
+    /**
+     * Elements count group by category
+     * @var array
+     */
+    protected $count;
+
+    /**
      * Prints a summary report with count of extensions, interfaces, classes,
      * functions and constants, for each file of the data source
      *
-     * @param array  $report Report data to produce
-     * @param string $base   Base directory of data source
+     * @param array  $report  Report data to produce
+     * @param string $base    Base directory of data source
+     * @param int    $verbose Verbose level (0: none, 1: warnings, ...)
      *
      * @return void
      */
-    public function generate($report, $base)
+    public function generate($report, $base, $verbose)
     {
-        $width = 79;
-        $globalVersions = array('4.0.0', '');
+        $this->total          = array();
+        $this->totalExcludes  = 0;
+        $this->globalVersions = array('4.0.0', '');
 
-        echo PHP_EOL;
-        echo 'PHP COMPAT INFO REPORT SUMMARY' . PHP_EOL;
-        echo str_repeat('-', $width).PHP_EOL;
-        echo 'FILES' . str_repeat(' ', ($width - 54))
-            . 'EXTENSIONS INTERFACES CLASSES FUNCTIONS CONSTANTS'.PHP_EOL;
-        echo str_repeat('-', $width).PHP_EOL;
-        if ($base) {
-            echo 'BASE: ' . $base . PHP_EOL;
-        }
-
-        $count = array(
+        $this->count = array(
             'extensions' => array(),
             'interfaces' => array(),
             'classes'    => array(),
             'functions'  => array(),
             'constants'  => array(),
         );
-        $ccn           = 0;
-        $currentFolder = '';
 
+        $this->printTHead($base);
+        $this->printTBody($report, $base);
+        $this->printTFoot(count($report));
+    }
+    
+    /**
+     * Prints header of report
+     *
+     * @param string $base Base directory of data source
+     *
+     * @return void
+     */
+    private function printTHead($base)
+    {
+        echo PHP_EOL;
+        echo 'PHP COMPAT INFO REPORT SUMMARY' . PHP_EOL;
+        echo str_repeat('-', $this->width)    . PHP_EOL;
+        echo 'FILES' . str_repeat(' ', ($this->width - 54))
+            . 'EXTENSIONS INTERFACES CLASSES FUNCTIONS CONSTANTS' . PHP_EOL;
+        echo str_repeat('-', $this->width)    . PHP_EOL;
+        if ($base) {
+            echo 'BASE: ' . $base . PHP_EOL;
+        }
+    }
+    
+    /**
+     * Prints footer of report
+     *
+     * @param int $filesCount Number of file parsed in report
+     *
+     * @return void
+     */
+    private function printTFoot($filesCount)
+    {
+        if ($filesCount > 0) {
+            echo str_repeat('-', $this->width) . PHP_EOL;
+            echo 'A TOTAL OF ' . PHP_EOL . ' ';
+            foreach (array_keys($this->count) as $category) {
+                $$category = count(array_count_values($this->count[$category]));
+
+                if ($$category > 0) {
+                    echo $$category . ' '
+                        . strtoupper(substr($category, 0, -1)) . '(S) ';
+                }
+            }
+            echo PHP_EOL;
+            echo 'WERE FOUND IN ' . $filesCount . ' FILE(S)' . PHP_EOL;
+            if ($this->ccn > 0) {
+                echo 'WITH CONDITIONAL CODE LEVEL ' . $this->ccn . PHP_EOL;
+            }
+            echo 'REQUIRED PHP ' . $this->globalVersions[0] .  ' (MIN) ';
+            if (!empty($this->globalVersions[1])) {
+                echo $this->globalVersions[1] . ' (MAX)';
+            }
+            echo PHP_EOL;
+        }
+        echo str_repeat('-', $this->width) . PHP_EOL;
+        echo PHP_Timer::resourceUsage()    . PHP_EOL;
+        echo str_repeat('-', $this->width) . PHP_EOL;
+        echo PHP_EOL;
+    }
+    
+    /**
+     * Prints body of report
+     *
+     * @param array  $report Elements of report
+     * @param string $base   Base directory of data source
+     *
+     * @return void
+     */
+    private function printTBody($report, $base)
+    {
+        $this->ccn     = 0;
+        $currentFolder = '';
+    
         foreach ($report as $filename => $elements) {
             if (dirname($filename) !== $currentFolder) {
                 $currentFolder = dirname($filename);
-                echo str_repeat('-', $width).PHP_EOL;
+                echo str_repeat('-', $this->width).PHP_EOL;
                 echo str_replace($base, 'DIR.: ', $currentFolder) . PHP_EOL;
             }
 
@@ -76,7 +153,7 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
                 case 'extensions':
                     $values = array_keys($data);
                     foreach ($values as $key) {
-                        $count[$element][] = $key;
+                        $this->count[$element][] = $key;
                     }
                     $$element += count($values);
                     break;
@@ -87,21 +164,21 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
                     foreach ($data as $category => $items) {
                         $values = array_keys($items);
                         foreach ($values as $key) {
-                            $count[$element][] = $key;
+                            $this->count[$element][] = $key;
                         }
                         $$element += count($values);
                     }
                     break;
                 case 'versions':
                     $this->updateVersion(
-                        $data[0], $globalVersions[0]
+                        $data[0], $this->globalVersions[0]
                     );
                     $this->updateVersion(
-                        $data[1], $globalVersions[1]
+                        $data[1], $this->globalVersions[1]
                     );
                     break;
                 case 'conditions':
-                    $ccn = $ccn | $this->getCCN($data);
+                    $this->ccn = $this->ccn | $this->getCCN($data);
                     break;
                 default:
                     continue 2;
@@ -128,32 +205,6 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
                 . $constants;
             echo PHP_EOL;
         }
-
-        if (count($report) > 0) {
-            echo str_repeat('-', $width).PHP_EOL;
-            echo 'A TOTAL OF ' . PHP_EOL . ' ';
-            foreach (array_keys($count) as $category) {
-                $$category = count(array_count_values($count[$category]));
-
-                if ($$category > 0) {
-                    echo $$category . ' '
-                        . strtoupper(substr($category, 0, -1)) . '(S) ';
-                }
-            }
-            echo PHP_EOL;
-            echo 'WERE FOUND IN '.count($report).' FILE(S)'.PHP_EOL;
-            if ($ccn > 0) {
-                echo 'WITH CONDITIONAL CODE LEVEL ' . $ccn . PHP_EOL;
-            }
-            echo 'REQUIRED PHP ' . $globalVersions[0] .  ' (MIN) ';
-            if (!empty($globalVersions[1])) {
-                echo $globalVersions[1] . ' (MAX)';
-            }
-            echo PHP_EOL;
-        }
-        echo str_repeat('-', $width).PHP_EOL;
-        echo PHP_Timer::resourceUsage() . PHP_EOL;
-        echo str_repeat('-', $width).PHP_EOL;
-        echo PHP_EOL;
     }
+    
 }

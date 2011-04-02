@@ -105,22 +105,21 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
     /**
      * Prints a reference report about all extensions supported
      *
-     * @param array  $report Report data to produce
-     * @param string $base   Base directory of data source
+     * @param array  $report  Report data to produce
+     * @param string $base    Base directory of data source
+     * @param int    $verbose Verbose level (0: none, 1: warnings, ...)
      *
      * @return void
      */
-    public function generate($report, $base)
+    public function generate($report, $base, $verbose)
     {
-        $width = 79;
-
         echo PHP_EOL;
-        echo str_repeat('-', $width).PHP_EOL;
+        echo str_repeat('-', $this->width)        . PHP_EOL;
         echo 'PHP COMPAT INFO DATABASE REFERENCE' . PHP_EOL;
-        echo str_repeat('-', $width).PHP_EOL;
-        echo '  EXTENSIONS' . str_repeat(' ', ($width - 46))
-            . 'EXTENSION         VERSION' . PHP_EOL;
-        echo str_repeat('-', $width).PHP_EOL;
+        echo str_repeat('-', $this->width) . PHP_EOL;
+        echo '  EXTENSIONS' . str_repeat(' ', ($this->width - 46))
+            . 'EXTENSION         VERSION'  . PHP_EOL;
+        echo str_repeat('-', $this->width) . PHP_EOL;
 
         $extensions  = get_loaded_extensions();
         $totalLoaded = 0;
@@ -147,15 +146,15 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
                 . str_repeat(' ', (16 - strlen($versions)));
             echo PHP_EOL;
         }
-        echo str_repeat('-', $width).PHP_EOL;
+        echo str_repeat('-', $this->width) . PHP_EOL;
         echo 'A TOTAL OF ' . count($report) . ' EXTENSIONS WERE FOUND';
         if ($totalLoaded > 0) {
             echo ' AND ' . $totalLoaded . ' LOADED';
         }
         echo PHP_EOL;
-        echo str_repeat('-', $width).PHP_EOL;
-        echo PHP_Timer::resourceUsage() . PHP_EOL;
-        echo str_repeat('-', $width).PHP_EOL;
+        echo str_repeat('-', $this->width) . PHP_EOL;
+        echo PHP_Timer::resourceUsage()    . PHP_EOL;
+        echo str_repeat('-', $this->width) . PHP_EOL;
         echo PHP_EOL;
     }
 }
