@@ -188,6 +188,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/xmlreader.php',
             'PHP_CompatInfo_Reference_Xmlwriter'
                 => 'PHP/CompatInfo/Reference/xmlwriter.php',
+            'PHP_CompatInfo_Reference_Xmlrpc'
+                => 'PHP/CompatInfo/Reference/xmlrpc.php',
             'PHP_CompatInfo_Reference_Xsl'
                 => 'PHP/CompatInfo/Reference/xsl.php',
             'PHP_CompatInfo_Reference_Zlib'
