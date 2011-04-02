@@ -245,6 +245,8 @@ class PHP_CompatInfo_Reference_Filter implements PHP_CompatInfo_Reference
                 'FILTER_FLAG_IPV6'               => array('5.2.0', ''),
                 'FILTER_FLAG_NO_RES_RANGE'       => array('5.2.0', ''),
                 'FILTER_FLAG_NO_PRIV_RANGE'      => array('5.2.0', ''),
+                'FILTER_SANITIZE_FULL_SPECIAL_CHARS'
+                                                 => array('5.3.3', ''),
             );
             $constants = array_merge(
                 $constants,
