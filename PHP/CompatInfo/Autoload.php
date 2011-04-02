@@ -146,6 +146,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/recode.php',
             'PHP_CompatInfo_Reference_Snmp'
                 => 'PHP/CompatInfo/Reference/snmp.php',
+            'PHP_CompatInfo_Reference_Soap'
+                => 'PHP/CompatInfo/Reference/soap.php',
             'PHP_CompatInfo_Reference_SPL'
                 => 'PHP/CompatInfo/Reference/spl.php',
             'PHP_CompatInfo_Reference_SQLite'

@@ -15,16 +15,22 @@ require_once 'GenericTest.php';
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 2.0.0RC4
  */
-class PHP_CompatInfo_Reference_SnmpTest extends PHP_CompatInfo_Reference_GenericTest
+class PHP_CompatInfo_Reference_SoapTest extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * @covers PHP_CompatInfo_Reference_Snmp::getExtensions
-     * @covers PHP_CompatInfo_Reference_Snmp::getFunctions
-     * @covers PHP_CompatInfo_Reference_Snmp::getConstants
+     * @covers PHP_CompatInfo_Reference_Soap::getExtensions
+     * @covers PHP_CompatInfo_Reference_Soap::getFunctions
+     * @covers PHP_CompatInfo_Reference_Soap::getConstants
+     * @covers PHP_CompatInfo_Reference_Soap::getClasses
      */
     protected function setUp()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Snmp();
+        $this->ignoredfunctions = array(
+            // Found in php < 5.1.6, nothing in doc
+            'soap_encode_to_xml',
+            'soap_encode_to_zval',
+        );
+        $this->obj = new PHP_CompatInfo_Reference_Soap();
         parent::setUp();
     }
 }
