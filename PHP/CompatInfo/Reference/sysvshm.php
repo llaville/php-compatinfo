@@ -21,7 +21,7 @@
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
- * @link     http://fr.php.net/manual/en/book.sem.php
+ * @link     http://www.php.net/manual/en/book.sem.php
  */
 class PHP_CompatInfo_Reference_Sysvshm implements PHP_CompatInfo_Reference
 {
@@ -137,7 +137,7 @@ class PHP_CompatInfo_Reference_Sysvshm implements PHP_CompatInfo_Reference
      *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
      *
      * @return array
-     * @link   http://fr.php.net/manual/en/ref.sem.php
+     * @link   http://www.php.net/manual/en/ref.sem.php
      */
     public function getFunctions($extension = null, $version = null)
     {
@@ -184,7 +184,7 @@ class PHP_CompatInfo_Reference_Sysvshm implements PHP_CompatInfo_Reference
         $constants = array();
 
         if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(                
+            $version4 = array(
             );
             $constants = array_merge(
                 $constants,
