@@ -21,7 +21,7 @@
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
- * @link     http://fr2.php.net/manual/en/book.tidy.php
+ * @link     http://www.php.net/manual/en/book.tidy.php
  */
 class PHP_CompatInfo_Reference_Tidy implements PHP_CompatInfo_Reference
 {
@@ -142,7 +142,7 @@ class PHP_CompatInfo_Reference_Tidy implements PHP_CompatInfo_Reference
      *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
      *
      * @return array
-     * @link   http://fr2.php.net/manual/en/ref.tidy.php
+     * @link   http://www.php.net/manual/en/ref.tidy.php
      */
     public function getFunctions($extension = null, $version = null)
     {
@@ -210,7 +210,7 @@ class PHP_CompatInfo_Reference_Tidy implements PHP_CompatInfo_Reference
      *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
      *
      * @return array
-     * @link   http://fr2.php.net/manual/en/tidy.constants.php
+     * @link   http://www.php.net/manual/en/tidy.constants.php
      */
     public function getConstants($extension = null, $version = null)
     {
