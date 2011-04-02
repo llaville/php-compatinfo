@@ -168,6 +168,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/ssh2.php',
             'PHP_CompatInfo_Reference_Standard'
                 => 'PHP/CompatInfo/Reference/standard.php',
+            'PHP_CompatInfo_Reference_Sysvmsg'
+                => 'PHP/CompatInfo/Reference/sysvmsg.php',
             'PHP_CompatInfo_Reference_Tokenizer'
                 => 'PHP/CompatInfo/Reference/tokenizer.php',
             'PHP_CompatInfo_Reference_Wddx'
