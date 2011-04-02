@@ -174,6 +174,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/sysvsem.php',
             'PHP_CompatInfo_Reference_Sysvshm'
                 => 'PHP/CompatInfo/Reference/sysvshm.php',
+            'PHP_CompatInfo_Reference_Tidy'
+                => 'PHP/CompatInfo/Reference/tidy.php',
             'PHP_CompatInfo_Reference_Tokenizer'
                 => 'PHP/CompatInfo/Reference/tokenizer.php',
             'PHP_CompatInfo_Reference_Wddx'
