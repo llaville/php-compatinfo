@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2011-04-02</date>
- <time>15:07:29</time>
+ <time>15:09:20</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -517,6 +517,11 @@ Bug fixes:
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
     <min>0.5.0</min>
+   </package>
+   <package>
+    <name>PHP_Timer</name>
+    <channel>pear.phpunit.de</channel>
+    <min>1.0.0</min>
    </package>
    <extension>
     <name>dom</name>
