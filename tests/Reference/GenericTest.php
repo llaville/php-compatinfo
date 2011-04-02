@@ -119,7 +119,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                 continue;
             }
             // Test if each functions are in reference
-            foreach (get_extension_funcs($extname) as $fctname) {
+            foreach ($ext as $fctname) {
                 if (!in_array($fctname, $this->ignoredfunctions)) {
                     $this->assertArrayHasKey(
                         $fctname,
@@ -192,13 +192,13 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
             if (isset($const[$extname])) {
                 // Test if each constants are in reference
                 foreach ($const[$extname] as $constname => $value) {
-	                if (!in_array($constname, $this->ignoredconstants)) {
-	                    $this->assertArrayHasKey(
-	                        $constname,
-	                        $this->ref['constants'],
-	                        "Defined constant '$constname' not known in Reference."
-	                    );
-	                }
+                    if (!in_array($constname, $this->ignoredconstants)) {
+                        $this->assertArrayHasKey(
+                            $constname,
+                            $this->ref['constants'],
+                            "Defined constant '$constname' not known in Reference."
+                        );
+                    }
                 }
             }
         }
