@@ -24,6 +24,19 @@ class PHP_CompatInfo_Reference_MhashTest extends PHP_CompatInfo_Reference_Generi
      */
     protected function setUp()
     {
+        $this->optionnalconstants = array(
+            'MHASH_MD2',
+            'MHASH_RIPEMD128',
+            'MHASH_RIPEMD256',
+            'MHASH_RIPEMD320',
+            'MHASH_SHA224',
+            'MHASH_SHA384',
+            'MHASH_SHA512',
+            'MHASH_SNEFRU128',
+            'MHASH_SNEFRU256',
+            'MHASH_WHIRLPOOL',
+        );
+
         $this->obj = new PHP_CompatInfo_Reference_Mhash();
         parent::setUp();
     }
