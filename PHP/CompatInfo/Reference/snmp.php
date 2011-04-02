@@ -1,6 +1,6 @@
 <?php
 /**
- * Version informations about mhash extension
+ * Version informations about snmp extension
  *
  * PHP version 5
  *
@@ -13,7 +13,7 @@
  */
 
 /**
- * All interfaces, classes, functions, constants about mhash extension
+ * All interfaces, classes, functions, constants about snmp extension
  *
  * @category PHP
  * @package  PHP_CompatInfo
@@ -21,9 +21,9 @@
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
- * @link     http://www.php.net/manual/en/book.mhash.php
+ * @link     http://www.php.net/manual/en/book.snmp.php
  */
-class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
+class PHP_CompatInfo_Reference_Snmp implements PHP_CompatInfo_Reference
 {
     /**
      * Gets all informations at once about:
@@ -59,7 +59,7 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
     public function getExtensions($extension = null, $version = null)
     {
         $extensions = array(
-            'mhash' => array('4.0.0', '5.3.0', '')
+            'snmp' => array('4.0.0', '', '')
         );
         return $extensions;
     }
@@ -137,7 +137,7 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
      *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
      *
      * @return array
-     * @link   http://www.php.net/manual/en/ref.mhash.php
+     * @link   http://www.php.net/manual/en/ref.snmp.php
      */
     public function getFunctions($extension = null, $version = null)
     {
@@ -145,11 +145,26 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
 
         if ((null == $version ) || ('4' == $version)) {
             $version4 = array(
-                'mhash_count'           => array('4.0.0', '5.3.0'),
-                'mhash_get_block_size'  => array('4.0.0', '5.3.0'),
-                'mhash_get_hash_name'   => array('4.0.0', '5.3.0'),
-                'mhash_keygen_s2k'      => array('4.0.4', '5.3.0'),
-                'mhash'                 => array('4.0.0', '5.3.0'),
+                'snmp_get_quick_print'              => array('4.0.0', ''),
+                'snmp_get_valueretrieval'           => array('4.3.3', ''),
+                'snmp_set_enum_print'               => array('4.3.0', ''),
+                'snmp_set_oid_numeric_print'        => array('4.3.0', ''),
+                'snmp_set_quick_print'              => array('4.0.0', ''),
+                'snmp_set_valueretrieval'           => array('4.3.3', ''),
+                'snmp3_get'                         => array('4.3.0', ''),
+                'snmp3_real_walk'                   => array('4.3.0', ''),
+                'snmp3_set'                         => array('4.3.0', ''),
+                'snmp3_walk'                        => array('4.3.0', ''),
+                'snmpget'                           => array('4.0.0', ''),
+                'snmprealwalk'                      => array('4.0.0', ''),
+                'snmpset'                           => array('4.0.0', ''),
+                'snmpwalk'                          => array('4.0.0', ''),
+                'snmpwalkoid'                       => array('4.0.0', ''),
+                // Appear in 4.3.11 and 5.0.4
+                'snmp2_get'                         => array('4.3.11', ''),
+                'snmp2_real_walk'                   => array('4.3.11', ''),
+                'snmp2_set'                         => array('4.3.11', ''),
+                'snmp2_walk'                        => array('4.3.11', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -158,6 +173,11 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'snmp_read_mib'                     => array('5.0.0', ''),
+                'snmp_set_oid_output_format'        => array('5.2.0', ''),
+                'snmpgetnext'                       => array('5.0.0', ''),
+                'snmp3_getnext'                     => array('5.0.0', ''),
+                'snmp2_getnext'                     => array('5.0.4', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -175,7 +195,7 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
      *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
      *
      * @return array
-     * @link   http://www.php.net/manual/fr/mhash.constants.php
+     * @link   http://www.php.net/manual/en/snmp.constants.php
      */
     public function getConstants($extension = null, $version = null)
     {
@@ -183,33 +203,21 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
 
         if ((null == $version ) || ('4' == $version)) {
             $version4 = array(
-                'MHASH_ADLER32'         => array('4.0.0', '5.3.0'),
-                'MHASH_CRC32'           => array('4.0.0', '5.3.0'),
-                'MHASH_CRC32B'          => array('4.0.0', '5.3.0'),
-                'MHASH_GOST'            => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL128'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL160'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL192'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL224'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL256'        => array('4.0.0', '5.3.0'),
-                'MHASH_MD2'             => array('4.0.0', '5.3.0'),
-                'MHASH_MD4'             => array('4.0.0', '5.3.0'),
-                'MHASH_MD5'             => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD128'       => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD160'       => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD256'       => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD320'       => array('4.0.0', '5.3.0'),
-                'MHASH_SHA1'            => array('4.0.0', '5.3.0'),
-                'MHASH_SHA224'          => array('4.0.0', '5.3.0'),
-                'MHASH_SHA256'          => array('4.0.0', '5.3.0'),
-                'MHASH_SHA384'          => array('4.0.0', '5.3.0'),
-                'MHASH_SHA512'          => array('4.0.0', '5.3.0'),
-                'MHASH_SNEFRU128'       => array('4.0.0', '5.3.0'),
-                'MHASH_SNEFRU256'       => array('4.0.0', '5.3.0'),
-                'MHASH_TIGER'           => array('4.0.0', '5.3.0'),
-                'MHASH_TIGER128'        => array('4.0.0', '5.3.0'),
-                'MHASH_TIGER160'        => array('4.0.0', '5.3.0'),
-                'MHASH_WHIRLPOOL'       => array('4.0.0', '5.3.0'),
+                'SNMP_VALUE_LIBRARY'                => array('4.3.3', ''),
+                'SNMP_VALUE_PLAIN'                  => array('4.3.3', ''),
+                'SNMP_VALUE_OBJECT'                 => array('4.3.3', ''),
+                'SNMP_BIT_STR'                      => array('4.3.3', ''),
+                'SNMP_OCTET_STR'                    => array('4.3.3', ''),
+                'SNMP_OPAQUE'                       => array('4.3.3', ''),
+                'SNMP_NULL'                         => array('4.3.3', ''),
+                'SNMP_OBJECT_ID'                    => array('4.3.3', ''),
+                'SNMP_IPADDRESS'                    => array('4.3.3', ''),
+                'SNMP_COUNTER'                      => array('4.3.3', ''),
+                'SNMP_UNSIGNED'                     => array('4.3.3', ''),
+                'SNMP_TIMETICKS'                    => array('4.3.3', ''),
+                'SNMP_UINTEGER'                     => array('4.3.3', ''),
+                'SNMP_INTEGER'                      => array('4.3.3', ''),
+                'SNMP_COUNTER64'                    => array('4.3.3', ''),
             );
             $constants = array_merge(
                 $constants,
@@ -218,6 +226,8 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'SNMP_OID_OUTPUT_FULL'              => array('5.2.0', ''),
+                'SNMP_OID_OUTPUT_NUMERIC'           => array('5.2.0', ''),
             );
             $constants = array_merge(
                 $constants,

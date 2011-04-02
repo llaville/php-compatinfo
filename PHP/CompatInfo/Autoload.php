@@ -142,6 +142,12 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/phar.php',
             'PHP_CompatInfo_Reference_Readline'
                 => 'PHP/CompatInfo/Reference/readline.php',
+            'PHP_CompatInfo_Reference_Recode'
+                => 'PHP/CompatInfo/Reference/recode.php',
+            'PHP_CompatInfo_Reference_Snmp'
+                => 'PHP/CompatInfo/Reference/snmp.php',
+            'PHP_CompatInfo_Reference_Soap'
+                => 'PHP/CompatInfo/Reference/soap.php',
             'PHP_CompatInfo_Reference_SPL'
                 => 'PHP/CompatInfo/Reference/spl.php',
             'PHP_CompatInfo_Reference_SQLite'

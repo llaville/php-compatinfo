@@ -207,8 +207,8 @@ class PHP_CompatInfo_Reference_Mcrypt implements PHP_CompatInfo_Reference
      *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
      *
      * @return array
-     * @link   http://fr2.php.net/manual/fr/mcrypt.constants.php
-     * @link   http://fr2.php.net/manual/fr/mcrypt.ciphers.php
+     * @link   http://www.php.net/manual/fr/mcrypt.constants.php
+     * @link   http://www.php.net/manual/fr/mcrypt.ciphers.php
      */
     public function getConstants($extension = null, $version = null)
     {

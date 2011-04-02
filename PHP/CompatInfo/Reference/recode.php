@@ -1,6 +1,6 @@
 <?php
 /**
- * Version informations about mhash extension
+ * Version informations about recode extension
  *
  * PHP version 5
  *
@@ -13,7 +13,7 @@
  */
 
 /**
- * All interfaces, classes, functions, constants about mhash extension
+ * All interfaces, classes, functions, constants about recode extension
  *
  * @category PHP
  * @package  PHP_CompatInfo
@@ -21,9 +21,9 @@
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
- * @link     http://www.php.net/manual/en/book.mhash.php
+ * @link     http://www.php.net/manual/en/book.recode.php
  */
-class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
+class PHP_CompatInfo_Reference_Recode implements PHP_CompatInfo_Reference
 {
     /**
      * Gets all informations at once about:
@@ -59,7 +59,7 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
     public function getExtensions($extension = null, $version = null)
     {
         $extensions = array(
-            'mhash' => array('4.0.0', '5.3.0', '')
+            'recode' => array('4.0.0', '', '2.0.1')
         );
         return $extensions;
     }
@@ -137,7 +137,7 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
      *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
      *
      * @return array
-     * @link   http://www.php.net/manual/en/ref.mhash.php
+     * @link   http://www.php.net/manual/en/ref.recode.php
      */
     public function getFunctions($extension = null, $version = null)
     {
@@ -145,11 +145,9 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
 
         if ((null == $version ) || ('4' == $version)) {
             $version4 = array(
-                'mhash_count'           => array('4.0.0', '5.3.0'),
-                'mhash_get_block_size'  => array('4.0.0', '5.3.0'),
-                'mhash_get_hash_name'   => array('4.0.0', '5.3.0'),
-                'mhash_keygen_s2k'      => array('4.0.4', '5.3.0'),
-                'mhash'                 => array('4.0.0', '5.3.0'),
+                'recode_file'               => array('4.0.0', ''),
+                'recode_string'             => array('4.0.0', ''),
+                'recode'                    => array('4.0.0', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -175,7 +173,7 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
      *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
      *
      * @return array
-     * @link   http://www.php.net/manual/fr/mhash.constants.php
+     * @link   http://www.php.net/manual/en/recode.constants.php
      */
     public function getConstants($extension = null, $version = null)
     {
@@ -183,33 +181,6 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
 
         if ((null == $version ) || ('4' == $version)) {
             $version4 = array(
-                'MHASH_ADLER32'         => array('4.0.0', '5.3.0'),
-                'MHASH_CRC32'           => array('4.0.0', '5.3.0'),
-                'MHASH_CRC32B'          => array('4.0.0', '5.3.0'),
-                'MHASH_GOST'            => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL128'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL160'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL192'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL224'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL256'        => array('4.0.0', '5.3.0'),
-                'MHASH_MD2'             => array('4.0.0', '5.3.0'),
-                'MHASH_MD4'             => array('4.0.0', '5.3.0'),
-                'MHASH_MD5'             => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD128'       => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD160'       => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD256'       => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD320'       => array('4.0.0', '5.3.0'),
-                'MHASH_SHA1'            => array('4.0.0', '5.3.0'),
-                'MHASH_SHA224'          => array('4.0.0', '5.3.0'),
-                'MHASH_SHA256'          => array('4.0.0', '5.3.0'),
-                'MHASH_SHA384'          => array('4.0.0', '5.3.0'),
-                'MHASH_SHA512'          => array('4.0.0', '5.3.0'),
-                'MHASH_SNEFRU128'       => array('4.0.0', '5.3.0'),
-                'MHASH_SNEFRU256'       => array('4.0.0', '5.3.0'),
-                'MHASH_TIGER'           => array('4.0.0', '5.3.0'),
-                'MHASH_TIGER128'        => array('4.0.0', '5.3.0'),
-                'MHASH_TIGER160'        => array('4.0.0', '5.3.0'),
-                'MHASH_WHIRLPOOL'       => array('4.0.0', '5.3.0'),
             );
             $constants = array_merge(
                 $constants,
