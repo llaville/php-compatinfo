@@ -201,9 +201,6 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURL_HTTP_VERSION_NONE'         => array('4.0.2', ''),
                 'CURL_HTTP_VERSION_1_0'          => array('4.0.2', ''),
                 'CURL_HTTP_VERSION_1_1'          => array('4.0.2', ''),
-                'CURL_IPRESOLVE_WHATEVER'        => array('4.0.2', ''),
-                'CURL_IPRESOLVE_V4'              => array('4.0.2', ''),
-                'CURL_IPRESOLVE_V6'              => array('4.0.2', ''),
                 'CURL_NETRC_OPTIONAL'            => array('4.0.2', ''),
                 'CURL_NETRC_IGNORED'             => array('4.0.2', ''),
                 'CURL_NETRC_REQUIRED'            => array('4.0.2', ''),
@@ -281,7 +278,6 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLE_RECV_ERROR'               => array('4.0.2', ''),
                 'CURLE_SEND_ERROR'               => array('4.0.2', ''),
                 'CURLE_SHARE_IN_USE'             => array('4.0.2', ''),
-                'CURLE_SSH'                      => array('4.0.2', ''),
                 'CURLE_SSL_CACERT'               => array('4.0.2', ''),
                 'CURLE_SSL_CERTPROBLEM'          => array('4.0.2', ''),
                 'CURLE_SSL_CIPHER'               => array('4.0.2', ''),
@@ -297,13 +293,8 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLE_URL_MALFORMAT_USER'       => array('4.0.2', ''),
                 'CURLE_WRITE_ERROR'              => array('4.0.2', ''),
 
-                'CURLFTPMETHOD_MULTICWD'         => array('4.0.2', ''),
-                'CURLFTPMETHOD_NOCWD'            => array('4.0.2', ''),
-                'CURLFTPMETHOD_SINGLECWD'        => array('4.0.2', ''),
-
                 'CURLFTPSSL_TRY'                 => array('4.0.2', ''),
 
-                'CURLINFO_CERTINFO'              => array('4.0.2', ''),
                 'CURLINFO_CONNECT_TIME'          => array('4.0.2', ''),
                 'CURLINFO_CONTENT_LENGTH_DOWNLOAD'
                                                  => array('4.0.2', ''),
@@ -339,7 +330,6 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLOPT_BUFFERSIZE'             => array('4.0.2', ''),
                 'CURLOPT_CAINFO'                 => array('4.0.2', ''),
                 'CURLOPT_CAPATH'                 => array('4.0.2', ''),
-                'CURLOPT_CERTINFO'               => array('4.0.2', ''),
                 'CURLOPT_CLOSEPOLICY'            => array('4.0.2', ''),
                 'CURLOPT_CONNECTTIMEOUT'         => array('4.0.2', ''),
                 'CURLOPT_CONNECTTIMEOUT_MS'      => array('4.0.2', ''),
@@ -363,8 +353,6 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLOPT_FTPPORT'                => array('4.0.2', ''),
                 'CURLOPT_FTP_CREATE_MISSING_DIRS'
                                                  => array('4.0.2', ''),
-                'CURLOPT_FTP_FILEMETHOD'         => array('4.0.2', ''),
-                'CURLOPT_FTP_SKIP_PASV_IP'       => array('4.0.2', ''),
                 'CURLOPT_FTP_USE_EPRT'           => array('4.0.2', ''),
                 'CURLOPT_FTP_USE_EPSV'           => array('4.0.2', ''),
                 'CURLOPT_HEADER'                 => array('4.0.2', ''),
@@ -378,22 +366,21 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLOPT_INFILE'                 => array('4.0.2', ''),
                 'CURLOPT_INFILESIZE'             => array('4.0.2', ''),
                 'CURLOPT_INTERFACE'              => array('4.0.2', ''),
-                'CURLOPT_IPRESOLVE'              => array('4.0.2', ''),
-                'CURLOPT_KEYPASSWD'              => array('4.0.2', ''),
                 'CURLOPT_KRB4LEVEL'              => array('4.0.2', ''),
                 'CURLOPT_LOW_SPEED_LIMIT'        => array('4.0.2', ''),
                 'CURLOPT_LOW_SPEED_TIME'         => array('4.0.2', ''),
                 'CURLOPT_MAXCONNECTS'            => array('4.0.2', ''),
                 'CURLOPT_MAXREDIRS'              => array('4.0.2', ''),
+                'CURLOPT_MUTE'                   => array('4.0.2', ''),
                 'CURLOPT_NETRC'                  => array('4.0.2', ''),
                 'CURLOPT_NOBODY'                 => array('4.0.2', ''),
                 'CURLOPT_NOPROGRESS'             => array('4.0.2', ''),
                 'CURLOPT_NOSIGNAL'               => array('4.0.2', ''),
+                'CURLOPT_PASSWDFUNCTION'         => array('4.0.2', ''),
                 'CURLOPT_PORT'                   => array('4.0.2', ''),
                 'CURLOPT_POST'                   => array('4.0.2', ''),
                 'CURLOPT_POSTFIELDS'             => array('4.0.2', ''),
                 'CURLOPT_POSTQUOTE'              => array('4.0.2', ''),
-                'CURLOPT_POSTREDIR'              => array('4.0.2', ''),
                 'CURLOPT_PROTOCOLS'              => array('4.0.2', ''),
                 'CURLOPT_PROXY'                  => array('4.0.2', ''),
                 'CURLOPT_PROXYAUTH'              => array('4.0.2', ''),
@@ -410,11 +397,6 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLOPT_REFERER'                => array('4.0.2', ''),
                 'CURLOPT_RESUME_FROM'            => array('4.0.2', ''),
                 'CURLOPT_RETURNTRANSFER'         => array('4.0.2', ''),
-                'CURLOPT_SSH_AUTH_TYPES'         => array('4.0.2', ''),
-                'CURLOPT_SSH_HOST_PUBLIC_KEY_MD5'
-                                                 => array('4.0.2', ''),
-                'CURLOPT_SSH_PRIVATE_KEYFILE'    => array('4.0.2', ''),
-                'CURLOPT_SSH_PUBLIC_KEYFILE'     => array('4.0.2', ''),
                 'CURLOPT_SSLCERT'                => array('4.0.2', ''),
                 'CURLOPT_SSLCERTPASSWD'          => array('4.0.2', ''),
                 'CURLOPT_SSLCERTTYPE'            => array('4.0.2', ''),
@@ -460,13 +442,6 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLPROXY_SOCKS4'               => array('4.0.2', ''),
                 'CURLPROXY_SOCKS5'               => array('4.0.2', ''),
 
-                'CURLSSH_AUTH_DEFAULT'           => array('4.0.2', ''),
-                'CURLSSH_AUTH_HOST'              => array('4.0.2', ''),
-                'CURLSSH_AUTH_KEYBOARD'          => array('4.0.2', ''),
-                'CURLSSH_AUTH_NONE'              => array('4.0.2', ''),
-                'CURLSSH_AUTH_PASSWORD'          => array('4.0.2', ''),
-                'CURLSSH_AUTH_PUBLICKEY'         => array('4.0.2', ''),
-
                 'CURLVERSION_NOW'                => array('4.0.2', ''),
             );
             $constants = array_merge(
@@ -476,15 +451,37 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'CURL_IPRESOLVE_WHATEVER'        => array('5.3.0', ''),
+                'CURL_IPRESOLVE_V4'              => array('5.3.0', ''),
+                'CURL_IPRESOLVE_V6'              => array('5.3.0', ''),
+
+                'CURLE_SSH'                      => array('5.3.0', ''),
+
+                'CURLFTPMETHOD_MULTICWD'         => array('5.3.0', ''),
+                'CURLFTPMETHOD_NOCWD'            => array('5.3.0', ''),
+                'CURLFTPMETHOD_SINGLECWD'        => array('5.3.0', ''),
+
+                'CURLINFO_CERTINFO'              => array('5.3.2', ''),
                 'CURLINFO_HEADER_OUT'            => array('5.1.3', ''),
                 'CURLINFO_PRIVATE'               => array('5.2.4', ''),
 
                 'CURLOPT_AUTOREFERER'            => array('5.1.0', ''),
+                'CURLOPT_CERTINFO'               => array('5.3.2', ''),
                 'CURLOPT_COOKIESESSION'          => array('5.1.0', ''),
+                'CURLOPT_FTP_FILEMETHOD'         => array('5.3.0', ''),
+                'CURLOPT_FTP_SKIP_PASV_IP'       => array('5.3.2', ''),
                 'CURLOPT_FTP_SSL'                => array('5.2.0', ''),
                 'CURLOPT_FTPSSLAUTH'             => array('5.1.0', ''),
+                'CURLOPT_IPRESOLVE'              => array('5.3.0', ''),
+                'CURLOPT_KEYPASSWD'              => array('5.3.0', ''),
+                'CURLOPT_POSTREDIR'              => array('5.3.2', ''),
                 'CURLOPT_PRIVATE'                => array('5.2.4', ''),
                 'CURLOPT_PROGRESSFUNCTION'       => array('5.3.0', ''),
+                'CURLOPT_SSH_AUTH_TYPES'         => array('5.3.0', ''),
+                'CURLOPT_SSH_HOST_PUBLIC_KEY_MD5'
+                                                 => array('5.3.0', ''),
+                'CURLOPT_SSH_PRIVATE_KEYFILE'    => array('5.3.0', ''),
+                'CURLOPT_SSH_PUBLIC_KEYFILE'     => array('5.3.0', ''),
                 'CURLOPT_TCP_NODELAY'            => array('5.2.1', ''),
 
                 'CURLFTPAUTH_DEFAULT'            => array('5.1.0', ''),
@@ -494,6 +491,13 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLFTPSSL_ALL'                 => array('5.2.0', ''),
                 'CURLFTPSSL_CONTROL'             => array('5.2.0', ''),
                 'CURLFTPSSL_NONE'                => array('5.2.0', ''),
+
+                'CURLSSH_AUTH_DEFAULT'           => array('5.3.0', ''),
+                'CURLSSH_AUTH_HOST'              => array('5.3.0', ''),
+                'CURLSSH_AUTH_KEYBOARD'          => array('5.3.0', ''),
+                'CURLSSH_AUTH_NONE'              => array('5.3.0', ''),
+                'CURLSSH_AUTH_PASSWORD'          => array('5.3.0', ''),
+                'CURLSSH_AUTH_PUBLICKEY'         => array('5.3.0', ''),
             );
             $constants = array_merge(
                 $constants,
