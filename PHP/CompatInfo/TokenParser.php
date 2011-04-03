@@ -40,15 +40,23 @@ class PHP_CompatInfo_TokenParser
 
             if ($class) {
                 $classes = $subject->getClasses();
-                $classMethod = array_key_exists(
-                    $name, (array)$classes[$class]['methods']
-                );
+                if (isset($classes[$class]['methods'])) {
+                    $classMethod = array_key_exists(
+                        $name, $classes[$class]['methods']
+                    );
+                } else {
+                    $classMethod = false;
+                }
             }
             else if ($interface) {
                 $interfaces = $subject->getInterfaces();
-                $interfaceMethod = array_key_exists(
-                    $name, (array)$interfaces[$interface]['methods']
-                );
+                if (isset($interfaces[$interface]['methods'])) {
+                    $interfaceMethod = array_key_exists(
+                        $name, $interfaces[$interface]['methods']
+                    );
+                } else {
+                    $interfaceMethod = false;
+                }
             }
             if ($classMethod === FALSE && $interfaceMethod === FALSE) {
 
