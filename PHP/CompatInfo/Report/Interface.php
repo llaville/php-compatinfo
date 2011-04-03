@@ -49,10 +49,10 @@ class PHP_CompatInfo_Report_Interface extends PHP_CompatInfo_Report
                         if (!isset($interfaces[$extension][$key])) {
                             $interfaces[$extension][$key] = $values;
                         } else {
-                            $interfaces[$extension][$key]['uses']   
+                            $interfaces[$extension][$key]['uses']
                                 += $values['uses'];
                             $interfaces[$extension][$key]['sources'] = array_merge(
-                                $interfaces[$extension][$key]['sources'], 
+                                $interfaces[$extension][$key]['sources'],
                                 $values['sources']
                             );
                         }
@@ -155,6 +155,8 @@ class PHP_CompatInfo_Report_Interface extends PHP_CompatInfo_Report
      */
     private function printTBody($elements, $filename, $base)
     {
+        ksort($elements);
+
         foreach ($elements as $category => $items) {
             $interfaces = array_keys($items);
             $this->total = array_merge($this->total, $interfaces);

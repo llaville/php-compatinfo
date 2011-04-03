@@ -119,7 +119,10 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
             . 'EXTENSION         VERSION'  . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
 
-        foreach ($report[$this->_list] as $element => $data) {
+        $elements = $report[$this->_list];
+        ksort($elements);
+        
+        foreach ($elements as $element => $data) {
 
             if ('extensions' == $this->_list) {
                 $values    = $data;

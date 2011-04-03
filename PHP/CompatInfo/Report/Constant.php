@@ -49,10 +49,10 @@ class PHP_CompatInfo_Report_Constant extends PHP_CompatInfo_Report
                         if (!isset($constants[$extension][$key])) {
                             $constants[$extension][$key] = $values;
                         } else {
-                            $constants[$extension][$key]['uses']   
+                            $constants[$extension][$key]['uses']
                                 += $values['uses'];
                             $constants[$extension][$key]['sources'] = array_merge(
-                                $constants[$extension][$key]['sources'], 
+                                $constants[$extension][$key]['sources'],
                                 $values['sources']
                             );
                         }
@@ -153,6 +153,8 @@ class PHP_CompatInfo_Report_Constant extends PHP_CompatInfo_Report
      */
     private function printTBody($elements, $filename, $base)
     {
+        ksort($elements);
+
         foreach ($elements as $category => $items) {
             $constants = array_keys($items);
             $this->total = array_merge($this->total, $constants);
