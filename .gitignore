@@ -2,3 +2,4 @@
 pull.sh
 PHP/CompatInfo/Reference/extension_pattern.php
 runtests
+genext.php

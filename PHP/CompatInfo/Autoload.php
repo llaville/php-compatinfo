@@ -140,6 +140,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/pgsql.php',
             'PHP_CompatInfo_Reference_Phar'
                 => 'PHP/CompatInfo/Reference/phar.php',
+            'PHP_CompatInfo_Reference_Posix'
+                => 'PHP/CompatInfo/Reference/posix.php',
             'PHP_CompatInfo_Reference_Readline'
                 => 'PHP/CompatInfo/Reference/readline.php',
             'PHP_CompatInfo_Reference_Recode'
@@ -166,6 +168,14 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/ssh2.php',
             'PHP_CompatInfo_Reference_Standard'
                 => 'PHP/CompatInfo/Reference/standard.php',
+            'PHP_CompatInfo_Reference_Sysvmsg'
+                => 'PHP/CompatInfo/Reference/sysvmsg.php',
+            'PHP_CompatInfo_Reference_Sysvsem'
+                => 'PHP/CompatInfo/Reference/sysvsem.php',
+            'PHP_CompatInfo_Reference_Sysvshm'
+                => 'PHP/CompatInfo/Reference/sysvshm.php',
+            'PHP_CompatInfo_Reference_Tidy'
+                => 'PHP/CompatInfo/Reference/tidy.php',
             'PHP_CompatInfo_Reference_Tokenizer'
                 => 'PHP/CompatInfo/Reference/tokenizer.php',
             'PHP_CompatInfo_Reference_Wddx'
@@ -178,6 +188,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/xmlreader.php',
             'PHP_CompatInfo_Reference_Xmlwriter'
                 => 'PHP/CompatInfo/Reference/xmlwriter.php',
+            'PHP_CompatInfo_Reference_Xmlrpc'
+                => 'PHP/CompatInfo/Reference/xmlrpc.php',
             'PHP_CompatInfo_Reference_Xsl'
                 => 'PHP/CompatInfo/Reference/xsl.php',
             'PHP_CompatInfo_Reference_Zlib'

@@ -200,6 +200,7 @@ class PHP_CompatInfo_Reference_Json implements PHP_CompatInfo_Reference
                 'JSON_ERROR_SYNTAX'              => array('5.3.0', ''),
                 'JSON_ERROR_UTF8'                => array('5.3.1', ''),
                 'JSON_ERROR_STATE_MISMATCH'      => array('5.3.0', ''),
+                'JSON_NUMERIC_CHECK'             => array('5.3.3', ''),
             );
             $constants = array_merge(
                 $constants,
