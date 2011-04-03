@@ -97,6 +97,18 @@ class PHP_CompatInfo_TokenParser
                 $subject->offsetSet($container, $classes);
             }
         }
+        elseif ($type === 'namespace') {
+            $container = $subject->options['containers'][$type];
+
+            if (null != $container) {
+                $name = $token->getName();
+
+                // update namespaces
+                $namespaces = $subject->offsetGet($container);
+                $namespaces[$name]['uses'][] = $token->getLine();
+                $subject->offsetSet($container, $namespaces);
+            }
+        }
     }
 
     public static function parseTokenConstant()

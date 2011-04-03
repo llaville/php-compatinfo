@@ -24,6 +24,8 @@ require_once dirname(__FILE__) . '/CompatInfo/Autoload.php';
  *         Returns informations on parsing results about excludes
  * @method array getIncludes()   getIncludes(category = null, $pattern = null)
  *         Returns informations on parsing results about includes
+ * @method array getNamespaces() getNamespaces(category = null, $pattern = null)
+ *         Returns informations on parsing results about namespaces
  * @method array getInterfaces() getInterfaces(category = null, $pattern = null)
  *         Returns informations on parsing results about interfaces
  * @method array getClasses()    getClasses(category = null, $pattern = null)
@@ -76,6 +78,11 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      * @var array
      */
     protected $extensions;
+
+    /**
+     * @var array
+     */
+    protected $namespaces;
 
     /**
      * @var array
@@ -489,6 +496,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $this->includes   = $results['includes'];
             $this->versions   = $results['versions'];
             $this->extensions = $results['extensions'];
+            $this->namespaces = $results['namespaces'];
             $this->interfaces = $results['interfaces'];
             $this->classes    = $results['classes'];
             $this->functions  = $results['functions'];
@@ -501,6 +509,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $this->includes   = array();
             $this->versions   = array('4.0.0', '');
             $this->extensions = array();
+            $this->namespaces = array();
             $this->interfaces = array();
             $this->classes    = array();
             $this->functions  = array();
@@ -591,6 +600,13 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             }
 
             /**
+             * @link http://www.php.net/manual/en/language.namespaces.php
+             *       Namespaces
+             */
+            $namespaces = $reflect->getNamespaces();
+            $this->getInfo('namespaces', '5.3.0', $namespaces, $source);
+
+            /**
              * @link http://www.php.net/manual/en/language.oop5.interfaces.php
              *       Object Interfaces
              */
@@ -632,6 +648,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             'includes'   => $this->includes,
             'versions'   => $this->versions,
             'extensions' => $this->extensions,
+            'namespaces' => $this->namespaces,
             'interfaces' => $this->interfaces,
             'classes'    => $this->classes,
             'functions'  => $this->functions,
@@ -705,7 +722,8 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     public function __call($name, $args)
     {
         $pattern = '/get' .
-            '(?>(Excludes|Includes|Interfaces|Classes|Functions|Constants))/';
+            '(?>(Excludes|Includes' .
+            '|Namespaces|Interfaces|Classes|Functions|Constants))/';
         if (preg_match($pattern, $name, $matches)) {
             $group = strtolower($matches[1]);
 
@@ -901,6 +919,10 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      */
     protected function searchReference($category, $name)
     {
+        if ($category == 'namespaces') {
+            return 1; // unknown reference
+        }
+
         if (!isset($this->reference[$category])) {
             throw new PHP_CompatInfo_Exception(
                 "Invalid search category. Given '$category'",
@@ -943,6 +965,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         static $extensions;
 
         switch ($key) {
+        case 'namespaces':
         case 'interfaces':
         case 'classes':
         case 'constants':
@@ -965,7 +988,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         case 'excludes':
             $search = array(
                 'extensions',
-                'interfaces', 'classes', 'functions', 'constants'
+                'namespaces', 'interfaces', 'classes', 'functions', 'constants'
             );
             break;
         case 'conditions':

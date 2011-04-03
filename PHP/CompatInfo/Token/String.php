@@ -32,7 +32,11 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             return $this->name;
         }
 
-        if ($this->_isFunction()) {
+        if ($this->_isNamespace()) {
+            $this->type = 'namespace';
+            $this->name = $this->tokenStream[$this->id][1];
+        }
+        else if ($this->_isFunction()) {
             $this->type = 'function';
             $this->name = $this->tokenStream[$this->id][1];
         }
@@ -87,6 +91,11 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
 
     private function _isConstant()
     {
+        if ($this->_getContext(-2) == 'T_CONST') {
+            // class or namespace constant
+            return true;
+        }
+
         $constants = get_defined_constants();
         $name      = $this->tokenStream[$this->id][1];
 
@@ -158,6 +167,15 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
         // static class call
         if ($this->_getContext(1) == 'T_DOUBLE_COLON' ||
             $this->_getContext(2) == 'T_DOUBLE_COLON') {
+            return true;
+        }
+        return false;
+    }
+
+    private function _isNamespace()
+    {
+        if ($this->_getContext(-2) == 'T_NAMESPACE' ||
+            $this->_getContext(-1) == 'T_NS_SEPARATOR') {
             return true;
         }
         return false;
