@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2011-04-03</date>
- <time>17:35:53</time>
+ <time>18:04:41</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -42,6 +42,7 @@ PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-lavill
 Additions and changes:
 - add 8 new references data dictionnaries related to extensions:
   Mhash, Mcrypt, Phar, Readline, recode, snmp, Soap, sqlite3
+- detect now magic constants (__LINE__, __FILE__, __DIR__, __FUNCTION__, __CLASS__, __METHOD__, __NAMESPACE__)
 - printing multiple reports feature is available. Use either:
   * phpci --report summary --report function /path/to/source
   * or just simple  phpci --report summary function /path/to/source
@@ -420,6 +421,9 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="source3.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="source4.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="source1626.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -470,6 +474,9 @@ Bug fixes:
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
     <file baseinstalldir="Bartlett" name="IssueTest.php" role="test">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="MagicConstantTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
     <file baseinstalldir="Bartlett" name="PackageTest.php" role="test">
@@ -586,6 +593,7 @@ PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-lavill
 Additions and changes:
 - add 8 new references data dictionnaries related to extensions:
   Mhash, Mcrypt, Phar, Readline, recode, snmp, Soap, sqlite3
+- detect now magic constants (__LINE__, __FILE__, __DIR__, __FUNCTION__, __CLASS__, __METHOD__, __NAMESPACE__)
 - printing multiple reports feature is available. Use either:
   * phpci --report summary --report function /path/to/source
   * or just simple  phpci --report summary function /path/to/source
