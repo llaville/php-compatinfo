@@ -159,6 +159,7 @@ class PHP_CompatInfo_Reference_PDO implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'pdo_drivers'                       => array('5.1.0', ''),
             );
             $functions = array_merge(
                 $functions,
