@@ -1,6 +1,8 @@
 <?php
 /**
- * Additional parser connected to tokens T_STRING and T_CONSTANT_ENCAPSED_STRING
+ * Additional parser connected to tokens :
+ * T_STRING, T_CONSTANT_ENCAPSED_STRING,
+ * T_LINE, T_FILE, T_DIR, T_FUNC_C, T_CLASS_C, T_METHOD_C, T_NS_C
  *
  * @author     Laurent Laville pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
@@ -115,6 +117,22 @@ class PHP_CompatInfo_TokenParser
                 $constants[$name]['uses'][] = $token->getLine();
                 $subject->offsetSet($container, $constants);
             }
+        }
+    }
+
+    public static function parseTokenMagicConstant()
+    {
+        list($subject, $context, $token) = func_get_args();
+
+        $container = $subject->options['containers']['const'];
+
+        if (null != $container) {
+            $name = (string)$token;
+
+            // update constants
+            $constants = $subject->offsetGet($container);
+            $constants[$name]['uses'][] = $token->getLine();
+            $subject->offsetSet($container, $constants);
         }
     }
 
