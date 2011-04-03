@@ -53,7 +53,7 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
             ob_start();
         }
 
-        $this->generate($report, $base);
+        $this->generate($report, $base, $options['verbose']);
 
         if (count($warnings) > 0 && $options['verbose'] > 0) {
             echo 'Warning messages : (' . count($warnings) . ')' . PHP_EOL;

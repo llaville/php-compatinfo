@@ -16,7 +16,7 @@
  */
 
 require_once dirname(__FILE__) . '/CompatInfo/Autoload.php';
- 
+
 /**
  * Check compatibility of chunk of PHP code
  *
@@ -528,16 +528,57 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             );
             $reflect = new PHP_Reflect($options);
 
+            // internal functions
             $reflect->connect(
                 'T_STRING',
                 'PHP_CompatInfo_Token_STRING',
                 array('PHP_CompatInfo_TokenParser', 'parseTokenString')
             );
+
+            // constants
             $reflect->connect(
                 'T_CONSTANT_ENCAPSED_STRING',
                 'PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING',
                 array('PHP_CompatInfo_TokenParser', 'parseTokenConstant')
             );
+
+            // magic constants
+            $reflect->connect(
+                'T_LINE',
+                'PHP_Reflect_Token_LINE',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
+            );
+            $reflect->connect(
+                'T_FILE',
+                'PHP_Reflect_Token_FILE',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
+            );
+            $reflect->connect(
+                'T_DIR',
+                'PHP_Reflect_Token_DIR',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
+            );
+            $reflect->connect(
+                'T_FUNC_C',
+                'PHP_Reflect_Token_FUNC_C',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
+            );
+            $reflect->connect(
+                'T_CLASS_C',
+                'PHP_Reflect_Token_CLASS_C',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
+            );
+            $reflect->connect(
+                'T_METHOD_C',
+                'PHP_Reflect_Token_METHOD_C',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
+            );
+            $reflect->connect(
+                'T_NS_C',
+                'PHP_Reflect_Token_NS_C',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
+            );
+
             $reflect->scan($source);
 
             /**
