@@ -186,9 +186,11 @@ class PHP_CompatInfo_Reference_Openssl implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'openssl_cipher_iv_length'       => array('5.3.3', ''),
                 'openssl_csr_get_public_key'     => array('5.2.0', ''),
                 'openssl_csr_get_subject'        => array('5.2.0', ''),
                 'openssl_decrypt'                => array('5.3.0', ''),
+                'openssl_dh_compute_key'         => array('5.3.0', ''),
                 'openssl_digest'                 => array('5.3.0', ''),
                 'openssl_encrypt'                => array('5.3.0', ''),
                 'openssl_get_cipher_methods'     => array('5.3.0', ''),
