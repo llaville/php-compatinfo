@@ -24,9 +24,6 @@ class PHP_CompatInfo_Reference_PcreTest extends PHP_CompatInfo_Reference_Generic
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
-            'OPENSSL_ALGO_MD2',
-        );
         $this->obj = new PHP_CompatInfo_Reference_Pcre();
         parent::setUp();
     }
