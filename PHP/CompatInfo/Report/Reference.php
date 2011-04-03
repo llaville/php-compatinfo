@@ -66,22 +66,12 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
 
         $report = $reference->getAll($extension, $version);
 
-        if ('all' == $source) {
-            $lists = array(
-                'extensions', 'interfaces', 'classes', 'functions', 'constants'
-            );
-        } else {
-            $lists = array($source);
-        }
-
         if (isset($options['reportFile'])) {
             ob_start();
         }
 
-        foreach ($lists as $list) {
-            $this->_list = $list;
-            $this->generate($report, false, $options['verbose']);
-        }
+        $this->_list = $source;
+        $this->generate($report, false, $options['verbose']);
 
         if (is_array($warnings)) {
             $warnings = array_merge($warnings, $reference->getWarnings());
@@ -129,7 +119,10 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
             . 'EXTENSION         VERSION'  . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
 
-        foreach ($report[$this->_list] as $element => $data) {
+        $elements = $report[$this->_list];
+        ksort($elements);
+        
+        foreach ($elements as $element => $data) {
 
             if ('extensions' == $this->_list) {
                 $values    = $data;

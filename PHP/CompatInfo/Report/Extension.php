@@ -50,7 +50,7 @@ class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
                     } else {
                         $extensions[$key]['uses'] += $values['uses'];
                         $extensions[$key]['sources'] = array_merge(
-                            $extensions[$key]['sources'], 
+                            $extensions[$key]['sources'],
                             $values['sources']
                         );
                     }
@@ -155,6 +155,8 @@ class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
      */
     private function printTBody($elements, $filename, $base)
     {
+        ksort($elements);
+
         foreach ($elements as $extension => $items) {
             if ($items['excluded']) {
                 echo 'E';

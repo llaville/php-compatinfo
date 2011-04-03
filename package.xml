@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2011-04-02</date>
- <time>15:09:20</time>
+ <date>2011-04-03</date>
+ <time>17:35:53</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -496,7 +496,7 @@ Bug fixes:
     <min>5.2.0</min>
    </php>
    <pearinstaller>
-    <min>1.9.2</min>
+    <min>1.9.0</min>
    </pearinstaller>
    <package>
     <name>Base</name>
@@ -576,7 +576,7 @@ Bug fixes:
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2011-04-02</date>
+   <date>2011-04-03</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Version 2 is a PHP5 rewrites

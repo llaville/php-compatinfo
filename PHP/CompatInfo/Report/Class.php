@@ -49,10 +49,10 @@ class PHP_CompatInfo_Report_Class extends PHP_CompatInfo_Report
                         if (!isset($classes[$extension][$key])) {
                             $classes[$extension][$key] = $values;
                         } else {
-                            $classes[$extension][$key]['uses']   
+                            $classes[$extension][$key]['uses']
                                 += $values['uses'];
                             $classes[$extension][$key]['sources'] = array_merge(
-                                $classes[$extension][$key]['sources'], 
+                                $classes[$extension][$key]['sources'],
                                 $values['sources']
                             );
                         }
@@ -154,6 +154,8 @@ class PHP_CompatInfo_Report_Class extends PHP_CompatInfo_Report
      */
     private function printTBody($elements, $filename, $base)
     {
+        ksort($elements);
+
         foreach ($elements as $category => $items) {
             $classes = array_keys($items);
             $this->total = array_merge($this->total, $classes);
