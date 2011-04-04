@@ -58,6 +58,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Report/Summary.php',
             'PHP_CompatInfo_Report_Extension'
                 => 'PHP/CompatInfo/Report/Extension.php',
+            'PHP_CompatInfo_Report_Namespace'
+                => 'PHP/CompatInfo/Report/Namespace.php',
             'PHP_CompatInfo_Report_Interface'
                 => 'PHP/CompatInfo/Report/Interface.php',
             'PHP_CompatInfo_Report_Class'
