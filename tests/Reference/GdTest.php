@@ -28,6 +28,18 @@ class PHP_CompatInfo_Reference_GdTest extends PHP_CompatInfo_Reference_GenericTe
             // Win32 only
             'imagegrabscreen',
             'imagegrabwindow',
+            // requires HAVE_COLORCLOSESTHWB
+            'imagecolorclosesthwb',
+            // requires HAVE_LIBT1
+            'imagepsbbox',
+            'imagepsencodefont',
+            'imagepsextendfont',
+            'imagepsfreefont',
+            'imagepsloadfont',
+            'imagepsslantfont',
+            'imagepstext',
+            // requires HAVE_GD_XPM (linux only)
+            'imagecreatefromgd',
         );
         $this->obj = new PHP_CompatInfo_Reference_Gd();
         parent::setUp();
