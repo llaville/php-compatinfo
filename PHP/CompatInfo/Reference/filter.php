@@ -228,7 +228,7 @@ class PHP_CompatInfo_Reference_Filter implements PHP_CompatInfo_Reference
                 'FILTER_FLAG_ALLOW_HEX'          => array('5.2.0', ''),
                 'FILTER_FLAG_STRIP_LOW'          => array('5.2.0', ''),
                 'FILTER_FLAG_STRIP_HIGH'         => array('5.2.0', ''),
-                'FILTER_FLAG_STRIP_BACKTICK'     => array('5.2.0', ''),
+                'FILTER_FLAG_STRIP_BACKTICK'     => array('5.3.2', ''),
                 'FILTER_FLAG_ENCODE_LOW'         => array('5.2.0', ''),
                 'FILTER_FLAG_ENCODE_HIGH'        => array('5.2.0', ''),
                 'FILTER_FLAG_ENCODE_AMP'         => array('5.2.0', ''),
