@@ -39,7 +39,7 @@ class PHP_CompatInfo_Reference_GdTest extends PHP_CompatInfo_Reference_GenericTe
             'imagepsslantfont',
             'imagepstext',
             // requires HAVE_GD_XPM (linux only)
-            'imagecreatefromgd',
+            'imagecreatefromxpm',
         );
         $this->obj = new PHP_CompatInfo_Reference_Gd();
         parent::setUp();
