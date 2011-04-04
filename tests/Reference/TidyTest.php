@@ -25,7 +25,10 @@ class PHP_CompatInfo_Reference_TidyTest extends PHP_CompatInfo_Reference_Generic
      */
     protected function setUp()
     {
-
+        $this->optionnalfunctions = array(
+            // Requires HAVE_TIDYOPTGETDOC
+            'tidy_get_opt_doc',
+        );
         $this->obj = new PHP_CompatInfo_Reference_Tidy();
         parent::setUp();
     }
