@@ -24,7 +24,10 @@ class PHP_CompatInfo_Reference_FtpTest extends PHP_CompatInfo_Reference_GenericT
      */
     protected function setUp()
     {
-
+        $this->optionnalfunctions = array(
+            // This requires HAVE_OPENSSL_EXT
+            'ftp_ssl_connect',
+        );
         $this->obj = new PHP_CompatInfo_Reference_Ftp();
         parent::setUp();
     }
