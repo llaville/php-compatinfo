@@ -59,7 +59,7 @@ class PHP_CompatInfo_Reference_Libxml implements PHP_CompatInfo_Reference
     public function getExtensions($extension = null, $version = null)
     {
         $extensions = array(
-            'libxml' => array('5.1.0', '', '')
+            'libxml' => array('5.0.0', '', '')
         );
         return $extensions;
     }
@@ -154,7 +154,7 @@ class PHP_CompatInfo_Reference_Libxml implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
-                'libxml_set_streams_context'     => array('5.1.0', ''),
+                'libxml_set_streams_context'     => array('5.0.0', ''),
                 'libxml_use_internal_errors'     => array('5.1.0', ''),
                 'libxml_get_last_error'          => array('5.1.0', ''),
                 'libxml_clear_errors'            => array('5.1.0', ''),
@@ -195,7 +195,7 @@ class PHP_CompatInfo_Reference_Libxml implements PHP_CompatInfo_Reference
             $version5 = array(
                 'LIBXML_VERSION'                 => array('5.1.0', ''),
                 'LIBXML_DOTTED_VERSION'          => array('5.1.0', ''),
-                'LIBXML_LOADED_VERSION'          => array('5.1.0', ''),
+                'LIBXML_LOADED_VERSION'          => array('5.3.0', ''),
                 'LIBXML_NOENT'                   => array('5.1.0', ''),
                 'LIBXML_DTDLOAD'                 => array('5.1.0', ''),
                 'LIBXML_DTDATTR'                 => array('5.1.0', ''),
@@ -209,7 +209,8 @@ class PHP_CompatInfo_Reference_Libxml implements PHP_CompatInfo_Reference
                 'LIBXML_NONET'                   => array('5.1.0', ''),
                 'LIBXML_COMPACT'                 => array('5.1.0', ''),
                 'LIBXML_NOXMLDECL'               => array('5.1.0', ''),
-                'LIBXML_PARSEHUGE'               => array('5.1.0', ''),
+                // since 5.2.12 and 5.3.2
+                'LIBXML_PARSEHUGE'               => array('5.2.12', ''),
                 'LIBXML_NOEMPTYTAG'              => array('5.1.0', ''),
                 'LIBXML_ERR_NONE'                => array('5.1.0', ''),
                 'LIBXML_ERR_WARNING'             => array('5.1.0', ''),

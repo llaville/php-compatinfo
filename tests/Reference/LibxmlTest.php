@@ -25,6 +25,10 @@ class PHP_CompatInfo_Reference_LibxmlTest extends PHP_CompatInfo_Reference_Gener
      */
     protected function setUp()
     {
+        $this->optionnalconstants = array(
+            // requires LIBXML_VERSION >= 20703
+            'LIBXML_PARSEHUGE',
+        );
         $this->obj = new PHP_CompatInfo_Reference_Libxml();
         parent::setUp();
     }
