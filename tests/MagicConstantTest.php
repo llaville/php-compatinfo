@@ -40,14 +40,14 @@ class PHP_CompatInfo_MagicConstantTest extends PHPUnit_Framework_TestCase
      */
     public function testGetConstants()
     {
-        $constants = $this->pci->getConstants();  error_log(print_r($constants, true));
+        $constants = $this->pci->getConstants();
 
         $this->assertArrayHasKey(
             'Core', $constants
         );
 
         if (version_compare(PHP_VERSION, '5.3.0', '<')) {
-        
+
             $expected = array(
                 '__FILE__' => array(
                     'versions' => array('4.0.0', ''),
@@ -80,9 +80,9 @@ class PHP_CompatInfo_MagicConstantTest extends PHPUnit_Framework_TestCase
                     'excluded' => false,
                 ),
             );
-            
+
         } else {
-        
+
             $expected = array(
                 '__NAMESPACE__' => array(
                     'versions' => array('5.3.0', ''),
@@ -128,7 +128,7 @@ class PHP_CompatInfo_MagicConstantTest extends PHPUnit_Framework_TestCase
                 ),
             );
         }
-        
+
         $this->assertSame(
             $expected, $constants['Core']
         );
