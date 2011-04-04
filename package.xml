@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2011-04-03</date>
- <time>21:39:55</time>
+ <date>2011-04-04</date>
+ <time>22:17:49</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -49,6 +49,7 @@ Additions and changes:
   * or just simple  phpci --report summary function /path/to/source
   * with XML config file, adds a comma separate valid report types in &apos;report&apos; property of tag &lt;phpcompatinfo&gt;
 - add summary reports (new default behavior) on each category (extension, interface, class, function, constant)  
+- add namespace report
 - reduced amount of memory used by PHP_Reflect to return only necessary properties
   
 Bug fixes:
@@ -308,6 +309,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="Interface.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="Namespace.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="Reference.php" role="php">
@@ -686,7 +690,7 @@ Bug fixes:
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2011-04-03</date>
+   <date>2011-04-04</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Version 2 is a PHP5 rewrites
@@ -703,6 +707,7 @@ Additions and changes:
   * or just simple  phpci --report summary function /path/to/source
   * with XML config file, adds a comma separate valid report types in &apos;report&apos; property of tag &lt;phpcompatinfo&gt;
 - add summary reports (new default behavior) on each category (extension, interface, class, function, constant)  
+- add namespace report
 - reduced amount of memory used by PHP_Reflect to return only necessary properties
   
 Bug fixes:
