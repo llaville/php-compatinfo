@@ -78,6 +78,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Listener/Growl.php',
 
             // PHP extensions references
+            'PHP_CompatInfo_Reference_Apc'
+                => 'PHP/CompatInfo/Reference/apc.php',
             'PHP_CompatInfo_Reference_Bcmath'
                 => 'PHP/CompatInfo/Reference/bcmath.php',
             'PHP_CompatInfo_Reference_Bz2'
