@@ -47,7 +47,7 @@ class PHP_CompatInfo_TokenParser
             $interfaceMethod = FALSE;
 
             if ($class) {
-                $classes = $subject->getClasses();
+                $classes = $subject->getClasses($ns);
                 if (isset($classes[$class]['methods'])) {
                     $classMethod = array_key_exists(
                         $name, $classes[$class]['methods']
@@ -57,7 +57,7 @@ class PHP_CompatInfo_TokenParser
                 }
             }
             else if ($interface) {
-                $interfaces = $subject->getInterfaces();
+                $interfaces = $subject->getInterfaces($ns);
                 if (isset($interfaces[$interface]['methods'])) {
                     $interfaceMethod = array_key_exists(
                         $name, $interfaces[$interface]['methods']
