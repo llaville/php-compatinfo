@@ -36,7 +36,7 @@ class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getIncludes
+     * covers PHP_CompatInfo::getIncludes
      */
     public function testGetIncludesFullReport()
     {
@@ -63,7 +63,7 @@ class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getIncludes
+     * covers PHP_CompatInfo::getIncludes
      */
     public function testGetIncludesFilterByCategory()
     {
@@ -79,7 +79,7 @@ class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getIncludes
+     * covers PHP_CompatInfo::getIncludes
      */
     public function testGetIncludesFilterByCategoryAndPattern()
     {

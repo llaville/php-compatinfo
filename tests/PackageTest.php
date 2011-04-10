@@ -38,9 +38,9 @@ class PHP_CompatInfo_PackageTest extends PHPUnit_Framework_TestCase
      * Parse source file of PEAR_PackageUpdate 0.5.0
      *
      * @covers PHP_CompatInfo::parse
-     * @covers PHP_CompatInfo::getClasses
-     * @covers PHP_CompatInfo::getFunctions
-     * @covers PHP_CompatInfo::getConstants
+     * covers PHP_CompatInfo::getClasses
+     * covers PHP_CompatInfo::getFunctions
+     * covers PHP_CompatInfo::getConstants
      */
     public function testParseSource7813()
     {

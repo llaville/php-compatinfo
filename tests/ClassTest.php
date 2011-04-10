@@ -64,7 +64,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getClasses
+     * covers PHP_CompatInfo::getClasses
      */
     public function testGetClassesFullReport()
     {
@@ -93,7 +93,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getClasses
+     * covers PHP_CompatInfo::getClasses
      */
     public function testGetClassesFilterByCategory()
     {
@@ -106,7 +106,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getClasses
+     * covers PHP_CompatInfo::getClasses
      */
     public function testGetClassesFilterByCategoryAndPattern()
     {

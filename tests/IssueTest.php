@@ -213,7 +213,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/bug.php?id=16302
      *       Exception class is detected as 4.0.0 code
      * @covers PHP_CompatInfo::parse
-     * @covers PHP_CompatInfo::getClasses
+     * covers PHP_CompatInfo::getClasses
      */
     public function testBug16302()
     {

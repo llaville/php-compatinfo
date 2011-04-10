@@ -36,7 +36,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getConstants
+     * covers PHP_CompatInfo::getConstants
      */
     public function testGetConstantsFullReport()
     {
@@ -81,7 +81,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getConstants
+     * covers PHP_CompatInfo::getConstants
      */
     public function testGetConstantsFilterByCategory()
     {
@@ -102,7 +102,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getConstants
+     * covers PHP_CompatInfo::getConstants
      */
     public function testGetConstantsFilterByCategoryAndPattern()
     {

@@ -36,7 +36,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getFunctions
+     * covers PHP_CompatInfo::getFunctions
      */
     public function testGetFunctionsFullReport()
     {
@@ -147,7 +147,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getFunctions
+     * covers PHP_CompatInfo::getFunctions
      */
     public function testGetFunctionsFilterByCategory()
     {
@@ -168,7 +168,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getFunctions
+     * covers PHP_CompatInfo::getFunctions
      */
     public function testGetFunctionsFilterByCategoryAndPattern()
     {

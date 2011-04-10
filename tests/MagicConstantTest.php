@@ -36,7 +36,7 @@ class PHP_CompatInfo_MagicConstantTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getConstants
+     * covers PHP_CompatInfo::getConstants
      */
     public function testGetConstants()
     {

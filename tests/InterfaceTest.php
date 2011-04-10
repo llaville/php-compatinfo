@@ -36,7 +36,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getInterfaces
+     * covers PHP_CompatInfo::getInterfaces
      */
     public function testGetInterfacesFullReport()
     {
@@ -71,7 +71,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getInterfaces
+     * covers PHP_CompatInfo::getInterfaces
      */
     public function testGetInterfacesFilterByCategory()
     {
@@ -84,7 +84,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers PHP_CompatInfo::getInterfaces
+     * covers PHP_CompatInfo::getInterfaces
      */
     public function testGetInterfacesFilterByCategoryAndPattern()
     {
