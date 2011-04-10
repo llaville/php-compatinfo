@@ -591,6 +591,22 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $reflect->scan($source);
 
             /**
+             * @link http://www.php.net/manual/en/language.namespaces.php
+             *       Namespaces
+             */
+            $namespaces = $reflect->getNamespaces();
+            if ($namespaces === null) {
+                // adds (at least) global namespace
+                $ns             = '\\';
+                $namespaces     = array($ns => array());
+                $defaultVersion = '4.0.0';
+            } else {
+                $ns             = true;
+                $defaultVersion = '5.3.0';
+            }
+            $this->getInfo('namespaces', $defaultVersion, $namespaces, $source, $ns);
+
+            /**
              * @link http://www.php.net/manual/en/language.control-structures.php
              *       Control Structures
              */
@@ -599,48 +615,43 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 $this->includes[$key] = array_keys($values);
             }
 
-            /**
-             * @link http://www.php.net/manual/en/language.namespaces.php
-             *       Namespaces
-             */
-            $namespaces = $reflect->getNamespaces();
-            $this->getInfo('namespaces', '5.3.0', $namespaces, $source);
+            foreach (array_keys($namespaces) as $ns) {
+                /**
+                 * @link http://www.php.net/manual/en/language.oop5.interfaces.php
+                 *       Object Interfaces
+                 */
+                $interfaces = $reflect->getInterfaces($ns);
+                $this->getInfo('interfaces', '5.0.0', $interfaces, $source, $ns);
 
-            /**
-             * @link http://www.php.net/manual/en/language.oop5.interfaces.php
-             *       Object Interfaces
-             */
-            $interfaces = $reflect->getInterfaces();
-            $this->getInfo('interfaces', '5.0.0', $interfaces, $source);
+                /**
+                 * @link http://www.php.net/manual/en/language.oop5.php
+                 *       Classes and Objects
+                 */
+                $classes = $reflect->getClasses($ns);
+                $this->getInfo('classes', '4.0.0', $classes, $source, $ns);
 
-            /**
-             * @link http://www.php.net/manual/en/language.oop5.php
-             *       Classes and Objects
-             */
-            $classes = $reflect->getClasses();
-            $this->getInfo('classes', '4.0.0', $classes, $source);
+                /**
+                 * @link http://www.php.net/manual/en/language.constants.php
+                 *       Constants
+                 */
+                $constants = $reflect->getConstants($ns);
+                $this->getInfo('constants', '4.0.0', $constants, $source, $ns);
 
-            /**
-             * @link http://www.php.net/manual/en/language.constants.php
-             *       Constants
-             */
-            $constants = $reflect->getConstants();
-            $this->getInfo('constants', '4.0.0', $constants, $source);
+                /**
+                 * @link http://www.php.net/manual/en/functions.user-defined.php
+                 *       User-defined functions
+                 * @link http://www.php.net/manual/en/functions.internal.php
+                 *       Internal (built-in) functions
+                 */
+                $userFunctions = (array)$reflect->getFunctions($ns);
+                $coreFunctions = (array)$reflect->getInternalFunctions($ns);
 
-            /**
-             * @link http://www.php.net/manual/en/functions.user-defined.php
-             *       User-defined functions
-             * @link http://www.php.net/manual/en/functions.internal.php
-             *       Internal (built-in) functions
-             */
-            $userFunctions = (array)$reflect->getFunctions();
-            $coreFunctions = (array)$reflect->getInternalFunctions();
-
-            $functions = array_merge_recursive(
-                $userFunctions,
-                $coreFunctions
-            );
-            $this->getInfo('functions', '4.0.0', $functions, $source);
+                $functions = array_merge_recursive(
+                    $userFunctions,
+                    $coreFunctions
+                );
+                $this->getInfo('functions', '4.0.0', $functions, $source, $ns);
+            }
         }
 
         $this->results[$source] = array(
@@ -1034,14 +1045,23 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      *
      * @return void
      */
-    protected function getInfo($category, $defaultVersion, $haystack, $source)
+    protected function getInfo($category, $defaultVersion, $haystack, $source, $ns)
     {
         if (!is_array($haystack)) {
             return;
         }
 
         foreach ($haystack as $key => $data) {
-            $ref = $this->searchReference($category, $key);
+
+            if ($ns == '\\') {
+                // global namespace
+                $ref = $this->searchReference($category, $key);
+            } else {
+                // user namespace
+                $ref            = 1;
+                $defaultVersion = '5.3.0';
+            }
+
             if ($ref === 1) {
                 // user component
                 $ref = array('user' => array(
@@ -1087,7 +1107,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 if (isset($data['parent']) && !empty($data['parent'])) {
                     $this->getInfo(
                         $category, '4.0.0',
-                        array($data['parent'] => ''), $source
+                        array($data['parent'] => ''), $source, $ns
                     );
                 }
 
@@ -1095,7 +1115,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                     // when a user class implements interfaces, identify them
                     $this->getInfo(
                         'interfaces', '5.0.0',
-                        array_flip($data['interfaces']), $source
+                        array_flip($data['interfaces']), $source, $ns
                     );
                 }
             }

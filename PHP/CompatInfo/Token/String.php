@@ -7,7 +7,7 @@
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version  SVN: $Id$
+ * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
@@ -34,7 +34,17 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
 
         if ($this->_isNamespace()) {
             $this->type = 'namespace';
-            $this->name = $this->tokenStream[$this->id][1];
+            $namespace  = $this->tokenStream[$this->id+2][1];
+
+            for ($i = $this->id + 3; ; $i += 2) {
+                if (isset($this->tokenStream[$i]) &&
+                    $this->tokenStream[$i][0] == 'T_NS_SEPARATOR') {
+                    $namespace .= '\\' . $this->tokenStream[$i+1][1];
+                } else {
+                    break;
+                }
+            }
+            $this->name = $namespace;
         }
         else if ($this->_isFunction()) {
             $this->type = 'function';

@@ -17,6 +17,13 @@ class PHP_CompatInfo_TokenParser
         list($subject, $context, $token) = func_get_args();
         extract($context);
 
+        if ($namespace === FALSE) {
+            // global namespace
+            $ns = '\\';
+        } else {
+            $ns = $namespace;
+        }
+
         $type = $token->getType();
 
         if ($type === 'constant') {
@@ -26,11 +33,10 @@ class PHP_CompatInfo_TokenParser
                 $name = $token->getName();
 
                 // update constants
-                $constants = $subject->offsetGet($container);
+                $constants = $subject->offsetGet(array($container => $ns));
                 $constants[$name]['uses'][] = $token->getLine();
-                $subject->offsetSet($container, $constants);
+                $subject->offsetSet(array($container => $ns), $constants);
             }
-
         }
         elseif ($type === 'function') {
             $container = $subject->options['containers']['core'];
@@ -66,12 +72,11 @@ class PHP_CompatInfo_TokenParser
                     $name = $token->getName();
 
                     // update internal functions
-                    $functions = $subject->offsetGet($container);
+                    $functions = $subject->offsetGet(array($container => $ns));
                     $functions[$name]['uses'][] = $token->getLine();
-                    $subject->offsetSet($container, $functions);
+                    $subject->offsetSet(array($container => $ns), $functions);
                 }
             }
-
         }
         elseif ($type === 'interface') {
             $container = $subject->options['containers'][$type];
@@ -80,9 +85,10 @@ class PHP_CompatInfo_TokenParser
                 $name = $token->getName();
 
                 // update interfaces
-                $interfaces = $subject->offsetGet($container);
+                $interfaces = $subject->offsetGet(array($container => $ns));
                 $interfaces[$name]['uses'][] = $token->getLine();
-                $subject->offsetSet($container, $interfaces);
+                $subject->offsetSet(array($container => $ns), $interfaces);
+
             }
         }
         elseif ($type === 'class') {
@@ -92,21 +98,9 @@ class PHP_CompatInfo_TokenParser
                 $name = $token->getName();
 
                 // update classes
-                $classes = $subject->offsetGet($container);
+                $classes = $subject->offsetGet(array($container => $ns));
                 $classes[$name]['uses'][] = $token->getLine();
-                $subject->offsetSet($container, $classes);
-            }
-        }
-        elseif ($type === 'namespace') {
-            $container = $subject->options['containers'][$type];
-
-            if (null != $container) {
-                $name = $token->getName();
-
-                // update namespaces
-                $namespaces = $subject->offsetGet($container);
-                $namespaces[$name]['uses'][] = $token->getLine();
-                $subject->offsetSet($container, $namespaces);
+                $subject->offsetSet(array($container => $ns), $classes);
             }
         }
     }
@@ -115,6 +109,13 @@ class PHP_CompatInfo_TokenParser
     {
         list($subject, $context, $token) = func_get_args();
         extract($context);
+
+        if ($namespace === FALSE) {
+            // global namespace
+            $ns = '\\';
+        } else {
+            $ns = $namespace;
+        }
 
         $type = $token->getType();
 
@@ -125,9 +126,9 @@ class PHP_CompatInfo_TokenParser
                 $name = $token->getName();
 
                 // update constants
-                $constants = $subject->offsetGet($container);
+                $constants = $subject->offsetGet(array($container => $ns));
                 $constants[$name]['uses'][] = $token->getLine();
-                $subject->offsetSet($container, $constants);
+                $subject->offsetSet(array($container => $ns), $constants);
             }
         }
     }
@@ -135,6 +136,14 @@ class PHP_CompatInfo_TokenParser
     public static function parseTokenMagicConstant()
     {
         list($subject, $context, $token) = func_get_args();
+        extract($context);
+
+        if ($namespace === FALSE) {
+            // global namespace
+            $ns = '\\';
+        } else {
+            $ns = $namespace;
+        }
 
         $container = $subject->options['containers']['const'];
 
@@ -142,9 +151,9 @@ class PHP_CompatInfo_TokenParser
             $name = (string)$token;
 
             // update constants
-            $constants = $subject->offsetGet($container);
+            $constants = $subject->offsetGet(array($container => $ns));
             $constants[$name]['uses'][] = $token->getLine();
-            $subject->offsetSet($container, $constants);
+            $subject->offsetSet(array($container => $ns), $constants);
         }
     }
 
