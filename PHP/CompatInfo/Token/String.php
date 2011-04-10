@@ -58,6 +58,10 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             $this->type = 'class';
             $this->name = $this->tokenStream[$this->id][1];
         }
+        else if ($this->_isConst()) {
+            $this->type = 'const';
+            $this->name = strtoupper($this->tokenStream[$this->id][1]);
+        }
         else if ($this->_isConstant()) {
             $this->type = 'constant';
             $this->name = strtoupper($this->tokenStream[$this->id][1]);
@@ -99,13 +103,17 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
         return false;
     }
 
-    private function _isConstant()
+    private function _isConst()
     {
         if ($this->_getContext(-2) == 'T_CONST') {
             // class or namespace constant
             return true;
         }
+        return false;
+    }
 
+    private function _isConstant()
+    {
         $constants = get_defined_constants();
         $name      = $this->tokenStream[$this->id][1];
 
