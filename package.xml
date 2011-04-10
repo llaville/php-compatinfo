@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2011-04-04</date>
- <time>22:17:49</time>
+ <date>2011-04-10</date>
+ <time>11:05:50</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -40,8 +40,8 @@ Version 2 is a PHP5 rewrites
 PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-laville.org
 
 Additions and changes:
-- add 14 new references data dictionnaries related to extensions:
-  Mhash, Mcrypt, Phar, posix, Readline, recode, snmp, Soap, sqlite3, 
+- add 15 new references data dictionnaries related to extensions:
+  APC, Mhash, Mcrypt, Phar, posix, Readline, recode, snmp, Soap, sqlite3, 
   sysvmsg, sysvsem, sysvshm, tidy, xmlrpc
 - detect now magic constants (__LINE__, __FILE__, __DIR__, __FUNCTION__, __CLASS__, __METHOD__, __NAMESPACE__)
 - printing multiple reports feature is available. Use either:
@@ -99,6 +99,9 @@ Bug fixes:
       </file>
      </dir> <!-- /PHP/CompatInfo/Listener -->
      <dir name="Reference">
+      <file baseinstalldir="Bartlett" name="apc.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="bcmath.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -380,6 +383,9 @@ Bug fixes:
    </dir> <!-- /scripts -->
    <dir name="tests">
     <dir name="Reference">
+     <file baseinstalldir="Bartlett" name="ApcTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="BcmathTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -630,7 +636,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>0.5.0</min>
+    <min>0.6.0</min>
    </package>
    <package>
     <name>PHP_Timer</name>
@@ -690,7 +696,7 @@ Bug fixes:
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2011-04-04</date>
+   <date>2011-04-10</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Version 2 is a PHP5 rewrites
@@ -698,8 +704,8 @@ Version 2 is a PHP5 rewrites
 PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-laville.org
 
 Additions and changes:
-- add 14 new references data dictionnaries related to extensions:
-  Mhash, Mcrypt, Phar, posix, Readline, recode, snmp, Soap, sqlite3, 
+- add 15 new references data dictionnaries related to extensions:
+  APC, Mhash, Mcrypt, Phar, posix, Readline, recode, snmp, Soap, sqlite3, 
   sysvmsg, sysvsem, sysvshm, tidy, xmlrpc
 - detect now magic constants (__LINE__, __FILE__, __DIR__, __FUNCTION__, __CLASS__, __METHOD__, __NAMESPACE__)
 - printing multiple reports feature is available. Use either:
