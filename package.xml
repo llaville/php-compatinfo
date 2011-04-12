@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2011-04-10</date>
- <time>11:05:50</time>
+ <date>2011-04-12</date>
+ <time>23:04:20</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -41,17 +41,18 @@ PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-lavill
 
 Additions and changes:
 - add 15 new references data dictionnaries related to extensions:
-  APC, Mhash, Mcrypt, Phar, posix, Readline, recode, snmp, Soap, sqlite3, 
+  APC, Mhash, Mcrypt, Phar, posix, Readline, recode, snmp, Soap, sqlite3,
   sysvmsg, sysvsem, sysvshm, tidy, xmlrpc
 - detect now magic constants (__LINE__, __FILE__, __DIR__, __FUNCTION__, __CLASS__, __METHOD__, __NAMESPACE__)
 - printing multiple reports feature is available. Use either:
   * phpci --report summary --report function /path/to/source
   * or just simple  phpci --report summary function /path/to/source
   * with XML config file, adds a comma separate valid report types in &apos;report&apos; property of tag &lt;phpcompatinfo&gt;
-- add summary reports (new default behavior) on each category (extension, interface, class, function, constant)  
+- add summary reports (new default behavior) on each category (extension, interface, class, function, constant)
 - add namespace report
+- add token report (language features as goto, use, try /catch, throw, instanceof, clone, ...)
 - reduced amount of memory used by PHP_Reflect to return only necessary properties
-  
+
 Bug fixes:
 - list-references command did not displayed extensions with mixed cases like (PDO, SQLite, SimpleXML)
  </notes>
@@ -324,6 +325,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="Summary.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="Token.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="Xml.php" role="php">
@@ -696,7 +700,7 @@ Bug fixes:
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2011-04-10</date>
+   <date>2011-04-12</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Version 2 is a PHP5 rewrites
@@ -705,17 +709,18 @@ PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-lavill
 
 Additions and changes:
 - add 15 new references data dictionnaries related to extensions:
-  APC, Mhash, Mcrypt, Phar, posix, Readline, recode, snmp, Soap, sqlite3, 
+  APC, Mhash, Mcrypt, Phar, posix, Readline, recode, snmp, Soap, sqlite3,
   sysvmsg, sysvsem, sysvshm, tidy, xmlrpc
 - detect now magic constants (__LINE__, __FILE__, __DIR__, __FUNCTION__, __CLASS__, __METHOD__, __NAMESPACE__)
 - printing multiple reports feature is available. Use either:
   * phpci --report summary --report function /path/to/source
   * or just simple  phpci --report summary function /path/to/source
   * with XML config file, adds a comma separate valid report types in &apos;report&apos; property of tag &lt;phpcompatinfo&gt;
-- add summary reports (new default behavior) on each category (extension, interface, class, function, constant)  
+- add summary reports (new default behavior) on each category (extension, interface, class, function, constant)
 - add namespace report
+- add token report (language features as goto, use, try /catch, throw, instanceof, clone, ...)
 - reduced amount of memory used by PHP_Reflect to return only necessary properties
-  
+
 Bug fixes:
 - list-references command did not displayed extensions with mixed cases like (PDO, SQLite, SimpleXML)
    </notes>

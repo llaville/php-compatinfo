@@ -2,7 +2,8 @@
 /**
  * Additional parser connected to tokens :
  * T_STRING, T_CONSTANT_ENCAPSED_STRING,
- * T_LINE, T_FILE, T_DIR, T_FUNC_C, T_CLASS_C, T_METHOD_C, T_NS_C
+ * T_LINE, T_FILE, T_DIR, T_FUNC_C, T_CLASS_C, T_METHOD_C, T_NS_C,
+ * T_CATCH, T_CLONE, T_INSTANCEOF, T_THROW, T_TRY, T_HALT_COMPILER, T_GOTO, T_USE
  *
  * @author     Laurent Laville pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
@@ -157,4 +158,28 @@ class PHP_CompatInfo_TokenParser
         }
     }
 
+    public static function parseTokenFeatures()
+    {
+        list($subject, $context, $token) = func_get_args();
+        extract($context);
+
+        if ($namespace === FALSE) {
+            // global namespace
+            $ns = '\\';
+        } else {
+            $ns = $namespace;
+        }
+
+        $container = $subject->options['containers']['token'];
+
+        if (null != $container) {
+            $name = (string)$token;
+
+            // update tokens
+            $tokens = $subject->offsetGet(array($container => $ns));
+            $tokens[$name]['uses'][] = $token->getLine();
+            $subject->offsetSet(array($container => $ns), $tokens);
+        }
+    }
+    
 }

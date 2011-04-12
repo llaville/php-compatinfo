@@ -50,6 +50,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
             'classes',
             'functions',
             'constants',
+            'tokens',
             'conditions',
         );
         $actual = $this->pci->toArray(TEST_FILES_PATH . 'source1.php');

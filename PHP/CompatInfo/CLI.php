@@ -106,7 +106,7 @@ class PHP_CompatInfo_CLI
                 'action'      => 'StoreArray',
                 'description' => 'Type of report',
                 'choices'     => array(
-                    'summary', 'source', 'xml',
+                    'summary', 'source', 'xml', 'token',
                     'extension',
                     'namespace', 'interface', 'class', 'function', 'constant'
                 )
@@ -133,7 +133,7 @@ class PHP_CompatInfo_CLI
                 'description'   => 'List of report available',
                 'action_params' => array(
                     'list' => array(
-                        'summary', 'source', 'xml',
+                        'summary', 'source', 'xml', 'token',
                         'extension',
                         'namespace', 'interface', 'class', 'function', 'constant'
                     ),

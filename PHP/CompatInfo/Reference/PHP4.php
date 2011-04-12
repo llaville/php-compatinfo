@@ -77,6 +77,7 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
             'classes'    => $this->getClasses($extension, $version),
             'functions'  => $this->getFunctions($extension, $version),
             'constants'  => $this->getConstants($extension, $version),
+            'tokens'     => $this->getTokens(),
         );
         return $references;
     }
@@ -224,6 +225,29 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
         }
 
         return $constants;
+    }
+
+    /**
+     * Gets informations about tokens (language features)
+     *
+     * @return array
+     */
+    public function getTokens()
+    {
+        $tokens = array();
+
+        $ext         = 'standard';
+        $extRefClass = $this->extensionReferences[$ext];
+
+        $ref    = new $extRefClass;
+        $values = $ref->getTokens();
+
+        $tokens = array_merge(
+            $tokens,
+            $this->combineExtension($ext, $values)
+        );
+
+        return $tokens;
     }
 
 }

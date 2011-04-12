@@ -980,4 +980,26 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
         return $constants;
     }
 
+    /**
+     * Gets informations about tokens (language features)
+     *
+     * @return array
+     */
+    public function getTokens()
+    {
+        $version5 = array(
+            'catch'                          => array('5.0.0', ''),
+            'clone'                          => array('5.0.0', ''),
+            'instanceof'                     => array('5.0.0', ''),
+            'throw'                          => array('5.0.0', ''),
+            'try'                            => array('5.0.0', ''),
+            '(unset)'                        => array('5.0.0', ''),
+            '__halt_compiler'                => array('5.1.0', ''),
+            'goto'                           => array('5.3.0', ''),
+            'use'                            => array('5.3.0', ''),
+        );
+
+        return $version5;
+    }
+
 }

@@ -107,6 +107,11 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     /**
      * @var array
      */
+    protected $tokens;
+
+    /**
+     * @var array
+     */
     protected $results;
 
     /**
@@ -501,6 +506,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $this->classes    = $results['classes'];
             $this->functions  = $results['functions'];
             $this->constants  = $results['constants'];
+            $this->tokens     = $results['tokens'];
             $conditions       = $results['conditions'];
 
         } else {
@@ -514,6 +520,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $this->classes    = array();
             $this->functions  = array();
             $this->constants  = array();
+            $this->tokens     = array();
             $conditions       = false;
 
             /**
@@ -524,6 +531,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 'containers' => array(
                     'const' => 'constants',
                     'core'  => 'internalFunctions',
+                    'token' => 'tokens'
                 ),
                 'properties' => array(
                     'interface'    => array('methods', 'parent'),
@@ -586,6 +594,53 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 'T_NS_C',
                 'PHP_Reflect_Token_NS_C',
                 array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
+            );
+
+            // language features / tokens
+            $reflect->connect(
+                'T_CATCH',
+                'PHP_Reflect_Token_CATCH',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
+            );
+            $reflect->connect(
+                'T_CLONE',
+                'PHP_Reflect_Token_CLONE',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
+            );
+            $reflect->connect(
+                'T_INSTANCEOF',
+                'PHP_Reflect_Token_INSTANCEOF',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
+            );
+            $reflect->connect(
+                'T_THROW',
+                'PHP_Reflect_Token_THROW',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
+            );
+            $reflect->connect(
+                'T_TRY',
+                'PHP_Reflect_Token_TRY',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
+            );
+            $reflect->connect(
+                'T_HALT_COMPILER',
+                'PHP_Reflect_Token_HALT_COMPILER',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
+            );
+            $reflect->connect(
+                'T_GOTO',
+                'PHP_Reflect_Token_GOTO',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
+            );
+            $reflect->connect(
+                'T_UNSET_CAST',
+                'PHP_Reflect_Token_UNSET_CAST',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
+            );
+            $reflect->connect(
+                'T_USE',
+                'PHP_Reflect_Token_USE',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
             );
 
             $reflect->scan($source);
@@ -651,6 +706,10 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                     $coreFunctions
                 );
                 $this->getInfo('functions', '4.0.0', $functions, $source, $ns);
+
+                // language features
+                $tokens = (array)$reflect->offsetGet(array('tokens' => $ns));
+                $this->getInfo('tokens', '5.0.0', $tokens, $source, $ns);
             }
         }
 
@@ -664,6 +723,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             'classes'    => $this->classes,
             'functions'  => $this->functions,
             'constants'  => $this->constants,
+            'tokens'     => $this->tokens,
             'conditions' => $conditions,
         );
 
