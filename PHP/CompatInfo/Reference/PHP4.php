@@ -236,7 +236,11 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
     {
         $tokens = array();
 
-        $ext         = 'standard';
+        $ext = 'standard';
+        if (!isset($this->extensionReferences[$ext])) {
+            $this->extensionReferences[$ext] 
+                = 'PHP_CompatInfo_Reference_' . ucfirst($ext);
+        }
         $extRefClass = $this->extensionReferences[$ext];
 
         $ref    = new $extRefClass;
