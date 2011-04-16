@@ -50,6 +50,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
             'classes',
             'functions',
             'constants',
+            'globals',
             'tokens',
             'conditions',
         );
