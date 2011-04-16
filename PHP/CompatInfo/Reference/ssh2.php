@@ -59,7 +59,7 @@ class PHP_CompatInfo_Reference_Ssh2 implements PHP_CompatInfo_Reference
     public function getExtensions($extension = null, $version = null)
     {
         $extensions = array(
-            'ssh2' => array('5.0.0', '', '')
+            'ssh2' => array('5.0.0', '', '0.11.0')
         );
         return $extensions;
     }
@@ -153,7 +153,10 @@ class PHP_CompatInfo_Reference_Ssh2 implements PHP_CompatInfo_Reference
                 'ssh2_exec'                      => array('5.0.0', ''),
                 'ssh2_fetch_stream'              => array('5.0.0', ''),
                 'ssh2_fingerprint'               => array('5.0.0', ''),
+                'ssh2_forward_accept'            => array('5.0.0', ''),
+                'ssh2_forward_listen'            => array('5.0.0', ''),
                 'ssh2_methods_negotiated'        => array('5.0.0', ''),
+                'ssh2_poll'                      => array('5.0.0', ''),
                 'ssh2_publickey_add'             => array('5.0.0', ''),
                 'ssh2_publickey_init'            => array('5.0.0', ''),
                 'ssh2_publickey_list'            => array('5.0.0', ''),
@@ -213,6 +216,27 @@ class PHP_CompatInfo_Reference_Ssh2 implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'SSH2_FINGERPRINT_MD5'              => array('5.0.0', ''),
+                'SSH2_FINGERPRINT_SHA1'             => array('5.0.0', ''),
+                'SSH2_FINGERPRINT_HEX'              => array('5.0.0', ''),
+                'SSH2_FINGERPRINT_RAW'              => array('5.0.0', ''),
+                'SSH2_TERM_UNIT_CHARS'              => array('5.0.0', ''),
+                'SSH2_TERM_UNIT_PIXELS'             => array('5.0.0', ''),
+                'SSH2_DEFAULT_TERMINAL'             => array('5.0.0', ''),
+                'SSH2_DEFAULT_TERM_WIDTH'           => array('5.0.0', ''),
+                'SSH2_DEFAULT_TERM_HEIGHT'          => array('5.0.0', ''),
+                'SSH2_DEFAULT_TERM_UNIT'            => array('5.0.0', ''),
+                'SSH2_STREAM_STDIO'                 => array('5.0.0', ''),
+                'SSH2_STREAM_STDERR'                => array('5.0.0', ''),
+                'SSH2_POLLIN'                       => array('5.0.0', ''),
+                'SSH2_POLLEXT'                      => array('5.0.0', ''),
+                'SSH2_POLLOUT'                      => array('5.0.0', ''),
+                'SSH2_POLLERR'                      => array('5.0.0', ''),
+                'SSH2_POLLHUP'                      => array('5.0.0', ''),
+                'SSH2_POLLNVAL'                     => array('5.0.0', ''),
+                'SSH2_POLL_SESSION_CLOSED'          => array('5.0.0', ''),
+                'SSH2_POLL_CHANNEL_CLOSED'          => array('5.0.0', ''),
+                'SSH2_POLL_LISTENER_CLOSED'         => array('5.0.0', ''),
             );
             $constants = array_merge(
                 $constants,

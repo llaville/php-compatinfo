@@ -17,12 +17,13 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 {
     protected $obj = NULL;
     protected $ref = NULL;
-    
+
     // Could be defined in Reference but missing (system dependant)
     protected $optionnalconstants   = array();
     protected $optionnalfunctions   = array();
     protected $optionnalclasses     = array();
-    
+    protected $optionnalinterfaces  = array();
+
     // Could be present but missing in Refence (alias, ...)
     protected $ignoredfunctions     = array();
     protected $ignoredconstants     = array();
@@ -172,6 +173,29 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                 $this->assertTrue(
                     class_exists($constname, false),
                     "Class '$constname', found in Reference, doesnt exists."
+                );
+            }
+        }
+    }
+
+    /**
+     * @depends testReference
+     */
+    public function testgetInterfacesFromReference()
+    {
+        if (is_null($this->ref)) {
+            return;
+        }
+
+        // Test than all referenced constant exists
+        foreach ($this->ref['interfaces'] as $intname => $range) {
+            list($min, $max) = $range;
+            if (!in_array($intname, $this->optionnalinterfaces)
+                && (empty($min) || version_compare(PHP_VERSION,$min)>=0)
+                && (empty($max) || version_compare(PHP_VERSION,$max)<0)) {
+                $this->assertTrue(
+                    interface_exists($intname, false),
+                    "Interface '$intname', found in Reference, doesnt exists."
                 );
             }
         }
