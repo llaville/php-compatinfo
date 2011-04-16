@@ -68,6 +68,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Report/Function.php',
             'PHP_CompatInfo_Report_Constant'
                 => 'PHP/CompatInfo/Report/Constant.php',
+            'PHP_CompatInfo_Report_Global'
+                => 'PHP/CompatInfo/Report/Global.php',
             'PHP_CompatInfo_Report_Xml'
                 => 'PHP/CompatInfo/Report/Xml.php',
             'PHP_CompatInfo_Report_Source'

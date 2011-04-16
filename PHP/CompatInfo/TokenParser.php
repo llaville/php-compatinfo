@@ -158,6 +158,36 @@ class PHP_CompatInfo_TokenParser
         }
     }
 
+    public static function parseTokenGlobals()
+    {
+        list($subject, $context, $token) = func_get_args();
+        extract($context);
+
+        $type = $token->getType();
+        if ($type === NULL) {
+            // standard variable
+            return;
+        }
+
+        if ($namespace === FALSE) {
+            // global namespace
+            $ns = '\\';
+        } else {
+            $ns = $namespace;
+        }
+
+        $container = $subject->options['containers']['glob'];
+
+        if (null != $container) {
+            $name = $token->getName();
+
+            // update globals
+            $globals = $subject->offsetGet(array($container => $ns));
+            $globals[$type][$name]['uses'][] = $token->getLine();
+            $subject->offsetSet(array($container => $ns), $globals);
+        }
+    }
+
     public static function parseTokenFeatures()
     {
         list($subject, $context, $token) = func_get_args();
@@ -181,5 +211,5 @@ class PHP_CompatInfo_TokenParser
             $subject->offsetSet(array($container => $ns), $tokens);
         }
     }
-    
+
 }

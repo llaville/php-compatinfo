@@ -1002,4 +1002,32 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
         return $version5;
     }
 
+    /**
+     * Gets informations about superglobals
+     *
+     * @return array
+     * @link   http://www.php.net/manual/en/language.variables.superglobals.php
+     */
+    public function getGlobals()
+    {
+        $version4 = array(
+            '$GLOBALS'                       => array('4.0.0', ''),
+            '$HTTP_SERVER_VARS'              => array('4.0.0', ''),
+            '$_SERVER'                       => array('4.1.0', ''),
+            '$HTTP_GET_VARS'                 => array('4.0.0', ''),
+            '$_GET'                          => array('4.1.0', ''),
+            '$HTTP_POST_VARS'                => array('4.0.0', ''),
+            '$HTTP_POST_FILES'               => array('4.0.0', ''),
+            '$_POST'                         => array('4.1.0', ''),
+            '$HTTP_COOKIE_VARS'              => array('4.0.0', ''),
+            '$_COOKIE'                       => array('4.1.0', ''),
+            '$HTTP_SESSION_VARS'             => array('4.0.0', ''),
+            '$_SESSION'                      => array('4.1.0', ''),
+            '$HTTP_ENV_VARS'                 => array('4.0.0', ''),
+            '$_ENV'                          => array('4.1.0', ''),
+        );
+
+        return $version4;
+    }
+
 }

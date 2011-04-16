@@ -77,6 +77,7 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
             'classes'    => $this->getClasses($extension, $version),
             'functions'  => $this->getFunctions($extension, $version),
             'constants'  => $this->getConstants($extension, $version),
+            'globals'    => $this->getGlobals(),
             'tokens'     => $this->getTokens(),
         );
         return $references;
@@ -228,6 +229,33 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
     }
 
     /**
+     * Gets informations about superglobals
+     *
+     * @return array
+     */
+    public function getGlobals()
+    {
+        $globals = array();
+
+        $ext = 'standard';
+        if (!isset($this->extensionReferences[$ext])) {
+            $this->extensionReferences[$ext]
+                = 'PHP_CompatInfo_Reference_' . ucfirst($ext);
+        }
+        $extRefClass = $this->extensionReferences[$ext];
+
+        $ref    = new $extRefClass;
+        $values = $ref->getGlobals();
+
+        $globals = array_merge(
+            $globals,
+            $this->combineExtension($ext, $values)
+        );
+
+        return $globals;
+    }
+
+    /**
      * Gets informations about tokens (language features)
      *
      * @return array
@@ -238,7 +266,7 @@ class PHP_CompatInfo_Reference_PHP4 extends PHP_CompatInfo_Reference_PluginsAbst
 
         $ext = 'standard';
         if (!isset($this->extensionReferences[$ext])) {
-            $this->extensionReferences[$ext] 
+            $this->extensionReferences[$ext]
                 = 'PHP_CompatInfo_Reference_' . ucfirst($ext);
         }
         $extRefClass = $this->extensionReferences[$ext];

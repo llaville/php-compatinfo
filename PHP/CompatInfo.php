@@ -2,8 +2,9 @@
 /**
  * PHP_CompatInfo check compatibility of PHP code and provides minimal and maximal
  * version to run it.
+ *
  * It adds the ability to reverse-engineer extensions, interfaces, classes,
- * functions (user or internal) and constants.
+ * functions (user or internal), constants and globals.
  *
  * PHP version 5
  *
@@ -34,6 +35,8 @@ require_once dirname(__FILE__) . '/CompatInfo/Autoload.php';
  *         Returns informations on parsing results about functions
  * @method array getConstants()  getConstants(category = null, $pattern = null)
  *         Returns informations on parsing results about constants
+ * @method array getGlobals()    getGlobals(category = null, $pattern = null)
+ *         Returns informations on parsing results about globals
  *
  * @category PHP
  * @package  PHP_CompatInfo
@@ -103,6 +106,11 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      * @var array
      */
     protected $constants;
+
+    /**
+     * @var array
+     */
+    protected $globals;
 
     /**
      * @var array
@@ -506,6 +514,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $this->classes    = $results['classes'];
             $this->functions  = $results['functions'];
             $this->constants  = $results['constants'];
+            $this->globals    = $results['globals'];
             $this->tokens     = $results['tokens'];
             $conditions       = $results['conditions'];
 
@@ -520,6 +529,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $this->classes    = array();
             $this->functions  = array();
             $this->constants  = array();
+            $this->globals    = array();
             $this->tokens     = array();
             $conditions       = false;
 
@@ -531,7 +541,8 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 'containers' => array(
                     'const' => 'constants',
                     'core'  => 'internalFunctions',
-                    'token' => 'tokens'
+                    'token' => 'tokens',
+                    'glob'  => 'globals'
                 ),
                 'properties' => array(
                     'interface'    => array('methods', 'parent'),
@@ -594,6 +605,13 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 'T_NS_C',
                 'PHP_Reflect_Token_NS_C',
                 array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
+            );
+
+            // globals and super globals
+            $reflect->connect(
+                'T_VARIABLE',
+                'PHP_Reflect_Token_VARIABLE',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenGlobals')
             );
 
             // language features / tokens
@@ -710,6 +728,20 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 // language features
                 $tokens = (array)$reflect->offsetGet(array('tokens' => $ns));
                 $this->getInfo('tokens', '5.0.0', $tokens, $source, $ns);
+
+                /**
+                 * @link http://www.php.net/manual/en/language.variables.superglobals.php
+                 *       Superglobals
+                 */
+                $globals = (array)$reflect->getGlobals(true, null, $ns);
+
+                foreach ($globals as $glob => $gdata) {
+                    foreach ($gdata as $name => $data) {
+                        $data['name'] = $name;
+                        $global = array($glob => $data);
+                        $this->getInfo('globals', '4.0.0', $global, $source, $ns);
+                    }
+                }
             }
         }
 
@@ -723,6 +755,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             'classes'    => $this->classes,
             'functions'  => $this->functions,
             'constants'  => $this->constants,
+            'globals'    => $this->globals,
             'tokens'     => $this->tokens,
             'conditions' => $conditions,
         );
@@ -782,7 +815,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
     /**
      * Magic methods to get informations on parsing results about
-     * excludes, includes, interfaces, classes, functions, constants
+     * excludes, includes, interfaces, classes, functions, constants, globals
      *
      * @param string $name Method name invoked
      * @param array  $args Method arguments provided
@@ -794,7 +827,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     {
         $pattern = '/get' .
             '(?>(Excludes|Includes' .
-            '|Namespaces|Interfaces|Classes|Functions|Constants))/';
+            '|Namespaces|Interfaces|Classes|Functions|Constants|Globals))/';
         if (preg_match($pattern, $name, $matches)) {
             $group = strtolower($matches[1]);
 
@@ -1136,6 +1169,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 $this->addWarning("Multiple values for same reference name '$key'");
                 continue;
             }
+
             list ($extension, $values) = each($ref);
 
             if (is_array($data)) {
@@ -1149,6 +1183,12 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 $this->updateVersion(
                     $values[$key]['versions'][1], $this->_versionsRef[1]
                 );
+            }
+
+            if ($category == 'globals') {
+                $_extension = $extension;
+                $extension  = $key;
+                $key        = $data['name'];
             }
 
             if (!isset($this->{$category}[$extension])) {
@@ -1182,10 +1222,18 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $values[$key]['excluded'] = false;
             $values[$key]['versions'] = $this->_versionsRef;
 
+            if ($category == 'globals') {
+                unset($values[$extension]);
+            }
+
             $this->{$category}[$extension] = array_merge(
                 $this->{$category}[$extension],
                 $values
             );
+
+            if ($category == 'globals') {
+                $extension = $_extension;
+            }
 
             if (!isset($this->extensions[$extension])) {
                 // retrieve extension versions information
@@ -1202,7 +1250,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 }
             }
             if ($extension != 'user') {
-                $this->extensions[$extension]['uses']   += $values[$key]['uses'];
+                $this->extensions[$extension]['uses'] += $values[$key]['uses'];
                 $sources = array_merge(
                     $this->extensions[$extension]['sources'], $values[$key]['sources']
                 );
