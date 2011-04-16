@@ -179,7 +179,8 @@ class PHP_CompatInfo_Reference_SQLite implements PHP_CompatInfo_Reference
                 'sqlite_field_name'              => array('5.0.0', ''),
                 'sqlite_has_more'                => array('5.0.0', ''),
                 'sqlite_has_prev'                => array('5.0.0', ''),
-                'sqlite_key'                     => array('5.1.0', ''),
+                // http://bugs.php.net/31510
+                //'sqlite_key'                   => array('5.1.0', ''),
                 'sqlite_last_error'              => array('5.0.0', ''),
                 'sqlite_last_insert_rowid'       => array('5.0.0', ''),
                 'sqlite_libencoding'             => array('5.0.0', ''),
