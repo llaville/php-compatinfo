@@ -37,6 +37,9 @@ class PHP_CompatInfo_Reference_SocketsTest extends PHP_CompatInfo_Reference_Gene
             'SOCKET_SYSNOTREADY',
             'SOCKET_TRY_AGAIN',
             'SOCKET_VERNOTSUPPORTED',
+            'MSG_DONTWAIT',
+            'MSG_EOR',
+            'MSG_EOF',
             // Unix only
             'SOCKET_E2BIG',
             'SOCKET_EADV',

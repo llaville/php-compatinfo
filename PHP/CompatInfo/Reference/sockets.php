@@ -321,6 +321,7 @@ class PHP_CompatInfo_Reference_Sockets implements PHP_CompatInfo_Reference
                 'SOCKET_EPFNOSUPPORT'            => array('4.1.0', ''),
                 'SOCKET_EPIPE'                   => array('4.3.0', ''),
                 'SOCKET_EPROTO'                  => array('4.3.0', ''),
+                'SOCKET_EPROCLIM'                => array('4.1.0', ''),
                 'SOCKET_EPROTONOSUPPORT'         => array('4.1.0', ''),
                 'SOCKET_EPROTOTYPE'              => array('4.1.0', ''),
                 'SOCKET_EREMCHG'                 => array('4.3.0', ''),
