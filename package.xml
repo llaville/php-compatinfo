@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2011-04-16</date>
- <time>17:48:09</time>
+ <time>18:31:09</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -499,7 +499,13 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="RecodeTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="SessionTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="ShmopTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="SimpleXMLTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="SnmpTest.php" role="test">
@@ -508,7 +514,19 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="SoapTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="SocketsTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="SPLTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="Sqlite3Test.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="SQLiteTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="Ssh2Test.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="SysvmsgTest.php" role="test">
