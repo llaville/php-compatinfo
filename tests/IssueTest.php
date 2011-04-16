@@ -186,9 +186,8 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         $this->pci->parse(TEST_FILES_PATH . 'source13873.php');
 
         $this->assertSame(
-            array('4.0.6', ''), $this->pci->getVersions()
+            array('4.1.0', ''), $this->pci->getVersions()
         );
-
     }
 
     /**
