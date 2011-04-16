@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2011-04-12</date>
- <time>23:04:20</time>
+ <date>2011-04-16</date>
+ <time>17:48:09</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -51,6 +51,7 @@ Additions and changes:
 - add summary reports (new default behavior) on each category (extension, interface, class, function, constant)
 - add namespace report
 - add token report (language features as goto, use, try /catch, throw, instanceof, clone, ...)
+- add globals/superglobals report
 - reduced amount of memory used by PHP_Reflect to return only necessary properties
 
 Bug fixes:
@@ -310,6 +311,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="Function.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="Global.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="Interface.php" role="php">
@@ -640,7 +644,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>0.6.0</min>
+    <min>0.7.0</min>
    </package>
    <package>
     <name>PHP_Timer</name>
@@ -700,7 +704,7 @@ Bug fixes:
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2011-04-12</date>
+   <date>2011-04-16</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Version 2 is a PHP5 rewrites
@@ -719,6 +723,7 @@ Additions and changes:
 - add summary reports (new default behavior) on each category (extension, interface, class, function, constant)
 - add namespace report
 - add token report (language features as goto, use, try /catch, throw, instanceof, clone, ...)
+- add globals/superglobals report
 - reduced amount of memory used by PHP_Reflect to return only necessary properties
 
 Bug fixes:
