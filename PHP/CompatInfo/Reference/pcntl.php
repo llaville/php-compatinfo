@@ -295,9 +295,9 @@ class PHP_CompatInfo_Reference_Pcntl implements PHP_CompatInfo_Reference
                 'BUS_ADRERR'        => array('5.3.0', ''),
                 'BUS_OBJERR'        => array('5.3.0', ''),
                 // Not (yet) in documentation
-                'PRIO_PGRP'          => array('5.3.4', ''),
-                'PRIO_USER'          => array('5.3.4', ''),
-                'PRIO_PROCESS'       => array('5.3.4', ''),
+                'PRIO_PGRP'          => array('5.0.0', ''),
+                'PRIO_USER'          => array('5.0.0', ''),
+                'PRIO_PROCESS'       => array('5.0.0', ''),
                 'PCNTL_EINTR'        => array('5.3.4', ''),
                 'PCNTL_ECHILD'       => array('5.3.4', ''),
                 'PCNTL_EINVAL'       => array('5.3.4', ''),

@@ -207,7 +207,7 @@ class PHP_CompatInfo_Reference_Pcre implements PHP_CompatInfo_Reference
                 'PREG_BACKTRACK_LIMIT_ERROR'     => array('5.2.0', ''),
                 'PREG_RECURSION_LIMIT_ERROR'     => array('5.2.0', ''),
                 'PREG_BAD_UTF8_ERROR'            => array('5.2.0', ''),
-                'PREG_BAD_UTF8_OFFSET_ERROR'     => array('5.3.0', ''),
+                'PREG_BAD_UTF8_OFFSET_ERROR'     => array('5.2.9', ''),
                 'PCRE_VERSION'                   => array('5.2.4', ''),
             );
             $constants = array_merge(
