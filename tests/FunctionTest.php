@@ -51,18 +51,41 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey(
             'standard', $functions
         );
-        $this->assertArrayHasKey(
-            'xdebug', $functions
-        );
+        if (extension_loaded('xdebug')) {
+            $this->assertArrayHasKey(
+                'xdebug', $functions
+            );
+        }
 
-        $expected = array(
-            'toFile' => array(
-                'versions' => array('4.0.0', ''),
-                'uses' => 1,
-                'sources' => array(TEST_FILES_PATH . 'source2.php'),
-                'excluded' => false,
-            ),
-        );
+        if (extension_loaded('xdebug')) {
+            $expected = array(
+                'toFile' => array(
+                    'versions' => array('4.0.0', ''),
+                    'uses' => 1,
+                    'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                    'excluded' => false,
+                ),
+            );
+        } else {
+            /**
+             * When xdebug extension is not loaded, xdebug_start_trace
+             * is considered as a user function
+             */
+            $expected = array(
+                'toFile' => array(
+                    'versions' => array('4.0.0', ''),
+                    'uses' => 1,
+                    'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                    'excluded' => false,
+                ),
+                'xdebug_start_trace' => array(
+                    'versions' => array('4.0.0', ''),
+                    'uses' => 1,
+                    'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                    'excluded' => false,
+                ),
+            );
+        }
         $this->assertSame(
             $expected, $functions['user']
         );
@@ -133,17 +156,20 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
             $expected, $functions['standard']
         );
 
-        $expected = array(
-            'xdebug_start_trace' => array(
-                'versions' => array('5.2.0', ''),
-                'uses' => 1,
-                'sources' => array(TEST_FILES_PATH . 'source2.php'),
-                'excluded' => false,
-            ),
-        );
-        $this->assertSame(
-            $expected, $functions['xdebug']
-        );
+        if (extension_loaded('xdebug')) {
+            $expected = array(
+                'xdebug_start_trace' => array(
+                    'versions' => array('5.2.0', ''),
+                    'uses' => 1,
+                    'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                    'excluded' => false,
+                ),
+            );
+            $this->assertSame(
+                $expected, $functions['xdebug']
+            );
+        }
+
     }
 
     /**
@@ -153,14 +179,35 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
     {
         $functions = $this->pci->getFunctions('user');
 
-        $expected = array(
-            'toFile' => array(
-                'versions' => array('4.0.0', ''),
-                'uses' => 1,
-                'sources' => array(TEST_FILES_PATH . 'source2.php'),
-                'excluded' => false,
-            ),
-        );
+        if (extension_loaded('xdebug')) {
+            $expected = array(
+                'toFile' => array(
+                    'versions' => array('4.0.0', ''),
+                    'uses' => 1,
+                    'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                    'excluded' => false,
+                ),
+            );
+        } else {
+            /**
+             * When xdebug extension is not loaded, xdebug_start_trace
+             * is considered as a user function
+             */
+            $expected = array(
+                'toFile' => array(
+                    'versions' => array('4.0.0', ''),
+                    'uses' => 1,
+                    'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                    'excluded' => false,
+                ),
+                'xdebug_start_trace' => array(
+                    'versions' => array('4.0.0', ''),
+                    'uses' => 1,
+                    'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                    'excluded' => false,
+                ),
+            );
+        }
 
         $this->assertSame(
             $expected, $functions
