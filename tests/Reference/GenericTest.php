@@ -101,6 +101,13 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                     "Function '$fctname', found in Reference, doesnt exists."
                 );
             }
+            if (($min && version_compare(PHP_VERSION,$min)<0)
+                || ($max && version_compare(PHP_VERSION,$max)>=0)) {
+                $this->assertFalse(
+                    function_exists($fctname),
+                    "Function '$fctname', found in Reference ($min,$max), exists."
+                );
+            }
         }
     }
 

@@ -162,7 +162,8 @@ class PHP_CompatInfo_Reference_Mcrypt implements PHP_CompatInfo_Reference
                 'mcrypt_enc_self_test'                  => array('4.0.2', ''),
                 'mcrypt_encrypt'                        => array('4.0.2', ''),
                 'mcrypt_generic_deinit'                 => array('4.0.7', ''),
-                'mcrypt_generic_end'                    => array('4.0.2', '5.1.7'),
+                // Function in php < 5.2, alias after
+                'mcrypt_generic_end'                    => array('4.0.2', ''),
                 'mcrypt_generic_init'                   => array('4.0.2', ''),
                 'mcrypt_generic'                        => array('4.0.2', ''),
                 'mcrypt_get_block_size'                 => array('4.0.0', ''),
