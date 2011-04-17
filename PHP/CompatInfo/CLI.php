@@ -78,6 +78,7 @@ class PHP_CompatInfo_CLI
         $input->addOption(
             'iniSet',
             array(
+                'short_name'  => '-d',
                 'long_name'   => '--ini-set',
                 'action'      => 'StoreString',
                 'description' => 'Sets a php.ini directive value'
