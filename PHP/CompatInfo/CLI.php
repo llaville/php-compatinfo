@@ -21,11 +21,13 @@ require_once dirname(__FILE__) . '/Autoload.php';
  *
  * Many reports are available:
  * - extension
+ * - namespace
  * - interface
  * - class
  * - function
  * - constant
  * - global
+ * - summary
  * - source
  * - xml
  * - token
