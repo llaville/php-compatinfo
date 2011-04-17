@@ -38,9 +38,6 @@ class PHP_CompatInfo_Reference_SocketsTest extends PHP_CompatInfo_Reference_Gene
                 'SOCKET_SYSNOTREADY',
                 'SOCKET_TRY_AGAIN',
                 'SOCKET_VERNOTSUPPORTED',
-                'MSG_DONTWAIT',
-                'MSG_EOR',
-                'MSG_EOF',
             );
         } else {
             $this->optionnalconstants = array(
@@ -105,6 +102,9 @@ class PHP_CompatInfo_Reference_SocketsTest extends PHP_CompatInfo_Reference_Gene
                 'SOCKET_EUNATCH',
                 'SOCKET_EXDEV',
                 'SOCKET_EXFULL',
+                'MSG_DONTWAIT',
+                'MSG_EOR',
+                'MSG_EOF',
             );
         }
         $this->optionnalfunctions = array(
