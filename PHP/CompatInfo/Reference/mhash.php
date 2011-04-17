@@ -59,7 +59,8 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
     public function getExtensions($extension = null, $version = null)
     {
         $extensions = array(
-            'mhash' => array('4.0.0', '5.3.0', '')
+            // emulated in hash extension since 5.3.0
+            'mhash' => array('4.0.0', '', '')
         );
         return $extensions;
     }
@@ -145,11 +146,11 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
 
         if ((null == $version ) || ('4' == $version)) {
             $version4 = array(
-                'mhash_count'           => array('4.0.0', '5.3.0'),
-                'mhash_get_block_size'  => array('4.0.0', '5.3.0'),
-                'mhash_get_hash_name'   => array('4.0.0', '5.3.0'),
-                'mhash_keygen_s2k'      => array('4.0.4', '5.3.0'),
-                'mhash'                 => array('4.0.0', '5.3.0'),
+                'mhash_count'           => array('4.0.0', ''),
+                'mhash_get_block_size'  => array('4.0.0', ''),
+                'mhash_get_hash_name'   => array('4.0.0', ''),
+                'mhash_keygen_s2k'      => array('4.0.4', ''),
+                'mhash'                 => array('4.0.0', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -183,33 +184,33 @@ class PHP_CompatInfo_Reference_Mhash implements PHP_CompatInfo_Reference
 
         if ((null == $version ) || ('4' == $version)) {
             $version4 = array(
-                'MHASH_ADLER32'         => array('4.0.0', '5.3.0'),
-                'MHASH_CRC32'           => array('4.0.0', '5.3.0'),
-                'MHASH_CRC32B'          => array('4.0.0', '5.3.0'),
-                'MHASH_GOST'            => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL128'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL160'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL192'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL224'        => array('4.0.0', '5.3.0'),
-                'MHASH_HAVAL256'        => array('4.0.0', '5.3.0'),
-                'MHASH_MD2'             => array('4.0.0', '5.3.0'),
-                'MHASH_MD4'             => array('4.0.0', '5.3.0'),
-                'MHASH_MD5'             => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD128'       => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD160'       => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD256'       => array('4.0.0', '5.3.0'),
-                'MHASH_RIPEMD320'       => array('4.0.0', '5.3.0'),
-                'MHASH_SHA1'            => array('4.0.0', '5.3.0'),
-                'MHASH_SHA224'          => array('4.0.0', '5.3.0'),
-                'MHASH_SHA256'          => array('4.0.0', '5.3.0'),
-                'MHASH_SHA384'          => array('4.0.0', '5.3.0'),
-                'MHASH_SHA512'          => array('4.0.0', '5.3.0'),
-                'MHASH_SNEFRU128'       => array('4.0.0', '5.3.0'),
-                'MHASH_SNEFRU256'       => array('4.0.0', '5.3.0'),
-                'MHASH_TIGER'           => array('4.0.0', '5.3.0'),
-                'MHASH_TIGER128'        => array('4.0.0', '5.3.0'),
-                'MHASH_TIGER160'        => array('4.0.0', '5.3.0'),
-                'MHASH_WHIRLPOOL'       => array('4.0.0', '5.3.0'),
+                'MHASH_ADLER32'         => array('4.0.0', ''),
+                'MHASH_CRC32'           => array('4.0.0', ''),
+                'MHASH_CRC32B'          => array('4.0.0', ''),
+                'MHASH_GOST'            => array('4.0.0', ''),
+                'MHASH_HAVAL128'        => array('4.0.0', ''),
+                'MHASH_HAVAL160'        => array('4.0.0', ''),
+                'MHASH_HAVAL192'        => array('4.0.0', ''),
+                'MHASH_HAVAL224'        => array('4.0.0', ''),
+                'MHASH_HAVAL256'        => array('4.0.0', ''),
+                'MHASH_MD2'             => array('4.0.0', ''),
+                'MHASH_MD4'             => array('4.0.0', ''),
+                'MHASH_MD5'             => array('4.0.0', ''),
+                'MHASH_RIPEMD128'       => array('4.0.0', ''),
+                'MHASH_RIPEMD160'       => array('4.0.0', ''),
+                'MHASH_RIPEMD256'       => array('4.0.0', ''),
+                'MHASH_RIPEMD320'       => array('4.0.0', ''),
+                'MHASH_SHA1'            => array('4.0.0', ''),
+                'MHASH_SHA224'          => array('4.0.0', ''),
+                'MHASH_SHA256'          => array('4.0.0', ''),
+                'MHASH_SHA384'          => array('4.0.0', ''),
+                'MHASH_SHA512'          => array('4.0.0', ''),
+                'MHASH_SNEFRU128'       => array('4.0.0', ''),
+                'MHASH_SNEFRU256'       => array('4.0.0', ''),
+                'MHASH_TIGER'           => array('4.0.0', ''),
+                'MHASH_TIGER128'        => array('4.0.0', ''),
+                'MHASH_TIGER160'        => array('4.0.0', ''),
+                'MHASH_WHIRLPOOL'       => array('4.0.0', ''),
             );
             $constants = array_merge(
                 $constants,
