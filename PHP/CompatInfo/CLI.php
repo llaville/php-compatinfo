@@ -21,11 +21,13 @@ require_once dirname(__FILE__) . '/Autoload.php';
  *
  * Many reports are available:
  * - extension
+ * - namespace
  * - interface
  * - class
  * - function
  * - constant
  * - global
+ * - summary
  * - source
  * - xml
  * - token
@@ -76,6 +78,7 @@ class PHP_CompatInfo_CLI
         $input->addOption(
             'iniSet',
             array(
+                'short_name'  => '-d',
                 'long_name'   => '--ini-set',
                 'action'      => 'StoreString',
                 'description' => 'Sets a php.ini directive value'
