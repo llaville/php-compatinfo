@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2011-04-16</date>
- <time>18:31:09</time>
+ <date>2011-04-18</date>
+ <time>23:15:50</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -52,6 +52,7 @@ Additions and changes:
 - add namespace report
 - add token report (language features as goto, use, try /catch, throw, instanceof, clone, ...)
 - add globals/superglobals report
+- add short option to set php.ini directive value
 - reduced amount of memory used by PHP_Reflect to return only necessary properties
 
 Bug fixes:
@@ -541,7 +542,28 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="TidyTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="TokenizerTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="WddxTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="XmlreaderTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="XmlrpcTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="XmlTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="XmlwriterTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="XslTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="ZlibTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
     </dir> <!-- /tests/Reference -->
@@ -722,7 +744,7 @@ Bug fixes:
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2011-04-16</date>
+   <date>2011-04-18</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Version 2 is a PHP5 rewrites
@@ -742,6 +764,7 @@ Additions and changes:
 - add namespace report
 - add token report (language features as goto, use, try /catch, throw, instanceof, clone, ...)
 - add globals/superglobals report
+- add short option to set php.ini directive value
 - reduced amount of memory used by PHP_Reflect to return only necessary properties
 
 Bug fixes:
