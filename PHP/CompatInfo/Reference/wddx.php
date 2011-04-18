@@ -151,7 +151,7 @@ class PHP_CompatInfo_Reference_Wddx implements PHP_CompatInfo_Reference
                 'wddx_packet_start'              => array('4.0.0', ''),
                 'wddx_serialize_value'           => array('4.0.0', ''),
                 'wddx_serialize_vars'            => array('4.0.0', ''),
-                // IN doc bu nowhere in sources
+                // In doc but nowhere in sources http://bugs.php.net/54557
                 //'wddx_unserialize'               => array('4.0.0', ''),
             );
             $functions = array_merge(
