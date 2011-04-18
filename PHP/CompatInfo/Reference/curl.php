@@ -464,6 +464,7 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLINFO_CERTINFO'              => array('5.3.2', ''),
                 'CURLINFO_HEADER_OUT'            => array('5.1.3', ''),
                 'CURLINFO_PRIVATE'               => array('5.2.4', ''),
+                'CURLINFO_REDIRECT_URL'          => array('5.3.7-dev', ''),
 
                 'CURLOPT_AUTOREFERER'            => array('5.1.0', ''),
                 'CURLOPT_CERTINFO'               => array('5.3.2', ''),
