@@ -514,7 +514,6 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'ob_get_level'                   => array('4.2.0', ''),
                 'ob_get_status'                  => array('4.2.0', ''),
                 'ob_get_contents'                => array('4.0.0', ''),
-                'ob_gzhandler'                   => array('4.0.4', ''),
                 'ob_implicit_flush'              => array('4.0.0', ''),
                 'ob_list_handlers'               => array('4.3.0', ''),
                 'ksort'                          => array('4.0.0', ''),
