@@ -24,7 +24,7 @@ class PHP_CompatInfo_Reference_XslTest extends PHP_CompatInfo_Reference_GenericT
      */
     protected function setUp()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Xml();
+        $this->obj = new PHP_CompatInfo_Reference_Xsl();
         parent::setUp();
     }
 }
