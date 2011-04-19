@@ -28,14 +28,22 @@ class PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING extends PHP_Reflect_Token_CO
 
     public function getName()
     {
+        static $const = array('define', 'defined', 'constant');
+    
         if ($this->name !== NULL) {
             return $this->name;
         }
 
         for ($i = $this->id - 1; $i > $this->id - 5; $i -= 1) {
-            if (isset($this->tokenStream[$i]) &&
-                $this->tokenStream[$i][0] == 'T_STRING' &&
-                in_array(strtolower($this->tokenStream[$i][1]), array('define', 'defined', 'constant'))
+            if (!isset($this->tokenStream[$i])) {
+                return; 
+            }  
+            if ($this->tokenStream[$i][0] == 'T_CONSTANT_ENCAPSED_STRING') {
+                // we reached the constant name
+                return; 
+            }
+            if ($this->tokenStream[$i][0] == 'T_STRING' 
+                && in_array(strtolower($this->tokenStream[$i][1]), $const)
             ) {
                 $this->type = 'constant';
                 $this->name = trim($this->tokenStream[$this->id][1], "'\"");

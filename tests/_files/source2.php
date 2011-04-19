@@ -25,7 +25,8 @@ function toFile($filename, $data)
     }
 }
 
-define ('APPLICATION_ENV', 'development');
+define ( 'APPLICATION_ENV' , 'development' );
+define("TPL_REPOSITORY",'/repository/templates');
 
 xdebug_start_trace();
 
