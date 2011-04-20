@@ -35,6 +35,8 @@ class PHP_CompatInfo_Reference_MysqliTest extends PHP_CompatInfo_Reference_Gener
             'MYSQLI_REFRESH_BACKUP_LOG',
             // Requires SERVER_QUERY_WAS_SLOW
             'MYSQLI_SERVER_QUERY_WAS_SLOW',
+            // requires SERVER_PS_OUT_PARAMS
+            'MYSQLI_SERVER_PS_OUT_PARAMS',
         );
         $this->optionnalfunctions = array(
             // Requires HAVE_EMBEDDED_MYSQLI

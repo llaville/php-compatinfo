@@ -25,7 +25,10 @@ class PHP_CompatInfo_Reference_OpensslTest extends PHP_CompatInfo_Reference_Gene
     protected function setUp()
     {
         $this->optionnalconstants = array(
+            // requires HAVE_OPENSSL_MD2_H
             'OPENSSL_ALGO_MD2',
+            // requires OPENSSL_VERSION_NUMBER >= 0x0090806fL
+            'OPENSSL_TLSEXT_SERVER_NAME',
         );
         $this->obj = new PHP_CompatInfo_Reference_Openssl();
         parent::setUp();

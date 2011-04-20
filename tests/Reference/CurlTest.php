@@ -47,6 +47,10 @@ class PHP_CompatInfo_Reference_CurlTest extends PHP_CompatInfo_Reference_Generic
             'CURLOPT_SSH_PRIVATE_KEYFILE',
             'CURLOPT_SSH_HOST_PUBLIC_KEY_MD5',
             'CURLE_SSH',
+            // requires libcurl >= 0x071301
+            'CURLINFO_CERTINFO',
+            'CURLOPT_CERTINFO',
+            'CURLOPT_POSTREDIR',
             // requires libcurl >= 0x071304
             'CURLOPT_REDIR_PROTOCOLS',
             'CURLOPT_PROTOCOLS',
