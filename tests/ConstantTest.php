@@ -56,6 +56,12 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'excluded' => false,
             ),
+            'TPL_REPOSITORY' => array(
+                'versions' => array('4.0.0', ''),
+                'uses' => 1,
+                'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                'excluded' => false,
+            ),
         );
         $this->assertSame(
             $expected, $constants['user']
@@ -89,6 +95,12 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
 
         $expected = array(
             'APPLICATION_ENV' => array(
+                'versions' => array('4.0.0', ''),
+                'uses' => 1,
+                'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                'excluded' => false,
+            ),
+            'TPL_REPOSITORY' => array(
                 'versions' => array('4.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
