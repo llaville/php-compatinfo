@@ -582,6 +582,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'getrusage'                      => array('4.0.0', ''),
                 // In "Semaphore functions" but in "standard" ext
                 'ftok'                           => array('4.2.0', ''),
+                'dl'                             => array('4.0.0', ''),
             );
             $functions = array_merge(
                 $functions,

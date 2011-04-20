@@ -25,6 +25,17 @@ class PHP_CompatInfo_Reference_StandardTest extends PHP_CompatInfo_Reference_Gen
      */
     protected function setUp()
     {
+        $this->ignoredfunctions = array(
+        // functions moved from internal to ereg extension in 5.3.0
+            'ereg_replace',
+            'ereg',
+            'eregi_replace',
+            'eregi',
+            'split',
+            'spliti',
+            'sql_regcase',
+        );
+
         if (DIRECTORY_SEPARATOR == '/') {
             $this->optionnalfunctions = array(
                 // remove in some Linux distribution (Redhat, ...)
