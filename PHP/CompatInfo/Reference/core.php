@@ -292,6 +292,8 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'UPLOAD_ERR_NO_TMP_DIR'          => array('4.3.10', ''),
                 'UPLOAD_ERR_OK'                  => array('4.3.0', ''),
                 'UPLOAD_ERR_PARTIAL'             => array('4.3.0', ''),
+                'ZEND_THREAD_SAFE'               => array('4.0.0', ''),
+                'ZEND_DEBUG_BUILD'               => array('4.0.0', ''),
             );
             $constants = array_merge(
                 $constants,
@@ -304,6 +306,8 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 '__DIR__'                        => array('5.3.0', ''),
                 '__METHOD__'                     => array('5.0.0', ''),
                 '__NAMESPACE__'                  => array('5.3.0', ''),
+                'DEBUG_BACKTRACE_IGNORE_ARGS'    => array('5.3.6', ''),
+                'DEBUG_BACKTRACE_PROVIDE_OBJECT' => array('5.3.6', ''),
                 'E_RECOVERABLE_ERROR'            => array('5.2.0', ''),
                 'E_DEPRECATED'                   => array('5.3.0', ''),
                 'E_USER_DEPRECATED'              => array('5.3.0', ''),
@@ -315,22 +319,10 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'PHP_MINOR_VERSION'              => array('5.2.7', ''),
                 'PHP_RELEASE_VERSION'            => array('5.2.7', ''),
                 'PHP_VERSION_ID'                 => array('5.2.7', ''),
-                'PHP_WINDOWS_NT_DOMAIN_CONTROLLER'
-                                                 => array('5.3.0', ''),
-                'PHP_WINDOWS_NT_SERVER'          => array('5.3.0', ''),
-                'PHP_WINDOWS_NT_WORKSTATION'     => array('5.3.0', ''),
-                'PHP_WINDOWS_VERSION_BUILD'      => array('5.3.0', ''),
-                'PHP_WINDOWS_VERSION_MAJOR'      => array('5.3.0', ''),
-                'PHP_WINDOWS_VERSION_MINOR'      => array('5.3.0', ''),
-                'PHP_WINDOWS_VERSION_PLATFORM'   => array('5.3.0', ''),
-                'PHP_WINDOWS_VERSION_PRODUCTTYPE'
-                                                 => array('5.3.0', ''),
-                'PHP_WINDOWS_VERSION_SP_MAJOR'   => array('5.3.0', ''),
-                'PHP_WINDOWS_VERSION_SP_MINOR'   => array('5.3.0', ''),
-                'PHP_WINDOWS_VERSION_SUITEMASK'  => array('5.3.0', ''),
                 'PHP_ZTS'                        => array('5.2.7', ''),
                 'UPLOAD_ERR_CANT_WRITE'          => array('5.1.0', ''),
                 'UPLOAD_ERR_EXTENSION'           => array('5.2.0', ''),
+                'ZEND_MULTIBYTE'                 => array('5.3.4', ''),
             );
             $constants = array_merge(
                 $constants,

@@ -1024,8 +1024,6 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
             $version5 = array(
                 'CRYPT_SHA256'                      => array('5.3.2', ''),
                 'CRYPT_SHA512'                      => array('5.3.2', ''),
-                'DEBUG_BACKTRACE_PROVIDE_OBJECT'    => array('5.3.6', ''),
-                'DEBUG_BACKTRACE_IGNORE_ARGS'       => array('5.3.6', ''),
                 'ENT_IGNORE'                        => array('5.3.0', ''),
                 'FILE_BINARY'                       => array('5.2.7', ''),
                 'FILE_TEXT'                         => array('5.2.7', ''),
