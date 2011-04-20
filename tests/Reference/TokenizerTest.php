@@ -24,6 +24,11 @@ class PHP_CompatInfo_Reference_TokenizerTest extends PHP_CompatInfo_Reference_Ge
      */
     protected function setUp()
     {
+        $this->ignoredconstants = array(
+            // Seems to be defined in 5.2.17...
+            'T_NAMESPACE',
+            'T_USE',
+        );
         $this->obj = new PHP_CompatInfo_Reference_Tokenizer();
         parent::setUp();
     }
