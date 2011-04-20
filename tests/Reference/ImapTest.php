@@ -24,14 +24,12 @@ class PHP_CompatInfo_Reference_ImapTest extends PHP_CompatInfo_Reference_Generic
      */
     protected function setUp()
     {
-        $this->ignoredfunctions = array(
-            'imap_fetchmime',
+        $this->optionnalfunctions = array(
+            // Not available on some 5.2.x but found in code...
+            'imap_listscan',
+            // requires HAVE_IMAP_MUTF7
             'imap_utf8_to_mutf7',
             'imap_mutf7_to_utf8',
-            'imap_fetchtext',
-            'imap_scan',
-            'imap_create',
-            'imap_rename'
         );
         $this->obj = new PHP_CompatInfo_Reference_Imap();
         parent::setUp();

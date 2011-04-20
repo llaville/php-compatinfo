@@ -391,7 +391,7 @@ class PHP_CompatInfo_Reference_Mysqli implements PHP_CompatInfo_Reference
                 'MYSQLI_TYPE_GEOMETRY'           => array('5.0.0', ''),
                 'MYSQLI_TYPE_NEWDECIMAL'         => array('5.0.0', ''),
                 'MYSQLI_TYPE_BIT'                => array('5.0.0', ''),
-                'MYSQLI_SET_CHARSET_NAME'        => array('5.0.0', ''),
+                'MYSQLI_SET_CHARSET_NAME'        => array('5.2.5', ''),
                 'MYSQLI_NO_DATA'                 => array('5.0.0', ''),
                 'MYSQLI_REPORT_INDEX'            => array('5.0.0', ''),
                 'MYSQLI_REPORT_ERROR'            => array('5.0.0', ''),

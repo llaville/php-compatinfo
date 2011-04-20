@@ -266,7 +266,7 @@ class PHP_CompatInfo_Reference_Openssl implements PHP_CompatInfo_Reference
                 'OPENSSL_ALGO_MD5'               => array('5.0.0', ''),
                 'OPENSSL_ALGO_MD4'               => array('5.0.0', ''),
                 'OPENSSL_ALGO_MD2'               => array('5.0.0', ''),
-                'OPENSSL_ALGO_DSS1'              => array('5.0.0', ''),
+                'OPENSSL_ALGO_DSS1'              => array('5.2.8', ''),
                 'OPENSSL_VERSION_TEXT'           => array('5.2.0', ''),
                 'OPENSSL_VERSION_NUMBER'         => array('5.2.0', ''),
                 'OPENSSL_TLSEXT_SERVER_NAME'     => array('5.3.2', ''),

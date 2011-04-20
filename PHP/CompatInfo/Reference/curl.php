@@ -439,7 +439,6 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLPROTO_TFTP'                 => array('4.0.2', ''),
 
                 'CURLPROXY_HTTP'                 => array('4.0.2', ''),
-                'CURLPROXY_SOCKS4'               => array('4.0.2', ''),
                 'CURLPROXY_SOCKS5'               => array('4.0.2', ''),
 
                 'CURLVERSION_NOW'                => array('4.0.2', ''),
@@ -492,6 +491,8 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLFTPSSL_ALL'                 => array('5.2.0', ''),
                 'CURLFTPSSL_CONTROL'             => array('5.2.0', ''),
                 'CURLFTPSSL_NONE'                => array('5.2.0', ''),
+
+                'CURLPROXY_SOCKS4'               => array('5.2.10', ''),
 
                 'CURLSSH_AUTH_DEFAULT'           => array('5.3.0', ''),
                 'CURLSSH_AUTH_HOST'              => array('5.3.0', ''),

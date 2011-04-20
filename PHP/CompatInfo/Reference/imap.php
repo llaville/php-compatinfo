@@ -155,6 +155,7 @@ class PHP_CompatInfo_Reference_Imap implements PHP_CompatInfo_Reference
                 'imap_check'                => array('4.0.0', ''),
                 'imap_clearflag_full'       => array('4.0.0', ''),
                 'imap_close'                => array('4.0.0', ''),
+                'imap_create'               => array('4.0.0', ''),
                 'imap_createmailbox'        => array('4.0.0', ''),
                 'imap_delete'               => array('4.0.0', ''),
                 'imap_deletemailbox'        => array('4.0.0', ''),
@@ -164,6 +165,7 @@ class PHP_CompatInfo_Reference_Imap implements PHP_CompatInfo_Reference
                 'imap_fetchbody'            => array('4.0.0', ''),
                 'imap_fetchheader'          => array('4.0.0', ''),
                 'imap_fetchstructure'       => array('4.0.0', ''),
+                'imap_fetchtext'            => array('4.0.0', ''),
                 'imap_get_quota'            => array('4.0.5', ''),
                 'imap_get_quotaroot'        => array('4.3.0', ''),
                 'imap_getmailboxes'         => array('4.0.0', ''),
@@ -189,6 +191,7 @@ class PHP_CompatInfo_Reference_Imap implements PHP_CompatInfo_Reference
                 'imap_open'                 => array('4.0.0', ''),
                 'imap_ping'                 => array('4.0.0', ''),
                 'imap_qprint'               => array('4.0.0', ''),
+                'imap_rename'               => array('4.0.0', ''),
                 'imap_renamemailbox'        => array('4.0.0', ''),
                 'imap_reopen'               => array('4.0.0', ''),
                 'imap_rfc822_parse_adrlist' => array('4.0.0', ''),
@@ -196,6 +199,7 @@ class PHP_CompatInfo_Reference_Imap implements PHP_CompatInfo_Reference
                 'imap_rfc822_write_address' => array('4.0.0', ''),
                 'imap_scanmailbox'          => array('4.0.0', ''),
                 'imap_search'               => array('4.0.0', ''),
+                'imap_scan'                 => array('4.0.0', ''),
                 'imap_set_quota'            => array('4.0.5', ''),
                 'imap_setacl'               => array('4.0.7', ''),
                 'imap_setflag_full'         => array('4.0.0', ''),
@@ -218,9 +222,12 @@ class PHP_CompatInfo_Reference_Imap implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'imap_fetchmime'            => array('5.3.6', ''),
                 'imap_gc'                   => array('5.3.0', ''),
                 'imap_getacl'               => array('5.0.0', ''),
                 'imap_savebody'             => array('5.1.3', ''),
+                'imap_utf8_to_mutf7'        => array('5.3.0', ''),
+                'imap_mutf7_to_utf8'        => array('5.3.0', ''),
             );
             $functions = array_merge(
                 $functions,

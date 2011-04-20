@@ -31,4 +31,15 @@ class PHP_CompatInfo_Reference_SessionTest extends PHP_CompatInfo_Reference_Gene
         $this->obj = new PHP_CompatInfo_Reference_Session();
         parent::setUp();
     }
+
+    public function testgetConstantsFromExtension() {
+        if (version_compare(PHP_VERSION,'5.2.9') <= 0) {
+            // Most functions have move to 'standard' in 5.2.10
+            $this->markTestSkipped(
+              "Can't be tested in php " . PHP_VERSION
+            );
+        } else {
+            parent::testgetConstantsFromExtension();
+        }
+    }
 }
