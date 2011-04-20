@@ -33,6 +33,8 @@ class PHP_CompatInfo_Reference_MysqliTest extends PHP_CompatInfo_Reference_Gener
             'MYSQLI_ON_UPDATE_NOW_FLAG',
             // Requires REFRESH_BACKUP_LOG
             'MYSQLI_REFRESH_BACKUP_LOG',
+            // Requires SERVER_QUERY_WAS_SLOW
+            'MYSQLI_SERVER_QUERY_WAS_SLOW',
         );
         $this->optionnalfunctions = array(
             // Requires HAVE_EMBEDDED_MYSQLI

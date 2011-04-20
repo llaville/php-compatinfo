@@ -27,9 +27,26 @@ class PHP_CompatInfo_Reference_CurlTest extends PHP_CompatInfo_Reference_Generic
         $this->optionnalconstants = array(
             'CURLOPT_MUTE',
             'CURLOPT_PASSWDFUNCTION',
+            // requires libcurl >= 0x070f01
+            'CURLFTPMETHOD_MULTICWD',
+            'CURLFTPMETHOD_NOCWD',
+            'CURLFTPMETHOD_SINGLECWD',
             // requires libcurl >= 0x071002
             'CURLOPT_CONNECTTIMEOUT_MS',
             'CURLOPT_TIMEOUT_MS',
+            // requires libcurl >= 0x071300
+            'CURLSSH_AUTH_NONE',
+            'CURLSSH_AUTH_PUBLICKEY',
+            'CURLSSH_AUTH_PASSWORD',
+            'CURLSSH_AUTH_HOST',
+            'CURLSSH_AUTH_KEYBOARD',
+            'CURLSSH_AUTH_DEFAULT',
+            'CURLOPT_SSH_AUTH_TYPES',
+            'CURLOPT_KEYPASSWD',
+            'CURLOPT_SSH_PUBLIC_KEYFILE',
+            'CURLOPT_SSH_PRIVATE_KEYFILE',
+            'CURLOPT_SSH_HOST_PUBLIC_KEY_MD5',
+            'CURLE_SSH',
             // requires libcurl >= 0x071304
             'CURLOPT_REDIR_PROTOCOLS',
             'CURLOPT_PROTOCOLS',

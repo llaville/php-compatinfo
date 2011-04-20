@@ -176,8 +176,8 @@ class PHP_CompatInfo_Reference_Enchant implements PHP_CompatInfo_Reference
                 // Version 1.0.1
                 'enchant_broker_list_dicts'             => array('5.3.0', ''),
                 // Version 1.1.0
-                'enchant_broker_set_dict_path'          => array('5.3.0', ''),
-                'enchant_broker_get_dict_path'          => array('5.3.0', ''),
+                'enchant_broker_set_dict_path'          => array('5.3.1', ''),
+                'enchant_broker_get_dict_path'          => array('5.3.1', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -212,8 +212,8 @@ class PHP_CompatInfo_Reference_Enchant implements PHP_CompatInfo_Reference
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
                 // version 1.0.1
-                'ENCHANT_ISPELL'            => array('5.3.0', ''),
-                'ENCHANT_MYSPELL'           => array('5.3.0', ''),
+                'ENCHANT_ISPELL'            => array('5.3.1', ''),
+                'ENCHANT_MYSPELL'           => array('5.3.1', ''),
             );
             $constants = array_merge(
                 $constants,
