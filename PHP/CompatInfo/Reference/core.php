@@ -171,12 +171,10 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'define'                         => array('4.0.0', ''),
                 'defined'                        => array('4.0.0', ''),
                 'get_class'                      => array('4.0.0', ''),
-                'get_called_class'               => array('4.0.0', ''),
                 'get_parent_class'               => array('4.0.0', ''),
                 'method_exists'                  => array('4.0.0', ''),
                 'class_exists'                   => array('4.0.0', ''),
                 'function_exists'                => array('4.0.0', ''),
-                'class_alias'                    => array('4.0.0', ''),
                 'get_included_files'             => array('4.0.0', ''),
                 'get_required_files'             => array('4.0.0', ''),
                 'is_subclass_of'                 => array('4.0.0', ''),
@@ -198,10 +196,6 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'get_extension_funcs'            => array('4.0.0', ''),
                 'get_defined_constants'          => array('4.0.7', ''),
                 'debug_backtrace'                => array('4.3.0', ''),
-                'gc_collect_cycles'              => array('4.0.0', ''),
-                'gc_enabled'                     => array('4.0.0', ''),
-                'gc_enable'                      => array('4.0.0', ''),
-                'gc_disable'                     => array('4.0.0', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -210,7 +204,13 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'class_alias'                    => array('5.3.0', ''),
                 'debug_print_backtrace'          => array('5.0.0', ''),
+                'gc_collect_cycles'              => array('5.3.0', ''),
+                'gc_enabled'                     => array('5.3.0', ''),
+                'gc_enable'                      => array('5.3.0', ''),
+                'gc_disable'                     => array('5.3.0', ''),
+                'get_called_class'               => array('5.3.0', ''),
                 'get_declared_interfaces'        => array('5.0.0', ''),
                 'interface_exists'               => array('5.0.2', ''),
                 'property_exists'                => array('5.1.0', ''),
@@ -293,7 +293,6 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'UPLOAD_ERR_OK'                  => array('4.3.0', ''),
                 'UPLOAD_ERR_PARTIAL'             => array('4.3.0', ''),
                 'ZEND_THREAD_SAFE'               => array('4.0.0', ''),
-                'ZEND_DEBUG_BUILD'               => array('4.0.0', ''),
             );
             $constants = array_merge(
                 $constants,
@@ -322,6 +321,7 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'PHP_ZTS'                        => array('5.2.7', ''),
                 'UPLOAD_ERR_CANT_WRITE'          => array('5.1.0', ''),
                 'UPLOAD_ERR_EXTENSION'           => array('5.2.0', ''),
+                'ZEND_DEBUG_BUILD'               => array('5.3.0', ''),
                 'ZEND_MULTIBYTE'                 => array('5.3.4', ''),
             );
             $constants = array_merge(
