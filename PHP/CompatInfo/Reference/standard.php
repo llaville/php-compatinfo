@@ -366,6 +366,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'headers_sent'                   => array('4.0.0', ''),
                 'connection_aborted'             => array('4.0.0', ''),
                 'connection_status'              => array('4.0.0', ''),
+                'connection_timeout'             => array('4.0.0', '4.0.5'),
                 'ignore_user_abort'              => array('4.0.0', ''),
                 'parse_ini_file'                 => array('4.0.0', ''),
                 'parse_ini_string'               => array('4.0.0', ''),
@@ -462,6 +463,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'opendir'                        => array('4.0.0', ''),
                 'closedir'                       => array('4.0.0', ''),
                 'chdir'                          => array('4.0.0', ''),
+                'chroot'                         => array('4.0.5', ''),
                 'getcwd'                         => array('4.0.0', ''),
                 'rewinddir'                      => array('4.0.0', ''),
                 'readdir'                        => array('4.0.0', ''),
@@ -478,6 +480,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'filetype'                       => array('4.0.0', ''),
                 'file_exists'                    => array('4.0.0', ''),
                 'is_writable'                    => array('4.0.0', ''),
+                'is_writeable'                   => array('4.0.0', ''),
                 'is_readable'                    => array('4.0.0', ''),
                 'is_executable'                  => array('4.0.0', ''),
                 'is_file'                        => array('4.0.0', ''),
@@ -588,7 +591,13 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'str_rot13'                      => array('4.2.0', ''),
                 'output_add_rewrite_var'         => array('4.0.0', ''),
                 'output_reset_rewrite_vars'      => array('4.3.0', ''),
-
+                'money_format'                   => array('4.3.0', ''),
+                'nl_langinfo'                    => array('4.1.0', ''),
+                'readlink'                       => array('4.0.0', ''),
+                'symlink'                        => array('4.0.0', ''),
+                'getrusage'                      => array('4.0.0', ''),
+                // In "Semaphore functions" but in "standard" ext
+                'ftok'                           => array('4.2.0', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -648,6 +657,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'stream_get_line'                => array('5.0.0', ''),
                 'stream_get_wrappers'            => array('5.0.0', ''),
                 'stream_get_transports'          => array('5.0.0', ''),
+                'stream_set_read_buffer'         => array('5.3.3', ''),
                 'stream_is_local'                => array('5.2.4', ''),
                 'stream_socket_accept'           => array('5.0.0', ''),
                 'stream_socket_client'           => array('5.0.0', ''),
@@ -662,6 +672,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'stream_wrapper_unregister'      => array('5.1.0', ''),
                 'stripos'                        => array('5.0.0', ''),
                 'strpbrk'                        => array('5.0.0', ''),
+                'strptime'                       => array('5.1.0', ''),
                 'strripos'                       => array('5.0.0', ''),
                 'substr_compare'                 => array('5.0.0', ''),
                 'sys_get_temp_dir'               => array('5.2.1', ''),
@@ -763,6 +774,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'PATHINFO_EXTENSION'             => array('4.0.0', ''),
                 'PATHINFO_FILENAME'              => array('4.0.0', ''),
                 'CHAR_MAX'                       => array('4.0.0', ''),
+                'LC_MESSAGES'                    => array('4.0.0', ''),
                 'LC_CTYPE'                       => array('4.0.0', ''),
                 'LC_NUMERIC'                     => array('4.0.0', ''),
                 'LC_TIME'                        => array('4.0.0', ''),
@@ -967,8 +979,26 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
-                'FILE_BINARY'                    => array('5.2.7', ''),
-                'FILE_TEXT'                      => array('5.2.7', ''),
+                'STREAM_IPPROTO_TCP'                => array('5.1.0', ''),
+                'STREAM_IPPROTO_UDP'                => array('5.1.0', ''),
+                'STREAM_IPPROTO_ICMP'               => array('5.1.0', ''),
+                'STREAM_IPPROTO_RAW'                => array('5.1.0', ''),
+                'FILE_BINARY'                       => array('5.2.7', ''),
+                'FILE_TEXT'                         => array('5.2.7', ''),
+                'DEBUG_BACKTRACE_PROVIDE_OBJECT'    => array('5.3.6', ''),
+                'DEBUG_BACKTRACE_IGNORE_ARGS'       => array('5.3.6', ''),
+                'PHP_WINDOWS_VERSION_MAJOR'         => array('5.3.0', ''),
+                'PHP_WINDOWS_VERSION_MINOR'         => array('5.3.0', ''),
+                'PHP_WINDOWS_VERSION_BUILD'         => array('5.3.0', ''),
+                'PHP_WINDOWS_VERSION_PLATFORM'      => array('5.3.0', ''),
+                'PHP_WINDOWS_VERSION_SP_MAJOR'      => array('5.3.0', ''),
+                'PHP_WINDOWS_VERSION_SP_MINOR'      => array('5.3.0', ''),
+                'PHP_WINDOWS_VERSION_SUITEMASK'     => array('5.3.0', ''),
+                'PHP_WINDOWS_VERSION_PRODUCTTYPE'   => array('5.3.0', ''),
+                'PHP_WINDOWS_NT_DOMAIN_CONTROLLER'  => array('5.3.0', ''),
+                'PHP_WINDOWS_NT_SERVER'             => array('5.3.0', ''),
+                'PHP_WINDOWS_NT_WORKSTATION'        => array('5.3.0', ''),
+
             );
             $constants = array_merge(
                 $constants,
