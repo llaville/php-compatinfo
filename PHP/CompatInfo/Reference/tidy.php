@@ -158,11 +158,11 @@ class PHP_CompatInfo_Reference_Tidy implements PHP_CompatInfo_Reference
                 'tidy_get_output'                   => array('4.0.0', ''),
                 'tidy_warning_count'                => array('4.0.0', ''),
                 // PECL tidy only, removed in PHP 5.0.0
-                'tidy_load_config'                  => array('4.0.0', '5.0.0'),
-                'tidy_reset_config'                 => array('4.0.0', '5.0.0'),
-                'tidy_save_config'                  => array('4.0.0', '5.0.0'),
-                'tidy_set_encoding'                 => array('4.0.0', '5.0.0'),
-                'tidy_setopt'                       => array('4.0.0', '5.0.0'),
+                'tidy_load_config'                  => array('4.0.0', '4.4.9'),
+                'tidy_reset_config'                 => array('4.0.0', '4.4.9'),
+                'tidy_save_config'                  => array('4.0.0', '4.4.9'),
+                'tidy_set_encoding'                 => array('4.0.0', '4.4.9'),
+                'tidy_setopt'                       => array('4.0.0', '4.4.9'),
                 // Function eq to tidy class methods in Tidy 0.5.2
                 'tidy_get_body'                     => array('4.0.0', ''),
                 'tidy_clean_repair'                 => array('4.0.0', ''),

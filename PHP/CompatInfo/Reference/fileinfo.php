@@ -194,7 +194,7 @@ class PHP_CompatInfo_Reference_Fileinfo implements PHP_CompatInfo_Reference
                 'FILEINFO_PRESERVE_ATIME' => array('4.0.0', ''),
                 'FILEINFO_RAW'            => array('4.0.0', ''),
                 // Removed in 5.3.0
-                'FILEINFO_COMPRESS'       => array('4.0.0', '5.3.0'),
+                'FILEINFO_COMPRESS'       => array('4.0.0', '5.2.17'),
             );
             $constants = array_merge(
                 $constants,

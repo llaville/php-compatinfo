@@ -360,7 +360,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'headers_sent'                   => array('4.0.0', ''),
                 'connection_aborted'             => array('4.0.0', ''),
                 'connection_status'              => array('4.0.0', ''),
-                'connection_timeout'             => array('4.0.0', '4.0.5'),
+                'connection_timeout'             => array('4.0.0', '4.0.4'),
                 'ignore_user_abort'              => array('4.0.0', ''),
                 'parse_ini_file'                 => array('4.0.0', ''),
                 'is_uploaded_file'               => array('4.0.3', ''),
