@@ -109,6 +109,11 @@ class PHP_CompatInfo_Reference_StandardTest extends PHP_CompatInfo_Reference_Gen
                 'LOG_LOCAL5',
                 'LOG_LOCAL6',
                 'LOG_LOCAL7',
+                // requires HAVE_FNMATCH (linux only)
+                'FNM_NOESCAPE',
+                'FNM_PATHNAME',
+                'FNM_PERIOD',
+                'FNM_CASEFOLD',
                 // requires HAVE_LIBINTL
                 'LC_MESSAGES',
                 'ABDAY_1',
