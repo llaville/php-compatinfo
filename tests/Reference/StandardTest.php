@@ -171,6 +171,21 @@ class PHP_CompatInfo_Reference_StandardTest extends PHP_CompatInfo_Reference_Gen
                 'YESEXPR',
                 'NOEXPR',
                 'CODESET',
+                // native support in 5.3 only (windows)
+                'DNS_A',
+                'DNS_NS',
+                'DNS_CNAME',
+                'DNS_SOA',
+                'DNS_PTR',
+                'DNS_HINFO',
+                'DNS_MX',
+                'DNS_TXT',
+                'DNS_SRV',
+                'DNS_NAPTR',
+                'DNS_AAAA',
+                'DNS_A6',
+                'DNS_ANY',
+                'DNS_ALL',
             );
         }
         $this->obj = new PHP_CompatInfo_Reference_Standard();
