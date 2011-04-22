@@ -54,6 +54,14 @@ class PHP_CompatInfo_Reference_CoreTest extends PHP_CompatInfo_Reference_Generic
                     'PHP_WINDOWS_NT_WORKSTATION',
                 )
             );
+        } else {
+            $this->optionnalconstants = array_merge(
+                $this->optionnalconstants,
+                array(
+                    // Non Windows only
+                    'PHP_MANDIR',
+                )
+            );
         }
 
         $this->optionnalfunctions = array(

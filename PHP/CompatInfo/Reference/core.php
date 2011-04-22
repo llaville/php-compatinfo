@@ -314,6 +314,7 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'PHP_DEBUG'                      => array('5.2.7', ''),
                 'PHP_EXTRA_VERSION'              => array('5.2.7', ''),
                 'PHP_MAJOR_VERSION'              => array('5.2.7', ''),
+                'PHP_MANDIR'                     => array('5.3.7-dev', ''),
                 'PHP_MAXPATHLEN'                 => array('5.3.0', ''),
                 'PHP_MINOR_VERSION'              => array('5.2.7', ''),
                 'PHP_RELEASE_VERSION'            => array('5.2.7', ''),
