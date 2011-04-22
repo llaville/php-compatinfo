@@ -36,6 +36,26 @@ class PHP_CompatInfo_Reference_CoreTest extends PHP_CompatInfo_Reference_Generic
             '__METHOD__',
             '__NAMESPACE__',
         );
+        if (DIRECTORY_SEPARATOR == '/') {
+            $this->optionnalconstants = array_merge(
+                $this->optionnalconstants,
+                array(
+                    // Win32 Only
+                    'PHP_WINDOWS_VERSION_MAJOR',
+                    'PHP_WINDOWS_VERSION_MINOR',
+                    'PHP_WINDOWS_VERSION_BUILD',
+                    'PHP_WINDOWS_VERSION_PLATFORM',
+                    'PHP_WINDOWS_VERSION_SP_MAJOR',
+                    'PHP_WINDOWS_VERSION_SP_MINOR',
+                    'PHP_WINDOWS_VERSION_SUITEMASK',
+                    'PHP_WINDOWS_VERSION_PRODUCTTYPE',
+                    'PHP_WINDOWS_NT_DOMAIN_CONTROLLER',
+                    'PHP_WINDOWS_NT_SERVER',
+                    'PHP_WINDOWS_NT_WORKSTATION',
+                )
+            );
+        }
+
         $this->optionnalfunctions = array(
             // Requires ZTS
             'zend_thread_id',

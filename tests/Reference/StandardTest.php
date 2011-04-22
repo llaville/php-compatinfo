@@ -41,20 +41,6 @@ class PHP_CompatInfo_Reference_StandardTest extends PHP_CompatInfo_Reference_Gen
                 // remove in some Linux distribution (Redhat, ...)
                 'php_egg_logo_guid',
             );
-            $this->optionnalconstants = array(
-                // Win32 Only
-                'PHP_WINDOWS_VERSION_MAJOR',
-                'PHP_WINDOWS_VERSION_MINOR',
-                'PHP_WINDOWS_VERSION_BUILD',
-                'PHP_WINDOWS_VERSION_PLATFORM',
-                'PHP_WINDOWS_VERSION_SP_MAJOR',
-                'PHP_WINDOWS_VERSION_SP_MINOR',
-                'PHP_WINDOWS_VERSION_SUITEMASK',
-                'PHP_WINDOWS_VERSION_PRODUCTTYPE',
-                'PHP_WINDOWS_NT_DOMAIN_CONTROLLER',
-                'PHP_WINDOWS_NT_SERVER',
-                'PHP_WINDOWS_NT_WORKSTATION',
-            );
         } else {
             $this->optionnalfunctions = array(
                 // requires HAVE_NL_LANGINFO (linux only)
