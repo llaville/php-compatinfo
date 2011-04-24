@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2011-04-23</date>
- <time>18:09:29</time>
+ <date>2011-04-24</date>
+ <time>10:53:26</time>
  <version>
   <release>2.0.0RC4</release>
   <api>2.0.0</api>
@@ -750,7 +750,7 @@ Bug fixes:
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2011-04-23</date>
+   <date>2011-04-24</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Version 2 is a PHP5 rewrites
