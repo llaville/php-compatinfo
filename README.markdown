@@ -38,88 +38,13 @@ This has to be done only once. Now the PEAR Installer can be used to install pac
 
 After the installation you can find the PHP_CompatInfo source files inside your local PEAR directory.
 
-Using the PHP_CompatInfo API
-----------------------------
 
-    <?php
-    require_once 'PHP/CompatInfo.php';
+Documentation
+-------------
 
-    try {
-        $pci = new PHP_CompatInfo($options);
-        $pci->parse($source);
+The documentation for PHP_CompatInfo is available in different formats:
 
-        $allResultsAtOnce = $pci->toArray();
-
-    } catch (PHP_CompatInfo_Exception $e) {
-        echo 'Exception ' . $e->getCode() . PHP_EOL;
-        echo $e->getMessage();
-    }
-
-Using the `phpci` tool
-----------------------
-
-    $ cat sample.php
-    <?php
-    interface ICompat
-    {
-        public function getCompat();
-        public function toArray();
-    }
-
-    class CompatInfo
-        extends PHP_CompatInfo
-        implements SplSubject, IteratorAggregate, Countable
-    {
-    }
-
-    function toFile($filename, $data)
-    {
-        if (function_exists('file_put_contents')) {
-            file_put_contents($filename, $data);
-        } else {
-            $file = fopen($filename, 'wb');
-            fwrite($file, $data);
-            fclose($file);
-        }
-    }
-
-    define ('APPLICATION_ENV', 'development');
-
-    xdebug_start_trace();
-
-    $a = array_fill(5, 6, 'banana');
-    // no backtrace yet
-    $backtrace = null;
-
-    if (function_exists('debug_backtrace')) {
-        $backtrace = debug_backtrace();
-    } else {
-        // no backtrace feature available
-        $backtrace = false;
-    }
-
-    debug_print_backtrace();
-
-    $a = null;
-    ?>
-    
-    
-    $ phpci print sample.php
-    PHP COMPAT INFO REPORT SUMMARY
-    -------------------------------------------------------------------------------
-    FILES                         EXTENSIONS INTERFACES CLASSES FUNCTIONS CONSTANTS
-    -------------------------------------------------------------------------------
-    BASE: /path/to
-    -------------------------------------------------------------------------------
-    DIR.:
-    sample.php                            4          4       2        11         3
-    -------------------------------------------------------------------------------
-    A TOTAL OF
-     4 EXTENSION(S) 4 INTERFACE(S) 2 CLASSE(S) 11 FUNCTION(S) 3 CONSTANT(S)
-    WERE FOUND IN 1 FILE(S)
-    WITH CONDITIONAL CODE LEVEL 1
-    REQUIRED PHP 5.2.0 (MIN)
-    -------------------------------------------------------------------------------
-    Time: 1 second, Memory: 5.00Mb
-    -------------------------------------------------------------------------------
-
+* [English, multiple HTML files](http://php5.laurent-laville.org/compatinfo/manual/2.0/en/index.html)
+* [English, single HTML file](http://php5.laurent-laville.org/compatinfo/manual/2.0/en/phpci-book.html)
+* [English, PDF](http://php5.laurent-laville.org/compatinfo/manual/2.0/en/phpci-book.pdf)
+* [English, CHM](http://php5.laurent-laville.org/compatinfo/manual/2.0/en/phpci-book.zip)
