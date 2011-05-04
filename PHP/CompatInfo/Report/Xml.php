@@ -219,6 +219,58 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                 $indent -= $indentStep;
             }
 
+            // all globals found in $filename
+            if (count($elements['globals']) > 0) {
+                $indent += $indentStep;
+                echo str_repeat(' ', $indent);
+                echo '<globals>' . PHP_EOL;
+                $indent += $indentStep;
+                foreach ($elements['globals'] as $category => $items) {
+                    if ('user' == $category) {
+                        $extension = '';
+                    } else {
+                        $extension = $category;
+                    }
+                    foreach ($items as $constant => $data) {
+                        echo str_repeat(' ', $indent);
+                        echo '<global name="' . $constant .
+                            '" scope="' . $extension .
+                            '" count="' . $data['uses'] .
+                            '" />' . PHP_EOL;
+                    }
+                }
+                $indent -= $indentStep;
+                echo str_repeat(' ', $indent);
+                echo '</globals>' . PHP_EOL;
+                $indent -= $indentStep;
+            }
+
+            // all tokens found in $filename
+            if (count($elements['tokens']) > 0) {
+                $indent += $indentStep;
+                echo str_repeat(' ', $indent);
+                echo '<tokens>' . PHP_EOL;
+                $indent += $indentStep;
+                foreach ($elements['tokens'] as $category => $items) {
+                    if ('user' == $category) {
+                        $extension = '';
+                    } else {
+                        $extension = $category;
+                    }
+                    foreach ($items as $constant => $data) {
+                        echo str_repeat(' ', $indent);
+                        echo '<token name="' . $constant .
+                            '" extension="' . $extension .
+                            '" count="' . $data['uses'] .
+                            '" />' . PHP_EOL;
+                    }
+                }
+                $indent -= $indentStep;
+                echo str_repeat(' ', $indent);
+                echo '</tokens>' . PHP_EOL;
+                $indent -= $indentStep;
+            }
+            
             echo str_repeat(' ', $indent);
             echo '</file>'.PHP_EOL;
         }
