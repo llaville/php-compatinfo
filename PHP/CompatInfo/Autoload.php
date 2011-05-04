@@ -122,6 +122,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/iconv.php',
             'PHP_CompatInfo_Reference_Imap'
                 => 'PHP/CompatInfo/Reference/imap.php',
+            'PHP_CompatInfo_Reference_Intl'
+                => 'PHP/CompatInfo/Reference/intl.php',
             'PHP_CompatInfo_Reference_Json'
                 => 'PHP/CompatInfo/Reference/json.php',
             'PHP_CompatInfo_Reference_Libxml'
