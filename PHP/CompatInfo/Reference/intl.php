@@ -157,9 +157,6 @@ class PHP_CompatInfo_Reference_Intl implements PHP_CompatInfo_Reference
 
         if ((null == $version ) || ('4' == $version)) {
             $version4 = array(
-                // php 5.3.0 or intl 1.0.2 or idn 0.1
-                'idn_to_ascii'                      => array('4.0.0', ''),
-                'idn_to_utf8'                       => array('4.0.0', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -263,6 +260,9 @@ class PHP_CompatInfo_Reference_Intl implements PHP_CompatInfo_Reference
                 'resourcebundle_get_error_code'     => array('5.2.4', ''),
                 'resourcebundle_get_error_message'  => array('5.2.4', ''),
                 'resourcebundle_locales'            => array('5.2.4', ''),
+                // php 5.3.0 or intl 1.0.2 or idn 0.1
+                'idn_to_ascii'                      => array('5.2.4', ''),
+                'idn_to_utf8'                       => array('5.2.4', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -288,9 +288,6 @@ class PHP_CompatInfo_Reference_Intl implements PHP_CompatInfo_Reference
 
         if ((null == $version ) || ('4' == $version)) {
             $version4 = array(
-                'IDNA_ALLOW_UNASSIGNED'             => array('4.0.0', ''),
-                'IDNA_DEFAULT'                      => array('4.0.0', ''),
-                'IDNA_USE_STD3_RULES'               => array('4.0.0', ''),
             );
             $constants = array_merge(
                 $constants,
@@ -302,6 +299,9 @@ class PHP_CompatInfo_Reference_Intl implements PHP_CompatInfo_Reference
                 'GRAPHEME_EXTR_COUNT'               => array('5.2.4', ''),
                 'GRAPHEME_EXTR_MAXBYTES'            => array('5.2.4', ''),
                 'GRAPHEME_EXTR_MAXCHARS'            => array('5.2.4', ''),
+                'IDNA_ALLOW_UNASSIGNED'             => array('5.2.4', ''),
+                'IDNA_DEFAULT'                      => array('5.2.4', ''),
+                'IDNA_USE_STD3_RULES'               => array('5.2.4', ''),
                 'INTL_MAX_LOCALE_LEN'               => array('5.2.4', ''),
                 'ULOC_ACTUAL_LOCALE'                => array('5.2.4', ''),
                 'ULOC_VALID_LOCALE'                 => array('5.2.4', ''),
