@@ -1146,12 +1146,12 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
         foreach ($haystack as $key => $data) {
 
+            $ref = $this->searchReference($category, $key);
+        
             if ($ns == '\\') {
                 // global namespace
-                $ref = $this->searchReference($category, $key);
-            } else {
+            } elseif ($ref === 1) {
                 // user namespace
-                $ref            = 1;
                 $defaultVersion = '5.3.0';
             }
 
