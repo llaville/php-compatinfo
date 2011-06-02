@@ -474,6 +474,8 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
                 'CURLOPT_FTPSSLAUTH'             => array('5.1.0', ''),
                 'CURLOPT_IPRESOLVE'              => array('5.3.0', ''),
                 'CURLOPT_KEYPASSWD'              => array('5.3.0', ''),
+                'CURLOPT_MAX_RECV_SPEED_LARGE'   => array('5.3.7-dev', ''),
+                'CURLOPT_MAX_SEND_SPEED_LARGE'   => array('5.3.7-dev', ''),
                 'CURLOPT_POSTREDIR'              => array('5.3.2', ''),
                 'CURLOPT_PRIVATE'                => array('5.2.4', ''),
                 'CURLOPT_PROGRESSFUNCTION'       => array('5.3.0', ''),

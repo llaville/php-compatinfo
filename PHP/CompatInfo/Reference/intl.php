@@ -303,6 +303,8 @@ class PHP_CompatInfo_Reference_Intl implements PHP_CompatInfo_Reference
                 'IDNA_DEFAULT'                      => array('5.2.4', ''),
                 'IDNA_USE_STD3_RULES'               => array('5.2.4', ''),
                 'INTL_MAX_LOCALE_LEN'               => array('5.2.4', ''),
+                'INTL_ICU_VERSION'                  => array('5.3.7-dev', ''),
+                'INTL_ICU_DATA_VERSION'             => array('5.3.7-dev', ''),
                 'ULOC_ACTUAL_LOCALE'                => array('5.2.4', ''),
                 'ULOC_VALID_LOCALE'                 => array('5.2.4', ''),
                 'U_AMBIGUOUS_ALIAS_WARNING'         => array('5.2.4', ''),
