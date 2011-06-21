@@ -1,11 +1,6 @@
 <?php
 /**
- */
-
-require_once 'GenericTest.php';
-
-/**
- * Tests for the PHP_CompatInfo class, retrieving functions informations.
+ * Unit tests for PHP_CompatInfo package, Posix Reference
  *
  * @package    PHP_CompatInfo
  * @subpackage Tests
@@ -14,6 +9,13 @@ require_once 'GenericTest.php';
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 2.0.0RC3
+ */
+
+require_once 'GenericTest.php';
+
+/**
+ * Tests for the PHP_CompatInfo class, retrieving components informations
+ * about Posix extension
  */
 class PHP_CompatInfo_Reference_PosixTest extends PHP_CompatInfo_Reference_GenericTest
 {
@@ -24,7 +26,6 @@ class PHP_CompatInfo_Reference_PosixTest extends PHP_CompatInfo_Reference_Generi
      */
     protected function setUp()
     {
-
         $this->obj = new PHP_CompatInfo_Reference_Posix();
         parent::setUp();
     }

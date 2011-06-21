@@ -1,11 +1,6 @@
 <?php
 /**
- */
-
-require_once 'GenericTest.php';
-
-/**
- * Tests for the PHP_CompatInfo class, retrieving functions informations.
+ * Unit tests for PHP_CompatInfo package, Shmop Reference
  *
  * @package    PHP_CompatInfo
  * @subpackage Tests
@@ -14,6 +9,13 @@ require_once 'GenericTest.php';
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 2.0.0RC3
+ */
+
+require_once 'GenericTest.php';
+
+/**
+ * Tests for the PHP_CompatInfo class, retrieving components informations
+ * about Shmop extension
  */
 class PHP_CompatInfo_Reference_ShmopTest extends PHP_CompatInfo_Reference_GenericTest
 {

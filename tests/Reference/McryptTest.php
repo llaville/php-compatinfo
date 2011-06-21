@@ -1,11 +1,6 @@
 <?php
 /**
- */
-
-require_once 'GenericTest.php';
-
-/**
- * Tests for the PHP_CompatInfo class, retrieving functions informations.
+ * Unit tests for PHP_CompatInfo package, Mcrypt Reference
  *
  * @package    PHP_CompatInfo
  * @subpackage Tests
@@ -14,6 +9,13 @@ require_once 'GenericTest.php';
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 2.0.0RC3
+ */
+
+require_once 'GenericTest.php';
+
+/**
+ * Tests for the PHP_CompatInfo class, retrieving components informations
+ * about Mcrypt extension
  */
 class PHP_CompatInfo_Reference_McryptTest extends PHP_CompatInfo_Reference_GenericTest
 {
@@ -24,12 +26,11 @@ class PHP_CompatInfo_Reference_McryptTest extends PHP_CompatInfo_Reference_Gener
      */
     protected function setUp()
     {
-		
         $this->optionnalconstants = array(
-        	// Non-free
-        	'MCRYPT_IDEA',
-        	// only in libmcrypt = 2.2.x	
-        	'MCRYPT_DES_COMPAT',
+            // Non-free
+            'MCRYPT_IDEA',
+            // only in libmcrypt = 2.2.x
+            'MCRYPT_DES_COMPAT',
             'MCRYPT_RC4',
             'MCRYPT_RC6_128',
             'MCRYPT_RC6_192',
@@ -41,7 +42,7 @@ class PHP_CompatInfo_Reference_McryptTest extends PHP_CompatInfo_Reference_Gener
             'MCRYPT_TWOFISH128',
             'MCRYPT_TWOFISH192',
             'MCRYPT_TWOFISH256',
-        	// only in libmcrypt > 2.4.x	
+            // only in libmcrypt > 2.4.x
             'MCRYPT_ARCFOUR_IV',
             'MCRYPT_ARCFOUR',
             'MCRYPT_ENIGNA',
@@ -61,7 +62,7 @@ class PHP_CompatInfo_Reference_McryptTest extends PHP_CompatInfo_Reference_Gener
             'MCRYPT_XTEA',
         );
         $this->ignoredconstants = array(
-        	'MCRYPT_BLOWFISH_COMPAT',
+            'MCRYPT_BLOWFISH_COMPAT',
         );
         $this->obj = new PHP_CompatInfo_Reference_Mcrypt();
         parent::setUp();

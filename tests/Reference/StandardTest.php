@@ -1,11 +1,6 @@
 <?php
 /**
- */
-
-require_once 'GenericTest.php';
-
-/**
- * Tests for the PHP_CompatInfo class, retrieving functions informations.
+ * Unit tests for PHP_CompatInfo package, Standard Reference
  *
  * @package    PHP_CompatInfo
  * @subpackage Tests
@@ -14,6 +9,13 @@ require_once 'GenericTest.php';
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 2.0.0RC4
+ */
+
+require_once 'GenericTest.php';
+
+/**
+ * Tests for the PHP_CompatInfo class, retrieving components informations
+ * about Standard extension
  */
 class PHP_CompatInfo_Reference_StandardTest extends PHP_CompatInfo_Reference_GenericTest
 {
@@ -26,7 +28,7 @@ class PHP_CompatInfo_Reference_StandardTest extends PHP_CompatInfo_Reference_Gen
     protected function setUp()
     {
         $this->ignoredfunctions = array(
-        // functions moved from internal to ereg extension in 5.3.0
+            // functions moved from internal to ereg extension in 5.3.0
             'ereg_replace',
             'ereg',
             'eregi_replace',

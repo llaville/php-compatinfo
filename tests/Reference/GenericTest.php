@@ -1,9 +1,6 @@
 <?php
 /**
- */
-
-/**
- * Tests for the PHP_CompatInfo class, retrieving functions informations.
+ * Unit tests for PHP_CompatInfo package, Generic base class
  *
  * @package    PHP_CompatInfo
  * @subpackage Tests
@@ -12,6 +9,10 @@
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 2.0.0RC3
+ */
+
+/**
+ * Tests for the PHP_CompatInfo class, retrieving components informations
  */
 class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 {
@@ -98,7 +99,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                 && (empty($max) || version_compare(PHP_VERSION,$max)<=0)) {
                 $this->assertTrue(
                     function_exists($fctname),
-                    "Function '$fctname', found in Reference, doesnt exists."
+                    "Function '$fctname', found in Reference, does not exists."
                 );
             }
             if (($min && version_compare(PHP_VERSION,$min)<0)
@@ -156,7 +157,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                 && (empty($max) || version_compare(PHP_VERSION,$max)<=0)) {
                 $this->assertTrue(
                     defined($constname),
-                    "Constant '$constname', found in Reference, doesnt exists."
+                    "Constant '$constname', found in Reference, does not exists."
                 );
             }
             if (!in_array($constname, $this->ignoredconstants)) {
@@ -181,21 +182,21 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
         }
 
         // Test than all referenced constant exists
-        foreach ($this->ref['classes'] as $constname => $range) {
+        foreach ($this->ref['classes'] as $classname => $range) {
             list($min, $max) = $range;
-            if (!in_array($constname, $this->optionnalclasses)
+            if (!in_array($classname, $this->optionnalclasses)
                 && (empty($min) || version_compare(PHP_VERSION,$min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION,$max)<=0)) {
                 $this->assertTrue(
-                    class_exists($constname, false),
-                    "Class '$constname', found in Reference, doesnt exists."
+                    class_exists($classname, false),
+                    "Class '$classname', found in Reference, does not exists."
                 );
             }
             if (($min && version_compare(PHP_VERSION,$min)<0)
                 || ($max && version_compare(PHP_VERSION,$max)>0)) {
                 $this->assertFalse(
-                    class_exists($constname, false),
-                    "Class '$constname', found in Reference ($min,$max), exists."
+                    class_exists($classname, false),
+                    "Class '$classname', found in Reference ($min,$max), exists."
                 );
             }
         }
@@ -218,7 +219,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                 && (empty($max) || version_compare(PHP_VERSION,$max)<=0)) {
                 $this->assertTrue(
                     interface_exists($intname, false),
-                    "Interface '$intname', found in Reference, doesnt exists."
+                    "Interface '$intname', found in Reference, does not exists."
                 );
             }
         }

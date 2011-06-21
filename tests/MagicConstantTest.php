@@ -1,5 +1,14 @@
 <?php
 /**
+ * Unit tests for PHP_CompatInfo package, magic constants informations
+ *
+ * @package    PHP_CompatInfo
+ * @subpackage Tests
+ * @author     Laurent Laville pear@laurent-laville.org>
+ * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version    Release: @package_version@
+ * @link       http://php5.laurent-laville.org/compatinfo/
+ * @since      Class available since Release 2.0.0RC4
  */
 
 if (!defined('TEST_FILES_PATH')) {
@@ -12,14 +21,6 @@ if (!defined('TEST_FILES_PATH')) {
 
 /**
  * Tests for the PHP_CompatInfo class, retrieving magic constants informations.
- *
- * @package    PHP_CompatInfo
- * @subpackage Tests
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
- * @since      Class available since Release 2.0.0RC4
  */
 class PHP_CompatInfo_MagicConstantTest extends PHPUnit_Framework_TestCase
 {
