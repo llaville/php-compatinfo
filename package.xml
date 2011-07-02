@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.9.3" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2011-05-04</date>
- <time>22:07:59</time>
+ <date>2011-07-02</date>
+ <time>12:25:06</time>
  <version>
   <release>2.0.0</release>
   <api>2.0.0</api>
@@ -42,12 +42,181 @@ PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-lavill
 Additions and changes:
 - add 1 new references data dictionnaries related to extensions:
   intl
+- add source documentation that can be build with AsciiDoc (see docs/README.txt)
 
 Bug fixes:
-- none
+- wrong PHP extension/internal functions detection when using namespace
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
+   <dir name="docs">
+    <dir name="images">
+     <dir name="icons">
+      <dir name="callouts">
+       <file baseinstalldir="Bartlett" name="1.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="2.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="3.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="4.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="5.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="6.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="7.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="8.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="9.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="10.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="11.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="12.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="13.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="14.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file baseinstalldir="Bartlett" name="15.png" role="doc">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /docs/images/icons/callouts -->
+      <file baseinstalldir="Bartlett" name="caution.png" role="doc">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="example.png" role="doc">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="home.png" role="doc">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="important.png" role="doc">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="next.png" role="doc">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="note.png" role="doc">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="prev.png" role="doc">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="README" role="doc">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="tip.png" role="doc">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="up.png" role="doc">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="warning.png" role="doc">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /docs/images/icons -->
+     <file baseinstalldir="Bartlett" name="PHPCompatInfo.png" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="summary.png" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="summary2.png" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="thumb_summary.png" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="thumb_summary2.png" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+    </dir> <!-- /docs/images -->
+    <dir name="js">
+     <file baseinstalldir="Bartlett" name="asciidoc-xhtml11.js" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="asciidoc.js" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+    </dir> <!-- /docs/js -->
+    <dir name="styles">
+     <file baseinstalldir="Bartlett" name="flask.css" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="pygments.css" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="toc2.css" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="xhtml11-quirks.css" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="xhtml11.css" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+    </dir> <!-- /docs/styles -->
+    <file baseinstalldir="Bartlett" name="basic_usage.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="build-phing.xml" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="CHANGELOG.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="command_line.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="getting_started.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="index.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="INSTALL.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="LICENSE.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="phpci-book.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="README.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="revision.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="UML.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="xml_configuration.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="XSLT.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+   </dir> <!-- /docs -->
    <dir name="misc">
     <file baseinstalldir="Bartlett" name="bullet_toggle_minus.png" role="data">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
@@ -644,9 +813,6 @@ Bug fixes:
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
    </dir> <!-- /tests -->
-   <file baseinstalldir="Bartlett" name="HOWTO.txt" role="doc">
-    <tasks:replace from="@package_version@" to="version" type="package-info" />
-   </file>
    <file baseinstalldir="Bartlett" name="LICENSE" role="doc">
     <tasks:replace from="@package_version@" to="version" type="package-info" />
    </file>
@@ -684,7 +850,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>0.7.0</min>
+    <min>1.0.0</min>
    </package>
    <package>
     <name>PHP_Timer</name>
@@ -708,7 +874,7 @@ Bug fixes:
    <package>
     <name>Net_Growl</name>
     <channel>pear.php.net</channel>
-    <min>2.2.2</min>
+    <min>2.3.0</min>
    </package>
    <package>
     <name>PHPUnit</name>
@@ -744,7 +910,7 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2011-05-04</date>
+   <date>2011-07-02</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Version 2 is a PHP5 rewrites
@@ -754,9 +920,10 @@ PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-lavill
 Additions and changes:
 - add 1 new references data dictionnaries related to extensions:
   intl
+- add source documentation that can be build with AsciiDoc (see docs/README.txt)
 
 Bug fixes:
-- none
+- wrong PHP extension/internal functions detection when using namespace
    </notes>
   </release>
   <release>
