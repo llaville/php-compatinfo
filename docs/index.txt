@@ -1,0 +1,224 @@
+PHP_CompatInfo
+==============
+include::revision.txt[]
+:stylesdir:   styles
+:scriptsdir:  js
+:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.0
+
+
+.{revdate}: PHP_CompatInfo {revnumber} Released
+************************************************************************
+Release highlights:
+
+- After 6 months of rewrites and unit tests, here are the first stable major version 2 release,
+with a full user guide.
+
+Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
+additions, changes and bug fixes. Changes are documented in the
+updated link:phpci-book.html[User Guide]. See the
+link:INSTALL.html[Installation page] for downloads and installation instructions.
+
+'Laurent Laville'
+************************************************************************
+
+== Introduction
+
+PHP_CompatInfo branch 1.x is still compatible with PHP4, that is from an old
+age now (unmaintained). 
+You can find it on PEAR main site on its http://pear.php.net/package/PHP_CompatInfo[project page].
+
+PHP_CompatInfo branch 2.x is a full rewrite with PHP5. 
+Since RC3 the PHP parser engine used is https://github.com/llaville/php-reflect[PHP_Reflect].
+It's an improved version with _callbacks to what ever token you want_ feature 
+from basic concept version of https://github.com/sebastianbergmann/php-token-stream[PHP_TokenStream].
+
+
+== Overview
+
+PHP_CompatInfo 2 provides two servers API :
+
+* a Command Line Interface (CLI) tool named _phpci_
+* a web browser interface 
+
+.Requirements
+
+* PHP 5.2.0 minimum
+* ezc/Base 1.8 minimum
+* ezc/ConsoleTools 1.6.1 minimum (for progress bar with CLI phpci tool)
+* pear/Console_CommandLine 1.1.3 minimum since RC3 (for CLI phpci tool)
+* bartlett/PHP_Reflect 1.0.0 minimum (PHP parser)
+* tokenizer extension
+* pcre extension
+* SPL extension
+* dom extension
+* libxml extension
+* phpunit/PHP_Timer 1.0.0 (utility class for timing) 
+* (optional) pear/Net_Growl 2.3.0 minimum (for growl audit observer)
+* (optional) PHPUnit 3.5.0 minimum (to run unit tests)
+* (optional) an XSLT processor if you want to produce an xHTML report from a phpci xml report
+
+Release Candidate 4 support 60 extensions.
+The _phpci_ tool may inform you on what of those extensions are or not loaded on your system.
+
+Run command 
+----
+    $ phpci list-references
+---- 
+
+Will output results as follow. May differ depending of your extensions loaded.
+----
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO DATABASE REFERENCE
+    -------------------------------------------------------------------------------
+      EXTENSIONS                                 EXTENSION         VERSION
+    -------------------------------------------------------------------------------
+      apc                                        3.1.7             4.0.0
+    L bcmath                                                       4.0.0
+    L bz2                                                          4.0.4
+    L calendar                                                     4.0.0
+    L Core                                                         4.0.0
+    L ctype                                                        4.0.4
+    L curl                                                         4.0.2
+    L date                                                         4.0.0
+    L dom                                        20031129          5.0.0
+      enchant                                    1.1.0             5.3.0
+    L ereg                                                         4.0.0  5.3.0
+    L fileinfo                                   1.0.5-dev         4.0.0
+    L filter                                     0.11.0            5.2.0
+    L ftp                                                          4.0.0
+    L gd                                                           4.0.0
+    L gettext                                                      4.0.0
+      gmp                                                          4.0.4
+    L hash                                       1.0               5.1.2
+    L iconv                                                        4.0.5
+    L imap                                                         4.0.0
+    L json                                       1.2.1             5.2.0
+    L libxml                                                       5.0.0
+    L mbstring                                                     4.0.6
+    L mcrypt                                                       4.0.0
+    L mhash                                                        4.0.0
+    L mysql                                      1.0               4.0.0
+    L mysqli                                     0.1               5.0.0
+    L openssl                                                      4.0.4
+      pcntl                                                        4.1.0
+    L pcre                                                         4.0.0
+    L PDO                                        1.0.4dev          5.1.0
+      pgsql                                                        4.0.0
+    L Phar                                       2.0.1             5.2.0
+      posix                                      306939            4.0.0
+      readline                                   2.0.1             4.0.0
+      recode                                     2.0.1             4.0.0
+    L session                                                      4.0.0
+    L shmop                                                        4.0.0
+    L SimpleXML                                  0.1               5.0.0
+      snmp                                                         4.0.0
+    L soap                                                         5.0.0
+    L sockets                                                      4.1.0
+    L SPL                                        0.2               5.0.0
+    L SQLite                                     2.0-dev           5.0.0
+    L sqlite3                                    0.7-dev           5.3.0
+      ssh2                                       0.11.0            5.0.0
+    L standard                                                     4.0.0
+      sysvmsg                                    306939            4.3.0
+      sysvsem                                                      4.0.0
+      sysvshm                                                      4.0.0
+    L tidy                                       2.0               4.0.0
+    L tokenizer                                  0.1               4.2.0
+    L wddx                                                         4.0.0
+    L xdebug                                     2.1.0             5.2.0
+    L xml                                                          4.0.0
+    L xmlreader                                  0.1               5.0.0
+    L xmlrpc                                     0.51              4.1.0
+    L xmlwriter                                  0.1               5.1.2
+    L xsl                                        0.1               5.0.0
+    L zlib                                       1.1               4.0.0
+    -------------------------------------------------------------------------------
+    A TOTAL OF 60 EXTENSIONS WERE FOUND AND 47 LOADED
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 4.75Mb
+    -------------------------------------------------------------------------------
+----
+
+
+== Features
+
+* Parse a single file
+* Parse a directory recursively or not
+* Parse a list of files and/or directories
+* Ability to give a list of extensions to ignore when calculating the version needed 
+* Ability to give a list of interfaces to ignore when calculating the version needed 
+* Ability to give a list of classes to ignore when calculating the version needed 
+* Ability to give a list of functions to ignore when calculating the version needed 
+* Ability to give a list of constants to ignore when calculating the version needed. 
+* Ability to give a list of files to ignore when calculating the version needed 
+* Ability to give a list of directories to ignore when calculating the version needed 
+* Ability to use a custom extensions list or by default only extensions loaded, to parse PHP code 
+* Event driven and listeners system to audit parsing process
+
+
+== Documentation
+
+The PHP_CompatInfo manual is available in a selection of formats. Pick a format
+from the table below to start downloading.
+
+[grid="rows",format="csv"]
+[options="header"]
+|===========================
+Language,Single HTML file,Many HTML files,HTML Help file (CHM),PDF file
+English, link:{man_dir}/en/pci-book.html.zip[pci-book.html.zip] 529Kb, link:{man_dir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] 464Kb , link:{man_dir}/en/phpci-book.chm.zip[phpci-book.chm.zip] 469Kb, link:{man_dir}/en/phpci-book.pdf[phpci-book.pdf] 512Kb
+|===========================
+
+[appendix]
+Changelog
+---------
+link:CHANGELOG.html[History of changes]
+
+[appendix]
+License
+-------
+Released under the link:LICENSE.html[BSD] license,
+you are free to do whatever you want, even in a commercial environment.
+You are also encouraged to contribute.
+
+[appendix]
+Credits
+-------
+
+I would like to thanks here specially a guy without who this PHP QA tool
+won't be born.
+
+[quote, , http://daveyshafik.com/]
+____
+.Davey Shafik
+
+Original author, he introduced his http://pear.php.net/pepr/pepr-proposal-show.php?id=27[proposal]
+in 2004, that gave birth of a PEAR package named
+http://pear.php.net/package/PHP_CompatInfo[PHP_CompatInfo].
+____
+
+
+I would also like to thanks a guy who help me to enhance support of more than 50 extensions.
+
+[quote, , http://blog.famillecollet.com/]
+____
+.Remi Collet
+
+Contributor of many extensions reference and unit tests. He has joined the team 
+on version 2.0.0RC2
+____
+
+
+[appendix]
+Links
+-----
+All pages of this site, and user guide were generated with AsciiDoc 8.6.5,
+assisted by FOP 1.0 (for PDFs). Automated build process uses Phing 2.4.5
+
+Convert the HTML Help source (.hhp and .html) files to HTML Help (.chm) files
+using the Microsoft HTML Help Compiler.
+
+* http://www.methods.co.nz/asciidoc/index.html[AsciiDoc]
+* http://pygments.org/[Pygments - Python syntax highlighter]
+* http://xmlgraphics.apache.org/fop/[Apache FOP]
+* http://msdn.microsoft.com/en-us/library/ms670169%28VS.85%29.aspx[Microsoft HTML Help Compiler]
+* http://phing.info/trac/[Phing]

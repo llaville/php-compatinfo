@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="phpcompatinfo" default="make-full-docs" basedir=".">
+
+    <property name="asciidoc.home" value="C:\asciidoc-8.6.5" override="true" />
+    <property name="homedir" value="C:\www\github\php-compat-info" override="true" />
+    <property name="mandir" value="C:\www\php5\compatinfo\manual\2.0\en" override="true" />
+    <property name="htmlhelpworkshop" value="C:\Program Files\HTML Help Workshop" override="true" />
+    <property name="fopopts" value="-pdf phpci-book.pdf" override="true" />
+    <property name="theme" value="flask" override="true" />
+
+    <target name="make-userguide-all"
+            depends="make-userguide, make-userguide-chunked, make-userguide-htmlhelp, make-userguide-pdf"
+            description="Build the user guide in all formats">
+
+    </target>
+
+    <target name="make-userguide-en-multipages"
+            description="Build the user guide in many HTML files">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked -D ${mandir} ${homedir}/docs/phpci-book.txt"
+        />
+
+    </target>
+    
+    <target name="make-userguide-en-singlepage"
+            description="Build the user guide in single HTML page">
+
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n -o ${mandir}/pci-book.html ${homedir}/docs/phpci-book.txt"
+        />
+
+    </target>
+
+    <target name="make-userguide-en-pdf"
+            description="Build the user guide in english PDF format">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py --verbose -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf -D ${mandir} --fop ${homedir}/docs/phpci-book.txt"
+        />
+
+    </target>
+
+    <target name="make-userguide-en-epub"
+            description="Build the user guide in english PDF format">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py --verbose -L --icons -d book -f epub -D ${mandir} ${homedir}/docs/phpci-book.txt"
+        />
+
+    </target>
+    
+    <target name="make-userguide-en-htmlhelp"
+            description="Build the user guide in english CHM format">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp -D ${mandir} ${homedir}/docs/phpci-book.txt"
+        />
+
+        <exec dir="${htmlhelpworkshop}"
+            command="hhc.exe ${mandir}/phpci-book.hhp"
+        />
+
+    </target>
+
+    <target name="make-userguide"
+            description="Build the user guide">
+
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n ${homedir}/docs/phpci-book.txt"
+        />
+
+    </target>
+
+    <target name="make-userguide-chunked"
+            description="Build the user guide in many HTML files">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked ${homedir}/docs/phpci-book.txt"
+        />
+
+    </target>
+
+    <target name="make-userguide-htmlhelp"
+            description="Build the user guide in CHM format">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp ${homedir}/docs/phpci-book.txt"
+        />
+
+        <exec dir="${htmlhelpworkshop}"
+            command="hhc.exe ${homedir}/userguide.hhp"
+        />
+
+    </target>
+
+    <target name="make-userguide-pdf"
+            description="Build the user guide in PDF format">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop ${homedir}/docs/phpci-book.txt"
+        />
+
+    </target>
+
+    <target name="make-docs"
+            depends="clean-docs"
+            description="Build the documentation of PHP_CompatInfo">
+
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/CHANGELOG.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/INSTALL.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/LICENSE.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n ${homedir}/docs/index.txt"
+        />
+
+    </target>
+
+    <target name="make-full-docs"
+            depends="clean-docs, make-docs, make-userguide"
+            description="Build the full documentation of PHP_CompatInfo">
+
+    </target>
+
+    <target name="clean-docs"
+            description="Remove old html generated files">
+
+        <delete>
+            <fileset dir="${homedir}/docs/">
+                <include name="*.html" />
+            </fileset>
+        </delete>
+
+    </target>
+
+    <target name="clean-docs-sources"
+            description="Remove old sources html generated files">
+
+        <delete>
+            <fileset dir="${homedir}/docs/sources">
+                <include name="*.html" />
+            </fileset>
+        </delete>
+
+    </target>
+
+    <target name="make-docs-sources"
+            description="Build examples sources of PHP_CompatInfo">
+
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/getFunctions.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/getIncludes.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printClassPHPUnit356.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printClassSingleFile.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printConstantPHPUnit356.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printConstantSingleFile.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printExtensionPHPUnit356.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printExtensionSingleFile.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printFunctionPHPUnit356.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printFunctionSingleFile.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printInterfacePHPUnit356.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printInterfaceSingleFile.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printSummaryPHPUnit356.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printSummarySingleFile.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printXmlPHPUnit356.txt"
+        />
+    </target>
+
+</project>

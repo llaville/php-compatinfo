@@ -1,0 +1,8 @@
+UML classes diagram
+===================
+:icons:
+:toc:
+include::revision.txt[]
+
+
+image::images/PHPCompatInfo.png["UML class diagram", width="17cm"]

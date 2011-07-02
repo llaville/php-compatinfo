@@ -1,0 +1,121 @@
+API basic usage
+===============
+:icons:
+:toc:
+include::revision.txt[]
+
+
+== Default options
+
+What either you use the CLI version with the _phpci_ command, or directly API functions,
+PHP_CompatInfo has some default options you should learn if you want to understand results provided.
+
+Depending of SAPI you will use, source of settings is different.
+
+Default options printed below, may be changed by the +$options+ parameter of +PHP_CompatInfo+ class constructor. 
+
+[grid="rows",format="csv"]
+[options="header",cols="2,2,10"]
+|===========================
+Option, Default, Description
+recursive, false, scan recursive subdirectories or just local files
+reference, PHP5, data dictionary reference (all PHP4 and PHP5 informations)
+referencePlugins, "[PHP4[...], PHP5[...]]", adapters to connect to data dictionaries reference
+verbose, false, output more information
+fileExtensions, "[php, inc, phtml]", list of file extensions to scan
+cacheDriver, file, cache results to improve speed of next iteration
+cacheOptions, "[save_path => /tmp]", options specific to cache driver used
+listeners, [], none
+|===========================
+
+
+== Scanning Files and Folders
+
+The simplest way of using PHP_CompatInfo is to provide the location of a file 
+or folder for PHP_CompatInfo to scan. If a folder is provided, PHP_CompatInfo 
+will scan all files it finds in that local folder. 
+
+NOTE: If you want sub-folders scanned, use the +recursive+ option. 
+
+.Example: do not use cache files, but parse directory recursively. 
+[source,php]
+----
+<?php
+require_once 'Bartlett/PHP/CompatInfo.php';
+
+$source  = '/path/to/myFolder';
+$options = array(
+    'cacheDriver' => 'null',
+    'recursive'   => true
+);
+
+try {
+    $phpci = new PHP_CompatInfo($options);
+    $phpci->parse($source);
+
+    $allResultsAtOnce = $phpci->toArray();
+
+} catch (PHP_CompatInfo_Exception $e) {
+    die ('PHP_CompatInfo Exception : ' . $e->getMessage() . PHP_EOL);
+}
+----
+
+== Specifying a Reference 
+
+PHP_CompatInfo can have multiple references installed to allow a single installation 
+to be used with multiple plateform. When scanning PHP code, PHP_CompatInfo can be told 
+which reference to use. This is done using the +reference+ option. 
+
+.Example: specify a PHP4 reference to parse only PHP 4 sources code
+[source,php]
+----
+<?php
+require_once 'Bartlett/PHP/CompatInfo.php';
+
+$source  = '/path/to/myFolder';
+$options = array(
+    'reference' => 'PHP4',
+);
+
+try {
+    $phpci = new PHP_CompatInfo($options);
+    $phpci->parse($source);
+
+    $allResultsAtOnce = $phpci->toArray();
+
+} catch (PHP_CompatInfo_Exception $e) {
+    die ('PHP_CompatInfo Exception : ' . $e->getMessage() . PHP_EOL);
+}
+----
+
+NOTE: If you want to use your own reference, you should have (of course) to write it, 
+but you must also tell where it is.
+
+.Example: replaces default references provided in standard distribution
+[source,php]
+----
+<?php
+require_once 'Bartlett/PHP/CompatInfo.php';
+
+$source  = '/path/to/myFolder';
+$options = array(
+    'reference' => 'PHP5',
+    'referencePlugins' => array(
+        'PHP5' => array(
+            'class' => 'myRefClass',
+            'file'  => '/path/to/file/hosting/myRefClass.php',
+            'args'  => array()
+        ),
+    
+);
+
+try {
+    $phpci = new PHP_CompatInfo($options);
+    $phpci->parse($source);
+
+    $allResultsAtOnce = $phpci->toArray();
+
+} catch (PHP_CompatInfo_Exception $e) {
+    die ('PHP_CompatInfo Exception : ' . $e->getMessage() . PHP_EOL);
+}
+----

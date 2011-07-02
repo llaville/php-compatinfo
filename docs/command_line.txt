@@ -1,0 +1,793 @@
+Using PHP_CompatInfo from the command line
+==========================================
+include::revision.txt[]
+
+
+== Differences to other SAPI
+
+Remarkable differences of the CLI SAPI compared to other SAPI:
+
+* gets responses in a seconde without code line to write
+* printing components report
+* printing references informations report
+* configurable thru an easy to read XML file
+
+
+== Options
+
+The list of command line options provided by the _phpci_ command can be queried anytime
+by running phpci with the -h or --help switches.
+
+----
+PHPCompatInfo (cli) by Laurent Laville.
+
+Usage:
+  phpci [options]
+  phpci [options] <command> [options] [args]
+
+Options:
+  --configuration=xmlFile      Read configuration from XML file
+  --no-configuration           Ignore default configuration file
+                               (phpcompatinfo.xml)
+  -d iniSet, --ini-set=iniSet  Sets a php.ini directive value
+  -v, --verbose                Output more verbose information
+  -h, --help                   show this help message and exit
+  --version                    show the program version and exit
+
+Commands:
+  print            Print a report of data source parsed.
+  list-references  List all extensions supported.
+  list             List all "elements" referenced in the data base.
+  list-extensions  List all extensions referenced in the data base.
+  list-interfaces  List all interfaces referenced in the data base.
+  list-classes     List all classes referenced in the data base.
+  list-functions   List all functions referenced in the data base.
+  list-constants   List all constants referenced in the data base.
+----
+
+[grid="rows",format="csv"]
+[options="header",cols="2,2,10"]
+|===========================
+Short Option, Long Option, Description
+, --configuration, "Specify a custom XML file (which does not need to be named phpcompatinfo.xml or located into PEAR +cfg_dir+)"
+, --no-configuration, "Ignore default configuration files +phpcompatinfo.xml+ or +phpcompatinfo.xml.dist+"
+-d, --ini-set, "This option allows you to set a custom value for any of the configuration directives allowed in php.ini. Example: -d memory_limit=256M"
+-v, --verbose, "Sets the verbose level to print more informations"
+-h, --help, "With this option, you can get information about the actual list of command line options and some one line descriptions about what they do."
+, --version, "Prints the version of PHP_CompatInfo and exits."
+|===========================
+
+Unless you tell it to ignore the XML configuration file, default options are sets 
+by the  +phpcompatinfo.xml.dist+ file if found into the PEAR +cfg_dir+ +\PHP_CompatInfo+ directory
+
+[source,xml]
+----
+<?xml version="1.0" encoding="utf-8" ?>
+<phpcompatinfo
+    reference="PHP5"
+    report="summary"
+    reportFileAppend="false"
+    cacheDriver="file"
+    recursive="false"
+    fileExtensions="php, inc, phtml"
+    consoleProgress="true"
+    verbose="false"
+    >
+
+    <!-- ... -->
+</phpcompatinfo>
+----
+
+
+== Commands
+
+They are two categories of command:
+
+* printing scanned sources code results
+* listing database references extensions informations
+
+=== print command
+
+This command allow to print results of scanned sources code.
+If you forget options, enter command below.
+----
+$ phpci print --help
+----
+
+That will show you this help screen:
+----
+Print a report of data source parsed.
+
+Usage:
+  phpci [options] print [options] <sourcePath>
+
+Options:
+  --reference=reference             The name of the reference to use
+  --report=report                   Type of report
+  --report-file=reportFile          Write the report to the specified file
+                                    path
+  --exclude-pattern=excludeID       Exclude components from list referenced
+                                    by ID provided
+  -R, --recursive                   Includes the contents of subdirectories
+  --file-extensions=fileExtensions  A comma separated list of file
+                                    extensions to check
+  --help-reference                  List of reference available
+  --help-report                     List of report available
+  -h, --help                        show this help message and exit
+
+Arguments:
+  sourcePath  The data source to scan (file or directory).
+----
+
+[grid="rows",format="csv"]
+[options="header",cols="2,2,10"]
+|===========================
+Short Option, Long Option, Description
+, --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --report, "Specify what kind of report to print. See --help-report for full list."
+, --report-file, "This option identify the file where results will be written."
+, --exclude-pattern, "Identify a <exclude> element in the XML configuration file, that define what elements to exclude from scope."
+-R, --recursive, "This option allow to parse directories recursively."
+, --file-extensions, "When parsing directory, specify what file to scan."
+, --help-reference, "Remember you what are reference dictionnary available in default distribution."
+, --help-report, "Remember you what are reports available in default distribution."
+-h, --help, "With this option, you can get information about the actual list of command line options."
+|===========================
+
+TIP: You can give one or more report at the same time.
+
+.Example:  Printing only summary report
+----
+$ phpci print --report summary /path/to/source
+----
+
+.Example: Printing both summary, extension, interface, class, function, and constant reports.
+----
+$ phpci print --report summary extension interface class function constant /path/to/source
+----
+
+.Example: Printing both function and constant reports.
+----
+$ phpci print --report function --report constant /path/to/source
+----
+
+=== list-references command
+
+This command allow to print the list of documented extensions available with your version of PHP_CompatInfo,
+and specify those which are currently loaded (*L* in front or their names)
+
+If you forget options, enter command below.
+----
+$ phpci list-references --help
+----
+
+That will show you this help screen:
+----
+List all extensions supported.
+
+Usage:
+  phpci [options] list-references [options]
+
+Options:
+  --report-file=reportFile  Write the report to the specified file path
+  -h, --help                show this help message and exit
+----
+
+[grid="rows",format="csv"]
+[options="header",cols="2,2,10"]
+|===========================
+Short Option, Long Option, Description
+, --report-file, "This option identify the file where results will be written."
+-h, --help, "With this option, you can get information about the actual list of command line options."
+|===========================
+
+.Example
+----
+$ phpci list-references
+----
+
+----
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO DATABASE REFERENCE
+    -------------------------------------------------------------------------------
+      EXTENSIONS                                 EXTENSION <1>     VERSION <2>
+    -------------------------------------------------------------------------------
+      apc                                        3.1.7             4.0.0
+    L bcmath                                                       4.0.0
+    L bz2                                                          4.0.4
+    L calendar                                                     4.0.0
+    L Core                                                         4.0.0
+    L ctype                                                        4.0.4
+    L curl                                                         4.0.2
+    L date                                                         4.0.0
+    L dom                                        20031129          5.0.0
+      enchant                                    1.1.0             5.3.0
+    L ereg                                                         4.0.0  5.3.0
+    L fileinfo                                   1.0.5-dev         4.0.0
+    L filter                                     0.11.0            5.2.0
+    L ftp                                                          4.0.0
+    L gd                                                           4.0.0
+    L gettext                                                      4.0.0
+      gmp                                                          4.0.4
+    L hash                                       1.0               5.1.2
+    L iconv                                                        4.0.5
+    L imap                                                         4.0.0
+    L json                                       1.2.1             5.2.0
+    L libxml                                                       5.0.0
+    L mbstring                                                     4.0.6
+    L mcrypt                                                       4.0.0
+    L mhash                                                        4.0.0
+    L mysql                                      1.0               4.0.0
+    L mysqli                                     0.1               5.0.0
+    L openssl                                                      4.0.4
+      pcntl                                                        4.1.0
+    L pcre                                                         4.0.0
+    L PDO                                        1.0.4dev          5.1.0
+      pgsql                                                        4.0.0
+    L Phar                                       2.0.1             5.2.0
+      posix                                      306939            4.0.0
+      readline                                   2.0.1             4.0.0
+      recode                                     2.0.1             4.0.0
+    L session                                                      4.0.0
+    L shmop                                                        4.0.0
+    L SimpleXML                                  0.1               5.0.0
+      snmp                                                         4.0.0
+    L soap                                                         5.0.0
+    L sockets                                                      4.1.0
+    L SPL                                        0.2               5.0.0
+    L SQLite                                     2.0-dev           5.0.0
+    L sqlite3                                    0.7-dev           5.3.0
+      ssh2                                       0.11.0            5.0.0
+    L standard                                                     4.0.0
+      sysvmsg                                    306939            4.3.0
+      sysvsem                                                      4.0.0
+      sysvshm                                                      4.0.0
+    L tidy                                       2.0               4.0.0
+    L tokenizer                                  0.1               4.2.0
+    L wddx                                                         4.0.0
+    L xdebug                                     2.1.0             5.2.0
+    L xml                                                          4.0.0
+    L xmlreader                                  0.1               5.0.0
+    L xmlrpc                                     0.51              4.1.0
+    L xmlwriter                                  0.1               5.1.2
+    L xsl                                        0.1               5.0.0
+    L zlib                                       1.1               4.0.0
+    -------------------------------------------------------------------------------
+    A TOTAL OF 60 EXTENSIONS WERE FOUND AND 47 LOADED
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 4.75Mb
+    -------------------------------------------------------------------------------
+----
+
+<1> This column specify the version of extension that was documented
+<2> This column specify which are the php versions (minimum and maximum) supported by the extension
+
+=== list command
+
+This command allow to combine one or more list-* command.
+
+WARNING: results may be huge
+
+If you forget options, enter command below.
+----
+$ phpci list --help
+----
+
+That will show you this help screen:
+----
+List all "elements" referenced in the data base.
+
+Usage:
+  phpci [options] list [options] <element...>
+
+Options:
+  --reference=reference     The name of the reference to use
+  --report-file=reportFile  Write the report to the specified file path
+  --help-reference          List of reference available
+  -h, --help                show this help message and exit
+
+Arguments:
+  element  May be either "extensions", "interfaces", "classes", "functions"
+           or "constants"
+----
+
+[grid="rows",format="csv"]
+[options="header",cols="2,2,10"]
+|===========================
+Short Option, Long Option, Description
+, --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --report-file, "This option identify the file where results will be written."
+, --help-reference, "Remember you what are reference dictionnary available in default distribution."
+-h, --help, "With this option, you can get information about the actual list of command line options."
+|===========================
+
+.Example: list both interfaces and classes of all extensions supported by PHP_Compatinfo
+----
+$ phpci list interfaces classes
+----
+
+----
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO INTERFACES REFERENCE
+    -------------------------------------------------------------------------------
+    INTERFACES                                   EXTENSION         VERSION
+    -------------------------------------------------------------------------------
+    ArrayAccess                                  SPL               5.1.0
+    Countable                                    SPL               5.1.0
+    Iterator                                     SPL               5.1.0
+    IteratorAggregate                            SPL               5.1.0
+    OuterIterator                                SPL               5.1.0
+    RecursiveIterator                            SPL               5.1.0
+    SeekableIterator                             SPL               5.1.0
+    Serializable                                 SPL               5.1.0
+    SplObserver                                  SPL               5.1.0
+    SplSubject                                   SPL               5.1.0
+    Traversable                                  SPL               5.1.0
+    -------------------------------------------------------------------------------
+    A TOTAL OF 11 INTERFACES WERE FOUND
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 6.25Mb
+    -------------------------------------------------------------------------------
+
+
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CLASSES REFERENCE
+    -------------------------------------------------------------------------------
+    CLASSES                                      EXTENSION         VERSION
+    -------------------------------------------------------------------------------
+    AppendIterator                               SPL               5.1.0
+    ArrayIterator                                SPL               5.0.0
+    ArrayObject                                  SPL               5.0.0
+    BadFunctionCallException                     SPL               5.1.0
+    BadMethodCallException                       SPL               5.1.0
+    CachingIterator                              SPL               5.0.0
+    Closure                                      Core              5.3.0
+    DOMAttr                                      dom               5.0.0
+
+    ... <more results> ...
+
+    mysqli_warning                               mysqli            5.0.0
+    php_user_filter                              standard          5.0.0
+    stdClass                                     Core              4.0.0
+    tidy                                         tidy              4.0.0
+    tidyNode                                     tidy              5.0.1
+    -------------------------------------------------------------------------------
+    A TOTAL OF 125 CLASSES WERE FOUND
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 6.25Mb
+    -------------------------------------------------------------------------------
+----
+
+=== list-extensions command
+
+This command allow to print the list of documented extensions available with your version of PHP_CompatInfo,
+and loaded on your platform.
+
+If you forget options, enter command below.
+----
+$ phpci list-extensions --help
+----
+
+That will show you this help screen:
+----
+List all extensions referenced in the data base.
+
+Usage:
+  phpci [options] list-extensions [options] <extension>
+
+Options:
+  --reference=reference     The name of the reference to use
+  --report-file=reportFile  Write the report to the specified file path
+  --help-reference          List of reference available
+  -h, --help                show this help message and exit
+
+Arguments:
+  extension  (optional) Limit output only to this extension
+----
+
+[grid="rows",format="csv"]
+[options="header",cols="2,2,10"]
+|===========================
+Short Option, Long Option, Description
+, --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --report-file, "This option identify the file where results will be written."
+, --help-reference, "Remember you what are reference dictionnary available in default distribution."
+-h, --help, "With this option, you can get information about the actual list of command line options."
+|===========================
+
+.Example
+----
+$ phpci list-extensions
+----
+
+----
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO EXTENSIONS REFERENCE
+    -------------------------------------------------------------------------------
+    EXTENSIONS                                   EXTENSION <1>     VERSION <2>
+    -------------------------------------------------------------------------------
+    Core                                                           4.0.0
+    PDO                                          1.0.4dev          5.1.0
+    Phar                                         2.0.1             5.2.0
+    SPL                                          0.2               5.0.0
+    SQLite                                       2.0-dev           5.0.0
+    SimpleXML                                    0.1               5.0.0
+    bcmath                                                         4.0.0
+    bz2                                                            4.0.4
+    calendar                                                       4.0.0
+    ctype                                                          4.0.4
+    curl                                                           4.0.2
+    date                                                           4.0.0
+    dom                                          20031129          5.0.0
+    ereg                                                           4.0.0  5.3.0
+    fileinfo                                     1.0.5-dev         4.0.0
+    filter                                       0.11.0            5.2.0
+    ftp                                                            4.0.0
+    gd                                                             4.0.0
+    gettext                                                        4.0.0
+    hash                                         1.0               5.1.2
+    iconv                                                          4.0.5
+    imap                                                           4.0.0
+    json                                         1.2.1             5.2.0
+    libxml                                                         5.0.0
+    mbstring                                                       4.0.6
+    mcrypt                                                         4.0.0
+    mhash                                                          4.0.0
+    mysql                                        1.0               4.0.0
+    mysqli                                       0.1               5.0.0
+    openssl                                                        4.0.4
+    pcre                                                           4.0.0
+    session                                                        4.0.0
+    shmop                                                          4.0.0
+    soap                                                           5.0.0
+    sockets                                                        4.1.0
+    sqlite3                                      0.7-dev           5.3.0
+    standard                                                       4.0.0
+    tidy                                         2.0               4.0.0
+    tokenizer                                    0.1               4.2.0
+    wddx                                                           4.0.0
+    xdebug                                       2.1.0             5.2.0
+    xml                                                            4.0.0
+    xmlreader                                    0.1               5.0.0
+    xmlrpc                                       0.51              4.1.0
+    xmlwriter                                    0.1               5.1.2
+    xsl                                          0.1               5.0.0
+    zlib                                         1.1               4.0.0
+    -------------------------------------------------------------------------------
+    A TOTAL OF 47 EXTENSIONS WERE FOUND
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 6.25Mb
+    -------------------------------------------------------------------------------
+----
+
+<1> This column specify the version of extension that was documented
+<2> This column specify which are the php versions (minimum and maximum) supported by the extension
+
+[TIP]
+.You can filter result by extension
+=====================================================================
+Example: if you want only SPL extension, enter command below.
+----
+$ phpci list-extensions SPL
+----
+=====================================================================
+
+=== list-interfaces command
+
+This command allow to print the list of documented interfaces available with your version of PHP_CompatInfo,
+from your extensions loaded (or defined into XML configuration file).
+
+If you forget options, enter command below.
+----
+$ phpci list-interfaces --help
+----
+
+That will show you this help screen:
+----
+List all interfaces referenced in the data base.
+
+Usage:
+  phpci [options] list-interfaces [options] <extension>
+
+Options:
+  --reference=reference     The name of the reference to use
+  --report-file=reportFile  Write the report to the specified file path
+  --help-reference          List of reference available
+  -h, --help                show this help message and exit
+
+Arguments:
+  extension  (optional) Limit output only to this extension
+----
+
+[grid="rows",format="csv"]
+[options="header",cols="2,2,10"]
+|===========================
+Short Option, Long Option, Description
+, --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --report-file, "This option identify the file where results will be written."
+, --help-reference, "Remember you what are reference dictionnary available in default distribution."
+-h, --help, "With this option, you can get information about the actual list of command line options."
+|===========================
+
+.Example
+----
+$ phpci list-interfaces
+----
+
+----
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO INTERFACES REFERENCE
+    -------------------------------------------------------------------------------
+    INTERFACES                                   EXTENSION <1>     VERSION <2>
+    -------------------------------------------------------------------------------
+    ArrayAccess                                  SPL               5.1.0
+    Countable                                    SPL               5.1.0
+    Iterator                                     SPL               5.1.0
+    IteratorAggregate                            SPL               5.1.0
+    OuterIterator                                SPL               5.1.0
+    RecursiveIterator                            SPL               5.1.0
+    SeekableIterator                             SPL               5.1.0
+    Serializable                                 SPL               5.1.0
+    SplObserver                                  SPL               5.1.0
+    SplSubject                                   SPL               5.1.0
+    Traversable                                  SPL               5.1.0
+    -------------------------------------------------------------------------------
+    A TOTAL OF 11 INTERFACES WERE FOUND
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 6.25Mb
+    -------------------------------------------------------------------------------
+----
+
+<1> This column specify the name of extension that provide these interfaces
+<2> This column specify which are the php versions (minimum and maximum) supported by the interface
+
+
+[TIP]
+.You can filter result by extension
+=====================================================================
+Example: if you want only SPL extension interfaces, enter command below.
+----
+$ phpci list-interfaces SPL
+----
+=====================================================================
+
+=== list-classes command
+
+This command allow to print the list of documented classes available with your version of PHP_CompatInfo,
+from your extensions loaded (or defined into XML configuration file).
+
+If you forget options, enter command below.
+----
+$ phpci list-classes --help
+----
+
+That will show you this help screen:
+----
+List all classes referenced in the data base.
+
+Usage:
+  phpci [options] list-classes [options] <extension>
+
+Options:
+  --reference=reference     The name of the reference to use
+  --report-file=reportFile  Write the report to the specified file path
+  --help-reference          List of reference available
+  -h, --help                show this help message and exit
+
+Arguments:
+  extension  (optional) Limit output only to this extension
+----
+
+[grid="rows",format="csv"]
+[options="header",cols="2,2,10"]
+|===========================
+Short Option, Long Option, Description
+, --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --report-file, "This option identify the file where results will be written."
+, --help-reference, "Remember you what are reference dictionnary available in default distribution."
+-h, --help, "With this option, you can get information about the actual list of command line options."
+|===========================
+
+.Example
+----
+$ phpci list-classes
+----
+
+----
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CLASSES REFERENCE
+    -------------------------------------------------------------------------------
+    CLASSES                                      EXTENSION <1>     VERSION <2>
+    -------------------------------------------------------------------------------
+    AppendIterator                               SPL               5.1.0
+    ArrayIterator                                SPL               5.0.0
+    ArrayObject                                  SPL               5.0.0
+    BadFunctionCallException                     SPL               5.1.0
+
+    ... <more results> ...
+
+    mysqli_warning                               mysqli            5.0.0
+    php_user_filter                              standard          5.0.0
+    stdClass                                     Core              4.0.0
+    tidy                                         tidy              4.0.0
+    tidyNode                                     tidy              5.0.1
+    -------------------------------------------------------------------------------
+    A TOTAL OF 125 CLASSES WERE FOUND
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 6.25Mb
+    -------------------------------------------------------------------------------
+----
+
+<1> This column specify the name of extension that provide these classes
+<2> This column specify which are the php versions (minimum and maximum) supported by the class
+
+[TIP]
+.You can filter result by extension
+=====================================================================
+Example: if you want only SPL extension classes, enter command below.
+----
+$ phpci list-classes SPL
+----
+=====================================================================
+
+=== list-functions command
+
+This command allow to print the list of documented functions available with your version of PHP_CompatInfo,
+from your extensions loaded (or defined into XML configuration file).
+
+If you forget options, enter command below.
+----
+$ phpci list-functions --help
+----
+
+That will show you this help screen:
+----
+List all functions referenced in the data base.
+
+Usage:
+  phpci [options] list-functions [options] <extension>
+
+Options:
+  --reference=reference     The name of the reference to use
+  --report-file=reportFile  Write the report to the specified file path
+  --help-reference          List of reference available
+  -h, --help                show this help message and exit
+
+Arguments:
+  extension  (optional) Limit output only to this extension
+----
+
+[grid="rows",format="csv"]
+[options="header",cols="2,2,10"]
+|===========================
+Short Option, Long Option, Description
+, --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --report-file, "This option identify the file where results will be written."
+, --help-reference, "Remember you what are reference dictionnary available in default distribution."
+-h, --help, "With this option, you can get information about the actual list of command line options."
+|===========================
+
+.Example
+----
+$ phpci list-functions
+----
+
+----
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO FUNCTIONS REFERENCE
+    -------------------------------------------------------------------------------
+    FUNCTIONS                                    EXTENSION <1>     VERSION <2>
+    -------------------------------------------------------------------------------
+    _                                            gettext           4.0.0
+    abs                                          standard          4.0.0
+    acos                                         standard          4.0.0
+    acosh                                        standard          4.0.7
+
+    ... <more results> ...
+
+    zend_logo_guid                               standard          4.0.0
+    zend_thread_id                               Core              5.0.0
+    zend_version                                 Core              4.0.0
+    zlib_get_coding_type                         zlib              4.3.2
+    -------------------------------------------------------------------------------
+    A TOTAL OF 1575 FUNCTIONS WERE FOUND
+    -------------------------------------------------------------------------------
+    Time: 1 second, Memory: 6.25Mb
+    -------------------------------------------------------------------------------
+----
+
+<1> This column specify the name of extension that provide these functions
+<2> This column specify which are the php versions (minimum and maximum) supported by the function
+
+[TIP]
+.You can filter result by extension
+=====================================================================
+Example: if you want only SPL extension functions, enter command below.
+----
+$ phpci list-functions SPL
+----
+=====================================================================
+
+=== list-constants command
+
+This command allow to print the list of documented constants available with your version of PHP_CompatInfo,
+from your extensions loaded (or defined into XML configuration file).
+
+If you forget options, enter command below.
+----
+$ phpci list-constants --help
+----
+
+That will show you this help screen:
+----
+List all constants referenced in the data base.
+
+Usage:
+  phpci [options] list-constants [options] <extension>
+
+Options:
+  --reference=reference     The name of the reference to use
+  --report-file=reportFile  Write the report to the specified file path
+  --help-reference          List of reference available
+  -h, --help                show this help message and exit
+
+Arguments:
+  extension  (optional) Limit output only to this extension
+----
+
+[grid="rows",format="csv"]
+[options="header",cols="2,2,10"]
+|===========================
+Short Option, Long Option, Description
+, --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --report-file, "This option identify the file where results will be written."
+, --help-reference, "Remember you what are reference dictionnary available in default distribution."
+-h, --help, "With this option, you can get information about the actual list of command line options."
+|===========================
+
+.Example
+----
+$ phpci list-constants
+----
+
+----
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONSTANTS REFERENCE
+    -------------------------------------------------------------------------------
+    CONSTANTS                                    EXTENSION <1>     VERSION <2>
+    -------------------------------------------------------------------------------
+    AF_INET                                      sockets           4.1.0
+    AF_INET6                                     sockets           4.1.0
+    AF_UNIX                                      sockets           4.1.0
+    APACHE_MAP                                   soap              5.0.0
+    ASSERT_ACTIVE                                standard          4.0.0
+
+    ... <more results> ...
+
+    XSL_CLONE_NEVER                              xsl               5.0.0
+    __CLASS__                                    Core              4.3.0
+    __COMPILER_HALT_OFFSET__                     Core              5.1.0
+    __DIR__                                      Core              5.3.0
+    __FILE__                                     Core              4.0.0
+    __FUNCTION__                                 Core              4.3.0
+    __LINE__                                     Core              4.0.0
+    __METHOD__                                   Core              5.0.0
+    __NAMESPACE__                                Core              5.3.0
+    -------------------------------------------------------------------------------
+    A TOTAL OF 1726 CONSTANTS WERE FOUND
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 6.25Mb
+    -------------------------------------------------------------------------------
+----
+
+<1> This column specify the name of extension that provide these constants
+<2> This column specify which are the php versions (minimum and maximum) supported by the constant
+
+[TIP]
+.You can filter result by extension
+=====================================================================
+Example: if you want only SPL extension constants, enter command below.
+----
+$ phpci list-constants SPL
+----
+=====================================================================

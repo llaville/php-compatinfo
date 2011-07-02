@@ -1,0 +1,277 @@
+The XML Configuration File
+==========================
+:icons:
+:toc:
+include::revision.txt[]
+
+
+== Main options
+
+The attributes of the +<phpcompatinfo>+ element can be used to configure
+PHP_CompatInfo's core functionnality.
+[source,xml]
+----
+<?xml version="1.0" encoding="utf-8" ?>
+<phpcompatinfo
+    reference="PHP5"
+    report="summary"
+    reportFileAppend="false"
+    cacheDriver="file"
+    recursive="false"
+    fileExtensions="php, inc, phtml"
+    consoleProgress="true"
+    verbose="false"
+    >
+
+    <!-- ... -->
+</phpcompatinfo>
+----
+The XML configuration above corresponds to the default behaviour of the +phpcli+ tool.
+
+reference::
+    Data dictionnary reference name. Defaults to PHP5 for all PHP4 
+    and PHP5 components depending of your extensions loaded.
+report::
+    Kind of report to produces. May be either _summary_, _source_, _xml_, _token_, 
+    _extension_, _namespace_, _interface_, _class_, _function_, _constant_, _global_
+reportFile::
+    File that will contains the console results. Defaults output to console only.
+reportFileAppend::
+    If you used the _reportFile_ option, shall we replace its contents or not.
+cacheDriver::
+    Either you use the _file_ system cache, or don't want to cache results _null_.
+recursive::
+    If you want to explore sub-directories of data source provided (_true_) or not (_false_).
+fileExtensions::
+    A comma separated list of file extensions to parse.
+consoleProgress::
+    Display (_true_) or not (_false_) a progress bar while scanning data source.
+verbose::
+    Output more verbose information.
+
+
+== Cache options
+
+[source,xml]
+----
+<?xml version="1.0" encoding="utf-8" ?>
+<phpcompatinfo
+    ... >
+
+    <cache id="file">
+        <options>
+            <save_path>/tmp</save_path>
+            <gc_probability>1</gc_probability>
+            <gc_maxlifetime>86400</gc_maxlifetime>
+        </options>
+    </cache>
+
+</phpcompatinfo>
+----
+The +<cache>+ element and its +<options>+ child can be used to improve speed of parsing.
+
+Default behavior will cache parsing results in a serialized data format on files backend of your local file system.
+
+save_path::
+    this is the path where the files (pci_<md5Hash>) are created.
+gc_probability::
+    _gc_probability_ is used to manage probability that the gc (garbage collection) routine is started. Defaults to 1
+gc_maxlifetime::
+    _gc_maxlifetime_ specifies the number of seconds after which data will be seen as 'garbage'
+    and potentially cleaned up. Garbage collection may occur after parsing data source. Defaults to 86400 (1 day)
+
+TIP: To clean the cache, set the probability (gc_probability) to 100, and reduce the life time (gc_maxlifetime) to 1 second. 
+
+
+== References
+
+[source,xml]
+----
+<?xml version="1.0" encoding="utf-8" ?>
+<phpcompatinfo
+    ... >
+
+    <references>
+        <reference name="Core" />
+        <reference name="standard" />
+    </references>
+
+</phpcompatinfo>
+----
+The +<references>+ element and its +<reference>+ children can be used to specify what extension you want to detect and none others.
+
+Default behaviour will auto-detect all your link:http://www.php.net/manual/en/function.extension-loaded.php[extensions loaded]. 
+
+
+== Setting PHP INI settings
+
+[source,xml]
+----
+<?xml version="1.0" encoding="utf-8" ?>
+<phpcompatinfo
+    ... >
+
+    <php>
+        <ini name="memory_limit" value="140M" />
+        <ini name="short_open_tag" />
+        <ini name="zend.ze1_compatibility_mode" value="false" />
+    </php>
+
+</phpcompatinfo>
+----
+The +<php>+ element and its +<ini>+ children can be used to configure PHP settings.
+
+NOTE: With *phpci* console tool, you can also sets a PHP directive value with +--ini-set+ switch.  
+
+.Examples
+----
+$ phpci --ini-set memory_limit=140M print /path/to/mySource
+
+// both give same results
+$ phpci --ini-set short_open_tag print /path/to/mySource
+$ phpci --ini-set short_open_tag=true print /path/to/mySource
+----
+
+
+== Excluding Files or Elements from parsing
+
+[source,xml]
+----
+<?xml version="1.0" encoding="utf-8" ?>
+<phpcompatinfo
+    ... >
+    
+    <excludes>
+        <exclude id="demo">
+            <directory name=".*\/Zend\/.*" />
+            <file name=".*\.php5" />
+            <extension name="xdebug" />
+            <interface name="SplSubject" />
+            <class name=".*Compat.*" />
+            <function name="ereg.*" />
+            <function name="debug_print_backtrace" />
+            <constant name="T_USE" />
+        </exclude>
+    </excludes>
+
+</phpcompatinfo>
+----
+The +<excludes>+ element and its children can be used to configure what element to ignore from parsing.
+It may be a list of folders (<directory>), files, extensions, interfaces, classes, functions or constants. 
+
+Default behaviour ignore nothing.
+
+NOTE: With *phpci* console tool, you can invoke it with the following switch: +
++--exclude-pattern <id>+
+
+.Example
+----
+$ phpci --exclude-pattern demo print /path/to/mySource
+----
+
+
+== Scan Listeners
+
+[source,xml]
+----
+<?xml version="1.0" encoding="utf-8" ?>
+<phpcompatinfo
+    ... >
+
+    <listeners>
+        <listener class="className" file="/path/to/filename">
+            <arguments>
+            </arguments>
+        </listener>
+        <listener class="PHP_CompatInfo_Listener_File" />
+        <listener class="PHP_CompatInfo_Listener_Growl">
+            <arguments>
+                <string>PHP_CompatInfo</string>
+                <array>
+                    <element key="info">
+                        <array>
+                            <element key="display">
+                                <string>Information</string>
+                            </element>
+                            <element key="enabled">
+                                <boolean>true</boolean>
+                            </element>
+                        </array>
+                    </element>
+                    <element key="warning">
+                        <array>
+                            <element key="enabled">
+                                <boolean>true</boolean>
+                            </element>
+                        </array>
+                    </element>
+                </array>
+                <string>mamasam</string>
+                <array>
+                    <element key="host">
+                        <string>192.168.1.2</string>
+                    </element>
+                    <element key="timeout">
+                        <integer>10</integer>
+                    </element>
+                    <element key="debug">
+                        <string>/path/to/logFile</string>
+                    </element>
+                </array>
+            </arguments>
+        </listener>
+    </listeners>
+  
+</phpcompatinfo>
+----
+The +<listeners>+ element and its +<listener>+ children can be used to attach 
+additional observers to the parses process.
+
+The *phpci* console tool know in standard distribution the *File* and *Growl* listeners.
+
+Please refer to link:http://growl.laurent-laville.org/[PEAR::Net_Growl] package for configuration options.
+
+You may add your own observer. To do so, specify the class name (_class_ attribute of +<listener>+ element) 
+hosted by a file (_file_ attribute of the same +<listener>+ element) that implement 
+the link:http://www.php.net/manual/en/class.splobserver.php[SplObserver] interface.
+
+
+== Plugins
+
+[source,xml]
+----
+<?xml version="1.0" encoding="utf-8" ?>
+<phpcompatinfo
+    ... >
+
+    <plugins>
+        <reference name="MyReference"
+            class="PEAR_CompatInfo"
+            file="/path/to/PEARCompatInfo.php">
+            <arguments>
+            </arguments>
+        </reference>
+    </plugins>
+
+</phpcompatinfo>
+----
+The +<plugins>+ element and its +<reference>+ children can be used to specify 
+your own data dictionary references. 
+Usefull when an extension data dictionary is not available in the standard distribution.
+
+Default behaviour is to load all PHP4 and PHP5 known elements referenced by the 
++PHP_CompatInfo_Reference_PHP5+ class.
+See the _reference_ attribute of +<phpcompatinfo>+ element.
+
+You may add your own plugin. To do so, specify the class name (_class_ attribute of +<reference>+ element) 
+hosted by a file (_file_ attribute of the same +<reference>+ element).
+Your class should inherit from +PHP_CompatInfo_Reference_PluginsAbstract+ abstract class 
+that implement the +PHP_CompatInfo_Reference+ interface.
+
+NOTE: With *phpci* console tool, you can invoke it with the following switch: +
++--reference <name>+
+
+.Example
+----
+$ phpci --reference MyReference print /path/to/mySource
+----
