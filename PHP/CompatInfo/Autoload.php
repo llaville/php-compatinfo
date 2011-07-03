@@ -134,6 +134,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/mcrypt.php',
             'PHP_CompatInfo_Reference_Memcache'
                 => 'PHP/CompatInfo/Reference/memcache.php',
+            'PHP_CompatInfo_Reference_Memcached'
+                => 'PHP/CompatInfo/Reference/memcached.php',
             'PHP_CompatInfo_Reference_Mhash'
                 => 'PHP/CompatInfo/Reference/mhash.php',
             'PHP_CompatInfo_Reference_Mysql'
