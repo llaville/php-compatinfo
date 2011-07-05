@@ -22,6 +22,7 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @link     http://www.php.net/manual/en/book.memcached.php
+ * @since    Class available since Release 2.1.0
  */
 class PHP_CompatInfo_Reference_Memcached implements PHP_CompatInfo_Reference
 {
