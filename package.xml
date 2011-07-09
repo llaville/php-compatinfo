@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.3" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -23,11 +23,11 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2011-07-02</date>
- <time>12:25:06</time>
+ <date>2011-07-09</date>
+ <time>15:09:00</time>
  <version>
-  <release>2.0.0</release>
-  <api>2.0.0</api>
+  <release>2.1.0</release>
+  <api>2.1.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -37,15 +37,12 @@ content of dictionary references.
  <notes>
 Version 2 is a PHP5 rewrites
 
-PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-laville.org
-
 Additions and changes:
-- add 1 new references data dictionnaries related to extensions:
-  intl
-- add source documentation that can be build with AsciiDoc (see docs/README.txt)
+- add 2 new references data dictionnaries related to extensions:
+  memcache, memcached
 
 Bug fixes:
-- wrong PHP extension/internal functions detection when using namespace
+- none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -332,6 +329,12 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="mcrypt.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="memcache.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="memcached.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="mhash.php" role="php">
@@ -630,6 +633,12 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="McryptTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="Memcache.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="Memcached.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="MhashTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -901,6 +910,28 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.1.0</release>
+    <api>2.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-07-09</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Version 2 is a PHP5 rewrites
+
+Additions and changes:
+- add 2 new references data dictionnaries related to extensions:
+  memcache, memcached
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.0.0</release>
