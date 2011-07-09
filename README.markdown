@@ -31,10 +31,10 @@ and on the PHPUnit PEAR channel (`pear.phpunit.de`).
 This has to be done only once. Now the PEAR Installer can be used to install packages from the Bartlett channel.
 
     $ pear install bartlett/PHP_CompatInfo
-    downloading PHP_CompatInfo-2.0.0RC1.tgz ...
-    Starting to download PHP_CompatInfo-2.0.0RC1.tgz (82,395 bytes)
-    .........................done: 82,395 bytes
-    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.0.0RC1
+    downloading PHP_CompatInfo-2.0.0.tgz ...
+    Starting to download PHP_CompatInfo-2.0.0.tgz (740,346 bytes)
+    .........................done: 740,346 bytes
+    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.0.0
 
 After the installation you can find the PHP_CompatInfo source files inside your local PEAR directory.
 
