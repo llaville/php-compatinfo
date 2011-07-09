@@ -60,7 +60,7 @@ class PHP_CompatInfo_Reference_Memcache implements PHP_CompatInfo_Reference
     public function getExtensions($extension = null, $version = null)
     {
         $extensions = array(
-            'memcache' => array('4.3.0', '', '3.0.6')
+            'memcache' => array('4.3.3', '', '3.0.6')
         );
         return $extensions;
     }
