@@ -6,6 +6,16 @@ PHP_CompatInfo ChangeLog
 :scriptsdir:  js
 
 
+== Version 2.1.0 (2011-08-24)
+
+.Additions and changes:
+* support all PHP versions until 5.3.8
+* add 2 new references data dictionnaries related to extensions: memcache, memcached
+
+.Bug fixes:
+* none
+
+
 == Version 2.0.0 (2011-07-02)
 
 .Additions and changes:

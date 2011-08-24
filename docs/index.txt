@@ -3,15 +3,15 @@ PHP_CompatInfo
 include::revision.txt[]
 :stylesdir:   styles
 :scriptsdir:  js
-:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.0
+:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.1
 
 
 .{revdate}: PHP_CompatInfo {revnumber} Released
 ************************************************************************
 Release highlights:
 
-- After 6 months of rewrites and unit tests, here are the first stable major version 2 release,
-with a full user guide.
+- Each new minor version is supposed to follow a new PHP release, which add new features.
+It's true with PHP_CompatInfo 2.1.0 that support PHP 5.3.7 / 5.3.8
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -57,7 +57,10 @@ PHP_CompatInfo 2 provides two servers API :
 * (optional) PHPUnit 3.5.0 minimum (to run unit tests)
 * (optional) an XSLT processor if you want to produce an xHTML report from a phpci xml report
 
-Release Candidate 4 support 60 extensions.
+Version 2.0.0 support 61 extensions.
+
+Version 2.1.0 support 63 extensions.
+
 The _phpci_ tool may inform you on what of those extensions are or not loaded on your system.
 
 Run command 
@@ -76,14 +79,14 @@ Will output results as follow. May differ depending of your extensions loaded.
     L bcmath                                                       4.0.0
     L bz2                                                          4.0.4
     L calendar                                                     4.0.0
-    L Core                                                         4.0.0
+      Core                                                         4.0.0
     L ctype                                                        4.0.4
     L curl                                                         4.0.2
     L date                                                         4.0.0
     L dom                                        20031129          5.0.0
       enchant                                    1.1.0             5.3.0
-    L ereg                                                         4.0.0  5.3.0
-    L fileinfo                                   1.0.5-dev         4.0.0
+      ereg                                                         4.0.0  5.3.0
+      fileinfo                                   1.0.5-dev         4.0.0
     L filter                                     0.11.0            5.2.0
     L ftp                                                          4.0.0
     L gd                                                           4.0.0
@@ -92,10 +95,13 @@ Will output results as follow. May differ depending of your extensions loaded.
     L hash                                       1.0               5.1.2
     L iconv                                                        4.0.5
     L imap                                                         4.0.0
+      intl                                       1.1.0             5.2.4
     L json                                       1.2.1             5.2.0
     L libxml                                                       5.0.0
     L mbstring                                                     4.0.6
     L mcrypt                                                       4.0.0
+      memcache                                   3.0.6             4.3.3
+      memcached                                  1.0.2             5.2.0
     L mhash                                                        4.0.0
     L mysql                                      1.0               4.0.0
     L mysqli                                     0.1               5.0.0
@@ -104,7 +110,7 @@ Will output results as follow. May differ depending of your extensions loaded.
     L pcre                                                         4.0.0
     L PDO                                        1.0.4dev          5.1.0
       pgsql                                                        4.0.0
-    L Phar                                       2.0.1             5.2.0
+      Phar                                       2.0.1             5.2.0
       posix                                      306939            4.0.0
       readline                                   2.0.1             4.0.0
       recode                                     2.0.1             4.0.0
@@ -116,7 +122,7 @@ Will output results as follow. May differ depending of your extensions loaded.
     L sockets                                                      4.1.0
     L SPL                                        0.2               5.0.0
     L SQLite                                     2.0-dev           5.0.0
-    L sqlite3                                    0.7-dev           5.3.0
+      sqlite3                                    0.7-dev           5.3.0
       ssh2                                       0.11.0            5.0.0
     L standard                                                     4.0.0
       sysvmsg                                    306939            4.3.0
@@ -133,9 +139,9 @@ Will output results as follow. May differ depending of your extensions loaded.
     L xsl                                        0.1               5.0.0
     L zlib                                       1.1               4.0.0
     -------------------------------------------------------------------------------
-    A TOTAL OF 60 EXTENSIONS WERE FOUND AND 47 LOADED
+    A TOTAL OF 63 EXTENSIONS WERE FOUND AND 42 LOADED
     -------------------------------------------------------------------------------
-    Time: 0 seconds, Memory: 4.75Mb
+    Time: 2 seconds, Memory: 5.00Mb
     -------------------------------------------------------------------------------
 ----
 

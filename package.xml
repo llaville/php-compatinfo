@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2011-07-09</date>
- <time>15:09:00</time>
+ <date>2011-08-24</date>
+ <time>20:39:09</time>
  <version>
   <release>2.1.0</release>
   <api>2.1.0</api>
@@ -38,6 +38,7 @@ content of dictionary references.
 Version 2 is a PHP5 rewrites
 
 Additions and changes:
+- support all PHP versions until 5.3.8
 - add 2 new references data dictionnaries related to extensions:
   memcache, memcached
 
@@ -919,12 +920,13 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2011-07-09</date>
+   <date>2011-08-24</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Version 2 is a PHP5 rewrites
 
 Additions and changes:
+- support all PHP versions until 5.3.8
 - add 2 new references data dictionnaries related to extensions:
   memcache, memcached
 
