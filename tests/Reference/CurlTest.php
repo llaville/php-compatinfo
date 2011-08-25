@@ -36,6 +36,8 @@ class PHP_CompatInfo_Reference_CurlTest extends PHP_CompatInfo_Reference_Generic
             // requires libcurl >= 0x071002
             'CURLOPT_CONNECTTIMEOUT_MS',
             'CURLOPT_TIMEOUT_MS',
+            // requires libcurl >= 0x071202
+            'CURLINFO_REDIRECT_URL',
             // requires libcurl >= 0x071300
             'CURLSSH_AUTH_NONE',
             'CURLSSH_AUTH_PUBLICKEY',
