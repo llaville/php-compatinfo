@@ -29,49 +29,71 @@ class PHP_CompatInfo_Reference_CurlTest extends PHP_CompatInfo_Reference_Generic
         $this->optionnalconstants = array(
             'CURLOPT_MUTE',
             'CURLOPT_PASSWDFUNCTION',
-            // requires libcurl >= 0x070f01
-            'CURLFTPMETHOD_MULTICWD',
-            'CURLFTPMETHOD_NOCWD',
-            'CURLFTPMETHOD_SINGLECWD',
-            // requires libcurl >= 0x071002
-            'CURLOPT_CONNECTTIMEOUT_MS',
-            'CURLOPT_TIMEOUT_MS',
-            // requires libcurl >= 0x071202
-            'CURLINFO_REDIRECT_URL',
-            // requires libcurl >= 0x071300
-            'CURLSSH_AUTH_NONE',
-            'CURLSSH_AUTH_PUBLICKEY',
-            'CURLSSH_AUTH_PASSWORD',
-            'CURLSSH_AUTH_HOST',
-            'CURLSSH_AUTH_KEYBOARD',
-            'CURLSSH_AUTH_DEFAULT',
-            'CURLOPT_SSH_AUTH_TYPES',
-            'CURLOPT_KEYPASSWD',
-            'CURLOPT_SSH_PUBLIC_KEYFILE',
-            'CURLOPT_SSH_PRIVATE_KEYFILE',
-            'CURLOPT_SSH_HOST_PUBLIC_KEY_MD5',
-            'CURLE_SSH',
-            // requires libcurl >= 0x071301
-            'CURLINFO_CERTINFO',
-            'CURLOPT_CERTINFO',
-            'CURLOPT_POSTREDIR',
-            // requires libcurl >= 0x071304
-            'CURLOPT_REDIR_PROTOCOLS',
-            'CURLOPT_PROTOCOLS',
-            'CURLPROTO_HTTP',
-            'CURLPROTO_HTTPS',
-            'CURLPROTO_FTP',
-            'CURLPROTO_FTPS',
-            'CURLPROTO_SCP',
-            'CURLPROTO_SFTP',
-            'CURLPROTO_TELNET',
-            'CURLPROTO_LDAP',
-            'CURLPROTO_LDAPS',
-            'CURLPROTO_DICT',
-            'CURLPROTO_FILE',
-            'CURLPROTO_TFTP',
-            'CURLPROTO_ALL',
         );
+        if (function_exists('curl_version')) {
+            $ver = curl_version();
+            $ver = $ver['version_number'];
+            if ($ver<0x071001) {
+                array_push($this->optionnalconstants,
+                    'CURLFTPMETHOD_MULTICWD',
+                    'CURLFTPMETHOD_NOCWD',
+                    'CURLFTPMETHOD_SINGLECWD'
+                );
+            }
+            if ($ver<0x071002) {
+                array_push($this->optionnalconstants,
+                    'CURLOPT_CONNECTTIMEOUT_MS',
+                    'CURLOPT_TIMEOUT_MS'
+                );
+            }
+            if ($ver<0x071202) {
+                array_push($this->optionnalconstants,
+                    'CURLINFO_REDIRECT_URL'
+                );
+            }
+            if ($ver<0x071300) {
+                array_push($this->optionnalconstants,
+                    'CURLSSH_AUTH_NONE',
+                    'CURLSSH_AUTH_PUBLICKEY',
+                    'CURLSSH_AUTH_PASSWORD',
+                    'CURLSSH_AUTH_HOST',
+                    'CURLSSH_AUTH_KEYBOARD',
+                    'CURLSSH_AUTH_DEFAULT',
+                    'CURLOPT_SSH_AUTH_TYPES',
+                    'CURLOPT_KEYPASSWD',
+                    'CURLOPT_SSH_PUBLIC_KEYFILE',
+                    'CURLOPT_SSH_PRIVATE_KEYFILE',
+                    'CURLOPT_SSH_HOST_PUBLIC_KEY_MD5',
+                    'CURLE_SSH'
+                );
+            }
+            if ($ver<0x071301) {
+                array_push($this->optionnalconstants,
+                    'CURLINFO_CERTINFO',
+                    'CURLOPT_CERTINFO',
+                    'CURLOPT_POSTREDIR'
+                );
+            }
+            if ($ver<0x071304) {
+                array_push($this->optionnalconstants,
+                    'CURLOPT_REDIR_PROTOCOLS',
+                    'CURLOPT_PROTOCOLS',
+                    'CURLPROTO_HTTP',
+                    'CURLPROTO_HTTPS',
+                    'CURLPROTO_FTP',
+                    'CURLPROTO_FTPS',
+                    'CURLPROTO_SCP',
+                    'CURLPROTO_SFTP',
+                    'CURLPROTO_TELNET',
+                    'CURLPROTO_LDAP',
+                    'CURLPROTO_LDAPS',
+                    'CURLPROTO_DICT',
+                    'CURLPROTO_FILE',
+                    'CURLPROTO_TFTP',
+                    'CURLPROTO_ALL'
+                );
+            }
+        }
         $this->obj = new PHP_CompatInfo_Reference_Curl();
         parent::setUp();
     }
