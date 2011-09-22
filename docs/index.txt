@@ -167,28 +167,23 @@ Will output results as follow. May differ depending of your extensions loaded.
 The PHP_CompatInfo manual is available in a selection of formats. Pick a format
 from the table below to start downloading.
 
-[grid="rows",format="csv"]
 [options="header"]
 |===========================
-Language,Single HTML file,Many HTML files,HTML Help file (CHM),PDF file
-English, link:{man_dir}/en/pci-book.html.zip[pci-book.html.zip] 529Kb, link:{man_dir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] 464Kb , link:{man_dir}/en/phpci-book.chm.zip[phpci-book.chm.zip] 469Kb, link:{man_dir}/en/phpci-book.pdf[phpci-book.pdf] 512Kb
+| Language | Single HTML file | Many HTML files | HTML Help file | PDF file
+| English | link:{man_dir}/en/pci-book.html.zip[pci-book.html.zip] 529Kb | link:{man_dir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] 464Kb | link:{man_dir}/en/phpci-book.chm.zip[phpci-book.chm.zip] 469Kb | link:{man_dir}/en/phpci-book.pdf[phpci-book.pdf] 512Kb
 |===========================
 
-[appendix]
-Changelog
----------
+== Appendix A: Changelog
+
 link:CHANGELOG.html[History of changes]
 
-[appendix]
-License
--------
+== Appendix B: License
+
 Released under the link:LICENSE.html[BSD] license,
 you are free to do whatever you want, even in a commercial environment.
 You are also encouraged to contribute.
 
-[appendix]
-Credits
--------
+== Appendix C: Credits
 
 I would like to thanks here specially a guy without who this PHP QA tool
 won't be born.
@@ -214,11 +209,10 @@ on version 2.0.0RC2
 ____
 
 
-[appendix]
-Links
------
-All pages of this site, and user guide were generated with AsciiDoc 8.6.5,
-assisted by FOP 1.0 (for PDFs). Automated build process uses Phing 2.4.5
+== Appendix D: Links
+
+All pages of this site, and user guide were generated with AsciiDoc 8.6.6,
+assisted by FOP 1.0 (for PDFs). Automated build process uses Phing 2.4.7.1
 
 Convert the HTML Help source (.hhp and .html) files to HTML Help (.chm) files
 using the Microsoft HTML Help Compiler.
