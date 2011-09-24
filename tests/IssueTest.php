@@ -21,6 +21,8 @@ if (!defined('TEST_FILES_PATH')) {
 
 /**
  * Tests for the PHP_CompatInfo class known issues
+ * 
+ * All sources used are Licensed : BSD or public domain
  */
 class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 {
@@ -55,23 +57,6 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Regression test for bug #3657
-     *
-     * @link http://pear.php.net/bugs/bug.php?id=3657
-     *       php5 clone constant/token in all sources
-     * @covers PHP_CompatInfo::parse
-     */
-    public function testBug3657()
-    {
-        // http://cvs.php.net/co.php/phpdoc/scripts/phpweb-entities.php.in?r=1.2
-        $this->pci->parse(TEST_FILES_PATH . 'source3657.php');
-
-        $this->assertSame(
-            array('4.0.0', ''), $this->pci->getVersions()
-        );
-    }
-
-    /**
      * Regression test for bug #6581
      *
      * @link http://pear.php.net/bugs/bug.php?id=6581
@@ -85,26 +70,6 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 
         $this->assertSame(
             array('4.0.0', ''), $this->pci->getVersions()
-        );
-    }
-
-    /**
-     * Regression test for bug #7813
-     *
-     * Parse source file of PEAR_PackageUpdate 0.5.0
-     *
-     * @link http://pear.php.net/bugs/bug.php?id=7813
-     *       wrong PHP minimum version detection
-     * @covers PHP_CompatInfo::parse
-     * @covers PHP_CompatInfo::getVersions
-     */
-    public function testBug7813()
-    {
-        // PEAR_PackageUpdate-0.5.0 package and PEAR_PackageUpdate Class
-        $this->pci->parse(TEST_FILES_PATH . 'source7813.php');
-
-        $this->assertSame(
-            array('4.3.0', ''), $this->pci->getVersions()
         );
     }
 
@@ -171,23 +136,6 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 
         $this->assertSame(
             array(), $this->pci->getExtensions()
-        );
-    }
-
-    /**
-     * Regression test for bug #13873
-     *
-     * @link http://pear.php.net/bugs/bug.php?id=13873
-     *       PHP_CompatInfo fails to scan conditional code
-     *       if it finds other than encapsed string
-     * @covers PHP_CompatInfo::parse
-     */
-    public function testBug13873()
-    {
-        $this->pci->parse(TEST_FILES_PATH . 'source13873.php');
-
-        $this->assertSame(
-            array('4.1.0', ''), $this->pci->getVersions()
         );
     }
 
