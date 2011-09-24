@@ -26,7 +26,7 @@ if (!defined('TEST_FILES_PATH')) {
  * source3657.php   is under PHP License
  * source7813.php   is under PHP License
  */
-class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
+class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
 {
     protected $pci;
 
