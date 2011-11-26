@@ -227,6 +227,7 @@ class PHP_CompatInfo_Reference_SPL implements PHP_CompatInfo_Reference
                 'spl_autoload_functions'         => array('5.1.2', ''),
                 'spl_autoload_call'              => array('5.1.2', ''),
                 'class_parents'                  => array('5.1.0', ''),
+                'class_uses'                     => array('5.4.0-dev', ''),
                 'class_implements'               => array('5.1.0', ''),
                 'spl_object_hash'                => array('5.2.0', ''),
                 'iterator_to_array'              => array('5.1.0', ''),
