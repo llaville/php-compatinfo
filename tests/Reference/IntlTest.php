@@ -27,6 +27,10 @@ class PHP_CompatInfo_Reference_IntlTest extends PHP_CompatInfo_Reference_Generic
      */
     protected function setUp()
     {
+        $this->optionnalconstants = array(
+            // requires libicu >= 3.8
+            'U_IDNA_DOMAIN_NAME_TOO_LONG_ERROR',
+        );
         $this->obj = new PHP_CompatInfo_Reference_Intl();
         parent::setUp();
     }

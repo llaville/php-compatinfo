@@ -181,6 +181,7 @@ class PHP_CompatInfo_Reference_Sockets implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'socket_import_stream'           => array('5.4.0-dev', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -359,6 +360,20 @@ class PHP_CompatInfo_Reference_Sockets implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'IP_MULTICAST_IF'                => array('5.4.0-dev', ''),
+                'IP_MULTICAST_LOOP'              => array('5.4.0-dev', ''),
+                'IP_MULTICAST_TTL'               => array('5.4.0-dev', ''),
+                'IPPROTO_IP'                     => array('5.4.0-dev', ''),
+                'IPPROTO_IPV6'                   => array('5.4.0-dev', ''),
+                'IPV6_MULTICAST_HOPS'            => array('5.4.0-dev', ''),
+                'IPV6_MULTICAST_IF'              => array('5.4.0-dev', ''),
+                'IPV6_MULTICAST_LOOP'            => array('5.4.0-dev', ''),
+                'MCAST_BLOCK_SOURCE'             => array('5.4.0-dev', ''),
+                'MCAST_JOIN_GROUP'               => array('5.4.0-dev', ''),
+                'MCAST_JOIN_SOURCE_GROUP'        => array('5.4.0-dev', ''),
+                'MCAST_LEAVE_GROUP'              => array('5.4.0-dev', ''),
+                'MCAST_LEAVE_SOURCE_GROUP'       => array('5.4.0-dev', ''),
+                'MCAST_UNBLOCK_SOURCE'           => array('5.4.0-dev', ''),
                 'MSG_DONTWAIT'                   => array('5.2.10', ''),
                 'MSG_EOR'                        => array('5.2.4', ''),
                 'MSG_EOF'                        => array('5.2.4', ''),

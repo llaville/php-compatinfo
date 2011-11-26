@@ -153,16 +153,16 @@ class PHP_CompatInfo_Reference_Session implements PHP_CompatInfo_Reference
                 'session_encode'                 => array('4.0.0', ''),
                 'session_get_cookie_params'      => array('4.0.0', ''),
                 'session_id'                     => array('4.0.0', ''),
-                'session_is_registered'          => array('4.0.0', ''),
+                'session_is_registered'          => array('4.0.0', '5.3.9'),
                 'session_module_name'            => array('4.0.0', ''),
                 'session_name'                   => array('4.0.0', ''),
                 'session_regenerate_id'          => array('4.3.2', ''),
-                'session_register'               => array('4.0.0', ''),
+                'session_register'               => array('4.0.0', '5.3.9'),
                 'session_save_path'              => array('4.0.0', ''),
                 'session_set_cookie_params'      => array('4.0.0', ''),
                 'session_set_save_handler'       => array('4.0.0', ''),
                 'session_start'                  => array('4.0.0', ''),
-                'session_unregister'             => array('4.0.0', ''),
+                'session_unregister'             => array('4.0.0', '5.3.9'),
                 'session_unset'                  => array('4.0.0', ''),
                 'session_write_close'            => array('4.0.4', ''),
             );
@@ -173,6 +173,8 @@ class PHP_CompatInfo_Reference_Session implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'session_register_shutdown'     => array('5.4.0-dev', ''),
+                'session_status'                => array('5.4.0-dev', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -207,6 +209,9 @@ class PHP_CompatInfo_Reference_Session implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'PHP_SESSION_ACTIVE'             => array('5.4.0-dev', ''),
+                'PHP_SESSION_DISABLED'           => array('5.4.0-dev', ''),
+                'PHP_SESSION_NONE'               => array('5.4.0-dev', ''),
             );
             $constants = array_merge(
                 $constants,

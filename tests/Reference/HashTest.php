@@ -55,6 +55,11 @@ class PHP_CompatInfo_Reference_HashTest extends PHP_CompatInfo_Reference_Generic
             'MHASH_RIPEMD320',
             'MHASH_SNEFRU256',
             'MHASH_MD2',
+            'MHASH_FNV132',
+            'MHASH_FNV1A32',
+            'MHASH_FNV164',
+            'MHASH_FNV1A64',
+            'MHASH_JOAAT',
         );
         $this->ignoredfunctions = array(
             'mhash',

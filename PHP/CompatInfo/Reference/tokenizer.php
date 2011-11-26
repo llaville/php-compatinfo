@@ -294,6 +294,7 @@ class PHP_CompatInfo_Reference_Tokenizer implements PHP_CompatInfo_Reference
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
                 'T_ABSTRACT'                     => array('5.0.0', ''),
+                'T_CALLABLE'                     => array('5.4.0-dev', ''),
                 'T_CATCH'                        => array('5.0.0', ''),
                 'T_CLONE'                        => array('5.0.0', ''),
                 'T_DIR'                          => array('5.3.0', ''),
@@ -302,6 +303,7 @@ class PHP_CompatInfo_Reference_Tokenizer implements PHP_CompatInfo_Reference
                 'T_HALT_COMPILER'                => array('5.1.0', ''),
                 'T_IMPLEMENTS'                   => array('5.0.0', ''),
                 'T_INSTANCEOF'                   => array('5.0.0', ''),
+                'T_INSTEADOF'                    => array('5.4.0-dev', ''),
                 'T_INTERFACE'                    => array('5.0.0', ''),
                 'T_METHOD_C'                     => array('5.0.0', ''),
                 'T_NAMESPACE'                    => array('5.3.0', ''),
@@ -310,6 +312,8 @@ class PHP_CompatInfo_Reference_Tokenizer implements PHP_CompatInfo_Reference
                 'T_PUBLIC'                       => array('5.0.0', ''),
                 'T_PROTECTED'                    => array('5.0.0', ''),
                 'T_PRIVATE'                      => array('5.0.0', ''),
+                'T_TRAIT'                        => array('5.4.0-dev', ''),
+                'T_TRAIT_C'                      => array('5.4.0-dev', ''),
                 'T_TRY'                          => array('5.0.0', ''),
                 'T_THROW'                        => array('5.0.0', ''),
                 'T_UNSET_CAST'                   => array('5.0.0', ''),

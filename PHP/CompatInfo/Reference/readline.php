@@ -200,6 +200,7 @@ class PHP_CompatInfo_Reference_Readline implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'READLINE_LIB'                  => array('5.4.0-dev', ''),
             );
             $constants = array_merge(
                 $constants,

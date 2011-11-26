@@ -164,7 +164,7 @@ class PHP_CompatInfo_Reference_Zlib implements PHP_CompatInfo_Reference
                 'gztell'                         => array('4.0.0', ''),
                 'gzuncompress'                   => array('4.0.1', ''),
                 'gzwrite'                        => array('4.0.0', ''),
-                'ob_gzhandler'                   => array('4.0.4', ''),
+                'ob_gzhandler'                   => array('4.0.4', '5.3.9'),
                 'readgzfile'                     => array('4.0.0', ''),
                 'zlib_get_coding_type'           => array('4.3.2', ''),
             );
@@ -175,6 +175,9 @@ class PHP_CompatInfo_Reference_Zlib implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'gzdecode'                       => array('5.4.0-dev', ''),
+                'zlib_decode'                    => array('5.4.0-dev', ''),
+                'zlib_encode'                    => array('5.4.0-dev', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -210,6 +213,9 @@ class PHP_CompatInfo_Reference_Zlib implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'ZLIB_ENCODING_DEFLATE'         => array('5.4.0-dev', ''),
+                'ZLIB_ENCODING_GZIP'            => array('5.4.0-dev', ''),
+                'ZLIB_ENCODING_RAW'             => array('5.4.0-dev', ''),
             );
             $constants = array_merge(
                 $constants,
