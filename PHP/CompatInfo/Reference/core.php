@@ -212,10 +212,12 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'gc_disable'                     => array('5.3.0', ''),
                 'get_called_class'               => array('5.3.0', ''),
                 'get_declared_interfaces'        => array('5.0.0', ''),
+                'get_declared_traits'            => array('5.4.0-dev', ''),
                 'interface_exists'               => array('5.0.2', ''),
                 'property_exists'                => array('5.1.0', ''),
                 'restore_exception_handler'      => array('5.0.0', ''),
                 'set_exception_handler'          => array('5.0.0', ''),
+                'trait_exists'                   => array('5.4.0-dev', ''),
                 'zend_thread_id'                 => array('5.0.0', ''),
             );
             $functions = array_merge(
@@ -317,6 +319,16 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'PHP_MANDIR'                        => array('5.3.7', ''),
                 'PHP_MAXPATHLEN'                    => array('5.3.0', ''),
                 'PHP_MINOR_VERSION'                 => array('5.2.7', ''),
+                'PHP_OUTPUT_HANDLER_CLEAN'          => array('5.4.0-dev', ''),
+                'PHP_OUTPUT_HANDLER_CLEANABLE'      => array('5.4.0-dev', ''),
+                'PHP_OUTPUT_HANDLER_DISABLED'       => array('5.4.0-dev', ''),
+                'PHP_OUTPUT_HANDLER_FINAL'          => array('5.4.0-dev', ''),
+                'PHP_OUTPUT_HANDLER_FLUSH'          => array('5.4.0-dev', ''),
+                'PHP_OUTPUT_HANDLER_FLUSHABLE'      => array('5.4.0-dev', ''),
+                'PHP_OUTPUT_HANDLER_REMOVABLE'      => array('5.4.0-dev', ''),
+                'PHP_OUTPUT_HANDLER_STARTED'        => array('5.4.0-dev', ''),
+                'PHP_OUTPUT_HANDLER_STDFLAGS'       => array('5.4.0-dev', ''),
+                'PHP_OUTPUT_HANDLER_WRITE'          => array('5.4.0-dev', ''),
                 'PHP_RELEASE_VERSION'               => array('5.2.7', ''),
                 'PHP_VERSION_ID'                    => array('5.2.7', ''),
                 'PHP_WINDOWS_VERSION_MAJOR'         => array('5.3.0', ''),
@@ -334,7 +346,7 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'UPLOAD_ERR_CANT_WRITE'             => array('5.1.0', ''),
                 'UPLOAD_ERR_EXTENSION'              => array('5.2.0', ''),
                 'ZEND_DEBUG_BUILD'                  => array('5.3.0', ''),
-                'ZEND_MULTIBYTE'                    => array('5.3.4', ''),
+                'ZEND_MULTIBYTE'                    => array('5.3.4', '5.3.9'),
             );
             $constants = array_merge(
                 $constants,
