@@ -38,6 +38,11 @@ class PHP_CompatInfo_Reference_CoreTest extends PHP_CompatInfo_Reference_Generic
             '__METHOD__',
             '__NAMESPACE__',
         );
+        $this->ignoredfunctions = array(
+            // Provided by PHP/CodeCoverage/Util.php when not available in PHP
+            // So no reliable check for this one
+            'trait_exists',
+        );
         if (DIRECTORY_SEPARATOR == '/') {
             $this->optionnalconstants = array_merge(
                 $this->optionnalconstants,
