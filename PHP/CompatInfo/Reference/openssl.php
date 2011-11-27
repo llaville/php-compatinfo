@@ -274,7 +274,7 @@ class PHP_CompatInfo_Reference_Openssl implements PHP_CompatInfo_Reference
                 'OPENSSL_VERSION_TEXT'           => array('5.2.0', ''),
                 'OPENSSL_VERSION_NUMBER'         => array('5.2.0', ''),
                 'OPENSSL_TLSEXT_SERVER_NAME'     => array('5.3.2', ''),
-                'OPENSSL_ZERO_PADDING'           => array('5.3.2', ''),
+                'OPENSSL_ZERO_PADDING'           => array('5.4.0-dev', ''),
             );
             $constants = array_merge(
                 $constants,
