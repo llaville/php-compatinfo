@@ -5,10 +5,11 @@
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Laurent Laville pear@laurent-laville.org>
+ * @author     Remi Collet <Remi@FamilleCollet.com>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
- * @since      Class available since Release 2.0.0beta3
+ * @since      Class available since Release 2.2.0
  */
 
 if (!defined('TEST_FILES_PATH')) {
