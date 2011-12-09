@@ -313,6 +313,7 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'E_DEPRECATED'                      => array('5.3.0', ''),
                 'E_USER_DEPRECATED'                 => array('5.3.0', ''),
                 'E_STRICT'                          => array('5.0.0', ''),
+                'PHP_BINARY'                        => array('5.4.0-dev', ''),
                 'PHP_DEBUG'                         => array('5.2.7', ''),
                 'PHP_EXTRA_VERSION'                 => array('5.2.7', ''),
                 'PHP_MAJOR_VERSION'                 => array('5.2.7', ''),
