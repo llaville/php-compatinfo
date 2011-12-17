@@ -174,6 +174,11 @@ class PHP_CompatInfo_Reference_StandardTest extends PHP_CompatInfo_Reference_Gen
                 'DNS_A6',
                 'DNS_ANY',
                 'DNS_ALL',
+                // Stream not supported
+                'STREAM_IPPROTO_TCP',
+                'STREAM_IPPROTO_UDP',
+                'STREAM_IPPROTO_ICMP',
+                'STREAM_IPPROTO_RAW',
             );
         }
         $this->obj = new PHP_CompatInfo_Reference_Standard();
