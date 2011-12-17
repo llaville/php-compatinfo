@@ -315,7 +315,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'long2ip'                        => array('4.0.0', ''),
                 'getenv'                         => array('4.0.0', ''),
                 'putenv'                         => array('4.0.0', ''),
-                'getopt'                         => array('4.3.0', ''),
+                'getopt'                         => array('4.3.0', '', '4.3.0, 5.3.0'),
                 'microtime'                      => array('4.0.0', ''),
                 'gettimeofday'                   => array('4.0.0', ''),
                 'uniqid'                         => array('4.0.0', ''),

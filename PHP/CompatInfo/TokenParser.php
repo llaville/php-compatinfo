@@ -75,6 +75,7 @@ class PHP_CompatInfo_TokenParser
                     // update internal functions
                     $functions = $subject->offsetGet(array($container => $ns));
                     $functions[$name]['uses'][] = $token->getLine();
+                    $functions[$name]['arguments'] = $token->getArguments();
                     $subject->offsetSet(array($container => $ns), $functions);
                 }
             }

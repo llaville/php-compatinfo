@@ -1044,12 +1044,20 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         }
 
         list ($extension, $values) = each($data[$name]);
-        list ($verMin, $verMax)    = $values;
+
+        if (count($values) == 2) {
+            list ($verMin, $verMax) = $values;
+            $arguments = null;
+        } else {
+            list ($verMin, $verMax, $arguments) = $values;
+            $arguments = explode(',', str_replace(' ', '', $arguments));
+        }
 
         $ref = array(
             $extension => array(
                 $name => array(
-                    'versions' => array($verMin, $verMax)
+                    'versions'  => array($verMin, $verMax),
+                    'arguments' => $arguments
                 )
             )
         );
@@ -1147,7 +1155,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         foreach ($haystack as $key => $data) {
 
             $ref = $this->searchReference($category, $key);
-        
+
             if ($ns == '\\') {
                 // global namespace
             } elseif ($ref === 1) {
@@ -1175,6 +1183,22 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             if (is_array($data)) {
                 // PHP Reflect results
                 $this->_versionsRef = $values[$key]['versions'];
+
+                if (isset($values[$key]['arguments'])
+                    && is_array($values[$key]['arguments'])
+                ) {
+                    foreach ($values[$key]['arguments'] as $a => $version) {
+
+                        $this->updateVersion(
+                            $version, $this->_versionsRef[0]
+                        );
+                        if (!empty($this->_versionsRef[1])) {
+                            $this->updateVersion(
+                                $version, $this->_versionsRef[1]
+                            );
+                        }
+                    }
+                }
             } else {
                 // parent or interface result from recursive call
                 $this->updateVersion(
@@ -1184,6 +1208,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                     $values[$key]['versions'][1], $this->_versionsRef[1]
                 );
             }
+            unset($values[$key]['arguments']);
 
             if ($category == 'globals') {
                 $_extension = $extension;
