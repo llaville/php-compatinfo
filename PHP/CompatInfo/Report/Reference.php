@@ -130,6 +130,7 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
             } else {
                 list ($extension, $values) = each($data);
             }
+            $values   = array_slice($values, 0, 2); 
             $versions = implode('  ', $values);
 
             echo $element
