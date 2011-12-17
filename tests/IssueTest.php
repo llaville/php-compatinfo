@@ -21,7 +21,7 @@ if (!defined('TEST_FILES_PATH')) {
 
 /**
  * Tests for the PHP_CompatInfo class known issues
- * 
+ *
  * All sources used are Licensed : BSD or public domain
  */
 class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
@@ -196,6 +196,23 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 
         $this->assertSame(
             array('5.1.0', '5.0.4'), $this->pci->getVersions()
+        );
+    }
+
+    /**
+     * Regression test for bug #18881
+     *
+     * @link http://pear.php.net/bugs/bug.php?id=18881
+     *       Parameter count isn't recognized
+     * @covers PHP_CompatInfo::parse
+     * @covers PHP_CompatInfo::getVersions
+     */
+    public function testBug18881()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881.php');
+
+        $this->assertSame(
+            array('5.0.0', ''), $this->pci->getVersions()
         );
     }
 
