@@ -216,4 +216,21 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Regression test for request #13094
+     *
+     * @link http://pear.php.net/bugs/bug.php?id=13094
+     *       PHP5 method chaining
+     * @covers PHP_CompatInfo::parse
+     * @covers PHP_CompatInfo::getVersions
+     */
+    public function testRequest13094()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source13094.php');
+
+        $this->assertSame(
+            array('5.0.0', ''), $this->pci->getVersions()
+        );
+    }
+
 }

@@ -26,6 +26,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Token/String.php',
             'PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING'
                 => 'PHP/CompatInfo/Token/ConstantEncapsedString.php',
+            'PHP_CompatInfo_Token_OBJECT_OPERATOR'
+                => 'PHP/CompatInfo/Token/ObjectOperator.php',
             'PHP_CompatInfo'
                 => 'PHP/CompatInfo.php',
             'PHP_CompatInfo_Exception'

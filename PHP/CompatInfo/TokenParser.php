@@ -206,6 +206,10 @@ class PHP_CompatInfo_TokenParser
         if (null != $container) {
             $name = (string)$token;
 
+            if ('' == $name) {
+                return;
+            }
+
             // update tokens
             $tokens = $subject->offsetGet(array($container => $ns));
             $tokens[$name]['uses'][] = $token->getLine();
