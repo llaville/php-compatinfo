@@ -27,13 +27,14 @@ class PHP_CompatInfo_Token_OBJECT_OPERATOR extends PHP_Reflect_Token_OBJECT_OPER
     {
         $name = '';
 
-        if ($this->_getContext(-1) == 'T_VARIABLE' 
-            || $this->_getContext(-2) == 'T_VARIABLE' 
+        if ($this->_getContext(-1) == 'T_VARIABLE'
+            || ($this->_getContext(-2) == 'T_VARIABLE'
+            && $this->_getContext(-1) == 'T_WHITESPACE')
         ) {
-            // try to detect method chaining 
+            // try to detect method chaining
 
-            if ($this->_getContext(+1) == 'T_STRING' 
-                || $this->_getContext(+2) == 'T_STRING' 
+            if ($this->_getContext(+1) == 'T_STRING'
+                || $this->_getContext(+2) == 'T_STRING'
             ) {
                 // start of object method call
                 $i = +2;
@@ -41,13 +42,13 @@ class PHP_CompatInfo_Token_OBJECT_OPERATOR extends PHP_Reflect_Token_OBJECT_OPER
                     && $this->_getContext($i) != 'T_SEMICOLON'
                     && $this->_getContext($i) != 'T_CLOSE_TAG'
                 ) {
-                
+
                     if ($this->_getContext($i) == 'T_CLOSE_BRACKET') {
-                    
+
                         if ($this->_getContext($i+1) == 'T_OBJECT_OPERATOR'
                             || $this->_getContext($i+2) == 'T_OBJECT_OPERATOR'
                         ) {
-                            // found method chaining 
+                            // found method chaining
                             $name = '$foo->method()->chaining()';
                             break;
                         }
@@ -56,10 +57,25 @@ class PHP_CompatInfo_Token_OBJECT_OPERATOR extends PHP_Reflect_Token_OBJECT_OPER
                 }
             }
         }
-        
+        elseif ($this->_getContext(-1) == 'T_CLOSE_BRACKET'
+            || $this->_getContext(-2) == 'T_CLOSE_BRACKET'
+        ) {
+            // try to detect class member access on instantiation
+            $i = -2;
+            while ($this->_getContext($i) != 'T_OPEN_TAG'
+                && $this->_getContext($i) != 'T_SEMICOLON'
+            ) {
+                if ($this->_getContext($i) == 'T_NEW') {
+                    $name = 'classMemberAccessOnInstantiation';
+                    break;
+                }
+                $i--;
+            }
+        }
+
         return $name;
     }
-    
+
     public function __toString()
     {
         return $this->getName();

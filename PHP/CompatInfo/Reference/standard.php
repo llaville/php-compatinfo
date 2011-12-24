@@ -1100,6 +1100,8 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
             '__halt_compiler'                => array('5.1.0', ''),
             'goto'                           => array('5.3.0', ''),
             'use'                            => array('5.3.0', ''),
+            'classMemberAccessOnInstantiation'
+                                             => array('5.4.0', ''),
         );
 
         return $version5;
