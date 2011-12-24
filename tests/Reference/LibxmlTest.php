@@ -31,6 +31,16 @@ class PHP_CompatInfo_Reference_LibxmlTest extends PHP_CompatInfo_Reference_Gener
             // requires LIBXML_VERSION >= 20703
             'LIBXML_PARSEHUGE',
         );
+
+        if (DIRECTORY_SEPARATOR == '/') {
+
+        } else {
+            $this->optionnalconstants = array(
+                'LIBXML_HTML_NODEFDTD',
+                'LIBXML_HTML_NOIMPLIED',
+            );
+        }
+
         $this->obj = new PHP_CompatInfo_Reference_Libxml();
         parent::setUp();
     }
