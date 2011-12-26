@@ -85,7 +85,7 @@ class PHP_CompatInfo_Reference_CoreTest extends PHP_CompatInfo_Reference_Generic
         }
     }
 
-    public function testGetFunctionsFromExtension() 
+    public function testGetFunctionsFromExtension()
     {
         if (version_compare(PHP_VERSION,'5.3.0') < 0) {
             $this->markTestSkipped(
