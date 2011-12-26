@@ -1,15 +1,15 @@
 <?php
 /**
  * Compatibility Interface
- */ 
+ */
 interface ICompat
 {
     public function getCompat();
     public function toArray();
 }
- 
-class CompatInfo 
-    extends PHP_CompatInfo 
+
+class CompatInfo
+    extends PHP_CompatInfo
     implements SplSubject, IteratorAggregate, Countable
 {
 }

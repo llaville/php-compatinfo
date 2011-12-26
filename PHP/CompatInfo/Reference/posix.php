@@ -213,7 +213,7 @@ class PHP_CompatInfo_Reference_Posix implements PHP_CompatInfo_Reference
         $constants = array();
 
         if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(                
+            $version4 = array(
             );
             $constants = array_merge(
                 $constants,

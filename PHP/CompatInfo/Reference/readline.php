@@ -153,7 +153,7 @@ class PHP_CompatInfo_Reference_Readline implements PHP_CompatInfo_Reference
                 'readline_read_history'             => array('4.0.0', ''),
                 'readline_write_history'            => array('4.0.0', ''),
                 'readline'                          => array('4.0.0', ''),
-                
+
             );
             $functions = array_merge(
                 $functions,
