@@ -169,7 +169,7 @@ class PHP_CompatInfo_Reference_Openssl implements PHP_CompatInfo_Reference
                 'openssl_public_decrypt'         => array('4.0.6', ''),
                 'openssl_public_encrypt'         => array('4.0.6', ''),
                 'openssl_seal'                   => array('4.0.4', ''),
-                'openssl_sign'                   => array('4.0.4', ''),
+                'openssl_sign'                   => array('4.0.4', '', '4.0.4, 4.0.4, 5.0.0'),
                 'openssl_verify'                 => array('4.0.4', ''),
                 'openssl_x509_check_private_key' => array('4.2.0', ''),
                 'openssl_x509_checkpurpose'      => array('4.0.6', ''),

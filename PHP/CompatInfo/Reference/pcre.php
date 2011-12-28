@@ -147,8 +147,8 @@ class PHP_CompatInfo_Reference_Pcre implements PHP_CompatInfo_Reference
             $version4 = array(
                 'preg_match'                     => array('4.0.0', ''),
                 'preg_match_all'                 => array('4.0.0', ''),
-                'preg_replace'                   => array('4.0.0', ''),
-                'preg_replace_callback'          => array('4.0.5', ''),
+                'preg_replace'                   => array('4.0.0', '', '4.0.0, 4.0.0, 4.0.0, 4.0.1, 5.1.0'),
+                'preg_replace_callback'          => array('4.0.5', '', '4.0.5, 4.0.5, 4.0.5, 4.0.5, 5.1.0'),
                 'preg_split'                     => array('4.0.0', ''),
                 'preg_quote'                     => array('4.0.0', ''),
                 'preg_grep'                      => array('4.0.0', ''),

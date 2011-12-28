@@ -156,7 +156,7 @@ class PHP_CompatInfo_Reference_Session implements PHP_CompatInfo_Reference
                 'session_is_registered'          => array('4.0.0', '5.3.9'),
                 'session_module_name'            => array('4.0.0', ''),
                 'session_name'                   => array('4.0.0', ''),
-                'session_regenerate_id'          => array('4.3.2', ''),
+                'session_regenerate_id'          => array('4.3.2', '', '5.1.0'),
                 'session_register'               => array('4.0.0', '5.3.9'),
                 'session_save_path'              => array('4.0.0', ''),
                 'session_set_cookie_params'      => array('4.0.0', ''),

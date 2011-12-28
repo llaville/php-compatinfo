@@ -154,7 +154,7 @@ class PHP_CompatInfo_Reference_Json implements PHP_CompatInfo_Reference
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
                 'json_encode'                    => array('5.2.0', ''),
-                'json_decode'                    => array('5.2.0', ''),
+                'json_decode'                    => array('5.2.0', '', '5.2.0, 5.2.0, 5.3.0, 5.4.0-dev'),
                 'json_last_error'                => array('5.3.0', ''),
             );
             $functions = array_merge(

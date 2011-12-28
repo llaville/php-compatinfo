@@ -172,7 +172,7 @@ class PHP_CompatInfo_Reference_SQLite implements PHP_CompatInfo_Reference
                 'sqlite_factory'                 => array('5.0.0', ''),
                 'sqlite_fetch_all'               => array('5.0.0', ''),
                 'sqlite_fetch_array'             => array('5.0.0', ''),
-                'sqlite_fetch_column_types'      => array('5.0.0', ''),
+                'sqlite_fetch_column_types'      => array('5.0.0', '', '5.0.0, 5.0.0, 5.1.0'),
                 'sqlite_fetch_object'            => array('5.0.0', ''),
                 'sqlite_fetch_single'            => array('5.0.0', ''),
                 'sqlite_fetch_string'            => array('5.0.0', ''),
