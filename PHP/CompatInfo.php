@@ -666,7 +666,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 'PHP_CompatInfo_Token_OBJECT_OPERATOR',
                 array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
             );
-            
+
             $reflect->scan($source);
 
             /**
@@ -1192,8 +1192,13 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
                 if (isset($values[$key]['arguments'])
                     && is_array($values[$key]['arguments'])
+                    && isset($data['arguments'])
+                    && is_array($data['arguments'])
                 ) {
                     foreach ($values[$key]['arguments'] as $a => $version) {
+                        if ($a == count($data['arguments'])) {
+                            break;
+                        }
 
                         $this->updateVersion(
                             $version, $this->_versionsRef[0]

@@ -94,7 +94,7 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
                 // do nothing
             }
 
-            else if ($this->tokenStream[$i][0] != 'T_VARIABLE'
+            else if ($this->tokenStream[$i][0] == 'T_STRING'
                 && !isset($nextArgument['name'])
             ) {
                 $nextArgument['typeHint'] = $this->tokenStream[$i][1];
@@ -144,6 +144,12 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             }
 
             else if ($this->tokenStream[$i][0] == 'T_COMMA') {
+                if (isset($nextArgument['typeHint'])
+                    && !isset($nextArgument['name'])
+                ) {
+                    $nextArgument['defaultValue'] = $nextArgument['typeHint'];
+                    unset($nextArgument['typeHint']);
+                }
                 // flush argument to array
                 $this->arguments[] = $nextArgument;
                 $nextArgument      = array();
@@ -152,6 +158,12 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             $i++;
         }
         if (!empty($nextArgument)) {
+            if (isset($nextArgument['typeHint'])
+                && !isset($nextArgument['name'])
+            ) {
+                $nextArgument['defaultValue'] = $nextArgument['typeHint'];
+                unset($nextArgument['typeHint']);
+            }
             $this->arguments[] = $nextArgument;
         }
 
