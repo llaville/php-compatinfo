@@ -164,7 +164,7 @@ class PHP_CompatInfo_Reference_Zlib implements PHP_CompatInfo_Reference
                 'gztell'                         => array('4.0.0', ''),
                 'gzuncompress'                   => array('4.0.1', ''),
                 'gzwrite'                        => array('4.0.0', ''),
-                'ob_gzhandler'                   => array('4.0.4', '5.3.9'),
+                'ob_gzhandler'                   => array('4.0.4', ''),
                 'readgzfile'                     => array('4.0.0', ''),
                 'zlib_get_coding_type'           => array('4.3.2', ''),
             );
