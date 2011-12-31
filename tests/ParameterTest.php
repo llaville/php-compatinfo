@@ -6,7 +6,7 @@
  * @subpackage Tests
  * @author     Laurent Laville pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: 2.2.0snapshot20111228
+ * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 2.2.0
  */
