@@ -1,0 +1,2 @@
+<?php
+$buffer = fgetss($handle);
