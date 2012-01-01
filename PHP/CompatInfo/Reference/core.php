@@ -178,7 +178,7 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'get_included_files'             => array('4.0.0', ''),
                 'get_required_files'             => array('4.0.0', ''),
                 'is_subclass_of'                 => array('4.0.0', ''),
-                'is_a'                           => array('4.0.0', ''),
+                'is_a'                           => array('4.2.0', '', '4.2.0, 4.2.0, 5.3.9'),
                 'get_class_vars'                 => array('4.0.0', ''),
                 'get_object_vars'                => array('4.0.0', ''),
                 'get_class_methods'              => array('4.0.0', ''),

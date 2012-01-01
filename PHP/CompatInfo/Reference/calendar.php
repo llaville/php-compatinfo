@@ -157,7 +157,7 @@ class PHP_CompatInfo_Reference_Calendar implements PHP_CompatInfo_Reference
                 'jdmonthname'                    => array('4.0.0', ''),
                 'jdtofrench'                     => array('4.0.0', ''),
                 'jdtogregorian'                  => array('4.0.0', ''),
-                'jdtojewish'                     => array('4.0.0', ''),
+                'jdtojewish'                     => array('4.0.0', '', '4.0.0, 4.3.0, 5.0.0'),
                 'jdtojulian'                     => array('4.0.0', ''),
                 'jdtounix'                       => array('4.0.0', ''),
                 'jewishtojd'                     => array('4.0.0', ''),

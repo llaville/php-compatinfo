@@ -38,6 +38,10 @@ class PHP_CompatInfo_Reference_CoreTest extends PHP_CompatInfo_Reference_Generic
             '__METHOD__',
             '__NAMESPACE__',
         );
+        $this->ignoredconstants = array(
+            // add by swig framework as core constant
+            'swig_runtime_data_type_pointer',
+        );
         $this->ignoredfunctions = array(
             // Provided by PHP/CodeCoverage/Util.php when not available in PHP
             // So no reliable check for this one
