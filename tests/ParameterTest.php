@@ -474,5 +474,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }
+
+    /**
+     * example with parse_url()
+     *
+     * @link http://www.php.net/manual/en/function.parse-url.php
+     */
+    public function testParseUrlDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-21d.php');
+
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testParseUrlOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-21o.php');
+
+        $this->assertSame(
+            array('5.2.0', ''), $this->pci->getVersions()
+        );
+    }
     
 }
