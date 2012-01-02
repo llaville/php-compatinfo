@@ -409,4 +409,26 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * example with jdtojewish()
+     *
+     * @link http://www.php.net/manual/en/function.jdtojewish.php
+     */
+    public function testJdtojewishDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-18d.php');
+
+        $this->markTestIncomplete(
+            'This test has not been fully implemented.'
+        );
+    }
+    public function testJdtojewishOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-18o.php');
+
+        $this->assertSame(
+            array('5.0.0', ''), $this->pci->getVersions()
+        );
+    }
+
 }
