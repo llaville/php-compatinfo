@@ -431,4 +431,26 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * example with stream_copy_to_stream()
+     *
+     * @link http://www.php.net/manual/en/function.stream-copy-to-stream.php
+     */
+    public function testStreamCopyToStreamDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-19d.php');
+
+        $this->assertSame(
+            array('5.0.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testStreamCopyToStreamOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-19o.php');
+
+        $this->assertSame(
+            array('5.1.0', ''), $this->pci->getVersions()
+        );
+    }
+    
 }
