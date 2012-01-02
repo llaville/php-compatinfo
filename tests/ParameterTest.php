@@ -364,7 +364,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
-    
+
     /**
      * example with substr_count()
      *
@@ -386,6 +386,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
-    
-    
+
+    /**
+     * example with is_a()
+     *
+     * @link http://www.php.net/manual/en/function.is-a.php
+     */
+    public function testIsADefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-17d.php');
+
+        $this->assertSame(
+            array('4.2.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testIsAOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-17o.php');
+
+        $this->assertSame(
+            array('5.3.9', ''), $this->pci->getVersions()
+        );
+    }
+
 }
