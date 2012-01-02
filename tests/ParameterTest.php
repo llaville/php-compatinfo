@@ -496,5 +496,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.2.0', ''), $this->pci->getVersions()
         );
     }
+
+    /**
+     * example with memory_get_usage()
+     *
+     * @link http://www.php.net/manual/en/function.memory-get-usage.php
+     */
+    public function testMemoryGetUsageDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-22d.php');
+
+        $this->assertSame(
+            array('4.3.2', ''), $this->pci->getVersions()
+        );
+    }
+    public function testMemoryGetUsageOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-22o.php');
+
+        $this->assertSame(
+            array('5.2.0', ''), $this->pci->getVersions()
+        );
+    }
     
 }
