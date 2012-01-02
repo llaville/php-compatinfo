@@ -452,5 +452,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
+
+    /**
+     * example with copy()
+     *
+     * @link http://www.php.net/manual/en/function.copy.php
+     */
+    public function testCopyDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-20d.php');
+
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testCopyOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-20o.php');
+
+        $this->assertSame(
+            array('5.3.0', ''), $this->pci->getVersions()
+        );
+    }
     
 }
