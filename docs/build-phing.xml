@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="phpcompatinfo" default="make-full-docs" basedir=".">
+<project name="phpcompatinfo" default="help" basedir=".">
 
     <property name="asciidoc.home" value="C:\asciidoc-8.6.5" override="true" />
     <property name="homedir" value="C:\www\github\php-compat-info" override="true" />
@@ -8,6 +8,26 @@
     <property name="fopopts" value="-pdf phpci-book.pdf" override="true" />
     <property name="theme" value="flask" override="true" />
 
+    <target name="help">
+        <echo>Target                        Description</echo>
+        <echo>------------------------------------------------------------------</echo>
+        <echo>clean-docs                    Remove old html generated files</echo>
+        <echo>clean-docs-sources            Remove old sources html generated files</echo>
+        <echo>make-docs                     Build the documentation of PHP_CompatInfo</echo>
+        <echo>make-docs-sources             Build examples sources of PHP_CompatInfo</echo>
+        <echo>make-full-docs                Build the full documentation of PHP_CompatInfo</echo>
+        <echo>make-userguide                Build the user guide</echo>
+        <echo>make-userguide-all            Build the user guide in all formats</echo>
+        <echo>make-userguide-chunked        Build the user guide in many HTML files</echo>
+        <echo>make-userguide-en-epub        Build the user guide in english PDF format</echo>
+        <echo>make-userguide-en-htmlhelp    Build the user guide in english CHM format</echo>
+        <echo>make-userguide-en-multipages  Build the user guide in many HTML files</echo>
+        <echo>make-userguide-en-pdf         Build the user guide in english PDF format</echo>
+        <echo>make-userguide-en-singlepage  Build the user guide in single HTML page</echo>
+        <echo>make-userguide-htmlhelp       Build the user guide in CHM format</echo>
+        <echo>make-userguide-pdf            Build the user guide in PDF format</echo>
+    </target>
+    
     <target name="make-userguide-all"
             depends="make-userguide, make-userguide-chunked, make-userguide-htmlhelp, make-userguide-pdf"
             description="Build the user guide in all formats">
