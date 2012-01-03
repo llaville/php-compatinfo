@@ -606,5 +606,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }
+
+    /**
+     * example with opendir()
+     *
+     * @link http://www.php.net/manual/en/function.opendir.php
+     */
+    public function testOpendirDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-27d.php');
+
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testOpendirOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-27o.php');
+
+        $this->assertSame(
+            array('5.3.0', ''), $this->pci->getVersions()
+        );
+    }
     
 }
