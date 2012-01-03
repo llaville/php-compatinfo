@@ -650,5 +650,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }
+
+    /**
+     * example with json_decode()
+     *
+     * @link http://www.php.net/manual/en/function.json-decode.php
+     */
+    public function testJsonDecodeDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-29d.php');
+
+        $this->assertSame(
+            array('5.2.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testJsonDecodeOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-29o.php');
+
+        $this->assertSame(
+            array('5.3.0', ''), $this->pci->getVersions()
+        );
+    }
     
 }
