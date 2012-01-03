@@ -761,4 +761,26 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * example with sqlite_fetch_column_types()
+     *
+     * @link http://www.php.net/manual/en/function.sqlite-fetch-column-types.php
+     */
+    public function testSqliteFetchColumnTypesDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-34d.php');
+
+        $this->assertSame(
+            array('5.0.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testSqliteFetchColumnTypesOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-34o.php');
+
+        $this->assertSame(
+            array('5.1.0', ''), $this->pci->getVersions()
+        );
+    }
+    
 }
