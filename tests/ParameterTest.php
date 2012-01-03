@@ -562,5 +562,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('4.0.3', ''), $this->pci->getVersions()
         );
     }
+
+    /**
+     * example with nl2br()
+     *
+     * @link http://www.php.net/manual/en/function.nl2br.php
+     */
+    public function testNl2brDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-25d.php');
+
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testNl2brOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-25o.php');
+
+        $this->assertSame(
+            array('5.3.0', ''), $this->pci->getVersions()
+        );
+    }
     
 }
