@@ -10,23 +10,17 @@
     <property file="${default.properties}"/>
 
     <target name="help">
-        <echo>Target                        Description</echo>
+        <echo>Target                   Description</echo>
         <echo>------------------------------------------------------------------</echo>
-        <echo>clean-docs                    Remove old html generated files</echo>
-        <echo>clean-docs-sources            Remove old sources html generated files</echo>
-        <echo>make-docs                     Build the documentation of PHP_CompatInfo</echo>
-        <echo>make-docs-sources             Build examples sources of PHP_CompatInfo</echo>
-        <echo>make-full-docs                Build the full documentation of PHP_CompatInfo</echo>
-        <echo>make-userguide                Build the user guide</echo>
-        <echo>make-userguide-all            Build the user guide in all formats</echo>
-        <echo>make-userguide-chunked        Build the user guide in many HTML files</echo>
-        <echo>make-userguide-en-epub        Build the user guide in english PDF format</echo>
-        <echo>make-userguide-en-htmlhelp    Build the user guide in english CHM format</echo>
-        <echo>make-userguide-en-multipages  Build the user guide in many HTML files</echo>
-        <echo>make-userguide-en-pdf         Build the user guide in english PDF format</echo>
-        <echo>make-userguide-en-singlepage  Build the user guide in single HTML page</echo>
-        <echo>make-userguide-htmlhelp       Build the user guide in CHM format</echo>
-        <echo>make-userguide-pdf            Build the user guide in PDF format</echo>
+        <echo>clean-docs               Remove old html generated files</echo>
+        <echo>make-docs                Build the documentation of PHP_CompatInfo</echo>
+        <echo>make-full-docs           Build the full documentation of PHP_CompatInfo</echo>
+        <echo>make-userguide           Build the user guide</echo>
+        <echo>make-userguide-all       Build the user guide in all formats</echo>
+        <echo>make-userguide-chunked   Build the user guide in many HTML files</echo>
+        <echo>make-userguide-htmlhelp  Build the user guide in CHM format</echo>
+        <echo>make-userguide-pdf       Build the user guide in PDF format</echo>
+        <echo>make-userguide-epub      Build the user guide in EPUB format</echo>
     </target>
     
     <target name="make-userguide-all"
@@ -35,61 +29,25 @@
 
     </target>
 
-    <target name="make-userguide-en-multipages"
-            description="Build the user guide in many HTML files">
-
-        <exec dir="${asciidoc.home}"
-            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked -D ${mandir} ${homedir}/docs/phpci-book.txt"
-        />
-
-    </target>
-    
-    <target name="make-userguide-en-singlepage"
-            description="Build the user guide in single HTML page">
-
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n -o ${mandir}/pci-book.html ${homedir}/docs/phpci-book.txt"
-        />
-
-    </target>
-
-    <target name="make-userguide-en-pdf"
-            description="Build the user guide in english PDF format">
-
-        <exec dir="${asciidoc.home}"
-            command="a2x.py --verbose -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf -D ${mandir} --fop ${homedir}/docs/phpci-book.txt"
-        />
-
-    </target>
-
-    <target name="make-userguide-en-epub"
-            description="Build the user guide in english PDF format">
-
-        <exec dir="${asciidoc.home}"
-            command="a2x.py --verbose -L --icons -d book -f epub -D ${mandir} ${homedir}/docs/phpci-book.txt"
-        />
-
-    </target>
-    
-    <target name="make-userguide-en-htmlhelp"
-            description="Build the user guide in english CHM format">
-
-        <exec dir="${asciidoc.home}"
-            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp -D ${mandir} ${homedir}/docs/phpci-book.txt"
-        />
-
-        <exec dir="${htmlhelpworkshop}"
-            command="hhc.exe ${mandir}/phpci-book.hhp"
-        />
-
-    </target>
-
     <target name="make-userguide"
             description="Build the user guide">
 
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n ${homedir}/docs/phpci-book.txt"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n -o ${output.dir}/phpci-book.html ${homedir}/docs/phpci-book.txt"
         />
+        <zip destfile="${output.dir}/phpci-book.html.zip">
+            <fileset dir="${output.dir}">
+                <include name="images/**" />
+                <include name="js/asciidoc.js" />
+                <include name="styles/pygments.css" />
+                <include name="styles/toc2.css" />
+                <include name="styles/${theme}.css" />
+                <include name="phpci-book.html" />
+                <exclude name="**/callouts/**" />
+                <exclude name="styles.css" />
+                <exclude name="**/Thumbs.db" />
+            </fileset>
+        </zip>
 
     </target>
 
@@ -97,8 +55,15 @@
             description="Build the user guide in many HTML files">
 
         <exec dir="${asciidoc.home}"
-            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked ${homedir}/docs/phpci-book.txt"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked -D ${output.dir} ${homedir}/docs/phpci-book.txt"
         />
+        <zip destfile="${output.dir}/phpci-book.chunked.zip">
+            <fileset dir="${output.dir}">
+                <include name="phpci-book.chunked/**" />
+                <exclude name="phpci-book.chunked/**/Thumbs.db" />
+            </fileset>
+        </zip>
+        <delete dir="${output.dir}/phpci-book.chunked" />
 
     </target>
 
@@ -106,12 +71,26 @@
             description="Build the user guide in CHM format">
 
         <exec dir="${asciidoc.home}"
-            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp ${homedir}/docs/phpci-book.txt"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp -D ${output.dir} ${homedir}/docs/phpci-book.txt"
         />
 
         <exec dir="${htmlhelpworkshop}"
-            command="hhc.exe ${homedir}/userguide.hhp"
+            command="hhc.exe ${output.dir}/phpci-book.hhp"
         />
+        <zip destfile="${output.dir}/phpci-book.chm.zip">
+            <fileset dir="${output.dir}">
+                <include name="phpci-book.chm" />
+            </fileset>
+        </zip>
+        <delete>
+            <fileset dir="${output.dir}">
+                <include name="phpci-book.chm" />
+                <include name="phpci-book.hhc" />
+                <include name="phpci-book.hhk" />
+                <include name="phpci-book.hhp" />
+            </fileset>
+        </delete>
+        <delete dir="${output.dir}/phpci-book.htmlhelp" />
 
     </target>
 
@@ -119,32 +98,40 @@
             description="Build the user guide in PDF format">
 
         <exec dir="${asciidoc.home}"
-            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop ${homedir}/docs/phpci-book.txt"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/phpci-book.txt"
+        />
+
+    </target>
+
+    <target name="make-userguide-epub"
+            description="Build the user guide in english PDF format">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py --verbose -L --icons -d book -f epub -D ${output.dir} ${homedir}/docs/phpci-book.txt"
         />
 
     </target>
 
     <target name="make-docs"
-            depends="clean-docs"
             description="Build the documentation of PHP_CompatInfo">
 
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/CHANGELOG.txt"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -o ${output.dir}/CHANGELOG.html ${homedir}/docs/CHANGELOG.txt"
         />
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/INSTALL.txt"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -o ${output.dir}/INSTALL.html ${homedir}/docs/INSTALL.txt"
         />
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/LICENSE.txt"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -o ${output.dir}/LICENSE.html ${homedir}/docs/LICENSE.txt"
         />
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n ${homedir}/docs/index.txt"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n -o ${output.dir}/index.html ${homedir}/docs/index.txt"
         />
 
     </target>
 
     <target name="make-full-docs"
-            depends="clean-docs, make-docs, make-userguide"
+            depends="make-docs, make-userguide-all"
             description="Build the full documentation of PHP_CompatInfo">
 
     </target>
@@ -158,67 +145,6 @@
             </fileset>
         </delete>
 
-    </target>
-
-    <target name="clean-docs-sources"
-            description="Remove old sources html generated files">
-
-        <delete>
-            <fileset dir="${homedir}/docs/sources">
-                <include name="*.html" />
-            </fileset>
-        </delete>
-
-    </target>
-
-    <target name="make-docs-sources"
-            description="Build examples sources of PHP_CompatInfo">
-
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/getFunctions.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/getIncludes.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printClassPHPUnit356.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printClassSingleFile.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printConstantPHPUnit356.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printConstantSingleFile.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printExtensionPHPUnit356.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printExtensionSingleFile.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printFunctionPHPUnit356.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printFunctionSingleFile.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printInterfacePHPUnit356.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printInterfaceSingleFile.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printSummaryPHPUnit356.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printSummarySingleFile.txt"
-        />
-        <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} ${homedir}/docs/sources/printXmlPHPUnit356.txt"
-        />
     </target>
 
 </project>
