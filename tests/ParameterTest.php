@@ -739,4 +739,26 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * example with session_regenerate_id()
+     *
+     * @link http://www.php.net/manual/en/function.session-regenerate-id.php
+     */
+    public function testSessionRegenerateIdDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-33d.php');
+
+        $this->assertSame(
+            array('4.3.2', ''), $this->pci->getVersions()
+        );
+    }
+    public function testSessionRegenerateIdOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-33o.php');
+
+        $this->assertSame(
+            array('5.1.0', ''), $this->pci->getVersions()
+        );
+    }
+
 }
