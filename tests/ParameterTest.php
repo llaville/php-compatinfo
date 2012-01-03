@@ -584,5 +584,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }
+
+    /**
+     * example with clearstatcache()
+     *
+     * @link http://www.php.net/manual/en/function.clearstatcache.php
+     */
+    public function testClearstatcacheDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-26d.php');
+
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testClearstatcacheOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-26o.php');
+
+        $this->assertSame(
+            array('5.3.0', ''), $this->pci->getVersions()
+        );
+    }
     
 }
