@@ -672,5 +672,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }
+
+    /**
+     * example with openssl_sign()
+     *
+     * @link http://www.php.net/manual/en/function.openssl-sign.php
+     */
+    public function testOpensslDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-30d.php');
+
+        $this->assertSame(
+            array('4.0.4', ''), $this->pci->getVersions()
+        );
+    }
+    public function testOpensslOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-30o.php');
+
+        $this->assertSame(
+            array('5.0.0', ''), $this->pci->getVersions()
+        );
+    }
     
 }
