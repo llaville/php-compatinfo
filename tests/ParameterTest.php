@@ -628,5 +628,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }
+
+    /**
+     * example with scandir()
+     *
+     * @link http://www.php.net/manual/en/function.scandir.php
+     */
+    public function testScandirDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-28d.php');
+
+        $this->assertSame(
+            array('5.0.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testScandirOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-28o.php');
+
+        $this->assertSame(
+            array('5.3.0', ''), $this->pci->getVersions()
+        );
+    }
     
 }

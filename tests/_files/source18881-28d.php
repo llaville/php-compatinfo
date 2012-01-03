@@ -1,0 +1,2 @@
+<?php
+scandir('/tmp');
