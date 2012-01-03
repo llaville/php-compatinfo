@@ -540,5 +540,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('4.1.0', ''), $this->pci->getVersions()
         );
     }
+
+    /**
+     * example with htmlentities()
+     *
+     * @link http://www.php.net/manual/en/function.htmlentities.php
+     */
+    public function testHtmlentitiesDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-24d.php');
+
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testHtmlentitiesOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-24o.php');
+
+        $this->assertSame(
+            array('4.0.3', ''), $this->pci->getVersions()
+        );
+    }
     
 }
