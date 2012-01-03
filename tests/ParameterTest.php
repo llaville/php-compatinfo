@@ -716,5 +716,27 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
-    
+
+    /**
+     * example with preg_replace_callback()
+     *
+     * @link http://www.php.net/manual/en/function.preg-replace-callback.php
+     */
+    public function testPregReplaceCallbackDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-32d.php');
+
+        $this->assertSame(
+            array('4.0.5', ''), $this->pci->getVersions()
+        );
+    }
+    public function testPregReplaceCallbackOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-32o.php');
+
+        $this->assertSame(
+            array('5.1.0', ''), $this->pci->getVersions()
+        );
+    }
+
 }
