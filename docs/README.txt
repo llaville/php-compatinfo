@@ -3,7 +3,7 @@ HOW TO build yourself The User Guide written for AsciiDoc
 NOTE: You should have installed on your system
 .For standard HTML or Docbook targets
 
-AsciiDoc 8.6.5
+AsciiDoc 8.6.6
     http://www.methods.co.nz/asciidoc/
 Source-Highlight 3.1+
     http://www.gnu.org/software/src-highlite/
@@ -19,7 +19,7 @@ Apache FOP
     http://xmlgraphics.apache.org/fop/index.html
 
 With basic layout, and linked javascript and styles
-$ asciidoc-8.6.5/asciidoc.py
+$ asciidoc-8.6.6/asciidoc.py
   -a icons
   -a toc2
   -a linkcss
@@ -29,7 +29,7 @@ $ asciidoc-8.6.5/asciidoc.py
   docs/userguide.txt
 
 With basic layout, and embbeded javascript and styles
-$ asciidoc-8.6.5/asciidoc.py
+$ asciidoc-8.6.6/asciidoc.py
   -a icons
   -a toc2
   -a theme=flask
@@ -37,10 +37,15 @@ $ asciidoc-8.6.5/asciidoc.py
   -v
   docs/userguide.txt
 
-Or used Phing 2.4.5
+Or used Phing 2.4.9
 
 But be careful to change first properties 'asciidoc.home' and 'homedir' values 
 that reflect your platform and installation.
+
+Since version 2.2.0 you can use alternative solution: use a properties file that define
+all values you wan't to overload (example)
+
+phing  /path/to/build-phing.xml -Ddefault.properties=/path/to/your-local.properties
 
 Single Html file
 phing  -f /path/to/build-phing.xml  make-userguide
