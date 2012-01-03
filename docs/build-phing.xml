@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="phpcompatinfo" default="help" basedir=".">
 
-    <property name="asciidoc.home" value="C:\asciidoc-8.6.5" override="true" />
-    <property name="homedir" value="C:\www\github\php-compat-info" override="true" />
-    <property name="mandir" value="C:\www\php5\compatinfo\manual\2.1\en" override="true" />
-    <property name="htmlhelpworkshop" value="C:\Program Files\HTML Help Workshop" override="true" />
-    <property name="fopopts" value="-pdf phpci-book.pdf" override="true" />
-    <property name="theme" value="flask" override="true" />
+    <!-- TIP found in ticket#62 (http://www.phing.info/trac/ticket/62) -->
+    <php function="dirname" returnProperty="phing.buildfile.dirname">
+        <param value="${phing.file}"/>
+    </php>
+
+    <property name="default.properties" value="${phing.buildfile.dirname}/local.win.properties"/>
+    <property file="${default.properties}"/>
 
     <target name="help">
         <echo>Target                        Description</echo>
