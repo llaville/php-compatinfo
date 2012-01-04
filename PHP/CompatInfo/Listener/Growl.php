@@ -12,7 +12,7 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
-require_once 'Net/Growl.php';
+require_once 'Net/Growl/Autoload.php';
 
 /**
  * Growl listener

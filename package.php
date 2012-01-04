@@ -23,14 +23,17 @@ $api_state       = 'beta';
 $api_version     = '2.2.0';
 $release_notes   = "
 Additions and changes:
+- fix references for functions with parameters that have different versions
+- add detection for class member access on instantiation (e.g. (new Foo)->bar())
 - improves detection for function with version changed depending of signature (arguments)
 - add PHPUnit configuration file (phpunit.xml). Help for CI env integration
 - split Issues Tests in two classes depending of code licences
 - fix references for PHP 5.4.0
 - make doc generation with AsciiDoc compatible with older version 8.4.5 (especially for old linux distributions)
+- phing build documentation script is now easily reuseable (configuration through an external properties file)
 
 Bug fixes:
-- none
+- request #13094 : PHP5 method chaining ( http://pear.php.net/bugs/bug.php?id=13094 )
 ";
 $license = array('BSD License', 'http://www.opensource.org/licenses/bsd-license.php');
 
@@ -90,7 +93,7 @@ $p2->addPackageDepWithChannel('required',
                               'PHP_Timer', 'pear.phpunit.de', '1.0.0');
 
 $p2->addPackageDepWithChannel('optional',
-                              'Net_Growl', 'pear.php.net', '2.3.0');
+                              'Net_Growl', 'pear.php.net', '2.4.0');
 $p2->addPackageDepWithChannel('optional',
                               'PHPUnit', 'pear.phpunit.de', '3.5.0');
 
