@@ -220,17 +220,18 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-09d.php');
 
-        $this->markTestIncomplete(
-            'This test has not been fully implemented.'
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
         );
     }
     public function testFgetssOptionalSignature()
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-09o.php');
 
-        $this->markTestIncomplete(
-            'This test has not been fully implemented.'
+        $this->assertSame(
+            array('5.0.0', ''), $this->pci->getVersions()
         );
+
     }
 
     /**
@@ -418,16 +419,17 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-18d.php');
 
-        $this->markTestIncomplete(
-            'This test has not been fully implemented.'
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
         );
+
     }
     public function testJdtojewishOptionalSignature()
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-18o.php');
 
         $this->assertSame(
-            array('5.0.0', ''), $this->pci->getVersions()
+            array('4.3.0', ''), $this->pci->getVersions()
         );
     }
 
@@ -782,5 +784,5 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
-    
+
 }

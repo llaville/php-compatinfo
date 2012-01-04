@@ -401,7 +401,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'feof'                           => array('4.0.0', ''),
                 'fgetc'                          => array('4.0.0', ''),
                 'fgets'                          => array('4.0.0', ''),
-                'fgetss'                         => array('4.0.0', '', '4.0.0, 5.0.0, 5.0.0'),
+                'fgetss'                         => array('4.0.0', '', '5.0.0, 4.0.0, 5.0.0'),
                 'fread'                          => array('4.0.0', ''),
                 'fopen'                          => array('4.0.0', ''),
                 'fpassthru'                      => array('4.0.0', ''),

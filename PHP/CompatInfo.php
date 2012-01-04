@@ -1195,10 +1195,10 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                     && isset($data['arguments'])
                     && is_array($data['arguments'])
                 ) {
-                    foreach ($values[$key]['arguments'] as $a => $version) {
-                        if ($a == count($data['arguments'])) {
-                            break;
-                        }
+                    $a = count($data['arguments']);
+                    if ($a > 0) {
+                        $a--;
+                        $version = $values[$key]['arguments'][$a];
 
                         $this->updateVersion(
                             $version, $this->_versionsRef[0]

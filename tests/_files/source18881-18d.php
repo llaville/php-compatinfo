@@ -1,2 +1,4 @@
 <?php
-echo jdtojewish(gregoriantojd(10, 8, 2002));
+$jday = unixtojd();
+
+echo jdtojewish($jday);
