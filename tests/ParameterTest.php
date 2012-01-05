@@ -785,4 +785,26 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * example with getopt()
+     *
+     * @link http://www.php.net/manual/en/function.getopt.php
+     */
+    public function testGetoptDefaultSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-35d.php');
+
+        $this->assertSame(
+            array('4.3.0', ''), $this->pci->getVersions()
+        );
+    }
+    public function testGetoptOptionalSignature()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source18881-35o.php');
+
+        $this->assertSame(
+            array('5.3.0', ''), $this->pci->getVersions()
+        );
+    }
+
 }

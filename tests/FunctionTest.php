@@ -152,18 +152,6 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'excluded' => false,
             ),
-            'getopt' => array(
-                'versions' => array('5.3.0', ''),
-                'uses' => 1,
-                'sources' => array(TEST_FILES_PATH . 'source2.php'),
-                'excluded' => false,
-            ),
-            'var_dump' => array(
-                'versions' => array('4.0.0', ''),
-                'uses' => 1,
-                'sources' => array(TEST_FILES_PATH . 'source2.php'),
-                'excluded' => false,
-            ),
         );
         $this->assertSame(
             $expected, $functions['standard']
@@ -254,16 +242,4 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * covers function with version changed depending of signature (arguments)
-     * example with getopt 
-     */
-    public function testGetFunctionWithArgumentsOnDifferentVersions()
-    {
-        $expected = array('5.3.0', '');
-
-        $this->assertSame(
-            $expected, $this->pci->getVersions()
-        );
-    }
 }
