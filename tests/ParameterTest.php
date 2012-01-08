@@ -417,6 +417,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      */
     public function testJdtojewishDefaultSignature()
     {
+        if (!extension_loaded('calendar')) {
+            $this->markTestSkipped(
+              "The 'calendar' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-18d.php');
 
         $this->assertSame(
@@ -426,6 +432,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     }
     public function testJdtojewishOptionalSignature()
     {
+        if (!extension_loaded('calendar')) {
+            $this->markTestSkipped(
+              "The 'calendar' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-18o.php');
 
         $this->assertSame(
@@ -660,6 +672,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      */
     public function testJsonDecodeDefaultSignature()
     {
+        if (!extension_loaded('json')) {
+            $this->markTestSkipped(
+              "The 'json' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-29d.php');
 
         $this->assertSame(
@@ -668,6 +686,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     }
     public function testJsonDecodeOptionalSignature()
     {
+        if (!extension_loaded('json')) {
+            $this->markTestSkipped(
+              "The 'json' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-29o.php');
 
         $this->assertSame(
@@ -682,6 +706,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      */
     public function testOpensslDefaultSignature()
     {
+        if (!extension_loaded('openssl')) {
+            $this->markTestSkipped(
+              "The 'openssl' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-30d.php');
 
         $this->assertSame(
@@ -690,6 +720,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     }
     public function testOpensslOptionalSignature()
     {
+        if (!extension_loaded('openssl')) {
+            $this->markTestSkipped(
+              "The 'openssl' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-30o.php');
 
         $this->assertSame(
@@ -704,6 +740,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      */
     public function testPregReplaceDefaultSignature()
     {
+        if (!extension_loaded('pcre')) {
+            $this->markTestSkipped(
+              "The 'pcre' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-31d.php');
 
         $this->assertSame(
@@ -712,6 +754,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     }
     public function testPregReplaceOptionalSignature()
     {
+        if (!extension_loaded('pcre')) {
+            $this->markTestSkipped(
+              "The 'pcre' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-31o.php');
 
         $this->assertSame(
@@ -726,6 +774,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      */
     public function testPregReplaceCallbackDefaultSignature()
     {
+        if (!extension_loaded('pcre')) {
+            $this->markTestSkipped(
+              "The 'pcre' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-32d.php');
 
         $this->assertSame(
@@ -734,6 +788,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     }
     public function testPregReplaceCallbackOptionalSignature()
     {
+        if (!extension_loaded('pcre')) {
+            $this->markTestSkipped(
+              "The 'pcre' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-32o.php');
 
         $this->assertSame(
@@ -748,6 +808,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      */
     public function testSessionRegenerateIdDefaultSignature()
     {
+        if (!extension_loaded('session')) {
+            $this->markTestSkipped(
+              "The 'session' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-33d.php');
 
         $this->assertSame(
@@ -756,6 +822,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     }
     public function testSessionRegenerateIdOptionalSignature()
     {
+        if (!extension_loaded('session')) {
+            $this->markTestSkipped(
+              "The 'session' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-33o.php');
 
         $this->assertSame(
@@ -770,6 +842,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      */
     public function testSqliteFetchColumnTypesDefaultSignature()
     {
+        if (!extension_loaded('sqlite')) {
+            $this->markTestSkipped(
+              "The 'sqlite' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-34d.php');
 
         $this->assertSame(
@@ -778,6 +856,12 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     }
     public function testSqliteFetchColumnTypesOptionalSignature()
     {
+        if (!extension_loaded('sqlite')) {
+            $this->markTestSkipped(
+              "The 'sqlite' extension is not available."
+            );
+        }
+
         $this->pci->parse(TEST_FILES_PATH . 'source18881-34o.php');
 
         $this->assertSame(
