@@ -128,6 +128,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/intl.php',
             'PHP_CompatInfo_Reference_Json'
                 => 'PHP/CompatInfo/Reference/json.php',
+            'PHP_CompatInfo_Reference_Ldap'
+                => 'PHP/CompatInfo/Reference/ldap.php',
             'PHP_CompatInfo_Reference_Libxml'
                 => 'PHP/CompatInfo/Reference/libxml.php',
             'PHP_CompatInfo_Reference_Mbstring'
