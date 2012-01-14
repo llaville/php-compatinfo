@@ -48,7 +48,7 @@ $p2->setOptions(
         'ignore'            => array(basename(__FILE__),
             '.git', '*.log',
             'Thumbs.db', 'packageBeta*.xml', 'packageRC*.xml',
-            'HOWTO.txt', 'IssueTest2.php',
+            'HOWTO.txt', 'IssueTest2.php', 'genext.php'
             ),
         'installexceptions' => array(
             'phpcompatinfo.xml.dist' => '',
