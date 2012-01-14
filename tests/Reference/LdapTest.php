@@ -28,6 +28,9 @@ class PHP_CompatInfo_Reference_LdapTest extends PHP_CompatInfo_Reference_Generic
     {
         $this->optionnalconstants = array(
             'LDAP_OPT_X_SASL_AUTHCID',
+            'LDAP_OPT_X_SASL_AUTHZID',
+            'LDAP_OPT_X_SASL_MECH',
+            'LDAP_OPT_X_SASL_REALM',
         );
         $this->optionnalfunctions = array(
             'ldap_sasl_bind',
