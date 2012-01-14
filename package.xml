@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-01-07</date>
- <time>14:34:55</time>
+ <date>2012-01-14</date>
+ <time>14:27:58</time>
  <version>
-  <release>2.2.0snapshot20120107</release>
+  <release>2.2.0snapshot20120114</release>
   <api>2.2.0</api>
  </version>
  <stability>
@@ -327,6 +327,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="json.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="ldap.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="libxml.php" role="php">
@@ -632,6 +635,9 @@ Bug fixes:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="JsonTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="LdapTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="LibxmlTest.php" role="test">
@@ -1150,14 +1156,14 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.2.0snapshot20120107</release>
+    <release>2.2.0snapshot20120114</release>
     <api>2.2.0</api>
    </version>
    <stability>
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2012-01-07</date>
+   <date>2012-01-14</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
