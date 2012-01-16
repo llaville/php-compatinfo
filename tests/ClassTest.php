@@ -47,6 +47,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
             'versions',
             'extensions',
             'namespaces',
+            'traits',
             'interfaces',
             'classes',
             'functions',
