@@ -33,7 +33,10 @@ class PHP_CompatInfo_Reference_LdapTest extends PHP_CompatInfo_Reference_Generic
             'LDAP_OPT_X_SASL_REALM',
         );
         $this->optionnalfunctions = array(
+            // Requires LDAP SASL
             'ldap_sasl_bind',
+            // Requires OpenLdap
+            'ldap_set_rebind_proc',
         );
         $this->obj = new PHP_CompatInfo_Reference_Ldap();
         parent::setUp();

@@ -180,6 +180,7 @@ class PHP_CompatInfo_Reference_Ldap implements PHP_CompatInfo_Reference
                 'ldap_read'                      => array('4.0.0', '', '4.0.0, 4.0.0, 4.0.0, 4.0.0, 4.0.2, 4.0.2, 4.0.2, 4.0.2'),
                 'ldap_rename'                    => array('4.0.5', ''),
                 'ldap_search'                    => array('4.0.0', '', '4.0.0, 4.0.0, 4.0.0, 4.0.0, 4.0.2, 4.0.2, 4.0.2, 4.0.2'),
+                'ldap_set_rebind_proc'           => array('4.2.0', ''),
                 'ldap_set_option'                => array('4.0.4', ''),
                 'ldap_sort'                      => array('4.2.0', ''),
                 'ldap_start_tls'                 => array('4.2.0', ''),
@@ -193,6 +194,9 @@ class PHP_CompatInfo_Reference_Ldap implements PHP_CompatInfo_Reference
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
                 'ldap_sasl_bind'                 => array('5.0.0', ''),
+                'ldap_control_paged_result'      => array('5.4.0-dev', ''),
+                'ldap_control_paged_result_response'
+                                                 => array('5.4.0-dev', ''),
             );
             $functions = array_merge(
                 $functions,
