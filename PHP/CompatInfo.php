@@ -90,6 +90,11 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     /**
      * @var array
      */
+    protected $traits;
+
+    /**
+     * @var array
+     */
     protected $interfaces;
 
     /**
@@ -510,6 +515,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $this->versions   = $results['versions'];
             $this->extensions = $results['extensions'];
             $this->namespaces = $results['namespaces'];
+            $this->traits     = $results['traits'];
             $this->interfaces = $results['interfaces'];
             $this->classes    = $results['classes'];
             $this->functions  = $results['functions'];
@@ -525,6 +531,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $this->versions   = array('4.0.0', '');
             $this->extensions = array();
             $this->namespaces = array();
+            $this->traits     = array();
             $this->interfaces = array();
             $this->classes    = array();
             $this->functions  = array();
@@ -696,6 +703,13 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
             foreach (array_keys($namespaces) as $ns) {
                 /**
+                 * @link http://www.php.net/manual/en/language.oop5.traits.php
+                 *       Traits
+                 */
+                $traits = $reflect->getTraits($ns);
+                $this->getInfo('traits', '5.4.0', $traits, $source, $ns);
+                
+                /**
                  * @link http://www.php.net/manual/en/language.oop5.interfaces.php
                  *       Object Interfaces
                  */
@@ -757,6 +771,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             'versions'   => $this->versions,
             'extensions' => $this->extensions,
             'namespaces' => $this->namespaces,
+            'traits'     => $this->traits,
             'interfaces' => $this->interfaces,
             'classes'    => $this->classes,
             'functions'  => $this->functions,
@@ -1029,7 +1044,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      */
     protected function searchReference($category, $name)
     {
-        if ($category == 'namespaces') {
+        if ($category == 'namespaces' || $category == 'traits') {
             return 1; // unknown reference
         }
 

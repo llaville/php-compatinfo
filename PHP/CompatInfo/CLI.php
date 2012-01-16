@@ -22,6 +22,7 @@ require_once dirname(__FILE__) . '/Autoload.php';
  * Many reports are available:
  * - extension
  * - namespace
+ * - trait
  * - interface
  * - class
  * - function
@@ -113,7 +114,8 @@ class PHP_CompatInfo_CLI
                 'choices'     => array(
                     'summary', 'source', 'xml', 'token',
                     'extension',
-                    'namespace', 'interface', 'class', 'function', 'constant',
+                    'namespace',
+                    'trait', 'interface', 'class', 'function', 'constant',
                     'global'
                 )
             )
@@ -141,7 +143,8 @@ class PHP_CompatInfo_CLI
                     'list' => array(
                         'summary', 'source', 'xml', 'token',
                         'extension',
-                        'namespace', 'interface', 'class', 'function', 'constant',
+                        'namespace',
+                        'trait', 'interface', 'class', 'function', 'constant',
                         'global'
                     ),
                 )

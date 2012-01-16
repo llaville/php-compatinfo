@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-01-14</date>
- <time>14:27:58</time>
+ <date>2012-01-16</date>
+ <time>10:36:47</time>
  <version>
-  <release>2.2.0snapshot20120114</release>
+  <release>2.2.0snapshot20120116</release>
   <api>2.2.0</api>
  </version>
  <stability>
@@ -47,6 +47,7 @@ Additions and changes:
 
 Bug fixes:
 - request #13094 : PHP5 method chaining ( http://pear.php.net/bugs/bug.php?id=13094 )
+- fix version stamp in XML report
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -506,6 +507,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="Token.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="Trait.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="Xml.php" role="php">
@@ -1156,14 +1160,14 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.2.0snapshot20120114</release>
+    <release>2.2.0snapshot20120116</release>
     <api>2.2.0</api>
    </version>
    <stability>
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2012-01-14</date>
+   <date>2012-01-16</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1178,6 +1182,7 @@ Additions and changes:
 
 Bug fixes:
 - request #13094 : PHP5 method chaining ( http://pear.php.net/bugs/bug.php?id=13094 )
+- fix version stamp in XML report
    </notes>
   </release>
   <release>
