@@ -19,7 +19,7 @@
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version  Release: 2.0.0RC3
+ * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
@@ -40,7 +40,7 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
         $globalVersions = array('4.0.0', '');
 
         echo '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
-        echo '<phpcompatinfo version="2.0.0RC3"' .
+        echo '<phpcompatinfo version="@package_version@"' .
             ' timestamp="' . date(DATE_W3C) . '">'    . PHP_EOL;
 
         $indentStep = 4;
