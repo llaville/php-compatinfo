@@ -31,9 +31,11 @@ Additions and changes:
 - fix references for PHP 5.4.0
 - make doc generation with AsciiDoc compatible with older version 8.4.5 (especially for old linux distributions)
 - phing build documentation script is now easily reuseable (configuration through an external properties file)
+- removes experimental PEAR package detection
 
 Bug fixes:
 - request #13094 : PHP5 method chaining ( http://pear.php.net/bugs/bug.php?id=13094 )
+- fix version stamp in XML report
 ";
 $license = array('BSD License', 'http://www.opensource.org/licenses/bsd-license.php');
 
@@ -48,7 +50,8 @@ $p2->setOptions(
         'ignore'            => array(basename(__FILE__),
             '.git', '*.log',
             'Thumbs.db', 'packageBeta*.xml', 'packageRC*.xml',
-            'HOWTO.txt', 'IssueTest2.php', 'genext.php'
+            'HOWTO.txt', 'IssueTest2.php', 'genext.php',
+            'PEAR.php', 'netgrowl.php'
             ),
         'installexceptions' => array(
             'phpcompatinfo.xml.dist' => '',

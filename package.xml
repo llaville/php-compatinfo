@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-01-16</date>
- <time>10:36:47</time>
+ <date>2012-01-17</date>
+ <time>15:09:14</time>
  <version>
-  <release>2.2.0snapshot20120116</release>
+  <release>2.2.0snapshot20120117</release>
   <api>2.2.0</api>
  </version>
  <stability>
@@ -44,6 +44,7 @@ Additions and changes:
 - fix references for PHP 5.4.0
 - make doc generation with AsciiDoc compatible with older version 8.4.5 (especially for old linux distributions)
 - phing build documentation script is now easily reuseable (configuration through an external properties file)
+- removes experimental PEAR package detection
 
 Bug fixes:
 - request #13094 : PHP5 method chaining ( http://pear.php.net/bugs/bug.php?id=13094 )
@@ -357,9 +358,6 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="mysqli.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="Bartlett" name="netgrowl.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
       <file baseinstalldir="Bartlett" name="openssl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -370,9 +368,6 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="pdo.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="PEAR.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="pgsql.php" role="php">
@@ -786,6 +781,12 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="source5.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="source6-includes.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="source6.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="source1626.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -1160,14 +1161,14 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.2.0snapshot20120116</release>
+    <release>2.2.0snapshot20120117</release>
     <api>2.2.0</api>
    </version>
    <stability>
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2012-01-16</date>
+   <date>2012-01-17</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1179,6 +1180,7 @@ Additions and changes:
 - fix references for PHP 5.4.0
 - make doc generation with AsciiDoc compatible with older version 8.4.5 (especially for old linux distributions)
 - phing build documentation script is now easily reuseable (configuration through an external properties file)
+- removes experimental PEAR package detection
 
 Bug fixes:
 - request #13094 : PHP5 method chaining ( http://pear.php.net/bugs/bug.php?id=13094 )
