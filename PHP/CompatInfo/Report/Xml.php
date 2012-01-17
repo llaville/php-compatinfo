@@ -114,6 +114,32 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                 $indent -= $indentStep;
             }
 
+            // all traits found in $filename
+            if (count($elements['traits']) > 0) {
+                $indent += $indentStep;
+                echo str_repeat(' ', $indent);
+                echo '<traits>' . PHP_EOL;
+                $indent += $indentStep;
+                foreach ($elements['traits'] as $category => $items) {
+                    if ('user' == $category) {
+                        $extension = '';
+                    } else {
+                        $extension = $category;
+                    }
+                    foreach ($items as $trait => $data) {
+                        echo str_repeat(' ', $indent);
+                        echo '<trait name="' . $trait .
+                            '" extension="' . $extension .
+                            '" count="' . $data['uses'] .
+                            '" />' . PHP_EOL;
+                    }
+                }
+                $indent -= $indentStep;
+                echo str_repeat(' ', $indent);
+                echo '</traits>' . PHP_EOL;
+                $indent -= $indentStep;
+            }
+
             // all interfaces found in $filename
             if (count($elements['interfaces']) > 0) {
                 $indent += $indentStep;
@@ -270,7 +296,7 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                 echo '</tokens>' . PHP_EOL;
                 $indent -= $indentStep;
             }
-            
+
             echo str_repeat(' ', $indent);
             echo '</file>'.PHP_EOL;
         }
