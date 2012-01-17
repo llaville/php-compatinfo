@@ -667,6 +667,11 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 'PHP_Reflect_Token_USE',
                 array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
             );
+            $reflect->connect(
+                'T_INSTEADOF',
+                'PHP_Reflect_Token_INSTEADOF',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
+            );
 
             $reflect->connect(
                 'T_OBJECT_OPERATOR',

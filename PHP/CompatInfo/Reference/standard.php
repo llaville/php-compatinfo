@@ -1102,6 +1102,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
             'use'                            => array('5.3.0', ''),
             'classMemberAccessOnInstantiation'
                                              => array('5.4.0', ''),
+            'insteadof'                      => array('5.4.0', ''),
         );
 
         return $version5;

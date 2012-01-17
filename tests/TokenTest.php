@@ -55,4 +55,23 @@ class PHP_CompatInfo_TokenTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Test detection of conflicts and aliases traits
+     *
+     * @covers PHP_CompatInfo::parse
+     * @covers PHP_CompatInfo::getVersions
+     */
+    public function testTraitsConflictsAndAliases()
+    {
+        if (version_compare(PHP_VERSION, '5.4.0RC1', '<')) {
+            $this->markTestSkipped();
+        }
+
+        $this->pci->parse(TEST_FILES_PATH . 'source6.php');
+
+        $this->assertSame(
+            array('5.4.0', ''), $this->pci->getVersions()
+        );
+    }
+
 }
