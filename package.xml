@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-01-17</date>
- <time>15:09:14</time>
+ <date>2012-01-19</date>
+ <time>14:12:24</time>
  <version>
-  <release>2.2.0snapshot20120117</release>
+  <release>2.2.0snapshot20120119</release>
   <api>2.2.0</api>
  </version>
  <stability>
@@ -44,6 +44,7 @@ Additions and changes:
 - fix references for PHP 5.4.0
 - make doc generation with AsciiDoc compatible with older version 8.4.5 (especially for old linux distributions)
 - phing build documentation script is now easily reuseable (configuration through an external properties file)
+- add 2 new references data dictionnaries related to extensions: ldap, oauth
 - removes experimental PEAR package detection
 
 Bug fixes:
@@ -358,6 +359,9 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="mysqli.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
+      <file baseinstalldir="Bartlett" name="oauth.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="openssl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -661,6 +665,9 @@ Bug fixes:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="MysqlTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="OAuthTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="OpensslTest.php" role="test">
@@ -1161,14 +1168,14 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.2.0snapshot20120117</release>
+    <release>2.2.0snapshot20120119</release>
     <api>2.2.0</api>
    </version>
    <stability>
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2012-01-17</date>
+   <date>2012-01-19</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1180,6 +1187,7 @@ Additions and changes:
 - fix references for PHP 5.4.0
 - make doc generation with AsciiDoc compatible with older version 8.4.5 (especially for old linux distributions)
 - phing build documentation script is now easily reuseable (configuration through an external properties file)
+- add 2 new references data dictionnaries related to extensions: ldap, oauth
 - removes experimental PEAR package detection
 
 Bug fixes:
