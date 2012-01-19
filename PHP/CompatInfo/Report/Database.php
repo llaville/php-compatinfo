@@ -45,13 +45,14 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
             dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'Reference'
         );
         $excludes = array(
-            'PluginsAbstract.php', 'PHP4.php', 'PHP5.php', 'PEAR.php'
+            'PluginsAbstract.php', 'PHP4.php', 'PHP5.php'
         );
         $exceptions = array(
-            'pdo'       => 'PDO', 
+            'oauth'     => 'OAuth',
+            'pdo'       => 'PDO',
             'simplexml' => 'SimpleXML',
-            'spl'       => 'SPL', 
-            'sqlite'    => 'SQLite', 
+            'spl'       => 'SPL',
+            'sqlite'    => 'SQLite',
         );
         $extensions = array();
         foreach ($dir as $fileinfo) {
@@ -63,7 +64,7 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
                 $name = basename($fn, '.php');
                 if (array_key_exists($name, $exceptions)) {
                     $name = $exceptions[$name];
-                } 
+                }
                 $extensions[] = $name;
             }
         }
