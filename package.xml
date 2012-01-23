@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-01-19</date>
- <time>14:12:24</time>
+ <date>2012-01-23</date>
+ <time>15:58:23</time>
  <version>
-  <release>2.2.0snapshot20120119</release>
+  <release>2.2.0snapshot20120123</release>
   <api>2.2.0</api>
  </version>
  <stability>
@@ -38,6 +38,7 @@ content of dictionary references.
 Additions and changes:
 - fix references for functions with parameters that have different versions
 - add detection for class member access on instantiation (e.g. (new Foo)-&gt;bar())
+- add detection of array dereferencing (PHP 5.4 feature)
 - improves detection for function with version changed depending of signature (arguments)
 - add PHPUnit configuration file (phpunit.xml). Help for CI env integration
 - split Issues Tests in two classes depending of code licences
@@ -522,6 +523,9 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="ObjectOperator.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
+      <file baseinstalldir="Bartlett" name="OpenSquare.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="String.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -792,6 +796,9 @@ Bug fixes:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="source6.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="source7.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="source1626.php" role="test">
@@ -1168,19 +1175,20 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.2.0snapshot20120119</release>
+    <release>2.2.0snapshot20120123</release>
     <api>2.2.0</api>
    </version>
    <stability>
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2012-01-19</date>
+   <date>2012-01-23</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
 - fix references for functions with parameters that have different versions
 - add detection for class member access on instantiation (e.g. (new Foo)-&gt;bar())
+- add detection of array dereferencing (PHP 5.4 feature)
 - improves detection for function with version changed depending of signature (arguments)
 - add PHPUnit configuration file (phpunit.xml). Help for CI env integration
 - split Issues Tests in two classes depending of code licences
