@@ -2,9 +2,10 @@
 /**
  * Unit tests for PHP_CompatInfo package, classes informations
  *
+ * @category   PHP
  * @package    PHP_CompatInfo
  * @subpackage Tests
- * @author     Laurent Laville pear@laurent-laville.org>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -26,6 +27,13 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
 {
     protected $pci;
 
+    /**
+     * Sets up the fixture.
+     *
+     * Parse source code to find all classes
+     *
+     * @return void
+     */
     protected function setUp()
     {
         $options = array(
@@ -37,7 +45,10 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests array results output
+     * 
      * @covers PHP_CompatInfo::toArray
+     * @return void
      */
     public function testToArray()
     {
@@ -68,7 +79,11 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests classes results
+     * 
      * covers PHP_CompatInfo::getClasses
+     * 
+     * @return void
      */
     public function testGetClassesFullReport()
     {
@@ -97,7 +112,11 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests classes results filtering
+     * 
      * covers PHP_CompatInfo::getClasses
+     * 
+     * @return void
      */
     public function testGetClassesFilterByCategory()
     {
@@ -110,7 +129,11 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests classes results filtering by regular expression
+     * 
      * covers PHP_CompatInfo::getClasses
+     * 
+     * @return void
      */
     public function testGetClassesFilterByCategoryAndPattern()
     {

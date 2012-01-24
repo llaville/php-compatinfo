@@ -2,6 +2,7 @@
 /**
  * Unit tests for PHP_CompatInfo package, Hash Reference
  *
+ * @category   PHP
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
@@ -20,9 +21,12 @@ require_once 'GenericTest.php';
 class PHP_CompatInfo_Reference_HashTest extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
+     * Sets up the fixture.
+     *
      * @covers PHP_CompatInfo_Reference_Hash::getExtensions
      * @covers PHP_CompatInfo_Reference_Hash::getFunctions
      * @covers PHP_CompatInfo_Reference_Hash::getConstants
+     * @return void
      */
     protected function setUp()
     {

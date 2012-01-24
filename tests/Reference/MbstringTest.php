@@ -2,6 +2,7 @@
 /**
  * Unit tests for PHP_CompatInfo package, Mbstring Reference
  *
+ * @category   PHP
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
@@ -20,9 +21,12 @@ require_once 'GenericTest.php';
 class PHP_CompatInfo_Reference_MbstringTest extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
+     * Sets up the fixture.
+     *
      * @covers PHP_CompatInfo_Reference_Mbstring::getExtensions
      * @covers PHP_CompatInfo_Reference_Mbstring::getFunctions
      * @covers PHP_CompatInfo_Reference_Mbstring::getConstants
+     * @return void
      */
     protected function setUp()
     {

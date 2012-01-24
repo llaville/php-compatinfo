@@ -2,9 +2,10 @@
 /**
  * Unit tests for PHP_CompatInfo package, magic constants informations
  *
+ * @category   PHP
  * @package    PHP_CompatInfo
  * @subpackage Tests
- * @author     Laurent Laville pear@laurent-laville.org>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -26,6 +27,13 @@ class PHP_CompatInfo_MagicConstantTest extends PHPUnit_Framework_TestCase
 {
     protected $pci;
 
+    /**
+     * Sets up the fixture.
+     *
+     * Parse source code to find all magic constants
+     *
+     * @return void
+     */
     protected function setUp()
     {
         $options = array(
@@ -37,7 +45,11 @@ class PHP_CompatInfo_MagicConstantTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests magic constants results
+     *
      * covers PHP_CompatInfo::getConstants
+     *
+     * @return void
      */
     public function testGetConstants()
     {

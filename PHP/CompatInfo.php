@@ -1174,6 +1174,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      *                               for user or undefined component
      * @param array  $haystack       Data list
      * @param string $source         Data source name
+     * @param string $ns             Namespace
      *
      * @return void
      */

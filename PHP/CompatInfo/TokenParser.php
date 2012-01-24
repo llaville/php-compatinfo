@@ -38,8 +38,8 @@ class PHP_CompatInfo_TokenParser
                 $constants[$name]['uses'][] = $token->getLine();
                 $subject->offsetSet(array($container => $ns), $constants);
             }
-        }
-        elseif ($type === 'function') {
+
+        } elseif ($type === 'function') {
             $container = $subject->options['containers']['core'];
 
             $name = $token->getName();

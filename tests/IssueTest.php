@@ -2,9 +2,10 @@
 /**
  * Unit tests for PHP_CompatInfo package, issues reported
  *
+ * @category   PHP
  * @package    PHP_CompatInfo
  * @subpackage Tests
- * @author     Laurent Laville pear@laurent-laville.org>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -28,6 +29,11 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 {
     protected $pci;
 
+    /**
+     * Sets up the fixture.
+     *
+     * @return void
+     */
     protected function setUp()
     {
         $options = array(
@@ -44,6 +50,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Class calls are seen wrong
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getExtensions
+     * @return void
      */
     public function testBug1626()
     {
@@ -63,6 +70,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Functions missing in func_array.php
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @return void
      */
     public function testBug6581()
     {
@@ -79,6 +87,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/bug.php?id=8559
      *       PHP_CompatInfo fails to scan if it finds empty file in path
      * @covers PHP_CompatInfo::parse
+     * @return void
      */
     public function testBug8559()
     {
@@ -95,6 +104,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/bug.php?id=10100
      *       Wrong parsing of possible attributes in strings
      * @covers PHP_CompatInfo::parse
+     * @return void
      */
     public function testBug10100()
     {
@@ -111,6 +121,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/bug.php?id=13417
      *       Parser ignore class-method that are named as standard php functions
      * @covers PHP_CompatInfo::parse
+     * @return void
      */
     public function testBug13417()
     {
@@ -129,6 +140,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       User functions are not ignored
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getExtensions
+     * @return void
      */
     public function testBug13568()
     {
@@ -145,6 +157,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/bug.php?id=14696
      *       PHP_CompatInfo fails to scan code line when not ended with semicolon
      * @covers PHP_CompatInfo::parse
+     * @return void
      */
     public function testBug14696()
     {
@@ -162,6 +175,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Exception class is detected as 4.0.0 code
      * @covers PHP_CompatInfo::parse
      * covers PHP_CompatInfo::getClasses
+     * @return void
      */
     public function testBug16302()
     {
@@ -189,6 +203,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Add support for reporting max PHP version
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @return void
      */
     public function testRequest6056()
     {
@@ -206,6 +221,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Parameter count isn't recognized
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @return void
      */
     public function testBug18881()
     {
@@ -223,6 +239,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       PHP5 method chaining
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @return void
      */
     public function testRequest13094()
     {

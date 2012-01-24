@@ -2,9 +2,10 @@
 /**
  * Unit tests for PHP_CompatInfo package, issues reported
  *
+ * @category   PHP
  * @package    PHP_CompatInfo
  * @subpackage Tests
- * @author     Laurent Laville pear@laurent-laville.org>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @author     Remi Collet <Remi@FamilleCollet.com>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
@@ -31,6 +32,11 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
 {
     protected $pci;
 
+    /**
+     * Sets up the fixture.
+     *
+     * @return void
+     */
     protected function setUp()
     {
         $options = array(
@@ -47,6 +53,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/bug.php?id=3657
      *       php5 clone constant/token in all sources
      * @covers PHP_CompatInfo::parse
+     * @return void
      */
     public function testBug3657()
     {
@@ -65,6 +72,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
      *       Functions missing in func_array.php
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @return void
      */
     public function testBug6581()
     {
@@ -84,6 +92,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
      *       wrong PHP minimum version detection
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @return void
      */
     public function testBug7813()
     {
@@ -103,6 +112,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
      *       PHP_CompatInfo fails to scan conditional code
      *       if it finds other than encapsed string
      * @covers PHP_CompatInfo::parse
+     * @return void
      */
     public function testBug13873()
     {

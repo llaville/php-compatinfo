@@ -2,6 +2,7 @@
 /**
  * Unit tests for PHP_CompatInfo package, Xmlwriter Reference
  *
+ * @category   PHP
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
@@ -20,9 +21,12 @@ require_once 'GenericTest.php';
 class PHP_CompatInfo_Reference_XmlwriterTest extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
+     * Sets up the fixture.
+     *
      * @covers PHP_CompatInfo_Reference_Xmlwriter::getExtensions
      * @covers PHP_CompatInfo_Reference_Xmlwriter::getClasses
      * @covers PHP_CompatInfo_Reference_Xmlwriter::getFunctions
+     * @return void
      */
     protected function setUp()
     {
