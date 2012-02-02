@@ -36,6 +36,7 @@ But PHP_CompatInfo (alias phpci), may also provides on CLI (with the +phpci+ com
 - *token* : language PHP5 special features such as try/catch/throw exception, etc 
 - *extension* : usage, minimum php version and origin of each extension used by your sources code
 - *namespace* : usage, minimum php version and origin of each namespace used by your sources code
+- *trait* : usage, minimum php version and origin of each trait used by your sources code
 - *interface* : usage, minimum php version and origin of each interface used by your sources code 
 - *class* : usage, minimum php version and origin of each class used by your sources code 
 - *function* : usage, minimum php version and origin of each function used by your sources code 
@@ -129,7 +130,7 @@ try {
 .phpci tool example
 
 From your PEAR _bin_dir_  directory and the default XML configuration file +phpcompatinfo.xml.dist+
-installed into PEAR _cfg_dir_\PHP_CompatInfo. 
+installed into PEAR _cfg_dir_/PHP_CompatInfo.
  
 ----
 $ phpci print /path/to/myFolder

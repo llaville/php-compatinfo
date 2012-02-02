@@ -212,13 +212,18 @@ $ phpci list-references
     L hash                                       1.0               5.1.2
     L iconv                                                        4.0.5
     L imap                                                         4.0.0
+      intl                                       1.1.0             5.2.4
     L json                                       1.2.1             5.2.0
+      ldap                                                         4.0.0
     L libxml                                                       5.0.0
     L mbstring                                                     4.0.6
     L mcrypt                                                       4.0.0
+      memcache                                   3.0.6             4.3.3
+      memcached                                  1.0.2             5.2.0
     L mhash                                                        4.0.0
     L mysql                                      1.0               4.0.0
     L mysqli                                     0.1               5.0.0
+    L OAuth                                      1.0-dev           5.1.0
     L openssl                                                      4.0.4
       pcntl                                                        4.1.0
     L pcre                                                         4.0.0
@@ -253,7 +258,7 @@ $ phpci list-references
     L xsl                                        0.1               5.0.0
     L zlib                                       1.1               4.0.0
     -------------------------------------------------------------------------------
-    A TOTAL OF 60 EXTENSIONS WERE FOUND AND 47 LOADED
+    A TOTAL OF 65 EXTENSIONS WERE FOUND AND 48 LOADED
     -------------------------------------------------------------------------------
     Time: 0 seconds, Memory: 4.75Mb
     -------------------------------------------------------------------------------
@@ -435,6 +440,7 @@ $ phpci list-extensions
     mhash                                                          4.0.0
     mysql                                        1.0               4.0.0
     mysqli                                       0.1               5.0.0
+    OAuth                                        1.0-dev           5.1.0
     openssl                                                        4.0.4
     pcre                                                           4.0.0
     session                                                        4.0.0
@@ -454,7 +460,7 @@ $ phpci list-extensions
     xsl                                          0.1               5.0.0
     zlib                                         1.1               4.0.0
     -------------------------------------------------------------------------------
-    A TOTAL OF 47 EXTENSIONS WERE FOUND
+    A TOTAL OF 48 EXTENSIONS WERE FOUND
     -------------------------------------------------------------------------------
     Time: 0 seconds, Memory: 6.25Mb
     -------------------------------------------------------------------------------

@@ -10,7 +10,7 @@ This work is licensed under the BSD License.
 The full legal text of the license is given below.
 
 ----
- Copyright (c) 2010-2011, Laurent Laville <pear@laurent-laville.org>
+ Copyright (c) 2010-2012, Laurent Laville <pear@laurent-laville.org>
 
  Credits to :
 

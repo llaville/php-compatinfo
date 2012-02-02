@@ -23,15 +23,15 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-01-23</date>
- <time>15:58:23</time>
+ <date>2012-02-02</date>
+ <time>15:09:56</time>
  <version>
-  <release>2.2.0snapshot20120123</release>
+  <release>2.2.0</release>
   <api>2.2.0</api>
  </version>
  <stability>
-  <release>snapshot</release>
-  <api>beta</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
@@ -1122,7 +1122,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>1.0.0</min>
+    <min>1.2.0</min>
    </package>
    <package>
     <name>PHP_Timer</name>
@@ -1175,14 +1175,14 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.2.0snapshot20120123</release>
+    <release>2.2.0</release>
     <api>2.2.0</api>
    </version>
    <stability>
-    <release>snapshot</release>
-    <api>beta</api>
+    <release>stable</release>
+    <api>stable</api>
    </stability>
-   <date>2012-01-23</date>
+   <date>2012-02-02</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
