@@ -2,11 +2,14 @@
 /**
  * Unit tests for PHP_CompatInfo package, Curl Reference
  *
+ * PHP version 5
+ *
+ * @category   PHP
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
+ * @version    SVN: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 2.0.0RC4
  */
@@ -16,13 +19,25 @@ require_once 'GenericTest.php';
 /**
  * Tests for the PHP_CompatInfo class, retrieving components informations
  * about Curl extension
+ *
+ * @category   PHP
+ * @package    PHP_CompatInfo
+ * @subpackage Tests
+ * @author     Remi Collet <Remi@FamilleCollet.com>
+ * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version    Release: @package_version@
+ * @link       http://php5.laurent-laville.org/compatinfo/
  */
-class PHP_CompatInfo_Reference_CurlTest extends PHP_CompatInfo_Reference_GenericTest
+class PHP_CompatInfo_Reference_CurlTest
+    extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
+     * Sets up the fixture.
+     *
      * @covers PHP_CompatInfo_Reference_Curl::getExtensions
      * @covers PHP_CompatInfo_Reference_Curl::getFunctions
      * @covers PHP_CompatInfo_Reference_Curl::getConstants
+     * @return void
      */
     protected function setUp()
     {
@@ -34,25 +49,29 @@ class PHP_CompatInfo_Reference_CurlTest extends PHP_CompatInfo_Reference_Generic
             $ver = curl_version();
             $ver = $ver['version_number'];
             if ($ver<0x071001) {
-                array_push($this->optionnalconstants,
+                array_push(
+                    $this->optionnalconstants,
                     'CURLFTPMETHOD_MULTICWD',
                     'CURLFTPMETHOD_NOCWD',
                     'CURLFTPMETHOD_SINGLECWD'
                 );
             }
             if ($ver<0x071002) {
-                array_push($this->optionnalconstants,
+                array_push(
+                    $this->optionnalconstants,
                     'CURLOPT_CONNECTTIMEOUT_MS',
                     'CURLOPT_TIMEOUT_MS'
                 );
             }
             if ($ver<0x071202) {
-                array_push($this->optionnalconstants,
+                array_push(
+                    $this->optionnalconstants,
                     'CURLINFO_REDIRECT_URL'
                 );
             }
             if ($ver<0x071300) {
-                array_push($this->optionnalconstants,
+                array_push(
+                    $this->optionnalconstants,
                     'CURLSSH_AUTH_NONE',
                     'CURLSSH_AUTH_PUBLICKEY',
                     'CURLSSH_AUTH_PASSWORD',
@@ -68,14 +87,16 @@ class PHP_CompatInfo_Reference_CurlTest extends PHP_CompatInfo_Reference_Generic
                 );
             }
             if ($ver<0x071301) {
-                array_push($this->optionnalconstants,
+                array_push(
+                    $this->optionnalconstants,
                     'CURLINFO_CERTINFO',
                     'CURLOPT_CERTINFO',
                     'CURLOPT_POSTREDIR'
                 );
             }
             if ($ver<0x071304) {
-                array_push($this->optionnalconstants,
+                array_push(
+                    $this->optionnalconstants,
                     'CURLOPT_REDIR_PROTOCOLS',
                     'CURLOPT_PROTOCOLS',
                     'CURLPROTO_HTTP',

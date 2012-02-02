@@ -1,6 +1,6 @@
 <?php
 /**
- * Autoloader for PHP_CompatInfo
+ * Registers autoloader for PHP_CompatInfo and all other dependencies
  *
  * PHP version 5
  *
@@ -8,10 +8,17 @@
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version  Release: @package_version@
+ * @version  SVN: $Id$
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
+/**
+ * Autoloader for PHP_CompatInfo 
+ *
+ * @param string $className name of the class (and namespace) being instantiated.
+ *
+ * @return void
+ */
 function phpCompatInfo_autoload($className)
 {
     static $classes = null;
@@ -218,11 +225,6 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/xsl.php',
             'PHP_CompatInfo_Reference_Zlib'
                 => 'PHP/CompatInfo/Reference/zlib.php',
-
-            // PEAR packages references
-            'PHP_CompatInfo_Reference_Net_Growl'
-                => 'PHP/CompatInfo/Reference/netgrowl.php',
-
         );
         $path = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR;
     }

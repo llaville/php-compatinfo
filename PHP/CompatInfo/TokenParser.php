@@ -1,18 +1,37 @@
 <?php
 /**
+ * Additional parser
+ *
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
+
+/**
  * Additional parser connected to tokens :
  * T_STRING, T_CONSTANT_ENCAPSED_STRING,
  * T_LINE, T_FILE, T_DIR, T_FUNC_C, T_CLASS_C, T_METHOD_C, T_NS_C,
  * T_CATCH, T_CLONE, T_INSTANCEOF, T_THROW, T_TRY, T_HALT_COMPILER, T_GOTO, T_USE
  *
- * @author     Laurent Laville pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
- * @link       http://php5.laurent-laville.org/compatinfo/
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
  */
-
 class PHP_CompatInfo_TokenParser
 {
+    /**
+     * Parser for token T_STRING
+     *
+     * @return void
+     */
     public static function parseTokenString()
     {
         list($subject, $context, $token) = func_get_args();
@@ -56,8 +75,8 @@ class PHP_CompatInfo_TokenParser
                 } else {
                     $classMethod = false;
                 }
-            }
-            else if ($interface) {
+
+            } else if ($interface) {
                 $interfaces = $subject->getInterfaces($ns);
                 if (isset($interfaces[$interface]['methods'])) {
                     $interfaceMethod = array_key_exists(
@@ -79,8 +98,8 @@ class PHP_CompatInfo_TokenParser
                     $subject->offsetSet(array($container => $ns), $functions);
                 }
             }
-        }
-        elseif ($type === 'interface') {
+
+        } elseif ($type === 'interface') {
             $container = $subject->options['containers'][$type];
 
             if (null != $container) {
@@ -92,8 +111,8 @@ class PHP_CompatInfo_TokenParser
                 $subject->offsetSet(array($container => $ns), $interfaces);
 
             }
-        }
-        elseif ($type === 'class') {
+
+        } elseif ($type === 'class') {
             $container = $subject->options['containers'][$type];
 
             if (null != $container) {
@@ -107,6 +126,11 @@ class PHP_CompatInfo_TokenParser
         }
     }
 
+    /**
+     * Parser for token T_CONSTANT_ENCAPSED_STRING
+     *
+     * @return void
+     */
     public static function parseTokenConstant()
     {
         list($subject, $context, $token) = func_get_args();
@@ -135,6 +159,12 @@ class PHP_CompatInfo_TokenParser
         }
     }
 
+    /**
+     * Parser for tokens
+     * T_LINE, T_FILE, T_DIR, T_FUNC_C, T_CLASS_C, T_METHOD_C, T_NS_C
+     *
+     * @return void
+     */
     public static function parseTokenMagicConstant()
     {
         list($subject, $context, $token) = func_get_args();
@@ -159,6 +189,11 @@ class PHP_CompatInfo_TokenParser
         }
     }
 
+    /**
+     * Parser for token T_VARIABLE
+     *
+     * @return void
+     */
     public static function parseTokenGlobals()
     {
         list($subject, $context, $token) = func_get_args();
@@ -189,6 +224,13 @@ class PHP_CompatInfo_TokenParser
         }
     }
 
+    /**
+     * Parser for tokens
+     * T_CATCH, T_CLONE, T_INSTANCEOF, T_THROW, T_TRY, T_HALT_COMPILER, T_GOTO,
+     * T_UNSET_CAST, T_USE, T_INSTEADOF, T_OBJECT_OPERATOR, T_OPEN_SQUARE
+     * 
+     * @return void
+     */
     public static function parseTokenFeatures()
     {
         list($subject, $context, $token) = func_get_args();

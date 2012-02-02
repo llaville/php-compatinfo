@@ -1314,7 +1314,8 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             if ($extension != 'user') {
                 $this->extensions[$extension]['uses'] += $values[$key]['uses'];
                 $sources = array_merge(
-                    $this->extensions[$extension]['sources'], $values[$key]['sources']
+                    $this->extensions[$extension]['sources'],
+                    $values[$key]['sources']
                 );
                 $this->extensions[$extension]['sources'] = array_unique($sources);
             }
