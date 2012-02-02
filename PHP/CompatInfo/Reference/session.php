@@ -173,8 +173,8 @@ class PHP_CompatInfo_Reference_Session implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
-                'session_register_shutdown'     => array('5.4.0-dev', ''),
-                'session_status'                => array('5.4.0-dev', ''),
+                'session_register_shutdown'     => array('5.4.0', ''),
+                'session_status'                => array('5.4.0', ''),
             );
             $functions = array_merge(
                 $functions,
@@ -209,9 +209,9 @@ class PHP_CompatInfo_Reference_Session implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
-                'PHP_SESSION_ACTIVE'             => array('5.4.0-dev', ''),
-                'PHP_SESSION_DISABLED'           => array('5.4.0-dev', ''),
-                'PHP_SESSION_NONE'               => array('5.4.0-dev', ''),
+                'PHP_SESSION_ACTIVE'             => array('5.4.0', ''),
+                'PHP_SESSION_DISABLED'           => array('5.4.0', ''),
+                'PHP_SESSION_NONE'               => array('5.4.0', ''),
             );
             $constants = array_merge(
                 $constants,

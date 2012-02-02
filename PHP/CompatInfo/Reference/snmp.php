@@ -227,11 +227,11 @@ class PHP_CompatInfo_Reference_Snmp implements PHP_CompatInfo_Reference
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
                 'SNMP_OID_OUTPUT_FULL'              => array('5.2.0', ''),
-                'SNMP_OID_OUTPUT_MODULE'            => array('5.4.0-dev', ''),
-                'SNMP_OID_OUTPUT_NONE'              => array('5.4.0-dev', ''),
+                'SNMP_OID_OUTPUT_MODULE'            => array('5.4.0', ''),
+                'SNMP_OID_OUTPUT_NONE'              => array('5.4.0', ''),
                 'SNMP_OID_OUTPUT_NUMERIC'           => array('5.2.0', ''),
-                'SNMP_OID_OUTPUT_SUFFIX'            => array('5.4.0-dev', ''),
-                'SNMP_OID_OUTPUT_UCD'               => array('5.4.0-dev', ''),
+                'SNMP_OID_OUTPUT_SUFFIX'            => array('5.4.0', ''),
+                'SNMP_OID_OUTPUT_UCD'               => array('5.4.0', ''),
             );
             $constants = array_merge(
                 $constants,
