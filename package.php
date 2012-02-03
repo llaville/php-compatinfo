@@ -17,27 +17,17 @@ $channel     = 'bartlett.laurent-laville.org';
 
 $release_state   = 'stable';
 //$release_version = '2.2.0snapshot' . date('Ymd');
-$release_version = '2.2.0';
+$release_version = '2.2.1';
 
 $api_state       = 'stable';
 $api_version     = '2.2.0';
 $release_notes   = "
 Additions and changes:
-- fix references for functions with parameters that have different versions
-- add detection for class member access on instantiation (e.g. (new Foo)->bar())
-- add detection of array dereferencing (PHP 5.4 feature)
-- improves detection for function with version changed depending of signature (arguments)
-- add PHPUnit configuration file (phpunit.xml). Help for CI env integration
-- split Issues Tests in two classes depending of code licences
-- fix references for PHP 5.4.0
-- make doc generation with AsciiDoc compatible with older version 8.4.5 (especially for old linux distributions)
-- phing build documentation script is now easily reuseable (configuration through an external properties file)
-- add 2 new references data dictionnaries related to extensions: ldap, oauth
-- removes experimental PEAR package detection
+- Version 2.2.0 support until PHP 5.3.9 and 5.4.0
+- Version 2.2.1 support until PHP 5.3.10 and 5.4.0
 
 Bug fixes:
-- request #13094 : PHP5 method chaining ( http://pear.php.net/bugs/bug.php?id=13094 )
-- fix version stamp in XML report
+- none
 ";
 $license = array('BSD License', 'http://www.opensource.org/licenses/bsd-license.php');
 

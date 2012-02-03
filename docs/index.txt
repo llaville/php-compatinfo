@@ -11,7 +11,8 @@ include::revision.txt[]
 Release highlights:
 
 - Each new minor version is supposed to follow a new PHP release, which add new features.
-It's true with PHP_CompatInfo 2.2.0 that support PHP 5.3.9 / 5.4.0
+It's true with PHP_CompatInfo 2.2.0 that support PHP 5.3.9 / 5.4.0.
+While PHP_CompatInfo 2.2.1 support PHP 5.3.10 and 5.4.0
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the

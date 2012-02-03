@@ -6,6 +6,15 @@ PHP_CompatInfo ChangeLog
 :scriptsdir:  js
 
 
+== Version 2.2.1 (2012-02-03)
+
+.Additions and changes:
+* Version 2.2.0 support until PHP 5.3.9 and 5.4.0
+* Version 2.2.1 support until PHP 5.3.10 and 5.4.0
+
+.Bug fixes:
+* none
+
 == Version 2.2.0 (2012-02-02)
 
 .Additions and changes:
