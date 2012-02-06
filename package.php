@@ -43,8 +43,13 @@ $p2->setOptions(
             basename(__FILE__),
             '.git', '*.log',
             'Thumbs.db', 'packageBeta*.xml', 'packageRC*.xml',
-            'HOWTO.txt', 'IssueTest2.php', 'genext.php',
-            'PEAR.php', 'netgrowl.php'
+            'HOWTO.txt', 'genext.php',
+            'PEAR.php', 'netgrowl.php',
+            'IssueTest2.php',
+            'PackageTest.php',
+            'source3651.php',
+            'source7813.php',
+            'source13873.php',
             ),
         'installexceptions' => array(
             'phpcompatinfo.xml.dist' => '',

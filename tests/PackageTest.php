@@ -25,6 +25,8 @@ if (!defined('TEST_FILES_PATH')) {
 /**
  * Tests for the PHP_CompatInfo package detection
  *
+ * source7813.php   is under PHP License
+ * 
  * @category   PHP
  * @package    PHP_CompatInfo
  * @subpackage Tests
