@@ -23,10 +23,9 @@
     <target name="help">
         <echo>Target                   Description</echo>
         <echo>------------------------------------------------------------------</echo>
-        <echo>clean-docs               Remove old html generated files</echo>
-        <echo>make-docs                Build the documentation of PHP_CompatInfo</echo>
         <echo>make-full-docs           Build the full documentation of PHP_CompatInfo</echo>
-        <echo>make-userguide           Build the user guide</echo>
+        <echo>make-html-docs           Build the documentation in HTML format</echo>
+        <echo>make-userguide           Build the user guide in single HTML page</echo>
         <echo>make-userguide-all       Build the user guide in all formats</echo>
         <echo>make-userguide-chunked   Build the user guide in many HTML files</echo>
         <echo>make-userguide-htmlhelp  Build the user guide in CHM format</echo>
@@ -48,51 +47,91 @@
     </target>
 
     <target name="make-userguide-all"
-            depends="make-userguide, make-userguide-chunked, make-userguide-htmlhelp, make-userguide-pdf"
-            description="Build the user guide in all formats">
+            description="Build the user guide of PHP_CompatInfo in many formats">
+
+        <phingcall target="make-userguide" />
+
+        <if>
+            <istrue value="${build.book.chunked}" />
+            <then>
+                <phingcall target="make-userguide-chunked" />
+            </then>
+        </if>
+
+        <if>
+            <istrue value="${build.book.chm}" />
+            <then>
+                <phingcall target="make-userguide-htmlhelp" />
+            </then>
+        </if>
+
+        <if>
+            <istrue value="${build.book.pdf}" />
+            <then>
+                <phingcall target="make-userguide-pdf" />
+            </then>
+        </if>
+
+        <if>
+            <istrue value="${build.book.epub}" />
+            <then>
+                <phingcall target="make-userguide-epub" />
+            </then>
+        </if>
 
     </target>
 
     <target name="make-userguide"
-            description="Build the user guide">
+            description="Build the user guide of PHP_CompatInfo in single HTML page">
 
         <exec dir="${asciidoc.home}"
             command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n -o ${output.dir}/phpci-book.html ${homedir}/docs/phpci-book.txt"
         />
-        <zip destfile="${output.dir}/phpci-book.html.zip">
-            <fileset dir="${output.dir}">
-                <include name="images/**" />
-                <include name="js/asciidoc.js" />
-                <include name="styles/pygments.css" />
-                <include name="styles/toc2.css" />
-                <include name="styles/${theme}.css" />
-                <include name="phpci-book.html" />
-                <exclude name="**/callouts/**" />
-                <exclude name="styles.css" />
-                <exclude name="**/Thumbs.db" />
-            </fileset>
-        </zip>
 
+        <if>
+            <istrue value="${build.tarball}" />
+            <then>
+                <zip destfile="${output.dir}/phpci-book.html.zip">
+                    <fileset dir="${output.dir}">
+                        <include name="images/**" />
+                        <include name="js/asciidoc.js" />
+                        <include name="styles/pygments.css" />
+                        <include name="styles/toc2.css" />
+                        <include name="styles/${theme}.css" />
+                        <include name="phpci-book.html" />
+                        <exclude name="**/callouts/**" />
+                        <exclude name="styles.css" />
+                        <exclude name="**/Thumbs.db" />
+                    </fileset>
+                </zip>
+            </then>
+        </if>
     </target>
 
     <target name="make-userguide-chunked"
-            description="Build the user guide in many HTML files">
+            description="Build the user guide of PHP_CompatInfo in many HTML files">
 
         <exec dir="${asciidoc.home}"
             command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked -D ${output.dir} ${homedir}/docs/phpci-book.txt"
         />
-        <zip destfile="${output.dir}/phpci-book.chunked.zip">
-            <fileset dir="${output.dir}">
-                <include name="phpci-book.chunked/**" />
-                <exclude name="phpci-book.chunked/**/Thumbs.db" />
-            </fileset>
-        </zip>
-        <delete dir="${output.dir}/phpci-book.chunked" />
+
+        <if>
+            <istrue value="${build.tarball}" />
+            <then>
+                <zip destfile="${output.dir}/phpci-book.chunked.zip">
+                    <fileset dir="${output.dir}">
+                        <include name="phpci-book.chunked/**" />
+                        <exclude name="phpci-book.chunked/**/Thumbs.db" />
+                    </fileset>
+                </zip>
+                <delete dir="${output.dir}/phpci-book.chunked" />
+            </then>
+        </if>
 
     </target>
 
     <target name="make-userguide-htmlhelp"
-            description="Build the user guide in CHM format">
+            description="Build the user guide of PHP_CompatInfo in CHM format">
 
         <exec dir="${asciidoc.home}"
             command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp -D ${output.dir} ${homedir}/docs/phpci-book.txt"
@@ -101,25 +140,31 @@
         <exec dir="${htmlhelpworkshop}"
             command="hhc.exe ${output.dir}/phpci-book.hhp"
         />
-        <zip destfile="${output.dir}/phpci-book.chm.zip">
-            <fileset dir="${output.dir}">
-                <include name="phpci-book.chm" />
-            </fileset>
-        </zip>
-        <delete>
-            <fileset dir="${output.dir}">
-                <include name="phpci-book.chm" />
-                <include name="phpci-book.hhc" />
-                <include name="phpci-book.hhk" />
-                <include name="phpci-book.hhp" />
-            </fileset>
-        </delete>
-        <delete dir="${output.dir}/phpci-book.htmlhelp" />
+
+        <if>
+            <istrue value="${build.tarball}" />
+            <then>
+                <zip destfile="${output.dir}/phpci-book.chm.zip">
+                    <fileset dir="${output.dir}">
+                        <include name="phpci-book.chm" />
+                    </fileset>
+                </zip>
+                <delete>
+                    <fileset dir="${output.dir}">
+                        <include name="phpci-book.chm" />
+                        <include name="phpci-book.hhc" />
+                        <include name="phpci-book.hhk" />
+                        <include name="phpci-book.hhp" />
+                    </fileset>
+                </delete>
+                <delete dir="${output.dir}/phpci-book.htmlhelp" />
+            </then>
+        </if>
 
     </target>
 
     <target name="make-userguide-pdf"
-            description="Build the user guide in PDF format">
+            description="Build the user guide of PHP_CompatInfo in PDF format">
 
         <exec dir="${asciidoc.home}"
             command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/phpci-book.txt"
@@ -128,7 +173,7 @@
     </target>
 
     <target name="make-userguide-epub"
-            description="Build the user guide in english PDF format">
+            description="Build the user guide of PHP_CompatInfo in EPUB format">
 
         <exec dir="${asciidoc.home}"
             command="a2x.py --verbose -L --icons -d book -f epub -D ${output.dir} ${homedir}/docs/phpci-book.txt"
@@ -163,14 +208,9 @@
         </phingcall>
     </target>
 
-    <target name="clean-docs"
-            description="Remove old html generated files">
-
-        <delete>
-            <fileset dir="${homedir}/docs/">
-                <include name="*.html" />
-            </fileset>
-        </delete>
+    <target name="make-html-docs"
+            depends="make-docs, make-userguide"
+            description="Build the documentation in HTML format only">
 
     </target>
 
