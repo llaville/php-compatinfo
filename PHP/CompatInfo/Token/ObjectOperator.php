@@ -64,6 +64,7 @@ class PHP_CompatInfo_Token_OBJECT_OPERATOR extends PHP_Reflect_Token_OBJECT_OPER
             $i = -2;
             while ($this->_getContext($i) != 'T_OPEN_TAG'
                 && $this->_getContext($i) != 'T_SEMICOLON'
+                && $this->_getContext($i) != 'T_OBJECT_OPERATOR'
             ) {
                 if ($this->_getContext($i) == 'T_NEW') {
                     $name = 'classMemberAccessOnInstantiation';

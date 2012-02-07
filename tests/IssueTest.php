@@ -258,4 +258,22 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Regression test for bug GH-26
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/26
+     *       Mistake in classMemberAccessOnInstantiation detection
+     * @covers PHP_CompatInfo::parse
+     * @covers PHP_CompatInfo::getVersions
+     * @return void
+     */
+    public function testBugGH26()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'gh26.php');
+
+        $this->assertSame(
+            array('5.0.0', ''), $this->pci->getVersions()
+        );
+    }
+
 }
