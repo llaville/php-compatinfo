@@ -21,7 +21,7 @@ And then use the xslt processor to transform the XML to a beautiful XHTML page.
 ----
 
 .Example with sources file list collapsed 
-image::images/summary.png["file list collapsed", width="17cm"]
+image::images/summary.png["file list collapsed", scaledwidth="100%"]
 
 .Example with sources file list expanded
-image::images/summary2.png["file list expanded", width="17cm"]
+image::images/summary2.png["file list expanded", scaledwidth="100%"]

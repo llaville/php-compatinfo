@@ -5,4 +5,4 @@ UML classes diagram
 include::revision.txt[]
 
 
-image::images/PHPCompatInfo.png["UML class diagram", width="17cm"]
+image::images/PHPCompatInfo.png["UML class diagram", scaledwidth="100%"]
