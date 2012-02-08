@@ -176,8 +176,25 @@
             description="Build the user guide of PHP_CompatInfo in EPUB format">
 
         <exec dir="${asciidoc.home}"
-            command="a2x.py --verbose -L --icons -d book -f epub -D ${output.dir} ${homedir}/docs/phpci-book.txt"
+            command="a2x.py --verbose -L -d book -f epub -D ${output.dir} ${homedir}/docs/phpci-book.txt"
+            returnProperty="exitCode"
         />
+
+        <if>
+            <equals arg1="${exitCode}" arg2="0" />
+            <then>
+                <if>
+                    <istrue value="${build.tarball}" />
+                    <then>
+                        <zip destfile="${output.dir}/phpci-book.epub.zip">
+                            <fileset dir="${output.dir}">
+                                <include name="phpci-book.epub" />
+                            </fileset>
+                        </zip>
+                    </then>
+                </if>
+            </then>
+        </if>
 
     </target>
 
