@@ -47,4 +47,5 @@ The documentation for PHP_CompatInfo is available in different formats:
 * [English, multiple HTML files](http://php5.laurent-laville.org/compatinfo/manual/2.2/en/index.html)
 * [English, single HTML file](http://php5.laurent-laville.org/compatinfo/manual/2.2/en/phpci-book.html)
 * [English, PDF](http://php5.laurent-laville.org/compatinfo/manual/2.2/en/phpci-book.pdf)
-* [English, CHM](http://php5.laurent-laville.org/compatinfo/manual/2.2/en/phpci-book.zip)
+* [English, CHM](http://php5.laurent-laville.org/compatinfo/manual/2.2/en/phpci-book.chm.zip)
+* [English, EPUB](http://php5.laurent-laville.org/compatinfo/manual/2.2/en/phpci-book.epub.zip)
