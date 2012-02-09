@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-02-03</date>
- <time>14:02:11</time>
+ <date>2012-02-09</date>
+ <time>09:49:34</time>
  <version>
-  <release>2.2.1</release>
+  <release>2.2.2</release>
   <api>2.2.0</api>
  </version>
  <stability>
@@ -36,11 +36,13 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- Version 2.2.0 support until PHP 5.3.9 and 5.4.0
-- Version 2.2.1 support until PHP 5.3.10 and 5.4.0
+- Phing documentation build script has evolved to allow more customized options
+- EPUB doc format is now available to download
 
 Bug fixes:
-- none
+- PHP minimum version on XSL references for XSL_SECPREF constants
+- GH-26 Mistake in classMemberAccessOnInstantiation detection
+  https://github.com/llaville/php-compat-info/issues/26
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -767,6 +769,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
      </dir> <!-- /tests/_files/emptyDir -->
+     <file baseinstalldir="Bartlett" name="gh26.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="source1.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -803,9 +808,6 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="source6581.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="Bartlett" name="source7813.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
      <file baseinstalldir="Bartlett" name="source10100.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -816,9 +818,6 @@ Bug fixes:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="source13568.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source13873.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="source14696.php" role="test">
@@ -1062,9 +1061,6 @@ Bug fixes:
     <file baseinstalldir="Bartlett" name="MagicConstantTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="Bartlett" name="PackageTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
     <file baseinstalldir="Bartlett" name="ParameterTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
@@ -1163,6 +1159,28 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.2.2</release>
+    <api>2.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-02-09</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- Phing documentation build script has evolved to allow more customized options
+- EPUB doc format is now available to download
+
+Bug fixes:
+- PHP minimum version on XSL references for XSL_SECPREF constants
+- GH-26 Mistake in classMemberAccessOnInstantiation detection
+  https://github.com/llaville/php-compat-info/issues/26
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.2.1</release>

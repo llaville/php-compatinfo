@@ -12,7 +12,7 @@ Release highlights:
 
 - Each new minor version is supposed to follow a new PHP release, which add new features.
 It's true with PHP_CompatInfo 2.2.0 that support PHP 5.3.9 / 5.4.0.
-While PHP_CompatInfo 2.2.1 support PHP 5.3.10 and 5.4.0
+While PHP_CompatInfo 2.2.1+ support PHP 5.3.10 and 5.4.0
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -64,7 +64,7 @@ PHP_CompatInfo 2 provides two servers API :
 .Version 2.1.0
 * support 63 extensions.
 
-.Version 2.2.0
+.Version 2.2.x
 * support 65 extensions.
 
 The _phpci_ tool may inform you on what of those extensions are or not loaded on your system.
@@ -177,8 +177,8 @@ from the table below to start downloading.
 
 [options="header"]
 |===========================
-| Language | Single HTML file | Many HTML files | HTML Help file | PDF file
-| English | link:{man_dir}/en/pci-book.html.zip[pci-book.html.zip] 517Kb | link:{man_dir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] 464Kb | link:{man_dir}/en/phpci-book.chm.zip[phpci-book.chm.zip] 469Kb | link:{man_dir}/en/phpci-book.pdf[phpci-book.pdf] 512Kb
+| Language | Single HTML file | Many HTML files | HTML Help file | PDF file | EPUB file
+| English | link:{man_dir}/en/pci-book.html.zip[pci-book.html.zip] 517Kb | link:{man_dir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] 464Kb | link:{man_dir}/en/phpci-book.chm.zip[phpci-book.chm.zip] 469Kb | link:{man_dir}/en/phpci-book.pdf[phpci-book.pdf] 512Kb | link:{man_dir}/en/phpci-book.epub.zip[phpci-book.epub.zip] 446Kb
 |===========================
 
 == Appendix A: Changelog

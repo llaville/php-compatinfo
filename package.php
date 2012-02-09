@@ -17,17 +17,19 @@ $channel     = 'bartlett.laurent-laville.org';
 
 $release_state   = 'stable';
 //$release_version = '2.2.0snapshot' . date('Ymd');
-$release_version = '2.2.1';
+$release_version = '2.2.2';
 
 $api_state       = 'stable';
 $api_version     = '2.2.0';
 $release_notes   = "
 Additions and changes:
-- Version 2.2.0 support until PHP 5.3.9 and 5.4.0
-- Version 2.2.1 support until PHP 5.3.10 and 5.4.0
+- Phing documentation build script has evolved to allow more customized options
+- EPUB doc format is now available to download
 
 Bug fixes:
-- none
+- PHP minimum version on XSL references for XSL_SECPREF constants
+- GH-26 Mistake in classMemberAccessOnInstantiation detection
+  https://github.com/llaville/php-compat-info/issues/26
 ";
 $license = array('BSD License', 'http://www.opensource.org/licenses/bsd-license.php');
 

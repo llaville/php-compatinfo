@@ -6,6 +6,18 @@ PHP_CompatInfo ChangeLog
 :scriptsdir:  js
 
 
+== Version 2.2.2 (2012-02-09)
+
+.Additions and changes:
+* Phing documentation build script has evolved to allow more customized options
+* EPUB doc format is now available to download
+
+.Bug fixes:
+* PHP minimum version on XSL references for XSL_SECPREF constants
+* GH-26 Mistake in classMemberAccessOnInstantiation detection
+  https://github.com/llaville/php-compat-info/issues/26
+
+
 == Version 2.2.1 (2012-02-03)
 
 .Additions and changes:
@@ -14,6 +26,7 @@ PHP_CompatInfo ChangeLog
 
 .Bug fixes:
 * none
+
 
 == Version 2.2.0 (2012-02-02)
 
