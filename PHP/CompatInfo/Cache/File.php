@@ -30,6 +30,11 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
     const PREFIX = 'phpci';
 
     /**
+     * Version of cache file
+     */
+    const VERSION = '@package_version@';
+
+    /**
      * Configuration options of file cache support
      * @var array
      */
@@ -109,7 +114,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
     public function isCached($source)
     {
         $fn = realpath($this->options['save_path']) . DIRECTORY_SEPARATOR .
-            self::PREFIX . '_' . md5($source);
+            self::PREFIX . '_' . md5($source . DIRECTORY_SEPARATOR . self::VERSION);
 
         $cached = file_exists($fn);
         if ($cached) {
@@ -152,7 +157,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
     public function setCache($source, $data)
     {
         $fn = realpath($this->options['save_path']) . DIRECTORY_SEPARATOR .
-            self::PREFIX . '_' . md5($source);
+            self::PREFIX . '_' . md5($source . DIRECTORY_SEPARATOR . self::VERSION);
 
         $bytes = file_put_contents($fn, serialize($data));
 

@@ -25,6 +25,9 @@ $release_notes   = "
 Additions and changes:
 - solve license conflict issue due to typo error in package.php script (thanks to Remi Collet)
 - protect cache file usage with invalid save_path
+- normalize cache file name
+  and avoid to delete no phpci cache files in directory identified by save_path option
+- invalid all cache files when upgrading to a new PHP_CompatInfo version
 
 Bug fixes:
 - GH-27 Mistake in arrayDereferencing detection
