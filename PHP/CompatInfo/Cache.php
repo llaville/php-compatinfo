@@ -30,35 +30,6 @@ class PHP_CompatInfo_Cache
     protected static $cache = array();
 
     /**
-     * Autoloader for PHP_CompatInfo_Cache
-     *
-     * @param string $className Name of the class trying to load
-     *
-     * @return void
-     */
-    public static function autoload($className)
-    {
-        static $classes = null;
-        static $path    = null;
-
-        if ($classes === null) {
-            $classes = array(
-                'PHP_CompatInfo_Cache_Interface'
-                    => 'PHP/CompatInfo/Cache/Interface.php',
-                'PHP_CompatInfo_Cache_Null' 
-                    => 'PHP/CompatInfo/Cache/Null.php',
-                'PHP_CompatInfo_Cache_File' 
-                    => 'PHP/CompatInfo/Cache/File.php',
-            );
-            $path = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR;
-        }
-
-        if (isset($classes[$className])) {
-            include $path . $classes[$className];
-        }
-    }
-
-    /**
      * Gets unique instance of a cache system
      *
      * @param string $driver  Cache type
@@ -68,8 +39,6 @@ class PHP_CompatInfo_Cache
      */
     public static function getInstance($driver = 'file', array $options = null)
     {
-        spl_autoload_register('PHP_CompatInfo_Cache::autoload');
-
         if (!isset(self::$cache[$driver])) {
             $className = 'PHP_CompatInfo_Cache_' . ucfirst($driver);
 
