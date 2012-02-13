@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2012-02-13</date>
- <time>14:26:47</time>
+ <time>14:35:58</time>
  <version>
   <release>2.2.3</release>
   <api>2.2.0</api>
@@ -39,7 +39,8 @@ Additions and changes:
 - solve license conflict issue due to typo error in package.php script (thanks to Remi Collet)
 
 Bug fixes:
-- none
+- GH-27 Mistake in arrayDereferencing detection
+  https://github.com/llaville/php-compat-info/issues/27
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -769,6 +770,9 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="gh26.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="gh27.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="source1.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -1169,7 +1173,8 @@ Additions and changes:
 - solve license conflict issue due to typo error in package.php script (thanks to Remi Collet)
 
 Bug fixes:
-- none
+- GH-27 Mistake in arrayDereferencing detection
+  https://github.com/llaville/php-compat-info/issues/27
    </notes>
   </release>
   <release>

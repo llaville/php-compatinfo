@@ -276,4 +276,22 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Regression test for bug GH-27
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/27
+     *       Mistake in arrayDereferencing detection
+     * @covers PHP_CompatInfo::parse
+     * @covers PHP_CompatInfo::getVersions
+     * @return void
+     */
+    public function testBugGH27()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'gh27.php');
+
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
+        );
+    }
+
 }

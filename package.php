@@ -26,7 +26,8 @@ Additions and changes:
 - solve license conflict issue due to typo error in package.php script (thanks to Remi Collet)
 
 Bug fixes:
-- none
+- GH-27 Mistake in arrayDereferencing detection
+  https://github.com/llaville/php-compat-info/issues/27
 ";
 $license = array('BSD License', 'http://www.opensource.org/licenses/bsd-license.php');
 

@@ -28,7 +28,8 @@ class PHP_CompatInfo_Token_OPEN_SQUARE extends PHP_Reflect_Token_OPEN_SQUARE
         $name = '';
 
         if ($this->_getContext(-1) == 'T_CLOSE_BRACKET'
-            || $this->_getContext(-2) == 'T_CLOSE_BRACKET'
+            || ($this->_getContext(-2) == 'T_CLOSE_BRACKET'
+            && $this->_getContext(-1) == 'T_WHITESPACE')
         ) {
             $name = 'arrayDereferencing';
         }
