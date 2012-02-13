@@ -56,6 +56,13 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
             ),
             $options
         );
+
+        if (file_exists($this->options['save_path']) === false) {
+            throw new PHP_CompatInfo_Exception(
+                "Directory '" . $this->options['save_path'] . "' does not exists.",
+                PHP_CompatInfo_Exception::INVALIDARGUMENT
+            );
+        }
     }
 
     /**
