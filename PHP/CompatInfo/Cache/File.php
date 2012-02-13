@@ -25,6 +25,11 @@
 class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
 {
     /**
+     * Normalize cache file by a prefix 
+     */
+    const PREFIX = 'phpci';
+
+    /**
      * Configuration options of file cache support
      * @var array
      */
@@ -46,6 +51,8 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
      *                probability that the gc (garbage collection) routine is started
      *              - "gc_maxlifetime" :
      *                delete all entries not used since n seconds
+     *
+     * @throws PHP_CompatInfo_Exception
      */
     public function __construct($options)
     {
@@ -78,10 +85,14 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
             );
             foreach ($iterator as $fileinfo) {
                 if ($fileinfo->isFile()) {
-                    if ($fileinfo->getMTime() <=
-                        (time() - $this->options['gc_maxlifetime'])
+                    if (preg_match('/^' . self::PREFIX . '_/',
+                        $fileinfo->getFilename())
                     ) {
-                        unlink($fileinfo->getPathname());
+                        if ($fileinfo->getMTime() <=
+                            (time() - $this->options['gc_maxlifetime'])
+                        ) {
+                            unlink($fileinfo->getPathname());
+                        }
                     }
                 }
             }
@@ -98,7 +109,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
     public function isCached($source)
     {
         $fn = realpath($this->options['save_path']) . DIRECTORY_SEPARATOR .
-            'pci_' . md5($source);
+            self::PREFIX . '_' . md5($source);
 
         $cached = file_exists($fn);
         if ($cached) {
@@ -141,7 +152,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
     public function setCache($source, $data)
     {
         $fn = realpath($this->options['save_path']) . DIRECTORY_SEPARATOR .
-            'pci_' . md5($source);
+            self::PREFIX . '_' . md5($source);
 
         $bytes = file_put_contents($fn, serialize($data));
 
