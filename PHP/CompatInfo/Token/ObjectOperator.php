@@ -61,13 +61,23 @@ class PHP_CompatInfo_Token_OBJECT_OPERATOR extends PHP_Reflect_Token_OBJECT_OPER
             || $this->_getContext(-2) == 'T_CLOSE_BRACKET'
         ) {
             // try to detect class member access on instantiation
-            $i = -2;
+            $i       = -2;
+            $bracket = 1;
             while ($this->_getContext($i) != 'T_OPEN_TAG'
                 && $this->_getContext($i) != 'T_SEMICOLON'
                 && $this->_getContext($i) != 'T_OBJECT_OPERATOR'
             ) {
+                if ($this->_getContext($i) == 'T_CLOSE_BRACKET') {
+                    $bracket++;
+                }
+                if ($this->_getContext($i) == 'T_OPEN_BRACKET') {
+                    $bracket--;
+                }
+
                 if ($this->_getContext($i) == 'T_NEW') {
-                    $name = 'classMemberAccessOnInstantiation';
+                    if ($bracket == 1) {
+                        $name = 'classMemberAccessOnInstantiation';
+                    }
                     break;
                 }
                 $i--;

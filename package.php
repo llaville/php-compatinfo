@@ -17,21 +17,17 @@ $channel     = 'bartlett.laurent-laville.org';
 
 $release_state   = 'stable';
 //$release_version = '2.2.0snapshot' . date('Ymd');
-$release_version = '2.2.3';
+$release_version = '2.2.4';
 
 $api_state       = 'stable';
 $api_version     = '2.2.0';
 $release_notes   = "
 Additions and changes:
-- solve license conflict issue due to typo error in package.php script (thanks to Remi Collet)
-- protect cache file usage with invalid save_path
-- normalize cache file name
-  and avoid to delete no phpci cache files in directory identified by save_path option
-- invalid all cache files when upgrading to a new PHP_CompatInfo version
+- none
 
 Bug fixes:
-- GH-27 Mistake in arrayDereferencing detection
-  https://github.com/llaville/php-compat-info/issues/27
+- GH-28 classMemberAccessOnInstantiation detection error
+  https://github.com/llaville/php-compat-info/issues/28
 ";
 $license = array('BSD License', 'http://www.opensource.org/licenses/bsd-license.php');
 
