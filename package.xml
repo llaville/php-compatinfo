@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-02-13</date>
- <time>14:35:58</time>
+ <date>2012-02-14</date>
+ <time>11:48:41</time>
  <version>
   <release>2.2.3</release>
   <api>2.2.0</api>
@@ -37,6 +37,10 @@ content of dictionary references.
  <notes>
 Additions and changes:
 - solve license conflict issue due to typo error in package.php script (thanks to Remi Collet)
+- protect cache file usage with invalid save_path
+- normalize cache file name
+  and avoid to delete no phpci cache files in directory identified by save_path option
+- invalid all cache files when upgrading to a new PHP_CompatInfo version
 
 Bug fixes:
 - GH-27 Mistake in arrayDereferencing detection
@@ -1166,11 +1170,15 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-02-13</date>
+   <date>2012-02-14</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
 - solve license conflict issue due to typo error in package.php script (thanks to Remi Collet)
+- protect cache file usage with invalid save_path
+- normalize cache file name
+  and avoid to delete no phpci cache files in directory identified by save_path option
+- invalid all cache files when upgrading to a new PHP_CompatInfo version
 
 Bug fixes:
 - GH-27 Mistake in arrayDereferencing detection
