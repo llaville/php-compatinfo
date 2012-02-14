@@ -90,9 +90,10 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
             );
             foreach ($iterator as $fileinfo) {
                 if ($fileinfo->isFile()) {
-                    if (preg_match('/^' . self::PREFIX . '_/',
-                        $fileinfo->getFilename())
-                    ) {
+                    if (preg_match(
+                        '/^' . self::PREFIX . '_/',
+                        $fileinfo->getFilename()
+                    )) {
                         if ($fileinfo->getMTime() <=
                             (time() - $this->options['gc_maxlifetime'])
                         ) {
@@ -113,15 +114,17 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
      */
     public function isCached($source)
     {
+        $cache_id = sha1_file($source);
+
         $fn = realpath($this->options['save_path']) . DIRECTORY_SEPARATOR .
-            self::PREFIX . '_' . md5($source . DIRECTORY_SEPARATOR . self::VERSION);
+            self::PREFIX . '_' . 
+            sha1($source . '/' . self::VERSION . '/' . $cache_id);
 
         $cached = file_exists($fn);
+
         if ($cached) {
-            $cache_id = md5_file($source);
             $this->cache[$cache_id] = $fn;
         }
-
         return $cached;
     }
 
@@ -134,7 +137,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
      */
     public function getCache($source)
     {
-        $cache_id = md5_file($source);
+        $cache_id = sha1_file($source);
 
         if (!isset($this->cache[$cache_id]) 
             || !file_exists($this->cache[$cache_id])
@@ -156,13 +159,15 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
      */
     public function setCache($source, $data)
     {
+        $cache_id = sha1_file($source);
+        
         $fn = realpath($this->options['save_path']) . DIRECTORY_SEPARATOR .
-            self::PREFIX . '_' . md5($source . DIRECTORY_SEPARATOR . self::VERSION);
+            self::PREFIX . '_' . 
+            sha1($source . '/' . self::VERSION . '/' . $cache_id);
 
         $bytes = file_put_contents($fn, serialize($data));
 
         if ($bytes !== false) {
-            $cache_id = md5_file($source);
             $this->cache[$cache_id] = $fn;
         }
     }
