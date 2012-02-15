@@ -69,88 +69,50 @@ class PHP_CompatInfo_MagicConstantTest extends PHPUnit_Framework_TestCase
             'Core', $constants
         );
 
-        if (version_compare(PHP_VERSION, '5.3.0', '<')) {
-
-            $expected = array(
-                '__FILE__' => array(
-                    'versions' => array('4.0.0', ''),
-                    'uses' => 1,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-                '__CLASS__' => array(
-                    'versions' => array('4.3.0', ''),
-                    'uses' => 1,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-                '__METHOD__' => array(
-                    'versions' => array('5.0.0', ''),
-                    'uses' => 1,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-                '__LINE__' => array(
-                    'versions' => array('4.0.0', ''),
-                    'uses' => 2,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-                '__FUNCTION__' => array(
-                    'versions' => array('4.3.0', ''),
-                    'uses' => 1,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-            );
-
-        } else {
-
-            $expected = array(
-                '__NAMESPACE__' => array(
-                    'versions' => array('5.3.0', ''),
-                    'uses' => 1,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-                '__DIR__' => array(
-                    'versions' => array('5.3.0', ''),
-                    'uses' => 1,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-                '__FILE__' => array(
-                    'versions' => array('4.0.0', ''),
-                    'uses' => 1,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-                '__CLASS__' => array(
-                    'versions' => array('4.3.0', ''),
-                    'uses' => 1,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-                '__METHOD__' => array(
-                    'versions' => array('5.0.0', ''),
-                    'uses' => 1,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-                '__LINE__' => array(
-                    'versions' => array('4.0.0', ''),
-                    'uses' => 2,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-                '__FUNCTION__' => array(
-                    'versions' => array('4.3.0', ''),
-                    'uses' => 1,
-                    'sources' => array(TEST_FILES_PATH . 'source4.php'),
-                    'excluded' => false,
-                ),
-            );
-        }
+        $expected = array(
+            '__NAMESPACE__' => array(
+                'versions' => array('5.3.0', ''),
+                'uses' => 1,
+                'sources' => array(TEST_FILES_PATH . 'source4.php'),
+                'excluded' => false,
+            ),
+            '__DIR__' => array(
+                'versions' => array('5.3.0', ''),
+                'uses' => 1,
+                'sources' => array(TEST_FILES_PATH . 'source4.php'),
+                'excluded' => false,
+            ),
+            '__FILE__' => array(
+                'versions' => array('4.0.0', ''),
+                'uses' => 1,
+                'sources' => array(TEST_FILES_PATH . 'source4.php'),
+                'excluded' => false,
+            ),
+            '__CLASS__' => array(
+                'versions' => array('4.3.0', ''),
+                'uses' => 1,
+                'sources' => array(TEST_FILES_PATH . 'source4.php'),
+                'excluded' => false,
+            ),
+            '__METHOD__' => array(
+                'versions' => array('5.0.0', ''),
+                'uses' => 1,
+                'sources' => array(TEST_FILES_PATH . 'source4.php'),
+                'excluded' => false,
+            ),
+            '__LINE__' => array(
+                'versions' => array('4.0.0', ''),
+                'uses' => 2,
+                'sources' => array(TEST_FILES_PATH . 'source4.php'),
+                'excluded' => false,
+            ),
+            '__FUNCTION__' => array(
+                'versions' => array('4.3.0', ''),
+                'uses' => 1,
+                'sources' => array(TEST_FILES_PATH . 'source4.php'),
+                'excluded' => false,
+            ),
+        );
 
         $this->assertSame(
             $expected, $constants['Core']

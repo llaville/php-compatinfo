@@ -312,4 +312,38 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Regression test for bug GH-29
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/29
+     *       Inconsistent magic constants detection on PHP 5.2, 5.3 and 5.4
+     * @link http://www.php.net/manual/en/language.constants.predefined.php
+     * @covers PHP_CompatInfo::parse
+     * @covers PHP_CompatInfo::getConstants
+     * @return void
+     */
+    public function testBugGH29()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'gh29.php');
+
+        $constantsPredefined = array_keys(
+            $this->pci->getConstants('Core', '^__(.*)__$')
+        );
+        sort($constantsPredefined);
+
+        $this->assertSame(
+            array(
+                '__CLASS__',
+                '__DIR__',
+                '__FILE__',
+                '__FUNCTION__',
+                '__LINE__',
+                '__METHOD__',
+                '__NAMESPACE__',
+                '__TRAIT__',
+            ),
+            $constantsPredefined
+        );
+    }
+
 }

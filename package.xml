@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-02-14</date>
- <time>18:55:26</time>
+ <date>2012-02-15</date>
+ <time>16:07:20</time>
  <version>
   <release>2.2.4</release>
   <api>2.2.0</api>
@@ -36,11 +36,13 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- none
+- add missing magic constant __TRAIT__ in core reference
 
 Bug fixes:
 - GH-28 classMemberAccessOnInstantiation detection error
   https://github.com/llaville/php-compat-info/issues/28
+- GH-29 inconsistent magic constants detection on PHP 5.2, 5.3 and 5.4
+  https://github.com/llaville/php-compat-info/issues/29
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -776,6 +778,9 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="gh28.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="gh29.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="source1.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -1109,7 +1114,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>1.2.0</min>
+    <min>1.2.1</min>
    </package>
    <package>
     <name>PHP_Timer</name>
@@ -1169,15 +1174,17 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-02-14</date>
+   <date>2012-02-15</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
-- none
+- add missing magic constant __TRAIT__ in core reference
 
 Bug fixes:
 - GH-28 classMemberAccessOnInstantiation detection error
   https://github.com/llaville/php-compat-info/issues/28
+- GH-29 inconsistent magic constants detection on PHP 5.2, 5.3 and 5.4
+  https://github.com/llaville/php-compat-info/issues/29
    </notes>
   </release>
   <release>

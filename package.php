@@ -23,11 +23,13 @@ $api_state       = 'stable';
 $api_version     = '2.2.0';
 $release_notes   = "
 Additions and changes:
-- none
+- add missing magic constant __TRAIT__ in core reference
 
 Bug fixes:
 - GH-28 classMemberAccessOnInstantiation detection error
   https://github.com/llaville/php-compat-info/issues/28
+- GH-29 inconsistent magic constants detection on PHP 5.2, 5.3 and 5.4
+  https://github.com/llaville/php-compat-info/issues/29
 ";
 $license = array('BSD License', 'http://www.opensource.org/licenses/bsd-license.php');
 
@@ -89,7 +91,7 @@ $p2->addPackageDepWithChannel('required',
 $p2->addPackageDepWithChannel('required',
                               'Console_CommandLine', 'pear.php.net', '1.1.3');
 $p2->addPackageDepWithChannel('required',
-                              'PHP_Reflect', 'bartlett.laurent-laville.org', '1.2.0');
+                              'PHP_Reflect', 'bartlett.laurent-laville.org', '1.2.1');
 $p2->addPackageDepWithChannel('required',
                               'PHP_Timer', 'pear.phpunit.de', '1.0.0');
 

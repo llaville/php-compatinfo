@@ -307,6 +307,7 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 '__DIR__'                           => array('5.3.0', ''),
                 '__METHOD__'                        => array('5.0.0', ''),
                 '__NAMESPACE__'                     => array('5.3.0', ''),
+                '__TRAIT__'                         => array('5.4.0', ''),
                 'DEBUG_BACKTRACE_IGNORE_ARGS'       => array('5.3.6', ''),
                 'DEBUG_BACKTRACE_PROVIDE_OBJECT'    => array('5.3.6', ''),
                 'E_RECOVERABLE_ERROR'               => array('5.2.0', ''),

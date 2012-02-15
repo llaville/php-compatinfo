@@ -35,6 +35,13 @@ class PHP_CompatInfo_TokenParser
     public static function parseTokenString()
     {
         list($subject, $context, $token) = func_get_args();
+
+        if (in_array(
+            (string)$token,
+            array('__DIR__', '__NAMESPACE__', '__TRAIT__')
+        )) {
+            return self::parseTokenMagicConstant($subject, $context, $token);
+        }
         extract($context);
 
         if ($namespace === FALSE) {
