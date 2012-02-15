@@ -91,7 +91,7 @@ $p2->addPackageDepWithChannel('required',
 $p2->addPackageDepWithChannel('required',
                               'Console_CommandLine', 'pear.php.net', '1.1.3');
 $p2->addPackageDepWithChannel('required',
-                              'PHP_Reflect', 'bartlett.laurent-laville.org', '1.2.1');
+                              'PHP_Reflect', 'bartlett.laurent-laville.org', '1.3.0');
 $p2->addPackageDepWithChannel('required',
                               'PHP_Timer', 'pear.phpunit.de', '1.0.0');
 
