@@ -24,6 +24,7 @@ $api_version     = '2.2.0';
 $release_notes   = "
 Additions and changes:
 - add missing magic constant __TRAIT__ in core reference
+- remove @cover annotation (that raise PHP_CodeCoverage_Exception) for magic method in IssueTest.php
 
 Bug fixes:
 - GH-28 classMemberAccessOnInstantiation detection error

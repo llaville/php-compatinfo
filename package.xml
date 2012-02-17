@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-02-15</date>
- <time>18:15:30</time>
+ <date>2012-02-17</date>
+ <time>10:51:14</time>
  <version>
   <release>2.2.4</release>
   <api>2.2.0</api>
@@ -37,6 +37,7 @@ content of dictionary references.
  <notes>
 Additions and changes:
 - add missing magic constant __TRAIT__ in core reference
+- remove @cover annotation (that raise PHP_CodeCoverage_Exception) for magic method in IssueTest.php
 
 Bug fixes:
 - GH-28 classMemberAccessOnInstantiation detection error
@@ -1174,11 +1175,12 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-02-15</date>
+   <date>2012-02-17</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
 - add missing magic constant __TRAIT__ in core reference
+- remove @cover annotation (that raise PHP_CodeCoverage_Exception) for magic method in IssueTest.php
 
 Bug fixes:
 - GH-28 classMemberAccessOnInstantiation detection error
