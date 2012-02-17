@@ -319,7 +319,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Inconsistent magic constants detection on PHP 5.2, 5.3 and 5.4
      * @link http://www.php.net/manual/en/language.constants.predefined.php
      * @covers PHP_CompatInfo::parse
-     * @covers PHP_CompatInfo::getConstants
+     *  covers PHP_CompatInfo::getConstants
      * @return void
      */
     public function testBugGH29()
