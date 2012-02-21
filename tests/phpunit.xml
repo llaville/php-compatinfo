@@ -1,6 +1,5 @@
 <phpunit bootstrap="../PHP/CompatInfo/Autoload.php">
     <testsuite name="PHP_CompatInfo Test Suite">
         <directory>.</directory>
-        <directory>./Reference</directory>
     </testsuite>
 </phpunit>
