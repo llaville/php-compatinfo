@@ -119,6 +119,7 @@ class PHP_CompatInfo_Reference_Snmp implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'SNMP'                           => array('5.4.0-dev', ''),
             );
             $classes = array_merge(
                 $classes,
