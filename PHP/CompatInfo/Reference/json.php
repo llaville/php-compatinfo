@@ -87,6 +87,7 @@ class PHP_CompatInfo_Reference_Json implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'JsonSerializable'               => array('5.4.0-dev', ''),
             );
             $interfaces = array_merge(
                 $interfaces,
