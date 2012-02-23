@@ -154,6 +154,9 @@ class PHP_CompatInfo_Reference_SPL implements PHP_CompatInfo_Reference
                 'IteratorIterator'               => array('5.1.0', ''),
                 'FilterIterator'                 => array('5.1.0', ''),
                 'RecursiveFilterIterator'        => array('5.1.0', ''),
+                'CallbackFilterIterator'         => array('5.4.0-dev', ''),
+                'RecursiveCallbackFilterIterator'
+                                                 => array('5.4.0-dev', ''),
                 'ParentIterator'                 => array('5.1.0', ''),
                 'LimitIterator'                  => array('5.1.0', ''),
                 'CachingIterator'                => array('5.0.0', ''),
