@@ -87,6 +87,7 @@ class PHP_CompatInfo_Reference_Session implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'SessionHandlerInterface'        => array('5.4.0-dev', ''),
             );
             $interfaces = array_merge(
                 $interfaces,
@@ -119,6 +120,7 @@ class PHP_CompatInfo_Reference_Session implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'SessionHandler'                 => array('5.4.0-dev', ''),
             );
             $classes = array_merge(
                 $classes,
