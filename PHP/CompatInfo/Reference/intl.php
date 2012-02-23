@@ -127,8 +127,8 @@ class PHP_CompatInfo_Reference_Intl implements PHP_CompatInfo_Reference
                 'MessageFormatter'              => array('5.2.4', ''),
                 'IntlDateFormatter'             => array('5.2.4', ''),
                 'ResourceBundle'                => array('5.2.4', ''),
-                // not yet available
-                // 'Transliterator'                => array('5.2.4', ''),
+                'Transliterator'                => array('5.4.0-dev', ''),
+                'Spoofchecker'                  => array('5.4.0-dev', ''),
             );
             $classes = array_merge(
                 $classes,
