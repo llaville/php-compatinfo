@@ -17,20 +17,26 @@ $channel     = 'bartlett.laurent-laville.org';
 
 $release_state   = 'stable';
 //$release_version = '2.2.0snapshot' . date('Ymd');
-$release_version = '2.2.4';
+$release_version = '2.2.5';
 
 $api_state       = 'stable';
 $api_version     = '2.2.0';
 $release_notes   = "
 Additions and changes:
-- add missing magic constant __TRAIT__ in core reference
-- remove @cover annotation (that raise PHP_CodeCoverage_Exception) for magic method in IssueTest.php
+- version 2.2.5 or better will support all PHP 5.4.0RC,
+  and future version 2.3.0 is reserved for final PHP 5.4.0 stable release
+- add support of new PHP 5.4 classes :
+  SPL: CallbackFilterIterator, RecursiveCallbackFilterIterator
+  Intl: Transliterator, Spoofchecker
+  Session: SessionHandler
+- add support of new PHP 5.4 interfaces :
+  Json: JsonSerializable
+  Session: SessionHandlerInterface
+- add 1 new references data dictionnaries related to extensions: Reflection,
+- add support for Growl test listener ( https://github.com/llaville/phpunit-GrowlTestListener )
 
 Bug fixes:
-- GH-28 classMemberAccessOnInstantiation detection error
-  https://github.com/llaville/php-compat-info/issues/28
-- GH-29 inconsistent magic constants detection on PHP 5.2, 5.3 and 5.4
-  https://github.com/llaville/php-compat-info/issues/29
+- none
 ";
 $license = array('BSD License', 'http://www.opensource.org/licenses/bsd-license.php');
 

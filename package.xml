@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-02-17</date>
- <time>10:51:14</time>
+ <date>2012-02-23</date>
+ <time>14:25:45</time>
  <version>
-  <release>2.2.4</release>
+  <release>2.2.5</release>
   <api>2.2.0</api>
  </version>
  <stability>
@@ -36,14 +36,20 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- add missing magic constant __TRAIT__ in core reference
-- remove @cover annotation (that raise PHP_CodeCoverage_Exception) for magic method in IssueTest.php
+- version 2.2.5 or better will support all PHP 5.4.0RC,
+  and future version 2.3.0 is reserved for final PHP 5.4.0 stable release
+- add support of new PHP 5.4 classes :
+  SPL: CallbackFilterIterator, RecursiveCallbackFilterIterator
+  Intl: Transliterator, Spoofchecker
+  Session: SessionHandler
+- add support of new PHP 5.4 interfaces :
+  Json: JsonSerializable
+  Session: SessionHandlerInterface
+- add 1 new references data dictionnaries related to extensions: Reflection,
+- add support for Growl test listener ( https://github.com/llaville/phpunit-GrowlTestListener )
 
 Bug fixes:
-- GH-28 classMemberAccessOnInstantiation detection error
-  https://github.com/llaville/php-compat-info/issues/28
-- GH-29 inconsistent magic constants detection on PHP 5.2, 5.3 and 5.4
-  https://github.com/llaville/php-compat-info/issues/29
+- none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -219,6 +225,17 @@ Bug fixes:
     </file>
    </dir> <!-- /docs -->
    <dir name="misc">
+    <dir name="autotest_images">
+     <file baseinstalldir="Bartlett" name="fail.png" role="data">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="pass.png" role="data">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="pending.png" role="data">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+    </dir> <!-- /misc/autotest_images -->
     <file baseinstalldir="Bartlett" name="bullet_toggle_minus.png" role="data">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
@@ -390,6 +407,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="recode.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="reflection.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="session.php" role="php">
@@ -692,6 +712,9 @@ Bug fixes:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="RecodeTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="ReflectionTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="SessionTest.php" role="test">
@@ -1056,6 +1079,9 @@ Bug fixes:
     <file baseinstalldir="Bartlett" name="FunctionTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
+    <file baseinstalldir="Bartlett" name="GrowlTestListener.php" role="test">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
     <file baseinstalldir="Bartlett" name="IncludeTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
@@ -1069,6 +1095,9 @@ Bug fixes:
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
     <file baseinstalldir="Bartlett" name="ParameterTest.php" role="test">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="phpunit-growl.xml" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
     <file baseinstalldir="Bartlett" name="phpunit.xml" role="test">
@@ -1166,6 +1195,35 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.2.5</release>
+    <api>2.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-02-23</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- version 2.2.5 or better will support all PHP 5.4.0RC,
+  and future version 2.3.0 is reserved for final PHP 5.4.0 stable release
+- add support of new PHP 5.4 classes :
+  SPL: CallbackFilterIterator, RecursiveCallbackFilterIterator
+  Intl: Transliterator, Spoofchecker
+  Session: SessionHandler
+- add support of new PHP 5.4 interfaces :
+  Json: JsonSerializable
+  Session: SessionHandlerInterface
+- add 1 new references data dictionnaries related to extensions: Reflection,
+- add support for Growl test listener ( https://github.com/llaville/phpunit-GrowlTestListener )
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.2.4</release>
