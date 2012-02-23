@@ -52,6 +52,7 @@ class PHP_CompatInfo_Reference_CoreTest
             '__DIR__',
             '__METHOD__',
             '__NAMESPACE__',
+            '__TRAIT__',
         );
         $this->ignoredconstants = array(
             // add by swig framework as core constant

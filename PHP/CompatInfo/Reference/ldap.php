@@ -194,9 +194,9 @@ class PHP_CompatInfo_Reference_Ldap implements PHP_CompatInfo_Reference
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
                 'ldap_sasl_bind'                 => array('5.0.0', ''),
-                'ldap_control_paged_result'      => array('5.4.0', ''),
+                'ldap_control_paged_result'      => array('5.4.0-dev', ''),
                 'ldap_control_paged_result_response'
-                                                 => array('5.4.0', ''),
+                                                 => array('5.4.0-dev', ''),
             );
             $functions = array_merge(
                 $functions,
