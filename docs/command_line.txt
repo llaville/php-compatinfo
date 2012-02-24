@@ -233,6 +233,7 @@ $ phpci list-references
       posix                                      306939            4.0.0
       readline                                   2.0.1             4.0.0
       recode                                     2.0.1             4.0.0
+      reflection                                                   5.0.0
     L session                                                      4.0.0
     L shmop                                                        4.0.0
     L SimpleXML                                  0.1               5.0.0
@@ -258,7 +259,7 @@ $ phpci list-references
     L xsl                                        0.1               5.0.0
     L zlib                                       1.1               4.0.0
     -------------------------------------------------------------------------------
-    A TOTAL OF 65 EXTENSIONS WERE FOUND AND 48 LOADED
+    A TOTAL OF 66 EXTENSIONS WERE FOUND AND 48 LOADED
     -------------------------------------------------------------------------------
     Time: 0 seconds, Memory: 4.75Mb
     -------------------------------------------------------------------------------

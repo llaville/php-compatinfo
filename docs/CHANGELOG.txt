@@ -6,6 +6,25 @@ PHP_CompatInfo ChangeLog
 :scriptsdir:  js
 
 
+== Version 2.2.5 (2012-02-24)
+
+.Additions and changes:
+* version 2.2.5 or better will support all PHP 5.4.0RC,
+  and future version 2.3.0 is reserved for final PHP 5.4.0 stable release
+* add support of new PHP 5.4 classes :
+  SPL: CallbackFilterIterator, RecursiveCallbackFilterIterator
+  Intl: Transliterator, Spoofchecker
+  Session: SessionHandler
+* add support of new PHP 5.4 interfaces :
+  Json: JsonSerializable
+  Session: SessionHandlerInterface
+* add 1 new references data dictionnaries related to extensions: Reflection,
+* add support for Growl test listener ( https://github.com/llaville/phpunit-GrowlTestListener )
+
+.Bug fixes:
+* none
+
+
 == Version 2.2.4 (2012-02-17)
 
 .Additions and changes:
