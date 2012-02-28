@@ -64,8 +64,11 @@ PHP_CompatInfo 2 provides two servers API :
 .Version 2.1.0
 * support 63 extensions.
 
-.Version 2.2.5
-* support 66 extensions.
+.Version 2.2.0
+* support 65 extensions.
+
+.Version 2.3.0
+* support 67 extensions.
 
 The _phpci_ tool may inform you on what of those extensions are or not loaded on your system.
 
