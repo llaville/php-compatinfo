@@ -23,30 +23,20 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-02-24</date>
- <time>11:00:21</time>
+ <date>2012-02-28</date>
+ <time>17:27:53</time>
  <version>
-  <release>2.2.5</release>
+  <release>2.3.0snapshot20120228</release>
   <api>2.2.0</api>
  </version>
  <stability>
-  <release>stable</release>
+  <release>snapshot</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- version 2.2.5 or better will support all PHP 5.4.0RC,
-  and future version 2.3.0 is reserved for final PHP 5.4.0 stable release
-- add support of new PHP 5.4 classes :
-  SPL: CallbackFilterIterator, RecursiveCallbackFilterIterator
-  Intl: Transliterator, Spoofchecker
-  Session: SessionHandler
-- add support of new PHP 5.4 interfaces :
-  Json: JsonSerializable
-  Session: SessionHandlerInterface
-- add 1 new references data dictionnaries related to extensions: Reflection,
-- add support for Growl test listener ( https://github.com/llaville/phpunit-GrowlTestListener )
+- add 1 new references data dictionnaries related to extensions: Zip,
 
 Bug fixes:
 - none
@@ -481,6 +471,9 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="xsl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
+      <file baseinstalldir="Bartlett" name="zip.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="zlib.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -781,6 +774,9 @@ Bug fixes:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="XslTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="ZipTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="ZlibTest.php" role="test">
@@ -1195,6 +1191,25 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.3.0snapshot20120228</release>
+    <api>2.2.0</api>
+   </version>
+   <stability>
+    <release>snapshot</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-02-28</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- add 1 new references data dictionnaries related to extensions: Zip,
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.2.5</release>
