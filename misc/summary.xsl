@@ -41,6 +41,9 @@
     <xsl:key name="interfaces" match="interfaces/interface" use="@name"/>
     <xsl:key name="interfaceExtensions" match="interfaces/interface" use="@extension"/>
 
+    <xsl:key name="traits" match="traits/trait" use="@name"/>
+    <xsl:key name="traitExtensions" match="traits/trait" use="@extension"/>
+
     <xsl:key name="classes" match="classes/class" use="@name"/>
     <xsl:key name="classExtensions" match="classes/class" use="@extension"/>
 
@@ -89,6 +92,9 @@
         <xsl:variable name="interfaceNodes" select="//file/interfaces/interface[generate-id(.) = generate-id(key('interfaces',@name))]" />
         <xsl:variable name="interfaceExtensionNodes" select="//file/interfaces/interface[generate-id(.) = generate-id(key('interfaceExtensions',@extension))]/@extension" />
 
+        <xsl:variable name="traitNodes" select="//file/traits/trait[generate-id(.) = generate-id(key('traits',@name))]" />
+        <xsl:variable name="traitExtensionNodes" select="//file/traits/trait[generate-id(.) = generate-id(key('traitExtensions',@extension))]/@extension" />
+
         <xsl:variable name="classNodes" select="//file/classes/class[generate-id(.) = generate-id(key('classes',@name))]" />
         <xsl:variable name="classExtensionNodes" select="//file/classes/class[generate-id(.) = generate-id(key('classExtensions',@extension))]/@extension" />
 
@@ -109,6 +115,12 @@
             <xsl:call-template name="counters">
                 <xsl:with-param name="extensionNodes" select="$interfaceExtensionNodes" />
                 <xsl:with-param name="nodes" select="$interfaceNodes" />
+            </xsl:call-template>
+
+            <dt>Traits: <xsl:value-of select="count($traitNodes)" /></dt>
+            <xsl:call-template name="counters">
+                <xsl:with-param name="extensionNodes" select="$traitExtensionNodes" />
+                <xsl:with-param name="nodes" select="$traitNodes" />
             </xsl:call-template>
 
             <dt>Classes: <xsl:value-of select="count($classNodes)" /></dt>
