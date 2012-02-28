@@ -223,7 +223,12 @@ $pfm->setSummary($ini['package']['summary']);
 $pfm->setDescription($ini['package']['desc']);
 
 $pfm->setPackageType('php');
-$pfm->setReleaseVersion($ini['package']['version']);
+if ($ini['package']['stability.release'] == 'snapshot') {
+    $version = $ini['package']['version'] . 'snapshot' . date('Ymd');
+} else {
+    $version = $ini['package']['version'];
+}
+$pfm->setReleaseVersion($version);
 $pfm->setReleaseStability($ini['package']['stability.release']);
 $pfm->setAPIVersion($ini['package']['version.api']);
 $pfm->setAPIStability($ini['package']['stability.api']);
