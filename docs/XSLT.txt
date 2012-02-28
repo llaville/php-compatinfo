@@ -12,7 +12,7 @@ into some nice html pages.
 
 To do this, make sure you've first generate the XML report, i.e:
 ----
- $ phpci --report xml --report-file <report.xml> print <dataSource>
+ $ phpci print --report xml --report-file <report.xml> <dataSource>
 ----
 
 And then use the xslt processor to transform the XML to a beautiful XHTML page.
