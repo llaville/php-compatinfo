@@ -3,7 +3,7 @@ PHP_CompatInfo
 include::revision.txt[]
 :stylesdir:   styles
 :scriptsdir:  js
-:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.2
+:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.3
 
 
 .{revdate}: PHP_CompatInfo {revnumber} Released
@@ -11,8 +11,7 @@ include::revision.txt[]
 Release highlights:
 
 - Each new minor version is supposed to follow a new PHP release, which add new features.
-It's true with PHP_CompatInfo 2.2.0 that support PHP 5.3.9 / 5.4.0.
-While PHP_CompatInfo 2.2.1+ support PHP 5.3.10 and 5.4.0
+It's true with PHP_CompatInfo 2.3.0 that support PHP 5.4.0.
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -48,7 +47,6 @@ PHP_CompatInfo 2 provides two servers API :
 * ezc/ConsoleTools 1.6.1 minimum (for progress bar with CLI phpci tool)
 * pear/Console_CommandLine 1.1.3 minimum since RC3 (for CLI phpci tool)
 * bartlett/PHP_Reflect 1.2.0 minimum (PHP parser)
-* tokenizer extension
 * pcre extension
 * SPL extension
 * dom extension
@@ -125,6 +123,7 @@ Will output results as follow. May differ depending of your extensions loaded.
       posix                                      306939            4.0.0
       readline                                   2.0.1             4.0.0
       recode                                     2.0.1             4.0.0
+      Reflection                                                   5.0.0
     L session                                                      4.0.0
     L shmop                                                        4.0.0
     L SimpleXML                                  0.1               5.0.0
@@ -148,9 +147,10 @@ Will output results as follow. May differ depending of your extensions loaded.
     L xmlrpc                                     0.51              4.1.0
     L xmlwriter                                  0.1               5.1.2
     L xsl                                        0.1               5.0.0
+    L zip                                        1.9.1             4.1.0
     L zlib                                       1.1               4.0.0
     -------------------------------------------------------------------------------
-    A TOTAL OF 65 EXTENSIONS WERE FOUND AND 43 LOADED
+    A TOTAL OF 67 EXTENSIONS WERE FOUND AND 44 LOADED
     -------------------------------------------------------------------------------
     Time: 2 seconds, Memory: 5.00Mb
     -------------------------------------------------------------------------------

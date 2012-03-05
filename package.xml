@@ -23,23 +23,29 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-02-28</date>
- <time>17:27:53</time>
+ <date>2012-03-05</date>
+ <time>13:53:35</time>
  <version>
-  <release>2.3.0snapshot20120228</release>
-  <api>2.2.0</api>
+  <release>2.3.0</release>
+  <api>2.3.0</api>
  </version>
  <stability>
-  <release>snapshot</release>
+  <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
+Versions summary:
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+
 Additions and changes:
 - add 1 new references data dictionnaries related to extensions: Zip,
+- XSL stylesheet summary.xsl that transform XML report to HTML page
+  display now traits (PHP 5.4)
 
 Bug fixes:
-- none
+- fix case sensitive name of Reflection reference in data dictionnary
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -1193,18 +1199,49 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.3.0snapshot20120228</release>
+    <release>2.3.0</release>
+    <api>2.3.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-03-05</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Versions summary:
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+
+Additions and changes:
+- add 1 new references data dictionnaries related to extensions: Zip,
+- XSL stylesheet summary.xsl that transform XML report to HTML page
+  display now traits (PHP 5.4)
+
+Bug fixes:
+- fix case sensitive name of Reflection reference in data dictionnary
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.3.0snapshot20120305</release>
     <api>2.2.0</api>
    </version>
    <stability>
     <release>snapshot</release>
     <api>stable</api>
    </stability>
-   <date>2012-02-28</date>
+   <date>2012-03-05</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
+Versions summary:
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+
 Additions and changes:
 - add 1 new references data dictionnaries related to extensions: Zip,
+- XSL stylesheet summary.xsl that transform XML report to HTML page
+  display now traits (PHP 5.4)
 
 Bug fixes:
 - none

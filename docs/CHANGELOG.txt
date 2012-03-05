@@ -6,6 +6,21 @@ PHP_CompatInfo ChangeLog
 :scriptsdir:  js
 
 
+== Version 2.3.0 (2012-03-05)
+
+.Versions summary:
+* 2.3.0 support all PHP versions until 5.4.0
+* 2.2.0 support all PHP versions until 5.3.10
+
+.Additions and changes:
+* add 1 new references data dictionnaries related to extensions: Zip,
+* XSL stylesheet summary.xsl that transform XML report to HTML page
+  display now traits (PHP 5.4)
+
+.Bug fixes:
+* fix case sensitive name of Reflection reference in data dictionnary
+
+
 == Version 2.2.5 (2012-02-24)
 
 .Additions and changes:
