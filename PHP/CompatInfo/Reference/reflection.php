@@ -59,7 +59,7 @@ class PHP_CompatInfo_Reference_Reflection implements PHP_CompatInfo_Reference
     public function getExtensions($extension = null, $version = null)
     {
         $extensions = array(
-            'reflection' => array('5.0.0', '', '')
+            'Reflection' => array('5.0.0', '', '')
         );
         return $extensions;
     }
