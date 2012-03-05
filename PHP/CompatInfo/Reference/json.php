@@ -87,7 +87,7 @@ class PHP_CompatInfo_Reference_Json implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
-                'JsonSerializable'               => array('5.4.0-dev', ''),
+                'JsonSerializable'               => array('5.4.0', ''),
             );
             $interfaces = array_merge(
                 $interfaces,
@@ -155,7 +155,7 @@ class PHP_CompatInfo_Reference_Json implements PHP_CompatInfo_Reference
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
                 'json_encode'                    => array('5.2.0', ''),
-                'json_decode'                    => array('5.2.0', '', '5.2.0, 5.2.0, 5.3.0, 5.4.0-dev'),
+                'json_decode'                    => array('5.2.0', '', '5.2.0, 5.2.0, 5.3.0, 5.4.0'),
                 'json_last_error'                => array('5.3.0', ''),
             );
             $functions = array_merge(
@@ -202,11 +202,11 @@ class PHP_CompatInfo_Reference_Json implements PHP_CompatInfo_Reference
                 'JSON_ERROR_UTF8'                => array('5.3.3', ''),
                 'JSON_ERROR_STATE_MISMATCH'      => array('5.3.0', ''),
                 'JSON_NUMERIC_CHECK'             => array('5.3.3', ''),
-                'JSON_BIGINT_AS_STRING'          => array('5.4.0-dev', ''),
-                'JSON_OBJECT_AS_ARRAY'           => array('5.4.0-dev', ''),
-                'JSON_PRETTY_PRINT'              => array('5.4.0-dev', ''),
-                'JSON_UNESCAPED_SLASHES'         => array('5.4.0-dev', ''),
-                'JSON_UNESCAPED_UNICODE'         => array('5.4.0-dev', ''),
+                'JSON_BIGINT_AS_STRING'          => array('5.4.0', ''),
+                'JSON_OBJECT_AS_ARRAY'           => array('5.4.0', ''),
+                'JSON_PRETTY_PRINT'              => array('5.4.0', ''),
+                'JSON_UNESCAPED_SLASHES'         => array('5.4.0', ''),
+                'JSON_UNESCAPED_UNICODE'         => array('5.4.0', ''),
             );
             $constants = array_merge(
                 $constants,

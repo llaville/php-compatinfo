@@ -158,7 +158,7 @@ class PHP_CompatInfo_Reference_Libxml implements PHP_CompatInfo_Reference
                 'libxml_disable_entity_loader'      => array('5.2.11', ''),
                 'libxml_get_errors'                 => array('5.1.0', ''),
                 'libxml_get_last_error'             => array('5.1.0', ''),
-                'libxml_set_external_entity_loader' => array('5.4.0-dev', ''),
+                'libxml_set_external_entity_loader' => array('5.4.0', ''),
                 'libxml_set_streams_context'        => array('5.0.0', ''),
                 'libxml_use_internal_errors'        => array('5.1.0', ''),
             );
@@ -217,9 +217,9 @@ class PHP_CompatInfo_Reference_Libxml implements PHP_CompatInfo_Reference
                 'LIBXML_ERR_WARNING'             => array('5.1.0', ''),
                 'LIBXML_ERR_ERROR'               => array('5.1.0', ''),
                 'LIBXML_ERR_FATAL'               => array('5.1.0', ''),
-                'LIBXML_HTML_NODEFDTD'           => array('5.4.0-dev', ''),
-                'LIBXML_HTML_NOIMPLIED'          => array('5.4.0-dev', ''),
-                'LIBXML_PEDANTIC'                => array('5.4.0-dev', ''),
+                'LIBXML_HTML_NODEFDTD'           => array('5.4.0', ''),
+                'LIBXML_HTML_NOIMPLIED'          => array('5.4.0', ''),
+                'LIBXML_PEDANTIC'                => array('5.4.0', ''),
             );
             $constants = array_merge(
                 $constants,

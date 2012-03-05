@@ -130,7 +130,7 @@ class PHP_CompatInfo_Reference_Reflection implements PHP_CompatInfo_Reference
                 'ReflectionObject'               => array('5.0.0', ''),
                 'ReflectionProperty'             => array('5.0.0', ''),
                 'ReflectionExtension'            => array('5.0.0', ''),
-                'ReflectionZendExtension'        => array('5.4.0-dev', ''),
+                'ReflectionZendExtension'        => array('5.4.0', ''),
             );
             $classes = array_merge(
                 $classes,
