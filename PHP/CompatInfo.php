@@ -1201,6 +1201,9 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             }
 
             if ($ref === 1) {
+                if ($key == 'anonymous function') {
+                    $defaultVersion = '5.3.0';
+                }
                 // user component
                 $ref = array('user' => array(
                     $key => array(

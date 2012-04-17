@@ -115,4 +115,22 @@ class PHP_CompatInfo_TokenTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Test detection of closures (anonymous function)
+     * PHP-5.3 feature
+     *
+     * @covers PHP_CompatInfo::parse
+     * @covers PHP_CompatInfo::getVersions
+     * @return void
+     */
+    public function testClosures()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'source8.php');
+
+        $this->assertSame(
+            array('5.3.0', ''), $this->pci->getVersions()
+        );
+
+    }
+
 }
