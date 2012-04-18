@@ -346,4 +346,20 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Regression test for request GH-30
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/30
+     *       mb_ereg_replace_callback support for PHP 5.4.1
+     * @covers PHP_CompatInfo::parse
+     * @return void
+     */
+    public function testRequestGH30()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'gh30-1.php');
+
+        $this->assertSame(
+            array('5.4.1-dev', ''), $this->pci->getVersions()
+        );
+    }
 }
