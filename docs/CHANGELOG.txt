@@ -6,6 +6,21 @@ PHP_CompatInfo ChangeLog
 :scriptsdir:  js
 
 
+== Version 2.4.0 (2012-04-26)
+
+.Versions summary:
+* 2.4.0 support all PHP versions until 5.4.1
+* 2.3.0 support all PHP versions until 5.4.0
+* 2.2.0 support all PHP versions until 5.3.10
+
+.Additions and changes:
+* ext/mbstring : add support for mb_ereg_replace_callback function
+* Growl Test Listener used now the latest version (2.6.0) of Net_Growl
+
+.Bug fixes:
+* fix wrong closure detection
+
+
 == Version 2.3.0 (2012-03-05)
 
 .Versions summary:
