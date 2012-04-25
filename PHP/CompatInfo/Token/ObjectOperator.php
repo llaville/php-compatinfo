@@ -66,6 +66,9 @@ class PHP_CompatInfo_Token_OBJECT_OPERATOR extends PHP_Reflect_Token_OBJECT_OPER
             while ($this->_getContext($i) != 'T_OPEN_TAG'
                 && $this->_getContext($i) != 'T_SEMICOLON'
                 && $this->_getContext($i) != 'T_OBJECT_OPERATOR'
+                && $this->_getContext($i) != 'T_PAAMAYIM_NEKUDOTAYIM'
+                && $this->_getContext($i) != 'T_OPEN_CURLY'
+                && $this->_getContext($i) !== false
             ) {
                 if ($this->_getContext($i) == 'T_CLOSE_BRACKET') {
                     $bracket++;
