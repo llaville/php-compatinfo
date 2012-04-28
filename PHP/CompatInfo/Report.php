@@ -77,6 +77,15 @@ abstract class PHP_CompatInfo_Report
 
         $this->generate($report, $base, $options['verbose']);
 
+        if (isset($options['reportFile'])) {
+            $generatedReport = ob_get_clean();
+
+            file_put_contents(
+                $options['reportFile'], $generatedReport,
+                $options['reportFileFlags']
+            );
+        }
+
         if (count($allWarnings) > 0 && $options['verbose'] > 0) {
             echo 'Warning messages : (' . count($allWarnings) . ')' . PHP_EOL;
             echo PHP_EOL;
@@ -87,16 +96,6 @@ abstract class PHP_CompatInfo_Report
                 }
                 echo '  ' . $warn . PHP_EOL;
             }
-        }
-
-        if (isset($options['reportFile'])) {
-            $generatedReport = ob_get_contents();
-            ob_end_flush();
-
-            file_put_contents(
-                $options['reportFile'], $generatedReport,
-                $options['reportFileFlags']
-            );
         }
     }
 
