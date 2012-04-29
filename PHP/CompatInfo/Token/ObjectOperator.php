@@ -76,7 +76,7 @@ class PHP_CompatInfo_Token_OBJECT_OPERATOR extends PHP_Reflect_Token_OBJECT_OPER
 
                 if ($this->_getContext($i) == 'T_NEW') {
                     if ($bracket == 1 && $this->_getContext($i-2) != 'T_STRING') {
-						// TODO: ignore comments and whitespace
+                        // TODO: ignore comments and whitespace
                         $name = 'classMemberAccessOnInstantiation';
                     }
                     break;
