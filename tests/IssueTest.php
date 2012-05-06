@@ -366,8 +366,8 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     /**
      * Regression test for bug GH-32
      *
-     * @link https://github.com/llaville/php-compat-info/issues/30
-     *       mb_ereg_replace_callback support for PHP 5.4.1
+     * @link https://github.com/llaville/php-compat-info/issues/32
+     *       Remove false positive on id(new stdClass)->c signature
      * @covers PHP_CompatInfo::parse
      * @return void
      */
