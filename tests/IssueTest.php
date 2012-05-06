@@ -380,4 +380,21 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Regression test for bug GH-33
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/33
+     *       Avoid deadlock in object operator
+     * @covers PHP_CompatInfo::parse
+     * @return void
+     */
+    public function testBugGH33()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'gh33.php');
+
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
+        );
+    }
+
 }
