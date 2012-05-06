@@ -362,4 +362,22 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
             array('5.4.1-dev', ''), $this->pci->getVersions()
         );
     }
+
+    /**
+     * Regression test for bug GH-32
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/30
+     *       mb_ereg_replace_callback support for PHP 5.4.1
+     * @covers PHP_CompatInfo::parse
+     * @return void
+     */
+    public function testBugGH32()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'gh32.php');
+
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
+        );
+    }
+
 }
