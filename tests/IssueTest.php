@@ -365,7 +365,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         }
 
         $this->assertSame(
-            array('5.4.1', ''), $this->pci->getVersions()
+            array($expected, ''), $this->pci->getVersions()
         );
     }
 
