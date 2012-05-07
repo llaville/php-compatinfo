@@ -214,7 +214,7 @@ class PHP_CompatInfo_Reference_Mbstring implements PHP_CompatInfo_Reference
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
                 'mb_encoding_aliases'            => array('5.3.0', ''),
-                'mb_ereg_replace_callback'       => array('5.4.1-dev', ''),
+                'mb_ereg_replace_callback'       => array('5.4.1', ''),
                 'mb_list_encodings'              => array('5.0.0', ''),
                 'mb_stripos'                     => array('5.2.0', ''),
                 'mb_stristr'                     => array('5.2.0', ''),
