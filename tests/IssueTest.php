@@ -358,14 +358,14 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'gh30-1.php');
 
-        if (version_compare(PHP_VERSION, '5.4.1', '<')) {
+        if (!extension_loaded('mbstring')) {
             $expected = '5.3.0';   // detect closure function
         } else {
             $expected = '5.4.1';   // detect mb_ereg_replace_callback function
         }
 
         $this->assertSame(
-            array($expected, ''), $this->pci->getVersions()
+            array('5.4.1', ''), $this->pci->getVersions()
         );
     }
 
