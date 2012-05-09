@@ -29,7 +29,8 @@
         <echo>make-userguide-all       Build the user guide in all formats</echo>
         <echo>make-userguide-chunked   Build the user guide in many HTML files</echo>
         <echo>make-userguide-htmlhelp  Build the user guide in CHM format</echo>
-        <echo>make-userguide-pdf       Build the user guide in PDF format</echo>
+        <echo>make-userguide-pdf-a4    Build the user guide in PDF A4 format</echo>
+        <echo>make-userguide-pdf-us    Build the user guide in PDF US format</echo>
         <echo>make-userguide-epub      Build the user guide in EPUB format</echo>
     </target>
 
@@ -66,9 +67,16 @@
         </if>
 
         <if>
-            <istrue value="${build.book.pdf}" />
+            <istrue value="${build.book.pdf-a4}" />
             <then>
-                <phingcall target="make-userguide-pdf" />
+                <phingcall target="make-userguide-pdf-a4" />
+            </then>
+        </if>
+
+        <if>
+            <istrue value="${build.book.pdf-us}" />
+            <then>
+                <phingcall target="make-userguide-pdf-us" />
             </then>
         </if>
 
@@ -163,12 +171,23 @@
 
     </target>
 
-    <target name="make-userguide-pdf"
-            description="Build the user guide of PHP_CompatInfo in PDF format">
+    <target name="make-userguide-pdf-a4"
+            description="Build the user guide in PDF A4 format">
 
         <exec dir="${asciidoc.home}"
             command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/phpci-book.txt"
         />
+        <move file="${output.dir}/phpci-book.pdf" tofile="${output.dir}/phpci-book-a4.pdf" />
+
+    </target>
+
+    <target name="make-userguide-pdf-us"
+            description="Build the user guide in PDF US format">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css --xsl-file=./docbook-xsl/fo-custom.xsl -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/phpci-book.txt"
+        />
+        <move file="${output.dir}/phpci-book.pdf" tofile="${output.dir}/phpci-book-us.pdf" />
 
     </target>
 
