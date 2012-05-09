@@ -23,29 +23,34 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-04-18</date>
- <time>09:57:53</time>
+ <date>2012-05-09</date>
+ <time>22:42:44</time>
  <version>
-  <release>2.4.0snapshot20120418</release>
+  <release>2.4.0</release>
   <api>2.3.0</api>
  </version>
  <stability>
-  <release>snapshot</release>
+  <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Versions summary:
-- 2.4.0 support all PHP versions until 5.4.1
+- 2.4.0 support all PHP versions until 5.4.3
 - 2.3.0 support all PHP versions until 5.4.0
 - 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
 
 Additions and changes:
 - ext/mbstring : add support for mb_ereg_replace_callback function
 - Growl Test Listener used now the latest version (2.6.0) of Net_Growl
+- phing build script can now generate PDF in both format A4 and US
 
 Bug fixes:
 - fix wrong closure detection
+- GH-31 : Don&apos;t write warnings to reports and don&apos;t print report if written to file
+- GH-32 : Remove false positive on id(new stdClass)-&gt;c signature
+- GH-33 : Avoid deadlock in object operator
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -795,6 +800,12 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
      </dir> <!-- /tests/_files/emptyDir -->
+     <file baseinstalldir="Bartlett" name="gh-32.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="gh-33.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="gh26.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -1118,6 +1129,9 @@ Bug fixes:
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
    </dir> <!-- /tests -->
+   <file baseinstalldir="Bartlett" name="fo-custom.xsl" role="doc">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
    <file baseinstalldir="Bartlett" name="LICENSE" role="doc">
     <tasks:replace from="@package_version@" to="version" type="package-info" />
    </file>
@@ -1208,27 +1222,32 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.4.0snapshot20120418</release>
+    <release>2.4.0</release>
     <api>2.3.0</api>
    </version>
    <stability>
-    <release>snapshot</release>
+    <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-04-18</date>
+   <date>2012-05-09</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Versions summary:
-- 2.4.0 support all PHP versions until 5.4.1
+- 2.4.0 support all PHP versions until 5.4.3
 - 2.3.0 support all PHP versions until 5.4.0
 - 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
 
 Additions and changes:
 - ext/mbstring : add support for mb_ereg_replace_callback function
 - Growl Test Listener used now the latest version (2.6.0) of Net_Growl
+- phing build script can now generate PDF in both format A4 and US
 
 Bug fixes:
 - fix wrong closure detection
+- GH-31 : Don&apos;t write warnings to reports and don&apos;t print report if written to file
+- GH-32 : Remove false positive on id(new stdClass)-&gt;c signature
+- GH-33 : Avoid deadlock in object operator
    </notes>
   </release>
   <release>
