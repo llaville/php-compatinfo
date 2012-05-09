@@ -59,7 +59,7 @@ This manual documents the final stable version {revnumber}
 
 .Optional resources :
 * link:http://pear.php.net[PEAR] 1.9.0 or newer
-* link:http://pear.php.net/package/Net_Growl[Net_Growl] 2.4.0 or newer
+* link:http://pear.php.net/package/Net_Growl[Net_Growl] 2.6.0 or newer
 * link:http://pear.phpunit.de[PHPUnit] 3.5.0 or newer from _PHPUnit_ PEAR channel
 * an XSLT processor if you want to produce an xHTML report from a phpci xml report
 
@@ -98,10 +98,10 @@ and on the PHPUnit PEAR channel (_pear.phpunit.de_).
 This has to be done only once. Now the PEAR Installer can be used to install packages from the Bartlett channel.
 ----
     $ pear install bartlett/PHP_CompatInfo
-    downloading PHP_CompatInfo-2.3.0.tgz ...
-    Starting to download PHP_CompatInfo-2.3.0.tgz (799,306 bytes)
-    .........................done: 799,306 bytes
-    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.3.0
+    downloading PHP_CompatInfo-2.4.0.tgz ...
+    Starting to download PHP_CompatInfo-2.4.0.tgz (801,319 bytes)
+    .........................done: 801,319 bytes
+    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.4.0
 ----
 After the installation you can find the PHP_CompatInfo source files inside your local PEAR directory.
 

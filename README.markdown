@@ -31,10 +31,10 @@ and on the PHPUnit PEAR channel (`pear.phpunit.de`).
 This has to be done only once. Now the PEAR Installer can be used to install packages from the Bartlett channel.
 
     $ pear install bartlett/PHP_CompatInfo
-    downloading PHP_CompatInfo-2.2.0.tgz ...
-    Starting to download PHP_CompatInfo-2.2.0.tgz (754,629 bytes)
-    .........................done: 754,629 bytes
-    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.2.0
+    downloading PHP_CompatInfo-2.4.0.tgz ...
+    Starting to download PHP_CompatInfo-2.4.0.tgz (801,319 bytes)
+    .........................done: 801,319 bytes
+    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.4.0
 
 After the installation you can find the PHP_CompatInfo source files inside your local PEAR directory.
 
@@ -44,8 +44,9 @@ Documentation
 
 The documentation for PHP_CompatInfo is available in different formats:
 
-* [English, multiple HTML files](http://php5.laurent-laville.org/compatinfo/manual/2.2/en/index.html)
-* [English, single HTML file](http://php5.laurent-laville.org/compatinfo/manual/2.2/en/phpci-book.html)
-* [English, PDF](http://php5.laurent-laville.org/compatinfo/manual/2.2/en/phpci-book.pdf)
-* [English, CHM](http://php5.laurent-laville.org/compatinfo/manual/2.2/en/phpci-book.chm.zip)
-* [English, EPUB](http://php5.laurent-laville.org/compatinfo/manual/2.2/en/phpci-book.epub.zip)
+* [English, multiple HTML files](http://php5.laurent-laville.org/compatinfo/manual/2.4/en/index.html)
+* [English, single HTML file](http://php5.laurent-laville.org/compatinfo/manual/2.4/en/phpci-book.html)
+* [English, PDF-A4](http://php5.laurent-laville.org/compatinfo/manual/2.4/en/phpci-book-a4.pdf)
+* [English, PDF-US](http://php5.laurent-laville.org/compatinfo/manual/2.4/en/phpci-book-us.pdf)
+* [English, CHM](http://php5.laurent-laville.org/compatinfo/manual/2.4/en/phpci-book.chm.zip)
+* [English, EPUB](http://php5.laurent-laville.org/compatinfo/manual/2.4/en/phpci-book.epub.zip)

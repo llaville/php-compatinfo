@@ -10,8 +10,7 @@ include::revision.txt[]
 ************************************************************************
 Release highlights:
 
-- Each new minor version is supposed to follow a new PHP release, which add new features.
-It's true with PHP_CompatInfo 2.3.0 that support PHP 5.4.0.
+- PHP_CompatInfo 2.4.0 add both support to PHP 5.3.13 and PHP 5.4.3.
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -52,7 +51,7 @@ PHP_CompatInfo 2 provides two servers API :
 * dom extension
 * libxml extension
 * phpunit/PHP_Timer 1.0.0 (utility class for timing) 
-* (optional) pear/Net_Growl 2.4.0 minimum (for growl audit observer)
+* (optional) pear/Net_Growl 2.6.0 minimum (for growl audit observer)
 * (optional) PHPUnit 3.5.0 minimum (to run unit tests)
 * (optional) an XSLT processor if you want to produce an xHTML report from a phpci xml report
 
@@ -66,6 +65,9 @@ PHP_CompatInfo 2 provides two servers API :
 * support 65 extensions.
 
 .Version 2.3.0
+* support 67 extensions.
+
+.Version 2.4.0
 * support 67 extensions.
 
 The _phpci_ tool may inform you on what of those extensions are or not loaded on your system.
@@ -180,8 +182,8 @@ from the table below to start downloading.
 
 [options="header"]
 |===========================
-| Language | Single HTML file | Many HTML files | HTML Help file | PDF file | EPUB file
-| English | link:{man_dir}/en/pci-book.html.zip[pci-book.html.zip] 517Kb | link:{man_dir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] 464Kb | link:{man_dir}/en/phpci-book.chm.zip[phpci-book.chm.zip] 469Kb | link:{man_dir}/en/phpci-book.pdf[phpci-book.pdf] 512Kb | link:{man_dir}/en/phpci-book.epub.zip[phpci-book.epub.zip] 446Kb
+| Language | Single HTML file | Many HTML files | HTML Help file | PDF A4 file | PDF US file | EPUB file
+| English | link:{man_dir}/en/pci-book.html.zip[pci-book.html.zip] 517Kb | link:{man_dir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] 464Kb | link:{man_dir}/en/phpci-book.chm.zip[phpci-book.chm.zip] 469Kb | link:{man_dir}/en/phpci-book-a4.pdf[phpci-book-a4.pdf] 512Kb | link:{man_dir}/en/phpci-book-us.pdf[phpci-book-us.pdf] 512Kb | link:{man_dir}/en/phpci-book.epub.zip[phpci-book.epub.zip] 446Kb
 |===========================
 
 == Appendix A: Changelog
@@ -222,8 +224,8 @@ ____
 
 == Appendix D: Links
 
-All pages of this site, and user guide were generated with AsciiDoc 8.6.6,
-assisted by FOP 1.0 (for PDFs). Automated build process uses Phing 2.4.9
+All pages of this site, and user guide were generated with AsciiDoc 8.6.7,
+assisted by FOP 1.0 (for PDFs). Automated build process uses Phing 2.4.12
 
 Convert the HTML Help source (.hhp and .html) files to HTML Help (.chm) files
 using the Microsoft HTML Help Compiler.
