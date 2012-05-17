@@ -247,13 +247,13 @@ class PHP_CompatInfo_Reference_Pgsql implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'pg_escape_literal'              => array('5.4.4-dev', ''),
+                'pg_escape_identifier'           => array('5.4.4-dev', ''),
                 'pg_execute'                     => array('5.1.0', ''),
                 'pg_fetch_all_columns'           => array('5.1.0', ''),
                 'pg_field_table'                 => array('5.2.0', ''),
                 'pg_field_type_oid'              => array('5.1.0', ''),
                 'pg_parameter_status'            => array('5.0.0', ''),
-                'pg_escape_literal'              => array('5.4.4-dev', ''),
-                'pg_escape_identifier'           => array('5.4.4-dev', ''),
                 'pg_prepare'                     => array('5.1.0', ''),
                 'pg_query_params'                => array('5.1.0', ''),
                 'pg_result_error_field'          => array('5.1.0', ''),
