@@ -119,6 +119,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/ereg.php',
             'PHP_CompatInfo_Reference_Enchant'
                 => 'PHP/CompatInfo/Reference/enchant.php',
+            'PHP_CompatInfo_Reference_Exif'
+                => 'PHP/CompatInfo/Reference/exif.php',
             'PHP_CompatInfo_Reference_Filter'
                 => 'PHP/CompatInfo/Reference/filter.php',
             'PHP_CompatInfo_Reference_Fileinfo'
