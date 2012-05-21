@@ -398,6 +398,9 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="PHP5.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
+      <file baseinstalldir="Bartlett" name="ALL.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="PluginsAbstract.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>

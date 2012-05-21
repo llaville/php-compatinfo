@@ -59,6 +59,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/PHP4.php',
             'PHP_CompatInfo_Reference_PHP5'
                 => 'PHP/CompatInfo/Reference/PHP5.php',
+            'PHP_CompatInfo_Reference_ALL'
+                => 'PHP/CompatInfo/Reference/ALL.php',
             'PHP_CompatInfo_Report'
                 => 'PHP/CompatInfo/Report.php',
             'PHP_CompatInfo_Report_Database'
@@ -117,6 +119,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/ereg.php',
             'PHP_CompatInfo_Reference_Enchant'
                 => 'PHP/CompatInfo/Reference/enchant.php',
+            'PHP_CompatInfo_Reference_Exif'
+                => 'PHP/CompatInfo/Reference/exif.php',
             'PHP_CompatInfo_Reference_Filter'
                 => 'PHP/CompatInfo/Reference/filter.php',
             'PHP_CompatInfo_Reference_Fileinfo'
@@ -143,6 +147,10 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/ldap.php',
             'PHP_CompatInfo_Reference_Libxml'
                 => 'PHP/CompatInfo/Reference/libxml.php',
+            'PHP_CompatInfo_Reference_Lzf'
+                => 'PHP/CompatInfo/Reference/lzf.php',
+            'PHP_CompatInfo_Reference_Mailparse'
+                => 'PHP/CompatInfo/Reference/mailparse.php',
             'PHP_CompatInfo_Reference_Mbstring'
                 => 'PHP/CompatInfo/Reference/mbstring.php',
             'PHP_CompatInfo_Reference_Mcrypt'
@@ -153,6 +161,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/memcached.php',
             'PHP_CompatInfo_Reference_Mhash'
                 => 'PHP/CompatInfo/Reference/mhash.php',
+            'PHP_CompatInfo_Reference_Mssql'
+                => 'PHP/CompatInfo/Reference/mssql.php',
             'PHP_CompatInfo_Reference_Mysql'
                 => 'PHP/CompatInfo/Reference/mysql.php',
             'PHP_CompatInfo_Reference_Mysqli'
@@ -183,6 +193,10 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/snmp.php',
             'PHP_CompatInfo_Reference_Soap'
                 => 'PHP/CompatInfo/Reference/soap.php',
+            'PHP_CompatInfo_Reference_Solr'
+                => 'PHP/CompatInfo/Reference/solr.php',
+            'PHP_CompatInfo_Reference_Sphinx'
+                => 'PHP/CompatInfo/Reference/sphinx.php',
             'PHP_CompatInfo_Reference_SPL'
                 => 'PHP/CompatInfo/Reference/spl.php',
             'PHP_CompatInfo_Reference_SQLite'
@@ -215,6 +229,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/wddx.php',
             'PHP_CompatInfo_Reference_Xdebug'
                 => 'PHP/CompatInfo/Reference/xdebug.php',
+            'PHP_CompatInfo_Reference_Xhprof'
+                => 'PHP/CompatInfo/Reference/xhprof.php',
             'PHP_CompatInfo_Reference_Xml'
                 => 'PHP/CompatInfo/Reference/xml.php',
             'PHP_CompatInfo_Reference_Xmlreader'
@@ -225,6 +241,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/xmlrpc.php',
             'PHP_CompatInfo_Reference_Xsl'
                 => 'PHP/CompatInfo/Reference/xsl.php',
+            'PHP_CompatInfo_Reference_Yaml'
+                => 'PHP/CompatInfo/Reference/yaml.php',
             'PHP_CompatInfo_Reference_Zip'
                 => 'PHP/CompatInfo/Reference/zip.php',
             'PHP_CompatInfo_Reference_Zlib'

@@ -178,6 +178,11 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                     'file'  => '',
                     'args'  => array()
                 ),
+                'ALL' => array(
+                    'class' => 'PHP_CompatInfo_Reference_ALL',
+                    'file'  => '',
+                    'args'  => array()
+                ),
             ),
             'verbose'          => false,
             'fileExtensions'   => array('php', 'inc', 'phtml'),
@@ -1146,7 +1151,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             );
             break;
         case 'reference':
-            $search = array('PHP4', 'PHP5');
+            $search = array('PHP4', 'PHP5', 'ALL');
             break;
         default:
             return false;
