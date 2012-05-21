@@ -60,7 +60,7 @@ class PHP_CompatInfo_Reference_Mssql implements PHP_CompatInfo_Reference
     public function getExtensions($extension = null, $version = null)
     {
         $extensions = array(
-            'Mssql' => array('4.0.0', '', '')
+            'mssql' => array('4.0.0', '', '')
         );
         return $extensions;
     }
