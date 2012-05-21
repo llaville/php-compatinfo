@@ -217,6 +217,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/wddx.php',
             'PHP_CompatInfo_Reference_Xdebug'
                 => 'PHP/CompatInfo/Reference/xdebug.php',
+            'PHP_CompatInfo_Reference_Xhprof'
+                => 'PHP/CompatInfo/Reference/xhprof.php',
             'PHP_CompatInfo_Reference_Xml'
                 => 'PHP/CompatInfo/Reference/xml.php',
             'PHP_CompatInfo_Reference_Xmlreader'
