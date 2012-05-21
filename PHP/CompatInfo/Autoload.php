@@ -147,6 +147,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/ldap.php',
             'PHP_CompatInfo_Reference_Libxml'
                 => 'PHP/CompatInfo/Reference/libxml.php',
+            'PHP_CompatInfo_Reference_Lzf'
+                => 'PHP/CompatInfo/Reference/lzf.php',
             'PHP_CompatInfo_Reference_Mailparse'
                 => 'PHP/CompatInfo/Reference/mailparse.php',
             'PHP_CompatInfo_Reference_Mbstring'
