@@ -233,6 +233,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/xmlrpc.php',
             'PHP_CompatInfo_Reference_Xsl'
                 => 'PHP/CompatInfo/Reference/xsl.php',
+            'PHP_CompatInfo_Reference_Yaml'
+                => 'PHP/CompatInfo/Reference/yaml.php',
             'PHP_CompatInfo_Reference_Zip'
                 => 'PHP/CompatInfo/Reference/zip.php',
             'PHP_CompatInfo_Reference_Zlib'
