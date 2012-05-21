@@ -145,6 +145,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/ldap.php',
             'PHP_CompatInfo_Reference_Libxml'
                 => 'PHP/CompatInfo/Reference/libxml.php',
+            'PHP_CompatInfo_Reference_Mailparse'
+                => 'PHP/CompatInfo/Reference/mailparse.php',
             'PHP_CompatInfo_Reference_Mbstring'
                 => 'PHP/CompatInfo/Reference/mbstring.php',
             'PHP_CompatInfo_Reference_Mcrypt'
