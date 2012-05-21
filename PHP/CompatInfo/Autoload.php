@@ -59,6 +59,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/PHP4.php',
             'PHP_CompatInfo_Reference_PHP5'
                 => 'PHP/CompatInfo/Reference/PHP5.php',
+            'PHP_CompatInfo_Reference_ALL'
+                => 'PHP/CompatInfo/Reference/ALL.php',
             'PHP_CompatInfo_Report'
                 => 'PHP/CompatInfo/Report.php',
             'PHP_CompatInfo_Report_Database'
