@@ -22,7 +22,7 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @link     http://www.php.net/manual/en/book.yaml.php
- * @since    Class available since Release ???
+ * @since    Class available since Release 2.5.0
  */
 class PHP_CompatInfo_Reference_Yaml implements PHP_CompatInfo_Reference
 {
