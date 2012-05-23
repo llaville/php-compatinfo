@@ -42,10 +42,18 @@ class PHP_CompatInfo_Reference_LibxmlTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
-            // requires LIBXML_VERSION >= 20703
-            'LIBXML_PARSEHUGE',
-        );
+        $this->optionnalconstants = array();
+        if (defined('LIBXML_VERSION')) {
+            if (LIBXML_VERSION < 20703) {
+                $this->optionnalconstants[] = 'LIBXML_PARSEHUGE';
+            }
+            if (LIBXML_VERSION < 20707) {
+                $this->optionnalconstants[] = 'LIBXML_HTML_NOIMPLIED';
+            }
+            if (LIBXML_VERSION < 20708) {
+                $this->optionnalconstants[] = 'LIBXML_HTML_NODEFDTD';
+            }
+        }
 
         if (DIRECTORY_SEPARATOR == '/') {
 

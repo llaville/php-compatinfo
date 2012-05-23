@@ -247,6 +247,8 @@ class PHP_CompatInfo_Reference_Pgsql implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'pg_escape_literal'              => array('5.4.4-dev', ''),
+                'pg_escape_identifier'           => array('5.4.4-dev', ''),
                 'pg_execute'                     => array('5.1.0', ''),
                 'pg_fetch_all_columns'           => array('5.1.0', ''),
                 'pg_field_table'                 => array('5.2.0', ''),
@@ -335,6 +337,8 @@ class PHP_CompatInfo_Reference_Pgsql implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
+                'PGSQL_LIBPQ_VERSION'            => array('5.4.4-dev', ''),
+                'PGSQL_LIBPQ_VERSION_STR'        => array('5.4.4-dev', ''),
                 'PGSQL_TRANSACTION_ACTIVE'       => array('5.1.0', ''),
                 'PGSQL_TRANSACTION_IDLE'         => array('5.1.0', ''),
                 'PGSQL_TRANSACTION_INERROR'      => array('5.1.0', ''),
