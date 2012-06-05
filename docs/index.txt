@@ -3,14 +3,15 @@ PHP_CompatInfo
 include::revision.txt[]
 :stylesdir:   styles
 :scriptsdir:  js
-:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.4
+:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.5
 
 
 .{revdate}: PHP_CompatInfo {revnumber} Released
 ************************************************************************
 Release highlights:
 
-- PHP_CompatInfo 2.4.0 add both support to PHP 5.3.13 and PHP 5.4.3.
+- PHP_CompatInfo 2.5.0 add both support to PHP 5.3.14 and PHP 5.4.4, 
+and add 8 news extensions.
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
