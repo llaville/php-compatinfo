@@ -25,7 +25,7 @@
 class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
 {
     /**
-     * Normalize cache file by a prefix 
+     * Normalize cache file by a prefix
      */
     const PREFIX = 'phpci';
 
@@ -75,30 +75,60 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
                 PHP_CompatInfo_Exception::INVALIDARGUMENT
             );
         }
+
+        // Check cache validity
+        $current = get_loaded_extensions();
+        sort($current);
+        $file = realpath($this->options['save_path']) . DIRECTORY_SEPARATOR . self::PREFIX;
+        $ok = true;
+        if (file_exists($file)) {
+            $prev = unserialize(file_get_contents($file));
+            if (!is_array($prev)
+                || count(array_diff($prev, $current))
+                || count(array_diff($current, $prev))) {
+                $ok = false;
+            }
+        } else {
+            $ok = false;
+        }
+        if (!$ok) {
+            // Clean all the cache content
+            $this->_clean();
+            file_put_contents($file, serialize($current));
+        }
     }
 
     /**
-     * Garbage collector
+     * Desctructor
      */
     public function __destruct()
     {
         // Calls the garbage collector with a certain probability
         if (rand(1, 100) < $this->options['gc_probability']) {
+            $this->_clean($this->options['gc_maxlifetime']);
+        }
+    }
 
-            $iterator = new DirectoryIterator(
-                realpath($this->options['save_path'])
-            );
-            foreach ($iterator as $fileinfo) {
-                if ($fileinfo->isFile()) {
-                    if (preg_match(
-                        '/^' . self::PREFIX . '_/',
-                        $fileinfo->getFilename()
-                    )) {
-                        if ($fileinfo->getMTime() <=
-                            (time() - $this->options['gc_maxlifetime'])
-                        ) {
-                            unlink($fileinfo->getPathname());
-                        }
+    /**
+     * Garbage collector
+     *
+     * @param integer validity delay, default -1 to clean all
+     */
+    private function _clean($delay=-1)
+    {
+        $iterator = new DirectoryIterator(
+            realpath($this->options['save_path'])
+        );
+        foreach ($iterator as $fileinfo) {
+            if ($fileinfo->isFile()) {
+                if (preg_match(
+                    '/^' . self::PREFIX . '_/',
+                    $fileinfo->getFilename()
+                )) {
+                    if ($fileinfo->getMTime() <=
+                        (time() - $delay)
+                    ) {
+                        unlink($fileinfo->getPathname());
                     }
                 }
             }
@@ -117,7 +147,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
         $cache_id = sha1_file($source);
 
         $fn = realpath($this->options['save_path']) . DIRECTORY_SEPARATOR .
-            self::PREFIX . '_' . 
+            self::PREFIX . '_' .
             sha1($source . '/' . self::VERSION . '/' . $cache_id);
 
         $cached = file_exists($fn);
@@ -139,7 +169,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
     {
         $cache_id = sha1_file($source);
 
-        if (!isset($this->cache[$cache_id]) 
+        if (!isset($this->cache[$cache_id])
             || !file_exists($this->cache[$cache_id])
         ) {
             return false;
@@ -160,9 +190,9 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
     public function setCache($source, $data)
     {
         $cache_id = sha1_file($source);
-        
+
         $fn = realpath($this->options['save_path']) . DIRECTORY_SEPARATOR .
-            self::PREFIX . '_' . 
+            self::PREFIX . '_' .
             sha1($source . '/' . self::VERSION . '/' . $cache_id);
 
         $bytes = file_put_contents($fn, serialize($data));
