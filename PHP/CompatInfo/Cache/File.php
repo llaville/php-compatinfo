@@ -99,7 +99,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
     }
 
     /**
-     * Desctructor
+     * Destructor
      */
     public function __destruct()
     {
