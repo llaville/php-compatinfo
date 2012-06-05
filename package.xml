@@ -23,34 +23,31 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-05-09</date>
- <time>22:42:44</time>
+ <date>2012-06-05</date>
+ <time>16:06:01</time>
  <version>
-  <release>2.4.0</release>
+  <release>2.5.0snapshot20120605</release>
   <api>2.3.0</api>
  </version>
  <stability>
-  <release>stable</release>
+  <release>snapshot</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Versions summary:
+- 2.5.0 support all PHP versions until 5.4.4
 - 2.4.0 support all PHP versions until 5.4.3
 - 2.3.0 support all PHP versions until 5.4.0
 - 2.2.0 support all PHP versions until 5.3.10
 - 2.1.0 support all PHP versions until 5.3.8
 
 Additions and changes:
-- ext/mbstring : add support for mb_ereg_replace_callback function
-- Growl Test Listener used now the latest version (2.6.0) of Net_Growl
-- phing build script can now generate PDF in both format A4 and US
+- add 8 new references data dictionnaries related to extensions: exif, lzf, 
+mailparse, mssql, solr, sphinx, xhprof, Yaml
 
 Bug fixes:
-- fix wrong closure detection
-- GH-31 : Don&apos;t write warnings to reports and don&apos;t print report if written to file
-- GH-32 : Remove false positive on id(new stdClass)-&gt;c signature
-- GH-33 : Avoid deadlock in object operator
+- GH-37 : cache content depends on installed extension
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -278,6 +275,9 @@ Bug fixes:
       </file>
      </dir> <!-- /PHP/CompatInfo/Listener -->
      <dir name="Reference">
+      <file baseinstalldir="Bartlett" name="ALL.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="apc.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -309,6 +309,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="ereg.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="exif.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="fileinfo.php" role="php">
@@ -350,6 +353,12 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="libxml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
+      <file baseinstalldir="Bartlett" name="lzf.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="mailparse.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="mbstring.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -363,6 +372,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="mhash.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="mssql.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="mysql.php" role="php">
@@ -398,9 +410,6 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="PHP5.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
-      <file baseinstalldir="Bartlett" name="ALL.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
       <file baseinstalldir="Bartlett" name="PluginsAbstract.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -432,6 +441,12 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="sockets.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="solr.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="sphinx.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="spl.php" role="php">
@@ -470,6 +485,9 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="xdebug.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
+      <file baseinstalldir="Bartlett" name="xhprof.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="xml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -483,6 +501,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="xsl.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="yaml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="zip.php" role="php">
@@ -628,6 +649,9 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="EregTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="ExifTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="FileinfoTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -670,19 +694,28 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="LibxmlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="LzfTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="MailparseTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="MbstringTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="McryptTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="Bartlett" name="Memcache.php" role="test">
+     <file baseinstalldir="Bartlett" name="MemcachedTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
-     <file baseinstalldir="Bartlett" name="Memcached.php" role="test">
+     <file baseinstalldir="Bartlett" name="MemcacheTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="MhashTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="MssqlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="MysqliTest.php" role="test">
@@ -742,6 +775,12 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="SocketsTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="SolrTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="SphinxTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="SPLTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -775,6 +814,9 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="WddxTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="XhprofTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="XmlreaderTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -788,6 +830,9 @@ Bug fixes:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="XslTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="YamlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="ZipTest.php" role="test">
@@ -1223,6 +1268,33 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.5.0snapshot20120605</release>
+    <api>2.3.0</api>
+   </version>
+   <stability>
+    <release>snapshot</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-06-05</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Versions summary:
+- 2.5.0 support all PHP versions until 5.4.4
+- 2.4.0 support all PHP versions until 5.4.3
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
+
+Additions and changes:
+- add 8 new references data dictionnaries related to extensions: exif, lzf, 
+mailparse, mssql, solr, sphinx, xhprof, Yaml
+
+Bug fixes:
+- GH-37 : cache content depends on installed extension
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.4.0</release>
