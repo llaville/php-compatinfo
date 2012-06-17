@@ -9,18 +9,19 @@ PHP_CompatInfo ChangeLog
 == Version 2.5.0 (2012-mm-dd)
 
 .Versions summary:
-- 2.5.0 support all PHP versions until 5.4.4
-- 2.4.0 support all PHP versions until 5.4.3
-- 2.3.0 support all PHP versions until 5.4.0
-- 2.2.0 support all PHP versions until 5.3.10
-- 2.1.0 support all PHP versions until 5.3.8
+* 2.5.0 support all PHP versions until 5.4.4
+* 2.4.0 support all PHP versions until 5.4.3
+* 2.3.0 support all PHP versions until 5.4.0
+* 2.2.0 support all PHP versions until 5.3.10
+* 2.1.0 support all PHP versions until 5.3.8
 
 .Additions and changes:
-- add 8 new references data dictionnaries related to extensions: exif, lzf, 
+* add 8 new references data dictionnaries related to extensions: exif, lzf,
 mailparse, mssql, solr, sphinx, xhprof, Yaml
 
 .Bug fixes:
-- GH-37 : cache content depends on installed extension
+* GH-37 : cache content depends on installed extension
+* GH-41 : Prevent division by zero PHP warning from progressbar when nothing parsed
 
 
 == Version 2.4.0 (2012-05-09)
