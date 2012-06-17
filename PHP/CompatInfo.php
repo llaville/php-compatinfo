@@ -458,6 +458,10 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         $files = self::getFilelist(
             $dataSource, $this->options['recursive'], $excludes
         );
+        $filesCount = count($files);
+        if ($filesCount < 1) {
+            return false;
+        }
 
         if (php_sapi_name() === 'cli'
             && isset($this->options['consoleProgress'])
@@ -469,19 +473,17 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         }
         if ($consoleProgress) {
             $out      = new ezcConsoleOutput();
-            $progress = new ezcConsoleProgressbar($out, count($files));
+            $progress = new ezcConsoleProgressbar($out, $filesCount);
         }
 
         $this->results = array();
         $i             = 0;
-        $indexes       = count($files);
-        $process       = ($indexes > 0);
 
         foreach ($files as $source) {
             $i++;
-            $this->startScanFile($source, $i, $indexes);
+            $this->startScanFile($source, $i, $filesCount);
             $this->scan($source);
-            $this->endScanFile($source, $i, $indexes);
+            $this->endScanFile($source, $i, $filesCount);
 
             if ($consoleProgress) {
                 $progress->advance();
@@ -493,7 +495,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
         $this->endScanSource();
 
-        return $process;
+        return true;
     }
 
     /**
