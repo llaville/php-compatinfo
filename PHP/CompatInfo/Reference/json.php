@@ -207,7 +207,7 @@ class PHP_CompatInfo_Reference_Json implements PHP_CompatInfo_Reference
                 'JSON_PRETTY_PRINT'              => array('5.4.0', ''),
                 'JSON_UNESCAPED_SLASHES'         => array('5.4.0', ''),
                 'JSON_UNESCAPED_UNICODE'         => array('5.4.0', ''),
-                'JSON_PARTIAL_OUTPUT_ON_ERROR'   => array('5.3.14', ''),
+                'JSON_PARTIAL_OUTPUT_ON_ERROR'   => array('5.3.14', '5.3.14'),
             );
             $constants = array_merge(
                 $constants,
