@@ -23,14 +23,14 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-06-05</date>
- <time>16:06:01</time>
+ <date>2012-06-18</date>
+ <time>21:16:12</time>
  <version>
-  <release>2.5.0snapshot20120605</release>
-  <api>2.3.0</api>
+  <release>2.5.0</release>
+  <api>2.5.0</api>
  </version>
  <stability>
-  <release>snapshot</release>
+  <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
@@ -48,6 +48,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 
 Bug fixes:
 - GH-37 : cache content depends on installed extension
+- GH-41 : Prevent division by zero PHP warning from progressbar when nothing parsed
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -1270,14 +1271,14 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.5.0snapshot20120605</release>
-    <api>2.3.0</api>
+    <release>2.5.0</release>
+    <api>2.5.0</api>
    </version>
    <stability>
-    <release>snapshot</release>
+    <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-06-05</date>
+   <date>2012-06-18</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Versions summary:
@@ -1293,6 +1294,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 
 Bug fixes:
 - GH-37 : cache content depends on installed extension
+- GH-41 : Prevent division by zero PHP warning from progressbar when nothing parsed
    </notes>
   </release>
   <release>
