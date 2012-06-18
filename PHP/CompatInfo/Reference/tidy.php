@@ -190,7 +190,7 @@ class PHP_CompatInfo_Reference_Tidy implements PHP_CompatInfo_Reference
         }
         if ((null == $version ) || ('5' == $version)) {
             $version5 = array(
-                'ob_tidyhandler'                    => array('5.0.0', '5.3.13'),
+                'ob_tidyhandler'                    => array('5.0.0', '5.3.14'),
                 // Function eq to tidy class method
                 'tidy_get_opt_doc'                  => array('5.1.0', ''),
             );
