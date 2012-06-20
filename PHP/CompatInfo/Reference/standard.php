@@ -640,7 +640,7 @@ class PHP_CompatInfo_Reference_Standard implements PHP_CompatInfo_Reference
                 'quoted_printable_encode'        => array('5.3.0', ''),
                 'realpath_cache_get'             => array('5.3.2', ''),
                 'realpath_cache_size'            => array('5.3.2', ''),
-                'scandir'                        => array('5.0.0', '', '5.0.0, 5.0.0, 5.3.0'),
+                'scandir'                        => array('5.0.0', ''),
                 'setrawcookie'                   => array('5.0.0', ''),
                 'str_getcsv'                     => array('5.3.0', ''),
                 'str_ireplace'                   => array('5.0.0', ''),
