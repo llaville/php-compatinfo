@@ -23,14 +23,14 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-06-18</date>
- <time>21:16:12</time>
+ <date>2012-06-24</date>
+ <time>18:55:14</time>
  <version>
-  <release>2.5.0</release>
+  <release>2.6.0snapshot20120624</release>
   <api>2.5.0</api>
  </version>
  <stability>
-  <release>stable</release>
+  <release>snapshot</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
@@ -43,12 +43,11 @@ Versions summary:
 - 2.1.0 support all PHP versions until 5.3.8
 
 Additions and changes:
-- add 8 new references data dictionnaries related to extensions: exif, lzf, 
-mailparse, mssql, solr, sphinx, xhprof, Yaml
+- Users have now ability to use their own autoloader (related to issue GH-43)
 
 Bug fixes:
-- GH-37 : cache content depends on installed extension
-- GH-41 : Prevent division by zero PHP warning from progressbar when nothing parsed
+- GH-34 : Remove false positive on A::CONST_NAME
+- GH-42 : Remove parameter versions from scandir()
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -849,12 +848,6 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
      </dir> <!-- /tests/_files/emptyDir -->
-     <file baseinstalldir="Bartlett" name="gh-32.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="gh-33.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
      <file baseinstalldir="Bartlett" name="gh26.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -871,6 +864,15 @@ Bug fixes:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="gh30.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="gh32.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="gh33.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="gh34.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="source1.php" role="test">
@@ -1269,6 +1271,33 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.6.0snapshot20120624</release>
+    <api>2.5.0</api>
+   </version>
+   <stability>
+    <release>snapshot</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-06-24</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Versions summary:
+- 2.5.0 support all PHP versions until 5.4.4
+- 2.4.0 support all PHP versions until 5.4.3
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
+
+Additions and changes:
+- Users have now ability to use their own autoloader (related to issue GH-43)
+
+Bug fixes:
+- GH-34 : Remove false positive on A::CONST_NAME
+- GH-42 : Remove parameter versions from scandir()
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.5.0</release>
