@@ -877,36 +877,6 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * example with scandir()
-     *
-     * @link http://www.php.net/manual/en/function.scandir.php
-     * @return void
-     */
-    public function testScandirDefaultSignature()
-    {
-        $this->pci->parse(TEST_FILES_PATH . 'source18881-28d.php');
-
-        $this->assertSame(
-            array('5.0.0', ''), $this->pci->getVersions()
-        );
-    }
-
-    /**
-     * alternative example with scandir()
-     *
-     * @link http://www.php.net/manual/en/function.scandir.php
-     * @return void
-     */
-    public function testScandirOptionalSignature()
-    {
-        $this->pci->parse(TEST_FILES_PATH . 'source18881-28o.php');
-
-        $this->assertSame(
-            array('5.3.0', ''), $this->pci->getVersions()
-        );
-    }
-
-    /**
      * example with json_decode()
      *
      * @link http://www.php.net/manual/en/function.json-decode.php
