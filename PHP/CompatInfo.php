@@ -16,8 +16,6 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
-require_once dirname(__FILE__) . '/CompatInfo/Autoload.php';
-
 /**
  * Check compatibility of chunk of PHP code
  *
