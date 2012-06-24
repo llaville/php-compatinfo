@@ -51,12 +51,60 @@ But PHP_CompatInfo (alias phpci), may also provides on CLI (with the +phpci+ com
 To parse a file with the PHP5 known references of your extensions loaded, 
 you have just to specify the file's location.
 
-.API example
+.API example (for all versions until 2.5.0)
 
 [source,php]
 ----
 <?php
 require_once 'Bartlett/PHP/CompatInfo.php';
+
+$source = '/path/to/myFile.php';
+
+try {
+    $phpci = new PHP_CompatInfo();
+    $phpci->parse($source);
+
+    $allResultsAtOnce = $phpci->toArray();
+
+} catch (PHP_CompatInfo_Exception $e) {
+    die ('PHP_CompatInfo Exception : ' . $e->getMessage() . PHP_EOL);
+}
+----
+
+.API example (for version 2.6.0 or better with default autoloader)
+
+[source,php]
+----
+<?php
+require_once 'Bartlett/PHP/CompatInfo/Autoload.php';
+
+$source = '/path/to/myFile.php';
+
+try {
+    $phpci = new PHP_CompatInfo();
+    $phpci->parse($source);
+
+    $allResultsAtOnce = $phpci->toArray();
+
+} catch (PHP_CompatInfo_Exception $e) {
+    die ('PHP_CompatInfo Exception : ' . $e->getMessage() . PHP_EOL);
+}
+----
+
+.API example (for version 2.6.0 or better with Symfony ClassLoader component)
+
+[source,php]
+----
+<?php
+require_once 'Symfony/Component/ClassLoader/UniversalClassLoader.php';
+
+use Symfony\Component\ClassLoader\UniversalClassLoader;
+
+$loader = new UniversalClassLoader();
+$loader->registerPrefixes(array(
+    'PHP_' => '/path/to/PEAR/Bartlett/',
+));
+$loader->register();
 
 $source = '/path/to/myFile.php';
 
