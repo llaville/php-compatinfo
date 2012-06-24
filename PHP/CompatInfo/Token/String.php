@@ -115,6 +115,11 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
 
     private function _isConstant()
     {
+        if ($this->_getContext(-2) == 'T_DOUBLE_COLON' ||
+            $this->_getContext(-1) == 'T_DOUBLE_COLON') {
+            return false;  // constant class call
+        }
+
         $constants = get_defined_constants();
         $name      = $this->tokenStream[$this->id][1];
 

@@ -403,4 +403,21 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Regression test for bug GH-34
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/34
+     *       Remove false positive on A::CONST_NAME
+     * @covers PHP_CompatInfo::parse
+     * @return void
+     */
+    public function testBugGH34()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'gh34.php');
+
+        $this->assertSame(
+            array('4.0.0', ''), $this->pci->getVersions()
+        );
+    }
+
 }
