@@ -43,7 +43,7 @@ PHP_CompatInfo 2 provides two servers API :
 .Requirements
 
 * PHP 5.2.0 minimum
-* ezc/Base 1.8 minimum
+* ezc/Base 1.8 minimum (for CLI phpci tool)
 * ezc/ConsoleTools 1.6.1 minimum (for progress bar with CLI phpci tool)
 * pear/Console_CommandLine 1.1.3 minimum since RC3 (for CLI phpci tool)
 * bartlett/PHP_Reflect 1.2.0 minimum (PHP parser)
