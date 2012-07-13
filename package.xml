@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-06-24</date>
- <time>18:55:14</time>
+ <date>2012-07-13</date>
+ <time>10:44:18</time>
  <version>
-  <release>2.6.0snapshot20120624</release>
+  <release>2.6.0snapshot20120713</release>
   <api>2.5.0</api>
  </version>
  <stability>
@@ -36,6 +36,7 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Versions summary:
+- 2.6.0 support all PHP versions until 5.4.5
 - 2.5.0 support all PHP versions until 5.4.4
 - 2.4.0 support all PHP versions until 5.4.3
 - 2.3.0 support all PHP versions until 5.4.0
@@ -47,6 +48,7 @@ Additions and changes:
 
 Bug fixes:
 - GH-34 : Remove false positive on A::CONST_NAME
+- GH-38 : type hinting in function prototype
 - GH-42 : Remove parameter versions from scandir()
  </notes>
  <contents>
@@ -875,6 +877,9 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="gh34.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="gh38.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="source1.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -1273,17 +1278,18 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.6.0snapshot20120624</release>
+    <release>2.6.0snapshot20120713</release>
     <api>2.5.0</api>
    </version>
    <stability>
     <release>snapshot</release>
     <api>stable</api>
    </stability>
-   <date>2012-06-24</date>
+   <date>2012-07-13</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Versions summary:
+- 2.6.0 support all PHP versions until 5.4.5
 - 2.5.0 support all PHP versions until 5.4.4
 - 2.4.0 support all PHP versions until 5.4.3
 - 2.3.0 support all PHP versions until 5.4.0
@@ -1295,6 +1301,7 @@ Additions and changes:
 
 Bug fixes:
 - GH-34 : Remove false positive on A::CONST_NAME
+- GH-38 : type hinting in function prototype
 - GH-42 : Remove parameter versions from scandir()
    </notes>
   </release>
