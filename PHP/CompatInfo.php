@@ -559,7 +559,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 'properties' => array(
                     'interface'    => array('methods', 'parent'),
                     'class'        => array('methods', 'parent', 'interfaces'),
-                    'function'     => array(),
+                    'function'     => array('arguments'),
                     'require_once' => array(),
                     'require'      => array(),
                     'include_once' => array(),
@@ -780,6 +780,13 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                         $data['name'] = $name;
                         $global = array($glob => $data);
                         $this->getInfo('globals', '4.0.0', $global, $source, $ns);
+                    }
+                }
+
+                $this->classTypeHinting($source, $ns, $userFunctions);
+                foreach ($classes as $class) {
+                    if (isset($class['methods'])) {
+                        $this->classTypeHinting($source, $ns, $class['methods']);
                     }
                 }
             }
@@ -1576,4 +1583,36 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         );
     }
 
+    /**
+     * Detect function or class method type hinting
+     *
+     * @param string $source    Source filename
+     * @param string $ns        Namespace
+     * @param array  $functions Functions or class methods data
+     *
+     * @return void
+     */
+    protected function classTypeHinting($source, $ns, $functions)
+    {
+        foreach ($functions as $function) {
+            if (isset($function['arguments'])
+                && is_array($function['arguments'])
+            ) {
+                foreach ($function['arguments'] as $argument) {
+                    if (isset($argument['typeHint'])) {
+                        if ($argument['typeHint'] != 'mixed'
+                            && $argument['typeHint'] != 'object'
+                            && $argument['typeHint'] != 'array'
+                        ) {
+                            $this->getInfo(
+                                'classes', '4.0.0',
+                                array($argument['typeHint'] => false),
+                                $source, $ns
+                            );
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -420,4 +420,63 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Regression test for bug GH-38
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/38
+     *       type hinting in function prototype
+     * @covers PHP_CompatInfo::parse
+     * @return void
+     */
+    public function testBugGH38()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'gh38.php');
+
+        $classes = $this->pci->getClasses();
+
+        $expected = array(
+            'user' => array(
+                'Foo' => array(
+                    'versions' => array('4.0.0', ''),
+                    'uses' => 1,
+                    'sources' => array(TEST_FILES_PATH . 'gh38.php'),
+                    'excluded' => false,
+                )
+            ),
+        );
+
+        if (extension_loaded('memcache')) {
+            $category = 'memcache';
+            $versions = array('4.3.3', '');
+        } else {
+            $category = 'user';
+            $versions = array('4.0.0', '');
+        }
+        $expected[$category]['Memcache'] = array(
+            'versions' => $versions,
+            'uses' => 1,
+            'sources' => array(TEST_FILES_PATH . 'gh38.php'),
+            'excluded' => false,
+        );
+
+        if (extension_loaded('PDO')) {
+            $category = 'PDO';
+            $versions = array('5.1.0', '');
+        } else {
+            $category = 'user';
+            $versions = array('4.0.0', '');
+        }
+        $expected[$category]['PDO'] = array(
+            'versions' => $versions,
+            'uses' => 1,
+            'sources' => array(TEST_FILES_PATH . 'gh38.php'),
+            'excluded' => false,
+        );
+
+        $this->assertSame(
+            $expected, $classes
+        );
+
+    }
+
 }
