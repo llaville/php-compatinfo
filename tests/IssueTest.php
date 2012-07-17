@@ -437,7 +437,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         $expected = array(
             'user' => array(
                 'Foo' => array(
-                    'versions' => array('4.0.0', ''),
+                    'versions' => array('5.1.0', ''),
                     'uses' => 1,
                     'sources' => array(TEST_FILES_PATH . 'gh38.php'),
                     'excluded' => false,
@@ -473,7 +473,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
             'excluded' => false,
         );
 
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $classes
         );
 
