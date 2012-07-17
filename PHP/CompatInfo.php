@@ -782,13 +782,6 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                         $this->getInfo('globals', '4.0.0', $global, $source, $ns);
                     }
                 }
-
-                $this->classTypeHinting($source, $ns, $userFunctions);
-                foreach ($classes as $class) {
-                    if (isset($class['methods'])) {
-                        $this->classTypeHinting($source, $ns, $class['methods']);
-                    }
-                }
             }
         }
 
@@ -1361,6 +1354,93 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 }
             }
 
+            $functions = array();
+
+            if ('classes' == $category) {
+                if (is_array($data) && isset($data['methods'])) {
+                    $functions = $data['methods'];
+                }
+
+            } elseif ('functions' == $category && 'user' == $extension) {
+                $functions = array($key => $data);
+            }
+
+            // updates versions depending of arguments in class methods and user functions
+            foreach ($functions as $function) {
+                if (isset($function['arguments'])
+                    && is_array($function['arguments'])
+                ) {
+                    foreach ($function['arguments'] as $argument) {
+                        if (isset($argument['typeHint'])) {
+                            $classKey = $argument['typeHint'];
+                            if ($classKey != 'mixed'
+                                && $classKey != 'object'
+                                && $classKey != 'array'
+                            ) {
+                                $ref = $this->searchReference('classes', $classKey);
+
+                                if ($ref === 1) {
+                                    if ($classKey == 'anonymous function') {
+                                        $defaultVersion = '5.3.0';
+                                    }
+                                    // user component
+                                    $ref = array('user' => array(
+                                        $classKey => array(
+                                            'versions' => array('4.0.0', ''),
+                                            )
+                                        )
+                                    );
+                                }
+                                if (!is_array($ref)) {
+                                    // multiple occurs for same reference (unpredictable)
+                                    $this->addWarning("Multiple values for same reference name '$classKey'");
+                                    continue;
+                                }
+                                list ($ext, $val) = each($ref);
+
+                                if (!isset($this->classes[$ext])
+                                    || !isset($this->classes[$ext][$classKey])
+                                ) {
+                                    $this->classes[$ext][$classKey] = array(
+                                        'versions' => $val[$classKey]['versions'],
+                                        'uses'     => 1,
+                                        'sources'  => array($source),
+                                        'excluded' => false
+                                    );
+                                }
+
+                                if (!isset($this->extensions[$ext])) {
+                                    // retrieve extension versions information
+                                    foreach ($this->reference['extensions'] as $k => $v) {
+                                        if ($ext === $k) {
+                                            $this->extensions[$ext] = array(
+                                                'versions' => $v,
+                                                'excluded' => false,
+                                                'uses'     => 1,
+                                                'sources'  => array($source)
+                                            );
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                $this->_versionsRef = $val[$classKey]['versions'];
+
+                                $this->updateVersion(
+                                    $this->_versionsRef[0],
+                                    $this->{$category}[$extension][$key]['versions'][0]
+                                );
+                                $this->updateVersion(
+                                    $this->_versionsRef[1],
+                                    $this->{$category}[$extension][$key]['versions'][1]
+                                );
+                            }
+                        }
+                    }
+
+                }
+            }
+
             // updates the minimum and maximum versions of current source
             $this->updateVersion(
                 $this->_versionsRef[0], $this->versions[0]
@@ -1583,36 +1663,4 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         );
     }
 
-    /**
-     * Detect function or class method type hinting
-     *
-     * @param string $source    Source filename
-     * @param string $ns        Namespace
-     * @param array  $functions Functions or class methods data
-     *
-     * @return void
-     */
-    protected function classTypeHinting($source, $ns, $functions)
-    {
-        foreach ($functions as $function) {
-            if (isset($function['arguments'])
-                && is_array($function['arguments'])
-            ) {
-                foreach ($function['arguments'] as $argument) {
-                    if (isset($argument['typeHint'])) {
-                        if ($argument['typeHint'] != 'mixed'
-                            && $argument['typeHint'] != 'object'
-                            && $argument['typeHint'] != 'array'
-                        ) {
-                            $this->getInfo(
-                                'classes', '4.0.0',
-                                array($argument['typeHint'] => false),
-                                $source, $ns
-                            );
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
