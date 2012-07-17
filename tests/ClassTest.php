@@ -122,7 +122,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
             ),
         );
 
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $classes
         );
     }
@@ -138,7 +138,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
     {
         $classes = $this->pci->getClasses('Core');
 
-        $this->assertSame(
+        $this->assertEquals(
             array(), $classes
         );
 
@@ -164,7 +164,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
             ),
         );
 
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $classes
         );
 
