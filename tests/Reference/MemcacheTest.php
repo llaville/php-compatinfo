@@ -42,6 +42,19 @@ class PHP_CompatInfo_Reference_MemcacheTest
      */
     protected function setUp()
     {
+        if (DIRECTORY_SEPARATOR == '\\') {
+            // Win32 only
+            $this->optionnalfunctions = array(
+                'memcache_append',
+                'memcache_cas',
+                'memcache_prepend',
+                'memcache_set_failure_callback',
+            );
+            $this->ignoredfunctions = array(
+                'memcache_setoptimeout',
+            );
+        }
+
         $this->obj = new PHP_CompatInfo_Reference_Memcache();
         parent::setUp();
     }
