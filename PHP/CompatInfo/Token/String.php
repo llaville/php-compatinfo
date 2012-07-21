@@ -89,7 +89,9 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             return false;  // property or methodName class call
         }
 
-        if ($this->_getContext(-2) == 'T_NEW') {
+        if ($this->_getContext(-2) == 'T_NEW'
+            || $this->_getContext(-1) == 'T_NS_SEPARATOR'
+        ) {
             return false;
         }
 
@@ -165,6 +167,20 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             return false;
         }
 
+        if ($this->_getContext(-1) == 'T_NS_SEPARATOR') {
+            $i = -2;
+            do {
+                $context = $this->_getContext($i);
+                if ($context == 'T_WHITESPACE') {
+                    if ($this->_getContext($i - 1) == 'T_NEW') {
+                        return true;
+                    }
+                    return false;
+                }
+                $i--;
+            } while (true);
+        }
+
         if ($this->_getContext(-2) == 'T_NEW') {
             return true;
         }
@@ -198,9 +214,22 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
 
     private function _isNamespace()
     {
-        if ($this->_getContext(-2) == 'T_NAMESPACE' ||
-            $this->_getContext(-1) == 'T_NS_SEPARATOR') {
+        if ($this->_getContext(-2) == 'T_NAMESPACE') {
             return true;
+        }
+
+        if ($this->_getContext(-1) == 'T_NS_SEPARATOR') {
+            $i = -2;
+            do {
+                $context = $this->_getContext($i);
+                if ($context == 'T_WHITESPACE') {
+                    if ($this->_getContext($i - 1) == 'T_USE') {
+                        return true;
+                    }
+                    return false;
+                }
+                $i--;
+            } while (true);
         }
         return false;
     }

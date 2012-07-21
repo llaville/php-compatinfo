@@ -175,11 +175,16 @@ class PHP_CompatInfo_Report_Class extends PHP_CompatInfo_Report
                 }
                 $versions = implode('  ', $items[$class]['versions']);
                 echo ' ';
-                if (strlen($class) < 38) {
-                    echo $class
-                        . str_repeat(' ', (38 - strlen($class)));
+                if (!isset($items[$class]['namespace']) || $items[$class]['namespace'] == '\\') {
+                    $fullClassName = $class;
                 } else {
-                    echo $class . PHP_EOL;
+                    $fullClassName = $items[$class]['namespace'] . "\\" . $class;
+                }
+                if (strlen($fullClassName) < 38) {
+                    echo $fullClassName
+                        . str_repeat(' ', (38 - strlen($fullClassName)));
+                } else {
+                    echo $fullClassName . PHP_EOL;
                     echo str_repeat(' ', 40);
                 }
                 echo $extension

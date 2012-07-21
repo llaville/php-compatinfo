@@ -673,11 +673,6 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
             );
             $reflect->connect(
-                'T_USE',
-                'PHP_Reflect_Token_USE',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
-            );
-            $reflect->connect(
                 'T_INSTEADOF',
                 'PHP_Reflect_Token_INSTEADOF',
                 array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
@@ -1274,15 +1269,22 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 $values[$key]['uses']
                     = $this->{$category}[$extension][$key]['uses'];
                 $values[$key]['sources'][] = $source;
+                $values[$key]['namespace'] = $ns;
             } else {
                 $values[$key]['uses']
                     = isset($data['uses']) ? count($data['uses']) : 1;
-                $values[$key]['sources'] = array($source);
+                $values[$key]['sources']   = array($source);
+                $values[$key]['namespace'] = $ns;
 
                 if (isset($data['parent']) && !empty($data['parent'])) {
+                    $parent = $data['parent'];
+                    if (strpos($parent, '\\') === 0) {
+                        $ns = '\\';
+                        $parent = substr($parent, 1);
+                    }
                     $this->getInfo(
                         $category, '4.0.0',
-                        array($data['parent'] => ''), $source, $ns
+                        array($parent => ''), $source, $ns
                     );
                 }
 
