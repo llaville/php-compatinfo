@@ -3,7 +3,7 @@ HOW TO build yourself The User Guide written for AsciiDoc
 NOTE: You should have installed on your system
 .For standard HTML or Docbook targets
 
-AsciiDoc 8.6.7
+AsciiDoc 8.6.8
     http://www.methods.co.nz/asciidoc/
 Source-Highlight 3.1+
     http://www.gnu.org/software/src-highlite/
@@ -19,7 +19,7 @@ Apache FOP
     http://xmlgraphics.apache.org/fop/index.html
 
 With basic layout, and linked javascript and styles
-$ asciidoc-8.6.7/asciidoc.py
+$ asciidoc-8.6.8/asciidoc.py
   -a icons
   -a toc2
   -a linkcss
@@ -29,7 +29,7 @@ $ asciidoc-8.6.7/asciidoc.py
   docs/userguide.txt
 
 With basic layout, and embbeded javascript and styles
-$ asciidoc-8.6.7/asciidoc.py
+$ asciidoc-8.6.8/asciidoc.py
   -a icons
   -a toc2
   -a theme=flask

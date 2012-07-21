@@ -10,8 +10,8 @@ include::revision.txt[]
 ************************************************************************
 Release highlights:
 
-- PHP_CompatInfo 2.5.0 add both support to PHP 5.3.14 and PHP 5.4.4, 
-and add 8 news extensions.
+- PHP_CompatInfo 2.6.0 add both support to PHP 5.3.15 and PHP 5.4.5,
+and improved support of namespaces.
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -46,14 +46,14 @@ PHP_CompatInfo 2 provides two servers API :
 * ezc/Base 1.8 minimum (for CLI phpci tool)
 * ezc/ConsoleTools 1.6.1 minimum (for progress bar with CLI phpci tool)
 * pear/Console_CommandLine 1.1.3 minimum since RC3 (for CLI phpci tool)
-* bartlett/PHP_Reflect 1.2.0 minimum (PHP parser)
+* bartlett/PHP_Reflect 1.4.0 minimum (PHP parser)
 * pcre extension
 * SPL extension
 * dom extension
 * libxml extension
 * phpunit/PHP_Timer 1.0.0 (utility class for timing) 
 * (optional) pear/Net_Growl 2.6.0 minimum (for growl audit observer)
-* (optional) PHPUnit 3.5.0 minimum (to run unit tests)
+* (optional) PHPUnit 3.6.0 minimum (to run unit tests)
 * (optional) an XSLT processor if you want to produce an xHTML report from a phpci xml report
 
 .Version 2.0.0
@@ -71,7 +71,7 @@ PHP_CompatInfo 2 provides two servers API :
 .Version 2.4.0
 * support 67 extensions.
 
-.Version 2.5.0
+.Versions 2.5.0 and 2.6.0
 * support 75 extensions.
 
 The _phpci_ tool may inform you on what of those extensions are or not loaded on your system.
@@ -236,7 +236,7 @@ ____
 
 == Appendix D: Links
 
-All pages of this site, and user guide were generated with AsciiDoc 8.6.7,
+All pages of this site, and user guide were generated with AsciiDoc 8.6.8,
 assisted by FOP 1.0 (for PDFs). Automated build process uses Phing 2.4.12
 
 Convert the HTML Help source (.hhp and .html) files to HTML Help (.chm) files

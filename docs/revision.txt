@@ -1,4 +1,4 @@
 :author:     Laurent Laville
 :email:      pear@laurent-laville.org
-:revdate:    2012-mm-dd
+:revdate:    2012-07-22
 :revnumber:  2.6.0
