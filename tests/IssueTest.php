@@ -196,6 +196,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
                 'versions' => array('5.1.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source16302.php'),
+                'namespace' => '\\',
                 'excluded' => false,
             ),
         );
@@ -440,6 +441,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
                     'versions' => array('5.1.0', ''),
                     'uses' => 1,
                     'sources' => array(TEST_FILES_PATH . 'gh38.php'),
+                    'namespace' => '\\',
                     'excluded' => false,
                 )
             ),
@@ -456,6 +458,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
             'versions' => $versions,
             'uses' => 1,
             'sources' => array(TEST_FILES_PATH . 'gh38.php'),
+            'namespace' => '\\',
             'excluded' => false,
         );
 
@@ -470,6 +473,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
             'versions' => $versions,
             'uses' => 1,
             'sources' => array(TEST_FILES_PATH . 'gh38.php'),
+            'namespace' => '\\',
             'excluded' => false,
         );
 

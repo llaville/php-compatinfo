@@ -77,12 +77,14 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
                 'versions' => array('4.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                'namespace' => '\\',
                 'excluded' => false,
             ),
             'TPL_REPOSITORY' => array(
                 'versions' => array('4.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                'namespace' => '\\',
                 'excluded' => false,
             ),
         );
@@ -95,12 +97,14 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
                 'versions' => array('4.0.0', ''),
                 'uses' => 2,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                'namespace' => '\\',
                 'excluded' => false,
             ),
             'FALSE' => array(
                 'versions' => array('4.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                'namespace' => '\\',
                 'excluded' => false,
             ),
         );
@@ -125,12 +129,14 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
                 'versions' => array('4.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                'namespace' => '\\',
                 'excluded' => false,
             ),
             'TPL_REPOSITORY' => array(
                 'versions' => array('4.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                'namespace' => '\\',
                 'excluded' => false,
             ),
         );
@@ -156,6 +162,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
                 'versions' => array('4.0.0', ''),
                 'uses' => 2,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
+                'namespace' => '\\',
                 'excluded' => false,
             ),
         );
