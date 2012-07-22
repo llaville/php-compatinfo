@@ -325,26 +325,32 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      */
     public function testBugGH29()
     {
-        $this->pci->parse(TEST_FILES_PATH . 'gh29.php');
+        if (version_compare(PHP_VERSION, '5.3.0', '<')) {
+            $this->markTestSkipped(
+                'NAMESPACE is fully supported only with PHP 5.3.0 or greater'
+            );
+        } else {
+            $this->pci->parse(TEST_FILES_PATH . 'gh29.php');
 
-        $constantsPredefined = array_keys(
-            $this->pci->getConstants('Core', '^__(.*)__$')
-        );
-        sort($constantsPredefined);
+            $constantsPredefined = array_keys(
+                $this->pci->getConstants('Core', '^__(.*)__$')
+            );
+            sort($constantsPredefined);
 
-        $this->assertSame(
-            array(
-                '__CLASS__',
-                '__DIR__',
-                '__FILE__',
-                '__FUNCTION__',
-                '__LINE__',
-                '__METHOD__',
-                '__NAMESPACE__',
-                '__TRAIT__',
-            ),
-            $constantsPredefined
-        );
+            $this->assertSame(
+                array(
+                    '__CLASS__',
+                    '__DIR__',
+                    '__FILE__',
+                    '__FUNCTION__',
+                    '__LINE__',
+                    '__METHOD__',
+                    '__NAMESPACE__',
+                    '__TRAIT__',
+                ),
+                $constantsPredefined
+            );
+        }
     }
 
     /**
