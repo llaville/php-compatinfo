@@ -125,7 +125,12 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      */
     protected $results;
 
-    /**
+     /**
+     * @var array
+     */
+    private $_namespaces;
+
+   /**
      * Observers connected
      * @var SplObjectStorage
      */
@@ -691,6 +696,9 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
             $reflect->scan($source);
 
+            $this->_namespaces
+                = $reflect->getNamespaces(PHP_Reflect::NAMESPACES_ALL);
+
             /**
              * @link http://www.php.net/manual/en/language.namespaces.php
              *       Namespaces
@@ -986,6 +994,31 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     public function getVersions()
     {
         return $this->_versionsLatest;
+    }
+
+    /**
+     * Search the namespace of component (class, interface, function, constant) 
+     * referenced by type hinting uses
+     *
+     * @param string $typeHint Type of parameter in method or function
+     *
+     * @return string
+     */
+    protected function searchNamespace($typeHint)
+    {
+        // default namespace
+        $namespace = '\\';
+    
+        if (is_array($this->_namespaces)) {
+            foreach ($this->_namespaces as $ns => $data) {
+                if (isset($data['alias']) && $typeHint == $data['alias']) {
+                    $namespace = $ns;
+                    break;
+                }
+            }
+        }
+        
+        return $namespace;
     }
 
     /**
@@ -1404,10 +1437,11 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                                     || !isset($this->classes[$ext][$classKey])
                                 ) {
                                     $this->classes[$ext][$classKey] = array(
-                                        'versions' => $val[$classKey]['versions'],
-                                        'uses'     => 1,
-                                        'sources'  => array($source),
-                                        'excluded' => false
+                                        'versions'  => $val[$classKey]['versions'],
+                                        'uses'      => 1,
+                                        'sources'   => array($source),
+                                        'namespace' => $this->searchNamespace($classKey),
+                                        'excluded'  => false
                                     );
                                 }
 
