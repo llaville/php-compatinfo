@@ -6,9 +6,10 @@ PHP_CompatInfo ChangeLog
 :scriptsdir:  js
 
 
-== Version 2.6.0 (2012-mm-dd)
+== Version 2.6.0 RC1 (2012-07-23)
 
 .Versions summary:
+* 2.6.0 support all PHP versions until 5.4.5
 * 2.5.0 support all PHP versions until 5.4.4
 * 2.4.0 support all PHP versions until 5.4.3
 * 2.3.0 support all PHP versions until 5.4.0
@@ -20,7 +21,11 @@ PHP_CompatInfo ChangeLog
 
 .Bug fixes:
 * GH-34 : Remove false positive on A::CONST_NAME
+* GH-38 : type hinting in function prototype
+* GH-39 : class not detected and bad version
+* GH-40 : ambiguous class report
 * GH-42 : Remove parameter versions from scandir()
+* unit tests suites PHP 5.2 compatibility with source only parsable with PHP 5.3 or greater
 
 
 == Version 2.5.0 (2012-06-18)
