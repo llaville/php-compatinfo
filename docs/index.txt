@@ -3,7 +3,7 @@ PHP_CompatInfo
 include::revision.txt[]
 :stylesdir:   styles
 :scriptsdir:  js
-:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.5
+:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.6
 
 
 .{revdate}: PHP_CompatInfo {revnumber} Released
