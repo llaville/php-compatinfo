@@ -148,7 +148,7 @@ class PHP_CompatInfo_Reference_Iconv implements PHP_CompatInfo_Reference
                 'iconv_get_encoding'             => array('4.0.5', ''),
                 'iconv_set_encoding'             => array('4.0.5', ''),
                 'iconv'                          => array('4.0.5', ''),
-                'ob_iconv_handler'               => array('4.0.5', '5.3.14'),
+                'ob_iconv_handler'               => array('4.0.5', '5.3.15'),
             );
             $functions = array_merge(
                 $functions,
