@@ -123,11 +123,9 @@ class PHP_CompatInfo_Report_Class extends PHP_CompatInfo_Report
     {
         $total = count($this->total);
         echo str_repeat('-', $this->width).PHP_EOL;
-        echo 'A TOTAL OF ' . $total . ' CLASS';
-        if ($total > 1) {
-            echo 'ES'; 
-        }
-        echo ' WERE FOUND';
+        echo 'A TOTAL OF ' . $total
+            . ' CLASS' . ($total > 1 ? 'ES WERE' : ' WAS')
+            . ' FOUND';
         if ($this->totalExcludes > 0) {
             echo ' AND ' . $this->totalExcludes . ' EXCLUDED FROM PARSING';
         }

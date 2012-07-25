@@ -101,12 +101,22 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
                 $$category = count(array_count_values($this->count[$category]));
 
                 if ($$category > 0) {
+                    if ($category == 'classes') {
+                        $length = -2;
+                        $plural = 'ES';
+                    } else {
+                        $length = -1;
+                        $plural = 'S';
+                    }
                     echo $$category . ' '
-                        . strtoupper(substr($category, 0, -1)) . '(S) ';
+                        . strtoupper(substr($category, 0, $length))
+                        . ($$category > 1 ? $plural : '')
+                        . ' ';
                 }
             }
             echo PHP_EOL;
-            echo 'WERE FOUND IN ' . $filesCount . ' FILE(S)' . PHP_EOL;
+            echo 'WERE FOUND IN ' . $filesCount
+                . ' FILE' . ($filesCount > 1 ? 'S' : '') . PHP_EOL;
             if ($this->ccn > 0) {
                 echo 'WITH CONDITIONAL CODE LEVEL ' . $this->ccn . PHP_EOL;
             }

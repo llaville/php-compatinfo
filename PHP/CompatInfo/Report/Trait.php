@@ -121,8 +121,11 @@ class PHP_CompatInfo_Report_Trait extends PHP_CompatInfo_Report
      */
     private function printTFoot($conditions)
     {
+        $total = count($this->total);
         echo str_repeat('-', $this->width) . PHP_EOL;
-        echo 'A TOTAL OF ' . count($this->total) .' TRAIT(S) WERE FOUND';
+        echo 'A TOTAL OF ' . $total
+            . ' TRAIT' . ($total > 1 ? 'S WERE' : ' WAS')
+            . ' FOUND';
         if ($this->totalExcludes > 0) {
             echo ' AND ' . $this->totalExcludes . ' EXCLUDED FROM PARSING';
         }
@@ -131,7 +134,7 @@ class PHP_CompatInfo_Report_Trait extends PHP_CompatInfo_Report
         if ($ccn > 0) {
             echo 'WITH CONDITIONAL CODE LEVEL ' . $ccn . PHP_EOL;
         }
-        if (count($this->total) > 0) {
+        if ($total > 0) {
             echo 'REQUIRED PHP ' . $this->globalVersions[0] .  ' (MIN) ';
             if (!empty($this->globalVersions[1])) {
                 echo $this->globalVersions[1] . ' (MAX)';
