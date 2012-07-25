@@ -35,14 +35,6 @@ content of dictionary references.
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
-Versions summary:
-- 2.6.0 support all PHP versions until 5.4.5
-- 2.5.0 support all PHP versions until 5.4.4
-- 2.4.0 support all PHP versions until 5.4.3
-- 2.3.0 support all PHP versions until 5.4.0
-- 2.2.0 support all PHP versions until 5.3.10
-- 2.1.0 support all PHP versions until 5.3.8
-
 Additions and changes:
 - Users have now ability to use their own autoloader (related to issue GH-43)
 
@@ -1291,14 +1283,6 @@ Bug fixes:
    <date>2012-07-23</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
-Versions summary:
-- 2.6.0 support all PHP versions until 5.4.5
-- 2.5.0 support all PHP versions until 5.4.4
-- 2.4.0 support all PHP versions until 5.4.3
-- 2.3.0 support all PHP versions until 5.4.0
-- 2.2.0 support all PHP versions until 5.3.10
-- 2.1.0 support all PHP versions until 5.3.8
-
 Additions and changes:
 - Users have now ability to use their own autoloader (related to issue GH-43)
 
