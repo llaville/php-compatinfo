@@ -1436,11 +1436,16 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                                 if (!isset($this->classes[$ext])
                                     || !isset($this->classes[$ext][$classKey])
                                 ) {
+                                    $namespace = $this->searchNamespace($classKey);
+                                    if ('\\' != $namespace && 'user' == $ext) {
+                                        $val[$classKey]['versions'] = array('5.3.0', '');
+                                    }
+
                                     $this->classes[$ext][$classKey] = array(
                                         'versions'  => $val[$classKey]['versions'],
                                         'uses'      => 1,
                                         'sources'   => array($source),
-                                        'namespace' => $this->searchNamespace($classKey),
+                                        'namespace' => $namespace,
                                         'excluded'  => false
                                     );
                                 }
