@@ -160,7 +160,7 @@ instead of a file.
 [source,php]
 ----
 <?php
-require_once 'Bartlett/PHP/CompatInfo.php';
+require_once 'Bartlett/PHP/CompatInfo/Autoload.php';
 
 $source = '/path/to/myFolder';
 

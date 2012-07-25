@@ -41,7 +41,7 @@ NOTE: If you want sub-folders scanned, use the +recursive+ option.
 [source,php]
 ----
 <?php
-require_once 'Bartlett/PHP/CompatInfo.php';
+require_once 'Bartlett/PHP/CompatInfo/Autoload.php';
 
 $source  = '/path/to/myFolder';
 $options = array(
@@ -70,7 +70,7 @@ which reference to use. This is done using the +reference+ option.
 [source,php]
 ----
 <?php
-require_once 'Bartlett/PHP/CompatInfo.php';
+require_once 'Bartlett/PHP/CompatInfo/Autoload.php';
 
 $source  = '/path/to/myFolder';
 $options = array(
@@ -95,7 +95,7 @@ but you must also tell where it is.
 [source,php]
 ----
 <?php
-require_once 'Bartlett/PHP/CompatInfo.php';
+require_once 'Bartlett/PHP/CompatInfo/Autoload.php';
 
 $source  = '/path/to/myFolder';
 $options = array(
