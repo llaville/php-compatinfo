@@ -127,6 +127,9 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                         $extension = $category;
                     }
                     foreach ($items as $trait => $data) {
+                        if ('\\' !== $data['namespace']) {
+                            $trait = $data['namespace'] . '\\' . $trait;
+                        }
                         echo str_repeat(' ', $indent);
                         echo '<trait name="' . $trait .
                             '" extension="' . $extension .
@@ -153,6 +156,9 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                         $extension = $category;
                     }
                     foreach ($items as $interface => $data) {
+                        if ('\\' !== $data['namespace']) {
+                            $interface = $data['namespace'] . '\\' . $interface;
+                        }
                         echo str_repeat(' ', $indent);
                         echo '<interface name="' . $interface .
                             '" extension="' . $extension .
@@ -179,6 +185,9 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                         $extension = $category;
                     }
                     foreach ($items as $class => $data) {
+                        if ('\\' !== $data['namespace']) {
+                            $class = $data['namespace'] . '\\' . $class;
+                        }
                         echo str_repeat(' ', $indent);
                         echo '<class name="' . $class .
                             '" extension="' . $extension .
@@ -205,6 +214,9 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                         $extension = $category;
                     }
                     foreach ($items as $function => $data) {
+                        if ('\\' !== $data['namespace']) {
+                            $function = $data['namespace'] . '\\' . $function;
+                        }
                         echo str_repeat(' ', $indent);
                         echo '<function name="' . $function .
                             '" extension="' . $extension .
@@ -232,6 +244,9 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                         $extension = $category;
                     }
                     foreach ($items as $constant => $data) {
+                        if ('\\' !== $data['namespace']) {
+                            $constant = $data['namespace'] . '\\' . $constant;
+                        }
                         echo str_repeat(' ', $indent);
                         echo '<constant name="' . $constant .
                             '" extension="' . $extension .
