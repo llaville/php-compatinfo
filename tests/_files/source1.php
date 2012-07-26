@@ -35,3 +35,8 @@ class d implements a
     {
     }
 }
+
+function foo(callable $cb) 
+{
+    $cb();
+}
