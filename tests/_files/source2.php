@@ -14,6 +14,21 @@ class CompatInfo
 {
 }
 
+class Closures {
+
+    function firstGetter($name) {
+        return function() use ($name) {
+            return $this->$name;
+        };
+    }
+
+    function secondGetter() {
+        return function($name)  {
+            return $this->$name;
+        };
+    }
+}
+
 function toFile($filename, $data)
 {
     if (function_exists('file_put_contents')) {
