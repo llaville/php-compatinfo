@@ -23,22 +23,40 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-07-23</date>
- <time>15:11:37</time>
+ <date>2012-07-26</date>
+ <time>18:28:57</time>
  <version>
-  <release>2.6.0RC1</release>
+  <release>2.6.0</release>
   <api>2.6.0</api>
  </version>
  <stability>
-  <release>beta</release>
+  <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
-Additions and changes:
+Versions summary:
+- 2.6.0 support all PHP versions until 5.4.5
+- 2.5.0 support all PHP versions until 5.4.4
+- 2.4.0 support all PHP versions until 5.4.3
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
+
+Additions and changes since 2.6.0RC1:
+- fixed plural in the footer of all reports produced by CLI
+- add namespace (when necessary) in XML report
+- improved version detection of namespaces aliases uses in type hinting
+
+Additions and changes since 2.5.0:
 - Users have now ability to use their own autoloader (related to issue GH-43)
 
-Bug fixes:
+Bug fixes since 2.6.0RC1:
+- fix references to latest version of branch PHP 5.3
+- wrong namespace used for class when importing other namespaces (see PHP_Reflect 1.4.2)
+- excludes callable type hint in additionnal class search
+
+.Bug fixes since 2.5.0:
 - GH-34 : Remove false positive on A::CONST_NAME
 - GH-38 : type hinting in function prototype
 - GH-39 : class not detected and bad version
@@ -1220,7 +1238,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>1.4.1</min>
+    <min>1.4.2</min>
    </package>
    <package>
     <name>PHP_Timer</name>
@@ -1271,6 +1289,48 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.6.0</release>
+    <api>2.6.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-07-26</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Versions summary:
+- 2.6.0 support all PHP versions until 5.4.5
+- 2.5.0 support all PHP versions until 5.4.4
+- 2.4.0 support all PHP versions until 5.4.3
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
+
+Additions and changes since 2.6.0RC1:
+- fixed plural in the footer of all reports produced by CLI
+- add namespace (when necessary) in XML report
+- improved version detection of namespaces aliases uses in type hinting
+
+Additions and changes since 2.5.0:
+- Users have now ability to use their own autoloader (related to issue GH-43)
+
+Bug fixes since 2.6.0RC1:
+- fix references to latest version of branch PHP 5.3
+- wrong namespace used for class when importing other namespaces (see PHP_Reflect 1.4.2)
+- excludes callable type hint in additionnal class search
+
+.Bug fixes since 2.5.0:
+- GH-34 : Remove false positive on A::CONST_NAME
+- GH-38 : type hinting in function prototype
+- GH-39 : class not detected and bad version
+- GH-40 : ambiguous class report
+- GH-42 : Remove parameter versions from scandir()
+- unit tests suites PHP 5.2 compatibility with source only parsable with PHP 5.3 or greater
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.6.0RC1</release>
