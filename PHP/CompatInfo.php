@@ -1411,6 +1411,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                             if ($classKey != 'mixed'
                                 && $classKey != 'object'
                                 && $classKey != 'array'
+                                && $classKey != 'callable'
                             ) {
                                 $ref = $this->searchReference('classes', $classKey);
 
