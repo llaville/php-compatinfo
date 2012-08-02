@@ -140,8 +140,8 @@ Will print out a summary report like this one
     myFile.php                            5          3      11        27         4
     -------------------------------------------------------------------------------
     A TOTAL OF
-     5 EXTENSION(S) 3 INTERFACE(S) 11 CLASSE(S) 27 FUNCTION(S) 4 CONSTANT(S)
-    WERE FOUND IN 1 FILE(S)
+     5 EXTENSIONS 3 INTERFACES 11 CLASSES 27 FUNCTIONS 4 CONSTANTS
+    WERE FOUND IN 1 FILE
     WITH CONDITIONAL CODE LEVEL 32
     REQUIRED PHP 5.1.3 (MIN)
     -------------------------------------------------------------------------------
@@ -203,8 +203,8 @@ Will print out the summary report
     TokenStream.php                       4          0       3        17         3
     -------------------------------------------------------------------------------
     A TOTAL OF
-     5 EXTENSION(S) 1 INTERFACE(S) 31 CLASSE(S) 47 FUNCTION(S) 6 CONSTANT(S)
-    WERE FOUND IN 8 FILE(S)
+     5 EXTENSIONS 1 INTERFACE 31 CLASSES 47 FUNCTIONS 6 CONSTANTS
+    WERE FOUND IN 8 FILES
     WITH CONDITIONAL CODE LEVEL 32
     REQUIRED PHP 5.1.2 (MIN)
     -------------------------------------------------------------------------------
