@@ -32,8 +32,8 @@ This has to be done only once. Now the PEAR Installer can be used to install pac
 
     $ pear install bartlett/PHP_CompatInfo
     downloading PHP_CompatInfo-2.6.0.tgz ...
-    Starting to download PHP_CompatInfo-2.6.0.tgz (808,921 bytes)
-    .........................done: 808,921 bytes
+    Starting to download PHP_CompatInfo-2.6.0.tgz (809,910 bytes)
+    .........................done: 809,910 bytes
     install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.6.0
 
 After the installation you can find the PHP_CompatInfo source files inside your local PEAR directory.
