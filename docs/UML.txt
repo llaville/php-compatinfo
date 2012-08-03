@@ -4,5 +4,187 @@ UML classes diagram
 :toc:
 include::revision.txt[]
 
+.Main System
+["plantuml", "images/PHPCompatInfo_01.png"]
+---------------------------------------------------------------------
+skinparam classAttributeIconSize 0
 
-image::images/PHPCompatInfo.png["UML class diagram", scaledwidth="100%"]
+interface SplSubject {
+    {abstract} void +attach ( SplObserver $observer )
+    {abstract} void +detach ( SplObserver $observer )
+    {abstract} void +notify ( void )
+}
+
+interface IteratorAggregate {
+    {abstract} Traversable +getIterator ( void )
+}
+
+interface Countable {
+    {abstract} int +count ( void )
+}
+
+class PHP_CompatInfo {
+    array #reference
+    array #warnings
+    array #options
+    array #excludes
+    array #includes
+    array #versions
+    array #extensions
+    array #namespaces
+    array #traits
+    array #interfaces
+    array #classes
+    array #functions
+    array #constants
+    array #globals
+    array #tokens
+    array #results
+    int #startTime
+
+    SplObjectStorage -_observers    
+    array -_namespaces
+    array -_versionsRef
+    array -_versionsLatest
+    array -_event
+    
+    object +__construct ( array $options = null )
+    
+    void +attach ( SplObserver $observer )
+    void +detach ( SplObserver $observer )
+    void +notify ( void )
+    
+    Traversable +getIterator ( void )
+    
+    int +count ( void )
+    
+    array +getEvent ( void )
+    void #setEvent( array $event )
+    
+    bool +hasWarnings ( void )
+    array +getWarnings ( bool $purge = false )
+    void +addWarning ( string $warn )
+    
+    array +getFilelist ( mixed $dataSource, bool $recursive, array $excludesPattern )
+    bool +parse ( mixed $dataSource )
+    array +toArray ( string $source = null )
+    array +getExtensions ( void )
+    array +__call ( string $name, array $args )
+    array +getConditions ( string $category = null, string $source = null )
+    array +getVersions ( void )
+    
+    void #scan ( string $source ) 
+    string #searchNamespace ( string $typeHint )
+    void #loadReference ( string $name, array $options = null )
+    mixed #searchReference ( string $category, string $name )
+    bool #isValid ( string $category, string $key )
+    void #updateVersion ( string $current, string &$base )
+    void #getInfo ( string $category, string $defaultVersion, array $haystack, string $source, string $ns )
+    void #startScanSource ( mxied $source )
+    void #endScanSource ( void )
+    void #startScanFile ( string $file, int $currentIndex, int $maxIndex )
+    void #endScanFile ( string $file, int $currentIndex, int $maxIndex )
+    void #startLoadReference ( string $reference, array $extensions )
+    void #endLoadReference ( string $reference, int $successful, int $failures )
+    void #failLoadReference ( string $warn )
+}
+
+class PHP_Reflect {
+}
+
+interface PHP_CompatInfo_Reference {
+    array +getAll ( string $extension = null, string $version = null )
+    array +getExtensions ( string $extension = null, string $version = null )
+    array +getInterfaces ( string $extension = null, string $version = null )
+    array +getClasses ( string $extension = null, string $version = null )
+    array +getFunctions ( string $extension = null, string $version = null )
+    array +getConstants ( string $extension = null, string $version = null )
+}
+
+abstract class PHP_CompatInfo_Reference_PluginsAbstract {
+    array #warnings
+    
+    bool  +hasWarnings ( void )
+    array +getWarnings ( void )
+    array #combineExtension ( string $ext, array $arr )
+    
+    array +getAll ( string $extension = null, string $version = '4' )
+    array +getExtensions ( string $extension = null, string $version = '4' )
+    array +getInterfaces ( string $extension = null, string $version = '4' )
+    array +getClasses ( string $extension = null, string $version = '4' )
+    array +getFunctions ( string $extension = null, string $version = '4' )
+    array +getConstants ( string $extension = null, string $version = '4' )
+}
+
+class PHP_CompatInfo_Reference_PHP4 {
+    array #extensionReferences
+    
+    object +__construct ( array $extensions = null )
+
+    array +getAll ( string $extension = null, string $version = '4' )
+    array +getExtensions ( string $extension = null, string $version = '4' )
+    array +getInterfaces ( string $extension = null, string $version = '4' )
+    array +getClasses ( string $extension = null, string $version = '4' )
+    array +getFunctions ( string $extension = null, string $version = '4' )
+    array +getConstants ( string $extension = null, string $version = '4' )
+
+    array +getGlobals ( void )
+    array +getTokens ( void )
+}
+
+class PHP_CompatInfo_Reference_PHP5 {
+    object +__construct ( array $extensions = null )
+
+    array +getAll ( string $extension = null, string $version = null )
+    array +getExtensions ( string $extension = null, string $version = null )
+    array +getInterfaces ( string $extension = null, string $version = null )
+    array +getClasses ( string $extension = null, string $version = null )
+    array +getFunctions ( string $extension = null, string $version = null )
+    array +getConstants ( string $extension = null, string $version = null )
+}
+
+SplSubject <|.. PHP_CompatInfo
+IteratorAggregate <|.. PHP_CompatInfo
+Countable <|.. PHP_CompatInfo
+
+PHP_CompatInfo_Reference <|.. PHP_CompatInfo_Reference_PluginsAbstract
+
+PHP_CompatInfo_Reference_PluginsAbstract <|-- PHP_CompatInfo_Reference_PHP4
+PHP_CompatInfo_Reference_PHP4 <|-- PHP_CompatInfo_Reference_PHP5
+
+PHP_Reflect - PHP_CompatInfo : < uses parser engine
+PHP_CompatInfo - PHP_CompatInfo_Reference_PHP5 : load >
+---------------------------------------------------------------------
+
+.Cache System
+["plantuml", "images/PHPCompatInfo_02.png"]
+---------------------------------------------------------------------
+class PHP_CompatInfo
+
+interface PHP_CompatInfo_Cache_Interface {
+    bool +isCached ( string $source)
+    array +getCache ( string $source)
+    void +setCache ( string $source, array $data )
+}
+
+class PHP_CompatInfo_Cache_File {
+    object +__construct ( )
+    void +__destruct ( )
+
+    bool +isCached ( string $source)
+    array +getCache ( string $source)
+    void +setCache ( string $source, array $data )
+}
+
+class PHP_CompatInfo_Cache_Null {
+    bool +isCached ( string $source)
+    array +getCache ( string $source)
+    void +setCache ( string $source, array $data )
+}
+
+PHP_CompatInfo_Cache_Interface <|.. PHP_CompatInfo_Cache_File
+PHP_CompatInfo_Cache_Interface <|.. PHP_CompatInfo_Cache_Null
+
+PHP_CompatInfo_Cache_File - PHP_CompatInfo : < use
+PHP_CompatInfo_Cache_Null - PHP_CompatInfo : < use
+---------------------------------------------------------------------
