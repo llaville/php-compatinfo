@@ -79,6 +79,164 @@ by the  +phpcompatinfo.xml.dist+ file if found into the PEAR +cfg_dir+ +\PHP_Com
 ----
 
 
+=== Verbose levels
+
+==== Level 0
+
+When you print report(s), you have on verbose level 0 (default) no extra informations.
+
+==== Level 1
+
+If you choose to set verbose level 1 (+-v+), your report(s) will print also some warnings messages.
+Such as what extensions are loaded in your platform (defined by your __php.ini__ file),
+but not available on your PHP_CompatInfo distribution.
+
+.For example on windows platform
+----
+Warning messages : (2)
+
+  Cannot load extension reference 'com_dotnet'
+  Cannot load extension reference 'odbc'
+----
+
+==== Level 2
+
+If you choose to set verbose level 2 (+-vv+), your report(s) will print both warnings messages
+(as in level 1) but also files where are used components of your report(s).
+
+.Example
+----
+    $ phpci -vv print --report condition \path\to\symfony-ClassLoader-2.0.15
+
+    BASE: \path\to\symfony-ClassLoader-2.0.15
+
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONDITION SUMMARY
+    -------------------------------------------------------------------------------
+      CONDITION                             EXTENSION         VERSION         COUNT
+    -------------------------------------------------------------------------------
+      extension_loaded                      Core              4.0.0               1
+        \ApcUniversalClassLoader.php
+      class_exists                          Core              4.0.0               2
+        \ClassCollectionLoader.php
+        \DebugUniversalClassLoader.php
+      interface_exists                      Core              5.0.2               2
+        \ClassCollectionLoader.php
+        \DebugUniversalClassLoader.php
+      function_exists                       Core              4.0.0               4
+        \ClassCollectionLoader.php
+        \DebugUniversalClassLoader.php
+      trait_exists                          Core              5.4.0               2
+        \ClassCollectionLoader.php
+        \DebugUniversalClassLoader.php
+    -------------------------------------------------------------------------------
+    A TOTAL OF 5 CONDITIONS WERE FOUND
+    REQUIRED PHP 5.4.0 (MIN)
+    -------------------------------------------------------------------------------
+    Time: 1 second, Memory: 8.25Mb
+    -------------------------------------------------------------------------------
+
+    Warning messages : (2)
+
+      Cannot load extension reference 'com_dotnet'
+      Cannot load extension reference 'odbc'
+----
+
+==== Level 3
+
+If you choose to set verbose level 3 (+-vvv+), your report(s) will print both warnings messages
+(as in level 1) and group results by used files of components of your report(s).
+
+NOTE: It is usefull only when data source to parse is a directory.
+
+.Example
+----
+    $ phpci -vvv print --report condition \path\to\symfony-ClassLoader-2.0.15
+
+    BASE: \path\to\symfony-ClassLoader-2.0.15
+    FILE: \ApcUniversalClassLoader.php
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONDITION SUMMARY
+    -------------------------------------------------------------------------------
+      CONDITION                             EXTENSION         VERSION         COUNT
+    -------------------------------------------------------------------------------
+      extension_loaded                      Core              4.0.0               1
+    -------------------------------------------------------------------------------
+    A TOTAL OF 1 CONDITION WAS FOUND
+    REQUIRED PHP 4.0.0 (MIN)
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 8.25Mb
+    -------------------------------------------------------------------------------
+
+    BASE: \path\to\symfony-ClassLoader-2.0.15
+    FILE: \ClassCollectionLoader.php
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONDITION SUMMARY
+    -------------------------------------------------------------------------------
+      CONDITION                             EXTENSION         VERSION         COUNT
+    -------------------------------------------------------------------------------
+      class_exists                          Core              4.0.0               1
+      interface_exists                      Core              5.0.2               1
+      function_exists                       Core              4.0.0               3
+      trait_exists                          Core              5.4.0               1
+    -------------------------------------------------------------------------------
+    A TOTAL OF 4 CONDITIONS WERE FOUND
+    REQUIRED PHP 5.4.0 (MIN)
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 8.25Mb
+    -------------------------------------------------------------------------------
+
+    BASE: \path\to\symfony-ClassLoader-2.0.15
+    FILE: \DebugUniversalClassLoader.php
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONDITION SUMMARY
+    -------------------------------------------------------------------------------
+      CONDITION                             EXTENSION         VERSION         COUNT
+    -------------------------------------------------------------------------------
+      class_exists                          Core              5.0.0               1
+      interface_exists                      Core              5.0.2               1
+      function_exists                       Core              4.0.0               1
+      trait_exists                          Core              5.4.0               1
+    -------------------------------------------------------------------------------
+    A TOTAL OF 4 CONDITIONS WERE FOUND
+    REQUIRED PHP 5.4.0 (MIN)
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 8.25Mb
+    -------------------------------------------------------------------------------
+
+    BASE: \path\to\symfony-ClassLoader-2.0.15
+    FILE: \MapClassLoader.php
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONDITION SUMMARY
+    -------------------------------------------------------------------------------
+      CONDITION                             EXTENSION         VERSION         COUNT
+    -------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------
+    A TOTAL OF 0 CONDITION WAS FOUND
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 8.25Mb
+    -------------------------------------------------------------------------------
+
+    BASE: \path\to\symfony-ClassLoader-2.0.15
+    FILE: \UniversalClassLoader.php
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONDITION SUMMARY
+    -------------------------------------------------------------------------------
+      CONDITION                             EXTENSION         VERSION         COUNT
+    -------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------
+    A TOTAL OF 0 CONDITION WAS FOUND
+    -------------------------------------------------------------------------------
+    Time: 0 seconds, Memory: 8.25Mb
+    -------------------------------------------------------------------------------
+
+    Warning messages : (2)
+
+      Cannot load extension reference 'com_dotnet'
+      Cannot load extension reference 'odbc'
+----
+
+
 == Commands
 
 They are two categories of command:
