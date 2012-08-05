@@ -926,7 +926,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      * - method_exists    (level 16)
      * - class_exists     (level 32)
      * - interface_exists (level 64)
-     * - trait_exists     (level 96)
+     * - trait_exists     (level 128)
      *
      * @param string $category OPTIONAL Level of conditional code
      * @param string $source   OPTIONAL Source filename
@@ -1172,7 +1172,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         case 'conditions':
             $search = array(
                 'function_exists', 'extension_loaded', 'defined',
-                'method_exists', 'class_exists', 'interface_exists'
+                'method_exists', 'class_exists', 'interface_exists', 'trait_exists'
             );
             break;
         case 'reference':

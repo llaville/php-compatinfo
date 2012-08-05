@@ -143,6 +143,9 @@ abstract class PHP_CompatInfo_Report
                 case 'interface_exists':
                     $ccn = $ccn | 64;
                     break;
+                case 'trait_exists':
+                    $ccn = $ccn | 128;
+                    break;
                 }
             }
         }
