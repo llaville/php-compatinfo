@@ -810,11 +810,6 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 null, $source
             );
         }
-        foreach ($this->results[$source]['conditions'] as $condition => $count) {
-            if ($count > 0) {
-                $this->addWarning("Found conditional code '$condition'");
-            }
-        }
 
         if (!$cached) {
             // write results in a cache to improve speed for later uses
