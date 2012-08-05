@@ -91,6 +91,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Report/Source.php',
             'PHP_CompatInfo_Report_Token'
                 => 'PHP/CompatInfo/Report/Token.php',
+            'PHP_CompatInfo_Report_Condition'
+                => 'PHP/CompatInfo/Report/Condition.php',
             'PHP_CompatInfo_Listener_File'
                 => 'PHP/CompatInfo/Listener/File.php',
             'PHP_CompatInfo_Listener_Growl'

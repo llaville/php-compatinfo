@@ -116,7 +116,7 @@ class PHP_CompatInfo_CLI
                     'extension',
                     'namespace',
                     'trait', 'interface', 'class', 'function', 'constant',
-                    'global'
+                    'global', 'condition'
                 )
             )
         );
@@ -145,7 +145,7 @@ class PHP_CompatInfo_CLI
                         'extension',
                         'namespace',
                         'trait', 'interface', 'class', 'function', 'constant',
-                        'global'
+                        'global', 'condition'
                     ),
                 )
             )
