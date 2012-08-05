@@ -23,46 +23,27 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-07-26</date>
- <time>18:28:57</time>
+ <date>2012-08-05</date>
+ <time>18:59:58</time>
  <version>
-  <release>2.6.0</release>
-  <api>2.6.0</api>
+  <release>2.7.0snapshot20120805</release>
+  <api>2.7.0</api>
  </version>
  <stability>
-  <release>stable</release>
+  <release>snapshot</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
-Versions summary:
-- 2.6.0 support all PHP versions until 5.4.5
-- 2.5.0 support all PHP versions until 5.4.4
-- 2.4.0 support all PHP versions until 5.4.3
-- 2.3.0 support all PHP versions until 5.4.0
-- 2.2.0 support all PHP versions until 5.3.10
-- 2.1.0 support all PHP versions until 5.3.8
+Additions and changes:
+- add a new report (condition) for CLI tool that will replace the warning messages
+on conditional code uses
+- removed warning messages about conditional code uses; replaced by
+the new --report condition of the CLI tool
+- add a new level for conditional code uses about traits (PHP 5.4 feature)
 
-Additions and changes since 2.6.0RC1:
-- fixed plural in the footer of all reports produced by CLI
-- add namespace (when necessary) in XML report
-- improved version detection of namespaces aliases uses in type hinting
-
-Additions and changes since 2.5.0:
-- Users have now ability to use their own autoloader (related to issue GH-43)
-
-Bug fixes since 2.6.0RC1:
-- fix references to latest version of branch PHP 5.3
-- wrong namespace used for class when importing other namespaces (see PHP_Reflect 1.4.2)
-- excludes callable type hint in additionnal class search
-
-.Bug fixes since 2.5.0:
-- GH-34 : Remove false positive on A::CONST_NAME
-- GH-38 : type hinting in function prototype
-- GH-39 : class not detected and bad version
-- GH-40 : ambiguous class report
-- GH-42 : Remove parameter versions from scandir()
-- unit tests suites PHP 5.2 compatibility with source only parsable with PHP 5.3 or greater
+Bug fixes:
+- none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -151,6 +132,12 @@ Bug fixes since 2.6.0RC1:
       </file>
      </dir> <!-- /docs/images/icons -->
      <file baseinstalldir="Bartlett" name="PHPCompatInfo.png" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="PHPCompatInfo_01.png" role="doc">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="PHPCompatInfo_02.png" role="doc">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="summary.png" role="doc">
@@ -530,6 +517,9 @@ Bug fixes since 2.6.0RC1:
      </dir> <!-- /PHP/CompatInfo/Reference -->
      <dir name="Report">
       <file baseinstalldir="Bartlett" name="Class.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="Condition.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="Constant.php" role="php">
@@ -1289,6 +1279,29 @@ Bug fixes since 2.6.0RC1:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.7.0snapshot20120805</release>
+    <api>2.7.0</api>
+   </version>
+   <stability>
+    <release>snapshot</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-08-05</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- add a new report (condition) for CLI tool that will replace the warning messages
+on conditional code uses
+- removed warning messages about conditional code uses; replaced by
+the new --report condition of the CLI tool
+- add a new level for conditional code uses about traits (PHP 5.4 feature)
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.6.0</release>
