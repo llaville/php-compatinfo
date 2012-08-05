@@ -6,6 +6,28 @@ PHP_CompatInfo ChangeLog
 :scriptsdir:  js
 
 
+== Version 2.7.0 (2012-08-dd)
+
+.Versions summary:
+* 2.7.0 support all PHP versions until 5.4.6
+* 2.6.0 support all PHP versions until 5.4.5
+* 2.5.0 support all PHP versions until 5.4.4
+* 2.4.0 support all PHP versions until 5.4.3
+* 2.3.0 support all PHP versions until 5.4.0
+* 2.2.0 support all PHP versions until 5.3.10
+* 2.1.0 support all PHP versions until 5.3.8
+
+.Additions and changes:
+* add a new report (condition) for CLI tool that will replace the warning messages
+on conditional code uses
+* removed warning messages about conditional code uses; replaced by
+the new --report condition of the CLI tool
+* add a new level for conditional code uses about traits (PHP 5.4 feature)
+
+.Bug fixes:
+* none
+
+
 == Version 2.6.0 (2012-07-26)
 
 .Versions summary:
