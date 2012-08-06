@@ -42,6 +42,7 @@ But PHP_CompatInfo (alias phpci), may also provides on CLI (with the +phpci+ com
 - *function* : usage, minimum php version and origin of each function used by your sources code 
 - *constant* : usage, minimum php version and origin of each constant used by your sources code 
 - *global* : usage, minimum php version and origin of each global variable used by your sources code 
+- *condition* : usage, minimum php version and origin of each code conditionnal function used by your sources code 
 
 
 == A simple tutorial

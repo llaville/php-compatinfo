@@ -119,3 +119,9 @@ try {
     die ('PHP_CompatInfo Exception : ' . $e->getMessage() . PHP_EOL);
 }
 ----
+
+Reference are :
+
+* *PHP4* to scan only PHP4 source code, with extensions specified or loaded on your system
+* *PHP5* to scan PHP4/PHP5 source code, with extensions specified or loaded on your system
+* *ALL*  to scan PHP4/PHP5 source code, with extensions specified or all present in current distribution
