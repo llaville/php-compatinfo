@@ -21,7 +21,7 @@
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
- * @since    Class available since Release ?????
+ * @since    Class available since Release 2.5.0
  */
 class PHP_CompatInfo_Reference_ALL extends PHP_CompatInfo_Reference_PHP4
 {
