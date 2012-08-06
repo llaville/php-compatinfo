@@ -66,3 +66,11 @@ phing  -f /path/to/build-phing.xml  make-userguide-epub
 Since version 2.4.0
 PDF US file (with FOP)
 phing  -f /path/to/build-phing.xml  make-userguide-pdf-us
+
+Since version 2.7.0
+You need also to install 
+- AsciiDoc PlantUML filter (Have a look on issue #3 at http://code.google.com/p/asciidoc-plantuml/issues/detail?id=3)
+- Graphviz 2.28; Be sure to define environment variable GRAPHVIZ_DOT
+
+On windows platform (for example):
+set GRAPHVIZ_DOT=C:\Graphviz\bin\dot.exe
