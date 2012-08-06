@@ -32,6 +32,7 @@ require_once dirname(__FILE__) . '/Autoload.php';
  * - source
  * - xml
  * - token
+ * - condition
  *
  * @category PHP
  * @package  PHP_CompatInfo
