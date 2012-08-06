@@ -25,17 +25,6 @@
 class PHP_CompatInfo_Reference_PHP5 extends PHP_CompatInfo_Reference_PHP4
 {
     /**
-     * Class constructor of PHP5 References
-     *
-     * @param array $extensions OPTIONAL List of extensions to look for
-     *                          (default: all supported by current platform)
-     */
-    public function __construct($extensions = null)
-    {
-        parent::__construct($extensions);
-    }
-
-    /**
      * Gets all informations at once about:
      * extensions, interfaces, classes, functions, constants
      *
