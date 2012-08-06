@@ -133,8 +133,6 @@ class PHP_CompatInfo_Reference_PHP4 {
 }
 
 class PHP_CompatInfo_Reference_PHP5 {
-    object +__construct ( array $extensions = null )
-
     array +getAll ( string $extension = null, string $version = null )
     array +getExtensions ( string $extension = null, string $version = null )
     array +getInterfaces ( string $extension = null, string $version = null )
