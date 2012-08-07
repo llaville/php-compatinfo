@@ -125,12 +125,12 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
      */
     protected $results;
 
-     /**
+    /**
      * @var array
      */
     private $_namespaces;
 
-   /**
+    /**
      * Observers connected
      * @var SplObjectStorage
      */
@@ -731,7 +731,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                  */
                 $traits = $reflect->getTraits($ns);
                 $this->getInfo('traits', '5.4.0', $traits, $source, $ns);
-                
+
                 /**
                  * @link http://www.php.net/manual/en/language.oop5.interfaces.php
                  *       Object Interfaces
@@ -867,52 +867,74 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         $pattern = '/get' .
             '(?>(Excludes|Includes' .
             '|Namespaces|Interfaces|Classes|Functions|Constants|Globals))/';
-        if (preg_match($pattern, $name, $matches)) {
-            $group = strtolower($matches[1]);
-
-            $category = (isset($args[0])) ? $args[0] : null;
-            $pattern  = (isset($args[1])) ? $args[1] : null;
-
-            if (isset($category) && !$this->isValid($category, $group)) {
-                throw new PHP_CompatInfo_Exception(
-                    "Invalid category. Given '$category'",
-                    PHP_CompatInfo_Exception::RUNTIME
-                );
-            }
-
-            if (!isset($category)) {
-                $$group = $this->{$group};
-            } elseif (isset($this->{$group}[$category])) {
-                $$group = $this->{$group}[$category];
-            } else {
-                $$group = array();
-            }
-            if (isset($pattern)) {
-                $items  = $$group;
-                $$group = array();
-                $n      = 0;
-                foreach ($items as $i => $values) {
-                    if (is_numeric($i)) {
-                        if (preg_match("/$pattern/", $values)) {
-                            ${$group}[$n] = $values;
-                            $n++;
-                        }
-                    } else {
-                        if (preg_match("/$pattern/", $i)) {
-                            ${$group}[$i] = $values;
-                        }
-                    }
-                }
-            }
-
-            return $$group;
-
-        } else {
+        if (preg_match($pattern, $name, $matches) === 0) {
             throw new PHP_CompatInfo_Exception(
                 "Invalid method. Given '$name'",
                 PHP_CompatInfo_Exception::RUNTIME
             );
         }
+
+        $group = strtolower($matches[1]);
+
+        $category = (isset($args[0])) ? $args[0] : null;
+        $pattern  = (isset($args[1])) ? $args[1] : null;
+
+        if (isset($category) && !$this->isValid($category, $group)) {
+            throw new PHP_CompatInfo_Exception(
+                "Invalid category. Given '$category'",
+                PHP_CompatInfo_Exception::RUNTIME
+            );
+        }
+
+        $results = array();
+
+        foreach ($this->results as $source => $data) {
+
+            if (!isset($category)) {
+                $categories = array_keys($data[$group]);
+            } elseif (isset($data[$group][$category])) {
+                $categories = array($category);
+            } else {
+                continue;
+            }
+
+            foreach ($categories as $_category) {
+                if (isset($results[$_category])) {
+                    foreach ($data[$group][$_category] as $name => $info) {
+                        if (isset($results[$_category][$name])) {
+                            // many uses, updates count and source file list
+                            $results[$_category][$name]['uses'] += $info['uses'];
+                            $results[$_category][$name]['sources'] = array_merge(
+                                $results[$_category][$name]['sources'],
+                                $info['sources']
+                            );
+                        } else {
+                            // first use
+                            $results[$_category][$name] = $info;
+                        }
+                    }
+                } else {
+                    $results[$_category] = $data[$group][$_category];
+                }
+            }
+        }
+
+        if (isset($pattern)) {
+            foreach ($results[$category] as $name => $values) {
+                if (preg_match("/$pattern/", $name) === 0) {
+                    unset($results[$category][$name]);
+                }
+            }
+        }
+        if (isset($category)) {
+            if (isset($results[$category])) {
+                $results = $results[$category];
+            } else {
+                $results = array();
+            }
+        }
+
+        return $results;
     }
 
     /**
@@ -994,7 +1016,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     }
 
     /**
-     * Search the namespace of component (class, interface, function, constant) 
+     * Search the namespace of component (class, interface, function, constant)
      * referenced by type hinting uses
      *
      * @param string $typeHint Type of parameter in method or function
@@ -1005,7 +1027,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     {
         // default namespace
         $namespace = '\\';
-    
+
         if (is_array($this->_namespaces)) {
             foreach ($this->_namespaces as $ns => $data) {
                 if (isset($data['alias']) && $typeHint == $data['alias']) {
@@ -1014,7 +1036,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 }
             }
         }
-        
+
         return $namespace;
     }
 
