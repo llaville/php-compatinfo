@@ -27,6 +27,8 @@
  *         Returns informations on parsing results about namespaces
  * @method array getInterfaces() getInterfaces(category = null, $pattern = null)
  *         Returns informations on parsing results about interfaces
+ * @method array getTraits()     getTraits(category = null, $pattern = null)
+ *         Returns informations on parsing results about traits
  * @method array getClasses()    getClasses(category = null, $pattern = null)
  *         Returns informations on parsing results about classes
  * @method array getFunctions()  getFunctions(category = null, $pattern = null)
@@ -866,7 +868,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     {
         $pattern = '/get' .
             '(?>(Excludes|Includes' .
-            '|Namespaces|Interfaces|Classes|Functions|Constants|Globals))/';
+            '|Namespaces|Interfaces|Traits|Classes|Functions|Constants|Globals))/';
         if (preg_match($pattern, $name, $matches) === 0) {
             throw new PHP_CompatInfo_Exception(
                 "Invalid method. Given '$name'",
@@ -875,6 +877,12 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         }
 
         $group = strtolower($matches[1]);
+
+        if ('traits' === $group
+            && version_compare(phpversion(), '5.4.0', 'lt')
+        ) {
+            return;
+        }
 
         $category = (isset($args[0])) ? $args[0] : null;
         $pattern  = (isset($args[1])) ? $args[1] : null;
@@ -1167,6 +1175,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
         switch ($key) {
         case 'namespaces':
         case 'interfaces':
+        case 'traits':
         case 'classes':
         case 'constants':
         case 'functions':
