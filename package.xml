@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-08-05</date>
- <time>18:59:58</time>
+ <date>2012-08-07</date>
+ <time>09:59:09</time>
  <version>
-  <release>2.7.0snapshot20120805</release>
+  <release>2.7.0snapshot20120807</release>
   <api>2.7.0</api>
  </version>
  <stability>
@@ -41,9 +41,10 @@ on conditional code uses
 - removed warning messages about conditional code uses; replaced by
 the new --report condition of the CLI tool
 - add a new level for conditional code uses about traits (PHP 5.4 feature)
+- add a new API getter for Traits (PHP 5.4 feature)
 
 Bug fixes:
-- none
+- API getters gave wrong results when data source is list of files (directory)
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -131,15 +132,6 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
      </dir> <!-- /docs/images/icons -->
-     <file baseinstalldir="Bartlett" name="PHPCompatInfo.png" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="PHPCompatInfo_01.png" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="PHPCompatInfo_02.png" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
      <file baseinstalldir="Bartlett" name="summary.png" role="doc">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -1281,14 +1273,14 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.7.0snapshot20120805</release>
+    <release>2.7.0snapshot20120807</release>
     <api>2.7.0</api>
    </version>
    <stability>
     <release>snapshot</release>
     <api>stable</api>
    </stability>
-   <date>2012-08-05</date>
+   <date>2012-08-07</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1297,9 +1289,10 @@ on conditional code uses
 - removed warning messages about conditional code uses; replaced by
 the new --report condition of the CLI tool
 - add a new level for conditional code uses about traits (PHP 5.4 feature)
+- add a new API getter for Traits (PHP 5.4 feature)
 
 Bug fixes:
-- none
+- API getters gave wrong results when data source is list of files (directory)
    </notes>
   </release>
   <release>

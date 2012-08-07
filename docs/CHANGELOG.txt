@@ -23,9 +23,10 @@ on conditional code uses
 * removed warning messages about conditional code uses; replaced by
 the new --report condition of the CLI tool
 * add a new level for conditional code uses about traits (PHP 5.4 feature)
+* add a new API getter for Traits (PHP 5.4 feature)
 
 .Bug fixes:
-* none
+* API getters gave wrong results when data source is list of files (directory)
 
 
 == Version 2.6.0 (2012-07-26)
