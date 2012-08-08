@@ -16,7 +16,7 @@
  * Additional parser connected to tokens :
  * T_STRING, T_CONSTANT_ENCAPSED_STRING,
  * T_LINE, T_FILE, T_DIR, T_FUNC_C, T_CLASS_C, T_METHOD_C, T_NS_C,
- * T_CATCH, T_CLONE, T_INSTANCEOF, T_THROW, T_TRY, T_HALT_COMPILER, T_GOTO, T_USE
+ * T_CATCH, T_CLONE, T_INSTANCEOF, T_THROW, T_TRY, T_HALT_COMPILER, T_GOTO
  *
  * @category PHP
  * @package  PHP_CompatInfo
@@ -234,7 +234,7 @@ class PHP_CompatInfo_TokenParser
     /**
      * Parser for tokens
      * T_CATCH, T_CLONE, T_INSTANCEOF, T_THROW, T_TRY, T_HALT_COMPILER, T_GOTO,
-     * T_UNSET_CAST, T_USE, T_INSTEADOF, T_OBJECT_OPERATOR, T_OPEN_SQUARE
+     * T_UNSET_CAST, T_INSTEADOF, T_OBJECT_OPERATOR, T_OPEN_SQUARE
      * 
      * @return void
      */
