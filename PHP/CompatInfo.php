@@ -564,9 +564,9 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                     'glob'  => 'globals'
                 ),
                 'properties' => array(
-                    'interface'    => array('methods', 'parent'),
-                    'class'        => array('methods', 'parent', 'interfaces'),
-                    'function'     => array('arguments'),
+                    'interface'    => array('keywords', 'methods', 'parent'),
+                    'class'        => array('keywords', 'methods', 'parent', 'interfaces'),
+                    'function'     => array('keywords', 'visibility', 'arguments'),
                     'require_once' => array(),
                     'require'      => array(),
                     'include_once' => array(),
@@ -1283,6 +1283,31 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
             if (is_array($data)) {
                 // PHP Reflect results
+
+                if (in_array($category, array('interfaces', 'classes'))) {
+                    // look for PHP5 features 
+                    if (isset($data['keywords']) && !empty($data['keywords'])) {
+                        // class abstraction, and final keyword
+                        $values[$key]['versions'] = array('5.0.0', '');
+                    } elseif (isset($data['methods']) 
+                        && is_array($data['methods'])
+                    ) {
+                        // methods visibility and keywords (final, static, abstract)
+                        foreach ($data['methods'] as $method => $properties) {
+                            if (isset($properties['keywords']) 
+                                && !empty($properties['keywords'])
+                            ) {
+                                $values[$key]['versions'] = array('5.0.0', '');
+                                break;
+                            } elseif (isset($properties['visibility']) 
+                                && !empty($properties['visibility'])
+                            ) {
+                                $values[$key]['versions'] = array('5.0.0', '');
+                                break;
+                            }
+                        }
+                    }
+                }
                 $this->_versionsRef = $values[$key]['versions'];
 
                 if (isset($values[$key]['arguments'])
