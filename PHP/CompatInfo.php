@@ -440,8 +440,8 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
     /**
      * Parse a data source
-     * searching for interfaces, classes, functions, constants, includes
-     * and conditional code
+     * searching for namespaces, interfaces, traits, classes,
+     * functions, constants, globals, includes and conditional code
      *
      * @param mixed $dataSource Data source (single file, directory, files list)
      *
@@ -481,8 +481,24 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $progress = new ezcConsoleProgressbar($out, $filesCount);
         }
 
-        $this->results = array();
         $i             = 0;
+        $this->results = array(
+            array(
+                'excludes'   => array(),
+                'includes'   => array(),
+                'versions'   => array(),
+                'extensions' => array(),
+                'namespaces' => array(),
+                'traits'     => array(),
+                'interfaces' => array(),
+                'classes'    => array(),
+                'functions'  => array(),
+                'constants'  => array(),
+                'globals'    => array(),
+                'tokens'     => array(),
+                'conditions' => array(),
+            )
+        );
 
         foreach ($files as $source) {
             $i++;
@@ -490,10 +506,130 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $this->scan($source);
             $this->endScanFile($source, $i, $filesCount);
 
+            // consolidate global results of ...
+
+            // excludes
+            foreach ($this->results[$source]['excludes'] as $exc => $data) {
+                if (isset($this->results[0]['excludes'][$exc])) {
+                    // next match
+                    $this->results[0]['excludes'][$exc] = array_merge(
+                        $this->results[0]['excludes'][$exc], $data
+                    );
+                } else {
+                    // first match
+                    $this->results[0]['excludes'][$exc] = $data;
+                }
+            }
+
+            // includes
+            foreach ($this->results[$source]['includes'] as $inc => $data) {
+                if (isset($this->results[0]['includes'][$inc])) {
+                    // next match
+                    $this->results[0]['includes'][$inc] = array_merge(
+                        $this->results[0]['includes'][$inc], $data
+                    );
+                    $this->results[0]['includes'][$inc] = array_unique(
+                        $this->results[0]['includes'][$inc]
+                    );
+                } else {
+                    // first match
+                    $this->results[0]['includes'][$inc] = $data;
+                }
+            }
+
+            // versions
+            $this->updateVersion(
+                $this->results[$source]['versions'][0],
+                $this->results[0]['versions'][0]
+            );
+            $this->updateVersion(
+                $this->results[$source]['versions'][1],
+                $this->results[0]['versions'][1]
+            );
+
+            // extensions
+            foreach ($this->results[$source]['extensions'] as $ext => $data) {
+                if (isset($this->results[0]['extensions'][$ext])) {
+                    // next match
+                    $this->results[0]['extensions'][$ext]['uses'] += $data['uses'];
+                    $this->results[0]['extensions'][$ext]['sources'] = array_merge(
+                        $this->results[0]['extensions'][$ext]['sources'],
+                        $data['sources']
+                    );
+                } else {
+                    // first match
+                    $this->results[0]['extensions'][$ext] = $data;
+                }
+            }
+
+            // namespaces, traits, interfaces, classes, functions, constants,
+            // globals and tokens
+            $keys = array(
+                'namespaces', 'traits', 'interfaces', 'classes',
+                'functions', 'constants', 'globals', 'tokens'
+            );
+            foreach ($keys as $key) {
+                foreach ($this->results[$source][$key] as $ext => $items) {
+                    foreach ($items as $name => $data) {
+                        if (isset($this->results[0][$key][$ext][$name])) {
+                            // next match
+                            $this->results[0][$key][$ext][$name]['uses']
+                                += $data['uses'];
+                            $this->results[0][$key][$ext][$name]['sources']
+                                = array_merge(
+                                    $this->results[0][$key][$ext][$name]['sources'],
+                                    $data['sources']
+                                );
+
+                            $this->updateVersion(
+                                $this->results[$source][$key][$ext][$name]['versions'][0],
+                                $this->results[0][$key][$ext][$name]['versions'][0]
+                            );
+                            $this->updateVersion(
+                                $this->results[$source][$key][$ext][$name]['versions'][1],
+                                $this->results[0][$key][$ext][$name]['versions'][1]
+                            );
+
+                        } else {
+                            // first match
+                            $this->results[0][$key][$ext][$name] = $data;
+                        }
+                    }
+                }
+            }
+
+            // conditions
+            foreach ($this->results[$source]['conditions'] as $cond => $data) {
+                if (isset($this->results[0]['conditions'][$cond])) {
+                    // next match
+                    $this->results[0]['conditions'][$cond] += $data;
+                } else {
+                    // first match
+                    $this->results[0]['conditions'][$cond] = $data;
+                }
+            }
+
             if ($consoleProgress) {
                 $progress->advance();
             }
         }
+
+        // re-consolidate partial results depending of global context
+        $keys = array(
+            'namespaces', 'traits', 'interfaces', 'classes',
+            'functions', 'constants', 'globals', 'tokens'
+        );
+        foreach ($files as $source) {
+            foreach ($keys as $key) {
+                foreach ($this->results[$source][$key] as $ext => $items) {
+                    foreach ($items as $name => $data) {
+                        $this->results[$source][$key][$ext][$name]['versions']
+                            = $this->results[0][$key][$ext][$name]['versions'];
+                    }
+                }
+            }
+        }
+
         if ($consoleProgress) {
             $progress->finish();
         }
@@ -505,8 +641,8 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
     /**
      * Parse a single file
-     * searching for interfaces, classes, functions, constants, includes
-     * and conditional code
+     * searching for namespaces, interfaces, traits, classes,
+     * functions, constants, globals, includes and conditional code
      *
      * @param string $source Source filename
      *
@@ -839,24 +975,20 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 );
             }
         } else {
-            $results = $this->results;
+            if ($this->options['verbose'] < 3) {
+                $results = $this->results[0];
+            } else {
+                $results = $this->results;
+                unset($results[0]);
+            }
         }
         return $results;
     }
 
     /**
-     * Returns informations on parsing results about extensions
-     *
-     * @return array
-     */
-    public function getExtensions()
-    {
-        return $this->extensions;
-    }
-
-    /**
      * Magic methods to get informations on parsing results about
-     * excludes, includes, interfaces, classes, functions, constants, globals
+     * excludes, includes, extensions,
+     * namespaces, interfaces, traits, classes, functions, constants, globals
      *
      * @param string $name Method name invoked
      * @param array  $args Method arguments provided
@@ -868,6 +1000,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     {
         $pattern = '/get' .
             '(?>(Excludes|Includes' .
+            '|Extensions' .
             '|Namespaces|Interfaces|Traits|Classes|Functions|Constants|Globals))/';
         if (preg_match($pattern, $name, $matches) === 0) {
             throw new PHP_CompatInfo_Exception(
@@ -896,35 +1029,14 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
         $results = array();
 
-        foreach ($this->results as $source => $data) {
-
-            if (!isset($category)) {
-                $categories = array_keys($data[$group]);
-            } elseif (isset($data[$group][$category])) {
-                $categories = array($category);
-            } else {
-                continue;
-            }
-
-            foreach ($categories as $_category) {
-                if (isset($results[$_category])) {
-                    foreach ($data[$group][$_category] as $name => $info) {
-                        if (isset($results[$_category][$name])) {
-                            // many uses, updates count and source file list
-                            $results[$_category][$name]['uses'] += $info['uses'];
-                            $results[$_category][$name]['sources'] = array_merge(
-                                $results[$_category][$name]['sources'],
-                                $info['sources']
-                            );
-                        } else {
-                            // first use
-                            $results[$_category][$name] = $info;
-                        }
-                    }
-                } else {
-                    $results[$_category] = $data[$group][$_category];
-                }
-            }
+        if (in_array(
+            $group, array(
+                'includes', 'extensions',
+                'namespaces', 'interfaces', 'traits', 'classes',
+                'functions', 'constants'
+            )
+        )) {
+            $results = $this->results[0][$group];
         }
 
         if (isset($pattern)) {
@@ -1285,21 +1397,21 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                 // PHP Reflect results
 
                 if (in_array($category, array('interfaces', 'classes'))) {
-                    // look for PHP5 features 
+                    // look for PHP5 features
                     if (isset($data['keywords']) && !empty($data['keywords'])) {
                         // class abstraction, and final keyword
                         $values[$key]['versions'] = array('5.0.0', '');
-                    } elseif (isset($data['methods']) 
+                    } elseif (isset($data['methods'])
                         && is_array($data['methods'])
                     ) {
                         // methods visibility and keywords (final, static, abstract)
                         foreach ($data['methods'] as $method => $properties) {
-                            if (isset($properties['keywords']) 
+                            if (isset($properties['keywords'])
                                 && !empty($properties['keywords'])
                             ) {
                                 $values[$key]['versions'] = array('5.0.0', '');
                                 break;
-                            } elseif (isset($properties['visibility']) 
+                            } elseif (isset($properties['visibility'])
                                 && !empty($properties['visibility'])
                             ) {
                                 $values[$key]['versions'] = array('5.0.0', '');
