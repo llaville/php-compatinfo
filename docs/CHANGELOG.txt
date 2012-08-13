@@ -26,6 +26,7 @@ the new --report condition of the CLI tool
 * add a new API getter for Traits (PHP 5.4 feature)
 * User classes that used visibility (public, protected, private) are now identified
 as PHP 5.0.0 and no more as PHP 4.0.0
+* Improved global results in a multiple data source context
 
 .Bug fixes:
 * API getters gave wrong results when data source is list of files (directory)
