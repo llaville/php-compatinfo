@@ -38,32 +38,8 @@ class PHP_CompatInfo_Report_Trait extends PHP_CompatInfo_Report
         if ($verbose < 3) {
             // summary report
 
-            $files = array_keys($report);
-
-            $traits     = array();
-            $conditions = array();
-
-            foreach ($files as $filename) {
-                foreach ($report[$filename]['traits'] as $extension => $data) {
-                    foreach ($data as $key => $values) {
-                        if (!isset($traits[$extension][$key])) {
-                            $traits[$extension][$key] = $values;
-                        } else {
-                            $traits[$extension][$key]['uses']
-                                += $values['uses'];
-                            $traits[$extension][$key]['sources'] = array_merge(
-                                $traits[$extension][$key]['sources'],
-                                $values['sources']
-                            );
-                        }
-                    }
-                }
-                foreach ($report[$filename]['conditions'] as $key => $values) {
-                    if (!isset($conditions[$key])) {
-                        $conditions[$key] = $values;
-                    }
-                }
-            }
+            $traits     = $report['traits'];
+            $conditions = $report['conditions'];
 
             $this->total          = array();
             $this->totalExcludes  = 0;

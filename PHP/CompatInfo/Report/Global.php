@@ -38,34 +38,8 @@ class PHP_CompatInfo_Report_Global extends PHP_CompatInfo_Report
         if ($verbose < 3) {
             // summary report
 
-            $files = array_keys($report);
-
-            $globals     = array();
-            $conditions = array();
-
-            foreach ($files as $filename) {
-                foreach ($report[$filename]['globals'] as $scope => $data) {
-                    foreach ($data as $key => $values) {
-                        if (!isset($globals[$scope][$key])) {
-                            $globals[$scope][$key] = $values;
-                        } else {
-                            $globals[$scope][$key]['uses']
-                                += $values['uses'];
-
-                            $globals[$scope][$key]['sources'] = array_merge(
-                                $globals[$scope][$key]['sources'],
-                                $values['sources']
-                            );
-
-                        }
-                    }
-                }
-                foreach ($report[$filename]['conditions'] as $key => $values) {
-                    if (!isset($conditions[$key])) {
-                        $conditions[$key] = $values;
-                    }
-                }
-            }
+            $globals    = $report['globals'];
+            $conditions = $report['conditions'];
 
             $this->total          = array();
             $this->totalExcludes  = 0;

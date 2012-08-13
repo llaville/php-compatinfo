@@ -38,32 +38,8 @@ class PHP_CompatInfo_Report_Class extends PHP_CompatInfo_Report
         if ($verbose < 3) {
             // summary report
 
-            $files = array_keys($report);
-
-            $classes    = array();
-            $conditions = array();
-
-            foreach ($files as $filename) {
-                foreach ($report[$filename]['classes'] as $extension => $data) {
-                    foreach ($data as $key => $values) {
-                        if (!isset($classes[$extension][$key])) {
-                            $classes[$extension][$key] = $values;
-                        } else {
-                            $classes[$extension][$key]['uses']
-                                += $values['uses'];
-                            $classes[$extension][$key]['sources'] = array_merge(
-                                $classes[$extension][$key]['sources'],
-                                $values['sources']
-                            );
-                        }
-                    }
-                }
-                foreach ($report[$filename]['conditions'] as $key => $values) {
-                    if (!isset($conditions[$key])) {
-                        $conditions[$key] = $values;
-                    }
-                }
-            }
+            $classes    = $report['classes'];
+            $conditions = $report['conditions'];
 
             $this->total          = array();
             $this->totalExcludes  = 0;

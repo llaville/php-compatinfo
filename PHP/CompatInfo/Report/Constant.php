@@ -38,32 +38,8 @@ class PHP_CompatInfo_Report_Constant extends PHP_CompatInfo_Report
         if ($verbose < 3) {
             // summary report
 
-            $files = array_keys($report);
-
-            $constants  = array();
-            $conditions = array();
-
-            foreach ($files as $filename) {
-                foreach ($report[$filename]['constants'] as $extension => $data) {
-                    foreach ($data as $key => $values) {
-                        if (!isset($constants[$extension][$key])) {
-                            $constants[$extension][$key] = $values;
-                        } else {
-                            $constants[$extension][$key]['uses']
-                                += $values['uses'];
-                            $constants[$extension][$key]['sources'] = array_merge(
-                                $constants[$extension][$key]['sources'],
-                                $values['sources']
-                            );
-                        }
-                    }
-                }
-                foreach ($report[$filename]['conditions'] as $key => $values) {
-                    if (!isset($conditions[$key])) {
-                        $conditions[$key] = $values;
-                    }
-                }
-            }
+            $constants  = $report['constants'];
+            $conditions = $report['conditions'];
 
             $this->total          = array();
             $this->totalExcludes  = 0;
