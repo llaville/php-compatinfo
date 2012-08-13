@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-08-07</date>
- <time>09:59:09</time>
+ <date>2012-08-13</date>
+ <time>18:23:43</time>
  <version>
-  <release>2.7.0snapshot20120807</release>
+  <release>2.7.0snapshot20120813</release>
   <api>2.7.0</api>
  </version>
  <stability>
@@ -42,6 +42,9 @@ on conditional code uses
 the new --report condition of the CLI tool
 - add a new level for conditional code uses about traits (PHP 5.4 feature)
 - add a new API getter for Traits (PHP 5.4 feature)
+- User classes that used visibility (public, protected, private) are now identified
+as PHP 5.0.0 and no more as PHP 4.0.0
+- Improved global results in a multiple data source context
 
 Bug fixes:
 - API getters gave wrong results when data source is list of files (directory)
@@ -1273,14 +1276,14 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.7.0snapshot20120807</release>
+    <release>2.7.0snapshot20120813</release>
     <api>2.7.0</api>
    </version>
    <stability>
     <release>snapshot</release>
     <api>stable</api>
    </stability>
-   <date>2012-08-07</date>
+   <date>2012-08-13</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1290,6 +1293,9 @@ on conditional code uses
 the new --report condition of the CLI tool
 - add a new level for conditional code uses about traits (PHP 5.4 feature)
 - add a new API getter for Traits (PHP 5.4 feature)
+- User classes that used visibility (public, protected, private) are now identified
+as PHP 5.0.0 and no more as PHP 4.0.0
+- Improved global results in a multiple data source context
 
 Bug fixes:
 - API getters gave wrong results when data source is list of files (directory)
