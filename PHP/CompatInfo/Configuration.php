@@ -179,7 +179,7 @@ class PHP_CompatInfo_Configuration
     }
 
     /**
-     * Returns the configuration for listeners
+     * Returns the configuration for plugins
      *
      * @return array
      */
