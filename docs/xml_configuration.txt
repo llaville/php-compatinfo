@@ -166,7 +166,7 @@ NOTE: With *phpci* console tool, you can invoke it with the following switch: +
 
 .Example
 ----
-$ phpci --exclude-pattern demo print /path/to/mySource
+$ phpci print --exclude-pattern demo /path/to/mySource
 ----
 
 
