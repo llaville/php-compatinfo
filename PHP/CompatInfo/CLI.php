@@ -578,7 +578,9 @@ class PHP_CompatInfo_CLI
 
         try {
             foreach ($reports as $report) {
-                if ('summary' == $report && $options['verbose'] < 3) {
+                if (in_array($report, array('summary', 'xml'))
+                    && $options['verbose'] < 3
+                ) {
                     $options['verbose'] = 3;
                 }
                 self::factory($report, $source, $options, $warnings);
