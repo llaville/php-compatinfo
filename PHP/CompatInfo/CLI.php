@@ -350,7 +350,7 @@ class PHP_CompatInfo_CLI
                 }
             } else {
                 $filename = $result->options['xmlFile'];
-                if (file_exists($filename)) {
+                if (file_exists($filename) && is_file($filename)) {
                     $config = realpath($filename);
                 } else {
                     $config = false;
