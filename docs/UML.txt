@@ -68,7 +68,6 @@ class PHP_CompatInfo {
     array +getFilelist ( mixed $dataSource, bool $recursive, array $excludesPattern )
     bool +parse ( mixed $dataSource )
     array +toArray ( string $source = null )
-    array +getExtensions ( void )
     array +__call ( string $name, array $args )
     array +getConditions ( string $category = null, string $source = null )
     array +getVersions ( void )
