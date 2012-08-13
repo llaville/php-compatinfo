@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpcompatinfo
+    reference="PHP5"
+    report="summary"
+    reportFileAppend="false"
+    cacheDriver="file"
+    recursive="false"
+    fileExtensions="php, inc, phtml"
+    consoleProgress="true"
+    verbose="false"
+    >
+
+    <cache id="file">
+        <options>
+            <save_path>/tmp</save_path>
+            <gc_probability>1</gc_probability>
+            <gc_maxlifetime>86400</gc_maxlifetime>
+        </options>
+    </cache>
+
+    <references>
+        <reference name="Core" />
+        <reference name="standard" />
+        <reference name="date" />
+        <reference name="xdebug" />
+    </references>
+
+    <php>
+        <ini name="memory_limit" value="140M" />
+        <ini name="short_open_tag" />
+        <ini name="zend.ze1_compatibility_mode" value="false" />
+    </php>
+
+    <excludes>
+        <exclude id="sample_mixed">
+            <directory name=".*\/Zend\/.*" />
+            <file name=".*\.php5" />
+            <extension name="xdebug" />
+            <interface name="SplSubject" />
+            <class name=".*Compat.*" />
+            <function name="ereg.*" />
+            <function name="debug_print_backtrace" />
+            <constant name="T_USE" />
+        </exclude>
+
+        <exclude id="sample_files">
+            <directory name=".*\/Zend\/.*" />
+            <directory name=".*\/tests\/.*" />
+            <file name=".*\.php5" />
+            <file name=".*\.inc\.php" />
+        </exclude>
+
+        <exclude id="sample_functions">
+            <function name="defined" />
+            <function name="trait_exists" />
+        </exclude>
+    </excludes>
+
+    <listeners>
+        <listener class="className" file="/invalid/path/to/filename">
+            <arguments>
+            </arguments>
+        </listener>
+        <listener class="PHP_CompatInfo_Listener_File" />
+        <listener class="PHP_CompatInfo_Listener_Growl">
+            <arguments>
+                <string>PHP_CompatInfo</string>
+                <array>
+                    <element key="info">
+                        <array>
+                            <element key="display">
+                                <string>Information</string>
+                            </element>
+                            <element key="enabled">
+                                <boolean>true</boolean>
+                            </element>
+                        </array>
+                    </element>
+                    <element key="warning">
+                        <array>
+                            <element key="enabled">
+                                <boolean>true</boolean>
+                            </element>
+                        </array>
+                    </element>
+                </array>
+                <string>mamasam</string>
+                <array>
+                    <element key="host">
+                        <string>192.168.1.2</string>
+                    </element>
+                    <element key="timeout">
+                        <integer>10</integer>
+                    </element>
+                    <element key="debug">
+                        <string>/path/to/logFile</string>
+                    </element>
+                </array>
+            </arguments>
+        </listener>
+    </listeners>
+
+    <plugins>
+        <reference name="MyReference"
+            class="PEAR_CompatInfo"
+            file="/path/to/PEARCompatInfo.php">
+            <arguments>
+            </arguments>
+        </reference>
+    </plugins>
+
+</phpcompatinfo>
