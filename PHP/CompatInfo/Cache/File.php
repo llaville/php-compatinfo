@@ -80,6 +80,14 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
         $current = get_loaded_extensions();
         sort($current);
         $file = realpath($this->options['save_path']) . DIRECTORY_SEPARATOR . self::PREFIX;
+
+        if (file_exists($file) && !is_file($file)) {
+            throw new PHP_CompatInfo_Exception(
+                "Directory '$file' exists and cannot be used as the main cache file.",
+                PHP_CompatInfo_Exception::INVALIDARGUMENT
+            );
+        }
+
         $ok = true;
         if (file_exists($file)) {
             $prev = unserialize(file_get_contents($file));
