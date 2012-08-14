@@ -27,11 +27,13 @@ the new --report condition of the CLI tool
 * User classes that used visibility (public, protected, private) are now identified
 as PHP 5.0.0 and no more as PHP 4.0.0
 * Improved global results in a multiple data source context
+* Add a warning message when --reference ALL used with extension detected but not loaded
 
 .Bug fixes:
 * API getters gave wrong results when data source is list of files (directory)
 * Avoid exception in all case when xml configuration location is not a file
 * Avoid exception when a directory phpci exists in save_path cache file
+* Force clean cache when --reference or --exclude-pattern changed. Avoid old results.
 
 
 == Version 2.6.0 (2012-07-26)
