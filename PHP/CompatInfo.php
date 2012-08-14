@@ -193,6 +193,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             ),
             'verbose'          => false,
             'fileExtensions'   => array('php', 'inc', 'phtml'),
+            'exclude'          => array(),
             'cacheDriver'      => 'file',
             'cacheOptions'     => array(
                 'save_path' => '/tmp'
@@ -653,7 +654,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
     protected function scan($source)
     {
         $cache = PHP_CompatInfo_Cache::getInstance(
-            $this->options['cacheDriver'], $this->options['cacheOptions']
+            $this->options['cacheDriver'], $this->options
         );
         $cached = $cache->isCached($source);
 
