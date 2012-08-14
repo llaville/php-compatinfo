@@ -30,7 +30,8 @@ as PHP 5.0.0 and no more as PHP 4.0.0
 
 .Bug fixes:
 * API getters gave wrong results when data source is list of files (directory)
-* Avoid exception when CLI --configuration option sets a directory instead of a file
+* Avoid exception in all case when xml configuration location is not a file
+* Avoid exception when a directory phpci exists in save_path cache file
 
 
 == Version 2.6.0 (2012-07-26)
