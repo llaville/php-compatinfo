@@ -633,6 +633,15 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             }
         }
 
+        if ('ALL' === $this->options['reference']) {
+            $keys = array_keys($this->results[0]['extensions']);
+            foreach ($keys as $ext) {
+                if (!extension_loaded($ext)) {
+                    $this->addWarning("Extension '$ext' referenced but not loaded");
+                }
+            }
+        }
+
         if ($consoleProgress) {
             $progress->finish();
         }
