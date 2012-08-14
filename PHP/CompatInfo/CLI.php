@@ -578,7 +578,7 @@ class PHP_CompatInfo_CLI
 
         try {
             foreach ($reports as $report) {
-                if (in_array($report, array('summary', 'xml'))
+                if (in_array($report, array('xml'))
                     && $options['verbose'] < 3
                 ) {
                     $options['verbose'] = 3;

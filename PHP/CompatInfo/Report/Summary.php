@@ -29,7 +29,7 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
      * @var int
      */
     protected $ccn;
-    
+
     /**
      * Elements count group by category
      * @var array
@@ -48,6 +48,7 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
      */
     public function generate($report, $base, $verbose)
     {
+        $this->ccn            = 0;
         $this->total          = array();
         $this->totalExcludes  = 0;
         $this->globalVersions = array('4.0.0', '');
@@ -60,11 +61,47 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
             'constants'  => array(),
         );
 
-        $this->printTHead($base);
-        $this->printTBody($report, $base);
-        $this->printTFoot(count($report));
+        $this->printTHead($base, $verbose);
+        if ($verbose < 3) {
+        
+            $this->globalVersions = $report['versions'];
+            $files                = array();
+
+            foreach ($report as $element => $items) {
+                switch ($element) {
+                case 'extensions':
+                    $values = array_keys($items);
+                    foreach ($values as $key) {
+                        $this->count[$element][] = $key;
+                    }
+                    break;
+                case 'interfaces':
+                case 'classes':
+                case 'functions':
+                case 'constants':
+                    foreach ($items as $ext => $data) {
+                        $values = array_keys($data);
+                        foreach ($values as $key) {
+                            $this->count[$element][] = $key;
+                            $files = array_merge($files, $items[$ext][$key]['sources']);
+                        }
+                    }
+                    break;
+                case 'conditions':
+                    $this->ccn = $this->ccn | $this->getCCN($items);
+                    break;
+                }
+            }
+            $files      = array_unique($files);
+            $filesCount = count($files);
+
+        } else {
+            $this->printTBody($report, $base);
+            $filesCount = count($report);
+        }
+        $this->printTFoot($filesCount);
     }
-    
+
     /**
      * Prints header of report
      *
@@ -72,10 +109,13 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
      *
      * @return void
      */
-    private function printTHead($base)
+    private function printTHead($base, $verbose)
     {
         echo PHP_EOL;
         echo 'PHP COMPAT INFO REPORT SUMMARY' . PHP_EOL;
+        if ($verbose < 3) {
+            return;
+        }
         echo str_repeat('-', $this->width)    . PHP_EOL;
         echo 'FILES' . str_repeat(' ', ($this->width - 54))
             . 'EXTENSIONS INTERFACES CLASSES FUNCTIONS CONSTANTS' . PHP_EOL;
@@ -84,7 +124,7 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
             echo 'BASE: ' . $base . PHP_EOL;
         }
     }
-    
+
     /**
      * Prints footer of report
      *
@@ -131,7 +171,7 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
         echo str_repeat('-', $this->width) . PHP_EOL;
         echo PHP_EOL;
     }
-    
+
     /**
      * Prints body of report
      *
@@ -142,9 +182,8 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
      */
     private function printTBody($report, $base)
     {
-        $this->ccn     = 0;
         $currentFolder = '';
-    
+
         foreach ($report as $filename => $elements) {
             if (dirname($filename) !== $currentFolder) {
                 $currentFolder = dirname($filename);
@@ -216,5 +255,5 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
             echo PHP_EOL;
         }
     }
-    
+
 }
