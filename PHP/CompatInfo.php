@@ -23,6 +23,8 @@
  *         Returns informations on parsing results about excludes
  * @method array getIncludes()   getIncludes(category = null, $pattern = null)
  *         Returns informations on parsing results about includes
+ * @method array getExtensions() getExtensions(category = null, $pattern = null)
+ *         Returns informations on parsing results about extensions
  * @method array getNamespaces() getNamespaces(category = null, $pattern = null)
  *         Returns informations on parsing results about namespaces
  * @method array getInterfaces() getInterfaces(category = null, $pattern = null)
