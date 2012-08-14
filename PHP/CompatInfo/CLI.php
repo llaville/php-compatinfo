@@ -350,13 +350,13 @@ class PHP_CompatInfo_CLI
                 }
             } else {
                 $filename = $result->options['xmlFile'];
-                if (file_exists($filename) && is_file($filename)) {
+                if (file_exists($filename)) {
                     $config = realpath($filename);
                 } else {
                     $config = false;
                 }
             }
-            if ($config) {
+            if ($config && is_file($config)) {
                 // try to load the configuration file contents
                 $configuration = PHP_CompatInfo_Configuration::getInstance($config);
 
