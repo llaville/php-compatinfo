@@ -1045,7 +1045,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $group, array(
                 'includes', 'excludes', 'extensions',
                 'namespaces', 'interfaces', 'traits', 'classes',
-                'functions', 'constants'
+                'functions', 'constants', 'globals'
             )
         )) {
             $results = $this->results[0][$group];
@@ -1322,6 +1322,17 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $search = array(
                 'extensions',
                 'namespaces', 'interfaces', 'classes', 'functions', 'constants'
+            );
+            break;
+        case 'globals':
+            $search = array(
+                '$GLOBALS',
+                '$HTTP_SERVER_VARS', '$_SERVER',
+                '$HTTP_GET_VARS', '$_GET',
+                '$HTTP_POST_VARS', '$HTTP_POST_FILES', '$_POST',
+                '$HTTP_COOKIE_VARS', '$_COOKIE',
+                '$HTTP_SESSION_VARS', '$_SESSION',
+                '$HTTP_ENV_VARS', '$_ENV'
             );
             break;
         case 'conditions':
