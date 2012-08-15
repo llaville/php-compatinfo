@@ -370,7 +370,9 @@ class PHP_CompatInfo_CLI
                             " does not exist, or is empty";
                     } else {
                         $haystack = array(
-                            'extension', 'interface', 'function', 'constant'
+                            'extension', 
+                            'interface', 'trait', 
+                            'function', 'constant'
                         );
                         foreach ($excludes as $key => $values) {
                             if (in_array($key, $haystack)) {

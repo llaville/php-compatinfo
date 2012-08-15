@@ -28,6 +28,7 @@ the new --report condition of the CLI tool
 as PHP 5.0.0 and no more as PHP 4.0.0
 * Improved global results in a multiple data source context
 * Add a warning message when --reference ALL used with extension detected but not loaded
+* Add ability to exclude traits from parsing with the CLI tool and the XML configuration file
 
 .Bug fixes:
 * API getters gave wrong results when data source is list of files (directory)

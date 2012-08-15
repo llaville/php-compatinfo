@@ -175,6 +175,7 @@ Will output results as follow. May differ depending of your extensions loaded.
 * Parse a list of files and/or directories
 * Ability to give a list of extensions to ignore when calculating the version needed 
 * Ability to give a list of interfaces to ignore when calculating the version needed 
+* Ability to give a list of traits to ignore when calculating the version needed 
 * Ability to give a list of classes to ignore when calculating the version needed 
 * Ability to give a list of functions to ignore when calculating the version needed 
 * Ability to give a list of constants to ignore when calculating the version needed. 

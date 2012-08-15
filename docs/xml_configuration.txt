@@ -147,6 +147,7 @@ $ phpci --ini-set short_open_tag=true print /path/to/mySource
             <file name=".*\.php5" />
             <extension name="xdebug" />
             <interface name="SplSubject" />
+            <trait name="^S" />
             <class name=".*Compat.*" />
             <function name="ereg.*" />
             <function name="debug_print_backtrace" />
@@ -157,7 +158,7 @@ $ phpci --ini-set short_open_tag=true print /path/to/mySource
 </phpcompatinfo>
 ----
 The +<excludes>+ element and its children can be used to configure what element to ignore from parsing.
-It may be a list of folders (<directory>), files, extensions, interfaces, classes, functions or constants. 
+It may be a list of folders (<directory>), files, extensions, interfaces, traits, classes, functions or constants. 
 
 Default behaviour ignore nothing.
 
