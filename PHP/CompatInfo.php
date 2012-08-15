@@ -1043,7 +1043,7 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
         if (in_array(
             $group, array(
-                'includes', 'extensions',
+                'includes', 'excludes', 'extensions',
                 'namespaces', 'interfaces', 'traits', 'classes',
                 'functions', 'constants'
             )
