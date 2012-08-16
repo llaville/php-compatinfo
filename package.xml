@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-08-13</date>
- <time>18:23:43</time>
+ <date>2012-08-16</date>
+ <time>15:42:14</time>
  <version>
-  <release>2.7.0snapshot20120813</release>
+  <release>2.7.0snapshot20120816</release>
   <api>2.7.0</api>
  </version>
  <stability>
@@ -45,9 +45,16 @@ the new --report condition of the CLI tool
 - User classes that used visibility (public, protected, private) are now identified
 as PHP 5.0.0 and no more as PHP 4.0.0
 - Improved global results in a multiple data source context
+- Add a warning message when --reference ALL used with extension detected but not loaded
+- Add ability to exclude traits from parsing with the CLI tool and the XML configuration file
+- XML report may show results either group by components or files
+- add namespaces in XML report
 
 Bug fixes:
 - API getters gave wrong results when data source is list of files (directory)
+- Avoid exception in all case when xml configuration location is not a file
+- Avoid exception when a directory phpci exists in save_path cache file
+- Force clean cache when --reference or --exclude-pattern changed. Avoid old results.
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -878,6 +885,9 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="gh38.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="phpcompatinfo.xml" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="source1.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -1149,6 +1159,9 @@ Bug fixes:
     <file baseinstalldir="Bartlett" name="ClassTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
+    <file baseinstalldir="Bartlett" name="ConfigurationTest.php" role="test">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
     <file baseinstalldir="Bartlett" name="ConstantTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
@@ -1276,14 +1289,14 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.7.0snapshot20120813</release>
+    <release>2.7.0snapshot20120816</release>
     <api>2.7.0</api>
    </version>
    <stability>
     <release>snapshot</release>
     <api>stable</api>
    </stability>
-   <date>2012-08-13</date>
+   <date>2012-08-16</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1296,9 +1309,16 @@ the new --report condition of the CLI tool
 - User classes that used visibility (public, protected, private) are now identified
 as PHP 5.0.0 and no more as PHP 4.0.0
 - Improved global results in a multiple data source context
+- Add a warning message when --reference ALL used with extension detected but not loaded
+- Add ability to exclude traits from parsing with the CLI tool and the XML configuration file
+- XML report may show results either group by components or files
+- add namespaces in XML report
 
 Bug fixes:
 - API getters gave wrong results when data source is list of files (directory)
+- Avoid exception in all case when xml configuration location is not a file
+- Avoid exception when a directory phpci exists in save_path cache file
+- Force clean cache when --reference or --exclude-pattern changed. Avoid old results.
    </notes>
   </release>
   <release>
