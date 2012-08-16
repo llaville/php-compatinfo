@@ -67,6 +67,11 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
                 $this->processExtensions($report['extensions']);
             }
 
+            // all namespaces found in data source
+            if (count($report['namespaces']) > 0) {
+                $this->processNamespaces($report['namespaces']);
+            }
+
             // all traits found in data source
             if (count($report['traits']) > 0) {
                 $this->processTraits($report['traits']);
@@ -136,6 +141,11 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
             // all extensions found in $filename
             if (count($elements['extensions']) > 0) {
                 $this->processExtensions($elements['extensions']);
+            }
+
+            // all namespaces found in $filename
+            if (count($elements['namespaces']) > 0) {
+                $this->processNamespaces($elements['namespaces']);
             }
 
             // all traits found in $filename
@@ -250,7 +260,7 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
      * Process 'conditions' elements of global or partial results
      *
      * @param array $elements Items data
-     * @param array $extra    (optional) source file list 
+     * @param array $extra    (optional) source file list
      *
      * @return void
      */
@@ -355,6 +365,47 @@ class PHP_CompatInfo_Report_Xml extends PHP_CompatInfo_Report
         $this->indent -= $this->indentStep;
         echo str_repeat(' ', $this->indent);
         echo '</traits>' . PHP_EOL;
+        $this->indent -= $this->indentStep;
+    }
+
+    /**
+     * Process 'namespaces' elements of global or partial results
+     *
+     * @param array $elements Items data
+     *
+     * @return void
+     */
+    private function processNamespaces($elements)
+    {
+        $this->indent += $this->indentStep;
+        echo str_repeat(' ', $this->indent);
+        echo '<namespaces>' . PHP_EOL;
+        $this->indent += $this->indentStep;
+        foreach ($elements as $category => $items) {
+            if ('user' == $category) {
+                $extension = '';
+            } else {
+                $extension = $category;
+            }
+            foreach ($items as $namespace => $data) {
+                echo str_repeat(' ', $this->indent);
+                echo '<namespace name="' . $namespace .
+                    '" extension="' . $extension .
+                    '" count="' . $data['uses'];
+
+                if ($this->verbose == 2) {
+                    echo '">' . PHP_EOL;
+                    $this->processFiles($data['sources']);
+                    echo str_repeat(' ', $this->indent);
+                    echo '</namespace>' . PHP_EOL;
+                } else {
+                    echo '" />' . PHP_EOL;
+                }
+            }
+        }
+        $this->indent -= $this->indentStep;
+        echo str_repeat(' ', $this->indent);
+        echo '</namespaces>' . PHP_EOL;
         $this->indent -= $this->indentStep;
     }
 
