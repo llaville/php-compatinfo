@@ -580,11 +580,6 @@ class PHP_CompatInfo_CLI
 
         try {
             foreach ($reports as $report) {
-                if (in_array($report, array('xml'))
-                    && $options['verbose'] < 3
-                ) {
-                    $options['verbose'] = 3;
-                }
                 self::factory($report, $source, $options, $warnings);
                 if ($report == 'reference') {
                     $options['reportFileFlags'] = FILE_APPEND;
