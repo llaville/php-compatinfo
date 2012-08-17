@@ -6,16 +6,7 @@ PHP_CompatInfo ChangeLog
 :scriptsdir:  js
 
 
-== Version 2.7.0 (2012-08-dd)
-
-.Versions summary:
-* 2.7.0 support all PHP versions until 5.4.6
-* 2.6.0 support all PHP versions until 5.4.5
-* 2.5.0 support all PHP versions until 5.4.4
-* 2.4.0 support all PHP versions until 5.4.3
-* 2.3.0 support all PHP versions until 5.4.0
-* 2.2.0 support all PHP versions until 5.3.10
-* 2.1.0 support all PHP versions until 5.3.8
+== Version 2.7.0RC1 (2012-08-17)
 
 .Additions and changes:
 * add a new report (condition) for CLI tool that will replace the warning messages
@@ -31,6 +22,7 @@ as PHP 5.0.0 and no more as PHP 4.0.0
 * Add ability to exclude traits from parsing with the CLI tool and the XML configuration file
 * XML report may show results either group by components or files
 * add namespaces in XML report
+* upgrade jquery minimized to version 1.7.2; used by summary.xsl.
 
 .Bug fixes:
 * API getters gave wrong results when data source is list of files (directory)

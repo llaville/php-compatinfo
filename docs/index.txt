@@ -10,8 +10,7 @@ include::revision.txt[]
 ************************************************************************
 Release highlights:
 
-- PHP_CompatInfo 2.7.0 add support to PHP 5.4.6, 
-and introduces a new report for CLI tool. Detection of PHP 5 was improved again.
+- PHP_CompatInfo 2.7.0RC1 improved global results and have many changes and bug fixes.
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the

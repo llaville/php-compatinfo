@@ -23,14 +23,14 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-08-16</date>
- <time>15:42:14</time>
+ <date>2012-08-17</date>
+ <time>10:48:12</time>
  <version>
-  <release>2.7.0snapshot20120816</release>
+  <release>2.7.0RC1</release>
   <api>2.7.0</api>
  </version>
  <stability>
-  <release>snapshot</release>
+  <release>beta</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
@@ -49,6 +49,7 @@ as PHP 5.0.0 and no more as PHP 4.0.0
 - Add ability to exclude traits from parsing with the CLI tool and the XML configuration file
 - XML report may show results either group by components or files
 - add namespaces in XML report
+- upgrade jquery minimized to version 1.7.2; used by summary.xsl.
 
 Bug fixes:
 - API getters gave wrong results when data source is list of files (directory)
@@ -247,7 +248,7 @@ Bug fixes:
     <file baseinstalldir="Bartlett" name="Jigsaw.png" role="data">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
-    <file baseinstalldir="Bartlett" name="jquery-1.5.min.js" role="data">
+    <file baseinstalldir="Bartlett" name="jquery.min.js" role="data">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
     <file baseinstalldir="Bartlett" name="phpci.css" role="data">
@@ -1289,14 +1290,14 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.7.0snapshot20120816</release>
+    <release>2.7.0RC1</release>
     <api>2.7.0</api>
    </version>
    <stability>
-    <release>snapshot</release>
+    <release>beta</release>
     <api>stable</api>
    </stability>
-   <date>2012-08-16</date>
+   <date>2012-08-17</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1313,6 +1314,7 @@ as PHP 5.0.0 and no more as PHP 4.0.0
 - Add ability to exclude traits from parsing with the CLI tool and the XML configuration file
 - XML report may show results either group by components or files
 - add namespaces in XML report
+- upgrade jquery minimized to version 1.7.2; used by summary.xsl.
 
 Bug fixes:
 - API getters gave wrong results when data source is list of files (directory)
