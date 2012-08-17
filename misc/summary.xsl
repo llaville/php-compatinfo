@@ -59,7 +59,7 @@
             <xsl:apply-templates select="phpcompatinfo" mode="head" />
             <title>PHP_CompatInfo Summary Report</title>
             <link rel="stylesheet" type="text/css" href="phpci.css"/>
-            <script type="text/javascript" src="jquery-1.5.min.js" />
+            <script type="text/javascript" src="jquery.min.js" />
             <script type="text/javascript">
             $(document).ready(function() {
                 var toggleMinus = 'bullet_toggle_minus.png';
