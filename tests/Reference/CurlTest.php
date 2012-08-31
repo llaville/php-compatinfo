@@ -69,9 +69,10 @@ class PHP_CompatInfo_Reference_CurlTest
                     'CURLINFO_REDIRECT_URL'
                 );
             }
-            if ($ver<0x071300) {
+            if ($ver<0x071300) { // 7.19.0
                 array_push(
                     $this->optionnalconstants,
+                    'CURLINFO_PRIMARY_IP',
                     'CURLSSH_AUTH_NONE',
                     'CURLSSH_AUTH_PUBLICKEY',
                     'CURLSSH_AUTH_PASSWORD',
@@ -112,6 +113,14 @@ class PHP_CompatInfo_Reference_CurlTest
                     'CURLPROTO_FILE',
                     'CURLPROTO_TFTP',
                     'CURLPROTO_ALL'
+                );
+            }
+            if ($ver<0x071500) { // 7.21.0
+                array_push(
+                    $this->optionnalconstants,
+                    'CURLINFO_LOCAL_IP',
+                    'CURLINFO_LOCAL_PORT',
+                    'CURLINFO_PRIMARY_PORT'
                 );
             }
         }

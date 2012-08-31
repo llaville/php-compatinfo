@@ -462,6 +462,10 @@ class PHP_CompatInfo_Reference_Curl implements PHP_CompatInfo_Reference
 
                 'CURLINFO_CERTINFO'              => array('5.3.2', ''),
                 'CURLINFO_HEADER_OUT'            => array('5.1.3', ''),
+                'CURLINFO_LOCAL_IP'              => array('5.4.7-dev', ''),
+                'CURLINFO_LOCAL_PORT'            => array('5.4.7-dev', ''),
+                'CURLINFO_PRIMARY_IP'            => array('5.4.7-dev', ''),
+                'CURLINFO_PRIMARY_PORT'          => array('5.4.7-dev', ''),
                 'CURLINFO_PRIVATE'               => array('5.2.4', ''),
                 'CURLINFO_REDIRECT_URL'          => array('5.3.7', ''),
 
