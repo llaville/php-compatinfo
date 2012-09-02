@@ -3,14 +3,15 @@ PHP_CompatInfo
 include::revision.txt[]
 :stylesdir:   styles
 :scriptsdir:  js
-:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.6
+:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.7
 
 
 .{revdate}: PHP_CompatInfo {revnumber} Released
 ************************************************************************
 Release highlights:
 
-- PHP_CompatInfo 2.7.0RC1 improved global results and have many changes and bug fixes.
+- PHP_CompatInfo 2.7.0 add both support to PHP 5.3.16 and PHP 5.4.6 
+and improved global results with many changes and bug fixes.
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -67,7 +68,7 @@ PHP_CompatInfo 2 provides two servers API :
 .Version 2.3.0 and 2.4.0
 * support 67 extensions.
 
-.Versions 2.5.0 and 2.6.0
+.Versions 2.5.0, 2.6.0 and 2.7.0
 * support 75 extensions.
 
 The _phpci_ tool may inform you on what of those extensions are or not loaded on your system.

@@ -33,6 +33,7 @@ This manual documents the final stable version {revnumber}
 * Parse a list of files and/or directories
 * Ability to give a list of extensions to ignore when calculating the version needed 
 * Ability to give a list of interfaces to ignore when calculating the version needed 
+* Ability to give a list of traits to ignore when calculating the version needed 
 * Ability to give a list of classes to ignore when calculating the version needed 
 * Ability to give a list of functions to ignore when calculating the version needed 
 * Ability to give a list of constants to ignore when calculating the version needed. 
@@ -98,10 +99,10 @@ and on the PHPUnit PEAR channel (_pear.phpunit.de_).
 This has to be done only once. Now the PEAR Installer can be used to install packages from the Bartlett channel.
 ----
     $ pear install bartlett/PHP_CompatInfo
-    downloading PHP_CompatInfo-2.6.0.tgz ...
-    Starting to download PHP_CompatInfo-2.6.0.tgz (809,910 bytes)
+    downloading PHP_CompatInfo-2.7.0.tgz ...
+    Starting to download PHP_CompatInfo-2.7.0.tgz (809,910 bytes)
     .........................done: 809,910 bytes
-    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.6.0
+    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.7.0
 ----
 After the installation you can find the PHP_CompatInfo source files inside your local PEAR directory.
 
