@@ -348,7 +348,7 @@ class PHP_CompatInfo_Reference_Core implements PHP_CompatInfo_Reference
                 'UPLOAD_ERR_CANT_WRITE'             => array('5.1.0', ''),
                 'UPLOAD_ERR_EXTENSION'              => array('5.2.0', ''),
                 'ZEND_DEBUG_BUILD'                  => array('5.3.0', ''),
-                'ZEND_MULTIBYTE'                    => array('5.3.4', '5.3.15'),
+                'ZEND_MULTIBYTE'                    => array('5.3.4', '5.3.16'),
             );
             $constants = array_merge(
                 $constants,
