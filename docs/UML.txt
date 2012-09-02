@@ -5,6 +5,7 @@ UML classes diagram
 include::revision.txt[]
 
 .Main System
+[scaledwidth="100%"]
 ["plantuml", "images/PHPCompatInfo_01.png"]
 ---------------------------------------------------------------------
 skinparam classAttributeIconSize 0
@@ -154,6 +155,7 @@ PHP_CompatInfo - PHP_CompatInfo_Reference_PHP5 : load >
 ---------------------------------------------------------------------
 
 .Cache System
+[scaledwidth="100%"]
 ["plantuml", "images/PHPCompatInfo_02.png"]
 ---------------------------------------------------------------------
 class PHP_CompatInfo
