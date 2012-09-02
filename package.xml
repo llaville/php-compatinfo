@@ -23,19 +23,31 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-08-17</date>
- <time>10:48:12</time>
+ <date>2012-09-02</date>
+ <time>17:52:09</time>
  <version>
-  <release>2.7.0RC1</release>
+  <release>2.7.0</release>
   <api>2.7.0</api>
  </version>
  <stability>
-  <release>beta</release>
+  <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
-Additions and changes:
+Versions summary:
+- 2.7.0 support all PHP versions until 5.4.6
+- 2.6.0 support all PHP versions until 5.4.5
+- 2.5.0 support all PHP versions until 5.4.4
+- 2.4.0 support all PHP versions until 5.4.3
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
+
+Additions and changes since 2.7.0RC1:
+- none
+
+Additions and changes since 2.6.0:
 - add a new report (condition) for CLI tool that will replace the warning messages
 on conditional code uses
 - removed warning messages about conditional code uses; replaced by
@@ -51,7 +63,10 @@ as PHP 5.0.0 and no more as PHP 4.0.0
 - add namespaces in XML report
 - upgrade jquery minimized to version 1.7.2; used by summary.xsl.
 
-Bug fixes:
+Bug fixes since 2.7.0RC1:
+- none
+
+Bug fixes since 2.6.0:
 - API getters gave wrong results when data source is list of files (directory)
 - Avoid exception in all case when xml configuration location is not a file
 - Avoid exception when a directory phpci exists in save_path cache file
@@ -1288,6 +1303,56 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.7.0</release>
+    <api>2.7.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-09-02</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Versions summary:
+- 2.7.0 support all PHP versions until 5.4.6
+- 2.6.0 support all PHP versions until 5.4.5
+- 2.5.0 support all PHP versions until 5.4.4
+- 2.4.0 support all PHP versions until 5.4.3
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
+
+Additions and changes since 2.7.0RC1:
+- none
+
+Additions and changes since 2.6.0:
+- add a new report (condition) for CLI tool that will replace the warning messages
+on conditional code uses
+- removed warning messages about conditional code uses; replaced by
+the new --report condition of the CLI tool
+- add a new level for conditional code uses about traits (PHP 5.4 feature)
+- add a new API getter for Traits (PHP 5.4 feature)
+- User classes that used visibility (public, protected, private) are now identified
+as PHP 5.0.0 and no more as PHP 4.0.0
+- Improved global results in a multiple data source context
+- Add a warning message when --reference ALL used with extension detected but not loaded
+- Add ability to exclude traits from parsing with the CLI tool and the XML configuration file
+- XML report may show results either group by components or files
+- add namespaces in XML report
+- upgrade jquery minimized to version 1.7.2; used by summary.xsl.
+
+Bug fixes since 2.7.0RC1:
+- none
+
+Bug fixes since 2.6.0:
+- API getters gave wrong results when data source is list of files (directory)
+- Avoid exception in all case when xml configuration location is not a file
+- Avoid exception when a directory phpci exists in save_path cache file
+- Force clean cache when --reference or --exclude-pattern changed. Avoid old results.
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.7.0RC1</release>
