@@ -194,7 +194,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
         if (extension_loaded('xdebug')) {
             $expected = array(
                 'xdebug_start_trace' => array(
-                    'versions' => array('5.2.0', ''),
+                    'versions' => array('4.3.0', ''),
                     'uses' => 1,
                     'sources' => array(TEST_FILES_PATH . 'source2.php'),
                     'namespace' => '\\',
@@ -212,7 +212,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
      * Tests functions results filtering
      *
      * covers PHP_CompatInfo::getFunctions
-     * 
+     *
      * @return void
      */
     public function testGetFunctionsFilterByCategory()
