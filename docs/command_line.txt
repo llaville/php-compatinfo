@@ -686,7 +686,7 @@ $ phpci list-interfaces
     -------------------------------------------------------------------------------
     PHP COMPAT INFO INTERFACES REFERENCE
     -------------------------------------------------------------------------------
-    INTERFACES                                   EXTENSION <1>     VERSION <2>
+    INTERFACES                                   EXTENSION <1>     PHP <2>
     -------------------------------------------------------------------------------
     ArrayAccess                                  SPL               5.1.0
     Countable                                    SPL               5.1.0
@@ -789,7 +789,7 @@ $ phpci list-classes
     -------------------------------------------------------------------------------
     PHP COMPAT INFO CLASSES REFERENCE
     -------------------------------------------------------------------------------
-    CLASSES                                      EXTENSION <1>     VERSION <2>
+    CLASSES                                      EXTENSION <1>     PHP <2>
     -------------------------------------------------------------------------------
     AppendIterator                               SPL               5.1.0
     ArrayIterator                                SPL               5.0.0
@@ -892,7 +892,7 @@ $ phpci list-functions
     -------------------------------------------------------------------------------
     PHP COMPAT INFO FUNCTIONS REFERENCE
     -------------------------------------------------------------------------------
-    FUNCTIONS                                    EXTENSION <1>     VERSION <2>
+    FUNCTIONS                                    EXTENSION <1>     PHP <2>
     -------------------------------------------------------------------------------
     _                                            gettext           4.0.0
     abs                                          standard          4.0.0
@@ -994,13 +994,17 @@ $ phpci list-constants
     -------------------------------------------------------------------------------
     PHP COMPAT INFO CONSTANTS REFERENCE
     -------------------------------------------------------------------------------
-    CONSTANTS                                    EXTENSION <1>     VERSION <2>
+    CONSTANTS                                    EXTENSION <1>     PHP <2>
     -------------------------------------------------------------------------------
     AF_INET                                      sockets           4.1.0
     AF_INET6                                     sockets           4.1.0
     AF_UNIX                                      sockets           4.1.0
     APACHE_MAP                                   soap              5.0.0
-    ASSERT_ACTIVE                                standard          4.0.0
+    ASSERT_ACTIVE                                standard-4.0.0    4.0.0
+
+    ... <more results> ...
+
+    STREAM_ENFORCE_SAFE_MODE                     standard-4.0.0    4.0.0/5.3.16
 
     ... <more results> ...
 
