@@ -23,110 +23,79 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @link     http://www.php.net/manual/en/book.apc.php
  */
-class PHP_CompatInfo_Reference_Apc implements PHP_CompatInfo_Reference
+class PHP_CompatInfo_Reference_Apc
+    extends PHP_CompatInfo_Reference_PluginsAbstract
 {
     /**
-     * Gets all informations at once about:
-     * extensions, interfaces, classes, functions, constants
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
+     * Extension/Reference name
      */
-    public function getAll($extension = null, $version = null)
-    {
-        $references = array(
-            'extensions' => $this->getExtensions($extension, $version),
-            'interfaces' => $this->getInterfaces($extension, $version),
-            'classes'    => $this->getClasses($extension, $version),
-            'functions'  => $this->getFunctions($extension, $version),
-            'constants'  => $this->getConstants($extension, $version),
-        );
-        return $references;
-    }
+    const REF_NAME    = 'apc';
+
+    /**
+     * Latest version of Extension/Reference supported
+     */
+    const REF_VERSION = '3.1.13';
 
     /**
      * Gets informations about extensions
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getExtensions($extension = null, $version = null)
+    public function getExtensions($extension = null, $version = null, $condition = null)
     {
+        /*
+            2.0.0 until 2.0.4  PHP 4.0.0 ge
+            3.0.0 until 3.0.19 PHP 4.3.0 ge
+            since 3.1.1        PHP 5.1.0 ge
+         */
+        $extver = phpversion(self::REF_NAME);
+        if ($extver === false) {
+            $extver = self::REF_VERSION;
+        }
+        // APC 3.1 breaks PHP 4 compatibility
+        if ($extension === null) {
+            $version1 = $version;
+            $version2 = '5.0.0';
+        } else {
+            $version1 = $extver;
+            $version2 = '3.1.0';
+        }
+        $phpMin = version_compare($version1, $version2, 'lt') ? '4.3.0' : '5.1.0';
         $extensions = array(
-            'apc' => array('4.0.0', '', '3.1.7')
+            self::REF_NAME => array($phpMin, '', self::REF_VERSION)
         );
+
         return $extensions;
-    }
-
-    /**
-     * Gets informations about interfaces
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
-     */
-    public function getInterfaces($extension = null, $version = null)
-    {
-        $interfaces = array();
-
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $interfaces = array_merge(
-                $interfaces,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-            );
-            $interfaces = array_merge(
-                $interfaces,
-                $version5
-            );
-        }
-        return $interfaces;
     }
 
     /**
      * Gets informations about classes
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getClasses($extension = null, $version = null)
+    public function getClasses($extension = null, $version = null, $condition = null)
     {
+        $this->setFilter( func_get_args() );
+
         $classes = array();
 
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $classes = array_merge(
-                $classes,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-                // APC >= 3.1.1
-                'APCIterator'               => array('5.0.0', '')
-            );
-            $classes = array_merge(
-                $classes,
-                $version5
-            );
-        }
+        $release = '3.1.1';       // 2008-12-12
+        $items = array(
+            'APCIterator'               => array('5.0.0', '')
+        );
+        $this->applyFilter($release, $items, $classes);
 
         return $classes;
     }
@@ -134,117 +103,120 @@ class PHP_CompatInfo_Reference_Apc implements PHP_CompatInfo_Reference
     /**
      * Gets informations about functions
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      * @link   http://www.php.net/manual/en/ref.apc.php
      */
-    public function getFunctions($extension = null, $version = null)
+    public function getFunctions($extension = null, $version = null, $condition = null)
     {
+        $this->setFilter( func_get_args() );
+
         $functions = array();
 
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-                // APC >= 2.0
-                'apc_cache_info'                    => array('4.0.0', ''),
-                'apc_clear_cache'                   => array('4.0.0', ''),
-                'apc_sma_info'                      => array('4.0.0', ''),
+        $release = '2.0.0';       // 2003-07-01
+        $items = array(
+            'apc_cache_info'                    => array('4.0.0', ''),
+            'apc_clear_cache'                   => array('4.0.0', ''),
+            'apc_sma_info'                      => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
 
-                // APC >= 3.0.0
-                'apc_define_constants'              => array('4.0.0', ''),
-                'apc_delete'                        => array('4.0.0', ''),
-                'apc_fetch'                         => array('4.0.0', ''),
-                'apc_load_constants'                => array('4.0.0', ''),
-                'apc_store'                         => array('4.0.0', ''),
+        $release = '3.0.0';       // 2005-07-05
+        $items = array(
+            'apc_define_constants'              => array('4.3.0', ''),
+            'apc_delete'                        => array('4.3.0', ''),
+            'apc_fetch'                         => array('4.3.0', ''),
+            'apc_load_constants'                => array('4.3.0', ''),
+            'apc_store'                         => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
 
-                // APC >= 3.0.13
-                'apc_add'                           => array('4.0.0', ''),
-                'apc_compile_file'                  => array('4.0.0', ''),
-            );
-            $functions = array_merge(
-                $functions,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-                // APC 3.1 breaks PHP 4 compatibility
-                // APC >= 3.1.1
-                'apc_cas'                           => array('5.0.0', ''),
-                'apc_dec'                           => array('5.0.0', ''),
-                'apc_delete_file'                   => array('5.0.0', ''),
-                'apc_inc'                           => array('5.0.0', ''),
+        $release = '3.0.13';      // 2007-02-24
+        $items = array(
+            'apc_add'                           => array('4.3.0', ''),
+            'apc_compile_file'                  => array('4.3.0', ''),
+            // Add optional limited flag
+            'apc_sma_info'                      => array('4.3.0', '', '4.3.0'),
+        );
+        $this->applyFilter($release, $items, $functions);
 
-                // APC >= 3.1.4
-                'apc_bin_dump'                      => array('5.0.0', ''),
-                'apc_bin_dumpfile'                  => array('5.0.0', ''),
-                'apc_bin_load'                      => array('5.0.0', ''),
-                'apc_bin_loadfile'                  => array('5.0.0', ''),
-                'apc_exists'                        => array('5.0.0', ''),
-            );
-            $functions = array_merge(
-                $functions,
-                $version5
-            );
-        }
+        $release = '3.1.1';       // 2008-12-12
+        $items = array(
+            'apc_cas'                           => array('5.1.0', ''),
+            'apc_dec'                           => array('5.1.0', ''),
+            'apc_delete_file'                   => array('5.1.0', ''),
+            'apc_inc'                           => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '3.1.4';       // 2010-08-05
+        $items = array(
+            'apc_bin_dump'                      => array('5.1.0', ''),
+            'apc_bin_dumpfile'                  => array('5.1.0', ''),
+            'apc_bin_load'                      => array('5.1.0', ''),
+            'apc_bin_loadfile'                  => array('5.1.0', ''),
+            'apc_exists'                        => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
         return $functions;
     }
 
     /**
      * Gets informations about constants
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      * @link   http://www.php.net/manual/en/apc.constants.php
      */
-    public function getConstants($extension = null, $version = null)
+    public function getConstants($extension = null, $version = null, $condition = null)
     {
+        $this->setFilter( func_get_args() );
+
         $constants = array();
 
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $constants = array_merge(
-                $constants,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-                // Use in APCIterator
-                'APC_LIST_ACTIVE'               => array('5.0.0', ''),
-                'APC_LIST_DELETED'              => array('5.0.0', ''),
-                'APC_ITER_TYPE'                 => array('5.0.0', ''),
-                'APC_ITER_KEY'                  => array('5.0.0', ''),
-                'APC_ITER_FILENAME'             => array('5.0.0', ''),
-                'APC_ITER_DEVICE'               => array('5.0.0', ''),
-                'APC_ITER_INODE'                => array('5.0.0', ''),
-                'APC_ITER_VALUE'                => array('5.0.0', ''),
-                'APC_ITER_MD5'                  => array('5.0.0', ''),
-                'APC_ITER_NUM_HITS'             => array('5.0.0', ''),
-                'APC_ITER_MTIME'                => array('5.0.0', ''),
-                'APC_ITER_CTIME'                => array('5.0.0', ''),
-                'APC_ITER_DTIME'                => array('5.0.0', ''),
-                'APC_ITER_ATIME'                => array('5.0.0', ''),
-                'APC_ITER_REFCOUNT'             => array('5.0.0', ''),
-                'APC_ITER_MEM_SIZE'             => array('5.0.0', ''),
-                'APC_ITER_TTL'                  => array('5.0.0', ''),
-                'APC_ITER_NONE'                 => array('5.0.0', ''),
-                'APC_ITER_ALL'                  => array('5.0.0', ''),
-                // use in apc_bin_load*
-                'APC_BIN_VERIFY_MD5'            => array('5.0.0', ''),
-                'APC_BIN_VERIFY_CRC32'          => array('5.0.0', ''),
-            );
-            $constants = array_merge(
-                $constants,
-                $version5
-            );
-        }
+        $release = '3.1.1';       // 2008-12-12
+        $items = array(
+            // Use in APCIterator
+            'APC_LIST_ACTIVE'               => array('5.1.0', ''),
+            'APC_LIST_DELETED'              => array('5.1.0', ''),
+            'APC_ITER_TYPE'                 => array('5.1.0', ''),
+            'APC_ITER_KEY'                  => array('5.1.0', ''),
+            'APC_ITER_FILENAME'             => array('5.1.0', ''),
+            'APC_ITER_DEVICE'               => array('5.1.0', ''),
+            'APC_ITER_INODE'                => array('5.1.0', ''),
+            'APC_ITER_VALUE'                => array('5.1.0', ''),
+            'APC_ITER_MD5'                  => array('5.1.0', ''),
+            'APC_ITER_NUM_HITS'             => array('5.1.0', ''),
+            'APC_ITER_MTIME'                => array('5.1.0', ''),
+            'APC_ITER_CTIME'                => array('5.1.0', ''),
+            'APC_ITER_DTIME'                => array('5.1.0', ''),
+            'APC_ITER_ATIME'                => array('5.1.0', ''),
+            'APC_ITER_REFCOUNT'             => array('5.1.0', ''),
+            'APC_ITER_MEM_SIZE'             => array('5.1.0', ''),
+            'APC_ITER_TTL'                  => array('5.1.0', ''),
+            'APC_ITER_NONE'                 => array('5.1.0', ''),
+            'APC_ITER_ALL'                  => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '3.1.4';       // 2010-08-05
+        $items = array(
+            // use in apc_bin_load*
+            'APC_BIN_VERIFY_MD5'            => array('5.1.0', ''),
+            'APC_BIN_VERIFY_CRC32'          => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
 
         return $constants;
     }

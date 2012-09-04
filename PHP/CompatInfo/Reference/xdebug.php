@@ -22,224 +22,198 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @link     http://xdebug.org/
+ * @since    Class available since Release 2.0.0RC3
  */
-class PHP_CompatInfo_Reference_Xdebug implements PHP_CompatInfo_Reference
+class PHP_CompatInfo_Reference_Xdebug
+    extends PHP_CompatInfo_Reference_PluginsAbstract
 {
     /**
-     * Gets all informations at once about:
-     * extensions, interfaces, classes, functions, constants
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
+     * Extension/Reference name
      */
-    public function getAll($extension = null, $version = null)
-    {
-        $references = array(
-            'extensions' => $this->getExtensions($extension, $version),
-            'interfaces' => $this->getInterfaces($extension, $version),
-            'classes'    => $this->getClasses($extension, $version),
-            'functions'  => $this->getFunctions($extension, $version),
-            'constants'  => $this->getConstants($extension, $version),
-        );
-        return $references;
-    }
+    const REF_NAME    = 'xdebug';
+
+    /**
+     * Latest version of Extension/Reference supported
+     */
+    const REF_VERSION = '2.2.1';
 
     /**
      * Gets informations about extensions
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getExtensions($extension = null, $version = null)
+    public function getExtensions($extension = null, $version = null, $condition = null)
     {
-        if ((null == $version ) || ('5' == $version)) {
-            $extensions = array(
-                'xdebug' => array('5.2.0', '', '2.1.0')
-            );
+        $extver = phpversion(self::REF_NAME);
+        if ($extver === false) {
+            $extver = self::REF_VERSION;
+        }
+        /*
+           Since version 2.1.0
+           Support for PHP versions lower than PHP 5.1 have been dropped
+         */
+        if ($extension === null) {
+            $version1 = $version;
+            $version2 = '5.0.0';
         } else {
-            /*
-               Since version 2.1.0
-               Support for PHP versions lower than PHP 5.1 have been dropped
-             */
-            $extensions = array();
+            $version1 = $extver;
+            $version2 = '2.1.0';
         }
+        $phpMin = version_compare($version1, $version2, 'lt') ? '4.3.0' : '5.1.0';
+        $extensions = array(
+            self::REF_NAME => array($phpMin, '', self::REF_VERSION)
+        );
         return $extensions;
-    }
-
-    /**
-     * Gets informations about interfaces
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
-     */
-    public function getInterfaces($extension = null, $version = null)
-    {
-        $interfaces = array();
-
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $interfaces = array_merge(
-                $interfaces,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-            );
-            $interfaces = array_merge(
-                $interfaces,
-                $version5
-            );
-        }
-        return $interfaces;
-    }
-
-    /**
-     * Gets informations about classes
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
-     */
-    public function getClasses($extension = null, $version = null)
-    {
-        $classes = array();
-
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $classes = array_merge(
-                $classes,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-            );
-            $classes = array_merge(
-                $classes,
-                $version5
-            );
-        }
-
-        return $classes;
     }
 
     /**
      * Gets informations about functions
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getFunctions($extension = null, $version = null)
+    public function getFunctions($extension = null, $version = null, $condition = null)
     {
+        $this->setFilter(func_get_args());
+
         $functions = array();
 
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $functions = array_merge(
-                $functions,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-                'xdebug_get_stack_depth'         => array('5.2.0', ''),
-                'xdebug_get_function_stack'      => array('5.2.0', ''),
-                'xdebug_get_formatted_function_stack'
-                                                 => array('5.2.0', ''),
-                'xdebug_print_function_stack'    => array('5.2.0', ''),
-                'xdebug_get_declared_vars'       => array('5.2.0', ''),
-                'xdebug_call_class'              => array('5.2.0', ''),
-                'xdebug_call_function'           => array('5.2.0', ''),
-                'xdebug_call_file'               => array('5.2.0', ''),
-                'xdebug_call_line'               => array('5.2.0', ''),
-                'xdebug_var_dump'                => array('5.2.0', ''),
-                'xdebug_debug_zval'              => array('5.2.0', ''),
-                'xdebug_debug_zval_stdout'       => array('5.2.0', ''),
-                'xdebug_enable'                  => array('5.2.0', ''),
-                'xdebug_disable'                 => array('5.2.0', ''),
-                'xdebug_is_enabled'              => array('5.2.0', ''),
-                'xdebug_break'                   => array('5.2.0', ''),
-                'xdebug_start_trace'             => array('5.2.0', ''),
-                'xdebug_stop_trace'              => array('5.2.0', ''),
-                'xdebug_get_tracefile_name'      => array('5.2.0', ''),
-                'xdebug_get_profiler_filename'   => array('5.2.0', ''),
-                'xdebug_dump_aggr_profiling_data'
-                                                 => array('5.2.0', ''),
-                'xdebug_clear_aggr_profiling_data'
-                                                 => array('5.2.0', ''),
-                'xdebug_memory_usage'            => array('5.2.0', ''),
-                'xdebug_peak_memory_usage'       => array('5.2.0', ''),
-                'xdebug_time_index'              => array('5.2.0', ''),
-                'xdebug_start_error_collection'  => array('5.2.0', ''),
-                'xdebug_stop_error_collection'   => array('5.2.0', ''),
-                'xdebug_get_collected_errors'    => array('5.2.0', ''),
-                'xdebug_start_code_coverage'     => array('5.2.0', ''),
-                'xdebug_stop_code_coverage'      => array('5.2.0', ''),
-                'xdebug_get_code_coverage'       => array('5.2.0', ''),
-                'xdebug_get_function_count'      => array('5.2.0', ''),
-                'xdebug_dump_superglobals'       => array('5.2.0', ''),
-                'xdebug_get_headers'             => array('5.2.0', ''),
-            );
-            $functions = array_merge(
-                $functions,
-                $version5
-            );
-        }
+        $release = '1.2.0';       // 2003-06-08
+        $items = array(
+            'xdebug_call_class'              => array('4.3.0', ''),
+            'xdebug_call_file'               => array('4.3.0', ''),
+            'xdebug_call_function'           => array('4.3.0', ''),
+            'xdebug_call_line'               => array('4.3.0', ''),
+            'xdebug_disable'                 => array('4.3.0', ''),
+            'xdebug_dump_function_trace'     => array('4.3.0', ''),
+            'xdebug_dump_superglobals'       => array('4.3.0', ''),
+            'xdebug_enable'                  => array('4.3.0', ''),
+            'xdebug_get_code_coverage'       => array('4.3.0', ''),
+            'xdebug_get_function_stack'      => array('4.3.0', ''),
+            'xdebug_get_function_trace'      => array('4.3.0', ''),
+            'xdebug_is_enabled'              => array('4.3.0', ''),
+            'xdebug_memory_usage'            => array('4.3.0', ''),
+            'xdebug_set_error_handler'       => array('4.3.0', ''),
+            'xdebug_start_code_coverage'     => array('4.3.0', ''),
+            'xdebug_start_trace'             => array('4.3.0', ''),
+            'xdebug_stop_code_coverage'      => array('4.3.0', ''),
+            'xdebug_stop_trace'              => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+        // removed functions in 2.0.0beta1 (then max version is 1.3.2)
+        $this->setMaxExtensionVersion(
+            '1.3.2', 'xdebug_get_function_trace', $functions
+        );
+        $this->setMaxExtensionVersion(
+            '1.3.2', 'xdebug_dump_function_trace', $functions
+        );
+        // removed functions in 2.0.0RC1 (then max version is 2.0.0beta6)
+        $this->setMaxExtensionVersion(
+            '2.0.0beta6', 'xdebug_set_error_handler', $functions
+        );
+
+        $release = '1.3.0RC1';    // 2003-09-18
+        $items = array(
+            'xdebug_time_index'              => array('4.3.0', ''),
+            'xdebug_var_dump'                => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '2.0.0beta1';  // 2004-09-15
+        $items = array(
+            'xdebug_break'                   => array('4.3.0', ''),
+            'xdebug_get_function_count'      => array('4.3.0', ''),
+            'xdebug_get_stack_depth'         => array('4.3.0', ''),
+            'xdebug_get_tracefile_name'      => array('4.3.0', ''),
+            'xdebug_peak_memory_usage'       => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '2.0.0beta2';  // 2004-11-28
+        $items = array(
+            'xdebug_debug_zval'              => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '2.0.0beta4';  // 2005-09-24
+        $items = array(
+            'xdebug_debug_zval_stdout'       => array('4.3.0', ''),
+            'xdebug_get_profiler_filename'   => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '2.0.0beta5';  // 2005-12-31
+        $items = array(
+            'xdebug_get_declared_vars'       => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '2.0.0beta6';  // 2006-06-30
+        $items = array(
+            'xdebug_clear_aggr_profiling_data'
+                                             => array('4.3.0', ''),
+            'xdebug_dump_aggr_profiling_data'
+                                             => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '2.0.0RC1';    // 2006-10-08
+        $items = array(
+            'xdebug_print_function_stack'    => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '2.1.0beta1';  // 2010-01-02
+        $items = array(
+            'xdebug_get_collected_errors'    => array('5.1.0', ''),
+            'xdebug_get_formatted_function_stack'
+                                             => array('5.1.0', ''),
+            'xdebug_get_headers'             => array('5.1.0', ''),
+            'xdebug_start_error_collection'  => array('5.1.0', ''),
+            'xdebug_stop_error_collection'   => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
         return $functions;
     }
 
     /**
      * Gets informations about constants
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getConstants($extension = null, $version = null)
+    public function getConstants($extension = null, $version = null, $condition = null)
     {
+        $this->setFilter(func_get_args());
+
         $constants = array();
 
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $constants = array_merge(
-                $constants,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-                'XDEBUG_TRACE_APPEND'            => array('5.2.0', ''),
-                'XDEBUG_TRACE_COMPUTERIZED'      => array('5.2.0', ''),
-                'XDEBUG_TRACE_HTML'              => array('5.2.0', ''),
-                'XDEBUG_CC_UNUSED'               => array('5.2.0', ''),
-                'XDEBUG_CC_DEAD_CODE'            => array('5.2.0', ''),
-            );
-            $constants = array_merge(
-                $constants,
-                $version5
-            );
-        }
+        $release = '1.2.0';       // 2003-06-08
+        $items = array(
+            'XDEBUG_CC_DEAD_CODE'            => array('5.2.0', ''),
+            'XDEBUG_CC_UNUSED'               => array('5.2.0', ''),
+            'XDEBUG_TRACE_APPEND'            => array('5.2.0', ''),
+            'XDEBUG_TRACE_COMPUTERIZED'      => array('5.2.0', ''),
+            'XDEBUG_TRACE_HTML'              => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
 
         return $constants;
     }

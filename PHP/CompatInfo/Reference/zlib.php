@@ -23,205 +23,117 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @link     http://www.php.net/manual/en/book.zlib.php
  */
-class PHP_CompatInfo_Reference_Zlib implements PHP_CompatInfo_Reference
+class PHP_CompatInfo_Reference_Zlib
+    extends PHP_CompatInfo_Reference_PluginsAbstract
 {
     /**
-     * Gets all informations at once about:
-     * extensions, interfaces, classes, functions, constants
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
+     * Extension/Reference name
      */
-    public function getAll($extension = null, $version = null)
-    {
-        $references = array(
-            'extensions' => $this->getExtensions($extension, $version),
-            'interfaces' => $this->getInterfaces($extension, $version),
-            'classes'    => $this->getClasses($extension, $version),
-            'functions'  => $this->getFunctions($extension, $version),
-            'constants'  => $this->getConstants($extension, $version),
-        );
-        return $references;
-    }
+    const REF_NAME    = 'zlib';
+
+    /**
+     * Latest version of Extension/Reference supported
+     */
+    const REF_VERSION = '1.1';
 
     /**
      * Gets informations about extensions
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getExtensions($extension = null, $version = null)
+    public function getExtensions($extension = null, $version = null, $condition = null)
     {
+        $phpMin = '4.0.0';
         $extensions = array(
-            'zlib' => array('4.0.0', '', '1.1')
+            self::REF_NAME => array($phpMin, '', self::REF_VERSION)
         );
         return $extensions;
     }
 
     /**
-     * Gets informations about interfaces
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
-     */
-    public function getInterfaces($extension = null, $version = null)
-    {
-        $interfaces = array();
-
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $interfaces = array_merge(
-                $interfaces,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-            );
-            $interfaces = array_merge(
-                $interfaces,
-                $version5
-            );
-        }
-        return $interfaces;
-    }
-
-    /**
-     * Gets informations about classes
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
-     */
-    public function getClasses($extension = null, $version = null)
-    {
-        $classes = array();
-
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $classes = array_merge(
-                $classes,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-            );
-            $classes = array_merge(
-                $classes,
-                $version5
-            );
-        }
-
-        return $classes;
-    }
-
-    /**
      * Gets informations about functions
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      * @link   http://www.php.net/manual/en/ref.zlib.php
      */
-    public function getFunctions($extension = null, $version = null)
+    public function getFunctions($extension = null, $version = null, $condition = null)
     {
+        $this->setFilter(func_get_args());
+
         $functions = array();
 
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-                'gzclose'                        => array('4.0.0', ''),
-                'gzcompress'                     => array('4.0.1', ''),
-                'gzdeflate'                      => array('4.0.4', ''),
-                'gzencode'                       => array('4.0.4', ''),
-                'gzeof'                          => array('4.0.0', ''),
-                'gzfile'                         => array('4.0.0', ''),
-                'gzgetc'                         => array('4.0.0', ''),
-                'gzgets'                         => array('4.0.0', ''),
-                'gzgetss'                        => array('4.0.0', ''),
-                'gzinflate'                      => array('4.0.4', ''),
-                'gzopen'                         => array('4.0.0', ''),
-                'gzpassthru'                     => array('4.0.0', ''),
-                'gzputs'                         => array('4.0.0', ''),
-                'gzread'                         => array('4.0.0', ''),
-                'gzrewind'                       => array('4.0.0', ''),
-                'gzseek'                         => array('4.0.0', ''),
-                'gztell'                         => array('4.0.0', ''),
-                'gzuncompress'                   => array('4.0.1', ''),
-                'gzwrite'                        => array('4.0.0', ''),
-                'ob_gzhandler'                   => array('4.0.4', ''),
-                'readgzfile'                     => array('4.0.0', ''),
-                'zlib_get_coding_type'           => array('4.3.2', ''),
-            );
-            $functions = array_merge(
-                $functions,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-                'gzdecode'                       => array('5.4.0', ''),
-                'zlib_decode'                    => array('5.4.0', ''),
-                'zlib_encode'                    => array('5.4.0', ''),
-            );
-            $functions = array_merge(
-                $functions,
-                $version5
-            );
-        }
+        $release = false;
+        $items = array(
+            'gzclose'                        => array('4.0.0', ''),
+            'gzcompress'                     => array('4.0.1', ''),
+            'gzdecode'                       => array('5.4.0', ''),
+            'gzdeflate'                      => array('4.0.4', ''),
+            'gzencode'                       => array('4.0.4', ''),
+            'gzeof'                          => array('4.0.0', ''),
+            'gzfile'                         => array('4.0.0', ''),
+            'gzgetc'                         => array('4.0.0', ''),
+            'gzgets'                         => array('4.0.0', ''),
+            'gzgetss'                        => array('4.0.0', ''),
+            'gzinflate'                      => array('4.0.4', ''),
+            'gzopen'                         => array('4.0.0', ''),
+            'gzpassthru'                     => array('4.0.0', ''),
+            'gzputs'                         => array('4.0.0', ''),
+            'gzread'                         => array('4.0.0', ''),
+            'gzrewind'                       => array('4.0.0', ''),
+            'gzseek'                         => array('4.0.0', ''),
+            'gztell'                         => array('4.0.0', ''),
+            'gzuncompress'                   => array('4.0.1', ''),
+            'gzwrite'                        => array('4.0.0', ''),
+            'ob_gzhandler'                   => array('4.0.4', ''),
+            'readgzfile'                     => array('4.0.0', ''),
+            'zlib_decode'                    => array('5.4.0', ''),
+            'zlib_encode'                    => array('5.4.0', ''),
+            'zlib_get_coding_type'           => array('4.3.2', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
         return $functions;
     }
 
     /**
      * Gets informations about constants
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      * @link   http://www.php.net/manual/en/zlib.constants.php
      */
-    public function getConstants($extension = null, $version = null)
+    public function getConstants($extension = null, $version = null, $condition = null)
     {
+        $this->setFilter(func_get_args());
+
         $constants = array();
 
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-                'FORCE_GZIP'                     => array('4.0.0', ''),
-                'FORCE_DEFLATE'                  => array('4.0.0', ''),
-            );
-            $constants = array_merge(
-                $constants,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-                'ZLIB_ENCODING_DEFLATE'         => array('5.4.0', ''),
-                'ZLIB_ENCODING_GZIP'            => array('5.4.0', ''),
-                'ZLIB_ENCODING_RAW'             => array('5.4.0', ''),
-            );
-            $constants = array_merge(
-                $constants,
-                $version5
-            );
-        }
+        $release = false;
+        $items = array(
+            'FORCE_DEFLATE'                 => array('4.0.0', ''),
+            'FORCE_GZIP'                    => array('4.0.0', ''),
+            'ZLIB_ENCODING_DEFLATE'         => array('5.4.0', ''),
+            'ZLIB_ENCODING_GZIP'            => array('5.4.0', ''),
+            'ZLIB_ENCODING_RAW'             => array('5.4.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
 
         return $constants;
     }
