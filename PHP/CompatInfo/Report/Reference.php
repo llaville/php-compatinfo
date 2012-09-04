@@ -175,13 +175,14 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
 
             echo $element
                 . str_repeat(' ', (45 - strlen($element)));
-            echo $extension
-                . str_repeat(' ', (18 - strlen($extension)));
             if (strlen($extension) < 18) {
+                echo $extension
+                    . str_repeat(' ', (18 - strlen($extension)));
+
                 echo $versions
                     . str_repeat(' ', (16 - strlen($versions)));
             } else {
-                echo PHP_EOL
+                echo $extension . PHP_EOL
                     . str_repeat(' ', 63)
                     . $versions;
             }
