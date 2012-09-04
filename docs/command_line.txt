@@ -57,7 +57,7 @@ Short Option, Long Option, Description
 , --version, "Prints the version of PHP_CompatInfo and exits."
 |===========================
 
-Unless you tell it to ignore the XML configuration file, default options are sets 
+Unless you tell it to ignore the XML configuration file, default options are sets
 by the  +phpcompatinfo.xml.dist+ file if found into the PEAR +cfg_dir+ +\PHP_CompatInfo+ directory
 
 [source,xml]
@@ -663,6 +663,8 @@ Options:
 
 Arguments:
   extension  (optional) Limit output only to this extension
+  version    (optional) Limit output to this version
+  condition  (optional) Limit output on a version condition
 ----
 
 [grid="rows",format="csv"]
@@ -717,6 +719,28 @@ $ phpci list-interfaces SPL
 ----
 =====================================================================
 
+[TIP]
+.You can filter result by extension and version (php or extension) with a particular relationship
+=====================================================================
+Example: if you want only Core interfaces, supported by all PHP versions until 5.1.0,
+ enter command below.
+----
+$ phpci list-interfaces core php_5.1.0
+----
+
+Example: if you want only standard interfaces, came only with PHP 5.0.0,
+ enter command below.
+----
+$ phpci list-interfaces standard php_5.0.0 eq
+----
+
+Example: if you want only apc interfaces, available with all apc versions since 3.1.0,
+ enter command below.
+----
+$ phpci list-interfaces apc 3.1.0 ge
+----
+=====================================================================
+
 === list-classes command
 
 This command allow to print the list of documented classes available with your version of PHP_CompatInfo,
@@ -742,6 +766,8 @@ Options:
 
 Arguments:
   extension  (optional) Limit output only to this extension
+  version    (optional) Limit output to this version
+  condition  (optional) Limit output on a version condition
 ----
 
 [grid="rows",format="csv"]
@@ -796,6 +822,28 @@ $ phpci list-classes SPL
 ----
 =====================================================================
 
+[TIP]
+.You can filter result by extension and version (php or extension) with a particular relationship
+=====================================================================
+Example: if you want only Core classes, supported by all PHP versions until 5.1.0,
+ enter command below.
+----
+$ phpci list-classes core php_5.1.0
+----
+
+Example: if you want only standard classes, came only with PHP 5.0.0,
+ enter command below.
+----
+$ phpci list-classes standard php_5.0.0 eq
+----
+
+Example: if you want only apc classes, available with all apc versions after 3.0.0,
+ enter command below.
+----
+$ phpci list-classes apc 3.0.0 gt
+----
+=====================================================================
+
 === list-functions command
 
 This command allow to print the list of documented functions available with your version of PHP_CompatInfo,
@@ -821,6 +869,8 @@ Options:
 
 Arguments:
   extension  (optional) Limit output only to this extension
+  version    (optional) Limit output to this version
+  condition  (optional) Limit output on a version condition
 ----
 
 [grid="rows",format="csv"]
@@ -874,6 +924,28 @@ $ phpci list-functions SPL
 ----
 =====================================================================
 
+[TIP]
+.You can filter result by extension and version (php or extension) with a particular relationship
+=====================================================================
+Example: if you want only json functions, supported by all PHP versions until 5.2.0,
+ enter command below.
+----
+$ phpci list-functions json php_5.2.0
+----
+
+Example: if you want only json functions, came only with PHP 5.3.0,
+ enter command below.
+----
+$ phpci list-functions json php_5.3.0 eq
+----
+
+Example: if you want only apc functions, available with all apc versions before 3.0.0,
+ enter command below.
+----
+$ phpci list-functions apc 3.0.0 lt
+----
+=====================================================================
+
 === list-constants command
 
 This command allow to print the list of documented constants available with your version of PHP_CompatInfo,
@@ -899,6 +971,8 @@ Options:
 
 Arguments:
   extension  (optional) Limit output only to this extension
+  version    (optional) Limit output to this version
+  condition  (optional) Limit output on a version condition
 ----
 
 [grid="rows",format="csv"]
@@ -955,5 +1029,27 @@ $ phpci list-constants
 Example: if you want only SPL extension constants, enter command below.
 ----
 $ phpci list-constants SPL
+----
+=====================================================================
+
+[TIP]
+.You can filter result by extension and version (php or extension) with a particular relationship
+=====================================================================
+Example: if you want only json constants, supported by all PHP versions until 5.3.0,
+ enter command below.
+----
+$ phpci list-constants json php_5.3.0
+----
+
+Example: if you want only json constants, came only with PHP 5.4.0,
+ enter command below.
+----
+$ phpci list-constants json php_5.4.0 eq
+----
+
+Example: if you want only apc constants, available with all apc versions before 3.2.0,
+ enter command below.
+----
+$ phpci list-constants apc 3.2.0 lt
 ----
 =====================================================================
