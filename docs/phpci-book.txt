@@ -56,6 +56,7 @@ This manual documents the final stable version {revnumber}
 * link:http://www.php.net/manual/en/book.spl.php[SPL] extension
 * link:http://www.php.net/manual/en/book.dom.php[DOM] extension
 * link:http://www.php.net/manual/en/book.libxml.php[libxml] extension
+* link:http://www.php.net/manual/en/book.reflection.php[Reflection] extension
 * link:http://pear.phpunit.de[PHP_Timer] 1.0.0 or newer from _PHPUnit_ PEAR channel
 
 .Optional resources :

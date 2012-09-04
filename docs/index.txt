@@ -3,15 +3,15 @@ PHP_CompatInfo
 include::revision.txt[]
 :stylesdir:   styles
 :scriptsdir:  js
-:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.7
+:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/2.8
 
 
 .{revdate}: PHP_CompatInfo {revnumber} Released
 ************************************************************************
 Release highlights:
 
-- PHP_CompatInfo 2.7.0 add both support to PHP 5.3.16 and PHP 5.4.6 
-and improved global results with many changes and bug fixes.
+- PHP_CompatInfo 2.8.0 add ability to filter extension elements
+(interfaces, classes, functions, constants) on php or release versions
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -24,12 +24,12 @@ link:INSTALL.html[Installation page] for downloads and installation instructions
 == Introduction
 
 PHP_CompatInfo branch 1.x is still compatible with PHP4, that is from an old
-age now (unmaintained). 
+age now (unmaintained).
 You can find it on PEAR main site on its http://pear.php.net/package/PHP_CompatInfo[project page].
 
-PHP_CompatInfo branch 2.x is a full rewrite with PHP5. 
+PHP_CompatInfo branch 2.x is a full rewrite with PHP5.
 Since RC3 the PHP parser engine used is https://github.com/llaville/php-reflect[PHP_Reflect].
-It's an improved version with _callbacks to what ever token you want_ feature 
+It's an improved version with _callbacks to what ever token you want_ feature
 from basic concept version of https://github.com/sebastianbergmann/php-token-stream[PHP_TokenStream].
 
 
@@ -38,7 +38,7 @@ from basic concept version of https://github.com/sebastianbergmann/php-token-str
 PHP_CompatInfo 2 provides two servers API :
 
 * a Command Line Interface (CLI) tool named _phpci_
-* a web browser interface 
+* a web browser interface
 
 .Requirements
 
@@ -51,7 +51,8 @@ PHP_CompatInfo 2 provides two servers API :
 * SPL extension
 * dom extension
 * libxml extension
-* phpunit/PHP_Timer 1.0.0 (utility class for timing) 
+* Reflection extension
+* phpunit/PHP_Timer 1.0.0 (utility class for timing)
 * (optional) pear/Net_Growl 2.6.0 minimum (for growl audit observer)
 * (optional) PHPUnit 3.6.0 minimum (to run unit tests)
 * (optional) an XSLT processor if you want to produce an xHTML report from a phpci xml report
@@ -73,10 +74,10 @@ PHP_CompatInfo 2 provides two servers API :
 
 The _phpci_ tool may inform you on what of those extensions are or not loaded on your system.
 
-Run command 
+Run command
 ----
     $ phpci list-references
----- 
+----
 
 Will output results as follow. May differ depending of your extensions loaded.
 ----
@@ -173,15 +174,15 @@ Will output results as follow. May differ depending of your extensions loaded.
 * Parse a single file
 * Parse a directory recursively or not
 * Parse a list of files and/or directories
-* Ability to give a list of extensions to ignore when calculating the version needed 
-* Ability to give a list of interfaces to ignore when calculating the version needed 
-* Ability to give a list of traits to ignore when calculating the version needed 
-* Ability to give a list of classes to ignore when calculating the version needed 
-* Ability to give a list of functions to ignore when calculating the version needed 
-* Ability to give a list of constants to ignore when calculating the version needed. 
-* Ability to give a list of files to ignore when calculating the version needed 
-* Ability to give a list of directories to ignore when calculating the version needed 
-* Ability to use a custom extensions list or by default only extensions loaded, to parse PHP code 
+* Ability to give a list of extensions to ignore when calculating the version needed
+* Ability to give a list of interfaces to ignore when calculating the version needed
+* Ability to give a list of traits to ignore when calculating the version needed
+* Ability to give a list of classes to ignore when calculating the version needed
+* Ability to give a list of functions to ignore when calculating the version needed
+* Ability to give a list of constants to ignore when calculating the version needed.
+* Ability to give a list of files to ignore when calculating the version needed
+* Ability to give a list of directories to ignore when calculating the version needed
+* Ability to use a custom extensions list or by default only extensions loaded, to parse PHP code
 * Event driven and listeners system to audit parsing process
 
 
@@ -227,7 +228,7 @@ I would also like to thanks a guy who help me to enhance support of more than 50
 ____
 .Remi Collet
 
-Contributor of many extensions reference and unit tests. He has joined the team 
+Contributor of many extensions reference and unit tests. He has joined the team
 on version 2.0.0RC2
 ____
 
