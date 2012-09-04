@@ -46,25 +46,47 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
             );
         }
 
-        if (isset($options['extensions'])) {
-            $extensions = $options['extensions'];
-            $extension  = $extensions[0];
-            unset($options['extensions']);
-        } else {
-            $extensions = $extension = null;
+        $extensions = $extension = $options['_filter']['extension'];
+        if (!is_null($extension)) {
+            if ('all' == $extension ) {
+                $extension = null;
+            } else {
+                // filter on a unique extension
+                $extensions = array($extension);
+            }
         }
+        $version = $options['_filter']['version'];
+        if (!is_null($version)) {
+            if (substr($version, 0, 4) == 'php_') {
+                // filter extension on PHP version
+                $version   = substr($version, 4);
+                $extension = null;
+            } else {
+                $extension = true;
+            }
+        }
+        $condition = $options['_filter']['condition'];
+
+        if ($extension !== true) {
+            // filter on PHP versions
+            if ($version === '4') {
+                $version = '5.0.0';
+                if (is_null($condition)) {
+                    $condition = 'lt';
+                } else {
+                    $version = '4.0.0';
+                }
+            }
+            if ($version === '5') {
+                $version = '5.0.0';
+                if (is_null($condition)) {
+                    $condition = 'ge';
+                }
+            }
+        }
+
         $reference = new $referenceClassName($extensions);
-
-        switch($options['reference']) {
-        case 'PHP4':
-            $version = '4';
-            break;
-        case 'PHP5':
-        default:
-            $version = null;
-        }
-
-        $report = $reference->getAll($extension, $version);
+        $report    = $reference->getAll($extension, $version, $condition);
 
         if (isset($options['reportFile'])) {
             ob_start();
@@ -110,18 +132,20 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
      */
     public function generate($report, $base, $verbose)
     {
+        $listUC = strtoupper($this->_list);
+
         echo PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
-        echo 'PHP COMPAT INFO ' . strtoupper($this->_list) . ' REFERENCE' . PHP_EOL;
+        echo 'PHP COMPAT INFO ' . $listUC . ' REFERENCE' . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
-        echo str_pad(strtoupper($this->_list), 10)
+        echo str_pad($listUC, 10)
             . str_repeat(' ', ($this->width - 44))
-            . 'EXTENSION         VERSION'  . PHP_EOL;
+            . 'EXTENSION         PHP'  . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
 
         $elements = $report[$this->_list];
         ksort($elements);
-        
+
         foreach ($elements as $element => $data) {
 
             if ('extensions' == $this->_list) {
@@ -130,21 +154,45 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
             } else {
                 list ($extension, $values) = each($data);
             }
-            $values   = array_slice($values, 0, 2); 
-            $versions = implode('  ', $values);
+            if (isset($values['extVersions'])
+                && is_array($values['extVersions'])
+            ) {
+                if (is_string($values['extVersions'][0])) {
+                    // min extension version
+                    $extension .= '-' . $values['extVersions'][0];
+                }
+                if (is_string($values['extVersions'][1])) {
+                    // Max extension version
+                    $extension .= '/' . $values['extVersions'][1];
+                }
+                unset($values['extVersions']);
+            }
+
+            $versions = $values[0];
+            if (!empty($values[1])) {
+                $versions .= '/' . $values[1];
+            }
 
             echo $element
                 . str_repeat(' ', (45 - strlen($element)));
             echo $extension
                 . str_repeat(' ', (18 - strlen($extension)));
-            echo $versions
-                . str_repeat(' ', (16 - strlen($versions)));
+            if (strlen($extension) < 18) {
+                echo $versions
+                    . str_repeat(' ', (16 - strlen($versions)));
+            } else {
+                echo PHP_EOL
+                    . str_repeat(' ', 63)
+                    . $versions;
+            }
             echo PHP_EOL;
         }
+        $total  = count($report[$this->_list]);
+        $length = strcasecmp($this->_list, 'classes') == 0 ? -2 : -1;
         echo str_repeat('-', $this->width) . PHP_EOL;
-        echo 'A TOTAL OF ' . count($report[$this->_list]) . ' ' .
-            strtoupper($this->_list) . ' ';
-        echo 'WERE FOUND '                 . PHP_EOL;
+        echo 'A TOTAL OF ' . $total . ' ' . substr($listUC, 0, $length)
+            . ($total > 1 ? ($length == -2 ? 'E' : '') . 'S WERE' : ' WAS')
+            . ' FOUND' . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
         echo PHP_Timer::resourceUsage()    . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
