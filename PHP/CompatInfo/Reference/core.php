@@ -76,20 +76,20 @@ class PHP_CompatInfo_Reference_Core
 
         $classes = array();
 
-        $release = '4.0.0';       //
+        $release = '4.0.0';       // 2000-05-22
         $items = array(
             'stdClass'                       => array('4.0.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '5.1.0';       //
+        $release = '5.1.0';       // 2005-11-24
         $items = array(
             'ErrorException'                 => array('5.1.0', ''),
             'Exception'                      => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '5.3.0';       //
+        $release = '5.3.0';       // 2009-06-30
         $items = array(
             'Closure'                        => array('5.3.0', ''),
         );
@@ -115,7 +115,7 @@ class PHP_CompatInfo_Reference_Core
 
         $functions = array();
 
-        $release = '4.0.0';       //
+        $release = '4.0.0';       // 2000-05-22
         $items = array(
             'zend_version'                   => array('4.0.0', ''),
             'func_num_args'                  => array('4.0.0', ''),
@@ -148,7 +148,7 @@ class PHP_CompatInfo_Reference_Core
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '4.0.1';       //
+        $release = '4.0.1';       // 2000-06-28
         $items = array(
             'create_function'                => array('4.0.1', ''),
             'restore_error_handler'          => array('4.0.1', ''),
@@ -157,14 +157,14 @@ class PHP_CompatInfo_Reference_Core
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '4.0.2';       //
+        $release = '4.0.2';       // 2000-08-29
         $items = array(
             'get_resource_type'              => array('4.0.2', ''),
             'strncasecmp'                    => array('4.0.2', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '4.0.4';       //
+        $release = '4.0.4';       // 2000-12-19
         $items = array(
             'get_defined_functions'          => array('4.0.4', ''),
             'get_defined_vars'               => array('4.0.4', ''),
@@ -177,19 +177,19 @@ class PHP_CompatInfo_Reference_Core
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '4.2.0';       //
+        $release = '4.2.0';       // 2002-04-22
         $items = array(
             'is_a'                           => array('4.2.0', '', '4.2.0, 4.2.0, 5.3.9'),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '4.3.0';       //
+        $release = '4.3.0';       // 2002-12-27
         $items = array(
             'debug_backtrace'                => array('4.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.0.0';       //
+        $release = '5.0.0';       // 2004-07-13
         $items = array(
             'debug_print_backtrace'          => array('5.0.0', ''),
             'get_declared_interfaces'        => array('5.0.0', ''),
@@ -199,19 +199,19 @@ class PHP_CompatInfo_Reference_Core
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.0.2';       //
+        $release = '5.0.2';       // 2004-09-23
         $items = array(
             'interface_exists'               => array('5.0.2', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.1.0';       //
+        $release = '5.1.0';       // 2005-11-24
         $items = array(
             'property_exists'                => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.3.0';       //
+        $release = '5.3.0';       // 2009-06-30
         $items = array(
             'class_alias'                    => array('5.3.0', ''),
             'gc_collect_cycles'              => array('5.3.0', ''),
@@ -222,7 +222,7 @@ class PHP_CompatInfo_Reference_Core
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.4.0';       //
+        $release = '5.4.0';       // 2012-03-01
         $items = array(
             'get_declared_traits'            => array('5.4.0', ''),
             'trait_exists'                   => array('5.4.0', ''),
@@ -250,7 +250,7 @@ class PHP_CompatInfo_Reference_Core
 
         $constants = array();
 
-        $release = '4.0.0';       //
+        $release = '4.0.0';       // 2000-05-22
         $items = array(
             'DEFAULT_INCLUDE_PATH'           => array('4.0.0', ''),
             'E_ALL'                          => array('4.0.0', ''),
@@ -289,13 +289,13 @@ class PHP_CompatInfo_Reference_Core
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '4.2.0';       //
+        $release = '4.2.0';       // 2002-04-22
         $items = array(
             'PHP_SAPI'                       => array('4.2.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '4.3.0';       //
+        $release = '4.3.0';       // 2002-12-27
         $items = array(
             'PHP_PREFIX'                     => array('4.3.0', ''),
             'PHP_SHLIB_SUFFIX'               => array('4.3.0', ''),
@@ -312,42 +312,42 @@ class PHP_CompatInfo_Reference_Core
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '4.3.10';      //
+        $release = '4.3.10';      // 2004-12-14
         $items = array(
             'PHP_EOL'                        => array('4.3.10', ''),
             'UPLOAD_ERR_NO_TMP_DIR'          => array('4.3.10', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '4.4.0';      //
+        $release = '4.4.0';      // 2005-07-11
         $items = array(
             'PHP_INT_MAX'                    => array('4.4.0', ''),
             'PHP_INT_SIZE'                   => array('4.4.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '5.0.0';      //
+        $release = '5.0.0';      // 2004-07-13
         $items = array(
             'E_STRICT'                          => array('5.0.0', ''),
             '__METHOD__'                        => array('5.0.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '5.1.0';      //
+        $release = '5.1.0';      // 2005-11-24
         $items = array(
             'UPLOAD_ERR_CANT_WRITE'             => array('5.1.0', ''),
             '__COMPILER_HALT_OFFSET__'          => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '5.2.0';      //
+        $release = '5.2.0';      // 2006-11-02
         $items = array(
             'E_RECOVERABLE_ERROR'               => array('5.2.0', ''),
             'UPLOAD_ERR_EXTENSION'              => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '5.2.7';      //
+        $release = '5.2.7';      // 2008-12-04
         $items = array(
             'PHP_DEBUG'                         => array('5.2.7', ''),
             'PHP_EXTRA_VERSION'                 => array('5.2.7', ''),
@@ -360,7 +360,7 @@ class PHP_CompatInfo_Reference_Core
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '5.3.0';      //
+        $release = '5.3.0';      // 2009-06-30
         $items = array(
             'E_DEPRECATED'                      => array('5.3.0', ''),
             'E_USER_DEPRECATED'                 => array('5.3.0', ''),
@@ -382,20 +382,20 @@ class PHP_CompatInfo_Reference_Core
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '5.3.4';      //
+        $release = '5.3.4';      // 2010-12-09
         $items = array(
             'ZEND_MULTIBYTE'                    => array('5.3.4', '5.3.16'),
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '5.3.6';      //
+        $release = '5.3.6';      // 2011-03-17
         $items = array(
             'DEBUG_BACKTRACE_IGNORE_ARGS'       => array('5.3.6', ''),
             'DEBUG_BACKTRACE_PROVIDE_OBJECT'    => array('5.3.6', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '5.4.0';      //
+        $release = '5.4.0';      // 2012-03-01
         $items = array(
             'PHP_BINARY'                        => array('5.4.0', ''),
             'PHP_OUTPUT_HANDLER_CLEAN'          => array('5.4.0', ''),
