@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Zip
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.9.1';
+    const REF_VERSION = '1.11.0';
 
     /**
      * Gets informations about extensions
@@ -49,7 +49,7 @@ class PHP_CompatInfo_Reference_Zip
      */
     public function getExtensions($extension = null, $version = null, $condition = null)
     {
-        $phpMin = '4.1.0';
+        $phpMin = '4.3.0';
         $extensions = array(
             self::REF_NAME => array($phpMin, '', self::REF_VERSION)
         );
@@ -73,7 +73,7 @@ class PHP_CompatInfo_Reference_Zip
 
         $classes = array();
 
-        $release = false;
+        $release = '1.6.0';       // 2006-07-25
         $items = array(
             'ZipArchive'                     => array('5.2.0', ''),
         );
@@ -100,18 +100,18 @@ class PHP_CompatInfo_Reference_Zip
 
         $functions = array();
 
-        $release = false;
+        $release = '1.0';         // 2003-05-21
         $items = array(
-            'zip_close'                      => array('4.1.0', ''),
-            'zip_entry_close'                => array('4.1.0', ''),
-            'zip_entry_compressedsize'       => array('4.1.0', ''),
-            'zip_entry_compressionmethod'    => array('4.1.0', ''),
-            'zip_entry_filesize'             => array('4.1.0', ''),
-            'zip_entry_name'                 => array('4.1.0', ''),
-            'zip_entry_open'                 => array('4.1.0', ''),
-            'zip_entry_read'                 => array('4.1.0', ''),
-            'zip_open'                       => array('4.1.0', ''),
-            'zip_read'                       => array('4.1.0', ''),
+            'zip_close'                      => array('4.3.0', ''),
+            'zip_entry_close'                => array('4.3.0', ''),
+            'zip_entry_compressedsize'       => array('4.3.0', ''),
+            'zip_entry_compressionmethod'    => array('4.3.0', ''),
+            'zip_entry_filesize'             => array('4.3.0', ''),
+            'zip_entry_name'                 => array('4.3.0', ''),
+            'zip_entry_open'                 => array('4.3.0', ''),
+            'zip_entry_read'                 => array('4.3.0', ''),
+            'zip_open'                       => array('4.3.0', ''),
+            'zip_read'                       => array('4.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
