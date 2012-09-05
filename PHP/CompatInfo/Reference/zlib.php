@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Zlib
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.1';
+    const REF_VERSION = '2.0';
 
     /**
      * Gets informations about extensions
@@ -49,7 +49,13 @@ class PHP_CompatInfo_Reference_Zlib
      */
     public function getExtensions($extension = null, $version = null, $condition = null)
     {
-        $phpMin = '4.0.0';
+        if (DIRECTORY_SEPARATOR == '\\') {
+            // Built-in support for zlib on Windows is available with PHP 4.3.0.
+            $phpMin = '4.3.0';
+        } else {
+            $phpMin = '4.0.0';
+        }
+
         $extensions = array(
             self::REF_NAME => array($phpMin, '', self::REF_VERSION)
         );
@@ -74,11 +80,10 @@ class PHP_CompatInfo_Reference_Zlib
 
         $functions = array();
 
-        $release = false;
+        $release = '1.0';         //
         $items = array(
             'gzclose'                        => array('4.0.0', ''),
             'gzcompress'                     => array('4.0.1', ''),
-            'gzdecode'                       => array('5.4.0', ''),
             'gzdeflate'                      => array('4.0.4', ''),
             'gzencode'                       => array('4.0.4', ''),
             'gzeof'                          => array('4.0.0', ''),
@@ -98,9 +103,15 @@ class PHP_CompatInfo_Reference_Zlib
             'gzwrite'                        => array('4.0.0', ''),
             'ob_gzhandler'                   => array('4.0.4', ''),
             'readgzfile'                     => array('4.0.0', ''),
+            'zlib_get_coding_type'           => array('4.3.2', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '2.0';         //
+        $items = array(
+            'gzdecode'                       => array('5.4.0', ''),
             'zlib_decode'                    => array('5.4.0', ''),
             'zlib_encode'                    => array('5.4.0', ''),
-            'zlib_get_coding_type'           => array('4.3.2', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -125,10 +136,15 @@ class PHP_CompatInfo_Reference_Zlib
 
         $constants = array();
 
-        $release = false;
+        $release = '1.0';         //
         $items = array(
             'FORCE_DEFLATE'                 => array('4.0.0', ''),
             'FORCE_GZIP'                    => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '2.0';         //
+        $items = array(
             'ZLIB_ENCODING_DEFLATE'         => array('5.4.0', ''),
             'ZLIB_ENCODING_GZIP'            => array('5.4.0', ''),
             'ZLIB_ENCODING_RAW'             => array('5.4.0', ''),
