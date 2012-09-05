@@ -8,6 +8,7 @@
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    SVN: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -24,6 +25,7 @@ require_once 'GenericTest.php';
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -45,6 +47,10 @@ class PHP_CompatInfo_Reference_TidyTest
         $this->optionnalfunctions = array(
             // Requires HAVE_TIDYOPTGETDOC
             'tidy_get_opt_doc',
+            // Removes in 0.7.0
+            'tidy_create',
+            // Removes in 2.0 (PHP 5 only)
+            'tidy_load_config_enc',
         );
         $this->obj = new PHP_CompatInfo_Reference_Tidy();
         parent::setUp();
