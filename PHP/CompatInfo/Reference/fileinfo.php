@@ -36,7 +36,7 @@ class PHP_CompatInfo_Reference_Fileinfo
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.5-dev';
+    const REF_VERSION = '1.0.5';
 
     /**
      * Gets informations about extensions
@@ -59,6 +59,32 @@ class PHP_CompatInfo_Reference_Fileinfo
     }
 
     /**
+     * Gets informations about classes
+     *
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
+     *
+     * @return array
+     */
+    public function getClasses($extension = null, $version = null, $condition = null)
+    {
+        $this->setFilter(func_get_args());
+
+        $classes = array();
+
+        $release = '0.1.0';       // 2004-02-13
+        $items = array(
+            'finfo'                   => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        return $classes;
+    }
+
+    /**
      * Gets informations about functions
      *
      * @param string $extension (optional) NULL for PHP version,
@@ -76,7 +102,7 @@ class PHP_CompatInfo_Reference_Fileinfo
 
         $functions = array();
 
-        $release = '0.1.0';
+        $release = '0.1.0';       // 2004-02-13
         $items = array(
             'finfo_buffer'            => array('4.0.0', ''),
             'finfo_close'             => array('4.0.0', ''),
@@ -86,10 +112,12 @@ class PHP_CompatInfo_Reference_Fileinfo
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = false;
+        /*
+            Since 1.0.5 enables by default in PHP 5.3.0
+         */
+        $release = '1.0.5';       // 2009-06-30 (PHP 5.3.0)
         $items = array(
-            // (emulated by Fileinfo since php 5.3.0)
-            'mime_content_type'       => array('4.3.0', ''),
+            'mime_content_type'       => array('5.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -114,18 +142,23 @@ class PHP_CompatInfo_Reference_Fileinfo
 
         $constants = array();
 
-        $release = false;
+        $release = '0.1.0';       // 2004-02-13
         $items = array(
             'FILEINFO_COMPRESS'         => array('4.0.0', '5.2.17'),
             'FILEINFO_CONTINUE'         => array('4.0.0', ''),
             'FILEINFO_DEVICES'          => array('4.0.0', ''),
             'FILEINFO_MIME'             => array('4.0.0', ''),
-            'FILEINFO_MIME_ENCODING'    => array('5.3.0', ''),
-            'FILEINFO_MIME_TYPE'        => array('5.3.0', ''),
             'FILEINFO_NONE'             => array('4.0.0', ''),
             'FILEINFO_PRESERVE_ATIME'   => array('4.0.0', ''),
             'FILEINFO_RAW'              => array('4.0.0', ''),
             'FILEINFO_SYMLINK'          => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '1.0.5';       // 2009-06-30 (PHP 5.3.0)
+        $items = array(
+            'FILEINFO_MIME_ENCODING'    => array('5.3.0', ''),
+            'FILEINFO_MIME_TYPE'        => array('5.3.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
