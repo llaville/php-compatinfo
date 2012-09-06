@@ -13,7 +13,7 @@
  */
 
 /**
- * Autoloader for PHP_CompatInfo 
+ * Autoloader for PHP_CompatInfo
  *
  * @param string $className name of the class (and namespace) being instantiated.
  *
@@ -163,6 +163,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/memcached.php',
             'PHP_CompatInfo_Reference_Mhash'
                 => 'PHP/CompatInfo/Reference/mhash.php',
+            'PHP_CompatInfo_Reference_Mongo'
+                => 'PHP/CompatInfo/Reference/mongo.php',
             'PHP_CompatInfo_Reference_Mssql'
                 => 'PHP/CompatInfo/Reference/mssql.php',
             'PHP_CompatInfo_Reference_Mysql'
