@@ -11,6 +11,8 @@
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  SVN: $Id$
  * @link     http://php5.laurent-laville.org/compatinfo/
+ * @link     http://gmplib.org/    The GNU Multiple Precision Arithmetic Library
+ * @link     http://www.mpir.org/  Multiple Precision Integers and Rationals - MPIR
  */
 
 /**
@@ -159,6 +161,13 @@ class PHP_CompatInfo_Reference_Gmp
             'GMP_ROUND_ZERO'           => array('4.0.4', ''),
             'GMP_VERSION'              => array('4.0.4', ''),
         );
+        /*
+            Windows only:
+            The GMP extension now relies on MPIR instead of the GMP library
+         */
+        if (DIRECTORY_SEPARATOR == '\\') {
+            $items['GMP_MPIR_VERSION'] = array('5.3.0', '');
+        }
         $this->applyFilter($release, $items, $constants);
 
         return $constants;
