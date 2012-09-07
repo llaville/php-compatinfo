@@ -117,6 +117,8 @@ class PHP_CompatInfo_Reference_Gd
             'imagecreatefromxbm'             => array('4.0.1', ''),
             'imagecreatefromxpm'             => array('4.0.1', ''),
             'imagecreatetruecolor'           => array('4.0.6', ''),
+            'imagecreatefromwebp'            => array('5.4.0', ''),
+            'imagewebp'                      => array('5.4.0', ''),
             'imagedashedline'                => array('4.0.0', ''),
             'imagedestroy'                   => array('4.0.0', ''),
             'imageellipse'                   => array('4.0.6', ''),
