@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-09-04</date>
- <time>17:23:43</time>
+ <date>2012-09-07</date>
+ <time>13:37:47</time>
  <version>
-  <release>2.8.0beta1</release>
+  <release>2.8.0beta2</release>
   <api>2.8.0</api>
  </version>
  <stability>
@@ -35,26 +35,12 @@ content of dictionary references.
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
-Additions and changes:
-- introduces a new Reference API that allow to filter elements (interfaces, classes, functions, constants)
-on php version or extension release, with or without a particular relationship (like operator in version_compare)
-- Full filter support for extensions apc (3.1.13), enchant (1.1.0), intl (2.0.1), sphinx (1.2.0), xdebug (2.2.1)
-- Limited filter support to php versions only for all other extensions
+Additions and changes since beta1:
+- add 1 new references data dictionnaries related to extensions: mongo
+- add full filter support for extensions fileinfo (1.0.5), filter (0.11.0),
+hash (1.0), mongo (1.2.12), tidy (2.0), zip (1.11.0), zlib (2.0)
 
-API filter examples on extension releases:
-- phpci list-classes intl 1.0.0
-- phpci list-functions xdebug 2.0.0 ge
-API filter examples on php versions:
-- phpci list-constants intl php_5.2.0 gt
-- phpci list-functions apc php_4  (only php &lt;  php 5.0.0)
-- phpci list-functions apc php_5  (only php &gt;= php 5.0.0)
-
-Upgrades extension dependencies:
-new Reference API uses PHP ReflectionClass (see REF_VERSION class constant : latest version of Extension/Reference supported)
-
-Adds missing Xdebug unit tests (while reference exists since 2.0.0RC3)
-
-Bug fixes:
+Bug fixes since beta1:
 - none
  </notes>
  <contents>
@@ -377,6 +363,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="mhash.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="mongo.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="mssql.php" role="php">
@@ -721,6 +710,9 @@ Bug fixes:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="MhashTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="MongoTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="MssqlTest.php" role="test">
@@ -1294,6 +1286,27 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.8.0beta2</release>
+    <api>2.8.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2012-09-07</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes since beta1:
+- add 1 new references data dictionnaries related to extensions: mongo
+- add full filter support for extensions fileinfo (1.0.5), filter (0.11.0),
+hash (1.0), mongo (1.2.12), tidy (2.0), zip (1.11.0), zlib (2.0)
+
+Bug fixes since beta1:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.8.0beta1</release>

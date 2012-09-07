@@ -5,6 +5,17 @@ PHP_CompatInfo ChangeLog
 :stylesdir:   styles
 :scriptsdir:  js
 
+== Version 2.8.0beta2 (2012-09-07)
+
+.Additions and changes since beta1:
+* add 1 new references data dictionnaries related to extensions: mongo
+* add full filter support for extensions fileinfo (1.0.5), filter (0.11.0),
+hash (1.0), mongo (1.2.12), tidy (2.0), zip (1.11.0), zlib (2.0)
+
+.Bug fixes since beta1:
+* none
+
+
 == Version 2.8.0beta1 (2012-09-04)
 
 .Additions and changes:
