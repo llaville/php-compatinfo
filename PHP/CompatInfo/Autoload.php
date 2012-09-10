@@ -233,6 +233,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/tokenizer.php',
             'PHP_CompatInfo_Reference_Wddx'
                 => 'PHP/CompatInfo/Reference/wddx.php',
+            'PHP_CompatInfo_Reference_XCache'
+                => 'PHP/CompatInfo/Reference/xcache.php',
             'PHP_CompatInfo_Reference_Xdebug'
                 => 'PHP/CompatInfo/Reference/xdebug.php',
             'PHP_CompatInfo_Reference_Xhprof'
