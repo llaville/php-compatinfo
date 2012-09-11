@@ -627,7 +627,7 @@ $ phpci list-extensions
 ----
 
 <1> This column specify the version of extension that was documented
-<2> This column specify which are the php versions (minimum and maximum) supported by the extension
+<2> This column specify what are the php versions (minimum and maximum) supported by the extension
 
 [TIP]
 .You can filter result by extension
@@ -707,7 +707,7 @@ $ phpci list-interfaces
 ----
 
 <1> This column specify the name of extension that provide these interfaces
-<2> This column specify which are the php versions (minimum and maximum) supported by the interface
+<2> This column specify what are the php versions (minimum and maximum) supported by the interface
 
 
 [TIP]
@@ -811,7 +811,7 @@ $ phpci list-classes
 ----
 
 <1> This column specify the name of extension that provide these classes
-<2> This column specify which are the php versions (minimum and maximum) supported by the class
+<2> This column specify what are the php versions (minimum and maximum) supported by the class
 
 [TIP]
 .You can filter result by extension
@@ -913,7 +913,7 @@ $ phpci list-functions
 ----
 
 <1> This column specify the name of extension that provide these functions
-<2> This column specify which are the php versions (minimum and maximum) supported by the function
+<2> This column specify what are the php versions (minimum and maximum) supported by the function
 
 [TIP]
 .You can filter result by extension
@@ -1025,7 +1025,7 @@ $ phpci list-constants
 ----
 
 <1> This column specify the name of extension that provide these constants
-<2> This column specify which are the php versions (minimum and maximum) supported by the constant
+<2> This column specify what are the php versions (minimum and maximum) supported by the constant
 
 [TIP]
 .You can filter result by extension
