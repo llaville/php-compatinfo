@@ -73,7 +73,7 @@ class PHP_CompatInfo_Reference_Libxml
 
         $classes = array();
 
-        $release = false;
+        $release = '5.1.0';       // 2005-11-24
         $items = array(
             'LibXMLError'                    => array('5.1.0', ''),
         );
@@ -100,15 +100,25 @@ class PHP_CompatInfo_Reference_Libxml
 
         $functions = array();
 
-        $release = false;
+        $release = '5.1.0';       // 2005-11-24
         $items = array(
             'libxml_clear_errors'               => array('5.1.0', ''),
-            'libxml_disable_entity_loader'      => array('5.2.11', ''),
             'libxml_get_errors'                 => array('5.1.0', ''),
             'libxml_get_last_error'             => array('5.1.0', ''),
-            'libxml_set_external_entity_loader' => array('5.4.0', ''),
             'libxml_set_streams_context'        => array('5.0.0', ''),
             'libxml_use_internal_errors'        => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.2.11';      // 2009-09-16
+        $items = array(
+            'libxml_disable_entity_loader'      => array('5.2.11', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.4.0';       // 2012-03-01
+        $items = array(
+            'libxml_set_external_entity_loader' => array('5.4.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -133,7 +143,7 @@ class PHP_CompatInfo_Reference_Libxml
 
         $constants = array();
 
-        $release = false;
+        $release = '5.1.0';       // 2005-11-24
         $items = array(
             'LIBXML_COMPACT'                 => array('5.1.0', ''),
             'LIBXML_DOTTED_VERSION'          => array('5.1.0', ''),
@@ -144,9 +154,6 @@ class PHP_CompatInfo_Reference_Libxml
             'LIBXML_ERR_FATAL'               => array('5.1.0', ''),
             'LIBXML_ERR_NONE'                => array('5.1.0', ''),
             'LIBXML_ERR_WARNING'             => array('5.1.0', ''),
-            'LIBXML_HTML_NODEFDTD'           => array('5.4.0', ''),
-            'LIBXML_HTML_NOIMPLIED'          => array('5.4.0', ''),
-            'LIBXML_LOADED_VERSION'          => array('5.3.0', ''),
             'LIBXML_NOBLANKS'                => array('5.1.0', ''),
             'LIBXML_NOCDATA'                 => array('5.1.0', ''),
             'LIBXML_NOEMPTYTAG'              => array('5.1.0', ''),
@@ -156,10 +163,28 @@ class PHP_CompatInfo_Reference_Libxml
             'LIBXML_NOWARNING'               => array('5.1.0', ''),
             'LIBXML_NOXMLDECL'               => array('5.1.0', ''),
             'LIBXML_NSCLEAN'                 => array('5.1.0', ''),
-            'LIBXML_PARSEHUGE'               => array('5.2.12', ''),
-            'LIBXML_PEDANTIC'                => array('5.4.0', ''),
             'LIBXML_VERSION'                 => array('5.1.0', ''),
             'LIBXML_XINCLUDE'                => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '5.2.12';      // 2009-12-17
+        $items = array(
+            'LIBXML_PARSEHUGE'               => array('5.2.12', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '5.3.0';       // 2009-06-30
+        $items = array(
+            'LIBXML_LOADED_VERSION'          => array('5.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '5.4.0';       // 2012-03-01
+        $items = array(
+            'LIBXML_HTML_NODEFDTD'           => array('5.4.0', ''),
+            'LIBXML_HTML_NOIMPLIED'          => array('5.4.0', ''),
+            'LIBXML_PEDANTIC'                => array('5.4.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
