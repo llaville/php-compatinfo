@@ -140,7 +140,7 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
         echo str_repeat('-', $this->width) . PHP_EOL;
         echo str_pad($listUC, 10)
             . str_repeat(' ', ($this->width - 44))
-            . 'EXTENSION         PHP'  . PHP_EOL;
+            . 'EXTENSION          PHP min/Max'  . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
 
         $elements = $report[$this->_list];
@@ -177,16 +177,12 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
                 . str_repeat(' ', (45 - strlen($element)));
             if (strlen($extension) < 18) {
                 echo $extension
-                    . str_repeat(' ', (18 - strlen($extension)));
-
-                echo $versions
-                    . str_repeat(' ', (16 - strlen($versions)));
+                    . str_repeat(' ', (19 - strlen($extension)));
             } else {
                 echo $extension . PHP_EOL
-                    . str_repeat(' ', 63)
-                    . $versions;
+                    . str_repeat(' ', 64);
             }
-            echo PHP_EOL;
+            echo $versions . PHP_EOL;
         }
         $total  = count($report[$this->_list]);
         $length = strcasecmp($this->_list, 'classes') == 0 ? -2 : -1;
