@@ -60,6 +60,32 @@ class PHP_CompatInfo_Reference_Mailparse
     }
 
     /**
+     * Gets informations about classes
+     *
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
+     *
+     * @return array
+     */
+    public function getClasses($extension = null, $version = null, $condition = null)
+    {
+        $this->setFilter(func_get_args());
+
+        $classes = array();
+
+        $release = '0.9';         // 2002-12-12
+        $items = array(
+            'mimemessage'                             => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        return $classes;
+    }
+
+    /**
      * Gets informations about functions
      *
      * @param string $extension (optional) NULL for PHP version,
@@ -77,7 +103,7 @@ class PHP_CompatInfo_Reference_Mailparse
 
         $functions = array();
 
-        $release = false;
+        $release = '0.9';         // 2002-12-12
         $items = array(
             'mailparse_determine_best_xfer_encoding'  => array('4.3.0', ''),
             'mailparse_msg_create'                    => array('4.3.0', ''),
@@ -118,7 +144,7 @@ class PHP_CompatInfo_Reference_Mailparse
 
         $constants = array();
 
-        $release = false;
+        $release = '0.9';         // 2002-12-12
         $items = array(
             'MAILPARSE_EXTRACT_OUTPUT'                => array('4.3.0', ''),
             'MAILPARSE_EXTRACT_RETURN'                => array('4.3.0', ''),
