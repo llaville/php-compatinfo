@@ -63,7 +63,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
     /**
      * Test the reference structure of an extension
-     * 
+     *
      * @return void
      */
     public function testReference()
@@ -87,7 +87,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey(
             'constants',
             $this->ref,
-            "No function in Reference"
+            "No constant in Reference"
         );
 
         $this->assertArrayHasKey(
@@ -105,7 +105,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
     /**
      * Test than all referenced functions exists
-     * 
+     *
      * @depends testReference
      * @return void
      */
