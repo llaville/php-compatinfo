@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_OAuth
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0-dev';
+    const REF_VERSION = '1.2.2';
 
     /**
      * Gets informations about extensions
@@ -73,10 +73,15 @@ class PHP_CompatInfo_Reference_OAuth
 
         $classes = array();
 
-        $release = false;
+        $release = '0.99.1';      // 2008-11-21
         $items = array(
             'OAuth'                          => array('5.1.0', ''),
             'OAuthException'                 => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '1.0.0';       // 2010-06-02
+        $items = array(
             'OAuthProvider'                  => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
@@ -102,10 +107,15 @@ class PHP_CompatInfo_Reference_OAuth
 
         $functions = array();
 
-        $release = false;
+        $release = '0.99.1';      // 2008-11-21
+        $items = array(
+            'oauth_urlencode'                => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '0.99.8';      // 2009-04-30
         $items = array(
             'oauth_get_sbs'                  => array('5.1.0', ''),
-            'oauth_urlencode'                => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -130,21 +140,32 @@ class PHP_CompatInfo_Reference_OAuth
 
         $constants = array();
 
-        $release = false;
+        $release = '0.99.1';      // 2008-11-21
         $items = array(
             'OAUTH_AUTH_TYPE_AUTHORIZATION'  => array('5.1.0', ''),
             'OAUTH_AUTH_TYPE_FORM'           => array('5.1.0', ''),
-            'OAUTH_AUTH_TYPE_NONE'           => array('5.1.0', ''),
             'OAUTH_AUTH_TYPE_URI'            => array('5.1.0', ''),
+            'OAUTH_SIG_METHOD_HMACSHA1'      => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '0.99.5';      // 2009-04-21
+        $items = array(
+            'OAUTH_AUTH_TYPE_NONE'           => array('5.1.0', ''),
+            'OAUTH_HTTP_METHOD_GET'          => array('5.1.0', ''),
+            'OAUTH_HTTP_METHOD_HEAD'         => array('5.1.0', ''),
+            'OAUTH_HTTP_METHOD_POST'         => array('5.1.0', ''),
+            'OAUTH_HTTP_METHOD_PUT'          => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '1.0.0';       // 2010-06-02
+        $items = array(
             'OAUTH_BAD_NONCE'                => array('5.1.0', ''),
             'OAUTH_BAD_TIMESTAMP'            => array('5.1.0', ''),
             'OAUTH_CONSUMER_KEY_REFUSED'     => array('5.1.0', ''),
             'OAUTH_CONSUMER_KEY_UNKNOWN'     => array('5.1.0', ''),
             'OAUTH_HTTP_METHOD_DELETE'       => array('5.1.0', ''),
-            'OAUTH_HTTP_METHOD_GET'          => array('5.1.0', ''),
-            'OAUTH_HTTP_METHOD_HEAD'         => array('5.1.0', ''),
-            'OAUTH_HTTP_METHOD_POST'         => array('5.1.0', ''),
-            'OAUTH_HTTP_METHOD_PUT'          => array('5.1.0', ''),
             'OAUTH_INVALID_SIGNATURE'        => array('5.1.0', ''),
             'OAUTH_OK'                       => array('5.1.0', ''),
             'OAUTH_PARAMETER_ABSENT'         => array('5.1.0', ''),
@@ -152,19 +173,29 @@ class PHP_CompatInfo_Reference_OAuth
             'OAUTH_REQENGINE_STREAMS'        => array('5.1.0', ''),
             'OAUTH_SIGNATURE_METHOD_REJECTED'
                                              => array('5.1.0', ''),
-            'OAUTH_SIG_METHOD_HMACSHA1'      => array('5.1.0', ''),
             'OAUTH_SIG_METHOD_HMACSHA256'    => array('5.1.0', ''),
-            'OAUTH_SIG_METHOD_PLAINTEXT'     => array('5.1.0', ''),
             'OAUTH_SIG_METHOD_RSASHA1'       => array('5.1.0', ''),
-            'OAUTH_SSLCHECK_BOTH'            => array('5.1.0', ''),
-            'OAUTH_SSLCHECK_HOST'            => array('5.1.0', ''),
-            'OAUTH_SSLCHECK_NONE'            => array('5.1.0', ''),
-            'OAUTH_SSLCHECK_PEER'            => array('5.1.0', ''),
             'OAUTH_TOKEN_EXPIRED'            => array('5.1.0', ''),
             'OAUTH_TOKEN_REJECTED'           => array('5.1.0', ''),
             'OAUTH_TOKEN_REVOKED'            => array('5.1.0', ''),
             'OAUTH_TOKEN_USED'               => array('5.1.0', ''),
             'OAUTH_VERIFIER_INVALID'         => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '1.1.0';       // 2011-02-06
+        $items = array(
+            'OAUTH_SSLCHECK_BOTH'            => array('5.1.0', ''),
+            'OAUTH_SSLCHECK_HOST'            => array('5.1.0', ''),
+            'OAUTH_SSLCHECK_NONE'            => array('5.1.0', ''),
+            'OAUTH_SSLCHECK_PEER'            => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+
+        $release = '1.2';         // 2011-06-27
+        $items = array(
+            'OAUTH_SIG_METHOD_PLAINTEXT'     => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
