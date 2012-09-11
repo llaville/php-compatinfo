@@ -73,7 +73,7 @@ class PHP_CompatInfo_Reference_Json
 
         $interfaces = array();
 
-        $release = false;
+        $release = '5.4.0';       // 2012-03-01
         $items = array(
             'JsonSerializable'               => array('5.4.0', ''),
         );
@@ -100,10 +100,15 @@ class PHP_CompatInfo_Reference_Json
 
         $functions = array();
 
-        $release = false;
+        $release = '5.2.0';       // 2006-11-02
         $items = array(
             'json_decode'                    => array('5.2.0', '', '5.2.0, 5.2.0, 5.3.0, 5.4.0'),
             'json_encode'                    => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.3.0';       // 2009-06-30
+        $items = array(
             'json_last_error'                => array('5.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
@@ -129,9 +134,8 @@ class PHP_CompatInfo_Reference_Json
 
         $constants = array();
 
-        $release = false;
+        $release = '5.3.0';       // 2009-06-30
         $items = array(
-            'JSON_BIGINT_AS_STRING'          => array('5.4.0', ''),
             'JSON_ERROR_CTRL_CHAR'           => array('5.3.0', ''),
             'JSON_ERROR_DEPTH'               => array('5.3.0', ''),
             'JSON_ERROR_NONE'                => array('5.3.0', ''),
@@ -143,9 +147,25 @@ class PHP_CompatInfo_Reference_Json
             'JSON_HEX_APOS'                  => array('5.3.0', ''),
             'JSON_HEX_QUOT'                  => array('5.3.0', ''),
             'JSON_HEX_TAG'                   => array('5.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '5.3.3';       // 2010-07-22
+        $items = array(
             'JSON_NUMERIC_CHECK'             => array('5.3.3', ''),
-            'JSON_OBJECT_AS_ARRAY'           => array('5.4.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '5.3.14';      // 2012-06-06
+        $items = array(
             'JSON_PARTIAL_OUTPUT_ON_ERROR'   => array('5.3.14', '5.3.14'),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '5.4.0';       // 2012-03-01
+        $items = array(
+            'JSON_BIGINT_AS_STRING'          => array('5.4.0', ''),
+            'JSON_OBJECT_AS_ARRAY'           => array('5.4.0', ''),
             'JSON_PRETTY_PRINT'              => array('5.4.0', ''),
             'JSON_UNESCAPED_SLASHES'         => array('5.4.0', ''),
             'JSON_UNESCAPED_UNICODE'         => array('5.4.0', ''),
