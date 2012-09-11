@@ -8,6 +8,7 @@
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    SVN: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -24,6 +25,7 @@ require_once 'GenericTest.php';
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -54,6 +56,10 @@ class PHP_CompatInfo_Reference_MemcacheTest
                 'memcache_setoptimeout',
             );
         }
+
+        $this->optionnalconstants = array(
+            'MEMCACHE_SERIALIZED'
+        );
 
         $this->obj = new PHP_CompatInfo_Reference_Memcache();
         parent::setUp();
