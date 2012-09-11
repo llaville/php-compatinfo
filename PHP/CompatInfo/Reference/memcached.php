@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Memcached
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.2';
+    const REF_VERSION = '2.1.0';
 
     /**
      * Gets informations about extensions
@@ -76,7 +76,7 @@ class PHP_CompatInfo_Reference_Memcached
 
         $classes = array();
 
-        $release = false;
+        $release = '0.1.0';       // 2009-01-29
         $items = array(
             'Memcached'                      => array('5.2.0', ''),
         );
