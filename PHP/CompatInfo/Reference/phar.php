@@ -75,12 +75,17 @@ class PHP_CompatInfo_Reference_Phar
 
         $classes = array();
 
-        $release = false;
+        $release = '1.0.0';       // 2007-03-28
         $items = array(
             'Phar'              => array('5.2.0', ''),
-            'PharData'          => array('5.2.0', ''),
             'PharException'     => array('5.2.0', ''),
             'PharFileInfo'      => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '2.0.0a1';     // 2008-03-26
+        $items = array(
+            'PharData'          => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
