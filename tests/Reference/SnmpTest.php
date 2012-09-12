@@ -8,6 +8,7 @@
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    SVN: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -24,6 +25,7 @@ require_once 'GenericTest.php';
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -41,6 +43,19 @@ class PHP_CompatInfo_Reference_SnmpTest
      */
     protected function setUp()
     {
+        if (DIRECTORY_SEPARATOR == '\\') {
+            // Win32 only
+            $this->optionnalconstants = array(
+                'SNMP_OID_OUTPUT_FULL',
+                'SNMP_OID_OUTPUT_NUMERIC',
+            );
+            $this->optionnalfunctions = array(
+                'snmp_set_enum_print',
+                'snmp_set_oid_output_format',
+                'snmp_set_oid_numeric_print',
+            );
+        }
+
         $this->obj = new PHP_CompatInfo_Reference_Snmp();
         parent::setUp();
     }
