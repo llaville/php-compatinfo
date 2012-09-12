@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_SPL
 
         $interfaces = array();
 
-        $release = false;
+        $release = '5.1.0';       // 2005-11-24
         $items = array(
             'ArrayAccess'                    => array('5.1.0', ''),
             'Countable'                      => array('5.1.0', ''),
@@ -110,32 +110,35 @@ class PHP_CompatInfo_Reference_SPL
      */
     public function getClasses($extension = null, $version = null, $condition = null)
     {
+        $this->setFilter(func_get_args());
+
         $classes = array();
 
-        $release = false;
+        $release = '5.0.0';       // 2004-07-13
         $items = array(
-            'AppendIterator'                    => array('5.1.0', ''),
             'ArrayIterator'                     => array('5.0.0', ''),
             'ArrayObject'                       => array('5.0.0', ''),
+            'CachingIterator'                   => array('5.0.0', ''),
+            'DirectoryIterator'                 => array('5.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '5.1.0';       // 2005-11-24
+        $items = array(
+            'AppendIterator'                    => array('5.1.0', ''),
             'BadFunctionCallException'          => array('5.1.0', ''),
             'BadMethodCallException'            => array('5.1.0', ''),
-            'CachingIterator'                   => array('5.0.0', ''),
-            'CallbackFilterIterator'            => array('5.4.0', ''),
-            'DirectoryIterator'                 => array('5.0.0', ''),
             'DomainException'                   => array('5.1.0', ''),
             'EmptyIterator'                     => array('5.1.0', ''),
             'ErrorException'                    => array('5.1.0', ''),
             'Exception'                         => array('5.1.0', ''),
-            'FilesystemIterator'                => array('5.3.0', ''),
             'FilterIterator'                    => array('5.1.0', ''),
-            'GlobIterator'                      => array('5.3.0', ''),
             'InfiniteIterator'                  => array('5.1.0', ''),
             'InvalidArgumentException'          => array('5.1.0', ''),
             'IteratorIterator'                  => array('5.1.0', ''),
             'LengthException'                   => array('5.1.0', ''),
             'LimitIterator'                     => array('5.1.0', ''),
             'LogicException'                    => array('5.1.0', ''),
-            'MultipleIterator'                  => array('5.3.0', ''),
             'NoRewindIterator'                  => array('5.1.0', ''),
             'OutOfBoundsException'              => array('5.1.0', ''),
             'OutOfRangeException'               => array('5.1.0', ''),
@@ -144,28 +147,57 @@ class PHP_CompatInfo_Reference_SPL
             'RangeException'                    => array('5.1.0', ''),
             'RecursiveArrayIterator'            => array('5.1.0', ''),
             'RecursiveCachingIterator'          => array('5.1.0', ''),
-            'RecursiveCallbackFilterIterator'   => array('5.4.0', ''),
-            'RecursiveDirectoryIterator'        => array('5.1.2', ''),
             'RecursiveFilterIterator'           => array('5.1.0', ''),
-            'RecursiveIteratorIterator'         => array('5.1.3', ''),
-            'RecursiveRegexIterator'            => array('5.2.0', ''),
-            'RecursiveTreeIterator'             => array('5.3.0', ''),
-            'RegexIterator'                     => array('5.2.0', ''),
             'RuntimeException'                  => array('5.1.0', ''),
-            'SplDoublyLinkedList'               => array('5.3.0', ''),
-            'SplFileInfo'                       => array('5.1.2', ''),
             'SplFileObject'                     => array('5.1.0', ''),
+            'SplObjectStorage'                  => array('5.1.0', ''),
+            'UnderflowException'                => array('5.1.0', ''),
+            'UnexpectedValueException'          => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '5.1.2';       // 2006-01-12
+        $items = array(
+            'RecursiveDirectoryIterator'        => array('5.1.2', ''),
+            'SplFileInfo'                       => array('5.1.2', ''),
+            'SplTempFileObject'                 => array('5.1.2', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '5.1.3';       // 2006-05-02
+        $items = array(
+            'RecursiveIteratorIterator'         => array('5.1.3', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '5.2.0';       // 2006-11-02
+        $items = array(
+            'RecursiveRegexIterator'            => array('5.2.0', ''),
+            'RegexIterator'                     => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '5.3.0';       // 2009-06-30
+        $items = array(
+            'FilesystemIterator'                => array('5.3.0', ''),
+            'GlobIterator'                      => array('5.3.0', ''),
+            'MultipleIterator'                  => array('5.3.0', ''),
+            'RecursiveTreeIterator'             => array('5.3.0', ''),
+            'SplDoublyLinkedList'               => array('5.3.0', ''),
             'SplFixedArray'                     => array('5.3.0', ''),
             'SplHeap'                           => array('5.3.0', ''),
             'SplMaxHeap'                        => array('5.3.0', ''),
             'SplMinHeap'                        => array('5.3.0', ''),
-            'SplObjectStorage'                  => array('5.1.0', ''),
             'SplPriorityQueue'                  => array('5.3.0', ''),
             'SplQueue'                          => array('5.3.0', ''),
             'SplStack'                          => array('5.3.0', ''),
-            'SplTempFileObject'                 => array('5.1.2', ''),
-            'UnderflowException'                => array('5.1.0', ''),
-            'UnexpectedValueException'          => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '5.4.0';       // 2012-03-01
+        $items = array(
+            'CallbackFilterIterator'            => array('5.4.0', ''),
+            'RecursiveCallbackFilterIterator'   => array('5.4.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
@@ -190,22 +222,42 @@ class PHP_CompatInfo_Reference_SPL
 
         $functions = array();
 
-        $release = false;
+        $release = '5.0.0';       // 2004-07-13
+        $items = array(
+            'spl_classes'                    => array('5.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.1.0';       // 2005-11-24
         $items = array(
             'class_implements'               => array('5.1.0', ''),
             'class_parents'                  => array('5.1.0', ''),
-            'class_uses'                     => array('5.4.0', ''),
             'iterator_apply'                 => array('5.1.0', ''),
             'iterator_count'                 => array('5.1.0', ''),
             'iterator_to_array'              => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.1.2';       // 2006-01-12
+        $items = array(
             'spl_autoload'                   => array('5.1.2', ''),
             'spl_autoload_call'              => array('5.1.2', ''),
             'spl_autoload_extensions'        => array('5.1.2', ''),
             'spl_autoload_functions'         => array('5.1.2', ''),
             'spl_autoload_register'          => array('5.1.2', ''),
             'spl_autoload_unregister'        => array('5.1.2', ''),
-            'spl_classes'                    => array('5.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.2.0';       // 2006-11-02
+        $items = array(
             'spl_object_hash'                => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.4.0';       // 2012-03-01
+        $items = array(
+            'class_uses'                     => array('5.4.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
