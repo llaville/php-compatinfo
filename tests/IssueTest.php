@@ -441,10 +441,22 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 
         $classes = $this->pci->getClasses();
 
+        if (extension_loaded('PDO')) {
+            /*
+                Detect PDO class on type hint of $db parameter
+                in Foo's class constructor
+             */
+            $versions = array('5.1.0', '');
+        } else {
+            /*
+                Detect simple Foo PHP 5 class, due to public keyword
+             */
+            $versions = array('5.0.0', '');
+        }
         $expected = array(
             'user' => array(
                 'Foo' => array(
-                    'versions' => array('5.1.0', ''),
+                    'versions' => $versions,
                     'uses' => 1,
                     'sources' => array(TEST_FILES_PATH . 'gh38.php'),
                     'namespace' => '\\',
