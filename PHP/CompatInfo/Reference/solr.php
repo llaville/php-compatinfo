@@ -76,7 +76,7 @@ class PHP_CompatInfo_Reference_Solr
 
         $classes = array();
 
-        $release = false;
+        $release = '0.9.11';      // 2010-06-22
         $items = array(
             'SolrClient'                        => array('5.2.3', ''),
             'SolrClientException'               => array('5.2.3', ''),
@@ -120,9 +120,9 @@ class PHP_CompatInfo_Reference_Solr
 
         $functions = array();
 
-        $release = false;
+        $release = '0.9.11';      // 2010-06-22
         $items = array(
-            'solr_get_version'                        => array('5.2.3', ''),
+            'solr_get_version'                  => array('5.2.3', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -147,12 +147,12 @@ class PHP_CompatInfo_Reference_Solr
 
         $constants = array();
 
-        $release = false;
+        $release = '0.9.11';      // 2010-06-22
         $items = array(
-            'SOLR_EXTENSION_VERSION'                  => array('5.2.3', ''),
-            'SOLR_MAJOR_VERSION'                      => array('5.2.3', ''),
-            'SOLR_MINOR_VERSION'                      => array('5.2.3', ''),
-            'SOLR_PATCH_VERSION'                      => array('5.2.3', ''),
+            'SOLR_EXTENSION_VERSION'            => array('5.2.3', ''),
+            'SOLR_MAJOR_VERSION'                => array('5.2.3', ''),
+            'SOLR_MINOR_VERSION'                => array('5.2.3', ''),
+            'SOLR_PATCH_VERSION'                => array('5.2.3', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
