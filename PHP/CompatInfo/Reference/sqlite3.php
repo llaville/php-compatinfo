@@ -36,7 +36,7 @@ class PHP_CompatInfo_Reference_Sqlite3
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '0.7-dev';
+    const REF_VERSION = '0.7';
 
     /**
      * Gets informations about extensions
