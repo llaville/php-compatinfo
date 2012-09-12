@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Ssh2
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '0.11.0';
+    const REF_VERSION = '0.11.3';
 
     /**
      * Gets informations about extensions
@@ -49,7 +49,7 @@ class PHP_CompatInfo_Reference_Ssh2
      */
     public function getExtensions($extension = null, $version = null, $condition = null)
     {
-        $phpMin = '5.0.0';
+        $phpMin = '4.0.0';
         $extensions = array(
             self::REF_NAME => array($phpMin, '', self::REF_VERSION)
         );
@@ -74,38 +74,53 @@ class PHP_CompatInfo_Reference_Ssh2
 
         $functions = array();
 
-        $release = false;
+        $release = '0.5';         // 2005-01-11
         $items = array(
-            'ssh2_auth_hostbased_file'       => array('5.0.0', ''),
-            'ssh2_auth_none'                 => array('5.0.0', ''),
-            'ssh2_auth_password'             => array('5.0.0', ''),
-            'ssh2_auth_pubkey_file'          => array('5.0.0', ''),
-            'ssh2_connect'                   => array('5.0.0', ''),
-            'ssh2_exec'                      => array('5.0.0', ''),
-            'ssh2_fetch_stream'              => array('5.0.0', ''),
-            'ssh2_fingerprint'               => array('5.0.0', ''),
-            'ssh2_forward_accept'            => array('5.0.0', ''),
-            'ssh2_forward_listen'            => array('5.0.0', ''),
-            'ssh2_methods_negotiated'        => array('5.0.0', ''),
-            'ssh2_poll'                      => array('5.0.0', ''),
-            'ssh2_publickey_add'             => array('5.0.0', ''),
-            'ssh2_publickey_init'            => array('5.0.0', ''),
-            'ssh2_publickey_list'            => array('5.0.0', ''),
-            'ssh2_publickey_remove'          => array('5.0.0', ''),
-            'ssh2_scp_recv'                  => array('5.0.0', ''),
-            'ssh2_scp_send'                  => array('5.0.0', ''),
-            'ssh2_sftp'                      => array('5.0.0', ''),
-            'ssh2_sftp_lstat'                => array('5.0.0', ''),
-            'ssh2_sftp_mkdir'                => array('5.0.0', ''),
-            'ssh2_sftp_readlink'             => array('5.0.0', ''),
-            'ssh2_sftp_realpath'             => array('5.0.0', ''),
-            'ssh2_sftp_rename'               => array('5.0.0', ''),
-            'ssh2_sftp_rmdir'                => array('5.0.0', ''),
-            'ssh2_sftp_stat'                 => array('5.0.0', ''),
-            'ssh2_sftp_symlink'              => array('5.0.0', ''),
-            'ssh2_sftp_unlink'               => array('5.0.0', ''),
-            'ssh2_shell'                     => array('5.0.0', ''),
-            'ssh2_tunnel'                    => array('5.0.0', ''),
+            'ssh2_auth_none'                 => array('4.0.0', ''),
+            'ssh2_auth_password'             => array('4.0.0', ''),
+            'ssh2_auth_pubkey_file'          => array('4.0.0', ''),
+            'ssh2_connect'                   => array('4.0.0', ''),
+            'ssh2_exec'                      => array('4.0.0', ''),
+            'ssh2_fetch_stream'              => array('4.0.0', ''),
+            'ssh2_fingerprint'               => array('4.0.0', ''),
+            'ssh2_forward_accept'            => array('4.0.0', ''),
+            'ssh2_forward_listen'            => array('4.0.0', ''),
+            'ssh2_methods_negotiated'        => array('4.0.0', ''),
+            'ssh2_scp_recv'                  => array('4.0.0', ''),
+            'ssh2_scp_send'                  => array('4.0.0', ''),
+            'ssh2_sftp'                      => array('4.0.0', ''),
+            'ssh2_sftp_lstat'                => array('4.0.0', ''),
+            'ssh2_sftp_mkdir'                => array('4.0.0', ''),
+            'ssh2_sftp_readlink'             => array('4.0.0', ''),
+            'ssh2_sftp_realpath'             => array('4.0.0', ''),
+            'ssh2_sftp_rename'               => array('4.0.0', ''),
+            'ssh2_sftp_rmdir'                => array('4.0.0', ''),
+            'ssh2_sftp_stat'                 => array('4.0.0', ''),
+            'ssh2_sftp_symlink'              => array('4.0.0', ''),
+            'ssh2_sftp_unlink'               => array('4.0.0', ''),
+            'ssh2_shell'                     => array('4.0.0', ''),
+            'ssh2_tunnel'                    => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '0.7';         // 2005-02-24
+        $items = array(
+            'ssh2_auth_hostbased_file'       => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '0.8';         // 2005-05-17
+        $items = array(
+            'ssh2_poll'                      => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '0.10';        // 2005-11-01
+        $items = array(
+            'ssh2_publickey_add'             => array('4.0.0', ''),
+            'ssh2_publickey_init'            => array('4.0.0', ''),
+            'ssh2_publickey_list'            => array('4.0.0', ''),
+            'ssh2_publickey_remove'          => array('4.0.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -130,29 +145,34 @@ class PHP_CompatInfo_Reference_Ssh2
 
         $constants = array();
 
-        $release = false;
+        $release = '0.5';         // 2005-01-11
         $items = array(
-            'SSH2_DEFAULT_TERMINAL'             => array('5.0.0', ''),
-            'SSH2_DEFAULT_TERM_HEIGHT'          => array('5.0.0', ''),
-            'SSH2_DEFAULT_TERM_UNIT'            => array('5.0.0', ''),
-            'SSH2_DEFAULT_TERM_WIDTH'           => array('5.0.0', ''),
-            'SSH2_FINGERPRINT_HEX'              => array('5.0.0', ''),
-            'SSH2_FINGERPRINT_MD5'              => array('5.0.0', ''),
-            'SSH2_FINGERPRINT_RAW'              => array('5.0.0', ''),
-            'SSH2_FINGERPRINT_SHA1'             => array('5.0.0', ''),
-            'SSH2_POLLERR'                      => array('5.0.0', ''),
-            'SSH2_POLLEXT'                      => array('5.0.0', ''),
-            'SSH2_POLLHUP'                      => array('5.0.0', ''),
-            'SSH2_POLLIN'                       => array('5.0.0', ''),
-            'SSH2_POLLNVAL'                     => array('5.0.0', ''),
-            'SSH2_POLLOUT'                      => array('5.0.0', ''),
-            'SSH2_POLL_CHANNEL_CLOSED'          => array('5.0.0', ''),
-            'SSH2_POLL_LISTENER_CLOSED'         => array('5.0.0', ''),
-            'SSH2_POLL_SESSION_CLOSED'          => array('5.0.0', ''),
-            'SSH2_STREAM_STDERR'                => array('5.0.0', ''),
-            'SSH2_STREAM_STDIO'                 => array('5.0.0', ''),
-            'SSH2_TERM_UNIT_CHARS'              => array('5.0.0', ''),
-            'SSH2_TERM_UNIT_PIXELS'             => array('5.0.0', ''),
+            'SSH2_TERM_UNIT_CHARS'              => array('4.0.0', ''),
+            'SSH2_TERM_UNIT_PIXELS'             => array('4.0.0', ''),
+            'SSH2_STREAM_STDERR'                => array('4.0.0', ''),
+            'SSH2_STREAM_STDIO'                 => array('4.0.0', ''),
+            'SSH2_DEFAULT_TERMINAL'             => array('4.0.0', ''),
+            'SSH2_DEFAULT_TERM_HEIGHT'          => array('4.0.0', ''),
+            'SSH2_DEFAULT_TERM_UNIT'            => array('4.0.0', ''),
+            'SSH2_DEFAULT_TERM_WIDTH'           => array('4.0.0', ''),
+            'SSH2_FINGERPRINT_HEX'              => array('4.0.0', ''),
+            'SSH2_FINGERPRINT_MD5'              => array('4.0.0', ''),
+            'SSH2_FINGERPRINT_RAW'              => array('4.0.0', ''),
+            'SSH2_FINGERPRINT_SHA1'             => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '0.8';         // 2005-05-17
+        $items = array(
+            'SSH2_POLLERR'                      => array('4.0.0', ''),
+            'SSH2_POLLEXT'                      => array('4.0.0', ''),
+            'SSH2_POLLHUP'                      => array('4.0.0', ''),
+            'SSH2_POLLIN'                       => array('4.0.0', ''),
+            'SSH2_POLLNVAL'                     => array('4.0.0', ''),
+            'SSH2_POLLOUT'                      => array('4.0.0', ''),
+            'SSH2_POLL_CHANNEL_CLOSED'          => array('4.0.0', ''),
+            'SSH2_POLL_LISTENER_CLOSED'         => array('4.0.0', ''),
+            'SSH2_POLL_SESSION_CLOSED'          => array('4.0.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
