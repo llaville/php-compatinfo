@@ -103,7 +103,7 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
         echo 'PHP COMPAT INFO DATABASE REFERENCE' . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
         echo '  EXTENSIONS' . str_repeat(' ', ($this->width - 46))
-            . 'EXTENSION         VERSION'  . PHP_EOL;
+            . 'EXTENSION         PHP min/Max'  . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
 
         $extensions  = get_loaded_extensions();
@@ -113,7 +113,10 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
 
             $values    = $data;
             $extension = array_pop($values);
-            $versions  = implode('  ', $values);
+            $versions  = $values[0];
+            if (!empty($values[1])) {
+                $versions .= '/' . $values[1];
+            }
 
             if (in_array($element, $extensions)) {
                 echo 'L';
