@@ -40,6 +40,12 @@ class PHP_CompatInfo_Reference_SphinxTest
      */
     protected function setUp()
     {
+        // Constants conditionnaly exists (according to libsphinx version)
+        $this->optionnalconstants = array(
+            'SPH_RANK_FIELDMASK',
+            'SPH_RANK_MATCHANY',
+            'SPH_RANK_PROXIMITY',
+        );
         $this->obj = new PHP_CompatInfo_Reference_Sphinx();
         parent::setUp();
     }
