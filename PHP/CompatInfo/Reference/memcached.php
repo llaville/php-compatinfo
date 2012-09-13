@@ -7,6 +7,7 @@
  * @category PHP
  * @package  PHP_CompatInfo
  * @author   Remi Collet <Remi@FamilleCollet.com>
+ * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  SVN: $Id$
  * @link     http://php5.laurent-laville.org/compatinfo/
@@ -18,183 +19,70 @@
  * @category PHP
  * @package  PHP_CompatInfo
  * @author   Remi Collet <Remi@FamilleCollet.com>
+ * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @link     http://www.php.net/manual/en/book.memcached.php
  * @since    Class available since Release 2.1.0
  */
-class PHP_CompatInfo_Reference_Memcached implements PHP_CompatInfo_Reference
+class PHP_CompatInfo_Reference_Memcached
+    extends PHP_CompatInfo_Reference_PluginsAbstract
 {
     /**
-     * Gets all informations at once about:
-     * extensions, interfaces, classes, functions, constants
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
+     * Extension/Reference name
      */
-    public function getAll($extension = null, $version = null)
-    {
-        $references = array(
-            'extensions' => $this->getExtensions($extension, $version),
-            'interfaces' => $this->getInterfaces($extension, $version),
-            'classes'    => $this->getClasses($extension, $version),
-            'functions'  => $this->getFunctions($extension, $version),
-            'constants'  => $this->getConstants($extension, $version),
-        );
-        return $references;
-    }
+    const REF_NAME    = 'memcached';
+
+    /**
+     * Latest version of Extension/Reference supported
+     */
+    const REF_VERSION = '1.0.2';
 
     /**
      * Gets informations about extensions
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
     public function getExtensions($extension = null, $version = null)
     {
+        $phpMin = '5.2.0';
         $extensions = array(
-            'memcached' => array('5.2.0', '', '1.0.2')
+            self::REF_NAME => array($phpMin, '', self::REF_VERSION)
         );
         return $extensions;
     }
 
     /**
-     * Gets informations about interfaces
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
-     */
-    public function getInterfaces($extension = null, $version = null)
-    {
-        $interfaces = array();
-
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $interfaces = array_merge(
-                $interfaces,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-            );
-            $interfaces = array_merge(
-                $interfaces,
-                $version5
-            );
-        }
-        return $interfaces;
-    }
-
-    /**
      * Gets informations about classes
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
     public function getClasses($extension = null, $version = null)
     {
+        $this->setFilter(func_get_args());
+
         $classes = array();
 
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $classes = array_merge(
-                $classes,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-                'Memcached'                      => array('5.2.0', ''),
-            );
-            $classes = array_merge(
-                $classes,
-                $version5
-            );
-        }
+        $release = false;
+        $items = array(
+            'Memcached'                      => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
 
         return $classes;
-    }
-
-    /**
-     * Gets informations about functions
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
-     */
-    public function getFunctions($extension = null, $version = null)
-    {
-        $functions = array();
-
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $functions = array_merge(
-                $functions,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-            );
-            $functions = array_merge(
-                $functions,
-                $version5
-            );
-        }
-        return $functions;
-    }
-
-    /**
-     * Gets informations about constants
-     *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
-     *
-     * @return array
-     * @link   http://www.php.net/manual/en/memcached.constants.php
-     */
-    public function getConstants($extension = null, $version = null)
-    {
-        $constants = array();
-
-        if ((null == $version ) || ('4' == $version)) {
-            $version4 = array(
-            );
-            $constants = array_merge(
-                $constants,
-                $version4
-            );
-        }
-        if ((null == $version ) || ('5' == $version)) {
-            $version5 = array(
-            );
-            $constants = array_merge(
-                $constants,
-                $version5
-            );
-        }
-
-        return $constants;
     }
 
 }

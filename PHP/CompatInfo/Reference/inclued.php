@@ -1,6 +1,6 @@
 <?php
 /**
- * Version informations about zip extension
+ * Version informations about inclued extension
  *
  * PHP version 5
  *
@@ -13,7 +13,7 @@
  */
 
 /**
- * All interfaces, classes, functions, constants about zip extension
+ * All interfaces, classes, functions, constants about inclued extension
  *
  * @category PHP
  * @package  PHP_CompatInfo
@@ -21,20 +21,20 @@
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
- * @link     http://www.php.net/manual/en/book.zip.php
+ * @link     http://www.php.net/manual/en/book.inclued.php
  */
-class PHP_CompatInfo_Reference_Zip
+class PHP_CompatInfo_Reference_Inclued
     extends PHP_CompatInfo_Reference_PluginsAbstract
 {
     /**
      * Extension/Reference name
      */
-    const REF_NAME    = 'zip';
+    const REF_NAME    = 'inclued';
 
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.11.0';
+    const REF_VERSION = '0.1.3';
 
     /**
      * Gets informations about extensions
@@ -49,37 +49,14 @@ class PHP_CompatInfo_Reference_Zip
      */
     public function getExtensions($extension = null, $version = null, $condition = null)
     {
-        $phpMin = '4.3.0';
+        /*
+            since 0.1.0 PHP 5.1.0 ge
+         */
+        $phpMin = '5.1.0';
         $extensions = array(
             self::REF_NAME => array($phpMin, '', self::REF_VERSION)
         );
         return $extensions;
-    }
-
-    /**
-     * Gets informations about classes
-     *
-     * @param string $extension (optional) NULL for PHP version,
-     *                          TRUE if extension version
-     * @param string $version   (optional) php or extension version
-     * @param string $condition (optional) particular relationship with $version
-     *                          Same operator values as used by version_compare
-     *
-     * @return array
-     */
-    public function getClasses($extension = null, $version = null, $condition = null)
-    {
-        $this->setFilter(func_get_args());
-
-        $classes = array();
-
-        $release = '1.6.0';       // 2006-07-25
-        $items = array(
-            'ZipArchive'                     => array('5.2.0', ''),
-        );
-        $this->applyFilter($release, $items, $classes);
-
-        return $classes;
     }
 
     /**
@@ -92,7 +69,7 @@ class PHP_CompatInfo_Reference_Zip
      *                          Same operator values as used by version_compare
      *
      * @return array
-     * @link   http://www.php.net/manual/en/ref.zip.php
+     * @link   http://www.php.net/manual/en/ref.inclued.php
      */
     public function getFunctions($extension = null, $version = null, $condition = null)
     {
@@ -100,18 +77,9 @@ class PHP_CompatInfo_Reference_Zip
 
         $functions = array();
 
-        $release = '1.0';         // 2003-05-21
+        $release = '0.1.0';       // 2008-02-29
         $items = array(
-            'zip_close'                      => array('4.3.0', ''),
-            'zip_entry_close'                => array('4.3.0', ''),
-            'zip_entry_compressedsize'       => array('4.3.0', ''),
-            'zip_entry_compressionmethod'    => array('4.3.0', ''),
-            'zip_entry_filesize'             => array('4.3.0', ''),
-            'zip_entry_name'                 => array('4.3.0', ''),
-            'zip_entry_open'                 => array('4.3.0', ''),
-            'zip_entry_read'                 => array('4.3.0', ''),
-            'zip_open'                       => array('4.3.0', ''),
-            'zip_read'                       => array('4.3.0', ''),
+            'inclued_get_data'                  => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 

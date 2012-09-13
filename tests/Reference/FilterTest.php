@@ -8,6 +8,7 @@
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    SVN: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -24,6 +25,7 @@ require_once 'GenericTest.php';
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -41,6 +43,25 @@ class PHP_CompatInfo_Reference_FilterTest
      */
     protected function setUp()
     {
+        $this->optionnalconstants = array(
+            'FILTER_SANITIZE_ALL',
+            'FILTER_VALIDATE_ALL',
+
+            // ignores all old API constants before 0.11.0
+            'FILTER_FLAG_ARRAY',
+            'FILTER_FLAG_SCALAR',
+        );
+
+        // ignores all old API functions before 0.11.0
+        $this->optionnalfunctions = array(
+            'input_get',
+            'input_filters_list',
+            'input_has_variable',
+            'filter_data',
+            'input_name_to_filter',
+            'input_get_args',
+        );
+
         $this->obj = new PHP_CompatInfo_Reference_Filter();
         parent::setUp();
     }

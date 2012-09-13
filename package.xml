@@ -23,39 +23,25 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-08-17</date>
- <time>10:48:12</time>
+ <date>2012-09-07</date>
+ <time>13:37:47</time>
  <version>
-  <release>2.7.0RC1</release>
-  <api>2.7.0</api>
+  <release>2.8.0beta2</release>
+  <api>2.8.0</api>
  </version>
  <stability>
   <release>beta</release>
-  <api>stable</api>
+  <api>beta</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
-Additions and changes:
-- add a new report (condition) for CLI tool that will replace the warning messages
-on conditional code uses
-- removed warning messages about conditional code uses; replaced by
-the new --report condition of the CLI tool
-- add a new level for conditional code uses about traits (PHP 5.4 feature)
-- add a new API getter for Traits (PHP 5.4 feature)
-- User classes that used visibility (public, protected, private) are now identified
-as PHP 5.0.0 and no more as PHP 4.0.0
-- Improved global results in a multiple data source context
-- Add a warning message when --reference ALL used with extension detected but not loaded
-- Add ability to exclude traits from parsing with the CLI tool and the XML configuration file
-- XML report may show results either group by components or files
-- add namespaces in XML report
-- upgrade jquery minimized to version 1.7.2; used by summary.xsl.
+Additions and changes since beta1:
+- add 1 new references data dictionnaries related to extensions: mongo
+- add full filter support for extensions fileinfo (1.0.5), filter (0.11.0),
+hash (1.0), mongo (1.2.12), tidy (2.0), zip (1.11.0), zlib (2.0)
 
-Bug fixes:
-- API getters gave wrong results when data source is list of files (directory)
-- Avoid exception in all case when xml configuration location is not a file
-- Avoid exception when a directory phpci exists in save_path cache file
-- Force clean cache when --reference or --exclude-pattern changed. Avoid old results.
+Bug fixes since beta1:
+- none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -377,6 +363,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="mhash.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="mongo.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="mssql.php" role="php">
@@ -723,6 +712,9 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="MhashTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="MongoTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="MssqlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -820,6 +812,9 @@ Bug fixes:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="WddxTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="XdebugTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="XhprofTest.php" role="test">
@@ -1256,6 +1251,9 @@ Bug fixes:
    <extension>
     <name>spl</name>
    </extension>
+   <extension>
+    <name>Reflection</name>
+   </extension>
   </required>
   <optional>
    <package>
@@ -1288,6 +1286,112 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.8.0beta2</release>
+    <api>2.8.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2012-09-07</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes since beta1:
+- add 1 new references data dictionnaries related to extensions: mongo
+- add full filter support for extensions fileinfo (1.0.5), filter (0.11.0),
+hash (1.0), mongo (1.2.12), tidy (2.0), zip (1.11.0), zlib (2.0)
+
+Bug fixes since beta1:
+- none
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.8.0beta1</release>
+    <api>2.8.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2012-09-04</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- introduces a new Reference API that allow to filter elements (interfaces, classes, functions, constants)
+on php version or extension release, with or without a particular relationship (like operator in version_compare)
+- Full filter support for extensions apc (3.1.13), enchant (1.1.0), intl (2.0.1), sphinx (1.2.0), xdebug (2.2.1)
+- Limited filter support to php versions only for all other extensions
+
+API filter examples on extension releases:
+- phpci list-classes intl 1.0.0
+- phpci list-functions xdebug 2.0.0 ge
+API filter examples on php versions:
+- phpci list-constants intl php_5.2.0 gt
+- phpci list-functions apc php_4  (only php &lt;  php 5.0.0)
+- phpci list-functions apc php_5  (only php &gt;= php 5.0.0)
+
+Upgrades extension dependencies:
+new Reference API uses PHP ReflectionClass (see REF_VERSION class constant : latest version of Extension/Reference supported)
+
+Adds missing Xdebug unit tests (while reference exists since 2.0.0RC3)
+
+Bug fixes:
+- none
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.7.0</release>
+    <api>2.7.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-09-02</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Versions summary:
+- 2.7.0 support all PHP versions until 5.4.6
+- 2.6.0 support all PHP versions until 5.4.5
+- 2.5.0 support all PHP versions until 5.4.4
+- 2.4.0 support all PHP versions until 5.4.3
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
+
+Additions and changes since 2.7.0RC1:
+- none
+
+Additions and changes since 2.6.0:
+- add a new report (condition) for CLI tool that will replace the warning messages
+on conditional code uses
+- removed warning messages about conditional code uses; replaced by
+the new --report condition of the CLI tool
+- add a new level for conditional code uses about traits (PHP 5.4 feature)
+- add a new API getter for Traits (PHP 5.4 feature)
+- User classes that used visibility (public, protected, private) are now identified
+as PHP 5.0.0 and no more as PHP 4.0.0
+- Improved global results in a multiple data source context
+- Add a warning message when --reference ALL used with extension detected but not loaded
+- Add ability to exclude traits from parsing with the CLI tool and the XML configuration file
+- XML report may show results either group by components or files
+- add namespaces in XML report
+- upgrade jquery minimized to version 1.7.2; used by summary.xsl.
+
+Bug fixes since 2.7.0RC1:
+- none
+
+Bug fixes since 2.6.0:
+- API getters gave wrong results when data source is list of files (directory)
+- Avoid exception in all case when xml configuration location is not a file
+- Avoid exception when a directory phpci exists in save_path cache file
+- Force clean cache when --reference or --exclude-pattern changed. Avoid old results.
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.7.0RC1</release>

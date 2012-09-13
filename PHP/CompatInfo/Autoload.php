@@ -13,7 +13,7 @@
  */
 
 /**
- * Autoloader for PHP_CompatInfo 
+ * Autoloader for PHP_CompatInfo
  *
  * @param string $className name of the class (and namespace) being instantiated.
  *
@@ -141,6 +141,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/iconv.php',
             'PHP_CompatInfo_Reference_Imap'
                 => 'PHP/CompatInfo/Reference/imap.php',
+            'PHP_CompatInfo_Reference_Inclued'
+                => 'PHP/CompatInfo/Reference/inclued.php',
             'PHP_CompatInfo_Reference_Intl'
                 => 'PHP/CompatInfo/Reference/intl.php',
             'PHP_CompatInfo_Reference_Json'
@@ -163,6 +165,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/memcached.php',
             'PHP_CompatInfo_Reference_Mhash'
                 => 'PHP/CompatInfo/Reference/mhash.php',
+            'PHP_CompatInfo_Reference_Mongo'
+                => 'PHP/CompatInfo/Reference/mongo.php',
             'PHP_CompatInfo_Reference_Mssql'
                 => 'PHP/CompatInfo/Reference/mssql.php',
             'PHP_CompatInfo_Reference_Mysql'
@@ -229,6 +233,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/tokenizer.php',
             'PHP_CompatInfo_Reference_Wddx'
                 => 'PHP/CompatInfo/Reference/wddx.php',
+            'PHP_CompatInfo_Reference_XCache'
+                => 'PHP/CompatInfo/Reference/xcache.php',
             'PHP_CompatInfo_Reference_Xdebug'
                 => 'PHP/CompatInfo/Reference/xdebug.php',
             'PHP_CompatInfo_Reference_Xhprof'

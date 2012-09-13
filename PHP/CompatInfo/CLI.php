@@ -194,6 +194,20 @@ class PHP_CompatInfo_CLI
                 'optional'    => true
             )
         );
+        $versionArgument = new Console_CommandLine_Argument(
+            'version',
+            array(
+                'description' => '(optional) Limit output to this version',
+                'optional'    => true
+            )
+        );
+        $conditionArgument = new Console_CommandLine_Argument(
+            'condition',
+            array(
+                'description' => '(optional) Limit output on a version condition',
+                'optional'    => true
+            )
+        );
 
         // print sub-command
         $printCmd = $input->addCommand(
@@ -270,6 +284,8 @@ class PHP_CompatInfo_CLI
         $listInterfacesCmd->addOption($reportFileOption);
         $listInterfacesCmd->addOption($helpReferenceOption);
         $listInterfacesCmd->addArgument($extensionArgument);
+        $listInterfacesCmd->addArgument($versionArgument);
+        $listInterfacesCmd->addArgument($conditionArgument);
 
         // list-classes sub-command
         $listClassesCmd = $input->addCommand(
@@ -282,6 +298,8 @@ class PHP_CompatInfo_CLI
         $listClassesCmd->addOption($reportFileOption);
         $listClassesCmd->addOption($helpReferenceOption);
         $listClassesCmd->addArgument($extensionArgument);
+        $listClassesCmd->addArgument($versionArgument);
+        $listClassesCmd->addArgument($conditionArgument);
 
         // list-functions sub-command
         $listFunctionsCmd = $input->addCommand(
@@ -294,6 +312,8 @@ class PHP_CompatInfo_CLI
         $listFunctionsCmd->addOption($reportFileOption);
         $listFunctionsCmd->addOption($helpReferenceOption);
         $listFunctionsCmd->addArgument($extensionArgument);
+        $listFunctionsCmd->addArgument($versionArgument);
+        $listFunctionsCmd->addArgument($conditionArgument);
 
         // list-constants sub-command
         $listConstantsCmd = $input->addCommand(
@@ -306,6 +326,8 @@ class PHP_CompatInfo_CLI
         $listConstantsCmd->addOption($reportFileOption);
         $listConstantsCmd->addOption($helpReferenceOption);
         $listConstantsCmd->addArgument($extensionArgument);
+        $listConstantsCmd->addArgument($versionArgument);
+        $listConstantsCmd->addArgument($conditionArgument);
 
 
         try {
@@ -370,8 +392,8 @@ class PHP_CompatInfo_CLI
                             " does not exist, or is empty";
                     } else {
                         $haystack = array(
-                            'extension', 
-                            'interface', 'trait', 
+                            'extension',
+                            'interface', 'trait',
                             'function', 'constant'
                         );
                         foreach ($excludes as $key => $values) {
@@ -555,10 +577,15 @@ class PHP_CompatInfo_CLI
             if ($source == 'references') {
                 $reports = array('database');
             } else {
-                $extension = $result->command->args['extension'];
-                if (!is_null($extension)) {
-                    $options['extensions'] = array($extension);
+                $options['_filter']['extension'] = $result->command->args['extension'];
+                if ($source == 'extensions') {
+                    $options['_filter']['version']   = null;
+                    $options['_filter']['condition'] = null;
+                } else {
+                    $options['_filter']['version']   = $result->command->args['version'];
+                    $options['_filter']['condition'] = $result->command->args['condition'];
                 }
+
                 $reports  = array('reference');
                 $elements = array();
             }

@@ -32,6 +32,12 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
     protected $warnings = array();
 
     /**
+     * Extension/Version/Condition to filter data reference
+     * @var array
+     */
+    protected $filter;
+
+    /**
      * Tells if some extensions references could not be loaded
      *
      * @return bool
@@ -71,23 +77,115 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
     }
 
     /**
+     * Defines the filter to get data reference that match your need
+     *
+     * @param array $args Array of variable argument (extension, version, condition)
+     *
+     * @return void
+     */
+    protected function setFilter($args)
+    {
+        if (count($args) > 2) {
+            list($extension, $version, $condition) = $args;
+        } else {
+            list($extension, $version) = $args;
+        }
+
+        if ($extension === true && $version === null) {
+            $class = new ReflectionClass(get_class($this));
+            $name  = 'REF_VERSION';
+            if ($class->hasConstant($name)) {
+                $version = $class->getConstant($name);
+            } else {
+                $version = '';
+            }
+
+        } elseif ($version === '4') {
+            $version   = '5.0.0';
+            $condition = 'lt';
+
+        } elseif ($version === '5') {
+            $version   = '5.0.0';
+            $condition = 'ge';
+
+        } elseif ($version === null) {
+            $version   = '4.0.0';
+            $condition = 'ge';
+        }
+
+        if (!isset($condition)) {
+            $condition = 'le';
+        }
+        $this->filter = array(
+            'extension' => $extension,
+            'version'   => $version,
+            'condition' => $condition
+        );
+    }
+
+    /**
+     * Apply the filter criteria on each element of $items array
+     *
+     * @param string $release  Release version
+     * @param array  $items    Release informations
+     * @param array  $elements Variable that host data
+     *
+     * @return void
+     */
+    protected function applyFilter($release, $items, &$elements)
+    {
+        foreach ($items as $name => $versions) {
+            if ($this->filter['extension'] === true) {
+                $compare = $release;
+            } else {
+                $compare = $versions[0];
+            }
+            if (version_compare(
+                $compare, $this->filter['version'], $this->filter['condition']
+            )) {
+                $versions['extVersions'][0] = $release;
+                $versions['extVersions'][1] = false;
+                $elements[$name]            = $versions;
+            }
+        }
+    }
+
+    /**
+     * Sets the maximum version where an element is still available in an extension
+     *
+     * @param string $version  Maximum extension version where an element exists
+     * @param string $name     Element name
+     * @param array  $elements Variable that host data
+     *
+     * @return void
+     */
+    protected function setMaxExtensionVersion($version, $name, &$elements)
+    {
+        if (isset($elements[$name]['extVersions'])) {
+            $elements[$name]['extVersions'][1] = $version;
+        }
+    }
+
+    /**
      * Gets all informations at once about:
      * extensions, interfaces, classes, functions, constants
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getAll($extension = null, $version = null)
+    public function getAll($extension = null, $version = null, $condition = null)
     {
         $references = array(
-            'extensions' => $this->getExtensions($extension, $version),
-            'interfaces' => $this->getInterfaces($extension, $version),
-            'classes'    => $this->getClasses($extension, $version),
-            'functions'  => $this->getFunctions($extension, $version),
-            'constants'  => $this->getConstants($extension, $version),
+            'extensions' => $this->getExtensions($extension, $version, $condition),
+            'interfaces' => $this->getInterfaces($extension, $version, $condition),
+            'classes'    => $this->getClasses($extension, $version, $condition),
+            'functions'  => $this->getFunctions($extension, $version, $condition),
+            'constants'  => $this->getConstants($extension, $version, $condition),
         );
         return $references;
     }
@@ -95,100 +193,80 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
     /**
      * Gets informations about extensions
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getExtensions($extension = null, $version = null)
+    public function getExtensions($extension = null, $version = null, $condition = null)
     {
-        trigger_error(
-            sprintf(
-                "You should implement the %s function in your reference plugin",
-                __FUNCTION__
-            )
-        );
         return array();
     }
 
     /**
      * Gets informations about interfaces
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getInterfaces($extension = null, $version = null)
+    public function getInterfaces($extension = null, $version = null, $condition = null)
     {
-        trigger_error(
-            sprintf(
-                "You should implement the %s function in your reference plugin",
-                __FUNCTION__
-            )
-        );
         return array();
     }
 
     /**
      * Gets informations about classes
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getClasses($extension = null, $version = null)
+    public function getClasses($extension = null, $version = null, $condition = null)
     {
-        trigger_error(
-            sprintf(
-                "You should implement the %s function in your reference plugin",
-                __FUNCTION__
-            )
-        );
         return array();
     }
 
     /**
      * Gets informations about functions
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getFunctions($extension = null, $version = null)
+    public function getFunctions($extension = null, $version = null, $condition = null)
     {
-        trigger_error(
-            sprintf(
-                "You should implement the %s function in your reference plugin",
-                __FUNCTION__
-            )
-        );
         return array();
     }
 
     /**
      * Gets informations about constants
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getConstants($extension = null, $version = null)
+    public function getConstants($extension = null, $version = null, $condition = null)
     {
-        trigger_error(
-            sprintf(
-                "You should implement the %s function in your reference plugin",
-                __FUNCTION__
-            )
-        );
         return array();
     }
 

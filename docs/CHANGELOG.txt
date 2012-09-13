@@ -5,6 +5,81 @@ PHP_CompatInfo ChangeLog
 :stylesdir:   styles
 :scriptsdir:  js
 
+== Version 2.8.0beta2 (2012-09-07)
+
+.Additions and changes since beta1:
+* add 1 new references data dictionnaries related to extensions: mongo
+* add full filter support for extensions fileinfo (1.0.5), filter (0.11.0),
+hash (1.0), mongo (1.2.12), tidy (2.0), zip (1.11.0), zlib (2.0)
+
+.Bug fixes since beta1:
+* none
+
+
+== Version 2.8.0beta1 (2012-09-04)
+
+.Additions and changes:
+* introduces a new Reference API that allow to filter elements (interfaces, classes, functions, constants)
+on php version or extension release, with or without a particular relationship (like operator in version_compare)
+* Full filter support for extensions apc (3.1.13), enchant (1.1.0), intl (2.0.1), sphinx (1.2.0), xdebug (2.2.1)
+* Limited filter support to php versions only for all other extensions
+
+.API filter examples on extension releases:
+* phpci list-classes intl 1.0.0
+* phpci list-functions xdebug 2.0.0 ge
+.API filter examples on php versions:
+* phpci list-constants intl php_5.2.0 gt
+* phpci list-functions apc php_4  (only php <  php 5.0.0)
+* phpci list-functions apc php_5  (only php >= php 5.0.0)
+
+Upgrades extension dependencies:
+new Reference API uses PHP ReflectionClass (see REF_VERSION class constant : latest version of Extension/Reference supported)
+
+Adds missing Xdebug unit tests (while reference exists since 2.0.0RC3)
+
+.Bug fixes:
+* none
+
+
+== Version 2.7.0 (2012-09-02)
+
+.Versions summary:
+* 2.7.0 support all PHP versions until 5.4.6
+* 2.6.0 support all PHP versions until 5.4.5
+* 2.5.0 support all PHP versions until 5.4.4
+* 2.4.0 support all PHP versions until 5.4.3
+* 2.3.0 support all PHP versions until 5.4.0
+* 2.2.0 support all PHP versions until 5.3.10
+* 2.1.0 support all PHP versions until 5.3.8
+
+.Additions and changes since 2.7.0RC1:
+* none
+
+.Additions and changes since 2.6.0:
+* add a new report (condition) for CLI tool that will replace the warning messages
+on conditional code uses
+* removed warning messages about conditional code uses; replaced by
+the new --report condition of the CLI tool
+* add a new level for conditional code uses about traits (PHP 5.4 feature)
+* add a new API getter for Traits (PHP 5.4 feature)
+* User classes that used visibility (public, protected, private) are now identified
+as PHP 5.0.0 and no more as PHP 4.0.0
+* Improved global results in a multiple data source context
+* Add a warning message when --reference ALL used with extension detected but not loaded
+* Add ability to exclude traits from parsing with the CLI tool and the XML configuration file
+* XML report may show results either group by components or files
+* add namespaces in XML report
+* upgrade jquery minimized to version 1.7.2; used by summary.xsl.
+
+.Bug fixes since 2.7.0RC1:
+* none
+
+.Bug fixes since 2.6.0:
+* API getters gave wrong results when data source is list of files (directory)
+* Avoid exception in all case when xml configuration location is not a file
+* Avoid exception when a directory phpci exists in save_path cache file
+* Force clean cache when --reference or --exclude-pattern changed. Avoid old results.
+
 
 == Version 2.7.0RC1 (2012-08-17)
 
@@ -243,14 +318,14 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 
 .Additions and changes:
 * add 15 new references data dictionnaries related to extensions:
-  APC, Mhash, Mcrypt, Phar, posix, Readline, recode, snmp, Soap, sqlite3, 
+  APC, Mhash, Mcrypt, Phar, posix, Readline, recode, snmp, Soap, sqlite3,
   sysvmsg, sysvsem, sysvshm, tidy, xmlrpc
 * detect now magic constants (__LINE__, __FILE__, __DIR__, __FUNCTION__, __CLASS__, __METHOD__, __NAMESPACE__)
 * printing multiple reports feature is available. Use either:
   - phpci --report summary --report function /path/to/source
   - or just simple  phpci --report summary function /path/to/source
   - with XML config file, adds a comma separate valid report types in 'report' property of tag <phpcompatinfo>
-* add summary reports (new default behavior) on each category (extension, interface, class, function, constant)  
+* add summary reports (new default behavior) on each category (extension, interface, class, function, constant)
 * add namespace report
 * add token report (language features as goto, use, try /catch, throw, instanceof, clone, ...)
 * add globals/superglobals report
@@ -282,7 +357,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 
 .Additions and changes:
 * add 20 new references data dictionnaries related to extensions:
-  ctype, dom, filter, ftp, gettext, iconv, json, mysql, mysqli, openssl, pgsql, 
+  ctype, dom, filter, ftp, gettext, iconv, json, mysql, mysqli, openssl, pgsql,
   session, simplexml, sqlite, ssh2, wddx, xmlreader, xmlwriter, xsl, zlib
 * Don't overwrite PHP_CompatInfo 1.x previous installation
 * add a XSL transformation stylesheet to produce a summary XHTML page from XML report
@@ -309,7 +384,7 @@ PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-lavill
 * An error message is now printed for errors while parsing the +phpcompatinfo.xml+ file
 
 .Bug fixes and changes related to PHP_TokenSteam code:
-* Wrapper can now provide all new features expected, even if lot of code should be remove later 
+* Wrapper can now provide all new features expected, even if lot of code should be remove later
 when a new stable release of PHP_TokenSteam will be available.
 
 
@@ -326,7 +401,7 @@ when a new stable release of PHP_TokenSteam will be available.
 * FIX missing extensions dependencies in package.xml
 
 .Bug fixes and changes related to PHP_TokenSteam code:
-* add a wrapper for current stable version 1.0.1; 
+* add a wrapper for current stable version 1.0.1;
   some new features may be available with future versions
 
 
@@ -340,10 +415,10 @@ when a new stable release of PHP_TokenSteam will be available.
 * add references for libxml extension
 * add references for pcre extension
 * add references for tokenizer extension
-* fix version and origin of interfaces 
+* fix version and origin of interfaces
   'Traversable','IteratorAggregate','Iterator','ArrayAccess','Serializable'
 * implements function PHP_CompatInfo::getConditions and all reports uses
-* Xml report show now the PHP required versions (min, max) 
+* Xml report show now the PHP required versions (min, max)
 * cache file introduces garbage collector features (probability and maxlifetime)
 * more and more phpdoc tags
 * replace assertType by assertInternalType in test suites to be ready for PHPUnit 3.6
@@ -351,7 +426,7 @@ when a new stable release of PHP_TokenSteam will be available.
 * add missing dependencies in package.xml (ezComponents, ...)
 
 .Bug fixes:
-* reset function (http://www.php.net/manual/en/function.reset.php) 
+* reset function (http://www.php.net/manual/en/function.reset.php)
   missing in standard extension data dictionary
 
 .Bug fixes and changes related to PHP_TokenSteam code:
