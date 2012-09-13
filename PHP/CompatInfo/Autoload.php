@@ -131,6 +131,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/ftp.php',
             'PHP_CompatInfo_Reference_Gd'
                 => 'PHP/CompatInfo/Reference/gd.php',
+            'PHP_CompatInfo_Reference_Geoip'
+                => 'PHP/CompatInfo/Reference/geoip.php',
             'PHP_CompatInfo_Reference_Gettext'
                 => 'PHP/CompatInfo/Reference/gettext.php',
             'PHP_CompatInfo_Reference_Gmp'
