@@ -99,6 +99,8 @@ function phpCompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Listener/Growl.php',
 
             // PHP extensions references
+            'PHP_CompatInfo_Reference_Amqp'
+                => 'PHP/CompatInfo/Reference/amqp.php',
             'PHP_CompatInfo_Reference_Apc'
                 => 'PHP/CompatInfo/Reference/apc.php',
             'PHP_CompatInfo_Reference_Bcmath'
