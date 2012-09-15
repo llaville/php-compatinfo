@@ -31,10 +31,10 @@ and on the PHPUnit PEAR channel (`pear.phpunit.de`).
 This has to be done only once. Now the PEAR Installer can be used to install packages from the Bartlett channel.
 
     $ pear install bartlett/PHP_CompatInfo
-    downloading PHP_CompatInfo-2.7.0.tgz ...
-    Starting to download PHP_CompatInfo-2.7.0.tgz (731,165 bytes)
-    .........................done: 731,165 bytes
-    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.7.0
+    downloading PHP_CompatInfo-2.8.0.tgz ...
+    Starting to download PHP_CompatInfo-2.8.0.tgz (742,038 bytes)
+    .........................done: 742,038 bytes
+    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.8.0
 
 After the installation you can find the PHP_CompatInfo source files inside your local PEAR directory.
 
@@ -44,9 +44,9 @@ Documentation
 
 The documentation for PHP_CompatInfo is available in different formats:
 
-* [English, multiple HTML files](http://php5.laurent-laville.org/compatinfo/manual/2.7/en/index.html)
-* [English, single HTML file](http://php5.laurent-laville.org/compatinfo/manual/2.7/en/phpci-book.html)
-* [English, PDF-A4](http://php5.laurent-laville.org/compatinfo/manual/2.7/en/phpci-book-a4.pdf)
-* [English, PDF-US](http://php5.laurent-laville.org/compatinfo/manual/2.7/en/phpci-book-us.pdf)
-* [English, CHM](http://php5.laurent-laville.org/compatinfo/manual/2.7/en/phpci-book.chm.zip)
-* [English, EPUB](http://php5.laurent-laville.org/compatinfo/manual/2.7/en/phpci-book.epub)
+* [English, multiple HTML files](http://php5.laurent-laville.org/compatinfo/manual/current/en/index.html)
+* [English, single HTML file](http://php5.laurent-laville.org/compatinfo/manual/current/en/phpci-book.html)
+* [English, PDF-A4](http://php5.laurent-laville.org/compatinfo/manual/current/en/phpci-book-a4.pdf)
+* [English, PDF-US](http://php5.laurent-laville.org/compatinfo/manual/current/en/phpci-book-us.pdf)
+* [English, CHM](http://php5.laurent-laville.org/compatinfo/manual/current/en/phpci-book.chm.zip)
+* [English, EPUB](http://php5.laurent-laville.org/compatinfo/manual/current/en/phpci-book.epub)
