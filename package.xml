@@ -23,24 +23,71 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-09-07</date>
- <time>13:37:47</time>
+ <date>2012-09-14</date>
+ <time>19:07:39</time>
  <version>
-  <release>2.8.0beta2</release>
+  <release>2.8.0</release>
   <api>2.8.0</api>
  </version>
  <stability>
-  <release>beta</release>
-  <api>beta</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
-Additions and changes since beta1:
-- add 1 new references data dictionnaries related to extensions: mongo
-- add full filter support for extensions fileinfo (1.0.5), filter (0.11.0),
-hash (1.0), mongo (1.2.12), tidy (2.0), zip (1.11.0), zlib (2.0)
+Versions summary:
+- 2.8.0 support all PHP versions until 5.4.7
+- 2.7.0 support all PHP versions until 5.4.6
+- 2.6.0 support all PHP versions until 5.4.5
+- 2.5.0 support all PHP versions until 5.4.4
+- 2.4.0 support all PHP versions until 5.4.3
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
 
-Bug fixes since beta1:
+Additions and changes:
+* add 5 new references data dictionnaries related to extensions:
+  amqp, geoip, inclued, mongo, XCache
+- introduces a new Reference API that allow to filter elements (interfaces, classes, functions, constants)
+on php version or extension release, with or without a particular relationship (like operator in version_compare)
+- Full filter support for 25 extensions (that have all releases documented):
+   amqp (1.0.7)
+   apc (3.1.13)
+   enchant (1.1.0)
+   fileinfo (1.0.5)
+   filter (0.11.0)
+   geoip (1.0.8)
+   hash (1.0)
+   inclued (0.1.3)
+   intl (2.0.1)
+   json (1.2.1)
+   libxml
+   lzf (1.6.2)
+   mailparse (2.1.6)
+   memcache (3.0.6)
+   memcached (2.1.0)
+   mongo (1.2.12)
+   OAuth (1.2.2)
+   Phar (2.0.1)
+   solr (1.0.2)
+   sphinx (1.2.0)
+   tidy (2.0)
+   XCache (2.0.1)
+   xdebug (2.2.1)
+   zip (1.11.0)
+   zlib (2.0)
+- Limited filter support to php versions only for all other extensions
+
+.Bug fixes:
+- none
+
+.Additions and changes since beta2:
+- add 4 new references data dictionnaries related to extensions: geoip, inclued, mongo, XCache
+- add full filter support for extensions geoip (1.0.8), inclued (0.1.3), json (1.2.1), libxml,
+lzf (1.6.2), mailparse (2.1.6), memcache (3.0.6), memcached (2.1.0), OAuth (1.2.2),
+Phar (2.0.1), solr (1.0.2), XCache (2.0.1)
+
+.Bug fixes since beta2:
 - none
  </notes>
  <contents>
@@ -317,6 +364,9 @@ Bug fixes since beta1:
       <file baseinstalldir="Bartlett" name="gd.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
+      <file baseinstalldir="Bartlett" name="geoip.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="gettext.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -330,6 +380,9 @@ Bug fixes since beta1:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="imap.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="inclued.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="intl.php" role="php">
@@ -474,6 +527,9 @@ Bug fixes since beta1:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="wddx.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="xcache.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="xdebug.php" role="php">
@@ -664,6 +720,9 @@ Bug fixes since beta1:
      <file baseinstalldir="Bartlett" name="GenericTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="GeoipTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="GettextTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -677,6 +736,9 @@ Bug fixes since beta1:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="ImapTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="IncluedTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="IntlTest.php" role="test">
@@ -812,6 +874,9 @@ Bug fixes since beta1:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="WddxTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="XCacheTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="XdebugTest.php" role="test">
@@ -1286,6 +1351,74 @@ Bug fixes since beta1:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.8.0</release>
+    <api>2.8.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-09-14</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Versions summary:
+- 2.8.0 support all PHP versions until 5.4.7
+- 2.7.0 support all PHP versions until 5.4.6
+- 2.6.0 support all PHP versions until 5.4.5
+- 2.5.0 support all PHP versions until 5.4.4
+- 2.4.0 support all PHP versions until 5.4.3
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
+
+Additions and changes:
+* add 5 new references data dictionnaries related to extensions:
+  amqp, geoip, inclued, mongo, XCache
+- introduces a new Reference API that allow to filter elements (interfaces, classes, functions, constants)
+on php version or extension release, with or without a particular relationship (like operator in version_compare)
+- Full filter support for 25 extensions (that have all releases documented):
+   amqp (1.0.7)
+   apc (3.1.13)
+   enchant (1.1.0)
+   fileinfo (1.0.5)
+   filter (0.11.0)
+   geoip (1.0.8)
+   hash (1.0)
+   inclued (0.1.3)
+   intl (2.0.1)
+   json (1.2.1)
+   libxml
+   lzf (1.6.2)
+   mailparse (2.1.6)
+   memcache (3.0.6)
+   memcached (2.1.0)
+   mongo (1.2.12)
+   OAuth (1.2.2)
+   Phar (2.0.1)
+   solr (1.0.2)
+   sphinx (1.2.0)
+   tidy (2.0)
+   XCache (2.0.1)
+   xdebug (2.2.1)
+   zip (1.11.0)
+   zlib (2.0)
+- Limited filter support to php versions only for all other extensions
+
+.Bug fixes:
+- none
+
+.Additions and changes since beta2:
+- add 4 new references data dictionnaries related to extensions: geoip, inclued, mongo, XCache
+- add full filter support for extensions geoip (1.0.8), inclued (0.1.3), json (1.2.1), libxml,
+lzf (1.6.2), mailparse (2.1.6), memcache (3.0.6), memcached (2.1.0), OAuth (1.2.2),
+Phar (2.0.1), solr (1.0.2), XCache (2.0.1)
+
+.Bug fixes since beta2:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.8.0beta2</release>
