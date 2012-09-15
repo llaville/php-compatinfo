@@ -203,7 +203,7 @@ from the table below to start downloading.
 [options="header"]
 |===========================
 | Language | Single HTML file | Many HTML files | HTML Help file | PDF A4 file | PDF US file | EPUB file
-| English | link:{man_dir}/en/pci-book.html.zip[pci-book.html.zip] 558Kb | link:{man_dir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] 505Kb | link:{man_dir}/en/phpci-book.chm.zip[phpci-book.chm.zip] 513Kb | link:{man_dir}/en/phpci-book-a4.pdf[phpci-book-a4.pdf] 607Kb | link:{man_dir}/en/phpci-book-us.pdf[phpci-book-us.pdf] 606Kb | link:{man_dir}/en/phpci-book.epub.zip[phpci-book.epub.zip] 487Kb
+| English | link:{man_dir}/en/pci-book.html.zip[pci-book.html.zip] 559Kb | link:{man_dir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] 506Kb | link:{man_dir}/en/phpci-book.chm.zip[phpci-book.chm.zip] 514Kb | link:{man_dir}/en/phpci-book-a4.pdf[phpci-book-a4.pdf] 610Kb | link:{man_dir}/en/phpci-book-us.pdf[phpci-book-us.pdf] 610Kb | link:{man_dir}/en/phpci-book.epub.zip[phpci-book.epub.zip] 488Kb
 |===========================
 
 == Appendix A: Changelog
