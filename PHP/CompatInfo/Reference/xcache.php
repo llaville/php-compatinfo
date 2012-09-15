@@ -22,7 +22,7 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @link     http://xcache.lighttpd.net/
- * @since    Class available since Release 2.8.0beta3
+ * @since    Class available since Release 2.8.0
  */
 class PHP_CompatInfo_Reference_XCache
     extends PHP_CompatInfo_Reference_PluginsAbstract
