@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-09-14</date>
- <time>19:07:39</time>
+ <date>2012-09-15</date>
+ <time>11:46:59</time>
  <version>
   <release>2.8.0</release>
   <api>2.8.0</api>
@@ -314,6 +314,9 @@ Phar (2.0.1), solr (1.0.2), XCache (2.0.1)
      </dir> <!-- /PHP/CompatInfo/Listener -->
      <dir name="Reference">
       <file baseinstalldir="Bartlett" name="ALL.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="amqp.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="apc.php" role="php">
@@ -669,6 +672,9 @@ Phar (2.0.1), solr (1.0.2), XCache (2.0.1)
    </dir> <!-- /scripts -->
    <dir name="tests">
     <dir name="Reference">
+     <file baseinstalldir="Bartlett" name="AmqpTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="ApcTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -1360,7 +1366,7 @@ Phar (2.0.1), solr (1.0.2), XCache (2.0.1)
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-09-14</date>
+   <date>2012-09-15</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Versions summary:
