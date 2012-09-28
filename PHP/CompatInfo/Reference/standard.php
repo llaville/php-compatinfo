@@ -33,7 +33,7 @@ class PHP_CompatInfo_Reference_Standard
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '5.4.7-dev';
+    const REF_VERSION = '5.4.7';
 
     /**
      * Gets informations about extensions
