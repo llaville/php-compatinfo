@@ -32,24 +32,24 @@ But PHP_CompatInfo (alias phpci), may also provides on CLI (with the +phpci+ com
 * Print multiple reports group by scanned files or components
 - *summary* : usage summary of each extension, interface, class, function, constant used by your sources code
 - *source* : lines code count summary with or without source code
-- *xml* : export result to a XML format easy to transform to xHTML or other format 
-- *token* : language PHP5 special features such as try/catch/throw exception, etc 
+- *xml* : export result to a XML format easy to transform to xHTML or other format
+- *token* : language PHP5 special features such as try/catch/throw exception, etc
 - *extension* : usage, minimum php version and origin of each extension used by your sources code
 - *namespace* : usage, minimum php version and origin of each namespace used by your sources code
 - *trait* : usage, minimum php version and origin of each trait used by your sources code
-- *interface* : usage, minimum php version and origin of each interface used by your sources code 
-- *class* : usage, minimum php version and origin of each class used by your sources code 
-- *function* : usage, minimum php version and origin of each function used by your sources code 
-- *constant* : usage, minimum php version and origin of each constant used by your sources code 
-- *global* : usage, minimum php version and origin of each global variable used by your sources code 
-- *condition* : usage, minimum php version and origin of each code conditionnal function used by your sources code 
+- *interface* : usage, minimum php version and origin of each interface used by your sources code
+- *class* : usage, minimum php version and origin of each class used by your sources code
+- *function* : usage, minimum php version and origin of each function used by your sources code
+- *constant* : usage, minimum php version and origin of each constant used by your sources code
+- *global* : usage, minimum php version and origin of each global variable used by your sources code
+- *condition* : usage, minimum php version and origin of each code conditionnal function used by your sources code
 
 
 == A simple tutorial
 
 === Parse a single file with default options
 
-To parse a file with the PHP5 known references of your extensions loaded, 
+To parse a file with the PHP5 known references of your extensions loaded,
 you have just to specify the file's location.
 
 .API example (for all versions until 2.5.0)
@@ -133,6 +133,25 @@ Will print out a summary report like this one
 ----
     PHP COMPAT INFO REPORT SUMMARY
     -------------------------------------------------------------------------------
+    A TOTAL OF
+     5 EXTENSIONS 3 INTERFACES 11 CLASSES 27 FUNCTIONS 4 CONSTANTS
+    WERE FOUND IN 1 FILE
+    WITH CONDITIONAL CODE LEVEL 32
+    REQUIRED PHP 5.1.3 (MIN)
+    -------------------------------------------------------------------------------
+    Time: 2 seconds, Memory: 8.50Mb
+    -------------------------------------------------------------------------------
+----
+
+When you set verbose level to 3, and re-run the print command
+----
+$ phpci --no-configuration -vvv print --reference PHP5 --report summary /path/to/myFile.php
+----
+
+It will print out this new detailed summary report
+----
+    PHP COMPAT INFO REPORT SUMMARY
+    -------------------------------------------------------------------------------
     FILES                         EXTENSIONS INTERFACES CLASSES FUNCTIONS CONSTANTS
     -------------------------------------------------------------------------------
     BASE: /path/to
@@ -148,12 +167,17 @@ Will print out a summary report like this one
     -------------------------------------------------------------------------------
     Time: 2 seconds, Memory: 8.50Mb
     -------------------------------------------------------------------------------
+
+    Warning messages : (2)
+
+      Cannot load extension reference 'odbc'
+      Cannot load extension reference 'mysqlnd'
 ----
 
 
 === Parse a directory with default options
 
-If you wish to parse an entire directory, you can specify the directory location 
+If you wish to parse an entire directory, you can specify the directory location
 instead of a file.
 
 .API example
@@ -180,9 +204,9 @@ try {
 
 From your PEAR _bin_dir_  directory and the default XML configuration file +phpcompatinfo.xml.dist+
 installed into PEAR _cfg_dir_/PHP_CompatInfo.
- 
+
 ----
-$ phpci print /path/to/myFolder
+$ phpci -vvv print /path/to/myFolder
 ----
 Will print out the summary report
 
@@ -211,4 +235,9 @@ Will print out the summary report
     -------------------------------------------------------------------------------
     Time: 2 seconds, Memory: 12.00Mb
     -------------------------------------------------------------------------------
+
+    Warning messages : (2)
+
+      Cannot load extension reference 'odbc'
+      Cannot load extension reference 'mysqlnd'
 ----
