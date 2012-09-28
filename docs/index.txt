@@ -10,9 +10,7 @@ include::revision.txt[]
 ************************************************************************
 Release highlights:
 
-- PHP_CompatInfo 2.8.0 add both support to PHP 5.3.17 and PHP 5.4.7
-and add ability to filter extension elements
-(interfaces, classes, functions, constants) on php or release versions
+- PHP_CompatInfo 2.8.1 fixed 4 minor bugs
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the

@@ -5,6 +5,18 @@ PHP_CompatInfo ChangeLog
 :stylesdir:   styles
 :scriptsdir:  js
 
+== Version 2.8.1 (2012-09-28)
+
+.Additions and changes:
+* none
+
+.Bug fixes:
+* fixed latest version of standard and Core references
+* fixed curl reference about new PHP 5.4 constants
+* fixed default version about anonymous function
+* phpci list command raises notice errors
+
+
 == Version 2.8.0 (2012-09-15)
 
 .Versions summary:
