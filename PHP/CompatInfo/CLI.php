@@ -572,6 +572,10 @@ class PHP_CompatInfo_CLI
             $source   = array_shift($elements);
             $reports  = array('reference');
 
+            $options['_filter']['extension'] = null;
+            $options['_filter']['version']   = null;
+            $options['_filter']['condition'] = null;
+
         } elseif ('list' == substr($command, 0, 4)) {
             list(, $source) = explode('-', $command);
             if ($source == 'references') {
