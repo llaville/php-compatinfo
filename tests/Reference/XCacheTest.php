@@ -41,6 +41,12 @@ class PHP_CompatInfo_Reference_XCacheTest
      */
     protected function setUp()
     {
+        $this->optionnalfunctions = array(
+            // Requires specific build optons
+            // so not available everywhere
+            'xcache_dasm_file',
+            'xcache_dasm_string',
+        );
         $this->obj = new PHP_CompatInfo_Reference_XCache();
         parent::setUp();
     }
