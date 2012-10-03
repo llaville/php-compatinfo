@@ -41,43 +41,25 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
             );
         }
 
-        $extensions = $extension = $options['_filter']['extension'];
-        if (!is_null($extension)) {
-            if ('all' == $extension ) {
-                $extension = null;
-            } else {
-                // filter on a unique extension
-                $extensions = array($extension);
-            }
-        }
-        $version = $options['_filter']['version'];
-        if (!is_null($version)) {
-            if (substr($version, 0, 4) == 'php_') {
-                // filter extension on PHP version
-                $version   = substr($version, 4);
-                $extension = null;
-            } else {
-                $extension = true;
-            }
-        }
-        $condition = $options['_filter']['condition'];
+        $extensions = $options['filterReference'];
 
-        if ($extension !== true) {
-            // filter on PHP versions
-            if ($version === '4') {
-                $version = '5.0.0';
-                if (is_null($condition)) {
-                    $condition = 'lt';
-                } else {
-                    $version = '4.0.0';
-                }
-            }
-            if ($version === '5') {
-                $version = '5.0.0';
-                if (is_null($condition)) {
-                    $condition = 'ge';
-                }
-            }
+        if (isset($options['filterVersion'])) {
+            self::$filterVersion = $options['filterVersion'];
+        }
+        $version = self::$filterVersion;
+
+        if (isset($options['filterOperator'])) {
+            self::$filterOperator = $options['filterOperator'];
+        }
+        $condition = self::$filterOperator;
+
+        if (substr($version, 0, 4) == 'php_') {
+            // filter references on PHP version
+            $version   = substr($version, 4);
+            $extension = null;
+        } else {
+            // filter references on EXT version
+            $extension = true;
         }
 
         $reference = new $referenceClassName($extensions);
@@ -180,6 +162,15 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
      */
     protected function printTBody($elements, $filename, $base)
     {
+        if ('extensions' == $this->typeReport['long']) {
+            $results = array('_dummy_' => $elements);
+            self::applyFilter($results);
+            $elements = $results['_dummy_'];
+        } else {
+            self::applyFilter($elements);
+        }
+        $this->total = $elements;
+
         ksort($elements);
 
         foreach ($elements as $element => $data) {

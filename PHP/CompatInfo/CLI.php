@@ -185,25 +185,30 @@ class PHP_CompatInfo_CLI
             )
         );
 
-        // argument common to all list sub-commands except for list-references
-        $extensionArgument = new Console_CommandLine_Argument(
-            'extension',
+        // options relatives to print sub-command
+        $filterVersionOption = new Console_CommandLine_Option(
+            'filterVersion',
             array(
-                'description' => '(optional) Limit output only to this extension',
-                'optional'    => true
+                'long_name'   => '--filter-version',
+                'action'      => 'StoreString',
+                'description' => 'The version to compare with each element found',
             )
         );
-        $versionArgument = new Console_CommandLine_Argument(
-            'version',
+        $filterOperatorOption = new Console_CommandLine_Option(
+            'filterOperator',
             array(
-                'description' => '(optional) Limit output to this version',
-                'optional'    => true
+                'long_name'   => '--filter-operator',
+                'action'      => 'StoreString',
+                'description' => 'The version test relationship',
+                'choices'     => array('lt', 'le', 'gt', 'ge', 'eq', 'ne')
             )
         );
-        $conditionArgument = new Console_CommandLine_Argument(
-            'condition',
+
+        // argument common to all list sub-commands except to list and list-references
+        $referenceArgument = new Console_CommandLine_Argument(
+            'reference',
             array(
-                'description' => '(optional) Limit output on a version condition',
+                'description' => '(optional) Limit output only to this reference',
                 'optional'    => true
             )
         );
@@ -221,6 +226,8 @@ class PHP_CompatInfo_CLI
         $printCmd->addOption($excludeIDOption);
         $printCmd->addOption($recursiveOption);
         $printCmd->addOption($fileExtensionsOption);
+        $printCmd->addOption($filterVersionOption);
+        $printCmd->addOption($filterOperatorOption);
         $printCmd->addOption($helpReferenceOption);
         $printCmd->addOption($helpReportOption);
         $printCmd->addArgument(
@@ -247,6 +254,8 @@ class PHP_CompatInfo_CLI
             )
         );
         $listCmd->addOption($referenceOption);
+        $listCmd->addOption($filterVersionOption);
+        $listCmd->addOption($filterOperatorOption);
         $listCmd->addOption($reportFileOption);
         $listCmd->addOption($helpReferenceOption);
         $listCmd->addArgument(
@@ -268,9 +277,11 @@ class PHP_CompatInfo_CLI
             )
         );
         $listExtensionsCmd->addOption($referenceOption);
+        $listExtensionsCmd->addOption($filterVersionOption);
+        $listExtensionsCmd->addOption($filterOperatorOption);
         $listExtensionsCmd->addOption($reportFileOption);
         $listExtensionsCmd->addOption($helpReferenceOption);
-        $listExtensionsCmd->addArgument($extensionArgument);
+        $listExtensionsCmd->addArgument($referenceArgument);
 
         // list-interfaces sub-command
         $listInterfacesCmd = $input->addCommand(
@@ -280,11 +291,11 @@ class PHP_CompatInfo_CLI
             )
         );
         $listInterfacesCmd->addOption($referenceOption);
+        $listInterfacesCmd->addOption($filterVersionOption);
+        $listInterfacesCmd->addOption($filterOperatorOption);
         $listInterfacesCmd->addOption($reportFileOption);
         $listInterfacesCmd->addOption($helpReferenceOption);
-        $listInterfacesCmd->addArgument($extensionArgument);
-        $listInterfacesCmd->addArgument($versionArgument);
-        $listInterfacesCmd->addArgument($conditionArgument);
+        $listInterfacesCmd->addArgument($referenceArgument);
 
         // list-classes sub-command
         $listClassesCmd = $input->addCommand(
@@ -294,11 +305,11 @@ class PHP_CompatInfo_CLI
             )
         );
         $listClassesCmd->addOption($referenceOption);
+        $listClassesCmd->addOption($filterVersionOption);
+        $listClassesCmd->addOption($filterOperatorOption);
         $listClassesCmd->addOption($reportFileOption);
         $listClassesCmd->addOption($helpReferenceOption);
-        $listClassesCmd->addArgument($extensionArgument);
-        $listClassesCmd->addArgument($versionArgument);
-        $listClassesCmd->addArgument($conditionArgument);
+        $listClassesCmd->addArgument($referenceArgument);
 
         // list-functions sub-command
         $listFunctionsCmd = $input->addCommand(
@@ -308,11 +319,11 @@ class PHP_CompatInfo_CLI
             )
         );
         $listFunctionsCmd->addOption($referenceOption);
+        $listFunctionsCmd->addOption($filterVersionOption);
+        $listFunctionsCmd->addOption($filterOperatorOption);
         $listFunctionsCmd->addOption($reportFileOption);
         $listFunctionsCmd->addOption($helpReferenceOption);
-        $listFunctionsCmd->addArgument($extensionArgument);
-        $listFunctionsCmd->addArgument($versionArgument);
-        $listFunctionsCmd->addArgument($conditionArgument);
+        $listFunctionsCmd->addArgument($referenceArgument);
 
         // list-constants sub-command
         $listConstantsCmd = $input->addCommand(
@@ -322,11 +333,11 @@ class PHP_CompatInfo_CLI
             )
         );
         $listConstantsCmd->addOption($referenceOption);
+        $listConstantsCmd->addOption($filterVersionOption);
+        $listConstantsCmd->addOption($filterOperatorOption);
         $listConstantsCmd->addOption($reportFileOption);
         $listConstantsCmd->addOption($helpReferenceOption);
-        $listConstantsCmd->addArgument($extensionArgument);
-        $listConstantsCmd->addArgument($versionArgument);
-        $listConstantsCmd->addArgument($conditionArgument);
+        $listConstantsCmd->addArgument($referenceArgument);
 
 
         try {
@@ -560,6 +571,13 @@ class PHP_CompatInfo_CLI
             $reports = $result->command->options['report'];
         }
 
+        if (isset($result->command->options['filterVersion'])) {
+            $options['filterVersion'] = $result->command->options['filterVersion'];
+        }
+        if (isset($result->command->options['filterOperator'])) {
+            $options['filterOperator'] = $result->command->options['filterOperator'];
+        }
+
         if ('print' == $command) {
             if (count($reports) == 0) {
                 $input->displayError('You must supply at least a type of report');
@@ -571,23 +589,14 @@ class PHP_CompatInfo_CLI
             $source   = array_shift($elements);
             $reports  = array('reference');
 
-            $options['_filter']['extension'] = null;
-            $options['_filter']['version']   = null;
-            $options['_filter']['condition'] = null;
+            $options['filterReference'] = null;
 
         } elseif ('list' == substr($command, 0, 4)) {
             list(, $source) = explode('-', $command);
             if ($source == 'references') {
                 $reports = array('database');
             } else {
-                $options['_filter']['extension'] = $result->command->args['extension'];
-                if ($source == 'extensions') {
-                    $options['_filter']['version']   = null;
-                    $options['_filter']['condition'] = null;
-                } else {
-                    $options['_filter']['version']   = $result->command->args['version'];
-                    $options['_filter']['condition'] = $result->command->args['condition'];
-                }
+                $options['filterReference'] = $result->command->args['reference'];
 
                 $reports  = array('reference');
                 $elements = array();

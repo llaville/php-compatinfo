@@ -134,6 +134,11 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
      */
     protected function applyFilter($release, $items, &$elements)
     {
+        if ($release === false) {
+            // to all references that are not yet fully releases explained
+            $release = '';
+        }
+
         foreach ($items as $name => $versions) {
             if ($this->filter['extension'] === true) {
                 $compare = $release;

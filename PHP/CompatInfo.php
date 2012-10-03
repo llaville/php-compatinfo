@@ -47,7 +47,8 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
-class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
+class PHP_CompatInfo extends PHP_CompatInfo_Filter
+    implements SplSubject, IteratorAggregate, Countable
 {
     /**
      * @var array
@@ -193,6 +194,8 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             ),
             'verbose'          => false,
             'fileExtensions'   => array('php', 'inc', 'phtml'),
+            'filterVersion'    => 'php_4.0.0',
+            'filterOperator'   => 'ge',
             'exclude'          => array(),
             'cacheDriver'      => 'file',
             'cacheOptions'     => array(
@@ -225,6 +228,16 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
         // loads data dictionaries reference
         $this->loadReference($this->options['reference'], $options);
+    }
+
+    /**
+     * Returns all options
+     *
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->options;
     }
 
     /**
@@ -1025,8 +1038,13 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             return;
         }
 
-        $category = (isset($args[0])) ? $args[0] : null;
-        $pattern  = (isset($args[1])) ? $args[1] : null;
+        $category = isset($args[0]) ? $args[0] : null;
+        $pattern  = isset($args[1]) ? $args[1] : null;
+
+        self::$filterVersion = isset($args[2])
+            ? $args[2] : $this->options['filterVersion'];
+        self::$filterOperator = isset($args[3])
+            ? $args[3] : $this->options['filterOperator'];
 
         if (isset($category) && !$this->isValid($category, $group)) {
             throw new PHP_CompatInfo_Exception(
@@ -1047,13 +1065,24 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $results = $this->results[0][$group];
         }
 
-        if (isset($pattern)) {
+        if (isset($pattern) && is_string($pattern)) {
             foreach ($results[$category] as $name => $values) {
                 if (preg_match("/$pattern/", $name) === 0) {
                     unset($results[$category][$name]);
                 }
             }
         }
+
+        if (in_array(
+            $group, array(
+                'extensions',
+                'namespaces', 'interfaces', 'traits', 'classes',
+                'functions', 'constants'
+            )
+        )) {
+            self::applyFilter($results, $category);
+        }
+
         if (isset($category)) {
             if (isset($results[$category])) {
                 $results = $results[$category];

@@ -23,7 +23,7 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
-abstract class PHP_CompatInfo_Report
+abstract class PHP_CompatInfo_Report extends PHP_CompatInfo_Filter
 {
     /**
      * @var int Report character width (default to 79)
@@ -75,6 +75,10 @@ abstract class PHP_CompatInfo_Report
             $report = array();
             $base   = false;
         }
+        $options = $pci->getOptions();
+
+        self::$filterVersion  = $options['filterVersion'];
+        self::$filterOperator = $options['filterOperator'];
 
         $allWarnings = array_unique(
             array_merge($warnings, $pci->getWarnings())
@@ -325,6 +329,8 @@ abstract class PHP_CompatInfo_Report
      */
     protected function printTBody($elements, $filename, $base)
     {
+        self::applyFilter($elements);
+
         ksort($elements);
 
         foreach ($elements as $category => $items) {

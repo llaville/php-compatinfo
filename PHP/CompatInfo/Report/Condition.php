@@ -39,6 +39,8 @@ class PHP_CompatInfo_Report_Condition extends PHP_CompatInfo_Report
             return;
         }
 
+        self::applyFilter($elements, 'Core');
+
         $ccl = array(
             'function_exists',
             'extension_loaded',
