@@ -5,6 +5,15 @@ PHP_CompatInfo ChangeLog
 :stylesdir:   styles
 :scriptsdir:  js
 
+== Version 2.9.0 (2012-10-29)
+
+.Additions and changes:
+* all required resources used now the default autoloader
+
+.Bug fixes:
+* none
+
+
 == Version 2.8.1 (2012-09-28)
 
 .Additions and changes:

@@ -27,6 +27,8 @@ function phpCompatInfo_autoload($className)
     if ($classes === null) {
 
         $classes = array(
+            'PHP_CompatInfo_CLI'
+                => 'PHP/CompatInfo/CLI.php',
             'PHP_CompatInfo_TokenParser'
                 => 'PHP/CompatInfo/TokenParser.php',
             'PHP_CompatInfo_Token_STRING'
@@ -276,3 +278,5 @@ require_once 'ezc/Base/base.php';
 spl_autoload_register(array('ezcBase', 'autoload'));
 
 require_once 'Bartlett/PHP/Reflect/Autoload.php';
+
+require_once 'PHP/Timer/Autoload.php';

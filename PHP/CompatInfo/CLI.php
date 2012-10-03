@@ -12,7 +12,6 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
-require_once dirname(__FILE__) . '/Autoload.php';
 
 /**
  * The Command Line Interpreter version provides ability to

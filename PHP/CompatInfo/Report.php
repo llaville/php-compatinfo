@@ -12,7 +12,6 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
-require_once 'PHP/Timer.php';
 
 /**
  * Abstract base class of each report
