@@ -395,7 +395,6 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
             $suffix = '.php';
             if (is_dir($dataSource)) {
                 $directory = $dataSource;
-                $prefix    = '';
 
                 if ($recursive === false) {
                     $iterator = new DirectoryIterator($directory);
@@ -411,9 +410,6 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
                     }
                 }
             } else {
-                $directory = dirname($dataSource);
-                $prefix    = basename($dataSource, $suffix);
-
                 $files[] = realpath($dataSource);
             }
 
