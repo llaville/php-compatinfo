@@ -80,8 +80,7 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
         }
 
         if (isset($options['reportFile'])) {
-            $generatedReport = ob_get_contents();
-            ob_end_flush();
+            $generatedReport = ob_get_clean();
 
             file_put_contents(
                 $options['reportFile'], $generatedReport,

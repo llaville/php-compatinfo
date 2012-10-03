@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2012-10-03</date>
- <time>16:09:10</time>
+ <time>16:25:27</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -39,6 +39,8 @@ Additions and changes:
 - all required resources used now the default autoloader
 - allow to run either a stand-alone or pear installed version
 - Reports refactoring (33 percent code reduced)
+- Source, Database and Reference reports
+will not be print anymore on standard output when --report-file option used
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
@@ -1326,6 +1328,8 @@ Additions and changes:
 - all required resources used now the default autoloader
 - allow to run either a stand-alone or pear installed version
 - Reports refactoring (33 percent code reduced)
+- Source, Database and Reference reports
+will not be print anymore on standard output when --report-file option used
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
