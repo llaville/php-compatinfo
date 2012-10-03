@@ -307,7 +307,7 @@ class PHP_CompatInfo_Reference_Standard
             'metaphone'                      => array('4.0.0', ''),
             'microtime'                      => array('4.0.0', '', '5.0.0'),
             'min'                            => array('4.0.0', ''),
-            'mkdir'                          => array('4.0.0', '', '4.0.0, 4.2.0, 5.0.0, 5.0.0'),
+            'mkdir'                          => array('4.0.0', '', '4.0.0, 4.0.0, 5.0.0, 5.0.0'),
             'mt_getrandmax'                  => array('4.0.0', ''),
             'mt_rand'                        => array('4.0.0', ''),
             'mt_srand'                       => array('4.0.0', ''),

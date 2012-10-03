@@ -17,6 +17,7 @@ will not be print anymore on standard output when --report-file option used
 
 .Bug fixes:
 * PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
+* standard reference fixed: mkdir mode parameter is required since PHP 4.0.0 and not 4.2.0 (it became optional)
 
 
 == Version 2.8.1 (2012-09-28)
