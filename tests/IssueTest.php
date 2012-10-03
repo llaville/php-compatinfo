@@ -467,7 +467,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 
         if (extension_loaded('memcache')) {
             $category = 'memcache';
-            $versions = array('4.3.3', '');
+            $versions = array('4.3.3', '', '0.2', '');
         } else {
             $category = 'user';
             $versions = array('4.0.0', '');
@@ -482,7 +482,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 
         if (extension_loaded('PDO')) {
             $category = 'PDO';
-            $versions = array('5.1.0', '');
+            $versions = array('5.1.0', '', '', '');
         } else {
             $category = 'user';
             $versions = array('4.0.0', '');

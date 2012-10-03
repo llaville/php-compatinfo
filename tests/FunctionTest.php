@@ -104,7 +104,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                     'excluded' => false,
                 ),
                 'xdebug_start_trace' => array(
-                    'versions' => array('4.0.0', ''),
+                    'versions' => array('4.0.0', '', '1.2.0', ''),
                     'uses' => 1,
                     'sources' => array(TEST_FILES_PATH . 'source2.php'),
                     'namespace' => '\\',
@@ -118,28 +118,28 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
 
         $expected = array(
             'function_exists' => array(
-                'versions' => array('4.0.0', ''),
+                'versions' => array('4.0.0', '', '4.0.0', ''),
                 'uses' => 2,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
                 'excluded' => false,
             ),
             'define' => array(
-                'versions' => array('4.0.0', ''),
+                'versions' => array('4.0.0', '', '4.0.0', ''),
                 'uses' => 2,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
                 'excluded' => false,
             ),
             'debug_backtrace' => array(
-                'versions' => array('4.3.0', ''),
+                'versions' => array('4.3.0', '', '4.3.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
                 'excluded' => false,
             ),
             'debug_print_backtrace' => array(
-                'versions' => array('5.0.0', ''),
+                'versions' => array('5.0.0', '', '5.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
@@ -152,35 +152,35 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
 
         $expected = array(
             'file_put_contents' => array(
-                'versions' => array('5.0.0', ''),
+                'versions' => array('5.0.0', '', '5.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
                 'excluded' => false,
             ),
             'fopen' => array(
-                'versions' => array('4.0.0', ''),
+                'versions' => array('4.0.0', '', '4.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
                 'excluded' => false,
             ),
             'fwrite' => array(
-                'versions' => array('4.0.0', ''),
+                'versions' => array('4.0.0', '', '4.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
                 'excluded' => false,
             ),
             'fclose' => array(
-                'versions' => array('4.0.0', ''),
+                'versions' => array('4.0.0', '', '4.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
                 'excluded' => false,
             ),
             'array_fill' => array(
-                'versions' => array('4.2.0', ''),
+                'versions' => array('4.2.0', '', '4.2.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
@@ -194,7 +194,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
         if (extension_loaded('xdebug')) {
             $expected = array(
                 'xdebug_start_trace' => array(
-                    'versions' => array('4.3.0', ''),
+                    'versions' => array('4.3.0', '', '1.2.0', ''),
                     'uses' => 1,
                     'sources' => array(TEST_FILES_PATH . 'source2.php'),
                     'namespace' => '\\',
@@ -243,7 +243,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                     'excluded' => false,
                 ),
                 'xdebug_start_trace' => array(
-                    'versions' => array('4.0.0', ''),
+                    'versions' => array('4.0.0', '', '1.2.0', ''),
                     'uses' => 1,
                     'sources' => array(TEST_FILES_PATH . 'source2.php'),
                     'namespace' => '\\',
@@ -270,14 +270,14 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
 
         $expected = array(
             'debug_backtrace' => array(
-                'versions' => array('4.3.0', ''),
+                'versions' => array('4.3.0', '', '4.3.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
                 'excluded' => false,
             ),
             'debug_print_backtrace' => array(
-                'versions' => array('5.0.0', ''),
+                'versions' => array('5.0.0', '', '5.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',

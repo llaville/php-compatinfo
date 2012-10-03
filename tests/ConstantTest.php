@@ -94,14 +94,14 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
 
         $expected = array(
             'NULL' => array(
-                'versions' => array('4.0.0', ''),
+                'versions' => array('4.0.0', '', '4.0.0', ''),
                 'uses' => 2,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
                 'excluded' => false,
             ),
             'FALSE' => array(
-                'versions' => array('4.0.0', ''),
+                'versions' => array('4.0.0', '', '4.0.0', ''),
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
@@ -159,7 +159,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
 
         $expected = array(
             'NULL' => array(
-                'versions' => array('4.0.0', ''),
+                'versions' => array('4.0.0', '', '4.0.0', ''),
                 'uses' => 2,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
