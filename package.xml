@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2012-10-03</date>
- <time>09:12:47</time>
+ <time>09:33:32</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -37,6 +37,7 @@ content of dictionary references.
  <notes>
 Additions and changes:
 - all required resources used now the default autoloader
+- allow to run either a stand-alone or pear installed version
 
 Bug fixes:
 - none
@@ -1322,6 +1323,7 @@ Bug fixes:
    <notes>
 Additions and changes:
 - all required resources used now the default autoloader
+- allow to run either a stand-alone or pear installed version
 
 Bug fixes:
 - none

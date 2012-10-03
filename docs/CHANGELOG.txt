@@ -9,6 +9,7 @@ PHP_CompatInfo ChangeLog
 
 .Additions and changes:
 * all required resources used now the default autoloader
+* allow to run either a stand-alone or pear installed version
 
 .Bug fixes:
 * none

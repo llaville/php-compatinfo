@@ -1,6 +1,31 @@
 #!@php_bin@
 <?php
+/**
+ * PHP_CompatInfo (cli)
+ *
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  SVN: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 
-require_once 'Bartlett/PHP/CompatInfo/CLI.php';
+$autoloader = 'PHP'
+    . DIRECTORY_SEPARATOR . 'CompatInfo'
+    . DIRECTORY_SEPARATOR . 'Autoload.php';
+
+if (strpos('@php_bin@', '@php_bin') === 0) {
+    // stand-alone version is running
+    $autoloader = dirname(__FILE__) . DIRECTORY_SEPARATOR . '..'
+        . DIRECTORY_SEPARATOR . $autoloader;
+} else {
+    // PEAR installed version is running
+    $autoloader = 'Bartlett' . DIRECTORY_SEPARATOR . $autoloader;
+}
+
+require_once $autoloader;
 
 PHP_CompatInfo_CLI::main();
