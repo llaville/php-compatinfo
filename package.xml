@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2012-10-03</date>
- <time>09:33:32</time>
+ <time>10:05:50</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -40,7 +40,7 @@ Additions and changes:
 - allow to run either a stand-alone or pear installed version
 
 Bug fixes:
-- none
+- PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -1326,7 +1326,7 @@ Additions and changes:
 - allow to run either a stand-alone or pear installed version
 
 Bug fixes:
-- none
+- PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
    </notes>
   </release>
   <release>

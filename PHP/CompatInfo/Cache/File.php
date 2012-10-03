@@ -104,8 +104,6 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
                 || (count($prev) !== count($current))
             ) {
                 $ok = false;
-            } elseif (count(array_diff($prev, $current))) {
-                $ok = false;
             } else {
                 $excludeKeys1 = array_keys($prev['exclude']);
                 $excludeKeys2 = array_keys($this->options['exclude']);
@@ -127,6 +125,12 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
                         if (count(array_diff($data, $info))) {
                             $ok = false;
                             break;
+                        }
+                    }
+                    if ($ok) {
+                        unset($prev['exclude'], $current['exclude']);
+                        if (count(array_diff($prev, $current))) {
+                            $ok = false;
                         }
                     }
                 }
