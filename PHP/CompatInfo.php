@@ -1265,27 +1265,18 @@ class PHP_CompatInfo implements SplSubject, IteratorAggregate, Countable
 
         list ($extension, $values) = each($data[$name]);
 
-        if (isset($values['extVersions'])) {
-            // reserved for future feature
-            list($extMin, $extMax) = $values['extVersions'];
-            unset($values['extVersions']);
-        } else {
-            // in case Custom Reference is not API 2.8 compatible
-            $extMin = $extMax = false;
-        }
-
-        if (count($values) == 2) {
-            list ($verMin, $verMax) = $values;
+        if (count($values) == 4) {
+            list ($verMin, $verMax, $extMin, $extMax) = $values;
             $arguments = null;
         } else {
-            list ($verMin, $verMax, $arguments) = $values;
+            list ($verMin, $verMax, $extMin, $extMax, $arguments) = $values;
             $arguments = explode(',', str_replace(' ', '', $arguments));
         }
 
         $ref = array(
             $extension => array(
                 $name => array(
-                    'versions'  => array($verMin, $verMax),
+                    'versions'  => array($verMin, $verMax, $extMin, $extMax),
                     'arguments' => $arguments
                 )
             )

@@ -24,10 +24,12 @@
  */
 class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
 {
+    protected $extensionsCount;
+
     /**
      * Class constructor of database references report
      *
-     * @param string $source   Data source
+     * @param string $source   not used
      * @param array  $options  Options for parser
      * @param array  $warnings List of warning messages already produced
      */
@@ -60,6 +62,7 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
             ob_start();
         }
 
+        $this->typeReport = array('short' => 'extension', 'long' => '');
         $this->generate($report, false, $options['verbose']);
 
         if (is_array($warnings)) {
@@ -91,20 +94,14 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
      * Prints a reference report about all extensions supported
      *
      * @param array  $report  Report data to produce
-     * @param string $base    Base directory of data source
+     * @param string $base    not used
      * @param int    $verbose Verbose level (0: none, 1: warnings, ...)
      *
      * @return void
      */
     public function generate($report, $base, $verbose)
     {
-        echo PHP_EOL;
-        echo str_repeat('-', $this->width)        . PHP_EOL;
-        echo 'PHP COMPAT INFO DATABASE REFERENCE' . PHP_EOL;
-        echo str_repeat('-', $this->width) . PHP_EOL;
-        echo '  EXTENSIONS' . str_repeat(' ', ($this->width - 46))
-            . 'EXTENSION         PHP min/Max'  . PHP_EOL;
-        echo str_repeat('-', $this->width) . PHP_EOL;
+        $this->printTHead($base, null);
 
         $extensions  = get_loaded_extensions();
         $totalLoaded = 0;
@@ -112,7 +109,10 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
         foreach ($report as $element => $data) {
 
             $values    = $data;
-            $extension = array_pop($values);
+            $extension = $values[2];
+            if (isset($values[3])) {
+                $extension .= '/' . $values[3];
+            }
             $versions  = $values[0];
             if (!empty($values[1])) {
                 $versions .= '/' . $values[1];
@@ -127,17 +127,51 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
             echo ' ';
 
             echo $element
-                . str_repeat(' ', (43 - strlen($element)));
+                . str_repeat(' ', (38 - strlen($element)));
             echo $extension
                 . str_repeat(' ', (18 - strlen($extension)));
             echo $versions
                 . str_repeat(' ', (16 - strlen($versions)));
             echo PHP_EOL;
         }
+        $this->extensionsCount = array(count($report), $totalLoaded);
+
+        $this->printTFoot();
+    }
+
+    /**
+     * Prints header of report
+     *
+     * @param string $base     not used
+     * @param string $filename not used
+     *
+     * @return void
+     */
+    protected function printTHead($base, $filename)
+    {
+        $label = strtoupper($this->typeReport['short']);
+
+        echo PHP_EOL;
+        echo str_repeat('-', $this->width)        . PHP_EOL;
+        echo 'PHP COMPAT INFO DATABASE REFERENCE' . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
-        echo 'A TOTAL OF ' . count($report) . ' EXTENSIONS WERE FOUND';
-        if ($totalLoaded > 0) {
-            echo ' AND ' . $totalLoaded . ' LOADED';
+        echo '  ' . $label . str_repeat(' ', (38 - strlen($label)))
+            . 'VERSION' . str_repeat(' ', ($this->width - 68))
+            . 'PHP min/Max' . PHP_EOL;
+        echo str_repeat('-', $this->width) . PHP_EOL;
+    }
+
+    /**
+     * Prints footer of report
+     *
+     * @return void
+     */
+    protected function printTFoot()
+    {
+        echo str_repeat('-', $this->width) . PHP_EOL;
+        echo 'A TOTAL OF ' . $this->extensionsCount[0] . ' EXTENSIONS WERE FOUND';
+        if ($this->extensionsCount[1] > 0) {
+            echo ' AND ' . $this->extensionsCount[1] . ' LOADED';
         }
         echo PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
@@ -145,4 +179,5 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
         echo str_repeat('-', $this->width) . PHP_EOL;
         echo PHP_EOL;
     }
+
 }

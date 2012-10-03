@@ -143,9 +143,16 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
             if (version_compare(
                 $compare, $this->filter['version'], $this->filter['condition']
             )) {
-                $versions['extVersions'][0] = $release;
-                $versions['extVersions'][1] = false;
-                $elements[$name]            = $versions;
+                /**
+                 * offset description
+                 *  0     php min value
+                 *  1     php Max value
+                 *  2     ext/release min value
+                 *  3     ext/release Max value
+                 *  4+    (optional) argument with php min value
+                 */
+                array_splice($versions, 2, 0, array($release, ''));
+                $elements[$name] = $versions;
             }
         }
     }
@@ -161,8 +168,8 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
      */
     protected function setMaxExtensionVersion($version, $name, &$elements)
     {
-        if (isset($elements[$name]['extVersions'])) {
-            $elements[$name]['extVersions'][1] = $version;
+        if (isset($elements[$name])) {
+            $elements[$name][3] = $version;
         }
     }
 

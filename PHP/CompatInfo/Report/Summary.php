@@ -37,6 +37,12 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
     protected $count;
 
     /**
+     * Number of file in data source parsed
+     * @var int
+     */
+    protected $filesCount;
+
+    /**
      * Prints a summary report with count of extensions, interfaces, classes,
      * functions and constants, for each file of the data source
      *
@@ -63,7 +69,7 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
 
         $this->printTHead($base, $verbose);
         if ($verbose < 3) {
-        
+
             $this->globalVersions = $report['versions'];
             $files                = array();
 
@@ -92,26 +98,28 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
                     break;
                 }
             }
-            $files      = array_unique($files);
-            $filesCount = count($files);
+            $files            = array_unique($files);
+            $this->filesCount = count($files);
 
         } else {
-            $this->printTBody($report, $base);
-            $filesCount = count($report);
+            $this->printTBody($report, null, $base);
+            $this->filesCount = count($report);
         }
-        $this->printTFoot($filesCount);
+        $this->printTFoot();
     }
 
     /**
      * Prints header of report
      *
-     * @param string $base Base directory of data source
+     * @param string $base    Base directory of data source
+     * @param int    $verbose Verbose level (0: none, 1: warnings, ...)
      *
      * @return void
      */
-    private function printTHead($base, $verbose)
+    protected function printTHead($base, $verbose)
     {
         echo PHP_EOL;
+        echo str_repeat('-', $this->width)    . PHP_EOL;
         echo 'PHP COMPAT INFO REPORT SUMMARY' . PHP_EOL;
         if ($verbose < 3) {
             return;
@@ -132,9 +140,9 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
      *
      * @return void
      */
-    private function printTFoot($filesCount)
+    protected function printTFoot()
     {
-        if ($filesCount > 0) {
+        if ($this->filesCount > 0) {
             echo str_repeat('-', $this->width) . PHP_EOL;
             echo 'A TOTAL OF ' . PHP_EOL . ' ';
             foreach (array_keys($this->count) as $category) {
@@ -155,8 +163,8 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
                 }
             }
             echo PHP_EOL;
-            echo 'WERE FOUND IN ' . $filesCount
-                . ' FILE' . ($filesCount > 1 ? 'S' : '') . PHP_EOL;
+            echo 'WERE FOUND IN ' . $this->filesCount
+                . ' FILE' . ($this->filesCount > 1 ? 'S' : '') . PHP_EOL;
             if ($this->ccn > 0) {
                 echo 'WITH CONDITIONAL CODE LEVEL ' . $this->ccn . PHP_EOL;
             }
@@ -175,12 +183,13 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
     /**
      * Prints body of report
      *
-     * @param array  $report Elements of report
-     * @param string $base   Base directory of data source
+     * @param array  $elements Elements of report
+     * @param string $filename not used
+     * @param string $base     Base directory of data source
      *
      * @return void
      */
-    private function printTBody($report, $base)
+    protected function printTBody($report, $filename, $base)
     {
         $currentFolder = '';
 

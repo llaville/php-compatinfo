@@ -25,98 +25,6 @@
 class PHP_CompatInfo_Report_Condition extends PHP_CompatInfo_Report
 {
     /**
-     * Prints a Condition report
-     *
-     * @param array  $report  Report data to produce
-     * @param string $base    Base directory of data source
-     * @param int    $verbose Verbose level (0: none, 1: warnings, ...)
-     *
-     * @return void
-     */
-    public function generate($report, $base, $verbose)
-    {
-        if ($verbose < 3) {
-            // summary report
-
-            $functions  = $report['functions'];
-            $conditions = $report['conditions'];
-
-            $this->total          = array();
-            $this->totalExcludes  = 0;
-            $this->globalVersions = array('4.0.0', '');
-
-            $this->printTHead($base, false);
-            $this->printTBody($functions, ($verbose == 2), $base);
-            $this->printTFoot();
-
-        } else {
-            // group by files report
-
-            foreach ($report as $filename => $elements) {
-                $this->total          = array();
-                $this->totalExcludes  = 0;
-                $this->globalVersions = array('4.0.0', '');
-
-                $this->printTHead($base, $filename);
-                $this->printTBody($elements['functions'], false, $base);
-                $this->printTFoot();
-            }
-        }
-        echo PHP_EOL;
-    }
-
-    /**
-     * Prints header of report
-     *
-     * @param string $base     Base directory of data source
-     * @param string $filename Current file
-     *
-     * @return void
-     */
-    private function printTHead($base, $filename)
-    {
-        echo PHP_EOL;
-        echo 'BASE: ' . $base . PHP_EOL;
-        echo str_replace($base, 'FILE: ', $filename) . PHP_EOL;
-        echo str_repeat('-', $this->width)           . PHP_EOL;
-        echo 'PHP COMPAT INFO CONDITION SUMMARY'     . PHP_EOL;
-        echo str_repeat('-', $this->width)           . PHP_EOL;
-        echo '  CONDITION' . str_repeat(' ', ($this->width - 50))
-            . 'EXTENSION' . str_repeat(' ', ($this->width - 70))
-            . 'VERSION' . str_repeat(' ', ($this->width - 70))
-            . 'COUNT' . PHP_EOL;
-        echo str_repeat('-', $this->width) . PHP_EOL;
-    }
-
-    /**
-     * Prints footer of report
-     *
-     * @return void
-     */
-    private function printTFoot()
-    {
-        $total = count($this->total);
-        echo str_repeat('-', $this->width).PHP_EOL;
-        echo 'A TOTAL OF ' . $total
-            . ' CONDITION' . ($total > 1 ? 'S WERE' : ' WAS')
-            . ' FOUND';
-        if ($this->totalExcludes > 0) {
-            echo ' AND ' . $this->totalExcludes . ' EXCLUDED FROM PARSING';
-        }
-        echo PHP_EOL;
-        if ($total > 0) {
-            echo 'REQUIRED PHP ' . $this->globalVersions[0] .  ' (MIN) ';
-            if (!empty($this->globalVersions[1])) {
-                echo $this->globalVersions[1] . ' (MAX)';
-            }
-            echo PHP_EOL;
-        }
-        echo str_repeat('-', $this->width) . PHP_EOL;
-        echo PHP_Timer::resourceUsage()    . PHP_EOL;
-        echo str_repeat('-', $this->width) . PHP_EOL;
-    }
-
-    /**
      * Prints body of report
      *
      * @param array  $elements List of function to print
@@ -125,7 +33,7 @@ class PHP_CompatInfo_Report_Condition extends PHP_CompatInfo_Report
      *
      * @return void
      */
-    private function printTBody($elements, $filename, $base)
+    protected function printTBody($elements, $filename, $base)
     {
         if (!isset($elements['Core'])) {
             return;
@@ -140,7 +48,6 @@ class PHP_CompatInfo_Report_Condition extends PHP_CompatInfo_Report
             'interface_exists',
             'trait_exists',
         );
-        $extension = 'Core';
 
         foreach ($elements['Core'] as $function => $data) {
             if (!in_array($function, $ccl)) {
@@ -154,7 +61,22 @@ class PHP_CompatInfo_Report_Condition extends PHP_CompatInfo_Report
             } else {
                 echo ' ';
             }
-            $versions = implode('  ', $data['versions']);
+
+            // PHP min/Max
+            $versions = $data['versions'][0];
+            if (!empty($data['versions'][1])) {
+                $versions .= '/' . $data['versions'][1];
+            }
+
+            // EXT-min/Max
+            $extension = 'Core';
+            if (!empty($data['versions'][2])) {
+                $extension .= '-' . $data['versions'][2];
+            }
+            if (!empty($values[3])) {
+                $extension .= '/' . $data['versions'][3];
+            }
+
             echo ' ';
             if (strlen($function) < 38) {
                 echo $function
@@ -163,8 +85,13 @@ class PHP_CompatInfo_Report_Condition extends PHP_CompatInfo_Report
                 echo $function . PHP_EOL;
                 echo str_repeat(' ', 40);
             }
-            echo $extension
-                . str_repeat(' ', (18 - strlen($extension)));
+            if (strlen($extension) < 18) {
+                echo $extension
+                    . str_repeat(' ', (18 - strlen($extension)));
+            } else {
+                echo $extension . PHP_EOL
+                    . str_repeat(' ', 40);
+            }
             echo $versions
                 . str_repeat(' ', (16 - strlen($versions)));
             echo str_repeat(

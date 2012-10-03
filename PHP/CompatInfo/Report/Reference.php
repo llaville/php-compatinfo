@@ -25,11 +25,6 @@
 class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
 {
     /**
-     * @var string
-     */
-    private $_list;
-
-    /**
      * Class constructor of reference report
      *
      * @param string $source   Data source
@@ -92,7 +87,10 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
             ob_start();
         }
 
-        $this->_list = $source;
+        $length = strcasecmp($source, 'classes') == 0 ? -2 : -1;
+        $this->typeReport = array(
+            'short' => substr($source, 0, $length), 'long' => $source
+        );
         $this->generate($report, false, $options['verbose']);
 
         if (is_array($warnings)) {
@@ -132,67 +130,97 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
      */
     public function generate($report, $base, $verbose)
     {
-        $listUC = strtoupper($this->_list);
+        $this->totalExcludes = $this->totalConditions = 0;
+
+        $this->total = $report[$this->typeReport['long']];
+
+        $this->printTHead(null, null);
+        $this->printTBody($this->total, null, null);
+        $this->printTFoot();
+
+        echo PHP_EOL;
+    }
+
+    /**
+     * Prints header of report
+     *
+     * @param string $base     not used
+     * @param string $filename not used
+     *
+     * @return void
+     */
+    protected function printTHead($base, $filename)
+    {
+        $label = strtoupper($this->typeReport['short']);
+
+        if ('EXTENSION' === $label) {
+            $extHeader = 'VERSION' . str_repeat(' ', ($this->width - 68));
+        } else {
+            $extHeader = 'EXT min/Max' . str_repeat(' ', ($this->width - 72));
+        }
 
         echo PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
-        echo 'PHP COMPAT INFO ' . $listUC . ' REFERENCE' . PHP_EOL;
+        echo 'PHP COMPAT INFO ' . $label . ' REFERENCE' . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
-        echo str_pad($listUC, 10)
-            . str_repeat(' ', ($this->width - 44))
-            . 'EXTENSION          PHP min/Max'  . PHP_EOL;
+        echo str_pad($label, 10)
+            . str_repeat(' ', ($this->width - 49))
+            . $extHeader
+            . 'PHP min/Max' . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
+    }
 
-        $elements = $report[$this->_list];
+    /**
+     * Prints body of report
+     *
+     * @param array  $elements List of element to print
+     * @param string $filename not used
+     * @param string $base     not used
+     *
+     * @return void
+     */
+    protected function printTBody($elements, $filename, $base)
+    {
         ksort($elements);
 
         foreach ($elements as $element => $data) {
 
-            if ('extensions' == $this->_list) {
+            if ('extensions' == $this->typeReport['long']) {
                 $values    = $data;
-                $extension = array_pop($values);
+                $extension = $element;
             } else {
                 list ($extension, $values) = each($data);
             }
-            if (isset($values['extVersions'])
-                && is_array($values['extVersions'])
-            ) {
-                if (is_string($values['extVersions'][0])) {
-                    // min extension version
-                    $extension .= '-' . $values['extVersions'][0];
-                }
-                if (is_string($values['extVersions'][1])) {
-                    // Max extension version
-                    $extension .= '/' . $values['extVersions'][1];
-                }
-                unset($values['extVersions']);
-            }
 
+            // PHP min/Max
             $versions = $values[0];
             if (!empty($values[1])) {
                 $versions .= '/' . $values[1];
             }
 
+            // EXT-min/Max
+            if ('extensions' == $this->typeReport['long']) {
+                $extension = $values[2];
+            } else {
+                if (!empty($values[2])) {
+                    $extension .= '-' . $values[2];
+                }
+                if (!empty($values[3])) {
+                    $extension .= '/' . $values[3];
+                }
+            }
+
             echo $element
-                . str_repeat(' ', (45 - strlen($element)));
+                . str_repeat(' ', (40 - strlen($element)));
             if (strlen($extension) < 18) {
                 echo $extension
-                    . str_repeat(' ', (19 - strlen($extension)));
+                    . str_repeat(' ', (18 - strlen($extension)));
             } else {
                 echo $extension . PHP_EOL
-                    . str_repeat(' ', 64);
+                    . str_repeat(' ', 58);
             }
             echo $versions . PHP_EOL;
         }
-        $total  = count($report[$this->_list]);
-        $length = strcasecmp($this->_list, 'classes') == 0 ? -2 : -1;
-        echo str_repeat('-', $this->width) . PHP_EOL;
-        echo 'A TOTAL OF ' . $total . ' ' . substr($listUC, 0, $length)
-            . ($total > 1 ? ($length == -2 ? 'E' : '') . 'S WERE' : ' WAS')
-            . ' FOUND' . PHP_EOL;
-        echo str_repeat('-', $this->width) . PHP_EOL;
-        echo PHP_Timer::resourceUsage()    . PHP_EOL;
-        echo str_repeat('-', $this->width) . PHP_EOL;
-        echo PHP_EOL;
     }
+
 }

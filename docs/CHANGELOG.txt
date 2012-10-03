@@ -10,6 +10,7 @@ PHP_CompatInfo ChangeLog
 .Additions and changes:
 * all required resources used now the default autoloader
 * allow to run either a stand-alone or pear installed version
+* Reports refactoring (33 percent code reduced)
 
 .Bug fixes:
 * PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not

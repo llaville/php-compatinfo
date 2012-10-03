@@ -22,8 +22,13 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
-class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
+class PHP_CompatInfo_Report_Source
 {
+    /**
+     * @var int Report character width (default to 79)
+     */
+    protected $width = 79;
+
     /**
      * Class constructor of source tokens report
      *
@@ -89,17 +94,9 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
             $reflect = new PHP_Reflect();
             $tokens  = $reflect->scan($filename);
 
-            echo PHP_EOL;
-            echo 'BASE: ' . $base . PHP_EOL;
-            echo str_replace($base, 'FILE: ', $filename) . PHP_EOL;
-            echo str_repeat('-', $this->width)           . PHP_EOL;
-            echo 'PHP COMPAT INFO SOURCE SUMMARY'        . PHP_EOL;
+            $this->printTHead($base, $filename, $verbose);
 
             if ($verbose == 1) {
-                echo str_repeat('-', $this->width) . PHP_EOL;
-                echo 'LINE   TOKEN                          TEXT' . PHP_EOL;
-                echo str_repeat('-', $this->width).PHP_EOL;
-
                 foreach ($tokens as $token) {
                     if ($token[0] == 'T_WHITESPACE') {
                         $text = '';
@@ -122,16 +119,52 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
             }
 
             $total = $reflect->getLinesOfCode();
-
-            echo str_repeat('-', $this->width) . PHP_EOL;
-            echo 'A TOTAL OF ' . $total['loc'] . ' LINE(S)';
-            echo ' WITH ' . $total['cloc'] . ' COMMENT LINE(S)';
-            echo ' AND ' . $total['ncloc'] . ' CODE LINE(S)'
-                . PHP_EOL;
-            echo str_repeat('-', $this->width) . PHP_EOL;
-            echo PHP_Timer::resourceUsage()    . PHP_EOL;
-            echo str_repeat('-', $this->width) . PHP_EOL;
+            $this->printTFoot($total);
         }
         echo PHP_EOL;
     }
+
+    /**
+     * Prints header of report
+     *
+     * @param string $base     Base directory of data source
+     * @param string $filename Current file
+     * @param int    $verbose  Verbose level (0: none, 1: warnings, ...)
+     *
+     * @return void
+     */
+    protected function printTHead($base, $filename, $verbose)
+    {
+        echo PHP_EOL;
+        echo 'BASE: ' . $base . PHP_EOL;
+        echo str_replace($base, 'FILE: ', $filename) . PHP_EOL;
+        echo str_repeat('-', $this->width)           . PHP_EOL;
+        echo 'PHP COMPAT INFO SOURCE SUMMARY'        . PHP_EOL;
+
+        if ($verbose == 1) {
+            echo str_repeat('-', $this->width) . PHP_EOL;
+            echo 'LINE   TOKEN                          TEXT' . PHP_EOL;
+            echo str_repeat('-', $this->width).PHP_EOL;
+        }
+    }
+
+    /**
+     * Prints footer of report
+     *
+     * @param array $total Count of code and comment lines
+     *
+     * @return void
+     */
+    protected function printTFoot($total)
+    {
+        echo str_repeat('-', $this->width) . PHP_EOL;
+        echo 'A TOTAL OF ' . $total['loc'] . ' LINE(S)';
+        echo ' WITH ' . $total['cloc'] . ' COMMENT LINE(S)';
+        echo ' AND ' . $total['ncloc'] . ' CODE LINE(S)'
+            . PHP_EOL;
+        echo str_repeat('-', $this->width) . PHP_EOL;
+        echo PHP_Timer::resourceUsage()    . PHP_EOL;
+        echo str_repeat('-', $this->width) . PHP_EOL;
+    }
+
 }
