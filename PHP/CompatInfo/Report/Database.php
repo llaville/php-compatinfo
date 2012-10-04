@@ -35,7 +35,16 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
      */
     public function __construct($source, $options, $warnings)
     {
-        $reference = new PHP_CompatInfo_Reference_ALL();
+        $extensions = $options['filterReference'];
+
+        if (isset($options['filterVersion'])) {
+            self::$filterVersion = $options['filterVersion'];
+        }
+        if (isset($options['filterOperator'])) {
+            self::$filterOperator = $options['filterOperator'];
+        }
+
+        $reference = new PHP_CompatInfo_Reference_ALL($extensions);
 
         $report = $reference->getExtensions();
 
@@ -81,41 +90,8 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
      */
     public function generate($report, $base, $verbose)
     {
-        $this->printTHead($base, null);
-
-        $extensions  = get_loaded_extensions();
-        $totalLoaded = 0;
-
-        foreach ($report as $element => $data) {
-
-            $values    = $data;
-            $extension = $values[2];
-            if (isset($values[3])) {
-                $extension .= '/' . $values[3];
-            }
-            $versions  = $values[0];
-            if (!empty($values[1])) {
-                $versions .= '/' . $values[1];
-            }
-
-            if (in_array($element, $extensions)) {
-                echo 'L';
-                $totalLoaded++;
-            } else {
-                echo ' ';
-            }
-            echo ' ';
-
-            echo $element
-                . str_repeat(' ', (38 - strlen($element)));
-            echo $extension
-                . str_repeat(' ', (18 - strlen($extension)));
-            echo $versions
-                . str_repeat(' ', (16 - strlen($versions)));
-            echo PHP_EOL;
-        }
-        $this->extensionsCount = array(count($report), $totalLoaded);
-
+        $this->printTHead(null, null);
+        $this->printTBody($report, null, null);
         $this->printTFoot();
     }
 
@@ -158,6 +134,55 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
         echo PHP_Timer::resourceUsage()    . PHP_EOL;
         echo str_repeat('-', $this->width) . PHP_EOL;
         echo PHP_EOL;
+    }
+
+    /**
+     * Prints body of report
+     *
+     * @param array  $elements List of element to print
+     * @param string $filename not used
+     * @param string $base     not used
+     *
+     * @return void
+     */
+    protected function printTBody($elements, $filename, $base)
+    {
+        $results = array('_dummy_' => $elements);
+        self::applyFilter($results);
+        $elements = $results['_dummy_'];
+
+        $extensions  = get_loaded_extensions();
+        $totalLoaded = 0;
+
+        foreach ($elements as $element => $data) {
+
+            $values    = $data;
+            $extension = $values[2];
+            if (isset($values[3])) {
+                $extension .= '/' . $values[3];
+            }
+            $versions  = $values[0];
+            if (!empty($values[1])) {
+                $versions .= '/' . $values[1];
+            }
+
+            if (in_array($element, $extensions)) {
+                echo 'L';
+                $totalLoaded++;
+            } else {
+                echo ' ';
+            }
+            echo ' ';
+
+            echo $element
+                . str_repeat(' ', (38 - strlen($element)));
+            echo $extension
+                . str_repeat(' ', (18 - strlen($extension)));
+            echo $versions
+                . str_repeat(' ', (16 - strlen($versions)));
+            echo PHP_EOL;
+        }
+        $this->extensionsCount = array(count($elements), $totalLoaded);
     }
 
 }

@@ -244,7 +244,10 @@ class PHP_CompatInfo_CLI
                 'description' => 'List all extensions supported.'
             )
         );
+        $listReferencesCmd->addOption($filterVersionOption);
+        $listReferencesCmd->addOption($filterOperatorOption);
         $listReferencesCmd->addOption($reportFileOption);
+        $listReferencesCmd->addArgument($referenceArgument);
 
         // list sub-command
         $listCmd = $input->addCommand(
@@ -596,11 +599,10 @@ class PHP_CompatInfo_CLI
             if ($source == 'references') {
                 $reports = array('database');
             } else {
-                $options['filterReference'] = $result->command->args['reference'];
-
                 $reports  = array('reference');
                 $elements = array();
             }
+            $options['filterReference'] = $result->command->args['reference'];
         }
 
         if (isset($result->command->options['recursive'])) {
