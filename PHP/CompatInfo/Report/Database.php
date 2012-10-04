@@ -35,28 +35,9 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
      */
     public function __construct($source, $options, $warnings)
     {
-        $referenceClassName = 'PHP_CompatInfo_Reference_' . $options['reference'];
+        $reference = new PHP_CompatInfo_Reference_ALL();
 
-        if (!class_exists($referenceClassName, true)) {
-            throw new PHP_CompatInfo_Exception(
-                'Reference type "' . $options['reference'] . '" not found.'
-            );
-        }
-
-        $extensions = PHP_CompatInfo_Reference_ALL::getDatabaseExtensions();
-
-        $reference = new $referenceClassName($extensions);
-
-        switch($options['reference']) {
-        case 'PHP4':
-            $version = '4';
-            break;
-        case 'PHP5':
-        default:
-            $version = null;
-        }
-
-        $report = $reference->getExtensions(null, $version);
+        $report = $reference->getExtensions();
 
         if (isset($options['reportFile'])) {
             ob_start();

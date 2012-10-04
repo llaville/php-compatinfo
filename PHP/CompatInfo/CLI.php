@@ -530,7 +530,7 @@ class PHP_CompatInfo_CLI
         if (isset($result->command->options['reference'])) {
             $options['reference'] = $result->command->options['reference'];
         }
-        if (empty($options['reference'])) {
+        if (empty($options['reference']) && 'list-references' !== $command) {
             $input->displayError('You must supply at least a reference');
         }
 
