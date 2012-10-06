@@ -106,6 +106,10 @@ class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
      */
     protected function printTBody($elements, $filename, $base)
     {
+        $results = array('_dummy_' => $elements);
+        self::applyFilter($results);
+        $elements = $results['_dummy_'];
+
         ksort($elements);
 
         foreach ($elements as $extension => $items) {
