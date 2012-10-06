@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2012-10-06</date>
- <time>09:58:51</time>
+ <time>11:03:10</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -44,6 +44,8 @@ will not be print anymore on standard output when --report-file option used
 - CAUTION: BC breaks with API 2.8.0 with the new filter system
 - list-references does not require --reference option anymore (always used ALL)
 - results of list-references may now be filtered
+- add a full report (all results at once:
+summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
@@ -1341,6 +1343,8 @@ will not be print anymore on standard output when --report-file option used
 - CAUTION: BC breaks with API 2.8.0 with the new filter system
 - list-references does not require --reference option anymore (always used ALL)
 - results of list-references may now be filtered
+- add a full report (all results at once:
+summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not

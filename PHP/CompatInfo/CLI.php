@@ -112,7 +112,7 @@ class PHP_CompatInfo_CLI
                 'action'      => 'StoreArray',
                 'description' => 'Type of report',
                 'choices'     => array(
-                    'summary', 'source', 'xml', 'token',
+                    'full', 'summary', 'source', 'xml', 'token',
                     'extension',
                     'namespace',
                     'trait', 'interface', 'class', 'function', 'constant',
@@ -141,7 +141,7 @@ class PHP_CompatInfo_CLI
                 'description'   => 'List of report available',
                 'action_params' => array(
                     'list' => array(
-                        'summary', 'source', 'xml', 'token',
+                        'full', 'summary', 'source', 'xml', 'token',
                         'extension',
                         'namespace',
                         'trait', 'interface', 'class', 'function', 'constant',
@@ -551,6 +551,19 @@ class PHP_CompatInfo_CLI
             }
         }
 
+        if (isset($result->command->options['report'])) {
+            $reports = $result->command->options['report'];
+        }
+
+        if (in_array('full', $reports)) {
+            $reports = array(
+                'summary', 'extension',
+                'interface', 'trait', 'class', 'function', 'constant',
+                'global', 'token', 'condition'
+            );
+            $reportFileAppend = true;
+        }
+
         if (isset($result->command->options['reportFile'])) {
             $reportFile       = $result->command->options['reportFile'];
         }
@@ -569,10 +582,6 @@ class PHP_CompatInfo_CLI
                     $options['reportFileFlags'] = 0;
                 }
             }
-        }
-
-        if (isset($result->command->options['report'])) {
-            $reports = $result->command->options['report'];
         }
 
         if (isset($result->command->options['filterVersion'])) {
