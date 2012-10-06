@@ -365,6 +365,8 @@ class PHP_CompatInfo_CLI
         );
         $reports = array();
 
+        $reportFileAppend = false;
+
         if ($result->options['noConfiguration'] !== true) {
             if (!isset($result->options['xmlFile'])) {
                 // use default configuration
@@ -551,7 +553,6 @@ class PHP_CompatInfo_CLI
 
         if (isset($result->command->options['reportFile'])) {
             $reportFile       = $result->command->options['reportFile'];
-            $reportFileAppend = false;
         }
 
         if (isset($reportFile)) {
@@ -562,7 +563,7 @@ class PHP_CompatInfo_CLI
             } else {
                 $options['reportFile'] = $reportFile;
 
-                if (isset($reportFileAppend) && $reportFileAppend === true) {
+                if ($reportFileAppend === true) {
                     $options['reportFileFlags'] = FILE_APPEND;
                 } else {
                     $options['reportFileFlags'] = 0;
