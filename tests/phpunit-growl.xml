@@ -7,9 +7,9 @@
         <listener class="GrowlTestListener"
                   file="./GrowlTestListener.php">
             <arguments>
-               <string>file://../misc/autotest_images/pass.png</string>
-               <string>file://../misc/autotest_images/pending.png</string>
-               <string>file://../misc/autotest_images/fail.png</string>
+               <file>../misc/autotest_images/pass.png</file>
+               <file>../misc/autotest_images/pending.png</file>
+               <file>../misc/autotest_images/fail.png</file>
                <string>127.0.0.1</string>
                <string></string>
                <boolean>true</boolean>

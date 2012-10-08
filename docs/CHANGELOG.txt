@@ -24,6 +24,7 @@ summary, extensions, interfaces, traits, classes, functions, constants, globals,
 * PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
 * standard reference fixed: mkdir mode parameter is required since PHP 4.0.0 and not 4.2.0 (it became optional)
 * multiple reports may now be appended in the same report file
+* fixed phpunit-growl.xml configuration file: display icons to both pear or stand-alone installation
 
 
 == Version 2.8.1 (2012-09-28)

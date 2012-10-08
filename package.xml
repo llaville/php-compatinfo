@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-10-06</date>
- <time>11:03:10</time>
+ <date>2012-10-08</date>
+ <time>13:53:52</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -46,11 +46,13 @@ will not be print anymore on standard output when --report-file option used
 - results of list-references may now be filtered
 - add a full report (all results at once:
 summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
+- CAUTION: if you want to keep PHP 5.2 compatibility, used phpunit/PHP_Timer 1.0.3 max
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
 - standard reference fixed: mkdir mode parameter is required since PHP 4.0.0 and not 4.2.0 (it became optional)
 - multiple reports may now be appended in the same report file
+- fixed phpunit-growl.xml configuration file: display icons to both pear or stand-alone installation
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -1331,7 +1333,7 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-10-06</date>
+   <date>2012-10-08</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1345,11 +1347,13 @@ will not be print anymore on standard output when --report-file option used
 - results of list-references may now be filtered
 - add a full report (all results at once:
 summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
+- CAUTION: if you want to keep PHP 5.2 compatibility, used phpunit/PHP_Timer 1.0.3 max
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
 - standard reference fixed: mkdir mode parameter is required since PHP 4.0.0 and not 4.2.0 (it became optional)
 - multiple reports may now be appended in the same report file
+- fixed phpunit-growl.xml configuration file: display icons to both pear or stand-alone installation
    </notes>
   </release>
   <release>
