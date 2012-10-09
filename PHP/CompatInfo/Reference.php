@@ -28,66 +28,78 @@ interface PHP_CompatInfo_Reference
      * Gets all informations at once about:
      * extensions, interfaces, classes, functions, constants
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getAll($extension = null, $version = null);
+    public function getAll($extension = null, $version = null, $condition = null);
 
     /**
      * Gets informations about extensions
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getExtensions($extension = null, $version = null);
+    public function getExtensions($extension = null, $version = null, $condition = null);
 
     /**
      * Gets informations about interfaces
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getInterfaces($extension = null, $version = null);
+    public function getInterfaces($extension = null, $version = null, $condition = null);
 
     /**
      * Gets informations about classes
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getClasses($extension = null, $version = null);
+    public function getClasses($extension = null, $version = null, $condition = null);
 
     /**
      * Gets informations about functions
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getFunctions($extension = null, $version = null);
+    public function getFunctions($extension = null, $version = null, $condition = null);
 
     /**
      * Gets informations about constants
      *
-     * @param string $extension OPTIONAL
-     * @param string $version   OPTIONAL PHP version
-     *                          (4 => only PHP4, 5 or null => PHP4 + PHP5)
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
      *
      * @return array
      */
-    public function getConstants($extension = null, $version = null);
+    public function getConstants($extension = null, $version = null, $condition = null);
 }

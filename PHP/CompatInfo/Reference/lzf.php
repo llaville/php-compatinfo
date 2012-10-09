@@ -50,7 +50,7 @@ class PHP_CompatInfo_Reference_Lzf
      *
      * @return array
      */
-    public function getExtensions($extension = null, $version = null)
+    public function getExtensions($extension = null, $version = null, $condition = null)
     {
         $phpMin = '4.0.0';
         $extensions = array(
@@ -71,7 +71,7 @@ class PHP_CompatInfo_Reference_Lzf
      * @return array
      * @link  http://www.php.net/manual/en/ref.lzf.php
      */
-    public function getFunctions($extension = null, $version = null)
+    public function getFunctions($extension = null, $version = null, $condition = null)
     {
         $this->setFilter(func_get_args());
 

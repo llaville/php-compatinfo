@@ -50,7 +50,7 @@ class PHP_CompatInfo_Reference_Memcached
      *
      * @return array
      */
-    public function getExtensions($extension = null, $version = null)
+    public function getExtensions($extension = null, $version = null, $condition = null)
     {
         $phpMin = '5.2.0';
         $extensions = array(
@@ -70,7 +70,7 @@ class PHP_CompatInfo_Reference_Memcached
      *
      * @return array
      */
-    public function getClasses($extension = null, $version = null)
+    public function getClasses($extension = null, $version = null, $condition = null)
     {
         $this->setFilter(func_get_args());
 

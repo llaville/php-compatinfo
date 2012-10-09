@@ -19,6 +19,7 @@ will not be print anymore on standard output when _--report-file_ option used
 * add a full report (all results at once:
 summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
 * CAUTION: if you want to keep PHP 5.2 compatibility, used phpunit/PHP_Timer 1.0.3 max
+* fixed Reference interface about new filter API
 
 .Bug fixes:
 * PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
