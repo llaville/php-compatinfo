@@ -18,6 +18,7 @@
  */
 
 require_once 'PEAR/PackageFileManager2.php';
+require_once 'PEAR/Packager.php';
 
 /**
  * Generates installexceptions, or exceptions key pfm option
@@ -164,8 +165,74 @@ function addIgnoreCondition($rules, $pfm)
             $pfm->addIgnoreToRelease($path, $as);
         }
     }
-
 }
+
+/**
+ * Adds replacements tasks
+ *
+ * @param mixed  $rules List of conditions to apply
+ * @param object $pfm   Instance of PEAR_PackageFileManager2
+ *
+ * @return void
+ */
+function addGitRcsKeywords($rules, $pfm)
+{
+    if (!is_array($rules)) {
+        $rules = array($rules);
+    }
+    foreach ($rules as $rule) {
+        $rule = explode(',', $rule);
+
+        if (count($rule) === 1) {
+            list($path) = array_map('trim', $rule);
+            $pfm->addGitRcsKeywords($path);
+        }
+    }
+}
+
+/**
+ * Extends features of PEAR_PackageFileManager v2
+ */
+class Bartlett_PackageFileManager extends PEAR_PackageFileManager2
+{
+    /**
+     * Add git RCS keywords replacement for a file,
+     * or files matching the glob pattern
+     *
+     * @param string $path relative path of file
+     *                     (relative to packagedirectory option)
+     *
+     * @return void
+     */
+    public function addGitRcsKeywords($path)
+    {
+        if (!isset($this->_options['replacements'])) {
+            $this->_options['replacements'] = array();
+        }
+        @include_once 'PEAR/Task/Gitrcskeywords/Rw.php';
+        if (!class_exists('PEAR_Task_Gitrcskeywords_Rw')) {
+            // just in case, PEAR gitrcskeywords task class is not installed
+            return;
+        }
+        $l = null;
+        $task = new PEAR_Task_Gitrcskeywords_Rw($this, $this->_config, $l, '');
+
+        $current_dir = getcwd();
+        chdir($this->_options['packagedirectory']);
+        $glob = defined('GLOB_BRACE') ? glob($path, GLOB_BRACE) : glob($path);
+
+        if (false !== $glob) {
+            foreach ($glob as $pathItem) {
+                if (is_file($pathItem)) {
+                    $this->_options['replacements'][$pathItem][] = $task;
+                }
+            }
+        }
+
+        chdir($current_dir);
+    }
+}
+
 
 $filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'package.ini';
 if (!file_exists($filename)) {
@@ -182,7 +249,7 @@ if ($ini === false) {
 
 PEAR::setErrorHandling(PEAR_ERROR_DIE);
 
-$pfm = new PEAR_PackageFileManager2();
+$pfm = new Bartlett_PackageFileManager();
 
 // files to ignore
 if (isset($ini['options']['ignores'])) {
@@ -280,7 +347,7 @@ if (isset($ini['package']['contributors'])) {
     addMaintainer($ini['package']['contributors'], 'contributor', $pfm);
 }
 
-// replaces
+// replacements
 if (isset($ini['replacements'])) {
     foreach ($ini['replacements'] as $file => $rules) {
         if (!is_array($rules)) {
@@ -289,12 +356,18 @@ if (isset($ini['replacements'])) {
         foreach ($rules as $rule) {
             $rule = explode(',', $rule);
 
-            if (count($rule)) {
+            if (count($rule) === 3) {
                 list($type, $from, $to) = array_map('trim', $rule);
                 if ($file === '*') {
                     $pfm->addGlobalReplacement($type, $from, $to);
                 } else {
                     $pfm->addReplacement($file, $type, $from, $to);
+                }
+
+            } elseif (count($rule) === 1) {
+                list($type) = array_map('trim', $rule);
+                if ('git-rcs-keywords' === $type) {
+                    $pfm->addGitRcsKeywords($file);
                 }
             }
         }
@@ -337,7 +410,26 @@ $pfm->generateContents();
 if (isset($_GET['make'])
     || (isset($_SERVER['argv']) && @$_SERVER['argv'][1] == 'make')
 ) {
+    // Writes XML package file
     $pfm->writePackageFile();
+
+} elseif (isset($_GET['build'])
+    || (isset($_SERVER['argv']) && @$_SERVER['argv'][1] == 'build')
+) {
+    // Builds package tarball
+    $currentDir = getcwd();
+    chdir(dirname(__FILE__));
+
+    $packager = new PEAR_Packager;
+
+    $result = $packager->package();
+    if (PEAR::isError($result)) {
+        echo $result->getMessage();
+        exit(1);
+    }
+
+    chdir($currentDir);
+
 } else {
     $pfm->debugPackageFile();
 }

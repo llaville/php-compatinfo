@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-10-08</date>
- <time>13:53:52</time>
+ <date>2012-10-09</date>
+ <time>17:46:09</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -260,368 +260,486 @@ Bug fixes:
      <dir name="Cache">
       <file baseinstalldir="Bartlett" name="File.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Interface.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Null.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
      </dir> <!-- /PHP/CompatInfo/Cache -->
      <dir name="Listener">
       <file baseinstalldir="Bartlett" name="File.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Growl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
      </dir> <!-- /PHP/CompatInfo/Listener -->
      <dir name="Reference">
       <file baseinstalldir="Bartlett" name="ALL.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="amqp.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="apc.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="bcmath.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="bz2.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="calendar.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="core.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="ctype.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="curl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="date.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="dom.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="enchant.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="ereg.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="exif.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="fileinfo.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="filter.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="ftp.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="gd.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="geoip.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="gettext.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="gmp.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="hash.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="iconv.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="imap.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="inclued.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="intl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="json.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="ldap.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="libxml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="lzf.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="mailparse.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="mbstring.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="mcrypt.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="memcache.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="memcached.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="mhash.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="mongo.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="mssql.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="mysql.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="mysqli.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="oauth.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="openssl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="pcntl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="pcre.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="pdo.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="pgsql.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="phar.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="PHP4.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="PHP5.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="PluginsAbstract.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="posix.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="readline.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="recode.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="reflection.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="session.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="shmop.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="simplexml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="snmp.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="soap.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="sockets.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="solr.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="sphinx.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="spl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="sqlite.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="sqlite3.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="ssh2.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="standard.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="sysvmsg.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="sysvsem.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="sysvshm.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="tidy.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="tokenizer.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="wddx.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="xcache.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="xdebug.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="xhprof.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="xml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="xmlreader.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="xmlrpc.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="xmlwriter.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="xsl.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="yaml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="zip.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="zlib.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
      </dir> <!-- /PHP/CompatInfo/Reference -->
      <dir name="Report">
       <file baseinstalldir="Bartlett" name="Class.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Condition.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Constant.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Database.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Extension.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Function.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Global.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Interface.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Namespace.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Reference.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Source.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Summary.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Token.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Trait.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="Xml.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
      </dir> <!-- /PHP/CompatInfo/Report -->
      <dir name="Token">
       <file baseinstalldir="Bartlett" name="ConstantEncapsedString.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="ObjectOperator.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="OpenSquare.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
       <file baseinstalldir="Bartlett" name="String.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       <tasks:gitrcskeywords />
       </file>
      </dir> <!-- /PHP/CompatInfo/Token -->
      <file baseinstalldir="Bartlett" name="Autoload.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="Cache.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="CLI.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
       <tasks:replace from="@cfg_dir@" to="cfg_dir" type="pear-config" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="Configuration.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="Exception.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="Filter.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="Reference.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="Report.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="TokenParser.php" role="php">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
     </dir> <!-- /PHP/CompatInfo -->
     <file baseinstalldir="Bartlett" name="CompatInfo.php" role="php">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
     </file>
    </dir> <!-- /PHP -->
    <dir name="scripts">
@@ -641,246 +759,327 @@ Bug fixes:
     <dir name="Reference">
      <file baseinstalldir="Bartlett" name="AmqpTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="ApcTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="BcmathTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="Bz2Test.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="CalendarTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="CoreTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="CtypeTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="CurlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="DateTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="DomTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="EnchantTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="EregTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="ExifTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="FileinfoTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="FilterTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="FtpTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="GdTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="GenericTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="GeoipTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="GettextTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="GmpTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="HashTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="IconvTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="ImapTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="IncluedTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="IntlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="JsonTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="LdapTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="LibxmlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="LzfTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="MailparseTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="MbstringTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="McryptTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="MemcachedTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="MemcacheTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="MhashTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="MongoTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="MssqlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="MysqliTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="MysqlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="OAuthTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="OpensslTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="PcntlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="PcreTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="PdoTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="PgsqlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="PharTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="PosixTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="ReadlineTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="RecodeTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="ReflectionTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SessionTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="ShmopTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SimpleXMLTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SnmpTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SoapTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SocketsTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SolrTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SphinxTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SPLTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="Sqlite3Test.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SQLiteTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="Ssh2Test.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="StandardTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SysvmsgTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SysvsemTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="SysvshmTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="TidyTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="TokenizerTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="WddxTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="XCacheTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="XdebugTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="XhprofTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="XmlreaderTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="XmlrpcTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="XmlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="XmlwriterTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="XslTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="YamlTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="ZipTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
      <file baseinstalldir="Bartlett" name="ZlibTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      <tasks:gitrcskeywords />
      </file>
     </dir> <!-- /tests/Reference -->
     <dir name="_files">
@@ -1192,33 +1391,42 @@ Bug fixes:
     </dir> <!-- /tests/_files -->
     <file baseinstalldir="Bartlett" name="ClassTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
     </file>
     <file baseinstalldir="Bartlett" name="ConfigurationTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
     </file>
     <file baseinstalldir="Bartlett" name="ConstantTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
     </file>
     <file baseinstalldir="Bartlett" name="FunctionTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
     </file>
     <file baseinstalldir="Bartlett" name="GrowlTestListener.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
     <file baseinstalldir="Bartlett" name="IncludeTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
     </file>
     <file baseinstalldir="Bartlett" name="InterfaceTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
     </file>
     <file baseinstalldir="Bartlett" name="IssueTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
     </file>
     <file baseinstalldir="Bartlett" name="MagicConstantTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
     </file>
     <file baseinstalldir="Bartlett" name="ParameterTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
     </file>
     <file baseinstalldir="Bartlett" name="phpunit-growl.xml" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
@@ -1228,6 +1436,7 @@ Bug fixes:
     </file>
     <file baseinstalldir="Bartlett" name="TokenTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
     </file>
    </dir> <!-- /tests -->
    <file baseinstalldir="Bartlett" name="fo-custom.xsl" role="doc">
@@ -1333,7 +1542,7 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-10-08</date>
+   <date>2012-10-09</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
