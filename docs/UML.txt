@@ -59,6 +59,8 @@ class PHP_CompatInfo {
     
     int +count ( void )
     
+    array +getOptions ( void )
+    
     array +getEvent ( void )
     void #setEvent( array $event )
     
@@ -89,16 +91,31 @@ class PHP_CompatInfo {
     void #failLoadReference ( string $warn )
 }
 
+class PHP_CompatInfo_Reference_PHP5 {
+}
+
 class PHP_Reflect {
 }
 
+SplSubject <|.. PHP_CompatInfo
+IteratorAggregate <|.. PHP_CompatInfo
+Countable <|.. PHP_CompatInfo
+
+PHP_Reflect - PHP_CompatInfo : < use parser engine 
+PHP_CompatInfo_Reference_PHP5 - PHP_CompatInfo : < load
+---------------------------------------------------------------------
+
+.Reference Plugins System
+[scaledwidth="100%"]
+["plantuml", "images/PHPCompatInfo_02.png"]
+---------------------------------------------------------------------
 interface PHP_CompatInfo_Reference {
-    array +getAll ( string $extension = null, string $version = null )
-    array +getExtensions ( string $extension = null, string $version = null )
-    array +getInterfaces ( string $extension = null, string $version = null )
-    array +getClasses ( string $extension = null, string $version = null )
-    array +getFunctions ( string $extension = null, string $version = null )
-    array +getConstants ( string $extension = null, string $version = null )
+    array +getAll ( string $extension = null, string $version = null, string $condition = null )
+    array +getExtensions ( string $extension = null, string $version = null, string $condition = null )
+    array +getInterfaces ( string $extension = null, string $version = null, string $condition = null )
+    array +getClasses ( string $extension = null, string $version = null, string $condition = null )
+    array +getFunctions ( string $extension = null, string $version = null, string $condition = null )
+    array +getConstants ( string $extension = null, string $version = null, string $condition = null )
 }
 
 abstract class PHP_CompatInfo_Reference_PluginsAbstract {
@@ -107,13 +124,16 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract {
     bool  +hasWarnings ( void )
     array +getWarnings ( void )
     array #combineExtension ( string $ext, array $arr )
+    void  #setFilter( array $args )
+    void  #applyFilter( string $release, array $items, arry &$elements)
+    void  #setMaxExtensionVersion( string $version, string $name, array &$elements)
     
-    array +getAll ( string $extension = null, string $version = '4' )
-    array +getExtensions ( string $extension = null, string $version = '4' )
-    array +getInterfaces ( string $extension = null, string $version = '4' )
-    array +getClasses ( string $extension = null, string $version = '4' )
-    array +getFunctions ( string $extension = null, string $version = '4' )
-    array +getConstants ( string $extension = null, string $version = '4' )
+    array +getAll ( string $extension = null, string $version = null, string $condition = null )
+    array +getExtensions ( string $extension = null, string $version = null, string $condition = null )
+    array +getInterfaces ( string $extension = null, string $version = null, string $condition = null )
+    array +getClasses ( string $extension = null, string $version = null, string $condition = null )
+    array +getFunctions ( string $extension = null, string $version = null, string $condition = null )
+    array +getConstants ( string $extension = null, string $version = null, string $condition = null )
 }
 
 class PHP_CompatInfo_Reference_PHP4 {
@@ -121,42 +141,48 @@ class PHP_CompatInfo_Reference_PHP4 {
     
     object +__construct ( array $extensions = null )
 
-    array +getAll ( string $extension = null, string $version = '4' )
-    array +getExtensions ( string $extension = null, string $version = '4' )
-    array +getInterfaces ( string $extension = null, string $version = '4' )
-    array +getClasses ( string $extension = null, string $version = '4' )
-    array +getFunctions ( string $extension = null, string $version = '4' )
-    array +getConstants ( string $extension = null, string $version = '4' )
+    array +getAll ( string $extension = null, string $version = '4', string $condition = null )
+    array +getExtensions ( string $extension = null, string $version = '4', string $condition = null )
+    array +getInterfaces ( string $extension = null, string $version = '4', string $condition = null )
+    array +getClasses ( string $extension = null, string $version = '4', string $condition = null )
+    array +getFunctions ( string $extension = null, string $version = '4', string $condition = null )
+    array +getConstants ( string $extension = null, string $version = '4', string $condition = null )
 
-    array +getGlobals ( void )
-    array +getTokens ( void )
+    array +getGlobals ( string $extension = null, string $version = '4', string $condition = null )
+    array +getTokens ( string $extension = null, string $version = '4', string $condition = null )
 }
 
 class PHP_CompatInfo_Reference_PHP5 {
-    array +getAll ( string $extension = null, string $version = null )
-    array +getExtensions ( string $extension = null, string $version = null )
-    array +getInterfaces ( string $extension = null, string $version = null )
-    array +getClasses ( string $extension = null, string $version = null )
-    array +getFunctions ( string $extension = null, string $version = null )
-    array +getConstants ( string $extension = null, string $version = null )
+    array +getAll ( string $extension = null, string $version = null, string $condition = null )
+    array +getExtensions ( string $extension = null, string $version = null, string $condition = null )
+    array +getInterfaces ( string $extension = null, string $version = null, string $condition = null )
+    array +getClasses ( string $extension = null, string $version = null, string $condition = null )
+    array +getFunctions ( string $extension = null, string $version = null, string $condition = null )
+    array +getConstants ( string $extension = null, string $version = null, string $condition = null )
 }
 
-SplSubject <|.. PHP_CompatInfo
-IteratorAggregate <|.. PHP_CompatInfo
-Countable <|.. PHP_CompatInfo
+class PHP_CompatInfo_Reference_ALL {
+    object +__construct( array $extensions = null )
+    array static +getDatabaseExtensions()
+    
+    array +getAll ( string $extension = null, string $version = null, string $condition = null )
+    array +getExtensions ( string $extension = null, string $version = null, string $condition = null )
+    array +getInterfaces ( string $extension = null, string $version = null, string $condition = null )
+    array +getClasses ( string $extension = null, string $version = null, string $condition = null )
+    array +getFunctions ( string $extension = null, string $version = null, string $condition = null )
+    array +getConstants ( string $extension = null, string $version = null, string $condition = null )
+}
 
 PHP_CompatInfo_Reference <|.. PHP_CompatInfo_Reference_PluginsAbstract
 
 PHP_CompatInfo_Reference_PluginsAbstract <|-- PHP_CompatInfo_Reference_PHP4
 PHP_CompatInfo_Reference_PHP4 <|-- PHP_CompatInfo_Reference_PHP5
-
-PHP_Reflect - PHP_CompatInfo : < uses parser engine
-PHP_CompatInfo - PHP_CompatInfo_Reference_PHP5 : load >
+PHP_CompatInfo_Reference_PHP4 <|-- PHP_CompatInfo_Reference_ALL
 ---------------------------------------------------------------------
 
 .Cache System
 [scaledwidth="100%"]
-["plantuml", "images/PHPCompatInfo_02.png"]
+["plantuml", "images/PHPCompatInfo_03.png"]
 ---------------------------------------------------------------------
 class PHP_CompatInfo
 
