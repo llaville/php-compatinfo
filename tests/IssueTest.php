@@ -9,7 +9,7 @@
  * @subpackage Tests
  * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    All sources used are Licensed : BSD or public domain
- * @version    SVN: $Id$
+ * @version    GIT: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 2.0.0beta3
  */

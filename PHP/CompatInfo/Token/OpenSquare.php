@@ -18,7 +18,7 @@
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version  SVN: $Id$
+ * @version  GIT: $Id$
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 class PHP_CompatInfo_Token_OPEN_SQUARE extends PHP_Reflect_Token_OPEN_SQUARE

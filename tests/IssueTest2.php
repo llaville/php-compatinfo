@@ -10,7 +10,7 @@
  * @author     Laurent Laville <pear@laurent-laville.org>
  * @author     Remi Collet <Remi@FamilleCollet.com>
  * @license    GPLv2 or PHP License
- * @version    SVN: $Id$
+ * @version    GIT: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 2.2.0
  */
