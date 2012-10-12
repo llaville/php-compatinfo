@@ -86,7 +86,7 @@ class PHP_CompatInfo_Reference_Iconv
             'iconv_strpos'                   => array('5.0.0', ''),
             'iconv_strrpos'                  => array('5.0.0', ''),
             'iconv_substr'                   => array('5.0.0', ''),
-            'ob_iconv_handler'               => array('4.0.5', '5.3.17'),
+            'ob_iconv_handler'               => array('4.0.5', '5.3.18'),
         );
         $this->applyFilter($release, $items, $functions);
 

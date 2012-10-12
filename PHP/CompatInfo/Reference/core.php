@@ -384,7 +384,7 @@ class PHP_CompatInfo_Reference_Core
 
         $release = '5.3.4';      // 2010-12-09
         $items = array(
-            'ZEND_MULTIBYTE'                    => array('5.3.4', '5.3.17'),
+            'ZEND_MULTIBYTE'                    => array('5.3.4', '5.3.18'),
         );
         $this->applyFilter($release, $items, $constants);
 
