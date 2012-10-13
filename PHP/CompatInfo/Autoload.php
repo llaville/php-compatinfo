@@ -19,7 +19,7 @@
  *
  * @return void
  */
-function phpCompatInfo_autoload($className)
+function PHP_CompatInfo_autoload($className)
 {
     static $classes = null;
     static $path    = null;
@@ -274,7 +274,7 @@ function phpCompatInfo_autoload($className)
     }
 }
 
-spl_autoload_register('phpCompatInfo_autoload');
+spl_autoload_register('PHP_CompatInfo_autoload');
 
 require_once 'ezc/Base/base.php';
 spl_autoload_register(array('ezcBase', 'autoload'));
