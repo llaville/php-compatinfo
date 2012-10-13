@@ -271,6 +271,8 @@ function PHP_CompatInfo_autoload($className)
         include $path . $classes[$className];
     } elseif (substr($className, 0, 19) == 'Console_CommandLine') {
         include str_replace('_', '/', $className) . '.php';
+    } elseif (substr($className, 0, 9) == 'PHP_Timer') {
+        @include str_replace('_', '/', $className) . '.php';
     }
 }
 
@@ -280,5 +282,3 @@ require_once 'ezc/Base/base.php';
 spl_autoload_register(array('ezcBase', 'autoload'));
 
 require_once 'Bartlett/PHP/Reflect/Autoload.php';
-
-require_once 'PHP/Timer/Autoload.php';

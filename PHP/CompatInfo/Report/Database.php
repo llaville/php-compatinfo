@@ -130,8 +130,7 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
             echo ' AND ' . $this->extensionsCount[1] . ' LOADED';
         }
         echo PHP_EOL;
-        echo str_repeat('-', $this->width) . PHP_EOL;
-        echo PHP_Timer::resourceUsage()    . PHP_EOL;
+        $this->printResourceUsage();
         echo str_repeat('-', $this->width) . PHP_EOL;
         echo PHP_EOL;
     }

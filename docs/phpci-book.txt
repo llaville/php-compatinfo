@@ -57,12 +57,12 @@ This manual documents the final stable version {revnumber}
 * link:http://www.php.net/manual/en/book.dom.php[DOM] extension
 * link:http://www.php.net/manual/en/book.libxml.php[libxml] extension
 * link:http://www.php.net/manual/en/book.reflection.php[Reflection] extension
-* link:http://pear.phpunit.de[PHP_Timer] 1.0.0 or newer from _PHPUnit_ PEAR channel
 
 .Optional resources :
 * link:http://pear.php.net[PEAR] 1.9.0 or newer
 * link:http://pear.php.net/package/Net_Growl[Net_Growl] 2.6.0 or newer
 * link:http://pear.phpunit.de[PHPUnit] 3.6.0 or newer from _PHPUnit_ PEAR channel
+* link:http://pear.phpunit.de[PHP_Timer] 1.0.0 or newer from _PHPUnit_ PEAR channel
 * an XSLT processor if you want to produce an xHTML report from a phpci xml report
 
 

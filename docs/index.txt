@@ -51,7 +51,7 @@ PHP_CompatInfo 2 provides two servers API :
 * dom extension
 * libxml extension
 * Reflection extension
-* phpunit/PHP_Timer 1.0.0 (utility class for timing)
+* (optional) phpunit/PHP_Timer 1.0.0 (utility class for timing)
 * (optional) pear/Net_Growl 2.6.0 minimum (for growl audit observer)
 * (optional) PHPUnit 3.6.0 minimum (to run unit tests)
 * (optional) an XSLT processor if you want to produce an xHTML report from a phpci xml report

@@ -174,8 +174,7 @@ class PHP_CompatInfo_Report_Summary extends PHP_CompatInfo_Report
             }
             echo PHP_EOL;
         }
-        echo str_repeat('-', $this->width) . PHP_EOL;
-        echo PHP_Timer::resourceUsage()    . PHP_EOL;
+        $this->printResourceUsage();
         echo str_repeat('-', $this->width) . PHP_EOL;
         echo PHP_EOL;
     }

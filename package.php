@@ -85,8 +85,16 @@ function addDep($dependencies, $type, $pfm)
             $pfm->addExtensionDep($type, $matches[1]);
 
         } elseif (preg_match('/(.*)\/(.*)/', $dep, $matches)) {
+            $versions = explode(',', $dependencies[$dep]);
+            $versions = array_map('trim', $versions);
+            if (count($versions) === 1) {
+                $max = false;
+            } else {
+                $max = $versions[1];
+            }
+            $min = $versions[0];
             $pfm->addPackageDepWithChannel(
-                $type, $matches[2], $matches[1], $dependencies[$dep]
+                $type, $matches[2], $matches[1], $min, $max
             );
         }
     }

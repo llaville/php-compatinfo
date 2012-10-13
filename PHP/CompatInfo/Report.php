@@ -313,8 +313,7 @@ abstract class PHP_CompatInfo_Report extends PHP_CompatInfo_Filter
             }
             echo PHP_EOL;
         }
-        echo str_repeat('-', $this->width) . PHP_EOL;
-        echo PHP_Timer::resourceUsage()    . PHP_EOL;
+        $this->printResourceUsage();
         echo str_repeat('-', $this->width) . PHP_EOL;
     }
 
@@ -407,6 +406,19 @@ abstract class PHP_CompatInfo_Report extends PHP_CompatInfo_Filter
                     $items[$key]['versions'][1], $this->globalVersions[1]
                 );
             }
+        }
+    }
+
+    /**
+     * Prints the resources (time, memory) usage
+     *
+     * @return void
+     */
+    protected function printResourceUsage()
+    {
+        if (class_exists('PHP_Timer', true) === true) {
+            echo str_repeat('-', $this->width) . PHP_EOL;
+            echo PHP_Timer::resourceUsage()    . PHP_EOL;
         }
     }
 

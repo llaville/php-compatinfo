@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-10-09</date>
- <time>17:53:01</time>
+ <date>2012-10-13</date>
+ <time>18:04:20</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -46,8 +46,8 @@ will not be print anymore on standard output when --report-file option used
 - results of list-references may now be filtered
 - add a full report (all results at once:
 summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
-- CAUTION: if you want to keep PHP 5.2 compatibility, used phpunit/PHP_Timer 1.0.3 max
 - fixed Reference interface about new filter API
+- WARNING: PHP_Timer 1.0.4 break PHP 5.2 compatibility, so the print resource feature become optional
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
@@ -1482,11 +1482,6 @@ Bug fixes:
     <channel>bartlett.laurent-laville.org</channel>
     <min>1.4.2</min>
    </package>
-   <package>
-    <name>PHP_Timer</name>
-    <channel>pear.phpunit.de</channel>
-    <min>1.0.0</min>
-   </package>
    <extension>
     <name>dom</name>
    </extension>
@@ -1513,6 +1508,12 @@ Bug fixes:
     <name>PHPUnit</name>
     <channel>pear.phpunit.de</channel>
     <min>3.6.0</min>
+   </package>
+   <package>
+    <name>PHP_Timer</name>
+    <channel>pear.phpunit.de</channel>
+    <min>1.0.0</min>
+    <max>1.0.3</max>
    </package>
   </optional>
  </dependencies>
@@ -1543,7 +1544,7 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-10-09</date>
+   <date>2012-10-13</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1557,8 +1558,8 @@ will not be print anymore on standard output when --report-file option used
 - results of list-references may now be filtered
 - add a full report (all results at once:
 summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
-- CAUTION: if you want to keep PHP 5.2 compatibility, used phpunit/PHP_Timer 1.0.3 max
 - fixed Reference interface about new filter API
+- WARNING: PHP_Timer 1.0.4 break PHP 5.2 compatibility, so the print resource feature become optional
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not

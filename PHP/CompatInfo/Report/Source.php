@@ -22,13 +22,8 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
-class PHP_CompatInfo_Report_Source
+class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
 {
-    /**
-     * @var int Report character width (default to 79)
-     */
-    protected $width = 79;
-
     /**
      * Class constructor of source tokens report
      *
@@ -161,8 +156,7 @@ class PHP_CompatInfo_Report_Source
         echo ' WITH ' . $total['cloc'] . ' COMMENT LINE(S)';
         echo ' AND ' . $total['ncloc'] . ' CODE LINE(S)'
             . PHP_EOL;
-        echo str_repeat('-', $this->width) . PHP_EOL;
-        echo PHP_Timer::resourceUsage()    . PHP_EOL;
+        $this->printResourceUsage();
         echo str_repeat('-', $this->width) . PHP_EOL;
     }
 
