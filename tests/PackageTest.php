@@ -79,7 +79,7 @@ class PHP_CompatInfo_PackageTest extends PHPUnit_Framework_TestCase
             'PEAR_ErrorStack',
             'PEAR_PackageUpdate',
         );
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $classes
         );
 
@@ -95,7 +95,7 @@ class PHP_CompatInfo_PackageTest extends PHPUnit_Framework_TestCase
             'get_class',
             'strlen',
         );
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $functions
         );
 
@@ -124,7 +124,7 @@ class PHP_CompatInfo_PackageTest extends PHPUnit_Framework_TestCase
             'unserialize',
             'version_compare'
         );
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $functions
         );
 
@@ -157,7 +157,7 @@ class PHP_CompatInfo_PackageTest extends PHPUnit_Framework_TestCase
             'PEAR_PACKAGEUPDATE_TYPE_MAJOR',
             'PEAR_PACKAGEUPDATE_TYPE_MINOR',
         );
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $constants
         );
 
@@ -181,7 +181,7 @@ class PHP_CompatInfo_PackageTest extends PHPUnit_Framework_TestCase
             'NULL',
             'TRUE',
         );
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $constants
         );
 
@@ -193,7 +193,7 @@ class PHP_CompatInfo_PackageTest extends PHPUnit_Framework_TestCase
             'DIRECTORY_SEPARATOR',
             'PATH_SEPARATOR',
         );
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $constants
         );
     }

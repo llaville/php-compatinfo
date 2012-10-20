@@ -88,7 +88,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
                 'excluded' => false,
             ),
         );
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $constants['user']
         );
 
@@ -108,7 +108,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
                 'excluded' => false,
             ),
         );
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $constants['Core']
         );
     }
@@ -141,7 +141,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
             ),
         );
 
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $constants
         );
     }
@@ -167,7 +167,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
             ),
         );
 
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $constants
         );
     }

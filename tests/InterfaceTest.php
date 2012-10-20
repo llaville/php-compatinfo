@@ -91,7 +91,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
             ),
         );
 
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $interfaces
         );
     }
@@ -107,7 +107,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
     {
         $interfaces = $this->pci->getInterfaces('Core');
 
-        $this->assertSame(
+        $this->assertEquals(
             array(), $interfaces
         );
 
@@ -134,7 +134,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
             ),
         );
 
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $interfaces
         );
 

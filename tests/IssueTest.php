@@ -66,7 +66,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 
         $extensions = $this->pci->getExtensions();
 
-        $this->assertSame(
+        $this->assertEquals(
             array(), $extensions
         );
     }
@@ -84,7 +84,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source6581.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -118,7 +118,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source10100.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -136,7 +136,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
         // HTML_CSS-1.5.1 package and HTML_CSS_Error Class
         $this->pci->parse(TEST_FILES_PATH . 'source13417.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -154,7 +154,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source13568.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array(), $this->pci->getExtensions()
         );
     }
@@ -171,7 +171,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source14696.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -200,7 +200,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
                 'excluded' => false,
             ),
         );
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $classes
         );
     }
@@ -218,7 +218,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source6056.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.1.0', '5.0.4'), $this->pci->getVersions()
         );
     }
@@ -236,7 +236,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -254,7 +254,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source13094.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -272,7 +272,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'gh26.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -290,7 +290,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'gh27.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -308,7 +308,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'gh28.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
@@ -337,7 +337,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
             );
             sort($constantsPredefined);
 
-            $this->assertSame(
+            $this->assertEquals(
                 array(
                     '__CLASS__',
                     '__DIR__',
@@ -371,7 +371,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
             $expected = '5.4.1';   // detect mb_ereg_replace_callback function
         }
 
-        $this->assertSame(
+        $this->assertEquals(
             array($expected, ''), $this->pci->getVersions()
         );
     }
@@ -388,7 +388,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'gh32.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -405,7 +405,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'gh33.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -422,7 +422,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'gh34.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }

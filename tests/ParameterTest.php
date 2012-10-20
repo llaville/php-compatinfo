@@ -63,7 +63,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-01d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -78,7 +78,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-01o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.3.2', ''), $this->pci->getVersions()
         );
     }
@@ -93,7 +93,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-02d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -108,7 +108,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-02o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -123,7 +123,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-03d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -138,7 +138,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-03o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -153,7 +153,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-04d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -168,7 +168,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-04o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -183,7 +183,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-05d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.2.0', ''), $this->pci->getVersions()
         );
     }
@@ -198,7 +198,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-05o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -213,7 +213,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-06d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -228,7 +228,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-06o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -243,7 +243,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-07d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -258,7 +258,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-07o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -273,7 +273,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-08d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -288,7 +288,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-08o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -303,7 +303,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-09d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -318,7 +318,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-09o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
 
@@ -334,7 +334,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-10d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -349,7 +349,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-10o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -364,7 +364,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-11d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -379,7 +379,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-11o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -394,7 +394,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-12d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -409,7 +409,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-12o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.2', ''), $this->pci->getVersions()
         );
     }
@@ -424,7 +424,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-13d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -439,7 +439,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-13o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
@@ -454,7 +454,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-14d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -469,7 +469,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-14o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
@@ -484,7 +484,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-15d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -499,7 +499,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-15o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
@@ -514,7 +514,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-16d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -529,7 +529,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-16o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
@@ -544,7 +544,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-17d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.2.0', ''), $this->pci->getVersions()
         );
     }
@@ -559,7 +559,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-17o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.3.9', ''), $this->pci->getVersions()
         );
     }
@@ -580,7 +580,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-18d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -601,7 +601,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-18o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -616,7 +616,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-19d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -631,7 +631,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-19o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
@@ -646,7 +646,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-20d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -661,7 +661,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-20o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -676,7 +676,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-21d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -691,7 +691,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-21o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.2.0', ''), $this->pci->getVersions()
         );
     }
@@ -706,7 +706,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-22d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.3.2', ''), $this->pci->getVersions()
         );
     }
@@ -721,7 +721,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-22o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.2.0', ''), $this->pci->getVersions()
         );
     }
@@ -736,7 +736,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-23d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -751,7 +751,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-23o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.1.0', ''), $this->pci->getVersions()
         );
     }
@@ -766,7 +766,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-24d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -781,7 +781,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-24o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.3', ''), $this->pci->getVersions()
         );
     }
@@ -796,7 +796,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-25d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -811,7 +811,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-25o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -826,7 +826,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-26d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -841,7 +841,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-26o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -856,7 +856,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-27d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -871,7 +871,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-27o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -892,7 +892,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-29d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.2.0', ''), $this->pci->getVersions()
         );
     }
@@ -913,7 +913,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-29o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -934,7 +934,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-30d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.4', ''), $this->pci->getVersions()
         );
     }
@@ -955,7 +955,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-30o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -976,7 +976,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-31d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -997,7 +997,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-31o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
@@ -1018,7 +1018,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-32d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.5', ''), $this->pci->getVersions()
         );
     }
@@ -1039,7 +1039,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-32o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
@@ -1060,7 +1060,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-33d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.3.2', ''), $this->pci->getVersions()
         );
     }
@@ -1081,7 +1081,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-33o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
@@ -1102,7 +1102,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-34d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -1123,7 +1123,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source18881-34o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.1.0', ''), $this->pci->getVersions()
         );
     }
@@ -1138,7 +1138,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-35d.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -1153,7 +1153,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source18881-35o.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.3.0', ''), $this->pci->getVersions()
         );
     }

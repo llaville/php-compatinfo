@@ -100,7 +100,7 @@ class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
             'test4.php'
         );
 
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $includes
         );
     }
@@ -116,7 +116,7 @@ class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
     {
         $includes = $this->pci->getIncludes('require', 'info');
 
-        $this->assertSame(
+        $this->assertEquals(
             array(), $includes
         );
     }

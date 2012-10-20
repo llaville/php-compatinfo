@@ -121,7 +121,7 @@ class PHP_CompatInfo_MagicConstantTest extends PHPUnit_Framework_TestCase
             ),
         );
 
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $constants['Core']
         );
     }

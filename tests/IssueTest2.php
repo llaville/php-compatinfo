@@ -70,7 +70,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
         // http://cvs.php.net/co.php/phpdoc/scripts/phpweb-entities.php.in?r=1.2
         $this->pci->parse(TEST_FILES_PATH . 'source3657.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -88,7 +88,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source6581.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.0.0', ''), $this->pci->getVersions()
         );
     }
@@ -109,7 +109,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
         // PEAR_PackageUpdate-0.5.0 package and PEAR_PackageUpdate Class
         $this->pci->parse(TEST_FILES_PATH . 'source7813.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.3.0', ''), $this->pci->getVersions()
         );
     }
@@ -128,7 +128,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source13873.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('4.1.0', ''), $this->pci->getVersions()
         );
     }

@@ -112,7 +112,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                 ),
             );
         }
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $functions['user']
         );
 
@@ -146,7 +146,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                 'excluded' => false,
             ),
         );
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $functions['Core']
         );
 
@@ -187,7 +187,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                 'excluded' => false,
             ),
         );
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $functions['standard']
         );
 
@@ -201,7 +201,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                     'excluded' => false,
                 ),
             );
-            $this->assertSame(
+            $this->assertEquals(
                 $expected, $functions['xdebug']
             );
         }
@@ -252,7 +252,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
             );
         }
 
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $functions
         );
     }
@@ -285,7 +285,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
             ),
         );
 
-        $this->assertSame(
+        $this->assertEquals(
             $expected, $functions
         );
     }

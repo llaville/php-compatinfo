@@ -69,7 +69,7 @@ class PHP_CompatInfo_TokenTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source5.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.4.0', ''), $this->pci->getVersions()
         );
     }
@@ -89,7 +89,7 @@ class PHP_CompatInfo_TokenTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source6.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.4.0', ''), $this->pci->getVersions()
         );
     }
@@ -110,7 +110,7 @@ class PHP_CompatInfo_TokenTest extends PHPUnit_Framework_TestCase
 
         $this->pci->parse(TEST_FILES_PATH . 'source7.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.4.0', ''), $this->pci->getVersions()
         );
     }
@@ -127,7 +127,7 @@ class PHP_CompatInfo_TokenTest extends PHPUnit_Framework_TestCase
     {
         $this->pci->parse(TEST_FILES_PATH . 'source8.php');
 
-        $this->assertSame(
+        $this->assertEquals(
             array('5.3.0', ''), $this->pci->getVersions()
         );
 
