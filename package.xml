@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-10-13</date>
- <time>18:04:20</time>
+ <date>2012-10-21</date>
+ <time>11:51:55</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -48,6 +48,7 @@ will not be print anymore on standard output when --report-file option used
 summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
 - fixed Reference interface about new filter API
 - WARNING: PHP_Timer 1.0.4 break PHP 5.2 compatibility, so the print resource feature become optional
+- improved true results again with detection of conditional code and excludes from parsing
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
@@ -1149,6 +1150,9 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="source8.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="source9.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="source1626.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -1394,6 +1398,10 @@ Bug fixes:
      <tasks:replace from="@package_version@" to="version" type="package-info" />
      <tasks:gitrcskeywords />
     </file>
+    <file baseinstalldir="Bartlett" name="ConditionTest.php" role="test">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:gitrcskeywords />
+    </file>
     <file baseinstalldir="Bartlett" name="ConfigurationTest.php" role="test">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
      <tasks:gitrcskeywords />
@@ -1544,7 +1552,7 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-10-13</date>
+   <date>2012-10-21</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1560,6 +1568,7 @@ will not be print anymore on standard output when --report-file option used
 summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
 - fixed Reference interface about new filter API
 - WARNING: PHP_Timer 1.0.4 break PHP 5.2 compatibility, so the print resource feature become optional
+- improved true results again with detection of conditional code and excludes from parsing
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not

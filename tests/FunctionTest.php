@@ -136,7 +136,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
-                'excluded' => false,
+                'excluded' => '1',  // excluded by code condition: function_exists
             ),
             'debug_print_backtrace' => array(
                 'versions' => array('5.0.0', '', '5.0.0', ''),
@@ -156,7 +156,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
-                'excluded' => false,
+                'excluded' => false,  // excluded by code condition: function_exists
             ),
             'fopen' => array(
                 'versions' => array('4.0.0', '', '4.0.0', ''),
@@ -274,7 +274,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                 'uses' => 1,
                 'sources' => array(TEST_FILES_PATH . 'source2.php'),
                 'namespace' => '\\',
-                'excluded' => false,
+                'excluded' => '1',  // excluded by code condition: function_exists
             ),
             'debug_print_backtrace' => array(
                 'versions' => array('5.0.0', '', '5.0.0', ''),

@@ -149,11 +149,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     /**
      * @var array
      */
-    private $_versionsLatest;
-
-    /**
-     * @var array
-     */
     private $_event;
 
     /**
@@ -169,8 +164,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     public function __construct(array $options = null)
     {
         $this->_observers = new SplObjectStorage();
-
-        $this->_versionsLatest = array('4.0.0', '');
 
         $defaultOptions = array(
             'recursive'        => false,
@@ -498,7 +491,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             array(
                 'excludes'   => array(),
                 'includes'   => array(),
-                'versions'   => array(),
+                'versions'   => array('4.0.0', ''),
                 'extensions' => array(),
                 'namespaces' => array(),
                 'traits'     => array(),
@@ -516,9 +509,8 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             $i++;
             $this->startScanFile($source, $i, $filesCount);
             $this->scan($source);
-            $this->endScanFile($source, $i, $filesCount);
 
-            // consolidate global results of ...
+            // consolidate all global results ...
 
             // excludes
             foreach ($this->results[$source]['excludes'] as $exc => $data) {
@@ -548,16 +540,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                     $this->results[0]['includes'][$inc] = $data;
                 }
             }
-
-            // versions
-            $this->updateVersion(
-                $this->results[$source]['versions'][0],
-                $this->results[0]['versions'][0]
-            );
-            $this->updateVersion(
-                $this->results[$source]['versions'][1],
-                $this->results[0]['versions'][1]
-            );
 
             // extensions
             foreach ($this->results[$source]['extensions'] as $ext => $data) {
@@ -592,16 +574,21 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                                     $this->results[0][$key][$ext][$name]['sources'],
                                     $data['sources']
                                 );
+                            if ($this->results[0][$key][$ext][$name]['excluded'] === false
+                                && $data['excluded'] !== false
+                            ) {
+                                $this->results[0][$key][$ext][$name]['excluded']
+                                    = $data['excluded'];
+                            }
 
                             $this->updateVersion(
-                                $this->results[$source][$key][$ext][$name]['versions'][0],
+                                $data['versions'][0],
                                 $this->results[0][$key][$ext][$name]['versions'][0]
                             );
                             $this->updateVersion(
-                                $this->results[$source][$key][$ext][$name]['versions'][1],
+                                $data['versions'][1],
                                 $this->results[0][$key][$ext][$name]['versions'][1]
                             );
-
                         } else {
                             // first match
                             $this->results[0][$key][$ext][$name] = $data;
@@ -609,6 +596,16 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                     }
                 }
             }
+
+            // versions
+            $this->updateVersion(
+                $this->results[$source]['versions'][0],
+                $this->results[0]['versions'][0]
+            );
+            $this->updateVersion(
+                $this->results[$source]['versions'][1],
+                $this->results[0]['versions'][1]
+            );
 
             // conditions
             foreach ($this->results[$source]['conditions'] as $cond => $data) {
@@ -621,24 +618,10 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 }
             }
 
+            $this->endScanFile($source, $i, $filesCount);
+
             if ($consoleProgress) {
                 $progress->advance();
-            }
-        }
-
-        // re-consolidate partial results depending of global context
-        $keys = array(
-            'namespaces', 'traits', 'interfaces', 'classes',
-            'functions', 'constants', 'globals', 'tokens'
-        );
-        foreach ($files as $source) {
-            foreach ($keys as $key) {
-                foreach ($this->results[$source][$key] as $ext => $items) {
-                    foreach ($items as $name => $data) {
-                        $this->results[$source][$key][$ext][$name]['versions']
-                            = $this->results[0][$key][$ext][$name]['versions'];
-                    }
-                }
             }
         }
 
@@ -945,6 +928,28 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                     }
                 }
             }
+
+            // updates current source versions only if element is not excluded
+            $keys = array(
+                'namespaces', 'traits', 'interfaces', 'classes',
+                'functions', 'constants', 'globals', 'tokens'
+            );
+            foreach ($keys as $key) {
+                foreach ($this->$key as $ext => $items) {
+                    foreach ($items as $name => $data) {
+                        if ($data['excluded'] === false) {
+                            $this->updateVersion(
+                                $data['versions'][0],
+                                $this->versions[0]
+                            );
+                            $this->updateVersion(
+                                $data['versions'][1],
+                                $this->versions[1]
+                            );
+                        }
+                    }
+                }
+            }
         }
 
         $this->results[$source] = array(
@@ -1169,7 +1174,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
      */
     public function getVersions()
     {
-        return $this->_versionsLatest;
+        return $this->results[0]['versions'];
     }
 
     /**
@@ -1511,7 +1516,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 $this->{$category}[$extension] = array();
             }
 
-            if (isset($this->{$category}[$extension][$key])) {
+            if (isset($this->{$category}[$extension][$key]['uses'])) {
                 $values[$key]['uses']
                     = $this->{$category}[$extension][$key]['uses'];
                 $values[$key]['sources'][] = $source;
@@ -1542,7 +1547,10 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                     );
                 }
             }
-            $values[$key]['excluded'] = false;
+            $values[$key]['excluded']
+                = isset($this->{$category}[$extension][$key]['excluded'])
+                    ? $this->{$category}[$extension][$key]['excluded'] : false;
+
             $values[$key]['versions'] = $this->_versionsRef;
 
             if ($category == 'globals') {
@@ -1600,6 +1608,10 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                         continue 2;
                     }
                 }
+            }
+
+            if ($category == 'functions') {
+                $this->excludeCodeConditions($key, $data, $source, $ns);
             }
 
             $functions = array();
@@ -1694,25 +1706,140 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                             }
                         }
                     }
-
                 }
             }
+        }
+    }
 
-            // updates the minimum and maximum versions of current source
-            $this->updateVersion(
-                $this->_versionsRef[0], $this->versions[0]
-            );
-            $this->updateVersion(
-                $this->_versionsRef[1], $this->versions[1]
-            );
+    /**
+     * Excludes code conditions that are not yet marked as excluded
+     *
+     * @param string $key    Function name of code conditional
+     * @param array  $data   Function properties in current context
+     * @param string $source Data source name
+     * @param string $ns     Namespace
+     *
+     * @return void
+     */
+    private function excludeCodeConditions($key, $data, $source, $ns)
+    {
+        $condCodeMapping = array(
+            'function_exists'  => 'functions',   // level 1
+            'extension_loaded' => 'extensions',  // level 2
+            'defined'          => 'constants',   // level 4
+            'class_exists'     => 'classes',     // level 32
+            'interface_exists' => 'interfaces',  // level 64
+            'trait_exists'     => 'traits',      // level 128
+        );
 
-            // updates the minimum and maximum versions of all data source
-            $this->updateVersion(
-                $this->_versionsRef[0], $this->_versionsLatest[0]
+        if ((array_key_exists($key, $condCodeMapping)
+            && isset($data['arguments'][0]['defaultValue'])
+            && is_string($data['arguments'][0]['defaultValue'])) === false
+        ) {
+            // it's not a catchable code condition
+            return;
+        }
+
+        $categKey = $condCodeMapping[$key];
+        $itemKey  = trim($data['arguments'][0]['defaultValue'], "'\"");
+
+        $namespace = '\\';
+        if (strpos($itemKey, $namespace) === false) {
+            $defaultVersion = '4.0.0';
+            $namespace      = $ns;
+        } else {
+            $defaultVersion = '5.3.0';
+            $values         = explode($namespace, $itemKey);
+            $itemKey        = array_pop($values);
+            $namespace      = implode($namespace, $values);
+        }
+
+        // adjust default version depending of component
+        if ('trait_exists' === $key) {
+            $defaultVersion = '5.4.0';
+        } elseif ('interface_exists' === $key
+            && '\\' === $namespace
+        ) {
+            $defaultVersion = '5.0.0';
+
+        } elseif ('extension_loaded' === $key) {
+            if (isset($this->reference['extensions'][$itemKey])) {
+                // if extension exists in reference, got it
+                $versions = $this->reference['extensions'][$itemKey];
+            } else {
+                // else uses default values
+                $versions = array('4.0.0', '', '');
+            }
+        } else {
+            /*
+                Others (class, function, constant)
+                are already defined depending of namespace
+             */
+        }
+
+        if ('extensions' === $categKey) {
+            if (isset($this->extensions[$itemKey])) {
+                // if already exists
+                $newProperties = array(
+                    'excluded'  => '1',
+                );
+            } else {
+                // if not yet found
+                $this->extensions[$itemKey] = array();
+                $newProperties = array(
+                    'versions'  => $versions,
+                    'uses'      => 1,
+                    'sources'   => array($source),
+                    'excluded'  => '1',
+                );
+            }
+            $this->extensions[$itemKey] = array_merge(
+                $this->extensions[$itemKey],
+                $newProperties
             );
-            $this->updateVersion(
-                $this->_versionsRef[1], $this->_versionsLatest[1]
-            );
+            $this->excludes[$categKey][$itemKey] = true;
+
+        } elseif (!isset($this->excludes[$categKey][$itemKey])) {
+            $ref = $this->searchReference($categKey, $itemKey);
+
+            if ($ref === 1) {
+                // user component
+                $ref = array('user' => array(
+                    $itemKey => array(
+                        'versions' => array($defaultVersion, ''),
+                        )
+                    )
+                );
+            }
+            if (is_array($ref)) {
+                list ($ext, $values) = each($ref);
+
+                if ('\\' === $namespace) {
+                    $this->excludes[$categKey][$itemKey] = true;
+                } else {
+                    $this->excludes[$categKey][$namespace . '\\' . $itemKey] = true;
+                }
+                if (isset($this->{$categKey}[$ext][$itemKey])) {
+                    // if already exists
+                    $newProperties = array(
+                        'excluded'  => '1',
+                    );
+                } else {
+                    // if not yet found
+                    $this->{$categKey}[$ext][$itemKey] = array();
+                    $newProperties = array(
+                        'versions'  => $values[$itemKey]['versions'],
+                        'uses'      => 1,
+                        'sources'   => array($source),
+                        'namespace' => $namespace,
+                        'excluded'  => '1',
+                    );
+                }
+                $this->{$categKey}[$ext][$itemKey] = array_merge(
+                    $this->{$categKey}[$ext][$itemKey],
+                    $newProperties
+                );
+            }
         }
     }
 
