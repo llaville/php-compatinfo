@@ -46,7 +46,6 @@ class PHP_CompatInfo {
     SplObjectStorage -_observers    
     array -_namespaces
     array -_versionsRef
-    array -_versionsLatest
     array -_event
     
     object +__construct ( array $options = null )
@@ -89,6 +88,8 @@ class PHP_CompatInfo {
     void #startLoadReference ( string $reference, array $extensions )
     void #endLoadReference ( string $reference, int $successful, int $failures )
     void #failLoadReference ( string $warn )
+
+    void -excludeCodeConditions( string $key, array $data, string $source, string $ns)
 }
 
 class PHP_CompatInfo_Reference_PHP5 {
