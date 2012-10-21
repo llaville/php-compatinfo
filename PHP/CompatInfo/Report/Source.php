@@ -88,7 +88,7 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
             $reflect = new PHP_Reflect();
             $tokens  = $reflect->scan($filename);
 
-            $this->printTHead($base, $filename, $verbose);
+            $this->printTHeader($base, $filename, $verbose);
 
             if ($verbose == 1) {
                 foreach ($tokens as $token) {
@@ -113,7 +113,7 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
             }
 
             $total = $reflect->getLinesOfCode();
-            $this->printTFoot($total);
+            $this->printTFooter($total);
         }
         echo PHP_EOL;
     }
@@ -127,7 +127,7 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
      *
      * @return void
      */
-    protected function printTHead($base, $filename, $verbose)
+    protected function printTHeader($base, $filename, $verbose)
     {
         echo PHP_EOL;
         echo 'BASE: ' . $base . PHP_EOL;
@@ -149,7 +149,7 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
      *
      * @return void
      */
-    protected function printTFoot($total)
+    protected function printTFooter($total)
     {
         echo str_repeat('-', $this->width) . PHP_EOL;
         echo 'A TOTAL OF ' . $total['loc'] . ' LINE(S)';
