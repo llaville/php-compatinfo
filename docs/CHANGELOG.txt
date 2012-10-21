@@ -19,7 +19,7 @@ will not be print anymore on standard output when _--report-file_ option used
 * add a full report (all results at once:
 summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
 * fixed Reference interface about new filter API
-* WARNING: PHP_Timer 1.0.4 break PHP 5.2 compatibility, so the print resource feature become optional
+* WARNING: PHP_Timer 1.0.4 (autoloader) break PHP 5.2 compatibility, so the print resource feature become optional
 * improved true results again with detection of conditional code and excludes from parsing
 
 .Bug fixes:

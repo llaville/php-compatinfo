@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2012-10-21</date>
- <time>11:51:55</time>
+ <time>22:18:38</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -47,7 +47,7 @@ will not be print anymore on standard output when --report-file option used
 - add a full report (all results at once:
 summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
 - fixed Reference interface about new filter API
-- WARNING: PHP_Timer 1.0.4 break PHP 5.2 compatibility, so the print resource feature become optional
+- WARNING: PHP_Timer 1.0.4 (autoloader) break PHP 5.2 compatibility, so the print resource feature become optional
 - improved true results again with detection of conditional code and excludes from parsing
 
 Bug fixes:
@@ -1521,10 +1521,14 @@ Bug fixes:
     <name>PHP_Timer</name>
     <channel>pear.phpunit.de</channel>
     <min>1.0.0</min>
-    <max>1.0.3</max>
    </package>
   </optional>
  </dependencies>
+ <usestask>
+  <task>gitrcskeywords</task>
+  <package>PEAR_Task_Gitrcskeywords</package>
+  <channel>bartlett.laurent-laville.org</channel>
+ </usestask>
  <phprelease>
   <installconditions>
    <os>
@@ -1567,7 +1571,7 @@ will not be print anymore on standard output when --report-file option used
 - add a full report (all results at once:
 summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
 - fixed Reference interface about new filter API
-- WARNING: PHP_Timer 1.0.4 break PHP 5.2 compatibility, so the print resource feature become optional
+- WARNING: PHP_Timer 1.0.4 (autoloader) break PHP 5.2 compatibility, so the print resource feature become optional
 - improved true results again with detection of conditional code and excludes from parsing
 
 Bug fixes:

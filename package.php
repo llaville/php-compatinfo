@@ -377,6 +377,7 @@ if (isset($ini['replacements'])) {
                 if ('git-rcs-keywords' === $type) {
                     $ok = $pfm->addGitRcsKeywords($file);
                     if ($ok) {
+                        $pfm->resetUsestask();
                         // documenting custom file task
                         $pfm->addUsestask(
                             'gitrcskeywords',
