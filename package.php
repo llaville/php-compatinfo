@@ -209,7 +209,7 @@ class Bartlett_PackageFileManager extends PEAR_PackageFileManager2
      * @param string $path relative path of file
      *                     (relative to packagedirectory option)
      *
-     * @return void
+     * @return bool TRUE if task added, FALSE otherwise
      */
     public function addGitRcsKeywords($path)
     {
@@ -219,7 +219,7 @@ class Bartlett_PackageFileManager extends PEAR_PackageFileManager2
         @include_once 'PEAR/Task/Gitrcskeywords/Rw.php';
         if (!class_exists('PEAR_Task_Gitrcskeywords_Rw')) {
             // just in case, PEAR gitrcskeywords task class is not installed
-            return;
+            return false;
         }
         $l = null;
         $task = new PEAR_Task_Gitrcskeywords_Rw($this, $this->_config, $l, '');
@@ -237,6 +237,7 @@ class Bartlett_PackageFileManager extends PEAR_PackageFileManager2
         }
 
         chdir($current_dir);
+        return true;
     }
 }
 
@@ -374,7 +375,15 @@ if (isset($ini['replacements'])) {
             } elseif (count($rule) === 1) {
                 list($type) = array_map('trim', $rule);
                 if ('git-rcs-keywords' === $type) {
-                    $pfm->addGitRcsKeywords($file);
+                    $ok = $pfm->addGitRcsKeywords($file);
+                    if ($ok) {
+                        // documenting custom file task
+                        $pfm->addUsestask(
+                            'gitrcskeywords',
+                            'PEAR_Task_Gitrcskeywords',
+                            'bartlett.laurent-laville.org'
+                        );
+                    }
                 }
             }
         }
