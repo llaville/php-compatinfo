@@ -45,8 +45,23 @@ class PHP_CompatInfo_Reference_OpensslTest
             // requires HAVE_OPENSSL_MD2_H
             'OPENSSL_ALGO_MD2',
             // requires OPENSSL_VERSION_NUMBER >= 0x0090806fL
+            // and !OPENSSL_NO_TLSEXT
             'OPENSSL_TLSEXT_SERVER_NAME',
         );
+        if (defined('OPENSSL_VERSION_NUMBER')) {
+            if (OPENSSL_VERSION_NUMBER < 0x0090708f) {
+                $this->optionnalconstants = array_merge(
+                    $this->optionnalconstants,
+                    array(
+                        'OPENSSL_ALGO_SHA224',
+                        'OPENSSL_ALGO_SHA256',
+                        'OPENSSL_ALGO_SHA384',
+                        'OPENSSL_ALGO_SHA512',
+                        'OPENSSL_ALGO_RMD160',
+                    )
+                );
+            }
+        }
         $this->obj = new PHP_CompatInfo_Reference_Openssl();
         parent::setUp();
     }
