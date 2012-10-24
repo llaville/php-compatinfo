@@ -23,6 +23,7 @@ summary, extensions, interfaces, traits, classes, functions, constants, globals,
 * improved true results again with detection of conditional code and excludes from parsing
 * upgrade ssh reference to version 0.12 (thanks to Remi Collet)
 * upgrade openssl reference with new PHP 5.4.8 constants (thanks to Remi Collet)
+* upgrade standard reference with PHP 5.4.8 optional second argument for assert() to specify custom message
 
 .Bug fixes:
 * PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not

@@ -136,7 +136,7 @@ class PHP_CompatInfo_Reference_Standard
             'arsort'                         => array('4.0.0', ''),
             'asin'                           => array('4.0.0', ''),
             'asort'                          => array('4.0.0', ''),
-            'assert'                         => array('4.0.0', ''),
+            'assert'                         => array('4.0.0', '', '4.0.0, 5.4.8'),
             'assert_options'                 => array('4.0.0', ''),
             'atan'                           => array('4.0.0', ''),
             'atan2'                          => array('4.0.0', ''),
