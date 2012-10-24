@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Ssh2
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '0.11.3';
+    const REF_VERSION = '0.12';
 
     /**
      * Gets informations about extensions
@@ -121,6 +121,13 @@ class PHP_CompatInfo_Reference_Ssh2
             'ssh2_publickey_init'            => array('4.0.0', ''),
             'ssh2_publickey_list'            => array('4.0.0', ''),
             'ssh2_publickey_remove'          => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '0.12';        // 2012-10-15
+        $items = array(
+            'ssh2_sftp_chmod'                => array('4.0.0', ''),
+            'ssh2_auth_agent'                => array('4.0.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
