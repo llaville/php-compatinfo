@@ -46,6 +46,8 @@ class PHP_CompatInfo_Reference_Ssh2Test
             'ssh2_forward_listen',
             // Requires PHP_SSH2_POLL
             'ssh2_poll',
+            // Requires libssh >= 1.2.3
+            'ssh2_auth_agent',
         );
         $this->optionnalconstants = array(
             // Requires PHP_SSH2_POLL
