@@ -24,6 +24,13 @@ interface Countable {
     {abstract} int +count ( void )
 }
 
+abstract class PHP_CompatInfo_Filter {
+    static string #filterVersion
+    static string #filterOperator
+
+    static void #applyFilter( array &$results, string $category = null)
+}
+
 class PHP_CompatInfo {
     array #reference
     array #warnings
@@ -43,38 +50,38 @@ class PHP_CompatInfo {
     array #results
     int #startTime
 
-    SplObjectStorage -_observers    
+    SplObjectStorage -_observers
     array -_namespaces
     array -_versionsRef
     array -_event
-    
+
     object +__construct ( array $options = null )
-    
+
     void +attach ( SplObserver $observer )
     void +detach ( SplObserver $observer )
     void +notify ( void )
-    
+
     Traversable +getIterator ( void )
-    
+
     int +count ( void )
-    
+
     array +getOptions ( void )
-    
+
     array +getEvent ( void )
     void #setEvent( array $event )
-    
+
     bool +hasWarnings ( void )
     array +getWarnings ( bool $purge = false )
     void +addWarning ( string $warn )
-    
+
     array +getFilelist ( mixed $dataSource, bool $recursive, array $excludesPattern )
     bool +parse ( mixed $dataSource )
     array +toArray ( string $source = null )
     array +__call ( string $name, array $args )
     array +getConditions ( string $category = null, string $source = null )
     array +getVersions ( void )
-    
-    void #scan ( string $source ) 
+
+    void #scan ( string $source )
     string #searchNamespace ( string $typeHint )
     void #loadReference ( string $name, array $options = null )
     mixed #searchReference ( string $category, string $name )
@@ -101,8 +108,9 @@ class PHP_Reflect {
 SplSubject <|.. PHP_CompatInfo
 IteratorAggregate <|.. PHP_CompatInfo
 Countable <|.. PHP_CompatInfo
+PHP_CompatInfo_Filter <|-- PHP_CompatInfo
 
-PHP_Reflect - PHP_CompatInfo : < use parser engine 
+PHP_Reflect - PHP_CompatInfo : < use parser engine
 PHP_CompatInfo_Reference_PHP5 - PHP_CompatInfo : < load
 ---------------------------------------------------------------------
 
@@ -121,14 +129,14 @@ interface PHP_CompatInfo_Reference {
 
 abstract class PHP_CompatInfo_Reference_PluginsAbstract {
     array #warnings
-    
+
     bool  +hasWarnings ( void )
     array +getWarnings ( void )
     array #combineExtension ( string $ext, array $arr )
     void  #setFilter( array $args )
     void  #applyFilter( string $release, array $items, arry &$elements)
     void  #setMaxExtensionVersion( string $version, string $name, array &$elements)
-    
+
     array +getAll ( string $extension = null, string $version = null, string $condition = null )
     array +getExtensions ( string $extension = null, string $version = null, string $condition = null )
     array +getInterfaces ( string $extension = null, string $version = null, string $condition = null )
@@ -139,7 +147,7 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract {
 
 class PHP_CompatInfo_Reference_PHP4 {
     array #extensionReferences
-    
+
     object +__construct ( array $extensions = null )
 
     array +getAll ( string $extension = null, string $version = '4', string $condition = null )
@@ -165,7 +173,7 @@ class PHP_CompatInfo_Reference_PHP5 {
 class PHP_CompatInfo_Reference_ALL {
     object +__construct( array $extensions = null )
     array static +getDatabaseExtensions()
-    
+
     array +getAll ( string $extension = null, string $version = null, string $condition = null )
     array +getExtensions ( string $extension = null, string $version = null, string $condition = null )
     array +getInterfaces ( string $extension = null, string $version = null, string $condition = null )
