@@ -30,6 +30,7 @@ summary, extensions, interfaces, traits, classes, functions, constants, globals,
 * standard reference fixed: mkdir mode parameter is required since PHP 4.0.0 and not 4.2.0 (it became optional)
 * multiple reports may now be appended in the same report file
 * fixed phpunit-growl.xml configuration file: display icons to both pear or stand-alone installation
+* avoid php warnings when argument to list command (of CLI tool) is invalid (requires Console_CommandLine 1.2.0 or better)
 
 
 == Version 2.8.1 (2012-09-28)

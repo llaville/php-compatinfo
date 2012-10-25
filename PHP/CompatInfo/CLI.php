@@ -268,6 +268,9 @@ class PHP_CompatInfo_CLI
                                  '"extensions", ' .
                                  '"interfaces", "classes", ' .
                                  '"functions" or "constants"',
+                'choices'     => array(
+                    'extensions', 'interfaces', 'classes', 'functions', 'constants'
+                ),
                 'multiple'    => true
             )
         );
