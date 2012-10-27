@@ -63,7 +63,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
     /**
      * Test the reference structure of an extension
-     *
+     * @group  reference
      * @return void
      */
     public function testReference()
@@ -107,6 +107,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * Test than all referenced functions exists
      *
      * @depends testReference
+     * @group  reference
      * @return void
      */
     public function testGetFunctionsFromReference()
@@ -143,6 +144,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * Test that each functions are defined in reference
      *
      * @depends testReference
+     * @group  reference
      * @return void
      */
     public function testGetFunctionsFromExtension()
@@ -174,6 +176,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * Test than all referenced constants exists
      *
      * @depends testReference
+     * @group  reference
      * @return void
      */
     public function testgetConstantsFromReference()
@@ -210,6 +213,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * Test than all referenced classes exists
      *
      * @depends testReference
+     * @group  reference
      * @return void
      */
     public function testgetClassesFromReference()
@@ -244,6 +248,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * Test than all referenced interfaces exists
      *
      * @depends testReference
+     * @group  reference
      * @return void
      */
     public function testgetInterfacesFromReference()
@@ -270,6 +275,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * Test that each constants are defined in reference
      *
      * @depends testReference
+     * @group  reference
      * @return void
      */
     public function testgetConstantsFromExtension()
