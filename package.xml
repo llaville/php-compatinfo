@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2012-10-27</date>
- <time>10:13:44</time>
+ <time>10:21:28</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -61,6 +61,7 @@ Bug fixes:
 - multiple reports may now be appended in the same report file
 - fixed phpunit-growl.xml configuration file: display icons to both pear or stand-alone installation
 - avoid php warnings when argument to list command (of CLI tool) is invalid (requires Console_CommandLine 1.2.0 or better)
+- depending of typeHint (interface, class), report now in the real category rather than just in classes
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -1376,6 +1377,7 @@ Bug fixes:
 - multiple reports may now be appended in the same report file
 - fixed phpunit-growl.xml configuration file: display icons to both pear or stand-alone installation
 - avoid php warnings when argument to list command (of CLI tool) is invalid (requires Console_CommandLine 1.2.0 or better)
+- depending of typeHint (interface, class), report now in the real category rather than just in classes
    </notes>
   </release>
   <release>

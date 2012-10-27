@@ -1649,9 +1649,20 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                                 && $classKey != 'array'
                                 && $classKey != 'callable'
                             ) {
-                                $ref = $this->searchReference('classes', $classKey);
+                                $catRef = 'interfaces';
+                                $ref = $this->searchReference($catRef, $classKey);
 
                                 if ($ref === 1) {
+                                    /*
+                                        if typeHint is not an interface,
+                                        perharps its a class
+                                     */
+                                    $catRef = 'classes';
+                                    $ref = $this->searchReference($catRef, $classKey);
+                                }
+
+                                if ($ref === 1) {
+                                    // not a PHP class or PHP interface, but just user
                                     if ($classKey == 'anonymous function') {
                                         $defaultVersion = '5.3.0';
                                     } else {
@@ -1672,15 +1683,15 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                                 }
                                 list ($ext, $val) = each($ref);
 
-                                if (!isset($this->classes[$ext])
-                                    || !isset($this->classes[$ext][$classKey])
+                                if (!isset($this->{$catRef}[$ext])
+                                    || !isset($this->{$catRef}[$ext][$classKey])
                                 ) {
                                     $namespace = $this->searchNamespace($classKey);
                                     if ('\\' != $namespace && 'user' == $ext) {
                                         $val[$classKey]['versions'] = array('5.3.0', '');
                                     }
 
-                                    $this->classes[$ext][$classKey] = array(
+                                    $this->{$catRef}[$ext][$classKey] = array(
                                         'versions'  => $val[$classKey]['versions'],
                                         'uses'      => 1,
                                         'sources'   => array($source),
@@ -1689,12 +1700,14 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                                     );
                                 }
 
+                                $this->_versionsRef = $val[$classKey]['versions'];
+
                                 if (!isset($this->extensions[$ext])) {
                                     // retrieve extension versions information
                                     foreach ($this->reference['extensions'] as $k => $v) {
                                         if ($ext === $k) {
                                             $this->extensions[$ext] = array(
-                                                'versions' => $v,
+                                                'versions' => $this->_versionsRef,
                                                 'excluded' => false,
                                                 'uses'     => 1,
                                                 'sources'  => array($source)
@@ -1703,8 +1716,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                                         }
                                     }
                                 }
-
-                                $this->_versionsRef = $val[$classKey]['versions'];
 
                                 $this->updateVersion(
                                     $this->_versionsRef[0],
