@@ -53,7 +53,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      * Tests the main PHP_CompatInfo default configuration
      *
      * covers PHP_CompatInfo_Configuration::getMainConfiguration
-     *
+     * @group  cli
      * @return void
      */
     public function testMainDefaultConfiguration()
@@ -76,7 +76,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      * Tests the cache options for driver used
      *
      * covers PHP_CompatInfo_Configuration::getCacheConfiguration
-     *
+     * @group  cli
      * @return void
      */
     public function testCacheConfiguration()
@@ -94,7 +94,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      * Tests the configuration for references
      *
      * covers PHP_CompatInfo_Configuration::getReferenceConfiguration
-     *
+     * @group  cli
      * @return void
      */
     public function testReferenceConfiguration()
@@ -113,7 +113,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      * Tests the PHP configuration options
      *
      * covers PHP_CompatInfo_Configuration::getPHPConfiguration
-     *
+     * @group  cli
      * @return void
      */
     public function testPHPConfiguration()
@@ -129,9 +129,9 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests exclusion of a files list
-
-     * covers PHP_CompatInfo_Configuration::getExcludeConfiguration
      *
+     * covers PHP_CompatInfo_Configuration::getExcludeConfiguration
+     * @group  cli
      * @return void
      */
     public function testExcludeFilesConfiguration()
@@ -146,9 +146,9 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests exclusion of a functions list
-
-     * covers PHP_CompatInfo_Configuration::getExcludeConfiguration
      *
+     * covers PHP_CompatInfo_Configuration::getExcludeConfiguration
+     * @group  cli
      * @return void
      */
     public function testExcludeFunctionsConfiguration()
@@ -164,7 +164,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      * Tests exclusion of all kind of elements
      *
      * covers PHP_CompatInfo_Configuration::getExcludeConfiguration
-     *
+     * @group  cli
      * @return void
      */
     public function testExcludeMixedConfiguration()
@@ -186,7 +186,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      * Tests the configuration for listeners
      *
      * covers PHP_CompatInfo_Configuration::getListenerConfiguration
-     *
+     * @group  cli
      * @return void
      */
     public function testListenerConfiguration()
@@ -228,7 +228,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      * Tests plugins options
      *
      * covers PHP_CompatInfo_Configuration::getPluginConfiguration
-     *
+     * @group  cli
      * @return void
      */
     public function testPluginConfiguration()
