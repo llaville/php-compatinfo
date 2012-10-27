@@ -108,6 +108,7 @@ class PHP_CompatInfo_Reference_CoreTest
     /**
      * Test that each functions are defined in reference
      *
+     * @group  reference
      * @return void
      */
     public function testGetFunctionsFromExtension()

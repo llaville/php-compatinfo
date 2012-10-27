@@ -52,6 +52,7 @@ class PHP_CompatInfo_Reference_SessionTest
     /**
      * Test that each constants are defined in reference
      *
+     * @group  reference
      * @return void
      */
     public function testgetConstantsFromExtension()
