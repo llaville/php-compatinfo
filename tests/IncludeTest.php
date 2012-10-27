@@ -58,7 +58,7 @@ class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
      * Tests includes results
      *
      * covers PHP_CompatInfo::getIncludes
-     *
+     * @group  main
      * @return void
      */
     public function testGetIncludesFullReport()
@@ -89,7 +89,7 @@ class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
      * Tests includes results filtering
      *
      * covers PHP_CompatInfo::getIncludes
-     *
+     * @group  main
      * @return void
      */
     public function testGetIncludesFilterByCategory()
@@ -109,7 +109,7 @@ class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
      * Tests includes results filtering by regular expression
      *
      * covers PHP_CompatInfo::getIncludes
-     *
+     * @group  main
      * @return void
      */
     public function testGetIncludesFilterByCategoryAndPattern()

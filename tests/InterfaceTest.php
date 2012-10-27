@@ -58,7 +58,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
      * Tests interfaces results
      *
      * covers PHP_CompatInfo::getInterfaces
-     *
+     * @group  main
      * @return void
      */
     public function testGetInterfacesFullReport()
@@ -100,7 +100,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
      * Tests interfaces results filtering
      *
      * covers PHP_CompatInfo::getInterfaces
-     *
+     * @group  main
      * @return void
      */
     public function testGetInterfacesFilterByCategory()
@@ -117,7 +117,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
      * Tests interfaces results filtering by regular expression
      *
      * covers PHP_CompatInfo::getInterfaces
-     * 
+     * @group  main
      * @return void
      */
     public function testGetInterfacesFilterByCategoryAndPattern()

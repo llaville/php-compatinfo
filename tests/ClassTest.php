@@ -58,6 +58,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
      * Tests array results output
      * 
      * @covers PHP_CompatInfo::toArray
+     * @group  main
      * @return void
      */
     public function testToArray()
@@ -92,7 +93,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
      * Tests classes results
      * 
      * covers PHP_CompatInfo::getClasses
-     * 
+     * @group  main
      * @return void
      */
     public function testGetClassesFullReport()
@@ -134,7 +135,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
      * Tests classes results filtering
      * 
      * covers PHP_CompatInfo::getClasses
-     * 
+     * @group  main
      * @return void
      */
     public function testGetClassesFilterByCategory()
@@ -151,7 +152,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
      * Tests classes results filtering by regular expression
      * 
      * covers PHP_CompatInfo::getClasses
-     * 
+     * @group  main
      * @return void
      */
     public function testGetClassesFilterByCategoryAndPattern()

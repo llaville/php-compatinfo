@@ -58,7 +58,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
      * Tests functions results
      *
      * covers PHP_CompatInfo::getFunctions
-     *
+     * @group  main
      * @return void
      */
     public function testGetFunctionsFullReport()
@@ -212,7 +212,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
      * Tests functions results filtering
      *
      * covers PHP_CompatInfo::getFunctions
-     *
+     * @group  main
      * @return void
      */
     public function testGetFunctionsFilterByCategory()
@@ -261,7 +261,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
      * Tests functions results filtering by regular expression
      *
      * covers PHP_CompatInfo::getFunctions
-     *
+     * @group  main
      * @return void
      */
     public function testGetFunctionsFilterByCategoryAndPattern()

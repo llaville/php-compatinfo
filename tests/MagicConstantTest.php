@@ -58,7 +58,7 @@ class PHP_CompatInfo_MagicConstantTest extends PHPUnit_Framework_TestCase
      * Tests magic constants results
      *
      * covers PHP_CompatInfo::getConstants
-     *
+     * @group  main
      * @return void
      */
     public function testGetConstants()

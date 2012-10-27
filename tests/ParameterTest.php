@@ -57,6 +57,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * signature example with get_browser()
      *
      * @link http://www.php.net/manual/en/function.get-browser.php
+     * @group  main
      * @return void
      */
     public function testGetBrowserDefaultSignature()
@@ -72,6 +73,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative signature example with get_browser()
      *
      * @link http://www.php.net/manual/en/function.get-browser.php
+     * @group  main
      * @return void
      */
     public function testGetBrowserOptionalSignature()
@@ -87,6 +89,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * signature example with sha1()
      *
      * @link http://www.php.net/manual/en/function.sha1.php
+     * @group  main
      * @return void
      */
     public function testSha1DefaultSignature()
@@ -102,6 +105,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative signature example with sha1()
      *
      * @link http://www.php.net/manual/en/function.sha1.php
+     * @group  main
      * @return void
      */
     public function testSha1OptionalSignature()
@@ -117,6 +121,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * signature example with sha1_file()
      *
      * @link http://www.php.net/manual/en/function.sha1_file.php
+     * @group  main
      * @return void
      */
     public function testSha1FileDefaultSignature()
@@ -132,6 +137,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative signature example with sha1_file()
      *
      * @link http://www.php.net/manual/en/function.sha1_file.php
+     * @group  main
      * @return void
      */
     public function testSha1FileOptionalSignature()
@@ -147,6 +153,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * signature example with md5()
      *
      * @link http://www.php.net/manual/en/function.md5.php
+     * @group  main
      * @return void
      */
     public function testMd5DefaultSignature()
@@ -162,6 +169,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative signature example with md5()
      *
      * @link http://www.php.net/manual/en/function.md5.php
+     * @group  main
      * @return void
      */
     public function testMd5OptionalSignature()
@@ -177,6 +185,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with md5_file()
      *
      * @link http://www.php.net/manual/en/function.md5-file.php
+     * @group  main
      * @return void
      */
     public function testMd5FileDefaultSignature()
@@ -192,6 +201,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with md5_file()
      *
      * @link http://www.php.net/manual/en/function.md5-file.php
+     * @group  main
      * @return void
      */
     public function testMd5FileOptionalSignature()
@@ -207,6 +217,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with mkdir()
      *
      * @link http://www.php.net/manual/en/function.mkdir.php
+     * @group  main
      * @return void
      */
     public function testMkdirDefaultSignature()
@@ -222,6 +233,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with mkdir()
      *
      * @link http://www.php.net/manual/en/function.mkdir.php
+     * @group  main
      * @return void
      */
     public function testMkdirOptionalSignature()
@@ -237,6 +249,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with file()
      *
      * @link http://www.php.net/manual/en/function.file.php
+     * @group  main
      * @return void
      */
     public function testFileDefaultSignature()
@@ -252,6 +265,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with file()
      *
      * @link http://www.php.net/manual/en/function.file.php
+     * @group  main
      * @return void
      */
     public function testFileOptionalSignature()
@@ -267,6 +281,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with str_replace()
      *
      * @link http://www.php.net/manual/en/function.str-replace.php
+     * @group  main
      * @return void
      */
     public function testStrReplaceDefaultSignature()
@@ -282,6 +297,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with str_replace()
      *
      * @link http://www.php.net/manual/en/function.str-replace.php
+     * @group  main
      * @return void
      */
     public function testStrReplaceOptionalSignature()
@@ -297,6 +313,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with fgetss()
      *
      * @link http://www.php.net/manual/en/function.fgetss.php
+     * @group  main
      * @return void
      */
     public function testFgetssDefaultSignature()
@@ -312,6 +329,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with fgetss()
      *
      * @link http://www.php.net/manual/en/function.fgetss.php
+     * @group  main
      * @return void
      */
     public function testFgetssOptionalSignature()
@@ -328,6 +346,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with microtime()
      *
      * @link http://www.php.net/manual/en/function.microtime.php
+     * @group  main
      * @return void
      */
     public function testMicrotimeDefaultSignature()
@@ -343,6 +362,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with microtime()
      *
      * @link http://www.php.net/manual/en/function.microtime.php
+     * @group  main
      * @return void
      */
     public function testMicrotimeOptionalSignature()
@@ -358,6 +378,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with array_keys()
      *
      * @link http://www.php.net/manual/en/function.array-keys.php
+     * @group  main
      * @return void
      */
     public function testArrayKeysDefaultSignature()
@@ -373,6 +394,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with array_keys()
      *
      * @link http://www.php.net/manual/en/function.array-keys.php
+     * @group  main
      * @return void
      */
     public function testArrayKeysOptionalSignature()
@@ -388,6 +410,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with array_slice()
      *
      * @link http://www.php.net/manual/en/function.array-slice.php
+     * @group  main
      * @return void
      */
     public function testArraySliceDefaultSignature()
@@ -403,6 +426,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with array_slice()
      *
      * @link http://www.php.net/manual/en/function.array-slice.php
+     * @group  main
      * @return void
      */
     public function testArraySliceOptionalSignature()
@@ -418,6 +442,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with file_get_contents()
      *
      * @link http://www.php.net/manual/en/function.file-get-contents.php
+     * @group  main
      * @return void
      */
     public function testFileGetContentsDefaultSignature()
@@ -433,6 +458,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with file_get_contents()
      *
      * @link http://www.php.net/manual/en/function.file-get-contents.php
+     * @group  main
      * @return void
      */
     public function testFileGetContentsOptionalSignature()
@@ -448,6 +474,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with stream_get_contents()
      *
      * @link http://www.php.net/manual/en/function.stream-get-contents.php
+     * @group  main
      * @return void
      */
     public function testStreamGetContentsDefaultSignature()
@@ -463,6 +490,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with stream_get_contents()
      *
      * @link http://www.php.net/manual/en/function.stream-get-contents.php
+     * @group  main
      * @return void
      */
     public function testStreamGetContentsOptionalSignature()
@@ -478,6 +506,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with gettimeofday()
      *
      * @link http://www.php.net/manual/en/function.gettimeofday.php
+     * @group  main
      * @return void
      */
     public function testGettimeofdayDefaultSignature()
@@ -493,6 +522,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with gettimeofday()
      *
      * @link http://www.php.net/manual/en/function.gettimeofday.php
+     * @group  main
      * @return void
      */
     public function testGettimeofdayOptionalSignature()
@@ -508,6 +538,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with substr_count()
      *
      * @link http://www.php.net/manual/en/function.substr-count.php
+     * @group  main
      * @return void
      */
     public function testSubstrCountDefaultSignature()
@@ -523,6 +554,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with substr_count()
      *
      * @link http://www.php.net/manual/en/function.substr-count.php
+     * @group  main
      * @return void
      */
     public function testSubstrCountOptionalSignature()
@@ -538,6 +570,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with is_a()
      *
      * @link http://www.php.net/manual/en/function.is-a.php
+     * @group  main
      * @return void
      */
     public function testIsADefaultSignature()
@@ -553,6 +586,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with is_a()
      *
      * @link http://www.php.net/manual/en/function.is-a.php
+     * @group  main
      * @return void
      */
     public function testIsAOptionalSignature()
@@ -568,6 +602,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with jdtojewish()
      *
      * @link http://www.php.net/manual/en/function.jdtojewish.php
+     * @group  main
      * @return void
      */
     public function testJdtojewishDefaultSignature()
@@ -589,6 +624,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with jdtojewish()
      *
      * @link http://www.php.net/manual/en/function.jdtojewish.php
+     * @group  main
      * @return void
      */
     public function testJdtojewishOptionalSignature()
@@ -610,6 +646,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with stream_copy_to_stream()
      *
      * @link http://www.php.net/manual/en/function.stream-copy-to-stream.php
+     * @group  main
      * @return void
      */
     public function testStreamCopyToStreamDefaultSignature()
@@ -625,6 +662,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with stream_copy_to_stream()
      *
      * @link http://www.php.net/manual/en/function.stream-copy-to-stream.php
+     * @group  main
      * @return void
      */
     public function testStreamCopyToStreamOptionalSignature()
@@ -640,6 +678,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with copy()
      *
      * @link http://www.php.net/manual/en/function.copy.php
+     * @group  main
      * @return void
      */
     public function testCopyDefaultSignature()
@@ -655,6 +694,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with copy()
      *
      * @link http://www.php.net/manual/en/function.copy.php
+     * @group  main
      * @return void
      */
     public function testCopyOptionalSignature()
@@ -670,6 +710,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with parse_url()
      *
      * @link http://www.php.net/manual/en/function.parse-url.php
+     * @group  main
      * @return void
      */
     public function testParseUrlDefaultSignature()
@@ -685,6 +726,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with parse_url()
      *
      * @link http://www.php.net/manual/en/function.parse-url.php
+     * @group  main
      * @return void
      */
     public function testParseUrlOptionalSignature()
@@ -700,6 +742,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with memory_get_usage()
      *
      * @link http://www.php.net/manual/en/function.memory-get-usage.php
+     * @group  main
      * @return void
      */
     public function testMemoryGetUsageDefaultSignature()
@@ -715,6 +758,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with memory_get_usage()
      *
      * @link http://www.php.net/manual/en/function.memory-get-usage.php
+     * @group  main
      * @return void
      */
     public function testMemoryGetUsageOptionalSignature()
@@ -730,6 +774,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with htmlspecialchars()
      *
      * @link http://www.php.net/manual/en/function.htmlspecialchars.php
+     * @group  main
      * @return void
      */
     public function testHtmlspecialcharsDefaultSignature()
@@ -745,6 +790,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with htmlspecialchars()
      *
      * @link http://www.php.net/manual/en/function.htmlspecialchars.php
+     * @group  main
      * @return void
      */
     public function testHtmlspecialcharsOptionalSignature()
@@ -760,6 +806,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with htmlentities()
      *
      * @link http://www.php.net/manual/en/function.htmlentities.php
+     * @group  main
      * @return void
      */
     public function testHtmlentitiesDefaultSignature()
@@ -775,6 +822,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with htmlentities()
      *
      * @link http://www.php.net/manual/en/function.htmlentities.php
+     * @group  main
      * @return void
      */
     public function testHtmlentitiesOptionalSignature()
@@ -790,6 +838,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with nl2br()
      *
      * @link http://www.php.net/manual/en/function.nl2br.php
+     * @group  main
      * @return void
      */
     public function testNl2brDefaultSignature()
@@ -805,6 +854,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with nl2br()
      *
      * @link http://www.php.net/manual/en/function.nl2br.php
+     * @group  main
      * @return void
      */
     public function testNl2brOptionalSignature()
@@ -820,6 +870,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with clearstatcache()
      *
      * @link http://www.php.net/manual/en/function.clearstatcache.php
+     * @group  main
      * @return void
      */
     public function testClearstatcacheDefaultSignature()
@@ -835,6 +886,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with clearstatcache()
      *
      * @link http://www.php.net/manual/en/function.clearstatcache.php
+     * @group  main
      * @return void
      */
     public function testClearstatcacheOptionalSignature()
@@ -850,6 +902,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with opendir()
      *
      * @link http://www.php.net/manual/en/function.opendir.php
+     * @group  main
      * @return void
      */
     public function testOpendirDefaultSignature()
@@ -865,6 +918,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with opendir()
      *
      * @link http://www.php.net/manual/en/function.opendir.php
+     * @group  main
      * @return void
      */
     public function testOpendirOptionalSignature()
@@ -880,6 +934,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with json_decode()
      *
      * @link http://www.php.net/manual/en/function.json-decode.php
+     * @group  main
      * @return void
      */
     public function testJsonDecodeDefaultSignature()
@@ -901,6 +956,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with json_decode()
      *
      * @link http://www.php.net/manual/en/function.json-decode.php
+     * @group  main
      * @return void
      */
     public function testJsonDecodeOptionalSignature()
@@ -922,6 +978,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with openssl_sign()
      *
      * @link http://www.php.net/manual/en/function.openssl-sign.php
+     * @group  main
      * @return void
      */
     public function testOpensslDefaultSignature()
@@ -943,6 +1000,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with openssl_sign()
      *
      * @link http://www.php.net/manual/en/function.openssl-sign.php
+     * @group  main
      * @return void
      */
     public function testOpensslOptionalSignature()
@@ -964,6 +1022,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with preg_replace()
      *
      * @link http://www.php.net/manual/en/function.preg-replace.php
+     * @group  main
      * @return void
      */
     public function testPregReplaceDefaultSignature()
@@ -985,6 +1044,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with preg_replace()
      *
      * @link http://www.php.net/manual/en/function.preg-replace.php
+     * @group  main
      * @return void
      */
     public function testPregReplaceOptionalSignature()
@@ -1006,6 +1066,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with preg_replace_callback()
      *
      * @link http://www.php.net/manual/en/function.preg-replace-callback.php
+     * @group  main
      * @return void
      */
     public function testPregReplaceCallbackDefaultSignature()
@@ -1027,6 +1088,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with preg_replace_callback()
      *
      * @link http://www.php.net/manual/en/function.preg-replace-callback.php
+     * @group  main
      * @return void
      */
     public function testPregReplaceCallbackOptionalSignature()
@@ -1048,6 +1110,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with session_regenerate_id()
      *
      * @link http://www.php.net/manual/en/function.session-regenerate-id.php
+     * @group  main
      * @return void
      */
     public function testSessionRegenerateIdDefaultSignature()
@@ -1069,6 +1132,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with session_regenerate_id()
      *
      * @link http://www.php.net/manual/en/function.session-regenerate-id.php
+     * @group  main
      * @return void
      */
     public function testSessionRegenerateIdOptionalSignature()
@@ -1090,6 +1154,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with sqlite_fetch_column_types()
      *
      * @link http://www.php.net/manual/en/function.sqlite-fetch-column-types.php
+     * @group  main
      * @return void
      */
     public function testSqliteFetchColumnTypesDefaultSignature()
@@ -1111,6 +1176,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with sqlite_fetch_column_types()
      *
      * @link http://www.php.net/manual/en/function.sqlite-fetch-column-types.php
+     * @group  main
      * @return void
      */
     public function testSqliteFetchColumnTypesOptionalSignature()
@@ -1132,6 +1198,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * example with getopt()
      *
      * @link http://www.php.net/manual/en/function.getopt.php
+     * @group  main
      * @return void
      */
     public function testGetoptDefaultSignature()
@@ -1147,6 +1214,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
      * alternative example with getopt()
      *
      * @link http://www.php.net/manual/en/function.getopt.php
+     * @group  main
      * @return void
      */
     public function testGetoptOptionalSignature()

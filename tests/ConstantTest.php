@@ -58,7 +58,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
      * Tests constants results
      * 
      * covers PHP_CompatInfo::getConstants
-     *
+     * @group  main
      * @return void
      */
     public function testGetConstantsFullReport()
@@ -117,7 +117,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
      * Tests constants filtering
      *
      * covers PHP_CompatInfo::getConstants
-     *
+     * @group  main
      * @return void
      */
     public function testGetConstantsFilterByCategory()
@@ -150,7 +150,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
      * Tests constants filtering by regular expression
      *
      * covers PHP_CompatInfo::getConstants
-     *
+     * @group  main
      * @return void
      */
     public function testGetConstantsFilterByCategoryAndPattern()

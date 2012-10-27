@@ -59,6 +59,7 @@ class PHP_CompatInfo_TokenTest extends PHPUnit_Framework_TestCase
      *
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  main
      * @return void
      */
     public function testClassMemberAccessOnInstantiation()
@@ -79,6 +80,7 @@ class PHP_CompatInfo_TokenTest extends PHPUnit_Framework_TestCase
      *
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  main
      * @return void
      */
     public function testTraitsConflictsAndAliases()
@@ -100,6 +102,7 @@ class PHP_CompatInfo_TokenTest extends PHPUnit_Framework_TestCase
      *
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  main
      * @return void
      */
     public function testArrayDereferencing()
@@ -121,6 +124,7 @@ class PHP_CompatInfo_TokenTest extends PHPUnit_Framework_TestCase
      *
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  main
      * @return void
      */
     public function testClosures()

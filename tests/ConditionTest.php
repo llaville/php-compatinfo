@@ -58,7 +58,7 @@ class PHP_CompatInfo_ConditionTest extends PHPUnit_Framework_TestCase
      * Tests all elements excluded at once
      *
      * covers PHP_CompatInfo::getExcludes
-     *
+     * @group  main
      * @return void
      */
     public function testGetAllElementsExcluded()
