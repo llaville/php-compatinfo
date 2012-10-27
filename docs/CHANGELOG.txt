@@ -37,6 +37,7 @@ summary, extensions, interfaces, traits, classes, functions, constants, globals,
 * upgrade standard reference with PHP 5.4.8 optional second argument for assert() to specify custom message
 * Extension report show now the real extension version min/max depending of others elements parsed
 (thanks to Remi Collet to noticed me)
+* test suites may be run by group, using phpunit _--exclude-group_ or _--group_ switches
 
 .Bug fixes:
 * PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
