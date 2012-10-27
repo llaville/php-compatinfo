@@ -58,6 +58,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Class calls are seen wrong
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getExtensions
+     * @group  regression
      * @return void
      */
     public function testBug1626()
@@ -78,6 +79,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Functions missing in func_array.php
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  regression
      * @return void
      */
     public function testBug6581()
@@ -95,6 +97,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/bug.php?id=8559
      *       PHP_CompatInfo fails to scan if it finds empty file in path
      * @covers PHP_CompatInfo::parse
+     * @group  regression
      * @return void
      */
     public function testBug8559()
@@ -112,6 +115,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/bug.php?id=10100
      *       Wrong parsing of possible attributes in strings
      * @covers PHP_CompatInfo::parse
+     * @group  regression
      * @return void
      */
     public function testBug10100()
@@ -129,6 +133,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/bug.php?id=13417
      *       Parser ignore class-method that are named as standard php functions
      * @covers PHP_CompatInfo::parse
+     * @group  regression
      * @return void
      */
     public function testBug13417()
@@ -148,6 +153,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       User functions are not ignored
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getExtensions
+     * @group  regression
      * @return void
      */
     public function testBug13568()
@@ -165,6 +171,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/bug.php?id=14696
      *       PHP_CompatInfo fails to scan code line when not ended with semicolon
      * @covers PHP_CompatInfo::parse
+     * @group  regression
      * @return void
      */
     public function testBug14696()
@@ -183,6 +190,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Exception class is detected as 4.0.0 code
      * @covers PHP_CompatInfo::parse
      * covers PHP_CompatInfo::getClasses
+     * @group  regression
      * @return void
      */
     public function testBug16302()
@@ -212,6 +220,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Add support for reporting max PHP version
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  regression
      * @return void
      */
     public function testRequest6056()
@@ -230,6 +239,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Parameter count isn't recognized
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  regression
      * @return void
      */
     public function testBug18881()
@@ -248,6 +258,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       PHP5 method chaining
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  regression
      * @return void
      */
     public function testRequest13094()
@@ -266,6 +277,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Mistake in classMemberAccessOnInstantiation detection
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  regression
      * @return void
      */
     public function testBugGH26()
@@ -284,6 +296,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Mistake in arrayDereferencing detection
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  regression
      * @return void
      */
     public function testBugGH27()
@@ -302,6 +315,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      *       Mistake in classMemberAccessOnInstantiation detection
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  regression
      * @return void
      */
     public function testBugGH28()
@@ -321,6 +335,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link http://www.php.net/manual/en/language.constants.predefined.php
      * @covers PHP_CompatInfo::parse
      *  covers PHP_CompatInfo::getConstants
+     * @group  regression
      * @return void
      */
     public function testBugGH29()
@@ -359,6 +374,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link https://github.com/llaville/php-compat-info/issues/30
      *       mb_ereg_replace_callback support for PHP 5.4.1
      * @covers PHP_CompatInfo::parse
+     * @group  regression
      * @return void
      */
     public function testRequestGH30()
@@ -382,6 +398,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link https://github.com/llaville/php-compat-info/issues/32
      *       Remove false positive on id(new stdClass)->c signature
      * @covers PHP_CompatInfo::parse
+     * @group  regression
      * @return void
      */
     public function testBugGH32()
@@ -399,6 +416,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link https://github.com/llaville/php-compat-info/issues/33
      *       Avoid deadlock in object operator
      * @covers PHP_CompatInfo::parse
+     * @group  regression
      * @return void
      */
     public function testBugGH33()
@@ -416,6 +434,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link https://github.com/llaville/php-compat-info/issues/34
      *       Remove false positive on A::CONST_NAME
      * @covers PHP_CompatInfo::parse
+     * @group  regression
      * @return void
      */
     public function testBugGH34()
@@ -433,6 +452,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
      * @link https://github.com/llaville/php-compat-info/issues/38
      *       type hinting in function prototype
      * @covers PHP_CompatInfo::parse
+     * @group  regression
      * @return void
      */
     public function testBugGH38()

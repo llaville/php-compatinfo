@@ -63,6 +63,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
      * @link http://pear.php.net/bugs/bug.php?id=3657
      *       php5 clone constant/token in all sources
      * @covers PHP_CompatInfo::parse
+     * @group  regression
      * @return void
      */
     public function testBug3657()
@@ -82,6 +83,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
      *       Functions missing in func_array.php
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  regression
      * @return void
      */
     public function testBug6581()
@@ -102,6 +104,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
      *       wrong PHP minimum version detection
      * @covers PHP_CompatInfo::parse
      * @covers PHP_CompatInfo::getVersions
+     * @group  regression
      * @return void
      */
     public function testBug7813()
@@ -122,6 +125,7 @@ class PHP_CompatInfo_IssueTest2 extends PHPUnit_Framework_TestCase
      *       PHP_CompatInfo fails to scan conditional code
      *       if it finds other than encapsed string
      * @covers PHP_CompatInfo::parse
+     * @group  regression
      * @return void
      */
     public function testBug13873()
