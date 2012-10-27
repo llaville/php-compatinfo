@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-10-25</date>
- <time>14:21:39</time>
+ <date>2012-10-27</date>
+ <time>10:13:44</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -52,6 +52,8 @@ summary, extensions, interfaces, traits, classes, functions, constants, globals,
 - upgrade ssh reference to version 0.12 (thanks to Remi Collet)
 - upgrade openssl reference with new PHP 5.4.8 constants (thanks to Remi Collet)
 - upgrade standard reference with PHP 5.4.8 optional second argument for assert() to specify custom message
+- Extension report show now the real extension version min/max depending of others elements parsed
+(thanks to Remi Collet to noticed me)
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
@@ -1345,7 +1347,7 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-10-25</date>
+   <date>2012-10-27</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1365,6 +1367,8 @@ summary, extensions, interfaces, traits, classes, functions, constants, globals,
 - upgrade ssh reference to version 0.12 (thanks to Remi Collet)
 - upgrade openssl reference with new PHP 5.4.8 constants (thanks to Remi Collet)
 - upgrade standard reference with PHP 5.4.8 optional second argument for assert() to specify custom message
+- Extension report show now the real extension version min/max depending of others elements parsed
+(thanks to Remi Collet to noticed me)
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not

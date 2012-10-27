@@ -86,7 +86,7 @@ class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
         echo 'PHP COMPAT INFO EXTENSION SUMMARY' . PHP_EOL;
         echo str_repeat('-', $this->width)       . PHP_EOL;
         echo '  EXTENSION' . str_repeat(' ', ($this->width - 50))
-            . 'VERSION' . str_repeat(' ', ($this->width - 68))
+            . 'EXT min/Max' . str_repeat(' ', ($this->width - 72))
             . 'PHP min/Max' . str_repeat(' ', ($this->width - 74))
             . 'COUNT' . PHP_EOL;
         echo str_repeat('-', $this->width)       . PHP_EOL;
@@ -124,7 +124,7 @@ class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
             }
 
             $extVersions = $items['versions'][2];
-            if (isset($items['versions'][3])) {
+            if (!empty($items['versions'][3])) {
                 $extVersions .= '/' . $items['versions'][3];
             }
             $versions = $items['versions'][0];

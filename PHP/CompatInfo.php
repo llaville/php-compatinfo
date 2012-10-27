@@ -1570,6 +1570,8 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 // retrieve extension versions information
                 foreach ($this->reference['extensions'] as $k => $v) {
                     if ($extension === $k) {
+                        $v[2] = '0.0';
+                        $v[3] = '';
                         $this->extensions[$extension] = array(
                             'versions' => $v,
                             'excluded' => false,
@@ -1587,6 +1589,15 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                     $values[$key]['sources']
                 );
                 $this->extensions[$extension]['sources'] = array_unique($sources);
+
+                $this->updateVersion(
+                    $values[$key]['versions'][2],
+                    $this->extensions[$extension]['versions'][2]
+                );
+                $this->updateVersion(
+                    $values[$key]['versions'][3],
+                    $this->extensions[$extension]['versions'][3]
+                );
             }
 
             // mark elements in excludes list
