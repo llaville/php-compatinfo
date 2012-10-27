@@ -1590,14 +1590,16 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 );
                 $this->extensions[$extension]['sources'] = array_unique($sources);
 
-                $this->updateVersion(
-                    $values[$key]['versions'][2],
-                    $this->extensions[$extension]['versions'][2]
-                );
-                $this->updateVersion(
-                    $values[$key]['versions'][3],
-                    $this->extensions[$extension]['versions'][3]
-                );
+                if (count($values[$key]['versions']) > 2) {
+                    $this->updateVersion(
+                        $values[$key]['versions'][2],
+                        $this->extensions[$extension]['versions'][2]
+                    );
+                    $this->updateVersion(
+                        $values[$key]['versions'][3],
+                        $this->extensions[$extension]['versions'][3]
+                    );
+                }
             }
 
             // mark elements in excludes list
