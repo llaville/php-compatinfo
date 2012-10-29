@@ -57,9 +57,12 @@ class PHP_CompatInfo_Report_Condition extends PHP_CompatInfo_Report
             }
             $this->total[] = $function;
 
-            if ($data['excluded']) {
+            if ($data['excluded'] === true) {
                 echo 'E';
                 $this->totalExcludes++;
+            } elseif ($data['excluded'] === '1') {
+                echo 'C';
+                $this->totalConditions++;
             } else {
                 echo ' ';
             }
