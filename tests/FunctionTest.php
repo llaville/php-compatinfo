@@ -104,7 +104,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                     'excluded' => false,
                 ),
                 'xdebug_start_trace' => array(
-                    'versions' => array('4.0.0', '', '1.2.0', ''),
+                    'versions' => array('4.0.0', ''),
                     'uses' => 1,
                     'sources' => array(TEST_FILES_PATH . 'source2.php'),
                     'namespace' => '\\',
@@ -243,7 +243,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
                     'excluded' => false,
                 ),
                 'xdebug_start_trace' => array(
-                    'versions' => array('4.0.0', '', '1.2.0', ''),
+                    'versions' => array('4.0.0', ''),
                     'uses' => 1,
                     'sources' => array(TEST_FILES_PATH . 'source2.php'),
                     'namespace' => '\\',
