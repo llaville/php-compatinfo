@@ -160,7 +160,7 @@ NOTE: It is usefull only when data source to parse is a directory.
     -------------------------------------------------------------------------------
       CONDITION                             EXTENSION         PHP min/Max     COUNT
     -------------------------------------------------------------------------------
-      extension_loaded                      Core              4.0.0               1
+      extension_loaded                      Core-4.0.0        4.0.0               1
     -------------------------------------------------------------------------------
     A TOTAL OF 1 CONDITION WAS FOUND
     REQUIRED PHP 4.0.0 (MIN)
@@ -175,10 +175,10 @@ NOTE: It is usefull only when data source to parse is a directory.
     -------------------------------------------------------------------------------
       CONDITION                             EXTENSION         PHP min/Max     COUNT
     -------------------------------------------------------------------------------
-      class_exists                          Core              4.0.0               1
-      interface_exists                      Core              5.0.2               1
-      function_exists                       Core              4.0.0               3
-      trait_exists                          Core              5.4.0               1
+      class_exists                          Core-4.0.0        4.0.0               1
+      interface_exists                      Core-5.0.2        5.0.2               1
+      function_exists                       Core-4.0.0        4.0.0               3
+      trait_exists                          Core-5.4.0        5.4.0               1
     -------------------------------------------------------------------------------
     A TOTAL OF 4 CONDITIONS WERE FOUND
     REQUIRED PHP 5.4.0 (MIN)
@@ -193,13 +193,14 @@ NOTE: It is usefull only when data source to parse is a directory.
     -------------------------------------------------------------------------------
       CONDITION                             EXTENSION         PHP min/Max     COUNT
     -------------------------------------------------------------------------------
-      class_exists                          Core              5.0.0               1
-      interface_exists                      Core              5.0.2               1
-      function_exists                       Core              4.0.0               1
-      trait_exists                          Core              5.4.0               1
+      class_exists                          Core-5.0.0        5.0.0               1
+      interface_exists                      Core-5.0.2        5.0.2               1
+      function_exists                       Core-4.0.0        4.0.0               1
+    C trait_exists                          Core-5.4.0        5.4.0               1
     -------------------------------------------------------------------------------
     A TOTAL OF 4 CONDITIONS WERE FOUND
-    REQUIRED PHP 5.4.0 (MIN)
+    WITH 1 EXCLUDED ON CONDITIONAL CODE
+    REQUIRED PHP 5.0.2 (MIN)
     -------------------------------------------------------------------------------
     Time: 0 seconds, Memory: 8.25Mb
     -------------------------------------------------------------------------------
@@ -257,7 +258,7 @@ That will show you this help screen:
 Print a report of data source parsed.
 
 Usage:
-  phpci [options] print [options] <sourcePath>
+  phpci [options] print [options] sourcePath
 
 Options:
   --reference=reference             The name of the reference to use
@@ -269,6 +270,9 @@ Options:
   -R, --recursive                   Includes the contents of subdirectories
   --file-extensions=fileExtensions  A comma separated list of file
                                     extensions to check
+  --filter-version=filterVersion    The version to compare with each
+                                    element found
+  --filter-operator=filterOperator  The version test relationship
   --help-reference                  List of reference available
   --help-report                     List of report available
   -h, --help                        show this help message and exit
@@ -287,6 +291,8 @@ Short Option, Long Option, Description
 , --exclude-pattern, "Identify a <exclude> element in the XML configuration file, that define what elements to exclude from scope."
 -R, --recursive, "This option allow to parse directories recursively."
 , --file-extensions, "When parsing directory, specify what file to scan."
+, --filter-version, "Filter results on a specific PHP or extension version"
+, --filter-operator, "Operator to test versions for a particular relationship (same as PHP.version_compare)"
 , --help-reference, "Remember you what are reference dictionnary available in default distribution."
 , --help-report, "Remember you what are reports available in default distribution."
 -h, --help, "With this option, you can get information about the actual list of command line options."
@@ -324,17 +330,23 @@ That will show you this help screen:
 List all extensions supported.
 
 Usage:
-  phpci [options] list-references [options]
+  phpci [options] list-references [options] [reference]
 
 Options:
-  --report-file=reportFile  Write the report to the specified file path
-  -h, --help                show this help message and exit
+  --filter-version=filterVersion    The version to compare with each
+                                    element found
+  --filter-operator=filterOperator  The version test relationship
+  --report-file=reportFile          Write the report to the specified file
+                                    path
+  -h, --help                        show this help message and exit
 ----
 
 [grid="rows",format="csv"]
 [options="header",cols="2,2,10"]
 |===========================
 Short Option, Long Option, Description
+, --filter-version, "Filter results on a specific PHP or extension version"
+, --filter-operator, "Operator to test versions for a particular relationship (same as PHP.version_compare)"
 , --report-file, "This option identify the file where results will be written."
 -h, --help, "With this option, you can get information about the actual list of command line options."
 |===========================
@@ -355,7 +367,7 @@ $ phpci list-references
     L bcmath                                                  4.0.0
     L bz2                                                     4.0.4
     L calendar                                                4.0.0
-    L Core                                  5.4.7             4.0.0
+    L Core                                  5.4.8             4.0.0
     L ctype                                                   4.0.4
     L curl                                                    4.0.2
     L date                                                    4.0.0
@@ -411,8 +423,8 @@ $ phpci list-references
     L SPL                                   0.2               5.0.0
     L SQLite                                2.0-dev           5.0.0
     L sqlite3                               0.7               5.3.0
-      ssh2                                  0.11.3            4.0.0
-    L standard                              5.4.7             4.0.0
+      ssh2                                  0.12.0            4.0.0
+    L standard                              5.4.8             4.0.0
       sysvmsg                               306939            4.3.0
       sysvsem                                                 4.0.0
       sysvshm                                                 4.0.0
@@ -456,13 +468,17 @@ That will show you this help screen:
 List all "elements" referenced in the data base.
 
 Usage:
-  phpci [options] list [options] <element...>
+  phpci [options] list [options] element1 element2 ...
 
 Options:
-  --reference=reference     The name of the reference to use
-  --report-file=reportFile  Write the report to the specified file path
-  --help-reference          List of reference available
-  -h, --help                show this help message and exit
+  --reference=reference             The name of the reference to use
+  --filter-version=filterVersion    The version to compare with each
+                                    element found
+  --filter-operator=filterOperator  The version test relationship
+  --report-file=reportFile          Write the report to the specified file
+                                    path
+  --help-reference                  List of reference available
+  -h, --help                        show this help message and exit
 
 Arguments:
   element  May be either "extensions", "interfaces", "classes", "functions"
@@ -474,6 +490,8 @@ Arguments:
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --filter-version, "Filter results on a specific PHP or extension version"
+, --filter-operator, "Operator to test versions for a particular relationship (same as PHP.version_compare)"
 , --report-file, "This option identify the file where results will be written."
 , --help-reference, "Remember you what are reference dictionnary available in default distribution."
 -h, --help, "With this option, you can get information about the actual list of command line options."
@@ -486,24 +504,24 @@ $ phpci list interfaces classes
 
 ----
     -------------------------------------------------------------------------------
-    PHP COMPAT INFO INTERFACES REFERENCE
+    PHP COMPAT INFO INTERFACE REFERENCE
     -------------------------------------------------------------------------------
-    INTERFACES                                   EXTENSION          PHP min/Max
+    INTERFACE                               EXT min/Max       PHP min/Max
     -------------------------------------------------------------------------------
-    ArrayAccess                                  SPL-5.1.0          5.1.0
-    Countable                                    SPL-5.1.0          5.1.0
-    Iterator                                     SPL-5.1.0          5.1.0
-    IteratorAggregate                            SPL-5.1.0          5.1.0
-    JsonSerializable                             json-5.4.0         5.4.0
-    OuterIterator                                SPL-5.1.0          5.1.0
-    RecursiveIterator                            SPL-5.1.0          5.1.0
-    Reflector                                    Reflection         5.0.0
-    SeekableIterator                             SPL-5.1.0          5.1.0
-    Serializable                                 SPL-5.1.0          5.1.0
-    SessionHandlerInterface                      session            5.4.0
-    SplObserver                                  SPL-5.1.0          5.1.0
-    SplSubject                                   SPL-5.1.0          5.1.0
-    Traversable                                  SPL-5.1.0          5.1.0
+    ArrayAccess                             SPL-5.1.0         5.1.0
+    Countable                               SPL-5.1.0         5.1.0
+    Iterator                                SPL-5.1.0         5.1.0
+    IteratorAggregate                       SPL-5.1.0         5.1.0
+    JsonSerializable                        json-5.4.0        5.4.0
+    OuterIterator                           SPL-5.1.0         5.1.0
+    RecursiveIterator                       SPL-5.1.0         5.1.0
+    Reflector                               Reflection        5.0.0
+    SeekableIterator                        SPL-5.1.0         5.1.0
+    Serializable                            SPL-5.1.0         5.1.0
+    SessionHandlerInterface                 session           5.4.0
+    SplObserver                             SPL-5.1.0         5.1.0
+    SplSubject                              SPL-5.1.0         5.1.0
+    Traversable                             SPL-5.1.0         5.1.0
     -------------------------------------------------------------------------------
     A TOTAL OF 14 INTERFACES WERE FOUND
     -------------------------------------------------------------------------------
@@ -512,34 +530,34 @@ $ phpci list interfaces classes
 
 
     -------------------------------------------------------------------------------
-    PHP COMPAT INFO CLASSES REFERENCE
+    PHP COMPAT INFO CLASS REFERENCE
     -------------------------------------------------------------------------------
-    CLASSES                                      EXTENSION          PHP min/Max
+    CLASS                                   EXT min/Max       PHP min/Max
     -------------------------------------------------------------------------------
-    AMQPChannel                                  amqp-1.0.0         5.2.0
-    AMQPConnection                               amqp-0.1.0         5.2.0
-    AMQPEnvelope                                 amqp-1.0.0         5.2.0
-    AMQPExchange                                 amqp-0.1.0         5.2.0
-    AMQPQueue                                    amqp-0.1.0         5.2.0
-    APCIterator                                  apc-3.1.1          5.0.0
-    AppendIterator                               SPL-5.1.0          5.1.0
-    ArrayIterator                                SPL-5.0.0          5.0.0
-    ArrayObject                                  SPL-5.0.0          5.0.0
-    BadFunctionCallException                     SPL-5.1.0          5.1.0
-    BadMethodCallException                       SPL-5.1.0          5.1.0
-    CachingIterator                              SPL-5.0.0          5.0.0
-    CallbackFilterIterator                       SPL-5.4.0          5.4.0
-    Closure                                      Core-5.3.0         5.3.0
-    Collator                                     intl-1.0.0beta     5.2.0
-    DOMAttr                                      dom                5.0.0
+    AMQPChannel                             amqp-1.0.0        5.2.0
+    AMQPConnection                          amqp-0.1.0        5.2.0
+    AMQPEnvelope                            amqp-1.0.0        5.2.0
+    AMQPExchange                            amqp-0.1.0        5.2.0
+    AMQPQueue                               amqp-0.1.0        5.2.0
+    APCIterator                             apc-3.1.1         5.0.0
+    AppendIterator                          SPL-5.1.0         5.1.0
+    ArrayIterator                           SPL-5.0.0         5.0.0
+    ArrayObject                             SPL-5.0.0         5.0.0
+    BadFunctionCallException                SPL-5.1.0         5.1.0
+    BadMethodCallException                  SPL-5.1.0         5.1.0
+    CachingIterator                         SPL-5.0.0         5.0.0
+    CallbackFilterIterator                  SPL-5.4.0         5.4.0
+    Closure                                 Core-5.3.0        5.3.0
+    Collator                                intl-1.0.0beta    5.2.0
+    DOMAttr                                 dom               5.0.0
 
     ... <more results> ...
 
-    mysqli_warning                               mysqli             5.0.0
-    php_user_filter                              standard-5.0.0     5.0.0
-    stdClass                                     Core-4.0.0         4.0.0
-    tidy                                         tidy-0.5.2         4.3.0
-    tidyNode                                     tidy-0.7.0         5.0.1
+    mysqli_warning                          mysqli            5.0.0
+    php_user_filter                         standard-5.0.0    5.0.0
+    stdClass                                Core-4.0.0        4.0.0
+    tidy                                    tidy-0.5.2        4.3.0
+    tidyNode                                tidy-0.7.0        5.0.1
     -------------------------------------------------------------------------------
     A TOTAL OF 208 CLASSES WERE FOUND
     -------------------------------------------------------------------------------
@@ -562,16 +580,20 @@ That will show you this help screen:
 List all extensions referenced in the data base.
 
 Usage:
-  phpci [options] list-extensions [options] <extension>
+  phpci [options] list-extensions [options] [reference]
 
 Options:
-  --reference=reference     The name of the reference to use
-  --report-file=reportFile  Write the report to the specified file path
-  --help-reference          List of reference available
-  -h, --help                show this help message and exit
+  --reference=reference             The name of the reference to use
+  --filter-version=filterVersion    The version to compare with each
+                                    element found
+  --filter-operator=filterOperator  The version test relationship
+  --report-file=reportFile          Write the report to the specified file
+                                    path
+  --help-reference                  List of reference available
+  -h, --help                        show this help message and exit
 
 Arguments:
-  extension  (optional) Limit output only to this extension
+  reference  (optional) Limit output only to this reference
 ----
 
 [grid="rows",format="csv"]
@@ -579,6 +601,8 @@ Arguments:
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --filter-version, "Filter results on a specific PHP or extension version"
+, --filter-operator, "Operator to test versions for a particular relationship (same as PHP.version_compare)"
 , --report-file, "This option identify the file where results will be written."
 , --help-reference, "Remember you what are reference dictionnary available in default distribution."
 -h, --help, "With this option, you can get information about the actual list of command line options."
@@ -591,58 +615,58 @@ $ phpci list-extensions
 
 ----
     -------------------------------------------------------------------------------
-    PHP COMPAT INFO EXTENSIONS REFERENCE
+    PHP COMPAT INFO EXTENSION REFERENCE
     -------------------------------------------------------------------------------
-    EXTENSIONS                                   EXTENSION <1>      PHP min/Max <2>
+    EXTENSION                               VERSION <1>       PHP min/Max <2>
     -------------------------------------------------------------------------------
-    Core                                         5.4.7              4.0.0
-    PDO                                          1.0.4dev           5.1.0
-    Phar                                         2.0.1              5.2.0
-    Reflection                                                      5.0.0
-    SPL                                          0.2                5.0.0
-    SimpleXML                                    0.1                5.0.0
-    bcmath                                                          4.0.0
-    bz2                                                             4.0.4
-    calendar                                                        4.0.0
-    ctype                                                           4.0.4
-    curl                                                            4.0.2
-    date                                                            4.0.0
-    dom                                          20031129           5.0.0
-    ereg                                                            4.0.0/5.3.0
-    fileinfo                                     1.0.5-dev          4.0.0
-    filter                                       0.11.0             5.2.0
-    ftp                                                             4.0.0
-    gd                                                              4.0.0
-    gettext                                                         4.0.0
-    hash                                         1.0                5.1.2
-    iconv                                                           4.0.5
-    imap                                                            4.0.0
-    json                                         1.2.1              5.2.0
-    libxml                                                          5.0.0
-    mbstring                                                        4.0.6
-    mcrypt                                                          4.0.0
-    mhash                                                           4.0.0
-    mysql                                        1.0                4.0.0
-    mysqli                                       0.1                5.0.0
-    OAuth                                        1.0-dev            5.1.0
-    openssl                                                         4.0.4
-    pcre                                                            4.0.0
-    session                                                         4.0.0
-    shmop                                                           4.0.0
-    soap                                                            5.0.0
-    sockets                                                         4.1.0
-    sqlite3                                      0.7-dev            5.3.0
-    standard                                     5.4.7              4.0.0
-    tidy                                         2.0                4.0.0
-    tokenizer                                    0.1                4.2.0
-    wddx                                                            4.0.0
-    xdebug                                       2.1.0              5.2.0
-    xml                                                             4.0.0
-    xmlreader                                    0.1                5.0.0
-    xmlrpc                                       0.51               4.1.0
-    xmlwriter                                    0.1                5.1.2
-    xsl                                          0.1                5.0.0
-    zlib                                         1.1                4.0.0
+    Core                                    5.4.8             4.0.0
+    PDO                                     1.0.4dev          5.1.0
+    Phar                                    2.0.1             5.2.0
+    Reflection                                                5.0.0
+    SPL                                     0.2               5.0.0
+    SimpleXML                               0.1               5.0.0
+    bcmath                                                    4.0.0
+    bz2                                                       4.0.4
+    calendar                                                  4.0.0
+    ctype                                                     4.0.4
+    curl                                                      4.0.2
+    date                                                      4.0.0
+    dom                                     20031129          5.0.0
+    ereg                                                      4.0.0/5.3.0
+    fileinfo                                1.0.5-dev         4.0.0
+    filter                                  0.11.0            5.2.0
+    ftp                                                       4.0.0
+    gd                                                        4.0.0
+    gettext                                                   4.0.0
+    hash                                    1.0               5.1.2
+    iconv                                                     4.0.5
+    imap                                                      4.0.0
+    json                                    1.2.1             5.2.0
+    libxml                                                    5.0.0
+    mbstring                                                  4.0.6
+    mcrypt                                                    4.0.0
+    mhash                                                     4.0.0
+    mysql                                   1.0               4.0.0
+    mysqli                                  0.1               5.0.0
+    OAuth                                   1.0-dev           5.1.0
+    openssl                                                   4.0.4
+    pcre                                                      4.0.0
+    session                                                   4.0.0
+    shmop                                                     4.0.0
+    soap                                                      5.0.0
+    sockets                                                   4.1.0
+    sqlite3                                 0.7-dev           5.3.0
+    standard                                5.4.8             4.0.0
+    tidy                                    2.0               4.0.0
+    tokenizer                               0.1               4.2.0
+    wddx                                                      4.0.0
+    xdebug                                  2.1.0             5.2.0
+    xml                                                       4.0.0
+    xmlreader                               0.1               5.0.0
+    xmlrpc                                  0.51              4.1.0
+    xmlwriter                               0.1               5.1.2
+    xsl                                     0.1               5.0.0
+    zlib                                    1.1               4.0.0
     -------------------------------------------------------------------------------
     A TOTAL OF 48 EXTENSIONS WERE FOUND
     -------------------------------------------------------------------------------
@@ -677,18 +701,20 @@ That will show you this help screen:
 List all interfaces referenced in the data base.
 
 Usage:
-  phpci [options] list-interfaces [options] <extension>
+  phpci [options] list-interfaces [options] [reference]
 
 Options:
-  --reference=reference     The name of the reference to use
-  --report-file=reportFile  Write the report to the specified file path
-  --help-reference          List of reference available
-  -h, --help                show this help message and exit
+  --reference=reference             The name of the reference to use
+  --filter-version=filterVersion    The version to compare with each
+                                    element found
+  --filter-operator=filterOperator  The version test relationship
+  --report-file=reportFile          Write the report to the specified file
+                                    path
+  --help-reference                  List of reference available
+  -h, --help                        show this help message and exit
 
 Arguments:
-  extension  (optional) Limit output only to this extension
-  version    (optional) Limit output to this version
-  condition  (optional) Limit output on a version condition
+  reference  (optional) Limit output only to this reference
 ----
 
 [grid="rows",format="csv"]
@@ -696,6 +722,8 @@ Arguments:
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --filter-version, "Filter results on a specific PHP or extension version"
+, --filter-operator, "Operator to test versions for a particular relationship (same as PHP.version_compare)"
 , --report-file, "This option identify the file where results will be written."
 , --help-reference, "Remember you what are reference dictionnary available in default distribution."
 -h, --help, "With this option, you can get information about the actual list of command line options."
@@ -708,24 +736,24 @@ $ phpci list-interfaces
 
 ----
     -------------------------------------------------------------------------------
-    PHP COMPAT INFO INTERFACES REFERENCE
+    PHP COMPAT INFO INTERFACE REFERENCE
     -------------------------------------------------------------------------------
-    INTERFACES                                   EXTENSION <1>      PHP min/Max <2>
+    INTERFACE                               EXT min/Max <1>   PHP min/Max <2>
     -------------------------------------------------------------------------------
-    ArrayAccess                                  SPL-5.1.0          5.1.0
-    Countable                                    SPL-5.1.0          5.1.0
-    Iterator                                     SPL-5.1.0          5.1.0
-    IteratorAggregate                            SPL-5.1.0          5.1.0
-    JsonSerializable                             json-5.4.0         5.4.0
-    OuterIterator                                SPL-5.1.0          5.1.0
-    RecursiveIterator                            SPL-5.1.0          5.1.0
-    Reflector                                    Reflection         5.0.0
-    SeekableIterator                             SPL-5.1.0          5.1.0
-    Serializable                                 SPL-5.1.0          5.1.0
-    SessionHandlerInterface                      session            5.4.0
-    SplObserver                                  SPL-5.1.0          5.1.0
-    SplSubject                                   SPL-5.1.0          5.1.0
-    Traversable                                  SPL-5.1.0          5.1.0
+    ArrayAccess                             SPL-5.1.0         5.1.0
+    Countable                               SPL-5.1.0         5.1.0
+    Iterator                                SPL-5.1.0         5.1.0
+    IteratorAggregate                       SPL-5.1.0         5.1.0
+    JsonSerializable                        json-5.4.0        5.4.0
+    OuterIterator                           SPL-5.1.0         5.1.0
+    RecursiveIterator                       SPL-5.1.0         5.1.0
+    Reflector                               Reflection        5.0.0
+    SeekableIterator                        SPL-5.1.0         5.1.0
+    Serializable                            SPL-5.1.0         5.1.0
+    SessionHandlerInterface                 session           5.4.0
+    SplObserver                             SPL-5.1.0         5.1.0
+    SplSubject                              SPL-5.1.0         5.1.0
+    Traversable                             SPL-5.1.0         5.1.0
     -------------------------------------------------------------------------------
     A TOTAL OF 14 INTERFACES WERE FOUND
     -------------------------------------------------------------------------------
@@ -752,19 +780,19 @@ $ phpci list-interfaces SPL
 Example: if you want only Core interfaces, supported by all PHP versions until 5.1.0,
  enter command below.
 ----
-$ phpci list-interfaces core php_5.1.0
+$ phpci list-interfaces core --filter-version php_5.1.0
 ----
 
 Example: if you want only standard interfaces, came only with PHP 5.0.0,
  enter command below.
 ----
-$ phpci list-interfaces standard php_5.0.0 eq
+$ phpci list-interfaces standard --filter-version php_5.0.0 --filter-operator eq
 ----
 
 Example: if you want only apc interfaces, available with all apc versions since 3.1.0,
  enter command below.
 ----
-$ phpci list-interfaces apc 3.1.0 ge
+$ phpci list-interfaces apc --filter-version 3.1.0 --filter-operator ge
 ----
 =====================================================================
 
@@ -783,18 +811,20 @@ That will show you this help screen:
 List all classes referenced in the data base.
 
 Usage:
-  phpci [options] list-classes [options] <extension>
+  phpci [options] list-classes [options] [reference]
 
 Options:
-  --reference=reference     The name of the reference to use
-  --report-file=reportFile  Write the report to the specified file path
-  --help-reference          List of reference available
-  -h, --help                show this help message and exit
-
+  --reference=reference             The name of the reference to use
+  --filter-version=filterVersion    The version to compare with each
+                                    element found
+  --filter-operator=filterOperator  The version test relationship
+  --report-file=reportFile          Write the report to the specified file
+                                    path
+  --help-reference                  List of reference available
+  -h, --help                        show this help message and exit
+  
 Arguments:
-  extension  (optional) Limit output only to this extension
-  version    (optional) Limit output to this version
-  condition  (optional) Limit output on a version condition
+  reference  (optional) Limit output only to this reference
 ----
 
 [grid="rows",format="csv"]
@@ -802,6 +832,8 @@ Arguments:
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --filter-version, "Filter results on a specific PHP or extension version"
+, --filter-operator, "Operator to test versions for a particular relationship (same as PHP.version_compare)"
 , --report-file, "This option identify the file where results will be written."
 , --help-reference, "Remember you what are reference dictionnary available in default distribution."
 -h, --help, "With this option, you can get information about the actual list of command line options."
@@ -814,32 +846,32 @@ $ phpci list-classes
 
 ----
     -------------------------------------------------------------------------------
-    PHP COMPAT INFO CLASSES REFERENCE
+    PHP COMPAT INFO CLASS REFERENCE
     -------------------------------------------------------------------------------
-    CLASSES                                      EXTENSION <1>      PHP min/Max <2>
+    CLASS                                   EXT min/Max <1>   PHP min/Max <2>
     -------------------------------------------------------------------------------
-    AppendIterator                               SPL-5.1.0          5.1.0
-    ArrayIterator                                SPL-5.0.0          5.0.0
-    ArrayObject                                  SPL-5.0.0          5.0.0
-    BadFunctionCallException                     SPL-5.1.0          5.1.0
-    BadMethodCallException                       SPL-5.1.0          5.1.0
-    CachingIterator                              SPL-5.0.0          5.0.0
-    CallbackFilterIterator                       SPL-5.4.0          5.4.0
-    Closure                                      Core-5.3.0         5.3.0
+    AppendIterator                          SPL-5.1.0         5.1.0
+    ArrayIterator                           SPL-5.0.0         5.0.0
+    ArrayObject                             SPL-5.0.0         5.0.0
+    BadFunctionCallException                SPL-5.1.0         5.1.0
+    BadMethodCallException                  SPL-5.1.0         5.1.0
+    CachingIterator                         SPL-5.0.0         5.0.0
+    CallbackFilterIterator                  SPL-5.4.0         5.4.0
+    Closure                                 Core-5.3.0        5.3.0
 
     ... <more results> ...
 
-    SplQueue                                     SPL-5.3.0          5.3.0
-    SplStack                                     SPL-5.3.0          5.3.0
-    SplTempFileObject                            SPL-5.1.2          5.1.2
-    UnderflowException                           SPL-5.1.0          5.1.0
-    UnexpectedValueException                     SPL-5.1.0          5.1.0
-    XMLReader                                    xmlreader          5.0.0
-    XMLWriter                                    xmlwriter          5.1.2
-    ZipArchive                                   zip-1.6.0          5.2.0
-    __PHP_Incomplete_Class                       standard-4.0.0     4.0.0
-    php_user_filter                              standard-5.0.0     5.0.0
-    stdClass                                     Core-4.0.0         4.0.0
+    SplQueue                                SPL-5.3.0         5.3.0
+    SplStack                                SPL-5.3.0         5.3.0
+    SplTempFileObject                       SPL-5.1.2         5.1.2
+    UnderflowException                      SPL-5.1.0         5.1.0
+    UnexpectedValueException                SPL-5.1.0         5.1.0
+    XMLReader                               xmlreader         5.0.0
+    XMLWriter                               xmlwriter         5.1.2
+    ZipArchive                              zip-1.6.0         5.2.0
+    __PHP_Incomplete_Class                  standard-4.0.0    4.0.0
+    php_user_filter                         standard-5.0.0    5.0.0
+    stdClass                                Core-4.0.0        4.0.0
     -------------------------------------------------------------------------------
     A TOTAL OF 118 CLASSES WERE FOUND
     -------------------------------------------------------------------------------
@@ -865,19 +897,19 @@ $ phpci list-classes SPL
 Example: if you want only Core classes, supported by all PHP versions until 5.1.0,
  enter command below.
 ----
-$ phpci list-classes core php_5.1.0
+$ phpci list-classes core --filter-version php_5.1.0
 ----
 
 Example: if you want only standard classes, came only with PHP 5.0.0,
  enter command below.
 ----
-$ phpci list-classes standard php_5.0.0 eq
+$ phpci list-classes standard --filter-version php_5.0.0 --filter-operator eq
 ----
 
 Example: if you want only apc classes, available with all apc versions after 3.0.0,
  enter command below.
 ----
-$ phpci list-classes apc 3.0.0 gt
+$ phpci list-classes apc --filter-version 3.0.0 --filter-operator gt
 ----
 =====================================================================
 
@@ -896,18 +928,20 @@ That will show you this help screen:
 List all functions referenced in the data base.
 
 Usage:
-  phpci [options] list-functions [options] <extension>
+  phpci [options] list-functions [options] [reference]
 
 Options:
-  --reference=reference     The name of the reference to use
-  --report-file=reportFile  Write the report to the specified file path
-  --help-reference          List of reference available
-  -h, --help                show this help message and exit
+  --reference=reference             The name of the reference to use
+  --filter-version=filterVersion    The version to compare with each
+                                    element found
+  --filter-operator=filterOperator  The version test relationship
+  --report-file=reportFile          Write the report to the specified file
+                                    path
+  --help-reference                  List of reference available
+  -h, --help                        show this help message and exit
 
 Arguments:
-  extension  (optional) Limit output only to this extension
-  version    (optional) Limit output to this version
-  condition  (optional) Limit output on a version condition
+  reference  (optional) Limit output only to this reference
 ----
 
 [grid="rows",format="csv"]
@@ -915,6 +949,8 @@ Arguments:
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --filter-version, "Filter results on a specific PHP or extension version"
+, --filter-operator, "Operator to test versions for a particular relationship (same as PHP.version_compare)"
 , --report-file, "This option identify the file where results will be written."
 , --help-reference, "Remember you what are reference dictionnary available in default distribution."
 -h, --help, "With this option, you can get information about the actual list of command line options."
@@ -927,37 +963,37 @@ $ phpci list-functions
 
 ----
     -------------------------------------------------------------------------------
-    PHP COMPAT INFO FUNCTIONS REFERENCE
+    PHP COMPAT INFO FUNCTION REFERENCE
     -------------------------------------------------------------------------------
-    FUNCTIONS                                    EXTENSION <1>      PHP min/Max <2>
+    FUNCTION                                EXT min/Max <1>    PHP min/Max <2>
     -------------------------------------------------------------------------------
-    abs                                          standard-4.0.0     4.0.0
-    acos                                         standard-4.0.0     4.0.0
-    acosh                                        standard-4.0.7     4.0.7
-    addcslashes                                  standard-4.0.0     4.0.0
-    addslashes                                   standard-4.0.0     4.0.0
-    array_change_key_case                        standard-4.2.0     4.2.0
-    array_chunk                                  standard-4.2.0     4.2.0
-    array_combine                                standard-5.0.0     5.0.0
-    
+    abs                                     standard-4.0.0     4.0.0
+    acos                                    standard-4.0.0     4.0.0
+    acosh                                   standard-4.0.7     4.0.7
+    addcslashes                             standard-4.0.0     4.0.0
+    addslashes                              standard-4.0.0     4.0.0
+    array_change_key_case                   standard-4.2.0     4.2.0
+    array_chunk                             standard-4.2.0     4.2.0
+    array_combine                           standard-5.0.0     5.0.0
+
     ... <more results> ...
 
-    zend_logo_guid                               standard-4.0.0     4.0.0
-    zend_thread_id                               Core-5.0.0         5.0.0
-    zend_version                                 Core-4.0.0         4.0.0
-    zip_close                                    zip-1.0            4.3.0
-    zip_entry_close                              zip-1.0            4.3.0
-    zip_entry_compressedsize                     zip-1.0            4.3.0
-    zip_entry_compressionmethod                  zip-1.0            4.3.0
-    zip_entry_filesize                           zip-1.0            4.3.0
-    zip_entry_name                               zip-1.0            4.3.0
-    zip_entry_open                               zip-1.0            4.3.0
-    zip_entry_read                               zip-1.0            4.3.0
-    zip_open                                     zip-1.0            4.3.0
-    zip_read                                     zip-1.0            4.3.0
-    zlib_decode                                  zlib-2.0           5.4.0
-    zlib_encode                                  zlib-2.0           5.4.0
-    zlib_get_coding_type                         zlib-1.0           4.3.2
+    zend_logo_guid                          standard-4.0.0     4.0.0
+    zend_thread_id                          Core-5.0.0         5.0.0
+    zend_version                            Core-4.0.0         4.0.0
+    zip_close                               zip-1.0            4.3.0
+    zip_entry_close                         zip-1.0            4.3.0
+    zip_entry_compressedsize                zip-1.0            4.3.0
+    zip_entry_compressionmethod             zip-1.0            4.3.0
+    zip_entry_filesize                      zip-1.0            4.3.0
+    zip_entry_name                          zip-1.0            4.3.0
+    zip_entry_open                          zip-1.0            4.3.0
+    zip_entry_read                          zip-1.0            4.3.0
+    zip_open                                zip-1.0            4.3.0
+    zip_read                                zip-1.0            4.3.0
+    zlib_decode                             zlib-2.0           5.4.0
+    zlib_encode                             zlib-2.0           5.4.0
+    zlib_get_coding_type                    zlib-1.0           4.3.2
     -------------------------------------------------------------------------------
     A TOTAL OF 1063 FUNCTIONS WERE FOUND
     -------------------------------------------------------------------------------
@@ -983,19 +1019,19 @@ $ phpci list-functions SPL
 Example: if you want only json functions, supported by all PHP versions until 5.2.0,
  enter command below.
 ----
-$ phpci list-functions json php_5.2.0
+$ phpci list-functions json --filter-version php_5.2.0
 ----
 
 Example: if you want only json functions, came only with PHP 5.3.0,
  enter command below.
 ----
-$ phpci list-functions json php_5.3.0 eq
+$ phpci list-functions json --filter-version php_5.3.0 --filter-operator eq
 ----
 
 Example: if you want only apc functions, available with all apc versions before 3.0.0,
  enter command below.
 ----
-$ phpci list-functions apc 3.0.0 lt
+$ phpci list-functions apc --filter-version 3.0.0 --filter-operator lt
 ----
 =====================================================================
 
@@ -1014,18 +1050,20 @@ That will show you this help screen:
 List all constants referenced in the data base.
 
 Usage:
-  phpci [options] list-constants [options] <extension>
+  phpci [options] list-constants [options] [reference]
 
 Options:
-  --reference=reference     The name of the reference to use
-  --report-file=reportFile  Write the report to the specified file path
-  --help-reference          List of reference available
-  -h, --help                show this help message and exit
+  --reference=reference             The name of the reference to use
+  --filter-version=filterVersion    The version to compare with each
+                                    element found
+  --filter-operator=filterOperator  The version test relationship
+  --report-file=reportFile          Write the report to the specified file
+                                    path
+  --help-reference                  List of reference available
+  -h, --help                        show this help message and exit
 
 Arguments:
-  extension  (optional) Limit output only to this extension
-  version    (optional) Limit output to this version
-  condition  (optional) Limit output on a version condition
+  reference  (optional) Limit output only to this reference
 ----
 
 [grid="rows",format="csv"]
@@ -1033,6 +1071,8 @@ Arguments:
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
+, --filter-version, "Filter results on a specific PHP or extension version"
+, --filter-operator, "Operator to test versions for a particular relationship (same as PHP.version_compare)"
 , --report-file, "This option identify the file where results will be written."
 , --help-reference, "Remember you what are reference dictionnary available in default distribution."
 -h, --help, "With this option, you can get information about the actual list of command line options."
@@ -1045,37 +1085,37 @@ $ phpci list-constants
 
 ----
     -------------------------------------------------------------------------------
-    PHP COMPAT INFO CONSTANTS REFERENCE
+    PHP COMPAT INFO CONSTANT REFERENCE
     -------------------------------------------------------------------------------
-    CONSTANTS                                    EXTENSION <1>      PHP min/Max <2>
+    CONSTANT                                EXT min/Max <1>   PHP min/Max <2>
     -------------------------------------------------------------------------------
-    ABDAY_1                                      standard-4.1.0     4.1.0
-    ABDAY_2                                      standard-4.1.0     4.1.0
-    ABDAY_3                                      standard-4.1.0     4.1.0
-    ABDAY_4                                      standard-4.1.0     4.1.0
-    ABDAY_5                                      standard-4.1.0     4.1.0
-    
-    ... <more results> ...
-
-    STREAM_ENFORCE_SAFE_MODE                     standard-4.0.0    4.0.0/5.3.17
+    ABDAY_1                                 standard-4.1.0    4.1.0
+    ABDAY_2                                 standard-4.1.0    4.1.0
+    ABDAY_3                                 standard-4.1.0    4.1.0
+    ABDAY_4                                 standard-4.1.0    4.1.0
+    ABDAY_5                                 standard-4.1.0    4.1.0
 
     ... <more results> ...
 
-    ZEND_DEBUG_BUILD                             Core-5.3.0         5.3.0
-    ZEND_MULTIBYTE                               Core-5.3.4         5.3.4/5.3.17
-    ZEND_THREAD_SAFE                             Core-4.0.0         4.0.0
-    ZLIB_ENCODING_DEFLATE                        zlib-2.0           5.4.0
-    ZLIB_ENCODING_GZIP                           zlib-2.0           5.4.0
-    ZLIB_ENCODING_RAW                            zlib-2.0           5.4.0
-    __CLASS__                                    Core-4.3.0         4.3.0
-    __COMPILER_HALT_OFFSET__                     Core-5.1.0         5.1.0
-    __DIR__                                      Core-5.3.0         5.3.0
-    __FILE__                                     Core-4.0.0         4.0.0
-    __FUNCTION__                                 Core-4.3.0         4.3.0
-    __LINE__                                     Core-4.0.0         4.0.0
-    __METHOD__                                   Core-5.0.0         5.0.0
-    __NAMESPACE__                                Core-5.3.0         5.3.0
-    __TRAIT__                                    Core-5.4.0         5.4.0
+    STREAM_ENFORCE_SAFE_MODE                standard-4.0.0    4.0.0/5.3.17
+
+    ... <more results> ...
+
+    ZEND_DEBUG_BUILD                        Core-5.3.0        5.3.0
+    ZEND_MULTIBYTE                          Core-5.3.4        5.3.4/5.3.17
+    ZEND_THREAD_SAFE                        Core-4.0.0        4.0.0
+    ZLIB_ENCODING_DEFLATE                   zlib-2.0          5.4.0
+    ZLIB_ENCODING_GZIP                      zlib-2.0          5.4.0
+    ZLIB_ENCODING_RAW                       zlib-2.0          5.4.0
+    __CLASS__                               Core-4.3.0        4.3.0
+    __COMPILER_HALT_OFFSET__                Core-5.1.0        5.1.0
+    __DIR__                                 Core-5.3.0        5.3.0
+    __FILE__                                Core-4.0.0        4.0.0
+    __FUNCTION__                            Core-4.3.0        4.3.0
+    __LINE__                                Core-4.0.0        4.0.0
+    __METHOD__                              Core-5.0.0        5.0.0
+    __NAMESPACE__                           Core-5.3.0        5.3.0
+    __TRAIT__                               Core-5.4.0        5.4.0
     -------------------------------------------------------------------------------
     A TOTAL OF 914 CONSTANTS WERE FOUND
     -------------------------------------------------------------------------------
@@ -1101,18 +1141,18 @@ $ phpci list-constants SPL
 Example: if you want only json constants, supported by all PHP versions until 5.3.0,
  enter command below.
 ----
-$ phpci list-constants json php_5.3.0
+$ phpci list-constants json --filter-version php_5.3.0
 ----
 
 Example: if you want only json constants, came only with PHP 5.4.0,
  enter command below.
 ----
-$ phpci list-constants json php_5.4.0 eq
+$ phpci list-constants json --filter-version php_5.4.0 --filter-operator eq
 ----
 
 Example: if you want only apc constants, available with all apc versions before 3.2.0,
  enter command below.
 ----
-$ phpci list-constants apc 3.2.0 lt
+$ phpci list-constants apc --filter-version 3.2.0 --filter-operator lt
 ----
 =====================================================================

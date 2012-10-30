@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-10-27</date>
- <time>10:21:28</time>
+ <date>2012-10-30</date>
+ <time>00:45:18</time>
  <version>
   <release>2.9.0</release>
   <api>2.9.0</api>
@@ -35,6 +35,17 @@ content of dictionary references.
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
+Versions summary:
+- 2.9.0 support all PHP versions until 5.4.8
+- 2.8.0 support all PHP versions until 5.4.7
+- 2.7.0 support all PHP versions until 5.4.6
+- 2.6.0 support all PHP versions until 5.4.5
+- 2.5.0 support all PHP versions until 5.4.4
+- 2.4.0 support all PHP versions until 5.4.3
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
+
 Additions and changes:
 - all required resources used now the default autoloader
 - allow to run either a stand-alone or pear installed version
@@ -54,6 +65,7 @@ summary, extensions, interfaces, traits, classes, functions, constants, globals,
 - upgrade standard reference with PHP 5.4.8 optional second argument for assert() to specify custom message
 - Extension report show now the real extension version min/max depending of others elements parsed
 (thanks to Remi Collet to noticed me)
+- test suites may be run by group, using phpunit --exclude-group or --group switches
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
@@ -1285,7 +1297,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>1.4.2</min>
+    <min>1.4.3</min>
    </package>
    <extension>
     <name>dom</name>
@@ -1348,9 +1360,20 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-10-27</date>
+   <date>2012-10-30</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
+Versions summary:
+- 2.9.0 support all PHP versions until 5.4.8
+- 2.8.0 support all PHP versions until 5.4.7
+- 2.7.0 support all PHP versions until 5.4.6
+- 2.6.0 support all PHP versions until 5.4.5
+- 2.5.0 support all PHP versions until 5.4.4
+- 2.4.0 support all PHP versions until 5.4.3
+- 2.3.0 support all PHP versions until 5.4.0
+- 2.2.0 support all PHP versions until 5.3.10
+- 2.1.0 support all PHP versions until 5.3.8
+
 Additions and changes:
 - all required resources used now the default autoloader
 - allow to run either a stand-alone or pear installed version
@@ -1370,6 +1393,7 @@ summary, extensions, interfaces, traits, classes, functions, constants, globals,
 - upgrade standard reference with PHP 5.4.8 optional second argument for assert() to specify custom message
 - Extension report show now the real extension version min/max depending of others elements parsed
 (thanks to Remi Collet to noticed me)
+- test suites may be run by group, using phpunit --exclude-group or --group switches
 
 Bug fixes:
 - PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not

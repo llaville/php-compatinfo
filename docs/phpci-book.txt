@@ -49,8 +49,8 @@ This manual documents the final stable version {revnumber}
 * link:http://www.php.net[PHP] 5.2.0 or newer
 * link:http://ezcomponents.org/[Base] 1.8 or newer from _components.ez.no_ PEAR channel
 * link:http://ezcomponents.org/[ConsoleTools] 1.6.1 or newer from _components.ez.no_ PEAR channel
-* link:http://pear.php.net/package/Console_CommandLine[Console_CommandLine] 1.1.3 or newer from default PEAR channel
-* link:http://bartlett.laurent-laville.org/[PHP_Reflect] 1.4.2 or newer from _Bartlett_ PEAR channel
+* link:http://pear.php.net/package/Console_CommandLine[Console_CommandLine] 1.2.0 or newer from default PEAR channel
+* link:http://bartlett.laurent-laville.org/[PHP_Reflect] 1.4.3 or newer from _Bartlett_ PEAR channel
 * link:http://www.php.net/manual/en/book.tokenizer.php[tokenizer] extension
 * link:http://www.php.net/manual/en/book.pcre.php[pcre] extension
 * link:http://www.php.net/manual/en/book.spl.php[SPL] extension
@@ -100,10 +100,10 @@ and on the PHPUnit PEAR channel (_pear.phpunit.de_).
 This has to be done only once. Now the PEAR Installer can be used to install packages from the Bartlett channel.
 ----
     $ pear install bartlett/PHP_CompatInfo
-    downloading PHP_CompatInfo-2.8.0.tgz ...
-    Starting to download PHP_CompatInfo-2.8.0.tgz (742,038 bytes)
-    .........................done: 742,038 bytes
-    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.8.0
+    downloading PHP_CompatInfo-2.9.0.tgz ...
+    Starting to download PHP_CompatInfo-2.9.0.tgz (747,635 bytes)
+    .........................done: 747,635 bytes
+    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.9.0
 ----
 After the installation you can find the PHP_CompatInfo source files inside your local PEAR directory.
 
