@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_XCache
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '2.0.1';
+    const REF_VERSION = '3.0.0';
 
     /**
      * Gets informations about extensions
@@ -114,21 +114,21 @@ class PHP_CompatInfo_Reference_XCache
         $release = '1.3.0';       // 2009-08-04
         $items = array(
             // Dis/Assembler Opcode Functions
-            'xcache_get_opcode_spec'            => array('5.3.0', ''),
+            'xcache_get_opcode_spec'            => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
         $release = '2.0.0';       // 2012-04-20
         $items = array(
             // Common Used Functions
-            'xcache_unset_by_prefix'            => array('5.3.0', ''),
+            'xcache_unset_by_prefix'            => array('5.2.0', ''),
 
             // Dis/Assembler Opcode Functions
-            'xcache_dasm_file'                  => array('5.3.0', ''),
-            'xcache_dasm_string'                => array('5.3.0', ''),
-            'xcache_get_isref'                  => array('5.3.0', ''),
-            'xcache_get_refcount'               => array('5.3.0', ''),
-            'xcache_get_type'                   => array('5.3.0', ''),
+            'xcache_dasm_file'                  => array('5.2.0', ''),
+            'xcache_dasm_string'                => array('5.2.0', ''),
+            'xcache_get_isref'                  => array('5.2.0', ''),
+            'xcache_get_refcount'               => array('5.2.0', ''),
+            'xcache_get_type'                   => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
