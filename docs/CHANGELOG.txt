@@ -8,6 +8,8 @@ PHP_CompatInfo ChangeLog
 == Version 2.10.0 (2012-mm-dd)
 
 .Additions and changes:
+* add 1 new references data dictionnaries related to extensions:
+  imagick
 * upgrade xcache reference to version 3.0.0
 
 .Bug fixes:
