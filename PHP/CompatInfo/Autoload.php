@@ -147,6 +147,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/hash.php',
             'PHP_CompatInfo_Reference_Iconv'
                 => 'PHP/CompatInfo/Reference/iconv.php',
+            'PHP_CompatInfo_Reference_Imagick'
+                => 'PHP/CompatInfo/Reference/imagick.php',
             'PHP_CompatInfo_Reference_Imap'
                 => 'PHP/CompatInfo/Reference/imap.php',
             'PHP_CompatInfo_Reference_Inclued'
