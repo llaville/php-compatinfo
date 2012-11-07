@@ -71,7 +71,7 @@ class PHP_CompatInfo_Reference_Imagick
      */
     public function getClasses($extension = null, $version = null, $condition = null)
     {
-        $this->setFilter( func_get_args() );
+        $this->setFilter(func_get_args());
 
         $classes = array();
 
