@@ -572,7 +572,7 @@ class PHP_CompatInfo_CLI
         }
 
         if (isset($reportFile)) {
-            if (is_dir($reportFile) || dirname($reportFile) == '.'
+            if (is_dir($reportFile)
                 || !file_exists(dirname($reportFile))
             ) {
                 $warnings[] = 'Report file: "' . $reportFile . '" is invalid';
