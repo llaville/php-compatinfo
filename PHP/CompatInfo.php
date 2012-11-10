@@ -236,9 +236,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             'filterOperator'   => 'ge',
             'exclude'          => array(),
             'cacheDriver'      => 'file',
-            'cacheOptions'     => array(
-                'save_path' => '/tmp'
-            ),
+            'cacheOptions'     => array(),
             'listeners'        => array(),
         );
 

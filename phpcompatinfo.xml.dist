@@ -12,7 +12,6 @@
 
     <cache id="file">
         <options>
-            <save_path>/tmp</save_path>
             <gc_probability>1</gc_probability>
             <gc_maxlifetime>86400</gc_maxlifetime>
         </options>

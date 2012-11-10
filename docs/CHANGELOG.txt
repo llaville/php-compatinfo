@@ -12,6 +12,7 @@ PHP_CompatInfo ChangeLog
   imagick
 * add clear-cache sub-command to CLI version
 * upgrade xcache reference to version 3.0.0
+* used temporary system directory rather than /tmp that does not exists by default on windows
 
 .Bug fixes:
 * GH-51 fix _--report-file_ option with file in current path directory

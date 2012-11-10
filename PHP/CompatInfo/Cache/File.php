@@ -63,6 +63,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
     {
         $cacheOptions = array_merge(
             array(
+                'save_path'      => sys_get_temp_dir(),
                 'gc_probability' => 1,       // probability 1/100
                 'gc_maxlifetime' => 86400,   // one day, 60 * 60 * 24
             ),
