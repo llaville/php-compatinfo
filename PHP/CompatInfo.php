@@ -165,37 +165,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     {
         $this->_observers = new SplObjectStorage();
 
-        $defaultOptions = array(
-            'recursive'        => false,
-            'reference'        => 'PHP5',
-            'referencePlugins' => array(
-                'PHP4' => array(
-                    'class' => 'PHP_CompatInfo_Reference_PHP4',
-                    'file'  => '',
-                    'args'  => array()
-                ),
-                'PHP5' => array(
-                    'class' => 'PHP_CompatInfo_Reference_PHP5',
-                    'file'  => '',
-                    'args'  => array()
-                ),
-                'ALL' => array(
-                    'class' => 'PHP_CompatInfo_Reference_ALL',
-                    'file'  => '',
-                    'args'  => array()
-                ),
-            ),
-            'verbose'          => false,
-            'fileExtensions'   => array('php', 'inc', 'phtml'),
-            'filterVersion'    => 'php_4.0.0',
-            'filterOperator'   => 'ge',
-            'exclude'          => array(),
-            'cacheDriver'      => 'file',
-            'cacheOptions'     => array(
-                'save_path' => '/tmp'
-            ),
-            'listeners'        => array(),
-        );
+        $defaultOptions = self::getDefaultOptions();
 
         if (isset($options)) {
             $options = array_merge($defaultOptions, $options);
@@ -231,6 +201,48 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     public function getOptions()
     {
         return $this->options;
+    }
+
+    /**
+     * Returns default options
+     *
+     * @return array
+     */
+    public static function getDefaultOptions()
+    {
+        $default = array(
+            'recursive'        => false,
+            'reference'        => 'PHP5',
+            'referencePlugins' => array(
+                'PHP4' => array(
+                    'class' => 'PHP_CompatInfo_Reference_PHP4',
+                    'file'  => '',
+                    'args'  => array()
+                ),
+                'PHP5' => array(
+                    'class' => 'PHP_CompatInfo_Reference_PHP5',
+                    'file'  => '',
+                    'args'  => array()
+                ),
+                'ALL' => array(
+                    'class' => 'PHP_CompatInfo_Reference_ALL',
+                    'file'  => '',
+                    'args'  => array()
+                ),
+            ),
+            'verbose'          => false,
+            'fileExtensions'   => array('php', 'inc', 'phtml'),
+            'filterVersion'    => 'php_4.0.0',
+            'filterOperator'   => 'ge',
+            'exclude'          => array(),
+            'cacheDriver'      => 'file',
+            'cacheOptions'     => array(
+                'save_path' => '/tmp'
+            ),
+            'listeners'        => array(),
+        );
+
+        return $default;
     }
 
     /**

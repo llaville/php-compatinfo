@@ -35,6 +35,7 @@ Options:
   --version                    show the program version and exit
 
 Commands:
+  clear-cache      Clear Parser Cache
   print            Print a report of data source parsed.
   list-references  List all extensions supported.
   list             List all "elements" referenced in the data base.
@@ -240,10 +241,30 @@ NOTE: It is usefull only when data source to parse is a directory.
 
 == Commands
 
-They are two categories of command:
+They are three categories of command:
 
+* cache management
 * printing scanned sources code results
 * listing database references extensions informations
+
+=== clear-cache command
+
+This command allow to delete a cache from a specific source file, or purge
+all cache entries.
+----
+$ phpci clear-cache
+----
+
+That will print, if cache is already cleared
+----
+0 cache entries cleared
+----
+Zero will be replaced by number of cache entries, in case of a previous CLI use
+
+To delete only a specific source file parsing results from cache entries
+----
+$ phpci clear-cache /path/to/source_file
+----
 
 === print command
 
@@ -822,7 +843,7 @@ Options:
                                     path
   --help-reference                  List of reference available
   -h, --help                        show this help message and exit
-  
+
 Arguments:
   reference  (optional) Limit output only to this reference
 ----

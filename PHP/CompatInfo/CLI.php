@@ -213,6 +213,21 @@ class PHP_CompatInfo_CLI
             )
         );
 
+        // clear-cache sub-command
+        $clearcacheCmd = $input->addCommand(
+            'clear-cache',
+            array(
+                'description' => 'Clear Parser Cache'
+            )
+        );
+        $clearcacheCmd->addArgument(
+            'sourceFile',
+            array(
+                'description' => 'The source file in cache entries to delete.',
+                'optional'    => true
+            )
+        );
+
         // print sub-command
         $printCmd = $input->addCommand(
             'print',
@@ -538,7 +553,9 @@ class PHP_CompatInfo_CLI
         if (isset($result->command->options['reference'])) {
             $options['reference'] = $result->command->options['reference'];
         }
-        if (empty($options['reference']) && 'list-references' !== $command) {
+        if (empty($options['reference'])
+            && !in_array($command, array('list-references', 'clear-cache'))
+        ) {
             $input->displayError('You must supply at least a reference');
         }
 
@@ -568,7 +585,7 @@ class PHP_CompatInfo_CLI
         }
 
         if (isset($result->command->options['reportFile'])) {
-            $reportFile       = $result->command->options['reportFile'];
+            $reportFile = $result->command->options['reportFile'];
         }
 
         if (isset($reportFile)) {
@@ -630,6 +647,19 @@ class PHP_CompatInfo_CLI
 
         if (isset($result->options['verbose'])) {
             $options['verbose'] = $result->options['verbose'];
+        }
+
+        if ('clear-cache' == $command) {
+
+            $defaultOptions = PHP_CompatInfo::getDefaultOptions();
+
+            $driver = isset($options['cacheDriver'])
+                ? $options['cacheDriver'] : $defaultOptions['cacheDriver'];
+            $source = $result->command->args['sourceFile'];
+
+            $cache = PHP_CompatInfo_Cache::getInstance($driver, $defaultOptions);
+            $count = $cache->deleteCache($source);
+            printf('%d cache entries cleared%s', $count, PHP_EOL);
         }
 
         try {

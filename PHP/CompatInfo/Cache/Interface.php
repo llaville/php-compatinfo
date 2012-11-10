@@ -51,4 +51,15 @@ interface PHP_CompatInfo_Cache_Interface
      * @return void
      */
     public function setCache($source, $data);
+
+    /**
+     * Delete either a cache entry related to a source file,
+     * or all entries
+     *
+     * @param string $source (optional) Source filename
+     *
+     * @return int Number of cache entries that were deleted
+     */
+    public function deleteCache($source = null);
+
 }

@@ -59,4 +59,17 @@ class PHP_CompatInfo_Cache_Null implements PHP_CompatInfo_Cache_Interface
     {
     }
 
+    /**
+     * Delete either a cache entry related to a source file,
+     * or all entries
+     *
+     * @param string $source (optional) Source filename
+     *
+     * @return int Number of cache entries that were deleted
+     */
+    public function deleteCache($source = null)
+    {
+        return 0;
+    }
+
 }

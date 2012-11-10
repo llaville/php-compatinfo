@@ -10,6 +10,7 @@ PHP_CompatInfo ChangeLog
 .Additions and changes:
 * add 1 new references data dictionnaries related to extensions:
   imagick
+* add clear-cache sub-command to CLI version
 * upgrade xcache reference to version 3.0.0
 
 .Bug fixes:

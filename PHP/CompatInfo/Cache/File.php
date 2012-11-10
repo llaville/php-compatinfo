@@ -160,9 +160,12 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
      * Garbage collector
      *
      * @param integer validity delay, default -1 to clean all
+     *
+     * @return int Number of cache entries deleted
      */
     private function _clean($delay=-1)
     {
+        $entries  = 0;
         $iterator = new DirectoryIterator(
             realpath($this->options['save_path'])
         );
@@ -175,11 +178,15 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
                     if ($fileinfo->getMTime() <=
                         (time() - $delay)
                     ) {
-                        unlink($fileinfo->getPathname());
+                        $deleted = unlink($fileinfo->getPathname());
+                        if ($deleted) {
+                            $entries++;
+                        }
                     }
                 }
             }
         }
+        return $entries;
     }
 
     /**
@@ -247,6 +254,34 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
         if ($bytes !== false) {
             $this->cache[$cache_id] = $fn;
         }
+    }
+
+    /**
+     * Delete either a cache entry related to a source file,
+     * or all entries
+     *
+     * @param string $source (optional) Source filename
+     *
+     * @return int Number of cache entries that were deleted
+     */
+    public function deleteCache($source = null)
+    {
+        if (isset($source)) {
+            $entries = 0;
+            if ($this->isCached($source)) {
+                $cache_id = sha1_file($source);
+                $deleted  = unlink($this->cache[$cache_id]);
+                if ($deleted) {
+                    unset($this->cache[$cache_id]);
+                    $entries = 1;
+                }
+            }
+        } else {
+            $entries = $this->_clean();
+            $this->cache = array();
+        }
+    
+        return $entries;
     }
 
 }
