@@ -660,23 +660,24 @@ class PHP_CompatInfo_CLI
             $cache = PHP_CompatInfo_Cache::getInstance($driver, $defaultOptions);
             $count = $cache->deleteCache($source);
             printf('%d cache entries cleared%s', $count, PHP_EOL);
-        }
 
-        try {
-            foreach ($reports as $report) {
-                self::factory($report, $source, $options, $warnings);
-                if ($report == 'reference') {
-                    $options['reportFileFlags'] = FILE_APPEND;
-                    while (count($elements) > 0) {
-                        $source = array_shift($elements);
-                        self::factory($report, $source, $options, $warnings);
+        } else {
+            try {
+                foreach ($reports as $report) {
+                    self::factory($report, $source, $options, $warnings);
+                    if ($report == 'reference') {
+                        $options['reportFileFlags'] = FILE_APPEND;
+                        while (count($elements) > 0) {
+                            $source = array_shift($elements);
+                            self::factory($report, $source, $options, $warnings);
+                        }
                     }
                 }
-            }
 
-        } catch (PHP_CompatInfo_Exception $e) {
-            print $e->getMessage() . PHP_EOL;
-            exit(1);
+            } catch (PHP_CompatInfo_Exception $e) {
+                print $e->getMessage() . PHP_EOL;
+                exit(1);
+            }
         }
     }
 
