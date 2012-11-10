@@ -13,7 +13,7 @@ PHP_CompatInfo ChangeLog
 * upgrade xcache reference to version 3.0.0
 
 .Bug fixes:
-* none
+* GH-51 fix _--report-file_ option with file in current path directory
 
 
 == Version 2.9.0 (2012-10-29)
