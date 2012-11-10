@@ -408,7 +408,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
         if (is_string($dataSource)) {
             $files = array();
 
-            $suffix = '.php';
             if (is_dir($dataSource)) {
                 $directory = $dataSource;
 
