@@ -26,7 +26,7 @@ fileExtensions, "[php, inc, phtml]", list of file extensions to scan
 filterVersion, "php_4.0.0", filter results on a specific PHP or extension version
 filterOperator, "ge", "operator to test versions for a particular relationship (same as PHP.version_compare)"
 cacheDriver, file, cache results to improve speed of next iteration
-cacheOptions, "[save_path => /tmp]", options specific to cache driver used
+cacheOptions, "[]", options specific to cache driver used
 listeners, [], none
 |===========================
 
