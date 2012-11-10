@@ -66,6 +66,7 @@ class PHP_CompatInfo {
     int +count ( void )
 
     array +getOptions ( void )
+    array static +getDefaultOptions( void )
 
     array +getEvent ( void )
     void #setEvent( array $event )
@@ -199,6 +200,7 @@ interface PHP_CompatInfo_Cache_Interface {
     bool +isCached ( string $source)
     array +getCache ( string $source)
     void +setCache ( string $source, array $data )
+    int +deleteCache ( string $source = null )
 }
 
 class PHP_CompatInfo_Cache_File {
@@ -208,12 +210,14 @@ class PHP_CompatInfo_Cache_File {
     bool +isCached ( string $source)
     array +getCache ( string $source)
     void +setCache ( string $source, array $data )
+    int +deleteCache ( string $source = null )
 }
 
 class PHP_CompatInfo_Cache_Null {
     bool +isCached ( string $source)
     array +getCache ( string $source)
     void +setCache ( string $source, array $data )
+    int +deleteCache ( string $source = null )
 }
 
 PHP_CompatInfo_Cache_Interface <|.. PHP_CompatInfo_Cache_File
