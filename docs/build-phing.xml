@@ -6,14 +6,11 @@
         <param value="${phing.file}"/>
     </php>
 
-    <php function="file_get_contents" returnProperty="file.contents">
-        <param value="phing/tasks/ext/GrowlNotifyTask.php"/>
-        <param value="true"/>
-    </php>
+    <available file="phing/tasks/ext/GrowlNotifyTask.php" property="file.exists" />
 
     <condition property="growl.task.available">
         <not>
-            <isfalse value="${file.contents}" />
+            <isfalse value="${file.exists}" />
         </not>
     </condition>
 
