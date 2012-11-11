@@ -6,7 +6,7 @@
         <param value="${phing.file}"/>
     </php>
 
-    <available file="phing/tasks/ext/GrowlNotifyTask.php" property="file.exists" />
+    <available resource="phing/tasks/ext/GrowlNotifyTask.php" property="file.exists" />
 
     <condition property="growl.task.available">
         <not>
@@ -91,26 +91,39 @@
 
         <exec dir="${asciidoc.home}"
             command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n -o ${output.dir}/phpci-book.html ${homedir}/docs/phpci-book.txt"
+            returnProperty="exitCode"
         />
-
         <if>
-            <istrue value="${build.tarball}" />
+            <equals arg1="${exitCode}" arg2="0" />
             <then>
-                <zip destfile="${output.dir}/phpci-book.html.zip">
-                    <fileset dir="${output.dir}">
-                        <include name="images/**" />
-                        <include name="js/asciidoc.js" />
-                        <include name="styles/pygments.css" />
-                        <include name="styles/toc2.css" />
-                        <include name="styles/${theme}.css" />
-                        <include name="phpci-book.html" />
-                        <exclude name="**/callouts/**" />
-                        <exclude name="styles.css" />
-                        <exclude name="**/Thumbs.db" />
-                    </fileset>
-                </zip>
+                <if>
+                    <istrue value="${build.tarball}" />
+                    <then>
+                        <zip destfile="${output.dir}/phpci-book.html.zip">
+                            <fileset dir="${output.dir}">
+                                <include name="images/**" />
+                                <include name="js/asciidoc.js" />
+                                <include name="styles/pygments.css" />
+                                <include name="styles/toc2.css" />
+                                <include name="styles/${theme}.css" />
+                                <include name="phpci-book.html" />
+                                <exclude name="**/callouts/**" />
+                                <exclude name="styles.css" />
+                                <exclude name="**/Thumbs.db" />
+                            </fileset>
+                        </zip>
+                    </then>
+                </if>
             </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message"
+                        value="Html single page version of userguide was not generated."
+                    />
+                </phingcall>
+            </else>
         </if>
+
     </target>
 
     <target name="make-userguide-chunked"
