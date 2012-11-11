@@ -118,19 +118,29 @@
 
         <exec dir="${asciidoc.home}"
             command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked -D ${output.dir} ${homedir}/docs/phpci-book.txt"
+            returnProperty="exitCode"
         />
-
         <if>
-            <istrue value="${build.tarball}" />
+            <equals arg1="${exitCode}" arg2="0" />
             <then>
-                <zip destfile="${output.dir}/phpci-book.chunked.zip">
-                    <fileset dir="${output.dir}">
-                        <include name="phpci-book.chunked/**" />
-                        <exclude name="phpci-book.chunked/**/Thumbs.db" />
-                    </fileset>
-                </zip>
-                <delete dir="${output.dir}/phpci-book.chunked" />
+                <if>
+                    <istrue value="${build.tarball}" />
+                    <then>
+                        <zip destfile="${output.dir}/phpci-book.chunked.zip">
+                            <fileset dir="${output.dir}">
+                                <include name="phpci-book.chunked/**" />
+                                <exclude name="phpci-book.chunked/**/Thumbs.db" />
+                            </fileset>
+                        </zip>
+                        <delete dir="${output.dir}/phpci-book.chunked" />
+                    </then>
+                </if>
             </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message" value="Html chunked userguide was not generated." />
+                </phingcall>
+            </else>
         </if>
 
     </target>
@@ -140,30 +150,40 @@
 
         <exec dir="${asciidoc.home}"
             command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp -D ${output.dir} ${homedir}/docs/phpci-book.txt"
+            returnProperty="exitCode"
         />
-
-        <exec dir="${htmlhelpworkshop}"
-            command="hhc.exe ${output.dir}/phpci-book.hhp"
-        />
-
         <if>
-            <istrue value="${build.tarball}" />
+            <equals arg1="${exitCode}" arg2="0" />
             <then>
-                <zip destfile="${output.dir}/phpci-book.chm.zip">
-                    <fileset dir="${output.dir}">
-                        <include name="phpci-book.chm" />
-                    </fileset>
-                </zip>
-                <delete>
-                    <fileset dir="${output.dir}">
-                        <include name="phpci-book.chm" />
-                        <include name="phpci-book.hhc" />
-                        <include name="phpci-book.hhk" />
-                        <include name="phpci-book.hhp" />
-                    </fileset>
-                </delete>
-                <delete dir="${output.dir}/phpci-book.htmlhelp" />
+                <exec dir="${htmlhelpworkshop}"
+                    command="hhc.exe ${output.dir}/phpci-book.hhp"
+                />
+
+                <if>
+                    <istrue value="${build.tarball}" />
+                    <then>
+                        <zip destfile="${output.dir}/phpci-book.chm.zip">
+                            <fileset dir="${output.dir}">
+                                <include name="phpci-book.chm" />
+                            </fileset>
+                        </zip>
+                        <delete>
+                            <fileset dir="${output.dir}">
+                                <include name="phpci-book.chm" />
+                                <include name="phpci-book.hhc" />
+                                <include name="phpci-book.hhk" />
+                                <include name="phpci-book.hhp" />
+                            </fileset>
+                        </delete>
+                        <delete dir="${output.dir}/phpci-book.htmlhelp" />
+                    </then>
+                </if>
             </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message" value="Html Help userguide was not generated." />
+                </phingcall>
+            </else>
         </if>
 
     </target>
@@ -173,8 +193,19 @@
 
         <exec dir="${asciidoc.home}"
             command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/phpci-book.txt"
+            returnProperty="exitCode"
         />
-        <move file="${output.dir}/phpci-book.pdf" tofile="${output.dir}/phpci-book-a4.pdf" />
+        <if>
+            <equals arg1="${exitCode}" arg2="0" />
+            <then>
+                <move file="${output.dir}/phpci-book.pdf" tofile="${output.dir}/phpci-book-a4.pdf" />
+            </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message" value="PDF-A4 userguide was not generated." />
+                </phingcall>
+            </else>
+        </if>
 
     </target>
 
@@ -183,8 +214,19 @@
 
         <exec dir="${asciidoc.home}"
             command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css --xsl-file=./docbook-xsl/fo-custom.xsl -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/phpci-book.txt"
+            returnProperty="exitCode"
         />
-        <move file="${output.dir}/phpci-book.pdf" tofile="${output.dir}/phpci-book-us.pdf" />
+        <if>
+            <equals arg1="${exitCode}" arg2="0" />
+            <then>
+                <move file="${output.dir}/phpci-book.pdf" tofile="${output.dir}/phpci-book-us.pdf" />
+            </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message" value="PDF-US userguide was not generated." />
+                </phingcall>
+            </else>
+        </if>
 
     </target>
 
@@ -195,7 +237,6 @@
             command="a2x.py --verbose -L -d book -f epub -D ${output.dir} ${homedir}/docs/phpci-book.txt"
             returnProperty="exitCode"
         />
-
         <if>
             <equals arg1="${exitCode}" arg2="0" />
             <then>
@@ -210,6 +251,11 @@
                     </then>
                 </if>
             </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message" value="ePub userguide was not generated." />
+                </phingcall>
+            </else>
         </if>
 
     </target>
