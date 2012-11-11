@@ -645,6 +645,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
 
         if ($consoleProgress) {
             $progress->finish();
+            echo PHP_EOL;
         }
 
         $this->endScanSource();
