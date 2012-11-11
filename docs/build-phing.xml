@@ -6,12 +6,10 @@
         <param value="${phing.file}"/>
     </php>
 
-    <available resource="phing/tasks/ext/GrowlNotifyTask.php" property="file.exists" />
-
     <condition property="growl.task.available">
-        <not>
-            <isfalse value="${file.exists}" />
-        </not>
+        <available resource="phing/tasks/ext/GrowlNotifyTask.php"
+            property="file.exists"
+        />
     </condition>
 
     <property name="default.properties" value="${phing.buildfile.dirname}/local.win.properties"/>
