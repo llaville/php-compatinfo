@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Amqp
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.7';
+    const REF_VERSION = '1.0.8';
 
     /**
      * Gets informations about extensions
@@ -138,6 +138,12 @@ class PHP_CompatInfo_Reference_Amqp
             'AMQP_NOWAIT'                             => array('5.2.0', ''),
             'AMQP_PASSIVE'                            => array('5.2.0', ''),
             'AMQP_REQUEUE'                            => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '1.0.8';       // 2012-11-12
+        $items = array(
+            'AMQP_OS_SOCKET_TIMEOUT_ERRNO'            => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
