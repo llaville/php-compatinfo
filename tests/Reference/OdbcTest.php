@@ -11,7 +11,7 @@
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    GIT: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
- * @since      Class available since Release 2.0.0RC4
+ * @since      Class available since Release 2.10.0
  */
 
 require_once 'GenericTest.php';

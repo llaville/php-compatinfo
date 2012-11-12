@@ -8,9 +8,10 @@ PHP_CompatInfo ChangeLog
 == Version 2.10.0 (2012-mm-dd)
 
 .Additions and changes:
-* add 1 new references data dictionnaries related to extensions:
-  imagick
+* add 3 new references data dictionnaries related to extensions:
+  igbinary, imagick, odbc
 * add clear-cache sub-command to CLI version
+* upgrade amqp reference to version 1.0.8
 * upgrade xcache reference to version 3.0.0
 * used temporary system directory rather than /tmp that does not exists by default on windows
 

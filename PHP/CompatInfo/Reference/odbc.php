@@ -24,6 +24,7 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @link     http://www.php.net/manual/en/book.uodbc.php
+ * @since    Class available since Release 2.10.0
  */
 class PHP_CompatInfo_Reference_Odbc
     extends PHP_CompatInfo_Reference_PluginsAbstract

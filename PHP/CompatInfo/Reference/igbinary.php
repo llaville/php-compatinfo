@@ -24,7 +24,7 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @link     https://github.com/igbinary/igbinary/
- * @since    Class available since Release 2.1.0
+ * @since    Class available since Release 2.10.0
  */
 class PHP_CompatInfo_Reference_Igbinary
     extends PHP_CompatInfo_Reference_PluginsAbstract
