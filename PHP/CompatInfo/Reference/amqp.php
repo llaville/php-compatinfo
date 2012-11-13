@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Amqp
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.8';
+    const REF_VERSION = '1.0.9';
 
     /**
      * Gets informations about extensions
