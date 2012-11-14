@@ -329,7 +329,7 @@ class PHP_CompatInfo_Reference_Standard
             'pack'                           => array('4.0.0', ''),
             'parse_ini_file'                 => array('4.0.0', ''),
             'parse_str'                      => array('4.0.0', ''),
-            'parse_url'                      => array('4.0.0', '', '4.0.0, 5.2.0'),
+            'parse_url'                      => array('4.0.0', '', '4.0.0, 5.1.2'),
             'passthru'                       => array('4.0.0', ''),
             'pclose'                         => array('4.0.0', ''),
             'pfsockopen'                     => array('4.0.0', ''),
