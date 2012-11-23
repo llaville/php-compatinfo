@@ -734,7 +734,7 @@ class PHP_CompatInfo_ParameterTest extends PHPUnit_Framework_TestCase
         $this->pci->parse(TEST_FILES_PATH . 'source18881-21o.php');
 
         $this->assertEquals(
-            array('5.2.0', ''), $this->pci->getVersions()
+            array('5.1.2', ''), $this->pci->getVersions()
         );
     }
 

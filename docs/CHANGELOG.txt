@@ -18,7 +18,7 @@ PHP_CompatInfo ChangeLog
 .Bug fixes:
 * GH-51 fix _--report-file_ option with file in current path directory
 * PHP Doc link:https://bugs.php.net/bug.php?id=60638[bug 60638]
-standard reference fixed: parse_url component parameter is required since PHP 5.1.2 and not 5.2.0
+standard reference fixed: parse_url component parameter is provided since PHP 5.1.2 and not 5.2.0
 
 
 == Version 2.9.0 (2012-10-29)
