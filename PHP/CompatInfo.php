@@ -860,7 +860,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 // adds (at least) global namespace
                 $ns             = '\\';
                 $namespaces     = array($ns => array());
-                $defaultVersion = '4.0.0';
+                $defaultVersion = $reflect->isNamespaceWarning() ? '5.3.0' : '4.0.0';
             } else {
                 $ns             = true;
                 $defaultVersion = '5.3.0';
