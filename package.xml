@@ -23,11 +23,11 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-10-30</date>
- <time>00:45:18</time>
+ <date>2012-11-26</date>
+ <time>16:46:40</time>
  <version>
-  <release>2.9.0</release>
-  <api>2.9.0</api>
+  <release>2.10.0</release>
+  <api>2.10.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -35,45 +35,21 @@ content of dictionary references.
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
-Versions summary:
-- 2.9.0 support all PHP versions until 5.4.8
-- 2.8.0 support all PHP versions until 5.4.7
-- 2.7.0 support all PHP versions until 5.4.6
-- 2.6.0 support all PHP versions until 5.4.5
-- 2.5.0 support all PHP versions until 5.4.4
-- 2.4.0 support all PHP versions until 5.4.3
-- 2.3.0 support all PHP versions until 5.4.0
-- 2.2.0 support all PHP versions until 5.3.10
-- 2.1.0 support all PHP versions until 5.3.8
-
 Additions and changes:
-- all required resources used now the default autoloader
-- allow to run either a stand-alone or pear installed version
-- Reports refactoring (33 percent code reduced)
-- Source, Database and Reference reports
-will not be print anymore on standard output when --report-file option used
-- CAUTION: BC breaks with API 2.8.0 with the new filter system
-- list-references does not require --reference option anymore (always used ALL)
-- results of list-references may now be filtered
-- add a full report (all results at once:
-summary, extensions, interfaces, traits, classes, functions, constants, globals, tokens, conditions)
-- fixed Reference interface about new filter API
-- WARNING: PHP_Timer 1.0.4 (autoloader) break PHP 5.2 compatibility, so the print resource feature become optional
-- improved true results again with detection of conditional code and excludes from parsing
-- upgrade ssh reference to version 0.12 (thanks to Remi Collet)
-- upgrade openssl reference with new PHP 5.4.8 constants (thanks to Remi Collet)
-- upgrade standard reference with PHP 5.4.8 optional second argument for assert() to specify custom message
-- Extension report show now the real extension version min/max depending of others elements parsed
-(thanks to Remi Collet to noticed me)
-- test suites may be run by group, using phpunit --exclude-group or --group switches
+- add 3 new references data dictionnaries related to extensions:
+  igbinary, imagick, odbc
+- add clear-cache sub-command to CLI version
+- upgrade amqp reference to version 1.0.9
+- upgrade xcache reference to version 3.0.0
+- used temporary system directory rather than /tmp that does not exists by default on windows
+- refactoring the documentation build phing script (split generic and specific code)
+- PHP min is set (at least) to 5.3.0 when you use namespace syntax on PHP 5.2 platform
+(requires PHP_Reflect 1.5.0 or greater)
 
 Bug fixes:
-- PHP 5.4 raises notice error (Array to string conversion) in file cache, while PHP 5.2 and 5.3 did not
-- standard reference fixed: mkdir mode parameter is required since PHP 4.0.0 and not 4.2.0 (it became optional)
-- multiple reports may now be appended in the same report file
-- fixed phpunit-growl.xml configuration file: display icons to both pear or stand-alone installation
-- avoid php warnings when argument to list command (of CLI tool) is invalid (requires Console_CommandLine 1.2.0 or better)
-- depending of typeHint (interface, class), report now in the real category rather than just in classes
+- GH-51 fix --report-file option with file in current path directory
+- PHP Doc bug 60638
+standard reference fixed: parse_url component parameter is provided since PHP 5.1.2 and not 5.2.0
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -205,6 +181,9 @@ Bug fixes:
     <file baseinstalldir="Bartlett" name="build-phing.xml" role="doc">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
+    <file baseinstalldir="Bartlett" name="builddocs.xml" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
     <file baseinstalldir="Bartlett" name="CHANGELOG.txt" role="doc">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
@@ -214,6 +193,9 @@ Bug fixes:
     <file baseinstalldir="Bartlett" name="getting_started.txt" role="doc">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
+    <file baseinstalldir="Bartlett" name="growlPhing.png" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
     <file baseinstalldir="Bartlett" name="index.txt" role="doc">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
@@ -221,6 +203,9 @@ Bug fixes:
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
     <file baseinstalldir="Bartlett" name="LICENSE.txt" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file baseinstalldir="Bartlett" name="list_references.txt" role="doc">
      <tasks:replace from="@package_version@" to="version" type="package-info" />
     </file>
     <file baseinstalldir="Bartlett" name="local.win.properties" role="doc">
@@ -367,6 +352,12 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="iconv.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
+      <file baseinstalldir="Bartlett" name="igbinary.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="imagick.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
       <file baseinstalldir="Bartlett" name="imap.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
@@ -419,6 +410,9 @@ Bug fixes:
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="oauth.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file baseinstalldir="Bartlett" name="odbc.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
       <file baseinstalldir="Bartlett" name="openssl.php" role="php">
@@ -729,6 +723,12 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="IconvTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
+     <file baseinstalldir="Bartlett" name="IgbinaryTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="ImagickTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
      <file baseinstalldir="Bartlett" name="ImapTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
@@ -781,6 +781,9 @@ Bug fixes:
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="OAuthTest.php" role="test">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+     <file baseinstalldir="Bartlett" name="OdbcTest.php" role="test">
       <tasks:replace from="@package_version@" to="version" type="package-info" />
      </file>
      <file baseinstalldir="Bartlett" name="OpensslTest.php" role="test">
@@ -1274,7 +1277,7 @@ Bug fixes:
  <dependencies>
   <required>
    <php>
-    <min>5.2.0</min>
+    <min>5.2.1</min>
    </php>
    <pearinstaller>
     <min>1.9.0</min>
@@ -1297,7 +1300,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>1.4.3</min>
+    <min>1.5.0</min>
    </package>
    <extension>
     <name>dom</name>
@@ -1351,6 +1354,35 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.10.0</release>
+    <api>2.10.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-11-26</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- add 3 new references data dictionnaries related to extensions:
+  igbinary, imagick, odbc
+- add clear-cache sub-command to CLI version
+- upgrade amqp reference to version 1.0.9
+- upgrade xcache reference to version 3.0.0
+- used temporary system directory rather than /tmp that does not exists by default on windows
+- refactoring the documentation build phing script (split generic and specific code)
+- PHP min is set (at least) to 5.3.0 when you use namespace syntax on PHP 5.2 platform
+(requires PHP_Reflect 1.5.0 or greater)
+
+Bug fixes:
+- GH-51 fix --report-file option with file in current path directory
+- PHP Doc bug 60638
+standard reference fixed: parse_url component parameter is provided since PHP 5.1.2 and not 5.2.0
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.9.0</release>
