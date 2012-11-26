@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="builddocs" default="help" basedir="."
+    description="Generic code to build the documentation in many format">
+
+    <condition property="growl.task.available">
+        <and>
+            <available resource="phing/tasks/ext/GrowlNotifyTask.php" />
+            <available resource="Net/Growl/Autoload.php" />
+        </and>
+    </condition>
+
+    <condition property="properties.init">
+        <and>
+            <isset property="default.properties" />
+            <available file="${default.properties}" />
+        </and>
+    </condition>
+
+    <fail unless="properties.init" msg="Properties file is not defined or does not exist." />
+    <property file="${default.properties}"/>
+
+    <if>
+        <not>
+            <isset property="buildfile.dir}" />
+        </not>
+        <then>
+            <!-- TIP found in ticket#62 (http://www.phing.info/trac/ticket/62) -->
+            <php function="dirname" returnProperty="buildfile.dir">
+                <param value="${phing.file}"/>
+            </php>
+        </then>
+    </if>
+
+    <fileset id="assets" dir="${buildfile.dir}">
+        <include name="images/**" />
+        <include name="js/asciidoc.js" />
+        <include name="styles/pygments.css" />
+        <include name="styles/toc2.css" />
+        <include name="styles/${theme}.css" />
+        <exclude name="**/callouts/**" />
+        <exclude name="styles.css" />
+        <exclude name="**/Thumbs.db" />
+    </fileset>
+
+    <target name="help">
+        <echo>Target                   Description                              </echo>
+        <echo>------------------------------------------------------------------</echo>
+        <echo>make-userguide-all       Build the user guide in all formats      </echo>
+        <echo>make-userguide-html      Build the user guide in single HTML page </echo>
+        <echo>make-userguide-chunked   Build the user guide in many HTML files  </echo>
+        <echo>make-userguide-htmlhelp  Build the user guide in CHM format       </echo>
+        <echo>make-userguide-pdf-a4    Build the user guide in PDF A4 format    </echo>
+        <echo>make-userguide-pdf-us    Build the user guide in PDF US format    </echo>
+        <echo>make-userguide-epub      Build the user guide in EPUB format      </echo>
+    </target>
+
+    <target name="notify" if="growl.task.available">
+
+        <taskdef name="growlnotify" classname="phing.tasks.ext.GrowlNotifyTask" />
+
+        <growlnotify message="${growl.message}"
+            title="PhingNotify"
+            priority="high"
+            sticky="true"
+            appicon="${buildfile.dir}/growlPhing.png"
+        />
+
+    </target>
+
+    <target name="copy-assets"
+            description="Copy images, stylesheets and javascripts">
+
+        <copy todir="${output.dir}">
+            <fileset refid="assets" />
+        </copy>
+    </target>
+
+    <target name="make-userguide-all"
+            depends="copy-assets"
+            description="Build the user guide in many formats">
+
+        <phingcall target="make-userguide-html" />
+
+        <if>
+            <istrue value="${build.book.chunked}" />
+            <then>
+                <phingcall target="make-userguide-chunked" />
+            </then>
+        </if>
+
+        <if>
+            <istrue value="${build.book.chm}" />
+            <then>
+                <phingcall target="make-userguide-htmlhelp" />
+            </then>
+        </if>
+
+        <if>
+            <istrue value="${build.book.pdf-a4}" />
+            <then>
+                <phingcall target="make-userguide-pdf-a4" />
+            </then>
+        </if>
+
+        <if>
+            <istrue value="${build.book.pdf-us}" />
+            <then>
+                <phingcall target="make-userguide-pdf-us" />
+            </then>
+        </if>
+
+        <if>
+            <istrue value="${build.book.epub}" />
+            <then>
+                <phingcall target="make-userguide-epub" />
+            </then>
+        </if>
+
+    </target>
+
+    <target name="make-userguide-html"
+            depends="copy-assets"
+            description="Build the user guide in single HTML page">
+
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n -o ${output.dir}/${prefix.book}-book.html ${homedir}/docs/${prefix.book}-book.txt"
+            returnProperty="exitCode"
+        />
+        <if>
+            <equals arg1="${exitCode}" arg2="0" />
+            <then>
+                <if>
+                    <istrue value="${build.tarball}" />
+                    <then>
+                        <zip destfile="${output.dir}/${prefix.book}-book.html.zip">
+                            <fileset refid="assets" />
+                            <fileset dir="${output.dir}">
+                                 <include name="${prefix.book}-book.html" />
+                            </fileset>
+                        </zip>
+                    </then>
+                </if>
+            </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message"
+                        value="HTML single page version of userguide was not generated."
+                    />
+                </phingcall>
+            </else>
+        </if>
+
+    </target>
+
+    <target name="make-userguide-chunked"
+            depends="copy-assets"
+            description="Build the user guide in many HTML files">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
+            returnProperty="exitCode"
+        />
+        <if>
+            <equals arg1="${exitCode}" arg2="0" />
+            <then>
+                <if>
+                    <istrue value="${build.tarball}" />
+                    <then>
+                        <zip destfile="${output.dir}/${prefix.book}-book.chunked.zip">
+                            <fileset dir="${output.dir}">
+                                <include name="${prefix.book}-book.chunked/**" />
+                                <exclude name="${prefix.book}-book.chunked/**/Thumbs.db" />
+                            </fileset>
+                        </zip>
+                        <delete dir="${output.dir}/${prefix.book}-book.chunked" />
+                    </then>
+                </if>
+            </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message"
+                        value="HTML chunked userguide was not generated."
+                    />
+                </phingcall>
+            </else>
+        </if>
+
+    </target>
+
+    <target name="make-userguide-htmlhelp"
+            depends="copy-assets"
+            description="Build the user guide in CHM format">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
+            returnProperty="exitCode"
+        />
+        <if>
+            <equals arg1="${exitCode}" arg2="0" />
+            <then>
+                <exec dir="${htmlhelpworkshop}"
+                    command="hhc.exe ${output.dir}/${prefix.book}-book.hhp"
+                />
+                <if>
+                    <istrue value="${build.tarball}" />
+                    <then>
+                        <zip destfile="${output.dir}/${prefix.book}-book.chm.zip">
+                            <fileset dir="${output.dir}">
+                                <include name="${prefix.book}-book.chm" />
+                            </fileset>
+                        </zip>
+                        <delete>
+                            <fileset dir="${output.dir}">
+                                <include name="${prefix.book}-book.chm" />
+                                <include name="${prefix.book}-book.hhc" />
+                                <include name="${prefix.book}-book.hhk" />
+                                <include name="${prefix.book}-book.hhp" />
+                            </fileset>
+                        </delete>
+                        <delete dir="${output.dir}/${prefix.book}-book.htmlhelp" />
+                    </then>
+                </if>
+            </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message"
+                        value="HTML Help userguide was not generated."
+                    />
+                </phingcall>
+            </else>
+        </if>
+
+    </target>
+
+    <target name="make-userguide-pdf-a4"
+            depends="copy-assets"
+            description="Build the user guide in PDF A4 format">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
+            returnProperty="exitCode"
+        />
+        <if>
+            <equals arg1="${exitCode}" arg2="0" />
+            <then>
+                <move file="${output.dir}/${prefix.book}-book.pdf" tofile="${output.dir}/${prefix.book}-book-a4.pdf" />
+            </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message"
+                        value="PDF-A4 userguide was not generated."
+                    />
+                </phingcall>
+            </else>
+        </if>
+
+    </target>
+
+    <target name="make-userguide-pdf-us"
+            depends="copy-assets"
+            description="Build the user guide in PDF US format">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css --xsl-file=./docbook-xsl/fo-custom.xsl -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
+            returnProperty="exitCode"
+        />
+        <if>
+            <equals arg1="${exitCode}" arg2="0" />
+            <then>
+                <move file="${output.dir}/${prefix.book}-book.pdf" tofile="${output.dir}/${prefix.book}-book-us.pdf" />
+            </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message"
+                        value="PDF-US userguide was not generated."
+                    />
+                </phingcall>
+            </else>
+        </if>
+
+    </target>
+
+    <target name="make-userguide-epub"
+            depends="copy-assets"
+            description="Build the user guide in EPUB format">
+
+        <exec dir="${asciidoc.home}"
+            command="a2x.py --verbose -L -d book -f epub -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
+            returnProperty="exitCode"
+        />
+        <if>
+            <equals arg1="${exitCode}" arg2="0" />
+            <then>
+                <if>
+                    <istrue value="${build.tarball}" />
+                    <then>
+                        <zip destfile="${output.dir}/${prefix.book}-book.epub.zip">
+                            <fileset dir="${output.dir}">
+                                <include name="${prefix.book}-book.epub" />
+                            </fileset>
+                        </zip>
+                    </then>
+                </if>
+            </then>
+            <else>
+                <phingcall target="notify">
+                    <property name="growl.message"
+                        value="ePub userguide was not generated."
+                    />
+                </phingcall>
+            </else>
+        </if>
+
+    </target>
+
+</project>
