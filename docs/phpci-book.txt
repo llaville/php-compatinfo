@@ -46,7 +46,7 @@ This manual documents the final stable version {revnumber}
 == System Requirements
 
 .Required resources :
-* link:http://www.php.net[PHP] 5.2.0 or newer
+* link:http://www.php.net[PHP] 5.2.1 or newer
 * link:http://ezcomponents.org/[Base] 1.8 or newer from _components.ez.no_ PEAR channel
 * link:http://ezcomponents.org/[ConsoleTools] 1.6.1 or newer from _components.ez.no_ PEAR channel
 * link:http://pear.php.net/package/Console_CommandLine[Console_CommandLine] 1.2.0 or newer from default PEAR channel
@@ -68,7 +68,7 @@ This manual documents the final stable version {revnumber}
 
 == Installing PHP_CompatInfo
 
-NOTE: The current version of PHP_CompatInfo requires *PHP 5.2.0 or newer*
+NOTE: The current version of PHP_CompatInfo requires *PHP 5.2.1 or newer*
 to run.  If you don't already have an up-to-date version of PHP
 installed it can be downloaded from the official PHP website
 http://www.php.net/.
@@ -100,10 +100,10 @@ and on the PHPUnit PEAR channel (_pear.phpunit.de_).
 This has to be done only once. Now the PEAR Installer can be used to install packages from the Bartlett channel.
 ----
     $ pear install bartlett/PHP_CompatInfo
-    downloading PHP_CompatInfo-2.9.0.tgz ...
-    Starting to download PHP_CompatInfo-2.9.0.tgz (747,635 bytes)
+    downloading PHP_CompatInfo-2.10.0.tgz ...
+    Starting to download PHP_CompatInfo-2.10.0.tgz (747,635 bytes)
     .........................done: 747,635 bytes
-    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.9.0
+    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.10.0
 ----
 After the installation you can find the PHP_CompatInfo source files inside your local PEAR directory.
 

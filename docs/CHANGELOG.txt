@@ -29,6 +29,8 @@ PHP_CompatInfo ChangeLog
 * upgrade xcache reference to version 3.0.0
 * used temporary system directory rather than /tmp that does not exists by default on windows
 * refactoring the documentation build phing script (split generic and specific code)
+* PHP min is set (at least) to 5.3.0 when you use namespace syntax on PHP 5.2 platform
+(requires PHP_Reflect 1.5.0 or greater)
 
 .Bug fixes:
 * GH-51 fix _--report-file_ option with file in current path directory
