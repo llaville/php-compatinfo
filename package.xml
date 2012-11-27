@@ -23,33 +23,23 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-11-26</date>
- <time>16:46:40</time>
+ <date>2012-11-27</date>
+ <time>21:51:32</time>
  <version>
-  <release>2.10.0</release>
+  <release>2.11.0snapshot20121127</release>
   <api>2.10.0</api>
  </version>
  <stability>
-  <release>stable</release>
+  <release>snapshot</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- add 3 new references data dictionnaries related to extensions:
-  igbinary, imagick, odbc
-- add clear-cache sub-command to CLI version
-- upgrade amqp reference to version 1.0.9
-- upgrade xcache reference to version 3.0.0
-- used temporary system directory rather than /tmp that does not exists by default on windows
-- refactoring the documentation build phing script (split generic and specific code)
-- PHP min is set (at least) to 5.3.0 when you use namespace syntax on PHP 5.2 platform
-(requires PHP_Reflect 1.5.0 or greater)
+- upgrade mongo reference to version 1.3.0
 
 Bug fixes:
-- GH-51 fix --report-file option with file in current path directory
-- PHP Doc bug 60638
-standard reference fixed: parse_url component parameter is provided since PHP 5.1.2 and not 5.2.0
+- none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -1354,6 +1344,25 @@ standard reference fixed: parse_url component parameter is provided since PHP 5.
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.11.0snapshot20121127</release>
+    <api>2.10.0</api>
+   </version>
+   <stability>
+    <release>snapshot</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-11-27</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- upgrade mongo reference to version 1.3.0
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.10.0</release>
