@@ -57,6 +57,12 @@ class PHP_CompatInfo_Reference_MongoTest
             'MongoLog',
             'MongoPool'
         );
+        // classes available since 1.3.0
+        array_push(
+            $this->optionnalclasses,
+            'MongoClient',
+            'MongoResultException'
+        );
 
         // found on windows 1.2.0 version but not declared in any sources
         $this->ignoredfunctions = array(
