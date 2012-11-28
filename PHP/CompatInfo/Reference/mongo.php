@@ -152,7 +152,7 @@ class PHP_CompatInfo_Reference_Mongo
 
         $release = '1.3.0RC1';    // 2012-11-05
         $items = array(
-            // Core
+            // Exceptions
             'MongoResultException'              => array('5.2.6', ''),
         );
         $this->applyFilter($release, $items, $classes);
