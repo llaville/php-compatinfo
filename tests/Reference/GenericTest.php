@@ -179,7 +179,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * @group  reference
      * @return void
      */
-    public function testgetConstantsFromReference()
+    public function testGetConstantsFromReference()
     {
         if (is_null($this->ref)) {
             return;
@@ -216,7 +216,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * @group  reference
      * @return void
      */
-    public function testgetClassesFromReference()
+    public function testGetClassesFromReference()
     {
         if (is_null($this->ref)) {
             return;
@@ -251,7 +251,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * @group  reference
      * @return void
      */
-    public function testgetInterfacesFromReference()
+    public function testGetInterfacesFromReference()
     {
         if (is_null($this->ref)) {
             return;
@@ -278,7 +278,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * @group  reference
      * @return void
      */
-    public function testgetConstantsFromExtension()
+    public function testGetConstantsFromExtension()
     {
         if (is_null($this->ref)) {
             return;

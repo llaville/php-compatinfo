@@ -55,7 +55,7 @@ class PHP_CompatInfo_Reference_SessionTest
      * @group  reference
      * @return void
      */
-    public function testgetConstantsFromExtension()
+    public function testGetConstantsFromExtension()
     {
         if (version_compare(PHP_VERSION, '5.2.9') <= 0) {
             // Most functions have move to 'standard' in 5.2.10
@@ -63,7 +63,7 @@ class PHP_CompatInfo_Reference_SessionTest
                 "Can't be tested in php " . PHP_VERSION
             );
         } else {
-            parent::testgetConstantsFromExtension();
+            parent::testGetConstantsFromExtension();
         }
     }
 }
