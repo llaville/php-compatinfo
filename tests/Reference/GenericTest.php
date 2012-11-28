@@ -276,6 +276,33 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test that each classes are defined in reference
+     *
+     * @depends testReference
+     * @group  reference
+     * @return void
+     */
+    public function testGetClassesFromExtension()
+    {
+        if (is_null($this->ref)) {
+            return;
+        }
+
+        foreach ($this->ref['extensions'] as $extname => $opt) {
+            $extension = new ReflectionExtension($extname);
+            $classes   = array_keys($extension->getClasses());
+
+            foreach ($classes as $classname) {
+                $this->assertArrayHasKey(
+                    $classname,
+                    $this->ref['classes'],
+                    "Defined class '$classname' not known in Reference."
+                );
+            }
+        }
+    }
+
+    /**
      * Test than all referenced interfaces exists
      *
      * @depends testReference
