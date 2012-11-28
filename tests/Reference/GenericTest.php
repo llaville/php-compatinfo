@@ -210,6 +210,37 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test that each constants are defined in reference
+     *
+     * @depends testReference
+     * @group  reference
+     * @return void
+     */
+    public function testGetConstantsFromExtension()
+    {
+        if (is_null($this->ref)) {
+            return;
+        }
+
+        $const = get_defined_constants(true);
+
+        foreach ($this->ref['extensions'] as $extname => $opt) {
+            if (isset($const[$extname])) {
+                // Test if each constants are in reference
+                foreach ($const[$extname] as $constname => $value) {
+                    if (!in_array($constname, $this->ignoredconstants)) {
+                        $this->assertArrayHasKey(
+                            $constname,
+                            $this->ref['constants'],
+                            "Defined constant '$constname' not known in Reference."
+                        );
+                    }
+                }
+            }
+        }
+    }
+
+    /**
      * Test than all referenced classes exists
      *
      * @depends testReference
@@ -271,34 +302,4 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
         }
     }
 
-    /**
-     * Test that each constants are defined in reference
-     *
-     * @depends testReference
-     * @group  reference
-     * @return void
-     */
-    public function testGetConstantsFromExtension()
-    {
-        if (is_null($this->ref)) {
-            return;
-        }
-
-        $const = get_defined_constants(true);
-
-        foreach ($this->ref['extensions'] as $extname => $opt) {
-            if (isset($const[$extname])) {
-                // Test if each constants are in reference
-                foreach ($const[$extname] as $constname => $value) {
-                    if (!in_array($constname, $this->ignoredconstants)) {
-                        $this->assertArrayHasKey(
-                            $constname,
-                            $this->ref['constants'],
-                            "Defined constant '$constname' not known in Reference."
-                        );
-                    }
-                }
-            }
-        }
-    }
 }
