@@ -52,6 +52,7 @@ class PHP_CompatInfo_Reference_Mongo
         /*
             0.9.0       PHP 5.0.0 ge
             since 1.0.0 PHP 5.1.0 ge
+            since 1.3.0 PHP 5.2.6 ge
          */
         $phpMin = '5.0.0';
         $extensions = array(
@@ -103,13 +104,13 @@ class PHP_CompatInfo_Reference_Mongo
             'MongoGridFS'                       => array('5.0.0', ''),
             'MongoGridFSFile'                   => array('5.0.0', ''),
             'MongoGridFSCursor'                 => array('5.0.0', ''),
-            
+
             // Exceptions
             'MongoException'                    => array('5.0.0', ''),
             'MongoCursorException'              => array('5.0.0', ''),
             'MongoConnectionException'          => array('5.0.0', ''),
             'MongoGridFSException'              => array('5.0.0', ''),
-            
+
         );
         $this->applyFilter($release, $items, $classes);
         // removed classes
@@ -119,13 +120,13 @@ class PHP_CompatInfo_Reference_Mongo
 
         $release = '1.0.1';       // 2009-11-19
         $items = array(
-            // Types 
+            // Types
             'MongoTimestamp'                    => array('5.1.0', ''),
             'MongoMaxKey'                       => array('5.1.0', ''),
             'MongoMinKey'                       => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
-        
+
         $release = '1.0.3';       // 2010-01-07
         $items = array(
             // Exceptions
@@ -135,7 +136,7 @@ class PHP_CompatInfo_Reference_Mongo
 
         $release = '1.0.9';       // 2010-08-06
         $items = array(
-            // Types 
+            // Types
             'MongoInt32'                        => array('5.1.0', ''),
             'MongoInt64'                        => array('5.1.0', ''),
         );
@@ -143,12 +144,26 @@ class PHP_CompatInfo_Reference_Mongo
 
         $release = '1.2.3';       // 2011-08-15
         $items = array(
-            // Miscellaneous 
+            // Miscellaneous
             'MongoLog'                          => array('5.1.0', ''),
             'MongoPool'                         => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
-        
+
+        $release = '1.3.0RC1';    // 2012-11-05
+        $items = array(
+            // Core
+            'MongoResultException'              => array('5.2.6', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '1.3.0RC3';    // 2012-11-20
+        $items = array(
+            // Core
+            'MongoClient'                       => array('5.2.6', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
         return $classes;
     }
 
