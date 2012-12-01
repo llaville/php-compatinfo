@@ -293,11 +293,19 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
             $classes   = array_keys($extension->getClasses());
 
             foreach ($classes as $classname) {
-                $this->assertArrayHasKey(
-                    $classname,
-                    $this->ref['classes'],
-                    "Defined class '$classname' not known in Reference."
-                );
+                if (class_exists($classname)) {
+                    $this->assertArrayHasKey(
+                        $classname,
+                        $this->ref['classes'],
+                        "Defined class '$classname' not known in Reference."
+                    );
+                } else {
+                    $this->assertArrayHasKey(
+                        $classname,
+                        $this->ref['interfaces'],
+                        "Defined class '$classname' not known in Reference."
+                    );
+                }
             }
         }
     }
