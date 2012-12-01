@@ -84,14 +84,19 @@ class PHP_CompatInfo_Reference_Amqp
         $release = '0.1.0';       // 2010-06-19 (beta)
         $items = array(
             'AMQPConnection'                => array('5.2.0', ''),
+            'AMQPConnectionException'       => array('5.2.0', ''),
+            'AMQPException'                 => array('5.2.0', ''),
             'AMQPExchange'                  => array('5.2.0', ''),
+            'AMQPExchangeException'         => array('5.2.0', ''),
             'AMQPQueue'                     => array('5.2.0', ''),
+            'AMQPQueueException'            => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
         $release = '1.0.0';       // 2012-02-15 (stable)
         $items = array(
             'AMQPChannel'                   => array('5.2.0', ''),
+            'AMQPChannelException'          => array('5.2.0', ''),
             'AMQPEnvelope'                  => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
