@@ -120,6 +120,12 @@ class PHP_CompatInfo_Reference_Hash
         );
         $this->applyFilter($release, $items, $functions);
 
+        $release = '5.5.0';       // soon
+        $items = array(
+            'hash_pbkdf2'                    => array('5.5.0-dev', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
         return $functions;
     }
 
