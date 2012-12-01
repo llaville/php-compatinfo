@@ -79,6 +79,7 @@ class PHP_CompatInfo_Reference_Memcached
         $release = '0.1.0';       // 2009-01-29
         $items = array(
             'Memcached'                      => array('5.2.0', ''),
+            'MemcachedException'             => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
