@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Memcache
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '3.0.6';
+    const REF_VERSION = '3.0.7';
 
     /**
      * Gets informations about extensions
@@ -79,6 +79,12 @@ class PHP_CompatInfo_Reference_Memcache
         $release = '0.2';         // 2004-02-26
         $items = array(
             'Memcache'                      => array('4.3.3', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '3.0.0';       // 2007-11-26
+        $items = array(
+            'MemcachePool'                  => array('4.3.3', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
