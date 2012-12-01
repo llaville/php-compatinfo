@@ -78,6 +78,7 @@ class PHP_CompatInfo_Reference_Snmp
         $release = false;
         $items = array(
             'SNMP'                           => array('5.4.0', ''),
+            'SNMPException'                  => array('5.4.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
