@@ -319,6 +319,7 @@ class PHP_CompatInfo_Reference_Mysqli
             'MYSQLI_RPL_MASTER'              => array('5.0.0', self::LATEST_PHP_5_2),
             'MYSQLI_RPL_SLAVE'               => array('5.0.0', self::LATEST_PHP_5_2),
             'MYSQLI_SERVER_PS_OUT_PARAMS'    => array('5.3.4', ''),
+            'MYSQLI_SERVER_PUBLIC_KEY'       => array('5.5.0-dev', ''),
             'MYSQLI_SERVER_QUERY_NO_GOOD_INDEX_USED'
                                              => array('5.3.0', ''),
             'MYSQLI_SERVER_QUERY_NO_INDEX_USED'
