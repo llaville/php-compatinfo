@@ -290,7 +290,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
         foreach ($this->ref['extensions'] as $extname => $opt) {
             $extension = new ReflectionExtension($extname);
-            $classes   = array_keys($extension->getClasses());
+            $classes   = $extension->getClassNames();
 
             foreach ($classes as $classname) {
                 if (class_exists($classname)) {
