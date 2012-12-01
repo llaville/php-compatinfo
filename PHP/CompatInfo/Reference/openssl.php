@@ -94,6 +94,7 @@ class PHP_CompatInfo_Reference_Openssl
             'openssl_get_privatekey'         => array('4.0.4', ''),
             'openssl_get_publickey'          => array('4.0.4', ''),
             'openssl_open'                   => array('4.0.4', ''),
+            'openssl_pbkdf2'                 => array('5.5.0-dev', ''),
             'openssl_pkcs12_export'          => array('5.2.2', ''),
             'openssl_pkcs12_export_to_file'  => array('5.2.2', ''),
             'openssl_pkcs12_read'            => array('5.2.2', ''),
