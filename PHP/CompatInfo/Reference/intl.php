@@ -311,9 +311,9 @@ class PHP_CompatInfo_Reference_Intl
             'datefmt_set_timezone'              => array('5.5.0-dev', ''),
 
             'intlgregcal_create_instance'       => array('5.5.0-dev', ''),
-            'intlgregcal_set_gregorian_change'  => array('5.5.0-dev', ''),
             'intlgregcal_get_gregorian_change'  => array('5.5.0-dev', ''),
             'intlgregcal_is_leap_year'          => array('5.5.0-dev', ''),
+            'intlgregcal_set_gregorian_change'  => array('5.5.0-dev', ''),
 
             'intlcal_add'                       => array('5.5.0-dev', ''),
             'intlcal_after'                     => array('5.5.0-dev', ''),
