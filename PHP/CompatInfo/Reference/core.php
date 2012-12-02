@@ -99,6 +99,37 @@ class PHP_CompatInfo_Reference_Core
     }
 
     /**
+     * Gets informations about interfaces
+     *
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
+     *
+     * @return array
+     */
+    public function getInterfaces($extension = null, $version = null, $condition = null)
+    {
+        $this->setFilter(func_get_args());
+
+        $interfaces = array();
+
+        $release = '5.3.0';       // 2009-06-30
+        $items = array(
+            'ArrayAccess'                    => array('5.3.0', ''),
+            'Iterator'                       => array('5.3.0', ''),
+            'Iterator'                       => array('5.3.0', ''),
+            'IteratorAggregate'              => array('5.3.0', ''),
+            'Serializable'                   => array('5.3.0', ''),
+            'Traversable'                    => array('5.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $interfaces);
+
+        return $interfaces;
+    }
+
+    /**
      * Gets informations about functions
      *
      * @param string $extension (optional) NULL for PHP version,
