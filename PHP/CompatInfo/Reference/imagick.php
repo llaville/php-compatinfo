@@ -78,9 +78,13 @@ class PHP_CompatInfo_Reference_Imagick
         $release = '2.0.0a1';       // 2007-05-02 - first public release
         $items = array(
             'Imagick'                       => array('5.1.3', ''),
+            'ImagickException'              => array('5.1.3', ''),
             'ImagickDraw'                   => array('5.1.3', ''),
+            'ImagickDrawException'          => array('5.1.3', ''),
             'ImagickPixel'                  => array('5.1.3', ''),
+            'ImagickPixelException'         => array('5.1.3', ''),
             'ImagickPixelIterator'          => array('5.1.3', ''),
+            'ImagickPixelIteratorException' => array('5.1.3', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
