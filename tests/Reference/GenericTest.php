@@ -303,7 +303,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                     $this->assertArrayHasKey(
                         $classname,
                         $this->ref['interfaces'],
-                        "Defined class '$classname' not known in Reference."
+                        "Defined interface '$classname' not known in Reference."
                     );
                 }
             }
