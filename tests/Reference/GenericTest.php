@@ -289,6 +289,10 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
         }
 
         foreach ($this->ref['extensions'] as $extname => $opt) {
+            if ('internal' == $extname) {
+                // only Core is a valid extension name for API reflection
+                continue;
+            }
             $extension = new ReflectionExtension($extname);
             $classes   = $extension->getClassNames();
 
