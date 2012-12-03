@@ -84,7 +84,7 @@ class PHP_CompatInfo_Reference_Memcache
 
         $release = '3.0.0';       // 2007-11-26
         $items = array(
-            'MemcachePool'                  => array('4.3.3', ''),
+            'MemcachePool'                  => array('4.3.11', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
