@@ -166,6 +166,15 @@ class PHP_CompatInfo_Reference_SPL
         );
         $this->applyFilter($release, $items, $classes);
 
+        $release = '5.1.0';       // 2005-11-24
+        $items = array(
+            'SimpleXMLIterator'                 => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+        $this->setMaxExtensionVersion(
+            '5.2.17', 'SimpleXMLIterator', $classes
+        );
+
         $release = '5.1.2';       // 2006-01-12
         $items = array(
             'RecursiveDirectoryIterator'        => array('5.1.2', ''),
