@@ -76,20 +76,30 @@ class PHP_CompatInfo_Reference_SPL
 
         $release = '5.1.0';       // 2005-11-24
         $items = array(
-            'ArrayAccess'                    => array('5.1.0', ''),
             'Countable'                      => array('5.1.0', ''),
-            'Iterator'                       => array('5.1.0', ''),
-            'IteratorAggregate'              => array('5.1.0', ''),
             'OuterIterator'                  => array('5.1.0', ''),
             'RecursiveIterator'              => array('5.1.0', ''),
             'SeekableIterator'               => array('5.1.0', ''),
-            'Serializable'                   => array('5.1.0', ''),
             'SplObserver'                    => array('5.1.0', ''),
             'SplSubject'                     => array('5.1.0', ''),
-            'Traversable'                    => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $interfaces);
 
+        $release = '5.1.0';       // 2005-11-24
+        $items = array(
+            'ArrayAccess'                    => array('5.1.0', ''),
+            'Iterator'                       => array('5.1.0', ''),
+            'IteratorAggregate'              => array('5.1.0', ''),
+            'Serializable'                   => array('5.1.0', ''),
+            'Traversable'                    => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $interfaces);
+        foreach (array_keys($items) as $interface) {
+            $this->setMaxExtensionVersion(
+                '5.2.17', $interface, $interfaces
+            );
+        }
+        
         return $interfaces;
     }
 
