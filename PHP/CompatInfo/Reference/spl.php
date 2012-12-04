@@ -96,7 +96,7 @@ class PHP_CompatInfo_Reference_SPL
         $this->applyFilter($release, $items, $interfaces);
         foreach (array_keys($items) as $interface) {
             $this->setMaxExtensionVersion(
-                '5.2.17', $interface, $interfaces
+                self::LATEST_PHP_5_2, $interface, $interfaces
             );
         }
         
@@ -172,7 +172,7 @@ class PHP_CompatInfo_Reference_SPL
         );
         $this->applyFilter($release, $items, $classes);
         $this->setMaxExtensionVersion(
-            '5.2.17', 'SimpleXMLIterator', $classes
+            self::LATEST_PHP_5_2, 'SimpleXMLIterator', $classes
         );
 
         $release = '5.1.2';       // 2006-01-12

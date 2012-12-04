@@ -187,7 +187,7 @@ class PHP_CompatInfo_Reference_Tidy
 
         $release = '2.0';         //
         $items = array(
-            'ob_tidyhandler'                    => array('5.0.0', '5.3.19'),
+            'ob_tidyhandler'                    => array('5.0.0', self::LATEST_PHP_5_3),
             'tidy_get_opt_doc'                  => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $functions);

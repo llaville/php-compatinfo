@@ -144,7 +144,7 @@ class PHP_CompatInfo_Reference_Fileinfo
 
         $release = '0.1.0';       // 2004-02-13
         $items = array(
-            'FILEINFO_COMPRESS'         => array('4.0.0', '5.2.17'),
+            'FILEINFO_COMPRESS'         => array('4.0.0', self::LATEST_PHP_5_2),
             'FILEINFO_CONTINUE'         => array('4.0.0', ''),
             'FILEINFO_DEVICES'          => array('4.0.0', ''),
             'FILEINFO_MIME'             => array('4.0.0', ''),

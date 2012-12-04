@@ -54,7 +54,7 @@ class PHP_CompatInfo_Reference_Mhash
         // emulated in hash extension since 5.3.0
         $phpMin = '4.0.0';
         $extensions = array(
-            self::REF_NAME => array($phpMin, '5.2.17', self::REF_VERSION)
+            self::REF_NAME => array($phpMin, self::LATEST_PHP_5_2, self::REF_VERSION)
         );
         return $extensions;
     }
