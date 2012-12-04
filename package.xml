@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-12-03</date>
- <time>18:08:20</time>
+ <date>2012-12-04</date>
+ <time>17:08:46</time>
  <version>
-  <release>2.11.0snapshot20121203</release>
+  <release>2.11.0snapshot20121204</release>
   <api>2.11.0</api>
  </version>
  <stability>
@@ -47,7 +47,7 @@ were moved form SPL to Core since PHP 5.3.0
 - SimpleXMLIterator was moved from SPL (PHP 5.2) to SimpleXml (PHP 5.3)
 
 Bug fixes:
-- none
+- GH-54 : Cannot generate documentation with missing UML diagrams pictures
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -1357,14 +1357,14 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.11.0snapshot20121203</release>
+    <release>2.11.0snapshot20121204</release>
     <api>2.11.0</api>
    </version>
    <stability>
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2012-12-03</date>
+   <date>2012-12-04</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -1379,7 +1379,7 @@ were moved form SPL to Core since PHP 5.3.0
 - SimpleXMLIterator was moved from SPL (PHP 5.2) to SimpleXml (PHP 5.3)
 
 Bug fixes:
-- none
+- GH-54 : Cannot generate documentation with missing UML diagrams pictures
    </notes>
   </release>
   <release>
