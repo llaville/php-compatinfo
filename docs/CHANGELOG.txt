@@ -33,7 +33,7 @@ were moved form SPL to Core since PHP 5.3.0
 * SimpleXMLIterator was moved from SPL (PHP 5.2) to SimpleXml (PHP 5.3)
 
 .Bug fixes:
-* none
+* GH-54 : Cannot generate documentation with missing UML diagrams pictures
 
 
 == Version 2.10.0 (2012-11-26)

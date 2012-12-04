@@ -157,7 +157,7 @@
             description="Build the user guide in many HTML files">
 
         <exec dir="${asciidoc.home}"
-            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
+            command="a2x.py --resource=${output.dir}/images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
             returnProperty="exitCode"
         />
         <if>
@@ -192,7 +192,7 @@
             description="Build the user guide in CHM format">
 
         <exec dir="${asciidoc.home}"
-            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
+            command="a2x.py --resource=${output.dir}/images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
             returnProperty="exitCode"
         />
         <if>
@@ -237,7 +237,7 @@
             description="Build the user guide in PDF A4 format">
 
         <exec dir="${asciidoc.home}"
-            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
+            command="a2x.py --resource=${output.dir}/images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
             returnProperty="exitCode"
         />
         <if>
@@ -261,7 +261,7 @@
             description="Build the user guide in PDF US format">
 
         <exec dir="${asciidoc.home}"
-            command="a2x.py -L --icons --stylesheet=./stylesheets/docbook-xsl.css --xsl-file=./docbook-xsl/fo-custom.xsl -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
+            command="a2x.py --resource=${output.dir}/images -L --icons --stylesheet=./stylesheets/docbook-xsl.css --xsl-file=./docbook-xsl/fo-custom.xsl -d book -f pdf --fop -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
             returnProperty="exitCode"
         />
         <if>
@@ -285,7 +285,7 @@
             description="Build the user guide in EPUB format">
 
         <exec dir="${asciidoc.home}"
-            command="a2x.py --verbose -L -d book -f epub -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
+            command="a2x.py --resource=${output.dir}/images -L -d book -f epub -D ${output.dir} ${homedir}/docs/${prefix.book}-book.txt"
             returnProperty="exitCode"
         />
         <if>
