@@ -21,16 +21,16 @@
     <target name="make-docs">
 
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -o ${output.dir}/CHANGELOG.html ${homedir}/docs/CHANGELOG.txt"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -o ${output.dir}/CHANGELOG.html ${homedir}/docs/CHANGELOG.txt"
         />
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -o ${output.dir}/INSTALL.html ${homedir}/docs/INSTALL.txt"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -o ${output.dir}/INSTALL.html ${homedir}/docs/INSTALL.txt"
         />
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -o ${output.dir}/LICENSE.html ${homedir}/docs/LICENSE.txt"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -o ${output.dir}/LICENSE.html ${homedir}/docs/LICENSE.txt"
         />
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -a linkcss -a icons -a theme=${theme} -a toc2 -n -o ${output.dir}/index.html ${homedir}/docs/index.txt"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -n -o ${output.dir}/index.html ${homedir}/docs/index.txt"
         />
 
     </target>
