@@ -81,7 +81,7 @@ class PHP_CompatInfo_CLI
             array(
                 'short_name'  => '-d',
                 'long_name'   => '--ini-set',
-                'action'      => 'StoreString',
+                'action'      => 'StoreArray',
                 'description' => 'Sets a php.ini directive value'
             )
         );
@@ -560,13 +560,15 @@ class PHP_CompatInfo_CLI
         }
 
         if (isset($result->options['iniSet'])) {
-            $ini = explode('=', $result->options['iniSet']);
+            foreach ($result->options['iniSet'] as $iniSet) {
+                $ini = explode('=', $iniSet);
 
-            if (isset($ini[0])) {
-                if (isset($ini[1])) {
-                    ini_set($ini[0], $ini[1]);
-                } else {
-                    ini_set($ini[0], true);
+                if (isset($ini[0])) {
+                    if (isset($ini[1])) {
+                        ini_set($ini[0], $ini[1]);
+                    } else {
+                        ini_set($ini[0], true);
+                    }
                 }
             }
         }
