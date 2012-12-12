@@ -43,6 +43,27 @@
 class PHP_CompatInfo_CLI
 {
     /**
+     * Current version of PHP_CompatInfo
+     * @var string
+     */
+    const VERSION = '@package_version@';
+
+    /**
+     * Gets current version of PHP_CompatInfo
+     *
+     * @return string
+     */
+    public static function getVersion()
+    {
+        if (strpos(self::VERSION, '@') === 0) {
+            $version = 'DEV';
+        } else {
+            $version = self::VERSION;
+        }
+        return $version;
+    }
+
+    /**
      * Handle console input and produce the appropriate report requested
      *
      * @return void
@@ -54,7 +75,7 @@ class PHP_CompatInfo_CLI
             array(
                 'name'        => 'phpci',
                 'description' => 'PHPCompatInfo (cli) by Laurent Laville.',
-                'version'     => '@package_version@'
+                'version'     => self::getVersion()
             )
         );
 
