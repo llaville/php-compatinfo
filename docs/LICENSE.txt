@@ -1,14 +1,13 @@
-Copyright
-=========
+= License
+:description: This work is licensed under the BSD License
 include::revision.txt[]
-:stylesdir:   styles
-:scriptsdir:  js
+include::attributes.txt[]
 
 
-This work is licensed under the BSD License.
+[role="lead"]
+The full legal text of the BSD 3-clause license is given below.
 
-The full legal text of the license is given below.
-
+[role="well"]
 ----
  Copyright (c) 2010-2012, Laurent Laville <pear@laurent-laville.org>
 
@@ -20,7 +19,7 @@ The full legal text of the license is given below.
     * Remi Collet
       Contributor on many extensions and unit tests since version 2.0.0RC2
 
-      
+
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without

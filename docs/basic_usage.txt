@@ -1,46 +1,49 @@
-API basic usage
-===============
-:icons:
-:toc:
+= Basic usage
+:description: Configure the default options to match your need
 include::revision.txt[]
+include::attributes.txt[]
 
 
 == Default options
 
-What either you use the CLI version with the _phpci_ command, or directly API functions,
+[role="lead"]
+What either you use the CLI version with the [label label-inverse]#phpci# command, or directly API functions,
 PHP_CompatInfo has some default options you should learn if you want to understand results provided.
 
-Depending of SAPI you will use, source of settings is different.
+Default options printed below, may be changed either :
 
-Default options printed below, may be changed by the +$options+ parameter of +PHP_CompatInfo+ class constructor. 
+* by the +$options+ parameter of +PHP_CompatInfo+ class constructor, if you use the API functions
+* by the XML configuration file +phpcompatinfo.xml+ or +phpcompatinfo.xml.dist+, if you use the CLI tool
 
-[grid="rows",format="csv"]
-[options="header",cols="2,2,10"]
+.Default options
+[options="header",cols="3,3,9", role="table table-bordered table-striped"]
 |===========================
-Option, Default, Description
-recursive, false, scan recursive subdirectories or just local files
-reference, PHP5, data dictionary reference (all PHP4 and PHP5 informations)
-referencePlugins, "[PHP4[...], PHP5[...]]", adapters to connect to data dictionaries reference
-verbose, false, output more information
-fileExtensions, "[php, inc, phtml]", list of file extensions to scan
-filterVersion, "php_4.0.0", filter results on a specific PHP or extension version
-filterOperator, "ge", "operator to test versions for a particular relationship (same as PHP.version_compare)"
-cacheDriver, file, cache results to improve speed of next iteration
-cacheOptions, "[]", options specific to cache driver used
-listeners, [], none
+| Option | Default | Description
+| `recursive` | false | scan recursive subdirectories or just local files
+| `reference` | PHP5  | data dictionary reference (all PHP4 and PHP5 informations)
+| `referencePlugins` | [PHP4[...], PHP5[...], ALL[...]] | adapters to connect to data dictionaries reference
+| `verbose`        | false | output more information
+| `fileExtensions` | [php, inc, phtml] | list of file extensions to scan
+| `filterVersion`  | php_4.0.0  | filter results on a specific PHP or extension version
+| `filterOperator` | ge   | operator to test versions for a particular relationship
+(same as PHP link:http://php.net/manual/en/function.version-compare.php[version_compare])
+| `cacheDriver`    | file | cache results to improve speed of next iteration
+| `cacheOptions`   | []   | options specific to cache driver used
+| `listeners`      | []   | none
 |===========================
 
 
-== Scanning Files and Folders
+== Scanning files and folders
 
-The simplest way of using PHP_CompatInfo is to provide the location of a file 
-or folder for PHP_CompatInfo to scan. If a folder is provided, PHP_CompatInfo 
-will scan all files it finds in that local folder. 
+The simplest way of using PHP_CompatInfo is to provide the location of a file
+or folder for PHP_CompatInfo to scan. If a folder is provided, PHP_CompatInfo
+will scan all files it finds in that local folder.
 
-NOTE: If you want sub-folders scanned, use the +recursive+ option. 
+[caption="Note", name="info", icon="{iconsdir}/note.png"]
+NOTE: If you want sub-folders scanned, use the +recursive+ option.
 
-.Example: do not use cache files, but parse directory recursively. 
-[source,php]
+.Example 1: do not use cache files, but parse directory recursively.
+[source,php,numbered]
 ----
 <?php
 require_once 'Bartlett/PHP/CompatInfo/Autoload.php';
@@ -62,21 +65,21 @@ try {
 }
 ----
 
-== Specifying a Reference 
+== Specifying a Reference
 
-PHP_CompatInfo can have multiple references installed to allow a single installation 
-to be used with multiple plateform. When scanning PHP code, PHP_CompatInfo can be told 
-which reference to use. This is done using the +reference+ option. 
+PHP_CompatInfo can have multiple references installed to allow a single installation
+to be used with multiple plateform. When scanning PHP code, PHP_CompatInfo can be told
+which reference to use. This is done using the +reference+ option.
 
-.Example: specify a PHP4 reference to parse only PHP 4 sources code
-[source,php]
+.Example 1: specify ALL reference to detect all extensions (not just those are loaded on your system)
+[source,php,numbered]
 ----
 <?php
 require_once 'Bartlett/PHP/CompatInfo/Autoload.php';
 
 $source  = '/path/to/myFolder';
 $options = array(
-    'reference' => 'PHP4',
+    'reference' => 'ALL',
 );
 
 try {
@@ -90,11 +93,11 @@ try {
 }
 ----
 
-NOTE: If you want to use your own reference, you should have (of course) to write it, 
+NOTE: If you want to use your own reference, you should have (of course) to write it,
 but you must also tell where it is.
 
-.Example: replaces default references provided in standard distribution
-[source,php]
+.Example 2: replaces default references provided in standard distribution
+[source,php,numbered]
 ----
 <?php
 require_once 'Bartlett/PHP/CompatInfo/Autoload.php';
@@ -108,7 +111,7 @@ $options = array(
             'file'  => '/path/to/file/hosting/myRefClass.php',
             'args'  => array()
         ),
-    
+
 );
 
 try {
@@ -122,8 +125,8 @@ try {
 }
 ----
 
-Reference are :
+References are :
 
-* *PHP4* to scan only PHP4 source code, with extensions specified or loaded on your system
-* *PHP5* to scan PHP4/PHP5 source code, with extensions specified or loaded on your system
-* *ALL*  to scan PHP4/PHP5 source code, with extensions specified or all present in current distribution
+* `PHP4` to scan only PHP4 source code, with extensions specified or loaded on your system
+* `PHP5` to scan PHP4/PHP5 source code, with extensions specified or loaded on your system
+* `ALL`  to scan PHP4/PHP5 source code, with extensions specified or all present in current distribution

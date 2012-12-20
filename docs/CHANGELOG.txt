@@ -1,28 +1,30 @@
-PHP_CompatInfo ChangeLog
-========================
-:author:      Laurent Laville
-:email:       pear@laurent-laville.org
-:stylesdir:   styles
-:scriptsdir:  js
-
-== Versions summary
-
-* 2.10.0 support all PHP versions until 5.4.9
-* 2.9.0 support all PHP versions until 5.4.8
-* 2.8.0 support all PHP versions until 5.4.7
-* 2.7.0 support all PHP versions until 5.4.6
-* 2.6.0 support all PHP versions until 5.4.5
-* 2.5.0 support all PHP versions until 5.4.4
-* 2.4.0 support all PHP versions until 5.4.3
-* 2.3.0 support all PHP versions until 5.4.0
-* 2.2.0 support all PHP versions until 5.3.10
-* 2.1.0 support all PHP versions until 5.3.8
+= {title}
+:title:       Changelog
+:description: Summary of versions changes
+include::attributes.txt[]
 
 
-== Version 2.11.0 (2012-mm-dd)
+[options="header", cols="3,3", role="table table-bordered table-striped"]
+|===========================
+| Version | Support all PHP versions until
+| 2.11.0  | 5.4.10
+| 2.10.0  | 5.4.9
+| 2.9.0   | 5.4.8
+| 2.8.0   | 5.4.7
+| 2.7.0   | 5.4.6
+| 2.6.0   | 5.4.5
+| 2.5.0   | 5.4.4
+| 2.4.0   | 5.4.3
+| 2.3.0   | 5.4.0
+| 2.2.0   | 5.3.10
+| 2.1.0   | 5.3.8
+|===========================
+
+
+== Version 2.11.0 _(2012-12-21)_
 
 .Additions and changes:
-* upgrade mongo reference to version 1.3.1
+* upgrade mongo reference to version 1.3.2
 * upgrade memcache reference to version 3.0.7
 * fix amqp reference (thanks to Remi Collet)
 * fix memcached reference (thanks to Remi Collet)
@@ -31,12 +33,14 @@ PHP_CompatInfo ChangeLog
 * interfaces ArrayAcess, Iterator, IteratorAggregate, Serializable, Traversable
 were moved form SPL to Core since PHP 5.3.0
 * SimpleXMLIterator was moved from SPL (PHP 5.2) to SimpleXml (PHP 5.3)
+* give always a readable version (whatever process used to install the CLI version)
 
 .Bug fixes:
 * GH-54 : Cannot generate documentation with missing UML diagrams pictures
+* GH-55 : support multiple _-d_ directive
 
 
-== Version 2.10.0 (2012-11-26)
+== Version 2.10.0 _(2012-11-26)_
 
 .Additions and changes:
 * add 3 new references data dictionnaries related to extensions:
@@ -55,7 +59,7 @@ were moved form SPL to Core since PHP 5.3.0
 standard reference fixed: parse_url component parameter is provided since PHP 5.1.2 and not 5.2.0
 
 
-== Version 2.9.0 (2012-10-29)
+== Version 2.9.0 _(2012-10-29)_
 
 .Additions and changes:
 * all required resources used now the default autoloader
@@ -87,7 +91,7 @@ summary, extensions, interfaces, traits, classes, functions, constants, globals,
 * depending of typeHint (interface, class), report now in the real category rather than just in classes
 
 
-== Version 2.8.1 (2012-09-28)
+== Version 2.8.1 _(2012-09-28)_
 
 .Additions and changes:
 * none
@@ -99,7 +103,7 @@ summary, extensions, interfaces, traits, classes, functions, constants, globals,
 * phpci list command raises notice errors
 
 
-== Version 2.8.0 (2012-09-15)
+== Version 2.8.0 _(2012-09-15)_
 
 .Additions and changes:
 * add 5 new references data dictionnaries related to extensions:
@@ -147,7 +151,7 @@ Phar (2.0.1), solr (1.0.2), XCache (2.0.1)
 * none
 
 
-== Version 2.8.0beta2 (2012-09-07)
+== Version 2.8.0beta2 _(2012-09-07)_
 
 .Additions and changes since beta1:
 * add 1 new references data dictionnaries related to extensions: mongo
@@ -158,7 +162,7 @@ hash (1.0), mongo (1.2.12), tidy (2.0), zip (1.11.0), zlib (2.0)
 * none
 
 
-== Version 2.8.0beta1 (2012-09-04)
+== Version 2.8.0beta1 _(2012-09-04)_
 
 .Additions and changes:
 * introduces a new Reference API that allow to filter elements (interfaces, classes, functions, constants)
@@ -183,7 +187,7 @@ Adds missing Xdebug unit tests (while reference exists since 2.0.0RC3)
 * none
 
 
-== Version 2.7.0 (2012-09-02)
+== Version 2.7.0 _(2012-09-02)_
 
 .Additions and changes since 2.7.0RC1:
 * none
@@ -214,7 +218,7 @@ as PHP 5.0.0 and no more as PHP 4.0.0
 * Force clean cache when --reference or --exclude-pattern changed. Avoid old results.
 
 
-== Version 2.7.0RC1 (2012-08-17)
+== Version 2.7.0RC1 _(2012-08-17)_
 
 .Additions and changes:
 * add a new report (condition) for CLI tool that will replace the warning messages
@@ -239,7 +243,7 @@ as PHP 5.0.0 and no more as PHP 4.0.0
 * Force clean cache when --reference or --exclude-pattern changed. Avoid old results.
 
 
-== Version 2.6.0 (2012-07-26)
+== Version 2.6.0 _(2012-07-26)_
 
 .Additions and changes since 2.6.0RC1:
 * fixed plural in the footer of all reports produced by CLI
@@ -263,7 +267,7 @@ as PHP 5.0.0 and no more as PHP 4.0.0
 * unit tests suites PHP 5.2 compatibility with source only parsable with PHP 5.3 or greater
 
 
-== Version 2.6.0 RC1 (2012-07-23)
+== Version 2.6.0 RC1 _(2012-07-23)_
 
 .Additions and changes:
 * Users have now ability to use their own autoloader (related to issue GH-43)
@@ -277,7 +281,7 @@ as PHP 5.0.0 and no more as PHP 4.0.0
 * unit tests suites PHP 5.2 compatibility with source only parsable with PHP 5.3 or greater
 
 
-== Version 2.5.0 (2012-06-18)
+== Version 2.5.0 _(2012-06-18)_
 
 .Additions and changes:
 * add 8 new references data dictionnaries related to extensions: exif, lzf,
@@ -288,7 +292,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 * GH-41 : Prevent division by zero PHP warning from progressbar when nothing parsed
 
 
-== Version 2.4.0 (2012-05-09)
+== Version 2.4.0 _(2012-05-09)_
 
 .Additions and changes:
 * ext/mbstring : add support for mb_ereg_replace_callback function
@@ -302,7 +306,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 * GH-33 : Avoid deadlock in object operator
 
 
-== Version 2.3.0 (2012-03-05)
+== Version 2.3.0 _(2012-03-05)_
 
 .Additions and changes:
 * add 1 new references data dictionnaries related to extensions: Zip,
@@ -313,7 +317,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 * fix case sensitive name of Reflection reference in data dictionnary
 
 
-== Version 2.2.5 (2012-02-24)
+== Version 2.2.5 _(2012-02-24)_
 
 .Additions and changes:
 * version 2.2.5 or better will support all PHP 5.4.0RC,
@@ -332,7 +336,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 * none
 
 
-== Version 2.2.4 (2012-02-17)
+== Version 2.2.4 _(2012-02-17)_
 
 .Additions and changes:
 * add missing magic constant __TRAIT__ in core reference
@@ -346,7 +350,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
   https://github.com/llaville/php-compat-info/issues/29
 
 
-== Version 2.2.3 (2012-02-14)
+== Version 2.2.3 _(2012-02-14)_
 
 .Additions and changes:
 * solve license conflict issue due to typo error in package.php script (thanks to Remi Collet)
@@ -360,7 +364,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
   https://github.com/llaville/php-compat-info/issues/27
 
 
-== Version 2.2.2 (2012-02-09)
+== Version 2.2.2 _(2012-02-09)_
 
 .Additions and changes:
 * Phing documentation build script has evolved to allow more customized options
@@ -372,7 +376,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
   https://github.com/llaville/php-compat-info/issues/26
 
 
-== Version 2.2.1 (2012-02-03)
+== Version 2.2.1 _(2012-02-03)_
 
 .Additions and changes:
 * Version 2.2.0 support until PHP 5.3.9 and 5.4.0
@@ -382,7 +386,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 * none
 
 
-== Version 2.2.0 (2012-02-02)
+== Version 2.2.0 _(2012-02-02)_
 
 .Additions and changes:
 * fix references for functions with parameters that have different versions
@@ -402,7 +406,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 * fix version stamp in XML report
 
 
-== Version 2.1.0 (2011-08-24)
+== Version 2.1.0 _(2011-08-24)_
 
 .Additions and changes:
 * support all PHP versions until 5.3.8
@@ -412,7 +416,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 * none
 
 
-== Version 2.0.0 (2011-07-02)
+== Version 2.0.0 _(2011-07-02)_
 
 .Additions and changes:
 * add 1 new references data dictionnaries related to extensions: intl
@@ -422,7 +426,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 * wrong PHP extension/internal functions detection when using namespace
 
 
-== Version 2.0.0 RC4 (2011-04-24)
+== Version 2.0.0 RC4 _(2011-04-24)_
 
 .Additions and changes:
 * add 15 new references data dictionnaries related to extensions:
@@ -444,7 +448,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 * list-references command did not displayed extensions with mixed cases like (PDO, SQLite, SimpleXML)
 
 
-== Version 2.0.0 RC3 (2011-03-24)
+== Version 2.0.0 RC3 _(2011-03-24)_
 
 .Additions and changes:
 * add 7 new references data dictionnaries and unit tests related to extensions:
@@ -461,7 +465,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 * none
 
 
-== Version 2.0.0 RC2 (2011-02-24)
+== Version 2.0.0 RC2 _(2011-02-24)_
 
 .Additions and changes:
 * add 20 new references data dictionnaries related to extensions:
@@ -475,7 +479,7 @@ mailparse, mssql, solr, sphinx, xhprof, Yaml
 * none
 
 
-== Version 2.0.0 RC1 (2011-01-24)
+== Version 2.0.0 RC1 _(2011-01-24)_
 
 PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-laville.org
 
@@ -496,7 +500,7 @@ PHP_CompatInfo 2 is now available on a new PEAR channel: bartlett.laurent-lavill
 when a new stable release of PHP_TokenSteam will be available.
 
 
-== Version 2.0.0 beta4 (2011-01-10)
+== Version 2.0.0 beta4 _(2011-01-10)_
 
 .Additions and changes:
 * option 'referenceDriver' removed in favour of new reference plugins system.
@@ -513,7 +517,7 @@ when a new stable release of PHP_TokenSteam will be available.
   some new features may be available with future versions
 
 
-== Version 2.0.0 beta3 (2010-12-29)
+== Version 2.0.0 beta3 _(2010-12-29)_
 
 .Additions and changes:
 * add unit tests for all issues detected in PCI versions lower than 2.0.0
@@ -542,7 +546,7 @@ when a new stable release of PHP_TokenSteam will be available.
 * PHP_Token_CONSTANT_ENCAPSED_STRING class implemented for constant detection
 
 
-== Version 2.0.0 beta2 (2010-12-23)
+== Version 2.0.0 beta2 _(2010-12-23)_
 
 .Additions and changes
 * Summary report: same file path are now unique (improve readibility)
@@ -563,6 +567,6 @@ when a new stable release of PHP_TokenSteam will be available.
 * wrong versions displayed (in some condition) on all reports with folder as data source
 
 
-== Version 2.0.0 beta1 (2010-12-20)
+== Version 2.0.0 beta1 _(2010-12-20)_
 
 First preview

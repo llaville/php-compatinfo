@@ -1,22 +1,37 @@
-Using PHP_CompatInfo from the command line
-==========================================
-include::revision.txt[]
+= Command Line
+:description: Using PHP_CompatInfo from the command line
+include::attributes.txt[]
 
 
-== Differences to other SAPI
+== Differences with API
 
-Remarkable differences of the CLI SAPI compared to other SAPI:
+* Reference informations (MIN and MAX PHP versions) about one or more extensions :
+- list all extensions
+- list all classes
+- list all interfaces
+- list all functions
+- list all constants
 
-* gets responses in a seconde without code line to write
-* printing components report
-* printing references informations report
-* configurable thru an easy to read XML file
+* Print multiple reports group by scanned files or components
+- *summary* : usage summary of each extension, interface, class, function, constant used by your sources code
+- *source* : lines code count summary with or without source code
+- *xml* : export result to a XML format easy to transform to xHTML or other format
+- *token* : language PHP5 special features such as try/catch/throw exception, etc
+- *extension* : usage, minimum php version and origin of each extension used by your sources code
+- *namespace* : usage, minimum php version and origin of each namespace used by your sources code
+- *trait* : usage, minimum php version and origin of each trait used by your sources code
+- *interface* : usage, minimum php version and origin of each interface used by your sources code
+- *class* : usage, minimum php version and origin of each class used by your sources code
+- *function* : usage, minimum php version and origin of each function used by your sources code
+- *constant* : usage, minimum php version and origin of each constant used by your sources code
+- *global* : usage, minimum php version and origin of each global variable used by your sources code
+- *condition* : usage, minimum php version and origin of each code conditionnal function used by your sources code
 
 
 == Options
 
-The list of command line options provided by the _phpci_ command can be queried anytime
-by running phpci with the -h or --help switches.
+The list of command line options provided by the [label label-inverse]#phpci# command
+can be queried anytime by running phpci with the `-h` or `--help` switches.
 
 ----
 PHPCompatInfo (cli) by Laurent Laville.
@@ -47,7 +62,7 @@ Commands:
 ----
 
 [grid="rows",format="csv"]
-[options="header",cols="2,2,10"]
+[options="header",cols="2,2,10",role="table table-bordered table-striped"]
 |===========================
 Short Option, Long Option, Description
 , --configuration, "Specify a custom XML file (which does not need to be named phpcompatinfo.xml or located into PEAR +cfg_dir+)"
@@ -61,7 +76,7 @@ Short Option, Long Option, Description
 Unless you tell it to ignore the XML configuration file, default options are sets
 by the  +phpcompatinfo.xml.dist+ file if found into the PEAR +cfg_dir+ +\PHP_CompatInfo+ directory
 
-[source,xml]
+[source,xml,numbered]
 ----
 <?xml version="1.0" encoding="utf-8" ?>
 <phpcompatinfo
@@ -92,13 +107,15 @@ If you choose to set verbose level 1 (+-v+), your report(s) will print also some
 Such as what extensions are loaded in your platform (defined by your __php.ini__ file),
 but not available on your PHP_CompatInfo distribution.
 
-.For example on windows platform
+.Example on windows platform
+====
 ----
 Warning messages : (2)
 
   Cannot load extension reference 'com_dotnet'
   Cannot load extension reference 'odbc'
 ----
+====
 
 ==== Level 2
 
@@ -106,6 +123,7 @@ If you choose to set verbose level 2 (+-vv+), your report(s) will print both war
 (as in level 1) but also files where are used components of your report(s).
 
 .Example
+====
 ----
     $ phpci -vv print --report condition \path\to\symfony-ClassLoader-2.0.15
 
@@ -142,6 +160,7 @@ If you choose to set verbose level 2 (+-vv+), your report(s) will print both war
       Cannot load extension reference 'com_dotnet'
       Cannot load extension reference 'odbc'
 ----
+====
 
 ==== Level 3
 
@@ -151,6 +170,7 @@ If you choose to set verbose level 3 (+-vvv+), your report(s) will print both wa
 NOTE: It is usefull only when data source to parse is a directory.
 
 .Example
+====
 ----
     $ phpci -vvv print --report condition \path\to\symfony-ClassLoader-2.0.15
 
@@ -237,7 +257,7 @@ NOTE: It is usefull only when data source to parse is a directory.
       Cannot load extension reference 'com_dotnet'
       Cannot load extension reference 'odbc'
 ----
-
+====
 
 == Commands
 
@@ -303,7 +323,7 @@ Arguments:
 ----
 
 [grid="rows",format="csv"]
-[options="header",cols="2,2,10"]
+[options="header",cols="2,2,10",role="table table-bordered table-striped"]
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
@@ -363,7 +383,7 @@ Options:
 ----
 
 [grid="rows",format="csv"]
-[options="header",cols="2,2,10"]
+[options="header",cols="2,2,10",role="table table-bordered table-striped"]
 |===========================
 Short Option, Long Option, Description
 , --filter-version, "Filter results on a specific PHP or extension version"
@@ -380,8 +400,8 @@ $ phpci list-references
 ----
 include::list_references.txt[]
 ----
-<1> This column specify the version of extension that was documented
-<2> This column specify which are the php versions (minimum and maximum) supported by the extension
+* The `VERSION` column specify the version of extension that was documented
+* The `PHP min/Max` column specify which are the php versions (minimum and maximum) supported by the extension
 
 === list command
 
@@ -417,7 +437,7 @@ Arguments:
 ----
 
 [grid="rows",format="csv"]
-[options="header",cols="2,2,10"]
+[options="header",cols="2,2,10",role="table table-bordered table-striped"]
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
@@ -433,6 +453,7 @@ Short Option, Long Option, Description
 $ phpci list interfaces classes
 ----
 
+====
 ----
     -------------------------------------------------------------------------------
     PHP COMPAT INFO INTERFACE REFERENCE
@@ -495,6 +516,7 @@ $ phpci list interfaces classes
     Time: 0 seconds, Memory: 9.50Mb
     -------------------------------------------------------------------------------
 ----
+====
 
 === list-extensions command
 
@@ -528,7 +550,7 @@ Arguments:
 ----
 
 [grid="rows",format="csv"]
-[options="header",cols="2,2,10"]
+[options="header",cols="2,2,10",role="table table-bordered table-striped"]
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
@@ -544,11 +566,12 @@ Short Option, Long Option, Description
 $ phpci list-extensions
 ----
 
+====
 ----
     -------------------------------------------------------------------------------
     PHP COMPAT INFO EXTENSION REFERENCE
     -------------------------------------------------------------------------------
-    EXTENSION                               VERSION <1>       PHP min/Max <2>
+    EXTENSION                               VERSION           PHP min/Max
     -------------------------------------------------------------------------------
     Core                                    5.4.8             4.0.0
     PDO                                     1.0.4dev          5.1.0
@@ -604,9 +627,10 @@ $ phpci list-extensions
     Time: 0 seconds, Memory: 6.25Mb
     -------------------------------------------------------------------------------
 ----
+====
+* The `VERSION` column specify the version of extension that was documented
+* The `PHP min/Max` column specify which are the php versions (minimum and maximum) supported by the extension
 
-<1> This column specify the version of extension that was documented
-<2> This column specify what are the php versions (minimum and maximum) supported by the extension
 
 [TIP]
 .You can filter result by extension
@@ -649,7 +673,7 @@ Arguments:
 ----
 
 [grid="rows",format="csv"]
-[options="header",cols="2,2,10"]
+[options="header",cols="2,2,10",role="table table-bordered table-striped"]
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
@@ -665,11 +689,12 @@ Short Option, Long Option, Description
 $ phpci list-interfaces
 ----
 
+====
 ----
     -------------------------------------------------------------------------------
     PHP COMPAT INFO INTERFACE REFERENCE
     -------------------------------------------------------------------------------
-    INTERFACE                               EXT min/Max <1>   PHP min/Max <2>
+    INTERFACE                               EXT min/Max       PHP min/Max
     -------------------------------------------------------------------------------
     ArrayAccess                             SPL-5.1.0         5.1.0
     Countable                               SPL-5.1.0         5.1.0
@@ -691,9 +716,9 @@ $ phpci list-interfaces
     Time: 0 seconds, Memory: 6.25Mb
     -------------------------------------------------------------------------------
 ----
-
-<1> This column specify the name of extension that provide these interfaces
-<2> This column specify what are the php versions (minimum and maximum) supported by the interface
+====
+* The `Ext min/Max` column specify which are the extension versions (minimum and maximum) required by these interfaces
+* The `PHP min/Max` column specify which are the php versions (minimum and maximum) supported by the extension
 
 
 [TIP]
@@ -759,7 +784,7 @@ Arguments:
 ----
 
 [grid="rows",format="csv"]
-[options="header",cols="2,2,10"]
+[options="header",cols="2,2,10",role="table table-bordered table-striped"]
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
@@ -775,11 +800,12 @@ Short Option, Long Option, Description
 $ phpci list-classes
 ----
 
+====
 ----
     -------------------------------------------------------------------------------
     PHP COMPAT INFO CLASS REFERENCE
     -------------------------------------------------------------------------------
-    CLASS                                   EXT min/Max <1>   PHP min/Max <2>
+    CLASS                                   EXT min/Max       PHP min/Max
     -------------------------------------------------------------------------------
     AppendIterator                          SPL-5.1.0         5.1.0
     ArrayIterator                           SPL-5.0.0         5.0.0
@@ -809,9 +835,9 @@ $ phpci list-classes
     Time: 0 seconds, Memory: 6.25Mb
     -------------------------------------------------------------------------------
 ----
-
-<1> This column specify the name of extension that provide these classes
-<2> This column specify what are the php versions (minimum and maximum) supported by the class
+====
+* The `Ext min/Max` column specify which are the extension versions (minimum and maximum) required by these classes
+* The `PHP min/Max` column specify which are the php versions (minimum and maximum) supported by the extension
 
 [TIP]
 .You can filter result by extension
@@ -876,7 +902,7 @@ Arguments:
 ----
 
 [grid="rows",format="csv"]
-[options="header",cols="2,2,10"]
+[options="header",cols="2,2,10",role="table table-bordered table-striped"]
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
@@ -892,11 +918,12 @@ Short Option, Long Option, Description
 $ phpci list-functions
 ----
 
+====
 ----
     -------------------------------------------------------------------------------
     PHP COMPAT INFO FUNCTION REFERENCE
     -------------------------------------------------------------------------------
-    FUNCTION                                EXT min/Max <1>    PHP min/Max <2>
+    FUNCTION                                EXT min/Max        PHP min/Max
     -------------------------------------------------------------------------------
     abs                                     standard-4.0.0     4.0.0
     acos                                    standard-4.0.0     4.0.0
@@ -931,9 +958,9 @@ $ phpci list-functions
     Time: 1 second, Memory: 6.25Mb
     -------------------------------------------------------------------------------
 ----
-
-<1> This column specify the name of extension that provide these functions
-<2> This column specify what are the php versions (minimum and maximum) supported by the function
+====
+* The `Ext min/Max` column specify which are the extension versions (minimum and maximum) required by these functions
+* The `PHP min/Max` column specify which are the php versions (minimum and maximum) supported by the extension
 
 [TIP]
 .You can filter result by extension
@@ -998,7 +1025,7 @@ Arguments:
 ----
 
 [grid="rows",format="csv"]
-[options="header",cols="2,2,10"]
+[options="header",cols="2,2,10",role="table table-bordered table-striped"]
 |===========================
 Short Option, Long Option, Description
 , --reference, "This option tells what reference dictionnary to use. May be either one providing by the package distribution or your own."
@@ -1014,11 +1041,12 @@ Short Option, Long Option, Description
 $ phpci list-constants
 ----
 
+====
 ----
     -------------------------------------------------------------------------------
     PHP COMPAT INFO CONSTANT REFERENCE
     -------------------------------------------------------------------------------
-    CONSTANT                                EXT min/Max <1>   PHP min/Max <2>
+    CONSTANT                                EXT min/Max       PHP min/Max
     -------------------------------------------------------------------------------
     ABDAY_1                                 standard-4.1.0    4.1.0
     ABDAY_2                                 standard-4.1.0    4.1.0
@@ -1053,9 +1081,9 @@ $ phpci list-constants
     Time: 0 seconds, Memory: 6.25Mb
     -------------------------------------------------------------------------------
 ----
-
-<1> This column specify the name of extension that provide these constants
-<2> This column specify what are the php versions (minimum and maximum) supported by the constant
+====
+* The `Ext min/Max` column specify which are the extension versions (minimum and maximum) required by these constants
+* The `PHP min/Max` column specify which are the php versions (minimum and maximum) supported by the extension
 
 [TIP]
 .You can filter result by extension

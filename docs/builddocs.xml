@@ -9,16 +9,6 @@
         </and>
     </condition>
 
-    <condition property="properties.init">
-        <and>
-            <isset property="default.properties" />
-            <available file="${default.properties}" />
-        </and>
-    </condition>
-
-    <fail unless="properties.init" msg="Properties file is not defined or does not exist." />
-    <property file="${default.properties}"/>
-
     <if>
         <not>
             <isset property="buildfile.dir}" />
@@ -30,6 +20,20 @@
             </php>
         </then>
     </if>
+
+    <property name="default.properties" value="${buildfile.dir}/default.properties"/>
+    <property name="local.properties" value="${buildfile.dir}/local.win.properties"/>
+
+    <condition property="properties.init">
+        <and>
+            <available file="${default.properties}" />
+            <available file="${local.properties}" />
+        </and>
+    </condition>
+
+    <fail unless="properties.init" msg="Properties files are not defined or does not exist." />
+    <property file="${default.properties}"/>
+    <property file="${local.properties}"/>
 
     <fileset id="assets" dir="${buildfile.dir}">
         <include name="images/**" />
@@ -55,8 +59,6 @@
     </target>
 
     <target name="notify" if="growl.task.available">
-
-        <taskdef name="growlnotify" classname="phing.tasks.ext.GrowlNotifyTask" />
 
         <growlnotify message="${growl.message}"
             title="PhingNotify"
@@ -123,7 +125,7 @@
             description="Build the user guide in single HTML page">
 
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -n -o ${output.dir}/${prefix.book}-book.html ${homedir}/docs/${prefix.book}-book.txt"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -o ${output.dir}/${prefix.book}-book.html ${homedir}/docs/${prefix.book}-book.txt"
             returnProperty="exitCode"
         />
         <if>

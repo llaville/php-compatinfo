@@ -1,80 +1,22 @@
-Getting Started
-===============
+= Getting Started
+:description: How to get started with your first parses
 include::revision.txt[]
+include::attributes.txt[]
 
 
-== Introduction
+[role="lead"]
+This simple tutorial will demonstrate how to parse a simple file or a directory.
 
-PHP_CompatInfo branch 1.x is still compatible with PHP4, that is from an old
-age now (unmaintained).
-You can find it on PEAR main site on its http://pear.php.net/package/PHP_CompatInfo[project page].
+Since version 2.6.0 you are free to use your favorite autoloading solution.
+Here, we will show the default and Symfony abilities.
 
-PHP_CompatInfo branch 2.x is a full rewrite with PHP5.
-Since RC3 the PHP parser engine used is https://github.com/llaville/php-reflect[PHP_Reflect].
-It's an improved version with "callbacks to what ever token you want" feature
-from basic concept version https://github.com/sebastianbergmann/php-token-stream[PHP_TokenStream].
-
-
-=== What can PHP_CompatInfo do for you ?
-
-Depending of server API you will use, PHP_CompatInfo main goal is to give you
-the minimum and maximum PHP versions, a script or a list of scripts (sources),
-are required to run code.
-
-But PHP_CompatInfo (alias phpci), may also provides on CLI (with the +phpci+ command) :
-
-* Reference informations (MIN and MAX PHP versions) about one or more extensions :
-- list all classes
-- list all interfaces
-- list all functions
-- list all constants
-
-* Print multiple reports group by scanned files or components
-- *summary* : usage summary of each extension, interface, class, function, constant used by your sources code
-- *source* : lines code count summary with or without source code
-- *xml* : export result to a XML format easy to transform to xHTML or other format
-- *token* : language PHP5 special features such as try/catch/throw exception, etc
-- *extension* : usage, minimum php version and origin of each extension used by your sources code
-- *namespace* : usage, minimum php version and origin of each namespace used by your sources code
-- *trait* : usage, minimum php version and origin of each trait used by your sources code
-- *interface* : usage, minimum php version and origin of each interface used by your sources code
-- *class* : usage, minimum php version and origin of each class used by your sources code
-- *function* : usage, minimum php version and origin of each function used by your sources code
-- *constant* : usage, minimum php version and origin of each constant used by your sources code
-- *global* : usage, minimum php version and origin of each global variable used by your sources code
-- *condition* : usage, minimum php version and origin of each code conditionnal function used by your sources code
-
-
-== A simple tutorial
-
-=== Parse a single file with default options
+== Parse a single file with default options
 
 To parse a file with the PHP5 known references of your extensions loaded,
 you have just to specify the file's location.
 
-.API example (for all versions until 2.5.0)
-
-[source,php]
-----
-<?php
-require_once 'Bartlett/PHP/CompatInfo.php';
-
-$source = '/path/to/myFile.php';
-
-try {
-    $phpci = new PHP_CompatInfo();
-    $phpci->parse($source);
-
-    $allResultsAtOnce = $phpci->toArray();
-
-} catch (PHP_CompatInfo_Exception $e) {
-    die ('PHP_CompatInfo Exception : ' . $e->getMessage() . PHP_EOL);
-}
-----
-
-.API example (for version 2.6.0 or better with default autoloader)
-
-[source,php]
+.Example 1: with version 2.6.0 or better (and default autoloader; see line [badge]#2#)
+[source,php,numbered]
 ----
 <?php
 require_once 'Bartlett/PHP/CompatInfo/Autoload.php';
@@ -92,9 +34,8 @@ try {
 }
 ----
 
-.API example (for version 2.6.0 or better with Symfony ClassLoader component)
-
-[source,php]
+.Example 2: with version 2.6.0 or better (and Symfony ClassLoader component; see lines [badge]#2# to [badge]#10#)
+[source,php,numbered]
 ----
 <?php
 require_once 'Symfony/Component/ClassLoader/UniversalClassLoader.php';
@@ -120,9 +61,28 @@ try {
 }
 ----
 
-.phpci tool example
+.Example 3: with all versions until 2.5.0 (no autoloader, but the library itself; see line [badge]#2#)
+[source,php,numbered]
+----
+<?php
+require_once 'Bartlett/PHP/CompatInfo.php';
 
-From your PEAR _bin_dir_  directory run this command
+$source = '/path/to/myFile.php';
+
+try {
+    $phpci = new PHP_CompatInfo();
+    $phpci->parse($source);
+
+    $allResultsAtOnce = $phpci->toArray();
+
+} catch (PHP_CompatInfo_Exception $e) {
+    die ('PHP_CompatInfo Exception : ' . $e->getMessage() . PHP_EOL);
+}
+----
+
+== Single file alternative with the CLI tool
+
+From your PEAR `bin_dir` directory run this command
 ----
 $ phpci --no-configuration print --reference PHP5 --report summary /path/to/myFile.php
 ----
@@ -130,6 +90,7 @@ It won't use the default XML configuration file +phpcompatinfo.xml+ or +phpcompa
 If you are sure of XML configuration settings, remove the +--no-configuration+ option.
 
 Will print out a summary report like this one
+====
 ----
     PHP COMPAT INFO REPORT SUMMARY
     -------------------------------------------------------------------------------
@@ -142,13 +103,15 @@ Will print out a summary report like this one
     Time: 2 seconds, Memory: 8.50Mb
     -------------------------------------------------------------------------------
 ----
+====
 
-When you set verbose level to 3, and re-run the print command
+When you set verbose level to 3 (`-vvv`), and run again the print command
 ----
 $ phpci --no-configuration -vvv print --reference PHP5 --report summary /path/to/myFile.php
 ----
 
 It will print out this new detailed summary report
+====
 ----
     PHP COMPAT INFO REPORT SUMMARY
     -------------------------------------------------------------------------------
@@ -173,16 +136,18 @@ It will print out this new detailed summary report
       Cannot load extension reference 'odbc'
       Cannot load extension reference 'mysqlnd'
 ----
+====
 
-
-=== Parse a directory with default options
+== Parse a directory with default options
 
 If you wish to parse an entire directory, you can specify the directory location
 instead of a file.
 
-.API example
+[caption="Caution", name="important", icon="{iconsdir}/caution.png"]
+CAUTION: the default behavior will not parse directories recursively.
 
-[source,php]
+.Example with default autoloader
+[source,php,numbered]
 ----
 <?php
 require_once 'Bartlett/PHP/CompatInfo/Autoload.php';
@@ -200,16 +165,17 @@ try {
 }
 ----
 
-.phpci tool example
+== Directory alternative with the CLI tool
 
-From your PEAR _bin_dir_  directory and the default XML configuration file +phpcompatinfo.xml.dist+
-installed into PEAR _cfg_dir_/PHP_CompatInfo.
+From your PEAR `bin_dir` directory and the default XML configuration file +phpcompatinfo.xml.dist+
+installed into PEAR `cfg_dir`/PHP_CompatInfo.
 
 ----
 $ phpci -vvv print /path/to/myFolder
 ----
-Will print out the summary report
 
+Will print out the summary report
+====
 ----
     PHP COMPAT INFO REPORT SUMMARY
     -------------------------------------------------------------------------------
@@ -241,3 +207,4 @@ Will print out the summary report
       Cannot load extension reference 'odbc'
       Cannot load extension reference 'mysqlnd'
 ----
+====

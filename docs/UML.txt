@@ -1,8 +1,8 @@
-UML classes diagram
-===================
-:icons:
-:toc:
+= UML class diagrams
+:description: Architecture of main components
 include::revision.txt[]
+include::attributes.txt[]
+
 
 .Main System
 [scaledwidth="100%"]
@@ -131,7 +131,7 @@ interface PHP_CompatInfo_Reference {
 abstract class PHP_CompatInfo_Reference_PluginsAbstract {
     const LATEST_PHP_5_2
     const LATEST_PHP_5_3
-    const LATEST_PHP_5_3
+    const LATEST_PHP_5_4
 
     array #warnings
     array #filter

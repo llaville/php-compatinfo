@@ -1,16 +1,14 @@
-PHP_CompatInfo Installation
-===========================
+= Install Guide
+:description: PHP_CompatInfo may be installed in several ways, choose your favorite.
 include::revision.txt[]
-:stylesdir:   styles
-:scriptsdir:  js
+include::attributes.txt[]
 
 
-NOTE: The current version of PHP_CompatInfo requires *PHP 5.2.0 or later*
-to run.  If you don't already have an up-to-date version of PHP
-installed it can be downloaded from the official PHP website http://www.php.net/
+[role="lead"]
+Before you begin, ensure that you have at least
+link:http://www.php.net[PHP] 5.2.1 installed.
 
-
-== Using PEAR installer
+== PEAR
 
 PHP_CompatInfo should be installed using the http://pear.php.net/[PEAR Installer].
 This installer is the backbone of PEAR, which provides a distribution system
@@ -18,37 +16,50 @@ for PHP packages, and is shipped with every release of PHP since version 4.3.0.
 
 Registering the channel:
 ----
-pear channel-discover bartlett.laurent-laville.org
+$ pear channel-discover bartlett.laurent-laville.org
 ----
 
-Registering additionnal channels:
+Registering additionnal channel:
 ----
-pear channel-discover pear.phpunit.de
-pear channel-discover components.ez.no
+$ pear channel-discover components.ez.no
 ----
 
 Installing the latest version available:
 ----
-pear install bartlett/PHP_CompatInfo
+$ pear install bartlett/PHP_CompatInfo
 ----
 
 Installing a specific version:
 ----
-pear install bartlett/PHP_CompatInfo-2.0.0
+$ pear install bartlett/PHP_CompatInfo-2.0.0
 ----
 
+== Git
 
-== Install manually
+You can also clone the project.
+----
+$ git clone git://github.com/llaville/php-compat-info.git && cd php-compat-info
+----
 
-Do the following:
+Copy the `PHP` sub-folder in a `Bartlett` directory
+accessible by your `include_path`.
 
-. Download sources from a link:https://github.com/llaville/php-compat-info/tarball/master[tarball]
-or a link:https://github.com/llaville/php-compat-info/zipball/master[zip] archive available on my github account.
-. Extract it to a directory that is listed in the +include_path+ of your
-php.ini configuration file
-. For windows platform, replace +@bin_dir@+, and +@php_bin@+ by values of your PEAR configuration
-(see command +pear config-show+) in file +phpci.bat+
-. For unix platform, replace +@php_bin@+ by values of your PEAR configuration
-(see command +pear config-show+) in file +phpci+
-. On all platform, replace +@cfg_dir@+ by values of your PEAR configuration
-(see command +pear config-show+) in file +CLI.php+
+.When [label]#include_path# is equals to [label]#.:/php/includes#
+====
+----
+$ mkdir /php/includes/Bartlett && cp PHP/* /php/includes/Bartlett
+----
+====
+
+WARNING: Don't forget to install also all others required dependencies:
+`PHP_Reflect`, `Console_CommandLine`,
+and http://components.ez.no[eZ Components] `Base`, `ConsoleTools`.
+
+Check that it works. Run the local [label label-inverse]#phpci# command.
+----
+$ php scripts/phpci --version
+----
+That should give expected result:
+====
+phpci version DEV.
+====

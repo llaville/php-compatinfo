@@ -1,0 +1,71 @@
+[role="lead"]
+PHP_CompatInfo is a PHP library that parse any data source (file, directory)
+to find out the minimum version and extensions required for it to run. 
+A CLI tool is available, giving results without to write a line of code.
+
+The major version 2 is a full rewrites to PHP5, that used exceptions to raise
+errors, and an autoloader to dynamically load required classes.
+
+Since version 2.0.0RC3 the PHP parser engine used is https://github.com/llaville/php-reflect[PHP_Reflect].
+It's an improved version from basic concept of https://github.com/sebastianbergmann/php-token-stream[PHP_TokenStream].
+
+If you want a PHP4 version compatible, you should consider to have a look on the
+branch 1.x solution hosted on PEAR repository :
+http://pear.php.net/package/PHP_CompatInfo[PEAR::PHP_CompatInfo] 1.9.0 
+
+[caption="Caution", name="important", icon="{iconsdir}/caution.png"]
+CAUTION: Its recommanded to migrate to PHP5, because PHP4 version is not maintained anymore.
+
+=== Features
+
+* Parse a single file
+* Parse a directory recursively or not
+* Parse a list of files and/or directories
+* Ability to give a list of extensions to ignore when calculating the version needed
+* Ability to give a list of interfaces to ignore when calculating the version needed
+* Ability to give a list of traits to ignore when calculating the version needed
+* Ability to give a list of classes to ignore when calculating the version needed
+* Ability to give a list of functions to ignore when calculating the version needed
+* Ability to give a list of constants to ignore when calculating the version needed.
+* Ability to give a list of files to ignore when calculating the version needed
+* Ability to give a list of directories to ignore when calculating the version needed
+* Ability to use a custom extensions list or by default only extensions loaded, to parse PHP code
+* Event driven and listeners system to audit parsing process
+
+=== Requirements
+
+* link:http://www.php.net[PHP] 5.2.1 or newer
+* link:http://ezcomponents.org/[Base] 1.8 or newer from _components.ez.no_ PEAR channel
+* link:http://ezcomponents.org/[ConsoleTools] 1.6.1 or newer from _components.ez.no_ PEAR channel
+* link:http://pear.php.net/package/Console_CommandLine[Console_CommandLine] 1.2.0 or newer from _default_ PEAR channel
+* link:http://bartlett.laurent-laville.org/[PHP_Reflect] 1.5.0 or newer from _Bartlett_ PEAR channel
+* link:http://www.php.net/manual/en/book.tokenizer.php[tokenizer] extension
+* link:http://www.php.net/manual/en/book.pcre.php[pcre] extension
+* link:http://www.php.net/manual/en/book.spl.php[SPL] extension
+* link:http://www.php.net/manual/en/book.dom.php[DOM] extension
+* link:http://www.php.net/manual/en/book.libxml.php[libxml] extension
+* link:http://www.php.net/manual/en/book.reflection.php[Reflection] extension
+* (optional) link:http://pear.php.net[PEAR] 1.9.0 or newer from _default_ PEAR channel
+* (optional) link:http://pear.php.net/package/Net_Growl[Net_Growl] 2.6.0 or newer from _default_ PEAR channel
+* (optional) link:http://pear.phpunit.de[PHPUnit] 3.6.0 or newer from _PHPUnit_ PEAR channel
+* (optional) link:http://pear.phpunit.de[PHP_Timer] 1.0.0 or newer from _PHPUnit_ PEAR channel
+* (optional) an XSLT processor if you want to produce an xHTML report from a phpci xml report
+
+=== Extensions supported
+
+[options="header", cols="3,3,9", role="table table-bordered table-striped"]
+|===========================
+| Version | Count | New extensions since previous version
+| 2.0.0   | 61    |
+| 2.1.0   | 63    | memcache, memcached
+| 2.2.0   | 65    | ldap, oauth
+| 2.3.0   | 67    | Reflection, Zip
+| 2.4.0   | 67    |
+| 2.5.0   | 75    | exif, lzf, mailparse, mssql, solr, sphinx, xhprof, Yaml
+| 2.6.0   | 75    |
+| 2.7.0   | 75    |
+| 2.8.0   | 80    | amqp, geoip, inclued, mongo, XCache
+| 2.9.0   | 80    |
+| 2.10.0  | 83    | igbinary, imagick, odbc
+| 2.11.0  | 83    |
+|===========================

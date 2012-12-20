@@ -1,0 +1,8 @@
+//:author:      Laurent Laville
+//:email:       pear@laurent-laville.org
+:stylesdir:   styles
+:scriptsdir:  js
+:keywords:    PHP, compatibility, version
+:mandir:      http://php5.laurent-laville.org/compatinfo/manual/current
+:brand:       PHP_CompatInfo
+:sidebar:     right

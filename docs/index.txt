@@ -1,16 +1,20 @@
-PHP_CompatInfo
-==============
+= PHP_CompatInfo
+:description: Find out the minimum version and the extensions required for a piece of code to run.
+:manhtml:     417Kb
+:manchunked:  544Kb
+:manchm:      545Kb
+:manpdfa4:    656Kb
+:manpdfus:    656Kb
+:manepub:     513Kb
 include::revision.txt[]
-:stylesdir:   styles
-:scriptsdir:  js
-:man_dir:     http://php5.laurent-laville.org/compatinfo/manual/current
+include::attributes.txt[]
 
 
 .{revdate}: PHP_CompatInfo {revnumber} Released
 ************************************************************************
-Release highlights:
+*Release highlights:*
 
-- PHP_CompatInfo 2.10.0 add both support to PHP 5.3.19 and PHP 5.4.9
+- PHP_CompatInfo 2.11.0 add both support to PHP 5.3.20 and PHP 5.4.10
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -22,62 +26,9 @@ link:INSTALL.html[Installation page] for downloads and installation instructions
 
 == Introduction
 
-PHP_CompatInfo branch 1.x is still compatible with PHP4, that is from an old
-age now (unmaintained).
-You can find it on PEAR main site on its http://pear.php.net/package/PHP_CompatInfo[project page].
+include::introduction.txt[]
 
-PHP_CompatInfo branch 2.x is a full rewrite with PHP5.
-Since RC3 the PHP parser engine used is https://github.com/llaville/php-reflect[PHP_Reflect].
-It's an improved version with _callbacks to what ever token you want_ feature
-from basic concept version of https://github.com/sebastianbergmann/php-token-stream[PHP_TokenStream].
-
-
-== Overview
-
-PHP_CompatInfo 2 provides two servers API :
-
-* a Command Line Interface (CLI) tool named _phpci_
-* a web browser interface
-
-.Requirements
-
-* PHP 5.2.1 minimum
-* ezc/Base 1.8 minimum (for CLI phpci tool)
-* ezc/ConsoleTools 1.6.1 minimum (for progress bar with CLI phpci tool)
-* pear/Console_CommandLine 1.2.0 minimum (for CLI phpci tool)
-* bartlett/PHP_Reflect 1.4.3 minimum (PHP parser)
-* pcre extension
-* SPL extension
-* dom extension
-* libxml extension
-* Reflection extension
-* (optional) phpunit/PHP_Timer 1.0.0 (utility class for timing)
-* (optional) pear/Net_Growl 2.6.0 minimum (for growl audit observer)
-* (optional) PHPUnit 3.6.0 minimum (to run unit tests)
-* (optional) an XSLT processor if you want to produce an xHTML report from a phpci xml report
-
-.Version 2.0.0
-* support 61 extensions.
-
-.Version 2.1.0
-* support 63 extensions.
-
-.Version 2.2.0
-* support 65 extensions.
-
-.Version 2.3.0 and 2.4.0
-* support 67 extensions.
-
-.Versions 2.5.0, 2.6.0 and 2.7.0
-* support 75 extensions.
-
-.Version 2.8.0 and 2.9.0
-* support 80 extensions.
-
-.Version 2.10.0
-* support 83 extensions.
-
-The _phpci_ tool may inform you on what of those extensions are or not loaded on your system.
+The [label label-inverse]#phpci# tool may inform you on what of those extensions are or not loaded on your system.
 
 Run command
 ----
@@ -85,81 +36,66 @@ Run command
 ----
 
 Will output results as follow. May differ depending of your extensions loaded.
+====
 ----
 include::list_references.txt[]
 ----
-<1> This column specify the version of extension that was documented
-<2> This column specify which are the php versions (minimum and maximum) supported by the extension
-
-
-== Features
-
-* Parse a single file
-* Parse a directory recursively or not
-* Parse a list of files and/or directories
-* Ability to give a list of extensions to ignore when calculating the version needed
-* Ability to give a list of interfaces to ignore when calculating the version needed
-* Ability to give a list of traits to ignore when calculating the version needed
-* Ability to give a list of classes to ignore when calculating the version needed
-* Ability to give a list of functions to ignore when calculating the version needed
-* Ability to give a list of constants to ignore when calculating the version needed.
-* Ability to give a list of files to ignore when calculating the version needed
-* Ability to give a list of directories to ignore when calculating the version needed
-* Ability to use a custom extensions list or by default only extensions loaded, to parse PHP code
-* Event driven and listeners system to audit parsing process
-
+====
+* The `L` flag tells us what extensions are loaded
+* The `VERSION` column specify the version of extension that was documented
+* The `PHP min/Max` column specify which are the php versions (minimum and maximum) supported by the extension
 
 == Documentation
 
-The PHP_CompatInfo manual is available in a selection of formats. Pick a format
-from the table below to start downloading.
+[role="lead"]
+Head to the PHP_CompatInfo link:./phpci-book.html[User Guide] available online
+for information or examples to get started.
 
-[options="header"]
+The PHP_CompatInfo book is available in a selection of formats.
+You can download the documentation for offline reading.
+
+[options="header", role="table table-bordered"]
 |===========================
 | Language | Single HTML file | Many HTML files | HTML Help file | PDF A4 file | PDF US file | EPUB file
-| English | link:{man_dir}/en/pci-book.html.zip[pci-book.html.zip] 559Kb | link:{man_dir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] 506Kb | link:{man_dir}/en/phpci-book.chm.zip[phpci-book.chm.zip] 514Kb | link:{man_dir}/en/phpci-book-a4.pdf[phpci-book-a4.pdf] 610Kb | link:{man_dir}/en/phpci-book-us.pdf[phpci-book-us.pdf] 610Kb | link:{man_dir}/en/phpci-book.epub.zip[phpci-book.epub.zip] 488Kb
+| English | link:{mandir}/en/phpci-book.html.zip[phpci-book.html.zip] {manhtml} | link:{mandir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] {manchunked} | link:{mandir}/en/phpci-book.chm.zip[phpci-book.chm.zip] {manchm} | link:{mandir}/en/phpci-book-a4.pdf[phpci-book-a4.pdf] {manpdfa4} | link:{mandir}/en/phpci-book-us.pdf[phpci-book-us.pdf] {manpdfus} | link:{mandir}/en/phpci-book.epub.zip[phpci-book.epub.zip] {manepub}
 |===========================
 
-== Appendix A: Changelog
+== Appendixes
 
-link:CHANGELOG.html[History of changes]
+=== Changelog
 
-== Appendix B: License
+You want to learn more about previous versions. Read the full link:CHANGELOG.html[changelog].
 
-Released under the link:LICENSE.html[BSD] license,
-you are free to do whatever you want, even in a commercial environment.
+=== License
+
+You are free to do whatever you want, even in a commercial environment.
 You are also encouraged to contribute.
+Read the full link:LICENSE.html[license].
 
-== Appendix C: Credits
+=== Credits
 
 I would like to thanks here specially a guy without who this PHP QA tool
 won't be born.
 
-[quote, , http://daveyshafik.com/]
+[quote, Davey Shafik, http://daveyshafik.com/]
 ____
-.Davey Shafik
-
 Original author, he introduced his http://pear.php.net/pepr/pepr-proposal-show.php?id=27[proposal]
 in 2004, that gave birth of a PEAR package named
 http://pear.php.net/package/PHP_CompatInfo[PHP_CompatInfo].
 ____
 
-
 I would also like to thanks a guy who help me to enhance support of more than 50 extensions.
 
-[quote, , http://blog.famillecollet.com/]
+[quote, Remi Collet, http://blog.famillecollet.com/]
 ____
-.Remi Collet
-
 Contributor of many extensions reference and unit tests. He has joined the team
 on version 2.0.0RC2
 ____
 
-
-== Appendix D: Links
+=== Links
 
 All pages of this site, and user guide were generated with AsciiDoc 8.6.8,
-assisted by FOP 1.0 (for PDFs). Automated build process uses Phing 2.4.12
+assisted by FOP 1.0 (for PDFs). Automated build process uses Phing 2.4.14
 
 Convert the HTML Help source (.hhp and .html) files to HTML Help (.chm) files
 using the Microsoft HTML Help Compiler.

@@ -1,14 +1,12 @@
-Postprocessing the report file with XSLT
-========================================
-:icons:
-:toc:
+= Transform the XML report to HTML
+:description: Postprocessing the report file with XSLT
 include::revision.txt[]
+include::attributes.txt[]
 
 
-== Main options
-
-There are several XSLT scripts which can be used to transform the XML report 
-into some nice html pages. 
+[role="lead"]
+PHP_CompatInfo provides an XSLT script which can be used to transform the XML report
+into some nice html pages.
 
 To do this, make sure you've first generate the XML report, i.e:
 ----
@@ -20,7 +18,7 @@ And then use the xslt processor to transform the XML to a beautiful XHTML page.
  $ xsltproc -o <output_page.html> summary.xsl <report.xml>
 ----
 
-.Example with sources file list collapsed 
+.Example with sources file list collapsed
 image::images/summary.png["file list collapsed", scaledwidth="100%"]
 
 .Example with sources file list expanded

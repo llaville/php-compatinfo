@@ -1,128 +1,129 @@
-PHP_CompatInfo User Guide
-=========================
+= User Guide
+:description: Overview of the project, its contents, and how to get started with your first parses
 include::revision.txt[]
-:stylesdir:   styles
-:scriptsdir:  js
-:keywords:    PHP, compatibility, version
-:language:    php
+include::attributes.txt[]
 
+
+[role="lead"]
+This guide documents the final stable version {revnumber}
 
 == Introduction
 
-PHP_CompatInfo is a PHP library that parse any data source (file/folder/mixed)
-to find out the minimum version and extensions required for it to run. 
-A CLI tool is available, giving results without to have to code a line of programmation.
-
-The major version 2 is a full rewrites to PHP5, that used exceptions to raise
-errors, and an autoloader to dynamically load required classes.
-
-If you want a PHP4 version compatible, you should consider to have a look on the
-branch 1.x solution hosted on PEAR repository :
-
-* link:http://pear.php.net/package/PHP_CompatInfo[PEAR::PHP_CompatInfo] 1.9.0 
-
-CAUTION: I recommand to migrate to PHP5, because I don't gave anymore support for PHP4 versions
-
-This manual documents the final stable version {revnumber}
+include::introduction.txt[]
 
 
-== Features
+ifdef::basebackend-html[]
+== Installation
 
-* Parse a single file
-* Parse a directory recursively or not
-* Parse a list of files and/or directories
-* Ability to give a list of extensions to ignore when calculating the version needed 
-* Ability to give a list of interfaces to ignore when calculating the version needed 
-* Ability to give a list of traits to ignore when calculating the version needed 
-* Ability to give a list of classes to ignore when calculating the version needed 
-* Ability to give a list of functions to ignore when calculating the version needed 
-* Ability to give a list of constants to ignore when calculating the version needed. 
-* Ability to give a list of files to ignore when calculating the version needed 
-* Ability to give a list of directories to ignore when calculating the version needed 
-* Ability to use a custom extensions list or by default only extensions loaded, to parse PHP code 
-* Event driven and listeners system to audit parsing process
+[role="lead"]
+Head to the link:./INSTALL.html[Install Guide] if it's your first use with PHP_CompatInfo.
 
+PHP_CompatInfo may be installed in several ways, choose your favorite.
 
-== System Requirements
+endif::[]
 
-.Required resources :
-* link:http://www.php.net[PHP] 5.2.1 or newer
-* link:http://ezcomponents.org/[Base] 1.8 or newer from _components.ez.no_ PEAR channel
-* link:http://ezcomponents.org/[ConsoleTools] 1.6.1 or newer from _components.ez.no_ PEAR channel
-* link:http://pear.php.net/package/Console_CommandLine[Console_CommandLine] 1.2.0 or newer from default PEAR channel
-* link:http://bartlett.laurent-laville.org/[PHP_Reflect] 1.4.3 or newer from _Bartlett_ PEAR channel
-* link:http://www.php.net/manual/en/book.tokenizer.php[tokenizer] extension
-* link:http://www.php.net/manual/en/book.pcre.php[pcre] extension
-* link:http://www.php.net/manual/en/book.spl.php[SPL] extension
-* link:http://www.php.net/manual/en/book.dom.php[DOM] extension
-* link:http://www.php.net/manual/en/book.libxml.php[libxml] extension
-* link:http://www.php.net/manual/en/book.reflection.php[Reflection] extension
+ifdef::basebackend-docbook[]
+:leveloffset: 1
 
-.Optional resources :
-* link:http://pear.php.net[PEAR] 1.9.0 or newer
-* link:http://pear.php.net/package/Net_Growl[Net_Growl] 2.6.0 or newer
-* link:http://pear.phpunit.de[PHPUnit] 3.6.0 or newer from _PHPUnit_ PEAR channel
-* link:http://pear.phpunit.de[PHP_Timer] 1.0.0 or newer from _PHPUnit_ PEAR channel
-* an XSLT processor if you want to produce an xHTML report from a phpci xml report
+include::INSTALL.txt[]
+
+:leveloffset: 0
+endif::[]
 
 
-== Installing PHP_CompatInfo
+ifdef::basebackend-html[]
+== Getting Started
 
-NOTE: The current version of PHP_CompatInfo requires *PHP 5.2.1 or newer*
-to run.  If you don't already have an up-to-date version of PHP
-installed it can be downloaded from the official PHP website
-http://www.php.net/.
+[role="lead"]
+See our link:getting-started.html[tutorial] to learn how to get started with your first parses.
 
-=== Using PEAR installer
+* use the default autoloader
+* use your own autoloader
+* run the CLI tool alternative
 
-PHP_CompatInfo should be installed using the [PEAR Installer](http://pear.php.net/). 
-This installer is the backbone of PEAR, which provides a distribution system for PHP packages, 
-and is shipped with every release of PHP since version 4.3.0.
+endif::[]
 
-The PEAR channel (_bartlett.laurent-laville.org_) that is used to distribute PHP_CompatInfo 
-needs to be registered with the local PEAR environment. 
-Furthermore, components that PHP_CompatInfo depends upon is hosted on the eZ Components PEAR channel (_components.ez.no_),
-and on the PHPUnit PEAR channel (_pear.phpunit.de_).
-
-----
-    $ pear channel-discover bartlett.laurent-laville.org
-    Adding Channel "bartlett.laurent-laville.org" succeeded
-    Discovery of channel "bartlett.laurent-laville.org" succeeded
-
-    $ pear channel-discover components.ez.no
-    Adding Channel "components.ez.no" succeeded
-    Discovery of channel "components.ez.no" succeeded
-
-    $ pear channel-discover pear.phpunit.de
-    Adding Channel "pear.phpunit.de" succeeded
-    Discovery of channel "pear.phpunit.de" succeeded
-----    
-This has to be done only once. Now the PEAR Installer can be used to install packages from the Bartlett channel.
-----
-    $ pear install bartlett/PHP_CompatInfo
-    downloading PHP_CompatInfo-2.10.0.tgz ...
-    Starting to download PHP_CompatInfo-2.10.0.tgz (747,635 bytes)
-    .........................done: 747,635 bytes
-    install ok: channel://bartlett.laurent-laville.org/PHP_CompatInfo-2.10.0
-----
-After the installation you can find the PHP_CompatInfo source files inside your local PEAR directory.
-
-
+ifdef::basebackend-docbook[]
 :leveloffset: 1
 
 include::getting_started.txt[]
 
+:leveloffset: 0
+endif::[]
+
+
+ifdef::basebackend-html[]
+== Basic usage
+
+[role="lead"]
+Configure the default options to link:basic-usage.html[match your need],
+and learn how to enlarge or limit parsing capabilities.
+
+* parse directories recursively
+* choose which file to scan
+* select pre-defined references or use your own data dictionaries
+* use the cache system
+
+endif::[]
+
+ifdef::basebackend-docbook[]
+:leveloffset: 1
+
 include::basic_usage.txt[]
+
+:leveloffset: 0
+endif::[]
+
+
+ifdef::basebackend-html[]
+== Command Line
+
+[role="lead"]
+How to get informations without to write a line of code. Use the link:command-line.html[CLI] tool.
+
+* list data dictionnaries contents
+* print multiple reports either on standard output (console) or to a file
+
+endif::[]
+
+ifdef::basebackend-docbook[]
+:leveloffset: 1
 
 include::command_line.txt[]
 
+:leveloffset: 0
+endif::[]
+
+
+ifdef::basebackend-html[]
+
+== Appendixes
+
+=== Configure CLI options  
+
+Structure and contents of the link:xml-configuration.html[XML configuration file]
+that allow to configure the CLI tool.
+
+=== Transform the XML report to HTML
+
+Postprocessing the XML report file with link:XSLT.html[XSLT] to produces some nice HTML pages.
+
+=== UML class diagrams
+
+Architecture main components highlighted by the link:UML.html[UML] class diagrams.
+
+endif::[]
+
+ifdef::basebackend-docbook[]
+:leveloffset: 1
+
 include::xml_configuration.txt[]
 
-[appendix]
 include::XSLT.txt[]
 
-[appendix]
 include::UML.txt[]
 
-[appendix]
 include::LICENSE.txt[]
+
+:leveloffset: 0
+endif::[]

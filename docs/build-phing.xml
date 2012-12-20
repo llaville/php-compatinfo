@@ -7,8 +7,19 @@
         <param value="${phing.file}"/>
     </php>
 
-    <property name="default.properties" value="${buildfile.dir}/local.win.properties"/>
+    <property name="default.properties" value="${buildfile.dir}/default.properties"/>
+    <property name="local.properties" value="${buildfile.dir}/local.win.properties"/>
+
+    <condition property="properties.init">
+        <and>
+            <available file="${default.properties}" />
+            <available file="${local.properties}" />
+        </and>
+    </condition>
+
+    <fail unless="properties.init" msg="Properties files are not defined or does not exist." />
     <property file="${default.properties}"/>
+    <property file="${local.properties}"/>
 
     <target name="help">
         <phing phingfile="${buildfile.dir}/builddocs.xml" target="help" />
@@ -24,13 +35,31 @@
             command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -o ${output.dir}/CHANGELOG.html ${homedir}/docs/CHANGELOG.txt"
         />
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -o ${output.dir}/INSTALL.html ${homedir}/docs/INSTALL.txt"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -o ${output.dir}/INSTALL.html ${homedir}/docs/INSTALL.txt"
         />
         <exec dir="${asciidoc.home}"
             command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -o ${output.dir}/LICENSE.html ${homedir}/docs/LICENSE.txt"
         />
         <exec dir="${asciidoc.home}"
-            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -n -o ${output.dir}/index.html ${homedir}/docs/index.txt"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -o ${output.dir}/index.html ${homedir}/docs/index.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -o ${output.dir}/getting-started.html ${homedir}/docs/getting_started.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -o ${output.dir}/basic-usage.html ${homedir}/docs/basic_usage.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -o ${output.dir}/command-line.html ${homedir}/docs/command_line.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -o ${output.dir}/xml-configuration.html ${homedir}/docs/xml_configuration.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -o ${output.dir}/XSLT.html ${homedir}/docs/XSLT.txt"
+        />
+        <exec dir="${asciidoc.home}"
+            command="asciidoc.py -b ${backend} -a linkcss -a icons -a theme=${theme} -a toc2 -o ${output.dir}/UML.html ${homedir}/docs/UML.txt"
         />
 
     </target>
