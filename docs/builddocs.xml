@@ -136,8 +136,18 @@
                     <then>
                         <zip destfile="${output.dir}/${prefix.book}-book.html.zip">
                             <fileset refid="assets" />
-                            <fileset dir="${output.dir}">
-                                 <include name="${prefix.book}-book.html" />
+                            <fileset dir="${output.dir}">                                
+                                <include name="${prefix.book}-book.html" />
+                                <include name="INSTALL.html" />
+                                <include name="CHANGELOG.html" />
+                                <include name="LICENSE.html" />
+                                <include name="getting-started.html" />
+                                <include name="basic-usage.html" />
+                                <include name="command-line.html" />
+                                <include name="XSLT.html" />
+                                <include name="xml-configuration.html" />
+                                <include name="UML.html" />
+                                <include name="images/PHPCompatInfo**" />
                             </fileset>
                         </zip>
                     </then>
