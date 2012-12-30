@@ -333,8 +333,8 @@ class PHP_CompatInfo_Reference_Standard
             'passthru'                       => array('4.0.0', ''),
             'pclose'                         => array('4.0.0', ''),
             'pfsockopen'                     => array('4.0.0', ''),
-            'php_logo_guid'                  => array('4.0.0', '5.4.9'),
-            'php_real_logo_guid'             => array('4.0.0', '5.4.9'),
+            'php_logo_guid'                  => array('4.0.0', self::LATEST_PHP_5_4),
+            'php_real_logo_guid'             => array('4.0.0', self::LATEST_PHP_5_4),
             'phpcredits'                     => array('4.0.0', ''),
             'phpinfo'                        => array('4.0.0', ''),
             'phpversion'                     => array('4.0.0', ''),
@@ -437,7 +437,7 @@ class PHP_CompatInfo_Reference_Standard
             'usleep'                         => array('4.0.0', ''),
             'usort'                          => array('4.0.0', ''),
             'var_dump'                       => array('4.0.0', ''),
-            'zend_logo_guid'                 => array('4.0.0', '5.4.9'),
+            'zend_logo_guid'                 => array('4.0.0', self::LATEST_PHP_5_4),
         );
         $this->applyFilter($release, $items, $functions);
 
