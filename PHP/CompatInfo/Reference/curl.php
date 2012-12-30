@@ -93,12 +93,16 @@ class PHP_CompatInfo_Reference_Curl
             'curl_multi_init'                => array('5.0.0', ''),
             'curl_multi_remove_handle'       => array('5.0.0', ''),
             'curl_multi_select'              => array('5.0.0', ''),
+            'curl_multi_setopt'              => array('5.5.0-dev', ''),
+            'curl_multi_strerror'            => array('5.5.0-dev', ''),
+            'curl_pause'                     => array('5.5.0-dev', ''),
             'curl_reset'                     => array('5.5.0-dev', ''),
             'curl_setopt'                    => array('4.0.2', ''),
             'curl_setopt_array'              => array('5.1.3', ''),
             'curl_share_close'               => array('5.5.0-dev', ''),
             'curl_share_init'                => array('5.5.0-dev', ''),
             'curl_share_setopt'              => array('5.5.0-dev', ''),
+            'curl_strerror'                  => array('5.5.0-dev', ''),
             'curl_unescape'                  => array('5.5.0-dev', ''),
             'curl_version'                   => array('4.0.2', ''),
         );
@@ -142,6 +146,7 @@ class PHP_CompatInfo_Reference_Curl
             'CURL_NETRC_IGNORED'             => array('4.0.2', ''),
             'CURL_NETRC_OPTIONAL'            => array('4.0.2', ''),
             'CURL_NETRC_REQUIRED'            => array('4.0.2', ''),
+            'CURL_READFUNC_PAUSE'            => array('5.5.0-dev', ''),
             'CURL_RTSPREQ_ANNOUNCE'          => array('5.5.0-dev', ''),
             'CURL_RTSPREQ_DESCRIBE'          => array('5.5.0-dev', ''),
             'CURL_RTSPREQ_GET_PARAMETER'     => array('5.5.0-dev', ''),
@@ -166,6 +171,7 @@ class PHP_CompatInfo_Reference_Curl
             'CURL_VERSION_KERBEROS4'         => array('4.0.2', ''),
             'CURL_VERSION_LIBZ'              => array('4.0.2', ''),
             'CURL_VERSION_SSL'               => array('4.0.2', ''),
+            'CURL_WRITEFUNC_PAUSE'           => array('5.5.0-dev', ''),
 
             'CURLAUTH_ANY'                   => array('4.0.2', ''),
             'CURLAUTH_ANYSAFE'               => array('4.0.2', ''),
@@ -323,6 +329,9 @@ class PHP_CompatInfo_Reference_Curl
             'CURLM_INTERNAL_ERROR'           => array('4.0.2', ''),
             'CURLM_OK'                       => array('4.0.2', ''),
             'CURLM_OUT_OF_MEMORY'            => array('4.0.2', ''),
+
+            'CURLMOPT_MAXCONNECTS'           => array('5.5.0-dev', ''),
+            'CURLMOPT_PIPELINING'            => array('5.5.0-dev', ''),
 
             'CURLMSG_DONE'                   => array('4.0.2', ''),
 
@@ -496,6 +505,13 @@ class PHP_CompatInfo_Reference_Curl
             'CURLOPT_WILDCARDMATCH'          => array('5.5.0-dev', ''),
             'CURLOPT_WRITEFUNCTION'          => array('4.0.2', ''),
             'CURLOPT_WRITEHEADER'            => array('4.0.2', ''),
+
+            'CURLPAUSE_ALL'                  => array('5.5.0-dev', ''),
+            'CURLPAUSE_CONT'                 => array('5.5.0-dev', ''),
+            'CURLPAUSE_RECV'                 => array('5.5.0-dev', ''),
+            'CURLPAUSE_RECV_CONT'            => array('5.5.0-dev', ''),
+            'CURLPAUSE_SEND'                 => array('5.5.0-dev', ''),
+            'CURLPAUSE_SEND_CONT'            => array('5.5.0-dev', ''),
 
             'CURLPROTO_ALL'                  => array('4.0.2', ''),
             'CURLPROTO_DICT'                 => array('4.0.2', ''),
