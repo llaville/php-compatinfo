@@ -349,6 +349,8 @@ abstract class PHP_CompatInfo_Report extends PHP_CompatInfo_Filter
                 }
                 if ('user' == $category) {
                     $extension = '';
+                } elseif('global' === $this->typeReport['short']) {
+                    $extension = $category;
                 } else {
                     $extension = $category;
                     if (!empty($items[$key]['versions'][2])) {
