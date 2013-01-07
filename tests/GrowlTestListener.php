@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2012, Laurent Laville <pear@laurent-laville.org>
+ * Copyright (c) 2012-2013, Laurent Laville <pear@laurent-laville.org>
  *
  * Credits to Raphael Stolt on base concept
  *

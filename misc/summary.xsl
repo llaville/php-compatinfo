@@ -3,7 +3,7 @@
  summary.xsl - xslt stylesheet for converting phpci xml report to a
                XHTML summary page
 
- Copyright (c) 2010-2012, Laurent Laville <pear@laurent-laville.org>
+ Copyright (c) 2010-2013, Laurent Laville <pear@laurent-laville.org>
 
  All rights reserved.
 
