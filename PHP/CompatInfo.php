@@ -1530,12 +1530,12 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 $values[$key]['uses']
                     = $this->{$category}[$extension][$key]['uses'];
                 $values[$key]['sources'][] = $source;
-                $values[$key]['namespace'] = $ns;
+                $values[$key]['namespace'] = ('user' === $extension) ? $ns : '\\';
             } else {
                 $values[$key]['uses']
                     = isset($data['uses']) ? count($data['uses']) : 1;
                 $values[$key]['sources']   = array($source);
-                $values[$key]['namespace'] = $ns;
+                $values[$key]['namespace'] = ('user' === $extension) ? $ns : '\\';
 
                 if (isset($data['parent']) && !empty($data['parent'])) {
                     $parent = $data['parent'];
