@@ -1580,7 +1580,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 // retrieve extension versions information
                 foreach ($this->reference['extensions'] as $k => $v) {
                     if ($extension === $k) {
-                        $v[2] = '0.0';
+                        $v[2] = '';
                         $v[3] = '';
                         $this->extensions[$extension] = array(
                             'versions' => $v,
