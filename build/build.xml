@@ -240,7 +240,7 @@
         PEAR Channel Server by Pirum
         ======================================================================
     -->
-    <property name="server.basedir"              value="/www/bartlett" />
+    <property name="server.basedir"              value="/var/pirum/servers/bartlett" />
     <property name="server.pirum.force"          value="false" />
     <property name="server.pirum.quiet"          value="true" />
 
