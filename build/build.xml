@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="PHP_CompatInfo" default="help">
+
+    <includepath classpath="${bartlettpackager.dir}/classes" />
+
+    <typedef name="mapping" classname="phing.types.Mapping"  />
+
+    <taskdef name="pirum" classname="phing.tasks.ext.PirumTask" />
+
+    <!--
+        ======================================================================
+        Project base directory
+        ======================================================================
+    -->
+    <resolvepath propertyName="project.dir" file="${phing.dir}/.." />
+
+    <!--
+        ======================================================================
+        Project properties
+        ======================================================================
+    -->
+    <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
+    <property name="build.target"                value="${project.dir}/build" />
+    <property name="build.version"               value="2.12.0" />
+
+    <!--
+        ======================================================================
+        Test by PHPUnit
+        ======================================================================
+    -->
+    <property name="test.printsummary"           value="true" />
+    <property name="test.configuration"          value="${project.dir}/tests/phpunit.xml" />
+
+    <!--
+        ======================================================================
+        Docs by phpDocumentor
+        ======================================================================
+    -->
+    <property name="docs.phpdoctask"             value="phpdoc2" />
+    <property name="docs.inc-pattern"            value="PHP/**/*.php" />
+
+    <!--
+        ======================================================================
+        Package by PEAR_PackageFileManager2
+        ======================================================================
+    -->
+    <property name="package.properties"          value="${project.dir}/build/package.properties" />
+    <property name="package.summary"             value="${project.dir}/build/package_summary.txt" />
+    <property name="package.description"         value="${project.dir}/build/package_description.txt" />
+    <property name="package.release"             value="${project.dir}/build/${build.version}.txt" />
+    <property name="package.keep-assets"         value="true" />
+
+    <!-- maintainers list -->
+    <mapping name="maintainers" id="package-maintainers-ref">
+        <element>
+            <element key="handle" value="farell"/>
+            <element key="name" value="Laurent Laville"/>
+            <element key="email" value="pear@laurent-laville.org"/>
+            <element key="role" value="lead"/>
+        </element>
+        <element>
+            <element key="handle" value="remicollet" />
+            <element key="name" value="Remi Collet" />
+            <element key="role" value="contributor" />
+        </element>
+    </mapping>
+
+    <!-- filelist roles exceptions -->
+    <mapping name="exceptions" id="package-exceptions-ref">
+        <element key="LICENSE" value="doc" />
+        <element key="phpunit.xml" value="test" />
+        <element key="phpcompatinfo.xml.dist" value="cfg" />
+        <element key="README.markdown" value="doc" />
+        <element key="fo-custom.xsl" value="doc" />
+    </mapping>
+
+    <!-- filelist basedirectory install exceptions -->
+    <mapping name="installexceptions" id="package-installexceptions-ref">
+        <element key="phpcompatinfo.xml.dist" value="" />
+        <element key="scripts/phpci" value="" />
+        <element key="scripts/phpci.bat" value="" />
+    </mapping>
+
+    <!-- packages dependencies list -->
+    <mapping name="deps" id="package-deps-ref">
+        <!-- required -->
+        <element>
+            <element key="channel" value="components.ez.no" />
+            <element key="name" value="Base" />
+            <element key="version" value="1.8" />
+        </element>
+        <element>
+            <element key="channel" value="components.ez.no" />
+            <element key="name" value="ConsoleTools" />
+            <element key="version" value="1.6.1" />
+        </element>
+        <element>
+            <element key="channel" value="pear.php.net" />
+            <element key="name" value="Console_CommandLine" />
+            <element key="version" value="1.2.0" />
+        </element>
+        <element>
+            <element key="channel" value="bartlett.laurent-laville.org" />
+            <element key="name" value="PHP_Reflect" />
+            <element key="version" value="1.5.0" />
+        </element>
+
+        <!-- optional -->
+        <element>
+            <element key="channel" value="pear.php.net" />
+            <element key="name" value="Net_Growl" />
+            <element key="version" value="2.6.0" />
+            <element key="optional" value="true" />
+        </element>
+        <element>
+            <element key="channel" value="pear.phpunit.de" />
+            <element key="name" value="PHPUnit" />
+            <element key="version" value="3.6.0" />
+            <element key="optional" value="true" />
+        </element>
+        <element>
+            <element key="channel" value="pear.phpunit.de" />
+            <element key="name" value="PHP_Timer" />
+            <element key="version" value="1.0.0" />
+            <element key="optional" value="true" />
+        </element>
+    </mapping>
+
+    <!-- extensions dependencies list -->
+    <mapping name="extdeps" id="package-extdeps-ref">
+        <element>
+            <element key="name" value="dom" />
+        </element>
+        <element>
+            <element key="name" value="libxml" />
+        </element>
+        <element>
+            <element key="name" value="pcre" />
+        </element>
+        <element>
+            <element key="name" value="SPL" />
+        </element>
+        <element>
+            <element key="name" value="Reflection" />
+        </element>
+    </mapping>
+
+    <!-- tasks replacements at run-time -->
+    <mapping name="replacements" id="package-rt-replacements-ref">
+        <element>
+            <element key="path" value="PHP/CompatInfo/CLI.php" />
+            <element key="type" value="pear-config" />
+            <element key="from" value="@cfg_dir@" />
+            <element key="to"   value="cfg_dir" />
+        </element>
+        <element>
+            <element key="path" value="scripts/phpci" />
+            <element key="type" value="pear-config" />
+            <element key="from" value="@php_bin@" />
+            <element key="to"   value="php_bin" />
+        </element>
+        <element>
+            <element key="path" value="scripts/phpci.bat" />
+            <element key="type" value="pear-config" />
+            <element key="from" value="@php_bin@" />
+            <element key="to"   value="php_bin" />
+        </element>
+        <element>
+            <element key="path" value="scripts/phpci.bat" />
+            <element key="type" value="pear-config" />
+            <element key="from" value="@bin_dir@" />
+            <element key="to"   value="bin_dir" />
+        </element>
+    </mapping>
+
+    <!-- files replacements at packaging-time -->
+    <patternset id="package-pt-replacements-ref">
+        <include name="PHP/**/*.php" />
+        <include name="tests/Reference/*.php" />
+        <include name="tests/*.php" />
+        <include name="scripts/phpci" />
+    </patternset>
+
+    <!-- End of line files tasks replacements -->
+    <mapping name="eol" id="package-eol-ref">
+        <element>
+            <element key="path" value="scripts/phpci.bat" />
+            <element key="type" value="windows" />
+        </element>
+    </mapping>
+
+    <!-- platform install conditions -->
+    <mapping name="installas" id="package-installas-ref">
+        <element key="windows">
+            <element>
+                <element key="path" value="scripts/phpci.bat" />
+                <element key="as" value="phpci.bat" />
+            </element>
+            <element>
+                <element key="path" value="scripts/phpci" />
+                <element key="as" value="phpci" />
+            </element>
+        </element>
+        <element>
+            <element>
+                <element key="path" value="scripts/phpci.bat" />
+                <element key="ignore" value="true" />
+            </element>
+            <element>
+                <element key="path" value="scripts/phpci" />
+                <element key="as" value="phpci" />
+            </element>
+        </element>
+    </mapping>
+
+    <!-- filelist contents -->
+    <fileset dir="${project.dir}" id="package-contents-ref">
+        <include name="**" />
+
+        <exclude name="*.tgz" />
+        <exclude name="**/Thumbs.db" />
+        <exclude name="package.xml" />
+        <exclude name="build/**" />
+        <exclude name="contributions/**" />
+        <exclude name="docs/images/**" />
+        <exclude name="docs/js/**" />
+        <exclude name="docs/styles/**" />
+        <exclude name="docs/*" />
+        <exclude name="**/netgrowl.php" />
+        <exclude name="**/PEAR.php" />
+        <exclude name="**/IssueTest2.php" />
+        <exclude name="**/PackageTest.php" />
+        <exclude name="**/source3657.php" />
+        <exclude name="**/source7813.php" />
+        <exclude name="**/source13873.php" />
+    </fileset>
+
+    <!--
+        ======================================================================
+        PEAR Channel Server by Pirum
+        ======================================================================
+    -->
+    <property name="server.basedir"              value="/www/bartlett" />
+    <property name="server.pirum.force"          value="false" />
+    <property name="server.pirum.quiet"          value="true" />
+
+    <mapping name="server" id="pirum-server-ref">
+        <element key="name" value="bartlett.laurent-laville.org" />
+        <element key="summary" value="Bartlett PEAR Channel" />
+        <element key="alias" value="bartlett" />
+        <element key="url" value="http://bartlett.laurent-laville.org" />
+    </mapping>
+
+    <mapping name="releases" id="pirum-releases-ref">
+        <element key="add" value="${build.target}/PHP_CompatInfo-${build.version}.tgz" />
+    </mapping>
+
+    <!--
+        ======================================================================
+        Imported modules
+        ======================================================================
+    -->
+    <property name="modules.test"                value="true" />
+    <property name="modules.docs"                value="true" />
+    <property name="modules.package"             value="true" />
+    <property name="modules.phar"                value="false" />
+    <property name="modules.server"              value="true" />
+
+    <import file="${bartlettpackager.dir}/modules/build.xml" />
+
+    <!--
+        ======================================================================
+        Actions
+        ======================================================================
+    -->
+    <target name="test"    depends="test.do" />
+
+    <target name="docs"    depends="docs.make-api" />
+    <target name="make-api" />
+
+    <target name="package" depends="package.do" />
+    <target name="make-xml" />
+    <target name="make-tar" />
+    <target name="replacements" />
+
+    <target name="server"  depends="server.do" />
+
+    <target name="help">
+        <echo>A toolchain manager for PHP_CompatInfo                     </echo>
+        <echo>                                                           </echo>
+        <echo>targets:                                                   </echo>
+        <echo>  test         Run Unit Test Suites                        </echo>
+        <echo>  docs         Generate API and User documentations        </echo>
+        <echo>  package      Generate the package.xml 2.0 and tarball    </echo>
+        <echo>  server       Build the PEAR Channel Server               </echo>
+    </target>
+
+</project>

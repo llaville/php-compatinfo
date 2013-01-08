@@ -1,0 +1,7 @@
+Additions and changes:
+- upgrade APC reference to version 3.1.14
+
+Bug fixes:
+- GH-58: improve the extension report render
+- GH-59: improve the global report render
+- GH-61: bad namespace in full report
