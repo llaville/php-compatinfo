@@ -1,4 +1,8 @@
 <phpunit bootstrap="../PHP/CompatInfo/Autoload.php">
+    <php>
+        <ini name="memory_limit" value="512M" />
+    </php>
+
     <testsuite name="PHP_CompatInfo Test Suite">
         <directory>.</directory>
     </testsuite>
