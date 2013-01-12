@@ -147,14 +147,10 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     private $_versionsRef;
 
     /**
-     * @var array
+     * @var object PHP_CompatInfo_Event
      */
     private $_event;
 
-    /**
-     * @var integer
-     */
-    protected $startTime;
 
     /**
      * Class constructor
@@ -314,31 +310,14 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     }
 
     /**
-     * Returns informations of latest event.
+     * Returns the latest event.
      * Used by observers connected
      *
-     * @return array
+     * @return object PHP_CompatInfo_Event
      */
     public function getEvent()
     {
         return $this->_event;
-    }
-
-    /**
-     * Publish the most recent event
-     *
-     * @param array $event Event data
-     *
-     * @return void
-     */
-    protected function setEvent($event)
-    {
-        $this->_event = array_merge(
-            $event,
-            array('timestamp' => time())
-        );
-
-        $this->notify();
     }
 
     /**
@@ -378,14 +357,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     public function addWarning($warn)
     {
         $this->warnings[] = $warn;
-
-        $this->setEvent(
-            array(
-                'name'    => __FUNCTION__,
-                'level'   => 'warning',
-                'message' => $warn
-            )
-        );
+        $this->firePushWarning($warn);
     }
 
     /**
@@ -463,7 +435,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
      */
     public function parse($dataSource)
     {
-        $this->startScanSource($dataSource);
+        $this->fireStartScanSource($dataSource);
 
         if (isset($this->options['exclude']['files'])) {
             $excludes = $this->options['exclude']['files'];
@@ -516,7 +488,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
 
         foreach ($files as $source) {
             $i++;
-            $this->startScanFile($source, $i, $filesCount);
+            $this->fireStartScanFile($source, $i, $filesCount);
             $this->scan($source);
 
             // consolidate all global results ...
@@ -627,7 +599,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 }
             }
 
-            $this->endScanFile($source, $i, $filesCount);
+            $this->fireEndScanFile($source, $i, $filesCount);
 
             if ($consoleProgress) {
                 $progress->advance();
@@ -648,7 +620,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             echo PHP_EOL;
         }
 
-        $this->endScanSource();
+        $this->fireEndScanSource();
 
         return true;
     }
@@ -1256,18 +1228,18 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 );
             }
 
-            $this->startLoadReference($name, $extensions);
+            $this->fireStartLoadReference($name, $extensions);
 
             $this->warnings = $reference->getWarnings();
             if ($this->options['verbose']) {
                 foreach ($this->warnings as $warn) {
-                    $this->failLoadReference($warn);
+                    $this->fireFailLoadReference($warn);
                 }
             }
 
             $this->reference = $reference->getAll();
 
-            $this->endLoadReference(
+            $this->fireEndLoadReference(
                 $name, count($reference->getExtensions()), count($this->warnings)
             );
         }
@@ -1878,64 +1850,33 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     }
 
     /**
-     * A data source scan started
+     * Fired a startScanSource event
      *
      * @param mixed $source Data source
      *
      * @return void
      */
-    protected function startScanSource($source)
+    protected function fireStartScanSource($source)
     {
-        $message = 'Audit started';
-
-        if (is_string($source)) {
-            if (is_dir($source)) {
-                $message .= ' for directory ' . realpath($source);
-            } else {
-                $message .= ' for file ' . realpath($source);
-            }
-        } elseif (is_array($source)) {
-                $message .= ' for a list of ' . count($source) .
-                    ' different(s) data source';
-        }
-        $this->startTime = time();
-        $this->setEvent(
-            array(
-                'name'    => __FUNCTION__,
-                'level'   => 'info',
-                'message' => $message
-            )
+        $this->_event = new PHP_CompatInfo_Event(
+            $this, 'startScanSource', $source
         );
+        $this->notify();
     }
 
     /**
-     * A data source scan ended
+     * Fired a endScanSource event
      *
      * @return void
      */
-    protected function endScanSource()
+    protected function fireEndScanSource()
     {
-        list($min, $max) = $this->getVersions();
-        $versions = $min . ' (min)';
-        if (!empty($max)) {
-            $versions .= $max . ' (max)';
-        }
-
-        $this->setEvent(
-            array(
-                'name'    => __FUNCTION__,
-                'level'   => 'info',
-                'message' => sprintf(
-                    'Audit finished in %s minutes. Required PHP %s',
-                    (date('i:s', time() - $this->startTime)),
-                    $versions
-                )
-            )
-        );
+        $this->_event = new PHP_CompatInfo_Event($this, 'endScanSource');
+        $this->notify();
     }
 
     /**
-     * A file scan started
+     * Fired a startScanFile event
      *
      * @param string $file         Filename
      * @param int    $currentIndex Position in data source
@@ -1943,25 +1884,16 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
      *
      * @return void
      */
-    protected function startScanFile($file, $currentIndex, $maxIndex)
+    protected function fireStartScanFile($file, $currentIndex, $maxIndex)
     {
-        $this->setEvent(
-            array(
-                'name'    => __FUNCTION__,
-                'level'   => 'info',
-                'message' => sprintf(
-                    'start scan file %s/%s: dir=%s, file=%s',
-                    $currentIndex,
-                    $maxIndex,
-                    dirname($file),
-                    basename($file)
-                )
-            )
+        $this->_event = new PHP_CompatInfo_Event(
+            $this, 'startScanFile', $file, $currentIndex, $maxIndex
         );
+        $this->notify();
     }
 
     /**
-     * A file scan ended
+     * Fired a endScanFile event
      *
      * @param string $file         Filename
      * @param int    $currentIndex Position in data source
@@ -1969,77 +1901,32 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
      *
      * @return void
      */
-    protected function endScanFile($file, $currentIndex, $maxIndex)
+    protected function fireEndScanFile($file, $currentIndex, $maxIndex)
     {
-        $summary = array();
-
-        list($min, $max) = $this->results[$file]['versions'];
-        $versions = 'required PHP ' . $min . ' (min)';
-        if (!empty($max)) {
-            $versions .= $max . ' (max)';
-        }
-        $summary[] = $versions;
-
-        $count = count($this->results[$file]['extensions']);
-        if ($count > 0) {
-            $summary[] = 'extensions=' . $count;
-        }
-
-        foreach (array('interfaces', 'classes', 'functions', 'constants') as $key) {
-            $count = 0;
-            foreach ($this->results[$file][$key] as $extensionElements) {
-                $count += count($extensionElements);
-            }
-            if ($count > 0) {
-                $summary[] = $key . '=' . $count;
-            }
-        }
-
-        $this->setEvent(
-            array(
-                'name'    => __FUNCTION__,
-                'level'   => 'info',
-                'message' => sprintf(
-                    'end scan file %s/%s: %s',
-                    $currentIndex,
-                    $maxIndex,
-                    implode(', ', $summary)
-                )
-            )
+        $this->_event = new PHP_CompatInfo_Event(
+            $this, 'endScanFile', $file, $currentIndex, $maxIndex
         );
+        $this->notify();
     }
 
     /**
-     * A load reference started
+     * Fired a startLoadReference event
      *
      * @param string $reference  Name of the reference
      * @param array  $extensions OPTIONAL List of extension to load
      *
      * @return void
      */
-    protected function startLoadReference($reference, $extensions)
+    protected function fireStartLoadReference($reference, $extensions)
     {
-        if (is_array($extensions)) {
-            $extra = 'modules list: '. implode(', ', $extensions);
-        } else {
-            $extra = 'modules loaded in the PHP interpreter';
-        }
-
-        $this->setEvent(
-            array(
-                'name'    => __FUNCTION__,
-                'level'   => 'info',
-                'message' => sprintf(
-                    'start load reference %s with %s',
-                    $reference,
-                    $extra
-                )
-            )
+        $this->_event = new PHP_CompatInfo_Event(
+            $this, 'startLoadReference', $reference, $extensions
         );
+        $this->notify();
     }
 
     /**
-     * A load reference ended
+     * Fired a endLoadReference event
      *
      * @param string $reference  Name of the reference
      * @param int    $successful Extensions reference that were successfully loaded
@@ -2047,38 +1934,42 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
      *
      * @return void
      */
-    protected function endLoadReference($reference, $successful, $failures)
+    protected function fireEndLoadReference($reference, $successful, $failures)
     {
-        $this->setEvent(
-            array(
-                'name'    => __FUNCTION__,
-                'level'   => 'info',
-                'message' => sprintf(
-                    'end load reference %s with %d successful, %d failures',
-                    $reference,
-                    $successful,
-                    $failures
-                )
-            )
+        $this->_event = new PHP_CompatInfo_Event(
+            $this, 'endLoadReference', $reference, $successful, $failures
         );
+        $this->notify();
     }
 
     /**
-     * A load reference failed
+     * Fired a failLoadReference event
      *
      * @param string $warn Reason of failure
      *
      * @return void
      */
-    protected function failLoadReference($warn)
+    protected function fireFailLoadReference($warn)
     {
-        $this->setEvent(
-            array(
-                'name'    => __FUNCTION__,
-                'level'   => 'warning',
-                'message' => $warn
-            )
+        $this->_event = new PHP_CompatInfo_Event(
+            $this, 'failLoadReference', $warn
         );
+        $this->notify();
+    }
+
+    /**
+     * Fired a pushWarning event
+     *
+     * @param string $warn Reason of warning
+     *
+     * @return void
+     */
+    protected function firePushWarning($warn)
+    {
+        $this->_event = new PHP_CompatInfo_Event(
+            $this, 'pushWarning', $warn
+        );
+        $this->notify();
     }
 
 }

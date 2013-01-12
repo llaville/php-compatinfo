@@ -24,15 +24,11 @@ require_once 'Net/Growl/Autoload.php';
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
-class PHP_CompatInfo_Listener_Growl implements SplObserver
+class PHP_CompatInfo_Listener_Growl
+    implements SplObserver, PHP_CompatInfo_Observable
 {
     const GROWL_NOTIFY_INFO = 'info';
     const GROWL_NOTIFY_WARN = 'warning';
-
-    /**
-     * @var array
-     */
-    protected $event;
 
     /**
      * @var object Net_Growl
@@ -40,18 +36,25 @@ class PHP_CompatInfo_Listener_Growl implements SplObserver
     protected $growl;
 
     /**
-     * Class constructor
+     * @var object PHP_CompatInfo
+     */
+    protected $subject;
+
+    /**
+     * Build a Growl listener
      *
      * @param string $appName       Application name
      * @param array  $notifications List of notification types
      * @param string $password      Password for Growl client
      * @param array  $options       List of options for Growl client
+     *
+     * @return object PHP_CompatInfo_Listener_Growl
      */
     public function __construct($appName = null, $notifications = null,
         $password = null, $options = null
     ) {
         if ($appName === null) {
-            $appName = 'PHPCompatInfo';
+            $appName = 'PHP_CompatInfo';
         }
 
         $defaultNotifications = array(
@@ -74,8 +77,7 @@ class PHP_CompatInfo_Listener_Growl implements SplObserver
 
         $defaultOptions  = array(
             'host'     => '127.0.0.1',
-            'protocol' => 'tcp',
-            'port'     => Net_Growl::GNTP_PORT,
+            'protocol' => 'gntp',
             'timeout'  => 15,
         );
 
@@ -100,76 +102,176 @@ class PHP_CompatInfo_Listener_Growl implements SplObserver
      */
     public function update(SplSubject $subject)
     {
-        $this->event = $subject->getEvent();
+        $this->subject = $subject;
 
-        if (method_exists($this, $this->event['name'])) {
-            call_user_func(array($this, $this->event['name']));
+        $event = $subject->getEvent();
+
+        // delegate to right event implementation
+        $data = call_user_func(array($this, $event->getName()), $event);
+
+        if (empty($data)) {
+            return;
         }
-    }
 
-    /**
-     * Notification for a load reference started
-     *
-     * @return void
-     */
-    public function startLoadReference()
-    {
-        $this->notifyEvent(__FUNCTION__);
-    }
-
-    /**
-     * Notification for a load reference ended
-     *
-     * @return void
-     */
-    public function endLoadReference()
-    {
-        list($reference, $successuf, $failures) = sscanf(
-            $this->event['message'],
-            'end load reference %s with %d successful, %d failures'
+        $this->growl->publish(
+            $data['name'], $data['title'], $data['description'], $data['options']
         );
+    }
 
+    /**
+     * Notification when load reference started
+     *
+     * @param object $event The event
+     *
+     * @return array
+     */
+    public function startLoadReference($event)
+    {
+        list($reference, ) = $event->getArguments();
+
+        return array(
+            'name'        => self::GROWL_NOTIFY_INFO,
+            'title'       => 'Load Reference started',
+            'description' => 'start loading reference ' . $reference,
+            'options'     => array()
+        );
+    }
+
+    /**
+     * Notification when load reference ended
+     *
+     * @param object $event The event
+     *
+     * @return array
+     */
+    public function endLoadReference($event)
+    {
+        list($reference, $successful, $failures) = $event->getArguments();
+
+        $description = sprintf(
+            'end loading reference %s with %d successful, %d failures',
+            $reference,
+            $successful,
+            $failures
+        );
         $options = array();
         if ($failures > 0) {
             $options['priority'] = Net_Growl::PRIORITY_HIGH;
         }
 
-        $this->notifyEvent(__FUNCTION__, $options);
+        return array(
+            'name'        => self::GROWL_NOTIFY_INFO,
+            'title'       => 'Load Reference ended',
+            'description' => $description,
+            'options'     => $options
+        );
     }
 
     /**
-     * Notification for a data source scan started
+     * Notification when load reference failed
      *
-     * @return void
+     * @param object $event The event
+     *
+     * @return array
      */
-    public function startScanSource()
+    public function failLoadReference($event)
     {
-        $this->notifyEvent(__FUNCTION__);
     }
 
     /**
-     * Notification for a data source scan ended
+     * Notification when data source scan started
      *
-     * @return void
+     * @param object $event The event
+     *
+     * @return array
      */
-    public function endScanSource()
+    public function startScanSource($event)
     {
-        $this->notifyEvent(__FUNCTION__, array('sticky' => true));
+        list($source) = $event->getArguments();
+
+        $message = 'Audit started';
+
+        if (is_string($source)) {
+            if (is_dir($source)) {
+                $message .= ' for directory ' . realpath($source);
+            } else {
+                $message .= ' for file ' . realpath($source);
+            }
+        } elseif (is_array($source)) {
+                $message .= ' for a list of ' . count($source) .
+                    ' different(s) data source';
+        }
+
+        return array(
+            'name'        => self::GROWL_NOTIFY_INFO,
+            'title'       => 'Scan Source started',
+            'description' => $message,
+            'options'     => array()
+        );
     }
 
     /**
-     * Send a notification to the growl client
-     * 
-     * @param string $title   Title of notification  
-     * @param array  $options OPTIONAL specific notification options
+     * Notification when data source scan ended
+     *
+     * @param object $event The event
+     *
+     * @return array
+     */
+    public function endScanSource($event)
+    {
+        list($min, $max) = $this->subject->getVersions();
+        $versions = $min . ' (min)';
+        if (!empty($max)) {
+            $versions .= $max . ' (max)';
+        }
+
+        return array(
+            'name'        => self::GROWL_NOTIFY_INFO,
+            'title'       => 'Scan Source ended',
+            'description' => 'Required PHP ' . $versions,
+            'options'     => array('sticky' => true)
+        );
+    }
+
+    /**
+     * Notification when file scan started
+     *
+     * @param object $event The event
      *
      * @return void
      */
-    protected function notifyEvent($title, $options = array())
+    public function startScanFile($event)
     {
-        $name        = $this->event['level'];
-        $description = $this->event['message'];
-        $this->growl->notify($name, $title, $description, $options);
+    }
+
+    /**
+     * Notification when file scan ended
+     *
+     * @param object $event The event
+     *
+     * @return void
+     */
+    public function endScanFile($event)
+    {
+    }
+
+    /**
+     * A warning pushed on stack
+     *
+     * @param object $event The event
+     *
+     * @return array
+     */
+    public function pushWarning($event)
+    {
+        list($warn) = $event->getArguments();
+
+        return array(
+            'name'        => self::GROWL_NOTIFY_WARN,
+            'title'       => 'Warning',
+            'description' => $warn,
+            'options'     => array('priority' => Net_Growl::PRIORITY_HIGH)
+        );
     }
 
 }

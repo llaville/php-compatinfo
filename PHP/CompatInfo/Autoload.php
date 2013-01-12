@@ -17,7 +17,8 @@
  *
  * @param string $className name of the class (and namespace) being instantiated.
  *
- * @return void
+ * @return  void
+ * @version Release: @package_version@
  */
 function PHP_CompatInfo_autoload($className)
 {
@@ -27,6 +28,10 @@ function PHP_CompatInfo_autoload($className)
     if ($classes === null) {
 
         $classes = array(
+            'PHP_CompatInfo_Event'
+                => 'PHP/CompatInfo/Event.php',
+            'PHP_CompatInfo_Observable'
+                => 'PHP/CompatInfo/Observable.php',
             'PHP_CompatInfo_Filter'
                 => 'PHP/CompatInfo/Filter.php',
             'PHP_CompatInfo_CLI'

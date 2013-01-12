@@ -48,12 +48,11 @@ class PHP_CompatInfo {
     array #globals
     array #tokens
     array #results
-    int #startTime
 
     SplObjectStorage -_observers
     array -_namespaces
     array -_versionsRef
-    array -_event
+    object -_event
 
     object +__construct ( array $options = null )
 
@@ -68,8 +67,7 @@ class PHP_CompatInfo {
     array +getOptions ( void )
     array static +getDefaultOptions( void )
 
-    array +getEvent ( void )
-    void #setEvent( array $event )
+    object +getEvent ( void )
 
     bool +hasWarnings ( void )
     array +getWarnings ( bool $purge = false )
@@ -89,13 +87,14 @@ class PHP_CompatInfo {
     bool #isValid ( string $category, string $key )
     void #updateVersion ( string $current, string &$base )
     void #getInfo ( string $category, string $defaultVersion, array $haystack, string $source, string $ns )
-    void #startScanSource ( mxied $source )
-    void #endScanSource ( void )
-    void #startScanFile ( string $file, int $currentIndex, int $maxIndex )
-    void #endScanFile ( string $file, int $currentIndex, int $maxIndex )
-    void #startLoadReference ( string $reference, array $extensions )
-    void #endLoadReference ( string $reference, int $successful, int $failures )
-    void #failLoadReference ( string $warn )
+    void #fireStartScanSource ( mxied $source )
+    void #fireEndScanSource ( void )
+    void #fireStartScanFile ( string $file, int $currentIndex, int $maxIndex )
+    void #fireEndScanFile ( string $file, int $currentIndex, int $maxIndex )
+    void #fireStartLoadReference ( string $reference, array $extensions )
+    void #fireEndLoadReference ( string $reference, int $successful, int $failures )
+    void #fireFailLoadReference ( string $warn )
+    void #firePushWarning ( string $warn )
 
     void -excludeCodeConditions( string $key, array $data, string $source, string $ns)
 }
