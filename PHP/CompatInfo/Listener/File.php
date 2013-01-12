@@ -295,7 +295,7 @@ class PHP_CompatInfo_Listener_File
      *
      * @param object $event The event
      *
-     * @return mixed Depends of listener implementation
+     * @return array
      */
     public function pushWarning($event)
     {
