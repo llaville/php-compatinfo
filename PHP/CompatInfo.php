@@ -1129,7 +1129,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
         );
 
         foreach ($this->results as $file => $results) {
-            if (isset($source) && $source != $file) {
+            if (isset($source) && (!is_string($file) || $source != $file)) {
                 continue;
             }
 
