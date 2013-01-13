@@ -6,3 +6,5 @@ Bug fixes:
 - GH-58: Improve the extension report render
 - GH-59: Improve the global report render
 - GH-61: Bad namespace in full report
+- fix getConditions() method related to global and each file results
+- Be sure to attach only a unique listener (same class and properties)
