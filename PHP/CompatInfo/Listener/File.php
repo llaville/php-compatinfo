@@ -26,6 +26,11 @@ class PHP_CompatInfo_Listener_File
     implements SplObserver, PHP_CompatInfo_Observable
 {
     /**
+     * @var string Destination (output) file
+     */
+    protected $destFile;
+
+    /**
      * @var string Time format
      */
     protected $timeFormat;
