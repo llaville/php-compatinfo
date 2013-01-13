@@ -1,5 +1,4 @@
-= {title}
-:title:       Changelog
+= Changelog
 :description: Summary of versions changes
 include::attributes.txt[]
 

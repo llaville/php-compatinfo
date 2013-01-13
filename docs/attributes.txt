@@ -1,5 +1,4 @@
-//:author:      Laurent Laville
-//:email:       pear@laurent-laville.org
+:author:      Laurent Laville
 :stylesdir:   styles
 :scriptsdir:  js
 :keywords:    PHP, compatibility, version
