@@ -24,7 +24,7 @@ require_once 'Net/Growl/Autoload.php';
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
-class PHP_CompatInfo_Listener_Growl
+class PHP_CompatInfo_Listener_Growl extends PHP_CompatInfo_Listener_Abstract
     implements SplObserver, PHP_CompatInfo_Observable
 {
     const GROWL_NOTIFY_INFO = 'info';
@@ -91,6 +91,8 @@ class PHP_CompatInfo_Listener_Growl
             $appName, $notifications, $password, $options
         );
         $this->growl->register();
+
+        $this->setHash($appName, $notifications, $password, $options);
     }
 
     /**

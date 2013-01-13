@@ -22,13 +22,13 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
-class PHP_CompatInfo_Listener_Console
+class PHP_CompatInfo_Listener_Console extends PHP_CompatInfo_Listener_Abstract
     implements SplObserver, PHP_CompatInfo_Observable
 {
     /**
      * @var integer
      */
-    protected $maxColumn = 60;
+    protected $maxColumn;
 
     /**
      * @var object PHP_CompatInfo
@@ -38,10 +38,19 @@ class PHP_CompatInfo_Listener_Console
     /**
      * Build a Console listener
      *
+     * @param integer $maxColumn (optional) Console output maximum width
+     *
      * @return object PHP_CompatInfo_Listener_Console
      */
-    public function __construct()
+    public function __construct($maxColumn = null)
     {
+        if (!empty($maxColumn) && is_integer($maxColumn)) {
+            $this->maxColumn = $maxColumn;
+        } else {
+            $this->maxColumn = 60;
+        }
+
+        $this->setHash($this->maxColumn);
     }
 
     /**

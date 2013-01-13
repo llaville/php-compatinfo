@@ -22,7 +22,7 @@
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
-class PHP_CompatInfo_Listener_File
+class PHP_CompatInfo_Listener_File extends PHP_CompatInfo_Listener_Abstract
     implements SplObserver, PHP_CompatInfo_Observable
 {
     /**
@@ -66,6 +66,8 @@ class PHP_CompatInfo_Listener_File
         } else {
             $this->timeFormat = $timeFormat;
         }
+
+        $this->setHash($this->destFile, $this->timeFormat);
     }
 
     /**

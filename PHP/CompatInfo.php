@@ -254,7 +254,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
      */
     public function attach(SplObserver $observer)
     {
-        $id = sha1(serialize($observer));
+        $id = $observer->getHash();
 
         if (!isset($this->_observersId[$id])) {
             $this->_observers->attach($observer);
@@ -272,7 +272,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
      */
     public function detach(SplObserver $observer)
     {
-        $id = sha1(serialize($observer));
+        $id = $observer->getHash();
 
         if (isset($this->_observersId[$id])) {
             $this->_observers->detach($observer);
