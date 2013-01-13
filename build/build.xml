@@ -85,16 +85,6 @@
     <mapping name="deps" id="package-deps-ref">
         <!-- required -->
         <element>
-            <element key="channel" value="components.ez.no" />
-            <element key="name" value="Base" />
-            <element key="version" value="1.8" />
-        </element>
-        <element>
-            <element key="channel" value="components.ez.no" />
-            <element key="name" value="ConsoleTools" />
-            <element key="version" value="1.6.1" />
-        </element>
-        <element>
             <element key="channel" value="pear.php.net" />
             <element key="name" value="Console_CommandLine" />
             <element key="version" value="1.2.0" />

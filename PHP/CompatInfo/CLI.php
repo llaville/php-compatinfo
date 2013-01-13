@@ -404,6 +404,7 @@ class PHP_CompatInfo_CLI
         );
         $reports = array();
 
+        $consoleProgress  = true;
         $reportFileAppend = false;
 
         if ($result->options['noConfiguration'] !== true) {
@@ -485,7 +486,7 @@ class PHP_CompatInfo_CLI
                     $options['cacheDriver'] = 'null';
                 }
                 if (isset($phpcompatinfo['consoleProgress'])) {
-                    $options['consoleProgress'] = $phpcompatinfo['consoleProgress'];
+                    $consoleProgress = $phpcompatinfo['consoleProgress'];
                 }
                 if (isset($phpcompatinfo['verbose'])) {
                     $options['verbose'] = $phpcompatinfo['verbose'];
@@ -534,8 +535,16 @@ class PHP_CompatInfo_CLI
                             );
                         }
 
-                        if ($listener instanceof SplObserver) {
-                            $options['listeners'][] = $listener;
+                        if ($listener instanceof PHP_CompatInfo_Listener_Console
+                            && $consoleProgress === false) {
+                            /*
+                                Do not add the console listener
+                                if consoleProgress directive is off
+                            */
+                        } else {
+                            if ($listener instanceof SplObserver) {
+                                $options['listeners'][] = $listener;
+                            }
                         }
                     }
                 }
@@ -569,6 +578,10 @@ class PHP_CompatInfo_CLI
             } elseif (isset($result->options['verbose'])) {
                 $warnings[] = 'File "' . $filename . '" does not exist';
             }
+        }
+
+        if ($consoleProgress === true) {
+            $options['listeners'][] = new PHP_CompatInfo_Listener_Console;
         }
 
         if (isset($result->command->options['reference'])) {

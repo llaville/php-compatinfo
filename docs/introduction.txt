@@ -35,8 +35,6 @@ CAUTION: Its recommanded to migrate to PHP5, because PHP4 version is not maintai
 === Requirements
 
 * link:http://www.php.net[PHP] 5.2.1 or newer
-* link:http://ezcomponents.org/[Base] 1.8 or newer from _components.ez.no_ PEAR channel
-* link:http://ezcomponents.org/[ConsoleTools] 1.6.1 or newer from _components.ez.no_ PEAR channel
 * link:http://pear.php.net/package/Console_CommandLine[Console_CommandLine] 1.2.0 or newer from _default_ PEAR channel
 * link:http://bartlett.laurent-laville.org/[PHP_Reflect] 1.5.0 or newer from _Bartlett_ PEAR channel
 * link:http://www.php.net/manual/en/book.tokenizer.php[tokenizer] extension

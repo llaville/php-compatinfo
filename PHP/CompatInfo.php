@@ -470,19 +470,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             return false;
         }
 
-        if (php_sapi_name() === 'cli'
-            && isset($this->options['consoleProgress'])
-            && ($this->options['consoleProgress'] === true)
-        ) {
-            $consoleProgress = true;
-        } else {
-            $consoleProgress = false;
-        }
-        if ($consoleProgress) {
-            $out      = new ezcConsoleOutput();
-            $progress = new ezcConsoleProgressbar($out, $filesCount);
-        }
-
         $i             = 0;
         $this->results = array(
             array(
@@ -616,10 +603,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             }
 
             $this->fireEndScanFile($source, $i, $filesCount);
-
-            if ($consoleProgress) {
-                $progress->advance();
-            }
         }
 
         if ('ALL' === $this->options['reference']) {
@@ -629,11 +612,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                     $this->addWarning("Extension '$ext' referenced but not loaded");
                 }
             }
-        }
-
-        if ($consoleProgress) {
-            $progress->finish();
-            echo PHP_EOL;
         }
 
         $this->fireEndScanSource();

@@ -106,6 +106,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Listener/File.php',
             'PHP_CompatInfo_Listener_Growl'
                 => 'PHP/CompatInfo/Listener/Growl.php',
+            'PHP_CompatInfo_Listener_Console'
+                => 'PHP/CompatInfo/Listener/Console.php',
 
             // PHP extensions references
             'PHP_CompatInfo_Reference_Amqp'
@@ -288,8 +290,5 @@ function PHP_CompatInfo_autoload($className)
 }
 
 spl_autoload_register('PHP_CompatInfo_autoload');
-
-require_once 'ezc/Base/base.php';
-spl_autoload_register(array('ezcBase', 'autoload'));
 
 require_once 'Bartlett/PHP/Reflect/Autoload.php';

@@ -1,6 +1,7 @@
 Additions and changes:
 - upgrade APC reference to version 3.1.14
 - refactoring of events and listeners interfaces
+- remove dependencies to eZ Components Base and ConsoleTools
 
 Bug fixes:
 - GH-58: Improve the extension report render

@@ -19,11 +19,6 @@ Registering the channel:
 $ pear channel-discover bartlett.laurent-laville.org
 ----
 
-Registering additionnal channel:
-----
-$ pear channel-discover components.ez.no
-----
-
 Installing the latest version available:
 ----
 $ pear install bartlett/PHP_CompatInfo
@@ -31,7 +26,7 @@ $ pear install bartlett/PHP_CompatInfo
 
 Installing a specific version:
 ----
-$ pear install bartlett/PHP_CompatInfo-2.0.0
+$ pear install bartlett/PHP_CompatInfo-2.12.0
 ----
 
 == Git
