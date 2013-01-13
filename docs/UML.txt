@@ -50,6 +50,7 @@ class PHP_CompatInfo {
     array #results
 
     SplObjectStorage -_observers
+    array -_observersId
     array -_namespaces
     array -_versionsRef
     object -_event

@@ -142,6 +142,12 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     private $_observers;
 
     /**
+     * Observers unique identifiers
+     * @var array
+     */
+    private $_observersId;
+
+    /**
      * @var array
      */
     private $_versionsRef;
@@ -248,7 +254,12 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
      */
     public function attach(SplObserver $observer)
     {
-        $this->_observers->attach($observer);
+        $id = sha1(serialize($observer));
+
+        if (!isset($this->_observersId[$id])) {
+            $this->_observers->attach($observer);
+            $this->_observersId[$id] = true;
+        }
         return $this;
     }
 
@@ -261,7 +272,12 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
      */
     public function detach(SplObserver $observer)
     {
-        $this->_observers->detach($observer);
+        $id = sha1(serialize($observer));
+
+        if (isset($this->_observersId[$id])) {
+            $this->_observers->detach($observer);
+            unset($this->_observersId[$id]);
+        }
         return $this;
     }
 
