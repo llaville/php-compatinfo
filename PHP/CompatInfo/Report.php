@@ -65,26 +65,7 @@ abstract class PHP_CompatInfo_Report extends PHP_CompatInfo_Filter
      */
     public function __construct($source, $options, $warnings, $report = null)
     {
-        if (empty($report)) {
-            $pci = new PHP_CompatInfo($options);
-            if ($pci->parse($source) === true) {
-                $report = $pci->toArray();
-                $base   = realpath($source);
-                if (is_file($base)) {
-                    $base = dirname($base);
-                }
-            } else {
-                $report = array();
-                $base   = false;
-            }
-            $allWarnings = array_unique(
-                array_merge($warnings, $pci->getWarnings())
-            );
-            $options = $pci->getOptions();
-        } else {
-            $base        = realpath($source);
-            $allWarnings = $warnings;
-        }
+        $base = realpath($source);
 
         self::$filterVersion  = $options['filterVersion'];
         self::$filterOperator = $options['filterOperator'];
@@ -144,18 +125,6 @@ abstract class PHP_CompatInfo_Report extends PHP_CompatInfo_Filter
                 $options['reportFile'], $generatedReport,
                 $options['reportFileFlags']
             );
-        }
-
-        if (count($allWarnings) > 0 && $options['verbose'] > 0) {
-            echo 'Warning messages : (' . count($allWarnings) . ')' . PHP_EOL;
-            echo PHP_EOL;
-            foreach ($allWarnings as $warn) {
-                if (in_array($warn, $warnings)) {
-                    // other listeners need to be notifed about console warnings
-                    $pci->addWarning($warn);
-                }
-                echo '  ' . $warn . PHP_EOL;
-            }
         }
     }
 

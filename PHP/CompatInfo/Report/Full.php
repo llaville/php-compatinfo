@@ -63,6 +63,19 @@ class PHP_CompatInfo_Report_Full
         }
         echo PHP_EOL;
 
+        if (count($allWarnings) > 0 && $options['verbose'] > 0) {
+            echo 'Warning messages : (' . count($allWarnings) . ')' . PHP_EOL;
+            echo PHP_EOL;
+            foreach ($allWarnings as $warn) {
+                if (in_array($warn, $warnings)) {
+                    // other listeners need to be notifed about console warnings
+                    $pci->addWarning($warn);
+                }
+                echo '  ' . $warn . PHP_EOL;
+            }
+            echo PHP_EOL;
+        }
+
         if (class_exists('PHP_Timer', true) === true) {
             echo PHP_Timer::resourceUsage() . PHP_EOL;
             echo PHP_EOL;

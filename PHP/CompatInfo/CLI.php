@@ -610,22 +610,18 @@ class PHP_CompatInfo_CLI
         if (isset($result->command->options['report'])) {
             $reports = $result->command->options['report'];
         }
+        if (empty($reports)) {
+            // default report
+            $reports = array('summary');
+        }
 
         if (in_array('full', $reports)) {
-            $key = array_search('full', $reports);
-            unset($reports[$key]);
-            $reportChilds = $reports;
-            $reports = array('full');
+            // when 'full' alias report is specified, ignored all others
+            $reports          = array();
             $reportFileAppend = true;
-
-        } elseif (count($reports) > 1) {
-            $reportChilds = $reports;
-            $reports = array('full');
-            $reportFileAppend = true;
-
-        } else {
-            $reportChilds = null;
+            $fullReport       = true;
         }
+        $reportChilds = $reports;
 
         if (isset($result->command->options['reportFile'])) {
             $reportFile = $result->command->options['reportFile'];
@@ -655,24 +651,25 @@ class PHP_CompatInfo_CLI
         }
 
         if ('print' == $command) {
-            if (count($reports) == 0) {
+            if (count($reports) == 0 && !isset($fullReport)) {
                 $input->displayError('You must supply at least a type of report');
             }
             $source = $result->command->args['sourcePath'];
+            $report = 'full';
 
         } elseif ('list' == $command) {
             $elements = $result->command->args['element'];
             $source   = array_shift($elements);
-            $reports  = array('reference');
+            $report   = 'reference';
 
             $options['filterReference'] = null;
 
         } elseif ('list' == substr($command, 0, 4)) {
             list(, $source) = explode('-', $command);
             if ($source == 'references') {
-                $reports = array('database');
+                $report   = 'database';
             } else {
-                $reports  = array('reference');
+                $report   = 'reference';
                 $elements = array();
             }
             $options['filterReference'] = $result->command->args['reference'];
@@ -706,14 +703,12 @@ class PHP_CompatInfo_CLI
 
         } else {
             try {
-                foreach ($reports as $report) {
-                    self::factory($report, $source, $options, $warnings, $reportChilds);
-                    if ($report == 'reference') {
-                        $options['reportFileFlags'] = FILE_APPEND;
-                        while (count($elements) > 0) {
-                            $source = array_shift($elements);
-                            self::factory($report, $source, $options, $warnings, null);
-                        }
+                self::factory($report, $source, $options, $warnings, $reportChilds);
+                if ($report == 'reference') {
+                    $options['reportFileFlags'] = FILE_APPEND;
+                    while (count($elements) > 0) {
+                        $source = array_shift($elements);
+                        self::factory($report, $source, $options, $warnings, null);
                     }
                 }
 
