@@ -133,7 +133,9 @@ abstract class PHP_CompatInfo_Report extends PHP_CompatInfo_Filter
             ob_start();
         }
 
-        $this->generate($report, $base, $options['verbose']);
+        if (!empty($report)) {
+            $this->generate($report, $base, $options['verbose']);
+        }
 
         if (isset($options['reportFile'])) {
             $generatedReport = ob_get_clean();
