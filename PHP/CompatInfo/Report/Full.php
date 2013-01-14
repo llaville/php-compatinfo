@@ -30,7 +30,7 @@ class PHP_CompatInfo_Report_Full
      * @param string $source       Data source
      * @param array  $options      Options for parser
      * @param array  $warnings     List of warning messages already produced
-     * @param array  $reportChilds List of reports to print 
+     * @param array  $reportChilds List of reports to print
      */
     public function __construct($source, $options, $warnings, $reportChilds)
     {
@@ -61,6 +61,18 @@ class PHP_CompatInfo_Report_Full
             $classReport = 'PHP_CompatInfo_Report_' . ucfirst($report);
             new $classReport($source, $options, $allWarnings, $reportResults);
         }
+        echo PHP_EOL;
+
+        if (class_exists('PHP_Timer', true) === true) {
+            echo PHP_Timer::resourceUsage() . PHP_EOL;
+            echo PHP_EOL;
+        }
+
+        echo 'Required PHP ' . $reportResults['versions'][0] . ' (min)';
+        if (!empty($reportResults['versions'][1])) {
+            echo ', ' . $reportResults['versions'][1] . ' (max)';
+        }
+        echo PHP_EOL;
     }
 
 }
