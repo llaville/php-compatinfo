@@ -612,12 +612,19 @@ class PHP_CompatInfo_CLI
         }
 
         if (in_array('full', $reports)) {
-            $reports = array(
-                'summary', 'extension',
-                'interface', 'trait', 'class', 'function', 'constant',
-                'global', 'token', 'condition'
-            );
+            $key = array_search('full', $reports);
+            unset($reports[$key]);
+            $reportChilds = $reports;
+            $reports = array('full');
             $reportFileAppend = true;
+
+        } elseif (count($reports) > 1) {
+            $reportChilds = $reports;
+            $reports = array('full');
+            $reportFileAppend = true;
+
+        } else {
+            $reportChilds = null;
         }
 
         if (isset($result->command->options['reportFile'])) {
@@ -700,7 +707,7 @@ class PHP_CompatInfo_CLI
         } else {
             try {
                 foreach ($reports as $report) {
-                    self::factory($report, $source, $options, $warnings);
+                    self::factory($report, $source, $options, $warnings, $reportChilds);
                     if ($report == 'reference') {
                         $options['reportFileFlags'] = FILE_APPEND;
                         while (count($elements) > 0) {
@@ -720,15 +727,16 @@ class PHP_CompatInfo_CLI
     /**
      * Produce the appropriate report object based on $report parameter
      *
-     * @param string $report   Type of report requested
-     * @param string $source   Data source or command list suffix
-     * @param array  $options  Options for parser
-     * @param array  $warnings List of warning messages already produced
+     * @param string $report       Type of report requested
+     * @param string $source       Data source or command list suffix
+     * @param array  $options      Options for parser
+     * @param array  $warnings     List of warning messages already produced
+     * @param array  $reportChilds List of reports to print (for full/combined)
      *
      * @return PHP_CompatInfo_Report
      * @throws PHP_CompatInfo_Exception If report is not available.
      */
-    public static function factory($report, $source, $options, $warnings)
+    public static function factory($report, $source, $options, $warnings, $reportChilds)
     {
         $reportClassName = 'PHP_CompatInfo_Report_' . ucfirst($report);
         if (!class_exists($reportClassName, true)) {
@@ -736,7 +744,7 @@ class PHP_CompatInfo_CLI
                 'Report type "' . $report . '" not found.'
             );
         }
-        $reportClass = new $reportClassName($source, $options, $warnings);
+        $reportClass = new $reportClassName($source, $options, $warnings, $reportChilds);
         return $reportClass;
     }
 

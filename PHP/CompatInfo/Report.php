@@ -61,28 +61,33 @@ abstract class PHP_CompatInfo_Report extends PHP_CompatInfo_Filter
      * @param string $source   Data source
      * @param array  $options  Options for parser
      * @param array  $warnings List of warning messages already produced
+     * @param array  $report   (optional) Parse results (full or combined reports)
      */
-    public function __construct($source, $options, $warnings)
+    public function __construct($source, $options, $warnings, $report = null)
     {
-        $pci = new PHP_CompatInfo($options);
-        if ($pci->parse($source) === true) {
-            $report = $pci->toArray();
-            $base   = realpath($source);
-            if (is_file($base)) {
-                $base = dirname($base);
+        if (empty($report)) {
+            $pci = new PHP_CompatInfo($options);
+            if ($pci->parse($source) === true) {
+                $report = $pci->toArray();
+                $base   = realpath($source);
+                if (is_file($base)) {
+                    $base = dirname($base);
+                }
+            } else {
+                $report = array();
+                $base   = false;
             }
+            $allWarnings = array_unique(
+                array_merge($warnings, $pci->getWarnings())
+            );
+            $options = $pci->getOptions();
         } else {
-            $report = array();
-            $base   = false;
+            $base        = realpath($source);
+            $allWarnings = $warnings;
         }
-        $options = $pci->getOptions();
 
         self::$filterVersion  = $options['filterVersion'];
         self::$filterOperator = $options['filterOperator'];
-
-        $allWarnings = array_unique(
-            array_merge($warnings, $pci->getWarnings())
-        );
 
         $reportMapping = array(
             'PHP_CompatInfo_Report_Class' => array(
