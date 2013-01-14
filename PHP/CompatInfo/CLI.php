@@ -712,7 +712,7 @@ class PHP_CompatInfo_CLI
                         $options['reportFileFlags'] = FILE_APPEND;
                         while (count($elements) > 0) {
                             $source = array_shift($elements);
-                            self::factory($report, $source, $options, $warnings);
+                            self::factory($report, $source, $options, $warnings, null);
                         }
                     }
                 }
