@@ -288,6 +288,8 @@ class PHP_CompatInfo_Reference_Mysqli
             'MYSQLI_NUM'                     => array('5.0.0', ''),
             'MYSQLI_NUM_FLAG'                => array('5.0.0', ''),
             'MYSQLI_ON_UPDATE_NOW_FLAG'      => array('5.3.0', ''),
+            'MYSQLI_OPT_CAN_HANDLE_EXPIRED_PASSWORDS'
+                                             => array('5.5.0-dev', ''),
             'MYSQLI_OPT_CONNECT_TIMEOUT'     => array('5.0.0', ''),
             'MYSQLI_OPT_INT_AND_FLOAT_NATIVE'
                                              => array('5.3.0', ''),
