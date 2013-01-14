@@ -23,11 +23,11 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2012-12-21</date>
- <time>11:38:25</time>
+ <date>2013-01-14</date>
+ <time>15:34:20</time>
  <version>
-  <release>2.11.0</release>
-  <api>2.11.0</api>
+  <release>2.12.0</release>
+  <api>2.12.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -36,20 +36,19 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- upgrade mongo reference to version 1.3.2
-- upgrade memcache reference to version 3.0.7
-- fix amqp reference (thanks to Remi Collet)
-- fix memcached reference (thanks to Remi Collet)
-- fix memcache reference (thanks to Remi Collet)
-- fix imagick reference (thanks to Remi Collet)
-- interfaces ArrayAcess, Iterator, IteratorAggregate, Serializable, Traversable
-were moved form SPL to Core since PHP 5.3.0
-- SimpleXMLIterator was moved from SPL (PHP 5.2) to SimpleXml (PHP 5.3)
-- give always a readable version (whatever process used to install the CLI version)
+- upgrade APC reference to version 3.1.14
+- refactoring of events and listeners interfaces
+- remove dependencies to eZ Components Base and ConsoleTools
+- a new progress console ALA PHPUnit
+- a real Full report (with only one parse loop)
 
 Bug fixes:
-- GH-54 : Cannot generate documentation with missing UML diagrams pictures
-- GH-55 : support multiple -d directive
+- GH-58: Improve the extension report render
+- GH-59: Improve the global report render
+- GH-60: Replace the git RCS keywords at packaging time
+- GH-61: Bad namespace in full report
+- fix getConditions() method related to global and each file results
+- Be sure to attach only a unique listener (same class and properties)
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -57,479 +56,224 @@ Bug fixes:
     <dir name="html">
      <dir name="images">
       <dir name="icons">
-       <file baseinstalldir="Bartlett" name="README" role="doc">
-        <tasks:replace from="@package_version@" to="version" type="package-info" />
-       </file>
+       <dir name="callouts">
+        <file baseinstalldir="Bartlett" name="1.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="2.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="3.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="4.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="5.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="6.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="7.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="8.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="9.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="10.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="11.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="12.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="13.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="14.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="15.png" role="doc" />
+       </dir> <!-- /docs/html/images/icons/callouts -->
+       <file baseinstalldir="Bartlett" name="caution.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="example.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="home.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="important.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="next.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="note.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="prev.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="README" role="doc" />
+       <file baseinstalldir="Bartlett" name="tip.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="up.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="warning.png" role="doc" />
       </dir> <!-- /docs/html/images/icons -->
+      <file baseinstalldir="Bartlett" name="PHPCompatInfo_01.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="PHPCompatInfo_02.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="PHPCompatInfo_03.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="summary.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="summary2.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="thumb_summary.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="thumb_summary2.png" role="doc" />
      </dir> <!-- /docs/html/images -->
      <dir name="js">
-      <file baseinstalldir="Bartlett" name="asciidoc.js" role="doc">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
+      <file baseinstalldir="Bartlett" name="asciidoc.js" role="doc" />
      </dir> <!-- /docs/html/js -->
      <dir name="styles">
-      <file baseinstalldir="Bartlett" name="asciidoc.css" role="doc">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="pygments.css" role="doc">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="toc2.css" role="doc">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
+      <file baseinstalldir="Bartlett" name="asciidoc.css" role="doc" />
+      <file baseinstalldir="Bartlett" name="pygments.css" role="doc" />
+      <file baseinstalldir="Bartlett" name="toc2.css" role="doc" />
      </dir> <!-- /docs/html/styles -->
-     <file baseinstalldir="Bartlett" name="basic-usage.html" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="CHANGELOG.html" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="command-line.html" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="getting-started.html" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="index.html" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="INSTALL.html" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="LICENSE.html" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="phpci-book.html" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="UML.html" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="xml-configuration.html" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="XSLT.html" role="doc">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
+     <file baseinstalldir="Bartlett" name="basic-usage.html" role="doc" />
+     <file baseinstalldir="Bartlett" name="CHANGELOG.html" role="doc" />
+     <file baseinstalldir="Bartlett" name="command-line.html" role="doc" />
+     <file baseinstalldir="Bartlett" name="getting-started.html" role="doc" />
+     <file baseinstalldir="Bartlett" name="index.html" role="doc" />
+     <file baseinstalldir="Bartlett" name="INSTALL.html" role="doc" />
+     <file baseinstalldir="Bartlett" name="LICENSE.html" role="doc" />
+     <file baseinstalldir="Bartlett" name="phpci-book.html" role="doc" />
+     <file baseinstalldir="Bartlett" name="UML.html" role="doc" />
+     <file baseinstalldir="Bartlett" name="xml-configuration.html" role="doc" />
+     <file baseinstalldir="Bartlett" name="XSLT.html" role="doc" />
     </dir> <!-- /docs/html -->
    </dir> <!-- /docs -->
    <dir name="misc">
     <dir name="autotest_images">
-     <file baseinstalldir="Bartlett" name="fail.png" role="data">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="pass.png" role="data">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="pending.png" role="data">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
+     <file baseinstalldir="Bartlett" name="fail.png" role="data" />
+     <file baseinstalldir="Bartlett" name="pass.png" role="data" />
+     <file baseinstalldir="Bartlett" name="pending.png" role="data" />
     </dir> <!-- /misc/autotest_images -->
-    <file baseinstalldir="Bartlett" name="bullet_toggle_minus.png" role="data">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="bullet_toggle_plus.png" role="data">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="Jigsaw.png" role="data">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="jquery.min.js" role="data">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="phpci.css" role="data">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="summary.xsl" role="data">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
+    <file baseinstalldir="Bartlett" name="bullet_toggle_minus.png" role="data" />
+    <file baseinstalldir="Bartlett" name="bullet_toggle_plus.png" role="data" />
+    <file baseinstalldir="Bartlett" name="Jigsaw.png" role="data" />
+    <file baseinstalldir="Bartlett" name="jquery.min.js" role="data" />
+    <file baseinstalldir="Bartlett" name="phpci.css" role="data" />
+    <file baseinstalldir="Bartlett" name="summary.xsl" role="data" />
    </dir> <!-- /misc -->
    <dir name="PHP">
     <dir name="CompatInfo">
      <dir name="Cache">
-      <file baseinstalldir="Bartlett" name="File.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Interface.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Null.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
+      <file baseinstalldir="Bartlett" name="File.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Interface.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Null.php" role="php" />
      </dir> <!-- /PHP/CompatInfo/Cache -->
      <dir name="Listener">
-      <file baseinstalldir="Bartlett" name="File.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Growl.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
+      <file baseinstalldir="Bartlett" name="Abstract.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Console.php" role="php" />
+      <file baseinstalldir="Bartlett" name="File.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Growl.php" role="php" />
      </dir> <!-- /PHP/CompatInfo/Listener -->
      <dir name="Reference">
-      <file baseinstalldir="Bartlett" name="ALL.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="amqp.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="apc.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="bcmath.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="bz2.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="calendar.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="core.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="ctype.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="curl.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="date.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="dom.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="enchant.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="ereg.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="exif.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="fileinfo.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="filter.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="ftp.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="gd.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="geoip.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="gettext.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="gmp.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="hash.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="iconv.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="igbinary.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="imagick.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="imap.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="inclued.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="intl.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="json.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="ldap.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="libxml.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="lzf.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="mailparse.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="mbstring.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="mcrypt.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="memcache.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="memcached.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="mhash.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="mongo.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="mssql.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="mysql.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="mysqli.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="oauth.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="odbc.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="openssl.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="pcntl.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="pcre.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="pdo.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="pgsql.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="phar.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="PHP4.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="PHP5.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="PluginsAbstract.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="posix.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="readline.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="recode.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="reflection.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="session.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="shmop.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="simplexml.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="snmp.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="soap.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="sockets.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="solr.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="sphinx.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="spl.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="sqlite.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="sqlite3.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="ssh2.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="standard.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="sysvmsg.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="sysvsem.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="sysvshm.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="tidy.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="tokenizer.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="wddx.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="xcache.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="xdebug.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="xhprof.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="xml.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="xmlreader.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="xmlrpc.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="xmlwriter.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="xsl.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="yaml.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="zip.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="zlib.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
+      <file baseinstalldir="Bartlett" name="ALL.php" role="php" />
+      <file baseinstalldir="Bartlett" name="amqp.php" role="php" />
+      <file baseinstalldir="Bartlett" name="apc.php" role="php" />
+      <file baseinstalldir="Bartlett" name="bcmath.php" role="php" />
+      <file baseinstalldir="Bartlett" name="bz2.php" role="php" />
+      <file baseinstalldir="Bartlett" name="calendar.php" role="php" />
+      <file baseinstalldir="Bartlett" name="core.php" role="php" />
+      <file baseinstalldir="Bartlett" name="ctype.php" role="php" />
+      <file baseinstalldir="Bartlett" name="curl.php" role="php" />
+      <file baseinstalldir="Bartlett" name="date.php" role="php" />
+      <file baseinstalldir="Bartlett" name="dom.php" role="php" />
+      <file baseinstalldir="Bartlett" name="enchant.php" role="php" />
+      <file baseinstalldir="Bartlett" name="ereg.php" role="php" />
+      <file baseinstalldir="Bartlett" name="exif.php" role="php" />
+      <file baseinstalldir="Bartlett" name="fileinfo.php" role="php" />
+      <file baseinstalldir="Bartlett" name="filter.php" role="php" />
+      <file baseinstalldir="Bartlett" name="ftp.php" role="php" />
+      <file baseinstalldir="Bartlett" name="gd.php" role="php" />
+      <file baseinstalldir="Bartlett" name="geoip.php" role="php" />
+      <file baseinstalldir="Bartlett" name="gettext.php" role="php" />
+      <file baseinstalldir="Bartlett" name="gmp.php" role="php" />
+      <file baseinstalldir="Bartlett" name="hash.php" role="php" />
+      <file baseinstalldir="Bartlett" name="iconv.php" role="php" />
+      <file baseinstalldir="Bartlett" name="igbinary.php" role="php" />
+      <file baseinstalldir="Bartlett" name="imagick.php" role="php" />
+      <file baseinstalldir="Bartlett" name="imap.php" role="php" />
+      <file baseinstalldir="Bartlett" name="inclued.php" role="php" />
+      <file baseinstalldir="Bartlett" name="intl.php" role="php" />
+      <file baseinstalldir="Bartlett" name="json.php" role="php" />
+      <file baseinstalldir="Bartlett" name="ldap.php" role="php" />
+      <file baseinstalldir="Bartlett" name="libxml.php" role="php" />
+      <file baseinstalldir="Bartlett" name="lzf.php" role="php" />
+      <file baseinstalldir="Bartlett" name="mailparse.php" role="php" />
+      <file baseinstalldir="Bartlett" name="mbstring.php" role="php" />
+      <file baseinstalldir="Bartlett" name="mcrypt.php" role="php" />
+      <file baseinstalldir="Bartlett" name="memcache.php" role="php" />
+      <file baseinstalldir="Bartlett" name="memcached.php" role="php" />
+      <file baseinstalldir="Bartlett" name="mhash.php" role="php" />
+      <file baseinstalldir="Bartlett" name="mongo.php" role="php" />
+      <file baseinstalldir="Bartlett" name="mssql.php" role="php" />
+      <file baseinstalldir="Bartlett" name="mysql.php" role="php" />
+      <file baseinstalldir="Bartlett" name="mysqli.php" role="php" />
+      <file baseinstalldir="Bartlett" name="oauth.php" role="php" />
+      <file baseinstalldir="Bartlett" name="odbc.php" role="php" />
+      <file baseinstalldir="Bartlett" name="openssl.php" role="php" />
+      <file baseinstalldir="Bartlett" name="pcntl.php" role="php" />
+      <file baseinstalldir="Bartlett" name="pcre.php" role="php" />
+      <file baseinstalldir="Bartlett" name="pdo.php" role="php" />
+      <file baseinstalldir="Bartlett" name="pgsql.php" role="php" />
+      <file baseinstalldir="Bartlett" name="phar.php" role="php" />
+      <file baseinstalldir="Bartlett" name="PHP4.php" role="php" />
+      <file baseinstalldir="Bartlett" name="PHP5.php" role="php" />
+      <file baseinstalldir="Bartlett" name="PluginsAbstract.php" role="php" />
+      <file baseinstalldir="Bartlett" name="posix.php" role="php" />
+      <file baseinstalldir="Bartlett" name="readline.php" role="php" />
+      <file baseinstalldir="Bartlett" name="recode.php" role="php" />
+      <file baseinstalldir="Bartlett" name="reflection.php" role="php" />
+      <file baseinstalldir="Bartlett" name="session.php" role="php" />
+      <file baseinstalldir="Bartlett" name="shmop.php" role="php" />
+      <file baseinstalldir="Bartlett" name="simplexml.php" role="php" />
+      <file baseinstalldir="Bartlett" name="snmp.php" role="php" />
+      <file baseinstalldir="Bartlett" name="soap.php" role="php" />
+      <file baseinstalldir="Bartlett" name="sockets.php" role="php" />
+      <file baseinstalldir="Bartlett" name="solr.php" role="php" />
+      <file baseinstalldir="Bartlett" name="sphinx.php" role="php" />
+      <file baseinstalldir="Bartlett" name="spl.php" role="php" />
+      <file baseinstalldir="Bartlett" name="sqlite.php" role="php" />
+      <file baseinstalldir="Bartlett" name="sqlite3.php" role="php" />
+      <file baseinstalldir="Bartlett" name="ssh2.php" role="php" />
+      <file baseinstalldir="Bartlett" name="standard.php" role="php" />
+      <file baseinstalldir="Bartlett" name="sysvmsg.php" role="php" />
+      <file baseinstalldir="Bartlett" name="sysvsem.php" role="php" />
+      <file baseinstalldir="Bartlett" name="sysvshm.php" role="php" />
+      <file baseinstalldir="Bartlett" name="tidy.php" role="php" />
+      <file baseinstalldir="Bartlett" name="tokenizer.php" role="php" />
+      <file baseinstalldir="Bartlett" name="wddx.php" role="php" />
+      <file baseinstalldir="Bartlett" name="xcache.php" role="php" />
+      <file baseinstalldir="Bartlett" name="xdebug.php" role="php" />
+      <file baseinstalldir="Bartlett" name="xhprof.php" role="php" />
+      <file baseinstalldir="Bartlett" name="xml.php" role="php" />
+      <file baseinstalldir="Bartlett" name="xmlreader.php" role="php" />
+      <file baseinstalldir="Bartlett" name="xmlrpc.php" role="php" />
+      <file baseinstalldir="Bartlett" name="xmlwriter.php" role="php" />
+      <file baseinstalldir="Bartlett" name="xsl.php" role="php" />
+      <file baseinstalldir="Bartlett" name="yaml.php" role="php" />
+      <file baseinstalldir="Bartlett" name="zip.php" role="php" />
+      <file baseinstalldir="Bartlett" name="zlib.php" role="php" />
      </dir> <!-- /PHP/CompatInfo/Reference -->
      <dir name="Report">
-      <file baseinstalldir="Bartlett" name="Class.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Condition.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Constant.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Database.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Extension.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Function.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Global.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Interface.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Namespace.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Reference.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Source.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Summary.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Token.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Trait.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="Xml.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
+      <file baseinstalldir="Bartlett" name="Class.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Condition.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Constant.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Database.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Extension.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Full.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Function.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Global.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Interface.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Namespace.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Reference.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Source.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Summary.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Token.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Trait.php" role="php" />
+      <file baseinstalldir="Bartlett" name="Xml.php" role="php" />
      </dir> <!-- /PHP/CompatInfo/Report -->
      <dir name="Token">
-      <file baseinstalldir="Bartlett" name="ConstantEncapsedString.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="ObjectOperator.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="OpenSquare.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
-      <file baseinstalldir="Bartlett" name="String.php" role="php">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
+      <file baseinstalldir="Bartlett" name="ConstantEncapsedString.php" role="php" />
+      <file baseinstalldir="Bartlett" name="ObjectOperator.php" role="php" />
+      <file baseinstalldir="Bartlett" name="OpenSquare.php" role="php" />
+      <file baseinstalldir="Bartlett" name="String.php" role="php" />
      </dir> <!-- /PHP/CompatInfo/Token -->
-     <file baseinstalldir="Bartlett" name="Autoload.php" role="php">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="Cache.php" role="php">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
+     <file baseinstalldir="Bartlett" name="Autoload.php" role="php" />
+     <file baseinstalldir="Bartlett" name="Cache.php" role="php" />
      <file baseinstalldir="Bartlett" name="CLI.php" role="php">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
       <tasks:replace from="@cfg_dir@" to="cfg_dir" type="pear-config" />
      </file>
-     <file baseinstalldir="Bartlett" name="Configuration.php" role="php">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="Exception.php" role="php">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="Filter.php" role="php">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="Reference.php" role="php">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="Report.php" role="php">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="TokenParser.php" role="php">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
+     <file baseinstalldir="Bartlett" name="Configuration.php" role="php" />
+     <file baseinstalldir="Bartlett" name="Event.php" role="php" />
+     <file baseinstalldir="Bartlett" name="Exception.php" role="php" />
+     <file baseinstalldir="Bartlett" name="Filter.php" role="php" />
+     <file baseinstalldir="Bartlett" name="Observable.php" role="php" />
+     <file baseinstalldir="Bartlett" name="Reference.php" role="php" />
+     <file baseinstalldir="Bartlett" name="Report.php" role="php" />
+     <file baseinstalldir="Bartlett" name="TokenParser.php" role="php" />
     </dir> <!-- /PHP/CompatInfo -->
-    <file baseinstalldir="Bartlett" name="CompatInfo.php" role="php">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
+    <file baseinstalldir="Bartlett" name="CompatInfo.php" role="php" />
    </dir> <!-- /PHP -->
    <dir name="scripts">
     <file baseinstalldir="" name="phpci" role="script">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
      <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
-     <tasks:unixeol />
     </file>
     <file baseinstalldir="" name="phpci.bat" role="script">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
      <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
      <tasks:replace from="@bin_dir@" to="bin_dir" type="pear-config" />
      <tasks:windowseol />
@@ -537,624 +281,216 @@ Bug fixes:
    </dir> <!-- /scripts -->
    <dir name="tests">
     <dir name="Reference">
-     <file baseinstalldir="Bartlett" name="AmqpTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="ApcTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="BcmathTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="Bz2Test.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="CalendarTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="CoreTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="CtypeTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="CurlTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="DateTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="DomTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="EnchantTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="EregTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="ExifTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="FileinfoTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="FilterTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="FtpTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="GdTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="GenericTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="GeoipTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="GettextTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="GmpTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="HashTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="IconvTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="IgbinaryTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="ImagickTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="ImapTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="IncluedTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="IntlTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="JsonTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="LdapTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="LibxmlTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="LzfTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="MailparseTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="MbstringTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="McryptTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="MemcachedTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="MemcacheTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="MhashTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="MongoTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="MssqlTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="MysqliTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="MysqlTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="OAuthTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="OdbcTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="OpensslTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="PcntlTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="PcreTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="PdoTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="PgsqlTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="PharTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="PosixTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="ReadlineTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="RecodeTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="ReflectionTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SessionTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="ShmopTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SimpleXMLTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SnmpTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SoapTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SocketsTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SolrTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SphinxTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SPLTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="Sqlite3Test.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SQLiteTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="Ssh2Test.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="StandardTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SysvmsgTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SysvsemTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="SysvshmTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="TidyTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="TokenizerTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="WddxTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="XCacheTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="XdebugTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="XhprofTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="XmlreaderTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="XmlrpcTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="XmlTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="XmlwriterTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="XslTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="YamlTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="ZipTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="ZlibTest.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
+     <file baseinstalldir="Bartlett" name="AmqpTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="ApcTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="BcmathTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="Bz2Test.php" role="test" />
+     <file baseinstalldir="Bartlett" name="CalendarTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="CoreTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="CtypeTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="CurlTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="DateTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="DomTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="EnchantTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="EregTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="ExifTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="FileinfoTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="FilterTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="FtpTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="GdTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="GenericTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="GeoipTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="GettextTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="GmpTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="HashTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="IconvTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="IgbinaryTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="ImagickTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="ImapTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="IncluedTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="IntlTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="JsonTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="LdapTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="LibxmlTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="LzfTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="MailparseTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="MbstringTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="McryptTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="MemcachedTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="MemcacheTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="MhashTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="MongoTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="MssqlTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="MysqliTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="MysqlTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="OAuthTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="OdbcTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="OpensslTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="PcntlTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="PcreTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="PdoTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="PgsqlTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="PharTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="PosixTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="ReadlineTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="RecodeTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="ReflectionTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SessionTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="ShmopTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SimpleXMLTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SnmpTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SoapTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SocketsTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SolrTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SphinxTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SPLTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="Sqlite3Test.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SQLiteTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="Ssh2Test.php" role="test" />
+     <file baseinstalldir="Bartlett" name="StandardTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SysvmsgTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SysvsemTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SysvshmTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="TidyTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="TokenizerTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="WddxTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="XCacheTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="XdebugTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="XhprofTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="XmlreaderTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="XmlrpcTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="XmlTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="XmlwriterTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="XslTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="YamlTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="ZipTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="ZlibTest.php" role="test" />
     </dir> <!-- /tests/Reference -->
     <dir name="_files">
      <dir name="emptyDir">
-      <file baseinstalldir="Bartlett" name="dummy.txt" role="test">
-       <tasks:replace from="@package_version@" to="version" type="package-info" />
-      </file>
+      <file baseinstalldir="Bartlett" name="dummy.txt" role="test" />
      </dir> <!-- /tests/_files/emptyDir -->
-     <file baseinstalldir="Bartlett" name="gh26.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="gh27.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="gh28.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="gh29.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="gh30-1.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="gh30.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="gh32.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="gh33.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="gh34.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="gh38.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="phpcompatinfo.xml" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source1.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source2.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source3.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source4.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source5.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source6-includes.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source6.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source7.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source8.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source9.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source1626.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source6056.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source6581.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source10100.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source13094.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source13417.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source13568.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source14696.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source16302.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-01d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-01o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-02d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-02o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-03d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-03o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-04d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-04o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-05d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-05o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-06d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-06o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-07d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-07o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-08d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-08o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-09d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-09o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-10d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-10o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-11d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-11o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-12d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-12o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-13d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-13o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-14d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-14o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-15d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-15o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-16d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-16o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-17d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-17o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-18d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-18o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-19d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-19o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-20d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-20o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-21d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-21o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-22d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-22o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-23d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-23o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-24d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-24o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-25d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-25o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-26d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-26o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-27d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-27o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-28d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-28o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-29d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-29o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-30d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-30o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-31d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-31o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-32d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-32o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-33d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-33o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-34d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-34o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-35d.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881-35o.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
-     <file baseinstalldir="Bartlett" name="source18881.php" role="test">
-      <tasks:replace from="@package_version@" to="version" type="package-info" />
-     </file>
+     <file baseinstalldir="Bartlett" name="gh26.php" role="test" />
+     <file baseinstalldir="Bartlett" name="gh27.php" role="test" />
+     <file baseinstalldir="Bartlett" name="gh28.php" role="test" />
+     <file baseinstalldir="Bartlett" name="gh29.php" role="test" />
+     <file baseinstalldir="Bartlett" name="gh30-1.php" role="test" />
+     <file baseinstalldir="Bartlett" name="gh30.php" role="test" />
+     <file baseinstalldir="Bartlett" name="gh32.php" role="test" />
+     <file baseinstalldir="Bartlett" name="gh33.php" role="test" />
+     <file baseinstalldir="Bartlett" name="gh34.php" role="test" />
+     <file baseinstalldir="Bartlett" name="gh38.php" role="test" />
+     <file baseinstalldir="Bartlett" name="phpcompatinfo.xml" role="test" />
+     <file baseinstalldir="Bartlett" name="source1.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source2.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source3.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source4.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source5.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source6-includes.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source6.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source7.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source8.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source9.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source1626.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source6056.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source6581.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source10100.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source13094.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source13417.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source13568.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source14696.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source16302.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-01d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-01o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-02d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-02o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-03d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-03o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-04d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-04o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-05d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-05o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-06d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-06o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-07d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-07o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-08d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-08o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-09d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-09o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-10d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-10o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-11d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-11o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-12d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-12o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-13d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-13o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-14d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-14o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-15d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-15o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-16d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-16o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-17d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-17o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-18d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-18o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-19d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-19o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-20d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-20o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-21d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-21o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-22d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-22o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-23d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-23o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-24d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-24o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-25d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-25o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-26d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-26o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-27d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-27o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-28d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-28o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-29d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-29o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-30d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-30o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-31d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-31o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-32d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-32o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-33d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-33o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-34d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-34o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-35d.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881-35o.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source18881.php" role="test" />
     </dir> <!-- /tests/_files -->
-    <file baseinstalldir="Bartlett" name="ClassTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="ConditionTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="ConfigurationTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="ConstantTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="FunctionTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="GrowlTestListener.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="IncludeTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="InterfaceTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="IssueTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="MagicConstantTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="ParameterTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="phpunit-growl.xml" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="phpunit.xml" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
-    <file baseinstalldir="Bartlett" name="TokenTest.php" role="test">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-    </file>
+    <file baseinstalldir="Bartlett" name="ClassTest.php" role="test" />
+    <file baseinstalldir="Bartlett" name="ConditionTest.php" role="test" />
+    <file baseinstalldir="Bartlett" name="ConfigurationTest.php" role="test" />
+    <file baseinstalldir="Bartlett" name="ConstantTest.php" role="test" />
+    <file baseinstalldir="Bartlett" name="FunctionTest.php" role="test" />
+    <file baseinstalldir="Bartlett" name="GrowlTestListener.php" role="test" />
+    <file baseinstalldir="Bartlett" name="IncludeTest.php" role="test" />
+    <file baseinstalldir="Bartlett" name="InterfaceTest.php" role="test" />
+    <file baseinstalldir="Bartlett" name="IssueTest.php" role="test" />
+    <file baseinstalldir="Bartlett" name="MagicConstantTest.php" role="test" />
+    <file baseinstalldir="Bartlett" name="ParameterTest.php" role="test" />
+    <file baseinstalldir="Bartlett" name="phpunit-growl.xml" role="test" />
+    <file baseinstalldir="Bartlett" name="phpunit.xml" role="test" />
+    <file baseinstalldir="Bartlett" name="TokenTest.php" role="test" />
    </dir> <!-- /tests -->
-   <file baseinstalldir="Bartlett" name="fo-custom.xsl" role="doc">
-    <tasks:replace from="@package_version@" to="version" type="package-info" />
-   </file>
-   <file baseinstalldir="Bartlett" name="LICENSE" role="doc">
-    <tasks:replace from="@package_version@" to="version" type="package-info" />
-   </file>
-   <file baseinstalldir="" name="phpcompatinfo.xml.dist" role="cfg">
-    <tasks:replace from="@package_version@" to="version" type="package-info" />
-   </file>
-   <file baseinstalldir="Bartlett" name="README.markdown" role="doc">
-    <tasks:replace from="@package_version@" to="version" type="package-info" />
-   </file>
+   <file baseinstalldir="Bartlett" name="fo-custom.xsl" role="doc" />
+   <file baseinstalldir="Bartlett" name="LICENSE" role="doc" />
+   <file baseinstalldir="" name="phpcompatinfo.xml.dist" role="cfg" />
+   <file baseinstalldir="Bartlett" name="README.markdown" role="doc" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
@@ -1165,16 +501,6 @@ Bug fixes:
    <pearinstaller>
     <min>1.9.0</min>
    </pearinstaller>
-   <package>
-    <name>Base</name>
-    <channel>components.ez.no</channel>
-    <min>1.8</min>
-   </package>
-   <package>
-    <name>ConsoleTools</name>
-    <channel>components.ez.no</channel>
-    <min>1.6.1</min>
-   </package>
    <package>
     <name>Console_CommandLine</name>
     <channel>pear.php.net</channel>
@@ -1195,7 +521,7 @@ Bug fixes:
     <name>pcre</name>
    </extension>
    <extension>
-    <name>spl</name>
+    <name>SPL</name>
    </extension>
    <extension>
     <name>Reflection</name>
@@ -1237,6 +563,34 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.12.0</release>
+    <api>2.12.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-01-14</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- upgrade APC reference to version 3.1.14
+- refactoring of events and listeners interfaces
+- remove dependencies to eZ Components Base and ConsoleTools
+- a new progress console ALA PHPUnit
+- a real Full report (with only one parse loop)
+
+Bug fixes:
+- GH-58: Improve the extension report render
+- GH-59: Improve the global report render
+- GH-60: Replace the git RCS keywords at packaging time
+- GH-61: Bad namespace in full report
+- fix getConditions() method related to global and each file results
+- Be sure to attach only a unique listener (same class and properties)
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.11.0</release>
