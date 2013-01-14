@@ -212,6 +212,7 @@ class PHP_CompatInfo_Reference_Curl
             'CURLE_FTP_COULDNT_SET_BINARY'   => array('4.0.2', ''),
             'CURLE_FTP_COULDNT_STOR_FILE'    => array('4.0.2', ''),
             'CURLE_FTP_COULDNT_USE_REST'     => array('4.0.2', ''),
+            'CURLE_FTP_PARTIAL_FILE'         => array('5.5.0-dev', ''),
             'CURLE_FTP_PORT_FAILED'          => array('4.0.2', ''),
             'CURLE_FTP_QUOTE_ERROR'          => array('4.0.2', ''),
             'CURLE_FTP_SSL_FAILED'           => array('4.0.2', ''),
@@ -277,6 +278,10 @@ class PHP_CompatInfo_Reference_Curl
             'CURLFTPSSL_NONE'                => array('5.2.0', ''),
             'CURLFTPSSL_TRY'                 => array('4.0.2', ''),
 
+            'CURLGSSAPI_DELEGATION_FLAG'     => array('5.5.0-dev', ''),
+            'CURLGSSAPI_DELEGATION_POLICY_FLAG'
+                                             => array('5.5.0-dev', ''),
+
             'CURLINFO_APPCONNECT_TIME'       => array('5.5.0-dev', ''),
             'CURLINFO_CERTINFO'              => array('5.3.2', ''),
             'CURLINFO_CONDITION_UNMET'       => array('5.5.0-dev', ''),
@@ -336,6 +341,7 @@ class PHP_CompatInfo_Reference_Curl
             'CURLMSG_DONE'                   => array('4.0.2', ''),
 
             'CURLOPT_ACCEPT_ENCODING'        => array('5.5.0-dev', ''),
+            'CURLOPT_ACCEPTTIMEOUT_MS'       => array('5.5.0-dev', ''),
             'CURLOPT_ADDRESS_SCOPE'          => array('5.5.0-dev', ''),
             'CURLOPT_APPEND'                 => array('5.5.0-dev', ''),
             'CURLOPT_AUTOREFERER'            => array('5.1.0', ''),
@@ -385,6 +391,7 @@ class PHP_CompatInfo_Reference_Curl
             'CURLOPT_FTP_USE_EPRT'           => array('4.0.2', ''),
             'CURLOPT_FTP_USE_EPSV'           => array('4.0.2', ''),
             'CURLOPT_FTP_USE_PRET'           => array('5.5.0-dev', ''),
+            'CURLOPT_GSSAPI_DELEGATION'      => array('5.5.0-dev', ''),
             'CURLOPT_HEADER'                 => array('4.0.2', ''),
             'CURLOPT_HEADERFUNCTION'         => array('4.0.2', ''),
             'CURLOPT_HTTP200ALIASES'         => array('4.0.2', ''),
@@ -484,6 +491,7 @@ class PHP_CompatInfo_Reference_Curl
             'CURLOPT_SSL_VERIFYPEER'         => array('4.0.2', ''),
             'CURLOPT_STDERR'                 => array('4.0.2', ''),
             'CURLOPT_TCP_NODELAY'            => array('5.2.1', ''),
+            'CURLOPT_TELNETOPTIONS'          => array('5.5.0-dev', ''),
             'CURLOPT_TFTP_BLKSIZE'           => array('5.5.0-dev', ''),
             'CURLOPT_TIMECONDITION'          => array('4.0.2', ''),
             'CURLOPT_TIMEOUT'                => array('4.0.2', ''),
