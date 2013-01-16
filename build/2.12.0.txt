@@ -1,5 +1,6 @@
 Additions and changes:
 - upgrade APC reference to version 3.1.14
+- upgrade XCache reference to version 3.0.1
 - refactoring of events and listeners interfaces
 - remove dependencies to eZ Components Base and ConsoleTools
 - a new progress console ALA PHPUnit
