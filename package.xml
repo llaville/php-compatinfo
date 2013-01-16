@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-01-14</date>
- <time>15:34:20</time>
+ <date>2013-01-16</date>
+ <time>14:06:22</time>
  <version>
   <release>2.12.0</release>
   <api>2.12.0</api>
@@ -37,6 +37,7 @@ content of dictionary references.
  <notes>
 Additions and changes:
 - upgrade APC reference to version 3.1.14
+- upgrade XCache reference to version 3.0.1
 - refactoring of events and listeners interfaces
 - remove dependencies to eZ Components Base and ConsoleTools
 - a new progress console ALA PHPUnit
@@ -54,64 +55,48 @@ Bug fixes:
   <dir baseinstalldir="Bartlett" name="/">
    <dir name="docs">
     <dir name="html">
-     <dir name="images">
-      <dir name="icons">
-       <dir name="callouts">
-        <file baseinstalldir="Bartlett" name="1.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="2.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="3.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="4.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="5.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="6.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="7.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="8.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="9.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="10.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="11.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="12.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="13.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="14.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="15.png" role="doc" />
-       </dir> <!-- /docs/html/images/icons/callouts -->
-       <file baseinstalldir="Bartlett" name="caution.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="example.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="home.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="important.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="next.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="note.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="prev.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="README" role="doc" />
-       <file baseinstalldir="Bartlett" name="tip.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="up.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="warning.png" role="doc" />
-      </dir> <!-- /docs/html/images/icons -->
-      <file baseinstalldir="Bartlett" name="PHPCompatInfo_01.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="PHPCompatInfo_02.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="PHPCompatInfo_03.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="summary.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="summary2.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="thumb_summary.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="thumb_summary2.png" role="doc" />
-     </dir> <!-- /docs/html/images -->
-     <dir name="js">
-      <file baseinstalldir="Bartlett" name="asciidoc.js" role="doc" />
-     </dir> <!-- /docs/html/js -->
-     <dir name="styles">
-      <file baseinstalldir="Bartlett" name="asciidoc.css" role="doc" />
-      <file baseinstalldir="Bartlett" name="pygments.css" role="doc" />
-      <file baseinstalldir="Bartlett" name="toc2.css" role="doc" />
-     </dir> <!-- /docs/html/styles -->
-     <file baseinstalldir="Bartlett" name="basic-usage.html" role="doc" />
-     <file baseinstalldir="Bartlett" name="CHANGELOG.html" role="doc" />
-     <file baseinstalldir="Bartlett" name="command-line.html" role="doc" />
-     <file baseinstalldir="Bartlett" name="getting-started.html" role="doc" />
-     <file baseinstalldir="Bartlett" name="index.html" role="doc" />
-     <file baseinstalldir="Bartlett" name="INSTALL.html" role="doc" />
-     <file baseinstalldir="Bartlett" name="LICENSE.html" role="doc" />
-     <file baseinstalldir="Bartlett" name="phpci-book.html" role="doc" />
-     <file baseinstalldir="Bartlett" name="UML.html" role="doc" />
-     <file baseinstalldir="Bartlett" name="xml-configuration.html" role="doc" />
-     <file baseinstalldir="Bartlett" name="XSLT.html" role="doc" />
+     <dir name="userguide">
+      <dir name="images">
+       <dir name="icons">
+        <file baseinstalldir="Bartlett" name="caution.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="example.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="home.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="important.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="next.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="note.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="prev.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="README" role="doc" />
+        <file baseinstalldir="Bartlett" name="tip.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="up.png" role="doc" />
+        <file baseinstalldir="Bartlett" name="warning.png" role="doc" />
+       </dir> <!-- /docs/html/userguide/images/icons -->
+       <file baseinstalldir="Bartlett" name="PHPCompatInfo_01.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="PHPCompatInfo_02.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="PHPCompatInfo_03.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="summary.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="summary2.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="thumb_summary.png" role="doc" />
+       <file baseinstalldir="Bartlett" name="thumb_summary2.png" role="doc" />
+      </dir> <!-- /docs/html/userguide/images -->
+      <dir name="js">
+       <file baseinstalldir="Bartlett" name="asciidoc.js" role="doc" />
+      </dir> <!-- /docs/html/userguide/js -->
+      <dir name="styles">
+       <file baseinstalldir="Bartlett" name="asciidoc.css" role="doc" />
+       <file baseinstalldir="Bartlett" name="pygments.css" role="doc" />
+       <file baseinstalldir="Bartlett" name="toc2.css" role="doc" />
+      </dir> <!-- /docs/html/userguide/styles -->
+      <file baseinstalldir="Bartlett" name="basic-usage.html" role="doc" />
+      <file baseinstalldir="Bartlett" name="CHANGELOG.html" role="doc" />
+      <file baseinstalldir="Bartlett" name="command-line.html" role="doc" />
+      <file baseinstalldir="Bartlett" name="getting-started.html" role="doc" />
+      <file baseinstalldir="Bartlett" name="INSTALL.html" role="doc" />
+      <file baseinstalldir="Bartlett" name="LICENSE.html" role="doc" />
+      <file baseinstalldir="Bartlett" name="phpci-book.html" role="doc" />
+      <file baseinstalldir="Bartlett" name="UML.html" role="doc" />
+      <file baseinstalldir="Bartlett" name="xml-configuration.html" role="doc" />
+      <file baseinstalldir="Bartlett" name="XSLT.html" role="doc" />
+     </dir> <!-- /docs/html/userguide -->
     </dir> <!-- /docs/html -->
    </dir> <!-- /docs -->
    <dir name="misc">
@@ -487,7 +472,6 @@ Bug fixes:
     <file baseinstalldir="Bartlett" name="phpunit.xml" role="test" />
     <file baseinstalldir="Bartlett" name="TokenTest.php" role="test" />
    </dir> <!-- /tests -->
-   <file baseinstalldir="Bartlett" name="fo-custom.xsl" role="doc" />
    <file baseinstalldir="Bartlett" name="LICENSE" role="doc" />
    <file baseinstalldir="" name="phpcompatinfo.xml.dist" role="cfg" />
    <file baseinstalldir="Bartlett" name="README.markdown" role="doc" />
@@ -572,11 +556,12 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2013-01-14</date>
+   <date>2013-01-16</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
 - upgrade APC reference to version 3.1.14
+- upgrade XCache reference to version 3.0.1
 - refactoring of events and listeners interfaces
 - remove dependencies to eZ Components Base and ConsoleTools
 - a new progress console ALA PHPUnit
