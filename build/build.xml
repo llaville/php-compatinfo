@@ -242,7 +242,7 @@
     </mapping>
 
     <mapping name="releases" id="pirum-releases-ref">
-        <element key="add" value="${build.target}/PHP_CompatInfo-${build.version}.tgz" />
+        <element key="add" value="${build.target}/${phing.project.name}-${build.version}.tgz" />
     </mapping>
 
     <!--
@@ -276,7 +276,7 @@
     <target name="server"  depends="server.do" />
 
     <target name="help">
-        <echo>A toolchain manager for PHP_CompatInfo                     </echo>
+        <echo>A toolchain manager for ${phing.project.name}              </echo>
         <echo>                                                           </echo>
         <echo>targets:                                                   </echo>
         <echo>  test         Run Unit Test Suites                        </echo>
