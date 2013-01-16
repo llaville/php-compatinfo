@@ -35,7 +35,7 @@ The list of command line options provided by the [label label-inverse]#phpci# co
 can be queried anytime by running phpci with the `-h` or `--help` switches.
 
 ----
-PHPCompatInfo (cli) by Laurent Laville.
+PHP_CompatInfo (cli) by Laurent Laville.
 
 Usage:
   phpci [options]
@@ -108,7 +108,7 @@ If you choose to set verbose level 1 (+-v+), your report(s) will print also some
 Such as what extensions are loaded in your platform (defined by your __php.ini__ file),
 but not available on your PHP_CompatInfo distribution.
 
-.Example on windows platform
+.Verbose level 1
 ====
 ----
 Warning messages : (2)
@@ -123,7 +123,7 @@ Warning messages : (2)
 If you choose to set verbose level 2 (+-vv+), your report(s) will print both warnings messages
 (as in level 1) but also files where are used components of your report(s).
 
-.Example
+.Verbose level 2
 ====
 ----
     $ phpci -vv print --report condition \path\to\symfony-ClassLoader-2.0.15
@@ -170,7 +170,7 @@ If you choose to set verbose level 3 (+-vvv+), your report(s) will print both wa
 
 NOTE: It is usefull only when data source to parse is a directory.
 
-.Example
+.Verbose level 3
 ====
 ----
     $ phpci -vvv print --report condition \path\to\symfony-ClassLoader-2.0.15
@@ -268,7 +268,7 @@ They are three categories of command:
 * printing scanned sources code results
 * listing database references extensions informations
 
-=== clear-cache command
+=== clear-cache
 
 This command allow to delete a cache from a specific source file, or purge
 all cache entries.
@@ -287,7 +287,7 @@ To delete only a specific source file parsing results from cache entries
 $ phpci clear-cache /path/to/source_file
 ----
 
-=== print command
+=== print
 
 This command allow to print results of scanned sources code.
 If you forget options, enter command below.
@@ -357,7 +357,7 @@ $ phpci print --report summary extension interface class function constant /path
 $ phpci print --report function --report constant /path/to/source
 ----
 
-=== list-references command
+=== list-references
 
 This command allow to print the list of documented extensions available with your version of PHP_CompatInfo,
 and specify those which are currently loaded (*L* in front or their names)
@@ -404,7 +404,7 @@ include::list-references.txt[]
 * The `VERSION` column specify the version of extension that was documented
 * The `PHP min/Max` column specify which are the php versions (minimum and maximum) supported by the extension
 
-=== list command
+=== list
 
 This command allow to combine one or more list-* command.
 
@@ -519,7 +519,7 @@ $ phpci list interfaces classes
 ----
 ====
 
-=== list-extensions command
+=== list-extensions
 
 This command allow to print the list of documented extensions available with your version of PHP_CompatInfo,
 and loaded on your platform.
@@ -642,7 +642,7 @@ $ phpci list-extensions SPL
 ----
 =====================================================================
 
-=== list-interfaces command
+=== list-interfaces
 
 This command allow to print the list of documented interfaces available with your version of PHP_CompatInfo,
 from your extensions loaded (or defined into XML configuration file).
@@ -753,7 +753,7 @@ $ phpci list-interfaces apc --filter-version 3.1.0 --filter-operator ge
 ----
 =====================================================================
 
-=== list-classes command
+=== list-classes
 
 This command allow to print the list of documented classes available with your version of PHP_CompatInfo,
 from your extensions loaded (or defined into XML configuration file).
@@ -871,7 +871,7 @@ $ phpci list-classes apc --filter-version 3.0.0 --filter-operator gt
 ----
 =====================================================================
 
-=== list-functions command
+=== list-functions
 
 This command allow to print the list of documented functions available with your version of PHP_CompatInfo,
 from your extensions loaded (or defined into XML configuration file).
@@ -994,7 +994,7 @@ $ phpci list-functions apc --filter-version 3.0.0 --filter-operator lt
 ----
 =====================================================================
 
-=== list-constants command
+=== list-constants
 
 This command allow to print the list of documented constants available with your version of PHP_CompatInfo,
 from your extensions loaded (or defined into XML configuration file).

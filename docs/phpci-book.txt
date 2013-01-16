@@ -1,4 +1,4 @@
-= User Guide
+= PHP_CompatInfo User Guide
 :description: Overview of the project, its contents, and how to get started with your first parses
 include::revision.txt[]
 include::attributes.txt[]

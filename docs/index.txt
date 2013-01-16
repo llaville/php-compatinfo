@@ -1,11 +1,11 @@
 = PHP_CompatInfo
 :description: Find out the minimum version and the extensions required for a piece of code to run.
-:manhtml:     605Kb
-:manchunked:  533Kb
+:manhtml:     606Kb
+:manchunked:  534Kb
 :manchm:      545Kb
-:manpdfa4:    657Kb
-:manpdfus:    656Kb
-:manepub:     513Kb
+:manpdfa4:    655Kb
+:manpdfus:    655Kb
+:manepub:     526Kb
 include::revision.txt[]
 include::attributes.txt[]
 

@@ -39,7 +39,7 @@ $ git clone git://github.com/llaville/php-compat-info.git && cd php-compat-info
 Copy the `PHP` sub-folder in a `Bartlett` directory
 accessible by your `include_path`.
 
-.When [label]#include_path# is equals to [label]#.:/php/includes#
+When [label]#include_path# is equals to [label]#.:/php/includes#
 ====
 ----
 $ mkdir /php/includes/Bartlett && cp PHP/* /php/includes/Bartlett
@@ -47,8 +47,7 @@ $ mkdir /php/includes/Bartlett && cp PHP/* /php/includes/Bartlett
 ====
 
 WARNING: Don't forget to install also all others required dependencies:
-`PHP_Reflect`, `Console_CommandLine`,
-and http://components.ez.no[eZ Components] `Base`, `ConsoleTools`.
+`PHP_Reflect`, `Console_CommandLine`.
 
 Check that it works. Run the local [label label-inverse]#phpci# command.
 ----
