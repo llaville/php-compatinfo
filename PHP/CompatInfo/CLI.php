@@ -74,7 +74,7 @@ class PHP_CompatInfo_CLI
         $input = new Console_CommandLine(
             array(
                 'name'        => 'phpci',
-                'description' => 'PHPCompatInfo (cli) by Laurent Laville.',
+                'description' => 'PHP_CompatInfo (cli) by Laurent Laville.',
                 'version'     => self::getVersion()
             )
         );
