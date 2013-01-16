@@ -3,7 +3,7 @@
 
     <includepath classpath="${bartlettpackager.dir}/classes" />
 
-    <typedef name="mapping" classname="phing.types.Mapping"  />
+    <typedef name="mapping" classname="phing.types.Mapping" />
 
     <taskdef name="pirum" classname="phing.tasks.ext.PirumTask" />
 
@@ -30,6 +30,7 @@
     -->
     <property name="test.printsummary"           value="true" />
     <property name="test.configuration"          value="${project.dir}/tests/phpunit.xml" />
+    <property name="test.exc-pattern"            value="**/PackageTest.php" />
 
     <!--
         ======================================================================
@@ -38,6 +39,45 @@
     -->
     <property name="docs.phpdoctask"             value="phpdoc2" />
     <property name="docs.inc-pattern"            value="PHP/**/*.php" />
+
+    <!--
+        ======================================================================
+        Docs by AsciiDoc
+        ======================================================================
+    -->
+    <property name="docs.asciidoc.home"          value="/asciidoc-8.6.8" />
+    <property name="docs.asciidoc.target"        value="${project.dir}/docs/html/userguide" />
+    <property name="docs.book-source.name"       value="phpci-book" />
+    <property name="docs.html-books-list"        value="INSTALL,CHANGELOG,LICENSE,getting-started,basic-usage,command-line,xml-configuration,XSLT,UML" />
+    <property name="docs.htmlhelpworkshop.home"  value="C:\Program Files\HTML Help Workshop" />
+    <property name="docs.fo-xsl"                 value="${docs.asciidoc.home}/docbook-xsl/fo-custom.xsl" />
+    <property name="docs.build-dist"             value="true" />
+
+    <fileset id="asciidoc-assets" dir="${project.dir}/docs">
+        <include name="images**" />
+        <include name="js/asciidoc.js" />
+        <include name="styles/pygments.css" />
+        <include name="styles/toc2.css" />
+        <include name="styles/${docs.theme-asciidoc}.css" />
+        <exclude name="**/callouts/**" />
+        <exclude name="styles.css" />
+        <exclude name="**/Thumbs.db" />
+    </fileset>
+
+    <fileset id="html-books-assets" dir="${docs.asciidoc.target}">
+        <include name="images**" />
+        <include name="js/**" />
+        <include name="styles/**" />
+        <include name="INSTALL.html" />
+        <include name="CHANGELOG.html" />
+        <include name="LICENSE.html" />
+        <include name="getting-started.html" />
+        <include name="basic-usage.html" />
+        <include name="command-line.html" />
+        <include name="xml-configuration.html" />
+        <include name="XSLT.html" />
+        <include name="UML.html" />
+    </fileset>
 
     <!--
         ======================================================================
@@ -209,7 +249,7 @@
         <exclude name="*.tgz" />
         <exclude name="**/Thumbs.db" />
         <exclude name="package.xml" />
-        <exclude name="build/**" />
+        <exclude name="build**" />
         <exclude name="contributions/**" />
         <exclude name="docs/images/**" />
         <exclude name="docs/js/**" />
@@ -262,17 +302,10 @@
         Actions
         ======================================================================
     -->
-    <target name="test"    depends="test.do" />
-
-    <target name="docs"    depends="docs.make-api" />
-    <target name="make-api" />
-
-    <target name="package" depends="package.do" />
-    <target name="make-xml" />
-    <target name="make-tar" />
-    <target name="replacements" />
-
-    <target name="server"  depends="server.do" />
+    <target name="test"    depends="test.all" />
+    <target name="docs"    depends="docs.all" />
+    <target name="package" depends="package.all" />
+    <target name="server"  depends="server.all" />
 
     <target name="help">
         <echo>A toolchain manager for ${phing.project.name}              </echo>
@@ -283,5 +316,15 @@
         <echo>  package      Generate the package.xml 2.0 and tarball    </echo>
         <echo>  server       Build the PEAR Channel Server               </echo>
     </target>
+
+    <target name="all" />
+    <target name="make-web" />
+    <target name="make-api" />
+    <target name="make-userguide" />
+    <target name="make-userguide-archive" />
+    <target name="make-xml" />
+    <target name="make-tar" />
+    <target name="replacements" />
+    <target name="copy-assets" />
 
 </project>
