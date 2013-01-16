@@ -26,6 +26,7 @@ include::attributes.txt[]
 - *constant* : usage, minimum php version and origin of each constant used by your sources code
 - *global* : usage, minimum php version and origin of each global variable used by your sources code
 - *condition* : usage, minimum php version and origin of each code conditionnal function used by your sources code
+- *full* : all above reports except xml
 
 
 == Options
@@ -398,7 +399,7 @@ $ phpci list-references
 ----
 
 ----
-include::list_references.txt[]
+include::list-references.txt[]
 ----
 * The `VERSION` column specify the version of extension that was documented
 * The `PHP min/Max` column specify which are the php versions (minimum and maximum) supported by the extension

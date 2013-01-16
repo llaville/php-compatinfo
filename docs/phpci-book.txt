@@ -16,7 +16,7 @@ ifdef::basebackend-html[]
 == Installation
 
 [role="lead"]
-Head to the link:./INSTALL.html[Install Guide] if it's your first use with PHP_CompatInfo.
+Head to the link:INSTALL.html[Install Guide] if it's your first use with PHP_CompatInfo.
 
 PHP_CompatInfo may be installed in several ways, choose your favorite.
 
@@ -46,7 +46,7 @@ endif::[]
 ifdef::basebackend-docbook[]
 :leveloffset: 1
 
-include::getting_started.txt[]
+include::getting-started.txt[]
 
 :leveloffset: 0
 endif::[]
@@ -69,7 +69,7 @@ endif::[]
 ifdef::basebackend-docbook[]
 :leveloffset: 1
 
-include::basic_usage.txt[]
+include::basic-usage.txt[]
 
 :leveloffset: 0
 endif::[]
@@ -89,7 +89,7 @@ endif::[]
 ifdef::basebackend-docbook[]
 :leveloffset: 1
 
-include::command_line.txt[]
+include::command-line.txt[]
 
 :leveloffset: 0
 endif::[]
@@ -117,7 +117,7 @@ endif::[]
 ifdef::basebackend-docbook[]
 :leveloffset: 1
 
-include::xml_configuration.txt[]
+include::xml-configuration.txt[]
 
 include::XSLT.txt[]
 

@@ -38,7 +38,7 @@ Run command
 Will output results as follow. May differ depending of your extensions loaded.
 ====
 ----
-include::list_references.txt[]
+include::list-references.txt[]
 ----
 ====
 * The `L` flag tells us what extensions are loaded
@@ -48,7 +48,7 @@ include::list_references.txt[]
 == Documentation
 
 [role="lead"]
-Head to the PHP_CompatInfo link:./phpci-book.html[User Guide] available online
+Head to the PHP_CompatInfo link:phpci-book.html[User Guide] available online
 for information or examples to get started.
 
 The PHP_CompatInfo book is available in a selection of formats.
