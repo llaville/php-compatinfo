@@ -71,7 +71,6 @@
         <element key="phpunit.xml" value="test" />
         <element key="phpcompatinfo.xml.dist" value="cfg" />
         <element key="README.markdown" value="doc" />
-        <element key="fo-custom.xsl" value="doc" />
     </mapping>
 
     <!-- filelist basedirectory install exceptions -->
