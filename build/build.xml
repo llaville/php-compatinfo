@@ -307,6 +307,8 @@
     <target name="package" depends="package.all" />
     <target name="server"  depends="server.all" />
 
+    <target name="all"     depends="test.all,docs.all,package.all,server.all" />
+
     <target name="help">
         <echo>A toolchain manager for ${phing.project.name}              </echo>
         <echo>                                                           </echo>
@@ -315,9 +317,9 @@
         <echo>  docs         Generate API and User documentations        </echo>
         <echo>  package      Generate the package.xml 2.0 and tarball    </echo>
         <echo>  server       Build the PEAR Channel Server               </echo>
+        <echo>  all          Do all tasks above                          </echo>
     </target>
 
-    <target name="all" />
     <target name="make-web" />
     <target name="make-api" />
     <target name="make-userguide" />
