@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-01-16</date>
- <time>14:06:22</time>
+ <date>2013-01-17</date>
+ <time>10:37:16</time>
  <version>
   <release>2.12.0</release>
   <api>2.12.0</api>
@@ -38,6 +38,7 @@ content of dictionary references.
 Additions and changes:
 - upgrade APC reference to version 3.1.14
 - upgrade XCache reference to version 3.0.1
+- upgrade mongo reference to version 1.3.3
 - refactoring of events and listeners interfaces
 - remove dependencies to eZ Components Base and ConsoleTools
 - a new progress console ALA PHPUnit
@@ -556,12 +557,13 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2013-01-16</date>
+   <date>2013-01-17</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
 - upgrade APC reference to version 3.1.14
 - upgrade XCache reference to version 3.0.1
+- upgrade mongo reference to version 1.3.3
 - refactoring of events and listeners interfaces
 - remove dependencies to eZ Components Base and ConsoleTools
 - a new progress console ALA PHPUnit
