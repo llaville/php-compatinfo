@@ -29,8 +29,8 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
      * Define latest versions of PHP branches (5.2, 5.3, 5.4, ...)
      */
     const LATEST_PHP_5_2 = '5.2.17';
-    const LATEST_PHP_5_3 = '5.3.21RC1';
-    const LATEST_PHP_5_4 = '5.4.11RC1';
+    const LATEST_PHP_5_3 = '5.3.21';
+    const LATEST_PHP_5_4 = '5.4.11';
 
     /**
      * Warning messages generated during loading of extensions references
