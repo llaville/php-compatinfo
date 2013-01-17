@@ -110,7 +110,6 @@
         <element key="LICENSE" value="doc" />
         <element key="phpunit.xml" value="test" />
         <element key="phpcompatinfo.xml.dist" value="cfg" />
-        <element key="README.markdown" value="doc" />
     </mapping>
 
     <!-- filelist basedirectory install exceptions -->
@@ -253,6 +252,7 @@
     <fileset dir="${project.dir}" id="package-contents-ref">
         <include name="**" />
 
+        <exclude name="README.markdown" />
         <exclude name="*.tgz" />
         <exclude name="**/Thumbs.db" />
         <exclude name="package.xml" />
