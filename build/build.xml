@@ -46,7 +46,7 @@
         ======================================================================
     -->
     <property name="docs.asciidoc.home"          value="/asciidoc-8.6.8" />
-    <property name="docs.asciidoc.target"        value="${project.dir}/docs/html/userguide" />
+    <property name="docs.asciidoc.target"        value="${project.dir}/html" />
     <property name="docs.book-source.name"       value="phpci-book" />
     <property name="docs.html-books-list"        value="INSTALL,CHANGELOG,LICENSE,getting-started,basic-usage,command-line,xml-configuration,XSLT,UML" />
     <property name="docs.htmlhelpworkshop.home"  value="C:\Program Files\HTML Help Workshop" />
@@ -118,6 +118,13 @@
         <element key="phpcompatinfo.xml.dist" value="" />
         <element key="scripts/phpci" value="" />
         <element key="scripts/phpci.bat" value="" />
+    </mapping>
+
+    <!-- directories role -->
+    <mapping name="dir_roles" id="package-dir-roles-ref">
+        <element key="html" value="doc" />
+        <element key="tests" value="test" />
+        <element key="scripts" value="script" />
     </mapping>
 
     <!-- packages dependencies list -->
