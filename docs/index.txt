@@ -14,7 +14,7 @@ include::attributes.txt[]
 ************************************************************************
 *Release highlights:*
 
-- PHP_CompatInfo 2.11.0 add both support to PHP 5.3.20 and PHP 5.4.10
+- PHP_CompatInfo 2.12.0 add both support to PHP 5.3.21 and PHP 5.4.11
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
