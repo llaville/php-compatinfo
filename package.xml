@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-01-17</date>
- <time>10:37:16</time>
+ <date>2013-01-18</date>
+ <time>10:24:29</time>
  <version>
-  <release>2.12.0</release>
+  <release>2.12.1</release>
   <api>2.12.0</api>
  </version>
  <stability>
@@ -36,70 +36,59 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- upgrade APC reference to version 3.1.14
-- upgrade XCache reference to version 3.0.1
-- upgrade mongo reference to version 1.3.3
-- refactoring of events and listeners interfaces
-- remove dependencies to eZ Components Base and ConsoleTools
-- a new progress console ALA PHPUnit
-- a real Full report (with only one parse loop)
+- fix path to html bundle documentation, and add missing index.html
+- remove README.markdown github landing page from distribution
+- bump year of LICENSE text file
+- add a chapter about new progress console in command line guide
 
 Bug fixes:
-- GH-58: Improve the extension report render
-- GH-59: Improve the global report render
-- GH-60: Replace the git RCS keywords at packaging time
-- GH-61: Bad namespace in full report
-- fix getConditions() method related to global and each file results
-- Be sure to attach only a unique listener (same class and properties)
+- none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
-   <dir name="docs">
-    <dir name="html">
-     <dir name="userguide">
-      <dir name="images">
-       <dir name="icons">
-        <file baseinstalldir="Bartlett" name="caution.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="example.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="home.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="important.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="next.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="note.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="prev.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="README" role="doc" />
-        <file baseinstalldir="Bartlett" name="tip.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="up.png" role="doc" />
-        <file baseinstalldir="Bartlett" name="warning.png" role="doc" />
-       </dir> <!-- /docs/html/userguide/images/icons -->
-       <file baseinstalldir="Bartlett" name="PHPCompatInfo_01.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="PHPCompatInfo_02.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="PHPCompatInfo_03.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="summary.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="summary2.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="thumb_summary.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="thumb_summary2.png" role="doc" />
-      </dir> <!-- /docs/html/userguide/images -->
-      <dir name="js">
-       <file baseinstalldir="Bartlett" name="asciidoc.js" role="doc" />
-      </dir> <!-- /docs/html/userguide/js -->
-      <dir name="styles">
-       <file baseinstalldir="Bartlett" name="asciidoc.css" role="doc" />
-       <file baseinstalldir="Bartlett" name="pygments.css" role="doc" />
-       <file baseinstalldir="Bartlett" name="toc2.css" role="doc" />
-      </dir> <!-- /docs/html/userguide/styles -->
-      <file baseinstalldir="Bartlett" name="basic-usage.html" role="doc" />
-      <file baseinstalldir="Bartlett" name="CHANGELOG.html" role="doc" />
-      <file baseinstalldir="Bartlett" name="command-line.html" role="doc" />
-      <file baseinstalldir="Bartlett" name="getting-started.html" role="doc" />
-      <file baseinstalldir="Bartlett" name="INSTALL.html" role="doc" />
-      <file baseinstalldir="Bartlett" name="LICENSE.html" role="doc" />
-      <file baseinstalldir="Bartlett" name="phpci-book.html" role="doc" />
-      <file baseinstalldir="Bartlett" name="UML.html" role="doc" />
-      <file baseinstalldir="Bartlett" name="xml-configuration.html" role="doc" />
-      <file baseinstalldir="Bartlett" name="XSLT.html" role="doc" />
-     </dir> <!-- /docs/html/userguide -->
-    </dir> <!-- /docs/html -->
-   </dir> <!-- /docs -->
+   <dir name="html">
+    <dir name="images">
+     <dir name="icons">
+      <file baseinstalldir="Bartlett" name="caution.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="example.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="home.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="important.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="next.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="note.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="prev.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="README" role="doc" />
+      <file baseinstalldir="Bartlett" name="tip.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="up.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="warning.png" role="doc" />
+     </dir> <!-- /html/images/icons -->
+     <file baseinstalldir="Bartlett" name="PHPCompatInfo_01.png" role="doc" />
+     <file baseinstalldir="Bartlett" name="PHPCompatInfo_02.png" role="doc" />
+     <file baseinstalldir="Bartlett" name="PHPCompatInfo_03.png" role="doc" />
+     <file baseinstalldir="Bartlett" name="summary.png" role="doc" />
+     <file baseinstalldir="Bartlett" name="summary2.png" role="doc" />
+     <file baseinstalldir="Bartlett" name="thumb_summary.png" role="doc" />
+     <file baseinstalldir="Bartlett" name="thumb_summary2.png" role="doc" />
+    </dir> <!-- /html/images -->
+    <dir name="js">
+     <file baseinstalldir="Bartlett" name="asciidoc.js" role="doc" />
+    </dir> <!-- /html/js -->
+    <dir name="styles">
+     <file baseinstalldir="Bartlett" name="asciidoc.css" role="doc" />
+     <file baseinstalldir="Bartlett" name="pygments.css" role="doc" />
+     <file baseinstalldir="Bartlett" name="toc2.css" role="doc" />
+    </dir> <!-- /html/styles -->
+    <file baseinstalldir="Bartlett" name="basic-usage.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="CHANGELOG.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="command-line.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="getting-started.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="index.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="INSTALL.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="LICENSE.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="phpci-book.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="UML.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="xml-configuration.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="XSLT.html" role="doc" />
+   </dir> <!-- /html -->
    <dir name="misc">
     <dir name="autotest_images">
      <file baseinstalldir="Bartlett" name="fail.png" role="data" />
@@ -475,7 +464,6 @@ Bug fixes:
    </dir> <!-- /tests -->
    <file baseinstalldir="Bartlett" name="LICENSE" role="doc" />
    <file baseinstalldir="" name="phpcompatinfo.xml.dist" role="cfg" />
-   <file baseinstalldir="Bartlett" name="README.markdown" role="doc" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
@@ -548,6 +536,28 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.12.1</release>
+    <api>2.12.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-01-18</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- fix path to html bundle documentation, and add missing index.html
+- remove README.markdown github landing page from distribution
+- bump year of LICENSE text file
+- add a chapter about new progress console in command line guide
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.12.0</release>

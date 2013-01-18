@@ -254,7 +254,10 @@
         <include name="**" />
 
         <exclude name="README.markdown" />
-        <exclude name="*.tgz" />
+        <exclude name="**/*.tgz" />
+        <exclude name="**/*.zip" />
+        <exclude name="**/*.pdf" />
+        <exclude name="**/*.epub" />
         <exclude name="**/Thumbs.db" />
         <exclude name="package.xml" />
         <exclude name="build**" />
