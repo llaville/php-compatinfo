@@ -1,0 +1,8 @@
+Additions and changes:
+- fix path to html bundle documentation, and add missing index.html
+- remove README.markdown github landing page from distribution
+- bump year of LICENSE text file
+- add a chapter about new progress console in command line guide
+
+Bug fixes:
+- none
