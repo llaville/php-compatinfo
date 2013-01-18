@@ -29,6 +29,34 @@ include::attributes.txt[]
 - *full* : all above reports except xml
 
 
+== Progress Bar
+
+NOTE: Since version 2.12.0, there is a new progress bar (ALA PHPUnit).
+
+====
+----
+PHP_CompatInfo 2.12.0 by Laurent Laville
+
+....CC......................................................  60 / 128 ( 46%)
+....C..C..........................................C....C.... 120 / 128 ( 93%)
+.C.....C
+
+   <your reports results HERE, or NONE if you use --report-file switch>
+
+Time: 17 seconds, Memory: 17.00Mb
+
+Required PHP 5.2.1 (min)
+----
+====
+
+* each `C` character tell us that there is a source file with conditional code (see condition report).
+* a resource line (time and memmory)
+* the global result of PHP versions required
+
+CAUTION: the global result of PHP versions required may be different from you partial report
+printed just above. Don't be confused.
+
+
 == Options
 
 The list of command line options provided by the [label label-inverse]#phpci# command
