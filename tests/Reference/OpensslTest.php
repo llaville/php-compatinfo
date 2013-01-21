@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_OpensslTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             // requires HAVE_OPENSSL_MD2_H
             'OPENSSL_ALGO_MD2',
             // requires OPENSSL_VERSION_NUMBER >= 0x0090806fL
@@ -50,8 +50,8 @@ class PHP_CompatInfo_Reference_OpensslTest
         );
         if (defined('OPENSSL_VERSION_NUMBER')) {
             if (OPENSSL_VERSION_NUMBER < 0x0090708f) {
-                $this->optionnalconstants = array_merge(
-                    $this->optionnalconstants,
+                $this->optionalconstants = array_merge(
+                    $this->optionalconstants,
                     array(
                         'OPENSSL_ALGO_SHA224',
                         'OPENSSL_ALGO_SHA256',

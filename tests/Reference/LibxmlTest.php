@@ -42,23 +42,23 @@ class PHP_CompatInfo_Reference_LibxmlTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array();
+        $this->optionalconstants = array();
         if (defined('LIBXML_VERSION')) {
             if (LIBXML_VERSION < 20703) {
-                $this->optionnalconstants[] = 'LIBXML_PARSEHUGE';
+                $this->optionalconstants[] = 'LIBXML_PARSEHUGE';
             }
             if (LIBXML_VERSION < 20707) {
-                $this->optionnalconstants[] = 'LIBXML_HTML_NOIMPLIED';
+                $this->optionalconstants[] = 'LIBXML_HTML_NOIMPLIED';
             }
             if (LIBXML_VERSION < 20708) {
-                $this->optionnalconstants[] = 'LIBXML_HTML_NODEFDTD';
+                $this->optionalconstants[] = 'LIBXML_HTML_NODEFDTD';
             }
         }
 
         if (DIRECTORY_SEPARATOR == '/') {
 
         } else {
-            $this->optionnalconstants = array(
+            $this->optionalconstants = array(
                 'LIBXML_HTML_NODEFDTD',
                 'LIBXML_HTML_NOIMPLIED',
             );

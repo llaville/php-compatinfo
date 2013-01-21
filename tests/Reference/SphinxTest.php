@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_SphinxTest
     protected function setUp()
     {
         // Constants conditionnaly exists (according to libsphinx version)
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             'SPH_RANK_FIELDMASK',
             'SPH_RANK_MATCHANY',
             'SPH_RANK_PROXIMITY',

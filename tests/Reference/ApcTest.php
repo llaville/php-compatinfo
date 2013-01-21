@@ -42,7 +42,7 @@ class PHP_CompatInfo_Reference_ApcTest
     protected function setUp()
     {
         // Constants and Classes not available in CLI mode
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             'APC_LIST_ACTIVE',
             'APC_LIST_DELETED',
             'APC_ITER_TYPE',
@@ -65,7 +65,7 @@ class PHP_CompatInfo_Reference_ApcTest
             'APC_BIN_VERIFY_MD5',
             'APC_BIN_VERIFY_CRC32',
         );
-        $this->optionnalclasses = array(
+        $this->optionalclasses = array(
             'APCIterator',
         );
         $this->obj = new PHP_CompatInfo_Reference_Apc();

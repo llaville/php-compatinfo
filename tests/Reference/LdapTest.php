@@ -41,13 +41,13 @@ class PHP_CompatInfo_Reference_LdapTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             'LDAP_OPT_X_SASL_AUTHCID',
             'LDAP_OPT_X_SASL_AUTHZID',
             'LDAP_OPT_X_SASL_MECH',
             'LDAP_OPT_X_SASL_REALM',
         );
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // Requires LDAP SASL
             'ldap_sasl_bind',
             // Requires OpenLdap

@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_CurlTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             'CURLOPT_MUTE',
             'CURLOPT_PASSWDFUNCTION',
         );
@@ -50,7 +50,7 @@ class PHP_CompatInfo_Reference_CurlTest
             $ver = $ver['version_number'];
             if ($ver<0x071001) {
                 array_push(
-                    $this->optionnalconstants,
+                    $this->optionalconstants,
                     'CURLFTPMETHOD_MULTICWD',
                     'CURLFTPMETHOD_NOCWD',
                     'CURLFTPMETHOD_SINGLECWD'
@@ -58,20 +58,20 @@ class PHP_CompatInfo_Reference_CurlTest
             }
             if ($ver<0x071002) {
                 array_push(
-                    $this->optionnalconstants,
+                    $this->optionalconstants,
                     'CURLOPT_CONNECTTIMEOUT_MS',
                     'CURLOPT_TIMEOUT_MS'
                 );
             }
             if ($ver<0x071202) {
                 array_push(
-                    $this->optionnalconstants,
+                    $this->optionalconstants,
                     'CURLINFO_REDIRECT_URL'
                 );
             }
             if ($ver<0x071300) { // 7.19.0
                 array_push(
-                    $this->optionnalconstants,
+                    $this->optionalconstants,
                     'CURLINFO_PRIMARY_IP',
                     'CURLSSH_AUTH_NONE',
                     'CURLSSH_AUTH_PUBLICKEY',
@@ -89,7 +89,7 @@ class PHP_CompatInfo_Reference_CurlTest
             }
             if ($ver<0x071301) {
                 array_push(
-                    $this->optionnalconstants,
+                    $this->optionalconstants,
                     'CURLINFO_CERTINFO',
                     'CURLOPT_CERTINFO',
                     'CURLOPT_POSTREDIR'
@@ -97,7 +97,7 @@ class PHP_CompatInfo_Reference_CurlTest
             }
             if ($ver<0x071304) {
                 array_push(
-                    $this->optionnalconstants,
+                    $this->optionalconstants,
                     'CURLOPT_REDIR_PROTOCOLS',
                     'CURLOPT_PROTOCOLS',
                     'CURLPROTO_HTTP',
@@ -117,7 +117,7 @@ class PHP_CompatInfo_Reference_CurlTest
             }
             if ($ver<0x071500) { // 7.21.0
                 array_push(
-                    $this->optionnalconstants,
+                    $this->optionalconstants,
                     'CURLINFO_LOCAL_IP',
                     'CURLINFO_LOCAL_PORT',
                     'CURLINFO_PRIMARY_PORT'

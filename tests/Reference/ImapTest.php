@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_ImapTest
      */
     protected function setUp()
     {
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // Not available on some 5.2.x but found in code...
             'imap_listscan',
             // requires HAVE_IMAP_MUTF7

@@ -43,7 +43,7 @@ class PHP_CompatInfo_Reference_GdTest
      */
     protected function setUp()
     {
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // Win32 only
             'imagegrabscreen',
             'imagegrabwindow',

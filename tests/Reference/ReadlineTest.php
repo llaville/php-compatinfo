@@ -40,7 +40,7 @@ class PHP_CompatInfo_Reference_ReadlineTest
      */
     protected function setUp()
     {
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // Not available with libedit (only with readline)
             'readline_list_history',
             'readline_callback_handler_install',

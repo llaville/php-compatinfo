@@ -54,12 +54,12 @@ class PHP_CompatInfo_Reference_StandardTest
         );
 
         if (DIRECTORY_SEPARATOR == '/') {
-            $this->optionnalfunctions = array(
+            $this->optionalfunctions = array(
                 // remove in some Linux distribution (Redhat, ...)
                 'php_egg_logo_guid',
             );
         } else {
-            $this->optionnalfunctions = array(
+            $this->optionalfunctions = array(
                 // requires HAVE_NL_LANGINFO (linux only)
                 'nl_langinfo',
                 // requires HAVE_STRPTIME (linux only)
@@ -102,7 +102,7 @@ class PHP_CompatInfo_Reference_StandardTest
                 'time_nanosleep',
                 'time_sleep_until',
             );
-            $this->optionnalconstants = array(
+            $this->optionalconstants = array(
                 // requires syslog
                 'LOG_LOCAL0',
                 'LOG_LOCAL1',

@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_SessionTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             // Only defined after session_start
             'SID',
         );

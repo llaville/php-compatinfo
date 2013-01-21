@@ -42,7 +42,7 @@ class PHP_CompatInfo_Reference_SocketsTest
     protected function setUp()
     {
         if (DIRECTORY_SEPARATOR == '/') {
-            $this->optionnalconstants = array(
+            $this->optionalconstants = array(
                 // Win32 only
                 'SOCKET_EDISCON',
                 'SOCKET_EPROCLIM',
@@ -57,7 +57,7 @@ class PHP_CompatInfo_Reference_SocketsTest
                 'SOCKET_VERNOTSUPPORTED',
             );
         } else {
-            $this->optionnalconstants = array(
+            $this->optionalconstants = array(
                 // Unix only
                 'SOCKET_E2BIG',
                 'SOCKET_EADV',
@@ -124,7 +124,7 @@ class PHP_CompatInfo_Reference_SocketsTest
                 'MSG_EOF',
             );
         }
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // requires HAVE_SOCKETPAIR
             'socket_create_pair',
         );

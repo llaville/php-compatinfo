@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_PcntlTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             'SI_NOINFO'
         );
         $this->obj = new PHP_CompatInfo_Reference_Pcntl();

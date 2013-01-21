@@ -40,7 +40,7 @@ class PHP_CompatInfo_Reference_Ssh2Test
      */
     protected function setUp()
     {
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // Requires PHP_SSH2_REMOTE_FORWARDING
             'ssh2_forward_accept',
             'ssh2_forward_listen',
@@ -49,7 +49,7 @@ class PHP_CompatInfo_Reference_Ssh2Test
             // Requires libssh >= 1.2.3
             'ssh2_auth_agent',
         );
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             // Requires PHP_SSH2_POLL
             'SSH2_POLLIN',
             'SSH2_POLLEXT',

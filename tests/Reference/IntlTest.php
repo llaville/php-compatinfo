@@ -50,8 +50,8 @@ class PHP_CompatInfo_Reference_IntlTest
 
         if (version_compare(INTL_ICU_VERSION, '3.8.0', 'lt')) {
             // requires libicu >= 3.8
-            $this->optionnalconstants = array_merge(
-                $this->optionnalconstants,
+            $this->optionalconstants = array_merge(
+                $this->optionalconstants,
                 array(
                     'U_IDNA_DOMAIN_NAME_TOO_LONG_ERROR',
                 )
@@ -68,8 +68,8 @@ class PHP_CompatInfo_Reference_IntlTest
 
         if (version_compare(INTL_ICU_VERSION, '4.6.0', 'lt') || $onWindowsPHP_5_3) {
             // requires libicu >= 4.6
-            $this->optionnalconstants = array_merge(
-                $this->optionnalconstants,
+            $this->optionalconstants = array_merge(
+                $this->optionalconstants,
                 array(
                     'INTL_ICU_DATA_VERSION',
 
@@ -110,7 +110,7 @@ class PHP_CompatInfo_Reference_IntlTest
 
             if ($onWindowsPHP_5_3) {
                 // one more exception on windows for PHP 5.3
-                $this->optionnalconstants[] = 'INTL_IDNA_VARIANT_2003';
+                $this->optionalconstants[] = 'INTL_IDNA_VARIANT_2003';
             }
         }
 

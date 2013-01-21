@@ -45,8 +45,8 @@ class PHP_CompatInfo_Reference_XdebugTest
         if (extension_loaded($extname)) {
             if (version_compare(phpversion($extname), '2.0.0beta1', 'ge')) {
                 // removed functions in 2.0.0beta1
-                $this->optionnalfunctions = array_merge(
-                    $this->optionnalfunctions,
+                $this->optionalfunctions = array_merge(
+                    $this->optionalfunctions,
                     array(
                         'xdebug_get_function_trace',
                         'xdebug_dump_function_trace',
@@ -56,8 +56,8 @@ class PHP_CompatInfo_Reference_XdebugTest
 
             if (version_compare(phpversion($extname), '2.0.0RC1', 'ge')) {
                 // removed functions in 2.0.0RC1
-                $this->optionnalfunctions = array_merge(
-                    $this->optionnalfunctions,
+                $this->optionalfunctions = array_merge(
+                    $this->optionalfunctions,
                     array(
                         'xdebug_set_error_handler',
                     )

@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_MysqlTest
      */
     protected function setUp()
     {
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // deprecated, requires MySQL < 4
             'mysql_create_db',
             'mysql_drop_db',

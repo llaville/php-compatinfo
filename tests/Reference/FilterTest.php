@@ -43,7 +43,7 @@ class PHP_CompatInfo_Reference_FilterTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             'FILTER_SANITIZE_ALL',
             'FILTER_VALIDATE_ALL',
 
@@ -53,7 +53,7 @@ class PHP_CompatInfo_Reference_FilterTest
         );
 
         // ignores all old API functions before 0.11.0
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             'input_get',
             'input_filters_list',
             'input_has_variable',

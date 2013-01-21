@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_MhashTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             'MHASH_MD2',
             'MHASH_RIPEMD128',
             'MHASH_RIPEMD256',

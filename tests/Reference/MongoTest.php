@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_MongoTest
      */
     protected function setUp()
     {
-        $this->optionnalclasses = array(
+        $this->optionalclasses = array(
             // only available with 0.9.0
             'MongoUtil',
         );
@@ -53,13 +53,13 @@ class PHP_CompatInfo_Reference_MongoTest
 
         // classes available since 1.2.3
         array_push(
-            $this->optionnalclasses,
+            $this->optionalclasses,
             'MongoLog',
             'MongoPool'
         );
         // classes available since 1.3.0
         array_push(
-            $this->optionnalclasses,
+            $this->optionalclasses,
             'MongoClient',
             'MongoResultException'
         );

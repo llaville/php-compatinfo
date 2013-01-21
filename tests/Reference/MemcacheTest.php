@@ -46,7 +46,7 @@ class PHP_CompatInfo_Reference_MemcacheTest
     {
         if (DIRECTORY_SEPARATOR == '\\') {
             // Win32 only
-            $this->optionnalfunctions = array(
+            $this->optionalfunctions = array(
                 'memcache_append',
                 'memcache_cas',
                 'memcache_prepend',
@@ -57,7 +57,7 @@ class PHP_CompatInfo_Reference_MemcacheTest
             );
         }
 
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             'MEMCACHE_SERIALIZED'
         );
 

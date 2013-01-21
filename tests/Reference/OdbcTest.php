@@ -42,7 +42,7 @@ class PHP_CompatInfo_Reference_OdbcTest
     protected function setUp()
     {
         // This constants require ODBC >= 3.0.0
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             // Standard data types
             'SQL_TYPE_DATE',
             'SQL_TYPE_TIME',

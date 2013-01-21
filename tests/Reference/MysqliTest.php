@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_MysqliTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             // Requires MYSQLI_USE_MYSQLND
             'MYSQLI_OPT_NET_CMD_BUFFER_SIZE',
             'MYSQLI_OPT_NET_READ_BUFFER_SIZE',
@@ -55,7 +55,7 @@ class PHP_CompatInfo_Reference_MysqliTest
             // requires SERVER_PS_OUT_PARAMS
             'MYSQLI_SERVER_PS_OUT_PARAMS',
         );
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // Requires HAVE_EMBEDDED_MYSQLI
             'mysqli_embedded_server_end',
             'mysqli_embedded_server_start',

@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_McryptTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             // Non-free
             'MCRYPT_IDEA',
             // only in libmcrypt = 2.2.x

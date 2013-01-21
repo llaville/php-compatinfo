@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_FtpTest
      */
     protected function setUp()
     {
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // This requires HAVE_OPENSSL_EXT
             'ftp_ssl_connect',
         );

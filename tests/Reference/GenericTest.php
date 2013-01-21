@@ -31,10 +31,10 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
     protected $ref = NULL;
 
     // Could be defined in Reference but missing (system dependant)
-    protected $optionnalconstants   = array();
-    protected $optionnalfunctions   = array();
-    protected $optionnalclasses     = array();
-    protected $optionnalinterfaces  = array();
+    protected $optionalconstants   = array();
+    protected $optionalfunctions   = array();
+    protected $optionalclasses     = array();
+    protected $optionalinterfaces  = array();
 
     // Could be present but missing in Refence (alias, ...)
     protected $ignoredfunctions     = array();
@@ -118,7 +118,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
         foreach ($this->ref['functions'] as $fctname => $range) {
             list($min, $max) = $range;
-            if (!in_array($fctname, $this->optionnalfunctions)
+            if (!in_array($fctname, $this->optionalfunctions)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
             ) {
@@ -187,7 +187,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
         foreach ($this->ref['constants'] as $constname => $range) {
             list($min, $max) = $range;
-            if (!in_array($constname, $this->optionnalconstants)
+            if (!in_array($constname, $this->optionalconstants)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
             ) {
@@ -255,7 +255,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
         foreach ($this->ref['classes'] as $classname => $range) {
             list($min, $max) = $range;
-            if (!in_array($classname, $this->optionnalclasses)
+            if (!in_array($classname, $this->optionalclasses)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
             ) {
@@ -329,7 +329,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
         foreach ($this->ref['interfaces'] as $intname => $range) {
             list($min, $max) = $range;
-            if (!in_array($intname, $this->optionnalinterfaces)
+            if (!in_array($intname, $this->optionalinterfaces)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
             ) {

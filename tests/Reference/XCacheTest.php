@@ -41,7 +41,7 @@ class PHP_CompatInfo_Reference_XCacheTest
      */
     protected function setUp()
     {
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // Requires specific build optons
             // so not available everywhere
             'xcache_dasm_file',

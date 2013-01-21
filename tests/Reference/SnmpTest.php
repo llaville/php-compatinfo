@@ -45,11 +45,11 @@ class PHP_CompatInfo_Reference_SnmpTest
     {
         if (DIRECTORY_SEPARATOR == '\\') {
             // Win32 only
-            $this->optionnalconstants = array(
+            $this->optionalconstants = array(
                 'SNMP_OID_OUTPUT_FULL',
                 'SNMP_OID_OUTPUT_NUMERIC',
             );
-            $this->optionnalfunctions = array(
+            $this->optionalfunctions = array(
                 'snmp_set_enum_print',
                 'snmp_set_oid_output_format',
                 'snmp_set_oid_numeric_print',

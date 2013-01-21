@@ -42,7 +42,7 @@ class PHP_CompatInfo_Reference_CoreTest
      */
     protected function setUp()
     {
-        $this->optionnalconstants = array(
+        $this->optionalconstants = array(
             // Not real constant
             '__CLASS__',
             '__FILE__',
@@ -64,8 +64,8 @@ class PHP_CompatInfo_Reference_CoreTest
             'trait_exists',
         );
         if (DIRECTORY_SEPARATOR == '/') {
-            $this->optionnalconstants = array_merge(
-                $this->optionnalconstants,
+            $this->optionalconstants = array_merge(
+                $this->optionalconstants,
                 array(
                     // Win32 Only
                     'PHP_WINDOWS_VERSION_MAJOR',
@@ -82,8 +82,8 @@ class PHP_CompatInfo_Reference_CoreTest
                 )
             );
         } else {
-            $this->optionnalconstants = array_merge(
-                $this->optionnalconstants,
+            $this->optionalconstants = array_merge(
+                $this->optionalconstants,
                 array(
                     // Non Windows only
                     'PHP_MANDIR',
@@ -91,7 +91,7 @@ class PHP_CompatInfo_Reference_CoreTest
             );
         }
 
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // Requires ZTS
             'zend_thread_id',
         );

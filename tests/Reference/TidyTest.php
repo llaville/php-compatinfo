@@ -44,7 +44,7 @@ class PHP_CompatInfo_Reference_TidyTest
      */
     protected function setUp()
     {
-        $this->optionnalfunctions = array(
+        $this->optionalfunctions = array(
             // Requires HAVE_TIDYOPTGETDOC
             'tidy_get_opt_doc',
             // Removes in 0.7.0
