@@ -472,7 +472,7 @@ class PHP_CompatInfo_Reference_Standard
             'is_uploaded_file'               => array('4.0.3', ''),
             'move_uploaded_file'             => array('4.0.3', ''),
             'pathinfo'                       => array('4.0.3', ''),
-            'php_egg_logo_guid'              => array('4.0.3', ''),
+            'php_egg_logo_guid'              => array('4.0.3', self::LATEST_PHP_5_4),
             'register_tick_function'         => array('4.0.3', ''),
             'unregister_tick_function'       => array('4.0.3', ''),
         );
