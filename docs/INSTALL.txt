@@ -29,6 +29,19 @@ Installing a specific version:
 $ pear install bartlett/PHP_CompatInfo-2.12.0
 ----
 
+== GNU/Linux RPM
+
+PHP_CompatInfo could be installed as RPM, using the package installer.
+
+In Fedora, from official repository.
+
+In Enterprise Linux (RHEL, CentOS, Scientific Linux, Oracle Linux, ...),
+from the http://fedoraproject.org/wiki/EPEL[EPEL repository].
+
+----
+# yum install php-bartlett-PHP-CompatInfo
+----
+
 == Git
 
 You can also clone the project.
