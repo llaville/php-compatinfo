@@ -1,5 +1,5 @@
 Additions and changes:
-- none
+- upgrade mongo reference to version 1.3.4
 
 Bug fixes:
 - GH-62: Hash without Mhash extension cause test failure
