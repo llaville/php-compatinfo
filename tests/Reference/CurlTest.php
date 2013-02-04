@@ -37,6 +37,7 @@ class PHP_CompatInfo_Reference_CurlTest
      * @covers PHP_CompatInfo_Reference_Curl::getExtensions
      * @covers PHP_CompatInfo_Reference_Curl::getFunctions
      * @covers PHP_CompatInfo_Reference_Curl::getConstants
+     * @covers PHP_CompatInfo_Reference_Curl::getClasses
      * @return void
      */
     protected function setUp()

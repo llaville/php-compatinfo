@@ -132,6 +132,7 @@ class PHP_CompatInfo_Reference_Intl
             'IntlPartsIterator'             => array('5.5.0-dev', ''),
             'IntlRuleBasedBreakIterator'    => array('5.5.0-dev', ''),
             'IntlTimeZone'                  => array('5.5.0-dev', ''),
+            'UConverter'                    => array('5.5.0-dev', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
