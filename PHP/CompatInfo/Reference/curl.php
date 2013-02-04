@@ -83,6 +83,7 @@ class PHP_CompatInfo_Reference_Curl
             'curl_error'                     => array('4.0.3', ''),
             'curl_escape'                    => array('5.5.0-dev', ''),
             'curl_exec'                      => array('4.0.2', ''),
+            'curl_file_create'               => array('5.5.0-dev', ''),
             'curl_getinfo'                   => array('4.0.4', ''),
             'curl_init'                      => array('4.0.2', ''),
             'curl_multi_add_handle'          => array('5.0.0', ''),
@@ -467,6 +468,7 @@ class PHP_CompatInfo_Reference_Curl
             'CURLOPT_RTSP_SESSION_ID'        => array('5.5.0-dev', ''),
             'CURLOPT_RTSP_STREAM_URI'        => array('5.5.0-dev', ''),
             'CURLOPT_RTSP_TRANSPORT'         => array('5.5.0-dev', ''),
+            'CURLOPT_SAFE_UPLOAD'            => array('5.5.0-dev', ''),
             'CURLOPT_SHARE'                  => array('5.5.0-dev', ''),
             'CURLOPT_SOCKS5_GSSAPI_NEC'      => array('5.5.0-dev', ''),
             'CURLOPT_SOCKS5_GSSAPI_SERVICE'  => array('5.5.0-dev', ''),
@@ -577,4 +579,29 @@ class PHP_CompatInfo_Reference_Curl
         return $constants;
     }
 
+    /**
+     * Gets informations about classes
+     *
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
+     *
+     * @return array
+     */
+    public function getClasses($extension = null, $version = null, $condition = null)
+    {
+        $this->setFilter(func_get_args());
+
+        $classes = array();
+
+        $release = '5.5.0';       // soon
+        $items = array(
+            'CURLFile'                      => array('5.5.0-dev', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        return $classes;
+    }
 }
