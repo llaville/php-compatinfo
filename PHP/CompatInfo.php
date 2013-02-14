@@ -1393,7 +1393,18 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
 
         foreach ($haystack as $key => $data) {
 
-            $ref = $this->searchReference($category, $key);
+            if (isset($data[0])) {
+                // when PHP_Reflect detect multiple instance of same element
+                $data = $data[0];
+            }
+            if ((isset($data['class']) && $data['class'] !== false)
+                || (isset($data['trait']) && $data['trait'] !== false)
+            ) {
+                // user component (class or trait constant)
+                $ref = 1;
+            } else {
+                $ref = $this->searchReference($category, $key);
+            }
 
             if ($ns == '\\') {
                 // global namespace
