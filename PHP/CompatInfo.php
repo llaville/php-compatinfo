@@ -674,7 +674,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
              */
             $options = array(
                 'containers' => array(
-                    'const' => 'constants',
                     'core'  => 'internalFunctions',
                     'token' => 'tokens',
                     'glob'  => 'globals'
@@ -703,48 +702,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 'T_CONSTANT_ENCAPSED_STRING',
                 'PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING',
                 array('PHP_CompatInfo_TokenParser', 'parseTokenConstant')
-            );
-
-            // magic constants
-            $reflect->connect(
-                'T_LINE',
-                'PHP_Reflect_Token_LINE',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_FILE',
-                'PHP_Reflect_Token_FILE',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_DIR',
-                'PHP_Reflect_Token_DIR',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_FUNC_C',
-                'PHP_Reflect_Token_FUNC_C',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_CLASS_C',
-                'PHP_Reflect_Token_CLASS_C',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_TRAIT_C',
-                'PHP_Reflect_Token_TRAIT_C',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_METHOD_C',
-                'PHP_Reflect_Token_METHOD_C',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_NS_C',
-                'PHP_Reflect_Token_NS_C',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
             );
 
             // globals and super globals
@@ -868,7 +825,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                  * @link http://www.php.net/manual/en/language.constants.php
                  *       Constants
                  */
-                $constants = $reflect->getConstants($ns);
+                $constants = $reflect->getConstants(false, null, $ns);
                 $this->getInfo('constants', '4.0.0', $constants, $source, $ns);
 
                 /**

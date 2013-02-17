@@ -15,7 +15,6 @@
 /**
  * Additional parser connected to tokens :
  * T_STRING, T_CONSTANT_ENCAPSED_STRING,
- * T_LINE, T_FILE, T_DIR, T_FUNC_C, T_CLASS_C, T_METHOD_C, T_NS_C,
  * T_CATCH, T_CLONE, T_INSTANCEOF, T_THROW, T_TRY, T_HALT_COMPILER, T_GOTO
  *
  * @category PHP
@@ -35,13 +34,6 @@ class PHP_CompatInfo_TokenParser
     public static function parseTokenString()
     {
         list($subject, $context, $token) = func_get_args();
-
-        if (in_array(
-            (string)$token,
-            array('__DIR__', '__NAMESPACE__', '__TRAIT__')
-        )) {
-            return self::parseTokenMagicConstant($subject, $context, $token);
-        }
         extract($context);
 
         if ($namespace === FALSE) {
@@ -54,14 +46,20 @@ class PHP_CompatInfo_TokenParser
         $type = $token->getType();
 
         if ($type === 'constant') {
-            $container = $subject->options['containers']['const'];
+            $container = $subject->options['containers']['constant'];
 
             if (null != $container) {
                 $name = $token->getName();
 
                 // update constants
                 $constants = $subject->offsetGet(array($container => $ns));
-                $constants[$name]['uses'][] = $token->getLine();
+                $tmp['uses'][] = $token->getLine();
+                if (method_exists($token, 'getValue')) {
+                    $tmp['value'] = $token->getValue();
+                }
+                $tmp['class'] = $class;
+                $tmp['trait'] = $trait;
+                $constants[$name][] = $tmp;
                 $subject->offsetSet(array($container => $ns), $constants);
             }
 
@@ -153,46 +151,22 @@ class PHP_CompatInfo_TokenParser
         $type = $token->getType();
 
         if ($type === 'constant') {
-            $container = $subject->options['containers']['const'];
+            $container = $subject->options['containers']['constant'];
 
             if (null != $container) {
                 $name = $token->getName();
 
                 // update constants
                 $constants = $subject->offsetGet(array($container => $ns));
-                $constants[$name]['uses'][] = $token->getLine();
+                $tmp['uses'][] = $token->getLine();
+                if (method_exists($token, 'getValue')) {
+                    $tmp['value'] = $token->getValue();
+                }
+                $tmp['class'] = $class;
+                $tmp['trait'] = $trait;
+                $constants[$name][] = $tmp;
                 $subject->offsetSet(array($container => $ns), $constants);
             }
-        }
-    }
-
-    /**
-     * Parser for tokens
-     * T_LINE, T_FILE, T_DIR, T_FUNC_C, T_CLASS_C, T_METHOD_C, T_NS_C
-     *
-     * @return void
-     */
-    public static function parseTokenMagicConstant()
-    {
-        list($subject, $context, $token) = func_get_args();
-        extract($context);
-
-        if ($namespace === FALSE) {
-            // global namespace
-            $ns = '\\';
-        } else {
-            $ns = $namespace;
-        }
-
-        $container = $subject->options['containers']['const'];
-
-        if (null != $container) {
-            $name = (string)$token;
-
-            // update constants
-            $constants = $subject->offsetGet(array($container => $ns));
-            $constants[$name]['uses'][] = $token->getLine();
-            $subject->offsetSet(array($container => $ns), $constants);
         }
     }
 
