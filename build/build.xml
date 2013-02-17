@@ -47,6 +47,7 @@
     -->
     <property name="docs.asciidoc.home"          value="/asciidoc-8.6.8" />
     <property name="docs.asciidoc.target"        value="${project.dir}/html" />
+    <property name="docs.theme-asciidoc"         value="flask" />
     <property name="docs.book-source.name"       value="phpci-book" />
     <property name="docs.html-books-list"        value="INSTALL,CHANGELOG,LICENSE,getting-started,basic-usage,command-line,xml-configuration,XSLT,UML,index" />
     <property name="docs.htmlhelpworkshop.home"  value="C:\Program Files\HTML Help Workshop" />
