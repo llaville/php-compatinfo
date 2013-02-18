@@ -697,7 +697,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 array('PHP_CompatInfo_TokenParser', 'parseTokenString')
             );
 
-            // constants
+            // user constants
             $reflect->connect(
                 'T_CONSTANT_ENCAPSED_STRING',
                 'PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING',
@@ -1351,8 +1351,13 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
         foreach ($haystack as $key => $data) {
 
             if (isset($data[0])) {
+                $uses = count($data);
                 // when PHP_Reflect detect multiple instance of same element
                 $data = $data[0];
+            } elseif (isset($data['uses'])) {
+                $uses = false;
+            } else {
+                $uses = 1;
             }
             if ((isset($data['class']) && $data['class'] !== false)
                 || (isset($data['trait']) && $data['trait'] !== false)
@@ -1466,9 +1471,8 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 $values[$key]['sources'][] = $source;
                 $values[$key]['namespace'] = ('user' === $extension) ? $ns : '\\';
             } else {
-                $values[$key]['uses']
-                    = isset($data['uses']) ? count($data['uses']) : 1;
-                $values[$key]['sources']   = array($source);
+                $values[$key]['uses'] = empty($uses) ? count($data['uses']) : $uses;
+                $values[$key]['sources'] = array($source);
                 $values[$key]['namespace'] = ('user' === $extension) ? $ns : '\\';
 
                 if (isset($data['parent']) && !empty($data['parent'])) {
