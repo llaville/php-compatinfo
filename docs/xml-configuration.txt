@@ -105,7 +105,7 @@ $ phpci clear-cache
 ----
 The +<references>+ element and its +<reference>+ children can be used to specify what extension you want to detect and none others.
 
-Default behaviour will auto-detect all your link:http://www.php.net/manual/en/function.extension-loaded.php[extensions loaded].
+Default behaviour will auto-detect all your http://www.php.net/manual/en/function.extension-loaded.php[extensions loaded].
 
 
 == Sets value of PHP configuration options
@@ -234,11 +234,11 @@ additional observers to the parses process.
 
 The *phpci* console tool know in standard distribution the *File* and *Growl* listeners.
 
-Please refer to link:http://growl.laurent-laville.org/[PEAR::Net_Growl] package for configuration options.
+Please refer to http://growl.laurent-laville.org/[PEAR::Net_Growl] package for configuration options.
 
 You may add your own observer. To do so, specify the class name (_class_ attribute of +<listener>+ element)
 hosted by a file (_file_ attribute of the same +<listener>+ element) that implement
-the link:http://www.php.net/manual/en/class.splobserver.php[SplObserver] interface.
+the http://www.php.net/manual/en/class.splobserver.php[SplObserver] interface.
 
 
 == Plugins
