@@ -70,7 +70,7 @@ class PHP_CompatInfo_Reference_{extname}
      *
      * @return array
      */
-    public function getClasses($extension = null, $version = null, $condition = null);
+    public function getClasses($extension = null, $version = null, $condition = null)
     {
         $this->setFilter(func_get_args());
 
