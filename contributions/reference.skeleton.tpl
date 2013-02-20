@@ -76,7 +76,7 @@ class PHP_CompatInfo_Reference_{extname}
 
         $classes = array();
 
-        $release = false
+        $release = false;
         $items = array(
 {classes}
         );
@@ -103,7 +103,7 @@ class PHP_CompatInfo_Reference_{extname}
 
         $functions = array();
 
-        $release = false
+        $release = false;
         $items = array(
 {functions}
         );
