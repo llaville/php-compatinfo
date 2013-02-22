@@ -139,7 +139,7 @@
         <element>
             <element key="channel" value="bartlett.laurent-laville.org" />
             <element key="name" value="PHP_Reflect" />
-            <element key="version" value="1.5.0" />
+            <element key="version" value="1.6.0" />
         </element>
 
         <!-- optional -->
