@@ -36,7 +36,7 @@ CAUTION: Its recommanded to migrate to PHP5, because PHP4 version is not maintai
 
 * http://www.php.net[PHP] 5.2.1 or newer
 * http://pear.php.net/package/Console_CommandLine[Console_CommandLine] 1.2.0 or newer from _default_ PEAR channel
-* http://bartlett.laurent-laville.org/[PHP_Reflect] 1.5.0 or newer from _Bartlett_ PEAR channel
+* http://bartlett.laurent-laville.org/[PHP_Reflect] 1.6.0 or newer from _Bartlett_ PEAR channel
 * http://www.php.net/manual/en/book.tokenizer.php[tokenizer] extension
 * http://www.php.net/manual/en/book.pcre.php[pcre] extension
 * http://www.php.net/manual/en/book.spl.php[SPL] extension
