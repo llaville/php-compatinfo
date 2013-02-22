@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-01-18</date>
- <time>10:24:29</time>
+ <date>2013-02-22</date>
+ <time>10:25:28</time>
  <version>
   <release>2.12.1</release>
   <api>2.12.0</api>
@@ -74,6 +74,7 @@ Bug fixes:
     </dir> <!-- /html/js -->
     <dir name="styles">
      <file baseinstalldir="Bartlett" name="asciidoc.css" role="doc" />
+     <file baseinstalldir="Bartlett" name="flask.css" role="doc" />
      <file baseinstalldir="Bartlett" name="pygments.css" role="doc" />
      <file baseinstalldir="Bartlett" name="toc2.css" role="doc" />
     </dir> <!-- /html/styles -->
@@ -186,6 +187,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="sqlite3.php" role="php" />
       <file baseinstalldir="Bartlett" name="ssh2.php" role="php" />
       <file baseinstalldir="Bartlett" name="standard.php" role="php" />
+      <file baseinstalldir="Bartlett" name="svn.php" role="php" />
       <file baseinstalldir="Bartlett" name="sysvmsg.php" role="php" />
       <file baseinstalldir="Bartlett" name="sysvsem.php" role="php" />
       <file baseinstalldir="Bartlett" name="sysvshm.php" role="php" />
@@ -323,6 +325,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="SQLiteTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="Ssh2Test.php" role="test" />
      <file baseinstalldir="Bartlett" name="StandardTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="SvnTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SysvmsgTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SysvsemTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SysvshmTest.php" role="test" />
@@ -482,7 +485,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>1.5.0</min>
+    <min>1.6.0</min>
    </package>
    <extension>
     <name>dom</name>
@@ -545,7 +548,7 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2013-01-18</date>
+   <date>2013-02-22</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
