@@ -6,6 +6,7 @@ include::attributes.txt[]
 [options="header", cols="3,3", role="table table-bordered table-striped"]
 |===========================
 | Version | Support all PHP versions until
+| 2.13.0  | 5.4.12
 | 2.12.0  | 5.4.11
 | 2.11.0  | 5.4.10
 | 2.10.0  | 5.4.9
@@ -19,6 +20,19 @@ include::attributes.txt[]
 | 2.2.0   | 5.3.10
 | 2.1.0   | 5.3.8
 |===========================
+
+
+== Version 2.13.0 _(2013-02-22)_
+
+.Additions and changes:
+* upgrade mongo reference to version 1.3.4
+* add 1 new reference data dictionnaries related to extension: svn
+* uses PHP_Reflect API 1.6 to detect user/class/magic constants
+
+.Bug fixes:
+* fix detection in constant/define/defined signatures
+* do not print twice warnings messages on Source report with verbose mode
+* GH-62: Hash without Mhash extension cause test failure
 
 
 == Version 2.12.1 _(2013-01-18)_
