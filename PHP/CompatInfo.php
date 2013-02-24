@@ -825,8 +825,10 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                  * @link http://www.php.net/manual/en/language.constants.php
                  *       Constants
                  */
-                $constants = $reflect->getConstants(false, null, $ns);
-                $this->getInfo('constants', '4.0.0', $constants, $source, $ns);
+                $constants = $reflect->getConstants(true, null, $ns);
+                $this->getInfo('constants', '4.0.0', $constants['user'],  $source, $ns);
+                $this->getInfo('constants', '4.0.0', $constants['magic'], $source, $ns);
+                $this->getInfo('constants', '4.0.0', $constants['ext'],   $source, $ns);
 
                 /**
                  * @link http://www.php.net/manual/en/functions.user-defined.php
