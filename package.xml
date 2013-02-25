@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-02-22</date>
- <time>10:30:24</time>
+ <date>2013-02-25</date>
+ <time>15:00:53</time>
  <version>
-  <release>2.13.0</release>
+  <release>2.13.1</release>
   <api>2.13.0</api>
  </version>
  <stability>
@@ -35,14 +35,9 @@ content of dictionary references.
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
-Additions and changes:
-- fix path to html bundle documentation, and add missing index.html
-- remove README.markdown github landing page from distribution
-- bump year of LICENSE text file
-- add a chapter about new progress console in command line guide
-
 Bug fixes:
-- none
+- fix constants detection with PHP_Reflect 1.6.1
+- GH-68: PHP 5.4.12 tests failed due to constant MYSQLI_OPT_CAN_HANDLE_EXPIRED_PASSWORDS
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -73,7 +68,6 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="asciidoc.js" role="doc" />
     </dir> <!-- /html/js -->
     <dir name="styles">
-     <file baseinstalldir="Bartlett" name="asciidoc.css" role="doc" />
      <file baseinstalldir="Bartlett" name="flask.css" role="doc" />
      <file baseinstalldir="Bartlett" name="pygments.css" role="doc" />
      <file baseinstalldir="Bartlett" name="toc2.css" role="doc" />
@@ -539,6 +533,23 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.13.1</release>
+    <api>2.13.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-02-25</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Bug fixes:
+- fix constants detection with PHP_Reflect 1.6.1
+- GH-68: PHP 5.4.12 tests failed due to constant MYSQLI_OPT_CAN_HANDLE_EXPIRED_PASSWORDS
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.13.0</release>
