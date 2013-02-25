@@ -22,6 +22,13 @@ include::attributes.txt[]
 |===========================
 
 
+== Version 2.13.1 _(2013-02-25)_
+
+.Bug fixes:
+* fix constants detection with PHP_Reflect 1.6.1
+* GH-68: PHP 5.4.12 tests failed due to constant MYSQLI_OPT_CAN_HANDLE_EXPIRED_PASSWORDS
+
+
 == Version 2.13.0 _(2013-02-22)_
 
 .Additions and changes:
