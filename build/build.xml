@@ -90,7 +90,7 @@
     <property name="package.summary"             value="${project.dir}/build/package_summary.txt" />
     <property name="package.description"         value="${project.dir}/build/package_description.txt" />
     <property name="package.release"             value="${project.dir}/build/${build.version}.txt" />
-    <property name="package.keep-assets"         value="true" />
+    <property name="package.keep-assets"         value="false" />
 
     <!-- maintainers list -->
     <mapping name="maintainers" id="package-maintainers-ref">
