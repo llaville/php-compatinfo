@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2013-02-25</date>
- <time>15:00:53</time>
+ <time>16:12:25</time>
  <version>
   <release>2.13.1</release>
   <api>2.13.0</api>
@@ -35,6 +35,9 @@ content of dictionary references.
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
+Additions and changes:
+- upgrade snmp reference to version 0.1 and fix missing SNMPException class
+
 Bug fixes:
 - fix constants detection with PHP_Reflect 1.6.1
 - GH-68: PHP 5.4.12 tests failed due to constant MYSQLI_OPT_CAN_HANDLE_EXPIRED_PASSWORDS
@@ -545,6 +548,9 @@ Bug fixes:
    <date>2013-02-25</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
+Additions and changes:
+- upgrade snmp reference to version 0.1 and fix missing SNMPException class
+
 Bug fixes:
 - fix constants detection with PHP_Reflect 1.6.1
 - GH-68: PHP 5.4.12 tests failed due to constant MYSQLI_OPT_CAN_HANDLE_EXPIRED_PASSWORDS
