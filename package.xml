@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-02-25</date>
- <time>16:12:25</time>
+ <date>2013-02-26</date>
+ <time>15:02:48</time>
  <version>
-  <release>2.13.1</release>
+  <release>2.13.2</release>
   <api>2.13.0</api>
  </version>
  <stability>
@@ -36,11 +36,10 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- upgrade snmp reference to version 0.1 and fix missing SNMPException class
+- fixes PHP_Reflect minimum dependency to 1.6.1
 
 Bug fixes:
-- fix constants detection with PHP_Reflect 1.6.1
-- GH-68: PHP 5.4.12 tests failed due to constant MYSQLI_OPT_CAN_HANDLE_EXPIRED_PASSWORDS
+- none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -482,7 +481,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>1.6.0</min>
+    <min>1.6.1</min>
    </package>
    <extension>
     <name>dom</name>
@@ -536,6 +535,25 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.13.2</release>
+    <api>2.13.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-02-26</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- fixes PHP_Reflect minimum dependency to 1.6.1
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.13.1</release>
