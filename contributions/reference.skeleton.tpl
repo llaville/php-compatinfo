@@ -70,13 +70,13 @@ class PHP_CompatInfo_Reference_{extname}
      *
      * @return array
      */
-    public function getClasses($extension = null, $version = null, $condition = null);
+    public function getClasses($extension = null, $version = null, $condition = null)
     {
         $this->setFilter(func_get_args());
 
         $classes = array();
 
-        $release = false
+        $release = false;
         $items = array(
 {classes}
         );
@@ -103,7 +103,7 @@ class PHP_CompatInfo_Reference_{extname}
 
         $functions = array();
 
-        $release = false
+        $release = false;
         $items = array(
 {functions}
         );

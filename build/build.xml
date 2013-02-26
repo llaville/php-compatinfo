@@ -21,7 +21,7 @@
     -->
     <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
     <property name="build.target"                value="${project.dir}/build" />
-    <property name="build.version"               value="2.12.1" />
+    <property name="build.version"               value="2.13.2" />
 
     <!--
         ======================================================================
@@ -47,6 +47,7 @@
     -->
     <property name="docs.asciidoc.home"          value="/asciidoc-8.6.8" />
     <property name="docs.asciidoc.target"        value="${project.dir}/html" />
+    <property name="docs.theme-asciidoc"         value="flask" />
     <property name="docs.book-source.name"       value="phpci-book" />
     <property name="docs.html-books-list"        value="INSTALL,CHANGELOG,LICENSE,getting-started,basic-usage,command-line,xml-configuration,XSLT,UML,index" />
     <property name="docs.htmlhelpworkshop.home"  value="C:\Program Files\HTML Help Workshop" />
@@ -89,7 +90,7 @@
     <property name="package.summary"             value="${project.dir}/build/package_summary.txt" />
     <property name="package.description"         value="${project.dir}/build/package_description.txt" />
     <property name="package.release"             value="${project.dir}/build/${build.version}.txt" />
-    <property name="package.keep-assets"         value="true" />
+    <property name="package.keep-assets"         value="false" />
 
     <!-- maintainers list -->
     <mapping name="maintainers" id="package-maintainers-ref">
@@ -138,7 +139,7 @@
         <element>
             <element key="channel" value="bartlett.laurent-laville.org" />
             <element key="name" value="PHP_Reflect" />
-            <element key="version" value="1.5.0" />
+            <element key="version" value="1.6.1" />
         </element>
 
         <!-- optional -->

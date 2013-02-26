@@ -34,19 +34,19 @@ CAUTION: Its recommanded to migrate to PHP5, because PHP4 version is not maintai
 
 === Requirements
 
-* link:http://www.php.net[PHP] 5.2.1 or newer
-* link:http://pear.php.net/package/Console_CommandLine[Console_CommandLine] 1.2.0 or newer from _default_ PEAR channel
-* link:http://bartlett.laurent-laville.org/[PHP_Reflect] 1.5.0 or newer from _Bartlett_ PEAR channel
-* link:http://www.php.net/manual/en/book.tokenizer.php[tokenizer] extension
-* link:http://www.php.net/manual/en/book.pcre.php[pcre] extension
-* link:http://www.php.net/manual/en/book.spl.php[SPL] extension
-* link:http://www.php.net/manual/en/book.dom.php[DOM] extension
-* link:http://www.php.net/manual/en/book.libxml.php[libxml] extension
-* link:http://www.php.net/manual/en/book.reflection.php[Reflection] extension
-* (optional) link:http://pear.php.net[PEAR] 1.9.0 or newer from _default_ PEAR channel
-* (optional) link:http://pear.php.net/package/Net_Growl[Net_Growl] 2.6.0 or newer from _default_ PEAR channel
-* (optional) link:http://pear.phpunit.de[PHPUnit] 3.6.0 or newer from _PHPUnit_ PEAR channel
-* (optional) link:http://pear.phpunit.de[PHP_Timer] 1.0.0 or newer from _PHPUnit_ PEAR channel
+* http://www.php.net[PHP] 5.2.1 or newer
+* http://pear.php.net/package/Console_CommandLine[Console_CommandLine] 1.2.0 or newer from _default_ PEAR channel
+* http://bartlett.laurent-laville.org/[PHP_Reflect] 1.6.0 or newer from _Bartlett_ PEAR channel
+* http://www.php.net/manual/en/book.tokenizer.php[tokenizer] extension
+* http://www.php.net/manual/en/book.pcre.php[pcre] extension
+* http://www.php.net/manual/en/book.spl.php[SPL] extension
+* http://www.php.net/manual/en/book.dom.php[DOM] extension
+* http://www.php.net/manual/en/book.libxml.php[libxml] extension
+* http://www.php.net/manual/en/book.reflection.php[Reflection] extension
+* (optional) http://pear.php.net[PEAR] 1.9.0 or newer from _default_ PEAR channel
+* (optional) http://pear.php.net/package/Net_Growl[Net_Growl] 2.6.0 or newer from _default_ PEAR channel
+* (optional) http://pear.phpunit.de[PHPUnit] 3.6.0 or newer from _PHPUnit_ PEAR channel
+* (optional) http://pear.phpunit.de[PHP_Timer] 1.0.0 or newer from _PHPUnit_ PEAR channel
 * (optional) an XSLT processor if you want to produce an xHTML report from a phpci xml report
 
 === Extensions supported
@@ -67,4 +67,5 @@ CAUTION: Its recommanded to migrate to PHP5, because PHP4 version is not maintai
 | 2.10.0  | 83    | igbinary, imagick, odbc
 | 2.11.0  | 83    |
 | 2.12.0  | 83    |
+| 2.13.0  | 84    | svn
 |===========================

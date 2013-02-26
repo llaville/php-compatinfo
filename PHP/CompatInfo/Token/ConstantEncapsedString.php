@@ -38,13 +38,19 @@ class PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING extends PHP_Reflect_Token_CO
             if (!isset($this->tokenStream[$i])) {
                 return; 
             }  
-            if ($this->tokenStream[$i][0] == 'T_CONSTANT_ENCAPSED_STRING') {
-                // we reached the constant name
+            if ($this->tokenStream[$i][0] !== 'T_OPEN_BRACKET'
+                && $this->tokenStream[$i][0] !== 'T_WHITESPACE'
+                && $this->tokenStream[$i][0] !== 'T_STRING'
+            ) {
+                /*
+                    look for signatures
+                        constant ( "CONSTANT" )
+                        define ( 'CONSTANT' )
+                        defined('CONSTANT')
+                 */
                 return; 
             }
-            if ($this->tokenStream[$i][0] == 'T_STRING' 
-                && in_array(strtolower($this->tokenStream[$i][1]), $const)
-            ) {
+            if (in_array(strtolower($this->tokenStream[$i][1]), $const)) {
                 $this->type = 'constant';
                 $this->name = trim($this->tokenStream[$this->id][1], "'\"");
                 break;

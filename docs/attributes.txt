@@ -5,3 +5,5 @@
 :mandir:      http://php5.laurent-laville.org/compatinfo/manual/current
 :brand:       PHP_CompatInfo
 :sidebar:     right
+:footer:
+:navinfo1:

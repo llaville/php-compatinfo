@@ -55,14 +55,6 @@ class PHP_CompatInfo_Report_Source extends PHP_CompatInfo_Report
 
         $this->generate($report, $base, $options['verbose']);
 
-        if (count($warnings) > 0 && $options['verbose'] > 0) {
-            echo 'Warning messages : (' . count($warnings) . ')' . PHP_EOL;
-            echo PHP_EOL;
-            foreach ($warnings as $warning) {
-                echo '  ' . $warning . PHP_EOL;
-            }
-        }
-
         if (isset($options['reportFile'])) {
             $generatedReport = ob_get_clean();
 

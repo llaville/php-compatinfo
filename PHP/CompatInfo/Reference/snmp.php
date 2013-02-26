@@ -36,7 +36,7 @@ class PHP_CompatInfo_Reference_Snmp
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '';
+    const REF_VERSION = '0.1';
 
     /**
      * Gets informations about extensions
@@ -78,6 +78,7 @@ class PHP_CompatInfo_Reference_Snmp
         $release = false;
         $items = array(
             'SNMP'                           => array('5.4.0', ''),
+            'SNMPException'                  => array('5.4.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
