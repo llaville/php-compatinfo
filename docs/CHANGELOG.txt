@@ -22,6 +22,15 @@ include::attributes.txt[]
 |===========================
 
 
+== Version 2.13.2 _(2013-02-26)_
+
+.Additions and changes:
+* fixes PHP_Reflect minimum dependency to 1.6.1
+
+.Bug fixes:
+* none
+
+
 == Version 2.13.1 _(2013-02-25)_
 
 .Additions and changes:
