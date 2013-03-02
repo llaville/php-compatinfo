@@ -5,21 +5,30 @@ include::attributes.txt[]
 
 [options="header", cols="3,3", role="table table-bordered table-striped"]
 |===========================
-| Version | Support all PHP versions until
-| 2.13.0  | 5.4.12
-| 2.12.0  | 5.4.11
-| 2.11.0  | 5.4.10
-| 2.10.0  | 5.4.9
-| 2.9.0   | 5.4.8
-| 2.8.0   | 5.4.7
-| 2.7.0   | 5.4.6
-| 2.6.0   | 5.4.5
-| 2.5.0   | 5.4.4
-| 2.4.0   | 5.4.3
-| 2.3.0   | 5.4.0
-| 2.2.0   | 5.3.10
-| 2.1.0   | 5.3.8
+| Version | PHP versions supported
+| 2.13.0  | add both support to PHP 5.4.12 and 5.3.22
+| 2.12.0  | add both support to PHP 5.4.11 and 5.3.21
+| 2.11.0  | add both support to PHP 5.4.10 and 5.3.20
+| 2.10.0  | add both support to PHP 5.4.9 and 5.3.19
+| 2.9.0   | add both support to PHP 5.4.8 and 5.3.18
+| 2.8.0   | add both support to PHP 5.4.7 and 5.3.17
+| 2.7.0   | add both support to PHP 5.4.6 and 5.3.16
+| 2.6.0   | add both support to PHP 5.4.5 and 5.3.15
+| 2.5.0   | add both support to PHP 5.4.4 and 5.3.14
+| 2.4.0   | add both support to PHP 5.4.3 and 5.3.13
+| 2.3.0   | add support to PHP 5.4.0, 5.4.1, 5.4.2 and 5.3.10, 5.3.11, 5.3.12
+| 2.2.0   | all PHP versions until 5.3.9
+| 2.1.0   | all PHP versions until 5.3.8
 |===========================
+
+
+== Version 2.14.0 _(2013-03-dd)_
+
+.Additions and changes:
+* none
+
+.Bug fixes:
+* none
 
 
 == Version 2.13.2 _(2013-02-26)_
