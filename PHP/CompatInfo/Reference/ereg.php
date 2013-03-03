@@ -53,7 +53,7 @@ class PHP_CompatInfo_Reference_Ereg
     {
         $phpMin = '4.0.0';
         $extensions = array(
-            self::REF_NAME => array($phpMin, '5.3.0', self::REF_VERSION)
+            self::REF_NAME => array($phpMin, self::LATEST_PHP_5_3, self::REF_VERSION)
         );
         return $extensions;
     }

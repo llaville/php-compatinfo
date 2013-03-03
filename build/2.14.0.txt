@@ -1,5 +1,6 @@
 Additions and changes:
 - do not print empty reports
+- update ereg reference on PHP max version
 
 Bug fixes:
 - notice error with verbose level 3 and source report
