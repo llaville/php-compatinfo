@@ -1,5 +1,5 @@
 Additions and changes:
-- none
+- do not print empty reports
 
 Bug fixes:
 - notice error with verbose level 3 and source report

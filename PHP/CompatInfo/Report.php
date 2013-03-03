@@ -206,6 +206,9 @@ abstract class PHP_CompatInfo_Report extends PHP_CompatInfo_Filter
             $this->totalConditions = 0;
             $this->globalVersions  = array('4.0.0', '');
 
+            if ($this->isEmpty($elements)) {
+                return;
+            }
             $this->printTHead($base, false);
             $this->printTBody($elements, ($verbose == 2), $base);
             $this->printTFoot();
@@ -219,6 +222,9 @@ abstract class PHP_CompatInfo_Report extends PHP_CompatInfo_Filter
                 $this->totalConditions = 0;
                 $this->globalVersions  = array('4.0.0', '');
 
+                if ($this->isEmpty($elements[$this->typeReport['long']])) {
+                    continue;
+                }
                 $this->printTHead($base, $filename);
                 $this->printTBody($elements[$this->typeReport['long']], false, $base);
                 $this->printTFoot();
@@ -400,4 +406,40 @@ abstract class PHP_CompatInfo_Report extends PHP_CompatInfo_Filter
         }
     }
 
+    /**
+     * Checks if current report element to print is empty or not
+     *
+     * @param array $elements Parse results to check
+     *
+     * @return boolean
+     */
+    protected function isEmpty($elements)
+    {
+        if ('condition' == $this->typeReport['short']) {
+            // condition report
+
+            if (isset($elements['Core'])) {
+                $ccl = array(
+                    'function_exists',
+                    'extension_loaded',
+                    'defined',
+                    'method_exists',
+                    'class_exists',
+                    'interface_exists',
+                    'trait_exists',
+                );
+
+                foreach ($elements['Core'] as $function => $data) {
+                    if (in_array($function, $ccl)) {
+                        return false;
+                    }
+                }
+            }
+        } elseif (!empty($elements)) {
+            // others reports
+            return false;
+        }
+
+        return true;
+    }
 }
