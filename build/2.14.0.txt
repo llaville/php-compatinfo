@@ -2,4 +2,4 @@ Additions and changes:
 - none
 
 Bug fixes:
-- none 
+- notice error with verbose level 3 and source report

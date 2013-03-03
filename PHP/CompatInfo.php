@@ -936,12 +936,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 );
             }
         } else {
-            if ($this->options['verbose'] < 3) {
-                $results = $this->results[0];
-            } else {
-                $results = $this->results;
-                unset($results[0]);
-            }
+            $results = $this->results;
         }
         return $results;
     }
