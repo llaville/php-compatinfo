@@ -288,6 +288,7 @@ class PHP_CompatInfo_Reference_Sockets
             'SO_RCVLOWAT'                    => array('4.1.0', ''),
             'SO_RCVTIMEO'                    => array('4.1.0', ''),
             'SO_REUSEADDR'                   => array('4.1.0', ''),
+            'SO_REUSEPORT'                   => array('5.4.10', ''),
             'SO_SNDBUF'                      => array('4.1.0', ''),
             'SO_SNDLOWAT'                    => array('4.1.0', ''),
             'SO_SNDTIMEO'                    => array('4.1.0', ''),

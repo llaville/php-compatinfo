@@ -124,6 +124,9 @@ class PHP_CompatInfo_Reference_SocketsTest
                 'MSG_EOF',
             );
         }
+        $tmp = array('SO_REUSEPORT');
+        $this->optionalconstants = array_merge($this->optionalconstants, $tmp);
+
         $this->optionalfunctions = array(
             // requires HAVE_SOCKETPAIR
             'socket_create_pair',
