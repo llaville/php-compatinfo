@@ -4,3 +4,4 @@ Additions and changes:
 
 Bug fixes:
 - notice error with verbose level 3 and source report
+- GH-69: SO_REUSEPORT missing in Sockets Reference
