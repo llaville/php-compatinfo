@@ -179,7 +179,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
                     if ($fileinfo->getMTime() <=
                         (time() - $delay)
                     ) {
-                        $deleted = unlink($fileinfo->getPathname());
+                        $deleted = @unlink($fileinfo->getPathname());
                         if ($deleted) {
                             $entries++;
                         }
@@ -271,7 +271,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
             $entries = 0;
             if ($this->isCached($source)) {
                 $cache_id = sha1_file($source);
-                $deleted  = unlink($this->cache[$cache_id]);
+                $deleted  = @unlink($this->cache[$cache_id]);
                 if ($deleted) {
                     unset($this->cache[$cache_id]);
                     $entries = 1;
