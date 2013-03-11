@@ -1,6 +1,7 @@
 Additions and changes:
 - do not print empty reports
 - update ereg reference on PHP max version
+- upgrade jQuery version to 1.9.1
 
 Bug fixes:
 - notice error with verbose level 3 and source report
