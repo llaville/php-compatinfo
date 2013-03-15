@@ -23,11 +23,11 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-02-26</date>
- <time>15:02:48</time>
+ <date>2013-03-15</date>
+ <time>21:02:27</time>
  <version>
-  <release>2.13.2</release>
-  <api>2.13.0</api>
+  <release>2.14.0</release>
+  <api>2.14.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -36,10 +36,15 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- fixes PHP_Reflect minimum dependency to 1.6.1
+- do not print empty reports
+- update ereg reference on PHP max version
+- update mongo reference to 1.3.5
+- upgrade jQuery version to 1.9.1
 
 Bug fixes:
-- none
+- notice error with verbose level 3 and source report
+- GH-69: SO_REUSEPORT missing in Sockets Reference
+- GH-74: make unlink silent in File Cache
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -535,6 +540,30 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.14.0</release>
+    <api>2.14.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-03-15</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- do not print empty reports
+- update ereg reference on PHP max version
+- update mongo reference to 1.3.5
+- upgrade jQuery version to 1.9.1
+
+Bug fixes:
+- notice error with verbose level 3 and source report
+- GH-69: SO_REUSEPORT missing in Sockets Reference
+- GH-74: make unlink silent in File Cache
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.13.2</release>
