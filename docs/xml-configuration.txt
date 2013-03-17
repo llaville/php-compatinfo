@@ -1,5 +1,6 @@
 = Configure CLI options
 :description: Structure and contents of the XML configuration file
+include::revision.txt[]
 include::attributes.txt[]
 
 
