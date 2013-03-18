@@ -2,9 +2,9 @@
 :description: Find out the minimum version and the extensions required for a piece of code to run.
 :manhtml:     616Kb
 :manchunked:  539Kb
-:manchm:      550Kb
-:manpdfa4:    662Kb
-:manpdfus:    663Kb
+:manchm:      552Kb
+:manpdfa4:    665Kb
+:manpdfus:    667Kb
 :manepub:     531Kb
 include::revision.txt[]
 include::attributes.txt[]

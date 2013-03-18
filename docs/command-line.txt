@@ -1,5 +1,6 @@
 = Command Line
 :description: Using PHP_CompatInfo from the command line
+include::revision.txt[]
 include::attributes.txt[]
 
 
