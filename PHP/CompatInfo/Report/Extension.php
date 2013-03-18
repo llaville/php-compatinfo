@@ -45,7 +45,7 @@ class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
             $this->totalConditions = 0;
             $this->globalVersions  = array('4.0.0', '');
 
-            if ($this->isEmpty($elements)) {
+            if ($this->isEmpty($extensions)) {
                 return;
             }
             $this->printTHeader($base, false, $extensions);
