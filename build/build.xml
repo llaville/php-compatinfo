@@ -21,7 +21,7 @@
     -->
     <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
     <property name="build.target"                value="${project.dir}/build" />
-    <property name="build.version"               value="2.14.0" />
+    <property name="build.version"               value="2.14.1" />
 
     <!--
         ======================================================================

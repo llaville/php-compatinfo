@@ -1,0 +1,5 @@
+Additions and changes:
+- none
+
+Bug fixes:
+- GH-76: broken extension report (thanks to Remi Collet)
