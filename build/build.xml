@@ -21,7 +21,7 @@
     -->
     <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
     <property name="build.target"                value="${project.dir}/build" />
-    <property name="build.version"               value="2.14.0" />
+    <property name="build.version"               value="2.14.1" />
 
     <!--
         ======================================================================
@@ -267,6 +267,7 @@
         <exclude name="docs/js/**" />
         <exclude name="docs/styles/**" />
         <exclude name="docs/*" />
+        <exclude name="misc/phpci.1*" />
         <exclude name="**/netgrowl.php" />
         <exclude name="**/PEAR.php" />
         <exclude name="**/IssueTest2.php" />

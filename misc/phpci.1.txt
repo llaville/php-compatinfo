@@ -1,0 +1,102 @@
+PHPCI(1)
+========
+:doctype: manpage
+
+
+NAME
+----
+phpci - parse any data source to find out the minimum version and extensions required for it to run
+
+
+SYNOPSIS
+--------
+*phpci* ['OPTIONS'] 'COMMAND' ['OPTS'] ['DATASOURCE']
+
+
+DESCRIPTION
+-----------
+The phpci(1) command parse any 'DATASOURCE' to find out the minimum PHP version
+and extensions required.
+
+
+OPTIONS
+-------
+*--configuration*='XMLFILE'::
+    Read configuration options from 'XMLFILE'. All command line options will 
+    overrides those that are defined in this xml file.
+
+*--no-configuration*::
+    Ignore default configuration files: 'phpcompatinfo.xml', 'phpcompatinfo.xml.dist'.
+
+*-d, --ini-set*='INI_SET'::
+    Sets a php.ini directive value. This option may be specified more than once.
+
+*-v, --verbose*::
+    Verbosely print processing information and warning messages.
+
+* ['TOPIC'] -h, --help*::
+    Print help TOPIC. 'topic' *--help*  will print help content about a
+    topic, *--help* summarizes phpci syntax.
+
+*--version*::
+    Print program version number.
+
+
+PRINT COMMAND
+-------------
+The phpci(1) 'PRINT' command is used to find out minimum php version to run 
+data source code provided. Syntax:
+
+  phpci print [OPTION] DATA_SOURCE
+
+Where:
+
+*OPTION*::
+  phpci(1) *--report* option specifying the type of result to print on stdout.
+  See *--help-report* option for valid choices.
+
+*DATA_SOURCE*::
+  The source path to scan.
+
+The commands perform as follows:
+
+*print*::
+  Print report on stdout or into a file if *--report-file* option is in effect.
+
+
+EXIT STATUS
+-----------
+*0*::
+    Success
+
+*1*::
+    Failure (syntax or usage error; configuration error; unexpected error).
+
+
+BUGS
+----
+Report any issue at <https://github.com/llaville/php-compat-info/issues>
+
+
+AUTHORS
+-------
+PHP_CompatInfo was originally written by Davey Shafik in 2004.
+
+Remi Collet, contributor of many extensions reference and unit tests, joined the project since version 2.0.0RC2 
+
+This CLI version was introduced and written by Laurent Laville.
+
+
+SEE ALSO
+--------
+Main web site: <http://php5.laurent-laville.org/compatinfo/>
+
+
+COPYRIGHT
+---------
+Copyright \(C) 2010-2013 Laurent Laville. 
+
+
+LICENSE
+-------
+Free use of this software is granted under the terms of the BSD 3-clause license.
