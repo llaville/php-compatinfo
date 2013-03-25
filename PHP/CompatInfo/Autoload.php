@@ -200,6 +200,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/oauth.php',
             'PHP_CompatInfo_Reference_Odbc'
                 => 'PHP/CompatInfo/Reference/odbc.php',
+            'PHP_CompatInfo_Reference_Zend_OPcache'
+                => 'PHP/CompatInfo/Reference/zendopcache.php',
             'PHP_CompatInfo_Reference_Openssl'
                 => 'PHP/CompatInfo/Reference/openssl.php',
             'PHP_CompatInfo_Reference_Pcntl'
