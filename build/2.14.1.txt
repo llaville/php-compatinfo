@@ -1,5 +1,5 @@
 Additions and changes:
-- none
+- update xdebug reference to 2.2.2
 
 Bug fixes:
 - GH-76: broken extension report (thanks to Remi Collet)
