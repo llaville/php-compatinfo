@@ -825,10 +825,8 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                  * @link http://www.php.net/manual/en/language.constants.php
                  *       Constants
                  */
-                $constants = $reflect->getConstants(true, null, $ns);
-                $this->getInfo('constants', '4.0.0', $constants['user'],  $source, $ns);
-                $this->getInfo('constants', '4.0.0', $constants['magic'], $source, $ns);
-                $this->getInfo('constants', '4.0.0', $constants['ext'],   $source, $ns);
+                $constants = $reflect->getConstants(false, null, $ns);
+                $this->getInfo('constants', '4.0.0', $constants, $source, $ns);
 
                 /**
                  * @link http://www.php.net/manual/en/functions.user-defined.php
@@ -863,6 +861,10 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                     }
                 }
             }
+
+            // additional search for constants on global namespace
+            $constants = $reflect->getConstants(false, null);
+            $this->getInfo('constants', '4.0.0', $constants,  $source, '\\');
 
             // updates current source versions only if element is not excluded
             $keys = array(
@@ -1356,14 +1358,8 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             } else {
                 $uses = 1;
             }
-            if ((isset($data['class']) && $data['class'] !== false)
-                || (isset($data['trait']) && $data['trait'] !== false)
-            ) {
-                // user component (class or trait constant)
-                $ref = 1;
-            } else {
-                $ref = $this->searchReference($category, $key);
-            }
+
+            $ref = $this->searchReference($category, $key);
 
             if ($ns == '\\') {
                 // global namespace

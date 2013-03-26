@@ -50,6 +50,12 @@ class PHP_CompatInfo_TokenParser
 
             if (null != $container) {
                 $name = $token->getName();
+                $defconst = get_defined_constants();
+                if (array_key_exists(strtoupper($name), $defconst)) {
+                    $class = FALSE;
+                    $trait = FALSE;
+                    $ns    = '\\';
+                }
 
                 // update constants
                 $constants = $subject->offsetGet(array($container => $ns));
@@ -155,6 +161,12 @@ class PHP_CompatInfo_TokenParser
 
             if (null != $container) {
                 $name = $token->getName();
+                $defconst = get_defined_constants();
+                if (array_key_exists(strtoupper($name), $defconst)) {
+                    $class = FALSE;
+                    $trait = FALSE;
+                    $ns    = '\\';
+                }
 
                 // update constants
                 $constants = $subject->offsetGet(array($container => $ns));
@@ -209,7 +221,7 @@ class PHP_CompatInfo_TokenParser
      * Parser for tokens
      * T_CATCH, T_CLONE, T_INSTANCEOF, T_THROW, T_TRY, T_HALT_COMPILER, T_GOTO,
      * T_UNSET_CAST, T_INSTEADOF, T_OBJECT_OPERATOR, T_OPEN_SQUARE
-     * 
+     *
      * @return void
      */
     public static function parseTokenFeatures()
