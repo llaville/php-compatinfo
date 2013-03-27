@@ -5,4 +5,4 @@ Additions and changes:
 Bug fixes:
 - GH-72: Namespace issue
 - GH-76: broken extension report (thanks to Remi Collet)
-- GH-80; Issue apcu (thanks to Remi Collet)
+- GH-80: Issue apcu (thanks to Remi Collet)
