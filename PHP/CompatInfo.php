@@ -1359,7 +1359,16 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 $uses = 1;
             }
 
-            $ref = $this->searchReference($category, $key);
+            if ('constants' == $category && $data['class'] !== false) {
+                /**
+                 * Class constants :
+                 * Do not search reference that can match core/ext constants
+                 * @see https://github.com/llaville/php-compat-info/issues/34
+                 */
+                $ref = 1;
+            } else {
+                $ref = $this->searchReference($category, $key);
+            }
 
             if ($ns == '\\') {
                 // global namespace
