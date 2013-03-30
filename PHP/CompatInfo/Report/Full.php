@@ -39,7 +39,14 @@ class PHP_CompatInfo_Report_Full
             return;
         }
         $reportResults = $pci->toArray();
-        $base   = realpath($source);
+        $masterResults = $reportResults[0];
+        if ($options['verbose'] < 3) {
+            $reportResults = $reportResults[0];
+        } else {
+            unset($reportResults[0]);
+        }
+
+        $base = realpath($source);
         if (is_file($base)) {
             $base = dirname($base);
         }
@@ -81,9 +88,9 @@ class PHP_CompatInfo_Report_Full
             echo PHP_EOL;
         }
 
-        echo 'Required PHP ' . $reportResults['versions'][0] . ' (min)';
-        if (!empty($reportResults['versions'][1])) {
-            echo ', ' . $reportResults['versions'][1] . ' (max)';
+        echo 'Required PHP ' . $masterResults['versions'][0] . ' (min)';
+        if (!empty($masterResults['versions'][1])) {
+            echo ', ' . $masterResults['versions'][1] . ' (max)';
         }
         echo PHP_EOL;
     }

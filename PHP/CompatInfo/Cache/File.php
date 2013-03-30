@@ -73,11 +73,41 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
         $cacheOptions['reference'] = $options['reference'];
         $cacheOptions['exclude']   = $options['exclude'];
 
+        // Expands variable from Environment
+        $nb = preg_match_all("/%{([^}]*)}/", $cacheOptions['save_path'], $reg);
+        for ($i=0 ; $i<$nb ; $i++) {
+            $val = getenv($reg[1][$i]);
+            if ($val) {
+                $cacheOptions['save_path'] = str_replace(
+                    $reg[0][$i],
+                    $val,
+                    $cacheOptions['save_path']
+                );
+            }
+        }
+
         $this->options = $cacheOptions;
 
+        // Directory could need to be created (first run or volatile folder)
         if (file_exists($this->options['save_path']) === false) {
+            if (!@mkdir($this->options['save_path'], 0755, true)) {
+                throw new PHP_CompatInfo_Exception(
+                    "Can't create Directory '" . $this->options['save_path'] . "'.",
+                    PHP_CompatInfo_Exception::INVALIDARGUMENT
+                );
+            }
+        }
+
+        // Check if directory exist and is writable by current user
+        if (!is_dir($this->options['save_path'])) {
             throw new PHP_CompatInfo_Exception(
                 "Directory '" . $this->options['save_path'] . "' does not exists.",
+                PHP_CompatInfo_Exception::INVALIDARGUMENT
+            );
+        }
+        if (!is_writable($this->options['save_path'])) {
+            throw new PHP_CompatInfo_Exception(
+                "Directory '" . $this->options['save_path'] . "' is not writable.",
                 PHP_CompatInfo_Exception::INVALIDARGUMENT
             );
         }
@@ -179,7 +209,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
                     if ($fileinfo->getMTime() <=
                         (time() - $delay)
                     ) {
-                        $deleted = unlink($fileinfo->getPathname());
+                        $deleted = @unlink($fileinfo->getPathname());
                         if ($deleted) {
                             $entries++;
                         }
@@ -271,7 +301,7 @@ class PHP_CompatInfo_Cache_File implements PHP_CompatInfo_Cache_Interface
             $entries = 0;
             if ($this->isCached($source)) {
                 $cache_id = sha1_file($source);
-                $deleted  = unlink($this->cache[$cache_id]);
+                $deleted  = @unlink($this->cache[$cache_id]);
                 if ($deleted) {
                     unset($this->cache[$cache_id]);
                     $entries = 1;

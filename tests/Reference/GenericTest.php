@@ -53,9 +53,18 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
         if (isset($this->ref['extensions'])) {
             foreach ($this->ref['extensions'] as $extname => $opt) {
                 if (!extension_loaded($extname)) {
-                    $this->markTestSkipped(
-                        "The '$extname' extension is not available."
-                    );
+                    // if dynamic extension load is activated
+                    $loaded = (bool) ini_get('enable_dl');
+                    if ($loaded) {
+                        // give a second chance
+                        $prefix = (PHP_SHLIB_SUFFIX === 'dll') ? 'php_' : '';
+                        $loaded = @dl($prefix . $extname . '.' . PHP_SHLIB_SUFFIX);
+                    }
+                    if ($loaded === false) {
+                        $this->markTestSkipped(
+                            "The '$extname' extension is not available."
+                        );
+                    }
                 }
             }
         }

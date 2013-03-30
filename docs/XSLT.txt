@@ -10,8 +10,9 @@ into some nice html pages.
 
 To do this, make sure you've first generate the XML report, i.e:
 ----
- $ phpci print --report xml --report-file <report.xml> <dataSource>
+ $ phpci -vvv print --report xml --report-file <report.xml> <dataSource>
 ----
+CAUTION: Be sure to use verbose level 3.
 
 And then use the xslt processor to transform the XML to a beautiful XHTML page.
 ----

@@ -674,7 +674,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
              */
             $options = array(
                 'containers' => array(
-                    'const' => 'constants',
                     'core'  => 'internalFunctions',
                     'token' => 'tokens',
                     'glob'  => 'globals'
@@ -698,53 +697,11 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 array('PHP_CompatInfo_TokenParser', 'parseTokenString')
             );
 
-            // constants
+            // user constants
             $reflect->connect(
                 'T_CONSTANT_ENCAPSED_STRING',
                 'PHP_CompatInfo_Token_CONSTANT_ENCAPSED_STRING',
                 array('PHP_CompatInfo_TokenParser', 'parseTokenConstant')
-            );
-
-            // magic constants
-            $reflect->connect(
-                'T_LINE',
-                'PHP_Reflect_Token_LINE',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_FILE',
-                'PHP_Reflect_Token_FILE',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_DIR',
-                'PHP_Reflect_Token_DIR',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_FUNC_C',
-                'PHP_Reflect_Token_FUNC_C',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_CLASS_C',
-                'PHP_Reflect_Token_CLASS_C',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_TRAIT_C',
-                'PHP_Reflect_Token_TRAIT_C',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_METHOD_C',
-                'PHP_Reflect_Token_METHOD_C',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
-            );
-            $reflect->connect(
-                'T_NS_C',
-                'PHP_Reflect_Token_NS_C',
-                array('PHP_CompatInfo_TokenParser', 'parseTokenMagicConstant')
             );
 
             // globals and super globals
@@ -868,7 +825,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                  * @link http://www.php.net/manual/en/language.constants.php
                  *       Constants
                  */
-                $constants = $reflect->getConstants($ns);
+                $constants = $reflect->getConstants(false, null, $ns);
                 $this->getInfo('constants', '4.0.0', $constants, $source, $ns);
 
                 /**
@@ -904,6 +861,10 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                     }
                 }
             }
+
+            // additional search for constants on global namespace
+            $constants = $reflect->getConstants(false, null);
+            $this->getInfo('constants', '4.0.0', $constants,  $source, '\\');
 
             // updates current source versions only if element is not excluded
             $keys = array(
@@ -977,12 +938,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 );
             }
         } else {
-            if ($this->options['verbose'] < 3) {
-                $results = $this->results[0];
-            } else {
-                $results = $this->results;
-                unset($results[0]);
-            }
+            $results = $this->results;
         }
         return $results;
     }
@@ -1393,7 +1349,26 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
 
         foreach ($haystack as $key => $data) {
 
-            $ref = $this->searchReference($category, $key);
+            if (isset($data[0])) {
+                $uses = count($data);
+                // when PHP_Reflect detect multiple instance of same element
+                $data = $data[0];
+            } elseif (isset($data['uses'])) {
+                $uses = false;
+            } else {
+                $uses = 1;
+            }
+
+            if ('constants' == $category && $data['class'] !== false) {
+                /**
+                 * Class constants :
+                 * Do not search reference that can match core/ext constants
+                 * @see https://github.com/llaville/php-compat-info/issues/34
+                 */
+                $ref = 1;
+            } else {
+                $ref = $this->searchReference($category, $key);
+            }
 
             if ($ns == '\\') {
                 // global namespace
@@ -1498,9 +1473,8 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 $values[$key]['sources'][] = $source;
                 $values[$key]['namespace'] = ('user' === $extension) ? $ns : '\\';
             } else {
-                $values[$key]['uses']
-                    = isset($data['uses']) ? count($data['uses']) : 1;
-                $values[$key]['sources']   = array($source);
+                $values[$key]['uses'] = empty($uses) ? count($data['uses']) : $uses;
+                $values[$key]['sources'] = array($source);
                 $values[$key]['namespace'] = ('user' === $extension) ? $ns : '\\';
 
                 if (isset($data['parent']) && !empty($data['parent'])) {

@@ -45,6 +45,9 @@ class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
             $this->totalConditions = 0;
             $this->globalVersions  = array('4.0.0', '');
 
+            if ($this->isEmpty($extensions)) {
+                return;
+            }
             $this->printTHeader($base, false, $extensions);
             $this->printTBody($extensions, ($verbose == 2), $base);
             $this->printTFoot();
@@ -58,6 +61,9 @@ class PHP_CompatInfo_Report_Extension extends PHP_CompatInfo_Report
                 $this->totalConditions = 0;
                 $this->globalVersions  = array('4.0.0', '');
 
+                if ($this->isEmpty($elements['extensions'])) {
+                    continue;
+                }
                 $this->printTHeader($base, $filename, $elements['extensions']);
                 $this->printTBody($elements['extensions'], false, $base);
                 $this->printTFoot();

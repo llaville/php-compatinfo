@@ -68,6 +68,16 @@ class PHP_CompatInfo_Reference_ApcTest
         $this->optionalclasses = array(
             'APCIterator',
         );
+        if (extension_loaded('apcu')) {
+            // APCu is a drop in replacement for APC
+            // present as "apc" but only provides user data cache functions
+            $this->optionalfunctions = array(
+                'apc_define_constants',
+                'apc_load_constants',
+                'apc_compile_file',
+                'apc_delete_file',
+            );
+        }
         $this->obj = new PHP_CompatInfo_Reference_Apc();
         parent::setUp();
     }

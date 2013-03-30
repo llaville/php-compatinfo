@@ -6,7 +6,7 @@ include::attributes.txt[]
 
 [role="lead"]
 Before you begin, ensure that you have at least
-link:http://www.php.net[PHP] 5.2.1 installed.
+http://www.php.net[PHP] 5.2.1 installed.
 
 == PEAR
 

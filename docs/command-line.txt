@@ -1,5 +1,6 @@
 = Command Line
 :description: Using PHP_CompatInfo from the command line
+include::revision.txt[]
 include::attributes.txt[]
 
 
@@ -154,40 +155,57 @@ If you choose to set verbose level 2 (+-vv+), your report(s) will print both war
 .Verbose level 2
 ====
 ----
-    $ phpci -vv print --report condition \path\to\symfony-ClassLoader-2.0.15
+    $ phpci -vv print -R --report condition \path\to\symfony-ClassLoader-2.1.2
 
-    BASE: \path\to\symfony-ClassLoader-2.0.15
+    BASE: \path\to\symfony-ClassLoader-2.1.2
 
     -------------------------------------------------------------------------------
     PHP COMPAT INFO CONDITION SUMMARY
     -------------------------------------------------------------------------------
-      CONDITION                             EXTENSION         PHP min/Max     COUNT
+      CONDITION                             EXT min/Max       PHP min/Max     COUNT
     -------------------------------------------------------------------------------
-      extension_loaded                      Core              4.0.0               1
-        \ApcUniversalClassLoader.php
-      class_exists                          Core              4.0.0               2
-        \ClassCollectionLoader.php
-        \DebugUniversalClassLoader.php
-      interface_exists                      Core              5.0.2               2
-        \ClassCollectionLoader.php
-        \DebugUniversalClassLoader.php
-      function_exists                       Core              4.0.0               4
-        \ClassCollectionLoader.php
-        \DebugUniversalClassLoader.php
-      trait_exists                          Core              5.4.0               2
-        \ClassCollectionLoader.php
-        \DebugUniversalClassLoader.php
+      extension_loaded                      Core-4.0.0        4.0.0               4
+        \Symfony\Component\ClassLoader\ApcClassLoader.php
+        \Symfony\Component\ClassLoader\ApcUniversalClassLoader.php
+        \Symfony\Component\ClassLoader\Tests\ApcUniversalClassLoaderTest.php
+        \Symfony\Component\ClassLoader\XcacheClassLoader.php
+      method_exists                         Core-4.0.0        4.0.0               3
+        \Symfony\Component\ClassLoader\ApcClassLoader.php
+        \Symfony\Component\ClassLoader\DebugClassLoader.php
+        \Symfony\Component\ClassLoader\XcacheClassLoader.php
+      function_exists                       Core-4.0.0        4.0.0               6
+        \Symfony\Component\ClassLoader\ClassCollectionLoader.php
+        \Symfony\Component\ClassLoader\DebugClassLoader.php
+        \Symfony\Component\ClassLoader\DebugUniversalClassLoader.php
+      class_exists                          Core-4.0.0        5.0.0              15
+        \Symfony\Component\ClassLoader\DebugClassLoader.php
+        \Symfony\Component\ClassLoader\DebugUniversalClassLoader.php
+        \Symfony\Component\ClassLoader\Tests\ApcUniversalClassLoaderTest.php
+        \Symfony\Component\ClassLoader\Tests\ClassLoaderTest.php
+        \Symfony\Component\ClassLoader\Tests\ClassMapGeneratorTest.php
+        \Symfony\Component\ClassLoader\Tests\UniversalClassLoaderTest.php
+      interface_exists                      Core-5.0.2        5.0.2               2
+        \Symfony\Component\ClassLoader\DebugClassLoader.php
+        \Symfony\Component\ClassLoader\DebugUniversalClassLoader.php
+    C trait_exists                          Core-5.4.0        5.4.0               2
+        \Symfony\Component\ClassLoader\DebugClassLoader.php
+        \Symfony\Component\ClassLoader\DebugUniversalClassLoader.php
     -------------------------------------------------------------------------------
-    A TOTAL OF 5 CONDITIONS WERE FOUND
-    REQUIRED PHP 5.4.0 (MIN)
+    A TOTAL OF 6 FUNCTIONS WERE FOUND
+    WITH 1 EXCLUDED ON CONDITIONAL CODE
+    REQUIRED PHP 5.0.2 (MIN)
     -------------------------------------------------------------------------------
-    Time: 1 second, Memory: 8.25Mb
+    Time: 5 seconds, Memory: 10.50Mb
     -------------------------------------------------------------------------------
 
-    Warning messages : (2)
 
-      Cannot load extension reference 'com_dotnet'
-      Cannot load extension reference 'odbc'
+    Warning messages : (1)
+
+      Cannot load extension reference 'mysqlnd'
+
+    Time: 5 seconds, Memory: 10.50Mb
+
+    Required PHP 5.3.2 (min)
 ----
 ====
 
@@ -201,90 +219,178 @@ NOTE: It is usefull only when data source to parse is a directory.
 .Verbose level 3
 ====
 ----
-    $ phpci -vvv print --report condition \path\to\symfony-ClassLoader-2.0.15
+    $ phpci -vvv print -R --report condition \path\to\symfony-ClassLoader-2.1.2
 
-    BASE: \path\to\symfony-ClassLoader-2.0.15
-    FILE: \ApcUniversalClassLoader.php
+    BASE: \path\to\ClassLoader-2.1.2
+    FILE: \Symfony\Component\ClassLoader\ApcClassLoader.php
     -------------------------------------------------------------------------------
     PHP COMPAT INFO CONDITION SUMMARY
     -------------------------------------------------------------------------------
-      CONDITION                             EXTENSION         PHP min/Max     COUNT
+      CONDITION                             EXT min/Max       PHP min/Max     COUNT
+    -------------------------------------------------------------------------------
+      extension_loaded                      Core-4.0.0        4.0.0               1
+      method_exists                         Core-4.0.0        4.0.0               1
+    -------------------------------------------------------------------------------
+    A TOTAL OF 2 FUNCTIONS WERE FOUND
+    REQUIRED PHP 4.0.0 (MIN)
+    -------------------------------------------------------------------------------
+    Time: 2 seconds, Memory: 6.50Mb
+    -------------------------------------------------------------------------------
+
+    BASE: \path\to\ClassLoader-2.1.2
+    FILE: \Symfony\Component\ClassLoader\ApcUniversalClassLoader.php
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONDITION SUMMARY
+    -------------------------------------------------------------------------------
+      CONDITION                             EXT min/Max       PHP min/Max     COUNT
     -------------------------------------------------------------------------------
       extension_loaded                      Core-4.0.0        4.0.0               1
     -------------------------------------------------------------------------------
-    A TOTAL OF 1 CONDITION WAS FOUND
+    A TOTAL OF 1 FUNCTION WAS FOUND
     REQUIRED PHP 4.0.0 (MIN)
     -------------------------------------------------------------------------------
-    Time: 0 seconds, Memory: 8.25Mb
+    Time: 2 seconds, Memory: 6.50Mb
     -------------------------------------------------------------------------------
 
-    BASE: \path\to\symfony-ClassLoader-2.0.15
-    FILE: \ClassCollectionLoader.php
+    BASE: \path\to\ClassLoader-2.1.2
+    FILE: \Symfony\Component\ClassLoader\ClassCollectionLoader.php
     -------------------------------------------------------------------------------
     PHP COMPAT INFO CONDITION SUMMARY
     -------------------------------------------------------------------------------
-      CONDITION                             EXTENSION         PHP min/Max     COUNT
+      CONDITION                             EXT min/Max       PHP min/Max     COUNT
     -------------------------------------------------------------------------------
-      class_exists                          Core-4.0.0        4.0.0               1
-      interface_exists                      Core-5.0.2        5.0.2               1
-      function_exists                       Core-4.0.0        4.0.0               3
-      trait_exists                          Core-5.4.0        5.4.0               1
+      function_exists                       Core-4.0.0        4.0.0               4
     -------------------------------------------------------------------------------
-    A TOTAL OF 4 CONDITIONS WERE FOUND
-    REQUIRED PHP 5.4.0 (MIN)
+    A TOTAL OF 1 FUNCTION WAS FOUND
+    REQUIRED PHP 4.0.0 (MIN)
     -------------------------------------------------------------------------------
-    Time: 0 seconds, Memory: 8.25Mb
+    Time: 2 seconds, Memory: 6.50Mb
     -------------------------------------------------------------------------------
 
-    BASE: \path\to\symfony-ClassLoader-2.0.15
-    FILE: \DebugUniversalClassLoader.php
+    BASE: \path\to\ClassLoader-2.1.2
+    FILE: \Symfony\Component\ClassLoader\DebugClassLoader.php
     -------------------------------------------------------------------------------
     PHP COMPAT INFO CONDITION SUMMARY
     -------------------------------------------------------------------------------
-      CONDITION                             EXTENSION         PHP min/Max     COUNT
+      CONDITION                             EXT min/Max       PHP min/Max     COUNT
     -------------------------------------------------------------------------------
-      class_exists                          Core-5.0.0        5.0.0               1
+      method_exists                         Core-4.0.0        4.0.0               1
+      class_exists                          Core-4.0.0        5.0.0               1
       interface_exists                      Core-5.0.2        5.0.2               1
       function_exists                       Core-4.0.0        4.0.0               1
     C trait_exists                          Core-5.4.0        5.4.0               1
     -------------------------------------------------------------------------------
-    A TOTAL OF 4 CONDITIONS WERE FOUND
+    A TOTAL OF 5 FUNCTIONS WERE FOUND
     WITH 1 EXCLUDED ON CONDITIONAL CODE
     REQUIRED PHP 5.0.2 (MIN)
     -------------------------------------------------------------------------------
-    Time: 0 seconds, Memory: 8.25Mb
+    Time: 2 seconds, Memory: 6.50Mb
     -------------------------------------------------------------------------------
 
-    BASE: \path\to\symfony-ClassLoader-2.0.15
-    FILE: \MapClassLoader.php
+    BASE: \path\to\ClassLoader-2.1.2
+    FILE: \Symfony\Component\ClassLoader\DebugUniversalClassLoader.php
     -------------------------------------------------------------------------------
     PHP COMPAT INFO CONDITION SUMMARY
     -------------------------------------------------------------------------------
-      CONDITION                             EXTENSION         PHP min/Max     COUNT
+      CONDITION                             EXT min/Max       PHP min/Max     COUNT
     -------------------------------------------------------------------------------
+      class_exists                          Core-4.0.0        5.0.0               1
+      interface_exists                      Core-5.0.2        5.0.2               1
+      function_exists                       Core-4.0.0        4.0.0               1
+    C trait_exists                          Core-5.4.0        5.4.0               1
     -------------------------------------------------------------------------------
-    A TOTAL OF 0 CONDITION WAS FOUND
+    A TOTAL OF 4 FUNCTIONS WERE FOUND
+    WITH 1 EXCLUDED ON CONDITIONAL CODE
+    REQUIRED PHP 5.0.2 (MIN)
     -------------------------------------------------------------------------------
-    Time: 0 seconds, Memory: 8.25Mb
+    Time: 2 seconds, Memory: 6.50Mb
     -------------------------------------------------------------------------------
 
-    BASE: \path\to\symfony-ClassLoader-2.0.15
-    FILE: \UniversalClassLoader.php
+    BASE: \path\to\ClassLoader-2.1.2
+    FILE: \Symfony\Component\ClassLoader\Tests\ApcUniversalClassLoaderTest.php
     -------------------------------------------------------------------------------
     PHP COMPAT INFO CONDITION SUMMARY
     -------------------------------------------------------------------------------
-      CONDITION                             EXTENSION         PHP min/Max     COUNT
+      CONDITION                             EXT min/Max       PHP min/Max     COUNT
     -------------------------------------------------------------------------------
+      extension_loaded                      Core-4.0.0        4.0.0               1
+      class_exists                          Core-4.0.0        4.0.0               4
     -------------------------------------------------------------------------------
-    A TOTAL OF 0 CONDITION WAS FOUND
+    A TOTAL OF 2 FUNCTIONS WERE FOUND
+    REQUIRED PHP 4.0.0 (MIN)
     -------------------------------------------------------------------------------
-    Time: 0 seconds, Memory: 8.25Mb
+    Time: 2 seconds, Memory: 6.50Mb
     -------------------------------------------------------------------------------
 
-    Warning messages : (2)
+    BASE: \path\to\ClassLoader-2.1.2
+    FILE: \Symfony\Component\ClassLoader\Tests\ClassLoaderTest.php
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONDITION SUMMARY
+    -------------------------------------------------------------------------------
+      CONDITION                             EXT min/Max       PHP min/Max     COUNT
+    -------------------------------------------------------------------------------
+      class_exists                          Core-4.0.0        4.0.0               4
+    -------------------------------------------------------------------------------
+    A TOTAL OF 1 FUNCTION WAS FOUND
+    REQUIRED PHP 4.0.0 (MIN)
+    -------------------------------------------------------------------------------
+    Time: 2 seconds, Memory: 6.50Mb
+    -------------------------------------------------------------------------------
 
-      Cannot load extension reference 'com_dotnet'
-      Cannot load extension reference 'odbc'
+    BASE: \path\to\ClassLoader-2.1.2
+    FILE: \Symfony\Component\ClassLoader\Tests\ClassMapGeneratorTest.php
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONDITION SUMMARY
+    -------------------------------------------------------------------------------
+      CONDITION                             EXT min/Max       PHP min/Max     COUNT
+    -------------------------------------------------------------------------------
+      class_exists                          Core-4.0.0        4.0.0               1
+    -------------------------------------------------------------------------------
+    A TOTAL OF 1 FUNCTION WAS FOUND
+    REQUIRED PHP 4.0.0 (MIN)
+    -------------------------------------------------------------------------------
+    Time: 2 seconds, Memory: 6.50Mb
+    -------------------------------------------------------------------------------
+
+    BASE: \path\to\ClassLoader-2.1.2
+    FILE: \Symfony\Component\ClassLoader\Tests\UniversalClassLoaderTest.php
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONDITION SUMMARY
+    -------------------------------------------------------------------------------
+      CONDITION                             EXT min/Max       PHP min/Max     COUNT
+    -------------------------------------------------------------------------------
+      class_exists                          Core-4.0.0        4.0.0               4
+    -------------------------------------------------------------------------------
+    A TOTAL OF 1 FUNCTION WAS FOUND
+    REQUIRED PHP 4.0.0 (MIN)
+    -------------------------------------------------------------------------------
+    Time: 2 seconds, Memory: 6.50Mb
+    -------------------------------------------------------------------------------
+
+    BASE: \path\to\ClassLoader-2.1.2
+    FILE: \Symfony\Component\ClassLoader\XcacheClassLoader.php
+    -------------------------------------------------------------------------------
+    PHP COMPAT INFO CONDITION SUMMARY
+    -------------------------------------------------------------------------------
+      CONDITION                             EXT min/Max       PHP min/Max     COUNT
+    -------------------------------------------------------------------------------
+      extension_loaded                      Core-4.0.0        4.0.0               1
+      method_exists                         Core-4.0.0        4.0.0               1
+    -------------------------------------------------------------------------------
+    A TOTAL OF 2 FUNCTIONS WERE FOUND
+    REQUIRED PHP 4.0.0 (MIN)
+    -------------------------------------------------------------------------------
+    Time: 2 seconds, Memory: 6.50Mb
+    -------------------------------------------------------------------------------
+
+
+    Warning messages : (1)
+
+      Cannot load extension reference 'mysqlnd'
+
+    Time: 2 seconds, Memory: 6.50Mb
+
+    Required PHP 5.3.2 (min)
 ----
 ====
 
