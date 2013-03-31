@@ -90,6 +90,9 @@ class PHP_CompatInfo_Reference_CoreTest
                 )
             );
         }
+        if (php_sapi_name() != 'cli') {
+            array_push($this->optionalconstants, 'STDIN', 'STDOUT', 'STDERR');
+        }
 
         $this->optionalfunctions = array(
             // Requires ZTS
