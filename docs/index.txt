@@ -1,11 +1,5 @@
 = PHP_CompatInfo
 :description: Find out the minimum version and the extensions required for a piece of code to run.
-:manhtml:     616Kb
-:manchunked:  539Kb
-:manchm:      552Kb
-:manpdfa4:    665Kb
-:manpdfus:    667Kb
-:manepub:     531Kb
 include::revision.txt[]
 include::attributes.txt[]
 
@@ -14,7 +8,7 @@ include::attributes.txt[]
 ************************************************************************
 *Release highlights:*
 
-- PHP_CompatInfo 2.14.0 add both support to PHP 5.3.23 and PHP 5.4.13
+- PHP_CompatInfo 2.14.1 fixe four bugs and update two references.
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -57,7 +51,7 @@ You can download the documentation for offline reading.
 [options="header", role="table table-bordered"]
 |===========================
 | Language | Single HTML file | Many HTML files | HTML Help file | PDF A4 file | PDF US file | EPUB file
-| English | link:{mandir}/en/phpci-book.html.zip[phpci-book.html.zip] {manhtml} | link:{mandir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] {manchunked} | link:{mandir}/en/phpci-book.chm.zip[phpci-book.chm.zip] {manchm} | link:{mandir}/en/phpci-book-a4.pdf[phpci-book-a4.pdf] {manpdfa4} | link:{mandir}/en/phpci-book-us.pdf[phpci-book-us.pdf] {manpdfus} | link:{mandir}/en/phpci-book.epub.zip[phpci-book.epub.zip] {manepub}
+| English | link:{mandir}/en/phpci-book.html.zip[phpci-book.html.zip] | link:{mandir}/en/phpci-book.chunked.zip[phpci-book.chunked.zip] | link:{mandir}/en/phpci-book.chm.zip[phpci-book.chm.zip] | link:{mandir}/en/phpci-book-a4.pdf[phpci-book-a4.pdf] | link:{mandir}/en/phpci-book-us.pdf[phpci-book-us.pdf] | link:{mandir}/en/phpci-book.epub.zip[phpci-book.epub.zip]
 |===========================
 
 == Appendixes

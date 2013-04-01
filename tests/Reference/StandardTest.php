@@ -102,6 +102,12 @@ class PHP_CompatInfo_Reference_StandardTest
                 'time_nanosleep',
                 'time_sleep_until',
             );
+
+            if (php_sapi_name() != 'cli') {
+                // dl function still exists in CLI but was removed from other SAPI since PHP 5.3
+                array_push($this->optionalfunctions, 'dl');
+            }
+
             $this->optionalconstants = array(
                 // requires syslog
                 'LOG_LOCAL0',
