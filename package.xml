@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-03-26</date>
- <time>22:23:52</time>
+ <date>2013-04-01</date>
+ <time>18:16:42</time>
  <version>
   <release>2.14.1</release>
   <api>2.14.0</api>
@@ -42,6 +42,8 @@ Additions and changes:
 Bug fixes:
 - GH-72: Namespace issue
 - GH-76: broken extension report (thanks to Remi Collet)
+- GH-77: Allow to use Environment variable in cache &apos;save_path&apos; option (thanks to Remi Collet)
+- GH-80: Issue apcu (thanks to Remi Collet)
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -546,7 +548,7 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2013-03-26</date>
+   <date>2013-04-01</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -556,6 +558,8 @@ Additions and changes:
 Bug fixes:
 - GH-72: Namespace issue
 - GH-76: broken extension report (thanks to Remi Collet)
+- GH-77: Allow to use Environment variable in cache &apos;save_path&apos; option (thanks to Remi Collet)
+- GH-80: Issue apcu (thanks to Remi Collet)
    </notes>
   </release>
   <release>
