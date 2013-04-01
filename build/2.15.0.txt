@@ -1,0 +1,5 @@
+Additions and changes:
+- new extension Zend Opcache (contribution by Remi Collet)
+
+Bug fixes:
+- none
