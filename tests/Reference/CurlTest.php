@@ -121,7 +121,73 @@ class PHP_CompatInfo_Reference_CurlTest
                     $this->optionalconstants,
                     'CURLINFO_LOCAL_IP',
                     'CURLINFO_LOCAL_PORT',
-                    'CURLINFO_PRIMARY_PORT'
+                    'CURLINFO_PRIMARY_PORT',
+                    'CURLOPT_FNMATCH_FUNCTION',
+                    'CURLOPT_WILDCARDMATCH',
+                    'CURLPROTO_RTMP',
+                    'CURLPROTO_RTMPE',
+                    'CURLPROTO_RTMPS',
+                    'CURLPROTO_RTMPT',
+                    'CURLPROTO_RTMPTE',
+                    'CURLPROTO_RTMPTS',
+                    'CURL_FNMATCHFUNC_FAIL',
+                    'CURL_FNMATCHFUNC_MATCH',
+                    'CURL_FNMATCHFUNC_NOMATCH'
+                );
+            }
+            if ($ver<0x071502) { /* Available since 7.21.2 */
+                array_push(
+                    $this->optionalconstants,
+                        'CURLPROTO_GOPHER'
+                );
+            }
+            if ($ver<0x071503) { /* Available since 7.21.3 */
+                array_push(
+                    $this->optionalconstants,
+                        'CURLAUTH_ONLY',
+                        'CURLOPT_RESOLVE'
+                );
+            }
+            if ($ver<0x071504) { /* Available since 7.21.4 */
+                array_push(
+                    $this->optionalconstants,
+                        'CURLOPT_TLSAUTH_PASSWORD',
+                        'CURLOPT_TLSAUTH_TYPE',
+                        'CURLOPT_TLSAUTH_USERNAME',
+                        'CURL_TLSAUTH_SRP'
+                );
+            }
+            if ($ver<0x071506) { /* Available since 7.21.6 */
+                array_push(
+                    $this->optionalconstants,
+                        'CURLOPT_ACCEPT_ENCODING',
+                        'CURLOPT_TRANSFER_ENCODING'
+                );
+            }
+            if ($ver<0x071600) { /* Available since 7.22.0 */
+                array_push(
+                    $this->optionalconstants,
+                        'CURLGSSAPI_DELEGATION_FLAG',
+                        'CURLGSSAPI_DELEGATION_POLICY_FLAG',
+                        'CURLOPT_GSSAPI_DELEGATION'
+                );
+            }
+            if ($ver<0x071800) { /* Available since 7.24.0 */
+                array_push(
+                    $this->optionalconstants,
+                        'CURLOPT_ACCEPTTIMEOUT_MS',
+                        'CURLOPT_DNS_SERVERS'
+                );
+            }
+            if ($ver<0x071900) { /* Available since 7.25.0 */
+                array_push(
+                    $this->optionalconstants,
+                        'CURLOPT_MAIL_AUTH',
+                        'CURLOPT_SSL_OPTIONS',
+                        'CURLOPT_TCP_KEEPALIVE',
+                        'CURLOPT_TCP_KEEPIDLE',
+                        'CURLOPT_TCP_KEEPINTVL',
+                        'CURLSSLOPT_ALLOW_BEAST'
                 );
             }
         }
