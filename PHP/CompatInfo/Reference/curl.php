@@ -172,6 +172,7 @@ class PHP_CompatInfo_Reference_Curl
             'CURL_VERSION_KERBEROS4'         => array('4.0.2', ''),
             'CURL_VERSION_LIBZ'              => array('4.0.2', ''),
             'CURL_VERSION_SSL'               => array('4.0.2', ''),
+            'CURL_WRAPPERS_ENABLE'           => array('5.4.15', ''),
             'CURL_WRITEFUNC_PAUSE'           => array('5.5.0-dev', ''),
 
             'CURLAUTH_ANY'                   => array('4.0.2', ''),
