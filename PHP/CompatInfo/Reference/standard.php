@@ -756,6 +756,7 @@ class PHP_CompatInfo_Reference_Standard
             'password_hash'                  => array('5.5.0-dev', ''),
             'password_needs_rehash'          => array('5.5.0-dev', ''),
             'password_verify'                => array('5.5.0-dev', ''),
+            'array_column'                   => array('5.5.0-dev', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
