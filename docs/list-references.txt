@@ -64,7 +64,7 @@
     L soap                                                    5.0.0
     L sockets                                                 4.1.0
       solr                                  1.0.2             5.2.3
-      sphinx                                1.2.0             5.1.3
+      sphinx                                1.3.0             5.1.3
     L SPL                                   0.2               5.0.0
     L SQLite                                2.0-dev           5.0.0
       sqlite3                               0.7               5.3.0

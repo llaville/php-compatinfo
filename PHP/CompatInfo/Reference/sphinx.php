@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Sphinx
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.2.0';
+    const REF_VERSION = '1.3.0';
 
     /**
      * Gets informations about extensions
@@ -171,6 +171,14 @@ class PHP_CompatInfo_Reference_Sphinx
             'SPH_RANK_FIELDMASK'                      => array('5.2.2', ''),
             'SPH_RANK_MATCHANY'                       => array('5.2.2', ''),
             'SPH_RANK_PROXIMITY'                      => array('5.2.2', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '1.3.0';       // 2013-04-04
+        $items = array(
+            'SPH_RANK_SPH04'                          => array('5.2.2', ''),
+            'SPH_RANK_EXPR'                           => array('5.2.2', ''),
+            'SPH_RANK_TOTAL'                          => array('5.2.2', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
