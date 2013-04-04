@@ -87,6 +87,32 @@ class PHP_CompatInfo_Reference_Date
     }
 
     /**
+     * Gets informations about interfaces
+     *
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
+     *
+     * @return array
+     */
+    public function getInterfaces($extension = null, $version = null, $condition = null)
+    {
+        $this->setFilter(func_get_args());
+
+        $interfaces = array();
+
+        $release = '5.5.0';       // not yet
+        $items = array(
+            'DateTimeInterface'              => array('5.5.0-dev', ''),
+        );
+        $this->applyFilter($release, $items, $interfaces);
+
+        return $interfaces;
+    }
+
+    /**
      * Gets informations about functions
      *
      * @param string $extension (optional) NULL for PHP version,
