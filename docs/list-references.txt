@@ -45,7 +45,7 @@
       mssql                                                   4.0.0
     L mysql                                 1.0               4.0.0
     L mysqli                                0.1               5.0.0
-      OAuth                                 1.2.2             5.1.0
+      OAuth                                 1.2.3             5.1.0
     L odbc                                                    4.0.0
     L openssl                                                 4.0.4
       pcntl                                                   4.1.0
