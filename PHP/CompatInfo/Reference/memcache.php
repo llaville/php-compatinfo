@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Memcache
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '3.0.7';
+    const REF_VERSION = '3.0.8';
 
     /**
      * Gets informations about extensions
@@ -52,7 +52,7 @@ class PHP_CompatInfo_Reference_Memcache
      */
     public function getExtensions($extension = null, $version = null, $condition = null)
     {
-        $phpMin = '4.3.3';
+        $phpMin = '4.3.11';
         $extensions = array(
             self::REF_NAME => array($phpMin, '', self::REF_VERSION)
         );
