@@ -10,7 +10,6 @@
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @author   Remi Collet <Remi@FamilleCollet.com>
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version  GIT: $Id$
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
@@ -28,8 +27,17 @@ if ($_SERVER['argc'] < 2) {
 $extname = $_SERVER['argv'][1];
 
 if (!($extname == 'internal' || $extname == 'Core' || extension_loaded($extname))) {
-    echo "Extension $extname not loaded" . PHP_EOL;
-    exit(2);
+    // if dynamic extension load is activated
+    $loaded = (bool) ini_get('enable_dl');
+    if ($loaded) {
+        // give a second chance
+        $prefix = (PHP_SHLIB_SUFFIX === 'dll') ? 'php_' : '';
+        $loaded = @dl($prefix . $extname . '.' . PHP_SHLIB_SUFFIX);
+    }
+    if ($loaded === false) {
+        echo "Extension $extname not loaded" . PHP_EOL;
+        exit(2);
+    }
 }
 
 if ($extname == 'Core' && version_compare(PHP_VERSION,'5.3.0','<')) {
