@@ -197,7 +197,15 @@ class PHP_CompatInfo_Reference_Memcache
         $items = array(
             'MEMCACHE_HAVE_SESSION'             => array('4.3.3', ''),
         );
+        $this->applyFilter($release, $items, $constants);
 
+        $release = '3.0.8';       // 2013-04-10
+        $items = array(
+            'MEMCACHE_USER1'                    => array('4.3.11', ''),
+            'MEMCACHE_USER2'                    => array('4.3.11', ''),
+            'MEMCACHE_USER3'                    => array('4.3.11', ''),
+            'MEMCACHE_USER4'                    => array('4.3.11', ''),
+        );
         $this->applyFilter($release, $items, $constants);
 
         return $constants;
