@@ -8,7 +8,7 @@ include::attributes.txt[]
 ************************************************************************
 *Release highlights:*
 
-- PHP_CompatInfo 2.14.1 fixe four bugs and update two references.
+- PHP_CompatInfo 2.15.0 add both support to PHP 5.3.24 and PHP 5.4.14
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
