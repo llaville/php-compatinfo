@@ -23,15 +23,15 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-04-10</date>
- <time>20:49:49</time>
+ <date>2013-04-11</date>
+ <time>19:58:34</time>
  <version>
   <release>2.15.0</release>
   <api>2.15.0</api>
  </version>
  <stability>
-  <release>snapshot</release>
-  <api>beta</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
@@ -550,10 +550,10 @@ Bug fixes:
     <api>2.15.0</api>
    </version>
    <stability>
-    <release>snapshot</release>
-    <api>beta</api>
+    <release>stable</release>
+    <api>stable</api>
    </stability>
-   <date>2013-04-10</date>
+   <date>2013-04-11</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
