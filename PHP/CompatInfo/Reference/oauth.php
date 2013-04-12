@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_OAuth
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.2.2';
+    const REF_VERSION = '1.2.3';
 
     /**
      * Gets informations about extensions

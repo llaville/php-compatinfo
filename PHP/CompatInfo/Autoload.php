@@ -200,6 +200,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/oauth.php',
             'PHP_CompatInfo_Reference_Odbc'
                 => 'PHP/CompatInfo/Reference/odbc.php',
+            'PHP_CompatInfo_Reference_Zend_OPcache'
+                => 'PHP/CompatInfo/Reference/zendopcache.php',
             'PHP_CompatInfo_Reference_Openssl'
                 => 'PHP/CompatInfo/Reference/openssl.php',
             'PHP_CompatInfo_Reference_Pcntl'
@@ -258,6 +260,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/tidy.php',
             'PHP_CompatInfo_Reference_Tokenizer'
                 => 'PHP/CompatInfo/Reference/tokenizer.php',
+            'PHP_CompatInfo_Reference_Varnish'
+                => 'PHP/CompatInfo/Reference/varnish.php',
             'PHP_CompatInfo_Reference_Wddx'
                 => 'PHP/CompatInfo/Reference/wddx.php',
             'PHP_CompatInfo_Reference_XCache'
