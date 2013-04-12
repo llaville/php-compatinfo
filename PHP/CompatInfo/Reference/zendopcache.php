@@ -85,6 +85,12 @@ class PHP_CompatInfo_Reference_Zend_OPcache
         );
         $this->applyFilter($release, $items, $functions);
 
+        $release = '7.0.2';       // not yet
+        $items = array(
+            'opcache_invalidate'               => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
         return $functions;
     }
 }
