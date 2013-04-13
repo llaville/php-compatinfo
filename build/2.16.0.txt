@@ -1,5 +1,6 @@
 Additions and changes:
 - new extension haru
+- new extension APCu
 
 Bug fixes:
 - none

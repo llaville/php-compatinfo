@@ -118,6 +118,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/amqp.php',
             'PHP_CompatInfo_Reference_Apc'
                 => 'PHP/CompatInfo/Reference/apc.php',
+            'PHP_CompatInfo_Reference_Apcu'
+                => 'PHP/CompatInfo/Reference/apcu.php',
             'PHP_CompatInfo_Reference_Bcmath'
                 => 'PHP/CompatInfo/Reference/bcmath.php',
             'PHP_CompatInfo_Reference_Bz2'
