@@ -1,0 +1,5 @@
+Additions and changes:
+- new extension haru
+
+Bug fixes:
+- none

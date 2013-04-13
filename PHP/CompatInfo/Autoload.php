@@ -154,6 +154,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/gettext.php',
             'PHP_CompatInfo_Reference_Gmp'
                 => 'PHP/CompatInfo/Reference/gmp.php',
+            'PHP_CompatInfo_Reference_Haru'
+                => 'PHP/CompatInfo/Reference/haru.php',
             'PHP_CompatInfo_Reference_Hash'
                 => 'PHP/CompatInfo/Reference/hash.php',
             'PHP_CompatInfo_Reference_Iconv'
