@@ -1,6 +1,7 @@
 Additions and changes:
 - new extension haru
 - new extension APCu
+- new extension msgpack
 
 Bug fixes:
 - none

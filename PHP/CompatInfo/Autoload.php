@@ -194,6 +194,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/mhash.php',
             'PHP_CompatInfo_Reference_Mongo'
                 => 'PHP/CompatInfo/Reference/mongo.php',
+            'PHP_CompatInfo_Reference_Msgpack'
+                => 'PHP/CompatInfo/Reference/msgpack.php',
             'PHP_CompatInfo_Reference_Mssql'
                 => 'PHP/CompatInfo/Reference/mssql.php',
             'PHP_CompatInfo_Reference_Mysql'
