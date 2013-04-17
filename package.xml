@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-04-16</date>
- <time>20:19:02</time>
+ <date>2013-04-17</date>
+ <time>19:48:18</time>
  <version>
   <release>2.16.0</release>
   <api>2.16.0</api>
@@ -191,6 +191,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="sqlite3.php" role="php" />
       <file baseinstalldir="Bartlett" name="ssh2.php" role="php" />
       <file baseinstalldir="Bartlett" name="standard.php" role="php" />
+      <file baseinstalldir="Bartlett" name="stomp.php" role="php" />
       <file baseinstalldir="Bartlett" name="svn.php" role="php" />
       <file baseinstalldir="Bartlett" name="sysvmsg.php" role="php" />
       <file baseinstalldir="Bartlett" name="sysvsem.php" role="php" />
@@ -334,6 +335,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="SQLiteTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="Ssh2Test.php" role="test" />
      <file baseinstalldir="Bartlett" name="StandardTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="StompTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SvnTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SysvmsgTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SysvsemTest.php" role="test" />
@@ -559,7 +561,7 @@ Bug fixes:
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2013-04-16</date>
+   <date>2013-04-17</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
