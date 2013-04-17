@@ -2,6 +2,7 @@ Additions and changes:
 - new extension haru
 - new extension APCu
 - new extension msgpack
+- new extension stomp
 
 Bug fixes:
 - none

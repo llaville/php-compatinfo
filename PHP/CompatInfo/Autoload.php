@@ -254,6 +254,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/ssh2.php',
             'PHP_CompatInfo_Reference_Standard'
                 => 'PHP/CompatInfo/Reference/standard.php',
+            'PHP_CompatInfo_Reference_Stomp'
+                => 'PHP/CompatInfo/Reference/stomp.php',
             'PHP_CompatInfo_Reference_Svn'
                 => 'PHP/CompatInfo/Reference/svn.php',
             'PHP_CompatInfo_Reference_Sysvmsg'
