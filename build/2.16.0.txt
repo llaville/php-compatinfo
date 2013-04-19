@@ -1,8 +1,6 @@
 Additions and changes:
-- new extension haru
-- new extension APCu
-- new extension msgpack
-- new extension stomp
+- add 4 new extensions: haru, APCu, msgpack, stomp
+- update amqp reference to 1.0.10
 
 Bug fixes:
 - none
