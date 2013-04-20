@@ -266,6 +266,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/tidy.php',
             'PHP_CompatInfo_Reference_Tokenizer'
                 => 'PHP/CompatInfo/Reference/tokenizer.php',
+            'PHP_CompatInfo_Reference_Uploadprogress'
+                => 'PHP/CompatInfo/Reference/uploadprogress.php',
             'PHP_CompatInfo_Reference_Varnish'
                 => 'PHP/CompatInfo/Reference/varnish.php',
             'PHP_CompatInfo_Reference_Wddx'
