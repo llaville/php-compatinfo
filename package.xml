@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-04-17</date>
- <time>19:48:18</time>
+ <date>2013-04-25</date>
+ <time>22:56:51</time>
  <version>
   <release>2.16.0</release>
   <api>2.16.0</api>
@@ -198,6 +198,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="sysvshm.php" role="php" />
       <file baseinstalldir="Bartlett" name="tidy.php" role="php" />
       <file baseinstalldir="Bartlett" name="tokenizer.php" role="php" />
+      <file baseinstalldir="Bartlett" name="uploadprogress.php" role="php" />
       <file baseinstalldir="Bartlett" name="varnish.php" role="php" />
       <file baseinstalldir="Bartlett" name="wddx.php" role="php" />
       <file baseinstalldir="Bartlett" name="xcache.php" role="php" />
@@ -342,6 +343,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="SysvshmTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="TidyTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="TokenizerTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="UploadprogressTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="VarnishTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="WddxTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="XCacheTest.php" role="test" />
@@ -561,7 +563,7 @@ Bug fixes:
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2013-04-17</date>
+   <date>2013-04-25</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
