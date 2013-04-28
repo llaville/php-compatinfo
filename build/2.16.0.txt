@@ -1,5 +1,5 @@
 Additions and changes:
-- add 5 new extensions: haru, APCu, msgpack, stomp, uploadprogress
+- add 6 new extensions: APCu, gender, haru, msgpack, stomp, uploadprogress
 - update amqp reference to 1.0.10
 
 Bug fixes:

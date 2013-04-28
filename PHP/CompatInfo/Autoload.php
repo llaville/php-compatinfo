@@ -150,6 +150,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/ftp.php',
             'PHP_CompatInfo_Reference_Gd'
                 => 'PHP/CompatInfo/Reference/gd.php',
+            'PHP_CompatInfo_Reference_Gender'
+                => 'PHP/CompatInfo/Reference/gender.php',
             'PHP_CompatInfo_Reference_Geoip'
                 => 'PHP/CompatInfo/Reference/geoip.php',
             'PHP_CompatInfo_Reference_Gettext'
