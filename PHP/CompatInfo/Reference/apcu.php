@@ -21,7 +21,6 @@
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
- * @link     http://www.php.net/manual/en/book.apcu.php
  * @since    Class available since Release 2.16.0
  */
 class PHP_CompatInfo_Reference_Apcu
@@ -35,7 +34,7 @@ class PHP_CompatInfo_Reference_Apcu
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '4.0.0';
+    const REF_VERSION = '4.0.1';
 
     /**
      * Gets informations about extensions
@@ -67,7 +66,6 @@ class PHP_CompatInfo_Reference_Apcu
      *                          Same operator values as used by version_compare
      *
      * @return array
-     * @link   http://www.php.net/manual/en/ref.apcu.php
      */
     public function getFunctions($extension = null, $version = null, $condition = null)
     {
@@ -98,4 +96,29 @@ class PHP_CompatInfo_Reference_Apcu
         return $functions;
     }
 
+    /**
+     * Gets informations about constants
+     *
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
+     *
+     * @return array
+     */
+    public function getConstants($extension = null, $version = null, $condition = null)
+    {
+        $this->setFilter(func_get_args());
+
+        $constants = array();
+
+        $release = '4.0.1';       // 2013-04-30
+        $items = array(
+            'APCU_APC_FULL_BC'                      => array('5.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        return $constants;
+    }
 }
