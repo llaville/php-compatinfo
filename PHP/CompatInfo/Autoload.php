@@ -180,6 +180,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/json.php',
             'PHP_CompatInfo_Reference_Ldap'
                 => 'PHP/CompatInfo/Reference/ldap.php',
+            'PHP_CompatInfo_Reference_Libevent'
+                => 'PHP/CompatInfo/Reference/libevent.php',
             'PHP_CompatInfo_Reference_Libxml'
                 => 'PHP/CompatInfo/Reference/libxml.php',
             'PHP_CompatInfo_Reference_Lzf'
