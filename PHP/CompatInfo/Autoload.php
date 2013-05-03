@@ -162,6 +162,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/haru.php',
             'PHP_CompatInfo_Reference_Hash'
                 => 'PHP/CompatInfo/Reference/hash.php',
+            'PHP_CompatInfo_Reference_Http'
+                => 'PHP/CompatInfo/Reference/http.php',
             'PHP_CompatInfo_Reference_Iconv'
                 => 'PHP/CompatInfo/Reference/iconv.php',
             'PHP_CompatInfo_Reference_Igbinary'

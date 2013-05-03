@@ -70,5 +70,5 @@ CAUTION: Its recommanded to migrate to PHP5, because PHP4 version is not maintai
 | 2.13.0  | 84    | svn
 | 2.14.0  | 84    |
 | 2.15.0  | 85    | varnish
-| 2.16.0  | 91    | APCu, gender, haru, msgpack, stomp, uploadprogress
+| 2.16.0  | 92    | APCu, gender, haru, http, msgpack, stomp, uploadprogress
 |===========================
