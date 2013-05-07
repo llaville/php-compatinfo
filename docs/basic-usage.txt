@@ -20,7 +20,7 @@ Default options printed below, may be changed either :
 |===========================
 | Option | Default | Description
 | `recursive` | false | scan recursive subdirectories or just local files
-| `reference` | PHP5  | data dictionary reference (all PHP4 and PHP5 informations)
+| `reference` | ALL  | data dictionary reference (all PHP4 and PHP5 informations)
 | `referencePlugins` | [PHP4[...], PHP5[...], ALL[...]] | adapters to connect to data dictionaries reference
 | `verbose`        | false | output more information
 | `fileExtensions` | [php, inc, phtml] | list of file extensions to scan
