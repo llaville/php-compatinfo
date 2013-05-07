@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-04-25</date>
- <time>22:56:51</time>
+ <date>2013-05-07</date>
+ <time>07:39:31</time>
  <version>
   <release>2.16.0</release>
   <api>2.16.0</api>
@@ -137,11 +137,13 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="filter.php" role="php" />
       <file baseinstalldir="Bartlett" name="ftp.php" role="php" />
       <file baseinstalldir="Bartlett" name="gd.php" role="php" />
+      <file baseinstalldir="Bartlett" name="gender.php" role="php" />
       <file baseinstalldir="Bartlett" name="geoip.php" role="php" />
       <file baseinstalldir="Bartlett" name="gettext.php" role="php" />
       <file baseinstalldir="Bartlett" name="gmp.php" role="php" />
       <file baseinstalldir="Bartlett" name="haru.php" role="php" />
       <file baseinstalldir="Bartlett" name="hash.php" role="php" />
+      <file baseinstalldir="Bartlett" name="http.php" role="php" />
       <file baseinstalldir="Bartlett" name="iconv.php" role="php" />
       <file baseinstalldir="Bartlett" name="igbinary.php" role="php" />
       <file baseinstalldir="Bartlett" name="imagick.php" role="php" />
@@ -150,6 +152,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="intl.php" role="php" />
       <file baseinstalldir="Bartlett" name="json.php" role="php" />
       <file baseinstalldir="Bartlett" name="ldap.php" role="php" />
+      <file baseinstalldir="Bartlett" name="libevent.php" role="php" />
       <file baseinstalldir="Bartlett" name="libxml.php" role="php" />
       <file baseinstalldir="Bartlett" name="lzf.php" role="php" />
       <file baseinstalldir="Bartlett" name="mailparse.php" role="php" />
@@ -284,12 +287,14 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="FilterTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="FtpTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="GdTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="GenderTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="GenericTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="GeoipTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="GettextTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="GmpTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="HaruTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="HashTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="HttpTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="IconvTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="IgbinaryTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="ImagickTest.php" role="test" />
@@ -298,6 +303,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="IntlTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="JsonTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="LdapTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="LibeventTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="LibxmlTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="LzfTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="MailparseTest.php" role="test" />
@@ -563,7 +569,7 @@ Bug fixes:
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2013-04-25</date>
+   <date>2013-05-07</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
