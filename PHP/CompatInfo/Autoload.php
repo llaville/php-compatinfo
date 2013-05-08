@@ -226,6 +226,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/phar.php',
             'PHP_CompatInfo_Reference_Posix'
                 => 'PHP/CompatInfo/Reference/posix.php',
+            'PHP_CompatInfo_Reference_Pthreads'
+                => 'PHP/CompatInfo/Reference/pthreads.php',
             'PHP_CompatInfo_Reference_Readline'
                 => 'PHP/CompatInfo/Reference/readline.php',
             'PHP_CompatInfo_Reference_Recode'
