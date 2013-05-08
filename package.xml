@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-05-07</date>
- <time>07:39:31</time>
+ <date>2013-05-08</date>
+ <time>10:16:58</time>
  <version>
   <release>2.16.0</release>
   <api>2.16.0</api>
@@ -178,6 +178,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="PHP5.php" role="php" />
       <file baseinstalldir="Bartlett" name="PluginsAbstract.php" role="php" />
       <file baseinstalldir="Bartlett" name="posix.php" role="php" />
+      <file baseinstalldir="Bartlett" name="pthreads.php" role="php" />
       <file baseinstalldir="Bartlett" name="readline.php" role="php" />
       <file baseinstalldir="Bartlett" name="recode.php" role="php" />
       <file baseinstalldir="Bartlett" name="reflection.php" role="php" />
@@ -326,6 +327,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="PgsqlTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="PharTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="PosixTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="PthreadsTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="ReadlineTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="RecodeTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="ReflectionTest.php" role="test" />
@@ -569,7 +571,7 @@ Bug fixes:
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2013-05-07</date>
+   <date>2013-05-08</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
