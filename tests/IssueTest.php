@@ -46,6 +46,7 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
     {
         $options = array(
             'cacheDriver' => 'null',
+            'reference'   => 'PHP5',
         );
 
         $this->pci = new PHP_CompatInfo($options);

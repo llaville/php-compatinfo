@@ -76,7 +76,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * @return void
      */
     public function testReference()
-    {
+    { 
         if (is_null($this->ref)) {
             return;
         }

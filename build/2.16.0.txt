@@ -1,0 +1,7 @@
+Additions and changes:
+- add 9 new extensions: APCu, gender, haru, http, libevent, msgpack, pthreads, stomp, uploadprogress
+- update amqp reference to 1.0.10
+- the default reference option is now ALL instead of PHP5
+
+Bug fixes:
+- none

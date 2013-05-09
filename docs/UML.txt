@@ -112,7 +112,7 @@ Countable <|.. PHP_CompatInfo
 PHP_CompatInfo_Filter <|-- PHP_CompatInfo
 
 PHP_Reflect - PHP_CompatInfo : < use parser engine
-PHP_CompatInfo_Reference_PHP5 - PHP_CompatInfo : < load
+PHP_CompatInfo_Reference_ALL - PHP_CompatInfo : < load
 ---------------------------------------------------------------------
 
 .Reference Plugins System

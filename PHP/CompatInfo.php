@@ -214,7 +214,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     {
         $default = array(
             'recursive'        => false,
-            'reference'        => 'PHP5',
+            'reference'        => 'ALL',
             'referencePlugins' => array(
                 'PHP4' => array(
                     'class' => 'PHP_CompatInfo_Reference_PHP4',

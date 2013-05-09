@@ -7,6 +7,7 @@ include::attributes.txt[]
 [options="header", cols="3,3", role="table table-bordered table-striped"]
 |===========================
 | Version | PHP versions supported
+| 2.16.0  | add both support to PHP 5.4.15 and 5.3.25
 | 2.15.0  | add both support to PHP 5.4.14 and 5.3.24
 | 2.14.0  | add both support to PHP 5.4.13 and 5.3.23
 | 2.13.0  | add both support to PHP 5.4.12 and 5.3.22
@@ -23,6 +24,17 @@ include::attributes.txt[]
 | 2.2.0   | all PHP versions until 5.3.9
 | 2.1.0   | all PHP versions until 5.3.8
 |===========================
+
+
+== Version 2.16.0 _(2013-05-09)_
+
+.Additions and changes:
+* add 9 new extensions: APCu, gender, haru, http, libevent, msgpack, pthreads, stomp, uploadprogress
+* update amqp reference to 1.0.10
+* the default reference option is now ALL instead of PHP5
+
+.Bug fixes:
+* none
 
 
 == Version 2.15.0 _(2013-04-11)_

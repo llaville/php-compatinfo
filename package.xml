@@ -23,11 +23,11 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-04-11</date>
- <time>19:58:34</time>
+ <date>2013-05-09</date>
+ <time>20:33:54</time>
  <version>
-  <release>2.15.0</release>
-  <api>2.15.0</api>
+  <release>2.16.0</release>
+  <api>2.16.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -121,6 +121,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="ALL.php" role="php" />
       <file baseinstalldir="Bartlett" name="amqp.php" role="php" />
       <file baseinstalldir="Bartlett" name="apc.php" role="php" />
+      <file baseinstalldir="Bartlett" name="apcu.php" role="php" />
       <file baseinstalldir="Bartlett" name="bcmath.php" role="php" />
       <file baseinstalldir="Bartlett" name="bz2.php" role="php" />
       <file baseinstalldir="Bartlett" name="calendar.php" role="php" />
@@ -136,10 +137,13 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="filter.php" role="php" />
       <file baseinstalldir="Bartlett" name="ftp.php" role="php" />
       <file baseinstalldir="Bartlett" name="gd.php" role="php" />
+      <file baseinstalldir="Bartlett" name="gender.php" role="php" />
       <file baseinstalldir="Bartlett" name="geoip.php" role="php" />
       <file baseinstalldir="Bartlett" name="gettext.php" role="php" />
       <file baseinstalldir="Bartlett" name="gmp.php" role="php" />
+      <file baseinstalldir="Bartlett" name="haru.php" role="php" />
       <file baseinstalldir="Bartlett" name="hash.php" role="php" />
+      <file baseinstalldir="Bartlett" name="http.php" role="php" />
       <file baseinstalldir="Bartlett" name="iconv.php" role="php" />
       <file baseinstalldir="Bartlett" name="igbinary.php" role="php" />
       <file baseinstalldir="Bartlett" name="imagick.php" role="php" />
@@ -148,6 +152,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="intl.php" role="php" />
       <file baseinstalldir="Bartlett" name="json.php" role="php" />
       <file baseinstalldir="Bartlett" name="ldap.php" role="php" />
+      <file baseinstalldir="Bartlett" name="libevent.php" role="php" />
       <file baseinstalldir="Bartlett" name="libxml.php" role="php" />
       <file baseinstalldir="Bartlett" name="lzf.php" role="php" />
       <file baseinstalldir="Bartlett" name="mailparse.php" role="php" />
@@ -157,6 +162,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="memcached.php" role="php" />
       <file baseinstalldir="Bartlett" name="mhash.php" role="php" />
       <file baseinstalldir="Bartlett" name="mongo.php" role="php" />
+      <file baseinstalldir="Bartlett" name="msgpack.php" role="php" />
       <file baseinstalldir="Bartlett" name="mssql.php" role="php" />
       <file baseinstalldir="Bartlett" name="mysql.php" role="php" />
       <file baseinstalldir="Bartlett" name="mysqli.php" role="php" />
@@ -172,6 +178,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="PHP5.php" role="php" />
       <file baseinstalldir="Bartlett" name="PluginsAbstract.php" role="php" />
       <file baseinstalldir="Bartlett" name="posix.php" role="php" />
+      <file baseinstalldir="Bartlett" name="pthreads.php" role="php" />
       <file baseinstalldir="Bartlett" name="readline.php" role="php" />
       <file baseinstalldir="Bartlett" name="recode.php" role="php" />
       <file baseinstalldir="Bartlett" name="reflection.php" role="php" />
@@ -188,12 +195,14 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="sqlite3.php" role="php" />
       <file baseinstalldir="Bartlett" name="ssh2.php" role="php" />
       <file baseinstalldir="Bartlett" name="standard.php" role="php" />
+      <file baseinstalldir="Bartlett" name="stomp.php" role="php" />
       <file baseinstalldir="Bartlett" name="svn.php" role="php" />
       <file baseinstalldir="Bartlett" name="sysvmsg.php" role="php" />
       <file baseinstalldir="Bartlett" name="sysvsem.php" role="php" />
       <file baseinstalldir="Bartlett" name="sysvshm.php" role="php" />
       <file baseinstalldir="Bartlett" name="tidy.php" role="php" />
       <file baseinstalldir="Bartlett" name="tokenizer.php" role="php" />
+      <file baseinstalldir="Bartlett" name="uploadprogress.php" role="php" />
       <file baseinstalldir="Bartlett" name="varnish.php" role="php" />
       <file baseinstalldir="Bartlett" name="wddx.php" role="php" />
       <file baseinstalldir="Bartlett" name="xcache.php" role="php" />
@@ -263,6 +272,7 @@ Bug fixes:
     <dir name="Reference">
      <file baseinstalldir="Bartlett" name="AmqpTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="ApcTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="ApcuTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="BcmathTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="Bz2Test.php" role="test" />
      <file baseinstalldir="Bartlett" name="CalendarTest.php" role="test" />
@@ -278,11 +288,14 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="FilterTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="FtpTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="GdTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="GenderTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="GenericTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="GeoipTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="GettextTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="GmpTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="HaruTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="HashTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="HttpTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="IconvTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="IgbinaryTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="ImagickTest.php" role="test" />
@@ -291,6 +304,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="IntlTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="JsonTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="LdapTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="LibeventTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="LibxmlTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="LzfTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="MailparseTest.php" role="test" />
@@ -300,6 +314,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="MemcacheTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="MhashTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="MongoTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="MsgpackTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="MssqlTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="MysqliTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="MysqlTest.php" role="test" />
@@ -312,6 +327,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="PgsqlTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="PharTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="PosixTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="PthreadsTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="ReadlineTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="RecodeTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="ReflectionTest.php" role="test" />
@@ -328,12 +344,14 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="SQLiteTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="Ssh2Test.php" role="test" />
      <file baseinstalldir="Bartlett" name="StandardTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="StompTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SvnTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SysvmsgTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SysvsemTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SysvshmTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="TidyTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="TokenizerTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="UploadprogressTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="VarnishTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="WddxTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="XCacheTest.php" role="test" />
@@ -544,6 +562,30 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.16.0</release>
+    <api>2.16.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-05-09</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- new extension Zend Opcache (contribution by Remi Collet)
+- new extension varnish
+- update sphinx reference to 1.3.0
+- update memcache reference to 3.0.8
+- update OAuth reference to 1.2.3
+- update mongo reference to 1.3.7
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.15.0</release>

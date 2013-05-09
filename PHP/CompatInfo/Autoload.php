@@ -118,6 +118,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/amqp.php',
             'PHP_CompatInfo_Reference_Apc'
                 => 'PHP/CompatInfo/Reference/apc.php',
+            'PHP_CompatInfo_Reference_Apcu'
+                => 'PHP/CompatInfo/Reference/apcu.php',
             'PHP_CompatInfo_Reference_Bcmath'
                 => 'PHP/CompatInfo/Reference/bcmath.php',
             'PHP_CompatInfo_Reference_Bz2'
@@ -134,28 +136,34 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/date.php',
             'PHP_CompatInfo_Reference_Dom'
                 => 'PHP/CompatInfo/Reference/dom.php',
-            'PHP_CompatInfo_Reference_Ereg'
-                => 'PHP/CompatInfo/Reference/ereg.php',
             'PHP_CompatInfo_Reference_Enchant'
                 => 'PHP/CompatInfo/Reference/enchant.php',
+            'PHP_CompatInfo_Reference_Ereg'
+                => 'PHP/CompatInfo/Reference/ereg.php',
             'PHP_CompatInfo_Reference_Exif'
                 => 'PHP/CompatInfo/Reference/exif.php',
-            'PHP_CompatInfo_Reference_Filter'
-                => 'PHP/CompatInfo/Reference/filter.php',
             'PHP_CompatInfo_Reference_Fileinfo'
                 => 'PHP/CompatInfo/Reference/fileinfo.php',
+            'PHP_CompatInfo_Reference_Filter'
+                => 'PHP/CompatInfo/Reference/filter.php',
             'PHP_CompatInfo_Reference_Ftp'
                 => 'PHP/CompatInfo/Reference/ftp.php',
             'PHP_CompatInfo_Reference_Gd'
                 => 'PHP/CompatInfo/Reference/gd.php',
+            'PHP_CompatInfo_Reference_Gender'
+                => 'PHP/CompatInfo/Reference/gender.php',
             'PHP_CompatInfo_Reference_Geoip'
                 => 'PHP/CompatInfo/Reference/geoip.php',
             'PHP_CompatInfo_Reference_Gettext'
                 => 'PHP/CompatInfo/Reference/gettext.php',
             'PHP_CompatInfo_Reference_Gmp'
                 => 'PHP/CompatInfo/Reference/gmp.php',
+            'PHP_CompatInfo_Reference_Haru'
+                => 'PHP/CompatInfo/Reference/haru.php',
             'PHP_CompatInfo_Reference_Hash'
                 => 'PHP/CompatInfo/Reference/hash.php',
+            'PHP_CompatInfo_Reference_Http'
+                => 'PHP/CompatInfo/Reference/http.php',
             'PHP_CompatInfo_Reference_Iconv'
                 => 'PHP/CompatInfo/Reference/iconv.php',
             'PHP_CompatInfo_Reference_Igbinary'
@@ -172,6 +180,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/json.php',
             'PHP_CompatInfo_Reference_Ldap'
                 => 'PHP/CompatInfo/Reference/ldap.php',
+            'PHP_CompatInfo_Reference_Libevent'
+                => 'PHP/CompatInfo/Reference/libevent.php',
             'PHP_CompatInfo_Reference_Libxml'
                 => 'PHP/CompatInfo/Reference/libxml.php',
             'PHP_CompatInfo_Reference_Lzf'
@@ -190,6 +200,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/mhash.php',
             'PHP_CompatInfo_Reference_Mongo'
                 => 'PHP/CompatInfo/Reference/mongo.php',
+            'PHP_CompatInfo_Reference_Msgpack'
+                => 'PHP/CompatInfo/Reference/msgpack.php',
             'PHP_CompatInfo_Reference_Mssql'
                 => 'PHP/CompatInfo/Reference/mssql.php',
             'PHP_CompatInfo_Reference_Mysql'
@@ -200,8 +212,6 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/oauth.php',
             'PHP_CompatInfo_Reference_Odbc'
                 => 'PHP/CompatInfo/Reference/odbc.php',
-            'PHP_CompatInfo_Reference_Zend_OPcache'
-                => 'PHP/CompatInfo/Reference/zendopcache.php',
             'PHP_CompatInfo_Reference_Openssl'
                 => 'PHP/CompatInfo/Reference/openssl.php',
             'PHP_CompatInfo_Reference_Pcntl'
@@ -216,16 +226,26 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/phar.php',
             'PHP_CompatInfo_Reference_Posix'
                 => 'PHP/CompatInfo/Reference/posix.php',
+            'PHP_CompatInfo_Reference_Pthreads'
+                => 'PHP/CompatInfo/Reference/pthreads.php',
             'PHP_CompatInfo_Reference_Readline'
                 => 'PHP/CompatInfo/Reference/readline.php',
             'PHP_CompatInfo_Reference_Recode'
                 => 'PHP/CompatInfo/Reference/recode.php',
             'PHP_CompatInfo_Reference_Reflection'
                 => 'PHP/CompatInfo/Reference/reflection.php',
+            'PHP_CompatInfo_Reference_Session'
+                => 'PHP/CompatInfo/Reference/session.php',
+            'PHP_CompatInfo_Reference_Shmop'
+                => 'PHP/CompatInfo/Reference/shmop.php',
+            'PHP_CompatInfo_Reference_SimpleXML'
+                => 'PHP/CompatInfo/Reference/simplexml.php',
             'PHP_CompatInfo_Reference_Snmp'
                 => 'PHP/CompatInfo/Reference/snmp.php',
             'PHP_CompatInfo_Reference_Soap'
                 => 'PHP/CompatInfo/Reference/soap.php',
+            'PHP_CompatInfo_Reference_Sockets'
+                => 'PHP/CompatInfo/Reference/sockets.php',
             'PHP_CompatInfo_Reference_Solr'
                 => 'PHP/CompatInfo/Reference/solr.php',
             'PHP_CompatInfo_Reference_Sphinx'
@@ -236,18 +256,12 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/sqlite.php',
             'PHP_CompatInfo_Reference_Sqlite3'
                 => 'PHP/CompatInfo/Reference/sqlite3.php',
-            'PHP_CompatInfo_Reference_Session'
-                => 'PHP/CompatInfo/Reference/session.php',
-            'PHP_CompatInfo_Reference_Shmop'
-                => 'PHP/CompatInfo/Reference/shmop.php',
-            'PHP_CompatInfo_Reference_SimpleXML'
-                => 'PHP/CompatInfo/Reference/simplexml.php',
-            'PHP_CompatInfo_Reference_Sockets'
-                => 'PHP/CompatInfo/Reference/sockets.php',
             'PHP_CompatInfo_Reference_Ssh2'
                 => 'PHP/CompatInfo/Reference/ssh2.php',
             'PHP_CompatInfo_Reference_Standard'
                 => 'PHP/CompatInfo/Reference/standard.php',
+            'PHP_CompatInfo_Reference_Stomp'
+                => 'PHP/CompatInfo/Reference/stomp.php',
             'PHP_CompatInfo_Reference_Svn'
                 => 'PHP/CompatInfo/Reference/svn.php',
             'PHP_CompatInfo_Reference_Sysvmsg'
@@ -260,6 +274,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/tidy.php',
             'PHP_CompatInfo_Reference_Tokenizer'
                 => 'PHP/CompatInfo/Reference/tokenizer.php',
+            'PHP_CompatInfo_Reference_Uploadprogress'
+                => 'PHP/CompatInfo/Reference/uploadprogress.php',
             'PHP_CompatInfo_Reference_Varnish'
                 => 'PHP/CompatInfo/Reference/varnish.php',
             'PHP_CompatInfo_Reference_Wddx'
@@ -282,6 +298,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/xsl.php',
             'PHP_CompatInfo_Reference_Yaml'
                 => 'PHP/CompatInfo/Reference/yaml.php',
+            'PHP_CompatInfo_Reference_Zend_OPcache'
+                => 'PHP/CompatInfo/Reference/zendopcache.php',
             'PHP_CompatInfo_Reference_Zip'
                 => 'PHP/CompatInfo/Reference/zip.php',
             'PHP_CompatInfo_Reference_Zlib'
