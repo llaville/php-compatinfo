@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_libevent
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '0.0.5';
+    const REF_VERSION = '0.1.0';
 
     /**
      * Gets informations about extensions
@@ -117,6 +117,12 @@ class PHP_CompatInfo_Reference_libevent
         $release = '0.0.5';       // 2012-04-02
         $items = array(
             'event_priority_set'                    => array('5.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '0.1.0';       // 2013-05-22
+        $items = array(
+            'event_base_reinit'                     => array('5.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 

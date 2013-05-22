@@ -1,6 +1,7 @@
 Additions and changes:
 - update xdebug reference to 2.2.3
 - update xhprof reference to 0.9.3
+- update libevent reference to 0.1.0
 
 Bug fixes:
 - none
