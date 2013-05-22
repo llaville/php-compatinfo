@@ -1,0 +1,5 @@
+Additions and changes:
+- update xdebug reference to 2.2.3
+
+Bug fixes:
+- none
