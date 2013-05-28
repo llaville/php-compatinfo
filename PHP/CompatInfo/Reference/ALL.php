@@ -63,7 +63,7 @@ class PHP_CompatInfo_Reference_ALL
             'spl'        => 'SPL',
             'sqlite'     => 'SQLite',
             'xcache'     => 'XCache',
-            'zendopcache'=> 'Zend OPcache',
+            'zendopcache'=> 'ZendOPcache',
         );
         $extensions = array();
         foreach ($dir as $fileinfo) {
