@@ -298,7 +298,7 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/xsl.php',
             'PHP_CompatInfo_Reference_Yaml'
                 => 'PHP/CompatInfo/Reference/yaml.php',
-            'PHP_CompatInfo_Reference_Zend_OPcache'
+            'PHP_CompatInfo_Reference_ZendOPcache'
                 => 'PHP/CompatInfo/Reference/zendopcache.php',
             'PHP_CompatInfo_Reference_Zip'
                 => 'PHP/CompatInfo/Reference/zip.php',

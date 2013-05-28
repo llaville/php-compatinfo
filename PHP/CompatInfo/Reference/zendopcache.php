@@ -23,13 +23,13 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Class available since Release 2.15.0
  */
-class PHP_CompatInfo_Reference_Zend_OPcache
+class PHP_CompatInfo_Reference_ZendOPcache
     extends PHP_CompatInfo_Reference_PluginsAbstract
 {
     /**
      * Extension/Reference name
      */
-    const REF_NAME    = 'Zend OPcache';
+    const REF_NAME    = 'ZendOPcache';
 
     /**
      * Latest version of Extension/Reference supported

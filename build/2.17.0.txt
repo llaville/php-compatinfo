@@ -4,4 +4,4 @@ Additions and changes:
 - update libevent reference to 0.1.0
 
 Bug fixes:
-- none
+- extension Zend OPcache is not displayed in list-references
