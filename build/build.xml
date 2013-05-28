@@ -21,7 +21,7 @@
     -->
     <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
     <property name="build.target"                value="${project.dir}/build" />
-    <property name="build.version"               value="2.15.0" />
+    <property name="build.version"               value="2.17.0" />
 
     <!--
         ======================================================================
@@ -268,6 +268,7 @@
         <exclude name="docs/styles/**" />
         <exclude name="docs/*" />
         <exclude name="misc/phpci.1*" />
+        <exclude name="vendor/**" />
         <exclude name="**/netgrowl.php" />
         <exclude name="**/PEAR.php" />
         <exclude name="**/IssueTest2.php" />
@@ -299,13 +300,31 @@
 
     <!--
         ======================================================================
+        PHAR version of CLI
+        ======================================================================
+    -->
+    <property name="phar.basedir"                value="${env.TMP}/${phing.project.name}/${DSTAMP}" />
+    <property name="phar.destfile"               value="phpcompatinfo.phar" />
+    <property name="phar.compression"            value="none" />
+    <property name="phar.stub"                   value="pharStub.php" />
+    <property name="phar.alias"                  value="phpcompatinfo.phar" />
+
+    <fileset dir="${project.dir}" id="phar-contents">
+        <include name="PHP/**" />
+        <include name="vendor/**" />
+        <exclude name="**/PEAR.php" />
+        <exclude name="**/netgrowl.php" />
+    </fileset>
+
+    <!--
+        ======================================================================
         Imported modules
         ======================================================================
     -->
     <property name="modules.test"                value="true" />
     <property name="modules.docs"                value="true" />
     <property name="modules.package"             value="true" />
-    <property name="modules.phar"                value="false" />
+    <property name="modules.phar"                value="true" />
     <property name="modules.server"              value="true" />
 
     <import file="${bartlettpackager.dir}/modules/build.xml" />
@@ -319,6 +338,7 @@
     <target name="docs"    depends="docs.all" />
     <target name="package" depends="package.all" />
     <target name="server"  depends="server.all" />
+    <target name="phar"    depends="phar.all" />
 
     <target name="all"     depends="test.all,docs.all,package.all,server.all" />
 
@@ -330,6 +350,7 @@
         <echo>  docs         Generate API and User documentations        </echo>
         <echo>  package      Generate the package.xml 2.0 and tarball    </echo>
         <echo>  server       Build the PEAR Channel Server               </echo>
+        <echo>  phar         Make the phar version of CLI                </echo>
         <echo>  all          Do all tasks above                          </echo>
     </target>
 

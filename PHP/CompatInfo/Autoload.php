@@ -12,6 +12,10 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
+if (defined('BARTLETT_COMPOSER_INSTALL')) {
+    return;
+}
+
 /**
  * Autoloader for PHP_CompatInfo
  *
