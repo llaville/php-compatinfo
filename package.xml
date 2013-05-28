@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-05-23</date>
- <time>20:39:22</time>
+ <date>2013-05-28</date>
+ <time>21:29:28</time>
  <version>
   <release>2.17.0</release>
   <api>2.17.0</api>
@@ -39,9 +39,11 @@ Additions and changes:
 - update xdebug reference to 2.2.3
 - update xhprof reference to 0.9.3
 - update libevent reference to 0.1.0
+- phar version of CLI tools
+- CLI tools phpci is renamed to phpcompatinfo to avoid name conflict with http://www.phptesting.org/
 
 Bug fixes:
-- none
+- extension Zend OPcache is not displayed in list-references
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -548,13 +550,13 @@ Bug fixes:
    </os>
   </installconditions>
   <filelist>
-   <install as="phpci.bat" name="scripts/phpci.bat" />
-   <install as="phpci" name="scripts/phpci" />
+   <install as="phpcompatinfo.bat" name="scripts/phpci.bat" />
+   <install as="phpcompatinfo" name="scripts/phpci" />
   </filelist>
  </phprelease>
  <phprelease>
   <filelist>
-   <install as="phpci" name="scripts/phpci" />
+   <install as="phpcompatinfo" name="scripts/phpci" />
    <ignore name="scripts/phpci.bat" />
   </filelist>
  </phprelease>
@@ -568,16 +570,18 @@ Bug fixes:
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2013-05-23</date>
+   <date>2013-05-28</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
 - update xdebug reference to 2.2.3
 - update xhprof reference to 0.9.3
 - update libevent reference to 0.1.0
+- phar version of CLI tools
+- CLI tools phpci is renamed to phpcompatinfo to avoid name conflict with http://www.phptesting.org/
 
 Bug fixes:
-- none
+- extension Zend OPcache is not displayed in list-references
    </notes>
   </release>
   <release>
