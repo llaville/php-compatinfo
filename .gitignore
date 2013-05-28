@@ -4,5 +4,6 @@ PHP/CompatInfo/Reference/extension_pattern.php
 runtests
 Thumbs.db
 *.tgz
+*.phar
 html/
 vendor/
