@@ -5,3 +5,4 @@ runtests
 Thumbs.db
 *.tgz
 html/
+vendor/
