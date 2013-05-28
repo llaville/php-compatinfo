@@ -231,11 +231,11 @@
         <element key="windows">
             <element>
                 <element key="path" value="scripts/phpci.bat" />
-                <element key="as" value="phpci.bat" />
+                <element key="as" value="phpcompatinfo.bat" />
             </element>
             <element>
                 <element key="path" value="scripts/phpci" />
-                <element key="as" value="phpci" />
+                <element key="as" value="phpcompatinfo" />
             </element>
         </element>
         <element>
@@ -245,7 +245,7 @@
             </element>
             <element>
                 <element key="path" value="scripts/phpci" />
-                <element key="as" value="phpci" />
+                <element key="as" value="phpcompatinfo" />
             </element>
         </element>
     </mapping>

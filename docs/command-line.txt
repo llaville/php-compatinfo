@@ -60,15 +60,15 @@ printed just above. Don't be confused.
 
 == Options
 
-The list of command line options provided by the [label label-inverse]#phpci# command
-can be queried anytime by running phpci with the `-h` or `--help` switches.
+The list of command line options provided by the [label label-inverse]#phpcompatinfo# command
+can be queried anytime by running phpcompatinfo with the `-h` or `--help` switches.
 
 ----
 PHP_CompatInfo (cli) by Laurent Laville.
 
 Usage:
-  phpci [options]
-  phpci [options] <command> [options] [args]
+  phpcompatinfo [options]
+  phpcompatinfo [options] <command> [options] [args]
 
 Options:
   --configuration=xmlFile      Read configuration from XML file
@@ -155,7 +155,7 @@ If you choose to set verbose level 2 (+-vv+), your report(s) will print both war
 .Verbose level 2
 ====
 ----
-    $ phpci -vv print -R --report condition \path\to\symfony-ClassLoader-2.1.2
+    $ phpcompatinfo -vv print -R --report condition \path\to\symfony-ClassLoader-2.1.2
 
     BASE: \path\to\symfony-ClassLoader-2.1.2
 
@@ -219,7 +219,7 @@ NOTE: It is usefull only when data source to parse is a directory.
 .Verbose level 3
 ====
 ----
-    $ phpci -vvv print -R --report condition \path\to\symfony-ClassLoader-2.1.2
+    $ phpcompatinfo -vvv print -R --report condition \path\to\symfony-ClassLoader-2.1.2
 
     BASE: \path\to\ClassLoader-2.1.2
     FILE: \Symfony\Component\ClassLoader\ApcClassLoader.php
@@ -407,7 +407,7 @@ They are three categories of command:
 This command allow to delete a cache from a specific source file, or purge
 all cache entries.
 ----
-$ phpci clear-cache
+$ phpcompatinfo clear-cache
 ----
 
 That will print, if cache is already cleared
@@ -418,7 +418,7 @@ Zero will be replaced by number of cache entries, in case of a previous CLI use
 
 To delete only a specific source file parsing results from cache entries
 ----
-$ phpci clear-cache /path/to/source_file
+$ phpcompatinfo clear-cache /path/to/source_file
 ----
 
 === print
@@ -426,7 +426,7 @@ $ phpci clear-cache /path/to/source_file
 This command allow to print results of scanned sources code.
 If you forget options, enter command below.
 ----
-$ phpci print --help
+$ phpcompatinfo print --help
 ----
 
 That will show you this help screen:
@@ -434,7 +434,7 @@ That will show you this help screen:
 Print a report of data source parsed.
 
 Usage:
-  phpci [options] print [options] sourcePath
+  phpcompatinfo [options] print [options] sourcePath
 
 Options:
   --reference=reference             The name of the reference to use
@@ -478,17 +478,17 @@ TIP: You can give one or more report at the same time.
 
 .Example:  Printing only summary report
 ----
-$ phpci print --report summary /path/to/source
+$ phpcompatinfo print --report summary /path/to/source
 ----
 
 .Example: Printing both summary, extension, interface, class, function, and constant reports.
 ----
-$ phpci print --report summary extension interface class function constant /path/to/source
+$ phpcompatinfo print --report summary extension interface class function constant /path/to/source
 ----
 
 .Example: Printing both function and constant reports.
 ----
-$ phpci print --report function --report constant /path/to/source
+$ phpcompatinfo print --report function --report constant /path/to/source
 ----
 
 === list-references
@@ -498,7 +498,7 @@ and specify those which are currently loaded (*L* in front or their names)
 
 If you forget options, enter command below.
 ----
-$ phpci list-references --help
+$ phpcompatinfo list-references --help
 ----
 
 That will show you this help screen:
@@ -506,7 +506,7 @@ That will show you this help screen:
 List all extensions supported.
 
 Usage:
-  phpci [options] list-references [options] [reference]
+  phpcompatinfo [options] list-references [options] [reference]
 
 Options:
   --filter-version=filterVersion    The version to compare with each
@@ -529,7 +529,7 @@ Short Option, Long Option, Description
 
 .Example
 ----
-$ phpci list-references
+$ phpcompatinfo list-references
 ----
 
 ----
@@ -546,7 +546,7 @@ WARNING: results may be huge
 
 If you forget options, enter command below.
 ----
-$ phpci list --help
+$ phpcompatinfo list --help
 ----
 
 That will show you this help screen:
@@ -554,7 +554,7 @@ That will show you this help screen:
 List all "elements" referenced in the data base.
 
 Usage:
-  phpci [options] list [options] element1 element2 ...
+  phpcompatinfo [options] list [options] element1 element2 ...
 
 Options:
   --reference=reference             The name of the reference to use
@@ -585,7 +585,7 @@ Short Option, Long Option, Description
 
 .Example: list both interfaces and classes of all extensions supported by PHP_Compatinfo
 ----
-$ phpci list interfaces classes
+$ phpcompatinfo list interfaces classes
 ----
 
 ====
@@ -660,7 +660,7 @@ and loaded on your platform.
 
 If you forget options, enter command below.
 ----
-$ phpci list-extensions --help
+$ phpcompatinfo list-extensions --help
 ----
 
 That will show you this help screen:
@@ -668,7 +668,7 @@ That will show you this help screen:
 List all extensions referenced in the data base.
 
 Usage:
-  phpci [options] list-extensions [options] [reference]
+  phpcompatinfo [options] list-extensions [options] [reference]
 
 Options:
   --reference=reference             The name of the reference to use
@@ -698,7 +698,7 @@ Short Option, Long Option, Description
 
 .Example
 ----
-$ phpci list-extensions
+$ phpcompatinfo list-extensions
 ----
 
 ====
@@ -772,7 +772,7 @@ $ phpci list-extensions
 =====================================================================
 Example: if you want only SPL extension, enter command below.
 ----
-$ phpci list-extensions SPL
+$ phpcompatinfo list-extensions SPL
 ----
 =====================================================================
 
@@ -783,7 +783,7 @@ from your extensions loaded (or defined into XML configuration file).
 
 If you forget options, enter command below.
 ----
-$ phpci list-interfaces --help
+$ phpcompatinfo list-interfaces --help
 ----
 
 That will show you this help screen:
@@ -791,7 +791,7 @@ That will show you this help screen:
 List all interfaces referenced in the data base.
 
 Usage:
-  phpci [options] list-interfaces [options] [reference]
+  phpcompatinfo [options] list-interfaces [options] [reference]
 
 Options:
   --reference=reference             The name of the reference to use
@@ -821,7 +821,7 @@ Short Option, Long Option, Description
 
 .Example
 ----
-$ phpci list-interfaces
+$ phpcompatinfo list-interfaces
 ----
 
 ====
@@ -861,7 +861,7 @@ $ phpci list-interfaces
 =====================================================================
 Example: if you want only SPL extension interfaces, enter command below.
 ----
-$ phpci list-interfaces SPL
+$ phpcompatinfo list-interfaces SPL
 ----
 =====================================================================
 
@@ -871,19 +871,19 @@ $ phpci list-interfaces SPL
 Example: if you want only Core interfaces, supported by all PHP versions until 5.1.0,
  enter command below.
 ----
-$ phpci list-interfaces core --filter-version php_5.1.0
+$ phpcompatinfo list-interfaces core --filter-version php_5.1.0
 ----
 
 Example: if you want only standard interfaces, came only with PHP 5.0.0,
  enter command below.
 ----
-$ phpci list-interfaces standard --filter-version php_5.0.0 --filter-operator eq
+$ phpcompatinfo list-interfaces standard --filter-version php_5.0.0 --filter-operator eq
 ----
 
 Example: if you want only apc interfaces, available with all apc versions since 3.1.0,
  enter command below.
 ----
-$ phpci list-interfaces apc --filter-version 3.1.0 --filter-operator ge
+$ phpcompatinfo list-interfaces apc --filter-version 3.1.0 --filter-operator ge
 ----
 =====================================================================
 
@@ -894,7 +894,7 @@ from your extensions loaded (or defined into XML configuration file).
 
 If you forget options, enter command below.
 ----
-$ phpci list-classes --help
+$ phpcompatinfo list-classes --help
 ----
 
 That will show you this help screen:
@@ -902,7 +902,7 @@ That will show you this help screen:
 List all classes referenced in the data base.
 
 Usage:
-  phpci [options] list-classes [options] [reference]
+  phpcompatinfo [options] list-classes [options] [reference]
 
 Options:
   --reference=reference             The name of the reference to use
@@ -932,7 +932,7 @@ Short Option, Long Option, Description
 
 .Example
 ----
-$ phpci list-classes
+$ phpcompatinfo list-classes
 ----
 
 ====
@@ -979,7 +979,7 @@ $ phpci list-classes
 =====================================================================
 Example: if you want only SPL extension classes, enter command below.
 ----
-$ phpci list-classes SPL
+$ phpcompatinfo list-classes SPL
 ----
 =====================================================================
 
@@ -989,19 +989,19 @@ $ phpci list-classes SPL
 Example: if you want only Core classes, supported by all PHP versions until 5.1.0,
  enter command below.
 ----
-$ phpci list-classes core --filter-version php_5.1.0
+$ phpcompatinfo list-classes core --filter-version php_5.1.0
 ----
 
 Example: if you want only standard classes, came only with PHP 5.0.0,
  enter command below.
 ----
-$ phpci list-classes standard --filter-version php_5.0.0 --filter-operator eq
+$ phpcompatinfo list-classes standard --filter-version php_5.0.0 --filter-operator eq
 ----
 
 Example: if you want only apc classes, available with all apc versions after 3.0.0,
  enter command below.
 ----
-$ phpci list-classes apc --filter-version 3.0.0 --filter-operator gt
+$ phpcompatinfo list-classes apc --filter-version 3.0.0 --filter-operator gt
 ----
 =====================================================================
 
@@ -1012,7 +1012,7 @@ from your extensions loaded (or defined into XML configuration file).
 
 If you forget options, enter command below.
 ----
-$ phpci list-functions --help
+$ phpcompatinfo list-functions --help
 ----
 
 That will show you this help screen:
@@ -1020,7 +1020,7 @@ That will show you this help screen:
 List all functions referenced in the data base.
 
 Usage:
-  phpci [options] list-functions [options] [reference]
+  phpcompatinfo [options] list-functions [options] [reference]
 
 Options:
   --reference=reference             The name of the reference to use
@@ -1050,7 +1050,7 @@ Short Option, Long Option, Description
 
 .Example
 ----
-$ phpci list-functions
+$ phpcompatinfo list-functions
 ----
 
 ====
@@ -1102,7 +1102,7 @@ $ phpci list-functions
 =====================================================================
 Example: if you want only SPL extension functions, enter command below.
 ----
-$ phpci list-functions SPL
+$ phpcompatinfo list-functions SPL
 ----
 =====================================================================
 
@@ -1112,19 +1112,19 @@ $ phpci list-functions SPL
 Example: if you want only json functions, supported by all PHP versions until 5.2.0,
  enter command below.
 ----
-$ phpci list-functions json --filter-version php_5.2.0
+$ phpcompatinfo list-functions json --filter-version php_5.2.0
 ----
 
 Example: if you want only json functions, came only with PHP 5.3.0,
  enter command below.
 ----
-$ phpci list-functions json --filter-version php_5.3.0 --filter-operator eq
+$ phpcompatinfo list-functions json --filter-version php_5.3.0 --filter-operator eq
 ----
 
 Example: if you want only apc functions, available with all apc versions before 3.0.0,
  enter command below.
 ----
-$ phpci list-functions apc --filter-version 3.0.0 --filter-operator lt
+$ phpcompatinfo list-functions apc --filter-version 3.0.0 --filter-operator lt
 ----
 =====================================================================
 
@@ -1135,7 +1135,7 @@ from your extensions loaded (or defined into XML configuration file).
 
 If you forget options, enter command below.
 ----
-$ phpci list-constants --help
+$ phpcompatinfo list-constants --help
 ----
 
 That will show you this help screen:
@@ -1143,7 +1143,7 @@ That will show you this help screen:
 List all constants referenced in the data base.
 
 Usage:
-  phpci [options] list-constants [options] [reference]
+  phpcompatinfo [options] list-constants [options] [reference]
 
 Options:
   --reference=reference             The name of the reference to use
@@ -1173,7 +1173,7 @@ Short Option, Long Option, Description
 
 .Example
 ----
-$ phpci list-constants
+$ phpcompatinfo list-constants
 ----
 
 ====
@@ -1225,7 +1225,7 @@ $ phpci list-constants
 =====================================================================
 Example: if you want only SPL extension constants, enter command below.
 ----
-$ phpci list-constants SPL
+$ phpcompatinfo list-constants SPL
 ----
 =====================================================================
 
@@ -1235,18 +1235,18 @@ $ phpci list-constants SPL
 Example: if you want only json constants, supported by all PHP versions until 5.3.0,
  enter command below.
 ----
-$ phpci list-constants json --filter-version php_5.3.0
+$ phpcompatinfo list-constants json --filter-version php_5.3.0
 ----
 
 Example: if you want only json constants, came only with PHP 5.4.0,
  enter command below.
 ----
-$ phpci list-constants json --filter-version php_5.4.0 --filter-operator eq
+$ phpcompatinfo list-constants json --filter-version php_5.4.0 --filter-operator eq
 ----
 
 Example: if you want only apc constants, available with all apc versions before 3.2.0,
  enter command below.
 ----
-$ phpci list-constants apc --filter-version 3.2.0 --filter-operator lt
+$ phpcompatinfo list-constants apc --filter-version 3.2.0 --filter-operator lt
 ----
 =====================================================================

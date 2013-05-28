@@ -62,11 +62,11 @@ $ mkdir /php/includes/Bartlett && cp PHP/* /php/includes/Bartlett
 WARNING: Don't forget to install also all others required dependencies:
 `PHP_Reflect`, `Console_CommandLine`.
 
-Check that it works. Run the local [label label-inverse]#phpci# command.
+Check that it works. Run the local [label label-inverse]#phpcompatinfo# command.
 ----
 $ php scripts/phpci --version
 ----
 That should give expected result:
 ====
-phpci version DEV.
+phpcompatinfo version DEV.
 ====
