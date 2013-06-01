@@ -11,12 +11,12 @@ set_include_path(
     get_include_path()
 );
 
+define('BARTLETT_PHAR_INSTALL', '');
+
 require_once 'PHP/Reflect/Autoload.php';
 require_once 'PHP/CompatInfo/Autoload.php';
 require_once 'PEAR/Exception.php';
 require_once 'PHP/Timer/Autoload.php';
-
-//define('BARTLETT_COMPOSER_INSTALL', '');
 
 PHP_CompatInfo_CLI::main();
 

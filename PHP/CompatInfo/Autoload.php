@@ -12,10 +12,6 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
-if (defined('BARTLETT_COMPOSER_INSTALL')) {
-    return;
-}
-
 /**
  * Autoloader for PHP_CompatInfo
  *
@@ -322,5 +318,9 @@ function PHP_CompatInfo_autoload($className)
 }
 
 spl_autoload_register('PHP_CompatInfo_autoload');
+
+if (defined('BARTLETT_PHAR_INSTALL')) {
+    return;
+}
 
 require_once 'Bartlett/PHP/Reflect/Autoload.php';
