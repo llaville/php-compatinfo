@@ -38,7 +38,7 @@ class PHP_CompatInfo_Reference_ZendOPcacheTest
      */
     protected function setUp()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Zend_OPcache();
+        $this->obj = new PHP_CompatInfo_Reference_ZendOPcache();
         parent::setUp();
     }
 }
