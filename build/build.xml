@@ -267,7 +267,7 @@
         <exclude name="docs/js/**" />
         <exclude name="docs/styles/**" />
         <exclude name="docs/*" />
-        <exclude name="misc/phpci.1*" />
+        <exclude name="misc/phpcompatinfo.1*" />
         <exclude name="vendor/**" />
         <exclude name="**/netgrowl.php" />
         <exclude name="**/PEAR.php" />
