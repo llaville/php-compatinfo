@@ -152,7 +152,7 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
         }
 
         foreach ($items as $name => $versions) {
-            if ($this->filter['extension'] === true) {
+            if ($this->filter['extension'] === true && !empty($release)) {
                 $compare = $release;
             } else {
                 $compare = $versions[0];
