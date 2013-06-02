@@ -116,7 +116,7 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
             $version   = '5.0.0';
             $condition = 'ge';
 
-        } elseif ($version === null) {
+        } elseif (empty($version)) {
             $version   = '4.0.0';
             $condition = 'ge';
 
