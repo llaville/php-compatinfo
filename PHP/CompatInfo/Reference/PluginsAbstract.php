@@ -119,6 +119,10 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
         } elseif ($version === null) {
             $version   = '4.0.0';
             $condition = 'ge';
+
+        } elseif (substr_count($version, '.') === 1) {
+            // try to normalize version number
+            $version .= '.0';
         }
 
         if (!isset($condition)) {

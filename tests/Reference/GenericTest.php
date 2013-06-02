@@ -50,10 +50,10 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         if ($this->obj instanceof PHP_CompatInfo_Reference) {
-            $this->ref = $this->obj->getAll();
+            $ref = array('extensions' => $this->obj->getExtensions());
         }
-        if (isset($this->ref['extensions'])) {
-            foreach ($this->ref['extensions'] as $extname => $opt) {
+        if (isset($ref['extensions'])) {
+            foreach ($ref['extensions'] as $extname => $opt) {
                 if (!extension_loaded($extname)) {
                     // if dynamic extension load is activated
                     $loaded = (bool) ini_get('enable_dl');
@@ -68,6 +68,8 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                         );
                     }
                 }
+                // test only the extension's version loaded from the current platform
+                $this->ref = $this->obj->getAll(true, phpversion($extname), 'le');
             }
         }
     }
