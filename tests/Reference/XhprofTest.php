@@ -40,6 +40,9 @@ class PHP_CompatInfo_Reference_XhprofTest
      */
     protected function setUp()
     {
+        // found on windows version but never on C source code 
+        array_push($this->ignoredconstants, 'XHPROF_FLAGS_LONGNAMES');
+
         $this->obj = new PHP_CompatInfo_Reference_Xhprof();
         parent::setUp();
     }
