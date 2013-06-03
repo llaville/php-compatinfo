@@ -46,7 +46,7 @@
       memcache                              3.0.8             4.3.11
       memcached                             2.1.0             5.2.0
     L mhash                                                   4.0.0/5.2.17
-      mongo                                 1.3.7             5.0.0
+      mongo                                 1.4.1             5.0.0
       msgpack                               0.5.5             5.0.0
       mssql                                                   4.0.0
     L mysql                                 1.0               4.0.0
