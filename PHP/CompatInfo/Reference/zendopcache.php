@@ -29,12 +29,12 @@ class PHP_CompatInfo_Reference_ZendOPcache
     /**
      * Extension/Reference name
      */
-    const REF_NAME    = 'ZendOPcache';
+    const REF_NAME    = 'Zend OPcache';
 
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '7.0.1';
+    const REF_VERSION = '7.0.2';
 
     /**
      * Gets informations about extensions
@@ -85,7 +85,7 @@ class PHP_CompatInfo_Reference_ZendOPcache
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '7.0.2';       // not yet
+        $release = '7.0.2';       // 2013-06-05
         $items = array(
             'opcache_invalidate'               => array('5.2.0', ''),
         );

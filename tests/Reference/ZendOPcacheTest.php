@@ -38,6 +38,17 @@ class PHP_CompatInfo_Reference_ZendOPcacheTest
      */
     protected function setUp()
     {
+        $extversion = phpversion(PHP_CompatInfo_Reference_ZendOPcache::REF_NAME);
+
+        if (PATH_SEPARATOR == ';') {
+            // Win*
+            if ('7.0.2FE' === $extversion) {
+                array_push($this->ignoredfunctions, 'opcache_invalidate');
+            }
+        } else {
+            // *nix
+        }
+
         $this->obj = new PHP_CompatInfo_Reference_ZendOPcache();
         parent::setUp();
     }
