@@ -305,7 +305,7 @@
     -->
     <property name="phar.basedir"                value="${env.TMP}/${phing.project.name}/${DSTAMP}" />
     <property name="phar.destfile"               value="phpcompatinfo.phar" />
-    <property name="phar.compression"            value="none" />
+    <property name="phar.compression"            value="gzip" />
     <property name="phar.stub"                   value="pharStub.php" />
     <property name="phar.alias"                  value="phpcompatinfo.phar" />
 
