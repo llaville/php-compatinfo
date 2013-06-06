@@ -7,6 +7,7 @@ include::attributes.txt[]
 [options="header", cols="3,3", role="table table-bordered table-striped"]
 |===========================
 | Version | PHP versions supported
+| 2.17.0  | add both support to PHP 5.4.16 and 5.3.26
 | 2.16.0  | add both support to PHP 5.4.15 and 5.3.25
 | 2.15.0  | add both support to PHP 5.4.14 and 5.3.24
 | 2.14.0  | add both support to PHP 5.4.13 and 5.3.23
@@ -24,6 +25,24 @@ include::attributes.txt[]
 | 2.2.0   | all PHP versions until 5.3.9
 | 2.1.0   | all PHP versions until 5.3.8
 |===========================
+
+
+== Version 2.17.0 _(2013-06-06)_
+
+.Additions and changes:
+* update xdebug reference to 2.2.3
+* update xhprof reference to 0.9.3
+* update libevent reference to 0.1.0
+* update amqp reference to 1.2.0
+* update gender reference to 1.0.0
+* update intl reference to 3.0.0
+* update mongo reference to 1.4.1
+* update zendopcache reference to 7.0.2
+* phar version of CLI tools
+* CLI tools phpci is renamed to phpcompatinfo to avoid name conflict with http://www.phptesting.org/
+
+.Bug fixes:
+* extension Zend OPcache is not displayed in list-references
 
 
 == Version 2.16.0 _(2013-05-09)_

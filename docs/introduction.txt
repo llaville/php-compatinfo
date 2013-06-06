@@ -71,4 +71,5 @@ CAUTION: Its recommanded to migrate to PHP5, because PHP4 version is not maintai
 | 2.14.0  | 84    |
 | 2.15.0  | 86    | varnish, Zend OPcache
 | 2.16.0  | 95    | APCu, gender, haru, http, libevent, msgpack, pthreads, stomp, uploadprogress
+| 2.17.0  | 95    |
 |===========================
