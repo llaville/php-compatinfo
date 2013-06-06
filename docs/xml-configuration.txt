@@ -13,7 +13,7 @@ PHP_CompatInfo's core functionnality.
 ----
 <?xml version="1.0" encoding="utf-8" ?>
 <phpcompatinfo
-    reference="PHP5"
+    reference="ALL"
     report="summary"
     reportFileAppend="false"
     cacheDriver="file"
@@ -29,8 +29,8 @@ PHP_CompatInfo's core functionnality.
 The XML configuration above corresponds to the default behaviour of the +phpcli+ tool.
 
 reference::
-    Data dictionnary reference name. Defaults to PHP5 for all PHP4
-    and PHP5 components depending of your extensions loaded.
+    Data dictionnary reference name. Defaults to ALL for all references 
+    included in this distribution.
 report::
     Kind of report to produces. May be either _summary_, _source_, _xml_, _token_,
     _extension_, _namespace_, _interface_, _class_, _function_, _constant_, _global_

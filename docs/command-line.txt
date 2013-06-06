@@ -110,7 +110,7 @@ by the  +phpcompatinfo.xml.dist+ file if found into the PEAR +cfg_dir+ +\PHP_Com
 ----
 <?xml version="1.0" encoding="utf-8" ?>
 <phpcompatinfo
-    reference="PHP5"
+    reference="ALL"
     report="summary"
     reportFileAppend="false"
     cacheDriver="file"
