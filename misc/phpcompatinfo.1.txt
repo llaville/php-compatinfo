@@ -1,21 +1,21 @@
-PHPCI(1)
-========
+PHPCOMPATINFO(1)
+================
 :doctype: manpage
 
 
 NAME
 ----
-phpci - parse any data source to find out the minimum version and extensions required for it to run
+phpcompatinfo - parse any data source to find out the minimum version and extensions required for it to run
 
 
 SYNOPSIS
 --------
-*phpci* ['OPTIONS'] 'COMMAND' ['OPTS'] ['DATASOURCE']
+*phpcompatinfo* ['OPTIONS'] 'COMMAND' ['OPTS'] ['DATASOURCE']
 
 
 DESCRIPTION
 -----------
-The phpci(1) command parse any 'DATASOURCE' to find out the minimum PHP version
+The phpcompatinfo(1) command parse any 'DATASOURCE' to find out the minimum PHP version
 and extensions required.
 
 
@@ -36,7 +36,7 @@ OPTIONS
 
 * ['TOPIC'] -h, --help*::
     Print help TOPIC. 'topic' *--help*  will print help content about a
-    topic, *--help* summarizes phpci syntax.
+    topic, *--help* summarizes phpcompatinfo syntax.
 
 *--version*::
     Print program version number.
@@ -44,15 +44,15 @@ OPTIONS
 
 PRINT COMMAND
 -------------
-The phpci(1) 'PRINT' command is used to find out minimum php version to run 
+The phpcompatinfo(1) 'PRINT' command is used to find out minimum php version to run 
 data source code provided. Syntax:
 
-  phpci print [OPTION] DATA_SOURCE
+  phpcompatinfo print [OPTION] DATA_SOURCE
 
 Where:
 
 *OPTION*::
-  phpci(1) *--report* option specifying the type of result to print on stdout.
+  phpcompatinfo(1) *--report* option specifying the type of result to print on stdout.
   See *--help-report* option for valid choices.
 
 *DATA_SOURCE*::

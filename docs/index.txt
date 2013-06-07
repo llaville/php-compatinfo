@@ -8,7 +8,7 @@ include::attributes.txt[]
 ************************************************************************
 *Release highlights:*
 
-- PHP_CompatInfo 2.16.0 add both support to PHP 5.3.25 and PHP 5.4.15
+- PHP_CompatInfo 2.17.0 add both support to PHP 5.3.26 and PHP 5.4.16
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -22,11 +22,11 @@ link:INSTALL.html[Installation page] for downloads and installation instructions
 
 include::introduction.txt[]
 
-The [label label-inverse]#phpci# tool may inform you on what of those extensions are or not loaded on your system.
+The [label label-inverse]#phpcompatinfo# tool may inform you on what of those extensions are or not loaded on your system.
 
 Run command
 ----
-    $ phpci list-references
+    $ phpcompatinfo list-references
 ----
 
 Will output results as follow. May differ depending of your extensions loaded.

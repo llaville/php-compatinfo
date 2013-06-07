@@ -150,7 +150,10 @@ class PHP_CompatInfo_Report_Database extends PHP_CompatInfo_Report
         self::applyFilter($results);
         $elements = $results['_dummy_'];
 
-        $extensions  = get_loaded_extensions();
+        $extensions  = array_map(
+            create_function('$a', 'return str_replace(" ", "", $a);'),
+            get_loaded_extensions()
+        );
         $totalLoaded = 0;
 
         foreach ($elements as $element => $data) {

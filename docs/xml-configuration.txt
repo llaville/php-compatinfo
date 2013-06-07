@@ -13,7 +13,7 @@ PHP_CompatInfo's core functionnality.
 ----
 <?xml version="1.0" encoding="utf-8" ?>
 <phpcompatinfo
-    reference="PHP5"
+    reference="ALL"
     report="summary"
     reportFileAppend="false"
     cacheDriver="file"
@@ -29,8 +29,8 @@ PHP_CompatInfo's core functionnality.
 The XML configuration above corresponds to the default behaviour of the +phpcli+ tool.
 
 reference::
-    Data dictionnary reference name. Defaults to PHP5 for all PHP4
-    and PHP5 components depending of your extensions loaded.
+    Data dictionnary reference name. Defaults to ALL for all references 
+    included in this distribution.
 report::
     Kind of report to produces. May be either _summary_, _source_, _xml_, _token_,
     _extension_, _namespace_, _interface_, _class_, _function_, _constant_, _global_
@@ -84,7 +84,7 @@ TIP: To clean the cache, set the probability (gc_probability) to 100, and reduce
 Or more easily used the `clear-cache` command.
 ====
 ----
-$ phpci clear-cache
+$ phpcompatinfo clear-cache
 0 cache entries cleared
 ----
 ====
@@ -126,15 +126,15 @@ Default behaviour will auto-detect all your http://www.php.net/manual/en/functio
 ----
 The +<php>+ element and its +<ini>+ children can be used to configure PHP settings.
 
-NOTE: With *phpci* console tool, you can also sets a PHP directive value with +--ini-set+ switch.
+NOTE: With *phpcompatinfo* console tool, you can also sets a PHP directive value with +--ini-set+ switch.
 
 ====
 ----
-$ phpci --ini-set memory_limit=140M print /path/to/mySource
+$ phpcompatinfo --ini-set memory_limit=140M print /path/to/mySource
 
 // both give same results
-$ phpci --ini-set short_open_tag print /path/to/mySource
-$ phpci --ini-set short_open_tag=true print /path/to/mySource
+$ phpcompatinfo --ini-set short_open_tag print /path/to/mySource
+$ phpcompatinfo --ini-set short_open_tag=true print /path/to/mySource
 ----
 ====
 
@@ -167,12 +167,12 @@ It may be a list of directories, files, extensions, interfaces, traits, classes,
 
 Default behaviour ignore nothing.
 
-NOTE: With *phpci* console tool, you can invoke it with the following switch: +
+NOTE: With *phpcompatinfo* console tool, you can invoke it with the following switch: +
 +--exclude-pattern <id>+
 
 ====
 ----
-$ phpci print --exclude-pattern demo /path/to/mySource
+$ phpcompatinfo print --exclude-pattern demo /path/to/mySource
 ----
 ====
 
@@ -233,7 +233,7 @@ $ phpci print --exclude-pattern demo /path/to/mySource
 The +<listeners>+ element and its +<listener>+ children can be used to attach
 additional observers to the parses process.
 
-The *phpci* console tool know in standard distribution the *File* and *Growl* listeners.
+The *phpcompatinfo* console tool know in standard distribution the *File* and *Growl* listeners.
 
 Please refer to http://growl.laurent-laville.org/[PEAR::Net_Growl] package for configuration options.
 
@@ -273,11 +273,11 @@ hosted by a file (_file_ attribute of the same +<reference>+ element).
 Your class should inherit from +PHP_CompatInfo_Reference_PluginsAbstract+ abstract class
 that implement the +PHP_CompatInfo_Reference+ interface.
 
-NOTE: With *phpci* console tool, you can invoke it with the following switch: +
+NOTE: With *phpcompatinfo* console tool, you can invoke it with the following switch: +
 +--reference <name>+
 
 ====
 ----
-$ phpci --reference MyReference print /path/to/mySource
+$ phpcompatinfo --reference MyReference print /path/to/mySource
 ----
 ====

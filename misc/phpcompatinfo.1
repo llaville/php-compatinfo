@@ -1,13 +1,13 @@
 '\" t
-.\"     Title: phpci
+.\"     Title: phpcompatinfo
 .\"    Author: [see the "AUTHORS" section]
 .\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
-.\"      Date: 03/19/2013
+.\"      Date: 05/28/2013
 .\"    Manual: \ \&
 .\"    Source: \ \&
 .\"  Language: English
 .\"
-.TH "PHPCI" "1" "03/19/2013" "\ \&" "\ \&"
+.TH "PHPCOMPATINFO" "1" "05/28/2013" "\ \&" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -28,13 +28,13 @@
 .\" * MAIN CONTENT STARTS HERE *
 .\" -----------------------------------------------------------------
 .SH "NAME"
-phpci \- parse any data source to find out the minimum version and extensions required for it to run
+phpcompatinfo \- parse any data source to find out the minimum version and extensions required for it to run
 .SH "SYNOPSIS"
 .sp
-\fBphpci\fR [\fIOPTIONS\fR] \fICOMMAND\fR [\fIOPTS\fR] [\fIDATASOURCE\fR]
+\fBphpcompatinfo\fR [\fIOPTIONS\fR] \fICOMMAND\fR [\fIOPTS\fR] [\fIDATASOURCE\fR]
 .SH "DESCRIPTION"
 .sp
-The phpci(1) command parse any \fIDATASOURCE\fR to find out the minimum PHP version and extensions required\&.
+The phpcompatinfo(1) command parse any \fIDATASOURCE\fR to find out the minimum PHP version and extensions required\&.
 .SH "OPTIONS"
 .PP
 \fB\-\-configuration\fR=\fIXMLFILE\fR
@@ -71,7 +71,7 @@ Verbosely print processing information and warning messages\&.
 \fItopic\fR\fB\-\-help\fR
 will print help content about a topic,
 \fB\-\-help\fR
-summarizes phpci syntax\&.
+summarizes phpcompatinfo syntax\&.
 .RE
 .RE
 .PP
@@ -81,13 +81,13 @@ Print program version number\&.
 .RE
 .SH "PRINT COMMAND"
 .sp
-The phpci(1) \fIPRINT\fR command is used to find out minimum php version to run data source code provided\&. Syntax:
+The phpcompatinfo(1) \fIPRINT\fR command is used to find out minimum php version to run data source code provided\&. Syntax:
 .sp
 .if n \{\
 .RS 4
 .\}
 .nf
-phpci print [OPTION] DATA_SOURCE
+phpcompatinfo print [OPTION] DATA_SOURCE
 .fi
 .if n \{\
 .RE
@@ -97,7 +97,7 @@ Where:
 .PP
 \fBOPTION\fR
 .RS 4
-phpci(1)
+phpcompatinfo(1)
 \fB\-\-report\fR
 option specifying the type of result to print on stdout\&. See
 \fB\-\-help\-report\fR

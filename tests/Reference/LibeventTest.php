@@ -43,6 +43,18 @@ class PHP_CompatInfo_Reference_LibeventTest
      */
     protected function setUp()
     {
+        $extversion = phpversion(PHP_CompatInfo_Reference_Libevent::REF_NAME);
+
+        if (PATH_SEPARATOR == ';') {
+            // Win*
+            if ('0.0.4' === $extversion) {
+                // only available since version 0.0.5
+                array_push($this->ignoredfunctions, 'event_priority_set');
+            }
+        } else {
+            // *nix
+        }
+
         $this->obj = new PHP_CompatInfo_Reference_Libevent();
         parent::setUp();
     }

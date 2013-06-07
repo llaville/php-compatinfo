@@ -10,7 +10,7 @@ into some nice html pages.
 
 To do this, make sure you've first generate the XML report, i.e:
 ----
- $ phpci -vvv print --report xml --report-file <report.xml> <dataSource>
+ $ phpcompatinfo -vvv print --report xml --report-file <report.xml> <dataSource>
 ----
 CAUTION: Be sure to use verbose level 3.
 

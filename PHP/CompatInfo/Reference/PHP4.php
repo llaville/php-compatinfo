@@ -50,7 +50,7 @@ class PHP_CompatInfo_Reference_PHP4
         }
 
         foreach ($extensions as $extension) {
-            $refClassName = 'PHP_CompatInfo_Reference_' . ucfirst($extension);
+            $refClassName = 'PHP_CompatInfo_Reference_' . ucfirst(str_replace(' ', '', $extension));
             $refClassName = str_replace(' ', '_', $refClassName);
             if (class_exists($refClassName, true)) {
                 $this->extensionReferences[$extension] = $refClassName;

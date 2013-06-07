@@ -298,7 +298,7 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/xsl.php',
             'PHP_CompatInfo_Reference_Yaml'
                 => 'PHP/CompatInfo/Reference/yaml.php',
-            'PHP_CompatInfo_Reference_Zend_OPcache'
+            'PHP_CompatInfo_Reference_ZendOPcache'
                 => 'PHP/CompatInfo/Reference/zendopcache.php',
             'PHP_CompatInfo_Reference_Zip'
                 => 'PHP/CompatInfo/Reference/zip.php',
@@ -318,5 +318,9 @@ function PHP_CompatInfo_autoload($className)
 }
 
 spl_autoload_register('PHP_CompatInfo_autoload');
+
+if (defined('BARTLETT_PHAR_INSTALL')) {
+    return;
+}
 
 require_once 'Bartlett/PHP/Reflect/Autoload.php';

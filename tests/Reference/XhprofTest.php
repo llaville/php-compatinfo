@@ -40,6 +40,13 @@ class PHP_CompatInfo_Reference_XhprofTest
      */
     protected function setUp()
     {
+        if (PATH_SEPARATOR == ';') {
+            // Win*
+            array_push($this->ignoredconstants, 'XHPROF_FLAGS_LONGNAMES');
+        } else {
+            // *nix
+        }
+
         $this->obj = new PHP_CompatInfo_Reference_Xhprof();
         parent::setUp();
     }
