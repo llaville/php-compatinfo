@@ -23,15 +23,15 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-06-01</date>
- <time>13:08:40</time>
+ <date>2013-06-07</date>
+ <time>07:43:17</time>
  <version>
   <release>2.17.0</release>
   <api>2.17.0</api>
  </version>
  <stability>
-  <release>snapshot</release>
-  <api>beta</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
@@ -40,6 +40,10 @@ Additions and changes:
 - update xhprof reference to 0.9.3
 - update libevent reference to 0.1.0
 - update amqp reference to 1.2.0
+- update gender reference to 1.0.0
+- update intl reference to 3.0.0
+- update mongo reference to 1.4.1
+- update zendopcache reference to 7.0.2
 - phar version of CLI tools
 - CLI tools phpci is renamed to phpcompatinfo to avoid name conflict with http://www.phptesting.org/
 
@@ -568,10 +572,10 @@ Bug fixes:
     <api>2.17.0</api>
    </version>
    <stability>
-    <release>snapshot</release>
-    <api>beta</api>
+    <release>stable</release>
+    <api>stable</api>
    </stability>
-   <date>2013-06-01</date>
+   <date>2013-06-07</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -579,6 +583,10 @@ Additions and changes:
 - update xhprof reference to 0.9.3
 - update libevent reference to 0.1.0
 - update amqp reference to 1.2.0
+- update gender reference to 1.0.0
+- update intl reference to 3.0.0
+- update mongo reference to 1.4.1
+- update zendopcache reference to 7.0.2
 - phar version of CLI tools
 - CLI tools phpci is renamed to phpcompatinfo to avoid name conflict with http://www.phptesting.org/
 
