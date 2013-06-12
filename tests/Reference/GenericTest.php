@@ -36,9 +36,11 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
     protected $optionalclasses     = array();
     protected $optionalinterfaces  = array();
 
-    // Could be present but missing in Refence (alias, ...)
+    // Could be present but missing in Reference (alias, ...)
     protected $ignoredfunctions     = array();
     protected $ignoredconstants     = array();
+    protected $ignoredclasses       = array();
+    protected $ignoredinterfaces    = array();
 
     /**
      * Sets up the fixture.
@@ -307,17 +309,21 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
             foreach ($classes as $classname) {
                 if (class_exists($classname)) {
-                    $this->assertArrayHasKey(
-                        $classname,
-                        $this->ref['classes'],
-                        "Defined class '$classname' not known in Reference."
-                    );
+                    if (!in_array($classname, $this->ignoredclasses)) {
+                        $this->assertArrayHasKey(
+                            $classname,
+                            $this->ref['classes'],
+                            "Defined class '$classname' not known in Reference."
+                        );
+                    }
                 } else {
-                    $this->assertArrayHasKey(
-                        $classname,
-                        $this->ref['interfaces'],
-                        "Defined interface '$classname' not known in Reference."
-                    );
+                    if (!in_array($classname, $this->ignoredinterfaces)) {
+                        $this->assertArrayHasKey(
+                            $classname,
+                            $this->ref['interfaces'],
+                            "Defined interface '$classname' not known in Reference."
+                        );
+                    }
                 }
             }
         }

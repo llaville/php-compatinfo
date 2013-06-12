@@ -26,7 +26,14 @@ $ pear install bartlett/PHP_CompatInfo
 
 Installing a specific version:
 ----
-$ pear install bartlett/PHP_CompatInfo-2.12.0
+$ pear install bartlett/PHP_CompatInfo-2.17.0
+----
+
+== PHP Archive (PHAR)
+
+----
+wget http://bartlett.laurent-laville.org/get/phpcompatinfo.phar
+chmod +x phpcompatinfo.phar
 ----
 
 == GNU/Linux RPM
@@ -62,11 +69,11 @@ $ mkdir /php/includes/Bartlett && cp PHP/* /php/includes/Bartlett
 WARNING: Don't forget to install also all others required dependencies:
 `PHP_Reflect`, `Console_CommandLine`.
 
-Check that it works. Run the local [label label-inverse]#phpci# command.
+Check that it works. Run the local [label label-inverse]#phpcompatinfo# command.
 ----
 $ php scripts/phpci --version
 ----
 That should give expected result:
 ====
-phpci version DEV.
+phpcompatinfo version DEV.
 ====

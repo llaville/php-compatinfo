@@ -40,6 +40,20 @@ class PHP_CompatInfo_Reference_AmqpTest
      */
     protected function setUp()
     {
+        $extversion = phpversion(PHP_CompatInfo_Reference_Amqp::REF_NAME);
+
+        if (PATH_SEPARATOR == ';') {
+            // Win*
+            if ('0.1' === $extversion) {
+                // only available since version 1.0.8
+                array_push($this->ignoredconstants, 'AMQP_OS_SOCKET_TIMEOUT_ERRNO');
+                // only available since version 1.0.0
+                array_push($this->ignoredclasses, 'AMQPChannel', 'AMQPChannelException', 'AMQPEnvelope');
+            }
+        } else {
+            // *nix
+        }
+
         $this->obj = new PHP_CompatInfo_Reference_Amqp();
         parent::setUp();
     }

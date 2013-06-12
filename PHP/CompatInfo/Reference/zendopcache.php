@@ -23,7 +23,7 @@
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Class available since Release 2.15.0
  */
-class PHP_CompatInfo_Reference_Zend_OPcache
+class PHP_CompatInfo_Reference_ZendOPcache
     extends PHP_CompatInfo_Reference_PluginsAbstract
 {
     /**
@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Zend_OPcache
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '7.0.1';
+    const REF_VERSION = '7.0.2';
 
     /**
      * Gets informations about extensions
@@ -85,7 +85,7 @@ class PHP_CompatInfo_Reference_Zend_OPcache
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '7.0.2';       // not yet
+        $release = '7.0.2';       // 2013-06-05
         $items = array(
             'opcache_invalidate'               => array('5.2.0', ''),
         );

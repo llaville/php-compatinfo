@@ -41,6 +41,18 @@ class PHP_CompatInfo_Reference_FileinfoTest
      */
     protected function setUp()
     {
+        $extversion = phpversion(PHP_CompatInfo_Reference_Fileinfo::REF_NAME);
+
+        if (PATH_SEPARATOR == ';') {
+            // Win*
+            if ('1.0.5-dev' === $extversion) {
+                array_push($this->ignoredfunctions, 'mime_content_type');
+                array_push($this->ignoredconstants, 'FILEINFO_MIME_ENCODING', 'FILEINFO_MIME_TYPE');
+            }
+        } else {
+            // *nix
+        }
+
         $this->obj = new PHP_CompatInfo_Reference_Fileinfo();
         parent::setUp();
     }

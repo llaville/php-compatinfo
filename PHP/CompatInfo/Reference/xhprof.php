@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Xhprof
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '0.9.2';
+    const REF_VERSION = '0.9.3';
 
     /**
      * Gets informations about extensions
