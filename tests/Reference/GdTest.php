@@ -63,6 +63,9 @@ class PHP_CompatInfo_Reference_GdTest
             // requires HAVE_GD_XPM (linux only)
             'imagecreatefromxpm',
         );
+        if (defined('GD_BUNDLED') && ! GD_BUNDLED) {
+            $this->optionalfunctions[] = 'imageantialias';
+        }
         $this->obj = new PHP_CompatInfo_Reference_Gd();
         parent::setUp();
     }
