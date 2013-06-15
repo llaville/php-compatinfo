@@ -41,6 +41,13 @@ class PHP_CompatInfo_Reference_JsonTest
      */
     protected function setUp()
     {
+        // New features of JSONC alternative extension
+        $this->ignoredconstants = array(
+            'JSON_PARSER_NOTSTRICT',
+        );
+        $this->ignoredclasses = array(
+            'JsonIncrementalParser',
+        );
         $this->obj = new PHP_CompatInfo_Reference_Json();
         parent::setUp();
     }
