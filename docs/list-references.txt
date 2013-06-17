@@ -87,7 +87,7 @@
       uploadprogress                        1.0.3.1           5.2.0
       varnish                               1.0.0             5.3.0
     L wddx                                                    4.0.0
-      XCache                                3.0.1             4.3.0
+      XCache                                3.0.2             4.3.0
     L xdebug                                2.2.3             4.3.0
       xhprof                                0.9.3             5.2.0
     L xml                                                     4.0.0
