@@ -1,5 +1,6 @@
 Additions and changes:
 - update xcache reference to 3.0.2
+- update http reference to 1.7.6
 
 Bug fixes:
 - none
