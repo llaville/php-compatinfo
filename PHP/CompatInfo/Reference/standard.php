@@ -333,8 +333,8 @@ class PHP_CompatInfo_Reference_Standard
             'passthru'                       => array('4.0.0', ''),
             'pclose'                         => array('4.0.0', ''),
             'pfsockopen'                     => array('4.0.0', ''),
-            'php_logo_guid'                  => array('4.0.0', ''),
-            'php_real_logo_guid'             => array('4.0.0', ''),
+            'php_logo_guid'                  => array('4.0.0', self::LATEST_PHP_5_4),
+            'php_real_logo_guid'             => array('4.0.0', self::LATEST_PHP_5_4),
             'phpcredits'                     => array('4.0.0', ''),
             'phpinfo'                        => array('4.0.0', ''),
             'phpversion'                     => array('4.0.0', ''),
@@ -437,7 +437,7 @@ class PHP_CompatInfo_Reference_Standard
             'usleep'                         => array('4.0.0', ''),
             'usort'                          => array('4.0.0', ''),
             'var_dump'                       => array('4.0.0', ''),
-            'zend_logo_guid'                 => array('4.0.0', ''),
+            'zend_logo_guid'                 => array('4.0.0', self::LATEST_PHP_5_4),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -472,7 +472,7 @@ class PHP_CompatInfo_Reference_Standard
             'is_uploaded_file'               => array('4.0.3', ''),
             'move_uploaded_file'             => array('4.0.3', ''),
             'pathinfo'                       => array('4.0.3', ''),
-            'php_egg_logo_guid'              => array('4.0.3', ''),
+            'php_egg_logo_guid'              => array('4.0.3', self::LATEST_PHP_5_4),
             'register_tick_function'         => array('4.0.3', ''),
             'unregister_tick_function'       => array('4.0.3', ''),
         );
@@ -746,6 +746,17 @@ class PHP_CompatInfo_Reference_Standard
             'hex2bin'                        => array('5.4.0', ''),
             'http_response_code'             => array('5.4.0', ''),
             'stream_set_chunk_size'          => array('5.4.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.5.0';       // soon
+        $items = array(
+            'boolval'                        => array('5.5.0-dev', ''),
+            'password_get_info'              => array('5.5.0-dev', ''),
+            'password_hash'                  => array('5.5.0-dev', ''),
+            'password_needs_rehash'          => array('5.5.0-dev', ''),
+            'password_verify'                => array('5.5.0-dev', ''),
+            'array_column'                   => array('5.5.0-dev', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -1171,6 +1182,14 @@ class PHP_CompatInfo_Reference_Standard
             'STREAM_META_OWNER'                 => array('5.4.0', ''),
             'STREAM_META_OWNER_NAME'            => array('5.4.0', ''),
             'STREAM_META_TOUCH'                 => array('5.4.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '5.5.0';       // soon
+        $items = array(
+            'PASSWORD_DEFAULT'                  => array('5.5.0-dev', ''),
+            'PASSWORD_BCRYPT'                   => array('5.5.0-dev', ''),
+            'PASSWORD_BCRYPT_DEFAULT_COST'      => array('5.5.0-dev', ''),
         );
         $this->applyFilter($release, $items, $constants);
 

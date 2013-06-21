@@ -113,6 +113,12 @@ class PHP_CompatInfo_Reference_Json
         );
         $this->applyFilter($release, $items, $functions);
 
+        $release = '5.5.0';       // soon
+        $items = array(
+            'json_last_error_msg'            => array('5.5.0-dev', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
         return $functions;
     }
 
@@ -156,12 +162,6 @@ class PHP_CompatInfo_Reference_Json
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '5.3.14';      // 2012-06-06
-        $items = array(
-            'JSON_PARTIAL_OUTPUT_ON_ERROR'   => array('5.3.14', '5.3.14'),
-        );
-        $this->applyFilter($release, $items, $constants);
-
         $release = '5.4.0';       // 2012-03-01
         $items = array(
             'JSON_BIGINT_AS_STRING'          => array('5.4.0', ''),
@@ -169,6 +169,15 @@ class PHP_CompatInfo_Reference_Json
             'JSON_PRETTY_PRINT'              => array('5.4.0', ''),
             'JSON_UNESCAPED_SLASHES'         => array('5.4.0', ''),
             'JSON_UNESCAPED_UNICODE'         => array('5.4.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '5.5.0';      // soon
+        $items = array(
+            'JSON_PARTIAL_OUTPUT_ON_ERROR'   => array('5.5.0-dev', ''),
+            'JSON_ERROR_RECURSION'           => array('5.5.0-dev', ''),
+            'JSON_ERROR_INF_OR_NAN'          => array('5.5.0-dev', ''),
+            'JSON_ERROR_UNSUPPORTED_TYPE'    => array('5.5.0-dev', ''),
         );
         $this->applyFilter($release, $items, $constants);
 

@@ -99,6 +99,7 @@ class PHP_CompatInfo_Reference_Intl
             'MessageFormatter'              => array('5.2.0', ''),
             'Normalizer'                    => array('5.2.0', ''),
             'NumberFormatter'               => array('5.2.0', ''),
+            'IntlException'                 => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
@@ -118,6 +119,20 @@ class PHP_CompatInfo_Reference_Intl
         $items = array(
             'Spoofchecker'                  => array('5.4.0', ''),
             'Transliterator'                => array('5.4.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '5.5.0';         // soon
+        $items = array(
+            'IntlBreakIterator'             => array('5.5.0-dev', ''),
+            'IntlCalendar'                  => array('5.5.0-dev', ''),
+            'IntlCodePointBreakIterator'    => array('5.5.0-dev', ''),
+            'IntlGregorianCalendar'         => array('5.5.0-dev', ''),
+            'IntlIterator'                  => array('5.5.0-dev', ''),
+            'IntlPartsIterator'             => array('5.5.0-dev', ''),
+            'IntlRuleBasedBreakIterator'    => array('5.5.0-dev', ''),
+            'IntlTimeZone'                  => array('5.5.0-dev', ''),
+            'UConverter'                    => array('5.5.0-dev', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
@@ -286,6 +301,86 @@ class PHP_CompatInfo_Reference_Intl
             'transliterator_get_error_message'  => array('5.4.0', ''),
             'transliterator_list_ids'           => array('5.4.0', ''),
             'transliterator_transliterate'      => array('5.4.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.5.0';     // soon
+        $items = array(
+            'datefmt_format_object'             => array('5.5.0-dev', ''),
+            'datefmt_get_calendar_object'       => array('5.5.0-dev', ''),
+            'datefmt_get_timezone'              => array('5.5.0-dev', ''),
+            'datefmt_set_timezone'              => array('5.5.0-dev', ''),
+
+            'intlgregcal_create_instance'       => array('5.5.0-dev', ''),
+            'intlgregcal_get_gregorian_change'  => array('5.5.0-dev', ''),
+            'intlgregcal_is_leap_year'          => array('5.5.0-dev', ''),
+            'intlgregcal_set_gregorian_change'  => array('5.5.0-dev', ''),
+
+            'intlcal_add'                       => array('5.5.0-dev', ''),
+            'intlcal_after'                     => array('5.5.0-dev', ''),
+            'intlcal_before'                    => array('5.5.0-dev', ''),
+            'intlcal_clear'                     => array('5.5.0-dev', ''),
+            'intlcal_create_instance'           => array('5.5.0-dev', ''),
+            'intlcal_equals'                    => array('5.5.0-dev', ''),
+            'intlcal_field_difference'          => array('5.5.0-dev', ''),
+            'intlcal_from_date_time'            => array('5.5.0-dev', ''),
+            'intlcal_get'                       => array('5.5.0-dev', ''),
+            'intlcal_get_actual_maximum'        => array('5.5.0-dev', ''),
+            'intlcal_get_actual_minimum'        => array('5.5.0-dev', ''),
+            'intlcal_get_available_locales'     => array('5.5.0-dev', ''),
+            'intlcal_get_day_of_week_type'      => array('5.5.0-dev', ''),
+            'intlcal_get_error_code'            => array('5.5.0-dev', ''),
+            'intlcal_get_error_message'         => array('5.5.0-dev', ''),
+            'intlcal_get_first_day_of_week'     => array('5.5.0-dev', ''),
+            'intlcal_get_greatest_minimum'      => array('5.5.0-dev', ''),
+            'intlcal_get_keyword_values_for_locale'
+                                                => array('5.5.0-dev', ''),
+            'intlcal_get_least_maximum'         => array('5.5.0-dev', ''),
+            'intlcal_get_locale'                => array('5.5.0-dev', ''),
+            'intlcal_get_maximum'               => array('5.5.0-dev', ''),
+            'intlcal_get_minimal_days_in_first_week'
+                                                => array('5.5.0-dev', ''),
+            'intlcal_get_minimum'               => array('5.5.0-dev', ''),
+            'intlcal_get_now'                   => array('5.5.0-dev', ''),
+            'intlcal_get_time'                  => array('5.5.0-dev', ''),
+            'intlcal_get_time_zone'             => array('5.5.0-dev', ''),
+            'intlcal_get_type'                  => array('5.5.0-dev', ''),
+            'intlcal_get_weekend_transition'    => array('5.5.0-dev', ''),
+            'intlcal_in_daylight_time'          => array('5.5.0-dev', ''),
+            'intlcal_is_equivalent_to'          => array('5.5.0-dev', ''),
+            'intlcal_is_lenient'                => array('5.5.0-dev', ''),
+            'intlcal_is_set'                    => array('5.5.0-dev', ''),
+            'intlcal_is_weekend'                => array('5.5.0-dev', ''),
+            'intlcal_roll'                      => array('5.5.0-dev', ''),
+            'intlcal_set'                       => array('5.5.0-dev', ''),
+            'intlcal_set_first_day_of_week'     => array('5.5.0-dev', ''),
+            'intlcal_set_lenient'               => array('5.5.0-dev', ''),
+            'intlcal_set_time'                  => array('5.5.0-dev', ''),
+            'intlcal_set_time_zone'             => array('5.5.0-dev', ''),
+            'intlcal_to_date_time'              => array('5.5.0-dev', ''),
+
+            'intltz_count_equivalent_ids'       => array('5.5.0-dev', ''),
+            'intltz_create_default'             => array('5.5.0-dev', ''),
+            'intltz_create_enumeration'         => array('5.5.0-dev', ''),
+            'intltz_create_time_zone'           => array('5.5.0-dev', ''),
+            'intltz_create_time_zone_id_enumeration'
+                                                => array('5.5.0-dev', ''),
+            'intltz_from_date_time_zone'        => array('5.5.0-dev', ''),
+            'intltz_get_canonical_id'           => array('5.5.0-dev', ''),
+            'intltz_get_equivalent_id'          => array('5.5.0-dev', ''),
+            'intltz_get_gmt'                    => array('5.5.0-dev', ''),
+            'intltz_get_display_name'           => array('5.5.0-dev', ''),
+            'intltz_get_dst_savings'            => array('5.5.0-dev', ''),
+            'intltz_get_error_code'             => array('5.5.0-dev', ''),
+            'intltz_get_error_message'          => array('5.5.0-dev', ''),
+            'intltz_get_id'                     => array('5.5.0-dev', ''),
+            'intltz_get_offset'                 => array('5.5.0-dev', ''),
+            'intltz_get_raw_offset'             => array('5.5.0-dev', ''),
+            'intltz_get_region'                 => array('5.5.0-dev', ''),
+            'intltz_get_tz_data_version'        => array('5.5.0-dev', ''),
+            'intltz_has_same_rules'             => array('5.5.0-dev', ''),
+            'intltz_to_date_time_zone'          => array('5.5.0-dev', ''),
+            'intltz_use_daylight_time'          => array('5.5.0-dev', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
