@@ -122,7 +122,7 @@ class PHP_CompatInfo_Reference_Hash
 
         $release = '5.5.0';       // soon
         $items = array(
-            'hash_pbkdf2'                    => array('5.5.0-dev', ''),
+            'hash_pbkdf2'                    => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 

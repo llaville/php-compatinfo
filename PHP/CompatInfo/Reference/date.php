@@ -79,7 +79,7 @@ class PHP_CompatInfo_Reference_Date
             'DatePeriod'                     => array('5.3.0', ''),
             'DateTime'                       => array('5.2.0', ''),
             'DateTimeZone'                   => array('5.2.0', ''),
-            'DateTimeImmutable'              => array('5.5.0-dev', ''),
+            'DateTimeImmutable'              => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
@@ -105,7 +105,7 @@ class PHP_CompatInfo_Reference_Date
 
         $release = '5.5.0';       // not yet
         $items = array(
-            'DateTimeInterface'              => array('5.5.0-dev', ''),
+            'DateTimeInterface'              => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $interfaces);
 
@@ -137,9 +137,9 @@ class PHP_CompatInfo_Reference_Date
             'date_add'                       => array('5.3.0', ''),
             'date_create'                    => array('5.2.0', ''),
             'date_create_from_format'        => array('5.3.0', ''),
-            'date_create_immutable'          => array('5.5.0-dev', ''),
+            'date_create_immutable'          => array('5.5.0', ''),
             'date_create_immutable_from_format'
-                                             => array('5.5.0-dev', ''),
+                                             => array('5.5.0', ''),
             'date_date_set'                  => array('5.2.0', ''),
             'date_default_timezone_get'      => array('5.1.0', ''),
             'date_default_timezone_set'      => array('5.1.0', ''),

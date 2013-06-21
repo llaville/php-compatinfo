@@ -115,7 +115,7 @@ class PHP_CompatInfo_Reference_Json
 
         $release = '5.5.0';       // soon
         $items = array(
-            'json_last_error_msg'            => array('5.5.0-dev', ''),
+            'json_last_error_msg'            => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -174,10 +174,10 @@ class PHP_CompatInfo_Reference_Json
 
         $release = '5.5.0';      // soon
         $items = array(
-            'JSON_PARTIAL_OUTPUT_ON_ERROR'   => array('5.5.0-dev', ''),
-            'JSON_ERROR_RECURSION'           => array('5.5.0-dev', ''),
-            'JSON_ERROR_INF_OR_NAN'          => array('5.5.0-dev', ''),
-            'JSON_ERROR_UNSUPPORTED_TYPE'    => array('5.5.0-dev', ''),
+            'JSON_PARTIAL_OUTPUT_ON_ERROR'   => array('5.5.0', ''),
+            'JSON_ERROR_RECURSION'           => array('5.5.0', ''),
+            'JSON_ERROR_INF_OR_NAN'          => array('5.5.0', ''),
+            'JSON_ERROR_UNSUPPORTED_TYPE'    => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 

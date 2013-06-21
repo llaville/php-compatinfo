@@ -250,7 +250,7 @@ class PHP_CompatInfo_Reference_Filter
             // 2010-03-31
             'FILTER_SANITIZE_FULL_SPECIAL_CHARS'    => array('5.3.3', ''),
             // Soon
-            'FILTER_VALIDATE_MAC'                   => array('5.5.0-dev', ''),
+            'FILTER_VALIDATE_MAC'                   => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 

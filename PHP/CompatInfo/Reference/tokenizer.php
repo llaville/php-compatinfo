@@ -215,7 +215,7 @@ class PHP_CompatInfo_Reference_Tokenizer
             'T_CLONE'                        => array('5.0.0', ''),
             'T_DIR'                          => array('5.3.0', ''),
             'T_FINAL'                        => array('5.0.0', ''),
-            'T_FINALLY'                      => array('5.5.0-dev', ''),
+            'T_FINALLY'                      => array('5.5.0', ''),
             'T_GOTO'                         => array('5.3.0', ''),
             'T_HALT_COMPILER'                => array('5.1.0', ''),
             'T_IMPLEMENTS'                   => array('5.0.0', ''),
@@ -235,7 +235,7 @@ class PHP_CompatInfo_Reference_Tokenizer
             'T_THROW'                        => array('5.0.0', ''),
             'T_UNSET_CAST'                   => array('5.0.0', ''),
             'T_USE'                          => array('5.3.0', ''),
-            'T_YIELD'                        => array('5.5.0-dev', ''),
+            'T_YIELD'                        => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 

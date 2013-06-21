@@ -751,12 +751,12 @@ class PHP_CompatInfo_Reference_Standard
 
         $release = '5.5.0';       // soon
         $items = array(
-            'boolval'                        => array('5.5.0-dev', ''),
-            'password_get_info'              => array('5.5.0-dev', ''),
-            'password_hash'                  => array('5.5.0-dev', ''),
-            'password_needs_rehash'          => array('5.5.0-dev', ''),
-            'password_verify'                => array('5.5.0-dev', ''),
-            'array_column'                   => array('5.5.0-dev', ''),
+            'boolval'                        => array('5.5.0', ''),
+            'password_get_info'              => array('5.5.0', ''),
+            'password_hash'                  => array('5.5.0', ''),
+            'password_needs_rehash'          => array('5.5.0', ''),
+            'password_verify'                => array('5.5.0', ''),
+            'array_column'                   => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -1187,9 +1187,9 @@ class PHP_CompatInfo_Reference_Standard
 
         $release = '5.5.0';       // soon
         $items = array(
-            'PASSWORD_DEFAULT'                  => array('5.5.0-dev', ''),
-            'PASSWORD_BCRYPT'                   => array('5.5.0-dev', ''),
-            'PASSWORD_BCRYPT_DEFAULT_COST'      => array('5.5.0-dev', ''),
+            'PASSWORD_DEFAULT'                  => array('5.5.0', ''),
+            'PASSWORD_BCRYPT'                   => array('5.5.0', ''),
+            'PASSWORD_BCRYPT_DEFAULT_COST'      => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 

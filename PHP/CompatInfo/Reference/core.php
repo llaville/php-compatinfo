@@ -97,7 +97,7 @@ class PHP_CompatInfo_Reference_Core
 
         $release = '5.5.0';       // soon
         $items = array(
-            'Generator'                      => array('5.5.0-dev', ''),
+            'Generator'                      => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
