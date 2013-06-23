@@ -75,7 +75,7 @@ class PHP_CompatInfo_Reference_Geoip
 
         $functions = array();
 
-        $release = '0.2.0';       // 2006-08-22
+        $release = '0.2.0';       // 2006-08-22 (beta)
         $items = array(
             'geoip_country_code3_by_name'           => array('4.3.0', ''),
             'geoip_country_code_by_name'            => array('4.3.0', ''),
@@ -88,7 +88,7 @@ class PHP_CompatInfo_Reference_Geoip
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0.1';       // 2007-08-22
+        $release = '1.0.1';       // 2007-08-22 (stable)
         $items = array(
             'geoip_db_avail'                        => array('4.3.0', ''),
             'geoip_db_filename'                     => array('4.3.0', ''),
@@ -96,19 +96,19 @@ class PHP_CompatInfo_Reference_Geoip
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0.2';       // 2007-11-20
+        $release = '1.0.2';       // 2007-11-20 (stable)
         $items = array(
             'geoip_isp_by_name'                     => array('4.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0.3';       // 2008-06-12
+        $release = '1.0.3';       // 2008-06-12 (stable)
         $items = array(
             'geoip_continent_code_by_name'          => array('4.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0.5';       // 2008-12-19
+        $release = '1.0.5';       // 2008-12-19 (stable)
         $items = array(
             'geoip_region_name_by_code'             => array('4.3.0', ''),
             'geoip_time_zone_by_country_and_region' => array('4.3.0', ''),
@@ -136,7 +136,7 @@ class PHP_CompatInfo_Reference_Geoip
 
         $constants = array();
 
-        $release = '0.2.0';       // 2006-08-22
+        $release = '0.2.0';       // 2006-08-22 (beta)
         $items = array(
             /* For database type constants */
             'GEOIP_ASNUM_EDITION'                   => array('4.3.0', ''),

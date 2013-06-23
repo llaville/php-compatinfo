@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_Gender
 
         $classes = array();
 
-        $release = '0.6.0';       // 2008-12-17
+        $release = '0.6.0';       // 2008-12-17 (stable)
         $items = array(
             'Gender\Gender'                         => array('5.3.0', ''),
         );

@@ -74,18 +74,23 @@ class PHP_CompatInfo_Reference_Gettext
 
         $functions = array();
 
-        $release = false;
+        $release = '4.0.0';       // 2000-05-22 (stable)
         $items = array(
-            'bind_textdomain_codeset'        => array('4.2.0', ''),
             'bindtextdomain'                 => array('4.0.0', ''),
             'dcgettext'                      => array('4.0.0', ''),
-            'dcngettext'                     => array('4.2.0', ''),
             'dgettext'                       => array('4.0.0', ''),
-            'dngettext'                      => array('4.2.0', ''),
             'gettext'                        => array('4.0.0', ''),
-            'ngettext'                       => array('4.2.0', ''),
             'textdomain'                     => array('4.0.0', ''),
             '_'                              => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '4.2.0';       // 2002-04-22 (stable)
+        $items = array(
+            'bind_textdomain_codeset'        => array('4.2.0', ''),
+            'dcngettext'                     => array('4.2.0', ''),
+            'dngettext'                      => array('4.2.0', ''),
+            'ngettext'                       => array('4.2.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 

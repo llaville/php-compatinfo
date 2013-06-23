@@ -87,7 +87,7 @@ class PHP_CompatInfo_Reference_Gmp
 
         $functions = array();
 
-        $release = false;
+        $release = '4.0.4';       // 2000-12-19 (stable)
         $items = array(
             'gmp_abs'                => array('4.0.4', ''),
             'gmp_add'                => array('4.0.4', ''),
@@ -112,7 +112,6 @@ class PHP_CompatInfo_Reference_Gmp
             'gmp_mod'                => array('4.0.4', ''),
             'gmp_mul'                => array('4.0.4', ''),
             'gmp_neg'                => array('4.0.4', ''),
-            'gmp_nextprime'          => array('5.2.0', ''),
             'gmp_or'                 => array('4.0.4', ''),
             'gmp_perfect_square'     => array('4.0.4', ''),
             'gmp_popcount'           => array('4.0.4', ''),
@@ -128,8 +127,19 @@ class PHP_CompatInfo_Reference_Gmp
             'gmp_sqrtrem'            => array('4.0.4', ''),
             'gmp_strval'             => array('4.0.4', ''),
             'gmp_sub'                => array('4.0.4', ''),
-            'gmp_testbit'            => array('5.3.0', ''),
             'gmp_xor'                => array('4.0.4', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+            
+        $release = '5.2.0';       // 2006-11-02 (stable)
+        $items = array(
+            'gmp_nextprime'          => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+            
+        $release = '5.3.0';       // 2009-06-30 (stable)
+        $items = array(
+            'gmp_testbit'            => array('5.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -154,19 +164,27 @@ class PHP_CompatInfo_Reference_Gmp
 
         $constants = array();
 
-        $release = false;
+        $release = '4.0.4';       // 2000-12-19 (stable)
         $items = array(
             'GMP_ROUND_MINUSINF'       => array('4.0.4', ''),
             'GMP_ROUND_PLUSINF'        => array('4.0.4', ''),
             'GMP_ROUND_ZERO'           => array('4.0.4', ''),
             'GMP_VERSION'              => array('4.0.4', ''),
         );
+        $this->applyFilter($release, $items, $constants);
+        
+        $release = '5.3.0';       // 2009-06-30 (stable)
+
         /*
             Windows only:
             The GMP extension now relies on MPIR instead of the GMP library
          */
         if (DIRECTORY_SEPARATOR == '\\') {
-            $items['GMP_MPIR_VERSION'] = array('5.3.0', '');
+            $items = array(
+                'GMP_MPIR_VERSION'     => array('5.3.0', ''),
+            );
+        } else {
+            $items = array();
         }
         $this->applyFilter($release, $items, $constants);
 
