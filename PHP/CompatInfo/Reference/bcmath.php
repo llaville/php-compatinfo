@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_Bcmath
 
         $functions = array();
 
-        $release = '4.0.0';       //
+        $release = '4.0.0';       // 2000-05-22 (stable)
         $items = array(
             'bcadd'                          => array('4.0.0', ''),
             'bcsub'                          => array('4.0.0', ''),
@@ -88,7 +88,7 @@ class PHP_CompatInfo_Reference_Bcmath
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.0.0';       //
+        $release = '5.0.0';       // 2004-07-13 (stable)
         $items = array(
             'bcpowmod'                       => array('5.0.0', ''),
         );
