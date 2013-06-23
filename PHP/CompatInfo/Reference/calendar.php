@@ -74,12 +74,8 @@ class PHP_CompatInfo_Reference_Calendar
 
         $functions = array();
 
-        $release = false;
+        $release = '4.0.0';       // 2000-05-22 (stable)
         $items = array(
-            'cal_days_in_month'              => array('4.0.7', ''),
-            'cal_from_jd'                    => array('4.0.7', ''),
-            'cal_info'                       => array('4.0.7', ''),
-            'cal_to_jd'                      => array('4.0.7', ''),
             'easter_date'                    => array('4.0.0', ''),
             'easter_days'                    => array('4.0.0', ''),
             'frenchtojd'                     => array('4.0.0', ''),
@@ -94,6 +90,15 @@ class PHP_CompatInfo_Reference_Calendar
             'jewishtojd'                     => array('4.0.0', ''),
             'juliantojd'                     => array('4.0.0', ''),
             'unixtojd'                       => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '4.0.7';       //
+        $items = array(
+            'cal_days_in_month'              => array('4.0.7', ''),
+            'cal_from_jd'                    => array('4.0.7', ''),
+            'cal_info'                       => array('4.0.7', ''),
+            'cal_to_jd'                      => array('4.0.7', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -118,8 +123,7 @@ class PHP_CompatInfo_Reference_Calendar
 
         $constants = array();
 
-        $release = false;
-        $items = array(
+        $release = '4.0.0';       // 2000-05-22 (stable)
             'CAL_GREGORIAN'                  => array('4.0.0', ''),
             'CAL_JULIAN'                     => array('4.0.0', ''),
             'CAL_JEWISH'                     => array('4.0.0', ''),
@@ -134,10 +138,20 @@ class PHP_CompatInfo_Reference_Calendar
             'CAL_MONTH_JULIAN_LONG'          => array('4.0.0', ''),
             'CAL_MONTH_JEWISH'               => array('4.0.0', ''),
             'CAL_MONTH_FRENCH'               => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '4.3.0';       // 2002-12-27 (stable)
+        $items = array(
             'CAL_EASTER_DEFAULT'             => array('4.3.0', ''),
             'CAL_EASTER_ROMAN'               => array('4.3.0', ''),
             'CAL_EASTER_ALWAYS_GREGORIAN'    => array('4.3.0', ''),
             'CAL_EASTER_ALWAYS_JULIAN'       => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '5.0.0';       // 2004-07-13 (stable)
+        $items = array(
             'CAL_JEWISH_ADD_ALAFIM_GERESH'   => array('5.0.0', ''),
             'CAL_JEWISH_ADD_ALAFIM'          => array('5.0.0', ''),
             'CAL_JEWISH_ADD_GERESHAYIM'      => array('5.0.0', ''),
