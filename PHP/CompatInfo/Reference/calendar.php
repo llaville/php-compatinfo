@@ -124,6 +124,7 @@ class PHP_CompatInfo_Reference_Calendar
         $constants = array();
 
         $release = '4.0.0';       // 2000-05-22 (stable)
+        $items = array(
             'CAL_GREGORIAN'                  => array('4.0.0', ''),
             'CAL_JULIAN'                     => array('4.0.0', ''),
             'CAL_JEWISH'                     => array('4.0.0', ''),
