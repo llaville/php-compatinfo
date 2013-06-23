@@ -91,7 +91,7 @@ class PHP_CompatInfo_Reference_Apc
 
         $classes = array();
 
-        $release = '3.1.1';       // 2008-12-12
+        $release = '3.1.1';       // 2008-12-12 (beta)
         $items = array(
             'APCIterator'               => array('5.0.0', '')
         );
@@ -118,7 +118,7 @@ class PHP_CompatInfo_Reference_Apc
 
         $functions = array();
 
-        $release = '2.0.0';       // 2003-07-01
+        $release = '2.0.0';       // 2003-07-01 (stable)
         $items = array(
             'apc_cache_info'                    => array('4.0.0', ''),
             'apc_clear_cache'                   => array('4.0.0', ''),
@@ -126,7 +126,7 @@ class PHP_CompatInfo_Reference_Apc
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '3.0.0';       // 2005-07-05
+        $release = '3.0.0';       // 2005-07-05 (stable)
         $items = array(
             'apc_define_constants'              => array('4.3.0', ''),
             'apc_delete'                        => array('4.3.0', ''),
@@ -136,7 +136,7 @@ class PHP_CompatInfo_Reference_Apc
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '3.0.13';      // 2007-02-24
+        $release = '3.0.13';      // 2007-02-24 (stable)
         $items = array(
             'apc_add'                           => array('4.3.0', ''),
             'apc_compile_file'                  => array('4.3.0', ''),
@@ -145,7 +145,7 @@ class PHP_CompatInfo_Reference_Apc
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '3.1.1';       // 2008-12-12
+        $release = '3.1.1';       // 2008-12-12 (beta)
         $items = array(
             'apc_cas'                           => array('5.1.0', ''),
             'apc_dec'                           => array('5.1.0', ''),
@@ -154,7 +154,7 @@ class PHP_CompatInfo_Reference_Apc
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '3.1.4';       // 2010-08-05
+        $release = '3.1.4';       // 2010-08-05 (beta)
         $items = array(
             'apc_bin_dump'                      => array('5.1.0', ''),
             'apc_bin_dumpfile'                  => array('5.1.0', ''),
@@ -185,7 +185,7 @@ class PHP_CompatInfo_Reference_Apc
 
         $constants = array();
 
-        $release = '3.1.1';       // 2008-12-12
+        $release = '3.1.1';       // 2008-12-12 (beta)
         $items = array(
             // Use in APCIterator
             'APC_LIST_ACTIVE'               => array('5.1.0', ''),
@@ -210,7 +210,7 @@ class PHP_CompatInfo_Reference_Apc
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '3.1.4';       // 2010-08-05
+        $release = '3.1.4';       // 2010-08-05 (beta)
         $items = array(
             // use in apc_bin_load*
             'APC_BIN_VERIFY_MD5'            => array('5.1.0', ''),

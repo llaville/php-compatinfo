@@ -73,7 +73,7 @@ class PHP_CompatInfo_Reference_Apcu
 
         $functions = array();
 
-        $release = '4.0.0';       // 2013-03-26
+        $release = '4.0.0';       // 2013-03-26 (beta)
         $items = array(
             'apcu_add'                              => array('5.3.0', ''),
             'apcu_bin_dump'                         => array('5.3.0', ''),
@@ -113,7 +113,7 @@ class PHP_CompatInfo_Reference_Apcu
 
         $constants = array();
 
-        $release = '4.0.1';       // 2013-04-30
+        $release = '4.0.1';       // 2013-04-30 (beta)
         $items = array(
             'APCU_APC_FULL_BC'                      => array('5.3.0', ''),
         );

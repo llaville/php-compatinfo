@@ -122,7 +122,7 @@ class PHP_CompatInfo_Reference_Amqp
 
         $constants = array();
 
-        $release = '0.1.0';       // 2008-12-12
+        $release = '0.1.0';       // 2008-12-12 (beta)
         $items = array(
             'AMQP_AUTOACK'                            => array('5.2.0', ''),
             'AMQP_AUTODELETE'                         => array('5.2.0', ''),
@@ -146,7 +146,7 @@ class PHP_CompatInfo_Reference_Amqp
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '1.0.8';       // 2012-11-12
+        $release = '1.0.8';       // 2012-11-12 (stable)
         $items = array(
             'AMQP_OS_SOCKET_TIMEOUT_ERRNO'            => array('5.2.0', ''),
         );
