@@ -77,13 +77,23 @@ class PHP_CompatInfo_Reference_Exif
 
         $functions = array();
 
-        $release = false;
+        $release = '4.0.1';       // 2000-06-28 (stable)
         $items = array(
-            'exif_imagetype'                          => array('4.3.0', ''),
+            'read_exif_data'                          => array('4.0.1', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '4.2.0';       // 2002-04-22 (stable)
+        $items = array(
             'exif_read_data'                          => array('4.2.0', ''),
             'exif_tagname'                            => array('4.2.0', ''),
             'exif_thumbnail'                          => array('4.2.0', ''),
-            'read_exif_data'                          => array('4.0.1', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '4.3.0';       // 2002-12-27 (stable)
+        $items = array(
+            'exif_imagetype'                          => array('4.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -108,7 +118,7 @@ class PHP_CompatInfo_Reference_Exif
 
         $constants = array();
 
-        $release = false;
+        $release = '4.0.1';       // 2000-06-28 (stable)
         $items = array(
             'EXIF_USE_MBSTRING'                       => array('4.0.1', ''),
         );

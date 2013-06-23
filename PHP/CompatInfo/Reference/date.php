@@ -73,12 +73,22 @@ class PHP_CompatInfo_Reference_Date
 
         $classes = array();
 
-        $release = false;
+        $release = '5.2.0';       // 2006-11-02 (stable)
+        $items = array(
+            'DateTime'                       => array('5.2.0', ''),
+            'DateTimeZone'                   => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '5.3.0';       // 2009-06-30 (stable)
         $items = array(
             'DateInterval'                   => array('5.3.0', ''),
             'DatePeriod'                     => array('5.3.0', ''),
-            'DateTime'                       => array('5.2.0', ''),
-            'DateTimeZone'                   => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '5.5.0';       // 2013-06-20 (stable)
+        $items = array(
             'DateTimeImmutable'              => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
@@ -103,7 +113,7 @@ class PHP_CompatInfo_Reference_Date
 
         $interfaces = array();
 
-        $release = '5.5.0';       // not yet
+        $release = '5.5.0';       // 2013-06-20 (stable)
         $items = array(
             'DateTimeInterface'              => array('5.5.0', ''),
         );
@@ -130,58 +140,93 @@ class PHP_CompatInfo_Reference_Date
 
         $functions = array();
 
-        $release = false;
+        $release = '4.0.0';       // 2000-05-22 (stable)
         $items = array(
             'checkdate'                      => array('4.0.0', ''),
             'date'                           => array('4.0.0', ''),
-            'date_add'                       => array('5.3.0', ''),
-            'date_create'                    => array('5.2.0', ''),
-            'date_create_from_format'        => array('5.3.0', ''),
-            'date_create_immutable'          => array('5.5.0', ''),
-            'date_create_immutable_from_format'
-                                             => array('5.5.0', ''),
-            'date_date_set'                  => array('5.2.0', ''),
-            'date_default_timezone_get'      => array('5.1.0', ''),
-            'date_default_timezone_set'      => array('5.1.0', ''),
-            'date_diff'                      => array('5.3.0', ''),
-            'date_format'                    => array('5.2.0', ''),
-            'date_get_last_errors'           => array('5.3.0', ''),
-            'date_interval_create_from_date_string'
-                                             => array('5.3.0', ''),
-            'date_interval_format'           => array('5.3.0', ''),
-            'date_isodate_set'               => array('5.2.0', ''),
-            'date_modify'                    => array('5.2.0', ''),
-            'date_offset_get'                => array('5.2.0', ''),
-            'date_parse'                     => array('5.2.0', ''),
-            'date_parse_from_format'         => array('5.3.0', ''),
-            'date_sub'                       => array('5.3.0', ''),
-            'date_sun_info'                  => array('5.1.2', ''),
-            'date_sunrise'                   => array('5.0.0', ''),
-            'date_sunset'                    => array('5.0.0', ''),
-            'date_time_set'                  => array('5.2.0', ''),
-            'date_timestamp_get'             => array('5.3.0', ''),
-            'date_timestamp_set'             => array('5.3.0', ''),
-            'date_timezone_get'              => array('5.2.0', ''),
-            'date_timezone_set'              => array('5.2.0', ''),
             'getdate'                        => array('4.0.0', ''),
             'gmdate'                         => array('4.0.0', ''),
             'gmmktime'                       => array('4.0.0', ''),
             'gmstrftime'                     => array('4.0.0', ''),
-            'idate'                          => array('5.0.0', ''),
             'localtime'                      => array('4.0.0', ''),
             'mktime'                         => array('4.0.0', ''),
             'strftime'                       => array('4.0.0', ''),
             'strtotime'                      => array('4.0.0', ''),
             'time'                           => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.0.0';       // 2004-07-13 (stable)
+        $items = array(
+            'date_sunrise'                   => array('5.0.0', ''),
+            'date_sunset'                    => array('5.0.0', ''),
+            'idate'                          => array('5.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.1.0';       // 2005-11-24 (stable)
+        $items = array(
+            'date_default_timezone_get'      => array('5.1.0', ''),
+            'date_default_timezone_set'      => array('5.1.0', ''),
             'timezone_abbreviations_list'    => array('5.1.0', ''),
             'timezone_identifiers_list'      => array('5.1.0', ''),
-            'timezone_location_get'          => array('5.3.0', ''),
-            'timezone_name_from_abbr'        => array('5.1.3', ''),
             'timezone_name_get'              => array('5.1.0', ''),
             'timezone_offset_get'            => array('5.1.0', ''),
             'timezone_open'                  => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.1.2';       //
+        $items = array(
+            'date_sun_info'                  => array('5.1.2', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.1.3';       // 2006-05-02 (stable)
+        $items = array(
+            'timezone_name_from_abbr'        => array('5.1.3', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.2.0';       // 2006-11-02 (stable)
+        $items = array(
+            'date_create'                    => array('5.2.0', ''),
+            'date_date_set'                  => array('5.2.0', ''),
+            'date_format'                    => array('5.2.0', ''),
+            'date_isodate_set'               => array('5.2.0', ''),
+            'date_modify'                    => array('5.2.0', ''),
+            'date_offset_get'                => array('5.2.0', ''),
+            'date_parse'                     => array('5.2.0', ''),
+            'date_time_set'                  => array('5.2.0', ''),
+            'date_timezone_get'              => array('5.2.0', ''),
+            'date_timezone_set'              => array('5.2.0', ''),
             'timezone_transitions_get'       => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.3.0';       // 2009-06-30 (stable)
+        $items = array(
+            'date_add'                       => array('5.3.0', ''),
+            'date_create_from_format'        => array('5.3.0', ''),
+            'date_diff'                      => array('5.3.0', ''),
+            'date_get_last_errors'           => array('5.3.0', ''),
+            'date_interval_create_from_date_string'
+                                             => array('5.3.0', ''),
+            'date_interval_format'           => array('5.3.0', ''),
+            'date_parse_from_format'         => array('5.3.0', ''),
+            'date_sub'                       => array('5.3.0', ''),
+            'date_timestamp_get'             => array('5.3.0', ''),
+            'date_timestamp_set'             => array('5.3.0', ''),
+            'timezone_location_get'          => array('5.3.0', ''),
             'timezone_version_get'           => array('5.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '5.5.0';       // 2013-06-20 (stable)
+        $items = array(
+            'date_create_immutable'          => array('5.5.0', ''),
+            'date_create_immutable_from_format'
+                                             => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
@@ -206,7 +251,7 @@ class PHP_CompatInfo_Reference_Date
 
         $constants = array();
 
-        $release = false;
+        $release = '5.1.1';       //
         $items = array(
             'DATE_ATOM'                      => array('5.1.1', ''),
             'DATE_COOKIE'                    => array('5.1.1', ''),
@@ -214,14 +259,24 @@ class PHP_CompatInfo_Reference_Date
             'DATE_RFC1036'                   => array('5.1.1', ''),
             'DATE_RFC1123'                   => array('5.1.1', ''),
             'DATE_RFC2822'                   => array('5.1.1', ''),
-            'DATE_RFC3339'                   => array('5.1.3', ''),
             'DATE_RFC822'                    => array('5.1.1', ''),
             'DATE_RFC850'                    => array('5.1.1', ''),
             'DATE_RSS'                       => array('5.1.1', ''),
             'DATE_W3C'                       => array('5.1.1', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '5.1.2';       //
+        $items = array(
             'SUNFUNCS_RET_DOUBLE'            => array('5.1.2', ''),
             'SUNFUNCS_RET_STRING'            => array('5.1.2', ''),
             'SUNFUNCS_RET_TIMESTAMP'         => array('5.1.2', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '5.1.3';       // 2006-05-02 (stable)
+        $items = array(
+            'DATE_RFC3339'                   => array('5.1.3', ''),
         );
         $this->applyFilter($release, $items, $constants);
 

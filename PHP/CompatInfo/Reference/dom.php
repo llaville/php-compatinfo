@@ -73,18 +73,16 @@ class PHP_CompatInfo_Reference_Dom
 
         $classes = array();
 
-        $release = false;
+        $release = '5.0.0';       // 2004-07-13 (stable)
         $items = array(
             'DOMAttr'                        => array('5.0.0', ''),
             'DOMCharacterData'               => array('5.0.0', ''),
             'DOMComment'                     => array('5.0.0', ''),
             'DOMDocument'                    => array('5.0.0', ''),
-            'DOMDocumentFragment'            => array('5.1.0', ''),
             'DOMDocumentType'                => array('5.0.0', ''),
             'DOMElement'                     => array('5.0.0', ''),
             'DOMEntity'                      => array('5.0.0', ''),
             'DOMEntityReference'             => array('5.0.0', ''),
-            'DOMException'                   => array('5.1.0', ''),
             'DOMImplementation'              => array('5.0.0', ''),
             'DOMNamedNodeMap'                => array('5.0.0', ''),
             'DOMNode'                        => array('5.0.0', ''),
@@ -109,6 +107,13 @@ class PHP_CompatInfo_Reference_Dom
         );
         $this->applyFilter($release, $items, $classes);
 
+        $release = '5.1.0';       // 2005-11-24 (stable)
+        $items = array(
+            'DOMDocumentFragment'            => array('5.1.0', ''),
+            'DOMException'                   => array('5.1.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
         return $classes;
     }
 
@@ -130,7 +135,7 @@ class PHP_CompatInfo_Reference_Dom
 
         $functions = array();
 
-        $release = false;
+        $release = '5.0.0';       // 2004-07-13 (stable)
         $items = array(
             'dom_import_simplexml'           => array('5.0.0', ''),
         );
@@ -157,7 +162,7 @@ class PHP_CompatInfo_Reference_Dom
 
         $constants = array();
 
-        $release = false;
+        $release = '5.0.0';       // 2004-07-13 (stable)
         $items = array(
             'DOMSTRING_SIZE_ERR'             => array('5.0.0', ''),
             'DOM_HIERARCHY_REQUEST_ERR'      => array('5.0.0', ''),

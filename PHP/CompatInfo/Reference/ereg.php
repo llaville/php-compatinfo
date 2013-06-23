@@ -76,15 +76,20 @@ class PHP_CompatInfo_Reference_Ereg
 
         $functions = array();
 
-        $release = false;
+        $release = '4.0.0';       // 2000-05-22 (stable)
         $items = array(
             'ereg'                    => array('4.0.0', ''),
             'ereg_replace'            => array('4.0.0', ''),
             'eregi'                   => array('4.0.0', ''),
             'eregi_replace'           => array('4.0.0', ''),
             'split'                   => array('4.0.0', ''),
-            'spliti'                  => array('4.0.1', ''),
             'sql_regcase'             => array('4.0.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '4.0.1';       // 2000-06-28 (stable)
+        $items = array(
+            'spliti'                  => array('4.0.1', ''),
         );
         $this->applyFilter($release, $items, $functions);
 

@@ -75,7 +75,7 @@ class PHP_CompatInfo_Reference_Fileinfo
 
         $classes = array();
 
-        $release = '0.1.0';       // 2004-02-13
+        $release = '0.1.0';       // 2004-02-13 (beta)
         $items = array(
             'finfo'                   => array('4.0.0', ''),
         );
@@ -102,7 +102,7 @@ class PHP_CompatInfo_Reference_Fileinfo
 
         $functions = array();
 
-        $release = '0.1.0';       // 2004-02-13
+        $release = '0.1.0';       // 2004-02-13 (beta)
         $items = array(
             'finfo_buffer'            => array('4.0.0', ''),
             'finfo_close'             => array('4.0.0', ''),
@@ -112,10 +112,7 @@ class PHP_CompatInfo_Reference_Fileinfo
         );
         $this->applyFilter($release, $items, $functions);
 
-        /*
-            Since 1.0.5 enables by default in PHP 5.3.0
-         */
-        $release = '1.0.5';       // 2009-06-30 (PHP 5.3.0)
+        $release = '1.0.5';       // 2009-06-30 (stable) enables by default in PHP 5.3.0
         $items = array(
             'mime_content_type'       => array('5.3.0', ''),
         );
@@ -142,7 +139,7 @@ class PHP_CompatInfo_Reference_Fileinfo
 
         $constants = array();
 
-        $release = '0.1.0';       // 2004-02-13
+        $release = '0.1.0';       // 2004-02-13 (beta)
         $items = array(
             'FILEINFO_COMPRESS'         => array('4.0.0', self::LATEST_PHP_5_2),
             'FILEINFO_CONTINUE'         => array('4.0.0', ''),
@@ -155,7 +152,7 @@ class PHP_CompatInfo_Reference_Fileinfo
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '1.0.5';       // 2009-06-30 (PHP 5.3.0)
+        $release = '1.0.5';       // 2009-06-30 (stable) enables by default in PHP 5.3.0
         $items = array(
             'FILEINFO_MIME_ENCODING'    => array('5.3.0', ''),
             'FILEINFO_MIME_TYPE'        => array('5.3.0', ''),

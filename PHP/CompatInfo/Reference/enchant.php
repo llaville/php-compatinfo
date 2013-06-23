@@ -79,7 +79,7 @@ class PHP_CompatInfo_Reference_Enchant
 
         $functions = array();
 
-        $release = '0.1.0';       // 2004-03-08
+        $release = '0.1.0';       // 2004-03-08 (alpha)
         $items = array(
             'enchant_broker_describe'               => array('5.0.0', ''),
             'enchant_broker_dict_exists'            => array('5.0.0', ''),
@@ -101,19 +101,19 @@ class PHP_CompatInfo_Reference_Enchant
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.2.0';       // 2004-03-09
+        $release = '0.2.0';       // 2004-03-09 (alpha)
         $items = array(
             'enchant_dict_quick_check'              => array('5.0.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0.1';       // 2006-03-21
+        $release = '1.0.1';       // 2006-03-21 (stable)
         $items = array(
             'enchant_broker_list_dicts'             => array('5.0.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.1.0';       // 2009-10-08
+        $release = '1.1.0';       // 2009-10-08 (stable)
         $items = array(
             'enchant_broker_set_dict_path'          => array('5.0.0', ''),
             'enchant_broker_get_dict_path'          => array('5.0.0', ''),
@@ -141,7 +141,7 @@ class PHP_CompatInfo_Reference_Enchant
 
         $constants = array();
 
-        $release = '1.1.0';       // 2009-10-08
+        $release = '1.1.0';       // 2009-10-08 (stable)
         $items = array(
             'ENCHANT_ISPELL'            => array('5.0.0', ''),
             'ENCHANT_MYSPELL'           => array('5.0.0', ''),

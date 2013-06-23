@@ -89,7 +89,7 @@ class PHP_CompatInfo_Reference_Filter
 
         $functions = array();
 
-        $release = '0.9.0';       // 2005-10-05
+        $release = '0.9.0';       // 2005-10-05 (beta)
         $items = array(
             'input_get'                 => array('4.0.0', ''),
             'input_filters_list'        => array('4.0.0', ''),
@@ -104,7 +104,7 @@ class PHP_CompatInfo_Reference_Filter
             );
         }
 
-        $release = '0.9.2';       // 2005-10-27
+        $release = '0.9.2';       // 2005-10-27 (beta)
         $items = array(
             'input_name_to_filter'      => array('4.0.0', ''),
         );
@@ -114,7 +114,7 @@ class PHP_CompatInfo_Reference_Filter
             '0.10.0', 'input_name_to_filter', $functions
         );
 
-        $release = '0.10.0';      // 2006-08-31
+        $release = '0.10.0';      // 2006-08-31 (beta)
         $items = array(
             'input_get_args'            => array('5.0.0', ''),
         );
@@ -127,7 +127,7 @@ class PHP_CompatInfo_Reference_Filter
         /*
             This release contains BC breaks, the API has been rewamped
           */
-        $release = '0.11.0';      // 2006-10-31
+        $release = '0.11.0';      // 2006-10-31 (beta)
         $items = array(
             'filter_has_var'            => array('5.0.0', ''),
             'filter_id'                 => array('5.0.0', ''),
@@ -160,7 +160,7 @@ class PHP_CompatInfo_Reference_Filter
 
         $constants = array();
 
-        $release = '0.9.0';       // 2005-10-05
+        $release = '0.9.0';       // 2005-10-05 (beta)
         $items = array(
             'FILTER_FLAG_ALLOW_FRACTION'            => array('4.0.0', ''),
             'FILTER_FLAG_ALLOW_HEX'                 => array('4.0.0', ''),
@@ -193,7 +193,7 @@ class PHP_CompatInfo_Reference_Filter
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '0.9.4';       // 2006-01-23
+        $release = '0.9.4';       // 2006-01-23 (beta)
         $items = array(
             'FILTER_CALLBACK'                       => array('4.0.0', ''),
             'FILTER_DEFAULT'                        => array('4.0.0', ''),
@@ -219,7 +219,7 @@ class PHP_CompatInfo_Reference_Filter
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '0.10.0';      // 2006-08-31
+        $release = '0.10.0';      // 2006-08-31 (beta)
         $items = array(
             'FILTER_FLAG_ARRAY'                     => array('5.0.0', ''),
             'FILTER_FLAG_SCALAR'                    => array('5.0.0', ''),
@@ -233,7 +233,7 @@ class PHP_CompatInfo_Reference_Filter
             '0.10.0', 'FILTER_FLAG_SCALAR', $constants
         );
 
-        $release = '0.11.0';      // 2006-10-31
+        $release = '0.11.0';      // 2006-10-31 (beta)
         $items = array(
             'FILTER_REQUIRE_ARRAY'                  => array('5.0.0', ''),
             'FILTER_REQUIRE_SCALAR'                 => array('5.0.0', ''),
