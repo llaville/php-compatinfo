@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_Bz2
 
         $functions = array();
 
-        $release = false;
+        $release = '4.0.4';       // 2000-12-19 (stable)
         $items = array(
             'bzclose'                 => array('4.0.4', ''),
             'bzcompress'              => array('4.0.4', ''),
