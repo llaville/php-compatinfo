@@ -23,32 +23,25 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-06-07</date>
- <time>07:43:17</time>
+ <date>2013-06-23</date>
+ <time>18:10:46</time>
  <version>
-  <release>2.17.0</release>
-  <api>2.17.0</api>
+  <release>2.18.0</release>
+  <api>2.18.0</api>
  </version>
  <stability>
-  <release>stable</release>
+  <release>snapshot</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- update xdebug reference to 2.2.3
-- update xhprof reference to 0.9.3
-- update libevent reference to 0.1.0
-- update amqp reference to 1.2.0
-- update gender reference to 1.0.0
-- update intl reference to 3.0.0
-- update mongo reference to 1.4.1
-- update zendopcache reference to 7.0.2
-- phar version of CLI tools
-- CLI tools phpci is renamed to phpcompatinfo to avoid name conflict with http://www.phptesting.org/
+- first release that support final stable version of PHP 5.5
+- update xcache reference to 3.0.2
+- update http reference to 1.7.6
 
 Bug fixes:
-- extension Zend OPcache is not displayed in list-references
+- none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -512,7 +505,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>1.6.2</min>
+    <min>1.7.0</min>
    </package>
    <extension>
     <name>dom</name>
@@ -566,6 +559,27 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.18.0</release>
+    <api>2.18.0</api>
+   </version>
+   <stability>
+    <release>snapshot</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-06-23</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- first release that support final stable version of PHP 5.5
+- update xcache reference to 3.0.2
+- update http reference to 1.7.6
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.17.0</release>
