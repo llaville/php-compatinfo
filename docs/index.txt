@@ -8,7 +8,7 @@ include::attributes.txt[]
 ************************************************************************
 *Release highlights:*
 
-- PHP_CompatInfo 2.17.0 add both support to PHP 5.3.26 and PHP 5.4.16
+- first release that support final stable version of PHP 5.5
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the

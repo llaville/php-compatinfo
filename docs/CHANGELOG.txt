@@ -7,6 +7,7 @@ include::attributes.txt[]
 [options="header", cols="3,3", role="table table-bordered table-striped"]
 |===========================
 | Version | PHP versions supported
+| 2.18.0  | add support to PHP 5.5.0
 | 2.17.0  | add both support to PHP 5.4.16 and 5.3.26
 | 2.16.0  | add both support to PHP 5.4.15 and 5.3.25
 | 2.15.0  | add both support to PHP 5.4.14 and 5.3.24
@@ -25,6 +26,17 @@ include::attributes.txt[]
 | 2.2.0   | all PHP versions until 5.3.9
 | 2.1.0   | all PHP versions until 5.3.8
 |===========================
+
+
+== Version 2.18.0 _(2013-06-24)_
+
+.Additions and changes:
+* first release that support final stable version of PHP 5.5
+* update xcache reference to 3.0.2
+* update http reference to 1.7.6
+
+.Bug fixes:
+* none
 
 
 == Version 2.17.0 _(2013-06-06)_
