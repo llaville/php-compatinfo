@@ -738,6 +738,11 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
             );
             $reflect->connect(
+                'T_FINALLY',
+                'PHP_Reflect_Token_FINALLY',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
+            );
+            $reflect->connect(
                 'T_HALT_COMPILER',
                 'PHP_Reflect_Token_HALT_COMPILER',
                 array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
@@ -755,6 +760,11 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             $reflect->connect(
                 'T_INSTEADOF',
                 'PHP_Reflect_Token_INSTEADOF',
+                array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
+            );
+            $reflect->connect(
+                'T_YIELD',
+                'PHP_Reflect_Token_YIELD',
                 array('PHP_CompatInfo_TokenParser', 'parseTokenFeatures')
             );
 

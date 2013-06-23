@@ -1246,6 +1246,13 @@ class PHP_CompatInfo_Reference_Standard
         );
         $this->applyFilter($release, $items, $tokens);
 
+        $release = '5.5.0';       // 2013-06-20 (stable)
+        $items = array(
+            'finally'                        => array('5.5.0', ''),
+            'yield'                          => array('5.5.0', ''),
+        );
+        $this->applyFilter($release, $items, $tokens);
+
         return $tokens;
     }
 
