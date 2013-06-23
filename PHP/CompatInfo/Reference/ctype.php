@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_Ctype
 
         $functions = array();
 
-        $release = false;
+        $release = '4.0.4';       // 2000-12-19 (stable)
         $items = array(
             'ctype_alnum'                    => array('4.0.4', ''),
             'ctype_alpha'                    => array('4.0.4', ''),
