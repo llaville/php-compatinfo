@@ -55,6 +55,7 @@ class PHP_CompatInfo_Reference_SocketsTest
                 'SOCKET_SYSNOTREADY',
                 'SOCKET_TRY_AGAIN',
                 'SOCKET_VERNOTSUPPORTED',
+                'MSG_CMSG_CLOEXEC',
             );
         } else {
             $this->optionalconstants = array(
