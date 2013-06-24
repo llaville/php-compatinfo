@@ -44,6 +44,10 @@ class PHP_CompatInfo_Reference_MemcacheTest
      */
     protected function setUp()
     {
+        $this->optionalconstants = array(
+            'MEMCACHE_SERIALIZED'
+        );
+
         if (DIRECTORY_SEPARATOR == '\\') {
             // Win32 only
             $this->optionalfunctions = array(
@@ -55,11 +59,13 @@ class PHP_CompatInfo_Reference_MemcacheTest
             $this->ignoredfunctions = array(
                 'memcache_setoptimeout',
             );
+            array_push($this->optionalconstants,
+                'MEMCACHE_USER1',
+                'MEMCACHE_USER2',
+                'MEMCACHE_USER3',
+                'MEMCACHE_USER4'
+            );
         }
-
-        $this->optionalconstants = array(
-            'MEMCACHE_SERIALIZED'
-        );
 
         $this->obj = new PHP_CompatInfo_Reference_Memcache();
         parent::setUp();
