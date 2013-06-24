@@ -48,6 +48,18 @@ class PHP_CompatInfo_Reference_IntlTest
             define('INTL_ICU_VERSION', false);
         }
 
+        if (PATH_SEPARATOR == ';') {
+            // Win*
+            $this->optionalclasses  = array('IntlException');
+            $this->ignoredfunctions = array(
+                'intltz_get_unknown',
+                'intlcal_get_repeated_wall_time_option',
+                'intlcal_get_skipped_wall_time_option',
+                'intlcal_set_repeated_wall_time_option',
+                'intlcal_set_skipped_wall_time_option',
+            );
+        }
+
         if (version_compare(INTL_ICU_VERSION, '3.8.0', 'lt')) {
             // requires libicu >= 3.8
             $this->optionalconstants = array_merge(
