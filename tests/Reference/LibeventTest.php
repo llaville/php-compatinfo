@@ -51,6 +51,7 @@ class PHP_CompatInfo_Reference_LibeventTest
                 // only available since version 0.0.5
                 array_push($this->ignoredfunctions, 'event_priority_set');
             }
+            array_push($this->optionalfunctions, 'event_base_reinit');
         } else {
             // *nix
         }
