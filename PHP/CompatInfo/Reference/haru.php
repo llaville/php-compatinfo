@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_Haru
 
         $classes = array();
 
-        $release = '0.0.1';       // 2007-03-26
+        $release = '0.0.1';       // 2007-03-26 (beta)
         $items = array(
             // @link http://www.php.net/manual/en/class.haruexception.php        
             'HaruException'                         => array('5.1.3', ''),

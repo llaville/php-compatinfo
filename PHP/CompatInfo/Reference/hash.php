@@ -93,7 +93,7 @@ class PHP_CompatInfo_Reference_Hash
 
         $functions = array();
 
-        $release = '1.1';         // 2005-12-07
+        $release = '1.1';         // 2005-12-07 (stable)
         $items = array(
             'hash'                           => array('4.0.0', ''),
             'hash_algos'                     => array('4.0.0', ''),
@@ -108,7 +108,7 @@ class PHP_CompatInfo_Reference_Hash
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.3.0';       // 2009-06-30
+        $release = '5.3.0';       // 2009-06-30 (stable)
         $items = array(
             'hash_copy'                      => array('5.3.0', ''),
 
@@ -120,7 +120,7 @@ class PHP_CompatInfo_Reference_Hash
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.5.0';       // soon
+        $release = '5.5.0';       // 2013-06-20 (stable)
         $items = array(
             'hash_pbkdf2'                    => array('5.5.0', ''),
         );
@@ -147,13 +147,13 @@ class PHP_CompatInfo_Reference_Hash
 
         $constants = array();
 
-        $release = '1.1';         // 2005-12-07
+        $release = '1.1';         // 2005-12-07 (stable)
         $items = array(
             'HASH_HMAC'                      => array('4.0.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '5.3.0';       // 2009-06-30
+        $release = '5.3.0';       // 2009-06-30 (stable)
         $items = array(
             'MHASH_CRC32'                    => array('5.3.0', ''),
             'MHASH_MD5'                      => array('5.3.0', ''),
@@ -184,7 +184,7 @@ class PHP_CompatInfo_Reference_Hash
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '5.4.0';       // 2012-03-01
+        $release = '5.4.0';       // 2012-03-01 (stable)
         $items = array(
             'MHASH_FNV132'                   => array('5.4.0', ''),
             'MHASH_FNV1A32'                  => array('5.4.0', ''),
