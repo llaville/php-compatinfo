@@ -77,14 +77,14 @@ class PHP_CompatInfo_Reference_Lzf
 
         $functions = array();
 
-        $release = '0.1';         // 2003-10-14
+        $release = '0.1';         // 2003-10-14 (stable)
         $items = array(
             'lzf_compress'                            => array('4.0.0', ''),
             'lzf_decompress'                          => array('4.0.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0';         // 2003-10-24
+        $release = '1.0';         // 2003-10-24 (stable)
         $items = array(
             'lzf_optimized_for'                       => array('4.0.0', ''),
         );
