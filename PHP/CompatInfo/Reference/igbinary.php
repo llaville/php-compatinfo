@@ -76,7 +76,7 @@ class PHP_CompatInfo_Reference_Igbinary
 
         $functions = array();
 
-        $release = '1.1.1   ';         // 2011-03-14
+        $release = '1.1.1';       // 2011-03-14 (stable)
         $items = array(
             'igbinary_serialize'                => array('5.2.0', ''),
             'igbinary_unserialize'              => array('5.2.0', ''),
