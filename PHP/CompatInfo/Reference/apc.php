@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Apc
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '3.1.14';
+    const REF_VERSION = '3.1.13';
 
     /**
      * Gets informations about extensions
