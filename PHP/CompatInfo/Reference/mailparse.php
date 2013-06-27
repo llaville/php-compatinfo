@@ -76,7 +76,7 @@ class PHP_CompatInfo_Reference_Mailparse
 
         $classes = array();
 
-        $release = '0.9';         // 2002-12-12
+        $release = '0.9';         // 2002-12-12 (beta)
         $items = array(
             'mimemessage'                             => array('4.3.0', ''),
         );
@@ -103,7 +103,7 @@ class PHP_CompatInfo_Reference_Mailparse
 
         $functions = array();
 
-        $release = '0.9';         // 2002-12-12
+        $release = '0.9';         // 2002-12-12 (beta)
         $items = array(
             'mailparse_determine_best_xfer_encoding'  => array('4.3.0', ''),
             'mailparse_msg_create'                    => array('4.3.0', ''),
@@ -144,7 +144,7 @@ class PHP_CompatInfo_Reference_Mailparse
 
         $constants = array();
 
-        $release = '0.9';         // 2002-12-12
+        $release = '0.9';         // 2002-12-12 (beta)
         $items = array(
             'MAILPARSE_EXTRACT_OUTPUT'                => array('4.3.0', ''),
             'MAILPARSE_EXTRACT_RETURN'                => array('4.3.0', ''),
