@@ -83,7 +83,7 @@ class PHP_CompatInfo_Reference_Mongo
 
         $classes = array();
 
-        $release = '0.9.0';       // 2009-05-20
+        $release = '0.9.0';       // 2009-05-20 (alpha)
         $items = array(
             // Core
             'Mongo'                             => array('5.0.0', ''),
@@ -118,7 +118,7 @@ class PHP_CompatInfo_Reference_Mongo
             '0.9.0', 'MongoUtil', $classes
         );
 
-        $release = '1.0.1';       // 2009-11-19
+        $release = '1.0.1';       // 2009-11-19 (stable)
         $items = array(
             // Types
             'MongoTimestamp'                    => array('5.1.0', ''),
@@ -127,14 +127,14 @@ class PHP_CompatInfo_Reference_Mongo
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '1.0.3';       // 2010-01-07
+        $release = '1.0.3';       // 2010-01-07 (stable)
         $items = array(
             // Exceptions
             'MongoCursorTimeoutException'       => array('5.1.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '1.0.9';       // 2010-08-06
+        $release = '1.0.9';       // 2010-08-06 (stable)
         $items = array(
             // Types
             'MongoInt32'                        => array('5.1.0', ''),
@@ -142,7 +142,7 @@ class PHP_CompatInfo_Reference_Mongo
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '1.2.3';       // 2011-08-15
+        $release = '1.2.3';       // 2011-08-15 (stable)
         $items = array(
             // Miscellaneous
             'MongoLog'                          => array('5.1.0', ''),
@@ -150,14 +150,14 @@ class PHP_CompatInfo_Reference_Mongo
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '1.3.0RC1';    // 2012-11-05
+        $release = '1.3.0RC1';    // 2012-11-05 (beta)
         $items = array(
             // Exceptions
             'MongoResultException'              => array('5.2.6', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '1.3.0RC3';    // 2012-11-20
+        $release = '1.3.0RC3';    // 2012-11-20 (beta)
         $items = array(
             // Core
             'MongoClient'                       => array('5.2.6', ''),
@@ -185,7 +185,7 @@ class PHP_CompatInfo_Reference_Mongo
 
         $functions = array();
 
-        $release = '1.0.1';       // 2009-11-19
+        $release = '1.0.1';       // 2009-11-19 (stable)
         $items = array(
             'bson_decode'                       => array('5.1.0', ''),
             'bson_encode'                       => array('5.1.0', ''),
