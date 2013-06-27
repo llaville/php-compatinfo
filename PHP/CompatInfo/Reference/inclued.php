@@ -77,7 +77,7 @@ class PHP_CompatInfo_Reference_Inclued
 
         $functions = array();
 
-        $release = '0.1.0';       // 2008-02-29
+        $release = '0.1.0';       // 2008-02-29 (alpha)
         $items = array(
             'inclued_get_data'                  => array('5.1.0', ''),
         );
