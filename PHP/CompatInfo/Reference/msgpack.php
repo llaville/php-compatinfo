@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_Msgpack
 
         $classes = array();
 
-        $release = '0.5.2';       // 2012-09-14
+        $release = '0.5.2';       // 2012-09-14 (beta)
         $items = array(
             'MessagePack'                           => array('5.0.0', ''),
             'MessagePackUnpacker'                   => array('5.0.0', ''),
@@ -102,7 +102,7 @@ class PHP_CompatInfo_Reference_Msgpack
 
         $functions = array();
 
-        $release = '0.5.2';       // 2012-09-14
+        $release = '0.5.2';       // 2012-09-14 (beta)
         $items = array(
             'msgpack_pack'                          => array('5.0.0', ''),
             'msgpack_serialize'                     => array('5.0.0', ''),
