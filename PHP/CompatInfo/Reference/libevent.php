@@ -75,7 +75,7 @@ class PHP_CompatInfo_Reference_libevent
 
         $functions = array();
 
-        $release = '0.0.2';       // 2009-08-29
+        $release = '0.0.2';       // 2009-08-29 (beta)
         $items = array(
             'event_add'                             => array('5.3.0', ''),
             'event_base_free'                       => array('5.3.0', ''),
@@ -108,19 +108,19 @@ class PHP_CompatInfo_Reference_libevent
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.0.4';       // 2010-06-23
+        $release = '0.0.4';       // 2010-06-23 (beta)
         $items = array(
             'event_buffer_set_callback'             => array('5.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.0.5';       // 2012-04-02
+        $release = '0.0.5';       // 2012-04-02 (beta)
         $items = array(
             'event_priority_set'                    => array('5.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.1.0';       // 2013-05-22
+        $release = '0.1.0';       // 2013-05-22 (beta)
         $items = array(
             'event_base_reinit'                     => array('5.3.0', ''),
         );
@@ -147,7 +147,7 @@ class PHP_CompatInfo_Reference_libevent
 
         $constants = array();
 
-        $release = '0.0.2';       // 2009-08-29
+        $release = '0.0.2';       // 2009-08-29 (beta)
         $items = array(
             'EVLOOP_NONBLOCK'                       => array('5.3.0', ''),
             'EVLOOP_ONCE'                           => array('5.3.0', ''),
@@ -159,7 +159,7 @@ class PHP_CompatInfo_Reference_libevent
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '0.0.4';       // 2010-06-23
+        $release = '0.0.4';       // 2010-06-23 (beta)
         $items = array(
             'EVBUFFER_EOF'                          => array('5.3.0', ''),
             'EVBUFFER_ERROR'                        => array('5.3.0', ''),
