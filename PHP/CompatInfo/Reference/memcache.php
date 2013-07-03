@@ -76,13 +76,13 @@ class PHP_CompatInfo_Reference_Memcache
 
         $classes = array();
 
-        $release = '0.2';         // 2004-02-26
+        $release = '0.2';         // 2004-02-26 (beta)
         $items = array(
             'Memcache'                      => array('4.3.3', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '3.0.0';       // 2007-11-26
+        $release = '3.0.0';       // 2007-11-26 (alpha)
         $items = array(
             'MemcachePool'                  => array('4.3.11', ''),
         );
@@ -109,7 +109,7 @@ class PHP_CompatInfo_Reference_Memcache
 
         $functions = array();
 
-        $release = '0.2';         // 2004-02-26
+        $release = '0.2';         // 2004-02-26 (beta)
         $items = array(
             'memcache_add'                      => array('4.3.3', ''),
             'memcache_connect'                  => array('4.3.3', ''),
@@ -125,20 +125,20 @@ class PHP_CompatInfo_Reference_Memcache
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.4';         // 2004-03-26
+        $release = '0.4';         // 2004-03-26 (beta)
         $items = array(
             'memcache_close'                    => array('4.3.3', ''),
             'memcache_pconnect'                 => array('4.3.3', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0';         // 2004-05-21
+        $release = '1.0';         // 2004-05-21 (beta)
         $items = array(
             'memcache_flush'                    => array('4.3.3', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '2.0.0';       // 2005-12-23
+        $release = '2.0.0';       // 2005-12-23 (stable)
         $items = array(
             'memcache_add_server'               => array('4.3.3', ''),
             'memcache_get_extended_stats'       => array('4.3.3', ''),
@@ -146,14 +146,14 @@ class PHP_CompatInfo_Reference_Memcache
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '2.1.0';       // 2006-10-09
+        $release = '2.1.0';       // 2006-10-09 (stable)
         $items = array(
             'memcache_get_server_status'        => array('4.3.3', ''),
             'memcache_set_server_params'        => array('4.3.3', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '3.0.0';       // 2007-11-26
+        $release = '3.0.0';       // 2007-11-26 (alpha)
         $items = array(
             'memcache_append'                   => array('4.3.11', ''),
             'memcache_cas'                      => array('4.3.11', ''),
@@ -183,7 +183,7 @@ class PHP_CompatInfo_Reference_Memcache
 
         $constants = array();
 
-        $release = '0.2';         // 2004-02-26
+        $release = '0.2';         // 2004-02-26 (beta)
         $items = array(
             'MEMCACHE_COMPRESSED'               => array('4.3.3', ''),
             'MEMCACHE_SERIALIZED'               => array('4.3.3', ''),
@@ -193,13 +193,13 @@ class PHP_CompatInfo_Reference_Memcache
             '0.2', 'MEMCACHE_SERIALIZED', $constants
         );
 
-        $release = '2.2.0';       // 2007-09-21
+        $release = '2.2.0';       // 2007-09-21 (stable)
         $items = array(
             'MEMCACHE_HAVE_SESSION'             => array('4.3.3', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '3.0.8';       // 2013-04-10
+        $release = '3.0.8';       // 2013-04-10 (beta)
         $items = array(
             'MEMCACHE_USER1'                    => array('4.3.11', ''),
             'MEMCACHE_USER2'                    => array('4.3.11', ''),
