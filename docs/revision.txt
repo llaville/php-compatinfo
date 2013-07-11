@@ -1,2 +1,2 @@
-:revdate:    2013-06-24
-:revnumber:  2.18.0
+:revdate:    2013-07-11
+:revnumber:  2.19.0
