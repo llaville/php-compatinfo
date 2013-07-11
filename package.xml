@@ -23,11 +23,11 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-06-24</date>
- <time>22:43:33</time>
+ <date>2013-07-11</date>
+ <time>22:21:05</time>
  <version>
-  <release>2.18.0</release>
-  <api>2.18.0</api>
+  <release>2.19.0</release>
+  <api>2.19.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -36,9 +36,7 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- first release that support final stable version of PHP 5.5
-- update xcache reference to 3.0.2
-- update http reference to 1.7.6
+- update xcache reference to 3.0.3
 
 Bug fixes:
 - none
@@ -559,6 +557,25 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.19.0</release>
+    <api>2.19.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-07-11</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- update xcache reference to 3.0.3
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.18.0</release>
