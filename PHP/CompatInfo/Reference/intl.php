@@ -159,6 +159,8 @@ class PHP_CompatInfo_Reference_Intl
 
         $functions = array();
 
+        $ver = defined('INTL_ICU_VERSION') ? INTL_ICU_VERSION : FALSE;
+
         $release = '1.0.0beta';   // 2007-12-06
         $items = array(
             'collator_asort'                    => array('5.2.0', ''),
@@ -342,10 +344,6 @@ class PHP_CompatInfo_Reference_Intl
                                                 => array('5.5.0', ''),
             'intlcal_get_minimum'               => array('5.5.0', ''),
             'intlcal_get_now'                   => array('5.5.0', ''),
-            'intlcal_get_repeated_wall_time_option'
-                                                => array('5.5.0', ''),
-            'intlcal_get_skipped_wall_time_option'
-                                                => array('5.5.0', ''),
             'intlcal_get_time'                  => array('5.5.0', ''),
             'intlcal_get_time_zone'             => array('5.5.0', ''),
             'intlcal_get_type'                  => array('5.5.0', ''),
@@ -359,10 +357,6 @@ class PHP_CompatInfo_Reference_Intl
             'intlcal_set'                       => array('5.5.0', ''),
             'intlcal_set_first_day_of_week'     => array('5.5.0', ''),
             'intlcal_set_lenient'               => array('5.5.0', ''),
-            'intlcal_set_repeated_wall_time_option'
-                                                => array('5.5.0', ''),
-            'intlcal_set_skipped_wall_time_option'
-                                                => array('5.5.0', ''),
             'intlcal_set_time'                  => array('5.5.0', ''),
             'intlcal_set_time_zone'             => array('5.5.0', ''),
             'intlcal_to_date_time'              => array('5.5.0', ''),
@@ -371,8 +365,6 @@ class PHP_CompatInfo_Reference_Intl
             'intltz_create_default'             => array('5.5.0', ''),
             'intltz_create_enumeration'         => array('5.5.0', ''),
             'intltz_create_time_zone'           => array('5.5.0', ''),
-            'intltz_create_time_zone_id_enumeration'
-                                                => array('5.5.0', ''),
             'intltz_from_date_time_zone'        => array('5.5.0', ''),
             'intltz_get_canonical_id'           => array('5.5.0', ''),
             'intltz_get_equivalent_id'          => array('5.5.0', ''),
@@ -384,14 +376,38 @@ class PHP_CompatInfo_Reference_Intl
             'intltz_get_id'                     => array('5.5.0', ''),
             'intltz_get_offset'                 => array('5.5.0', ''),
             'intltz_get_raw_offset'             => array('5.5.0', ''),
-            'intltz_get_region'                 => array('5.5.0', ''),
-            'intltz_get_unknown'                => array('5.5.0', ''),
+
             'intltz_get_tz_data_version'        => array('5.5.0', ''),
             'intltz_has_same_rules'             => array('5.5.0', ''),
             'intltz_to_date_time_zone'          => array('5.5.0', ''),
             'intltz_use_daylight_time'          => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
+
+        if (version_compare($ver, '4.8', 'ge')) {
+            // requires libicu >= 4.8
+            $items = array(
+                'intltz_create_time_zone_id_enumeration'
+                                                => array('5.5.0', ''),
+                'intltz_get_region'             => array('5.5.0', ''),
+            );
+            $this->applyFilter($release, $items, $functions);
+        }
+        if (version_compare($ver, '49', 'ge')) {
+            // requires libicu >= 49 (version scheme change 4.9 become 49)
+            $items = array(
+                'intltz_get_unknown'            => array('5.5.0', ''),
+                'intlcal_get_repeated_wall_time_option'
+                                                => array('5.5.0', ''),
+                'intlcal_get_skipped_wall_time_option'
+                                                => array('5.5.0', ''),
+                'intlcal_set_repeated_wall_time_option'
+                                                => array('5.5.0', ''),
+                'intlcal_set_skipped_wall_time_option'
+                                                => array('5.5.0', ''),
+            );
+            $this->applyFilter($release, $items, $functions);
+        }
 
         return $functions;
     }
@@ -413,6 +429,8 @@ class PHP_CompatInfo_Reference_Intl
         $this->setFilter(func_get_args());
 
         $constants = array();
+
+        $ver = defined('INTL_ICU_VERSION') ? INTL_ICU_VERSION : FALSE;
 
         $release = '1.0.0beta';   // 2007-12-06
         $items = array(
@@ -558,18 +576,6 @@ class PHP_CompatInfo_Reference_Intl
             'U_REGEX_SET_CONTAINS_STRING'       => array('5.2.0', ''),
             'U_REGEX_ERROR_LIMIT'               => array('5.2.0', ''),
 
-            // The error code in the range 0x10400-0x104ff are reserved for IDNA related error codes
-            'U_IDNA_PROHIBITED_ERROR'           => array('5.2.0', ''),
-            'U_IDNA_ERROR_START'                => array('5.2.0', ''),
-            'U_IDNA_UNASSIGNED_ERROR'           => array('5.2.0', ''),
-            'U_IDNA_CHECK_BIDI_ERROR'           => array('5.2.0', ''),
-            'U_IDNA_STD3_ASCII_RULES_ERROR'     => array('5.2.0', ''),
-            'U_IDNA_ACE_PREFIX_ERROR'           => array('5.2.0', ''),
-            'U_IDNA_VERIFICATION_ERROR'         => array('5.2.0', ''),
-            'U_IDNA_LABEL_TOO_LONG_ERROR'       => array('5.2.0', ''),
-            'U_IDNA_ZERO_LENGTH_LABEL_ERROR'    => array('5.2.0', ''),
-            'U_IDNA_ERROR_LIMIT'                => array('5.2.0', ''),
-
             // Aliases for StringPrep
             'U_STRINGPREP_PROHIBITED_ERROR'     => array('5.2.0', ''),
             'U_STRINGPREP_UNASSIGNED_ERROR'     => array('5.2.0', ''),
@@ -578,6 +584,25 @@ class PHP_CompatInfo_Reference_Intl
             'U_ERROR_LIMIT'                     => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
+
+        if (version_compare($ver, '4.6.0', 'ge')) {
+            // requires libicu >= 4.6
+            $items = array(
+                // The error code in the range 0x10400-0x104ff are reserved for IDNA related error codes
+                'U_IDNA_PROHIBITED_ERROR'       => array('5.2.0', ''),
+                'U_IDNA_ERROR_START'            => array('5.2.0', ''),
+                'U_IDNA_UNASSIGNED_ERROR'       => array('5.2.0', ''),
+                'U_IDNA_CHECK_BIDI_ERROR'       => array('5.2.0', ''),
+                'U_IDNA_STD3_ASCII_RULES_ERROR' => array('5.2.0', ''),
+                'U_IDNA_ACE_PREFIX_ERROR'       => array('5.2.0', ''),
+                'U_IDNA_VERIFICATION_ERROR'     => array('5.2.0', ''),
+                'U_IDNA_LABEL_TOO_LONG_ERROR'   => array('5.2.0', ''),
+                'U_IDNA_ZERO_LENGTH_LABEL_ERROR'
+                                                => array('5.2.0', ''),
+                'U_IDNA_ERROR_LIMIT'            => array('5.2.0', ''),
+            );
+            $this->applyFilter($release, $items, $constants);
+        }
 
         $release = '1.0.0RC1';    // 2008-05-27
         $items = array(
@@ -597,37 +622,51 @@ class PHP_CompatInfo_Reference_Intl
 
         $release = '2.0.0b1';     // 2011-11-29
         $items = array(
-            'U_IDNA_DOMAIN_NAME_TOO_LONG_ERROR' => array('5.4.0', ''),
-
-            'IDNA_CHECK_BIDI'                   => array('5.4.0', ''),
-            'IDNA_CHECK_CONTEXTJ'               => array('5.4.0', ''),
-
-            'IDNA_NONTRANSITIONAL_TO_ASCII'     => array('5.4.0', ''),
-            'IDNA_NONTRANSITIONAL_TO_UNICODE'   => array('5.4.0', ''),
-
-            'IDNA_ERROR_EMPTY_LABEL'            => array('5.4.0', ''),
-            'IDNA_ERROR_LABEL_TOO_LONG'         => array('5.4.0', ''),
-            'IDNA_ERROR_DOMAIN_NAME_TOO_LONG'   => array('5.4.0', ''),
-            'IDNA_ERROR_LEADING_HYPHEN'         => array('5.4.0', ''),
-            'IDNA_ERROR_TRAILING_HYPHEN'        => array('5.4.0', ''),
-            'IDNA_ERROR_HYPHEN_3_4'             => array('5.4.0', ''),
-            'IDNA_ERROR_LEADING_COMBINING_MARK' => array('5.4.0', ''),
-            'IDNA_ERROR_DISALLOWED'             => array('5.4.0', ''),
-            'IDNA_ERROR_PUNYCODE'               => array('5.4.0', ''),
-            'IDNA_ERROR_LABEL_HAS_DOT'          => array('5.4.0', ''),
-            'IDNA_ERROR_INVALID_ACE_LABEL'      => array('5.4.0', ''),
-            'IDNA_ERROR_BIDI'                   => array('5.4.0', ''),
-            'IDNA_ERROR_CONTEXTJ'               => array('5.4.0', ''),
-
-            'INTL_ICU_DATA_VERSION'             => array('5.3.7', ''),
             'INTL_ICU_VERSION'                  => array('5.3.7', ''),
 
             'INTL_IDNA_VARIANT_2003'            => array('5.4.0', ''),
-            'INTL_IDNA_VARIANT_UTS46'           => array('5.4.0', ''),
 
             'INTL_MAX_LOCALE_LEN'               => array('5.2.4', ''),
         );
         $this->applyFilter($release, $items, $constants);
+
+        if (version_compare($ver, '3.8.0', 'ge')) {
+            // requires libicu >= 3.8
+            $items = array(
+                'U_IDNA_DOMAIN_NAME_TOO_LONG_ERROR' => array('5.4.0', ''),
+            );
+            $this->applyFilter($release, $items, $constants);
+        }
+
+        if (version_compare($ver, '4.6.0', 'ge')) {
+            // requires libicu >= 4.6
+            $items = array(
+                'INTL_ICU_DATA_VERSION'             => array('5.3.7', ''),
+
+                'IDNA_CHECK_BIDI'                   => array('5.4.0', ''),
+                'IDNA_CHECK_CONTEXTJ'               => array('5.4.0', ''),
+
+                'IDNA_NONTRANSITIONAL_TO_ASCII'     => array('5.4.0', ''),
+                'IDNA_NONTRANSITIONAL_TO_UNICODE'   => array('5.4.0', ''),
+
+                'IDNA_ERROR_EMPTY_LABEL'            => array('5.4.0', ''),
+                'IDNA_ERROR_LABEL_TOO_LONG'         => array('5.4.0', ''),
+                'IDNA_ERROR_DOMAIN_NAME_TOO_LONG'   => array('5.4.0', ''),
+                'IDNA_ERROR_LEADING_HYPHEN'         => array('5.4.0', ''),
+                'IDNA_ERROR_TRAILING_HYPHEN'        => array('5.4.0', ''),
+                'IDNA_ERROR_HYPHEN_3_4'             => array('5.4.0', ''),
+                'IDNA_ERROR_LEADING_COMBINING_MARK' => array('5.4.0', ''),
+                'IDNA_ERROR_DISALLOWED'             => array('5.4.0', ''),
+                'IDNA_ERROR_PUNYCODE'               => array('5.4.0', ''),
+                'IDNA_ERROR_LABEL_HAS_DOT'          => array('5.4.0', ''),
+                'IDNA_ERROR_INVALID_ACE_LABEL'      => array('5.4.0', ''),
+                'IDNA_ERROR_BIDI'                   => array('5.4.0', ''),
+                'IDNA_ERROR_CONTEXTJ'               => array('5.4.0', ''),
+
+                'INTL_IDNA_VARIANT_UTS46'           => array('5.4.0', ''),
+            );
+            $this->applyFilter($release, $items, $constants);
+        }
 
         return $constants;
     }
