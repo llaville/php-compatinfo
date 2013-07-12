@@ -51,13 +51,6 @@ class PHP_CompatInfo_Reference_IntlTest
         if (PATH_SEPARATOR == ';') {
             // Win*
             $this->optionalclasses  = array('IntlException');
-            $this->ignoredfunctions = array(
-                'intltz_get_unknown',
-                'intlcal_get_repeated_wall_time_option',
-                'intlcal_get_skipped_wall_time_option',
-                'intlcal_set_repeated_wall_time_option',
-                'intlcal_set_skipped_wall_time_option',
-            );
         }
 
         if (version_compare(INTL_ICU_VERSION, '3.8.0', 'lt')) {
@@ -66,6 +59,30 @@ class PHP_CompatInfo_Reference_IntlTest
                 $this->optionalconstants,
                 array(
                     'U_IDNA_DOMAIN_NAME_TOO_LONG_ERROR',
+                )
+            );
+        }
+
+        if (version_compare(INTL_ICU_VERSION, '4.8', 'lt')) {
+            // requires libicu >= 4.8
+            $this->optionalfunctions = array_merge(
+                $this->optionalfunctions,
+                array(
+                    'intltz_create_time_zone_id_enumeration',
+                    'intltz_get_region',
+                )
+            );
+        }
+        if (version_compare(INTL_ICU_VERSION, '49', 'lt')) {
+            // requires libicu >= 49 (version scheme change 4.9 become 49)
+            $this->optionalfunctions = array_merge(
+                $this->optionalfunctions,
+                array(
+                    'intltz_get_unknown',
+                    'intlcal_get_repeated_wall_time_option',
+                    'intlcal_get_skipped_wall_time_option',
+                    'intlcal_set_repeated_wall_time_option',
+                    'intlcal_set_skipped_wall_time_option',
                 )
             );
         }

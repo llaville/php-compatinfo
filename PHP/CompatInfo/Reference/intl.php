@@ -342,6 +342,10 @@ class PHP_CompatInfo_Reference_Intl
                                                 => array('5.5.0', ''),
             'intlcal_get_minimum'               => array('5.5.0', ''),
             'intlcal_get_now'                   => array('5.5.0', ''),
+            'intlcal_get_repeated_wall_time_option'
+                                                => array('5.5.0', ''),
+            'intlcal_get_skipped_wall_time_option'
+                                                => array('5.5.0', ''),
             'intlcal_get_time'                  => array('5.5.0', ''),
             'intlcal_get_time_zone'             => array('5.5.0', ''),
             'intlcal_get_type'                  => array('5.5.0', ''),
@@ -355,6 +359,10 @@ class PHP_CompatInfo_Reference_Intl
             'intlcal_set'                       => array('5.5.0', ''),
             'intlcal_set_first_day_of_week'     => array('5.5.0', ''),
             'intlcal_set_lenient'               => array('5.5.0', ''),
+            'intlcal_set_repeated_wall_time_option'
+                                                => array('5.5.0', ''),
+            'intlcal_set_skipped_wall_time_option'
+                                                => array('5.5.0', ''),
             'intlcal_set_time'                  => array('5.5.0', ''),
             'intlcal_set_time_zone'             => array('5.5.0', ''),
             'intlcal_to_date_time'              => array('5.5.0', ''),
@@ -377,6 +385,7 @@ class PHP_CompatInfo_Reference_Intl
             'intltz_get_offset'                 => array('5.5.0', ''),
             'intltz_get_raw_offset'             => array('5.5.0', ''),
             'intltz_get_region'                 => array('5.5.0', ''),
+            'intltz_get_unknown'                => array('5.5.0', ''),
             'intltz_get_tz_data_version'        => array('5.5.0', ''),
             'intltz_has_same_rules'             => array('5.5.0', ''),
             'intltz_to_date_time_zone'          => array('5.5.0', ''),
