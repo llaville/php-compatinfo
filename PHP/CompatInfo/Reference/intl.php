@@ -103,7 +103,7 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '1.0.0RC1';   // 2008-05-27
+        $release = '1.0.0RC1';    // 2008-05-27
         $items = array(
             'IntlDateFormatter'             => array('5.2.4', ''),
         );
@@ -122,7 +122,7 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '5.5.0';         // soon
+        $release = '5.5.0';       // 2013-06-20
         $items = array(
             'IntlBreakIterator'             => array('5.5.0', ''),
             'IntlCalendar'                  => array('5.5.0', ''),
@@ -230,7 +230,7 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0.0RC1';   // 2008-05-27
+        $release = '1.0.0RC1';    // 2008-05-27
         $items = array(
             'datefmt_create'                    => array('5.2.4', ''),
             'datefmt_format'                    => array('5.2.4', ''),
@@ -304,7 +304,7 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.5.0';     // soon
+        $release = '5.5.0';       // 2013-06-20
         $items = array(
             'datefmt_format_object'             => array('5.5.0', ''),
             'datefmt_get_calendar_object'       => array('5.5.0', ''),
@@ -579,7 +579,7 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '1.0.0RC1';   // 2008-05-27
+        $release = '1.0.0RC1';    // 2008-05-27
         $items = array(
             'GRAPHEME_EXTR_COUNT'               => array('5.2.4', ''),
             'GRAPHEME_EXTR_MAXBYTES'            => array('5.2.4', ''),
