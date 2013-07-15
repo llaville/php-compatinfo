@@ -49,6 +49,22 @@ class PHP_CompatInfo_Reference_IntlTest
             $this->optionalclasses  = array('IntlException');
         }
 
+        if (version_compare(PHP_VERSION, '5.4.0', 'lt') && (PATH_SEPARATOR == ';')) {
+
+            $this->optionalconstants = array(
+                'U_IDNA_PROHIBITED_ERROR',
+                'U_IDNA_ERROR_START',
+                'U_IDNA_UNASSIGNED_ERROR',
+                'U_IDNA_CHECK_BIDI_ERROR',
+                'U_IDNA_STD3_ASCII_RULES_ERROR',
+                'U_IDNA_ACE_PREFIX_ERROR',
+                'U_IDNA_VERIFICATION_ERROR',
+                'U_IDNA_LABEL_TOO_LONG_ERROR',
+                'U_IDNA_ZERO_LENGTH_LABEL_ERROR',
+                'U_IDNA_ERROR_LIMIT',
+            );
+        }
+
         $this->obj = new PHP_CompatInfo_Reference_Intl();
         parent::setUp();
     }
