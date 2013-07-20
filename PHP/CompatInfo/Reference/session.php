@@ -76,6 +76,7 @@ class PHP_CompatInfo_Reference_Session
         $release = false;
         $items = array(
             'SessionHandlerInterface'        => array('5.4.0', ''),
+            'SessionIdInterface'             => array('5.5.1', ''),
         );
         $this->applyFilter($release, $items, $interfaces);
 
