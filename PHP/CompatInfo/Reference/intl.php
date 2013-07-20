@@ -409,6 +409,13 @@ class PHP_CompatInfo_Reference_Intl
             $this->applyFilter($release, $items, $functions);
         }
 
+        $release = '5.5.1';       // 2013-07-18
+        $items = array(
+            'intlcal_set_minimal_days_in_first_week'
+                                                => array('5.5.1', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
         return $functions;
     }
 
