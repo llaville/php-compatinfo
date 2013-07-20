@@ -8,7 +8,7 @@ include::attributes.txt[]
 ************************************************************************
 *Release highlights:*
 
-- PHP_CompatInfo 2.19.0 add both support to PHP 5.3.27 and PHP 5.4.17
+- PHP_CompatInfo 2.20.0 add support to PHP 5.5.1
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the

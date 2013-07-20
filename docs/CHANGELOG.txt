@@ -7,6 +7,7 @@ include::attributes.txt[]
 [options="header", cols="3,3", role="table table-bordered table-striped"]
 |===========================
 | Version | PHP versions supported
+| 2.20.0  | add support to PHP 5.5.1
 | 2.19.0  | add both support to PHP 5.4.17 and 5.3.27
 | 2.18.0  | add support to PHP 5.5.0
 | 2.17.0  | add both support to PHP 5.4.16 and 5.3.26
@@ -27,6 +28,16 @@ include::attributes.txt[]
 | 2.2.0   | all PHP versions until 5.3.9
 | 2.1.0   | all PHP versions until 5.3.8
 |===========================
+
+
+== Version 2.20.0 _(2013-07-20)_
+
+.Additions and changes:
+* add support to PHP 5.5.1
+* update session and intl references sync with PHP 5.5.1
+
+.Bug fixes:
+* none
 
 
 == Version 2.19.0 _(2013-07-11)_

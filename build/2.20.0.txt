@@ -1,0 +1,6 @@
+Additions and changes:
+- add support to PHP 5.5.1
+- update session and intl references sync with PHP 5.5.1
+
+Bug fixes:
+- none
