@@ -1,0 +1,5 @@
+Additions and changes:
+- update mongo reference to 1.4.2
+
+Bug fixes:
+- none
