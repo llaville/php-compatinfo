@@ -1,20 +1,20 @@
 [role="lead"]
-PHP_CompatInfo is a PHP library that parse any data source (file, directory)
+PHP_CompatInfo is a PHP library that will parse source code (file, directory)
 to find out the minimum version and extensions required for it to run. 
-A CLI tool is available, giving results without to write a line of code.
+A CLI tool is available, giving results without having to write a line of code.
 
-The major version 2 is a full rewrites to PHP5, that used exceptions to raise
+The major version 2 is a full rewrite to PHP5 that uses exceptions to raise
 errors, and an autoloader to dynamically load required classes.
 
 Since version 2.0.0RC3 the PHP parser engine used is https://github.com/llaville/php-reflect[PHP_Reflect].
-It's an improved version from basic concept of https://github.com/sebastianbergmann/php-token-stream[PHP_TokenStream].
+It's an improved version from the basic concept of https://github.com/sebastianbergmann/php-token-stream[PHP_TokenStream].
 
-If you want a PHP4 version compatible, you should consider to have a look on the
+If you want a PHP4-compatible version, you should consider to have a look on the
 branch 1.x solution hosted on PEAR repository :
 http://pear.php.net/package/PHP_CompatInfo[PEAR::PHP_CompatInfo] 1.9.0 
 
 [caption="Caution", name="important", icon="{iconsdir}/caution.png"]
-CAUTION: Its recommanded to migrate to PHP5, because PHP4 version is not maintained anymore.
+CAUTION: Its recommended to migrate to PHP5, because the PHP4 version is not maintained anymore.
 
 === Features
 
