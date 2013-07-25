@@ -188,6 +188,7 @@ class PHP_CompatInfo_Reference_SocketsTest
             'MSG_MORE',
             'MSG_WAITFORONE',
             'MSG_CMSG_CLOEXEC',
+            'SO_BINDTODEVICE',
             'SO_REUSEPORT',
             'SO_FAMILY',
             'TCP_NODELAY',

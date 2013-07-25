@@ -302,6 +302,7 @@ class PHP_CompatInfo_Reference_Sockets
             'SOL_TCP'                        => array('4.1.0', ''),
             'SOL_UDP'                        => array('4.1.0', ''),
             'SOMAXCONN'                      => array('4.1.0', ''),
+            'SO_BINDTODEVICE'                => array('5.5.1', ''),
             'SO_BROADCAST'                   => array('4.1.0', ''),
             'SO_DEBUG'                       => array('4.1.0', ''),
             'SO_DONTROUTE'                   => array('4.1.0', ''),
