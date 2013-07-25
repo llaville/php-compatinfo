@@ -195,4 +195,29 @@ class PHP_CompatInfo_Reference_Mongo
         return $functions;
     }
 
+    /**
+     * Gets informations about constants
+     *
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
+     *
+     * @return array
+     */
+    public function getConstants($extension = null, $version = null, $condition = null)
+    {
+        $this->setFilter(func_get_args());
+
+        $constants = array();
+
+        $release = '1.4.2';      // 2013-07-23
+        $items = array(
+            'MONGO_STREAMS'                  => array('5.2.6', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        return $constants;
+    }
 }
