@@ -2,4 +2,5 @@ Additions and changes:
 - update mongo reference to 1.4.2
 
 Bug fixes:
-- none
+- request #98 fixed mongo, sockets and standard references (thanks to Remi Collet)
+ 
