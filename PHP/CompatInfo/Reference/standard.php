@@ -492,7 +492,7 @@ class PHP_CompatInfo_Reference_Standard
             'array_reduce'                   => array('4.0.5', ''),
             'array_search'                   => array('4.0.5', ''),
             'call_user_method_array'         => array('4.0.5', ''),
-            'chroot'                         => array('4.0.5', self::LATEST_PHP_5_3),
+            'chroot'                         => array('4.0.5', ''),
             'is_scalar'                      => array('4.0.5', ''),
             'strcoll'                        => array('4.0.5', ''),
         );

@@ -55,6 +55,8 @@ class PHP_CompatInfo_Reference_StandardTest
 
         if (DIRECTORY_SEPARATOR == '/') {
             $this->optionalfunctions = array(
+                // requires HAVE_CHROOT
+                'chroot',
                 // remove in some Linux distribution (Redhat, ...)
                 'php_egg_logo_guid',
             );
@@ -68,7 +70,7 @@ class PHP_CompatInfo_Reference_StandardTest
                 'money_format',
                 // requires HAVE_GETRUSAGE (linux only)
                 'getrusage',
-                // requires HAVE_CHROOT (linux only)
+                // requires HAVE_CHROOT
                 'chroot',
                 // requires HAVE_FTOK (linux only)
                 'ftok',
