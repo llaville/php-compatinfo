@@ -76,6 +76,9 @@ class PHP_CompatInfo_Token_OBJECT_OPERATOR extends PHP_Reflect_Token_OBJECT_OPER
                 if ($this->_getContext($i) == 'T_OPEN_BRACKET') {
                     $bracket--;
                 }
+                if ($bracket === 0) {
+                    break;
+                }
 
                 if ($this->_getContext($i) == 'T_NEW') {
                     if ($bracket == 1 && $this->_getContext($i-2) != 'T_STRING') {

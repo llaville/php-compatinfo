@@ -3,4 +3,4 @@ Additions and changes:
 
 Bug fixes:
 - request #98 fixed mongo, sockets and standard references (thanks to Remi Collet)
- 
+- GH-97: False positive classMemberAccessOnInstantiation detection

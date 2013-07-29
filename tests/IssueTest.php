@@ -522,4 +522,23 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Regression test for bug GH-97
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/97
+     *       False positive classMemberAccessOnInstantiation detection
+     * @covers PHP_CompatInfo::parse
+     * @group  regression
+     * @return void
+     */
+    public function testBugGH97()
+    {
+        $this->pci->parse(TEST_FILES_PATH . 'gh97.php');
+
+        $this->assertEquals(
+            array('5.0.0', ''), $this->pci->getVersions()
+        );
+
+    }
+
 }
