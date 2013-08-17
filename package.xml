@@ -23,23 +23,25 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-07-27</date>
- <time>10:25:00</time>
+ <date>2013-08-17</date>
+ <time>10:52:05</time>
  <version>
   <release>2.21.0</release>
   <api>2.21.0</api>
  </version>
  <stability>
-  <release>snapshot</release>
-  <api>beta</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- update mongo reference to 1.4.2
+- update mongo reference to 1.4.3
+- update libxml reference for PHP 5.5.2
 
 Bug fixes:
 - request #98 fixed mongo, sockets and standard references (thanks to Remi Collet)
+- GH-97: False positive classMemberAccessOnInstantiation detection
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -376,6 +378,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="gh33.php" role="test" />
      <file baseinstalldir="Bartlett" name="gh34.php" role="test" />
      <file baseinstalldir="Bartlett" name="gh38.php" role="test" />
+     <file baseinstalldir="Bartlett" name="gh97.php" role="test" />
      <file baseinstalldir="Bartlett" name="phpcompatinfo.xml" role="test" />
      <file baseinstalldir="Bartlett" name="source1.php" role="test" />
      <file baseinstalldir="Bartlett" name="source2.php" role="test" />
@@ -563,17 +566,19 @@ Bug fixes:
     <api>2.21.0</api>
    </version>
    <stability>
-    <release>snapshot</release>
-    <api>beta</api>
+    <release>stable</release>
+    <api>stable</api>
    </stability>
-   <date>2013-07-27</date>
+   <date>2013-08-17</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
-- update mongo reference to 1.4.2
+- update mongo reference to 1.4.3
+- update libxml reference for PHP 5.5.2
 
 Bug fixes:
 - request #98 fixed mongo, sockets and standard references (thanks to Remi Collet)
+- GH-97: False positive classMemberAccessOnInstantiation detection
    </notes>
   </release>
   <release>
