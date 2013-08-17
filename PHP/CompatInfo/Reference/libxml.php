@@ -188,6 +188,12 @@ class PHP_CompatInfo_Reference_Libxml
         );
         $this->applyFilter($release, $items, $constants);
 
+        $release = '5.5.2';       // 2013-08-16
+        $items = array(
+            'LIBXML_SCHEMA_CREATE'           => array('5.5.2', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
         return $constants;
     }
 

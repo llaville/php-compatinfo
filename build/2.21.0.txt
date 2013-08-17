@@ -1,5 +1,6 @@
 Additions and changes:
 - update mongo reference to 1.4.3
+- update libxml reference for PHP 5.5.2
 
 Bug fixes:
 - request #98 fixed mongo, sockets and standard references (thanks to Remi Collet)
