@@ -316,6 +316,10 @@
         <exclude name="**/netgrowl.php" />
     </fileset>
 
+    <fileset dir="${project.dir}" id="phar-versions">
+        <include name="PHP/CompatInfo/CLI.php" />
+    </fileset>
+
     <!--
         ======================================================================
         Imported modules
