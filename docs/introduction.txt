@@ -75,4 +75,6 @@ CAUTION: Its recommended to migrate to PHP5, because the PHP4 version is not mai
 | 2.18.0  | 95    |
 | 2.19.0  | 95    |
 | 2.20.0  | 95    |
+| 2.21.0  | 95    |
+| 2.22.0  | 95    |
 |===========================
