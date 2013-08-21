@@ -35,7 +35,7 @@ include::attributes.txt[]
 == Version 2.22.0 _(2013-08-21)_
 
 .Additions and changes:
-* none
+* phar _--version_ switch now print the latest version rather than DEV
 
 .Bug fixes:
 * none
