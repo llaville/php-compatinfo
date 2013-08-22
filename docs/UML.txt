@@ -143,6 +143,7 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract {
     void  #setFilter( array $args )
     void  #applyFilter( string $release, array $items, arry &$elements)
     void  #setMaxExtensionVersion( string $version, string $name, array &$elements)
+    void  #setExcludeVersions(mixed $versions, string $name, array &$elements)
 
     array +getAll ( string $extension = null, string $version = null, string $condition = null )
     array +getExtensions ( string $extension = null, string $version = null, string $condition = null )

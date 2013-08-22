@@ -1,5 +1,7 @@
 Additions and changes:
 - phar --version switch now print the latest version rather than DEV
+- add new function setExcludeVersions() in abstract PHP_CompatInfo_Reference_PluginsAbstract class
+  that allow to exclude one or more version for an element ( related to issue GH-99 )
 
 Bug fixes:
 - none

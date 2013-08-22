@@ -191,6 +191,27 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
     }
 
     /**
+     * Sets the exclusion list of PHP version an element is not available
+     *
+     * @param mixed  $versions One version or a list of PHP versions to exclude
+     *                         about the element $name
+     * @param string $name     Element name
+     * @param array  $elements Variable that host data
+     *
+     * @return void
+     */
+    protected function setExcludeVersions($versions, $name, &$elements)
+    {
+        if (!isset($elements[$name])) {
+            return;
+        }
+        if (!is_array($versions)) {
+            $versions = array($versions);
+        }
+        $elements[$name]['excludes'] = $versions;
+    }
+
+    /**
      * Gets all informations at once about:
      * extensions, interfaces, classes, functions, constants
      *
