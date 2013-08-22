@@ -30,8 +30,8 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
      */
     const LATEST_PHP_5_2 = '5.2.17';
     const LATEST_PHP_5_3 = '5.3.27';
-    const LATEST_PHP_5_4 = '5.4.18';
-    const LATEST_PHP_5_5 = '5.5.2';
+    const LATEST_PHP_5_4 = '5.4.19';
+    const LATEST_PHP_5_5 = '5.5.3';
 
     /**
      * Warning messages generated during loading of extensions references
@@ -188,6 +188,27 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
         if (isset($elements[$name])) {
             $elements[$name][3] = $version;
         }
+    }
+
+    /**
+     * Sets the exclusion list of PHP version an element is not available
+     *
+     * @param mixed  $versions One version or a list of PHP versions to exclude
+     *                         about the element $name
+     * @param string $name     Element name
+     * @param array  $elements Variable that host data
+     *
+     * @return void
+     */
+    protected function setExcludeVersions($versions, $name, &$elements)
+    {
+        if (!isset($elements[$name])) {
+            return;
+        }
+        if (!is_array($versions)) {
+            $versions = array($versions);
+        }
+        $elements[$name]['excludes'] = $versions;
     }
 
     /**

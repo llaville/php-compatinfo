@@ -21,7 +21,7 @@
     -->
     <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
     <property name="build.target"                value="${project.dir}/build" />
-    <property name="build.version"               value="2.21.0" />
+    <property name="build.version"               value="2.22.0" />
 
     <!--
         ======================================================================
@@ -314,6 +314,10 @@
         <include name="vendor/**" />
         <exclude name="**/PEAR.php" />
         <exclude name="**/netgrowl.php" />
+    </fileset>
+
+    <fileset dir="${project.dir}" id="phar-versions">
+        <include name="PHP/CompatInfo/CLI.php" />
     </fileset>
 
     <!--

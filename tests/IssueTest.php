@@ -541,4 +541,34 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Regression test for bug GH-99
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/99
+     *       SO_BINDTODEVICE exists in php >= 5.4.18 and >= 5.5.1 (so not in 5.5.0)
+     * @covers PHP_CompatInfo_Reference
+     * @group  regression
+     * @return void
+     */
+    public function testBugGH99()
+    {
+        $ref = new PHP_CompatInfo_Reference_PHP5(array('sockets'));
+        $constants = $ref->getConstants();
+
+        $this->assertEquals(
+            array('sockets' =>
+                array(
+                    0 => '5.4.18',
+                    1 => '',
+                    2 => '',
+                    3 => '',
+                    'excludes' => array('5.5.0'),
+                )
+            ),
+            $constants['SO_BINDTODEVICE']
+        );
+
+    }
+
+
 }

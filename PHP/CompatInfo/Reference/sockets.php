@@ -302,7 +302,7 @@ class PHP_CompatInfo_Reference_Sockets
             'SOL_TCP'                        => array('4.1.0', ''),
             'SOL_UDP'                        => array('4.1.0', ''),
             'SOMAXCONN'                      => array('4.1.0', ''),
-            'SO_BINDTODEVICE'                => array('5.5.1', ''),
+            'SO_BINDTODEVICE'                => array('5.4.18', ''),
             'SO_BROADCAST'                   => array('4.1.0', ''),
             'SO_DEBUG'                       => array('4.1.0', ''),
             'SO_DONTROUTE'                   => array('4.1.0', ''),
@@ -323,6 +323,7 @@ class PHP_CompatInfo_Reference_Sockets
             'TCP_NODELAY'                    => array('5.2.7', ''),
         );
         $this->applyFilter($release, $items, $constants);
+        $this->setExcludeVersions('5.5.0', 'SO_BINDTODEVICE', $constants);
 
         return $constants;
     }
