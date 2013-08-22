@@ -32,13 +32,15 @@ include::attributes.txt[]
 |===========================
 
 
-== Version 2.22.0 _(2013-08-21)_
+== Version 2.22.0 _(2013-08-22)_
 
 .Additions and changes:
 * phar _--version_ switch now print the latest version rather than DEV
+* add new function setExcludeVersions() in abstract PHP_CompatInfo_Reference_PluginsAbstract class
+  that allow to exclude one or more version for an element ( related to issue GH-99 )
 
 .Bug fixes:
-* none
+* GH-99: SO_BINDTODEVICE exists in php >= 5.4.18 and >= 5.5.1 (so not in 5.5.0)
 
 
 == Version 2.21.0 _(2013-08-17)_
