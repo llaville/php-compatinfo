@@ -78,7 +78,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      * @return void
      */
     public function testReference()
-    { 
+    {
         if (is_null($this->ref)) {
             return;
         }
@@ -129,6 +129,11 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
         foreach ($this->ref['functions'] as $fctname => $range) {
             list($min, $max) = $range;
+            if (array_key_exists('excludes', $range)
+                && in_array(PHP_VERSION, $range['excludes'])
+            ) {
+                array_push($this->ignoredfunctions, $fctname);
+            }
             if (!in_array($fctname, $this->optionalfunctions)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
@@ -198,6 +203,11 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
         foreach ($this->ref['constants'] as $constname => $range) {
             list($min, $max) = $range;
+            if (array_key_exists('excludes', $range)
+                && in_array(PHP_VERSION, $range['excludes'])
+            ) {
+                array_push($this->ignoredconstants, $constname);
+            }
             if (!in_array($constname, $this->optionalconstants)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
@@ -266,6 +276,11 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
         foreach ($this->ref['classes'] as $classname => $range) {
             list($min, $max) = $range;
+            if (array_key_exists('excludes', $range)
+                && in_array(PHP_VERSION, $range['excludes'])
+            ) {
+                array_push($this->ignoredclasses, $constname);
+            }
             if (!in_array($classname, $this->optionalclasses)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
@@ -275,13 +290,15 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                     "Class '$classname', found in Reference, does not exists."
                 );
             }
-            if (($min && version_compare(PHP_VERSION, $min)<0)
-                || ($max && version_compare(PHP_VERSION, $max)>0)
-            ) {
-                $this->assertFalse(
-                    class_exists($classname, false),
-                    "Class '$classname', found in Reference ($min,$max), exists."
-                );
+            if (!in_array($classname, $this->ignoredclasses)) {
+                if (($min && version_compare(PHP_VERSION, $min)<0)
+                    || ($max && version_compare(PHP_VERSION, $max)>0)
+                ) {
+                    $this->assertFalse(
+                        class_exists($classname, false),
+                        "Class '$classname', found in Reference ($min,$max), exists."
+                    );
+                }
             }
         }
     }
@@ -344,6 +361,12 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
         foreach ($this->ref['interfaces'] as $intname => $range) {
             list($min, $max) = $range;
+            if (array_key_exists('excludes', $range)
+                && in_array(PHP_VERSION, $range['excludes'])
+            ) {
+                array_push($this->optionalinterfaces, $intname);
+            }
+
             if (!in_array($intname, $this->optionalinterfaces)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
