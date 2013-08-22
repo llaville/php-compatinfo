@@ -323,6 +323,7 @@ class PHP_CompatInfo_Reference_Sockets
             'TCP_NODELAY'                    => array('5.2.7', ''),
         );
         $this->applyFilter($release, $items, $constants);
+        $this->setExcludeVersions('5.4.18', 'SO_BINDTODEVICE', $constants);
 
         return $constants;
     }
