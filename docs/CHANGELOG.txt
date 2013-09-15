@@ -36,7 +36,7 @@ include::attributes.txt[]
 == Version 2.23.0 _(2013-09-dd)_
 
 .Additions and changes:
-* none
+* update APCu reference to 4.0.2
 
 .Bug fixes:
 * none

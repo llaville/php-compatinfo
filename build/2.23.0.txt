@@ -1,5 +1,5 @@
 Additions and changes:
-- none
+- update APCu reference to 4.0.2
 
 Bug fixes:
 - none
