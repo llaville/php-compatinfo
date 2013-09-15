@@ -37,6 +37,7 @@ include::attributes.txt[]
 
 .Additions and changes:
 * update APCu reference to 4.0.2
+* update pthreads reference to 0.0.45
 
 .Bug fixes:
 * none
