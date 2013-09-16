@@ -26,7 +26,7 @@
  * @link     http://www.php.net/manual/en/book.rar.php
  * @since    Class available since Release 2.23.0
  */
-class PHP_CompatInfo_Reference_rar
+class PHP_CompatInfo_Reference_Rar
     extends PHP_CompatInfo_Reference_PluginsAbstract
 {
     /**
