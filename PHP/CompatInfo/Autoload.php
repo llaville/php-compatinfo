@@ -218,6 +218,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/pcntl.php',
             'PHP_CompatInfo_Reference_Pcre'
                 => 'PHP/CompatInfo/Reference/pcre.php',
+            'PHP_CompatInfo_Reference_PDFlib'
+                => 'PHP/CompatInfo/Reference/pdflib.php',
             'PHP_CompatInfo_Reference_PDO'
                 => 'PHP/CompatInfo/Reference/pdo.php',
             'PHP_CompatInfo_Reference_Pgsql'

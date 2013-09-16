@@ -56,6 +56,7 @@ class PHP_CompatInfo_Reference_ALL
         $exceptions = array(
             'core'       => 'Core',
             'oauth'      => 'OAuth',
+            'pdflib'     => 'PDFlib',
             'pdo'        => 'PDO',
             'phar'       => 'Phar',
             'reflection' => 'Reflection',
