@@ -36,7 +36,7 @@ include::attributes.txt[]
 == Version 2.23.0 _(2013-09-dd)_
 
 .Additions and changes:
-* add 2 new extensions: Rar, PDFlib
+* add 3 new extensions: htscanner, PDFlib, Rar
 * update APCu reference to 4.0.2
 * update pthreads reference to 0.0.45
 
