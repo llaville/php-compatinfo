@@ -1,4 +1,5 @@
 Additions and changes:
+- add 1 new extensions: Rar
 - update APCu reference to 4.0.2
 - update pthreads reference to 0.0.45
 

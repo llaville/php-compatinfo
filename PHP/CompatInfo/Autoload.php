@@ -228,6 +228,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/posix.php',
             'PHP_CompatInfo_Reference_Pthreads'
                 => 'PHP/CompatInfo/Reference/pthreads.php',
+            'PHP_CompatInfo_Reference_Rar'
+                => 'PHP/CompatInfo/Reference/rar.php',
             'PHP_CompatInfo_Reference_Readline'
                 => 'PHP/CompatInfo/Reference/readline.php',
             'PHP_CompatInfo_Reference_Recode'
