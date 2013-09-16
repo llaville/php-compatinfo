@@ -95,8 +95,10 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
     {
         if (count($args) > 2) {
             list($extension, $version, $condition) = $args;
-        } else {
+        } elseif (count($args) > 1) {
             list($extension, $version) = $args;
+        } else {
+            $extension = $version = $condition = null;
         }
 
         if ($extension === true && $version === null) {
@@ -209,6 +211,18 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
             $versions = array($versions);
         }
         $elements[$name]['excludes'] = $versions;
+    }
+
+    /**
+     * Returns a PHP_CompatInfo_Reference object.
+     *
+     * @param  string $element One of reference's element to discover
+     * @return mixed  FALSE if reference could not be loaded or is not detected,
+     *                reference object instance otherwise
+     */
+    protected function loadReference($element)
+    {
+        return $this;
     }
 
     /**
