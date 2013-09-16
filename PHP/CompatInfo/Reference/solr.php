@@ -76,7 +76,7 @@ class PHP_CompatInfo_Reference_Solr
 
         $classes = array();
 
-        $release = '0.9.11';      // 2010-06-22
+        $release = '0.9.11';      // 2010-06-22 (beta)
         $items = array(
             'SolrClient'                        => array('5.2.3', ''),
             'SolrClientException'               => array('5.2.3', ''),
@@ -120,7 +120,7 @@ class PHP_CompatInfo_Reference_Solr
 
         $functions = array();
 
-        $release = '0.9.11';      // 2010-06-22
+        $release = '0.9.11';      // 2010-06-22 (beta)
         $items = array(
             'solr_get_version'                  => array('5.2.3', ''),
         );
@@ -147,7 +147,7 @@ class PHP_CompatInfo_Reference_Solr
 
         $constants = array();
 
-        $release = '0.9.11';      // 2010-06-22
+        $release = '0.9.11';      // 2010-06-22 (beta)
         $items = array(
             'SOLR_EXTENSION_VERSION'            => array('5.2.3', ''),
             'SOLR_MAJOR_VERSION'                => array('5.2.3', ''),
