@@ -30,8 +30,8 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
      */
     const LATEST_PHP_5_2 = '5.2.17';
     const LATEST_PHP_5_3 = '5.3.27';
-    const LATEST_PHP_5_4 = '5.4.19';
-    const LATEST_PHP_5_5 = '5.5.3';
+    const LATEST_PHP_5_4 = '5.4.20';
+    const LATEST_PHP_5_5 = '5.5.4';
 
     /**
      * Warning messages generated during loading of extensions references
@@ -95,8 +95,10 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
     {
         if (count($args) > 2) {
             list($extension, $version, $condition) = $args;
-        } else {
+        } elseif (count($args) > 1) {
             list($extension, $version) = $args;
+        } else {
+            $extension = $version = $condition = null;
         }
 
         if ($extension === true && $version === null) {
@@ -209,6 +211,22 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
             $versions = array($versions);
         }
         $elements[$name]['excludes'] = $versions;
+    }
+
+    /**
+     * Returns a PHP_CompatInfo_Reference object.
+     *
+     * @param string $element  One of reference's element to discover
+     * @param bool   $prefetch (optional) When FALSE, do a matching rules search.
+     *                         Otherwise force a prefetch with $element
+     *                         that identify a reference.
+     *
+     * @return mixed FALSE if reference could not be loaded or is not detected,
+     *               reference object instance otherwise
+     */
+    public function loadReference($element, $prefetch = FALSE)
+    {
+        return $this;
     }
 
     /**

@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Apcu
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '4.0.1';
+    const REF_VERSION = '4.0.2';
 
     /**
      * Gets informations about extensions
@@ -90,6 +90,12 @@ class PHP_CompatInfo_Reference_Apcu
             'apcu_inc'                              => array('5.3.0', ''),
             'apcu_sma_info'                         => array('5.3.0', ''),
             'apcu_store'                            => array('5.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
+        $release = '4.0.2';       // 2013-09-14 (beta)
+        $items = array(
+            'apcu_key_info'                         => array('5.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 

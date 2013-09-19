@@ -123,7 +123,7 @@ class PHP_CompatInfo_CLI
                 'long_name'   => '--reference',
                 'action'      => 'StoreString',
                 'description' => 'The name of the reference to use',
-                'choices'     => array('PHP4', 'PHP5', 'ALL'),
+                'choices'     => array('PHP5', 'ALL', 'DYN'),
             )
         );
         $reportOption = new Console_CommandLine_Option(
@@ -149,7 +149,7 @@ class PHP_CompatInfo_CLI
                 'description'   => 'List of reference available',
                 'action_params' => array(
                     'list' => array(
-                        'PHP4', 'PHP5', 'ALL'
+                        'PHP5', 'ALL', 'DYN'
                     ),
                 )
             )

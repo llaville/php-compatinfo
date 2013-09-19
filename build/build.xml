@@ -21,7 +21,7 @@
     -->
     <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
     <property name="build.target"                value="${project.dir}/build" />
-    <property name="build.version"               value="2.22.0" />
+    <property name="build.version"               value="2.23.0" />
 
     <!--
         ======================================================================
@@ -139,7 +139,8 @@
         <element>
             <element key="channel" value="bartlett.laurent-laville.org" />
             <element key="name" value="PHP_Reflect" />
-            <element key="version" value="1.7.0" />
+            <element key="version" value="1.8.0" />
+            <element key="max" value="1.99.0" />
         </element>
 
         <!-- optional -->

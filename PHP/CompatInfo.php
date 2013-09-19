@@ -53,11 +53,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     /**
      * @var array
      */
-    protected $reference;
-
-    /**
-     * @var array
-     */
     protected $warnings = array();
 
     /**
@@ -216,11 +211,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             'recursive'        => false,
             'reference'        => 'ALL',
             'referencePlugins' => array(
-                'PHP4' => array(
-                    'class' => 'PHP_CompatInfo_Reference_PHP4',
-                    'file'  => '',
-                    'args'  => array()
-                ),
                 'PHP5' => array(
                     'class' => 'PHP_CompatInfo_Reference_PHP5',
                     'file'  => '',
@@ -228,6 +218,11 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                 ),
                 'ALL' => array(
                     'class' => 'PHP_CompatInfo_Reference_ALL',
+                    'file'  => '',
+                    'args'  => array()
+                ),
+                'DYN' => array(
+                    'class' => 'PHP_CompatInfo_Reference_DYN',
                     'file'  => '',
                     'args'  => array()
                 ),
@@ -1147,7 +1142,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     /**
      * Loads a data dictionary references ($name)
      *
-     * @param string $name    The data dictionary reference (PHP4, PHP5, ...)
+     * @param string $name    The data dictionary reference (PHP5, ...)
      * @param array  $options OPTIONAL The driver configure options
      *
      * @return void
@@ -1163,10 +1158,15 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
         }
         $plugin = $this->options['referencePlugins'][$name];
 
-        if (isset($options['extensions'])) {
-            $extensions = $options['extensions'];
+        if ('DYN' === $this->options['reference']) {
+            // default references that must always loaded by default
+            $extensions = array('Core', 'standard');
         } else {
-            $extensions = null;
+            if (isset($options['extensions'])) {
+                $extensions = $options['extensions'];
+            } else {
+                $extensions = null;
+            }
         }
 
         if (!class_exists($plugin['class'], false)
@@ -1187,21 +1187,23 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                     PHP_CompatInfo_Exception::RUNTIME
                 );
             }
+            $this->referenceLoader = $reference;
 
-            $this->fireStartLoadReference($name, $extensions);
+            if ('DYN' !== $this->options['reference']) {
 
-            $this->warnings = $reference->getWarnings();
-            if ($this->options['verbose']) {
-                foreach ($this->warnings as $warn) {
-                    $this->fireFailLoadReference($warn);
+                $this->fireStartLoadReference($name, $extensions);
+
+                $this->warnings = $reference->getWarnings();
+                if ($this->options['verbose']) {
+                    foreach ($this->warnings as $warn) {
+                        $this->fireFailLoadReference($warn);
+                    }
                 }
+
+                $this->fireEndLoadReference(
+                    $name, count($reference->getExtensions()), count($this->warnings)
+                );
             }
-
-            $this->reference = $reference->getAll();
-
-            $this->fireEndLoadReference(
-                $name, count($reference->getExtensions()), count($this->warnings)
-            );
         }
     }
 
@@ -1219,23 +1221,35 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             return 1; // unknown reference
         }
 
-        if (!isset($this->reference[$category])) {
+        if (!in_array($category,
+            array('interfaces', 'classes', 'functions', 'constants', 'globals', 'tokens'))
+        ) {
             throw new PHP_CompatInfo_Exception(
                 "Invalid search category. Given '$category'",
                 PHP_CompatInfo_Exception::RUNTIME
             );
         }
 
-        $data = $this->reference[$category];
+        $ref = $this->referenceLoader->loadReference($name);
+        if (!$ref instanceof PHP_CompatInfo_Reference_PluginsAbstract) {
+            return 1; // unknown reference
+        }
+
+        $getter = 'get' . ucfirst($category);
+        $data   = $ref->$getter();
 
         if (!isset($data[$name])) {
             return 1; // unknown reference
         }
-        if (count($data[$name]) > 1) {
-            return 2; // multiple reference
-        }
 
-        list ($extension, $values) = each($data[$name]);
+        if (isset($data[$name][0])) {
+            // only a single reference was returned to $ref ( by DYN )
+            $extension = $ref::REF_NAME;
+            $values    = $data[$name];
+        } else {
+            // a combinaison of references was returned to $ref ( by ALL, PHP5 )
+            list ($extension, $values) = each($data[$name]);
+        }
 
         if (count($values) == 4) {
             list ($verMin, $verMax, $extMin, $extMax) = $values;
@@ -1276,11 +1290,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
         case 'constants':
         case 'functions':
             if (!isset($extensions)) {
-                $extensions = array();
-                foreach (array_values($this->reference['extensions'])
-                    as $name => $versions) {
-                    $extensions[] = $name;
-                }
+                $extensions = array_keys($this->referenceLoader->getExtensions());
             }
             $search = $extensions; ;
             array_unshift($search, 'user');
@@ -1314,7 +1324,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             );
             break;
         case 'reference':
-            $search = array('PHP4', 'PHP5', 'ALL');
+            $search = array('PHP5', 'ALL');
             break;
         default:
             return false;
@@ -1528,7 +1538,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
 
             if (!isset($this->extensions[$extension])) {
                 // retrieve extension versions information
-                foreach ($this->reference['extensions'] as $k => $v) {
+                foreach($this->referenceLoader->getExtensions() as $k => $v) {
                     if ($extension === $k) {
                         $v[2] = '';
                         $v[3] = '';
@@ -1666,7 +1676,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
 
                                 if (!isset($this->extensions[$ext])) {
                                     // retrieve extension versions information
-                                    foreach ($this->reference['extensions'] as $k => $v) {
+                                    foreach($this->referenceLoader->getExtensions() as $k => $v) {
                                         if ($ext === $k) {
                                             $this->extensions[$ext] = array(
                                                 'versions' => $this->_versionsRef,
@@ -1747,9 +1757,10 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             $defaultVersion = '5.0.0';
 
         } elseif ('extension_loaded' === $key) {
-            if (isset($this->reference['extensions'][$itemKey])) {
+            $refs = $this->referenceLoader->getExtensions();
+            if (isset($refs[$itemKey])) {
                 // if extension exists in reference, got it
-                $versions = $this->reference['extensions'][$itemKey];
+                $versions = $refs[$itemKey];
             } else {
                 // else uses default values
                 $versions = array('4.0.0', '', '');

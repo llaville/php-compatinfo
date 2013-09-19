@@ -7,6 +7,7 @@ include::attributes.txt[]
 [options="header", cols="3,3", role="table table-bordered table-striped"]
 |===========================
 | Version | PHP versions supported
+| 2.23.0  | add both support to PHP 5.4.20 and 5.5.4
 | 2.22.0  | add both support to PHP 5.4.19 and 5.5.3
 | 2.21.0  | add both support to PHP 5.4.18 and 5.5.2
 | 2.20.0  | add support to PHP 5.5.1
@@ -30,6 +31,20 @@ include::attributes.txt[]
 | 2.2.0   | all PHP versions until 5.3.9
 | 2.1.0   | all PHP versions until 5.3.8
 |===========================
+
+
+== Version 2.23.0 _(2013-09-19)_
+
+.Additions and changes:
+* add 3 new extensions: htscanner, PDFlib, Rar
+* update APCu reference to 4.0.2
+* update pthreads reference to 0.0.45
+* introduces an experimental `DYN` lazy loader references ( NOT YET OPERATIONAL, missing rules implementations )
+* drop support of PHP4 reference
+* drop support of PHP 5.2
+
+.Bug fixes:
+* none
 
 
 == Version 2.22.0 _(2013-08-22)_

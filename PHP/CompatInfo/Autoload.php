@@ -70,6 +70,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/PHP5.php',
             'PHP_CompatInfo_Reference_ALL'
                 => 'PHP/CompatInfo/Reference/ALL.php',
+            'PHP_CompatInfo_Reference_DYN'
+                => 'PHP/CompatInfo/Reference/DYN.php',
             'PHP_CompatInfo_Report'
                 => 'PHP/CompatInfo/Report.php',
             'PHP_CompatInfo_Report_Database'
@@ -162,6 +164,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/haru.php',
             'PHP_CompatInfo_Reference_Hash'
                 => 'PHP/CompatInfo/Reference/hash.php',
+            'PHP_CompatInfo_Reference_Htscanner'
+                => 'PHP/CompatInfo/Reference/htscanner.php',
             'PHP_CompatInfo_Reference_Http'
                 => 'PHP/CompatInfo/Reference/http.php',
             'PHP_CompatInfo_Reference_Iconv'
@@ -218,6 +222,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/pcntl.php',
             'PHP_CompatInfo_Reference_Pcre'
                 => 'PHP/CompatInfo/Reference/pcre.php',
+            'PHP_CompatInfo_Reference_PDFlib'
+                => 'PHP/CompatInfo/Reference/pdflib.php',
             'PHP_CompatInfo_Reference_PDO'
                 => 'PHP/CompatInfo/Reference/pdo.php',
             'PHP_CompatInfo_Reference_Pgsql'
@@ -228,6 +234,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/posix.php',
             'PHP_CompatInfo_Reference_Pthreads'
                 => 'PHP/CompatInfo/Reference/pthreads.php',
+            'PHP_CompatInfo_Reference_Rar'
+                => 'PHP/CompatInfo/Reference/rar.php',
             'PHP_CompatInfo_Reference_Readline'
                 => 'PHP/CompatInfo/Reference/readline.php',
             'PHP_CompatInfo_Reference_Recode'

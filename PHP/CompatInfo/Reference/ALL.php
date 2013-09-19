@@ -26,7 +26,7 @@
  * @since    Class available since Release 2.5.0
  */
 class PHP_CompatInfo_Reference_ALL
-    extends PHP_CompatInfo_Reference_PHP4
+    extends PHP_CompatInfo_Reference_PHP5
 {
     /**
      * Class constructor of ALL References
@@ -51,11 +51,12 @@ class PHP_CompatInfo_Reference_ALL
     {
         $dir = new DirectoryIterator(dirname(__FILE__));
         $excludes = array(
-            'PluginsAbstract.php', 'PHP4.php', 'PHP5.php', 'ALL.php'
+            'PluginsAbstract.php', 'PHP5.php', 'ALL.php', 'DYN.php'
         );
         $exceptions = array(
             'core'       => 'Core',
             'oauth'      => 'OAuth',
+            'pdflib'     => 'PDFlib',
             'pdo'        => 'PDO',
             'phar'       => 'Phar',
             'reflection' => 'Reflection',
@@ -83,106 +84,4 @@ class PHP_CompatInfo_Reference_ALL
         return $extensions;
     }
 
-    /**
-     * Gets all informations at once about:
-     * extensions, interfaces, classes, functions, constants
-     *
-     * @param string $extension (optional) NULL for PHP version,
-     *                          TRUE if extension version
-     * @param string $version   (optional) php or extension version
-     * @param string $condition (optional) particular relationship with $version
-     *                          Same operator values as used by version_compare
-     *
-     * @return array
-     */
-    public function getAll($extension = null, $version = null, $condition = null)
-    {
-        $references = parent::getAll($extension, $version, $condition);
-        return $references;
-    }
-
-    /**
-     * Gets informations about extensions
-     *
-     * @param string $extension (optional) NULL for PHP version,
-     *                          TRUE if extension version
-     * @param string $version   (optional) php or extension version
-     * @param string $condition (optional) particular relationship with $version
-     *                          Same operator values as used by version_compare
-     *
-     * @return array
-     */
-    public function getExtensions($extension = null , $version = null, $condition = null)
-    {
-        $extensions = parent::getExtensions($extension, $version, $condition);
-        return $extensions;
-    }
-
-    /**
-     * Gets informations about interfaces
-     *
-     * @param string $extension (optional) NULL for PHP version,
-     *                          TRUE if extension version
-     * @param string $version   (optional) php or extension version
-     * @param string $condition (optional) particular relationship with $version
-     *                          Same operator values as used by version_compare
-     *
-     * @return array
-     */
-    public function getInterfaces($extension = null , $version = null, $condition = null)
-    {
-        $interfaces = parent::getInterfaces($extension, $version, $condition);
-        return $interfaces;
-    }
-
-    /**
-     * Gets informations about classes
-     *
-     * @param string $extension (optional) NULL for PHP version,
-     *                          TRUE if extension version
-     * @param string $version   (optional) php or extension version
-     * @param string $condition (optional) particular relationship with $version
-     *                          Same operator values as used by version_compare
-     *
-     * @return array
-     */
-    public function getClasses($extension = null, $version = null, $condition = null)
-    {
-        $classes = parent::getClasses($extension, $version, $condition);
-        return $classes;
-    }
-
-    /**
-     * Gets informations about functions
-     *
-     * @param string $extension (optional) NULL for PHP version,
-     *                          TRUE if extension version
-     * @param string $version   (optional) php or extension version
-     * @param string $condition (optional) particular relationship with $version
-     *                          Same operator values as used by version_compare
-     *
-     * @return array
-     */
-    public function getFunctions($extension = null, $version = null, $condition = null)
-    {
-        $functions = parent::getFunctions($extension, $version, $condition);
-        return $functions;
-    }
-
-    /**
-     * Gets informations about constants
-     *
-     * @param string $extension (optional) NULL for PHP version,
-     *                          TRUE if extension version
-     * @param string $version   (optional) php or extension version
-     * @param string $condition (optional) particular relationship with $version
-     *                          Same operator values as used by version_compare
-     *
-     * @return array
-     */
-    public function getConstants($extension = null, $version = null, $condition = null)
-    {
-        $constants = parent::getConstants($extension, $version, $condition);
-        return $constants;
-    }
 }
