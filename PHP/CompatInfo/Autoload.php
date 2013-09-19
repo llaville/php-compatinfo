@@ -70,6 +70,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/PHP5.php',
             'PHP_CompatInfo_Reference_ALL'
                 => 'PHP/CompatInfo/Reference/ALL.php',
+            'PHP_CompatInfo_Reference_DYN'
+                => 'PHP/CompatInfo/Reference/DYN.php',
             'PHP_CompatInfo_Report'
                 => 'PHP/CompatInfo/Report.php',
             'PHP_CompatInfo_Report_Database'

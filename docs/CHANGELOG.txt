@@ -33,12 +33,15 @@ include::attributes.txt[]
 |===========================
 
 
-== Version 2.23.0 _(2013-09-dd)_
+== Version 2.23.0 _(2013-09-19)_
 
 .Additions and changes:
 * add 3 new extensions: htscanner, PDFlib, Rar
 * update APCu reference to 4.0.2
 * update pthreads reference to 0.0.45
+* introduces an experimental `DYN` lazy loader references ( NOT YET OPERATIONAL, missing rules implementations )
+
+CAUTION: this is the last version to keep support of PHP4 reference and PHP 5.2
 
 .Bug fixes:
 * none

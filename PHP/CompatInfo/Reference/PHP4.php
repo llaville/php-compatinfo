@@ -63,13 +63,17 @@ class PHP_CompatInfo_Reference_PHP4
     /**
      * Returns a PHP_CompatInfo_Reference object.
      *
-     * @param  string $element One of reference's element to discover
-     * @return mixed  FALSE if reference could not be loaded or is not detected,
-     *                reference object instance otherwise
+     * @param string $element  One of reference's element to discover
+     * @param bool   $prefetch (optional) When FALSE, do a matching rules search.
+     *                         Otherwise force a prefetch with $element
+     *                         that identify a reference.
+     *
+     * @return mixed FALSE if reference could not be loaded or is not detected,
+     *               reference object instance otherwise
      */
-    public function loadReference($element)
+    public function loadReference($element, $prefetch = FALSE)
     {
-        return parent::loadReference($element);
+        return parent::loadReference($element, $prefetch);
     }
 
     /**
@@ -113,14 +117,15 @@ class PHP_CompatInfo_Reference_PHP4
     {
         $extensions = array();
 
-        foreach ($this->extensionReferences as $ext => $extRefObject) {
-            $values = $extRefObject->getExtensions($extension, $version, $condition);
+        foreach ($this->extensionReferences as $ext => $extRefObj) {
+            $values = $extRefObj->getExtensions($extension, $version, $condition);
 
             $extensions = array_merge(
                 $extensions,
                 $values
             );
         }
+
         return $extensions;
     }
 
@@ -139,14 +144,15 @@ class PHP_CompatInfo_Reference_PHP4
     {
         $interfaces = array();
 
-        foreach ($this->extensionReferences as $ext => $extRefObject) {
-            $values = $extRefObject->getInterfaces($extension, $version, $condition);
+        foreach ($this->extensionReferences as $ext => $extRefObj) {
+            $values = $extRefObj->getInterfaces($extension, $version, $condition);
 
             $interfaces = array_merge(
                 $interfaces,
                 $this->combineExtension($ext, $values)
             );
         }
+
         return $interfaces;
     }
 
@@ -165,14 +171,15 @@ class PHP_CompatInfo_Reference_PHP4
     {
         $classes = array();
 
-        foreach ($this->extensionReferences as $ext => $extRefObject) {
-            $values = $extRefObject->getClasses($extension, $version, $condition);
+        foreach ($this->extensionReferences as $ext => $extRefObj) {
+            $values = $extRefObj->getClasses($extension, $version, $condition);
 
             $classes = array_merge(
                 $classes,
                 $this->combineExtension($ext, $values)
             );
         }
+
         return $classes;
     }
 
@@ -191,14 +198,15 @@ class PHP_CompatInfo_Reference_PHP4
     {
         $functions = array();
 
-        foreach ($this->extensionReferences as $ext => $extRefObject) {
-            $values = $extRefObject->getFunctions($extension, $version, $condition);
+        foreach ($this->extensionReferences as $ext => $extRefObj) {
+            $values = $extRefObj->getFunctions($extension, $version, $condition);
 
             $functions = array_merge(
                 $functions,
                 $this->combineExtension($ext, $values)
             );
         }
+
         return $functions;
     }
 
@@ -217,14 +225,15 @@ class PHP_CompatInfo_Reference_PHP4
     {
         $constants = array();
 
-        foreach ($this->extensionReferences as $ext => $extRefObject) {
-            $values = $extRefObject->getConstants($extension, $version, $condition);
+        foreach ($this->extensionReferences as $ext => $extRefObj) {
+            $values = $extRefObj->getConstants($extension, $version, $condition);
 
             $constants = array_merge(
                 $constants,
                 $this->combineExtension($ext, $values)
             );
         }
+
         return $constants;
     }
 
@@ -241,12 +250,12 @@ class PHP_CompatInfo_Reference_PHP4
      */
     public function getGlobals($extension = null, $version = '4', $condition = null)
     {
-        $globals      = array();
-        $ext          = 'standard';
-        $extRefObject = $this->extensionReferences[$ext] ;
+        $globals   = array();
+        $ext       = 'standard';
+        $extRefObj = $this->extensionReferences[$ext] ;
 
-        if ($extRefObject instanceof PHP_CompatInfo_Reference) {
-            $values = $extRefObject->getGlobals($extension, $version, $condition);
+        if ($extRefObj instanceof PHP_CompatInfo_Reference) {
+            $values = $extRefObj->getGlobals($extension, $version, $condition);
 
             $globals = array_merge(
                 $globals,
@@ -269,12 +278,12 @@ class PHP_CompatInfo_Reference_PHP4
      */
     public function getTokens($extension = null, $version = '4', $condition = null)
     {
-        $tokens       = array();
-        $ext          = 'standard';
-        $extRefObject = $this->extensionReferences[$ext] ;
+        $tokens    = array();
+        $ext       = 'standard';
+        $extRefObj = $this->extensionReferences[$ext] ;
 
-        if ($extRefObject instanceof PHP_CompatInfo_Reference) {
-            $values = $extRefObject->getTokens($extension, $version, $condition);
+        if ($extRefObj instanceof PHP_CompatInfo_Reference) {
+            $values = $extRefObj->getTokens($extension, $version, $condition);
 
             $tokens = array_merge(
                 $tokens,

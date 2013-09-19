@@ -51,7 +51,7 @@ class PHP_CompatInfo_Reference_ALL
     {
         $dir = new DirectoryIterator(dirname(__FILE__));
         $excludes = array(
-            'PluginsAbstract.php', 'PHP4.php', 'PHP5.php', 'ALL.php'
+            'PluginsAbstract.php', 'PHP4.php', 'PHP5.php', 'ALL.php', 'DYN.php'
         );
         $exceptions = array(
             'core'       => 'Core',
