@@ -23,11 +23,11 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-08-22</date>
- <time>19:14:11</time>
+ <date>2013-09-19</date>
+ <time>23:27:54</time>
  <version>
-  <release>2.22.0</release>
-  <api>2.22.0</api>
+  <release>2.23.0</release>
+  <api>2.23.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -36,12 +36,15 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- phar --version switch now print the latest version rather than DEV
-- add new function setExcludeVersions() in abstract PHP_CompatInfo_Reference_PluginsAbstract class
-  that allow to exclude one or more version for an element ( related to issue GH-99 )
+- add 3 new extensions: htscanner, PDFlib, Rar
+- update APCu reference to 4.0.2
+- update pthreads reference to 0.0.45
+- introduces an experimental DYN lazy loader references ( NOT YET OPERATIONAL, missing rules implementations )
+- drop support of PHP4 reference
+- drop support of PHP 5.2
 
 Bug fixes:
-- GH-99: SO_BINDTODEVICE exists in php &gt;= 5.4.18 and &gt;= 5.5.1 (so not in 5.5.0)
+- none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -127,6 +130,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="curl.php" role="php" />
       <file baseinstalldir="Bartlett" name="date.php" role="php" />
       <file baseinstalldir="Bartlett" name="dom.php" role="php" />
+      <file baseinstalldir="Bartlett" name="DYN.php" role="php" />
       <file baseinstalldir="Bartlett" name="enchant.php" role="php" />
       <file baseinstalldir="Bartlett" name="ereg.php" role="php" />
       <file baseinstalldir="Bartlett" name="exif.php" role="php" />
@@ -140,6 +144,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="gmp.php" role="php" />
       <file baseinstalldir="Bartlett" name="haru.php" role="php" />
       <file baseinstalldir="Bartlett" name="hash.php" role="php" />
+      <file baseinstalldir="Bartlett" name="htscanner.php" role="php" />
       <file baseinstalldir="Bartlett" name="http.php" role="php" />
       <file baseinstalldir="Bartlett" name="iconv.php" role="php" />
       <file baseinstalldir="Bartlett" name="igbinary.php" role="php" />
@@ -168,14 +173,15 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="openssl.php" role="php" />
       <file baseinstalldir="Bartlett" name="pcntl.php" role="php" />
       <file baseinstalldir="Bartlett" name="pcre.php" role="php" />
+      <file baseinstalldir="Bartlett" name="pdflib.php" role="php" />
       <file baseinstalldir="Bartlett" name="pdo.php" role="php" />
       <file baseinstalldir="Bartlett" name="pgsql.php" role="php" />
       <file baseinstalldir="Bartlett" name="phar.php" role="php" />
-      <file baseinstalldir="Bartlett" name="PHP4.php" role="php" />
       <file baseinstalldir="Bartlett" name="PHP5.php" role="php" />
       <file baseinstalldir="Bartlett" name="PluginsAbstract.php" role="php" />
       <file baseinstalldir="Bartlett" name="posix.php" role="php" />
       <file baseinstalldir="Bartlett" name="pthreads.php" role="php" />
+      <file baseinstalldir="Bartlett" name="rar.php" role="php" />
       <file baseinstalldir="Bartlett" name="readline.php" role="php" />
       <file baseinstalldir="Bartlett" name="recode.php" role="php" />
       <file baseinstalldir="Bartlett" name="reflection.php" role="php" />
@@ -292,6 +298,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="GmpTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="HaruTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="HashTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="HtscannerTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="HttpTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="IconvTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="IgbinaryTest.php" role="test" />
@@ -320,11 +327,13 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="OpensslTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="PcntlTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="PcreTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="PDFlibTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="PdoTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="PgsqlTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="PharTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="PosixTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="PthreadsTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="RarTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="ReadlineTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="RecodeTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="ReflectionTest.php" role="test" />
@@ -493,7 +502,7 @@ Bug fixes:
  <dependencies>
   <required>
    <php>
-    <min>5.2.1</min>
+    <min>5.3.0</min>
    </php>
    <pearinstaller>
     <min>1.9.0</min>
@@ -506,7 +515,8 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>1.7.0</min>
+    <min>1.8.0</min>
+    <max>1.99.0</max>
    </package>
    <extension>
     <name>dom</name>
@@ -560,6 +570,30 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.23.0</release>
+    <api>2.23.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-09-19</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- add 3 new extensions: htscanner, PDFlib, Rar
+- update APCu reference to 4.0.2
+- update pthreads reference to 0.0.45
+- introduces an experimental DYN lazy loader references ( NOT YET OPERATIONAL, missing rules implementations )
+- drop support of PHP4 reference
+- drop support of PHP 5.2
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.22.0</release>
