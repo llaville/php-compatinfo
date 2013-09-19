@@ -21,7 +21,7 @@ Default options printed below, may be changed either :
 | Option | Default | Description
 | `recursive` | false | scan recursive subdirectories or just local files
 | `reference` | ALL  | data dictionary reference (all PHP4 and PHP5 informations)
-| `referencePlugins` | [PHP4[...], PHP5[...], ALL[...]] | adapters to connect to data dictionaries reference
+| `referencePlugins` | [PHP5[...], ALL[...]] | adapters to connect to data dictionaries reference
 | `verbose`        | false | output more information
 | `fileExtensions` | [php, inc, phtml] | list of file extensions to scan
 | `filterVersion`  | php_4.0.0  | filter results on a specific PHP or extension version
@@ -127,6 +127,5 @@ try {
 
 References are :
 
-* `PHP4` to scan only PHP4 source code, with extensions specified or loaded on your system
 * `PHP5` to scan PHP4/PHP5 source code, with extensions specified or loaded on your system
 * `ALL`  to scan PHP4/PHP5 source code, with extensions specified or all present in current distribution

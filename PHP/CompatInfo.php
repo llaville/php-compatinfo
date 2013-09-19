@@ -211,11 +211,6 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             'recursive'        => false,
             'reference'        => 'ALL',
             'referencePlugins' => array(
-                'PHP4' => array(
-                    'class' => 'PHP_CompatInfo_Reference_PHP4',
-                    'file'  => '',
-                    'args'  => array()
-                ),
                 'PHP5' => array(
                     'class' => 'PHP_CompatInfo_Reference_PHP5',
                     'file'  => '',
@@ -1147,7 +1142,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
     /**
      * Loads a data dictionary references ($name)
      *
-     * @param string $name    The data dictionary reference (PHP4, PHP5, ...)
+     * @param string $name    The data dictionary reference (PHP5, ...)
      * @param array  $options OPTIONAL The driver configure options
      *
      * @return void
@@ -1252,7 +1247,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             $extension = $ref::REF_NAME;
             $values    = $data[$name];
         } else {
-            // a combinaison of references was returned to $ref ( by ALL, PHP4, PHP5 )
+            // a combinaison of references was returned to $ref ( by ALL, PHP5 )
             list ($extension, $values) = each($data[$name]);
         }
 
@@ -1329,7 +1324,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
             );
             break;
         case 'reference':
-            $search = array('PHP4', 'PHP5', 'ALL');
+            $search = array('PHP5', 'ALL');
             break;
         default:
             return false;

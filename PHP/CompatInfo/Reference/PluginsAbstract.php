@@ -216,11 +216,15 @@ abstract class PHP_CompatInfo_Reference_PluginsAbstract
     /**
      * Returns a PHP_CompatInfo_Reference object.
      *
-     * @param  string $element One of reference's element to discover
-     * @return mixed  FALSE if reference could not be loaded or is not detected,
-     *                reference object instance otherwise
+     * @param string $element  One of reference's element to discover
+     * @param bool   $prefetch (optional) When FALSE, do a matching rules search.
+     *                         Otherwise force a prefetch with $element
+     *                         that identify a reference.
+     *
+     * @return mixed FALSE if reference could not be loaded or is not detected,
+     *               reference object instance otherwise
      */
-    protected function loadReference($element)
+    public function loadReference($element, $prefetch = FALSE)
     {
         return $this;
     }

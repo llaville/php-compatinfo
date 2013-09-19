@@ -6,7 +6,7 @@ include::attributes.txt[]
 
 [role="lead"]
 Before you begin, ensure that you have at least
-http://www.php.net[PHP] 5.2.1 installed.
+http://www.php.net[PHP] 5.3.0 installed.
 
 == PEAR
 
@@ -26,7 +26,7 @@ $ pear install bartlett/PHP_CompatInfo
 
 Installing a specific version:
 ----
-$ pear install bartlett/PHP_CompatInfo-2.17.0
+$ pear install bartlett/PHP_CompatInfo-2.23.0
 ----
 
 == PHP Archive (PHAR)
