@@ -43,6 +43,8 @@ class PHP_CompatInfo_Reference_JsonTest
     {
         // New features of JSONC alternative extension
         $this->ignoredconstants = array(
+            'JSON_C_BUNDLED',
+            'JSON_C_VERSION',
             'JSON_PARSER_NOTSTRICT',
         );
         $this->ignoredclasses = array(
