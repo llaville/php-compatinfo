@@ -21,7 +21,7 @@
     -->
     <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
     <property name="build.target"                value="${project.dir}/build" />
-    <property name="build.version"               value="2.23.0" />
+    <property name="build.version"               value="2.23.1" />
 
     <!--
         ======================================================================
@@ -340,10 +340,22 @@
         ======================================================================
     -->
     <target name="test"    depends="test.all" />
-    <target name="docs"    depends="docs.all" />
+    <target name="docs"    depends="docs.all">
+        <phingcall target="docs.make-userguide">
+            <property name="userguide.format" value="pdf" />
+            <property name="docs.pdf-paper-type" value="a4" />
+        </phingcall>
+    </target>
     <target name="package" depends="package.all" />
     <target name="server"  depends="server.all" />
     <target name="phar"    depends="phar.all" />
+    <target name="web">
+        <phingcall target="docs.make-web">
+            <property name="docs.asciidoc.target" value="D:/laurent-laville.org/www/php5/compatinfo/manual/current/en" />
+            <property name="docs.theme-asciidoc" value="bspear2" />
+            <property name="docs.backend-asciidoc" value="bootstrap" />
+        </phingcall>
+    </target>
 
     <target name="all"     depends="test.all,docs.all,package.all,server.all" />
 
