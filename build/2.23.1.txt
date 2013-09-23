@@ -1,0 +1,5 @@
+Additions and changes:
+- none
+
+Bug fixes:
+- GH-101: about json constants and pdf function in unit tests (Thanks to Remi Collet)

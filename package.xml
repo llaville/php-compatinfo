@@ -23,10 +23,10 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-09-19</date>
- <time>23:27:54</time>
+ <date>2013-09-23</date>
+ <time>14:56:35</time>
  <version>
-  <release>2.23.0</release>
+  <release>2.23.1</release>
   <api>2.23.0</api>
  </version>
  <stability>
@@ -36,15 +36,10 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- add 3 new extensions: htscanner, PDFlib, Rar
-- update APCu reference to 4.0.2
-- update pthreads reference to 0.0.45
-- introduces an experimental DYN lazy loader references ( NOT YET OPERATIONAL, missing rules implementations )
-- drop support of PHP4 reference
-- drop support of PHP 5.2
+- none
 
 Bug fixes:
-- none
+- GH-101: about json constants and pdf function in unit tests (Thanks to Remi Collet)
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -570,6 +565,25 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.23.1</release>
+    <api>2.23.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-09-23</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- none
+
+Bug fixes:
+- GH-101: about json constants and pdf function in unit tests (Thanks to Remi Collet)
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.23.0</release>

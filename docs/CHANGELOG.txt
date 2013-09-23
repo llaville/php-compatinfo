@@ -33,6 +33,15 @@ include::attributes.txt[]
 |===========================
 
 
+== Version 2.23.1 _(2013-09-23)_
+
+.Additions and changes:
+* none
+
+.Bug fixes:
+* GH-101: about json constants and pdf function in unit tests (Thanks to Remi Collet)
+
+
 == Version 2.23.0 _(2013-09-19)_
 
 .Additions and changes:
