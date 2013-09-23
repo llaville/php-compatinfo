@@ -21,7 +21,7 @@
     -->
     <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
     <property name="build.target"                value="${project.dir}/build" />
-    <property name="build.version"               value="2.23.0" />
+    <property name="build.version"               value="2.23.1" />
 
     <!--
         ======================================================================
@@ -340,7 +340,12 @@
         ======================================================================
     -->
     <target name="test"    depends="test.all" />
-    <target name="docs"    depends="docs.all" />
+    <target name="docs"    depends="docs.all">
+        <phingcall target="docs.make-userguide">
+            <property name="userguide.format" value="pdf" />
+            <property name="docs.pdf-paper-type" value="a4" />
+        </phingcall>
+    </target>
     <target name="package" depends="package.all" />
     <target name="server"  depends="server.all" />
     <target name="phar"    depends="phar.all" />
