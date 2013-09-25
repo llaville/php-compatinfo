@@ -78,4 +78,5 @@ CAUTION: Its recommended to migrate to PHP5, because the PHP4 version is not mai
 | 2.21.0  | 95    |
 | 2.22.0  | 95    |
 | 2.23.0  | 98    | htscanner, Rar, PDFlib
+| 2.24.0  | 98    |
 |===========================

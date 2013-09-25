@@ -8,7 +8,7 @@ include::attributes.txt[]
 ************************************************************************
 *Release highlights:*
 
-- PHP_CompatInfo 2.23.1 is a minor bugfix release.
+- add both support to PHP 5.4.21 and 5.5.5
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the

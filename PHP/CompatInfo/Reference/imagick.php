@@ -36,7 +36,7 @@ class PHP_CompatInfo_Reference_Imagick
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '3.1.0RC2';
+    const REF_VERSION = '3.1.2';
 
     /**
      * Gets informations about extensions
