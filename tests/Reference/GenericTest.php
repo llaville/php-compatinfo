@@ -52,27 +52,27 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-        if (self::$obj instanceof PHP_CompatInfo_Reference) {
-            self::$ref = self::$obj->getAll();
+        if (!self::$obj instanceof PHP_CompatInfo_Reference) {
+            return;
         }
-        if (isset(self::$ref['extensions'])) {
-            foreach (self::$ref['extensions'] as $extname => $opt) {
-                if (!extension_loaded($extname)) {
-                    // if dynamic extension load is activated
-                    $loaded = (bool) ini_get('enable_dl');
-                    if ($loaded) {
-                        // give a second chance
-                        $prefix = (PHP_SHLIB_SUFFIX === 'dll') ? 'php_' : '';
-                        $loaded = @dl($prefix . $extname . '.' . PHP_SHLIB_SUFFIX);
-                    }
-                    if ($loaded === false) {
-                        self::markTestSkipped(
-                            "The '$extname' extension is not available."
-                        );
-                    }
-                }
+        $obj     = self::$obj;
+        $extname = $obj::REF_NAME;
+
+        if (!extension_loaded($extname)) {
+            // if dynamic extension load is activated
+            $loaded = (bool) ini_get('enable_dl');
+            if ($loaded) {
+                // give a second chance
+                $prefix = (PHP_SHLIB_SUFFIX === 'dll') ? 'php_' : '';
+                $loaded = @dl($prefix . $extname . '.' . PHP_SHLIB_SUFFIX);
+            }
+            if ($loaded === false) {
+                self::markTestSkipped(
+                    "The '$extname' extension is not available."
+                );
             }
         }
+        self::$ref = self::$obj->getAll();
     }
 
     /**
