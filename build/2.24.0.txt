@@ -1,6 +1,7 @@
 Additions and changes:
 - update imagick reference to 3.1.2
 - update mongo reference to 1.4.4
+- update xhprof reference to 0.9.4
 
 Bug fixes:
 - none
