@@ -35,16 +35,17 @@ if (!defined('TEST_FILES_PATH')) {
  */
 class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
 {
-    protected $conf;
+    protected static $compatInfoConfig;
 
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @return void
+     * @link   http://phpunit.de/manual/current/en/fixtures.html#fixtures.sharing-fixture
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->conf = PHP_CompatInfo_Configuration::getInstance(
+        self::$compatInfoConfig = PHP_CompatInfo_Configuration::getInstance(
             TEST_FILES_PATH . 'phpcompatinfo.xml'
         );
     }
@@ -58,7 +59,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      */
     public function testMainDefaultConfiguration()
     {
-        $actual   = $this->conf->getMainConfiguration();
+        $actual   = self::$compatInfoConfig->getMainConfiguration();
         $expected = array(
             'reference'        => 'PHP5',
             'report'           => array('summary'),
@@ -81,7 +82,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      */
     public function testCacheConfiguration()
     {
-        $actual   = $this->conf->getCacheConfiguration('file');
+        $actual   = self::$compatInfoConfig->getCacheConfiguration('file');
         $expected = array(
             'save_path'      => '/tmp',
             'gc_probability' => 1,
@@ -99,7 +100,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      */
     public function testReferenceConfiguration()
     {
-        $actual   = $this->conf->getReferenceConfiguration();
+        $actual   = self::$compatInfoConfig->getReferenceConfiguration();
         $expected = array(
             'Core',
             'standard',
@@ -118,7 +119,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      */
     public function testPHPConfiguration()
     {
-        $actual   = $this->conf->getPHPConfiguration();
+        $actual   = self::$compatInfoConfig->getPHPConfiguration();
         $expected = array(
             'memory_limit'                => '140M',
             'short_open_tag'              => true,
@@ -136,7 +137,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      */
     public function testExcludeFilesConfiguration()
     {
-        $actual   = $this->conf->getExcludeConfiguration('sample_files');
+        $actual   = self::$compatInfoConfig->getExcludeConfiguration('sample_files');
         $expected = array(
             'directory' => array('.*\/Zend\/.*', '.*\/tests\/.*'),
             'file'      => array('.*\.php5', '.*\.inc\.php'),
@@ -153,7 +154,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      */
     public function testExcludeFunctionsConfiguration()
     {
-        $actual   = $this->conf->getExcludeConfiguration('sample_functions');
+        $actual   = self::$compatInfoConfig->getExcludeConfiguration('sample_functions');
         $expected = array(
             'function' => array('defined', 'trait_exists'),
         );
@@ -169,7 +170,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      */
     public function testExcludeMixedConfiguration()
     {
-        $actual   = $this->conf->getExcludeConfiguration('sample_mixed');
+        $actual   = self::$compatInfoConfig->getExcludeConfiguration('sample_mixed');
         $expected = array(
             'directory' => array('.*\/Zend\/.*'),
             'file'      => array('.*\.php5'),
@@ -191,7 +192,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      */
     public function testListenerConfiguration()
     {
-        $actual   = $this->conf->getListenerConfiguration();
+        $actual   = self::$compatInfoConfig->getListenerConfiguration();
         $expected = array(
             array(
                 'class'     => 'className',
@@ -233,7 +234,7 @@ class PHP_CompatInfo_ConfigurationTest extends PHPUnit_Framework_TestCase
      */
     public function testPluginConfiguration()
     {
-        $actual   = $this->conf->getPluginConfiguration();
+        $actual   = self::$compatInfoConfig->getPluginConfiguration();
         $expected = array(
             'MyReference' => array(
                 'class' => 'PEAR_CompatInfo',

@@ -35,23 +35,21 @@ if (!defined('TEST_FILES_PATH')) {
  */
 class PHP_CompatInfo_ConditionTest extends PHPUnit_Framework_TestCase
 {
-    protected $pci;
+    protected static $compatInfo;
 
     /**
-     * Sets up the fixture.
-     *
-     * Parse source code to find all code conditions
+     * Sets up the shared fixture.
      *
      * @return void
+     * @link   http://phpunit.de/manual/current/en/fixtures.html#fixtures.sharing-fixture
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $options = array(
             'cacheDriver' => 'null',
         );
-
-        $this->pci = new PHP_CompatInfo($options);
-        $this->pci->parse(TEST_FILES_PATH . 'source9.php');
+        self::$compatInfo = new PHP_CompatInfo($options);
+        self::$compatInfo->parse(TEST_FILES_PATH . 'source9.php');
     }
 
     /**
@@ -63,7 +61,7 @@ class PHP_CompatInfo_ConditionTest extends PHPUnit_Framework_TestCase
      */
     public function testGetAllElementsExcluded()
     {
-        $excludes = $this->pci->getExcludes();
+        $excludes = self::$compatInfo->getExcludes();
         $expected = array(
             'constants' => array(
                 'PHP_BINARY' => true

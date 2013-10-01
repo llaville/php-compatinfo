@@ -35,23 +35,21 @@ if (!defined('TEST_FILES_PATH')) {
  */
 class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
 {
-    protected $pci;
+    protected static $compatInfo;
 
     /**
-     * Sets up the fixture.
-     *
-     * Parse source code to find all interfaces
+     * Sets up the shared fixture.
      *
      * @return void
+     * @link   http://phpunit.de/manual/current/en/fixtures.html#fixtures.sharing-fixture
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $options = array(
             'cacheDriver' => 'null',
         );
-
-        $this->pci = new PHP_CompatInfo($options);
-        $this->pci->parse(TEST_FILES_PATH . 'source1.php');
+        self::$compatInfo = new PHP_CompatInfo($options);
+        self::$compatInfo->parse(TEST_FILES_PATH . 'source1.php');
     }
 
     /**
@@ -63,7 +61,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
      */
     public function testGetInterfacesFullReport()
     {
-        $interfaces = $this->pci->getInterfaces();
+        $interfaces = self::$compatInfo->getInterfaces();
 
         $expected = array(
             'user' => array(
@@ -105,7 +103,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
      */
     public function testGetInterfacesFilterByCategory()
     {
-        $interfaces = $this->pci->getInterfaces('Core');
+        $interfaces = self::$compatInfo->getInterfaces('Core');
 
         $this->assertEquals(
             array(), $interfaces
@@ -122,7 +120,7 @@ class PHP_CompatInfo_InterfaceTest extends PHPUnit_Framework_TestCase
      */
     public function testGetInterfacesFilterByCategoryAndPattern()
     {
-        $interfaces = $this->pci->getInterfaces('user', '^b$');
+        $interfaces = self::$compatInfo->getInterfaces('user', '^b$');
 
         $expected = array(
             'b' => array(
