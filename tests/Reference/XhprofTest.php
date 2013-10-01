@@ -32,22 +32,22 @@ class PHP_CompatInfo_Reference_XhprofTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Xhprof::getExtensions
      * @covers PHP_CompatInfo_Reference_Xhprof::getFunctions
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         if (PATH_SEPARATOR == ';') {
             // Win*
-            array_push($this->ignoredconstants, 'XHPROF_FLAGS_LONGNAMES');
+            array_push(self::$ignoredconstants, 'XHPROF_FLAGS_LONGNAMES');
         } else {
             // *nix
         }
 
-        $this->obj = new PHP_CompatInfo_Reference_Xhprof();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Xhprof();
+        parent::setUpBeforeClass();
     }
 }

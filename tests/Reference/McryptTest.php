@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_McryptTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Mcrypt::getExtensions
      * @covers PHP_CompatInfo_Reference_Mcrypt::getFunctions
      * @covers PHP_CompatInfo_Reference_Mcrypt::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             // Non-free
             'MCRYPT_IDEA',
             // only in libmcrypt = 2.2.x
@@ -76,10 +76,10 @@ class PHP_CompatInfo_Reference_McryptTest
             'MCRYPT_WAKE',
             'MCRYPT_XTEA',
         );
-        $this->ignoredconstants = array(
+        self::$ignoredconstants = array(
             'MCRYPT_BLOWFISH_COMPAT',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Mcrypt();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Mcrypt();
+        parent::setUpBeforeClass();
     }
 }

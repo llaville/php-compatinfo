@@ -34,16 +34,16 @@ class PHP_CompatInfo_Reference_GdTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Gd::getExtensions
      * @covers PHP_CompatInfo_Reference_Gd::getFunctions
      * @covers PHP_CompatInfo_Reference_Gd::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             // Win32 only
             'imagegrabscreen',
             'imagegrabwindow',
@@ -64,9 +64,9 @@ class PHP_CompatInfo_Reference_GdTest
             'imagecreatefromxpm',
         );
         if (defined('GD_BUNDLED') && ! GD_BUNDLED) {
-            $this->optionalfunctions[] = 'imageantialias';
+            self::$optionalfunctions[] = 'imageantialias';
         }
-        $this->obj = new PHP_CompatInfo_Reference_Gd();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Gd();
+        parent::setUpBeforeClass();
     }
 }

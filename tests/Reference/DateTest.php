@@ -32,7 +32,7 @@ class PHP_CompatInfo_Reference_DateTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Date::getExtensions
      * @covers PHP_CompatInfo_Reference_Date::getFunctions
@@ -40,9 +40,9 @@ class PHP_CompatInfo_Reference_DateTest
      * @covers PHP_CompatInfo_Reference_Date::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Date();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Date();
+        parent::setUpBeforeClass();
     }
 }

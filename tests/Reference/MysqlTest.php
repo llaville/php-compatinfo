@@ -32,21 +32,21 @@ class PHP_CompatInfo_Reference_MysqlTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Mysql::getExtensions
      * @covers PHP_CompatInfo_Reference_Mysql::getFunctions
      * @covers PHP_CompatInfo_Reference_Mysql::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             // deprecated, requires MySQL < 4
             'mysql_create_db',
             'mysql_drop_db',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Mysql();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Mysql();
+        parent::setUpBeforeClass();
     }
 }

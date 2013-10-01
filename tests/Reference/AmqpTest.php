@@ -32,13 +32,13 @@ class PHP_CompatInfo_Reference_AmqpTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Amqp::getClasses
      * @covers PHP_CompatInfo_Reference_Amqp::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $extversion = phpversion(PHP_CompatInfo_Reference_Amqp::REF_NAME);
 
@@ -46,15 +46,15 @@ class PHP_CompatInfo_Reference_AmqpTest
             // Win*
             if ('0.1' === $extversion) {
                 // only available since version 1.0.8
-                array_push($this->ignoredconstants, 'AMQP_OS_SOCKET_TIMEOUT_ERRNO');
+                array_push(self::$ignoredconstants, 'AMQP_OS_SOCKET_TIMEOUT_ERRNO');
                 // only available since version 1.0.0
-                array_push($this->ignoredclasses, 'AMQPChannel', 'AMQPChannelException', 'AMQPEnvelope');
+                array_push(self::$ignoredclasses, 'AMQPChannel', 'AMQPChannelException', 'AMQPEnvelope');
             }
         } else {
             // *nix
         }
 
-        $this->obj = new PHP_CompatInfo_Reference_Amqp();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Amqp();
+        parent::setUpBeforeClass();
     }
 }

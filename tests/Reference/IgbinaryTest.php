@@ -34,15 +34,15 @@ class PHP_CompatInfo_Reference_IgbinaryTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Igbinary::getExtensions
      * @covers PHP_CompatInfo_Reference_Igbinary::getFunctions
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Igbinary();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Igbinary();
+        parent::setUpBeforeClass();
     }
 }

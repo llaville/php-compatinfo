@@ -32,7 +32,7 @@ class PHP_CompatInfo_Reference_StandardTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Standard::getExtensions
      * @covers PHP_CompatInfo_Reference_Standard::getFunctions
@@ -40,9 +40,9 @@ class PHP_CompatInfo_Reference_StandardTest
      * @covers PHP_CompatInfo_Reference_Standard::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->ignoredfunctions = array(
+        self::$ignoredfunctions = array(
             // functions moved from internal to ereg extension in 5.3.0
             'ereg_replace',
             'ereg',
@@ -54,14 +54,14 @@ class PHP_CompatInfo_Reference_StandardTest
         );
 
         if (DIRECTORY_SEPARATOR == '/') {
-            $this->optionalfunctions = array(
+            self::$optionalfunctions = array(
                 // requires HAVE_CHROOT
                 'chroot',
                 // remove in some Linux distribution (Redhat, ...)
                 'php_egg_logo_guid',
             );
         } else {
-            $this->optionalfunctions = array(
+            self::$optionalfunctions = array(
                 // requires HAVE_NL_LANGINFO (linux only)
                 'nl_langinfo',
                 // requires HAVE_STRPTIME (linux only)
@@ -107,10 +107,10 @@ class PHP_CompatInfo_Reference_StandardTest
 
             if (php_sapi_name() != 'cli') {
                 // dl function still exists in CLI but was removed from other SAPI since PHP 5.3
-                array_push($this->optionalfunctions, 'dl');
+                array_push(self::$optionalfunctions, 'dl');
             }
 
-            $this->optionalconstants = array(
+            self::$optionalconstants = array(
                 // requires syslog
                 'LOG_LOCAL0',
                 'LOG_LOCAL1',
@@ -204,7 +204,7 @@ class PHP_CompatInfo_Reference_StandardTest
                 'STREAM_IPPROTO_RAW',
             );
         }
-        $this->obj = new PHP_CompatInfo_Reference_Standard();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Standard();
+        parent::setUpBeforeClass();
     }
 }

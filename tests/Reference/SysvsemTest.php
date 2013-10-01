@@ -32,15 +32,15 @@ class PHP_CompatInfo_Reference_SysvsemTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Sysvsem::getExtensions
      * @covers PHP_CompatInfo_Reference_Sysvsem::getFunctions
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Sysvsem();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Sysvsem();
+        parent::setUpBeforeClass();
     }
 }

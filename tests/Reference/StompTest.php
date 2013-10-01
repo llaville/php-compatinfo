@@ -34,16 +34,16 @@ class PHP_CompatInfo_Reference_StompTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Stomp::getClasses
      * @covers PHP_CompatInfo_Reference_Stomp::getFunctions
      * @covers PHP_CompatInfo_Reference_Stomp::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Stomp();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Stomp();
+        parent::setUpBeforeClass();
     }
 }

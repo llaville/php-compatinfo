@@ -32,21 +32,21 @@ class PHP_CompatInfo_Reference_XdebugTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Xdebug::getExtensions
      * @covers PHP_CompatInfo_Reference_Xdebug::getFunctions
      * @covers PHP_CompatInfo_Reference_Xdebug::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $extname = 'xdebug';
         if (extension_loaded($extname)) {
             if (version_compare(phpversion($extname), '2.0.0beta1', 'ge')) {
                 // removed functions in 2.0.0beta1
-                $this->optionalfunctions = array_merge(
-                    $this->optionalfunctions,
+                self::$optionalfunctions = array_merge(
+                    self::$optionalfunctions,
                     array(
                         'xdebug_get_function_trace',
                         'xdebug_dump_function_trace',
@@ -56,8 +56,8 @@ class PHP_CompatInfo_Reference_XdebugTest
 
             if (version_compare(phpversion($extname), '2.0.0RC1', 'ge')) {
                 // removed functions in 2.0.0RC1
-                $this->optionalfunctions = array_merge(
-                    $this->optionalfunctions,
+                self::$optionalfunctions = array_merge(
+                    self::$optionalfunctions,
                     array(
                         'xdebug_set_error_handler',
                     )
@@ -65,7 +65,7 @@ class PHP_CompatInfo_Reference_XdebugTest
             }
         }
 
-        $this->obj = new PHP_CompatInfo_Reference_Xdebug();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Xdebug();
+        parent::setUpBeforeClass();
     }
 }

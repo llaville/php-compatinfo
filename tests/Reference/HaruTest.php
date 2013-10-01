@@ -34,16 +34,16 @@ class PHP_CompatInfo_Reference_HaruTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Haru::getClasses
      * @covers PHP_CompatInfo_Reference_Haru::getFunctions
      * @covers PHP_CompatInfo_Reference_Haru::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Haru();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Haru();
+        parent::setUpBeforeClass();
     }
 }

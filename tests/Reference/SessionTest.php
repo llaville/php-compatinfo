@@ -32,21 +32,21 @@ class PHP_CompatInfo_Reference_SessionTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Session::getExtensions
      * @covers PHP_CompatInfo_Reference_Session::getFunctions
      * @covers PHP_CompatInfo_Reference_Session::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             // Only defined after session_start
             'SID',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Session();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Session();
+        parent::setUpBeforeClass();
     }
 
     /**

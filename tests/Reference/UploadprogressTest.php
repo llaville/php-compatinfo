@@ -34,16 +34,16 @@ class PHP_CompatInfo_Reference_UploadprogressTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Uploadprogress::getClasses
      * @covers PHP_CompatInfo_Reference_Uploadprogress::getFunctions
      * @covers PHP_CompatInfo_Reference_Uploadprogress::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Uploadprogress();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Uploadprogress();
+        parent::setUpBeforeClass();
     }
 }

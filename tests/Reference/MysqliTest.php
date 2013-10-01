@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_MysqliTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Mysqli::getExtensions
      * @covers PHP_CompatInfo_Reference_Mysqli::getFunctions
      * @covers PHP_CompatInfo_Reference_Mysqli::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             // Requires MYSQLI_USE_MYSQLND
             'MYSQLI_OPT_NET_CMD_BUFFER_SIZE',
             'MYSQLI_OPT_NET_READ_BUFFER_SIZE',
@@ -57,7 +57,7 @@ class PHP_CompatInfo_Reference_MysqliTest
             // requires MYSQL_VERSION_ID >= 50611 or MYSQLI_USE_MYSQLND
             'MYSQLI_OPT_CAN_HANDLE_EXPIRED_PASSWORDS',
         );
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             // Requires HAVE_EMBEDDED_MYSQLI
             'mysqli_embedded_server_end',
             'mysqli_embedded_server_start',
@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_MysqliTest
             'mysqli_stmt_more_results',
             'mysqli_stmt_next_result',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Mysqli();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Mysqli();
+        parent::setUpBeforeClass();
     }
 }

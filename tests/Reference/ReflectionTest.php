@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_ReflectionTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Reflection::getExtensions
      * @covers PHP_CompatInfo_Reference_Reflection::getFunctions
      * @covers PHP_CompatInfo_Reference_Reflection::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Reflection();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Reflection();
+        parent::setUpBeforeClass();
     }
 }

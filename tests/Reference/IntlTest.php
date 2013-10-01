@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_IntlTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Intl::getExtensions
      * @covers PHP_CompatInfo_Reference_Intl::getFunctions
@@ -42,16 +42,16 @@ class PHP_CompatInfo_Reference_IntlTest
      * @covers PHP_CompatInfo_Reference_Intl::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         if (PATH_SEPARATOR == ';') {
             // Win*
-            $this->optionalclasses  = array('IntlException');
+            self::$optionalclasses  = array('IntlException');
         }
 
         if (version_compare(PHP_VERSION, '5.4.0', 'lt') && (PATH_SEPARATOR == ';')) {
 
-            $this->optionalconstants = array(
+            self::$optionalconstants = array(
                 'U_IDNA_PROHIBITED_ERROR',
                 'U_IDNA_ERROR_START',
                 'U_IDNA_UNASSIGNED_ERROR',
@@ -65,7 +65,7 @@ class PHP_CompatInfo_Reference_IntlTest
             );
         }
 
-        $this->obj = new PHP_CompatInfo_Reference_Intl();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Intl();
+        parent::setUpBeforeClass();
     }
 }

@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_PDOTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_PDO::getExtensions
      * @covers PHP_CompatInfo_Reference_PDO::getFunctions
      * @covers PHP_CompatInfo_Reference_PDO::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_PDO();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_PDO();
+        parent::setUpBeforeClass();
     }
 }

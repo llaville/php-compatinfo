@@ -34,16 +34,16 @@ class PHP_CompatInfo_Reference_FilterTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Filter::getExtensions
      * @covers PHP_CompatInfo_Reference_Filter::getFunctions
      * @covers PHP_CompatInfo_Reference_Filter::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             'FILTER_SANITIZE_ALL',
             'FILTER_VALIDATE_ALL',
 
@@ -53,7 +53,7 @@ class PHP_CompatInfo_Reference_FilterTest
         );
 
         // ignores all old API functions before 0.11.0
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             'input_get',
             'input_filters_list',
             'input_has_variable',
@@ -62,7 +62,7 @@ class PHP_CompatInfo_Reference_FilterTest
             'input_get_args',
         );
 
-        $this->obj = new PHP_CompatInfo_Reference_Filter();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Filter();
+        parent::setUpBeforeClass();
     }
 }

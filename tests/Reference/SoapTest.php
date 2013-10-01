@@ -32,7 +32,7 @@ class PHP_CompatInfo_Reference_SoapTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Soap::getExtensions
      * @covers PHP_CompatInfo_Reference_Soap::getFunctions
@@ -40,14 +40,14 @@ class PHP_CompatInfo_Reference_SoapTest
      * @covers PHP_CompatInfo_Reference_Soap::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->ignoredfunctions = array(
+        self::$ignoredfunctions = array(
             // Found in php < 5.1.6, nothing in doc
             'soap_encode_to_xml',
             'soap_encode_to_zval',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Soap();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Soap();
+        parent::setUpBeforeClass();
     }
 }

@@ -32,17 +32,17 @@ class PHP_CompatInfo_Reference_OdbcTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Odbc::getExtensions
      * @covers PHP_CompatInfo_Reference_Odbc::getFunctions
      * @covers PHP_CompatInfo_Reference_Odbc::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         // This constants require ODBC >= 3.0.0
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             // Standard data types
             'SQL_TYPE_DATE',
             'SQL_TYPE_TIME',
@@ -61,7 +61,7 @@ class PHP_CompatInfo_Reference_OdbcTest
             'SQL_ENSURE',
             'SQL_QUICK',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Odbc();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Odbc();
+        parent::setUpBeforeClass();
     }
 }

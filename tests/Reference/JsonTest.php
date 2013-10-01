@@ -32,25 +32,25 @@ class PHP_CompatInfo_Reference_JsonTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Json::getExtensions
      * @covers PHP_CompatInfo_Reference_Json::getFunctions
      * @covers PHP_CompatInfo_Reference_Json::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         // New features of JSONC alternative extension
-        $this->ignoredconstants = array(
+        self::$ignoredconstants = array(
             'JSON_C_BUNDLED',
             'JSON_C_VERSION',
             'JSON_PARSER_NOTSTRICT',
         );
-        $this->ignoredclasses = array(
+        self::$ignoredclasses = array(
             'JsonIncrementalParser',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Json();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Json();
+        parent::setUpBeforeClass();
     }
 }

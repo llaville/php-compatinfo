@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_MhashTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Mhash::getExtensions
      * @covers PHP_CompatInfo_Reference_Mhash::getFunctions
      * @covers PHP_CompatInfo_Reference_Mhash::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             'MHASH_MD2',
             'MHASH_RIPEMD128',
             'MHASH_RIPEMD256',
@@ -54,7 +54,7 @@ class PHP_CompatInfo_Reference_MhashTest
             'MHASH_WHIRLPOOL',
         );
 
-        $this->obj = new PHP_CompatInfo_Reference_Mhash();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Mhash();
+        parent::setUpBeforeClass();
     }
 }

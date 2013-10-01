@@ -32,15 +32,15 @@ class PHP_CompatInfo_Reference_CtypeTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Ctype::getExtensions
      * @covers PHP_CompatInfo_Reference_Ctype::getFunctions
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Ctype();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Ctype();
+        parent::setUpBeforeClass();
     }
 }

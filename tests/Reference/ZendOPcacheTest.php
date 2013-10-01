@@ -31,25 +31,25 @@ class PHP_CompatInfo_Reference_ZendOPcacheTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Zend_OPcache::getFunctions
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $extversion = phpversion(PHP_CompatInfo_Reference_ZendOPcache::REF_NAME);
 
         if (PATH_SEPARATOR == ';') {
             // Win*
             if ('7.0.2FE' === $extversion) {
-                array_push($this->ignoredfunctions, 'opcache_invalidate');
+                array_push(self::$ignoredfunctions, 'opcache_invalidate');
             }
         } else {
             // *nix
         }
 
-        $this->obj = new PHP_CompatInfo_Reference_ZendOPcache();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_ZendOPcache();
+        parent::setUpBeforeClass();
     }
 }

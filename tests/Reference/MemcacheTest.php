@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_MemcacheTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Memcache::getExtensions
      * @covers PHP_CompatInfo_Reference_Memcache::getFunctions
@@ -42,24 +42,24 @@ class PHP_CompatInfo_Reference_MemcacheTest
      * @covers PHP_CompatInfo_Reference_Memcache::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             'MEMCACHE_SERIALIZED'
         );
 
         if (DIRECTORY_SEPARATOR == '\\') {
             // Win32 only
-            $this->optionalfunctions = array(
+            self::$optionalfunctions = array(
                 'memcache_append',
                 'memcache_cas',
                 'memcache_prepend',
                 'memcache_set_failure_callback',
             );
-            $this->ignoredfunctions = array(
+            self::$ignoredfunctions = array(
                 'memcache_setoptimeout',
             );
-            array_push($this->optionalconstants,
+            array_push(self::$optionalconstants,
                 'MEMCACHE_USER1',
                 'MEMCACHE_USER2',
                 'MEMCACHE_USER3',
@@ -67,7 +67,7 @@ class PHP_CompatInfo_Reference_MemcacheTest
             );
         }
 
-        $this->obj = new PHP_CompatInfo_Reference_Memcache();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Memcache();
+        parent::setUpBeforeClass();
     }
 }

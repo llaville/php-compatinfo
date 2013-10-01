@@ -32,7 +32,7 @@ class PHP_CompatInfo_Reference_LibxmlTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Libxml::getExtensions
      * @covers PHP_CompatInfo_Reference_Libxml::getFunctions
@@ -40,31 +40,31 @@ class PHP_CompatInfo_Reference_LibxmlTest
      * @covers PHP_CompatInfo_Reference_Libxml::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array();
+        self::$optionalconstants = array();
         if (defined('LIBXML_VERSION')) {
             if (LIBXML_VERSION < 20703) {
-                $this->optionalconstants[] = 'LIBXML_PARSEHUGE';
+                self::$optionalconstants[] = 'LIBXML_PARSEHUGE';
             }
             if (LIBXML_VERSION < 20707) {
-                $this->optionalconstants[] = 'LIBXML_HTML_NOIMPLIED';
+                self::$optionalconstants[] = 'LIBXML_HTML_NOIMPLIED';
             }
             if (LIBXML_VERSION < 20708) {
-                $this->optionalconstants[] = 'LIBXML_HTML_NODEFDTD';
+                self::$optionalconstants[] = 'LIBXML_HTML_NODEFDTD';
             }
         }
 
         if (DIRECTORY_SEPARATOR == '/') {
 
         } else {
-            $this->optionalconstants = array(
+            self::$optionalconstants = array(
                 'LIBXML_HTML_NODEFDTD',
                 'LIBXML_HTML_NOIMPLIED',
             );
         }
 
-        $this->obj = new PHP_CompatInfo_Reference_Libxml();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Libxml();
+        parent::setUpBeforeClass();
     }
 }

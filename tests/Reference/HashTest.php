@@ -32,14 +32,14 @@ class PHP_CompatInfo_Reference_HashTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Hash::getExtensions
      * @covers PHP_CompatInfo_Reference_Hash::getFunctions
      * @covers PHP_CompatInfo_Reference_Hash::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $mhashconstants = array(
             'MHASH_CRC32',
@@ -87,18 +87,18 @@ class PHP_CompatInfo_Reference_HashTest
             if (!extension_loaded('mash')) {
                 // Only available if hash emulates mhash
                 // so will not be found, while in reference
-                $this->optionalfunctions = &$mhashfunctions;
-                $this->optionalconstants = &$mhashconstants;
+                self::$optionalfunctions = &$mhashfunctions;
+                self::$optionalconstants = &$mhashconstants;
             }
         } else {
             if (extension_loaded('mash')) {
                 // Provided by mhash, not by hash
                 // so will be detected, while not in reference
-                $this->ignoredfunctions = &$mhashfunctions;
-                $this->ignoredconstants = &$mhashconstants;
+                self::$ignoredfunctions = &$mhashfunctions;
+                self::$ignoredconstants = &$mhashconstants;
             }
         }
-        $this->obj = new PHP_CompatInfo_Reference_Hash();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Hash();
+        parent::setUpBeforeClass();
     }
 }

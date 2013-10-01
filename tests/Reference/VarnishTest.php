@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_VarnishTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Varnish::getExtensions
      * @covers PHP_CompatInfo_Reference_Varnish::getFunctions
      * @covers PHP_CompatInfo_Reference_Varnish::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Varnish();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Varnish();
+        parent::setUpBeforeClass();
     }
 }

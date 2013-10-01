@@ -32,7 +32,7 @@ class PHP_CompatInfo_Reference_SplTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_SPL::getExtensions
      * @covers PHP_CompatInfo_Reference_SPL::getFunctions
@@ -40,9 +40,9 @@ class PHP_CompatInfo_Reference_SplTest
      * @covers PHP_CompatInfo_Reference_SPL::getInterfaces
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_SPL();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_SPL();
+        parent::setUpBeforeClass();
     }
 }

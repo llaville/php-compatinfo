@@ -32,19 +32,19 @@ class PHP_CompatInfo_Reference_PcntlTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Pcntl::getExtensions
      * @covers PHP_CompatInfo_Reference_Pcntl::getFunctions
      * @covers PHP_CompatInfo_Reference_Pcntl::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             'SI_NOINFO'
         );
-        $this->obj = new PHP_CompatInfo_Reference_Pcntl();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Pcntl();
+        parent::setUpBeforeClass();
     }
 }

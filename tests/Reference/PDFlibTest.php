@@ -34,18 +34,18 @@ class PHP_CompatInfo_Reference_PDFlibTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_PDFlib::getClasses
      * @covers PHP_CompatInfo_Reference_PDFlib::getFunctions
      * @covers PHP_CompatInfo_Reference_PDFlib::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         // functions only available if PDFLIB_MAJORVERSION >= 8
         // so not available with pdflib-lite free library
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             'pdf_add_path_point',
             'pdf_add_portfolio_file',
             'pdf_add_portfolio_folder',
@@ -85,7 +85,7 @@ class PHP_CompatInfo_Reference_PDFlibTest
             'pdf_utf8_to_utf32',
             'pdf_utf32_to_utf8',
         );
-        $this->obj = new PHP_CompatInfo_Reference_PDFlib();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_PDFlib();
+        parent::setUpBeforeClass();
     }
 }
