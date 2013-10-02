@@ -40,6 +40,7 @@ include::attributes.txt[]
 * update imagick reference to 3.1.2
 * update mongo reference to 1.4.4
 * update xhprof reference to 0.9.4
+* update varnish reference to 1.1.0
 
 .Bug fixes:
 * none

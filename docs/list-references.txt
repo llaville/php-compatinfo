@@ -88,7 +88,7 @@
     L tidy                                  2.0               4.3.0
     L tokenizer                             0.1               4.2.0
       uploadprogress                        1.0.3.1           5.2.0
-      varnish                               1.0.0             5.3.0
+      varnish                               1.1.0             5.3.0
     L wddx                                                    4.0.0
       XCache                                3.0.3             4.3.0
     L xdebug                                2.2.3             4.3.0

@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Varnish
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.0';
+    const REF_VERSION = '1.1.0';  // 2013-10-01 (stable)
 
     /**
      * Gets informations about extensions
@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_Varnish
 
         $classes = array();
 
-        $release = '0.3';         // 2011-08-23
+        $release = '0.3';         // 2011-08-23 (alpha)
         $items = array(
             'VarnishAdmin'                          => array('5.3.0', ''),
             'VarnishStat'                           => array('5.3.0', ''),
@@ -83,7 +83,7 @@ class PHP_CompatInfo_Reference_Varnish
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '0.4';         // 2011-08-26
+        $release = '0.4';         // 2011-08-26 (alpha)
         $items = array(
             'VarnishLog'                            => array('5.3.0', ''),
         );
@@ -110,7 +110,7 @@ class PHP_CompatInfo_Reference_Varnish
 
         $constants = array();
 
-        $release = '0.3';         // 2011-08-23
+        $release = '0.3';         // 2011-08-23 (alpha)
         $items = array(
             // Status/return codes in the varnish CLI protocol
             'VARNISH_STATUS_SYNTAX'                 => array('5.3.0', ''),
@@ -127,7 +127,7 @@ class PHP_CompatInfo_Reference_Varnish
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '0.8';         // 2011-09-02
+        $release = '0.8';         // 2011-09-02 (alpha)
         $items = array(
             'VARNISH_CONFIG_IDENT'                  => array('5.3.0', ''),
             'VARNISH_CONFIG_HOST'                   => array('5.3.0', ''),
@@ -137,7 +137,7 @@ class PHP_CompatInfo_Reference_Varnish
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '0.9.2';       // 2011-10-06
+        $release = '0.9.2';       // 2011-10-06 (beta)
         $items = array(
             'VARNISH_CONFIG_COMPAT'                 => array('5.3.0', ''),
             'VARNISH_COMPAT_2'                      => array('5.3.0', ''),
