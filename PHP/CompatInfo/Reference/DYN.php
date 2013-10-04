@@ -185,6 +185,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'haru',
             ),
             array(
+                'prefixes'  => array('hash_', 'mhash_', 'HASH_', 'MHASH_'),
+                'suffixes'  => array('hash', 'mhash'),
+                'contains'  => FALSE,
+                'extension' => 'hash',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
