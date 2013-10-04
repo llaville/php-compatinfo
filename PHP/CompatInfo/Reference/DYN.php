@@ -155,6 +155,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'gd',
             ),
             array(
+                'prefixes'  => 'Gender',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'gender',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
