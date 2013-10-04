@@ -107,6 +107,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'date',
             ),
             array(
+                'prefixes'  => array('Dom', 'dom_', 'DOM_', 'XML_', 'DOMSTRING_SIZE_ERR'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'dom',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
