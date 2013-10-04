@@ -161,6 +161,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'gender',
             ),
             array(
+                'prefixes'  => array('geoip_', 'GEOIP_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'geoip',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,

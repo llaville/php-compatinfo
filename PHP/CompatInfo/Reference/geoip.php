@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Geoip
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.8';
+    const REF_VERSION = '1.0.8';  // 2011-10-23 (stable)
 
     /**
      * Gets informations about extensions
