@@ -167,6 +167,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'geoip',
             ),
             array(
+                'prefixes'  => FALSE,
+                'suffixes'  => 'gettext',
+                'contains'  => 'textdomain',
+                'extension' => 'gettext',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
