@@ -197,6 +197,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'http',
             ),
             array(
+                'prefixes'  => array('iconv_', 'ICONV_'),
+                'suffixes'  => FALSE,
+                'contains'  => 'iconv',
+                'extension' => 'iconv',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
