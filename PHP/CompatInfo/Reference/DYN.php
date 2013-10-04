@@ -113,6 +113,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'dom',
             ),
             array(
+                'prefixes'  => array('enchant_', 'ENCHANT_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'enchant',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
