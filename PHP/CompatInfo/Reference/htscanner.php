@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Htscanner
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.1';
+    const REF_VERSION = '1.0.1';  // 2012-03-01 (stable)
 
     /**
      * Gets informations about extensions
