@@ -143,6 +143,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'filter',
             ),
             array(
+                'prefixes'  => array('ftp_', 'FTP_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'ftp',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
