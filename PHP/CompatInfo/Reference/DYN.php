@@ -131,6 +131,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'exif',
             ),
             array(
+                'prefixes'  => array('finfo', 'FILEINFO_'),
+                'suffixes'  => FALSE,
+                'contains'  => 'mime_content_type',
+                'extension' => 'fileinfo',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
