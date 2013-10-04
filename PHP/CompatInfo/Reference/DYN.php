@@ -65,6 +65,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'apc',
             ),
             array(
+                'prefixes'  => array('apcu_', 'APCU_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'apcu',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
