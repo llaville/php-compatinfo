@@ -224,6 +224,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'imap',
             ),
             array(
+                'prefixes'  => 'inclued_',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'inclued',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
