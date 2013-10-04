@@ -179,6 +179,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'gmp',
             ),
             array(
+                'prefixes'  => 'Haru',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'haru',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
