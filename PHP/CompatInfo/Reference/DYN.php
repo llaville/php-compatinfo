@@ -125,6 +125,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'ereg',
             ),
             array(
+                'prefixes'  => array('exif_', 'EXIF_'),
+                'suffixes'  => FALSE,
+                'contains'  => 'read_exif_data',
+                'extension' => 'exif',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
