@@ -173,6 +173,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'gettext',
             ),
             array(
+                'prefixes'  => array('gmp_', 'GMP_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'gmp',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
