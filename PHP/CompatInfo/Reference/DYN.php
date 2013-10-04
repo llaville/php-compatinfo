@@ -101,6 +101,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'curl',
             ),
             array(
+                'prefixes'  => array('DateTime', 'DateInterval', 'DatePeriod', 'date_', 'timezone_', 'DATE_', 'SUNFUNCS_'),
+                'suffixes'  => array('date', 'time'),
+                'contains'  => FALSE,
+                'extension' => 'date',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
