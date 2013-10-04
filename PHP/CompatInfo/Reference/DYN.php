@@ -209,6 +209,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'igbinary',
             ),
             array(
+                'prefixes'  => 'Imagick',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'imagick',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
