@@ -215,6 +215,15 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'imagick',
             ),
             array(
+                'prefixes'  => array(
+                    'imap_', 'CL_', 'CP_', 'ENC', 'FT_', 'IMAP_',
+                    'LATT_', 'OP_', 'SA_', 'SE_', 'SORT', 'SO_', 'ST_', 'TYPE'
+                ),
+                'suffixes'  => 'NIL',
+                'contains'  => FALSE,
+                'extension' => 'imap',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
