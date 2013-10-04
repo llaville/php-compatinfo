@@ -119,6 +119,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'enchant',
             ),
             array(
+                'prefixes'  => array('ereg', 'split', 'sql_regcase'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'ereg',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
