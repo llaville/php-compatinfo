@@ -191,6 +191,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'hash',
             ),
             array(
+                'prefixes'  => array('Http', 'http_', 'HTTP_'),
+                'suffixes'  => FALSE,
+                'contains'  => array('ob_deflatehandler', 'ob_etaghandler', 'ob_inflatehandler'),
+                'extension' => 'http',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
