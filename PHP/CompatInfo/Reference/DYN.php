@@ -149,6 +149,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'ftp',
             ),
             array(
+                'prefixes'  => array('image', 'IMG_', 'PNG_', 'GD_'),
+                'suffixes'  => '2wbmp',
+                'contains'  => 'gd_info',
+                'extension' => 'gd',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
