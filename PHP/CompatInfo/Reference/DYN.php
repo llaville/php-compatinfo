@@ -95,6 +95,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'ctype',
             ),
             array(
+                'prefixes'  => array('curl_', 'CURL'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'curl',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
