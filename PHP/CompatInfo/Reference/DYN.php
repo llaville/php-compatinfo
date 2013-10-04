@@ -230,6 +230,20 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'inclued',
             ),
             array(
+                'prefixes'  => array(
+                    'Intl', 'UConverter', 'Collator', 'Locale',
+                    'MessageFormatter', 'NumberFormatter', 'Normalizer',
+                    'ResourceBundle', 'Spoofchecker', 'Transliterator',
+                    'intl_', 'collator_', 'locale_', 'msgfmt_', 'normalizer_',
+                    'numfmt_', 'datefmt_', 'grapheme_', 'idn_', 'resourcebundle_',
+                    'transliterator_', 'intlgregcal_', 'intlcal_', 'intltz_',
+                    'ULOC_', 'U_', 'GRAPHEME_', 'IDNA_', 'INTL_'
+                ),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'intl',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,

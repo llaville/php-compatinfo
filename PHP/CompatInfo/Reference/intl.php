@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Intl
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '3.0.0';
+    const REF_VERSION = '3.0.0';  // 2013-06-02 (stable)
 
     /**
      * Gets informations about extensions
@@ -92,7 +92,7 @@ class PHP_CompatInfo_Reference_Intl
 
         $classes = array();
 
-        $release = '1.0.0beta';   // 2007-12-06
+        $release = '1.0.0beta';   // 2007-12-06 (beta)
         $items = array(
             'Collator'                      => array('5.2.0', ''),
             'Locale'                        => array('5.2.0', ''),
@@ -103,26 +103,26 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '1.0.0RC1';    // 2008-05-27
+        $release = '1.0.0RC1';    // 2008-05-27 (stable)
         $items = array(
             'IntlDateFormatter'             => array('5.2.4', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '1.1.0';       // 2010-01-08
+        $release = '1.1.0';       // 2010-01-08 (stable)
         $items = array(
             'ResourceBundle'                => array('5.2.4', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '2.0.0b1';     // 2011-11-29
+        $release = '2.0.0b1';     // 2011-11-29 (beta)
         $items = array(
             'Spoofchecker'                  => array('5.4.0', ''),
             'Transliterator'                => array('5.4.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '5.5.0';       // 2013-06-20
+        $release = '5.5.0';       // 2013-06-20 (stable)
         $items = array(
             'IntlBreakIterator'             => array('5.5.0', ''),
             'IntlCalendar'                  => array('5.5.0', ''),
@@ -161,7 +161,7 @@ class PHP_CompatInfo_Reference_Intl
 
         $ver = defined('INTL_ICU_VERSION') ? INTL_ICU_VERSION : FALSE;
 
-        $release = '1.0.0beta';   // 2007-12-06
+        $release = '1.0.0beta';   // 2007-12-06 (beta)
         $items = array(
             'collator_asort'                    => array('5.2.0', ''),
             'collator_compare'                  => array('5.2.0', ''),
@@ -232,7 +232,7 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0.0RC1';    // 2008-05-27
+        $release = '1.0.0RC1';    // 2008-05-27 (stable)
         $items = array(
             'datefmt_create'                    => array('5.2.4', ''),
             'datefmt_format'                    => array('5.2.4', ''),
@@ -264,26 +264,26 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0.1';       // 2008-09-12
+        $release = '1.0.1';       // 2008-09-12 (stable)
         $items = array(
             'locale_accept_from_http'           => array('5.2.4', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0.2';       // 2009-04-09
+        $release = '1.0.2';       // 2009-04-09 (stable)
         $items = array(
             'idn_to_ascii'                      => array('5.2.4', ''),
             'idn_to_utf8'                       => array('5.2.4', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.0.3';       // 2009-10-26
+        $release = '1.0.3';       // 2009-10-26 (stable)
         $items = array(
             'collator_get_sort_key'             => array('5.2.4', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.1.0';       // 2010-01-08
+        $release = '1.1.0';       // 2010-01-08 (stable)
         $items = array(
             'resourcebundle_count'              => array('5.2.4', ''),
             'resourcebundle_create'             => array('5.2.4', ''),
@@ -294,7 +294,7 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '2.0.0b1';     // 2011-11-29
+        $release = '2.0.0b1';     // 2011-11-29 (beta)
         $items = array(
             'transliterator_create'             => array('5.4.0', ''),
             'transliterator_create_from_rules'  => array('5.4.0', ''),
@@ -306,7 +306,7 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.5.0';       // 2013-06-20
+        $release = '5.5.0';       // 2013-06-20 (stable)
         $items = array(
             'datefmt_format_object'             => array('5.5.0', ''),
             'datefmt_get_calendar_object'       => array('5.5.0', ''),
@@ -409,7 +409,7 @@ class PHP_CompatInfo_Reference_Intl
             $this->applyFilter($release, $items, $functions);
         }
 
-        $release = '5.5.1';       // 2013-07-18
+        $release = '5.5.1';       // 2013-07-18 (stable)
         $items = array(
             'intlcal_set_minimal_days_in_first_week'
                                                 => array('5.5.1', ''),
@@ -439,7 +439,7 @@ class PHP_CompatInfo_Reference_Intl
 
         $ver = defined('INTL_ICU_VERSION') ? INTL_ICU_VERSION : FALSE;
 
-        $release = '1.0.0beta';   // 2007-12-06
+        $release = '1.0.0beta';   // 2007-12-06 (beta)
         $items = array(
             'ULOC_ACTUAL_LOCALE'                => array('5.2.0', ''),
             'ULOC_VALID_LOCALE'                 => array('5.2.0', ''),
@@ -611,7 +611,7 @@ class PHP_CompatInfo_Reference_Intl
             $this->applyFilter($release, $items, $constants);
         }
 
-        $release = '1.0.0RC1';    // 2008-05-27
+        $release = '1.0.0RC1';    // 2008-05-27 (stable)
         $items = array(
             'GRAPHEME_EXTR_COUNT'               => array('5.2.4', ''),
             'GRAPHEME_EXTR_MAXBYTES'            => array('5.2.4', ''),
@@ -619,7 +619,7 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '1.0.2';       // 2009-04-09
+        $release = '1.0.2';       // 2009-04-09 (stable)
         $items = array(
             'IDNA_ALLOW_UNASSIGNED'             => array('5.2.4', ''),
             'IDNA_DEFAULT'                      => array('5.2.4', ''),
@@ -627,7 +627,7 @@ class PHP_CompatInfo_Reference_Intl
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '2.0.0b1';     // 2011-11-29
+        $release = '2.0.0b1';     // 2011-11-29 (beta)
         $items = array(
             'INTL_ICU_VERSION'                  => array('5.3.7', ''),
 
