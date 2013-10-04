@@ -244,6 +244,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'intl',
             ),
             array(
+                'prefixes'  => array('Json', 'json_', 'JSON_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'json',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
