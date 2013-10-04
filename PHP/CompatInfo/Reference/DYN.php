@@ -137,6 +137,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'fileinfo',
             ),
             array(
+                'prefixes'  => array('input_', 'filter_', 'INPUT_', 'FILTER_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'filter',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
