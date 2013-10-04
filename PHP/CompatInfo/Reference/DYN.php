@@ -89,6 +89,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'calendar',
             ),
             array(
+                'prefixes'  => 'ctype_',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'ctype',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
