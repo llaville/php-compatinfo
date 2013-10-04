@@ -71,6 +71,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'apcu',
             ),
             array(
+                'prefixes'  => array('bc'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'bcmath',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
