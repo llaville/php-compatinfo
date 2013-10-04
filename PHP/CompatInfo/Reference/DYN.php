@@ -203,6 +203,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'iconv',
             ),
             array(
+                'prefixes'  => 'igbinary_',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'igbinary',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
