@@ -59,6 +59,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'amqp',
             ),
             array(
+                'prefixes'  => array('APC', 'apc_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'apc',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
