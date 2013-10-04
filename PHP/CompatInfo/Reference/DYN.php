@@ -83,6 +83,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'bz2',
             ),
             array(
+                'prefixes'  => array('cal_', 'easter_', 'frenchtojd', 'gregoriantojd', 'jd', 'CAL_'),
+                'suffixes'  => 'tojd',
+                'contains'  => FALSE,
+                'extension' => 'calendar',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
