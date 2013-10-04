@@ -77,6 +77,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'bcmath',
             ),
             array(
+                'prefixes'  => array('bz'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'bz2',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
