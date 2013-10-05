@@ -268,6 +268,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'libxml',
             ),
             array(
+                'prefixes'  => 'lzf_',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'lzf',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
