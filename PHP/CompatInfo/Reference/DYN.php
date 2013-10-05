@@ -316,6 +316,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'mongo',
             ),
             array(
+                'prefixes'  => array('msgpack_', 'MessagePack'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'msgpack',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,

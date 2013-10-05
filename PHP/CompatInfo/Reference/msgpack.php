@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Msgpack
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '0.5.5';
+    const REF_VERSION = '0.5.5';  // 2013-02-18 (beta)
 
     /**
      * Gets informations about extensions
