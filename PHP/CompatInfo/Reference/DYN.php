@@ -322,6 +322,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'msgpack',
             ),
             array(
+                'prefixes'  => array('mssql_', 'MSSQL_', 'SQL'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'mssql',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
