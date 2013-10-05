@@ -310,7 +310,7 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'mhash',
             ),
             array(
-                'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
+                'prefixes'  => array('Mongo', 'bson_', 'MONGO_'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
                 'extension' => 'mongo',

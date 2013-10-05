@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Mongo
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.4.4';
+    const REF_VERSION = '1.4.4';  // 2013-09-25 (stable)
 
     /**
      * Gets informations about extensions
