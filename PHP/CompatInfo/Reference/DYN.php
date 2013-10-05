@@ -262,6 +262,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'libevent',
             ),
             array(
+                'prefixes'  => array('libxml_', 'LibXML', 'LIBXML_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'libxml',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
