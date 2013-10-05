@@ -334,6 +334,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'mysql',
             ),
             array(
+                'prefixes'  => array('mysqli_', 'MYSQLI_', 'mysqli'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'mysqli',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
