@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Memcached
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '2.1.0';
+    const REF_VERSION = '2.1.0';  // 2012-08-07 (stable)
 
     /**
      * Gets informations about extensions

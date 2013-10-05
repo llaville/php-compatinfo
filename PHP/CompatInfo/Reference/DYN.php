@@ -298,6 +298,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'memcache',
             ),
             array(
+                'prefixes'  => 'Memcached',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'memcached',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
