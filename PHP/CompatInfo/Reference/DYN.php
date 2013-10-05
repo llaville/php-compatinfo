@@ -292,6 +292,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'mcrypt',
             ),
             array(
+                'prefixes'  => array('memcache_', 'Memcache', 'MEMCACHE_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'memcache',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
