@@ -286,6 +286,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'mbstring',
             ),
             array(
+                'prefixes'  => array('mcrypt_', 'mdecrypt_', 'MCRYPT_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'mcrypt',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
