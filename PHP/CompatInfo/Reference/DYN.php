@@ -328,6 +328,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'mssql',
             ),
             array(
+                'prefixes'  => array('mysql_', 'MYSQL_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'mysql',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
