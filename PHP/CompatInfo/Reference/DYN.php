@@ -250,6 +250,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'json',
             ),
             array(
+                'prefixes'  => array('ldap_', 'LDAP_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'ldap',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
