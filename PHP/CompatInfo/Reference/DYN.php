@@ -274,6 +274,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'lzf',
             ),
             array(
+                'prefixes'  => array('mailparse_', 'MAILPARSE_'),
+                'suffixes'  => FALSE,
+                'contains'  => 'mimemessage',
+                'extension' => 'mailparse',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
