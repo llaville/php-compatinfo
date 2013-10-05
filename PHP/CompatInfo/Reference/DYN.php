@@ -280,6 +280,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'mailparse',
             ),
             array(
+                'prefixes'  => array('mb_', 'mbereg', 'mbregex', 'mbsplit', 'MB_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'mbstring',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
