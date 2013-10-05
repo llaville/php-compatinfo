@@ -256,6 +256,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'ldap',
             ),
             array(
+                'prefixes'  => array('event_', 'EVLOOP_', 'EV_', 'EVBUFFER_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'libevent',
+            ),
+            array(
                 'prefixes'  => array('Mongo', 'bson_', 'MONGO'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,

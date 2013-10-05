@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_libevent
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '0.1.0';
+    const REF_VERSION = '0.1.0';  // 2013-05-22 (beta)
 
     /**
      * Gets informations about extensions
