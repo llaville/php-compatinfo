@@ -507,6 +507,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'SQLite',
             ),
             array(
+                'prefixes'  => array('SQLite3', 'SQLITE3_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'SQLite3',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
