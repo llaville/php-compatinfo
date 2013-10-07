@@ -340,6 +340,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'mysqli',
             ),
             array(
+                'prefixes'  => array('OAuth', 'oauth_', 'OAUTH_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'OAuth',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
