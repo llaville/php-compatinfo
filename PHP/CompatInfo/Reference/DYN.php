@@ -453,6 +453,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'SimpleXML',
             ),
             array(
+                'prefixes'  => array('SNMP', 'snmp'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'snmp',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
