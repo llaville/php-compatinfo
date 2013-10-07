@@ -490,6 +490,17 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'sphinx',
             ),
             array(
+                'prefixes'  => array(
+                    'Spl', 'Iterator',
+                    'Countable', 'ArrayAccess', 'Serializable', 'Traversable',
+                    'ArrayObject',
+                    'spl_', 'class_', 'iterator_'
+                ),
+                'suffixes'  => array('Iterator', 'Exception'),
+                'contains'  => FALSE,
+                'extension' => 'SPL',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
