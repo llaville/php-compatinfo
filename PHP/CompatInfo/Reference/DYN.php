@@ -468,6 +468,16 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'soap',
             ),
             array(
+                'prefixes'  => array(
+                    'socket_', 'AF_', 'IPPROTO_', 'IPV6_', 'IP_', 'MCAST_',
+                    'MSG_', 'PHP_BINARY_READ', 'PHP_NORMAL_READ', 'SCM_',
+                    'SOCKET_', 'SOCK_', 'SOL_', 'SOMAXCONN', 'SO_', 'TCP_NODELAY'
+                ),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'sockets',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
