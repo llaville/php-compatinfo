@@ -417,6 +417,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'rar',
             ),
             array(
+                'prefixes'  => array('readline', 'READLINE_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'readline',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
