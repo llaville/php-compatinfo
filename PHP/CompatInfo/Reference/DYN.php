@@ -435,6 +435,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'Reflection',
             ),
             array(
+                'prefixes'  => array('Session', 'session_', 'PHP_SESSION_', 'SID'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'session',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
