@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Solr
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.2';
+    const REF_VERSION = '1.0.2';  // 2011-11-28 (stable)
 
     /**
      * Gets informations about extensions

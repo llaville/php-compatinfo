@@ -478,6 +478,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'sockets',
             ),
             array(
+                'prefixes'  => array('Solr', 'solr_', 'SOLR_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'solr',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
