@@ -411,6 +411,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'pthreads',
             ),
             array(
+                'prefixes'  => array('Rar', 'rar_', 'RAR_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'rar',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
