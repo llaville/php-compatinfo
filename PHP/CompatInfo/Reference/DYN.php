@@ -385,6 +385,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'PDO',
             ),
             array(
+                'prefixes'  => array('pg_', 'PGSQL_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'pgsql',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
