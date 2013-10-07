@@ -391,6 +391,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'pgsql',
             ),
             array(
+                'prefixes'  => 'Phar',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'Phar',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
