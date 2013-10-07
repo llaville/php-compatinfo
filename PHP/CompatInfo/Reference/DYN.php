@@ -352,6 +352,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'odbc',
             ),
             array(
+                'prefixes'  => array('openssl_', 'OPENSSL_', 'PKCS7_', 'X509_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'openssl',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
