@@ -373,6 +373,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'pcre',
             ),
             array(
+                'prefixes'  => array('PDFlib', 'pdf_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'PDFlib',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
