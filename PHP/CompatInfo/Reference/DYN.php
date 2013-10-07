@@ -447,6 +447,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'shmop',
             ),
             array(
+                'prefixes'  => array('SimpleXML', 'simplexml_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'SimpleXML',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
