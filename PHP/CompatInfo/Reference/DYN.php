@@ -423,6 +423,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'readline',
             ),
             array(
+                'prefixes'  => 'recode',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'recode',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
