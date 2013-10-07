@@ -441,6 +441,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'session',
             ),
             array(
+                'prefixes'  => 'shmop_',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'shmop',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
