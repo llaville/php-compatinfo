@@ -501,6 +501,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'SPL',
             ),
             array(
+                'prefixes'  => array('SQLite', 'sqlite_', 'SQLITE_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'SQLite',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
