@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Sphinx
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.3.0';
+    const REF_VERSION = '1.3.0';  // 2013-04-04 (stable)
 
     /**
      * Gets informations about extensions
@@ -92,7 +92,7 @@ class PHP_CompatInfo_Reference_Sphinx
 
         $classes = array();
 
-        $release = '0.1.0';       // 2008-07-21
+        $release = '0.1.0';       // 2008-07-21 (beta)
         $items = array(
             'SphinxClient'                  => array('5.1.3', ''),
         );
@@ -119,7 +119,7 @@ class PHP_CompatInfo_Reference_Sphinx
 
         $constants = array();
 
-        $release = '0.1.0';       // 2008-07-21
+        $release = '0.1.0';       // 2008-07-21 (beta)
         $items = array(
             'SEARCHD_ERROR'                           => array('5.1.3', ''),
             'SEARCHD_OK'                              => array('5.1.3', ''),
@@ -166,7 +166,7 @@ class PHP_CompatInfo_Reference_Sphinx
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '1.1.0';       // 2010-09-17
+        $release = '1.1.0';       // 2010-09-17 (stable)
         $items = array(
             'SPH_RANK_FIELDMASK'                      => array('5.2.2', ''),
             'SPH_RANK_MATCHANY'                       => array('5.2.2', ''),
@@ -174,7 +174,7 @@ class PHP_CompatInfo_Reference_Sphinx
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '1.3.0';       // 2013-04-04
+        $release = '1.3.0';       // 2013-04-04 (stable)
         $items = array(
             'SPH_RANK_SPH04'                          => array('5.2.2', ''),
             'SPH_RANK_EXPR'                           => array('5.2.2', ''),

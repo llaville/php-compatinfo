@@ -484,6 +484,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'solr',
             ),
             array(
+                'prefixes'  => array('Sphinx', 'SEARCHD_', 'SPH_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'sphinx',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
