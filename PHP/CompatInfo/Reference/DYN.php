@@ -358,6 +358,15 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'openssl',
             ),
             array(
+                'prefixes'  => array(
+                    'pcntl_', 'BUS_', 'CLD_', 'FPE_', 'ILL_', 'PCNTL_', 'POLL_',
+                    'PRIO_', 'SEGV_', 'SIG', 'SI_', 'TRAP_', 'WNOHANG', 'WUNTRACED'
+                ),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'pcntl',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
