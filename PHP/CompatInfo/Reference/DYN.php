@@ -459,6 +459,15 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'snmp',
             ),
             array(
+                'prefixes'  => array(
+                    'Soap', 'SOAP_', 'WSDL_', 'XSD_',
+                    'APACHE_MAP', 'UNKNOWN_TYPE'
+                ),
+                'suffixes'  => FALSE,
+                'contains'  => '_soap_',
+                'extension' => 'soap',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
