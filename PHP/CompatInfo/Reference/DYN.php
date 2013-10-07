@@ -397,6 +397,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'Phar',
             ),
             array(
+                'prefixes'  => array('posix_', 'POSIX_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'posix',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
