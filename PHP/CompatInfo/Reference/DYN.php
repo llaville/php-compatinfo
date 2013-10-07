@@ -346,6 +346,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'OAuth',
             ),
             array(
+                'prefixes'  => array('odbc_', 'ODBC_', 'SQL_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'odbc',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
