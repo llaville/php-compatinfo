@@ -429,6 +429,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'recode',
             ),
             array(
+                'prefixes'  => array('Reflection', 'Reflector'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'Reflection',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
