@@ -367,6 +367,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'pcntl',
             ),
             array(
+                'prefixes'  => array('preg_', 'PCRE_', 'PREG_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'pcre',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
