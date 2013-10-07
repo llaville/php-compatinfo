@@ -403,6 +403,14 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'posix',
             ),
             array(
+                'prefixes'  => array(
+                    'Cond', 'Mutex', 'Stackable', 'Thread', 'Worker', 'PTHREADS_'
+                ),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'pthreads',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,

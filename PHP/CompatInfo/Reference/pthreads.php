@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Pthreads
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '0.45';
+    const REF_VERSION = '0.45';   // 2013-09-08 (stable)
 
     /**
      * Gets informations about extensions
