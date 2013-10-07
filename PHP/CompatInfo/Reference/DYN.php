@@ -379,6 +379,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'PDFlib',
             ),
             array(
+                'prefixes'  => array('PDO', 'pdo_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'PDO',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
