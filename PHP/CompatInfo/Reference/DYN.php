@@ -513,6 +513,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'SQLite3',
             ),
             array(
+                'prefixes'  => array('ssh2_', 'SSH2_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'ssh2',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
