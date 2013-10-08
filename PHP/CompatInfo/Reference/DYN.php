@@ -555,6 +555,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'tidy',
             ),
             array(
+                'prefixes'  => array('token_', 'T_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'tokenizer',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
