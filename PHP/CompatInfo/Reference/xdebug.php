@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Xdebug
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '2.2.3';
+    const REF_VERSION = '2.2.3';  // 2013-05-22 (stable)
 
     /**
      * Gets informations about extensions
@@ -89,7 +89,7 @@ class PHP_CompatInfo_Reference_Xdebug
 
         $functions = array();
 
-        $release = '1.2.0';       // 2003-06-08
+        $release = '1.2.0';       // 2003-06-08 (stable)
         $items = array(
             'xdebug_call_class'              => array('4.3.0', ''),
             'xdebug_call_file'               => array('4.3.0', ''),
@@ -123,14 +123,14 @@ class PHP_CompatInfo_Reference_Xdebug
             '2.0.0beta6', 'xdebug_set_error_handler', $functions
         );
 
-        $release = '1.3.0RC1';    // 2003-09-18
+        $release = '1.3.0RC1';    // 2003-09-18 (beta)
         $items = array(
             'xdebug_time_index'              => array('4.3.0', ''),
             'xdebug_var_dump'                => array('4.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '2.0.0beta1';  // 2004-09-15
+        $release = '2.0.0beta1';  // 2004-09-15 (beta)
         $items = array(
             'xdebug_break'                   => array('4.3.0', ''),
             'xdebug_get_function_count'      => array('4.3.0', ''),
@@ -140,26 +140,26 @@ class PHP_CompatInfo_Reference_Xdebug
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '2.0.0beta2';  // 2004-11-28
+        $release = '2.0.0beta2';  // 2004-11-28 (beta)
         $items = array(
             'xdebug_debug_zval'              => array('4.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '2.0.0beta4';  // 2005-09-24
+        $release = '2.0.0beta4';  // 2005-09-24 (beta)
         $items = array(
             'xdebug_debug_zval_stdout'       => array('4.3.0', ''),
             'xdebug_get_profiler_filename'   => array('4.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '2.0.0beta5';  // 2005-12-31
+        $release = '2.0.0beta5';  // 2005-12-31 (beta)
         $items = array(
             'xdebug_get_declared_vars'       => array('4.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '2.0.0beta6';  // 2006-06-30
+        $release = '2.0.0beta6';  // 2006-06-30 (beta)
         $items = array(
             'xdebug_clear_aggr_profiling_data'
                                              => array('4.3.0', ''),
@@ -168,13 +168,13 @@ class PHP_CompatInfo_Reference_Xdebug
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '2.0.0RC1';    // 2006-10-08
+        $release = '2.0.0RC1';    // 2006-10-08 (beta)
         $items = array(
             'xdebug_print_function_stack'    => array('4.3.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '2.1.0beta1';  // 2010-01-02
+        $release = '2.1.0beta1';  // 2010-01-02 (beta)
         $items = array(
             'xdebug_get_collected_errors'    => array('5.1.0', ''),
             'xdebug_get_formatted_function_stack'
@@ -205,7 +205,7 @@ class PHP_CompatInfo_Reference_Xdebug
 
         $constants = array();
 
-        $release = '1.2.0';       // 2003-06-08
+        $release = '1.2.0';       // 2003-06-08 (stable)
         $items = array(
             'XDEBUG_CC_DEAD_CODE'            => array('5.2.0', ''),
             'XDEBUG_CC_UNUSED'               => array('5.2.0', ''),

@@ -585,6 +585,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'XCache',
             ),
             array(
+                'prefixes'  => array('xdebug_', 'XDEBUG_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'xdebug',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
