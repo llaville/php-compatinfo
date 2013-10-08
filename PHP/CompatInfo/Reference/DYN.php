@@ -47,12 +47,6 @@ class PHP_CompatInfo_Reference_DYN
     ) {
         $this->rules = array(
             array(
-                'prefixes'  => array('Spl', 'spl_', 'class_', 'iterator_'),
-                'suffixes'  => array('Iterator', 'Exception'),
-                'contains'  => FALSE,
-                'extension' => 'SPL',
-            ),
-            array(
                 'prefixes'  => array('AMQP'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
