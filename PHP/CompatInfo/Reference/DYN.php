@@ -609,6 +609,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'xmlreader',
             ),
             array(
+                'prefixes'  => 'xmlrpc_',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'xmlrpc',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
