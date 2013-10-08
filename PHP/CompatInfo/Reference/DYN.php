@@ -615,6 +615,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'xmlrpc',
             ),
             array(
+                'prefixes'  => array('XMLWriter', 'xmlwriter_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'xmlwriter',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
