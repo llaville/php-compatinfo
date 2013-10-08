@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Stomp
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.5';
+    const REF_VERSION = '1.0.5';  // 2012-11-18 (stable)
 
     /**
      * Gets informations about extensions
@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_Stomp
 
         $classes = array();
 
-        $release = '0.1.0';       // 2009-10-30
+        $release = '0.1.0';       // 2009-10-30 (alpha)
         $items = array(
             'Stomp'                                 => array('5.2.2', ''),
             'StompException'                        => array('5.2.2', ''),
@@ -103,7 +103,7 @@ class PHP_CompatInfo_Reference_Stomp
 
         $functions = array();
 
-        $release = '0.1.0';       // 2009-10-30
+        $release = '0.1.0';       // 2009-10-30 (alpha)
         $items = array(
             'stomp_abort'                           => array('5.2.2', ''),
             'stomp_ack'                             => array('5.2.2', ''),
@@ -124,7 +124,7 @@ class PHP_CompatInfo_Reference_Stomp
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.3.0';       // 2009-11-06
+        $release = '0.3.0';       // 2009-11-06 (beta)
         $items = array(
             'stomp_connect_error'                   => array('5.2.2', ''),
         );

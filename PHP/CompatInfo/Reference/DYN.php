@@ -519,6 +519,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'ssh2',
             ),
             array(
+                'prefixes'  => array('stomp_', 'Stomp'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'stomp',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
