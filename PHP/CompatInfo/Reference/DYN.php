@@ -621,6 +621,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'xmlwriter',
             ),
             array(
+                'prefixes'  => array('XSLT', 'XSL_', 'LIBEXSLT_', 'LIBXSLT_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'xsl',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
