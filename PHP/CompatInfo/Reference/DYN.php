@@ -591,6 +591,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'xdebug',
             ),
             array(
+                'prefixes'  => array('xhprof_', 'XHPROF_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'xhprof',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
