@@ -537,6 +537,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'sysvmsg',
             ),
             array(
+                'prefixes'  => 'sem_',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'sysvsem',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
