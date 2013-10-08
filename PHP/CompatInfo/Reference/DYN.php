@@ -531,6 +531,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'svn',
             ),
             array(
+                'prefixes'  => array('msg_', 'MSG_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'sysvmsg',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
