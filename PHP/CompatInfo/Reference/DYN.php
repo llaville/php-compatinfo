@@ -597,6 +597,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'xhprof',
             ),
             array(
+                'prefixes'  => array('xml_', 'utf8_', 'XML_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'xml',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
