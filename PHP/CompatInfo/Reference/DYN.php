@@ -639,6 +639,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'Zend OPcache',
             ),
             array(
+                'prefixes'  => array('zip_', 'Zip'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'zip',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
