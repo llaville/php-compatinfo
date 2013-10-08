@@ -627,6 +627,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'xsl',
             ),
             array(
+                'prefixes'  => array('yaml_', 'YAML_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'yaml',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
