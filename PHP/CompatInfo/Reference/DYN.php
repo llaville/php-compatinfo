@@ -645,6 +645,14 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'zip',
             ),
             array(
+                'prefixes'  => array(
+                    'gz_', 'zlib_', 'ob_gz', 'readgz', 'FORCE_', 'ZLIB_'
+                ),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'zlib',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
