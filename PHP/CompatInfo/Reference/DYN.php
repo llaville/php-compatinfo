@@ -579,6 +579,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'wddx',
             ),
             array(
+                'prefixes'  => array('xcache_', 'XCACHE_', 'XC_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'XCache',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
