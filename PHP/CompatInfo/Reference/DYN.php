@@ -561,6 +561,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'tokenizer',
             ),
             array(
+                'prefixes'  => 'uploadprogress_',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'uploadprogress',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
