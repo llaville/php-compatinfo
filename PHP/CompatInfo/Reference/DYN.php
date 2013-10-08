@@ -525,6 +525,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'stomp',
             ),
             array(
+                'prefixes'  => array('svn_', 'Svn', 'SVN_', 'PHP_SVN_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'svn',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,

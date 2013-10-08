@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Svn
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.2';
+    const REF_VERSION = '1.0.2';  // 2012-03-27 (stable)
 
     /**
      * Gets informations about extensions
@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_Svn
 
         $classes = array();
 
-        $release = '0.3';         // 2008-02-09
+        $release = '0.3';         // 2008-02-09 (beta)
         $items = array(
             'Svn'                                   => array('4.0.0', ''),
             'SvnNode'                               => array('4.0.0', ''),
@@ -104,7 +104,7 @@ class PHP_CompatInfo_Reference_Svn
 
         $functions = array();
 
-        $release = '0.1';         // 2005-05-29
+        $release = '0.1';         // 2005-05-29 (beta)
         $items = array(
             'svn_add'                               => array('4.0.0', ''),
             'svn_auth_get_parameter'                => array('4.0.0', ''),
@@ -136,7 +136,7 @@ class PHP_CompatInfo_Reference_Svn
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.2';         // 2006-03-20
+        $release = '0.2';         // 2006-03-20 (beta)
         $items = array(
             'svn_fs_abort_txn'                      => array('4.0.0', ''),
             'svn_fs_apply_text'                     => array('4.0.0', ''),
@@ -157,7 +157,7 @@ class PHP_CompatInfo_Reference_Svn
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.3';         // 2008-02-09
+        $release = '0.3';         // 2008-02-09 (beta)
         $items = array(
             'svn_blame'                             => array('4.0.0', ''),
             'svn_copy'                              => array('4.0.0', ''),
@@ -169,7 +169,7 @@ class PHP_CompatInfo_Reference_Svn
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.4';         // 2008-06-03
+        $release = '0.4';         // 2008-06-03 (beta)
         $items = array(
             'svn_delete'                            => array('4.0.0', ''),
             'svn_mkdir'                             => array('4.0.0', ''),
@@ -179,7 +179,7 @@ class PHP_CompatInfo_Reference_Svn
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.5';         // 2008-10-09
+        $release = '0.5';         // 2008-10-09 (beta)
         $items = array(
             'svn_config_ensure'                     => array('4.0.0', ''),
             'svn_lock'                              => array('4.0.0', ''),
@@ -208,7 +208,7 @@ class PHP_CompatInfo_Reference_Svn
 
         $constants = array();
 
-        $release = '0.1';         // 2005-05-29
+        $release = '0.1';         // 2005-05-29 (beta)
         $items = array(
             'PHP_SVN_AUTH_PARAM_IGNORE_SSL_VERIFY_ERRORS'
                                                     => array('4.0.0', ''),
@@ -250,7 +250,7 @@ class PHP_CompatInfo_Reference_Svn
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '0.3';         // 2008-02-09
+        $release = '0.3';         // 2008-02-09 (beta)
         $items = array(
             'SVN_ALL'                               => array('4.0.0', ''),
             'SVN_DISCOVER_CHANGED_PATHS'            => array('4.0.0', ''),
@@ -271,7 +271,7 @@ class PHP_CompatInfo_Reference_Svn
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '1.0.1';       // 2010-12-08
+        $release = '1.0.1';       // 2010-12-08 (stable)
         $items = array(
             'SVN_REVISION_UNSPECIFIED'              => array('4.0.0', ''),
         );
