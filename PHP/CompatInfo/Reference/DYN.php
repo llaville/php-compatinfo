@@ -573,6 +573,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'varnish',
             ),
             array(
+                'prefixes'  => 'wddx_',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'wddx',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
