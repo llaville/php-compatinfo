@@ -603,6 +603,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'xml',
             ),
             array(
+                'prefixes'  => 'XMLReader',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'xmlreader',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
