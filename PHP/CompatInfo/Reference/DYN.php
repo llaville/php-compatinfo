@@ -543,6 +543,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'sysvsem',
             ),
             array(
+                'prefixes'  => 'shm_',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'sysvshm',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
