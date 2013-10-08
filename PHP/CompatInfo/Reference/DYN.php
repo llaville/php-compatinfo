@@ -567,6 +567,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'uploadprogress',
             ),
             array(
+                'prefixes'  => array('Varnish', 'VARNISH_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'varnish',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
