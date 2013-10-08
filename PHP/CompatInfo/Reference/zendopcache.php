@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_ZendOPcache
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '7.0.2';
+    const REF_VERSION = '7.0.2';  // 2013-06-05 (beta)
 
     /**
      * Gets informations about extensions
@@ -77,7 +77,7 @@ class PHP_CompatInfo_Reference_ZendOPcache
         // published as Zend Optimiser+
         // 7.0.1 is the first version named Zend OPcache
 
-        $release = '7.0.1';       // 2013-03-25
+        $release = '7.0.1';       // 2013-03-25 (beta)
         $items = array(
             'opcache_reset'                    => array('5.2.0', ''),
             'opcache_get_configuration'        => array('5.2.0', ''),
@@ -85,7 +85,7 @@ class PHP_CompatInfo_Reference_ZendOPcache
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '7.0.2';       // 2013-06-05
+        $release = '7.0.2';       // 2013-06-05 (beta)
         $items = array(
             'opcache_invalidate'               => array('5.2.0', ''),
         );

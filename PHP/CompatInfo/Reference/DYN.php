@@ -633,6 +633,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'yaml',
             ),
             array(
+                'prefixes'  => 'opcache_',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'Zend OPcache',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
