@@ -107,7 +107,7 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'date',
             ),
             array(
-                'prefixes'  => array('Dom', 'dom_', 'DOM_', 'XML_', 'DOMSTRING_SIZE_ERR'),
+                'prefixes'  => array('DOM', 'dom_', 'DOM_', 'XML_', 'DOMSTRING_'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
                 'extension' => 'dom',
