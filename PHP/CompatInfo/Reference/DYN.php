@@ -549,6 +549,12 @@ class PHP_CompatInfo_Reference_DYN
                 'extension' => 'sysvshm',
             ),
             array(
+                'prefixes'  => array('tidy_', 'TIDY_', 'tidy', 'ob_tidy'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'tidy',
+            ),
+            array(
                 'prefixes'  => '*',
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
