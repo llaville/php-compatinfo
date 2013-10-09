@@ -6,6 +6,8 @@ Additions and changes:
 - update zip reference to 1.12.1
 - convert test case classes from standard fixtures to shared fixtures
 - DYN (lazy loader) is now rules completed. May be used in production
+- tests suites may be now run with default memory limit
+- 'extension not available' message is received by all PHPUnit test listeners
 
 Bug fixes:
 - none
