@@ -31,6 +31,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 {
     protected static $obj = NULL;
     protected static $ref = NULL;
+    protected static $ext = NULL;
 
     // Could be defined in Reference but missing (system dependant)
     protected static $optionalconstants   = array();
@@ -64,13 +65,9 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
             if ($loaded) {
                 // give a second chance
                 $prefix = (PHP_SHLIB_SUFFIX === 'dll') ? 'php_' : '';
-                $loaded = @dl($prefix . $extname . '.' . PHP_SHLIB_SUFFIX);
+                @dl($prefix . $extname . '.' . PHP_SHLIB_SUFFIX);
             }
-            if ($loaded === false) {
-                self::markTestSkipped(
-                    "The '$extname' extension is not available."
-                );
-            }
+            self::$ext = $extname;
         }
         self::$ref = self::$obj->getAll();
     }
@@ -83,7 +80,9 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
     public function testReference()
     {
         if (is_null(self::$ref)) {
-            return;
+            $this->markTestSkipped(
+                "The '{self::$ext}' extension is not available."
+            );
         }
 
         $this->assertArrayHasKey(
