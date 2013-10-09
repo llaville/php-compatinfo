@@ -69,8 +69,14 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
             }
             self::$ext = $extname;
         }
-        self::$ref = self::$obj->getAll();
+        if (extension_loaded($extname)) {
+            self::$ref = $obj->getAll();
+        } else {
+            self::$ref = NULL;
+        }
     }
+
+
 
     /**
      * Test the reference structure of an extension
@@ -81,7 +87,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
     {
         if (is_null(self::$ref)) {
             $this->markTestSkipped(
-                "The '{self::$ext}' extension is not available."
+                "The '" . self::$ext . "' extension is not available."
             );
         }
 
