@@ -46,6 +46,7 @@ include::attributes.txt[]
 * DYN (lazy loader) is now rules completed. May be used in production
 * tests suites may be now run with default memory limit
 * _extension not available_ message is received by all PHPUnit test listeners
+* add a new PHPUnit test listener useful to know what reference is loaded and tested
 
 .Bug fixes:
 * none
