@@ -23,23 +23,32 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-09-23</date>
- <time>14:56:35</time>
+ <date>2013-10-09</date>
+ <time>16:29:44</time>
  <version>
-  <release>2.23.1</release>
-  <api>2.23.0</api>
+  <release>2.24.0</release>
+  <api>2.24.0</api>
  </version>
  <stability>
-  <release>stable</release>
-  <api>stable</api>
+  <release>snapshot</release>
+  <api>beta</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- none
+- update imagick reference to 3.1.2
+- update mongo reference to 1.4.4
+- update xhprof reference to 0.9.4
+- update varnish reference to 1.1.0
+- update zip reference to 1.12.1
+- convert test case classes from standard fixtures to shared fixtures
+- DYN (lazy loader) is now rules completed. May be used in production
+- tests suites may be now run with default memory limit
+- &apos;extension not available&apos; message is received by all PHPUnit test listeners
+- add a new PHPUnit test listener useful to know what reference is loaded and tested
 
 Bug fixes:
-- GH-101: about json constants and pdf function in unit tests (Thanks to Remi Collet)
+- none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -488,6 +497,7 @@ Bug fixes:
     <file baseinstalldir="Bartlett" name="ParameterTest.php" role="test" />
     <file baseinstalldir="Bartlett" name="phpunit-growl.xml" role="test" />
     <file baseinstalldir="Bartlett" name="phpunit.xml" role="test" />
+    <file baseinstalldir="Bartlett" name="ReferenceTestListener.php" role="test" />
     <file baseinstalldir="Bartlett" name="TokenTest.php" role="test" />
    </dir> <!-- /tests -->
    <file baseinstalldir="Bartlett" name="LICENSE" role="doc" />
@@ -565,6 +575,34 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.24.0</release>
+    <api>2.24.0</api>
+   </version>
+   <stability>
+    <release>snapshot</release>
+    <api>beta</api>
+   </stability>
+   <date>2013-10-09</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- update imagick reference to 3.1.2
+- update mongo reference to 1.4.4
+- update xhprof reference to 0.9.4
+- update varnish reference to 1.1.0
+- update zip reference to 1.12.1
+- convert test case classes from standard fixtures to shared fixtures
+- DYN (lazy loader) is now rules completed. May be used in production
+- tests suites may be now run with default memory limit
+- &apos;extension not available&apos; message is received by all PHPUnit test listeners
+- add a new PHPUnit test listener useful to know what reference is loaded and tested
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.23.1</release>
