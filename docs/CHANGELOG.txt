@@ -47,6 +47,7 @@ include::attributes.txt[]
 * tests suites may be now run with default memory limit
 * _extension not available_ message is received by all PHPUnit test listeners
 * add a new PHPUnit test listener useful to know what reference is loaded and tested
+* add composer support (GH-102 request)
 
 .Bug fixes:
 * none

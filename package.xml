@@ -24,7 +24,7 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2013-10-09</date>
- <time>16:29:44</time>
+ <time>22:55:00</time>
  <version>
   <release>2.24.0</release>
   <api>2.24.0</api>
@@ -46,6 +46,7 @@ Additions and changes:
 - tests suites may be now run with default memory limit
 - &apos;extension not available&apos; message is received by all PHPUnit test listeners
 - add a new PHPUnit test listener useful to know what reference is loaded and tested
+- add composer support (GH-102 request)
 
 Bug fixes:
 - none
@@ -598,6 +599,7 @@ Additions and changes:
 - tests suites may be now run with default memory limit
 - &apos;extension not available&apos; message is received by all PHPUnit test listeners
 - add a new PHPUnit test listener useful to know what reference is loaded and tested
+- add composer support (GH-102 request)
 
 Bug fixes:
 - none

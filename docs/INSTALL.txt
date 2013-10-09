@@ -26,7 +26,7 @@ $ pear install bartlett/PHP_CompatInfo
 
 Installing a specific version:
 ----
-$ pear install bartlett/PHP_CompatInfo-2.23.0
+$ pear install bartlett/PHP_CompatInfo-2.24.0
 ----
 
 == PHP Archive (PHAR)
@@ -34,6 +34,36 @@ $ pear install bartlett/PHP_CompatInfo-2.23.0
 ----
 wget http://bartlett.laurent-laville.org/get/phpcompatinfo.phar
 chmod +x phpcompatinfo.phar
+----
+
+== Composer
+
+Install http://getcomposer.org[Composer] in your root project with this command:
+----
+$ curl -s http://getcomposer.org/installer | php
+----
+
+Or http://getcomposer.org/composer.phar[download composer.phar] in your root project.
+
+Put a file named `composer.json` at the root of your project, containing the dependency:
+----
+{
+    "require": {
+        "pear-bartlett/PHP_CompatInfo": "2.24.*"
+    }
+}
+----
+
+And install this dependency with the following command:
+----
+$ php composer.phar install
+----
+
+Include Composer's autoloader, and use the `PHP_CompatInfo` class
+[source,php]
+----
+<?php
+require_once 'vendor/autoload.php';
 ----
 
 == GNU/Linux RPM

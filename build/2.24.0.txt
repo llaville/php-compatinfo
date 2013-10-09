@@ -9,6 +9,7 @@ Additions and changes:
 - tests suites may be now run with default memory limit
 - 'extension not available' message is received by all PHPUnit test listeners
 - add a new PHPUnit test listener useful to know what reference is loaded and tested
+- add composer support (GH-102 request)
 
 Bug fixes:
 - none

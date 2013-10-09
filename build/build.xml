@@ -261,6 +261,7 @@
         <exclude name="**/*.pdf" />
         <exclude name="**/*.epub" />
         <exclude name="**/Thumbs.db" />
+        <exclude name="composer.json" />
         <exclude name="package.xml" />
         <exclude name="build**" />
         <exclude name="contributions/**" />
@@ -351,7 +352,7 @@
     <target name="phar"    depends="phar.all" />
     <target name="web">
         <phingcall target="docs.make-web">
-            <property name="docs.asciidoc.target" value="D:/laurent-laville.org/www/php5/compatinfo/manual/current/en" />
+            <property name="docs.asciidoc.target" value="/var/compatinfo/manual/current/en" />
             <property name="docs.theme-asciidoc" value="bspear2" />
             <property name="docs.backend-asciidoc" value="bootstrap" />
         </phingcall>
