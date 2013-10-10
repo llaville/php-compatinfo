@@ -48,6 +48,7 @@ include::attributes.txt[]
 * _extension not available_ message is received by all PHPUnit test listeners
 * add a new PHPUnit test listener useful to know what reference is loaded and tested
 * add composer support (GH-102 request)
+* raise PHP_Reflect dependency to 1.9.0
 
 .Bug fixes:
 * none
