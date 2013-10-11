@@ -358,7 +358,7 @@
         </phingcall>
     </target>
 
-    <target name="all"     depends="test.all,docs.all,package.all,server.all" />
+    <target name="all"     depends="test.all,docs.all,package.all,server.all,phar.all" />
 
     <target name="help">
         <echo>A toolchain manager for ${phing.project.name}              </echo>
