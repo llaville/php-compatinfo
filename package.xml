@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-10-09</date>
- <time>22:55:00</time>
+ <date>2013-10-11</date>
+ <time>17:53:49</time>
  <version>
   <release>2.24.0</release>
   <api>2.24.0</api>
@@ -47,6 +47,7 @@ Additions and changes:
 - &apos;extension not available&apos; message is received by all PHPUnit test listeners
 - add a new PHPUnit test listener useful to know what reference is loaded and tested
 - add composer support (GH-102 request)
+- raise PHP_Reflect dependency to 1.9.0
 
 Bug fixes:
 - none
@@ -521,7 +522,7 @@ Bug fixes:
    <package>
     <name>PHP_Reflect</name>
     <channel>bartlett.laurent-laville.org</channel>
-    <min>1.8.0</min>
+    <min>1.9.0</min>
     <max>1.99.0</max>
    </package>
    <extension>
@@ -585,7 +586,7 @@ Bug fixes:
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2013-10-09</date>
+   <date>2013-10-11</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -600,6 +601,7 @@ Additions and changes:
 - &apos;extension not available&apos; message is received by all PHPUnit test listeners
 - add a new PHPUnit test listener useful to know what reference is loaded and tested
 - add composer support (GH-102 request)
+- raise PHP_Reflect dependency to 1.9.0
 
 Bug fixes:
 - none
