@@ -140,8 +140,6 @@ class PHP_CompatInfo_Reference_SPL
             'BadMethodCallException'            => array('5.1.0', ''),
             'DomainException'                   => array('5.1.0', ''),
             'EmptyIterator'                     => array('5.1.0', ''),
-            'ErrorException'                    => array('5.1.0', ''),
-            'Exception'                         => array('5.1.0', ''),
             'FilterIterator'                    => array('5.1.0', ''),
             'InfiniteIterator'                  => array('5.1.0', ''),
             'InvalidArgumentException'          => array('5.1.0', ''),
