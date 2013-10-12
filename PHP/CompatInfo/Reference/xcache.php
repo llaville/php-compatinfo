@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_XCache
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '3.0.3';  // 2013-06-18 (stable)
+    const REF_VERSION = '3.1.0';  // 2013-10-10 (stable)
 
     /**
      * Gets informations about extensions
@@ -355,6 +355,17 @@ class PHP_CompatInfo_Reference_XCache
             'XC_QM_ASSIGN_VAR'              => array('5.4.0', ''),
             'XC_RETURN_BY_REF'              => array('5.4.0', ''),
             'XC_SEPARATE'                   => array('5.4.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '3.1.0';       // 2013-10-10 (stable)
+        $items = array(
+            'XC_OPSPEC_FETCHTYPE'           => array('5.3.0', ''),
+            'XC_DISCARD_EXCEPTION'          => array('5.5.0', ''),
+            'XC_YIELD'                      => array('5.5.0', ''),
+            'XC_GENERATOR_RETURN'           => array('5.5.0', ''),
+            'XC_FAST_CALL'                  => array('5.5.0', ''),
+            'XC_FAST_RET'                   => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
