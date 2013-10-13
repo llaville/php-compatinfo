@@ -50,6 +50,7 @@ include::attributes.txt[]
 * add a new PHPUnit test listener useful to know what reference is loaded and tested
 * add composer support (GH-102 request)
 * raise PHP_Reflect dependency to 1.9.0
+* detect more constants (when used as argument in function signature/call)
 
 .Bug fixes:
 * none

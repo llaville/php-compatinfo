@@ -51,6 +51,10 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             $this->type = 'function';
             $this->name = $this->tokenStream[$this->id][1];
         }
+        elseif ($this->_getContext(-2) == 'T_FUNCTION') {
+            $this->type = 'user';
+            $this->name = $this->tokenStream[$this->id][1];
+        }
         else if ($this->_isInterface()) {
             $this->type = 'interface';
             $this->name = $this->tokenStream[$this->id][1];
@@ -59,7 +63,7 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             $this->type = 'class';
             $this->name = $this->tokenStream[$this->id][1];
         }
-        else if ($this->_isConstant()) {
+        else {
             $this->type = 'constant';
             $this->name = strtoupper($this->tokenStream[$this->id][1]);
         }
@@ -100,19 +104,6 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             return true;
         }
         return false;
-    }
-
-    private function _isConstant()
-    {
-        if ($this->_getContext(-2) == 'T_DOUBLE_COLON' ||
-            $this->_getContext(-1) == 'T_DOUBLE_COLON') {
-            return false;  // constant class call
-        }
-
-        $constants = get_defined_constants();
-        $name      = $this->tokenStream[$this->id][1];
-
-        return (array_key_exists(strtoupper($name), $constants));
     }
 
     private function _isInterface()
