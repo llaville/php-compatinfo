@@ -837,7 +837,7 @@ class PHP_CompatInfo_Reference_DYN
                 'matches'   => FALSE,
                 'excludes'  => FALSE,
                 'prefixes'  => array(
-                    'gz_', 'zlib_', 'ob_gz', 'readgz', 'FORCE_', 'ZLIB_'
+                    'gz', 'zlib_', 'ob_gz', 'readgz', 'FORCE_', 'ZLIB_'
                 ),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
