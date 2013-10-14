@@ -632,8 +632,7 @@ class PHP_CompatInfo_Reference_DYN
                 ),
                 'excludes'  => array('ErrorException', 'Exception'),
                 'prefixes'  => array(
-                    'Spl', 'Iterator',
-                    'Countable', 'ArrayAccess', 'Serializable', 'Traversable',
+                    'Spl', 'Countable',
                     'ArrayObject',
                     'spl_', 'iterator_',
                     'class_implements', 'class_parents', 'class_uses'
