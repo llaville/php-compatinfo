@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-10-11</date>
- <time>17:53:49</time>
+ <date>2013-10-13</date>
+ <time>14:58:10</time>
  <version>
   <release>2.24.0</release>
   <api>2.24.0</api>
@@ -41,6 +41,7 @@ Additions and changes:
 - update xhprof reference to 0.9.4
 - update varnish reference to 1.1.0
 - update zip reference to 1.12.1
+- update xcache reference to 3.1.0
 - convert test case classes from standard fixtures to shared fixtures
 - DYN (lazy loader) is now rules completed. May be used in production
 - tests suites may be now run with default memory limit
@@ -48,6 +49,7 @@ Additions and changes:
 - add a new PHPUnit test listener useful to know what reference is loaded and tested
 - add composer support (GH-102 request)
 - raise PHP_Reflect dependency to 1.9.0
+- detect more constants (when used as argument in function signature/call)
 
 Bug fixes:
 - none
@@ -586,7 +588,7 @@ Bug fixes:
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2013-10-11</date>
+   <date>2013-10-13</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
@@ -595,6 +597,7 @@ Additions and changes:
 - update xhprof reference to 0.9.4
 - update varnish reference to 1.1.0
 - update zip reference to 1.12.1
+- update xcache reference to 3.1.0
 - convert test case classes from standard fixtures to shared fixtures
 - DYN (lazy loader) is now rules completed. May be used in production
 - tests suites may be now run with default memory limit
@@ -602,6 +605,7 @@ Additions and changes:
 - add a new PHPUnit test listener useful to know what reference is loaded and tested
 - add composer support (GH-102 request)
 - raise PHP_Reflect dependency to 1.9.0
+- detect more constants (when used as argument in function signature/call)
 
 Bug fixes:
 - none
