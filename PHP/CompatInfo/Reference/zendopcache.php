@@ -91,6 +91,12 @@ class PHP_CompatInfo_Reference_ZendOPcache
         );
         $this->applyFilter($release, $items, $functions);
 
+        $release = '7.0.3-dev';       // 2013-10-17 (bundled in 5.5.5)
+        $items = array(
+            'opcache_compile_file'             => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $functions);
+
         return $functions;
     }
 }
