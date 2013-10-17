@@ -116,7 +116,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
                 ),
                 'Baz' => array(
                     'versions' => array('4.0.0', ''),
-                    'uses' => 1,
+                    'uses' => 2,
                     'sources' => array(TEST_FILES_PATH . 'source1.php'),
                     'namespace' => '\\',
                     'excluded' => false,
