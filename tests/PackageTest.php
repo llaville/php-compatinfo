@@ -133,6 +133,8 @@ class PHP_CompatInfo_PackageTest extends PHPUnit_Framework_TestCase
         sort($constants);
 
         $expected = array(
+            'OS_WINDOWS',
+            'PEAR_CONFIG_SYSCONFDIR',
             'PEAR_PACKAGEUPDATE_ERROR_INVALIDPREF',
             'PEAR_PACKAGEUPDATE_ERROR_INVALIDSTATE',
             'PEAR_PACKAGEUPDATE_ERROR_INVALIDTYPE',
