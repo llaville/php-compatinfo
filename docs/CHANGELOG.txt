@@ -43,6 +43,7 @@ include::attributes.txt[]
 * update varnish reference to 1.1.0
 * update zip reference to 1.12.1
 * update xcache reference to 3.1.0
+* update zend opcache reference to 7.0.3-dev bundled in PHP 5.5.5
 * convert test case classes from standard fixtures to shared fixtures
 * DYN (lazy loader) is now rules completed. May be used in production
 * tests suites may be now run with default memory limit

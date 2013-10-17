@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_ZendOPcache
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '7.0.2';  // 2013-06-05 (beta)
+    const REF_VERSION = '7.0.3-dev';   // 2013-10-17 (bundled in 5.5.5)
 
     /**
      * Gets informations about extensions
@@ -91,7 +91,7 @@ class PHP_CompatInfo_Reference_ZendOPcache
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '7.0.3-dev';       // 2013-10-17 (bundled in 5.5.5)
+        $release = '7.0.3-dev';   // 2013-10-17 (bundled in 5.5.5)
         $items = array(
             'opcache_compile_file'             => array('5.2.0', ''),
         );
