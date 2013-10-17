@@ -34,7 +34,7 @@ include::attributes.txt[]
 |===========================
 
 
-== Version 2.24.0 _(2013-mm-dd)_
+== Version 2.24.0 _(2013-10-17)_
 
 .Additions and changes:
 * update imagick reference to 3.1.2
