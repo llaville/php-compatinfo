@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Lzf
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.6.2';
+    const REF_VERSION = '1.6.2';  // 2012-07-08 (stable)
 
     /**
      * Gets informations about extensions

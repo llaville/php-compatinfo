@@ -8,6 +8,7 @@
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    GIT: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
@@ -21,56 +22,61 @@
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Remi Collet <Remi@FamilleCollet.com>
+ * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
  */
 class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 {
-    protected $obj = NULL;
-    protected $ref = NULL;
+    protected static $obj = NULL;
+    protected static $ref = NULL;
+    protected static $ext = NULL;
 
     // Could be defined in Reference but missing (system dependant)
-    protected $optionalconstants   = array();
-    protected $optionalfunctions   = array();
-    protected $optionalclasses     = array();
-    protected $optionalinterfaces  = array();
+    protected static $optionalconstants   = array();
+    protected static $optionalfunctions   = array();
+    protected static $optionalclasses     = array();
+    protected static $optionalinterfaces  = array();
 
     // Could be present but missing in Reference (alias, ...)
-    protected $ignoredfunctions     = array();
-    protected $ignoredconstants     = array();
-    protected $ignoredclasses       = array();
-    protected $ignoredinterfaces    = array();
+    protected static $ignoredfunctions     = array();
+    protected static $ignoredconstants     = array();
+    protected static $ignoredclasses       = array();
+    protected static $ignoredinterfaces    = array();
 
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @return void
+     * @link   http://phpunit.de/manual/current/en/fixtures.html#fixtures.sharing-fixture
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        if ($this->obj instanceof PHP_CompatInfo_Reference) {
-            $this->ref = $this->obj->getAll();
+        if (!self::$obj instanceof PHP_CompatInfo_Reference) {
+            return;
         }
-        if (isset($this->ref['extensions'])) {
-            foreach ($this->ref['extensions'] as $extname => $opt) {
-                if (!extension_loaded($extname)) {
-                    // if dynamic extension load is activated
-                    $loaded = (bool) ini_get('enable_dl');
-                    if ($loaded) {
-                        // give a second chance
-                        $prefix = (PHP_SHLIB_SUFFIX === 'dll') ? 'php_' : '';
-                        $loaded = @dl($prefix . $extname . '.' . PHP_SHLIB_SUFFIX);
-                    }
-                    if ($loaded === false) {
-                        $this->markTestSkipped(
-                            "The '$extname' extension is not available."
-                        );
-                    }
-                }
+        $obj     = self::$obj;
+        $extname = $obj::REF_NAME;
+
+        if (!extension_loaded($extname)) {
+            // if dynamic extension load is activated
+            $loaded = (bool) ini_get('enable_dl');
+            if ($loaded) {
+                // give a second chance
+                $prefix = (PHP_SHLIB_SUFFIX === 'dll') ? 'php_' : '';
+                @dl($prefix . $extname . '.' . PHP_SHLIB_SUFFIX);
             }
+            self::$ext = $extname;
+        }
+        if (extension_loaded($extname)) {
+            self::$ref = $obj->getAll();
+        } else {
+            self::$ref = NULL;
         }
     }
+
+
 
     /**
      * Test the reference structure of an extension
@@ -79,37 +85,39 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      */
     public function testReference()
     {
-        if (is_null($this->ref)) {
-            return;
+        if (is_null(self::$ref)) {
+            $this->markTestSkipped(
+                "The '" . self::$ext . "' extension is not available."
+            );
         }
 
         $this->assertArrayHasKey(
             'extensions',
-            $this->ref,
+            self::$ref,
             "No extension in Reference"
         );
 
         $this->assertArrayHasKey(
             'functions',
-            $this->ref,
+            self::$ref,
             "No function in Reference"
         );
 
         $this->assertArrayHasKey(
             'constants',
-            $this->ref,
+            self::$ref,
             "No constant in Reference"
         );
 
         $this->assertArrayHasKey(
             'classes',
-            $this->ref,
+            self::$ref,
             "No classe in Reference"
         );
 
         $this->assertArrayHasKey(
             'interfaces',
-            $this->ref,
+            self::$ref,
             "No interface in Reference"
         );
     }
@@ -123,18 +131,18 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      */
     public function testGetFunctionsFromReference()
     {
-        if (is_null($this->ref)) {
+        if (is_null(self::$ref)) {
             return;
         }
 
-        foreach ($this->ref['functions'] as $fctname => $range) {
+        foreach (self::$ref['functions'] as $fctname => $range) {
             list($min, $max) = $range;
             if (array_key_exists('excludes', $range)
                 && in_array(PHP_VERSION, $range['excludes'])
             ) {
-                array_push($this->ignoredfunctions, $fctname);
+                array_push(self::$ignoredfunctions, $fctname);
             }
-            if (!in_array($fctname, $this->optionalfunctions)
+            if (!in_array($fctname, self::$optionalfunctions)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
             ) {
@@ -143,7 +151,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                     "Function '$fctname', found in Reference, does not exists."
                 );
             }
-            if (!in_array($fctname, $this->ignoredfunctions)) {
+            if (!in_array($fctname, self::$ignoredfunctions)) {
                 if (($min && version_compare(PHP_VERSION, $min)<0)
                     || ($max && version_compare(PHP_VERSION, $max)>0)
                 ) {
@@ -165,11 +173,11 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      */
     public function testGetFunctionsFromExtension()
     {
-        if (is_null($this->ref)) {
+        if (is_null(self::$ref)) {
             return;
         }
 
-        foreach ($this->ref['extensions'] as $extname => $opt) {
+        foreach (self::$ref['extensions'] as $extname => $opt) {
             $ext = get_extension_funcs($extname);
             if (!is_array($ext)) {
                 // At least, for sqlite3 (PHP Bug ?)
@@ -177,10 +185,10 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
             }
 
             foreach ($ext as $fctname) {
-                if (!in_array($fctname, $this->ignoredfunctions)) {
+                if (!in_array($fctname, self::$ignoredfunctions)) {
                     $this->assertArrayHasKey(
                         $fctname,
-                        $this->ref['functions'],
+                        self::$ref['functions'],
                         "Defined function '$fctname' not known in Reference."
                     );
                 }
@@ -197,18 +205,18 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      */
     public function testGetConstantsFromReference()
     {
-        if (is_null($this->ref)) {
+        if (is_null(self::$ref)) {
             return;
         }
 
-        foreach ($this->ref['constants'] as $constname => $range) {
+        foreach (self::$ref['constants'] as $constname => $range) {
             list($min, $max) = $range;
             if (array_key_exists('excludes', $range)
                 && in_array(PHP_VERSION, $range['excludes'])
             ) {
-                array_push($this->ignoredconstants, $constname);
+                array_push(self::$ignoredconstants, $constname);
             }
-            if (!in_array($constname, $this->optionalconstants)
+            if (!in_array($constname, self::$optionalconstants)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
             ) {
@@ -217,7 +225,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                     "Constant '$constname', found in Reference, does not exists."
                 );
             }
-            if (!in_array($constname, $this->ignoredconstants)) {
+            if (!in_array($constname, self::$ignoredconstants)) {
                 if (($min && version_compare(PHP_VERSION, $min)<0)
                     || ($max && version_compare(PHP_VERSION, $max)>0)
                 ) {
@@ -239,20 +247,20 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      */
     public function testGetConstantsFromExtension()
     {
-        if (is_null($this->ref)) {
+        if (is_null(self::$ref)) {
             return;
         }
 
         $const = get_defined_constants(true);
 
-        foreach ($this->ref['extensions'] as $extname => $opt) {
+        foreach (self::$ref['extensions'] as $extname => $opt) {
             if (isset($const[$extname])) {
                 // Test if each constants are in reference
                 foreach ($const[$extname] as $constname => $value) {
-                    if (!in_array($constname, $this->ignoredconstants)) {
+                    if (!in_array($constname, self::$ignoredconstants)) {
                         $this->assertArrayHasKey(
                             $constname,
-                            $this->ref['constants'],
+                            self::$ref['constants'],
                             "Defined constant '$constname' not known in Reference."
                         );
                     }
@@ -270,18 +278,18 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      */
     public function testGetClassesFromReference()
     {
-        if (is_null($this->ref)) {
+        if (is_null(self::$ref)) {
             return;
         }
 
-        foreach ($this->ref['classes'] as $classname => $range) {
+        foreach (self::$ref['classes'] as $classname => $range) {
             list($min, $max) = $range;
             if (array_key_exists('excludes', $range)
                 && in_array(PHP_VERSION, $range['excludes'])
             ) {
-                array_push($this->ignoredclasses, $constname);
+                array_push(self::$ignoredclasses, $constname);
             }
-            if (!in_array($classname, $this->optionalclasses)
+            if (!in_array($classname, self::$optionalclasses)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
             ) {
@@ -290,7 +298,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                     "Class '$classname', found in Reference, does not exists."
                 );
             }
-            if (!in_array($classname, $this->ignoredclasses)) {
+            if (!in_array($classname, self::$ignoredclasses)) {
                 if (($min && version_compare(PHP_VERSION, $min)<0)
                     || ($max && version_compare(PHP_VERSION, $max)>0)
                 ) {
@@ -312,11 +320,11 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      */
     public function testGetClassesFromExtension()
     {
-        if (is_null($this->ref)) {
+        if (is_null(self::$ref)) {
             return;
         }
 
-        foreach ($this->ref['extensions'] as $extname => $opt) {
+        foreach (self::$ref['extensions'] as $extname => $opt) {
             if ('internal' == $extname) {
                 // only Core is a valid extension name for API reflection
                 continue;
@@ -326,18 +334,18 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
 
             foreach ($classes as $classname) {
                 if (class_exists($classname)) {
-                    if (!in_array($classname, $this->ignoredclasses)) {
+                    if (!in_array($classname, self::$ignoredclasses)) {
                         $this->assertArrayHasKey(
                             $classname,
-                            $this->ref['classes'],
+                            self::$ref['classes'],
                             "Defined class '$classname' not known in Reference."
                         );
                     }
                 } else {
-                    if (!in_array($classname, $this->ignoredinterfaces)) {
+                    if (!in_array($classname, self::$ignoredinterfaces)) {
                         $this->assertArrayHasKey(
                             $classname,
-                            $this->ref['interfaces'],
+                            self::$ref['interfaces'],
                             "Defined interface '$classname' not known in Reference."
                         );
                     }
@@ -355,19 +363,19 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
      */
     public function testGetInterfacesFromReference()
     {
-        if (is_null($this->ref)) {
+        if (is_null(self::$ref)) {
             return;
         }
 
-        foreach ($this->ref['interfaces'] as $intname => $range) {
+        foreach (self::$ref['interfaces'] as $intname => $range) {
             list($min, $max) = $range;
             if (array_key_exists('excludes', $range)
                 && in_array(PHP_VERSION, $range['excludes'])
             ) {
-                array_push($this->optionalinterfaces, $intname);
+                array_push(self::$optionalinterfaces, $intname);
             }
 
-            if (!in_array($intname, $this->optionalinterfaces)
+            if (!in_array($intname, self::$optionalinterfaces)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
             ) {

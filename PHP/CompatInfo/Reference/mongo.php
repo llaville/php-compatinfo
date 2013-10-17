@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Mongo
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.4.3';
+    const REF_VERSION = '1.4.4';  // 2013-09-25 (stable)
 
     /**
      * Gets informations about extensions
@@ -212,7 +212,7 @@ class PHP_CompatInfo_Reference_Mongo
 
         $constants = array();
 
-        $release = '1.4.2';      // 2013-07-23
+        $release = '1.4.2';      // 2013-07-23 (stable)
         $items = array(
             'MONGO_STREAMS'                  => array('5.2.6', ''),
         );

@@ -1,2 +1,2 @@
-:revdate:    2013-09-23
-:revnumber:  2.23.1
+:revdate:    2013-10-17
+:revnumber:  2.24.0

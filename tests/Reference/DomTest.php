@@ -32,7 +32,7 @@ class PHP_CompatInfo_Reference_DomTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Dom::getExtensions
      * @covers PHP_CompatInfo_Reference_Dom::getFunctions
@@ -40,9 +40,9 @@ class PHP_CompatInfo_Reference_DomTest
      * @covers PHP_CompatInfo_Reference_Dom::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Dom();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Dom();
+        parent::setUpBeforeClass();
     }
 }

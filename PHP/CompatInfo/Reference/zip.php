@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Zip
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.11.0';
+    const REF_VERSION = '1.12.1'; // 2013-04-29 (beta)
 
     /**
      * Gets informations about extensions
@@ -73,7 +73,7 @@ class PHP_CompatInfo_Reference_Zip
 
         $classes = array();
 
-        $release = '1.6.0';       // 2006-07-25
+        $release = '1.6.0';       // 2006-07-25 (beta)
         $items = array(
             'ZipArchive'                     => array('5.2.0', ''),
         );
@@ -100,7 +100,7 @@ class PHP_CompatInfo_Reference_Zip
 
         $functions = array();
 
-        $release = '1.0';         // 2003-05-21
+        $release = '1.0';         // 2003-05-21 (stable)
         $items = array(
             'zip_close'                      => array('4.3.0', ''),
             'zip_entry_close'                => array('4.3.0', ''),

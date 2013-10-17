@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Gender
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.0';
+    const REF_VERSION = '1.0.0';  // 2013-06-02 (stable)
 
     /**
      * Gets informations about extensions

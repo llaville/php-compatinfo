@@ -32,7 +32,7 @@ class PHP_CompatInfo_Reference_CurlTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Curl::getExtensions
      * @covers PHP_CompatInfo_Reference_Curl::getFunctions
@@ -40,13 +40,13 @@ class PHP_CompatInfo_Reference_CurlTest
      * @covers PHP_CompatInfo_Reference_Curl::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             'CURLOPT_MUTE',
             'CURLOPT_PASSWDFUNCTION',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Curl();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Curl();
+        parent::setUpBeforeClass();
     }
 }

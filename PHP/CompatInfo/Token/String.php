@@ -47,8 +47,16 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             }
             $this->name = $namespace;
         }
+        else if ($this->_isClassCall()) {
+            $this->type = 'classcall';
+            $this->name = $this->tokenStream[$this->id][1];
+        }
         else if ($this->_isFunction()) {
             $this->type = 'function';
+            $this->name = $this->tokenStream[$this->id][1];
+        }
+        elseif ($this->_getContext(-2) == 'T_FUNCTION') {
+            $this->type = 'user';
             $this->name = $this->tokenStream[$this->id][1];
         }
         else if ($this->_isInterface()) {
@@ -73,18 +81,22 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
         return $this->type;
     }
 
-    private function _isFunction()
+    private function _isClassCall()
     {
         if ($this->_getContext(-2) == 'T_DOUBLE_COLON' ||
             $this->_getContext(-1) == 'T_DOUBLE_COLON') {
-            return false;  // methodName of static class call
+            return true;  // methodName of static class call
         }
 
         if ($this->_getContext(-2) == 'T_OBJECT_OPERATOR' ||
             $this->_getContext(-1) == 'T_OBJECT_OPERATOR') {
-            return false;  // property or methodName class call
+            return true;  // property or methodName class call
         }
+        return false;
+    }
 
+    private function _isFunction()
+    {
         if ($this->_getContext(-2) == 'T_NEW'
             || $this->_getContext(-1) == 'T_NS_SEPARATOR'
         ) {
@@ -100,19 +112,6 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             return true;
         }
         return false;
-    }
-
-    private function _isConstant()
-    {
-        if ($this->_getContext(-2) == 'T_DOUBLE_COLON' ||
-            $this->_getContext(-1) == 'T_DOUBLE_COLON') {
-            return false;  // constant class call
-        }
-
-        $constants = get_defined_constants();
-        $name      = $this->tokenStream[$this->id][1];
-
-        return (array_key_exists(strtoupper($name), $constants));
     }
 
     private function _isInterface()
@@ -152,6 +151,17 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
         $name = $this->tokenStream[$this->id][1];
         if ('self' == $name || 'parent' == $name) {
             return false;
+        }
+
+        if ($this->_getContext(-2) == 'T_INSTANCEOF') {
+            return true;
+        }
+
+        if (   $this->_getContext(1) == 'T_WHITESPACE'
+            && $this->_getContext(2) == 'T_VARIABLE'
+        ) {
+            // type hinting (object)
+            return true;
         }
 
         if ($this->_getContext(-1) == 'T_NS_SEPARATOR') {
@@ -219,6 +229,22 @@ class PHP_CompatInfo_Token_STRING extends PHP_Reflect_Token_STRING
             } while (true);
         }
         return false;
+    }
+
+    private function _isConstant()
+    {
+        $name = $this->tokenStream[$this->id][1];
+        if ('self' == $name || 'parent' == $name) {
+            return false;
+        }
+
+        if (    $this->_getContext(-1) == 'T_OBJECT_OPERATOR'
+            ||  $this->_getContext(-2) == 'T_OBJECT_OPERATOR'
+        ) {
+            // class properties
+            return false;
+        }
+        return true;
     }
 
     private function _getContext($i)

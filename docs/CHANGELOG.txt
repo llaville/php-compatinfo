@@ -7,6 +7,7 @@ include::attributes.txt[]
 [options="header", cols="3,3", role="table table-bordered table-striped"]
 |===========================
 | Version | PHP versions supported
+| 2.24.0  | add both support to PHP 5.4.21 and 5.5.5
 | 2.23.0  | add both support to PHP 5.4.20 and 5.5.4
 | 2.22.0  | add both support to PHP 5.4.19 and 5.5.3
 | 2.21.0  | add both support to PHP 5.4.18 and 5.5.2
@@ -31,6 +32,29 @@ include::attributes.txt[]
 | 2.2.0   | all PHP versions until 5.3.9
 | 2.1.0   | all PHP versions until 5.3.8
 |===========================
+
+
+== Version 2.24.0 _(2013-10-17)_
+
+.Additions and changes:
+* update imagick reference to 3.1.2
+* update mongo reference to 1.4.4
+* update xhprof reference to 0.9.4
+* update varnish reference to 1.1.0
+* update zip reference to 1.12.1
+* update xcache reference to 3.1.0
+* update zend opcache reference to 7.0.3-dev bundled in PHP 5.5.5
+* convert test case classes from standard fixtures to shared fixtures
+* DYN (lazy loader) is now rules completed. May be used in production
+* tests suites may be now run with default memory limit
+* _extension not available_ message is received by all PHPUnit test listeners
+* add a new PHPUnit test listener useful to know what reference is loaded and tested
+* add composer support (GH-102 request)
+* raise PHP_Reflect dependency to 1.9.0
+* detect more constants (when used as argument in function signature/call)
+
+.Bug fixes:
+* none
 
 
 == Version 2.23.1 _(2013-09-23)_

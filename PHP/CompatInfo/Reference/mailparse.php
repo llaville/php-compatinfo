@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Mailparse
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '2.1.6';
+    const REF_VERSION = '2.1.6';  // 2012-03-09 (stable)
 
     /**
      * Gets informations about extensions

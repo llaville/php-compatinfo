@@ -1,0 +1,51 @@
+{
+    "name": "pear-bartlett/PHP_CompatInfo",
+    "description": "Find out the minimum version and the extensions required for a piece of code to run",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "homepage": "http://php5.laurent-laville.org/compatinfo/",
+    "support": {
+        "source": "https://github.com/llaville/php-compat-info",
+        "issues": "https://github.com/llaville/php-compat-info/issues"
+    },
+    "repositories": [
+        {
+            "type": "pear",
+            "url": "http://bartlett.laurent-laville.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "pear-pear/Console_CommandLine": ">=1.2.0",
+        "pear-bartlett/PHP_Reflect": ">=1.8.0,<=1.99.0",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "ext-pcre": "*",
+        "ext-SPL": "*",
+        "ext-Reflection": "*"
+    },
+    "suggest": {
+        "pear-pear/Net_Growl": ">=2.6.0",
+        "pear-phpunit/PHPUnit": ">=3.6.0",
+        "pear-phpunit/PHP_Timer": ">=1.0.0"
+    },
+    "authors": [
+        {
+            "name": "Laurent Laville",
+            "email": "pear@laurent-laville.org",
+            "homepage": "https://github.com/llaville",
+            "role": "Lead"
+        },
+        {
+            "name": "Remi Collet",
+            "email": "",
+            "homepage": "https://github.com/remicollet",
+            "role": "Contributor"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "PHP"
+        ]
+    }
+}

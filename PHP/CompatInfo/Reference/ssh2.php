@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Ssh2
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '0.12';
+    const REF_VERSION = '0.12';   // 2012-10-15 (beta)
 
     /**
      * Gets informations about extensions
@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_Ssh2
 
         $functions = array();
 
-        $release = '0.5';         // 2005-01-11
+        $release = '0.5';         // 2005-01-11 (beta)
         $items = array(
             'ssh2_auth_none'                 => array('4.0.0', ''),
             'ssh2_auth_password'             => array('4.0.0', ''),
@@ -103,19 +103,19 @@ class PHP_CompatInfo_Reference_Ssh2
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.7';         // 2005-02-24
+        $release = '0.7';         // 2005-02-24 (beta)
         $items = array(
             'ssh2_auth_hostbased_file'       => array('4.0.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.8';         // 2005-05-17
+        $release = '0.8';         // 2005-05-17 (beta)
         $items = array(
             'ssh2_poll'                      => array('4.0.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.10';        // 2005-11-01
+        $release = '0.10';        // 2005-11-01 (beta)
         $items = array(
             'ssh2_publickey_add'             => array('4.0.0', ''),
             'ssh2_publickey_init'            => array('4.0.0', ''),
@@ -124,7 +124,7 @@ class PHP_CompatInfo_Reference_Ssh2
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.12';        // 2012-10-15
+        $release = '0.12';        // 2012-10-15 (beta)
         $items = array(
             'ssh2_sftp_chmod'                => array('4.0.0', ''),
             'ssh2_auth_agent'                => array('4.0.0', ''),
@@ -152,7 +152,7 @@ class PHP_CompatInfo_Reference_Ssh2
 
         $constants = array();
 
-        $release = '0.5';         // 2005-01-11
+        $release = '0.5';         // 2005-01-11 (beta)
         $items = array(
             'SSH2_TERM_UNIT_CHARS'              => array('4.0.0', ''),
             'SSH2_TERM_UNIT_PIXELS'             => array('4.0.0', ''),
@@ -169,7 +169,7 @@ class PHP_CompatInfo_Reference_Ssh2
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '0.8';         // 2005-05-17
+        $release = '0.8';         // 2005-05-17 (beta)
         $items = array(
             'SSH2_POLLERR'                      => array('4.0.0', ''),
             'SSH2_POLLEXT'                      => array('4.0.0', ''),

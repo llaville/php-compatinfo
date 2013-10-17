@@ -32,21 +32,21 @@ class PHP_CompatInfo_Reference_TokenizerTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Tokenizer::getExtensions
      * @covers PHP_CompatInfo_Reference_Tokenizer::getFunctions
      * @covers PHP_CompatInfo_Reference_Tokenizer::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->ignoredconstants = array(
+        self::$ignoredconstants = array(
             // Seems to be defined in 5.2.17...
             'T_NAMESPACE',
             'T_USE',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Tokenizer();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Tokenizer();
+        parent::setUpBeforeClass();
     }
 }

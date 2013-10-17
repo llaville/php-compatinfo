@@ -35,23 +35,21 @@ if (!defined('TEST_FILES_PATH')) {
  */
 class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
 {
-    protected $pci;
+    protected static $compatInfo;
 
     /**
-     * Sets up the fixture.
-     *
-     * Parse source code to find all constants
+     * Sets up the shared fixture.
      *
      * @return void
+     * @link   http://phpunit.de/manual/current/en/fixtures.html#fixtures.sharing-fixture
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $options = array(
             'cacheDriver' => 'null',
         );
-
-        $this->pci = new PHP_CompatInfo($options);
-        $this->pci->parse(TEST_FILES_PATH . 'source2.php');
+        self::$compatInfo = new PHP_CompatInfo($options);
+        self::$compatInfo->parse(TEST_FILES_PATH . 'source2.php');
     }
 
     /**
@@ -63,7 +61,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
      */
     public function testGetConstantsFullReport()
     {
-        $constants = $this->pci->getConstants();
+        $constants = self::$compatInfo->getConstants();
 
         $this->assertArrayHasKey(
             'user', $constants
@@ -122,7 +120,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
      */
     public function testGetConstantsFilterByCategory()
     {
-        $constants = $this->pci->getConstants('user');
+        $constants = self::$compatInfo->getConstants('user');
 
         $expected = array(
             'APPLICATION_ENV' => array(
@@ -155,7 +153,7 @@ class PHP_CompatInfo_ConstantTest extends PHPUnit_Framework_TestCase
      */
     public function testGetConstantsFilterByCategoryAndPattern()
     {
-        $constants = $this->pci->getConstants('Core', '^NULL$');
+        $constants = self::$compatInfo->getConstants('Core', '^NULL$');
 
         $expected = array(
             'NULL' => array(

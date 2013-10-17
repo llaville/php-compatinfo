@@ -34,14 +34,14 @@ class PHP_CompatInfo_Reference_LibeventTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Libevent::getClasses
      * @covers PHP_CompatInfo_Reference_Libevent::getFunctions
      * @covers PHP_CompatInfo_Reference_Libevent::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $extversion = phpversion(PHP_CompatInfo_Reference_Libevent::REF_NAME);
 
@@ -49,14 +49,14 @@ class PHP_CompatInfo_Reference_LibeventTest
             // Win*
             if ('0.0.4' === $extversion) {
                 // only available since version 0.0.5
-                array_push($this->ignoredfunctions, 'event_priority_set');
+                array_push(self::$ignoredfunctions, 'event_priority_set');
             }
-            array_push($this->optionalfunctions, 'event_base_reinit');
+            array_push(self::$optionalfunctions, 'event_base_reinit');
         } else {
             // *nix
         }
 
-        $this->obj = new PHP_CompatInfo_Reference_Libevent();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Libevent();
+        parent::setUpBeforeClass();
     }
 }

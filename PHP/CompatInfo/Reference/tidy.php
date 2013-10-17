@@ -92,13 +92,13 @@ class PHP_CompatInfo_Reference_Tidy
 
         $classes = array();
 
-        $release = '0.5.2';       // 2003-08-06
+        $release = '0.5.2';       // 2003-08-06 (beta)
         $items = array(
             'tidy'                     => array('4.3.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '0.7.0';       // 2003-09-22
+        $release = '0.7.0';       // 2003-09-22 (beta)
         $items = array(
             'tidyNode'                 => array('5.0.1', ''),
         );
@@ -125,7 +125,7 @@ class PHP_CompatInfo_Reference_Tidy
 
         $functions = array();
 
-        $release = '0.5.2';       // 2003-08-06
+        $release = '0.5.2';       // 2003-08-06 (beta)
         $items = array(
             'tidy_access_count'                 => array('4.3.0', ''),
             'tidy_clean_repair'                 => array('4.3.0', ''),
@@ -176,7 +176,7 @@ class PHP_CompatInfo_Reference_Tidy
             '1.2', 'tidy_load_config_enc', $functions
         );
 
-        $release = '0.7.0';       // 2003-09-22
+        $release = '0.7.0';       // 2003-09-22 (beta)
         $items = array(
             'tidy_repair_string'                => array('4.3.0', ''),
             'tidy_repair_file'                  => array('4.3.0', ''),
@@ -213,7 +213,7 @@ class PHP_CompatInfo_Reference_Tidy
 
         $constants = array();
 
-        $release = '0.5.2';       // 2003-08-06
+        $release = '0.5.2';       // 2003-08-06 (beta)
         $items = array(
             'TIDY_NODETYPE_ASP'                 => array('4.3.0', ''),
             'TIDY_NODETYPE_CDATA'               => array('4.3.0', ''),

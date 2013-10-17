@@ -34,29 +34,29 @@ class PHP_CompatInfo_Reference_SnmpTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Snmp::getExtensions
      * @covers PHP_CompatInfo_Reference_Snmp::getFunctions
      * @covers PHP_CompatInfo_Reference_Snmp::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         if (DIRECTORY_SEPARATOR == '\\') {
             // Win32 only
-            $this->optionalconstants = array(
+            self::$optionalconstants = array(
                 'SNMP_OID_OUTPUT_FULL',
                 'SNMP_OID_OUTPUT_NUMERIC',
             );
-            $this->optionalfunctions = array(
+            self::$optionalfunctions = array(
                 'snmp_set_enum_print',
                 'snmp_set_oid_output_format',
                 'snmp_set_oid_numeric_print',
             );
         }
 
-        $this->obj = new PHP_CompatInfo_Reference_Snmp();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Snmp();
+        parent::setUpBeforeClass();
     }
 }

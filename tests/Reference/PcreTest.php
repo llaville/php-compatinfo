@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_PcreTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Pcre::getExtensions
      * @covers PHP_CompatInfo_Reference_Pcre::getFunctions
      * @covers PHP_CompatInfo_Reference_Pcre::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Pcre();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Pcre();
+        parent::setUpBeforeClass();
     }
 }

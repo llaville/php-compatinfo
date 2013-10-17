@@ -32,17 +32,17 @@ class PHP_CompatInfo_Reference_SocketsTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Sockets::getExtensions
      * @covers PHP_CompatInfo_Reference_Sockets::getFunctions
      * @covers PHP_CompatInfo_Reference_Sockets::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         if (PATH_SEPARATOR == ':') {
-            $this->optionalconstants = array(
+            self::$optionalconstants = array(
                 // Win32 only (from ext/sockets/win32_socket_constants.h)
                 'SOCKET_EDISCON',
                 'SOCKET_EPROCLIM',
@@ -57,7 +57,7 @@ class PHP_CompatInfo_Reference_SocketsTest
                 'SOCKET_VERNOTSUPPORTED',
             );
         } else {
-            $this->optionalconstants = array(
+            self::$optionalconstants = array(
                 // Unix only (from ext/sockets/unix_socket_constants.h)
                 'SOCKET_E2BIG',
                 'SOCKET_EADV',
@@ -202,13 +202,13 @@ class PHP_CompatInfo_Reference_SocketsTest
             'IPPROTO_IPV6',
             'IPV6_UNICAST_HOPS',
         );
-        $this->optionalconstants = array_merge($this->optionalconstants, $tmp);
+        self::$optionalconstants = array_merge(self::$optionalconstants, $tmp);
 
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             // requires HAVE_SOCKETPAIR
             'socket_create_pair',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Sockets();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Sockets();
+        parent::setUpBeforeClass();
     }
 }

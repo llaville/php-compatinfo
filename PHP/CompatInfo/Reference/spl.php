@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_SPL
 
         $interfaces = array();
 
-        $release = '5.1.0';       // 2005-11-24
+        $release = '5.1.0';       // 2005-11-24 (stable)
         $items = array(
             'Countable'                      => array('5.1.0', ''),
             'OuterIterator'                  => array('5.1.0', ''),
@@ -85,7 +85,7 @@ class PHP_CompatInfo_Reference_SPL
         );
         $this->applyFilter($release, $items, $interfaces);
 
-        $release = '5.1.0';       // 2005-11-24
+        $release = '5.1.0';       // 2005-11-24 (stable)
         $items = array(
             'ArrayAccess'                    => array('5.1.0', ''),
             'Iterator'                       => array('5.1.0', ''),
@@ -124,7 +124,7 @@ class PHP_CompatInfo_Reference_SPL
 
         $classes = array();
 
-        $release = '5.0.0';       // 2004-07-13
+        $release = '5.0.0';       // 2004-07-13 (stable)
         $items = array(
             'ArrayIterator'                     => array('5.0.0', ''),
             'ArrayObject'                       => array('5.0.0', ''),
@@ -133,15 +133,13 @@ class PHP_CompatInfo_Reference_SPL
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '5.1.0';       // 2005-11-24
+        $release = '5.1.0';       // 2005-11-24 (stable)
         $items = array(
             'AppendIterator'                    => array('5.1.0', ''),
             'BadFunctionCallException'          => array('5.1.0', ''),
             'BadMethodCallException'            => array('5.1.0', ''),
             'DomainException'                   => array('5.1.0', ''),
             'EmptyIterator'                     => array('5.1.0', ''),
-            'ErrorException'                    => array('5.1.0', ''),
-            'Exception'                         => array('5.1.0', ''),
             'FilterIterator'                    => array('5.1.0', ''),
             'InfiniteIterator'                  => array('5.1.0', ''),
             'InvalidArgumentException'          => array('5.1.0', ''),
@@ -166,7 +164,7 @@ class PHP_CompatInfo_Reference_SPL
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '5.1.0';       // 2005-11-24
+        $release = '5.1.0';       // 2005-11-24 (stable)
         $items = array(
             'SimpleXMLIterator'                 => array('5.1.0', ''),
         );
@@ -175,7 +173,7 @@ class PHP_CompatInfo_Reference_SPL
             self::LATEST_PHP_5_2, 'SimpleXMLIterator', $classes
         );
 
-        $release = '5.1.2';       // 2006-01-12
+        $release = '5.1.2';       // 2006-01-12 (stable)
         $items = array(
             'RecursiveDirectoryIterator'        => array('5.1.2', ''),
             'SplFileInfo'                       => array('5.1.2', ''),
@@ -183,20 +181,20 @@ class PHP_CompatInfo_Reference_SPL
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '5.1.3';       // 2006-05-02
+        $release = '5.1.3';       // 2006-05-02 (stable)
         $items = array(
             'RecursiveIteratorIterator'         => array('5.1.3', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '5.2.0';       // 2006-11-02
+        $release = '5.2.0';       // 2006-11-02 (stable)
         $items = array(
             'RecursiveRegexIterator'            => array('5.2.0', ''),
             'RegexIterator'                     => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '5.3.0';       // 2009-06-30
+        $release = '5.3.0';       // 2009-06-30 (stable)
         $items = array(
             'FilesystemIterator'                => array('5.3.0', ''),
             'GlobIterator'                      => array('5.3.0', ''),
@@ -213,7 +211,7 @@ class PHP_CompatInfo_Reference_SPL
         );
         $this->applyFilter($release, $items, $classes);
 
-        $release = '5.4.0';       // 2012-03-01
+        $release = '5.4.0';       // 2012-03-01 (stable)
         $items = array(
             'CallbackFilterIterator'            => array('5.4.0', ''),
             'RecursiveCallbackFilterIterator'   => array('5.4.0', ''),
@@ -241,13 +239,13 @@ class PHP_CompatInfo_Reference_SPL
 
         $functions = array();
 
-        $release = '5.0.0';       // 2004-07-13
+        $release = '5.0.0';       // 2004-07-13 (stable)
         $items = array(
             'spl_classes'                    => array('5.0.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.1.0';       // 2005-11-24
+        $release = '5.1.0';       // 2005-11-24 (stable)
         $items = array(
             'class_implements'               => array('5.1.0', ''),
             'class_parents'                  => array('5.1.0', ''),
@@ -257,7 +255,7 @@ class PHP_CompatInfo_Reference_SPL
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.1.2';       // 2006-01-12
+        $release = '5.1.2';       // 2006-01-12 (stable)
         $items = array(
             'spl_autoload'                   => array('5.1.2', ''),
             'spl_autoload_call'              => array('5.1.2', ''),
@@ -268,13 +266,13 @@ class PHP_CompatInfo_Reference_SPL
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.2.0';       // 2006-11-02
+        $release = '5.2.0';       // 2006-11-02 (stable)
         $items = array(
             'spl_object_hash'                => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.4.0';       // 2012-03-01
+        $release = '5.4.0';       // 2012-03-01 (stable)
         $items = array(
             'class_uses'                     => array('5.4.0', ''),
         );

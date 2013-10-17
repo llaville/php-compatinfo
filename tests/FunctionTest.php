@@ -35,23 +35,21 @@ if (!defined('TEST_FILES_PATH')) {
  */
 class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
 {
-    protected $pci;
+    protected static $compatInfo;
 
     /**
-     * Sets up the fixture.
-     *
-     * Parse source code to find all functions (user/internal)
+     * Sets up the shared fixture.
      *
      * @return void
+     * @link   http://phpunit.de/manual/current/en/fixtures.html#fixtures.sharing-fixture
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $options = array(
             'cacheDriver' => 'null',
         );
-
-        $this->pci = new PHP_CompatInfo($options);
-        $this->pci->parse(TEST_FILES_PATH . 'source2.php');
+        self::$compatInfo = new PHP_CompatInfo($options);
+        self::$compatInfo->parse(TEST_FILES_PATH . 'source2.php');
     }
 
     /**
@@ -63,7 +61,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
      */
     public function testGetFunctionsFullReport()
     {
-        $functions = $this->pci->getFunctions();
+        $functions = self::$compatInfo->getFunctions();
 
         $this->assertArrayHasKey(
             'user', $functions
@@ -217,7 +215,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
      */
     public function testGetFunctionsFilterByCategory()
     {
-        $functions = $this->pci->getFunctions('user');
+        $functions = self::$compatInfo->getFunctions('user');
 
         if (extension_loaded('xdebug')) {
             $expected = array(
@@ -266,7 +264,7 @@ class PHP_CompatInfo_FunctionTest extends PHPUnit_Framework_TestCase
      */
     public function testGetFunctionsFilterByCategoryAndPattern()
     {
-        $functions = $this->pci->getFunctions('Core', '^debug');
+        $functions = self::$compatInfo->getFunctions('Core', '^debug');
 
         $expected = array(
             'debug_backtrace' => array(

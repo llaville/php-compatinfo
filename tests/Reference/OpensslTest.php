@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_OpensslTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Openssl::getExtensions
      * @covers PHP_CompatInfo_Reference_Openssl::getFunctions
      * @covers PHP_CompatInfo_Reference_Openssl::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             // requires HAVE_OPENSSL_MD2_H
             'OPENSSL_ALGO_MD2',
             // requires OPENSSL_VERSION_NUMBER >= 0x0090806fL
@@ -50,8 +50,8 @@ class PHP_CompatInfo_Reference_OpensslTest
         );
         if (defined('OPENSSL_VERSION_NUMBER')) {
             if (OPENSSL_VERSION_NUMBER < 0x0090708f) {
-                $this->optionalconstants = array_merge(
-                    $this->optionalconstants,
+                self::$optionalconstants = array_merge(
+                    self::$optionalconstants,
                     array(
                         'OPENSSL_ALGO_SHA224',
                         'OPENSSL_ALGO_SHA256',
@@ -62,7 +62,7 @@ class PHP_CompatInfo_Reference_OpensslTest
                 );
             }
         }
-        $this->obj = new PHP_CompatInfo_Reference_Openssl();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Openssl();
+        parent::setUpBeforeClass();
     }
 }

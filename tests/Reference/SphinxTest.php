@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_SphinxTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Sphinx::getExtensions
      * @covers PHP_CompatInfo_Reference_Sphinx::getFunctions
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         // Constants conditionnaly exists (according to libsphinx version)
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             'SPH_RANK_EXPR',
             'SPH_RANK_FIELDMASK',
             'SPH_RANK_MATCHANY',
@@ -49,7 +49,7 @@ class PHP_CompatInfo_Reference_SphinxTest
             'SPH_RANK_SPH04',
             'SPH_RANK_TOTAL',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Sphinx();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Sphinx();
+        parent::setUpBeforeClass();
     }
 }

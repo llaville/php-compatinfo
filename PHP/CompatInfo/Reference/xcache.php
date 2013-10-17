@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_XCache
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '3.0.3';
+    const REF_VERSION = '3.1.0';  // 2013-10-10 (stable)
 
     /**
      * Gets informations about extensions
@@ -74,7 +74,7 @@ class PHP_CompatInfo_Reference_XCache
 
         $functions = array();
 
-        $release = '1.0';         // 2006-06-06
+        $release = '1.0';         // 2006-06-06 (stable)
         $items = array(
             // Common Used Functions
             'xcache_get'                        => array('4.3.0', ''),
@@ -101,7 +101,7 @@ class PHP_CompatInfo_Reference_XCache
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.2.0';       // 2006-12-10
+        $release = '1.2.0';       // 2006-12-10 (stable)
         $items = array(
             // Coverager Functions
             'xcache_coverager_decode'           => array('5.2.0', ''),
@@ -111,14 +111,14 @@ class PHP_CompatInfo_Reference_XCache
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '1.3.0';       // 2009-08-04
+        $release = '1.3.0';       // 2009-08-04 (stable)
         $items = array(
             // Dis/Assembler Opcode Functions
             'xcache_get_opcode_spec'            => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '2.0.0';       // 2012-04-20
+        $release = '2.0.0';       // 2012-04-20 (stable)
         $items = array(
             // Common Used Functions
             'xcache_unset_by_prefix'            => array('5.2.0', ''),
@@ -152,7 +152,7 @@ class PHP_CompatInfo_Reference_XCache
 
         $constants = array();
 
-        $release = '1.0';         // 2006-06-06
+        $release = '1.0';         // 2006-06-06 (stable)
         $items = array(
             'XCACHE_MODULES'                => array('4.3.0', ''),
             'XCACHE_VERSION'                => array('4.3.0', ''),
@@ -335,7 +335,7 @@ class PHP_CompatInfo_Reference_XCache
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '1.3.0';       // 2009-08-04
+        $release = '1.3.0';       // 2009-08-04 (stable)
         $items = array(
             'XC_INIT_NS_FCALL_BY_NAME'      => array('5.3.0', ''),
             'XC_GOTO'                       => array('5.3.0', ''),
@@ -347,7 +347,7 @@ class PHP_CompatInfo_Reference_XCache
         );
         $this->applyFilter($release, $items, $constants);
 
-        $release = '2.0.0';       // 2012-04-20
+        $release = '2.0.0';       // 2012-04-20 (stable)
         $items = array(
             'XC_ADD_TRAIT'                  => array('5.4.0', ''),
             'XC_BIND_TRAITS'                => array('5.4.0', ''),
@@ -355,6 +355,17 @@ class PHP_CompatInfo_Reference_XCache
             'XC_QM_ASSIGN_VAR'              => array('5.4.0', ''),
             'XC_RETURN_BY_REF'              => array('5.4.0', ''),
             'XC_SEPARATE'                   => array('5.4.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '3.1.0';       // 2013-10-10 (stable)
+        $items = array(
+            'XC_OPSPEC_FETCHTYPE'           => array('5.3.0', ''),
+            'XC_DISCARD_EXCEPTION'          => array('5.5.0', ''),
+            'XC_YIELD'                      => array('5.5.0', ''),
+            'XC_GENERATOR_RETURN'           => array('5.5.0', ''),
+            'XC_FAST_CALL'                  => array('5.5.0', ''),
+            'XC_FAST_RET'                   => array('5.5.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 

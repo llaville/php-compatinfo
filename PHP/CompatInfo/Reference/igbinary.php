@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Igbinary
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.1.1';
+    const REF_VERSION = '1.1.1';  // 2011-03-14 (stable)
 
     /**
      * Gets informations about extensions

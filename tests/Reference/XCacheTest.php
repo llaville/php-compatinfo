@@ -32,22 +32,22 @@ class PHP_CompatInfo_Reference_XCacheTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_XCache::getExtensions
      * @covers PHP_CompatInfo_Reference_XCache::getFunctions
      * @covers PHP_CompatInfo_Reference_XCache::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             // Requires specific build optons
             // so not available everywhere
             'xcache_dasm_file',
             'xcache_dasm_string',
         );
-        $this->obj = new PHP_CompatInfo_Reference_XCache();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_XCache();
+        parent::setUpBeforeClass();
     }
 }

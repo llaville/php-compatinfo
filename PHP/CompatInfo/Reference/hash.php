@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Hash
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0';
+    const REF_VERSION = '';
 
     /**
      * Gets informations about extensions

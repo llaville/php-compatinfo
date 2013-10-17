@@ -69,8 +69,9 @@ class PHP_CompatInfo_TokenParser
                 $subject->offsetSet(array($container => $ns), $constants);
             }
 
-        } elseif ($type === 'function') {
-            $container = $subject->options['containers']['core'];
+        } elseif ($type === 'function' || $type === 'user') {
+            $cont      = ($type === 'function') ? 'core' : 'function';
+            $container = $subject->options['containers'][$cont];
 
             $name = $token->getName();
 

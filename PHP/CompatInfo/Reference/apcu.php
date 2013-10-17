@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Apcu
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '4.0.2';
+    const REF_VERSION = '4.0.2';  // 2013-09-14 (beta)
 
     /**
      * Gets informations about extensions

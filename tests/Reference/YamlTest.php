@@ -32,15 +32,15 @@ class PHP_CompatInfo_Reference_YamlTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Yaml::getExtensions
      * @covers PHP_CompatInfo_Reference_Yaml::getFunctions
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Yaml();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Yaml();
+        parent::setUpBeforeClass();
     }
 }

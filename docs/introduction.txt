@@ -36,7 +36,7 @@ CAUTION: Its recommended to migrate to PHP5, because the PHP4 version is not mai
 
 * http://www.php.net[PHP] 5.3.0 or newer
 * http://pear.php.net/package/Console_CommandLine[Console_CommandLine] 1.2.0 or newer from _default_ PEAR channel
-* http://bartlett.laurent-laville.org/[PHP_Reflect] 1.8.0 or newer from _Bartlett_ PEAR channel
+* http://bartlett.laurent-laville.org/[PHP_Reflect] 1.9.0 or newer from _Bartlett_ PEAR channel
 * http://www.php.net/manual/en/book.tokenizer.php[tokenizer] extension
 * http://www.php.net/manual/en/book.pcre.php[pcre] extension
 * http://www.php.net/manual/en/book.spl.php[SPL] extension
@@ -78,4 +78,5 @@ CAUTION: Its recommended to migrate to PHP5, because the PHP4 version is not mai
 | 2.21.0  | 95    |
 | 2.22.0  | 95    |
 | 2.23.0  | 98    | htscanner, Rar, PDFlib
+| 2.24.0  | 98    |
 |===========================

@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Uploadprogress
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.3.1';
+    const REF_VERSION = '1.0.3.1';// 2011-08-15 (stable)
 
     /**
      * Gets informations about extensions
@@ -75,13 +75,13 @@ class PHP_CompatInfo_Reference_Uploadprogress
 
         $functions = array();
 
-        $release = '0.3.0';       // 2006-12-05
+        $release = '0.3.0';       // 2006-12-05 (beta)
         $items = array(
             'uploadprogress_get_info'               => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '0.9.0';       // 2008-07-08
+        $release = '0.9.0';       // 2008-07-08 (beta)
         $items = array(
             'uploadprogress_get_contents'           => array('5.2.0', ''),
         );

@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_SysvmsgTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Sysvmsg::getExtensions
      * @covers PHP_CompatInfo_Reference_Sysvmsg::getFunctions
      * @covers PHP_CompatInfo_Reference_Sysvmsg::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Sysvmsg();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Sysvmsg();
+        parent::setUpBeforeClass();
     }
 }

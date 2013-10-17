@@ -32,28 +32,28 @@ class PHP_CompatInfo_Reference_FileinfoTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Fileinfo::getExtensions
      * @covers PHP_CompatInfo_Reference_Fileinfo::getFunctions
      * @covers PHP_CompatInfo_Reference_Fileinfo::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $extversion = phpversion(PHP_CompatInfo_Reference_Fileinfo::REF_NAME);
 
         if (PATH_SEPARATOR == ';') {
             // Win*
             if ('1.0.5-dev' === $extversion) {
-                array_push($this->ignoredfunctions, 'mime_content_type');
-                array_push($this->ignoredconstants, 'FILEINFO_MIME_ENCODING', 'FILEINFO_MIME_TYPE');
+                array_push(self::$ignoredfunctions, 'mime_content_type');
+                array_push(self::$ignoredconstants, 'FILEINFO_MIME_ENCODING', 'FILEINFO_MIME_TYPE');
             }
         } else {
             // *nix
         }
 
-        $this->obj = new PHP_CompatInfo_Reference_Fileinfo();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Fileinfo();
+        parent::setUpBeforeClass();
     }
 }

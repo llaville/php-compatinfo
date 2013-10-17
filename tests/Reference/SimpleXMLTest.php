@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_SimpleXMLTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_SimpleXML::getExtensions
      * @covers PHP_CompatInfo_Reference_SimpleXML::getFunctions
      * @covers PHP_CompatInfo_Reference_SimpleXML::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_SimpleXML();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_SimpleXML();
+        parent::setUpBeforeClass();
     }
 }

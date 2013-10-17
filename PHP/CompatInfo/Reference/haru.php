@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Haru
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.0.4';
+    const REF_VERSION = '1.0.4';  // 2012-12-23 (stable)
 
     /**
      * Gets informations about extensions

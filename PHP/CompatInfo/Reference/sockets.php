@@ -107,7 +107,7 @@ class PHP_CompatInfo_Reference_Sockets
         );
         $this->applyFilter($release, $items, $functions);
 
-        $release = '5.5.0';       // 2013-06-20 'stable)
+        $release = '5.5.0';       // 2013-06-20 (stable)
         $items = array(
             'socket_cmsg_space'              => array('5.5.0', ''),
             'socket_recvmsg'                 => array('5.5.0', ''),

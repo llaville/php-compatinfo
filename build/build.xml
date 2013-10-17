@@ -21,7 +21,7 @@
     -->
     <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
     <property name="build.target"                value="${project.dir}/build" />
-    <property name="build.version"               value="2.23.1" />
+    <property name="build.version"               value="2.24.0" />
 
     <!--
         ======================================================================
@@ -139,7 +139,7 @@
         <element>
             <element key="channel" value="bartlett.laurent-laville.org" />
             <element key="name" value="PHP_Reflect" />
-            <element key="version" value="1.8.0" />
+            <element key="version" value="1.9.0" />
             <element key="max" value="1.99.0" />
         </element>
 
@@ -261,6 +261,7 @@
         <exclude name="**/*.pdf" />
         <exclude name="**/*.epub" />
         <exclude name="**/Thumbs.db" />
+        <exclude name="composer.json" />
         <exclude name="package.xml" />
         <exclude name="build**" />
         <exclude name="contributions/**" />
@@ -351,13 +352,13 @@
     <target name="phar"    depends="phar.all" />
     <target name="web">
         <phingcall target="docs.make-web">
-            <property name="docs.asciidoc.target" value="D:/laurent-laville.org/www/php5/compatinfo/manual/current/en" />
+            <property name="docs.asciidoc.target" value="/var/compatinfo/manual/current/en" />
             <property name="docs.theme-asciidoc" value="bspear2" />
             <property name="docs.backend-asciidoc" value="bootstrap" />
         </phingcall>
     </target>
 
-    <target name="all"     depends="test.all,docs.all,package.all,server.all" />
+    <target name="all"     depends="test.all,docs.all,package.all,server.all,phar.all" />
 
     <target name="help">
         <echo>A toolchain manager for ${phing.project.name}              </echo>

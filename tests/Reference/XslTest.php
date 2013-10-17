@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_XslTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Xsl::getExtensions
      * @covers PHP_CompatInfo_Reference_Xsl::getConstants
      * @covers PHP_CompatInfo_Reference_Xsl::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Xsl();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Xsl();
+        parent::setUpBeforeClass();
     }
 }

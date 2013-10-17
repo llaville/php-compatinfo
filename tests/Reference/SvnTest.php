@@ -32,7 +32,7 @@ class PHP_CompatInfo_Reference_SvnTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Svn::getExtensions
      * @covers PHP_CompatInfo_Reference_Svn::getConstants
@@ -40,9 +40,9 @@ class PHP_CompatInfo_Reference_SvnTest
      * @covers PHP_CompatInfo_Reference_Svn::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Svn();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Svn();
+        parent::setUpBeforeClass();
     }
 }

@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_TidyTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Tidy::getExtensions
      * @covers PHP_CompatInfo_Reference_Tidy::getFunctions
@@ -42,9 +42,9 @@ class PHP_CompatInfo_Reference_TidyTest
      * @covers PHP_CompatInfo_Reference_Tidy::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             // Requires HAVE_TIDYOPTGETDOC
             'tidy_get_opt_doc',
             // Removes in 0.7.0
@@ -52,7 +52,7 @@ class PHP_CompatInfo_Reference_TidyTest
             // Removes in 2.0 (PHP 5 only)
             'tidy_load_config_enc',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Tidy();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Tidy();
+        parent::setUpBeforeClass();
     }
 }

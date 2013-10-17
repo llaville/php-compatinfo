@@ -32,15 +32,15 @@ class PHP_CompatInfo_Reference_IncluedTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Inclued::getExtensions
      * @covers PHP_CompatInfo_Reference_Inclued::getFunctions
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Inclued();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Inclued();
+        parent::setUpBeforeClass();
     }
 }

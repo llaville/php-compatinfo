@@ -35,28 +35,26 @@ if (!defined('TEST_FILES_PATH')) {
  */
 class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
 {
-    protected $pci;
+    protected static $compatInfo;
 
     /**
-     * Sets up the fixture.
-     *
-     * Parse source code to find all classes
+     * Sets up the shared fixture.
      *
      * @return void
+     * @link   http://phpunit.de/manual/current/en/fixtures.html#fixtures.sharing-fixture
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $options = array(
             'cacheDriver' => 'null',
         );
-
-        $this->pci = new PHP_CompatInfo($options);
-        $this->pci->parse(TEST_FILES_PATH . 'source1.php');
+        self::$compatInfo = new PHP_CompatInfo($options);
+        self::$compatInfo->parse(TEST_FILES_PATH . 'source1.php');
     }
 
     /**
      * Tests array results output
-     * 
+     *
      * @covers PHP_CompatInfo::toArray
      * @group  main
      * @return void
@@ -78,7 +76,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
             'tokens',
             'conditions',
         );
-        $actual = $this->pci->toArray(TEST_FILES_PATH . 'source1.php');
+        $actual = self::$compatInfo->toArray(TEST_FILES_PATH . 'source1.php');
 
         $this->assertInternalType(
             PHPUnit_Framework_Constraint_IsType::TYPE_ARRAY, $actual
@@ -91,14 +89,14 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests classes results
-     * 
+     *
      * covers PHP_CompatInfo::getClasses
      * @group  main
      * @return void
      */
     public function testGetClassesFullReport()
     {
-        $classes = $this->pci->getClasses();
+        $classes = self::$compatInfo->getClasses();
 
         $expected = array(
             'user' => array(
@@ -118,7 +116,7 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
                 ),
                 'Baz' => array(
                     'versions' => array('4.0.0', ''),
-                    'uses' => 1,
+                    'uses' => 2,
                     'sources' => array(TEST_FILES_PATH . 'source1.php'),
                     'namespace' => '\\',
                     'excluded' => false,
@@ -133,14 +131,14 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests classes results filtering
-     * 
+     *
      * covers PHP_CompatInfo::getClasses
      * @group  main
      * @return void
      */
     public function testGetClassesFilterByCategory()
     {
-        $classes = $this->pci->getClasses('Core');
+        $classes = self::$compatInfo->getClasses('Core');
 
         $this->assertEquals(
             array(), $classes
@@ -150,14 +148,14 @@ class PHP_CompatInfo_ClassTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests classes results filtering by regular expression
-     * 
+     *
      * covers PHP_CompatInfo::getClasses
      * @group  main
      * @return void
      */
     public function testGetClassesFilterByCategoryAndPattern()
     {
-        $classes = $this->pci->getClasses('user', '^d$');
+        $classes = self::$compatInfo->getClasses('user', '^d$');
 
         $expected = array(
             'd' => array(

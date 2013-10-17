@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_ApcuTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Apcu::getClasses
      * @covers PHP_CompatInfo_Reference_Apcu::getFunctions
      * @covers PHP_CompatInfo_Reference_Apcu::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Apcu();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Apcu();
+        parent::setUpBeforeClass();
     }
 }

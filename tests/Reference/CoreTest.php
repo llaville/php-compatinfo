@@ -32,7 +32,7 @@ class PHP_CompatInfo_Reference_CoreTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Core::getExtensions
      * @covers PHP_CompatInfo_Reference_Core::getFunctions
@@ -40,9 +40,9 @@ class PHP_CompatInfo_Reference_CoreTest
      * @covers PHP_CompatInfo_Reference_Core::getInterfaces
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             // Not real constant
             '__CLASS__',
             '__FILE__',
@@ -54,18 +54,18 @@ class PHP_CompatInfo_Reference_CoreTest
             '__NAMESPACE__',
             '__TRAIT__',
         );
-        $this->ignoredconstants = array(
+        self::$ignoredconstants = array(
             // add by swig framework as core constant
             'swig_runtime_data_type_pointer',
         );
-        $this->ignoredfunctions = array(
+        self::$ignoredfunctions = array(
             // Provided by PHP/CodeCoverage/Util.php when not available in PHP
             // So no reliable check for this one
             'trait_exists',
         );
         if (DIRECTORY_SEPARATOR == '/') {
-            $this->optionalconstants = array_merge(
-                $this->optionalconstants,
+            self::$optionalconstants = array_merge(
+                self::$optionalconstants,
                 array(
                     // Win32 Only
                     'PHP_WINDOWS_VERSION_MAJOR',
@@ -82,8 +82,8 @@ class PHP_CompatInfo_Reference_CoreTest
                 )
             );
         } else {
-            $this->optionalconstants = array_merge(
-                $this->optionalconstants,
+            self::$optionalconstants = array_merge(
+                self::$optionalconstants,
                 array(
                     // Non Windows only
                     'PHP_MANDIR',
@@ -91,20 +91,20 @@ class PHP_CompatInfo_Reference_CoreTest
             );
         }
         if (php_sapi_name() != 'cli') {
-            array_push($this->optionalconstants, 'STDIN', 'STDOUT', 'STDERR');
+            array_push(self::$optionalconstants, 'STDIN', 'STDOUT', 'STDERR');
         }
 
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             // Requires ZTS
             'zend_thread_id',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Core();
-        $this->ref = $this->obj->getAll();
+        self::$obj = new PHP_CompatInfo_Reference_Core();
+        self::$ref = self::$obj->getAll();
 
         if (version_compare(PHP_VERSION, '5.3.0') < 0) {
             // this is a hack...
-            $this->ref['extensions']['internal'] = $this->ref['extensions']['Core'];
-            unset($this->ref['extensions']['Core']);
+            self::$ref['extensions']['internal'] = self::$ref['extensions']['Core'];
+            unset(self::$ref['extensions']['Core']);
         }
     }
 

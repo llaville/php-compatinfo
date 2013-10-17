@@ -32,20 +32,20 @@ class PHP_CompatInfo_Reference_FtpTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Ftp::getExtensions
      * @covers PHP_CompatInfo_Reference_Ftp::getFunctions
      * @covers PHP_CompatInfo_Reference_Ftp::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             // This requires HAVE_OPENSSL_EXT
             'ftp_ssl_connect',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Ftp();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Ftp();
+        parent::setUpBeforeClass();
     }
 }

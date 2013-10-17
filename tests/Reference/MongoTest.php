@@ -32,16 +32,16 @@ class PHP_CompatInfo_Reference_MongoTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Mongo::getExtensions
      * @covers PHP_CompatInfo_Reference_Mongo::getFunctions
      * @covers PHP_CompatInfo_Reference_Mongo::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalclasses = array(
+        self::$optionalclasses = array(
             // only available with 0.9.0
             'MongoUtil',
         );
@@ -53,23 +53,23 @@ class PHP_CompatInfo_Reference_MongoTest
 
         // classes available since 1.2.3
         array_push(
-            $this->optionalclasses,
+            self::$optionalclasses,
             'MongoLog',
             'MongoPool'
         );
         // classes available since 1.3.0
         array_push(
-            $this->optionalclasses,
+            self::$optionalclasses,
             'MongoClient',
             'MongoResultException'
         );
 
         // found on windows 1.2.0 version but not declared in any sources
-        $this->ignoredfunctions = array(
+        self::$ignoredfunctions = array(
             'mongoPoolDebug'
         );
 
-        $this->obj = new PHP_CompatInfo_Reference_Mongo();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Mongo();
+        parent::setUpBeforeClass();
     }
 }

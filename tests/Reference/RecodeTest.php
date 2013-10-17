@@ -32,15 +32,15 @@ class PHP_CompatInfo_Reference_RecodeTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Recode::getExtensions
      * @covers PHP_CompatInfo_Reference_Recode::getFunctions
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Recode();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Recode();
+        parent::setUpBeforeClass();
     }
 }

@@ -32,15 +32,15 @@ class PHP_CompatInfo_Reference_Ssh2Test
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Ssh2::getExtensions
      * @covers PHP_CompatInfo_Reference_Ssh2::getFunctions
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             // Requires PHP_SSH2_REMOTE_FORWARDING
             'ssh2_forward_accept',
             'ssh2_forward_listen',
@@ -49,7 +49,7 @@ class PHP_CompatInfo_Reference_Ssh2Test
             // Requires libssh >= 1.2.3
             'ssh2_auth_agent',
         );
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             // Requires PHP_SSH2_POLL
             'SSH2_POLLIN',
             'SSH2_POLLEXT',
@@ -61,7 +61,7 @@ class PHP_CompatInfo_Reference_Ssh2Test
             'SSH2_POLL_CHANNEL_CLOSED',
             'SSH2_POLL_LISTENER_CLOSED',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Ssh2();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Ssh2();
+        parent::setUpBeforeClass();
     }
 }

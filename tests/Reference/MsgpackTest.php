@@ -34,16 +34,16 @@ class PHP_CompatInfo_Reference_MsgpackTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Msgpack::getClasses
      * @covers PHP_CompatInfo_Reference_Msgpack::getFunctions
      * @covers PHP_CompatInfo_Reference_Msgpack::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->obj = new PHP_CompatInfo_Reference_Msgpack();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Msgpack();
+        parent::setUpBeforeClass();
     }
 }

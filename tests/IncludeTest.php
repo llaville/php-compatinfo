@@ -35,23 +35,21 @@ if (!defined('TEST_FILES_PATH')) {
  */
 class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
 {
-    protected $pci;
+    protected static $compatInfo;
 
     /**
-     * Sets up the fixture.
-     *
-     * Parse source code to find all includes
+     * Sets up the shared fixture.
      *
      * @return void
+     * @link   http://phpunit.de/manual/current/en/fixtures.html#fixtures.sharing-fixture
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         $options = array(
             'cacheDriver' => 'null',
         );
-
-        $this->pci = new PHP_CompatInfo($options);
-        $this->pci->parse(TEST_FILES_PATH . 'source3.php');
+        self::$compatInfo = new PHP_CompatInfo($options);
+        self::$compatInfo->parse(TEST_FILES_PATH . 'source3.php');
     }
 
     /**
@@ -63,7 +61,7 @@ class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
      */
     public function testGetIncludesFullReport()
     {
-        $includes = $this->pci->getIncludes();
+        $includes = self::$compatInfo->getIncludes();
 
         $expected = array(
             'include' => array(
@@ -94,7 +92,7 @@ class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
      */
     public function testGetIncludesFilterByCategory()
     {
-        $includes = $this->pci->getIncludes('require_once');
+        $includes = self::$compatInfo->getIncludes('require_once');
 
         $expected = array(
             'test4.php'
@@ -114,7 +112,7 @@ class PHP_CompatInfo_IncludeTest extends PHPUnit_Framework_TestCase
      */
     public function testGetIncludesFilterByCategoryAndPattern()
     {
-        $includes = $this->pci->getIncludes('require', 'info');
+        $includes = self::$compatInfo->getIncludes('require', 'info');
 
         $this->assertEquals(
             array(), $includes

@@ -125,7 +125,6 @@ class PHP_CompatInfo_Reference_Core
         $items = array(
             'ArrayAccess'                    => array('5.3.0', ''),
             'Iterator'                       => array('5.3.0', ''),
-            'Iterator'                       => array('5.3.0', ''),
             'IteratorAggregate'              => array('5.3.0', ''),
             'Serializable'                   => array('5.3.0', ''),
             'Traversable'                    => array('5.3.0', ''),

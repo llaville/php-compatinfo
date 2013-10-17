@@ -32,15 +32,15 @@ class PHP_CompatInfo_Reference_ReadlineTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Readline::getExtensions
      * @covers PHP_CompatInfo_Reference_Readline::getFunctions
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             // Not available with libedit (only with readline)
             'readline_list_history',
             'readline_callback_handler_install',
@@ -49,7 +49,7 @@ class PHP_CompatInfo_Reference_ReadlineTest
             'readline_on_new_line',
             'readline_redisplay',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Readline();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Readline();
+        parent::setUpBeforeClass();
     }
 }

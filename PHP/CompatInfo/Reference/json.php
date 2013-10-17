@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Json
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.2.1';
+    const REF_VERSION = '1.2.1';  // 2006-03-17 (stable)
 
     /**
      * Gets informations about extensions

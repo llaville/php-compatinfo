@@ -32,17 +32,17 @@ class PHP_CompatInfo_Reference_ApcTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Apc::getExtensions
      * @covers PHP_CompatInfo_Reference_Apc::getFunctions
      * @covers PHP_CompatInfo_Reference_Apc::getClasses
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
         // Constants and Classes not available in CLI mode
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             'APC_LIST_ACTIVE',
             'APC_LIST_DELETED',
             'APC_ITER_TYPE',
@@ -65,20 +65,20 @@ class PHP_CompatInfo_Reference_ApcTest
             'APC_BIN_VERIFY_MD5',
             'APC_BIN_VERIFY_CRC32',
         );
-        $this->optionalclasses = array(
+        self::$optionalclasses = array(
             'APCIterator',
         );
         if (extension_loaded('apcu')) {
             // APCu is a drop in replacement for APC
             // present as "apc" but only provides user data cache functions
-            $this->optionalfunctions = array(
+            self::$optionalfunctions = array(
                 'apc_define_constants',
                 'apc_load_constants',
                 'apc_compile_file',
                 'apc_delete_file',
             );
         }
-        $this->obj = new PHP_CompatInfo_Reference_Apc();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Apc();
+        parent::setUpBeforeClass();
     }
 }

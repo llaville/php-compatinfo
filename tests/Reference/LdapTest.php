@@ -32,28 +32,28 @@ class PHP_CompatInfo_Reference_LdapTest
     extends PHP_CompatInfo_Reference_GenericTest
 {
     /**
-     * Sets up the fixture.
+     * Sets up the shared fixture.
      *
      * @covers PHP_CompatInfo_Reference_Ldap::getExtensions
      * @covers PHP_CompatInfo_Reference_Ldap::getFunctions
      * @covers PHP_CompatInfo_Reference_Ldap::getConstants
      * @return void
      */
-    protected function setUp()
+    public static function setUpBeforeClass()
     {
-        $this->optionalconstants = array(
+        self::$optionalconstants = array(
             'LDAP_OPT_X_SASL_AUTHCID',
             'LDAP_OPT_X_SASL_AUTHZID',
             'LDAP_OPT_X_SASL_MECH',
             'LDAP_OPT_X_SASL_REALM',
         );
-        $this->optionalfunctions = array(
+        self::$optionalfunctions = array(
             // Requires LDAP SASL
             'ldap_sasl_bind',
             // Requires OpenLdap
             'ldap_set_rebind_proc',
         );
-        $this->obj = new PHP_CompatInfo_Reference_Ldap();
-        parent::setUp();
+        self::$obj = new PHP_CompatInfo_Reference_Ldap();
+        parent::setUpBeforeClass();
     }
 }
