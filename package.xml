@@ -24,14 +24,14 @@ content of dictionary references.
   <active>yes</active>
  </contributor>
  <date>2013-10-17</date>
- <time>09:29:24</time>
+ <time>18:14:31</time>
  <version>
   <release>2.24.0</release>
   <api>2.24.0</api>
  </version>
  <stability>
-  <release>snapshot</release>
-  <api>beta</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
@@ -586,8 +586,8 @@ Bug fixes:
     <api>2.24.0</api>
    </version>
    <stability>
-    <release>snapshot</release>
-    <api>beta</api>
+    <release>stable</release>
+    <api>stable</api>
    </stability>
    <date>2013-10-17</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
