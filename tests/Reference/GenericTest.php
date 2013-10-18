@@ -140,6 +140,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
             if (array_key_exists('excludes', $range)
                 && in_array(PHP_VERSION, $range['excludes'])
             ) {
+                // TODO please check this ? optional or ignored ?
                 array_push(self::$ignoredfunctions, $fctname);
             }
             if (!in_array($fctname, self::$optionalfunctions)
@@ -151,7 +152,7 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
                     "Function '$fctname', found in Reference, does not exists."
                 );
             }
-            if (!in_array($fctname, self::$ignoredfunctions)) {
+            if (!in_array($fctname, self::$optionalfunctions)) {
                 if (($min && version_compare(PHP_VERSION, $min)<0)
                     || ($max && version_compare(PHP_VERSION, $max)>0)
                 ) {
