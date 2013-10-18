@@ -140,22 +140,24 @@ class PHP_CompatInfo_Reference_GenericTest extends PHPUnit_Framework_TestCase
             if (array_key_exists('excludes', $range)
                 && in_array(PHP_VERSION, $range['excludes'])
             ) {
-                // TODO please check this ? optional or ignored ?
-                array_push(self::$ignoredfunctions, $fctname);
+                // We are in min/max, so add it as optional
+                array_push(self::$optionalfunctions, $fctname);
             }
             if (!in_array($fctname, self::$optionalfunctions)
                 && (empty($min) || version_compare(PHP_VERSION, $min)>=0)
                 && (empty($max) || version_compare(PHP_VERSION, $max)<=0)
             ) {
+                // Should be there except if set as optional
                 $this->assertTrue(
                     function_exists($fctname),
                     "Function '$fctname', found in Reference, does not exists."
                 );
             }
-            if (!in_array($fctname, self::$optionalfunctions)) {
+            if (!in_array($fctname, self::$ignoredfunctions)) {
                 if (($min && version_compare(PHP_VERSION, $min)<0)
                     || ($max && version_compare(PHP_VERSION, $max)>0)
                 ) {
+                    // Should not be there except if ignored
                     $this->assertFalse(
                         function_exists($fctname),
                         "Function '$fctname', found in Reference ($min,$max), exists."
