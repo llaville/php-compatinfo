@@ -87,15 +87,15 @@ class PHP_CompatInfo_Reference_HashTest
             if (!extension_loaded('mash')) {
                 // Only available if hash emulates mhash
                 // so will not be found, while in reference
-                self::$optionalfunctions = &$mhashfunctions;
-                self::$optionalconstants = &$mhashconstants;
+                self::$optionalfunctions = $mhashfunctions;
+                self::$optionalconstants = $mhashconstants;
             }
         } else {
             if (extension_loaded('mash')) {
                 // Provided by mhash, not by hash
                 // so will be detected, while not in reference
-                self::$ignoredfunctions = &$mhashfunctions;
-                self::$ignoredconstants = &$mhashconstants;
+                self::$ignoredfunctions = $mhashfunctions;
+                self::$ignoredconstants = $mhashconstants;
             }
         }
         self::$obj = new PHP_CompatInfo_Reference_Hash();
