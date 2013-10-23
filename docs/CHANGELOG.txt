@@ -39,6 +39,7 @@ include::attributes.txt[]
 
 .Additions and changes:
 * update varnish reference to 1.1.1
+* add new jsmin reference (0.1.1)
 
 .Bug fixes:
 * none

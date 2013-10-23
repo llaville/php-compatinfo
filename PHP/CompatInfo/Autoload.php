@@ -180,6 +180,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/inclued.php',
             'PHP_CompatInfo_Reference_Intl'
                 => 'PHP/CompatInfo/Reference/intl.php',
+            'PHP_CompatInfo_Reference_Jsmin'
+                => 'PHP/CompatInfo/Reference/jsmin.php',
             'PHP_CompatInfo_Reference_Json'
                 => 'PHP/CompatInfo/Reference/json.php',
             'PHP_CompatInfo_Reference_Ldap'

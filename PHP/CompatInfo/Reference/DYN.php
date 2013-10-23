@@ -313,6 +313,14 @@ class PHP_CompatInfo_Reference_DYN
             array(
                 'matches'   => FALSE,
                 'excludes'  => FALSE,
+                'prefixes'  => array('jsmin', 'JSMIN_'),
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'jsmin',
+            ),
+            array(
+                'matches'   => FALSE,
+                'excludes'  => FALSE,
                 'prefixes'  => array('ldap_', 'LDAP_'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
