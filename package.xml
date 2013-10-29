@@ -23,37 +23,25 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-10-17</date>
- <time>18:14:31</time>
+ <date>2013-10-29</date>
+ <time>11:47:56</time>
  <version>
-  <release>2.24.0</release>
-  <api>2.24.0</api>
+  <release>2.25.0</release>
+  <api>2.25.0</api>
  </version>
  <stability>
-  <release>stable</release>
-  <api>stable</api>
+  <release>snapshot</release>
+  <api>beta</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- update imagick reference to 3.1.2
-- update mongo reference to 1.4.4
-- update xhprof reference to 0.9.4
-- update varnish reference to 1.1.0
-- update zip reference to 1.12.1
-- update xcache reference to 3.1.0
-- update zend opcache reference to 7.0.3-dev bundled in PHP 5.5.5
-- convert test case classes from standard fixtures to shared fixtures
-- DYN (lazy loader) is now rules completed. May be used in production
-- tests suites may be now run with default memory limit
-- &apos;extension not available&apos; message is received by all PHPUnit test listeners
-- add a new PHPUnit test listener useful to know what reference is loaded and tested
-- add composer support (GH-102 request)
-- raise PHP_Reflect dependency to 1.9.0
-- detect more constants (when used as argument in function signature/call)
+- update varnish reference to 1.1.1
+- add new jsmin reference (0.1.1)
+- fixed the test skeleton template now unit test suites used shared fixtures
 
 Bug fixes:
-- none
+- GH-105: detect PHP-5.4 feature : Short array syntax
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -161,6 +149,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="imap.php" role="php" />
       <file baseinstalldir="Bartlett" name="inclued.php" role="php" />
       <file baseinstalldir="Bartlett" name="intl.php" role="php" />
+      <file baseinstalldir="Bartlett" name="jsmin.php" role="php" />
       <file baseinstalldir="Bartlett" name="json.php" role="php" />
       <file baseinstalldir="Bartlett" name="ldap.php" role="php" />
       <file baseinstalldir="Bartlett" name="libevent.php" role="php" />
@@ -315,6 +304,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="ImapTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="IncluedTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="IntlTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="JsminTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="JsonTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="LdapTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="LibeventTest.php" role="test" />
@@ -408,6 +398,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="source7.php" role="test" />
      <file baseinstalldir="Bartlett" name="source8.php" role="test" />
      <file baseinstalldir="Bartlett" name="source9.php" role="test" />
+     <file baseinstalldir="Bartlett" name="source10.php" role="test" />
      <file baseinstalldir="Bartlett" name="source1626.php" role="test" />
      <file baseinstalldir="Bartlett" name="source6056.php" role="test" />
      <file baseinstalldir="Bartlett" name="source6581.php" role="test" />
@@ -580,6 +571,27 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.25.0</release>
+    <api>2.25.0</api>
+   </version>
+   <stability>
+    <release>snapshot</release>
+    <api>beta</api>
+   </stability>
+   <date>2013-10-29</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- update varnish reference to 1.1.1
+- add new jsmin reference (0.1.1)
+- fixed the test skeleton template now unit test suites used shared fixtures
+
+Bug fixes:
+- GH-105: detect PHP-5.4 feature : Short array syntax
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.24.0</release>
