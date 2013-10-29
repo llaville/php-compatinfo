@@ -43,7 +43,7 @@ include::attributes.txt[]
 * fixed the test skeleton template now unit test suites used shared fixtures
 
 .Bug fixes:
-* none
+* GH-105: detect PHP-5.4 feature : Short array syntax
 
 
 == Version 2.24.0 _(2013-10-17)_

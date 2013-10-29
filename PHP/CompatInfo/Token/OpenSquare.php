@@ -34,6 +34,13 @@ class PHP_CompatInfo_Token_OPEN_SQUARE extends PHP_Reflect_Token_OPEN_SQUARE
             $name = 'arrayDereferencing';
         }
 
+        if ($this->_getContext(-1) == 'T_EQUAL'
+            || ($this->_getContext(-2) == 'T_EQUAL'
+            && $this->_getContext(-1) == 'T_WHITESPACE')
+        ) {
+            $name = 'arrayShortSyntax';
+        }
+
         return $name;
     }
 
