@@ -1,4 +1,5 @@
 Additions and changes:
+- update mongo reference to 1.4.5
 - update varnish reference to 1.1.1
 - add new jsmin reference (0.1.1)
 - fixed the test skeleton template now unit test suites used shared fixtures
