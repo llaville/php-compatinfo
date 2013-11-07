@@ -23,8 +23,8 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-10-29</date>
- <time>11:47:56</time>
+ <date>2013-11-07</date>
+ <time>20:18:11</time>
  <version>
   <release>2.25.0</release>
   <api>2.25.0</api>
@@ -36,12 +36,14 @@ content of dictionary references.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
+- update mongo reference to 1.4.5
 - update varnish reference to 1.1.1
 - add new jsmin reference (0.1.1)
 - fixed the test skeleton template now unit test suites used shared fixtures
 
 Bug fixes:
-- GH-105: detect PHP-5.4 feature : Short array syntax
+- GH-105: detect PHP-5.4 feature : Short array syntax declaration
+- GH-106: detect PHP-5.4 feature : Short array syntax on function call
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -387,6 +389,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="gh34.php" role="test" />
      <file baseinstalldir="Bartlett" name="gh38.php" role="test" />
      <file baseinstalldir="Bartlett" name="gh97.php" role="test" />
+     <file baseinstalldir="Bartlett" name="gh106.php" role="test" />
      <file baseinstalldir="Bartlett" name="phpcompatinfo.xml" role="test" />
      <file baseinstalldir="Bartlett" name="source1.php" role="test" />
      <file baseinstalldir="Bartlett" name="source2.php" role="test" />
@@ -580,16 +583,18 @@ Bug fixes:
     <release>snapshot</release>
     <api>beta</api>
    </stability>
-   <date>2013-10-29</date>
+   <date>2013-11-07</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
    <notes>
 Additions and changes:
+- update mongo reference to 1.4.5
 - update varnish reference to 1.1.1
 - add new jsmin reference (0.1.1)
 - fixed the test skeleton template now unit test suites used shared fixtures
 
 Bug fixes:
-- GH-105: detect PHP-5.4 feature : Short array syntax
+- GH-105: detect PHP-5.4 feature : Short array syntax declaration
+- GH-106: detect PHP-5.4 feature : Short array syntax on function call
    </notes>
   </release>
   <release>
