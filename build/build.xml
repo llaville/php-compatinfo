@@ -353,8 +353,9 @@
     <target name="web">
         <phingcall target="docs.make-web">
             <property name="docs.asciidoc.target" value="/var/compatinfo/manual/current/en" />
-            <property name="docs.theme-asciidoc" value="bspear2" />
+            <property name="docs.theme-asciidoc" value="flatly" />
             <property name="docs.backend-asciidoc" value="bootstrap" />
+            <property name="docs.bootstrap-backend-opt" value="-a bsver=3 -a navbar=fixed -a jumbotron-fullwidth" />
         </phingcall>
     </target>
 
