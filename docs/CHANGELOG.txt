@@ -35,7 +35,7 @@ include::attributes.txt[]
 |===========================
 
 
-== Version 2.25.0 _(2013-mm-dd)_
+== Version 2.25.0 _(2013-11-14)_
 
 .Additions and changes:
 * update mongo reference to 1.4.5
