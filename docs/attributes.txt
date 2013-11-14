@@ -3,7 +3,7 @@
 :scriptsdir:  js
 :keywords:    PHP, compatibility, version
 :mandir:      http://php5.laurent-laville.org/compatinfo/manual/current
-:brand:       PHP_CompatInfo
+:brand:       PHP_CompatInfo {revnumber}
 :sidebar:     right
 :footer:
 :navinfo1:

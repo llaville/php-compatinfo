@@ -6,7 +6,7 @@ include::attributes.txt[]
 
 .Main System
 [scaledwidth="100%"]
-["plantuml", "images/PHPCompatInfo_01.png"]
+["plantuml", "images/PHPCompatInfo_01.png", "png"]
 ---------------------------------------------------------------------
 skinparam classAttributeIconSize 0
 
@@ -116,7 +116,7 @@ PHP_CompatInfo_Reference_ALL - PHP_CompatInfo : < load
 
 .Reference Plugins System
 [scaledwidth="100%"]
-["plantuml", "images/PHPCompatInfo_02.png"]
+["plantuml", "images/PHPCompatInfo_02.png", "png"]
 ---------------------------------------------------------------------
 interface PHP_CompatInfo_Reference {
     array +getAll ( string $extension = null, string $version = null, string $condition = null )
@@ -190,7 +190,7 @@ PHP_CompatInfo_Reference_PHP5 <|-- PHP_CompatInfo_Reference_DYN
 
 .Cache System
 [scaledwidth="100%"]
-["plantuml", "images/PHPCompatInfo_03.png"]
+["plantuml", "images/PHPCompatInfo_03.png", "png"]
 ---------------------------------------------------------------------
 class PHP_CompatInfo
 

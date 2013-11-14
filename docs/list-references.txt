@@ -10,7 +10,7 @@
     L bcmath                                                  4.0.0
     L bz2                                                     4.0.4
     L calendar                                                4.0.0
-      Core                                  5.5.5             4.0.0
+      Core                                  5.5.6             4.0.0
     L ctype                                                   4.0.4
     L curl                                                    4.0.2
     L date                                                    4.0.0
@@ -36,6 +36,7 @@
     L imap                                                    4.0.0
       inclued                               0.1.3             5.1.0
       intl                                  3.0.0             5.2.0
+      jsmin                                 0.1.1             5.3.10
     L json                                  1.2.1             5.2.0
     L ldap                                                    4.0.0
       libevent                              0.1.0             5.3.0
@@ -79,7 +80,7 @@
     L SQLite                                2.0-dev           5.0.0
       sqlite3                               0.7               5.3.0
       ssh2                                  0.12              4.0.0
-    L standard                              5.5.5             4.0.0
+    L standard                              5.5.6             4.0.0
       stomp                                 1.0.5             5.2.2
     L svn                                   1.0.2             4.0.0
       sysvmsg                               306939            4.3.0
@@ -88,7 +89,7 @@
     L tidy                                  2.0               4.3.0
     L tokenizer                             0.1               4.2.0
       uploadprogress                        1.0.3.1           5.2.0
-      varnish                               1.1.0             5.3.0
+      varnish                               1.1.1             5.3.0
     L wddx                                                    4.0.0
       XCache                                3.1.0             4.3.0
     L xdebug                                2.2.3             4.3.0
@@ -103,7 +104,7 @@
     L zip                                   1.12.1            4.3.0
     L zlib                                  2.0               4.3.0
     -------------------------------------------------------------------------------
-    A TOTAL OF 98 EXTENSIONS WERE FOUND AND 49 LOADED
+    A TOTAL OF 99 EXTENSIONS WERE FOUND AND 49 LOADED
     -------------------------------------------------------------------------------
     Time: 1 second, Memory: 5.25Mb
     -------------------------------------------------------------------------------

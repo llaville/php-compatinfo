@@ -60,7 +60,7 @@ printed just above. Don't be confused.
 
 == Options
 
-The list of command line options provided by the [label label-inverse]#phpcompatinfo# command
+The list of command line options provided by the [label label-primary]#phpcompatinfo# command
 can be queried anytime by running phpcompatinfo with the `-h` or `--help` switches.
 
 ----

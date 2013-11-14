@@ -570,5 +570,25 @@ class PHP_CompatInfo_IssueTest extends PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Regression test for bug GH-106
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/106
+     *       Short Array Syntax on function call
+     * @covers PHP_CompatInfo_Reference
+     * @group  regression
+     * @return void
+     */
+    public function testBugGH106()
+    {
+        if (version_compare(PHP_VERSION, '5.4.0RC1', '<')) {
+            $this->markTestSkipped();
+        }
 
+        $this->pci->parse(TEST_FILES_PATH . 'gh106.php');
+
+        $this->assertEquals(
+            array('5.4.0', ''), $this->pci->getVersions()
+        );
+    }
 }

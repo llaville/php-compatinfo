@@ -119,6 +119,29 @@ class PHP_CompatInfo_TokenTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test detection of short array syntax
+     * PHP-5.4 feature
+     *
+     * @covers PHP_CompatInfo::parse
+     * @covers PHP_CompatInfo::getVersions
+     * @group  main
+     * @link   https://github.com/llaville/php-compat-info/issues/105
+     * @return void
+     */
+    public function testShortArraySyntax()
+    {
+        if (version_compare(PHP_VERSION, '5.4.0RC1', '<')) {
+            $this->markTestSkipped();
+        }
+
+        $this->pci->parse(TEST_FILES_PATH . 'source10.php');
+
+        $this->assertEquals(
+            array('5.4.0', ''), $this->pci->getVersions()
+        );
+    }
+
+    /**
      * Test detection of closures (anonymous function)
      * PHP-5.3 feature
      *

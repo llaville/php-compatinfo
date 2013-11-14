@@ -7,7 +7,7 @@ include::attributes.txt[]
 == Default options
 
 [role="lead"]
-What either you use the CLI version with the [label label-inverse]#phpcompatinfo# command, or directly API functions,
+What either you use the CLI version with the [label label-primary]#phpcompatinfo# command, or directly API functions,
 PHP_CompatInfo has some default options you should learn if you want to understand results provided.
 
 Default options printed below, may be changed either :

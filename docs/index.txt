@@ -8,8 +8,8 @@ include::attributes.txt[]
 ************************************************************************
 *Release highlights:*
 
-- Add both support to PHP 5.4.21 and 5.5.5
-- The dynamic reference loader (--reference DYN) is now fully operational
+- Add both support to PHP 5.4.22 and 5.5.6
+- Fix bugs related to PHP 5.4 feature Array short syntax
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -23,7 +23,7 @@ link:INSTALL.html[Installation page] for downloads and installation instructions
 
 include::introduction.txt[]
 
-The [label label-inverse]#phpcompatinfo# tool may inform you on what of those extensions are or not loaded on your system.
+The [label label-primary]#phpcompatinfo# tool may inform you on what of those extensions are or not loaded on your system.
 
 Run command
 ----

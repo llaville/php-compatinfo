@@ -35,7 +35,7 @@ class PHP_CompatInfo_Reference_Varnish
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.1.0';  // 2013-10-01 (stable)
+    const REF_VERSION = '1.1.1';  // 2013-10-20 (stable)
 
     /**
      * Gets informations about extensions

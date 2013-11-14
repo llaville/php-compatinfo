@@ -1242,6 +1242,7 @@ class PHP_CompatInfo_Reference_Standard
             'classMemberAccessOnInstantiation'
                                              => array('5.4.0', ''),
             'arrayDereferencing'             => array('5.4.0', ''),
+            'arrayShortSyntax'               => array('5.4.0', ''),
             'insteadof'                      => array('5.4.0', ''),
         );
         $this->applyFilter($release, $items, $tokens);

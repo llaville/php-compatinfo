@@ -7,6 +7,7 @@ include::attributes.txt[]
 [options="header", cols="3,3", role="table table-bordered table-striped"]
 |===========================
 | Version | PHP versions supported
+| 2.25.0  | add both support to PHP 5.4.22 and 5.5.6
 | 2.24.0  | add both support to PHP 5.4.21 and 5.5.5
 | 2.23.0  | add both support to PHP 5.4.20 and 5.5.4
 | 2.22.0  | add both support to PHP 5.4.19 and 5.5.3
@@ -32,6 +33,19 @@ include::attributes.txt[]
 | 2.2.0   | all PHP versions until 5.3.9
 | 2.1.0   | all PHP versions until 5.3.8
 |===========================
+
+
+== Version 2.25.0 _(2013-11-14)_
+
+.Additions and changes:
+* update mongo reference to 1.4.5
+* update varnish reference to 1.1.1
+* add new jsmin reference (0.1.1)
+* fixed the test skeleton template now unit test suites used shared fixtures
+
+.Bug fixes:
+* GH-105: detect PHP-5.4 feature : Short array syntax declaration
+* GH-106: detect PHP-5.4 feature : Short array syntax on function call
 
 
 == Version 2.24.0 _(2013-10-17)_
