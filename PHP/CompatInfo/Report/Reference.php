@@ -200,8 +200,12 @@ class PHP_CompatInfo_Report_Reference extends PHP_CompatInfo_Report
                 }
             }
 
-            echo $element
-                . str_repeat(' ', (40 - strlen($element)));
+            echo $element;
+            if (strlen($element) > 40) {
+                echo PHP_EOL . str_repeat(' ', 40);
+            } else {
+                echo str_repeat(' ', (40 - strlen($element)));
+            }
             if (strlen($extension) < 18) {
                 echo $extension
                     . str_repeat(' ', (18 - strlen($extension)));
