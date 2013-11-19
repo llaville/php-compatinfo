@@ -1,0 +1,6 @@
+Additions and changes:
+- update yaml reference to 1.1.1
+
+Bug fixes:
+- fix notice error when matching internal function arguments and signature used in implementation
+(thanks to Remi Collet to noticed me)
