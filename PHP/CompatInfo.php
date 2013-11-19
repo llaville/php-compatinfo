@@ -1253,7 +1253,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
 
         if (count($values) == 4) {
             list ($verMin, $verMax, $extMin, $extMax) = $values;
-            $arguments = null;
+            $arguments = array();
         } else {
             list ($verMin, $verMax, $extMin, $extMax, $arguments) = $values;
             $arguments = explode(',', str_replace(' ', '', $arguments));
@@ -1452,7 +1452,7 @@ class PHP_CompatInfo extends PHP_CompatInfo_Filter
                     && is_array($data['arguments'])
                 ) {
                     $a = count($data['arguments']);
-                    if ($a > 0) {
+                    if ($a > 0 && count($values[$key]['arguments']) >= $a) {
                         $a--;
                         $version = $values[$key]['arguments'][$a];
 
