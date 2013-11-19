@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Yaml
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.1.0';  // 2012-04-15 (stable)
+    const REF_VERSION = '1.1.1';  // 2013-11-18 (stable)
 
     /**
      * Gets informations about extensions
