@@ -54,6 +54,10 @@ Put a file named `composer.json` at the root of your project, containing the dep
     "repositories": [
         {
             "type": "pear",
+            "url": "http://pear.php.net"
+        },
+        {
+            "type": "pear",
             "url": "http://bartlett.laurent-laville.org"
         }
     ]
