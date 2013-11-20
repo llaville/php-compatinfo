@@ -71,6 +71,10 @@ Put a file named [label label-default]#composer.json# at the root of your projec
     "repositories": [
         {
             "type": "pear",
+            "url": "http://pear.php.net"
+        },
+        {
+            "type": "pear",
             "url": "http://bartlett.laurent-laville.org"
         }
     ]
