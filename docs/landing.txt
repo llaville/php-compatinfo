@@ -66,7 +66,7 @@ Put a file named [label label-default]#composer.json# at the root of your projec
 ----
 {
     "require": {
-        "pear-bartlett/PHP_CompatInfo": "2.25.*"
+        "pear-bartlett/PHP_CompatInfo": "2.26.*"
     },
     "repositories": [
         {
