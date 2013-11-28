@@ -23,27 +23,25 @@ content of dictionary references.
   <email />
   <active>yes</active>
  </contributor>
- <date>2013-11-14</date>
- <time>12:19:32</time>
+ <date>2013-11-28</date>
+ <time>12:30:56</time>
  <version>
-  <release>2.25.0</release>
-  <api>2.25.0</api>
+  <release>2.26.0</release>
+  <api>2.26.0</api>
  </version>
  <stability>
-  <release>stable</release>
-  <api>stable</api>
+  <release>snapshot</release>
+  <api>beta</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- update mongo reference to 1.4.5
-- update varnish reference to 1.1.1
-- add new jsmin reference (0.1.1)
-- fixed the test skeleton template now unit test suites used shared fixtures
+- add new riak reference 1.0.0
+- update yaml reference to 1.1.1
 
 Bug fixes:
-- GH-105: detect PHP-5.4 feature : Short array syntax declaration
-- GH-106: detect PHP-5.4 feature : Short array syntax on function call
+- fix notice error when matching internal function arguments and signature used in implementation
+(thanks to Remi Collet to noticed me)
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -185,6 +183,7 @@ Bug fixes:
       <file baseinstalldir="Bartlett" name="readline.php" role="php" />
       <file baseinstalldir="Bartlett" name="recode.php" role="php" />
       <file baseinstalldir="Bartlett" name="reflection.php" role="php" />
+      <file baseinstalldir="Bartlett" name="riak.php" role="php" />
       <file baseinstalldir="Bartlett" name="session.php" role="php" />
       <file baseinstalldir="Bartlett" name="shmop.php" role="php" />
       <file baseinstalldir="Bartlett" name="simplexml.php" role="php" />
@@ -338,6 +337,7 @@ Bug fixes:
      <file baseinstalldir="Bartlett" name="ReadlineTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="RecodeTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="ReflectionTest.php" role="test" />
+     <file baseinstalldir="Bartlett" name="RiakTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SessionTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="ShmopTest.php" role="test" />
      <file baseinstalldir="Bartlett" name="SimpleXMLTest.php" role="test" />
@@ -574,6 +574,27 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.26.0</release>
+    <api>2.26.0</api>
+   </version>
+   <stability>
+    <release>snapshot</release>
+    <api>beta</api>
+   </stability>
+   <date>2013-11-28</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- add new riak reference 1.0.0
+- update yaml reference to 1.1.1
+
+Bug fixes:
+- fix notice error when matching internal function arguments and signature used in implementation
+(thanks to Remi Collet to noticed me)
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.25.0</release>
