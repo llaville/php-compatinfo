@@ -36,6 +36,7 @@ class PHP_CompatInfo_Reference_Http
      * Latest version of Extension/Reference supported
      */
     const REF_VERSION = '1.7.6';  // 2013-06-20 (stable)
+    // WIP: const REF_VERSION = '2.0.1';  // 2013-11-26 (stable)
 
     /**
      * Gets informations about extensions
@@ -102,8 +103,67 @@ class PHP_CompatInfo_Reference_Http
         );
         $this->applyFilter($release, $items, $classes);
 
+        $release = '2.0.0';     // 2013-11-22 (stable)
+        $items = array(
+            'http\\Exception\\RuntimeException'         => array('5.3.0', ''),
+            'http\\Exception\\UnexpectedValueException' => array('5.3.0', ''),
+            'http\\Exception\\BadMethodCallException'   => array('5.3.0', ''),
+            'http\\Exception\\InvalidArgumentException' => array('5.3.0', ''),
+            'http\\Exception\\BadHeaderException'       => array('5.3.0', ''),
+            'http\\Exception\\BadUrlException'          => array('5.3.0', ''),
+            'http\\Exception\\BadMessageException'      => array('5.3.0', ''),
+            'http\\Exception\\BadConversionException'   => array('5.3.0', ''),
+            'http\\Exception\\BadQueryStringException'  => array('5.3.0', ''),
+            'http\\Cookie'                              => array('5.3.0', ''),
+            'http\\Encoding\\Stream'                    => array('5.3.0', ''),
+            'http\\Encoding\\Stream\\Deflate'           => array('5.3.0', ''),
+            'http\\Encoding\\Stream\\Inflate'           => array('5.3.0', ''),
+            'http\\Encoding\\Stream\\Dechunk'           => array('5.3.0', ''),
+            'http\\Header'                              => array('5.3.0', ''),
+            'http\\Message'                             => array('5.3.0', ''),
+            'http\\Message\\Body'                       => array('5.3.0', ''),
+            'http\\QueryString'                         => array('5.3.0', ''),
+            'http\\Client'                              => array('5.3.0', ''),
+            'http\\Client\\Request'                     => array('5.3.0', ''),
+            'http\\Client\\Response'                    => array('5.3.0', ''),
+            'http\\Url'                                 => array('5.3.0', ''),
+            'http\\Env'                                 => array('5.3.0', ''),
+            'http\\Env\\Request'                        => array('5.3.0', ''),
+            'http\\Env\\Response'                       => array('5.3.0', ''),
+            'http\\Params'                              => array('5.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
         return $classes;
     }
+
+
+    /**
+     * Gets informations about interfaces
+     *
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
+     *
+     * @return array
+     */
+    public function getInterfaces($extension = null, $version = null, $condition = null)
+    {
+        $this->setFilter(func_get_args());
+
+        $interfaces = array();
+
+        $release = '2.0.0';     // 2013-11-22 (stable)
+        $items = array(
+            'http\\Exception'                        => array('5.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $interfaces);
+
+        return $interfaces;
+    }
+
 
     /**
      * Gets informations about functions
@@ -323,6 +383,37 @@ class PHP_CompatInfo_Reference_Http
             'HTTP_VERSION_1_1'                      => array('4.3.0', ''),
             'HTTP_VERSION_ANY'                      => array('4.3.0', ''),
             'HTTP_VERSION_NONE'                     => array('4.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $constants);
+
+        $release = '2.0.0';     // 2013-11-22 (stable)
+        $items = array(
+            'http\\Client\\Curl\\HTTP_VERSION_1_0'   => array('5.3.0', ''),
+            'http\\Client\\Curl\\HTTP_VERSION_1_1'   => array('5.3.0', ''),
+            'http\\Client\\Curl\\HTTP_VERSION_ANY'   => array('5.3.0', ''),
+            'http\\Client\\Curl\\SSL_VERSION_TLSv1'  => array('5.3.0', ''),
+            'http\\Client\\Curl\\SSL_VERSION_SSLv2'  => array('5.3.0', ''),
+            'http\\Client\\Curl\\SSL_VERSION_SSLv3'  => array('5.3.0', ''),
+            'http\\Client\\Curl\\SSL_VERSION_ANY'    => array('5.3.0', ''),
+            'http\\Client\\Curl\\IPRESOLVE_V4'       => array('5.3.0', ''),
+            'http\\Client\\Curl\\IPRESOLVE_V6'       => array('5.3.0', ''),
+            'http\\Client\\Curl\\IPRESOLVE_ANY'      => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_BASIC'         => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_DIGEST'        => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_DIGEST_IE'     => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_NTLM'          => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_GSSNEG'        => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_ANY'           => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_SOCKS4'       => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_SOCKS4A'      => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_SOCKS5_HOSTNAME'
+                                                     => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_SOCKS5'       => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_HTTP'         => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_HTTP_1_0'     => array('5.3.0', ''),
+            'http\\Client\\Curl\\POSTREDIR_301'      => array('5.3.0', ''),
+            'http\\Client\\Curl\\POSTREDIR_302'      => array('5.3.0', ''),
+            'http\\Client\\Curl\\POSTREDIR_ALL'      => array('5.3.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 
