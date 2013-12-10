@@ -45,6 +45,7 @@ include::attributes.txt[]
 .Bug fixes:
 * fix notice error when matching internal function arguments and signature used in implementation
 (thanks to Remi Collet to noticed me)
+* fix notice error on list reference report when filter reference option is active
 
 
 == Version 2.25.0 _(2013-11-14)_
