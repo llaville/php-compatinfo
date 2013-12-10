@@ -59,6 +59,9 @@ class PHP_CompatInfo_Reference_StandardTest
                 'chroot',
                 // remove in some Linux distribution (Redhat, ...)
                 'php_egg_logo_guid',
+                // not detected because of https://bugs.php.net/66218
+                'cli_get_process_title',
+                'cli_set_process_title',
             );
         } else {
             self::$optionalfunctions = array(
