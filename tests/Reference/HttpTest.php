@@ -43,6 +43,14 @@ class PHP_CompatInfo_Reference_HttpTest
      */
     public static function setUpBeforeClass()
     {
+        if (version_compare(phpversion("http"), "2.0.0", "ge")) {
+            self::$optionalfunctions
+                = array_keys(PHP_CompatInfo_Reference_Http::getOldFunctions());
+            self::$optionalclasses
+                = array_keys(PHP_CompatInfo_Reference_Http::getOldClasses());
+            self::$optionalconstants
+                = array_keys(PHP_CompatInfo_Reference_Http::getOldConstants());
+        }
         self::$obj = new PHP_CompatInfo_Reference_Http();
         parent::setUpBeforeClass();
     }
