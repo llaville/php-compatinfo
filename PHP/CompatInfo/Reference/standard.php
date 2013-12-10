@@ -753,6 +753,8 @@ class PHP_CompatInfo_Reference_Standard
         $items = array(
             'array_column'                   => array('5.5.0', ''),
             'boolval'                        => array('5.5.0', ''),
+            'cli_get_process_title'          => array('5.5.0', ''),
+            'cli_set_process_title'          => array('5.5.0', ''),
             'password_get_info'              => array('5.5.0', ''),
             'password_hash'                  => array('5.5.0', ''),
             'password_needs_rehash'          => array('5.5.0', ''),
