@@ -37,7 +37,7 @@ class PHP_CompatInfo_Reference_Memcached
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '2.1.0';  // 2012-08-07 (stable)
+    const REF_VERSION = '2.2.0b1';  // 2013-11-25 (beta)
 
     /**
      * Gets informations about extensions
@@ -80,6 +80,12 @@ class PHP_CompatInfo_Reference_Memcached
         $items = array(
             'Memcached'                      => array('5.2.0', ''),
             'MemcachedException'             => array('5.2.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        $release = '2.2.0b1';     // 2013-11-25 (beta)
+        $items = array(
+            'MemcachedServer'                => array('5.2.0', ''),
         );
         $this->applyFilter($release, $items, $classes);
 
