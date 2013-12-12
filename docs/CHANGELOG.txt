@@ -36,7 +36,7 @@ include::attributes.txt[]
 |===========================
 
 
-== Version 2.26.0 _(2013-12-dd)_
+== Version 2.26.0 _(2013-12-13)_
 
 .Additions and changes:
 * add new riak reference 1.0.0
