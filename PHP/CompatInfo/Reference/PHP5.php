@@ -247,15 +247,17 @@ class PHP_CompatInfo_Reference_PHP5
     {
         $globals   = array();
         $ext       = 'standard';
-        $extRefObj = $this->extensionReferences[$ext] ;
+        if (isset($this->extensionReferences[$ext])) {
+            $extRefObj = $this->extensionReferences[$ext];
 
-        if ($extRefObj instanceof PHP_CompatInfo_Reference) {
-            $values = $extRefObj->getGlobals($extension, $version, $condition);
+            if ($extRefObj instanceof PHP_CompatInfo_Reference) {
+                $values = $extRefObj->getGlobals($extension, $version, $condition);
 
-            $globals = array_merge(
-                $globals,
-                $this->combineExtension($ext, $values)
-            );
+                $globals = array_merge(
+                    $globals,
+                    $this->combineExtension($ext, $values)
+                );
+            }
         }
         return $globals;
     }
@@ -275,15 +277,17 @@ class PHP_CompatInfo_Reference_PHP5
     {
         $tokens    = array();
         $ext       = 'standard';
-        $extRefObj = $this->extensionReferences[$ext] ;
+        if (isset($this->extensionReferences[$ext])) {
+            $extRefObj = $this->extensionReferences[$ext];
 
-        if ($extRefObj instanceof PHP_CompatInfo_Reference) {
-            $values = $extRefObj->getTokens($extension, $version, $condition);
+            if ($extRefObj instanceof PHP_CompatInfo_Reference) {
+                $values = $extRefObj->getTokens($extension, $version, $condition);
 
-            $tokens = array_merge(
-                $tokens,
-                $this->combineExtension($ext, $values)
-            );
+                $tokens = array_merge(
+                    $tokens,
+                    $this->combineExtension($ext, $values)
+                );
+            }
         }
         return $tokens;
     }

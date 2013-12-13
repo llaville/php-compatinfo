@@ -242,6 +242,8 @@ function PHP_CompatInfo_autoload($className)
                 => 'PHP/CompatInfo/Reference/readline.php',
             'PHP_CompatInfo_Reference_Recode'
                 => 'PHP/CompatInfo/Reference/recode.php',
+            'PHP_CompatInfo_Reference_Riak'
+                => 'PHP/CompatInfo/Reference/riak.php',
             'PHP_CompatInfo_Reference_Reflection'
                 => 'PHP/CompatInfo/Reference/reflection.php',
             'PHP_CompatInfo_Reference_Session'

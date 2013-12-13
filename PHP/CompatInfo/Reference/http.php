@@ -35,7 +35,8 @@ class PHP_CompatInfo_Reference_Http
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.7.6';  // 2013-06-20 (stable)
+    const LASTV1      = '1.7.6';  // 2013-06-20 (stable)
+    const REF_VERSION = '2.0.3';  // 2013-12-10 (stable)
 
     /**
      * Gets informations about extensions
@@ -58,24 +59,12 @@ class PHP_CompatInfo_Reference_Http
     }
 
     /**
-     * Gets informations about classes
-     *
-     * @param string $extension (optional) NULL for PHP version,
-     *                          TRUE if extension version
-     * @param string $version   (optional) php or extension version
-     * @param string $condition (optional) particular relationship with $version
-     *                          Same operator values as used by version_compare
+     * List of API v1 classes
      *
      * @return array
      */
-    public function getClasses($extension = null, $version = null, $condition = null)
-    {
-        $this->setFilter(func_get_args());
-
-        $classes = array();
-
-        $release = false;
-        $items = array(
+    public static function getOldClasses() {
+        return array(
             'HttpDeflateStream'                     => array('4.3.0', ''),
             'HttpEncodingException'                 => array('4.3.0', ''),
             'HttpException'                         => array('4.3.0', ''),
@@ -100,13 +89,10 @@ class PHP_CompatInfo_Reference_Http
             'HttpUrlException'                      => array('4.3.0', ''),
             'HttpUtil'                              => array('4.3.0', ''),
         );
-        $this->applyFilter($release, $items, $classes);
-
-        return $classes;
     }
 
     /**
-     * Gets informations about functions
+     * Gets informations about classes
      *
      * @param string $extension (optional) NULL for PHP version,
      *                          TRUE if extension version
@@ -115,16 +101,93 @@ class PHP_CompatInfo_Reference_Http
      *                          Same operator values as used by version_compare
      *
      * @return array
-     * @link   http://www.php.net/manual/en/ref.http.php
      */
-    public function getFunctions($extension = null, $version = null, $condition = null)
+    public function getClasses($extension = null, $version = null, $condition = null)
     {
         $this->setFilter(func_get_args());
 
-        $functions = array();
+        $classes = array();
 
         $release = false;
+        $items = $this->getOldClasses();
+        $this->applyFilter($release, $items, $classes, self::LASTV1);
+
+        // http 2.0.0 API was rewamped
+        foreach (array_keys($items) as $name) {
+            $this->setMaxExtensionVersion(
+                self::LASTV1, $name, $classes
+            );
+        }
+
+        $release = '2.0.0';     // 2013-11-22 (stable)
         $items = array(
+            'http\\Exception\\RuntimeException'         => array('5.3.0', ''),
+            'http\\Exception\\UnexpectedValueException' => array('5.3.0', ''),
+            'http\\Exception\\BadMethodCallException'   => array('5.3.0', ''),
+            'http\\Exception\\InvalidArgumentException' => array('5.3.0', ''),
+            'http\\Exception\\BadHeaderException'       => array('5.3.0', ''),
+            'http\\Exception\\BadUrlException'          => array('5.3.0', ''),
+            'http\\Exception\\BadMessageException'      => array('5.3.0', ''),
+            'http\\Exception\\BadConversionException'   => array('5.3.0', ''),
+            'http\\Exception\\BadQueryStringException'  => array('5.3.0', ''),
+            'http\\Cookie'                              => array('5.3.0', ''),
+            'http\\Encoding\\Stream'                    => array('5.3.0', ''),
+            'http\\Encoding\\Stream\\Deflate'           => array('5.3.0', ''),
+            'http\\Encoding\\Stream\\Inflate'           => array('5.3.0', ''),
+            'http\\Encoding\\Stream\\Dechunk'           => array('5.3.0', ''),
+            'http\\Header'                              => array('5.3.0', ''),
+            'http\\Message'                             => array('5.3.0', ''),
+            'http\\Message\\Body'                       => array('5.3.0', ''),
+            'http\\QueryString'                         => array('5.3.0', ''),
+            'http\\Client'                              => array('5.3.0', ''),
+            'http\\Client\\Request'                     => array('5.3.0', ''),
+            'http\\Client\\Response'                    => array('5.3.0', ''),
+            'http\\Url'                                 => array('5.3.0', ''),
+            'http\\Env'                                 => array('5.3.0', ''),
+            'http\\Env\\Request'                        => array('5.3.0', ''),
+            'http\\Env\\Response'                       => array('5.3.0', ''),
+            'http\\Params'                              => array('5.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $classes);
+
+        return $classes;
+    }
+
+
+    /**
+     * Gets informations about interfaces
+     *
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
+     *
+     * @return array
+     */
+    public function getInterfaces($extension = null, $version = null, $condition = null)
+    {
+        $this->setFilter(func_get_args());
+
+        $interfaces = array();
+
+        $release = '2.0.0';     // 2013-11-22 (stable)
+        $items = array(
+            'http\\Exception'                        => array('5.3.0', ''),
+        );
+        $this->applyFilter($release, $items, $interfaces);
+
+        return $interfaces;
+    }
+
+
+    /**
+     * List of API v1 functions
+     *
+     * @return array
+     */
+    public static function getOldFunctions() {
+        return array(
             'http_build_cookie'                     => array('4.3.0', ''),
             'http_build_str'                        => array('4.3.0', ''),
             'http_build_url'                        => array('4.3.0', ''),
@@ -178,13 +241,9 @@ class PHP_CompatInfo_Reference_Http
             'ob_etaghandler'                        => array('4.3.0', ''),
             'ob_inflatehandler'                     => array('4.3.0', ''),
         );
-        $this->applyFilter($release, $items, $functions);
-
-        return $functions;
     }
-
     /**
-     * Gets informations about constants
+     * Gets informations about functions
      *
      * @param string $extension (optional) NULL for PHP version,
      *                          TRUE if extension version
@@ -193,16 +252,35 @@ class PHP_CompatInfo_Reference_Http
      *                          Same operator values as used by version_compare
      *
      * @return array
-     * @link   http://www.php.net/manual/en/http.constants.php
+     * @link   http://www.php.net/manual/en/ref.http.php
      */
-    public function getConstants($extension = null, $version = null, $condition = null)
+    public function getFunctions($extension = null, $version = null, $condition = null)
     {
         $this->setFilter(func_get_args());
 
-        $constants = array();
+        $functions = array();
 
         $release = false;
-        $items = array(
+        $items = $this->getOldFunctions();
+        $this->applyFilter($release, $items, $functions);
+
+        // http 2.0.0 API was rewamped
+        foreach (array_keys($items) as $name) {
+            $this->setMaxExtensionVersion(
+                self::LASTV1, $name, $functions
+            );
+        }
+
+        return $functions;
+    }
+
+    /**
+     * List of API v1 constants
+     *
+     * @return array
+     */
+    public static function getOldConstants() {
+        return array(
             'HTTP_AUTH_ANY'                         => array('4.3.0', ''),
             'HTTP_AUTH_BASIC'                       => array('4.3.0', ''),
             'HTTP_AUTH_DIGEST'                      => array('4.3.0', ''),
@@ -323,6 +401,66 @@ class PHP_CompatInfo_Reference_Http
             'HTTP_VERSION_1_1'                      => array('4.3.0', ''),
             'HTTP_VERSION_ANY'                      => array('4.3.0', ''),
             'HTTP_VERSION_NONE'                     => array('4.3.0', ''),
+        );
+    }
+
+    /**
+     * Gets informations about constants
+     *
+     * @param string $extension (optional) NULL for PHP version,
+     *                          TRUE if extension version
+     * @param string $version   (optional) php or extension version
+     * @param string $condition (optional) particular relationship with $version
+     *                          Same operator values as used by version_compare
+     *
+     * @return array
+     * @link   http://www.php.net/manual/en/http.constants.php
+     */
+    public function getConstants($extension = null, $version = null, $condition = null)
+    {
+        $this->setFilter(func_get_args());
+
+        $constants = array();
+
+        $release = false;
+        $items = $this->getOldConstants();
+        $this->applyFilter($release, $items, $constants, self::LASTV1);
+
+        // http 2.0.0 API was rewamped
+        foreach (array_keys($items) as $name) {
+            $this->setMaxExtensionVersion(
+                self::LASTV1, $name, $constants
+            );
+        }
+
+        $release = '2.0.0';     // 2013-11-22 (stable)
+        $items = array(
+            'http\\Client\\Curl\\HTTP_VERSION_1_0'   => array('5.3.0', ''),
+            'http\\Client\\Curl\\HTTP_VERSION_1_1'   => array('5.3.0', ''),
+            'http\\Client\\Curl\\HTTP_VERSION_ANY'   => array('5.3.0', ''),
+            'http\\Client\\Curl\\SSL_VERSION_TLSv1'  => array('5.3.0', ''),
+            'http\\Client\\Curl\\SSL_VERSION_SSLv2'  => array('5.3.0', ''),
+            'http\\Client\\Curl\\SSL_VERSION_SSLv3'  => array('5.3.0', ''),
+            'http\\Client\\Curl\\SSL_VERSION_ANY'    => array('5.3.0', ''),
+            'http\\Client\\Curl\\IPRESOLVE_V4'       => array('5.3.0', ''),
+            'http\\Client\\Curl\\IPRESOLVE_V6'       => array('5.3.0', ''),
+            'http\\Client\\Curl\\IPRESOLVE_ANY'      => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_BASIC'         => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_DIGEST'        => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_DIGEST_IE'     => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_NTLM'          => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_GSSNEG'        => array('5.3.0', ''),
+            'http\\Client\\Curl\\AUTH_ANY'           => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_SOCKS4'       => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_SOCKS4A'      => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_SOCKS5_HOSTNAME'
+                                                     => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_SOCKS5'       => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_HTTP'         => array('5.3.0', ''),
+            'http\\Client\\Curl\\PROXY_HTTP_1_0'     => array('5.3.0', ''),
+            'http\\Client\\Curl\\POSTREDIR_301'      => array('5.3.0', ''),
+            'http\\Client\\Curl\\POSTREDIR_302'      => array('5.3.0', ''),
+            'http\\Client\\Curl\\POSTREDIR_ALL'      => array('5.3.0', ''),
         );
         $this->applyFilter($release, $items, $constants);
 

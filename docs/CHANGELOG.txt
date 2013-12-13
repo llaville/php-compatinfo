@@ -7,6 +7,7 @@ include::attributes.txt[]
 [options="header", cols="3,3", role="table table-bordered table-striped"]
 |===========================
 | Version | PHP versions supported
+| 2.26.0  | add both support to PHP 5.4.23 and 5.5.7
 | 2.25.0  | add both support to PHP 5.4.22 and 5.5.6
 | 2.24.0  | add both support to PHP 5.4.21 and 5.5.5
 | 2.23.0  | add both support to PHP 5.4.20 and 5.5.4
@@ -33,6 +34,22 @@ include::attributes.txt[]
 | 2.2.0   | all PHP versions until 5.3.9
 | 2.1.0   | all PHP versions until 5.3.8
 |===========================
+
+
+== Version 2.26.0 _(2013-12-13)_
+
+.Additions and changes:
+* add new riak reference 1.0.0
+* update yaml reference to 1.1.1
+* update zip reference to 1.12.3
+* update memcached reference to 2.2.0b1 (GH-112 by Remi Collet)
+* update http reference to 2.0.3 (GH-110 by Remi Collet)
+
+.Bug fixes:
+* fix notice error when matching internal function arguments and signature used in implementation
+(thanks to Remi Collet to noticed me)
+* fix notice error on list reference report when filter reference option is active
+* GH-111: missing cli_get_process_title and cli_set_process_title (by Remi Collet)
 
 
 == Version 2.25.0 _(2013-11-14)_

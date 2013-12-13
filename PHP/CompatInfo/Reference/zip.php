@@ -34,7 +34,7 @@ class PHP_CompatInfo_Reference_Zip
     /**
      * Latest version of Extension/Reference supported
      */
-    const REF_VERSION = '1.12.1'; // 2013-04-29 (beta)
+    const REF_VERSION = '1.12.3'; // 2013-12-12 (stable)
 
     /**
      * Gets informations about extensions

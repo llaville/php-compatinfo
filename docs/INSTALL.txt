@@ -26,7 +26,7 @@ $ pear install bartlett/PHP_CompatInfo
 
 Installing a specific version:
 ----
-$ pear install bartlett/PHP_CompatInfo-2.25.0
+$ pear install bartlett/PHP_CompatInfo-2.26.0
 ----
 
 == PHP Archive (PHAR)
@@ -49,9 +49,13 @@ Put a file named `composer.json` at the root of your project, containing the dep
 ----
 {
     "require": {
-        "pear-bartlett/PHP_CompatInfo": "2.25.*"
+        "pear-bartlett/PHP_CompatInfo": "2.26.*"
     },
     "repositories": [
+        {
+            "type": "pear",
+            "url": "http://pear.php.net"
+        },
         {
             "type": "pear",
             "url": "http://bartlett.laurent-laville.org"

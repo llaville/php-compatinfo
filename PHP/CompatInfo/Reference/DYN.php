@@ -566,6 +566,14 @@ class PHP_CompatInfo_Reference_DYN
             array(
                 'matches'   => FALSE,
                 'excludes'  => FALSE,
+                'prefixes'  => 'Riak',
+                'suffixes'  => FALSE,
+                'contains'  => FALSE,
+                'extension' => 'riak',
+            ),
+            array(
+                'matches'   => FALSE,
+                'excludes'  => FALSE,
                 'prefixes'  => array('Session', 'session_', 'PHP_SESSION_', 'SID'),
                 'suffixes'  => FALSE,
                 'contains'  => FALSE,
