@@ -1,0 +1,20 @@
+= Official Blog of PHP CompatInfo
+:description: What's new on this project
+:brand: https://github.com/llaville/php-compat-info
+:rssref: http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:jumbotron-fullwidth:
+:icons!:
+:iconsfont: font-awesome
+:iconsfontdir: ./fonts/font-awesome
+:imagesdir: ./images
+:css-signature: blog
+
+[role="well-sm"]
+**********
+*Stay tuned*
+
+Subscribe to RSS feed icon:rss-square[size="lg",link="http://php5.laurent-laville.org/compatinfo/blog/rss.xml"]
+
+**********
+
+include::201401-a-blog-official-launch.asciidoc[]
