@@ -15,6 +15,11 @@
 
 Subscribe to RSS feed icon:rss-square[size="lg",link="http://php5.laurent-laville.org/compatinfo/blog/rss.xml"]
 
+*Archives*
+
+[style="archives"]
+- 2014
+** link:201401.html[January] [badge pull-right]#1#
 **********
 
-include::201401-a-blog-official-launch.asciidoc[]
+include::201402-release-3.0.RC1-planned.asciidoc[]
