@@ -1,0 +1,51 @@
+:css-signature: blog
+:icons!:
+:iconsfont: font-awesome
+:iconsfontdir: ./fonts/font-awesome
+:imagesdir: ./images
+:author: Laurent Laville
+:revdate: 2014-02-03
+:pubdate: Mon, 03 Feb 2014 15:57:00 +0100
+:summary: Preview of the Command-Line part of CompatInfo 3.0.0RC1
+
+== Command-Line preview of future release 3.0.0RC1
+
+[role="blog",cols="3,9",halign="right",citetitle="Published by {author} on {revdate}"]
+.icon:calendar[size="4x"]
+--
+[role="lead"]
+{summary}
+
+Even if full source code of RC1 is not yet ready for a public release,
+I've just uploaded the new https://github.com/llaville/php-compat-info/tree/v3[branch v3].
+
+Here is a screenshot preview, but you can test it yourself (independant from other software components).
+
+image:consoleCompatInfo300RC1.png[options="responsive"]
+
+In addition to common commands with
+http://php5.laurent-laville.org/reflect/blog/201402-release-2.0.RC2-preview.html[PHP Reflect 2RC2],
+there is another one category:
+
+*reference*::
+Allow to introspect the data dictionnary of extensions supported.
+
+.Example 1: list all elements of SPL extension
+----
+$ compatinfo --profile reference:show spl
+----
+
+.Example 2: list all elements of SPL extension that requires at least PHP 5.2
+----
+$ compatinfo --profile reference:show --php=">= 5.2.0" spl
+----
+
+.Example 3: list only ini directives of Xdebug
+----
+$ compatinfo --profile reference:show --ini xdebug
+----
+
+*analyser:run*::
+The command that will launch the data source parse process and display final results,
+depending of your analyser choice.
+--

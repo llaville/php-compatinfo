@@ -22,4 +22,6 @@ Subscribe to RSS feed icon:rss-square[size="lg",link="http://php5.laurent-lavill
 ** link:201401.html[January] [badge pull-right]#1#
 **********
 
+include::201402-release-3.0.RC1-preview.asciidoc[]
+
 include::201402-release-3.0.RC1-planned.asciidoc[]
