@@ -1,0 +1,39 @@
+#!/usr/bin/env php
+<?php
+// bin/console
+//putenv("COMPATINFO=/var/compatinfo/branches/v3/bin/compatinfo.json");
+ini_set('memory_limit', -1);
+
+require_once 'Symfony/Component/ClassLoader/UniversalClassLoader.php';
+require_once 'PHP/Timer.php';
+
+use Symfony\Component\ClassLoader\UniversalClassLoader;
+
+$loader = new UniversalClassLoader();
+$loader->registerNamespaces(array(
+    'Bartlett' => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src',
+    'Symfony'  => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor',
+));
+$loader->register();
+
+use Bartlett\Reflect\Command\AnalyserListCommand;
+use Bartlett\Reflect\Command\ProviderListCommand;
+use Bartlett\Reflect\Command\ProviderShowCommand;
+use Bartlett\Reflect\Command\ProviderDisplayCommand;
+use Bartlett\Reflect\Command\PluginListCommand;
+
+use Bartlett\CompatInfo\ConsoleApplication as Application;
+use Bartlett\CompatInfo\Command\AnalyserRunCommand;
+use Bartlett\CompatInfo\Command\ReferenceListCommand;
+use Bartlett\CompatInfo\Command\ReferenceShowCommand;
+
+$application = new Application();
+$application->add(new AnalyserRunCommand);
+$application->add(new AnalyserListCommand);
+$application->add(new ReferenceListCommand);
+$application->add(new ReferenceShowCommand);
+$application->add(new ProviderListCommand);
+$application->add(new ProviderShowCommand);
+$application->add(new ProviderDisplayCommand);
+$application->add(new PluginListCommand);
+$application->run();

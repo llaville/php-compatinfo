@@ -1,0 +1,63 @@
+{
+    "source-providers": [
+        {
+            "in": "phar:///var/compatinfo/branches/v3/examples/archives/PHP_CompatInfo-2.0.0.zip as CompatInfo",
+            "name": "*.php",
+            "path": "PHP/"
+        },
+        {
+            "in": "phar:///var/compatinfo/branches/v3/examples/archives/PHP_Reflect-1.0.0.tar as Reflect",
+            "path": "PHP/",
+            "name": "*.php"
+        },
+        {
+            "in": "phar:///var/compatinfo/branches/v3/examples/archives/PHP_Reflect-1.0.0.tar as ReflectAL",
+            "path": "PHP/",
+            "name": "Autoload.php"
+        },
+        {
+            "in": "phar:///var/compatinfo/branches/v3/examples/archives/phing-2.6.1.tgz as phing",
+            "name": "*.php",
+            "path": "tasks/system",
+            "notPath": "contrib/",
+            "size": "< 4K"
+        },
+        {
+            "in": "phar:///var/compatinfo/branches/v3/examples/archives/Zend-1.12.3.tgz as ZF1",
+            "name": "*.php"
+        },
+        {
+            "in": "phar:///var/compatinfo/branches/v3/examples/archives/Zend-1.12.3.tgz as ZFDate",
+            "name": "Date.php",
+            "depth": "== 1"
+        }
+    ],
+    "plugins": [
+        {
+            "name": "Analyser",
+            "class": "Bartlett\\Reflect\\Plugin\\Analyser\\AnalyserPlugin"
+        }
+    ],
+    "analysers" : [
+        {
+            "name": "Interface",
+            "class": "Bartlett\\CompatInfo\\Analyser\\InterfaceAnalyser"
+        },
+        {
+            "name": "Trait",
+            "class": "Bartlett\\CompatInfo\\Analyser\\TraitAnalyser"
+        },
+        {
+            "name": "Class",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ClassAnalyser"
+        },
+        {
+            "name": "Function",
+            "class": "Bartlett\\CompatInfo\\Analyser\\FunctionAnalyser"
+        },
+        {
+            "name": "Constant",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ConstantAnalyser"
+        }
+    ]
+}
