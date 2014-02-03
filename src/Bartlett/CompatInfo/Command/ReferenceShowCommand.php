@@ -110,7 +110,7 @@ class ReferenceShowCommand extends Command
             $filters += self::FILTER_FUNCTIONS;
         }
         if ($input->getOption('interfaces')) {
-            $filters += self::FILTER_INTERFACES8;
+            $filters += self::FILTER_INTERFACES;
         }
         if ($input->getOption('classes')) {
             $filters += self::FILTER_CLASSES;
