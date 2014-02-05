@@ -66,7 +66,8 @@ abstract class PHP_CompatInfo_Filter
             foreach ($items as $name => $values) {
                 if (isset($values['versions'])) {
                     $compare = $extension
-                        ? $values['versions'][2] : $values['versions'][0];
+                        ? (isset($values['versions'][2]) ? $values['versions'][2] : $values['versions'][0])
+                        : $values['versions'][0];
                 } else {
                     $compare = $extension ? $values[2] : $values[0];
                 }
