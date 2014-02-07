@@ -140,7 +140,7 @@ class CoreExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
-        
+
         // 5.4.0
         if (version_compare($version, '5.4.0', 'ge')) {
             $release = $this->getR50400();
@@ -291,6 +291,9 @@ class CoreExtension extends AbstractReference
             '__LINE__'                      => null,
         );
         $release->functions = array(
+            'list'                          => null,
+            'empty'                         => null,
+            'isset'                         => null,
             'zend_version'                  => null,
             'func_num_args'                 => null,
             'func_get_arg'                  => null,
