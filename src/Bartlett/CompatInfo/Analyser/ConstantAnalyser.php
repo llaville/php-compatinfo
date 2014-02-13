@@ -41,6 +41,15 @@ class ConstantAnalyser extends AbstractAnalyser
         );
     }
 
+    public function visitPackageModel($package)
+    {
+        $this->packages[] = $package->getName();
+
+        foreach ($package->getConstants() as $constant) {
+            $constant->accept($this);
+        }
+    }
+
     public function visitConstantModel($constant)
     {
         $name     = $constant->getName();

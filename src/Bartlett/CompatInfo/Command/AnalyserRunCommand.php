@@ -309,7 +309,7 @@ END;
             count($metric['sa.methods']),
             count($metric['sa.functions']),
             count($metric['sa.constants']),
-            $metric['sa.internals'],
+            count($metric['sa.internals']),
             $metric['sa.versions']['php.min'],
             $metric['sa.versions']['php.max']
         );

@@ -40,7 +40,7 @@ class InterfaceAnalyser extends AbstractAnalyser
             )
         );
     }
-    
+
     public function visitPackageModel($package)
     {
         $this->packages[] = $package->getName();

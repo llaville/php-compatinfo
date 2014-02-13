@@ -22,8 +22,6 @@ use Bartlett\Reflect\Model\PackageModel;
 use Bartlett\Reflect\Model\ClassModel;
 use Bartlett\Reflect\Model\MethodModel;
 use Bartlett\Reflect\Model\ConstantModel;
-use Bartlett\Reflect\Ast\Statement;
-use Bartlett\Reflect\Ast\Expression;
 
 /**
  * Provides common metrics for all CompatInfo analysers.
@@ -36,7 +34,6 @@ use Bartlett\Reflect\Ast\Expression;
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Class available since Release 3.0.0RC1
  */
-
 abstract class AbstractAnalyser extends ReflectAnalyser
 {
     protected static $php4 = array(
@@ -124,10 +121,10 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     {
     }
 
-    public function visitStatement($dependency)
+    public function visitDependencyModel($dependency)
     {
-        $name = $dependency->getAttribute('name');
-        $argc = $dependency->getAttribute('args');
+        $name = $dependency->getName();
+        $argc = 0;
 
         $versions = $this->processInternal($name, $argc);
         $type     = $this->loader->getTypeElement();
@@ -136,10 +133,6 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
             $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
         }
-    }
-
-    public function visitExpression($dependency)
-    {
     }
 
     /**

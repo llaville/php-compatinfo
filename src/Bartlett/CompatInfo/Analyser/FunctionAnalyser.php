@@ -40,4 +40,19 @@ class FunctionAnalyser extends AbstractAnalyser
             )
         );
     }
+
+    public function visitPackageModel($package)
+    {
+        parent::visitPackageModel($package);
+
+        foreach ($package->getFunctions() as $function) {
+            $function->accept($this);
+        }
+    }
+
+    public function visitFunctionModel($function)
+    {
+        $name = $function->getName();
+        $this->count[self::METRICS_PREFIX . '.functions'][$name] = self::$php4;
+    }
 }

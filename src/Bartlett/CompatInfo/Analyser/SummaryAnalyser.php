@@ -44,7 +44,7 @@ class SummaryAnalyser extends AbstractAnalyser
             self::METRICS_PREFIX . '.methods'       => array(),
             self::METRICS_PREFIX . '.functions'     => array(),
             self::METRICS_PREFIX . '.constants'     => array(),
-            self::METRICS_PREFIX . '.internals'     => 0,
+            self::METRICS_PREFIX . '.internals'     => array(),
             self::METRICS_PREFIX . '.versions'      => array(
                 'ext.min' => '',
                 'ext.max' => '',
@@ -107,76 +107,12 @@ class SummaryAnalyser extends AbstractAnalyser
         $this->count[self::METRICS_PREFIX . '.constants'][$name] = self::$php4;
     }
 
-    public function visitStatement($dependency)
+    public function visitDependencyModel($dependency)
     {
-        $this->count[self::METRICS_PREFIX . '.internals']++;
-
-        $versions = $this->processInternal(
-            $dependency->getAttribute('name'),
-            $dependency->getAttribute('args')
-        );
+        $name = $dependency->getName();
+        $versions = $this->processInternal($name);
+        $this->count[self::METRICS_PREFIX . '.internals'][$name] = $versions;
 
         $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
-    }
-
-    public function visitExpression($dependency)
-    {
-        $depType = $dependency->getType();
-
-        if ('Alloc' == $depType) {
-            if ($name = ltrim($dependency->getAttribute('class'), '\\')) {
-
-                $versions = $this->processInternal(
-                    $name,
-                    $dependency->count()
-                );
-
-                $type = self::METRICS_PREFIX . '.classes';
-                $this->count[$type][$name] = $versions;
-
-                $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
-
-                // name class resolver
-                $node = $dependency->getParent()->getChild(0);
-
-                if ($node->getType() == 'Variable') {
-                    // local variable that host the class instance
-                    $this->aliases[$node->getAttribute('name')] = $name;
-                }
-            }
-
-        } elseif (
-            in_array($depType, array('MethodCall', 'ClassMemberAccessOnInstantiation'))
-        ) {
-            if ('ClassMemberAccessOnInstantiation' == $depType) {
-                $this->updateGlobalVersion('5.4.0RC1', '');
-                $name = $dependency->getAttribute('name');
-                $name = array_shift($name);
-                $this->aliases[$name] = $name;
-            }
-
-            list ($class, $method) = $dependency->getAttribute('name');
-            $argc = $dependency->getAttribute('args');
-
-            if ('this' !== $class && isset($this->aliases[$class])) {
-                // name class resolver  (see issue GH-100)
-                $name = $this->aliases[$class];
-
-                $ref = $this->findReference($name);
-                $methods = $ref->getClassMethods();
-
-                if (array_key_exists(strtolower($method), array_change_key_case($methods[$name]))) {
-
-                    $min = $methods[$name][$method]['php.min'];
-                    $max = $methods[$name][$method]['php.max'];
-
-                    $this->updateGlobalVersion($min, $max);
-
-                    $type = self::METRICS_PREFIX . '.classes';
-                    $this->count[$type][$name]['php.min'] = $min;
-                    $this->count[$type][$name]['php.max'] = $max;
-                }
-            }
-        }
     }
 }
