@@ -180,5 +180,4 @@ class FtpExtension extends AbstractReference
         );
         return $release;
     }
-
 }

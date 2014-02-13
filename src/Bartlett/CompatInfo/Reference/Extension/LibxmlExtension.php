@@ -10,13 +10,13 @@ class LibxmlExtension extends AbstractReference
     const REF_VERSION = '';
 
     private $version_number;
-    
+
     public function __construct()
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
         $this->version_number = $this->getMetaVersion('version_number');
-        
+
         $version  = $this->getCurrentVersion();
         $releases = array();
 
@@ -127,7 +127,7 @@ class LibxmlExtension extends AbstractReference
                 'LIBXML_NOXMLDECL'          => null,
             );
             $release->constants += $items;
-        }        
+        }
         $release->functions = array(
             'libxml_clear_errors'           => null,
             'libxml_get_errors'             => null,
@@ -166,7 +166,7 @@ class LibxmlExtension extends AbstractReference
             'php.max' => '',
         );
         $release->constants = array();
-        
+
         if ($this->version_number >= 20703) { /* 2.7.3 */
             $items = array(
                 'LIBXML_PARSEHUGE'          => null,
@@ -242,7 +242,7 @@ class LibxmlExtension extends AbstractReference
                 'LIBXML_SCHEMA_CREATE'      => null,
             );
             $release->constants += $items;
-        }        
+        }
         return $release;
     }
 }

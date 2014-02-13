@@ -382,5 +382,4 @@ class XdebugExtension extends AbstractReference
         );
         return $release;
     }
-
 }

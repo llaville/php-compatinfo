@@ -49,11 +49,11 @@ class IconvExtension extends AbstractReference
             'php.min' => '4.0.5',
             'php.max' => '',
         );
-        $release->iniEntries = array(        
+        $release->iniEntries = array(
             'iconv.input_encoding'          => null,
             'iconv.internal_encoding'       => null,
             'iconv.output_encoding'         => null,
-        );        
+        );
         $release->functions = array(
             'iconv'                         => null,
             'iconv_get_encoding'            => null,
@@ -105,6 +105,6 @@ class IconvExtension extends AbstractReference
             'iconv_strrpos'                         => null,
             'iconv_substr'                          => null,
         );
-       return $release;
+        return $release;
     }
 }

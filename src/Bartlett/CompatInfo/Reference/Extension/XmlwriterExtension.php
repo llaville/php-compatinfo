@@ -108,5 +108,4 @@ class XmlwriterExtension extends AbstractReference
         );
         return $release;
     }
-
 }

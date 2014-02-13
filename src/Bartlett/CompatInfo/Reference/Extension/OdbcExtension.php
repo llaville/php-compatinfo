@@ -36,7 +36,7 @@ class OdbcExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
-        
+
         // 5.3.0
         if (version_compare($version, '5.3.0', 'ge')) {
             $release = $this->getR50300();
@@ -209,7 +209,7 @@ class OdbcExtension extends AbstractReference
         );
         return $release;
     }
-    
+
     protected function getR50300()
     {
         $release = new \StdClass;
@@ -226,5 +226,4 @@ class OdbcExtension extends AbstractReference
         );
         return $release;
     }
-    
 }

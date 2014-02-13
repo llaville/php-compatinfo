@@ -124,8 +124,8 @@ class ReferenceShowCommand extends Command
             if (!preg_match(
                 '/^\s*(==|!=|[<>]=?)?\s*(.*)$/',
                 $php,
-                $matches)
-            ) {
+                $matches
+            )) {
                 throw new \InvalidArgumentException(
                     sprintf('Don\'t understand "%s" as a version number.', $php)
                 );
@@ -186,7 +186,7 @@ class ReferenceShowCommand extends Command
 
     protected function render(&$php, &$rows, &$results, $title)
     {
-        $headers = array($title, 'REF', 'EXT min/Max', 'PHP min/Max'); 
+        $headers = array($title, 'REF', 'EXT min/Max', 'PHP min/Max');
         
         if ($php) {
             $footers = array(

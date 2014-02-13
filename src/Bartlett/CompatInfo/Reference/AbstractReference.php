@@ -27,7 +27,7 @@ abstract class AbstractReference implements ReferenceInterface
         $eol = "\n";
         $str = '';
 
-        $versioning = function ($versions) use($eol) {
+        $versioning = function ($versions) use ($eol) {
             $str = sprintf(
                 '      Version EXT => %s %s%s',
                 $versions['ext.min'],

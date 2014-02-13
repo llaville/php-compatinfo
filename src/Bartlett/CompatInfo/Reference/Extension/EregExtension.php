@@ -69,5 +69,4 @@ class EregExtension extends AbstractReference
         );
         return $release;
     }
-
 }

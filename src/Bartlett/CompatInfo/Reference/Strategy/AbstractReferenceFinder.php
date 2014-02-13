@@ -97,7 +97,7 @@ abstract class AbstractReferenceFinder
     {
         return $this->find($element, array(self::FIND_CLASSES));
     }
-    
+
     /**
      * Gets the name of Reference that provide this function $element
      *
@@ -147,10 +147,10 @@ abstract class AbstractReferenceFinder
             return $this->references[$name];
         }
         return $this->references;
-    }    
-    
+    }
+
     public function getTypeElement()
     {
         return $this->typeElement;
-    }    
+    }
 }

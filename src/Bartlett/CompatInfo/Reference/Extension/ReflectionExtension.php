@@ -21,13 +21,13 @@ class ReflectionExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
-        
+
         // 5.4.0
         if (version_compare($version, '5.4.0', 'ge')) {
             $release = $this->getR50400();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
-        }        
+        }
     }
 
     protected function getR50000()
@@ -58,7 +58,7 @@ class ReflectionExtension extends AbstractReference
         );
         return $release;
     }
-    
+
     protected function getR50400()
     {
         $release = new \StdClass;
@@ -71,8 +71,8 @@ class ReflectionExtension extends AbstractReference
             'php.max' => '',
         );
         $release->classes = array(
-            'ReflectionZendExtension'       => null,        
+            'ReflectionZendExtension'       => null,
         );
         return $release;
-    }    
+    }
 }

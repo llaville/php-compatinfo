@@ -23,7 +23,7 @@ class ZipExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
-        
+
         // 1.6.0
         if (version_compare($version, '1.6.0', 'ge')) {
             $release = $this->getR10600();
@@ -57,7 +57,7 @@ class ZipExtension extends AbstractReference
         );
         return $release;
     }
-    
+
     protected function getR10600()
     {
         $release = new \StdClass;
@@ -85,7 +85,7 @@ class ZipExtension extends AbstractReference
                         'ext.min' => '1.12.4'
                     ),
                 ),
-            ),            
+            ),
         );
         return $release;
     }

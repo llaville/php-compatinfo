@@ -16,7 +16,7 @@ class XmlreaderExtension extends AbstractReference
         //$version  = $this->getCurrentVersion();  // @FIXME
         $version  = $this->getLatestPhpVersion();
         $releases = array();
-        
+
         // 5.0.0
         if (version_compare($version, '5.0.0', 'ge')) {
             $release = $this->getR50000();
@@ -37,7 +37,7 @@ class XmlreaderExtension extends AbstractReference
             'php.max' => '',
         );
         $release->classes = array(
-            'XMLReader'                     => null,        
+            'XMLReader'                     => null,
         );
         return $release;
     }

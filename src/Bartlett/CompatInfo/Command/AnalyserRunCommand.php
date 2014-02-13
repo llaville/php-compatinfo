@@ -14,7 +14,6 @@ use Bartlett\Reflect\Command\ProviderCommand;
 use Bartlett\Reflect\ProviderManager;
 use Bartlett\Reflect\Provider\SymfonyFinderProvider;
 use Bartlett\Reflect\Plugin\Analyser\AnalyserPlugin;
-#use Symfony\Component\EventDispatcher\GenericEvent;   // @FIXME optional
 
 class AnalyserRunCommand extends ProviderCommand
 {
@@ -73,8 +72,8 @@ class AnalyserRunCommand extends ProviderCommand
             if (!preg_match(
                 '/^\s*(==|!=|[<>]=?)?\s*(.*)$/',
                 $php,
-                $matches)
-            ) {
+                $matches
+            )) {
                 throw new \InvalidArgumentException(
                     sprintf('Don\'t understand "%s" as a version number.', $php)
                 );

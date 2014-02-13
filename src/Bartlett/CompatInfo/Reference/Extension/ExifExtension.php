@@ -56,7 +56,7 @@ class ExifExtension extends AbstractReference
             'exif.decode_unicode_motorola'  => null,
             'exif.encode_jis'               => null,
             'exif.encode_unicode'           => null,
-        );        
+        );
         $release->functions = array(
             'read_exif_data'                => null,
         );
@@ -101,5 +101,4 @@ class ExifExtension extends AbstractReference
         );
         return $release;
     }
-
 }
