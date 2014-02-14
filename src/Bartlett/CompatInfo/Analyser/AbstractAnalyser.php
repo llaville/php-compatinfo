@@ -270,10 +270,6 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $min = '5.4.0';
             $this->count[static::METRICS_PREFIX . '.traits'][$name]['php.min'] = $min;
 
-        } elseif (!empty($interfaces)) {
-            $min = '5.0.0';
-            $this->count[static::METRICS_PREFIX . '.interfaces'][$name]['php.min'] = $min;
-
         } elseif ($parent) {
             // inspect parent class and checks versions
             return $this->processClass($parent);
@@ -281,7 +277,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         } elseif ($element->inNamespace()) {
             $min = '5.3.0';
 
-        } elseif ($element->isInterface()) {
+        } elseif ($element->isInterface() || !empty($interfaces)) {
             $min = '5.0.0';
 
         } else {
