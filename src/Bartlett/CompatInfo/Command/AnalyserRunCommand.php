@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Helper\TableHelper;
 use Symfony\Component\Console\Helper\ProgressHelper;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 use Bartlett\CompatInfo;
 use Bartlett\Reflect\Command\ProviderCommand;
@@ -163,6 +164,16 @@ class AnalyserRunCommand extends ProviderCommand
                 $compatinfo->addPlugin($analyser);
             }
 
+            if ($output->isVerbose()) {
+                $compatinfo->getEventDispatcher()->addListener(
+                    'reflect.progress',
+                    function (GenericEvent $e) use($progress) {
+                        if ($progress instanceof ProgressHelper) {
+                            $progress->advance();
+                        }
+                    }
+                );
+            }
 
             $compatinfo->parse();
 
@@ -217,14 +228,14 @@ class AnalyserRunCommand extends ProviderCommand
                 $table->render($output);
                 $output->writeln('');
             }
-            
+
             if (in_array('trait', $analysers)) {
                 $output->writeln("<info>Traits Analysis</info>\n");
                 $table = $this->traitAnalyser($count, $php);
                 $table->render($output);
                 $output->writeln('');
             }
-            
+
             if (in_array('class', $analysers)) {
                 $output->writeln("<info>Classes Analysis</info>\n");
                 $table = $this->classAnalyser($count, $php);
@@ -245,7 +256,7 @@ class AnalyserRunCommand extends ProviderCommand
                 $table->render($output);
                 $output->writeln('');
             }
-            
+
             if (in_array('size', $analysers)) {
                 $text = $this->sizeAnalyser($count);
                 $output->writeln('<info>Size Analysis</info>');
@@ -342,14 +353,14 @@ END;
             ->listHelper($metric['fa.functions'], $metric['fa.versions'], $php, 'Function');
         return $table;
     }
-    
+
     private function constantAnalyser($metric, $php)
     {
         $table = $this->getApplication()
             ->listHelper($metric['ca.constants'], $metric['ca.versions'], $php, 'Constant');
         return $table;
     }
-    
+
     private function sizeAnalyser($count)
     {
         $count['ncloc']         = $count['loc'] - $count['cloc'];
