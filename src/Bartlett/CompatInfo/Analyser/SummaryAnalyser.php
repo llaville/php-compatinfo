@@ -95,12 +95,6 @@ class SummaryAnalyser extends AbstractAnalyser
         }
     }
 
-    public function visitFunctionModel($function)
-    {
-        $name = $function->getName();
-        $this->count[self::METRICS_PREFIX . '.functions'][$name] = self::$php4;
-    }
-
     public function visitConstantModel($constant)
     {
         $name = $constant->getName();

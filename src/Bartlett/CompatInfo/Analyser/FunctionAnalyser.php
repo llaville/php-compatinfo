@@ -49,17 +49,4 @@ class FunctionAnalyser extends AbstractAnalyser
             $function->accept($this);
         }
     }
-
-    public function visitFunctionModel($function)
-    {
-        $name = $function->getName();
-        $this->count[self::METRICS_PREFIX . '.functions'][$name] = self::$php4;
-
-        if ($function->inNamespace()) {
-            $min = '5.3.0';
-            $this->count[self::METRICS_PREFIX . '.functions'][$name]['php.min'] = $min;
-
-            $this->updateGlobalVersion($min, '');
-        }
-    }
 }
