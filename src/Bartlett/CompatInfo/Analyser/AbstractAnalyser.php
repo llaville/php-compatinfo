@@ -206,7 +206,9 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         if ($ref) {
             $elements = $ref->{'get' . ucfirst($this->loader->getTypeElement())}();
 
-            $versions = $elements[$element];
+            // because case found in code does not always match the PHP Ref. declaration
+            $elements = array_change_key_case($elements);
+            $versions = $elements[strtolower($element)];
             $versions['ref'] = $ref::REF_NAME;
         } else {
             // not found; probably user component or reference not yet supported
