@@ -213,6 +213,25 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $versions = self::$php4;
             $versions['ref'] = 'user';
         }
+
+        $refName = $versions['ref'];
+
+        if (isset($this->count[static::METRICS_PREFIX . '.extensions'][$refName])) {
+            self::updateVersion(
+                $versions['ext.min'],
+                $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['ext.min']
+            );
+            self::updateVersion(
+                $versions['ext.max'],
+                $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['ext.max']
+            );
+        } else {
+            $this->count[static::METRICS_PREFIX . '.extensions'][$refName] = array(
+                'ext.min' => '',
+                'ext.max' => '',
+            );
+        }
+
         return $versions;
     }
 
