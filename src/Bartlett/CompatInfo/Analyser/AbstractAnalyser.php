@@ -275,8 +275,12 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $this->count[static::METRICS_PREFIX . '.interfaces'][$name]['php.min'] = $min;
 
             // inspect each interface implemented and checks their versions
-            foreach ($element->getInterfaces() as $interface) {
-                $name = $interface->getName();
+            foreach ($interfaces as $name) {
+                // only if model was previously loaded
+                if (!isset($this->interfaces[$name])) {
+                    continue;
+                }
+                $interface = $this->interfaces[$name];
 
                 list ($min, $max) = $this->processClass($interface);
 
