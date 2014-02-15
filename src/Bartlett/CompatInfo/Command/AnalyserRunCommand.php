@@ -222,6 +222,13 @@ class AnalyserRunCommand extends ProviderCommand
                 $output->writeln($text);
             }
 
+            if (in_array('extension', $analysers)) {
+                $output->writeln("<info>Extensions Analysis</info>\n");
+                $table = $this->extensionAnalyser($count, $php);
+                $table->render($output);
+                $output->writeln('');
+            }
+
             if (in_array('interface', $analysers)) {
                 $output->writeln("<info>Interfaces Analysis</info>\n");
                 $table = $this->interfaceAnalyser($count, $php);
@@ -324,6 +331,13 @@ END;
             $metric['sa.versions']['php.max']
         );
         return $str;
+    }
+
+    private function extensionAnalyser($metric, $php)
+    {
+        $table = $this->getApplication()
+            ->listHelper($metric['ea.extensions'], $metric['ea.versions'], $php, 'Extension');
+        return $table;
     }
 
     private function interfaceAnalyser($metric, $php)
