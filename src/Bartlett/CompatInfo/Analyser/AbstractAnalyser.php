@@ -231,20 +231,30 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
         $refName = $versions['ref'];
 
-        if (isset($this->count[static::METRICS_PREFIX . '.extensions'][$refName])) {
-            self::updateVersion(
+        if ('user' !== $refName) {
+            if (!isset($this->count[static::METRICS_PREFIX . '.extensions'][$refName])) {
+                $this->count[static::METRICS_PREFIX . '.extensions'][$refName] = self::$php4;
+            }
+
+            static::updateVersion(
                 $versions['ext.min'],
                 $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['ext.min']
             );
-            self::updateVersion(
+            static::updateVersion(
                 $versions['ext.max'],
                 $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['ext.max']
             );
-        } elseif ('user' !== $refName) {
-            $this->count[static::METRICS_PREFIX . '.extensions'][$refName] = array(
-                'ext.min' => '',
-                'ext.max' => '',
+
+            static::updateVersion(
+                $versions['php.min'],
+                $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['php.min']
             );
+            static::updateVersion(
+                $versions['php.max'],
+                $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['php.max']
+            );
+
+            $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
         }
 
         return $versions;
