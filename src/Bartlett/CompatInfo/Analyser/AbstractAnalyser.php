@@ -240,7 +240,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 $versions['ext.max'],
                 $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['ext.max']
             );
-        } else {
+        } elseif ('user' !== $refName) {
             $this->count[static::METRICS_PREFIX . '.extensions'][$refName] = array(
                 'ext.min' => '',
                 'ext.max' => '',
