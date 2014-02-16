@@ -16,12 +16,7 @@ use Bartlett\CompatInfo\Reference\ReferenceLoader;
 use Bartlett\CompatInfo\Reference\Strategy\PreFetchStrategy;
 use Bartlett\CompatInfo\Reference\Strategy\AutoDiscoverStrategy;
 
-use Bartlett\Reflect;
 use Bartlett\Reflect\Analyser\AbstractAnalyser as ReflectAnalyser;
-use Bartlett\Reflect\Model\PackageModel;
-use Bartlett\Reflect\Model\ClassModel;
-use Bartlett\Reflect\Model\MethodModel;
-use Bartlett\Reflect\Model\ConstantModel;
 
 /**
  * Provides common metrics for all CompatInfo analysers.
