@@ -28,6 +28,11 @@ class TraitAnalyser extends AbstractAnalyser
     const METRICS_PREFIX = 'ta';
     const METRICS_GROUP  = 'traits';
 
+    /**
+     * Initializes all metrics.
+     *
+     * @return void
+     */
     protected function init()
     {
         $this->count = array(
@@ -41,6 +46,13 @@ class TraitAnalyser extends AbstractAnalyser
         );
     }
 
+    /**
+     * Explore all traits (ClassModel) in each namespace (PackageModel).
+     *
+     * @param object $package Reflect the current namespace explored
+     *
+     * @return void
+     */
     public function visitPackageModel($package)
     {
         $this->packages[] = $package->getName();

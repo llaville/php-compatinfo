@@ -28,6 +28,11 @@ class ClassAnalyser extends AbstractAnalyser
     const METRICS_PREFIX = 'cla';
     const METRICS_GROUP  = 'classes';
 
+    /**
+     * Initializes all metrics.
+     *
+     * @return void
+     */
     protected function init()
     {
         $this->count = array(
@@ -41,6 +46,13 @@ class ClassAnalyser extends AbstractAnalyser
         );
     }
 
+    /**
+     * Explore all classes (ClassModel) in each namespace (PackageModel).
+     *
+     * @param object $package Reflect the current namespace explored
+     *
+     * @return void
+     */
     public function visitPackageModel($package)
     {
         $this->packages[] = $package->getName();

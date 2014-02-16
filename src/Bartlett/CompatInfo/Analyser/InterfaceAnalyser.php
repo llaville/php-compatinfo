@@ -28,6 +28,11 @@ class InterfaceAnalyser extends AbstractAnalyser
     const METRICS_PREFIX = 'ia';
     const METRICS_GROUP  = 'interfaces';
 
+    /**
+     * Initializes all metrics.
+     *
+     * @return void
+     */
     protected function init()
     {
         $this->count = array(
@@ -41,6 +46,13 @@ class InterfaceAnalyser extends AbstractAnalyser
         );
     }
 
+    /**
+     * Explore all interfaces (ClassModel) in each namespace (PackageModel).
+     *
+     * @param object $package Reflect the current namespace explored
+     *
+     * @return void
+     */
     public function visitPackageModel($package)
     {
         $this->packages[] = $package->getName();

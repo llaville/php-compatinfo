@@ -28,6 +28,11 @@ class ExtensionAnalyser extends AbstractAnalyser
     const METRICS_PREFIX = 'ea';
     const METRICS_GROUP  = 'extensions';
 
+    /**
+     * Initializes all metrics.
+     *
+     * @return void
+     */
     protected function init()
     {
         $this->count = array(
