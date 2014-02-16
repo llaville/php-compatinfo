@@ -170,11 +170,16 @@ abstract class AbstractAnalyser extends ReflectAnalyser
      */
     public function visitConstantModel($constant)
     {
-        $name = $constant->getName();
-        $this->count[static::METRICS_PREFIX . '.constants'][$name] = self::$php4;
+        $name     = $constant->getName();
+
+        $versions = $this->processInternal($name);
+        $type     = $this->loader->getTypeElement();
+
+        $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
+        $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
     }
 
-     /**
+    /**
      * Explore contents of each dependency (DependencyModel)
      * found in the current namespace.
      *

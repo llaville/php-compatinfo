@@ -28,6 +28,11 @@ class ConstantAnalyser extends AbstractAnalyser
     const METRICS_PREFIX = 'ca';
     const METRICS_GROUP  = 'constants';
 
+    /**
+     * Initializes all metrics.
+     *
+     * @return void
+     */
     protected function init()
     {
         $this->count = array(
@@ -41,24 +46,19 @@ class ConstantAnalyser extends AbstractAnalyser
         );
     }
 
+    /**
+     * Explore all constants (ConstantModel) in each namespace (PackageModel).
+     *
+     * @param object $package Reflect the current namespace explored
+     *
+     * @return void
+     */
     public function visitPackageModel($package)
     {
         $this->packages[] = $package->getName();
 
         foreach ($package->getConstants() as $constant) {
             $constant->accept($this);
-        }
-    }
-
-    public function visitConstantModel($constant)
-    {
-        $name     = $constant->getName();
-        $versions = $this->processInternal($name);
-        $type     = $this->loader->getTypeElement();
-
-        if ($type == static::METRICS_GROUP) {
-            $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
-            $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
         }
     }
 }
