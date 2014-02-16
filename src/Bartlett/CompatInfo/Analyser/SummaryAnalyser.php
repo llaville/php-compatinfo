@@ -110,7 +110,7 @@ class SummaryAnalyser extends AbstractAnalyser
     {
         $name = $dependency->getName();
         $versions = $this->processInternal($name);
-        $this->count[self::METRICS_PREFIX . '.internals'][$name] = $versions;
+        $this->count[static::METRICS_PREFIX . '.internals'][$name] = $versions;
 
         $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
     }
