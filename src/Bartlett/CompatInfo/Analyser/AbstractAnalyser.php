@@ -333,20 +333,20 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     /**
      * Explore class/interface/trait signature
      *
-     * @param object $element A ClassModel definition
+     * @param object $model A ClassModel definition
      */
-    protected function processClass($element)
+    protected function processClass($model)
     {
         $max        = '';
-        $name       = $element->getName();
-        $parent     = $element->getParentClass();
-        $interfaces = $element->getInterfaceNames();
+        $name       = $model->getName();
+        $parent     = $model->getParentClass();
+        $interfaces = $model->getInterfaceNames();
 
-        if ($element->getName() == 'Generator') {
+        if ($model->getName() == 'Generator') {
             $min = '5.5.0';
             $this->count[static::METRICS_PREFIX . '.classes'][$name]['php.min'] = $min;
 
-        } elseif ($element->isTrait()) {
+        } elseif ($model->isTrait()) {
             $min = '5.4.0';
             $this->count[static::METRICS_PREFIX . '.traits'][$name]['php.min'] = $min;
 
@@ -354,18 +354,18 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             // inspect parent class and checks versions
             return $this->processClass($parent);
 
-        } elseif ($element->inNamespace()) {
+        } elseif ($model->inNamespace()) {
             $min = '5.3.0';
 
-        } elseif ($element->isInterface() || !empty($interfaces)) {
+        } elseif ($model->isInterface() || !empty($interfaces)) {
             $min = '5.0.0';
 
         } else {
             /**
              * Look for PHP5 features
              */
-            if ($element->isAbstract()
-                || $element->isFinal()
+            if ($model->isAbstract()
+                || $model->isFinal()
             ) {
                 $min = '5.0.0';
             } else {
