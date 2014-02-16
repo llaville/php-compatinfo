@@ -45,6 +45,13 @@ abstract class AbstractReferenceFinder
     {
         $priorities = array();
 
+        $parts = explode('\\', $element);
+        $item  = array_pop($parts);
+
+        if (count($parts) > 0 && strtoupper($item) === $item) {
+            // seems to be a constant in a namespace
+            array_push($priorities, self::FIND_CONSTANTS);
+        }
         if (strtoupper($element) === $element) {
             // seems to be a constant
             array_push($priorities, self::FIND_CONSTANTS);
