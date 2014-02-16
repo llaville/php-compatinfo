@@ -44,6 +44,13 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     );
     protected $loader;
 
+    /**
+     * Explore dependencies (DependencyModel) of each namespace (PackageModel).
+     *
+     * @param object $package Reflect the current namespace explored
+     *
+     * @return void
+     */
     public function visitPackageModel($package)
     {
         parent::visitPackageModel($package);
@@ -53,11 +60,19 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         }
     }
 
+    /**
+     * Explore user classes (ClassModel) found in the current namespace.
+     *
+     * @param object $class Reflect the current user class explored
+     *
+     * @return void
+     */
     public function visitClassModel($class)
     {
         parent::visitClassModel($class);
 
         if ($this->testClass) {
+            // do not explore classes of PHPUnit tests suites
             return;
         }
 
@@ -84,6 +99,14 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         }
     }
 
+    /**
+     * Explore methods (MethodModel) of each user classes
+     * found in the current namespace.
+     *
+     * @param object $method Reflect the current method explored
+     *
+     * @return void
+     */
     public function visitMethodModel($method)
     {
         $name = $method->getName();
@@ -117,6 +140,13 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         );
     }
 
+    /**
+     * Explore user functions (FunctionModel) found in the current namespace.
+     *
+     * @param object $function Reflect the current user function explored
+     *
+     * @return void
+     */
     public function visitFunctionModel($function)
     {
         $name = $function->getName();
@@ -130,11 +160,29 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         }
     }
 
+    /**
+     * Explore user or magic constants (ConstantModel)
+     * found in the current namespace.
+     *
+     * @param object $constant Reflect the current constant explored
+     *
+     * @return void
+     */
     public function visitConstantModel($constant)
     {
+        $name = $constant->getName();
+        $this->count[static::METRICS_PREFIX . '.constants'][$name] = self::$php4;
     }
 
-    public function visitDependencyModel($dependency)
+     /**
+     * Explore contents of each dependency (DependencyModel)
+     * found in the current namespace.
+     *
+     * @param object $dependency Reflect the current dependency explored
+     *
+     * @return void
+     */
+   public function visitDependencyModel($dependency)
     {
         $name = $dependency->getName();
         $argc = 0;
@@ -163,6 +211,14 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         }
     }
 
+    /**
+     * Update the global versions of the project
+     *
+     * @param string $min The PHP min version to check
+     * @param string $max The PHP max version to check
+     *
+     * @return void
+     */
     protected function updateGlobalVersion($min, $max)
     {
         self::updateVersion(
@@ -175,9 +231,17 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         );
     }
 
+    /**
+     * Finds Reference versions of any elements found in the data source code.
+     *
+     * @param string $element Name of element to search for Reference versions
+     *
+     * @return null|object Instance of ReferenceInterface
+     */
     protected function findReference($element)
     {
         if (!$this->loader) {
+            // list of extensions that cannot be automatic discover
             $extensions = array(
                 'standard',
                 'core',
@@ -207,11 +271,17 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $this->loader->register(
                 new PreFetchStrategy($extensions)
             );
+            // all other extensions may be (lazy) load on demand
             $this->loader->register(new AutoDiscoverStrategy);
         }
         return $this->loader->loadRef($element);
     }
 
+    /**
+     * @param string $element Name of element to search for Reference versions
+     * @param int    $argc    (optional) Number of arguments used
+     *                        in current $element signature
+     */
     protected function processInternal($element, $argc = 0)
     {
         $ref = $this->findReference($element);

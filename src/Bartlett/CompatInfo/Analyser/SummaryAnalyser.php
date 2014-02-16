@@ -12,10 +12,6 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
-use Bartlett\Reflect\Model\ClassModel;
-use Bartlett\Reflect\Model\FunctionModel;
-use Bartlett\Reflect\Model\ConstantModel;
-
 /**
  * This analyzer collects versions on all elements of a project.
  *
@@ -30,9 +26,13 @@ use Bartlett\Reflect\Model\ConstantModel;
 class SummaryAnalyser extends AbstractAnalyser
 {
     const METRICS_PREFIX = 'sa';
+    const METRICS_GROUP  = 'internals';
 
-    protected $aliases = array();
-
+    /**
+     * Initializes all metrics.
+     *
+     * @return void
+     */
     protected function init()
     {
         $this->count = array(
@@ -54,6 +54,13 @@ class SummaryAnalyser extends AbstractAnalyser
         );
     }
 
+    /**
+     * Explore contents of each namespace (PackageModel).
+     *
+     * @param object $package Reflect the current namespace explored
+     *
+     * @return void
+     */
     public function visitPackageModel($package)
     {
         parent::visitPackageModel($package);
@@ -95,12 +102,14 @@ class SummaryAnalyser extends AbstractAnalyser
         }
     }
 
-    public function visitConstantModel($constant)
-    {
-        $name = $constant->getName();
-        $this->count[self::METRICS_PREFIX . '.constants'][$name] = self::$php4;
-    }
-
+    /**
+     * Explore contents of each dependency (DependencyModel)
+     * found in the current namespace.
+     *
+     * @param object $dependency Reflect the current dependency explored
+     *
+     * @return void
+     */
     public function visitDependencyModel($dependency)
     {
         $name = $dependency->getName();
