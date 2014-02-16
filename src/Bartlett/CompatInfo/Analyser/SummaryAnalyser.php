@@ -63,8 +63,6 @@ class SummaryAnalyser extends AbstractAnalyser
      */
     public function visitPackageModel($package)
     {
-        parent::visitPackageModel($package);
-
         $name = $package->getName();
 
         $this->count[self::METRICS_PREFIX . '.packages'][$name] = self::$php4;
@@ -77,9 +75,7 @@ class SummaryAnalyser extends AbstractAnalyser
             );
         }
 
-        foreach ($package->getDependencies() as $dependency) {
-            $dependency->accept($this);
-        }
+        parent::visitPackageModel($package);
 
         foreach ($package->getClasses() as $class) {
             $class->accept($this);
