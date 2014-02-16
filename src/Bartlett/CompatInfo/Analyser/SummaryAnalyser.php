@@ -65,12 +65,12 @@ class SummaryAnalyser extends AbstractAnalyser
     {
         $name = $package->getName();
 
-        $this->count[self::METRICS_PREFIX . '.packages'][$name] = self::$php4;
+        $this->count[static::METRICS_PREFIX . '.packages'][$name] = self::$php4;
         if ('+global' !== $name) {
-            $this->count[self::METRICS_PREFIX . '.packages'][$name]['php.min'] = '5.3.0';
+            $this->count[static::METRICS_PREFIX . '.packages'][$name]['php.min'] = '5.3.0';
 
             $this->updateGlobalVersion(
-                $this->count[self::METRICS_PREFIX . '.packages'][$name]['php.min'],
+                $this->count[static::METRICS_PREFIX . '.packages'][$name]['php.min'],
                 ''
             );
         }
