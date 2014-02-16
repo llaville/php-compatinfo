@@ -54,9 +54,12 @@ class AutoDiscoverStrategy extends AbstractReferenceFinder implements ReferenceF
                 }
             }
         }
-        // element seems not provided by any extension
-        //error_log('--> Not Found [AutoDiscoverStrategy]');
-        $this->typeElement = array_shift($priorities);
-        return 'user';
+        // element seems not provided by any extension.
+        // Save in cache to speed up next searches
+        $this->cache[$index][$needle]['name'] = $name = 'user';
+        $this->cache[$index][$needle]['type'] = $priority = array_shift($priorities);
+        $this->typeElement = $priority;
+        //error_log('--> Not Found [AutoDiscoverStrategy] on ' . $this->typeElement);
+        return $name;
     }
 }

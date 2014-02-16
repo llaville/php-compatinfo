@@ -80,9 +80,12 @@ class PreFetchStrategy extends AbstractReferenceFinder implements ReferenceFinde
                 }
             }
         }
-        // element seems not provided by any extension
-        //error_log('--> Not Found [PreFetchStrategy]');
-        $this->typeElement = array_shift($priorities);
-        return 'user';
+        // element seems not provided by any extension.
+        // Save in cache to speed up next searches
+        $this->cache[$index][$needle]['name'] = $name = 'user';
+        $this->cache[$index][$needle]['type'] = $priority = array_shift($priorities);
+        $this->typeElement = $priority;
+        //error_log('--> Not Found [PreFetchStrategy] on ' . $this->typeElement);
+        return $name;
     }
 }
