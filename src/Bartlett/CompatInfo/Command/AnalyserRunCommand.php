@@ -216,8 +216,6 @@ class AnalyserRunCommand extends ProviderCommand
 
             if (in_array('summary', $analysers)) {
                 $output->writeln("<info>Summary Analysis</info>");
-                #$table = $this->summaryAnalyser($count);
-                #$table->render($output);
                 $text = $this->summaryAnalyser($count);
                 $output->writeln($text);
             }
@@ -225,6 +223,13 @@ class AnalyserRunCommand extends ProviderCommand
             if (in_array('extension', $analysers)) {
                 $output->writeln("<info>Extensions Analysis</info>\n");
                 $table = $this->extensionAnalyser($count, $php);
+                $table->render($output);
+                $output->writeln('');
+            }
+
+            if (in_array('namespace', $analysers)) {
+                $output->writeln("<info>Namespaces Analysis</info>\n");
+                $table = $this->namespaceAnalyser($count, $php);
                 $table->render($output);
                 $output->writeln('');
             }
@@ -337,6 +342,13 @@ END;
     {
         $table = $this->getApplication()
             ->listHelper($metric['ea.extensions'], $metric['ea.versions'], $php, 'Extension');
+        return $table;
+    }
+
+    private function namespaceAnalyser($metric, $php)
+    {
+        $table = $this->getApplication()
+            ->listHelper($metric['na.packages'], $metric['na.versions'], $php, 'Namespace');
         return $table;
     }
 
