@@ -92,6 +92,8 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         foreach ($class->getMethods() as $method) {
             $method->accept($this);
         }
+
+        $this->updatePackageVersion($min, $max, $class->getNamespaceName());
     }
 
     /**
@@ -149,9 +151,12 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
         if ($function->inNamespace()) {
             $min = '5.3.0';
+            $max = '';
             $this->count[static::METRICS_PREFIX . '.functions'][$name]['php.min'] = $min;
 
-            $this->updateGlobalVersion($min, '');
+            $this->updateGlobalVersion($min, $max);
+
+            $this->updatePackageVersion($min, $max, $function->getNamespaceName());
         }
     }
 
@@ -224,6 +229,32 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $max,
             $this->count[static::METRICS_PREFIX . '.versions']['php.max']
         );
+    }
+
+    /**
+     * Update the current namespace versions, only if metric is required.
+     *
+     * @param string $min The PHP min version to check
+     * @param string $max The PHP max version to check
+     * @param string $pkg The current namespace name
+     *
+     * @return void
+     */
+    protected function updatePackageVersion($min, $max, $pkg)
+    {
+        if (isset($this->count[static::METRICS_PREFIX . '.packages'])) {
+            if (empty($pkg)) {
+                $pkg = '+global';
+            }
+            self::updateVersion(
+                $min,
+                $this->count[static::METRICS_PREFIX . '.packages'][$pkg]['php.min']
+            );
+            self::updateVersion(
+                $max,
+                $this->count[static::METRICS_PREFIX . '.packages'][$pkg]['php.max']
+            );
+        }
     }
 
     /**
