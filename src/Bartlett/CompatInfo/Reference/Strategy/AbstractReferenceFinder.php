@@ -20,17 +20,23 @@ abstract class AbstractReferenceFinder
      */
     public function __construct()
     {
-        $path = dirname(__DIR__) . '/Extension/*Extension.php';
+        $path = dirname(__DIR__) . '/Extension';
 
-        $iterator = new \GlobIterator($path, \FilesystemIterator::KEY_AS_FILENAME);
+        if ($uri = \Phar::running(false)) {
+            $iterator = new \RecursiveIteratorIterator(new \Phar($uri));
+        } else {
+            $iterator = new \DirectoryIterator($path);
+        }
 
-        foreach ($iterator as $item) {
+        foreach ($iterator as $file) {
+            if (fnmatch('*Extension.php', $file->getPathName())) {
 
-            $className = basename($iterator->key(), '.php');
-            $extName   = strtolower(str_replace('Extension', '', $className));
+                $className = basename($file, '.php');
+                $extName   = strtolower(str_replace('Extension', '', $className));
 
-            $this->extensions[$extName]
-                = 'Bartlett\\CompatInfo\\Reference\\Extension\\' . $className;
+                $this->extensions[$extName]
+                    = 'Bartlett\\CompatInfo\\Reference\\Extension\\' . $className;
+            }
         }
     }
 
