@@ -1,8 +1,13 @@
 #!/usr/bin/env php
 <?php
 // bin/console
-//putenv("COMPATINFO=/var/compatinfo/branches/v3/bin/compatinfo.json");
+//putenv("COMPATINFO=/path/to/dir/compatinfo.json");
 ini_set('memory_limit', -1);
+
+$phpParserDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/PHP-Parser/lib';
+
+require $phpParserDir . '/PhpParser/Autoloader.php';
+PhpParser\Autoloader::register();
 
 require_once 'Symfony/Component/ClassLoader/UniversalClassLoader.php';
 require_once 'PHP/Timer.php';
@@ -15,6 +20,10 @@ $loader->registerNamespaces(array(
     'Symfony'  => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor',
 ));
 $loader->register();
+
+if (PHP_SAPI !== 'cli') {
+    return;
+}
 
 use Bartlett\Reflect\Command\AnalyserListCommand;
 use Bartlett\Reflect\Command\ProviderListCommand;
