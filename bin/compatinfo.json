@@ -1,33 +1,33 @@
 {
     "source-providers": [
         {
-            "in": "phar:///var/compatinfo/branches/v3/examples/archives/PHP_CompatInfo-2.0.0.zip as CompatInfo",
+            "in": "phar:///var/dist/PHP_CompatInfo-2.0.0.zip as CompatInfo2",
             "name": "*.php",
             "path": "PHP/"
         },
         {
-            "in": "phar:///var/compatinfo/branches/v3/examples/archives/PHP_Reflect-1.0.0.tar as Reflect",
+            "in": "phar:///var/dist/PHP_Reflect-1.0.0.tar as Reflect1",
             "path": "PHP/",
             "name": "*.php"
         },
         {
-            "in": "phar:///var/compatinfo/branches/v3/examples/archives/PHP_Reflect-1.0.0.tar as ReflectAL",
+            "in": "phar:///var/dist/PHP_Reflect-1.0.0.tar as ReflectAL",
             "path": "PHP/",
             "name": "Autoload.php"
         },
         {
-            "in": "phar:///var/compatinfo/branches/v3/examples/archives/phing-2.6.1.tgz as phing",
+            "in": "phar:///var/dist/phing-2.7.0.tgz as phing27",
             "name": "*.php",
             "path": "tasks/system",
             "notPath": "contrib/",
             "size": "< 4K"
         },
         {
-            "in": "phar:///var/compatinfo/branches/v3/examples/archives/Zend-1.12.3.tgz as ZF1",
+            "in": "phar:///var/dist/Zend-1.12.3.tgz as ZF1123",
             "name": "*.php"
         },
         {
-            "in": "phar:///var/compatinfo/branches/v3/examples/archives/Zend-1.12.3.tgz as ZFDate",
+            "in": "phar:///var/dist/Zend-1.12.3.tgz as ZFDate",
             "name": "Date.php",
             "depth": "== 1"
         }
@@ -39,6 +39,14 @@
         }
     ],
     "analysers" : [
+        {
+            "name": "Namespace",
+            "class": "Bartlett\\CompatInfo\\Analyser\\NamespaceAnalyser"
+        },
+        {
+            "name": "Extension",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ExtensionAnalyser"
+        },
         {
             "name": "Interface",
             "class": "Bartlett\\CompatInfo\\Analyser\\InterfaceAnalyser"
