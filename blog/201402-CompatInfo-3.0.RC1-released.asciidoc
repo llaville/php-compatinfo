@@ -1,0 +1,118 @@
+:css-signature: blog
+:icons!:
+:iconsfont: font-awesome
+:iconsfontdir: ./fonts/font-awesome
+:imagesdir: ./images
+:author: Laurent Laville
+:revdate: 2014-02-19
+:pubdate: Wed, 19 Feb 2014 16:20:20 +0100
+:summary: CompatInfo 3.0.0RC1 has just been released.
+
+== CompatInfo 3.0.0RC1 released
+
+[role="blog",cols="3,9",halign="right",citetitle="Published by {author} on {revdate}"]
+.icon:rocket[size="4x"]
+--
+[role="lead"]
+{summary}
+
+As I've explained yesterday on http://php5.laurent-laville.org/reflect/blog[Reflect's blog], 
+about the http://php5.laurent-laville.org/reflect/blog/201402-Reflect-2.0.RC2-released.html[Reflect 2.0.0RC2] 
+release, there are no PEAR package version.
+
+CompatInfo 3.0.0RC1 is available only on two formats :
+
+* a PHAR version that bundles all dependencies (PHP-Parser + patch (1.0.0-dev+gh95), 
+Symfony Finder 2.4.1, EventDispatcher 2.4.1, Console 2.4.1) in a single file.
+* a https://github.com/llaville/php-compat-info/blob/v3/composer.json[composer version].
+
+*Caution about the composer version* 
+
+To use my patch (1.0.0-dev+gh95) on base Nikita 1.0-dev version, add on your `composer.json` file
+the following contents:
+----
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/llaville/PHP-Parser"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "nikic/php-parser": "dev-MagicConst as 1.0.*@dev"
+    }
+}
+----
+
+You should get something like this output
+----
+Loading composer repositories with package information
+Installing dependencies
+  - Installing nikic/php-parser (dev-MagicConst d287cb4)
+    Cloning d287cb42896ba8921fda64fc5868093647fd65de
+
+Writing lock file
+Generating autoload files
+----
+
+The PHAR version was built with the http://box-project.org/[Box Project].
+The config file _box.json_ is https://github.com/llaville/php-compat-info/blob/v3/box.json[available] 
+on the github repository.
+
+[NOTE]
+.This phar version is both compatible with CLI and other SAPI
+=====================================================================
+For web usage, just include the phar version, and use API. 
+----
+<?php
+require '/path/to/dir/phpcompatinfo.phar';
+// ...
+----
+=====================================================================
+
+If you use CompatInfo in CLI, you should have access to a console application.
+This console use a json configuration file. Here is an 
+https://github.com/llaville/php-compat-info/blob/v3/bin/compatinfo.json[example].
+
+*source-providers*::
+identify your data source (following Symfony/Finder options)
+
+*plugins*::
+included all plugins installed. Only one available *AnalyserPlugin* that give final results.
+
+*analysers*::
+list all analysers installed accessible through the AnalyserPlugin. Previously (CompatInfo 1.x)
+it was called report (--report option).
+
+.Example 1: Summary analyser (always available, and display as default report, if none provided)
+----
+$ php phpcompatinfo.phar analyser:run --alias Reflect1 
+---- 
+
+.Example 2: Extension analyser (with benchmark active if PHP_Timer installed)
+----
+$ php phpcompatinfo.phar --profile analyser:run --alias CompatInfo2 extension 
+----
+
+.Example 3: Inspect full SPL Reference contents (that may be filtered by component; see reference:show options) 
+----
+$ php phpcompatinfo.phar --profile reference:show spl
+----
+
+.Example 4: Inspect Reference contents filtered by PHP version (all elements in Core since PHP 5.3)
+----
+$ php phpcompatinfo.phar --profile reference:show --php=">= 5.3.0" core
+----
+
+.What is planned for the final stable version:
+************************************************
+* Fixes issues if users found something wrong.
+* Adds 40 extensions remaining (on 100) that were not yet migrated to new format.
+* Adds code to have ability to use the cache feature (plugin). 
+* Finish the documentation that is not yet available.
+************************************************
+
+link:http://bartlett.laurent-laville.org/get/phpcompatinfo.phar[caption="Download the PHAR version",role="primary",icon="glyphicon-download-alt"]
+
+--
