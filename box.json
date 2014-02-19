@@ -1,0 +1,62 @@
+{
+    "alias": "phpcompatinfo.phar",
+    "chmod": "0755",
+    "directories": ["src"],
+    "extract": true,
+    "compression": "GZ",
+    "files": [
+        "LICENSE"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "in": "vendor/PHP-Parser"
+        },
+        {
+            "name": "*.php",
+            "notPath": "/Tests/",
+            "in": "vendor/Symfony"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/Bartlett"
+        }
+    ],
+    "map": [
+        {
+            "vendor/Bartlett": "src/Bartlett"
+        }
+    ],
+    "metadata": [
+        {
+            "vendor": [
+                {
+                    "nikic": [
+                        {
+                            "PHP-Parser": "1.0.0-dev+gh95"
+                        }
+                    ],
+                    "symfony": [
+                        {
+                            "console": "2.4.1",
+                            "eventdispatcher": "2.4.1",
+                            "finder": "2.4.1"
+                        }
+                    ],
+                    "llaville": [
+                        {
+                            "php-reflect": "2.0.0RC2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "git-commit": "git_commit",
+    "git-version": "package_version",
+    "main": "bin/compatinfo",
+    "output": "phpcompatinfo.phar",
+    "intercept": true,
+    "stub": true,
+    "web": false
+}
