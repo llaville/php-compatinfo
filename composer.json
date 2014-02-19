@@ -10,24 +10,29 @@
     },
     "repositories": [
         {
+            "type": "vcs",
+            "url": "https://github.com/llaville/PHP-Parser"
+        },
+        {
             "type": "pear",
-            "url": "http://bartlett.laurent-laville.org"
+            "url": "http://pear.phpunit.de/"
         }
     ],
     "require": {
         "php": ">=5.3.0",
-        "pear-pear/Console_CommandLine": ">=1.2.0",
-        "pear-bartlett/PHP_Reflect": ">=1.8.0,<=1.99.0",
-        "ext-dom": "*",
-        "ext-libxml": "*",
+        "ext-tokenizer": "*",
         "ext-pcre": "*",
-        "ext-SPL": "*",
-        "ext-Reflection": "*"
+        "ext-spl": "*",
+        "ext-json": "*",
+        "pear-phpunit/PHP_Timer": ">=1.0.0",
+        "nikic/php-parser": "dev-MagicConst as 1.0.*@dev",
+        "symfony/class-loader": ">=2.4",
+        "symfony/event-dispatcher": ">=2.4",
+        "symfony/finder": ">=2.4",
+        "symfony/console": ">=2.4"
     },
-    "suggest": {
-        "pear-pear/Net_Growl": ">=2.6.0",
-        "pear-phpunit/PHPUnit": ">=3.6.0",
-        "pear-phpunit/PHP_Timer": ">=1.0.0"
+    "require-dev": {
+        "pear-phpunit/PHPUnit": ">=3.7"
     },
     "authors": [
         {
@@ -44,8 +49,9 @@
         }
     ],
     "autoload": {
-        "classmap": [
-            "PHP"
-        ]
+        "psr-0": {
+            "Bartlett\\": "src/",
+            "Bartlett\\Tests\\CompatInfo\\": "tests/"
+        }
     }
 }
