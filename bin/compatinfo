@@ -9,8 +9,13 @@ $phpParserDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/PHP-Parser/lib'
 require $phpParserDir . '/PhpParser/Autoloader.php';
 PhpParser\Autoloader::register();
 
-require_once 'Symfony/Component/ClassLoader/UniversalClassLoader.php';
-require_once 'PHP/Timer.php';
+if (\Phar::running()) {
+    require_once 'phar://phpcompatinfo.phar/vendor/Symfony/Component/ClassLoader/UniversalClassLoader.php';
+    require_once 'phar://phpcompatinfo.phar/vendor/PHPUnit/PHP_Timer/PHP/Timer.php';
+} else {
+    require_once 'Symfony/Component/ClassLoader/UniversalClassLoader.php';
+    require_once 'PHP/Timer.php';
+}
 
 use Symfony\Component\ClassLoader\UniversalClassLoader;
 
