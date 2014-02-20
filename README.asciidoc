@@ -6,13 +6,14 @@ find out the minimum version and the extensions required for a piece of code to 
 
 == Blog 
 
-The first mature Release Candidate (RC1) was released Wed, 19 Feb 2014.
+The first mature Release Candidate (RC1) of API 3.0 was released Wed, 19 Feb 2014.
 
 It was distributed as source code (install via composer) and a PHAR version 
 that bundles all dependencies in a single file.
 
 Follow development on the http://php5.laurent-laville.org/compatinfo/blog[official Blog]. 
 
+Have a look on master branch for previous stable API 2.0
 
 == Documentation
 
