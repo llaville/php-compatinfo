@@ -22,6 +22,8 @@ Subscribe to RSS feed icon:rss-square[size="lg",link="http://php5.laurent-lavill
 ** link:201401.html[January] [badge pull-right]#1#
 **********
 
+include::201402-CompatInfo-3.0.RC1-phar-fixed.asciidoc[]
+
 include::201402-CompatInfo-3.0.RC1-installation.asciidoc[]
 
 include::201402-CompatInfo-3.0.RC1-released.asciidoc[]
