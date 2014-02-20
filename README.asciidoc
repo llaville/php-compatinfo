@@ -1,0 +1,25 @@
+= PHP CompatInfo
+
+**PHP CompatInfo** is a library that
+find out the minimum version and the extensions required for a piece of code to run.
+
+
+== Blog 
+
+The first mature Release Candidate (RC1) was released Wed, 19 Feb 2014.
+
+It was distributed as source code (install via composer) and a PHAR version 
+that bundles all dependencies in a single file.
+
+Follow development on the http://php5.laurent-laville.org/compatinfo/blog[official Blog]. 
+
+
+== Documentation
+
+The documentation for PHP CompatInfo will be soon available 
+in http://php5.laurent-laville.org/compatinfo/manual/3.0/en/[English] 
+and different formats, begun with a web doc,
+built with https://github.com/llaville/asciidoc-bootstrap-backend[AsciiDoc-Bootstrap] 
+and http://getbootstrap.com/[Bootstrap 3].   
+
+AsciiDoc source code are available on `docs` folder of the repository.
