@@ -10,10 +10,6 @@
     },
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/llaville/PHP-Parser"
-        },
-        {
             "type": "pear",
             "url": "http://pear.phpunit.de/"
         }
@@ -25,7 +21,7 @@
         "ext-spl": "*",
         "ext-json": "*",
         "pear-phpunit/PHP_Timer": ">=1.0.0",
-        "nikic/php-parser": "dev-MagicConst as 1.0.*@dev",
+        "nikic/php-parser": "1.0.*@dev",
         "symfony/class-loader": ">=2.4",
         "symfony/event-dispatcher": ">=2.4",
         "symfony/finder": ">=2.4",
