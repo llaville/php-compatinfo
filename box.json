@@ -65,7 +65,7 @@
     "git-commit": "git_commit",
     "git-version": "package_version",
     "main": "bin/compatinfo",
-    "output": "phpcompatinfo.phar",
+    "output": "phpcompatinfo-@git-version@.phar",
     "intercept": true,
     "stub": true,
     "web": false
