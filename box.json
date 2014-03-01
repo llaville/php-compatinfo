@@ -37,7 +37,7 @@
                 {
                     "nikic": [
                         {
-                            "PHP-Parser": "1.0.0-dev+gh95"
+                            "PHP-Parser": "1.0.0-dev"
                         }
                     ],
                     "symfony": [
