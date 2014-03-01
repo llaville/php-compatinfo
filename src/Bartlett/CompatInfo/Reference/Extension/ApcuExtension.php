@@ -6,7 +6,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class ApcuExtension extends AbstractReference
 {
     const REF_NAME    = 'apcu';
-    const REF_VERSION = '4.0.3';    // 2014-01-27 (beta)
+    const REF_VERSION = '4.0.4';    // 2014-03-01 (beta)
 
     public function __construct()
     {
@@ -32,6 +32,13 @@ class ApcuExtension extends AbstractReference
         // 4.0.2
         if (version_compare($version, '4.0.2', 'ge')) {
             $release = $this->getR40002();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
+        // 4.0.3
+        if (version_compare($version, '4.0.3', 'ge')) {
+            $release = $this->getR40003();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
@@ -121,6 +128,23 @@ class ApcuExtension extends AbstractReference
         );
         $release->functions = array(
             'apcu_key_info'                 => null,
+        );
+        return $release;
+    }
+
+    protected function getR40003()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '4.0.3',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2014-01-27',
+            'php.min' => '5.3.0',
+            'php.max' => '',
+        );
+        $release->functions = array(
+            'apcu_enabled'                  => null,
         );
         return $release;
     }
