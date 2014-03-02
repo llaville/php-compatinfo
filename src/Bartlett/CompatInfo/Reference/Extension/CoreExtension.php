@@ -50,6 +50,13 @@ class CoreExtension extends AbstractReference
             $this->storage->attach($releases[--$count]);
         }
 
+        // 4.1.0
+        if (version_compare($version, '4.1.0', 'ge')) {
+            $release = $this->getR40100();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
         // 4.2.0
         if (version_compare($version, '4.2.0', 'ge')) {
             $release = $this->getR40200();
@@ -169,6 +176,7 @@ class CoreExtension extends AbstractReference
         );
         $release->iniEntries = array(
             'SMTP'                          => null,
+            'allow_call_time_pass_reference'=> array('php.max' => self::LATEST_PHP_5_3),
             'allow_url_fopen'               => null,
             'allow_url_include'             => null,
             'always_populate_raw_post_data' => null,
@@ -181,6 +189,7 @@ class CoreExtension extends AbstractReference
             'browscap'                      => null,
             'default_charset'               => null,
             'default_mimetype'              => null,
+            'define_syslog_variables'       => array('php.max' => self::LATEST_PHP_5_3),
             'disable_classes'               => null,
             'disable_functions'             => null,
             'display_errors'                => null,
@@ -189,7 +198,6 @@ class CoreExtension extends AbstractReference
             'docref_ext'                    => null,
             'docref_root'                   => null,
             'enable_dl'                     => null,
-            'enable_post_data_reading'      => null,
             'error_append_string'           => null,
             'error_log'                     => null,
             'error_prepend_string'          => null,
@@ -198,6 +206,7 @@ class CoreExtension extends AbstractReference
             'expose_php'                    => null,
             'extension_dir'                 => null,
             'file_uploads'                  => null,
+            'highlight.bg'                  => array('php.max' => self::LATEST_PHP_5_3),
             'highlight.comment'             => null,
             'highlight.default'             => null,
             'highlight.html'                => null,
@@ -211,6 +220,9 @@ class CoreExtension extends AbstractReference
             'include_path'                  => null,
             'log_errors'                    => null,
             'log_errors_max_len'            => null,
+            'magic_quotes_gpc'              => array('php.max' => self::LATEST_PHP_5_3),
+            'magic_quotes_runtime'          => array('php.max' => self::LATEST_PHP_5_3),
+            'magic_quotes_sybase'           => array('php.max' => self::LATEST_PHP_5_3),
             'mail.add_x_header'             => null,
             'mail.force_extra_parameters'   => null,
             'mail.log'                      => null,
@@ -228,16 +240,18 @@ class CoreExtension extends AbstractReference
             'realpath_cache_size'           => null,
             'realpath_cache_ttl'            => null,
             'register_argc_argv'            => null,
+            'register_globals'              => array('php.max' => self::LATEST_PHP_5_3),
             'report_memleaks'               => null,
             'report_zend_debug'             => null,
             'request_order'                 => null,
+            'safe_mode'                     => array('php.max' => self::LATEST_PHP_5_3),
+            'safe_mode_exec_dir'            => array('php.max' => self::LATEST_PHP_5_3),
             'sendmail_from'                 => null,
             'sendmail_path'                 => null,
             'serialize_precision'           => null,
             'short_open_tag'                => null,
             'smtp_port'                     => null,
             'sql.safe_mode'                 => null,
-            'sys_temp_dir'                  => null,
             'track_errors'                  => null,
             'unserialize_callback_func'     => null,
             'upload_max_filesize'           => null,
@@ -249,10 +263,10 @@ class CoreExtension extends AbstractReference
             'windows.show_crt_warning'      => null,
             'xmlrpc_error_number'           => null,
             'xmlrpc_errors'                 => null,
+            'y2k_compliance'                => array('php.max' => self::LATEST_PHP_5_3),
             'zend.detect_unicode'           => null,
             'zend.enable_gc'                => null,
             'zend.multibyte'                => null,
-            'zend.script_encoding'          => null,
         );
         $release->constants = array(
             'DEFAULT_INCLUDE_PATH'          => null,
@@ -402,6 +416,24 @@ class CoreExtension extends AbstractReference
         return $release;
     }
 
+    protected function getR40100()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '4.1.0',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2001-12-10',
+            'php.min' => '4.1.0',
+            'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'safe_mode_gid'                 => array('php.max' => self::LATEST_PHP_5_3),
+            'safe_mode_include_dir'         => array('php.max' => self::LATEST_PHP_5_3),
+        );
+        return $release;
+    }
+
     protected function getR40200()
     {
         $release = new \StdClass;
@@ -499,6 +531,9 @@ class CoreExtension extends AbstractReference
             'date'    => '2004-07-13',
             'php.min' => '5.0.0',
             'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'register_long_arrays'          => array('php.max' => self::LATEST_PHP_5_3),
         );
         $release->constants = array(
             'E_STRICT'                      => null,
@@ -712,6 +747,10 @@ class CoreExtension extends AbstractReference
             'php.min' => '5.4.0',
             'php.max' => '',
         );
+        $release->iniEntries = array(
+            'enable_post_data_reading'      => null,
+            'zend.script_encoding'          => null,
+        );
         $release->constants = array(
             'PHP_BINARY'                    => null,
             'PHP_OUTPUT_HANDLER_CLEAN'      => null,
@@ -743,6 +782,9 @@ class CoreExtension extends AbstractReference
             'date'    => '2013-06-20',
             'php.min' => '5.5.0',
             'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'sys_temp_dir'                  => null,
         );
         $release->classes = array(
             'Generator'                     => null,

@@ -207,6 +207,8 @@ class StandardExtension extends AbstractReference
             'assert.callback'               => null,
             'assert.quiet_eval'             => null,
             'url_rewriter.tags'             => null,
+            'safe_mode_allowed_env_vars'    => array('php.max' => self::LATEST_PHP_5_3),
+            'safe_mode_protected_env_vars'  => array('php.max' => self::LATEST_PHP_5_3),
         );
         $release->classes = array(
             'Directory' => array(

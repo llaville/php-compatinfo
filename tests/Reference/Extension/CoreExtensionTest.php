@@ -95,8 +95,17 @@ class CoreExtensionTest extends GenericTest
         }
 
         self::$optionalfunctions = array(
+            'empty',
+            'isset',
+            'list',
             // Requires ZTS
             'zend_thread_id',
+        );
+
+        self::$optionalcfgs = array(
+            // Requires --enable-zend-multibyte
+            'zend.detect_unicode',
+            'zend.multibyte'
         );
 
         self::$obj = new CoreExtension();
