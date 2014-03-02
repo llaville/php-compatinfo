@@ -20,6 +20,14 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Helper\TableHelper;
 
+use Bartlett\Reflect\Command\ProviderListCommand;
+use Bartlett\Reflect\Command\ProviderShowCommand;
+use Bartlett\Reflect\Command\ProviderDisplayCommand;
+use Bartlett\Reflect\Command\PluginListCommand;
+
+use Bartlett\CompatInfo\Command\ReferenceListCommand;
+use Bartlett\CompatInfo\Command\ReferenceShowCommand;
+
 /**
  * Console Application.
  *
@@ -74,6 +82,53 @@ class ConsoleApplication extends Application
         );
 
         return $definition;
+    }
+
+    /**
+     * Initializes the default commands that should always be available.
+     *
+     * @return array An array of default Command instances
+     */
+    protected function getDefaultCommands()
+    {
+        $commands   = parent::getDefaultCommands();
+        $commands[] = new PluginListCommand;
+        $commands[] = new ProviderListCommand;
+        $commands[] = new ProviderShowCommand;
+        $commands[] = new ProviderDisplayCommand;
+        $commands[] = new ReferenceListCommand;
+        $commands[] = new ReferenceShowCommand;
+
+        try {
+            $var = $this->getJsonConfigFile();
+        } catch (\Exception $e) {
+            // stop here if json config file is missing or invalid
+        }
+
+        if (isset($var['plugins'])) {
+            // checks for additional commands
+
+            if (is_array($var['plugins'])) {
+                $plugins = $var['plugins'];
+            } else {
+                $plugins = array($var['plugins']);
+            }
+
+            foreach ($plugins as $plugin) {
+                if (isset($plugin['class']) && is_string($plugin['class'])) {
+                    // try to load the plugin
+                    if (class_exists($plugin['class'])) {
+                        $cmds = $plugin['class']::getCommands();
+                        while (!empty($cmds)) {
+                            // add each command provided by the plugin
+                            $commands[] = array_shift($cmds);
+                        }
+                    }
+                }
+            }
+        }
+
+        return $commands;
     }
 
     public function doRun(InputInterface $input, OutputInterface $output)
