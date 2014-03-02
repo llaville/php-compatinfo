@@ -1,0 +1,20 @@
+= Official Blog of PHP CompatInfo
+:description: Archives of February 2014
+:brand: https://github.com/llaville/php-reflect
+:rssref: http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:jumbotron-fullwidth:
+:icons!:
+:iconsfont: font-awesome
+:iconsfontdir: ./fonts/font-awesome
+:imagesdir: ./images
+:css-signature: blog
+
+include::201402-CompatInfo-3.0.RC1-phar-fixed.asciidoc[]
+
+include::201402-CompatInfo-3.0.RC1-installation.asciidoc[]
+
+include::201402-CompatInfo-3.0.RC1-released.asciidoc[]
+
+include::201402-release-3.0.RC1-preview.asciidoc[]
+
+include::201402-release-3.0.RC1-planned.asciidoc[]
