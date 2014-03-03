@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class XdebugExtension extends AbstractReference
 {
     const REF_NAME    = 'xdebug';
-    const REF_VERSION = '2.2.3';    // 2013-05-22 (stable)
+    const REF_VERSION = '2.2.4';    // 2014-02-28 (stable)
 
     public function __construct()
     {
