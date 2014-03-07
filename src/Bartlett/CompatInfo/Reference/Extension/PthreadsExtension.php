@@ -9,7 +9,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class PthreadsExtension extends AbstractReference
 {
     const REF_NAME    = 'pthreads';
-    const REF_VERSION = '0.1.0';    // 2014-01-18 (stable)
+    const REF_VERSION = '1.0.0';    // 2014-03-07 (stable)
 
     public function __construct()
     {
@@ -42,6 +42,13 @@ class PthreadsExtension extends AbstractReference
         // 0.1.0
         if (version_compare($version, '0.1.0', 'ge')) {
             $release = $this->getR00100();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
+        // 1.0.0
+        if (version_compare($version, '1.0.0', 'ge')) {
+            $release = $this->getR10000();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
@@ -121,6 +128,33 @@ class PthreadsExtension extends AbstractReference
         $release->constants = array(
             'PTHREADS_ALLOW_HEADERS'        => null,
             'PTHREADS_INHERIT_COMMENTS'     => null,
+        );
+        return $release;
+    }
+
+    protected function getR10000()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '1.0.0',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2014-03-07',
+            'php.min' => '5.3.0',
+            'php.max' => '',
+        );
+        $release->classes = array(
+            'Pool'                          => array(
+                'methods' => array(
+                    '__construct'           => null,
+                    '__destruct'            => null,
+                    'collect'               => null,
+                    'resize'                => null,
+                    'shutdown'              => null,
+                    'submit'                => null,
+                    'submitTo'              => null,
+                ),
+            ),
         );
         return $release;
     }
