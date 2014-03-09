@@ -6,7 +6,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class AmqpExtension extends AbstractReference
 {
     const REF_NAME    = 'amqp';
-    const REF_VERSION = '1.2.0';    // 2013-05-28 (stable)
+    const REF_VERSION = '1.3.0';    // 2013-11-25 (beta)
 
     public function __construct()
     {
@@ -39,6 +39,13 @@ class AmqpExtension extends AbstractReference
         // 1.0.10
         if (version_compare($version, '1.0.10', 'ge')) {
             $release = $this->getR10010();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
+        // 1.3.0
+        if (version_compare($version, '1.3.0', 'ge')) {
+            $release = $this->getR10300();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
@@ -152,6 +159,23 @@ class AmqpExtension extends AbstractReference
         $release->iniEntries = array(
             'amqp.read_timeout'             => null,
             'amqp.write_timeout'            => null,
+        );
+        return $release;
+    }
+
+    protected function getR10300()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '1.3.0',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2013-11-25',
+            'php.min' => '5.2.0',
+            'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'amqp.connect_timeout'          => null,
         );
         return $release;
     }
