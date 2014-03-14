@@ -9,7 +9,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class PthreadsExtension extends AbstractReference
 {
     const REF_NAME    = 'pthreads';
-    const REF_VERSION = '1.0.0';    // 2014-03-07 (stable)
+    const REF_VERSION = '2.0.0';    // 2014-03-14 (stable)
 
     public function __construct()
     {
@@ -49,6 +49,13 @@ class PthreadsExtension extends AbstractReference
         // 1.0.0
         if (version_compare($version, '1.0.0', 'ge')) {
             $release = $this->getR10000();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
+        // 2.0.0
+        if (version_compare($version, '2.0.0', 'ge')) {
+            $release = $this->getR20000();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
@@ -153,6 +160,41 @@ class PthreadsExtension extends AbstractReference
                     'shutdown'              => null,
                     'submit'                => null,
                     'submitTo'              => null,
+                ),
+            ),
+        );
+        return $release;
+    }
+
+    protected function getR20000()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '2.0.0',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2014-03-14',
+            'php.min' => '5.3.0',
+            'php.max' => '',
+        );
+        $release->classes = array(
+            'Threaded'                      => array(
+                'methods' => array(
+                    'chunk'                 => null,
+                    'count'                 => null,
+                    'getTerminationInfo'    => null,
+                    'isRunning'             => null,
+                    'isTerminated'          => null,
+                    'isWaiting'             => null,
+                    'lock'                  => null,
+                    'merge'                 => null,
+                    'notify'                => null,
+                    'pop'                   => null,
+                    'run'                   => null,
+                    'shift'                 => null,
+                    'synchronized'          => null,
+                    'unlock'                => null,
+                    'wait'                  => null,
                 ),
             ),
         );
