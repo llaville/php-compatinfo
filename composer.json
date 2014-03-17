@@ -1,5 +1,5 @@
 {
-    "name": "pear-bartlett/PHP_CompatInfo",
+    "name": "bartlett/php-compatinfo",
     "description": "Find out the minimum version and the extensions required for a piece of code to run",
     "type": "library",
     "license": "BSD-3-Clause",
@@ -8,27 +8,17 @@
         "source": "https://github.com/llaville/php-compat-info",
         "issues": "https://github.com/llaville/php-compat-info/issues"
     },
-    "repositories": [
-        {
-            "type": "pear",
-            "url": "http://pear.phpunit.de/"
-        }
-    ],
     "require": {
         "php": ">=5.3.0",
         "ext-tokenizer": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
         "ext-json": "*",
-        "pear-phpunit/PHP_Timer": ">=1.0.0",
         "nikic/php-parser": "1.0.*@dev",
-        "symfony/class-loader": ">=2.4",
-        "symfony/event-dispatcher": ">=2.4",
-        "symfony/finder": ">=2.4",
-        "symfony/console": ">=2.4"
+        "bartlett/php-reflect": "2.*@dev"
     },
     "require-dev": {
-        "pear-phpunit/PHPUnit": ">=3.7"
+        "phpunit/phpunit": ">=3.7"
     },
     "authors": [
         {
