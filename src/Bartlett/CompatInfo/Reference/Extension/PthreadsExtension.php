@@ -9,7 +9,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class PthreadsExtension extends AbstractReference
 {
     const REF_NAME    = 'pthreads';
-    const REF_VERSION = '2.0.0';    // 2014-03-14 (stable)
+    const REF_VERSION = '2.0.2';    // 2014-03-17 (stable)
 
     public function __construct()
     {
@@ -59,6 +59,13 @@ class PthreadsExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 2.0.1
+        if (version_compare($version, '2.0.1', 'ge')) {
+            $release = $this->getR20001();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR00033()
@@ -75,7 +82,25 @@ class PthreadsExtension extends AbstractReference
         $release->classes = array(
             'Cond'                          => null,
             'Mutex'                         => null,
-            'Thread'                        => null,
+            'Thread'                        => array(
+                'methods' => array(
+                    'detach'                => null,
+                    'getCreatorId'          => null,
+                    'getThreadId'           => null,
+                    'isJoined'              => null,
+                    'isStarted'             => null,
+                    'join'                  => null,
+                    'kill'                  => null,
+                    'notify'                => null,
+                    'start'                 => null,
+                    'wait'                  => null,
+                ),
+                'staticMethods' => array(
+                    'getCurrentThread'      => null,
+                    'getCurrentThreadId'    => null,
+                    'globally'              => array('ext.min' => '2.0.1'),
+                ),
+            ),
             'Worker'                        => null,
         );
         return $release;
@@ -197,6 +222,24 @@ class PthreadsExtension extends AbstractReference
                     'wait'                  => null,
                 ),
             ),
+        );
+        return $release;
+    }
+
+    protected function getR20001()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '2.0.1',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2014-03-16',
+            'php.min' => '5.3.0',
+            'php.max' => '',
+        );
+
+        $release->constants = array(
+            'PTHREADS_ALLOW_GLOBALS'        => null,
         );
         return $release;
     }
