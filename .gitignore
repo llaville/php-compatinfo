@@ -9,3 +9,4 @@ html/
 vendor/
 blog/rssbuilder.php
 blog/rss.xml
+composer.lock
