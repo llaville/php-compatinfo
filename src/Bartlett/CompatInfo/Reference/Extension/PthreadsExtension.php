@@ -9,7 +9,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class PthreadsExtension extends AbstractReference
 {
     const REF_NAME    = 'pthreads';
-    const REF_VERSION = '2.0.2';    // 2014-03-17 (stable)
+    const REF_VERSION = '2.0.3';    // 2014-03-27 (stable)
 
     public function __construct()
     {
@@ -237,7 +237,6 @@ class PthreadsExtension extends AbstractReference
             'php.min' => '5.3.0',
             'php.max' => '',
         );
-
         $release->constants = array(
             'PTHREADS_ALLOW_GLOBALS'        => null,
         );
