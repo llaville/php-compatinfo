@@ -310,6 +310,11 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $const   = get_defined_constants(true);
         $dict    = self::$obj->getConstants();
 
+        if (defined('__PHPUNIT_PHAR__')) {
+            // remove '' . "\0" . '__COMPILER_HALT_OFFSET__' . "\0" . __PHPUNIT_PHAR__
+            array_pop($const['Core']);
+        }
+
         if (isset($const[$extname])) {
             // Test if each constants are in reference
             foreach ($const[$extname] as $constname => $value) {
