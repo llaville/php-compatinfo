@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class MongoExtension extends AbstractReference
 {
     const REF_NAME    = 'mongo';
-    const REF_VERSION = '1.5.0RC1';  // 2014-03-11 (beta)
+    const REF_VERSION = '1.5.1';    // 2014-04-04 (stable)
 
     public function __construct()
     {
@@ -113,8 +113,20 @@ class MongoExtension extends AbstractReference
             // Core
             'Mongo'                         => null,
             'MongoUtil'                     => array('ext.max' => '0.9.0'),
-            'MongoCollection'               => null,
-            'MongoCursor'                   => null,
+            'MongoCollection'               => array(
+                'methods' => array(
+                    'aggregateCursor'       => array(
+                        'ext.min' => '1.5.0RC2'
+                    ),
+                ),
+            ),
+            'MongoCursor'                   => array(
+                'methods' => array(
+                    'maxTimeMS'             => array(
+                        'ext.min' => '1.5.0alpha1'
+                    ),
+                ),
+            ),
             'MongoDB'                       => null,
 
             // Types
@@ -250,7 +262,16 @@ class MongoExtension extends AbstractReference
         );
         $release->classes = array(
             // Core
-            'MongoClient'                   => null,
+            'MongoClient'                           => array(
+                'methods' => array(
+                    'getWriteConcern'               => array(
+                        'ext.min' => '1.5.0RC2'
+                    ),
+                    'setWriteConcern'               => array(
+                        'ext.min' => '1.5.0RC2'
+                    ),
+                ),
+            ),
         );
         return $release;
     }
@@ -291,7 +312,13 @@ class MongoExtension extends AbstractReference
             'MongoInsertBatch'                              => null,
             'MongoProtocolException'                        => null,
             'MongoUpdateBatch'                              => null,
-            'MongoWriteBatch'                               => null,
+            'MongoWriteBatch'                      => array(
+                'methods' => array(
+                    'getBatchInfo'                 => array(
+                        'ext.min' => '1.5.0RC2'
+                    ),
+                ),
+            ),
             'MongoWriteConcernException'                    => null,
         );
         $release->interfaces = array(
