@@ -210,7 +210,10 @@ abstract class AbstractReference implements ReferenceInterface
         if (version_compare(PHP_VERSION, '5.5', 'lt')) {
             return self::LATEST_PHP_5_4;
         }
-        return self::LATEST_PHP_5_5;
+        if (version_compare(PHP_VERSION, '5.6', 'lt')) {
+            return self::LATEST_PHP_5_5;
+        }
+        return self::LATEST_PHP_5_6;
     }
 
     public function getReleases()
