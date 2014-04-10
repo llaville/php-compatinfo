@@ -12,7 +12,7 @@ class SimplexmlExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
+        $version  = $this->getLatestPhpVersion();
         $releases = array();
 
         // 5.0.0
