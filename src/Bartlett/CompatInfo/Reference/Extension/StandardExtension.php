@@ -183,6 +183,13 @@ class StandardExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.6.0alpha3
+        if (version_compare($version, '5.6.0alpha3', 'ge')) {
+            $release = $this->getR50600a3();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR40000()
@@ -1507,6 +1514,32 @@ class StandardExtension extends AbstractReference
             'PASSWORD_DEFAULT'              => null,
             'PASSWORD_BCRYPT'               => null,
             'PASSWORD_BCRYPT_DEFAULT_COST'  => null,
+        );
+        return $release;
+    }
+
+    protected function getR50600a3()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.6.0alpha3',
+            'ext.max' => '',
+            'state'   => 'alpha',
+            'date'    => '2014-02-27',
+            'php.min' => '5.6.0alpha3',
+            'php.max' => '',
+        );
+        $release->constants = array(
+            'ARRAY_FILTER_USE_BOTH'                 => null,
+            'ARRAY_FILTER_USE_KEY'                  => null,
+            'STREAM_CRYPTO_METHOD_ANY_CLIENT'       => null,
+            'STREAM_CRYPTO_METHOD_ANY_SERVER'       => null,
+            'STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT'   => null,
+            'STREAM_CRYPTO_METHOD_TLSv1_0_SERVER'   => null,
+            'STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT'   => null,
+            'STREAM_CRYPTO_METHOD_TLSv1_1_SERVER'   => null,
+            'STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT'   => null,
+            'STREAM_CRYPTO_METHOD_TLSv1_2_SERVER'   => null,
         );
         return $release;
     }
