@@ -161,6 +161,13 @@ class CoreExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.6.0alpha3
+        if (version_compare($version, '5.6.0alpha3', 'ge')) {
+            $release = $this->getR50600a3();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR40000()
@@ -788,6 +795,25 @@ class CoreExtension extends AbstractReference
         );
         $release->classes = array(
             'Generator'                     => null,
+        );
+        return $release;
+    }
+
+    protected function getR50600a3()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.6.0alpha3',
+            'ext.max' => '',
+            'state'   => 'alpha',
+            'date'    => '2014-02-27',
+            'php.min' => '5.6.0alpha3',
+            'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'input_encoding'                => null,
+            'internal_encoding'             => null,
+            'output_encoding'               => null,
         );
         return $release;
     }
