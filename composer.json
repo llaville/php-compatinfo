@@ -14,8 +14,8 @@
         "ext-pcre": "*",
         "ext-spl": "*",
         "ext-json": "*",
-        "nikic/php-parser": "1.0.*@dev",
-        "bartlett/php-reflect": "2.*@dev"
+        "nikic/php-parser": "1.0.0-beta1",
+        "bartlett/php-reflect": "2.0.*"
     },
     "require-dev": {
         "phpunit/phpunit": ">=3.7"
