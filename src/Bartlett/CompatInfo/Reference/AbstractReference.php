@@ -180,7 +180,7 @@ abstract class AbstractReference implements ReferenceInterface
     public function getCurrentVersion()
     {
         $version = phpversion($this->name);
-        $pattern = '/^[0-9]+\.[0-9]+\.[0-9]+([+-][^+-][0-9A-Za-z-.]*)?$/';
+        $pattern = '/^[0-9]+\.[0-9]+/';
         if (!preg_match($pattern, $version)) {
             /**
              * When version is not provided by the extension, or not standard format
