@@ -159,9 +159,14 @@ abstract class AbstractReference implements ReferenceInterface
     {
         if ('curl' == $this->name && function_exists('curl_version')) {
             $meta = curl_version();
-        
+
         } elseif ('libxml' == $this->name) {
             $meta = array('version_number' => LIBXML_VERSION);
+
+        } elseif ('intl' == $this->name) {
+            $meta = array('version_number' => defined('INTL_ICU_VERSION')
+                ? INTL_ICU_VERSION : false
+            );
         }
         if (isset($meta)) {
             if (isset($key) && array_key_exists($key, $meta)) {
