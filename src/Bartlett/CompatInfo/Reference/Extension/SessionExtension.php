@@ -98,6 +98,13 @@ class SessionExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.6.0alpha1
+        if (version_compare($version, '5.6.0alpha1', 'ge')) {
+            $release = $this->getR50600a1();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR40000()
@@ -368,6 +375,26 @@ class SessionExtension extends AbstractReference
         );
         $release->iniEntries = array(
             'session.use_strict_mode'       => null,
+        );
+        return $release;
+    }
+
+    protected function getR50600a1()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.6.0alpha1',
+            'ext.max' => '',
+            'state'   => 'alpha',
+            'date'    => '2014-01-21',
+            'php.min' => '5.6.0alpha1',
+            'php.max' => '',
+        );
+        $release->functions = array(
+            'session_abort'                 => null,
+            'session_gc'                    => null,
+            'session_reset'                 => null,
+            'session_serializer_name'       => null,
         );
         return $release;
     }
