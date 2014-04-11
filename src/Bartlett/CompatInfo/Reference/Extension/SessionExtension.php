@@ -392,9 +392,15 @@ class SessionExtension extends AbstractReference
         );
         $release->functions = array(
             'session_abort'                 => null,
-            'session_gc'                    => null,
+            'session_gc'                    => array(
+                'ext.max' => '5.6.0alpha3',
+                'php.max' => '5.6.0alpha3'
+            ),
             'session_reset'                 => null,
-            'session_serializer_name'       => null,
+            'session_serializer_name'       => array(
+                'ext.max' => '5.6.0alpha3',
+                'php.max' => '5.6.0alpha3'
+            ),
         );
         return $release;
     }

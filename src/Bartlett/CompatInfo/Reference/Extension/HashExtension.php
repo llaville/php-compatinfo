@@ -43,6 +43,13 @@ class HashExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.6.0beta1
+        if (version_compare($version, '5.6.0beta1', 'ge')) {
+            $release = $this->getR50600b1();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR10100()
@@ -159,6 +166,23 @@ class HashExtension extends AbstractReference
         );
         $release->functions = array(
             'hash_pbkdf2'                   => null,
+        );
+        return $release;
+    }
+
+    protected function getR50600b1()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.6.0beta1',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2014-04-11',
+            'php.min' => '5.6.0beta1',
+            'php.max' => '',
+        );
+        $release->functions = array(
+            'hash_equals'                   => null,
         );
         return $release;
     }
