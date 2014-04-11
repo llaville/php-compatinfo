@@ -46,6 +46,22 @@ class CurlExtensionTest extends GenericTest
             'CURLOPT_MUTE',
             'CURLOPT_PASSWDFUNCTION',
         );
+
+        if (PATH_SEPARATOR == ';') {
+            // Win*
+            if (version_compare(PHP_VERSION, '5.6.0alpha1', 'ge')) {
+                // PHP 5.6
+                array_push(self::$optionalconstants,
+                    'CURLCLOSEPOLICY_CALLBACK',
+                    'CURLCLOSEPOLICY_LEAST_RECENTLY_USED',
+                    'CURLCLOSEPOLICY_LEAST_TRAFFIC',
+                    'CURLCLOSEPOLICY_OLDEST',
+                    'CURLCLOSEPOLICY_SLOWEST',
+                    'CURLOPT_CLOSEPOLICY'
+                );
+            }
+        }
+
         self::$obj = new CurlExtension();
         parent::setUpBeforeClass();
     }
