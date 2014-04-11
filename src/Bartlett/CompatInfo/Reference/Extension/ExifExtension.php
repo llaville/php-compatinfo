@@ -13,7 +13,7 @@ class ExifExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
+        $version  = $this->getLatestPhpVersion();
         $releases = array();
 
         // 4.0.1
@@ -95,6 +95,14 @@ class ExifExtension extends AbstractReference
             'date'    => '2002-12-27',
             'php.min' => '4.3.0',
             'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'exif.decode_unicode_intel'     => null,
+            'exif.decode_unicode_motorola'  => null,
+            'exif.encode_jis'               => null,
+            'exif.decode_jis_intel'         => null,
+            'exif.decode_jis_motorola'      => null,
+            'exif.encode_unicode'           => null,
         );
         $release->functions = array(
             'exif_imagetype'                => null,
