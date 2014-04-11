@@ -1,5 +1,5 @@
 {
-    "name": "pear-bartlett/PHP_CompatInfo",
+    "name": "bartlett/php-compatinfo",
     "description": "Find out the minimum version and the extensions required for a piece of code to run",
     "type": "library",
     "license": "BSD-3-Clause",
@@ -16,18 +16,18 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "pear-pear/Console_CommandLine": ">=1.2.0",
-        "pear-bartlett/PHP_Reflect": ">=1.8.0,<=1.99.0",
+        "pear-pear/console_commandline": ">=1.2.0",
+        "pear-bartlett/php_reflect": ">=1.8.0,<=1.99.0",
         "ext-dom": "*",
         "ext-libxml": "*",
         "ext-pcre": "*",
-        "ext-SPL": "*",
-        "ext-Reflection": "*"
+        "ext-spl": "*",
+        "ext-reflection": "*"
     },
     "suggest": {
-        "pear-pear/Net_Growl": ">=2.6.0",
-        "pear-phpunit/PHPUnit": ">=3.6.0",
-        "pear-phpunit/PHP_Timer": ">=1.0.0"
+        "pear-pear/net_growl": ">=2.6.0",
+        "phpunit/phpunit": ">=3.6",
+        "phpunit/php-timer": ">=1.0.0"
     },
     "authors": [
         {
@@ -38,7 +38,6 @@
         },
         {
             "name": "Remi Collet",
-            "email": "",
             "homepage": "https://github.com/remicollet",
             "role": "Contributor"
         }
