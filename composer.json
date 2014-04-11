@@ -38,5 +38,10 @@
             "Bartlett\\": "src/",
             "Bartlett\\Tests\\CompatInfo\\": "tests/"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-v3": "3.0-dev"
+        }
     }
 }
