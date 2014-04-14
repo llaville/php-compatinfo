@@ -8,9 +8,9 @@ $baseDir   = dirname(__DIR__);
 $vendorDir = $baseDir . '/vendor';
 
 if (\Phar::running()) {
-    require_once 'phar://phpreflect.phar/vendor/nikic/php-parser/lib/bootstrap.php';
-    require_once 'phar://phpreflect.phar/vendor/symfony/class-loader/Symfony/Component/ClassLoader/UniversalClassLoader.php';
-    require_once 'phar://phpreflect.phar/vendor/phpunit/php-timer/PHP/Timer.php';
+    require_once 'phar://phpcompatinfo.phar/vendor/nikic/php-parser/lib/bootstrap.php';
+    require_once 'phar://phpcompatinfo.phar/vendor/symfony/class-loader/Symfony/Component/ClassLoader/UniversalClassLoader.php';
+    require_once 'phar://phpcompatinfo.phar/vendor/phpunit/php-timer/PHP/Timer.php';
 } else {
     require_once $vendorDir . '/nikic/php-parser/lib/bootstrap.php';
     require_once $vendorDir . '/symfony/class-loader/Symfony/Component/ClassLoader/UniversalClassLoader.php';
