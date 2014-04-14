@@ -10,25 +10,25 @@
     "finder": [
         {
             "name": "*.php",
-            "in": "vendor/PHP-Parser"
+            "in": "vendor/nikic/php-parser/lib"
         },
         {
             "name": "*.php",
             "notPath": "/Tests/",
-            "in": "vendor/Symfony"
+            "in": "vendor/symfony"
         },
         {
             "name": "*.php",
-            "in": "vendor/PHPUnit"
+            "in": "vendor/phpunit/php-timer"
         },
         {
             "name": "*.php",
-            "in": "vendor/Bartlett"
+            "in": "vendor/bartlett/php-reflect/src"
         }
     ],
     "map": [
         {
-            "vendor/Bartlett": "src/Bartlett"
+            "vendor/bartlett/php-reflect/src/Bartlett": "src/Bartlett"
         }
     ],
     "metadata": [
@@ -37,15 +37,15 @@
                 {
                     "nikic": [
                         {
-                            "PHP-Parser": "1.0.0-dev"
+                            "PHP-Parser": "1.0.0-beta1"
                         }
                     ],
                     "symfony": [
                         {
-                            "classloader": "2.4.2",
-                            "console": "2.4.2",
-                            "eventdispatcher": "2.4.2",
-                            "finder": "2.4.2"
+                            "classloader": "2.4.3",
+                            "console": "2.4.3",
+                            "eventdispatcher": "2.4.3",
+                            "finder": "2.4.3"
                         }
                     ],
                     "phpunit": [
@@ -55,7 +55,7 @@
                     ],
                     "llaville": [
                         {
-                            "php-reflect": "2.0.0RC2"
+                            "php-reflect": "2.0.0"
                         }
                     ]
                 }
