@@ -1,0 +1,11 @@
+:author:      Laurent Laville
+:keywords:    PHP, compatibility, version
+:mandir:      http://php5.laurent-laville.org/compatinfo/manual/3.0
+:brand:       PHP CompatInfo {revnumber}
+:brandref:    https://github.com/llaville/php-compat-info/tree/v3
+:sidebar:     right
+:footer:
+:navinfo1:
+:iconsfont:    font-awesome
+:iconsfontdir: ./fonts/font-awesome
+:imagesdir:    ./images

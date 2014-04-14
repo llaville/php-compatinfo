@@ -1,0 +1,130 @@
+= CompatInfo
+:description: CompatInfo makes it extremely easy to learn and maintain your components compatibilities for reuse in your PHP applications.
+:jumbotron-fullwidth:
+:css-signature: landing
+:icons!:
+:iconsfont: font-awesome
+:iconsfontdir: ./fonts/font-awesome
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+
+
+== What Is PHP CompatInfo
+
+PHP [label label-primary]#CompatInfo# is a PHP library that parse any data source
+to find out the minimum version and extensions required for it to run.
+
+== Features
+
+[cols="1,11"]
+.icon:flag[size="2x"]
+--
+[medium]*Modern*
+
+[label label-primary]#CompatInfo# takes advantage of new features in PHP 5.3.0 or greater.
+--
+[cols="1,11"]
+.icon:building-o[size="2x"]
+--
+[medium]*Robust*
+
+[label label-primary]#CompatInfo# is strictly tested. Checks code coverage and see by yourself.
+--
+[cols="1,11"]
+.icon:archive[size="2x"]
+--
+[medium]*Explore all data source*
+
+[label label-primary]#CompatInfo# comes with a source provider (based on Symfony http://symfony.com/doc/current/components/finder.html[Finder] component)
+that allow to parse all data source (single file, directories, archives Phar, Zip, Tar, and lot more).
+--
+[cols="1,11"]
+.icon:suitcase[size="2x"]
+--
+[medium]*Solid Foundation*
+
+Whenever possible wheel reinvention was avoided. [label label-primary]#CompatInfo# uses code from well-known projects
+including http://www.symfony.com/[Symfony] Finder, Console, and EventDispatcher.
+--
+
+== Documentation
+
+[role="partintro",cols="3,9"]
+.icon:book[size="7x"] [clearfix]#All documentation are available online and for download in several formats.#
+--
+[medium]*Offline Reading*
+
+The [label label-primary]#CompatInfo# book is available in a selection of formats.
+You can download the documentation for offline reading.
+
+[options="header", cols="3,9", role="table table-bordered table-striped"]
+|===========================
+| Formats                             | Download links
+| icon:file-o[]      Single HTML file | link:{mandir}/en/[phpcompatinfo-book.html.zip]
+| icon:files-o[]     Many HTML files  | link:{mandir}/en/[phpcompatinfo-book.chunked.zip]
+| icon:file-text-o[] HTML Help file   | link:{mandir}/en/[phpcompatinfo-book.chm.zip]
+| icon:file-text[]   PDF A4 file      | link:{mandir}/en/[phpcompatinfo-book-a4.pdf]
+| icon:file-text[]   PDF US file      | link:{mandir}/en/[phpcompatinfo-book-us.pdf]
+| icon:book[]        EPUB file        | link:{mandir}/en/[phpcompatinfo-book.epub.zip]
+|===========================
+--
+
+== License
+
+[role="partintro",cols="3,9"]
+.icon:shield[size="7x"] [clearfix]#CompatInfo is open-source software.#
+--
+[medium]*BSD License*
+
+The full legal text of the BSD 3-clause license is given below.
+----
+ Copyright (c) 2010-2014, Laurent Laville <pear@laurent-laville.org>
+
+ Credits to :
+
+    * Davey Shafik
+      Original author, he introduced his proposal in 2004,
+      that gave birth of a PEAR package named PHP_CompatInfo.
+    * Remi Collet
+      Contributor on many extensions and unit tests since version 2.0.0RC2
+
+ All rights reserved.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+
+     * Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+     * Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+     * Neither the name of the authors nor the names of its contributors
+       may be used to endorse or promote products derived from this software
+       without specific prior written permission.
+
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+ BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+----
+--
+
+== What is next
+
+WARNING: First visit, you are highly recommended to follow chapters in order.
+
+[horizontal]
+Setup:: Configuring your project and get ready for your first parsing.
+Quick Start:: This quick start is a five minute tutorial where you can discover how to identify a data source and parse its contents.
+Handle Results:: Learn how to explore and exploit parsing results.
+Concrete Examples:: Discover how CompatInfo may be use in real condition.
+
+link:setup.html["Go to next chapter: Setup",role="primary",icon="glyphicon-step-forward",options="block"]
