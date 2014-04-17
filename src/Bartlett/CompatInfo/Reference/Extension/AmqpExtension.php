@@ -6,7 +6,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class AmqpExtension extends AbstractReference
 {
     const REF_NAME    = 'amqp';
-    const REF_VERSION = '1.3.0';    // 2013-11-25 (beta)
+    const REF_VERSION = '1.4.0';    // 2013-04-14 (stable)
 
     public function __construct()
     {
