@@ -71,17 +71,17 @@ class OauthExtension extends AbstractReference
             'php.max' => '',
         );
         $release->functions = array(
-            'oauth_urlencode'                   => array('5.1.0', ''),
+            'oauth_urlencode'                   => null,
         );
         $release->constants = array(
-            'OAUTH_AUTH_TYPE_AUTHORIZATION'     => array('5.1.0', ''),
-            'OAUTH_AUTH_TYPE_FORM'              => array('5.1.0', ''),
-            'OAUTH_AUTH_TYPE_URI'               => array('5.1.0', ''),
-            'OAUTH_SIG_METHOD_HMACSHA1'         => array('5.1.0', ''),
+            'OAUTH_AUTH_TYPE_AUTHORIZATION'     => null,
+            'OAUTH_AUTH_TYPE_FORM'              => null,
+            'OAUTH_AUTH_TYPE_URI'               => null,
+            'OAUTH_SIG_METHOD_HMACSHA1'         => null,
         );
         $release->classes = array(
-            'OAuth'                             => array('5.1.0', ''),
-            'OAuthException'                    => array('5.1.0', ''),
+            'OAuth'                             => null,
+            'OAuthException'                    => null,
         );
         return $release;
     }
@@ -98,11 +98,11 @@ class OauthExtension extends AbstractReference
             'php.max' => '',
         );
         $release->constants = array(
-            'OAUTH_AUTH_TYPE_NONE'              => array('5.1.0', ''),
-            'OAUTH_HTTP_METHOD_GET'             => array('5.1.0', ''),
-            'OAUTH_HTTP_METHOD_HEAD'            => array('5.1.0', ''),
-            'OAUTH_HTTP_METHOD_POST'            => array('5.1.0', ''),
-            'OAUTH_HTTP_METHOD_PUT'             => array('5.1.0', ''),
+            'OAUTH_AUTH_TYPE_NONE'              => null,
+            'OAUTH_HTTP_METHOD_GET'             => null,
+            'OAUTH_HTTP_METHOD_HEAD'            => null,
+            'OAUTH_HTTP_METHOD_POST'            => null,
+            'OAUTH_HTTP_METHOD_PUT'             => null,
         );
         return $release;
     }
@@ -119,7 +119,7 @@ class OauthExtension extends AbstractReference
             'php.max' => '',
         );
         $release->functions = array(
-            'oauth_get_sbs'                     => array('5.1.0', ''),
+            'oauth_get_sbs'                     => null,
         );
         return $release;
     }
@@ -136,27 +136,27 @@ class OauthExtension extends AbstractReference
             'php.max' => '',
         );
         $release->constants = array(
-            'OAUTH_BAD_NONCE'                   => array('5.1.0', ''),
-            'OAUTH_BAD_TIMESTAMP'               => array('5.1.0', ''),
-            'OAUTH_CONSUMER_KEY_REFUSED'        => array('5.1.0', ''),
-            'OAUTH_CONSUMER_KEY_UNKNOWN'        => array('5.1.0', ''),
-            'OAUTH_HTTP_METHOD_DELETE'          => array('5.1.0', ''),
-            'OAUTH_INVALID_SIGNATURE'           => array('5.1.0', ''),
-            'OAUTH_OK'                          => array('5.1.0', ''),
-            'OAUTH_PARAMETER_ABSENT'            => array('5.1.0', ''),
-            'OAUTH_REQENGINE_CURL'              => array('5.1.0', ''),
-            'OAUTH_REQENGINE_STREAMS'           => array('5.1.0', ''),
-            'OAUTH_SIGNATURE_METHOD_REJECTED'   => array('5.1.0', ''),
-            'OAUTH_SIG_METHOD_HMACSHA256'       => array('5.1.0', ''),
-            'OAUTH_SIG_METHOD_RSASHA1'          => array('5.1.0', ''),
-            'OAUTH_TOKEN_EXPIRED'               => array('5.1.0', ''),
-            'OAUTH_TOKEN_REJECTED'              => array('5.1.0', ''),
-            'OAUTH_TOKEN_REVOKED'               => array('5.1.0', ''),
-            'OAUTH_TOKEN_USED'                  => array('5.1.0', ''),
-            'OAUTH_VERIFIER_INVALID'            => array('5.1.0', ''),
+            'OAUTH_BAD_NONCE'                   => null,
+            'OAUTH_BAD_TIMESTAMP'               => null,
+            'OAUTH_CONSUMER_KEY_REFUSED'        => null,
+            'OAUTH_CONSUMER_KEY_UNKNOWN'        => null,
+            'OAUTH_HTTP_METHOD_DELETE'          => null,
+            'OAUTH_INVALID_SIGNATURE'           => null,
+            'OAUTH_OK'                          => null,
+            'OAUTH_PARAMETER_ABSENT'            => null,
+            'OAUTH_REQENGINE_CURL'              => null,
+            'OAUTH_REQENGINE_STREAMS'           => null,
+            'OAUTH_SIGNATURE_METHOD_REJECTED'   => null,
+            'OAUTH_SIG_METHOD_HMACSHA256'       => null,
+            'OAUTH_SIG_METHOD_RSASHA1'          => null,
+            'OAUTH_TOKEN_EXPIRED'               => null,
+            'OAUTH_TOKEN_REJECTED'              => null,
+            'OAUTH_TOKEN_REVOKED'               => null,
+            'OAUTH_TOKEN_USED'                  => null,
+            'OAUTH_VERIFIER_INVALID'            => null,
         );
         $release->classes = array(
-            'OAuthProvider'                     => array('5.1.0', ''),
+            'OAuthProvider'                     => null,
         );
         return $release;
     }
@@ -173,10 +173,10 @@ class OauthExtension extends AbstractReference
             'php.max' => '',
         );
         $release->constants = array(
-            'OAUTH_SSLCHECK_BOTH'               => array('5.1.0', ''),
-            'OAUTH_SSLCHECK_HOST'               => array('5.1.0', ''),
-            'OAUTH_SSLCHECK_NONE'               => array('5.1.0', ''),
-            'OAUTH_SSLCHECK_PEER'               => array('5.1.0', ''),
+            'OAUTH_SSLCHECK_BOTH'               => null,
+            'OAUTH_SSLCHECK_HOST'               => null,
+            'OAUTH_SSLCHECK_NONE'               => null,
+            'OAUTH_SSLCHECK_PEER'               => null,
         );
         return $release;
     }
@@ -193,7 +193,7 @@ class OauthExtension extends AbstractReference
             'php.max' => '',
         );
         $release->constants = array(
-            'OAUTH_SIG_METHOD_PLAINTEXT'        => array('5.1.0', ''),
+            'OAUTH_SIG_METHOD_PLAINTEXT'        => null,
         );
         return $release;
     }
