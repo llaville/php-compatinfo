@@ -42,18 +42,4 @@ class RecodeExtension extends AbstractReference
         );
         return $release;
     }
-        $release = new \StdClass;
-        $release->info = array(
-            'ext.min' => '5.4.0',
-            'ext.max' => '',
-            'state'   => 'stable',
-            'date'    => '2012-03-01',
-            'php.min' => '5.4.0',
-            'php.max' => '',
-        );
-        $release->constants = array(
-            'READLINE_LIB'                      => null,
-        );
-        return $release;
-    }
 }
