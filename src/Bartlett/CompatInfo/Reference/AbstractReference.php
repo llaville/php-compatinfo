@@ -167,6 +167,11 @@ abstract class AbstractReference implements ReferenceInterface
             $meta = array('version_number' => defined('INTL_ICU_VERSION')
                 ? INTL_ICU_VERSION : false
             );
+            
+        } elseif ('openssl' == $this->name) {
+            $meta = array('version_number' => defined('OPENSSL_VERSION_NUMBER')
+                ? OPENSSL_VERSION_NUMBER : false
+            );
         }
         if (isset($meta)) {
             if (isset($key) && array_key_exists($key, $meta)) {
