@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class RarExtension extends AbstractReference
 {
     const REF_NAME    = 'rar';
-    const REF_VERSION = '3.0.1';  // 2012-07-29 (stable)
+    const REF_VERSION = '3.0.2';  // 2013-10-14 (stable)
 
     public function __construct()
     {
