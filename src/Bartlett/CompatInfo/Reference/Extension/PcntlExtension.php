@@ -174,9 +174,9 @@ class PcntlExtension extends AbstractReference
             'php.max' => '',
         );
         $release->constants = array(
-            'PRIO_PGRP'                 ==> null,
-            'PRIO_PROCESS'              ==> null,
-            'PRIO_USER'                 ==> null,
+            'PRIO_PGRP'                 => null,
+            'PRIO_PROCESS'              => null,
+            'PRIO_USER'                 => null,
         );
         $release->functions = array(
             'pcntl_getpriority'         => null,
