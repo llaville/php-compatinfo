@@ -117,6 +117,20 @@ class OpensslExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.6.0alpha1
+        if (version_compare($version, '5.6.0alpha1', 'ge')) {
+            $release = $this->getR50600a1();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
+        // 5.6.0beta1
+        if (version_compare($version, '5.6.0beta1', 'ge')) {
+            $release = $this->getR50600b1();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR40004()
@@ -442,6 +456,54 @@ class OpensslExtension extends AbstractReference
         );
         $release->functions = array(
             'openssl_pbkdf2'                    => null,
+        );
+        return $release;
+    }
+
+    protected function getR50600a1()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.6.0alpha1',
+            'ext.max' => '',
+            'state'   => 'alpha',
+            'date'    => '2014-01-21',
+            'php.min' => '5.6.0alpha1',
+            'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'openssl.cafile'                    => null,
+            'openssl.capath'                    => null,
+        );
+        $release->constants = array(
+            'OPENSSL_ALGO_SHA224'               => null,
+        );
+        $release->functions = array(
+            'openssl_spki_export'               => null,
+            'openssl_spki_export_challenge'     => null,
+            'openssl_spki_new'                  => null,
+            'openssl_spki_verify'               => null,
+            'openssl_x509_fingerprint'          => null,
+        );
+        return $release;
+    }
+
+    protected function getR50600b1()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.6.0beta1',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2014-04-11',
+            'php.min' => '5.6.0beta1',
+            'php.max' => '',
+        );
+        $release->constants = array(
+            'OPENSSL_DEFAULT_STREAM_CIPHERS'    => null,
+        );
+        $release->functions = array(
+            'openssl_get_cert_locations'        => null,
         );
         return $release;
     }
