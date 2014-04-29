@@ -123,7 +123,7 @@ class ZendopcacheExtension extends AbstractReference
             'ext.max' => '',
             'state'   => 'beta',
             'date'    => '2013-10-17',
-            'php.min' => '5.2.0',
+            'php.min' => '5.5.5',
             'php.max' => '',
         );
         $release->functions = array(
@@ -140,7 +140,7 @@ class ZendopcacheExtension extends AbstractReference
             'ext.max' => '',
             'state'   => 'beta',
             'date'    => '2014-04-03',
-            'php.min' => '5.2.0',
+            'php.min' => '5.5.11',
             'php.max' => '',
         );
         $release->functions = array(
