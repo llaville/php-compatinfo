@@ -50,15 +50,12 @@ class PreFetchStrategy extends AbstractReferenceFinder implements ReferenceFinde
      */
     protected function find($element, $priorities)
     {
-        //error_log(sprintf('Find "%s" following priorities "%s" [PreFetchStrategy]', $element, json_encode($priorities)));
-
         $needle = strtolower($element);
         $index  = substr($needle, 0, 1);
 
         if (isset($this->cache[$index])) {
             if (isset($this->cache[$index][$needle])) {
                 // already found
-                //error_log(sprintf('--> Found in cache; "%s" (as %s) Reference [PreFetchStrategy]', $this->cache[$index][$needle]['name'], $this->cache[$index][$needle]['type']));
                 $this->typeElement = $this->cache[$index][$needle]['type'];
                 return $this->cache[$index][$needle]['name'];
             }
@@ -74,7 +71,6 @@ class PreFetchStrategy extends AbstractReferenceFinder implements ReferenceFinde
                     // found element. Save in cache to speed up next searches
                     $this->cache[$index][$needle]['name'] = $name;
                     $this->cache[$index][$needle]['type'] = $priority;
-                    //error_log(sprintf('--> Found in "%s" Reference by "%s" rule [PreFetchStrategy]', $name, $priority));
                     $this->typeElement = $priority;
                     return $name;
                 }
@@ -85,7 +81,6 @@ class PreFetchStrategy extends AbstractReferenceFinder implements ReferenceFinde
         $this->cache[$index][$needle]['name'] = $name = 'user';
         $this->cache[$index][$needle]['type'] = $priority = array_shift($priorities);
         $this->typeElement = $priority;
-        //error_log('--> Not Found [PreFetchStrategy] on ' . $this->typeElement);
         return $name;
     }
 }

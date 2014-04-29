@@ -14,15 +14,12 @@ class AutoDiscoverStrategy extends AbstractReferenceFinder implements ReferenceF
      */
     protected function find($element, $priorities)
     {
-        //error_log(sprintf('Find "%s" following priorities "%s" [AutoDiscoverStrategy]', $element, json_encode($priorities)));
-
         $needle = strtolower($element);
         $index  = substr($needle, 0, 1);
 
         if (isset($this->cache[$index])) {
             if (isset($this->cache[$index][$needle])) {
                 // already found
-                //error_log(sprintf('--> Found in cache; "%s" (as %s) Reference [AutoDiscoverStrategy]', $this->cache[$index][$needle]['name'], $this->cache[$index][$needle]['type']));
                 $this->typeElement = $this->cache[$index][$needle]['type'];
                 return $this->cache[$index][$needle]['name'];
             }
@@ -48,7 +45,6 @@ class AutoDiscoverStrategy extends AbstractReferenceFinder implements ReferenceF
                     // found element. Save in cache to speed up next searches
                     $this->cache[$index][$needle]['name'] = $name;
                     $this->cache[$index][$needle]['type'] = $priority;
-                    //error_log(sprintf('--> Found in "%s" Reference by "%s" rule [AutoDiscoverStrategy]', $name, $priority));
                     $this->typeElement = $priority;
                     return $name;
                 }
@@ -59,7 +55,6 @@ class AutoDiscoverStrategy extends AbstractReferenceFinder implements ReferenceF
         $this->cache[$index][$needle]['name'] = $name = 'user';
         $this->cache[$index][$needle]['type'] = $priority = array_shift($priorities);
         $this->typeElement = $priority;
-        //error_log('--> Not Found [AutoDiscoverStrategy] on ' . $this->typeElement);
         return $name;
     }
 }
