@@ -1,0 +1,34 @@
+:css-signature: blog
+:icons!:
+:iconsfont: font-awesome
+:iconsfontdir: ./fonts/font-awesome
+:imagesdir: ./images
+:author: Laurent Laville
+:revdate: 2014-04-30
+:pubdate: Wed, 30 Apr 2014 21:01:57 +0200
+:summary: CompatInfo 3.0.0 has just been released.
+
+== CompatInfo 3.0.0 released
+
+[role="blog",cols="3,9",halign="right",citetitle="Published by {author} on {revdate}"]
+.icon:rocket[size="4x"]
+--
+[role="lead"]
+{summary}
+
+Support all 100 extensions as in version 2.26.0, with updates.   
+
+Changes since RC2:
+
+* 30 more extensions were migrated from format 2.x to 3.x 
+* fixes PHP warning with `reference:list` command
+
+.What is planned for the next stable version:
+************************************************
+* Support new stable PHP versions 5.5.12 and 5.4.28
+* Improve the documentation.
+************************************************
+
+link:http://bartlett.laurent-laville.org/get/phpcompatinfo-3.0.0.phar[caption="Download the PHAR version",role="primary",icon="glyphicon-download-alt"]
+
+--

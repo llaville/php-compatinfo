@@ -16,7 +16,6 @@
         "ext-json": "*",
         "bartlett/php-reflect": "2.0.*"
     },
-    "minimum-stability": "beta",
     "require-dev": {
         "phpunit/phpunit": ">=3.7"
     },
