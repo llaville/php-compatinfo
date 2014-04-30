@@ -26,11 +26,6 @@
             "in": "vendor/bartlett/php-reflect/src"
         }
     ],
-    "map": [
-        {
-            "vendor/bartlett/php-reflect/src/Bartlett": "src/Bartlett"
-        }
-    ],
     "metadata": [
         {
             "vendor": [
