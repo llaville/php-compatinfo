@@ -8,7 +8,7 @@ class ReferenceLoader implements \Countable
 {
     protected $loaders;
     protected $typeElement;
-    
+
     /**
      * Creates a new instance of ReferenceLoader.
      */
@@ -109,7 +109,7 @@ class ReferenceLoader implements \Countable
     {
         return $this->typeElement;
     }
-        
+
     /**
      * Returns list of all References provided.
      *
@@ -126,6 +126,11 @@ class ReferenceLoader implements \Countable
 
             $className = basename($iterator->key(), '.php');
             $extName   = strtolower(str_replace('Extension', '', $className));
+
+            // special case for "Zend OPcache" (with a blank in its name)
+            if ('zendopcache' == $extName) {
+                $extName = 'zend opcache';
+            }
 
             $refs[$extName] = new \stdClass;
         }
