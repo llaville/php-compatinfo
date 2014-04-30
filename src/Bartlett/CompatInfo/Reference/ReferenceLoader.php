@@ -118,13 +118,18 @@ class ReferenceLoader implements \Countable
     public function getProvidedReferences()
     {
         $refs = array();
-        $path =__DIR__ . '/Extension/*Extension.php';
+        $path = __DIR__ . '/Extension/';
 
-        $iterator = new \GlobIterator($path, \FilesystemIterator::KEY_AS_FILENAME);
+        $iterator = new \DirectoryIterator($path);
 
         foreach ($iterator as $item) {
-
-            $className = basename($iterator->key(), '.php');
+            if ($item->isDot()) {
+                continue;
+            }
+            if (strpos($item->getFilename(), 'Extension') === false) {
+                continue;
+            }
+            $className = basename($item->getFilename(), '.php');
             $extName   = strtolower(str_replace('Extension', '', $className));
 
             // special case for "Zend OPcache" (with a blank in its name)
