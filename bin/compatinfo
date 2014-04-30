@@ -25,9 +25,8 @@ $loader->registerNamespaces(array(
     'Symfony\\Component\\EventDispatcher' => $vendorDir . '/symfony/event-dispatcher',
     'Symfony\\Component\\Console'         => $vendorDir . '/symfony/console',
     'Symfony\\Component\\ClassLoader'     => $vendorDir . '/symfony/class-loader',
-    'Bartlett\\Reflect'                   => $vendorDir . '/bartlett/php-reflect/src',
     'Bartlett\\Tests\\CompatInfo'         => $baseDir . '/tests',
-    'Bartlett'                            => $baseDir . '/src',
+    'Bartlett'                            => array($baseDir . '/src', $vendorDir . '/bartlett/php-reflect/src'),
 ));
 $loader->register();
 
