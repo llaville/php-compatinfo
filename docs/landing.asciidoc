@@ -124,7 +124,5 @@ WARNING: First visit, you are highly recommended to follow chapters in order.
 [horizontal]
 Setup:: Configuring your project and get ready for your first parsing.
 Quick Start:: This quick start is a five minute tutorial where you can discover how to identify a data source and parse its contents.
-Handle Results:: Learn how to explore and exploit parsing results.
-Concrete Examples:: Discover how CompatInfo may be use in real condition.
 
 link:setup.html["Go to next chapter: Setup",role="primary",icon="glyphicon-step-forward",options="block"]
