@@ -27,6 +27,7 @@ use Bartlett\Reflect\Command\PluginListCommand;
 
 use Bartlett\CompatInfo\Command\ReferenceListCommand;
 use Bartlett\CompatInfo\Command\ReferenceShowCommand;
+use Bartlett\CompatInfo\Command\AnalyserRunCommand;
 
 /**
  * Console Application.
@@ -121,7 +122,12 @@ class ConsoleApplication extends Application
                         $cmds = $plugin['class']::getCommands();
                         while (!empty($cmds)) {
                             // add each command provided by the plugin
-                            $commands[] = array_shift($cmds);
+                            $cmd = array_shift($cmds);
+                            if (strpos(get_class($cmd), 'AnalyserRunCommand')) {
+                                // replace Reflect Command by CompaInfo Command
+                                $cmd = new AnalyserRunCommand;
+                            }
+                            $commands[] = $cmd;
                         }
                     }
                 }
