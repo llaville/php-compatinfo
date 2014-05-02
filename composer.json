@@ -32,6 +32,9 @@
             "role": "Contributor"
         }
     ],
+    "bin": [
+        "bin/compatinfo"
+    ],
     "autoload": {
         "psr-0": {
             "Bartlett\\": "src/",
