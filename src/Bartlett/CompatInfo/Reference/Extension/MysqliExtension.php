@@ -78,6 +78,13 @@ class MysqliExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.6.0beta2
+        if (version_compare($version, '5.6.0beta2', 'ge')) {
+            $release = $this->getR50600b2();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR50000()
@@ -485,6 +492,23 @@ class MysqliExtension extends AbstractReference
         );
         $release->functions = array(
             'mysqli_get_links_stats'                    => null,
+        );
+        return $release;
+    }
+
+    protected function getR50600b2()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.6.0beta2',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2014-05-02',
+            'php.min' => '5.6.0beta2',
+            'php.max' => '',
+        );
+        $release->constants = array(
+            'MYSQLI_STORE_RESULT_COPY_DATA'             => null,
         );
         return $release;
     }
