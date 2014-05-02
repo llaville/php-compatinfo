@@ -1,0 +1,31 @@
+:css-signature: blog
+:icons!:
+:iconsfont: font-awesome
+:iconsfontdir: ./fonts/font-awesome
+:imagesdir: ./images
+:author: Laurent Laville
+:revdate: 2014-05-02
+:pubdate: Fri, 02 May 2014 10:51:58 +0200
+:summary: CompatInfo 3.1.0 has just been released.
+
+== CompatInfo 3.1.0 released
+
+[role="blog",cols="3,9",halign="right",citetitle="Published by {author} on {revdate}"]
+.icon:rocket[size="4x"]
+--
+[role="lead"]
+{summary}
+
+* Support new stable PHP versions 5.5.12 and 5.4.28
+* Support PHP 5.6.0beta2
+* Exposes package binary to vendor directory
+ 
+.What is planned for the next stable version:
+************************************************
+* Improve the documentation.
+* Fixes all remaining issues (that could be detected: need user feedback)
+************************************************
+
+link:http://bartlett.laurent-laville.org/get/phpcompatinfo-3.1.0.phar[caption="Download the PHAR version",role="primary",icon="glyphicon-download-alt"]
+
+--

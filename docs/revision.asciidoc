@@ -1,2 +1,2 @@
-:revdate:    2014-05-01
-:revnumber:  3.0.0
+:revdate:    2014-05-02
+:revnumber:  3.1.0

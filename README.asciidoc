@@ -9,6 +9,7 @@ find out the minimum version and the extensions required for a piece of code to 
 * The first mature Release Candidate (RC1) of API 3.0 was released Wed, 19 Feb 2014.
 * The last Release Candidate (RC2) of API 3.0 was released Mon, 14 Apr 2014.
 * Final stable release 3.0.0 was released Thu, 01 May 2014.
+* Second stable release of branch v3 3.1.0 was released Fri, 02 May 2014.
 
 It was distributed as source code (install via composer) and a PHAR version 
 that bundles all dependencies in a single file.
@@ -24,11 +25,12 @@ You can either :
 * download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-3.0.0RC1-2-gd181e6c.phar[3.0.0RC1]
 * download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-3.0.0RC2.phar[3.0.0RC2]
 * download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-3.0.0.phar[3.0.0]
+* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-3.1.0.phar[3.1.0]
 * install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist].
 
 == Documentation
 
-The (limited) documentation for PHP CompatInfo 3.0 is only available online
-in http://php5.laurent-laville.org/compatinfo/manual/3.0/en/[English].
+The (limited) documentation for PHP CompatInfo 3.1 is only available online
+in http://php5.laurent-laville.org/compatinfo/manual/3.1/en/[English].
 
 AsciiDoc source code are available on `docs` folder of the repository.

@@ -40,7 +40,8 @@ with at least, content below:
 {
     "require": {
         "bartlett/php-compatinfo": ">=3.0"
-    }
+    },
+    "minimum-stability": "beta"    
 }
 ----
 And run the following command:
