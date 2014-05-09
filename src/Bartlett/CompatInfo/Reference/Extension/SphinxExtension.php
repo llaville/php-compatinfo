@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class SphinxExtension extends AbstractReference
 {
     const REF_NAME    = 'sphinx';
-    const REF_VERSION = '';
+    const REF_VERSION = '1.3.2';    // 2014-05-06 (stable)
 
     public function __construct()
     {
