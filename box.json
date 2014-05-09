@@ -5,9 +5,14 @@
     "extract": true,
     "compression": "GZ",
     "files": [
-        "LICENSE"
+        "LICENSE",
+        "vendor/autoload.php"
     ],
     "finder": [
+        {
+            "name": "*.php",
+            "in": "vendor/composer"
+        },
         {
             "name": "*.php",
             "in": "vendor/nikic/php-parser/lib"
@@ -37,7 +42,6 @@
                     ],
                     "symfony": [
                         {
-                            "classloader": "2.4.3",
                             "console": "2.4.3",
                             "eventdispatcher": "2.4.3",
                             "finder": "2.4.3"

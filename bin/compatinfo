@@ -4,31 +4,13 @@
 //putenv("COMPATINFO=/path/to/dir/compatinfo.json");
 ini_set('memory_limit', -1);
 
-$baseDir   = dirname(__DIR__);
-$vendorDir = $baseDir . '/vendor';
-
 if (\Phar::running()) {
-    require_once 'phar://phpcompatinfo.phar/vendor/nikic/php-parser/lib/bootstrap.php';
-    require_once 'phar://phpcompatinfo.phar/vendor/symfony/class-loader/Symfony/Component/ClassLoader/UniversalClassLoader.php';
-    require_once 'phar://phpcompatinfo.phar/vendor/phpunit/php-timer/PHP/Timer.php';
+    $vendorDir = 'phar://phpcompatinfo.phar/vendor';
 } else {
-    require_once $vendorDir . '/nikic/php-parser/lib/bootstrap.php';
-    require_once $vendorDir . '/symfony/class-loader/Symfony/Component/ClassLoader/UniversalClassLoader.php';
-    require_once $vendorDir . '/phpunit/php-timer/PHP/Timer.php';
+    $baseDir   = dirname(__DIR__);
+    $vendorDir = $baseDir . '/vendor';
 }
-
-use Symfony\Component\ClassLoader\UniversalClassLoader;
-
-$loader = new UniversalClassLoader();
-$loader->registerNamespaces(array(
-    'Symfony\\Component\\Finder'          => $vendorDir . '/symfony/finder',
-    'Symfony\\Component\\EventDispatcher' => $vendorDir . '/symfony/event-dispatcher',
-    'Symfony\\Component\\Console'         => $vendorDir . '/symfony/console',
-    'Symfony\\Component\\ClassLoader'     => $vendorDir . '/symfony/class-loader',
-    'Bartlett\\Tests\\CompatInfo'         => $baseDir . '/tests',
-    'Bartlett'                            => array($baseDir . '/src', $vendorDir . '/bartlett/php-reflect/src'),
-));
-$loader->register();
+require_once $vendorDir . '/autoload.php';
 
 if (PHP_SAPI !== 'cli') {
     return;
