@@ -1,7 +1,18 @@
 #!/usr/bin/env php
 <?php
-// bin/console
-//putenv("COMPATINFO=/path/to/dir/compatinfo.json");
+if (!getenv("COMPATINFO")) {
+    $files = array(
+        realpath('./compatinfo.json'),
+        getenv('HOME').'/.config/phpcompatinfo.json',
+        '/etc/phpcompatinfo.json',
+    );
+    foreach ($files as $file) {
+        if (file_exists($file)) {
+            putenv("COMPATINFO=$file");
+            break;
+        }
+    }
+}
 ini_set('memory_limit', -1);
 
 if (\Phar::running()) {
