@@ -163,8 +163,7 @@ class ConsoleApplication extends Application
      */
     public function getJsonConfigFile()
     {
-        $path = trim(getenv('COMPATINFO')) ? : './compatinfo.json';
-        $path = realpath($path);
+        $path = realpath(getenv('COMPATINFO'));
 
         if (!is_file($path)) {
             throw new \Exception(

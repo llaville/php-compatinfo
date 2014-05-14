@@ -7,8 +7,8 @@ if (class_exists('Phar')) {
     if (!getenv("COMPATINFO")) {
         $files = array(
             realpath('./compatinfo.json'),
-            getenv('HOME').'/.config/phpcompatinfo.json',
-            '/etc/phpcompatinfo.json',
+            getenv('HOME').'/.config/compatinfo.json',
+            '/etc/compatinfo.json',
         );
         foreach ($files as $file) {
             if (file_exists($file)) {
@@ -17,6 +17,6 @@ if (class_exists('Phar')) {
             }
         }
     }
-    require 'phar://' . __FILE__ . '/bin/reflect';
+    require 'phar://' . __FILE__ . '/bin/compatinfo';
 }
 __HALT_COMPILER();
