@@ -1,18 +1,5 @@
 #!/usr/bin/env php
 <?php
-if (!getenv("COMPATINFO")) {
-    $files = array(
-        realpath('./compatinfo.json'),
-        getenv('HOME').'/.config/phpcompatinfo.json',
-        '/etc/phpcompatinfo.json',
-    );
-    foreach ($files as $file) {
-        if (file_exists($file)) {
-            putenv("COMPATINFO=$file");
-            break;
-        }
-    }
-}
 ini_set('memory_limit', -1);
 
 if (\Phar::running()) {
@@ -20,6 +7,20 @@ if (\Phar::running()) {
 } else {
     $baseDir   = dirname(__DIR__);
     $vendorDir = $baseDir . '/vendor';
+
+    if (!getenv("COMPATINFO")) {
+        $files = array(
+            realpath('./compatinfo.json'),
+            getenv('HOME').'/.config/phpcompatinfo.json',
+            '/etc/phpcompatinfo.json',
+        );
+        foreach ($files as $file) {
+            if (file_exists($file)) {
+                putenv("COMPATINFO=$file");
+                break;
+            }
+        }
+    }
 }
 require_once $vendorDir . '/autoload.php';
 

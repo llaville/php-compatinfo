@@ -66,6 +66,6 @@
     "main": "bin/compatinfo",
     "output": "phpcompatinfo-@git-version@.phar",
     "intercept": true,
-    "stub": true,
+    "stub": "phar-stub.php",
     "web": false
 }
