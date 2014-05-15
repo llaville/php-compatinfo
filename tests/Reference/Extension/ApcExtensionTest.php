@@ -52,29 +52,29 @@ class ApcExtensionTest extends GenericTest
             array_push(self::$optionalcfgs,
                 'apc.shm_strings_buffer'
             );
+        }
 
-            if (version_compare(PHP_VERSION, '5.5.0', 'ge')) {
-                // and PHP 5.5+
-                array_push(self::$optionalcfgs,
-                    'apc.cache_by_default',
-                    'apc.canonicalize',
-                    'apc.file_md5',
-                    'apc.file_update_protection',
-                    'apc.filters',
-                    'apc.include_once_override',
-                    'apc.lazy_classes',
-                    'apc.lazy_functions',
-                    'apc.max_file_size',
-                    'apc.num_files_hint',
-                    'apc.report_autofilter',
-                    'apc.shm_strings_buffer',
-                    'apc.stat',
-                    'apc.stat_ctime',
-                    'apc.user_entries_hint',
-                    'apc.user_ttl',
-                    'apc.write_lock'
-                );
-            }
+        if (extension_loaded('apcu')) {
+            // and PHP 5.5+
+            array_push(self::$optionalcfgs,
+                'apc.cache_by_default',
+                'apc.canonicalize',
+                'apc.file_md5',
+                'apc.file_update_protection',
+                'apc.filters',
+                'apc.include_once_override',
+                'apc.lazy_classes',
+                'apc.lazy_functions',
+                'apc.max_file_size',
+                'apc.num_files_hint',
+                'apc.report_autofilter',
+                'apc.shm_strings_buffer',
+                'apc.stat',
+                'apc.stat_ctime',
+                'apc.user_entries_hint',
+                'apc.user_ttl',
+                'apc.write_lock'
+            );
         }
 
         // Constants and Classes not available in CLI mode
