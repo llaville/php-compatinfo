@@ -22,6 +22,13 @@ class MemcachedExtension extends AbstractReference
             $this->storage->attach($releases[--$count]);
         }
 
+        // 2.0.0
+        if (version_compare($version, '2.0.0', 'ge')) {
+            $release = $this->getR20000();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
         // 2.2.0b1
         if (version_compare($version, '2.2.0b1', 'ge')) {
             $release = $this->getR20200b1();
@@ -48,6 +55,31 @@ class MemcachedExtension extends AbstractReference
         return $release;
     }
 
+    protected function getR20000()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '2.0.0',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2012-03-02',
+            'php.min' => '5.2.0',
+            'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'memcached.compression_factor'       => null,
+            'memcached.compression_threshold'    => null,
+            'memcached.compression_type'         => null,
+            'memcached.serializer'               => null,
+            'memcached.sess_binary'              => null,
+            'memcached.sess_locking'             => null,
+            'memcached.sess_lock_wait'           => null,
+            'memcached.sess_prefix'              => null,
+            'memcached.use_sasl'                 => null,
+        );
+        return $release;
+    }
+
     protected function getR20200b1()
     {
         $release = new \StdClass;
@@ -58,6 +90,18 @@ class MemcachedExtension extends AbstractReference
             'date'    => '2013-11-25',
             'php.min' => '5.2.0',
             'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'memcached.sess_connect_timeout'        => null,
+            'memcached.sess_consistent_hash'        => null,
+            'memcached.sess_lock_expire'            => null,
+            'memcached.sess_lock_max_wait'          => null,
+            'memcached.sess_number_of_replicas'     => null,
+            'memcached.sess_randomize_replica_read' => null,
+            'memcached.sess_remove_failed'          => null,
+            'memcached.sess_sasl_username'          => null,
+            'memcached.sess_sasl_password'          => null,
+            'memcached.store_retry_count'           => null,
         );
         $release->classes = array(
             'MemcachedServer'           => null,
