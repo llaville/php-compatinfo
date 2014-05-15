@@ -6,7 +6,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class GeoipExtension extends AbstractReference
 {
     const REF_NAME    = 'geoip';
-    const REF_VERSION = '1.0.8';    // 2011-10-23 (stable)
+    const REF_VERSION = '1.1.0';    // 2014-05-01 (beta)
 
     public function __construct()
     {
@@ -46,6 +46,13 @@ class GeoipExtension extends AbstractReference
         // 1.0.5
         if (version_compare($version, '1.0.5', 'ge')) {
             $release = $this->getR10005();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
+        // 1.1.0
+        if (version_compare($version, '1.1.0', 'ge')) {
+            $release = $this->getR10100();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
@@ -106,6 +113,9 @@ class GeoipExtension extends AbstractReference
             'php.min' => '4.3.0',
             'php.max' => '',
         );
+        $release->iniEntries = array(
+            'geoip.custom_directory'                => null,
+        );
         $release->functions = array(
             'geoip_db_avail'                        => null,
             'geoip_db_filename'                     => null,
@@ -162,6 +172,29 @@ class GeoipExtension extends AbstractReference
         $release->functions = array(
             'geoip_region_name_by_code'             => null,
             'geoip_time_zone_by_country_and_region' => null,
+        );
+        return $release;
+    }
+
+    protected function getR10100()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '1.1.0',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2014-05-01',
+            'php.min' => '4.3.0',
+            'php.max' => '',
+        );
+        $release->functions = array(
+            'geoip_setup_custom_directory'          => null,
+            'geoip_asnum_by_name'                   => null,
+            'geoip_domain_by_name'                  => null,
+            'geoip_netspeedcell_by_name'            => null,
+        );
+        $release->constants = array(
+            'GEOIP_NETSPEED_EDITION_REV1'           => null,
         );
         return $release;
     }

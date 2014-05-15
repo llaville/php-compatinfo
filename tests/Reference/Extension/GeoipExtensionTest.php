@@ -47,7 +47,10 @@ class GeoipExtensionTest extends GenericTest
             'geoip_region_name_by_code',
             'geoip_time_zone_by_country_and_region',
         );
-
+        self::$optionalconstants = array(
+            // requires GeoIP C library 1.4.8 or higher (LIBGEOIP_VERSION >= 1004008)
+            'GEOIP_NETSPEED_EDITION_REV1',
+        );
         self::$obj = new GeoipExtension();
         parent::setUpBeforeClass();
     }
