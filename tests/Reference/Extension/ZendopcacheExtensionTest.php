@@ -42,6 +42,12 @@ class ZendopcacheExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
+        if (PATH_SEPARATOR == ':') {
+            // Windows only
+            self::$optionalcfgs = array(
+                'opcache.mmap_base',
+            );
+        }
         self::$obj = new ZendopcacheExtension();
         parent::setUpBeforeClass();
     }
