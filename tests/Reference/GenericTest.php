@@ -92,6 +92,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
                 "The '" . self::$ext . "' extension is not available."
             );
         }
+        $this->assertTrue(true);
     }
 
     /**
@@ -106,7 +107,9 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         if (is_null(self::$obj)) {
             return;
         }
-        foreach (self::$obj->getIniEntries() as $inientry => $range) {
+        $inientries = self::$obj->getIniEntries();
+        $this->assertTrue(is_array($inientries));
+        foreach ($inientries as $inientry => $range) {
             $min = $range['php.min'];
             $max = $range['php.max'];
 
@@ -162,6 +165,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $dict       = self::$obj->getIniEntries();
         $extension  = new \ReflectionExtension($extname);
         $iniEntries = array_keys($extension->getINIEntries());
+        $this->assertTrue(is_array($dict));
 
         foreach ($iniEntries as $iniEntry) {
             if (!in_array($iniEntry, self::$ignoredcfgs)) {
@@ -186,7 +190,9 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         if (is_null(self::$obj)) {
             return;
         }
-        foreach (self::$obj->getFunctions() as $fctname => $range) {
+        $fcts = self::$obj->getFunctions();
+        $this->assertTrue(is_array($fcts));
+        foreach ($fcts as $fctname => $range) {
             $min = $range['php.min'];
             $max = $range['php.max'];
 
@@ -238,6 +244,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
             return;
         }
         $dict = self::$obj->getFunctions();
+        $this->assertTrue(is_array($dict));
 
         foreach ($ext as $fctname) {
             if (!in_array($fctname, self::$ignoredfunctions)) {
@@ -262,7 +269,9 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         if (is_null(self::$obj)) {
             return;
         }
-        foreach (self::$obj->getConstants() as $constname => $range) {
+        $dict = self::$obj->getConstants();
+        $this->assertTrue(is_array($dict));
+        foreach ($dict as $constname => $range) {
             $min = $range['php.min'];
             $max = $range['php.max'];
 
@@ -309,6 +318,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $extname = self::$ext;
         $const   = get_defined_constants(true);
         $dict    = self::$obj->getConstants();
+        $this->assertTrue(is_array($dict));
 
         if (defined('__PHPUNIT_PHAR__')) {
             // remove '' . "\0" . '__COMPILER_HALT_OFFSET__' . "\0" . __PHPUNIT_PHAR__
@@ -341,7 +351,9 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         if (is_null(self::$obj)) {
             return;
         }
-        foreach (self::$obj->getClasses() as $classname => $range) {
+        $dict = self::$obj->getClasses();
+        $this->assertTrue(is_array($dict));
+        foreach ($dict as $classname => $range) {
             $min = $range['php.min'];
             $max = $range['php.max'];
 
@@ -395,6 +407,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $dict2     = self::$obj->getInterfaces();
         $extension = new \ReflectionExtension($extname);
         $classes   = $extension->getClassNames();
+        $this->assertTrue(is_array($classes));
 
         foreach ($classes as $classname) {
             if (class_exists($classname)) {
@@ -429,7 +442,9 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         if (is_null(self::$obj)) {
             return;
         }
-        foreach (self::$obj->getInterfaces() as $intname => $range) {
+        $dict = self::$obj->getInterfaces();
+        $this->assertTrue(is_array($dict));
+        foreach ($dict as $intname => $range) {
             $min = $range['php.min'];
             $max = $range['php.max'];
 
