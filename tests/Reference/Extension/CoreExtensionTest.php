@@ -63,7 +63,18 @@ class CoreExtensionTest extends GenericTest
             // So no reliable check for this one
             'trait_exists',
         );
+        self::$optionalcfgs = array(
+            // Requires --enable-zend-multibyte
+            'zend.detect_unicode',
+            'zend.multibyte'
+        );
         if (PATH_SEPARATOR == ':') {
+            self::$optionalcfgs = array_merge(
+                array(
+                self::$optionalcfgs,
+                    'windows.show_crt_warning',
+                )
+            );
             self::$optionalconstants = array_merge(
                 self::$optionalconstants,
                 array(
@@ -100,12 +111,6 @@ class CoreExtensionTest extends GenericTest
             'list',
             // Requires ZTS
             'zend_thread_id',
-        );
-
-        self::$optionalcfgs = array(
-            // Requires --enable-zend-multibyte
-            'zend.detect_unicode',
-            'zend.multibyte'
         );
 
         self::$obj = new CoreExtension();
