@@ -94,6 +94,10 @@ class ReadlineExtension extends AbstractReference
             'php.min' => '5.4.0',
             'php.max' => '',
         );
+        $release->iniEntries = array(
+            'cli.pager'                         => null,
+            'cli.prompt'                        => null,
+        );
         $release->constants = array(
             'READLINE_LIB'                      => null,
         );
