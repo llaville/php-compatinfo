@@ -51,9 +51,30 @@ class MssqlExtension extends AbstractReference
             $this->storage->attach($releases[--$count]);
         }
 
+        // 4.3.0
+        if (version_compare($version, '4.3.0', 'ge')) {
+            $release = $this->getR40300();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
         // 4.3.2
         if (version_compare($version, '4.3.2', 'ge')) {
             $release = $this->getR40302();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
+        // 5.1.2
+        if (version_compare($version, '5.1.2', 'ge')) {
+            $release = $this->getR50102();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
+        // 5.5.2
+        if (version_compare($version, '5.2.2', 'ge')) {
+            $release = $this->getR50502();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
@@ -69,6 +90,17 @@ class MssqlExtension extends AbstractReference
             'date'    => '2000-05-22',
             'php.min' => '4.0.0',
             'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'mssql.allow_persistent'            => null,
+            'mssql.compatability_mode'          => null,
+            'mssql.connect_timeout'             => null,
+            'mssql.max_links'                   => null,
+            'mssql.max_persistent'              => null,
+            'mssql.min_error_severity'          => null,
+            'mssql.min_message_severity'        => null,
+            'mssql.textlimit'                   => null,
+            'mssql.textsize'                    => null,
         );
         $release->constants = array(
             'MSSQL_ASSOC'                       => null,
@@ -122,6 +154,9 @@ class MssqlExtension extends AbstractReference
             'php.min' => '4.0.4',
             'php.max' => '',
         );
+        $release->iniEntries = array(
+            'mssql.batchsize'                   => null,
+        );
         $release->functions = array(
             'mssql_fetch_batch'                 => null,
             'mssql_rows_affected'               => null,
@@ -157,6 +192,9 @@ class MssqlExtension extends AbstractReference
             'php.min' => '4.0.7',
             'php.max' => '',
         );
+        $release->iniEntries = array(
+            'mssql.timeout'                     => null,
+        );
         $release->functions = array(
             'mssql_bind'                        => null,
             'mssql_execute'                     => null,
@@ -177,8 +215,29 @@ class MssqlExtension extends AbstractReference
             'php.min' => '4.2.0',
             'php.max' => '',
         );
+        $release->iniEntries = array(
+            'mssql.datetimeconvert'             => null,
+        );
         $release->functions = array(
             'mssql_fetch_assoc'                 => null,
+        );
+        return $release;
+    }
+
+    protected function getR40300()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '4.3.0',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2002-12-27',
+            'php.min' => '4.3.0',
+            'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'mssql.secure_connection'          => null,
+            'mssql.max_procs'                  => null,
         );
         return $release;
     }
@@ -196,6 +255,40 @@ class MssqlExtension extends AbstractReference
         );
         $release->functions = array(
             'mssql_free_statement'              => null,
+        );
+        return $release;
+    }
+
+    protected function getR50102()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.1.2',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2006-01-12',
+            'php.min' => '5.1.2',
+            'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'mssql.charset'                    => null,
+        );
+        return $release;
+    }
+
+    protected function getR50502()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.5.2',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2013-08-13',
+            'php.min' => '5.5.2',
+            'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'mssql.compatibility_mode'          => null,
         );
         return $release;
     }
