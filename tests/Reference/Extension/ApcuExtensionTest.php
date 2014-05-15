@@ -42,6 +42,9 @@ class ApcuExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
+        self::$optionalcfgs = array(
+            'apc.mmap_file_mask',  // build option
+        );
         self::$obj = new ApcuExtension();
         parent::setUpBeforeClass();
     }

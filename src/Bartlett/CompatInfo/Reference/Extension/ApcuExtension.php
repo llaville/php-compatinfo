@@ -56,6 +56,7 @@ class ApcuExtension extends AbstractReference
             'php.max' => '',
         );
         $release->iniEntries = array(
+            'apc.mmap_file_mask'            => null,
             'apc.coredump_unmap'            => null,
             'apc.enable_cli'                => null,
             'apc.enabled'                   => null,
