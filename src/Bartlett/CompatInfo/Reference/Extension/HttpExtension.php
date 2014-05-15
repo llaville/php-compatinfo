@@ -374,6 +374,9 @@ class HttpExtension extends AbstractReference
             'php.min' => '5.3.0',
             'php.max' => '',
         );
+        $release->iniEntries = array(
+            'http.etag.mode'                            => null,
+        );
         $release->classes = array(
             'http\\Client'                              => null,
             'http\\Client\\Request'                     => null,
