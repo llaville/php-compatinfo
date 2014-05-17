@@ -240,8 +240,8 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     {
         $ext = get_extension_funcs(self::$ext);
         if (!is_array($ext)) {
-            // At least, for sqlite3 (PHP Bug ?)
-            return;
+            // can be NULL for ext without function
+            $ext = array();
         }
         $dict = self::$obj->getFunctions();
         $this->assertTrue(is_array($dict));
