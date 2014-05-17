@@ -24,7 +24,7 @@ class FileinfoExtension extends AbstractReference
         }
 
         // 1.0.5
-        if (version_compare($version, '1.0.5', 'ge')) {
+        if (version_compare($version, '1.0.5-dev', 'ge')) {
             $release = $this->getR10005();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
@@ -70,7 +70,7 @@ class FileinfoExtension extends AbstractReference
         // enables by default in PHP 5.3.0
         $release = new \StdClass;
         $release->info = array(
-            'ext.min' => '1.0.5',
+            'ext.min' => '1.0.5-dev',
             'ext.max' => '',
             'state'   => 'stable',
             'date'    => '2009-06-30',
