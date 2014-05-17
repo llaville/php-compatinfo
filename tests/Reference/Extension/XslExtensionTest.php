@@ -42,6 +42,21 @@ class XslExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
+        if (version_compare(PHP_VERSION, '5.3.3', 'eq')) {
+            // Security fix backported in PHP 5.3.3 / RHEL-6
+            self::$ignoredcfgs = array(
+                'xsl.security_prefs',
+            );
+            self::$ignoredconstants = array(
+                'XSL_SECPREF_CREATE_DIRECTORY',
+                'XSL_SECPREF_DEFAULT',
+                'XSL_SECPREF_NONE',
+                'XSL_SECPREF_READ_FILE',
+                'XSL_SECPREF_READ_NETWORK',
+                'XSL_SECPREF_WRITE_FILE',
+                'XSL_SECPREF_WRITE_NETWORK',
+            );
+        }
         self::$obj = new XslExtension();
         parent::setUpBeforeClass();
     }
