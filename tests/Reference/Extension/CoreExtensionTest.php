@@ -70,8 +70,8 @@ class CoreExtensionTest extends GenericTest
         );
         if (PATH_SEPARATOR == ':') {
             self::$optionalcfgs = array_merge(
-                array(
                 self::$optionalcfgs,
+                array(
                     'windows.show_crt_warning',
                 )
             );
