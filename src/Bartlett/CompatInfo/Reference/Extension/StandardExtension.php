@@ -170,6 +170,13 @@ class StandardExtension extends AbstractReference
             $this->storage->attach($releases[--$count]);
         }
 
+        // 5.3.4
+        if (version_compare($version, '5.3.4', 'ge')) {
+            $release = $this->getR50304();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
         // 5.4.0
         if (version_compare($version, '5.4.0', 'ge')) {
             $release = $this->getR50400();
@@ -205,7 +212,6 @@ class StandardExtension extends AbstractReference
         );
         $release->iniEntries = array(
             'user_agent'                    => null,
-            'from'                          => null,
             'default_socket_timeout'        => null,
             'auto_detect_line_endings'      => null,
             'assert.active'                 => null,
@@ -1443,6 +1449,23 @@ class StandardExtension extends AbstractReference
         );
         $release->functions = array(
             'stream_set_read_buffer'        => null,
+        );
+        return $release;
+    }
+
+    protected function getR50304()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.3.4',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2010-12-09',
+            'php.min' => '5.3.4',
+            'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'from'                          => null,
         );
         return $release;
     }
