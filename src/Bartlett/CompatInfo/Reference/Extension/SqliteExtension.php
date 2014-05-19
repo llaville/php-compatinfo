@@ -16,19 +16,19 @@ class SqliteExtension extends AbstractReference
         $version  = $this->getCurrentVersion();
         $releases = array();
 
-        // 5.0.0
-        if (version_compare($version, '5.0.0', 'ge')) {
-            $release = $this->getR50000();
+        // 2.0-dev
+        if (version_compare($version, '2.0-dev', 'ge')) {
+            $release = $this->getR20000dev();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
     }
 
-    protected function getR50000()
+    protected function getR20000dev()
     {
         $release = new \StdClass;
         $release->info = array(
-            'ext.min' => '5.0.0',
+            'ext.min' => '2.0-dev',
             'ext.max' => '',
             'state'   => 'stable',
             'date'    => '2004-07-13',
