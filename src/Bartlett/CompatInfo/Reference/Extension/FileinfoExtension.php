@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class FileinfoExtension extends AbstractReference
 {
     const REF_NAME    = 'fileinfo';
-    const REF_VERSION = '';
+    const REF_VERSION = '1.0.5';    // 2014-02-18
 
     public function __construct()
     {
@@ -23,9 +23,9 @@ class FileinfoExtension extends AbstractReference
             $this->storage->attach($releases[--$count]);
         }
 
-        // 1.0.5
+        // 1.0.5-dev
         if (version_compare($version, '1.0.5-dev', 'ge')) {
-            $release = $this->getR10005();
+            $release = $this->getR10005dev();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
@@ -65,7 +65,7 @@ class FileinfoExtension extends AbstractReference
         return $release;
     }
 
-    protected function getR10005()
+    protected function getR10005dev()
     {
         // enables by default in PHP 5.3.0
         $release = new \StdClass;
