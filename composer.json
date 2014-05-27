@@ -34,7 +34,7 @@
         }
     ],
     "bin": [
-        "bin/compatinfo"
+        "bin/phpcompatinfo"
     ],
     "autoload": {
         "psr-0": {

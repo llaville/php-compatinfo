@@ -17,6 +17,6 @@ if (class_exists('Phar')) {
             }
         }
     }
-    require 'phar://' . __FILE__ . '/bin/compatinfo';
+    require 'phar://' . __FILE__ . '/bin/phpcompatinfo';
 }
 __HALT_COMPILER();
