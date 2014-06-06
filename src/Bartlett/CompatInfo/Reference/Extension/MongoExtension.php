@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class MongoExtension extends AbstractReference
 {
     const REF_NAME    = 'mongo';
-    const REF_VERSION = '1.5.2';    // 2014-05-06 (stable)
+    const REF_VERSION = '1.5.3';    // 2014-06-05 (stable)
 
     public function __construct()
     {
