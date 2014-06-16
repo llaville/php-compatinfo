@@ -1,31 +1,31 @@
 = Official Blog of PHP CompatInfo
 :description: What's new on this project
-:brand: https://github.com/llaville/php-compat-info
-:rssref: http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:brand:       https://github.com/llaville/php-compat-info
+:rssref:      http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:jumbotron:
 :jumbotron-fullwidth:
 :icons!:
-:iconsfont: font-awesome
-:iconsfontdir: ./fonts/font-awesome
-:imagesdir: ./images
-:css-signature: blog
+:iconsfont:   font-awesome
+:imagesdir:   ./images
 
-[role="well-sm"]
-**********
-*Stay tuned*
+[role="col-md-3"]
+====
+[panel,primary]
+.Stay tuned
+--
+Subscribe to http://php5.laurent-laville.org/compatinfo/blog/rss.xml[RSS feed].
+--
 
-Subscribe to RSS feed icon:rss-square[size="lg",link="http://php5.laurent-laville.org/compatinfo/blog/rss.xml"]
-
-*Archives*
-
-[style="archives"]
+[panel,success]
+.Archives
+--
 - 2014
 ** link:201401.html[January] [badge pull-right]#1#
 ** link:201402.html[February] [badge pull-right]#5#
 ** link:201404.html[April] [badge pull-right]#1#
-**********
+** link:201405.html[May] [badge pull-right]#3#
+--
+====
 
-include::201405-CompatInfo-3.2.asciidoc[]
-
-include::201405-CompatInfo-3.1-released.asciidoc[]
-
-include::201405-CompatInfo-3.0-released.asciidoc[]
+[role="col-md-9"]
+include::201406-user-documentation.asciidoc[]
