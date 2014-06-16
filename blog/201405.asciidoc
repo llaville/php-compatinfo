@@ -1,0 +1,15 @@
+= Official Blog of PHP CompatInfo
+:description: Archives of May 2014
+:brand:       https://github.com/llaville/php-compat-info
+:rssref:      http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:jumbotron:
+:jumbotron-fullwidth:
+:icons!:
+:iconsfont:   font-awesome
+:imagesdir:   ./images
+
+include::201405-CompatInfo-3.2.asciidoc[]
+
+include::201405-CompatInfo-3.1-released.asciidoc[]
+
+include::201405-CompatInfo-3.0-released.asciidoc[]
