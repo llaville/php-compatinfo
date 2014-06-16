@@ -1,20 +1,15 @@
-:css-signature: blog
-:icons!:
 :iconsfont: font-awesome
-:iconsfontdir: ./fonts/font-awesome
 :imagesdir: ./images
-:author: Laurent Laville
-:revdate: 2014-02-19
-:pubdate: Wed, 19 Feb 2014 16:20:20 +0100
-:summary: CompatInfo 3.0.0RC1 has just been released.
+:author:    Laurent Laville
+:revdate:   2014-02-19
+:pubdate:   Wed, 19 Feb 2014 16:20:20 +0100
+:summary:   CompatInfo 3.0.0RC1 has just been released.
 
-== CompatInfo 3.0.0RC1 released
+== {summary}
 
-[role="blog",cols="3,9",halign="right",citetitle="Published by {author} on {revdate}"]
-.icon:rocket[size="4x"]
---
-[role="lead"]
-{summary}
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/rocket.png[alt="release",icon="rocket",size="4x",width=56]
 
 As I've explained yesterday on http://php5.laurent-laville.org/reflect/blog[Reflect's blog], 
 about the http://php5.laurent-laville.org/reflect/blog/201402-Reflect-2.0.RC2-released.html[Reflect 2.0.0RC2] 
@@ -113,6 +108,11 @@ $ php phpcompatinfo.phar --profile reference:show --php=">= 5.3.0" core
 * Finish the documentation that is not yet available.
 ************************************************
 
-link:http://bartlett.laurent-laville.org/get/phpcompatinfo.phar[caption="Download the PHAR version",role="primary",icon="glyphicon-download-alt"]
+ifdef::basebackend-bootstrap[]
+link:http://bartlett.laurent-laville.org/get/phpcompatinfo-3.0.0RC1.phar[caption="Download the PHAR version",role="primary",icon="glyphicon-download-alt"]
+endif::[]
 
---
+ifndef::basebackend-bootstrap[]
+link:http://bartlett.laurent-laville.org/get/phpcompatinfo-3.0.0RC1.phar[Download the PHAR version]
+endif::[]
+____

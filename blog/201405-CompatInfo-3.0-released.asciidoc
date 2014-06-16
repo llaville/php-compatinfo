@@ -1,20 +1,15 @@
-:css-signature: blog
-:icons!:
 :iconsfont: font-awesome
-:iconsfontdir: ./fonts/font-awesome
 :imagesdir: ./images
-:author: Laurent Laville
-:revdate: 2014-05-01
-:pubdate: Thu, 01 May 2014 09:14:58 +0200
-:summary: CompatInfo 3.0.0 has just been released.
+:author:    Laurent Laville
+:revdate:   2014-05-01
+:pubdate:   Thu, 01 May 2014 09:14:58 +0200
+:summary:   CompatInfo 3.0.0 has just been released.
 
-== CompatInfo 3.0.0 released
+== {summary}
 
-[role="blog",cols="3,9",halign="right",citetitle="Published by {author} on {revdate}"]
-.icon:rocket[size="4x"]
---
-[role="lead"]
-{summary}
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/rocket.png[alt="release",icon="rocket",size="4x",width=56]
 
 Support all 100 extensions as in version 2.26.0, with updates.   
 
@@ -29,10 +24,12 @@ here are some commands explained:
 
 NOTE: if you use the CLI version of CompatInfo, from PHAR or source code, you should 
 add a `compatinfo.json` configuration file in the root of your project. Here is an 
-https://github.com/llaville/php-compat-info/blob/v3/bin/compatinfo.json[example], with 
+https://github.com/llaville/php-compat-info/blob/v3/bin/phpcompatinfo.json[example], with 
 some _source-providers_ declared (accept all Symfony Finder criteria), default _plugins_ required,
 and some _analysers_ (known as --report in CompatInfo 2.x)
 
+CAUTION: *UPDATE* Since this https://github.com/llaville/php-compat-info/commit/0f42ce862c5ac29f84e1786925129891d162cba9[commit],
+we have normalized names and old `compatinfo.json` was renamed to `phpcompatinfo.json`.
 
 .Example 1: Summary analyser (always available, and display as default report, if none provided)
 ----
@@ -82,6 +79,12 @@ $ compatinfo provider:show --alias phing27
 * Fixes all remaining issues (that could be detected: need user feedback)
 ************************************************
 
+ifdef::basebackend-bootstrap[]
 link:http://bartlett.laurent-laville.org/get/phpcompatinfo-3.0.0.phar[caption="Download the PHAR version",role="primary",icon="glyphicon-download-alt"]
+endif::[]
 
---
+ifndef::basebackend-bootstrap[]
+link:http://bartlett.laurent-laville.org/get/phpcompatinfo-3.0.0.phar[Download the PHAR version]
+endif::[]
+
+____

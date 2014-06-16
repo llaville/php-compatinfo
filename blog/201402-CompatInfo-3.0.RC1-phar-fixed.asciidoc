@@ -1,20 +1,18 @@
-:css-signature: blog
-:icons!:
 :iconsfont: font-awesome
-:iconsfontdir: ./fonts/font-awesome
 :imagesdir: ./images
-:author: Laurent Laville
-:revdate: 2014-02-20
-:pubdate: Thu, 20 Feb 2014 14:29:21 +0100
-:summary: PHAR version of CompatInfo 3.0.0RC1 bundles now all dependencies.
+:author:    Laurent Laville
+:revdate:   2014-02-20
+:pubdate:   Thu, 20 Feb 2014 14:29:21 +0100
+:summary:   CompatInfo 3.0.0RC1 PHAR version FIXED
 
-== CompatInfo 3.0.0RC1 PHAR version FIXED
+== {summary}
 
-[role="blog",cols="3,9",halign="right",citetitle="Published by {author} on {revdate}"]
-.icon:comment[size="4x"]
---
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/comment.png[alt="update",icon="comment",size="4x",width=56]
+
 [role="lead"]
-{summary}
+PHAR version of CompatInfo 3.0.0RC1 bundles now all dependencies.
 
 The WARNING I've emitted in my previous post should be forgotten if you use the new
 version:
@@ -25,4 +23,4 @@ phpCompatInfo version 3.0.0RC1-2-gd181e6c build d181e6cdbf6c701b6400231ebee130c7
 ----
 
 Download *new* version at http://bartlett.laurent-laville.org/get/phpcompatinfo-3.0.0RC1-2-gd181e6c.phar
---
+____

@@ -1,12 +1,11 @@
 = Official Blog of PHP CompatInfo
 :description: Archives of January 2014
-:brand: https://github.com/llaville/php-reflect
-:rssref: http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:brand:       https://github.com/llaville/php-compat-info
+:rssref:      http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:jumbotron:
 :jumbotron-fullwidth:
 :icons!:
-:iconsfont: font-awesome
-:iconsfontdir: ./fonts/font-awesome
-:imagesdir: ./images
-:css-signature: blog
+:iconsfont:   font-awesome
+:imagesdir:   ./images
 
 include::201401-a-blog-official-launch.asciidoc[]

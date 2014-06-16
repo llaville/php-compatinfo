@@ -1,20 +1,18 @@
-:css-signature: blog
-:icons!:
 :iconsfont: font-awesome
-:iconsfontdir: ./fonts/font-awesome
 :imagesdir: ./images
-:author: Laurent Laville
-:revdate: 2014-01-14
-:pubdate: Tue, 14 Jan 2014 12:10:32 +0100
-:summary: Reason of silence since last stable version, one month ago.
+:author:    Laurent Laville
+:revdate:   2014-01-14
+:pubdate:   Tue, 14 Jan 2014 12:10:32 +0100
+:summary:   A blog official launch
 
-== A blog official launch
+== {summary}
 
-[role="blog",cols="3,9",halign="right",citetitle="Published by {author} on {revdate}"]
-.Stay tuned icon:rss-square[size="lg",link="http://php5.laurent-laville.org/compatinfo/blog/rss.xml"]
---
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/rss-square.png[alt="update",icon="rss-square",size="4x",width=56]
+
 [role="lead"]
-{summary}
+Reason of silence since last stable version, one month ago.
 
 If you follow my work, you're probably surprised to see no new version since latest stable release 2.26.0
 
@@ -26,4 +24,4 @@ I've reached a milestone that is closed to a fisrt Release Candidate for CompatI
 
 Before the launch of this first release candidate, I'll introduce in next days the changes
 of this new major version 3.0, on this blog.
---
+____

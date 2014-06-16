@@ -1,20 +1,15 @@
-:css-signature: blog
-:icons!:
 :iconsfont: font-awesome
-:iconsfontdir: ./fonts/font-awesome
 :imagesdir: ./images
-:author: Laurent Laville
-:revdate: 2014-02-03
-:pubdate: Mon, 03 Feb 2014 15:57:00 +0100
-:summary: Preview of the Command-Line part of CompatInfo 3.0.0RC1
+:author:    Laurent Laville
+:revdate:   2014-02-03
+:pubdate:   Mon, 03 Feb 2014 15:57:00 +0100
+:summary:   Command-Line preview of future release 3.0.0RC1
 
-== Command-Line preview of future release 3.0.0RC1
+== {summary}
 
-[role="blog",cols="3,9",halign="right",citetitle="Published by {author} on {revdate}"]
-.icon:calendar[size="4x"]
---
-[role="lead"]
-{summary}
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/calendar.png[alt="calendar",icon="calendar",size="4x",width=56]
 
 Even if full source code of RC1 is not yet ready for a public release,
 I've just uploaded the new https://github.com/llaville/php-compat-info/tree/v3[branch v3].
@@ -48,4 +43,4 @@ $ compatinfo --profile reference:show --ini xdebug
 *analyser:run*::
 The command that will launch the data source parse process and display final results,
 depending of your analyser choice.
---
+____

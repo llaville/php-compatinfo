@@ -1,20 +1,15 @@
-:css-signature: blog
-:icons!:
 :iconsfont: font-awesome
-:iconsfontdir: ./fonts/font-awesome
 :imagesdir: ./images
-:author: Laurent Laville
-:revdate: 2014-04-11
-:pubdate: Fri, 11 Apr 2014 10:23:04 +0200
-:summary: Preview of the second release candidate
+:author:    Laurent Laville
+:revdate:   2014-04-11
+:pubdate:   Fri, 11 Apr 2014 10:23:04 +0200
+:summary:   CompatInfo 3.0.0RC2 preview
 
-== CompatInfo 3.0.0RC2 preview
+== {summary}
 
-[role="blog",cols="3,9",halign="right",citetitle="Published by {author} on {revdate}"]
-.icon:clock-o[size="4x"]
---
-[role="lead"]
-{summary}
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/clock-o.png[alt="future",icon="clock-o",size="4x",width=56]
 
 Even if all extension/references are not yet migrated to new format (currently 70%), 
 I planned to publish the second and last release candidate on Monday 14 April 2014.
@@ -101,4 +96,4 @@ $ php phpcompatinfo.phar reference:list
 ----
 
 *The final stable version is planned for Wed, 30 April 2014.*
---
+____
