@@ -8,7 +8,7 @@ abstract class AbstractReference implements ReferenceInterface
     const LATEST_PHP_5_3 = '5.3.28';
     const LATEST_PHP_5_4 = '5.4.30RC1';
     const LATEST_PHP_5_5 = '5.5.14RC1';
-    const LATEST_PHP_5_6 = '5.6.0beta4';
+    const LATEST_PHP_5_6 = '5.6.0RC1';
 
     protected $storage;
 
