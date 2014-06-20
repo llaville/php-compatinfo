@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class SolrExtension extends AbstractReference
 {
     const REF_NAME    = 'solr';
-    const REF_VERSION = '1.1.0';    // 2014-06-19 (stable)
+    const REF_VERSION = '1.1.1';    // 2014-06-20 (stable)
 
     public function __construct()
     {
@@ -86,7 +86,7 @@ class SolrExtension extends AbstractReference
             'php.max' => '',
         );
         $release->classes = array(
-            'SolrServerException '              => null,
+            'SolrServerException'               => null,
         );
         return $release;
     }
