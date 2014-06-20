@@ -1,27 +1,33 @@
+:doctitle:    CompatInfo 3.0 preview
+:description: First Milestone
 :iconsfont: font-awesome
 :imagesdir: ./images
 :author:    Laurent Laville
 :revdate:   2014-02-19
 :pubdate:   Wed, 19 Feb 2014 16:20:20 +0100
 :summary:   CompatInfo 3.0.0RC1 has just been released.
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
 
+[id="post-3"]
 == {summary}
 
 [quote,Published by {author} on {revdate}]
 ____
 image:icons/font-awesome/rocket.png[alt="release",icon="rocket",size="4x",width=56]
 
-As I've explained yesterday on http://php5.laurent-laville.org/reflect/blog[Reflect's blog], 
-about the http://php5.laurent-laville.org/reflect/blog/201402-Reflect-2.0.RC2-released.html[Reflect 2.0.0RC2] 
+As I've explained yesterday on http://php5.laurent-laville.org/reflect/blog[Reflect's blog],
+about the http://php5.laurent-laville.org/reflect/blog/201402-Reflect-2.0.RC2-released.html[Reflect 2.0.0RC2]
 release, there are no PEAR package version.
 
 CompatInfo 3.0.0RC1 is available only on two formats :
 
-* a PHAR version that bundles all dependencies (PHP-Parser + patch (1.0.0-dev+gh95), 
+* a PHAR version that bundles all dependencies (PHP-Parser + patch (1.0.0-dev+gh95),
 Symfony Finder 2.4.1, EventDispatcher 2.4.1, Console 2.4.1) in a single file.
 * a https://github.com/llaville/php-compat-info/blob/v3/composer.json[composer version].
 
-*Caution about the composer version* 
+*Caution about the composer version*
 
 To use my patch (1.0.0-dev+gh95) on base Nikita 1.0-dev version, add on your `composer.json` file
 the following contents:
@@ -52,13 +58,13 @@ Generating autoload files
 ----
 
 The PHAR version was built with the http://box-project.org/[Box Project].
-The config file _box.json_ is https://github.com/llaville/php-compat-info/blob/v3/box.json[available] 
+The config file _box.json_ is https://github.com/llaville/php-compat-info/blob/v3/box.json[available]
 on the github repository.
 
 [NOTE]
 .This phar version is both compatible with CLI and other SAPI
 =====================================================================
-For web usage, just include the phar version, and use API. 
+For web usage, just include the phar version, and use API.
 ----
 <?php
 require '/path/to/dir/phpcompatinfo.phar';
@@ -67,7 +73,7 @@ require '/path/to/dir/phpcompatinfo.phar';
 =====================================================================
 
 If you use CompatInfo in CLI, you should have access to a console application.
-This console use a json configuration file. Here is an 
+This console use a json configuration file. Here is an
 https://github.com/llaville/php-compat-info/blob/v3/bin/compatinfo.json[example].
 
 *source-providers*::
@@ -82,15 +88,15 @@ it was called report (--report option).
 
 .Example 1: Summary analyser (always available, and display as default report, if none provided)
 ----
-$ php phpcompatinfo.phar analyser:run --alias Reflect1 
----- 
+$ php phpcompatinfo.phar analyser:run --alias Reflect1
+----
 
 .Example 2: Extension analyser (with benchmark active if PHP_Timer installed)
 ----
-$ php phpcompatinfo.phar --profile analyser:run --alias CompatInfo2 extension 
+$ php phpcompatinfo.phar --profile analyser:run --alias CompatInfo2 extension
 ----
 
-.Example 3: Inspect full SPL Reference contents (that may be filtered by component; see reference:show options) 
+.Example 3: Inspect full SPL Reference contents (that may be filtered by component; see reference:show options)
 ----
 $ php phpcompatinfo.phar --profile reference:show spl
 ----
@@ -104,7 +110,7 @@ $ php phpcompatinfo.phar --profile reference:show --php=">= 5.3.0" core
 ************************************************
 * Fixes issues if users found something wrong.
 * Adds 40 extensions remaining (on 100) that were not yet migrated to new format.
-* Adds code to have ability to use the cache feature (plugin). 
+* Adds code to have ability to use the cache feature (plugin).
 * Finish the documentation that is not yet available.
 ************************************************
 

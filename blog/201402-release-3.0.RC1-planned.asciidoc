@@ -1,10 +1,16 @@
+:doctitle:    CompatInfo 3.0 preview
+:description: 
 :iconsfont: font-awesome
 :imagesdir: ./images
 :author:    Laurent Laville
 :revdate:   2014-02-01
 :pubdate:   Sat, 01 Feb 2014 09:54:11 +0100
 :summary:   Release 3.0.0RC1 is planned
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
 
+[id="post-1"]
 == {summary}
 
 [quote,Published by {author} on {revdate}]

@@ -1,17 +1,23 @@
+:doctitle:    CompatInfo 3.0 preview
+:description: Second Milestone
 :iconsfont: font-awesome
 :imagesdir: ./images
 :author:    Laurent Laville
 :revdate:   2014-04-11
 :pubdate:   Fri, 11 Apr 2014 10:23:04 +0200
 :summary:   CompatInfo 3.0.0RC2 preview
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
 
+[id="post-1"]
 == {summary}
 
 [quote,Published by {author} on {revdate}]
 ____
 image:icons/font-awesome/clock-o.png[alt="future",icon="clock-o",size="4x",width=56]
 
-Even if all extension/references are not yet migrated to new format (currently 70%), 
+Even if all extension/references are not yet migrated to new format (currently 70%),
 I planned to publish the second and last release candidate on Monday 14 April 2014.
 
 .With this command

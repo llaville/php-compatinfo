@@ -1,12 +1,15 @@
-= Official Blog of PHP CompatInfo
+= {title}
+:title:       Official Blog of PHP CompatInfo
 :description: What's new on this project
 :brand:       https://github.com/llaville/php-compat-info
 :rssref:      http://php5.laurent-laville.org/compatinfo/blog/rss.xml
 :jumbotron:
 :jumbotron-fullwidth:
+:footer-fullwidth:
 :icons!:
-:iconsfont:   font-awesome
+:iconsfont:   font-aweseome
 :imagesdir:   ./images
+
 
 [role="col-md-3"]
 ====
@@ -29,3 +32,5 @@ Subscribe to http://php5.laurent-laville.org/compatinfo/blog/rss.xml[RSS feed].
 
 [role="col-md-9"]
 include::201406-user-documentation.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]

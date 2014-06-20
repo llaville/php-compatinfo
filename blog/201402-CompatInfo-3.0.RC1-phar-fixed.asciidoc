@@ -1,10 +1,16 @@
+:doctitle:    CompatInfo 3.0 preview
+:description: Phar version
 :iconsfont: font-awesome
 :imagesdir: ./images
 :author:    Laurent Laville
 :revdate:   2014-02-20
 :pubdate:   Thu, 20 Feb 2014 14:29:21 +0100
 :summary:   CompatInfo 3.0.0RC1 PHAR version FIXED
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
 
+[id="post-5"]
 == {summary}
 
 [quote,Published by {author} on {revdate}]

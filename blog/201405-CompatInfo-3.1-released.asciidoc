@@ -1,10 +1,16 @@
+:doctitle:    CompatInfo 3.1 stable
+:description: 
 :iconsfont: font-awesome
 :imagesdir: ./images
 :author:    Laurent Laville
 :revdate:   2014-05-02
 :pubdate:   Fri, 02 May 2014 10:51:58 +0200
 :summary:   CompatInfo 3.1.0 has just been released.
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
 
+[id="post-2"]
 == {summary}
 
 [quote,Published by {author} on {revdate}]
@@ -28,5 +34,4 @@ endif::[]
 ifndef::basebackend-bootstrap[]
 link:http://bartlett.laurent-laville.org/get/phpcompatinfo-3.1.0.phar[Download the PHAR version]
 endif::[]
-
 ____
