@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class RiakExtension extends AbstractReference
 {
     const REF_NAME    = 'riak';
-    const REF_VERSION = '1.1.6';    // 2014-05-15 (stable)
+    const REF_VERSION = '1.2.0';    // 2014-06-22 (stable)
 
     public function __construct()
     {
