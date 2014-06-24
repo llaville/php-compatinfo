@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class SolrExtension extends AbstractReference
 {
     const REF_NAME    = 'solr';
-    const REF_VERSION = '1.1.1';    // 2014-06-20 (stable)
+    const REF_VERSION = '2.0.0';    // 2014-06-24 (stable)
 
     public function __construct()
     {
