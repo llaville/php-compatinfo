@@ -1,0 +1,177 @@
+= Getting Started
+:description: How to download, configure and use it in a basic way.
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:icons!:
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+:pharstable:  http://bartlett.laurent-laville.org/get/phpcompatinfo.phar
+
+
+== Download
+
+We distribute a http://www.php.net/phar[PHP Archive] (PHAR) that contains
+all required dependencies of PHP [label label-primary]#CompatInfo# bundled in a single file.
+
+ifdef::basebackend-bootstrap[]
+link:{pharstable}["Download the latest version",role="primary",icon="glyphicon-download-alt",options="block,white"]
+endif::[]
+ifndef::basebackend-bootstrap[]
+link:{pharstable}[Download the latest version]
+endif::[]
+
+Make it executable, and put it into your `$PATH`.
+----
+$ chmod +x phpcompatinfo.phar
+$ mv phpcompatinfo.phar /usr/local/bin/phpcompatinfo
+
+$ phpcompatinfo --version
+----
+
+You can also immediately use the PHAR after you have downloaded it.
+----
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo.phar
+$ php phpcompatinfo.phar --version
+----
+
+With both methods then you have this output :
+
+[role="cli-output"]
+====
+----
+phpCompatInfo version 3.1.0 build b9b813a906d0f2e18608c1c6d153418d99582622
+----
+====
+
+[role="col-md-6"]
+== Configuration
+.With the minimalist JSON file +phpcompatinfo.json+
+----
+{
+    "source-providers": [
+        {
+            "in": ". as current",
+            "name": "/\\.(php|inc|phtml)$/"
+        }
+    ],
+    "plugins": [
+        {
+            "name": "Analyser",
+            "class": "Bartlett\\Reflect\\Plugin\\Analyser\\AnalyserPlugin"
+        }
+    ],
+    "analysers" : [
+        {
+            "name": "Namespace",
+            "class": "Bartlett\\CompatInfo\\Analyser\\NamespaceAnalyser"
+        },
+        {
+            "name": "Extension",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ExtensionAnalyser"
+        },
+        {
+            "name": "Interface",
+            "class": "Bartlett\\CompatInfo\\Analyser\\InterfaceAnalyser"
+        },
+        {
+            "name": "Trait",
+            "class": "Bartlett\\CompatInfo\\Analyser\\TraitAnalyser"
+        },
+        {
+            "name": "Class",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ClassAnalyser"
+        },
+        {
+            "name": "Function",
+            "class": "Bartlett\\CompatInfo\\Analyser\\FunctionAnalyser"
+        },
+        {
+            "name": "Constant",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ConstantAnalyser"
+        }
+    ]
+}
+----
+Put it in your project's folder. Alternative locations are possible.
+Please refer to the link:#[documentation] for details on how to do this.
+
+
+[role="col-md-6"]
+== Structure
+
+source-providers::
+this entry provide list of your data sources to parse.
++
+[TIP]
+====
+Like [label label-primary]#CompatInfo# always needs a JSON file to run, Remi Collet
+https://github.com/llaville/php-compat-info/issues/120#issuecomment-46188900[shared]
+a workaround solution exposed here that allows to run :
+----
+$ phpcompatinfo analyser:run .
+----
+====
+
+plugins::
+this entry list all plugins added to the core base code of PHP Reflect.
++
+CAUTION: Don't forget to add at least this default content, else the `analyser:run`
+and `analyser:list` commands wouldn't be available.
+
+analysers::
+this entry list all analysers that may be used with the `analyser:run` command.
++
+IMPORTANT: Don't miss it, else you could not run the `analyser:run` command.
+
+[role="col-md-12 clearfix"]
+== Execution
+
+With a default +phpcompatinfo.json+ as detailed above, put in the +src/+ folder of the
+[label label-primary]#CompatInfo# source code, and invoke the following command :
+----
+$ phpcompatinfo analyser:run .
+----
+and you should obtain something like this :
+
+[role="cli-output"]
+====
+----
+include::summary_analysis.out.asciidoc[]
+----
+====
+
+
+[role="col-md-12 clearfix"]
+== Summary
+
+[role="lead"]
+Let's review what we've done :
+
+* downloaded the latest stable PHAR version.
+* prepared your JSON configuration file that is required to run [label label-primary]#CompatInfo# commands.
+* executed your first parse on the [label label-primary]#CompatInfo# data source.
+
+[role="col-md-12 clearfix"]
+== Next
+
+[role="lead"]
+Choose your way depending of your skill level.
+
+************************************************
+.Read more
+
+* Want to learn more about the command line interpreter (CLI) version, interface that do
+[label label-primary]#CompatInfo# an easy tool without to write a line of PHP code,
+have a look on link:user-guide.html[user's guide].
+
+* Want to learn more about [label label-primary]#CompatInfo# architecture and /or
+you want to extends it to match your needs,
+have a look on link:developer-guide.html[developer's guide].
+
+* You are a user of previous version 2.26 that is really different, and want to
+upgrade to the new major version 3, and keep your old environment still running,
+have a look on link:migration-guide.html[migration's guide].
+************************************************

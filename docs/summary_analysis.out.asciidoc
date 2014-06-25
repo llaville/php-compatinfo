@@ -1,0 +1,22 @@
+
+Data Source Analysed
+
+Directories                                          8
+Files                                              124
+
+Summary Analysis
+
+Summary
+  Extensions                                        11
+  Namespaces                                         8
+  Interfaces                                         3
+  Traits                                             0
+  Classes                                          124
+  Methods                                          761
+  Functions                                          3
+  Constants                                         12
+  Internal Functions                                84
+
+Versions
+  PHP min                                        5.3.7
+  PHP max
