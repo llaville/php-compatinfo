@@ -1,0 +1,161 @@
+= {title}
+:title:       PHP CompatInfo
+:description: Make it extremely easy to maintain your components compatibilities for reuse in your PHP applications.
+include::attributes.asciidoc[]
+include::revision.asciidoc[]
+:stable:      2.26.0
+:icons!:
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+
+
+== Releases
+
+_currently v{stable}_
+
+[role="col-md-6"]
+====
+[panel,primary]
+.v2
+--
+[bg-primary]*Stable Release*
+
+Last branch 2 release was published on December 13, 2013.
+
+ifdef::basebackend-bootstrap[]
+link:./manual/2.26/en/index.html["Learn more",role="primary",options="block"]
+endif::[]
+
+ifndef::basebackend-bootstrap[]
+link:./manual/2.26/en/index.html[Learn more]
+endif::[]
+--
+====
+
+[role="col-md-6"]
+====
+[panel,success]
+.v3
+--
+[bg-success]*Stable Release*
+
+Next release will enhance stability on July 14, 2014.
+
+ifdef::basebackend-bootstrap[]
+link:./manual/3.2/en/getting-started.html["Learn more",role="primary",options="block"]
+endif::[]
+
+ifndef::basebackend-bootstrap[]
+link:./manual/3.2/en/getting-started.html[Learn more]
+endif::[]
+--
+====
+
+unfloat::[]
+
+== Features
+
+[role="lead"]
+PHP_CompatInfo is a PHP library that parse any data source
+to find out the minimum version and extensions required for it to run.
+
+
+[role="col-md-1"]
+image:icons/font-awesome/flag.png[alt="modern",icon="flag",size="2x"]
+
+[role="col-md-11"]
+--
+[medium]*Modern*
+
+[label label-primary]#CompatInfo# takes advantage of new features in PHP 5.3.0 or greater.
+--
+unfloat::[]
+
+[role="col-md-1"]
+image:icons/font-awesome/building-o.png[alt="robust",icon="building-o",size="2x"]
+
+[role="col-md-11"]
+--
+[medium]*Robust*
+
+[label label-primary]#CompatInfo# is strictly tested. Checks code coverage and see by yourself.
+--
+unfloat::[]
+
+[role="col-md-1"]
+image:icons/font-awesome/archive.png[alt="archives",icon="archive",size="2x"]
+
+[role="col-md-11"]
+--
+[medium]*Explore all data source*
+
+[label label-primary]#CompatInfo# comes with a source provider (based on Symfony http://symfony.com/doc/current/components/finder.html[Finder] component)
+that allow to parse all data source (single file, directories, archives Phar, Zip, Tar, and lot more).
+--
+unfloat::[]
+
+[role="col-md-1"]
+image:icons/font-awesome/suitcase.png[alt="foundation",icon="suitcase",size="2x"]
+
+[role="col-md-11"]
+--
+[medium]*Solid Foundation*
+
+Whenever possible wheel reinvention was avoided. [label label-primary]#CompatInfo# uses code from well-known projects
+including http://www.symfony.com/[Symfony] Finder, and EventDispatcher.
+--
+unfloat::[]
+
+[role="col-md-1"]
+image:icons/font-awesome/expand.png[alt="extensible",icon="expand",size="2x"]
+
+[role="col-md-11"]
+--
+[medium]*Extensible*
+
+You don't find the feature you're searching for. [label label-primary]#CompatInfo# may be
+extended easily, without having to hack the code.
+--
+unfloat::[]
+
+== Open Source
+
+[role="lead"]
+{brand} is open source. It's hosted, developed, and maintained on GitHub.
+
+ifdef::basebackend-bootstrap[]
+link:{brandref}["View the GitHub Project",role="primary",options="block"]
+endif::[]
+
+ifndef::basebackend-bootstrap[]
+{brandref}[View the GitHub Project]
+endif::[]
+
+== License
+
+[role="col-md-6"]
+====
+[panel,success]
+--
+[bg-success]*Documentation* 
+
+All documentation provided in +docs+ folder are 
+in http://asciidoc.org[AsciiDoc] format (files with extension +.asciidoc+). 
+They are built with a Python AsciiDoc backend that convert output to an html http:/getbootstrap.com[Bootstrap] renders. 
+http://laurent-laville.org/asciidoc/bootstrap/manual/current/en/[AsciiDoc-Bootstrap] 
+is released under the http://www.apache.org/licenses/LICENSE-2.0.html[Apache 2] license.
+--
+====
+
+[role="col-md-6"]
+====
+[panel,success]
+--
+[bg-success]*Code* 
+
+All source code is licensed under http://opensource.org/licenses/BSD-3-Clause[BSD 3-Clause].
+--
+====
