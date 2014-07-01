@@ -38,6 +38,7 @@ Each element that need to be explored by your analyser should have a visit metho
 
 * For packages, we need to implement a *visitPackageModel* method.
 * For classes, we need to implement a *visitClassModel* method.
+* For properties, we need to implement a *visitPropertyModel* method.
 * For methods, we need to implement a *visitMethodModel* method.
 * For functions, we need to implement a *visitFunctionModel* method.
 * For constants, we need to implement a *visitConstantModel* method.
@@ -65,6 +66,10 @@ class Analyser extends AbstractVisitor
     }
 
     public function visitMethodModel($method)
+    {
+    }
+
+    public function visitPropertyModel($property)
     {
     }
 
