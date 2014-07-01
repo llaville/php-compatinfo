@@ -89,11 +89,44 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
         $this->updateGlobalVersion($min, $max);
 
+        foreach ($class->getProperties() as $property) {
+            $property->accept($this);
+        }
+
         foreach ($class->getMethods() as $method) {
             $method->accept($this);
         }
 
         $this->updatePackageVersion($min, $max, $class->getNamespaceName());
+    }
+
+    /**
+     * Explore properties (PropertyModel) of each user classes
+     * found in the current namespace.
+     *
+     * @param object $property Reflect the current class property explored
+     *
+     * @return void
+     */
+    public function visitPropertyModel($property)
+    {
+        // Property visibility
+        if ($property->isPublic()
+            || $property->isPrivate()
+            || $property->isProtected()
+        ) {
+            $min = '5.0.0';
+            $max = '';
+
+            // update object versions
+            $class = $property->getClassName();
+            self::updateVersion(
+                $min,
+                $this->count[static::METRICS_PREFIX . '.classes'][$class]['php.min']
+            );
+
+            $this->updateGlobalVersion($min, $max);
+        }
     }
 
     /**
