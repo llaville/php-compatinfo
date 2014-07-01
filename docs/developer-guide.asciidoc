@@ -1,0 +1,99 @@
+= Developer Guide
+:description: All you have to know about CompatInfo v3 architecture.
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:icons!:
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+
+ifdef::basebackend-docbook[]
+[partintro]
+--
+image:icons/font-awesome/code.png[alt="API",icon="code",iconsfont="font-awesome",size="9x"]
+*API*
+
+[label label-primary]#CompatInfo# comes with a complete API.
+
+image:icons/font-awesome/puzzle-piece.png[alt="Plugins",icon="puzzle-piece",iconsfont="font-awesome",size="9x"]
+*Plugins*
+
+[label label-primary]#CompatInfo# uses a Symfony http://symfony.com/doc/current/components/event_dispatcher/index.html[EventDispatcher] Component
+to allow you to easily extend the features list.
+
+See xref:_plugins[]
+
+image:icons/font-awesome/search-plus.png[alt="Analysers",icon="search-plus",iconsfont="font-awesome",size="9x"]
+*Analysers*
+
+[label label-primary]#CompatInfo# uses analysers that implements the
+http://en.wikipedia.org/wiki/Visitor_pattern[Visitor] pattern in a simple and effective way
+to make the render of your results truly customizable.
+
+See xref:_analysers[]
+--
+endif::basebackend-docbook[]
+
+ifdef::basebackend-html[]
+[role="col-sm-3 hidden-xs"]
+image:icons/font-awesome/code.png[alt="API",icon="code",iconsfont="font-awesome",size="9x"]
+
+[role="col-sm-9"]
+====
+[panel,info]
+.API
+--
+[label label-primary]#CompatInfo# comes with a complete API.
+
+ifdef::basebackend-bootstrap[]
+link:developer-guide&#45;&#45;api.html["Application Programming Interface",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:developer-guide&#45;&#45;api.html[Application Programming Interface]
+endif::basebackend-bootstrap[]
+--
+====
+
+[role="col-sm-3 hidden-xs"]
+image:icons/font-awesome/puzzle-piece.png[alt="Plugins",icon="puzzle-piece",iconsfont="font-awesome",size="9x"]
+
+[role="col-sm-9"]
+====
+[panel,info]
+.Plugins
+--
+[label label-primary]#CompatInfo# uses a Symfony http://symfony.com/doc/current/components/event_dispatcher/index.html[EventDispatcher] Component
+to allow you to easily extend the features list.
+
+ifdef::basebackend-bootstrap[]
+link:developer-guide&#45;&#45;plugins.html["Plugins",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:developer-guide&#45;&#45;plugins.html[Plugins]
+endif::basebackend-bootstrap[]
+--
+====
+
+[role="col-sm-3 hidden-xs"]
+image:icons/font-awesome/search-plus.png[alt="Analysers",icon="search-plus",iconsfont="font-awesome",size="9x"]
+
+[role="col-sm-9"]
+====
+[panel,info]
+.Analysers
+--
+[label label-primary]#CompatInfo# uses analysers that implements the
+http://en.wikipedia.org/wiki/Visitor_pattern[Visitor] pattern in a simple and effective way
+to make the render of your results truly customizable.
+
+ifdef::basebackend-bootstrap[]
+link:developer-guide&#45;&#45;analysers.html["Analysers",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:developer-guide&#45;&#45;analysers.html[Analysers]
+endif::basebackend-bootstrap[]
+--
+====
+endif::basebackend-html[]

@@ -1,0 +1,32 @@
+= API
+:description: Application Programming Interface
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:icons!:
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+
+ifdef::basebackend-bootstrap[]
+
+[role="col-md-3"]
+====
+[panel,primary]
+.{toc-title}
+--
+* xref:_source_provider[Source Provider]
+--
+====
+:leveloffset: 1
+endif::basebackend-bootstrap[]
+
+[role="col-md-9"]
+include::developer-guide--source-provider.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]
+
+ifdef::basebackend-bootstrap[]
+:leveloffset: 0
+endif::basebackend-bootstrap[]

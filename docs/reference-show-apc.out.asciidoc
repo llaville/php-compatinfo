@@ -1,0 +1,84 @@
+ IniEntries                 REF EXT min/Max PHP min/Max
+ apc.cache_by_default           3.0.0       4.3.0
+ apc.canonicalize               3.1.1       5.1.0
+ apc.coredump_unmap             3.0.19      4.3.0
+ apc.enable_cli                 3.0.11      4.3.0
+ apc.enabled                    2.0.0       4.0.0
+ apc.file_md5                   3.1.1       5.1.0
+ apc.file_update_protection     3.0.11      4.3.0
+ apc.filters                    2.0.0       4.0.0
+ apc.gc_ttl                     2.0.0       4.0.0
+ apc.include_once_override      3.0.19      4.3.0
+ apc.lazy_classes               3.1.12      5.1.0
+ apc.lazy_functions             3.1.12      5.1.0
+ apc.max_file_size              3.0.11      4.3.0
+ apc.mmap_file_mask             2.0.0       4.0.0
+ apc.num_files_hint             2.0.0       4.0.0
+ apc.optimization               2.0.0       4.0.0
+ apc.preload_path               3.1.1       5.1.0
+ apc.report_autofilter          3.0.11      4.3.0
+ apc.rfc1867                    3.0.19      4.3.0
+ apc.rfc1867_freq               3.0.19      4.3.0
+ apc.rfc1867_name               3.0.19      4.3.0
+ apc.rfc1867_prefix             3.0.19      4.3.0
+ apc.rfc1867_ttl                3.1.1       5.1.0
+ apc.serializer                 3.1.12      5.1.0
+ apc.shm_segments               2.0.0       4.0.0
+ apc.shm_size                   2.0.0       4.0.0
+ apc.shm_strings_buffer         3.1.12      5.1.0
+ apc.slam_defense               3.0.0       4.3.0
+ apc.stat                       3.0.11      4.3.0
+ apc.stat_ctime                 3.0.19      4.3.0
+ apc.ttl                        3.0.0       4.3.0
+ apc.use_request_time           3.1.12      5.1.0
+ apc.user_entries_hint          3.0.0       4.3.0
+ apc.user_ttl                   3.0.0       4.3.0
+ apc.write_lock                 3.0.11      4.3.0
+ Total [35]
+ Constants            REF EXT min/Max PHP min/Max
+ APC_BIN_VERIFY_CRC32     3.1.4       5.1.0
+ APC_BIN_VERIFY_MD5       3.1.4       5.1.0
+ APC_ITER_ALL             3.1.1       5.1.0
+ APC_ITER_ATIME           3.1.1       5.1.0
+ APC_ITER_CTIME           3.1.1       5.1.0
+ APC_ITER_DEVICE          3.1.1       5.1.0
+ APC_ITER_DTIME           3.1.1       5.1.0
+ APC_ITER_FILENAME        3.1.1       5.1.0
+ APC_ITER_INODE           3.1.1       5.1.0
+ APC_ITER_KEY             3.1.1       5.1.0
+ APC_ITER_MD5             3.1.1       5.1.0
+ APC_ITER_MEM_SIZE        3.1.1       5.1.0
+ APC_ITER_MTIME           3.1.1       5.1.0
+ APC_ITER_NONE            3.1.1       5.1.0
+ APC_ITER_NUM_HITS        3.1.1       5.1.0
+ APC_ITER_REFCOUNT        3.1.1       5.1.0
+ APC_ITER_TTL             3.1.1       5.1.0
+ APC_ITER_TYPE            3.1.1       5.1.0
+ APC_ITER_VALUE           3.1.1       5.1.0
+ APC_LIST_ACTIVE          3.1.1       5.1.0
+ APC_LIST_DELETED         3.1.1       5.1.0
+ Total [21]
+ Functions            REF EXT min/Max PHP min/Max
+ apc_add                  3.0.13      4.3.0
+ apc_bin_dump             3.1.4       5.1.0
+ apc_bin_dumpfile         3.1.4       5.1.0
+ apc_bin_load             3.1.4       5.1.0
+ apc_bin_loadfile         3.1.4       5.1.0
+ apc_cache_info           2.0.0       4.0.0
+ apc_cas                  3.1.1       5.1.0
+ apc_clear_cache          2.0.0       4.0.0
+ apc_compile_file         3.0.13      4.3.0
+ apc_dec                  3.1.1       5.1.0
+ apc_define_constants     3.0.0       4.3.0
+ apc_delete               3.0.0       4.3.0
+ apc_delete_file          3.1.1       5.1.0
+ apc_exists               3.1.4       5.1.0
+ apc_fetch                3.0.0       4.3.0
+ apc_inc                  3.1.1       5.1.0
+ apc_load_constants       3.0.0       4.3.0
+ apc_sma_info             2.0.0       4.0.0
+ apc_store                3.0.0       4.3.0
+ Total [19]
+ Classes     REF EXT min/Max PHP min/Max
+ APCIterator     3.1.1       5.1.0
+ Total [1]

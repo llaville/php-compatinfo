@@ -18,10 +18,10 @@ all required dependencies of PHP [label label-primary]#CompatInfo# bundled in a 
 
 ifdef::basebackend-bootstrap[]
 link:{pharstable}["Download the latest version",role="primary",icon="glyphicon-download-alt",options="block,white"]
-endif::[]
+endif::basebackend-bootstrap[]
 ifndef::basebackend-bootstrap[]
 link:{pharstable}[Download the latest version]
-endif::[]
+endif::basebackend-bootstrap[]
 
 Make it executable, and put it into your `$PATH`.
 ----
@@ -45,6 +45,16 @@ With both methods then you have this output :
 phpCompatInfo version 3.1.0 build b9b813a906d0f2e18608c1c6d153418d99582622
 ----
 ====
+
+Other alternative installations are possible.
+Please refer to the
+ifdef::basebackend-html[]
+link:user-guide&#45;&#45;installation.html[documentation]
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_installation[]
+endif::basebackend-docbook[]
+for details on how to do this.
 
 [role="col-md-6"]
 == Configuration
@@ -96,8 +106,14 @@ phpCompatInfo version 3.1.0 build b9b813a906d0f2e18608c1c6d153418d99582622
 }
 ----
 Put it in your project's folder. Alternative locations are possible.
-Please refer to the link:#[documentation] for details on how to do this.
-
+Please refer to the
+ifdef::basebackend-html[]
+link:user-guide&#45;&#45;configuration.html[documentation]
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_the_json_configuration_file[]
+endif::basebackend-docbook[]
+for details on how to do this.
 
 [role="col-md-6"]
 == Structure
@@ -143,7 +159,6 @@ include::summary_analysis.out.asciidoc[]
 ----
 ====
 
-
 [role="col-md-12 clearfix"]
 == Summary
 
@@ -165,13 +180,32 @@ Choose your way depending of your skill level.
 
 * Want to learn more about the command line interpreter (CLI) version, interface that do
 [label label-primary]#CompatInfo# an easy tool without to write a line of PHP code,
-have a look on link:user-guide.html[user's guide].
+have a look on
+ifdef::basebackend-html[]
+link:user-guide.html[user's guide]
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_user_guide[]
+endif::basebackend-docbook[]
 
 * Want to learn more about [label label-primary]#CompatInfo# architecture and /or
 you want to extends it to match your needs,
-have a look on link:developer-guide.html[developer's guide].
+have a look on
+ifdef::basebackend-html[]
+link:developer-guide.html[developer's guide]
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_developer_guide[]
+endif::basebackend-docbook[]
 
 * You are a user of previous version 2.26 that is really different, and want to
 upgrade to the new major version 3, and keep your old environment still running,
-have a look on link:migration-guide.html[migration's guide].
+have a look on
+ifdef::basebackend-html[]
+link:migration-guide.html[migration's guide]
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_migration_guide[]
+endif::basebackend-docbook[]
+
 ************************************************

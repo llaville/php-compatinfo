@@ -1,0 +1,168 @@
+= Analysers
+:description: How to customize the render of your results.
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:icons!:
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+
+
+[role="lead"]
+Analysers implements the http://en.wikipedia.org/wiki/Visitor_pattern[Visitor] pattern
+in a simple and effective way to make the render of your results truly customizable.
+
+== Visitor pattern
+
+Each +Analyser+ class must implement interface +Bartlett\Reflect\Visitor\VisitorInterface+.
+
+WARNING: Abstract visitor is a component of Reflect, and not CompatInfo. Take care of namespace !
+
+[source,php]
+----
+<?php
+
+namespace Bartlett\Reflect\Visitor;
+
+use Bartlett\Reflect\Model\Visitable;
+
+interface VisitorInterface
+{
+    public function visit(Visitable $visitable);
+}
+----
+
+Each element that need to be explored by your analyser should have a visit method accordingly.
+
+* For packages, we need to implement a *visitPackageModel* method.
+* For classes, we need to implement a *visitClassModel* method.
+* For methods, we need to implement a *visitMethodModel* method.
+* For functions, we need to implement a *visitFunctionModel* method.
+* For constants, we need to implement a *visitConstantModel* method.
+* For includes, we need to implement a *visitIncludeModel* method.
+* For dependencies, we need to implement a *visitDependencyModel* method.
+
+NOTE: Abstract class `Bartlett\Reflect\Visitor\AbstractVisitor`,
+that implement interface +Bartlett\Reflect\Visitor\VisitorInterface+,
+holds a basic visitor.
+
+[source,php]
+----
+<?php
+
+use Bartlett\Reflect\Visitor\AbstractVisitor;
+
+class Analyser extends AbstractVisitor
+{
+    public function visitPackageModel($package)
+    {
+    }
+
+    public function visitClassModel($class)
+    {
+    }
+
+    public function visitMethodModel($method)
+    {
+    }
+
+    public function visitFunctionModel($function)
+    {
+    }
+
+    public function visitConstantModel($constant)
+    {
+    }
+
+    public function visitIncludeModel($include)
+    {
+    }
+
+    public function visitDependencyModel($dependency)
+    {
+    }
+}
+----
+
+[TIP]
+====
+An abstract class +Bartlett\Reflect\Analyser\AbstractAnalyser+
+that implement all required interfaces may be used to initialize common data in a simple way.
+
+Your analyser became as simple like that:
+[source,php]
+----
+<?php
+
+use Bartlett\Reflect\Analyser\AbstractAnalyser;
+
+class Analyser extends AbstractAnalyser
+{
+}
+----
+====
+
+
+== Print results
+
+Once you have used visit methods to explore parsing results, you will need to return
+formatted data ready to be print.
+
+To do so, you should implement the +toArray+ method of +Bartlett\Reflect\Analyser\AnalyserInterface+.
+
+Implementation should follow only one rule. Return an array with :
+
+* free data identifier as key.
+* data contents are an array with a string format
+compatible http://www.php.net/manual/en/function.vsprintf.php[vsprintf] as first element, and the value as second element.
+
+.Console lines information (without data)
+====
+[source,php]
+----
+<?php
+
+    $lines['dataSourceAnalysed'] = array(
+        '<info>Data Source Analysed</info>%s',
+        array(PHP_EOL)
+    );
+
+    $lines['methodsScope'] = array(
+        '    Scope',
+        array()
+    );
+----
+====
+
+.Console line information with only one value
+====
+[source,php]
+----
+<?php
+
+    $lines['methods'] = array(
+        '  Methods                                   %10d',
+        array($count['methods'])
+    );
+----
+====
+
+.Console line information with more than one value
+====
+[source,php]
+----
+<?php
+
+    $lines['nonStaticMethods'] = array(
+        '      Non-Static Methods                    %10d (%.2f%%)',
+        array(
+            $count['nonStaticMethods'],
+            $count['methods'] > 0 ? ($count['nonStaticMethods'] / $count['methods']) * 100 : 0,
+        )
+    );
+----
+====
+
+TIP: See source code of {rawbaseurl}/src/Bartlett/CompatInfo/Analyser/SummaryAnalyser.php[Summary Analyser] as example.

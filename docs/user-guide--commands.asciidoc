@@ -1,0 +1,282 @@
+ifndef::basebackend-docbook[]
+
+= User Guide
+:description: The Command-Line Interface
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:icons!:
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+
+endif::basebackend-docbook[]
+
+== The Command-Line
+
+[role="lead"]
+The command-line interface is the easiest way to try and learn the basic CompatInfo features.
+
+NOTE: For all users.
+
+
+=== Command-Line Options
+
+Without +plugins+ and +analysers+ sections in your `phpcompatinfo.json` configuration file,
+when you invoke the `phpcompatinfo` command, you should obtain the following commands and options :
+
+[role="cli-output"]
+====
+----
+phpCompatInfo version 3.1.0 build b9b813a906d0f2e18608c1c6d153418d99582622
+
+Usage:
+  [options] command [arguments]
+
+Options:
+  --help           -h Display this help message.
+  --quiet          -q Do not output any message.
+  --verbose        -v|vv|vvv Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+  --version        -V Display this application version.
+  --ansi              Force ANSI output.
+  --no-ansi           Disable ANSI output.
+  --no-interaction -n Do not ask any interactive question.
+  --profile           Display timing and memory usage information.
+
+Available commands:
+  help               Displays help for a command
+  list               Lists commands
+plugin
+  plugin:list        List all plugins installed.
+provider
+  provider:display   Show source of a file in a data source.
+  provider:list      List all data source providers.
+  provider:show      Show list of files in a data source.
+reference
+  reference:list     List all references supported.
+  reference:show     Show information about a reference.
+----
+====
+
+[horizontal]
+plugin:list::
+List all plugins configured (and correctly installed) in `plugins` section of your `phpcompatinfo.json` config file.
++
+.Without plugins, you will get
+----
+$ phpcompatinfo plugin:list
+
+ [Json Configuration]
+ No plugins detected.
+----
++
+.With only `Analyser` plugin configured, you will get
+----
+$ phpcompatinfo plugin:list
+
+ Plugin Name Plugin Class                                    Events Subscribed
+ Analyser    Bartlett\Reflect\Plugin\Analyser\AnalyserPlugin reflect.complete
+----
+
+provider:list::
+List all data source providers configured in `source-providers` section of your `phpcompatinfo.json` config file.
++
+.Result may vary depending of your current directory, but you will get something like
+----
+$ phpcompatinfo provider:list
+
+ Source Alias   Files
+ .      current     46
+----
+
+provider:show::
+Show list of files corresponding to the (Symfony) Finder rules defined.
++
+.With Reflect source files
+----
+$ phpcompatinfo provider:show .
+----
++
+Possible alternative
++
+----
+$ phpcompatinfo provider:show --alias current
+----
++
+----
+ Source                                                  Files
+ .                                                       46
+ Relative Path Name                                      Date                      Size
+ Bartlett\Reflect\Analyser\AbstractAnalyser.php          2014-02-03T17:25:07+01:00    3475
+ Bartlett\Reflect\Analyser\AnalyserInterface.php         2014-02-03T17:26:50+01:00     835
+ Bartlett\Reflect\Analyser\StructureAnalyser.php         2014-02-23T17:31:16+01:00   12798
+
+ <... more lines ...>
+----
+
+provider:display::
+Show source code of a file in one of the data source identified.
++
+.With `Bartlett\Reflect.php` in the 'current' data source
+----
+$ phpcompatinfo provider:display . Bartlett\Reflect.php
+----
++
+Possible alternative
++
+----
+$ phpcompatinfo provider:display --alias current Bartlett\Reflect.php
+----
++
+----
+ Source
+ .
+ Relative Path Name Date Size
+ Id    Token                          Line  Text
+     0 T_OPEN_TAG                         1 <?php
+     1 T_DOC_COMMENT                      2 /** * Reflect * Reverse-engineer
+     2 T_WHITESPACE                      15
+     3 T_NAMESPACE                       17 namespace
+     4 T_WHITESPACE                      17
+     5 T_STRING                          17 Bartlett
+     6 T_SEMICOLON                       17 ;
+
+ <... more lines ...>
+----
+
+reference:list::
+Show the list of all references supported in this version.
++
+----
+$ phpcompatinfo reference:list
+----
++
+----
+ References     Version     Loaded
+ amqp           1.4.0       1.4.0
+ apc            3.1.13      4.0.6
+ apcu           4.0.4       4.0.6
+
+ <... more lines ...>
+
+ Zend OPcache   7.0.4-devFE 7.0.4-devFE
+ zip            1.12.4      1.12.4
+ zlib           2.0         2.0
+ Total [100]
+----
++
+[NOTE]
+====
+* Loaded version is referenced only if the corresponding extension is loaded from your `php.ini` configuration file.
+* For PHP extensions that are always enabled by default, the versions (current and loaded) depends of your platform.
+====
+
+reference:show::
+Introspection of a reference (case insensitive)
++
+.For example, with `apc` reference
+----
+$ phpcompatinfo reference:show apc
+----
++
+.List all elements of `apc` extension
+----
+include::reference-show-apc.out.asciidoc[]
+----
++
+.List all elements of `apc` extension that requires at least PHP 5.1
+----
+$ phpcompatinfo reference:show --php=">= 5.1.0" apc
+
+include::reference-show-apc-filter-php.out.asciidoc[]
+----
++
+.List ini directives of `apc` extension, that require only PHP 4.3
+----
+$ phpcompatinfo reference:show --ini --php="== 4.3.0" apc
+
+include::reference-show-apc-filter-ini.out.asciidoc[]
+----
++
+NOTE: The possible operators are: +{lt}+, +{lt}=+, +{gt}+, +{gt}=+, +==+, +=+, +!=+, +<>+. 
+
+
+When the `Analyser` plugin is installed, following lines added into `analysers` section
+----
+    {
+        "name": "Analyser",
+        "class": "Bartlett\\Reflect\\Plugin\\Analyser\\AnalyserPlugin"
+    }
+----
+you will get two additionnal commands.
+
+[horizontal]
+analyser:list::
+List all analysers configured in `analysers` section of your `phpcompatinfo.json` config file.
++
+.Without analysers, you will get
+----
+$ phpcompatinfo analyser:list
+
+ [Json Configuration]
+ No analysers detected.
+----
++
+.With only `Analyser` plugin configured, you will get
+----
+$ phpcompatinfo analyser:list
+
+ Analyser Name Analyser Class
+ Class         Bartlett\CompatInfo\Analyser\ClassAnalyser
+ Constant      Bartlett\CompatInfo\Analyser\ConstantAnalyser
+ Extension     Bartlett\CompatInfo\Analyser\ExtensionAnalyser
+ Function      Bartlett\CompatInfo\Analyser\FunctionAnalyser
+ Interface     Bartlett\CompatInfo\Analyser\InterfaceAnalyser
+ Namespace     Bartlett\CompatInfo\Analyser\NamespaceAnalyser
+ Summary       Bartlett\CompatInfo\Analyser\SummaryAnalyser
+ Trait         Bartlett\CompatInfo\Analyser\TraitAnalyser
+----
+
+analyser:run::
+Parse a data source and display results. May wary depending of the data source and analyser used.
++
+.With `structure` analyser and the Reflect source code, you will get something like
+----
+$ phpcompatinfo analyser:run .
+----
++
+Possible alternative
++
+----
+$ phpcompatinfo analyser:run --alias current
+----
++
+----
+include::summary_analysis.out.asciidoc[]
+----
+
+
+== Summary
+
+[role="lead"]
+Let's review what we've learned about the command-line interface :
+
+* It's a Symfony http://symfony.com/doc/current/components/console/index.html[Console Component] that can be extended to infinite via plugins and analysers.
+* You can examine inside a reference and filters elements.
+
+ifdef::basebackend-bootstrap[]
+== Next
+
+[role="lead"]
+For PHP developers only.
+
+************************************************
+.Read more
+
+* Want to learn more about [label label-primary]#CompatInfo# architecture and /or
+you want to extends it to match your needs,
+have a look on link:developer-guide.html[developer's guide].
+
+************************************************
+endif::basebackend-bootstrap[]

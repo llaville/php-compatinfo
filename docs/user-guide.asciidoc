@@ -1,0 +1,50 @@
+= User Guide
+:description: Start using CompatInfo without writing a line of code
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:icons!:
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+
+[role="col-md-12"]
+====
+[panel,success]
+.For all users
+--
+NOTE: First visit, you are highly recommended to follow chapters in following order.
+
+. link:user-guide&#45;&#45;installation.html[Installing] all necessary [label label-primary]#CompatInfo# components.
+. link:user-guide&#45;&#45;configuration.html[Configuring] your project and get ready for your first parsing.
+. link:user-guide&#45;&#45;commands.html[Running] your first parses with the Command-Line interface.
+
+link:user-guide&#45;&#45;installation.html["Installing PHP CompatInfo",role="primary",icon="glyphicon-step-forward",options="block"]
+--
+====
+
+unfloat::[]
+
+[role="col-md-6"]
+====
+[panel,info]
+.Migrating from CompatInfo 2.x to 3.x
+--
+CAUTION: All you have to know if you want to upgrade from a previous version 2.x easily.
+
+link:migration-guide.html["Migration Guide",role="primary",icon="glyphicon-book",options="block"]
+--
+====
+
+[role="col-md-6"]
+====
+[panel,danger]
+.For Developers Only
+--
+NOTE: Basic [label label-primary]#CompatInfo# features does not match your needs.
+Learn how to extend or change some features/behaviors.
+
+link:developer-guide.html["Developer Guide",role="primary",icon="glyphicon-book",options="block"]
+--
+====
