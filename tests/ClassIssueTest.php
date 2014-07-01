@@ -88,7 +88,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
         $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.versions';
 
         $expected = '5.0.0';
-        $metrics  = self::$compatinfo->getMetrics();  #error_log ( print_r($metrics, true) );
+        $metrics  = self::$compatinfo->getMetrics();
 
         $this->assertEquals(
             $expected,
