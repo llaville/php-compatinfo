@@ -27,10 +27,11 @@ Subscribe to http://php5.laurent-laville.org/compatinfo/blog/rss.xml[RSS feed].
 ** link:201402.html[February] [badge pull-right]#5#
 ** link:201404.html[April] [badge pull-right]#1#
 ** link:201405.html[May] [badge pull-right]#3#
+** link:201406.html[June] [badge pull-right]#1#
 --
 ====
 
 [role="col-md-9"]
-include::201406-user-documentation.asciidoc[]
+include::201407-release-3.2-planned.asciidoc[]
 
 [role="col-md-9 col-md-offset-3"]

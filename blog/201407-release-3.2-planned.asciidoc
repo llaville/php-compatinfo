@@ -1,0 +1,37 @@
+:doctitle:    CompatInfo 3.2 preview
+:description:
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-07-01
+:pubdate:   Tue, 01 Jul 2014 16:41:41 +0200
+:summary:   Release 3.2.0 planned
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-1"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/calendar.png[alt="calendar",icon="calendar",size="4x"]
+
+[role="lead"]
+The third release of major branch 3 is planned for Monday July 14, 2014.
+
+It will include a new full documentation for all audiences (basic users and developers).
+
+A draft is already available for :
+
+* Getting Started section
+* User Guide
+* Developer Guide
+
+And will come later :
+
+* Full details of API in developer guide
+* Migration Guide
+
+Want to have a look, it's http://php5.laurent-laville.org/compatinfo/manual/3.2/en/getting-started.html[here] !
+____

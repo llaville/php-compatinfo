@@ -1,10 +1,16 @@
+:doctitle:    CompatInfo 3.2 preview
+:description:
 :iconsfont: font-awesome
 :imagesdir: ./images
 :author:    Laurent Laville
 :revdate:   2014-06-16
 :pubdate:   Mon, 16 Jun 2014 20:43:05 +0200
 :summary:   User Documentation is on way
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
 
+[id="post-1"]
 == {summary}
 
 [quote,Published by {author} on {revdate}]
