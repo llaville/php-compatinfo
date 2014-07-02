@@ -2,7 +2,7 @@
     "alias": "phpcompatinfo.phar",
     "chmod": "0755",
     "directories": ["src"],
-    "extract": true,
+    "extract": false,
     "compression": "GZ",
     "files": [
         "LICENSE",
