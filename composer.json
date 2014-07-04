@@ -15,7 +15,7 @@
         "ext-pcre": "*",
         "ext-spl": "*",
         "ext-json": "*",
-        "bartlett/php-reflect": "2.0.*"
+        "bartlett/php-reflect": "2.*"
     },
     "require-dev": {
         "phpunit/phpunit": ">=3.7"
