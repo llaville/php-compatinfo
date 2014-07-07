@@ -6,7 +6,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class MemcachedExtension extends AbstractReference
 {
     const REF_NAME    = 'memcached';
-    const REF_VERSION = '2.0.0';  // 2014-04-01 (stable)
+    const REF_VERSION = '2.2.0';  // 2014-04-01 (stable)
 
     public function __construct()
     {
