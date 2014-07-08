@@ -1,0 +1,652 @@
+= References
+:description: Strategy to load each Reference with their versions
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:icons!:
+:jumbotron:
+:footer-fullwidth:
+:php5:        progress:100[role="primary"]
+:stable:      progress:100[role="success"]
+:beta:        progress:90[role="warning"]
+:alpha:       progress:40[role="danger"]
+
+[role="col-md-6"]
+====
+[panel,info]
+.Legend
+--
+* included with PHP5 distribution {php5}
+* stable version {stable}
+* beta version {beta}
+* alpha version {alpha}
+* *prefetch strategy* : references are always loaded
+* *autodiscover strategy* : references loaded only when detected 
+--
+====
+
+[role="col-md-6"]
+====
+[panel,info]
+.Statistics
+--
+* [label label-default]#2.0.0# support 61 references
+* [label label-info]#2.1.0# support 63 references
+* [label label-info]#2.2.0# support 65 references
+* [label label-info]#2.3.0# support 67 references
+* [label label-info]#2.5.0# support 75 references
+* [label label-info]#2.8.0# support 80 references
+* [label label-info]#2.10.0# support 83 references
+* [label label-info]#2.13.0# support 84 references
+* [label label-info]#2.15.0# support 86 references
+* [label label-info]#2.16.0# support 95 references
+* [label label-info]#2.23.0# support 98 references
+* [label label-info]#2.25.0# support 99 references
+* [label label-info]#2.26.0# support 100 references
+--
+====
+
+[options="header,autowidth", role="table table-bordered table-striped"]
+|===========================
+| Prefetch | AutoDiscover | Reference | CompatInfo
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| amqp
+1.4.0 {stable}
+| [label label-info]#2.8.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| apc
+3.1.13 {beta}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| apcu
+4.0.6 {beta}
+| [label label-info]#2.16.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| bcmath
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| bz2
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| calendar
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| Core
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| ctype
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| curl
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| date
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| dom
+20031129 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| enchant
+1.1.0 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| ereg
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| exif
+{php5}
+| [label label-info]#2.5.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| fileinfo
+1.0.5 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| filter
+0.11.0 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| ftp
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| gd
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| gender
+1.0.0 {stable}
+| [label label-info]#2.16.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| geoip
+1.1.0 {beta}
+| [label label-info]#2.8.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| gettext
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| gmp
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| haru
+1.0.4 {stable}
+| [label label-info]#2.16.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| hash
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| htscanner
+1.0.1 {stable}
+| [label label-info]#2.23.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| http
+2.0.6 {stable}
+| [label label-info]#2.16.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| iconv
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| igbinary
+1.1.1 {stable}
+| [label label-info]#2.10.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| imagick
+3.1.2 {stable}
+| [label label-info]#2.10.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| imap
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| inclued
+0.1.3 {beta}
+| [label label-info]#2.8.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| intl
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| jsmin
+0.1.1 {beta}
+| [label label-info]#2.25.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| json
+1.2.1 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| ldap
+{php5}
+| [label label-info]#2.2.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| libevent
+0.1.0 {beta}
+| [label label-info]#2.16.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| libxml
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| lzf
+1.6.2 {stable}
+| [label label-info]#2.5.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| mailparse
+2.1.6 {stable}
+| [label label-info]#2.5.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| mbstring
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| mcrypt
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| memcached
+2.2.0 {stable}
+| [label label-info]#2.1.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| memcache
+3.0.8 {beta}
+| [label label-info]#2.1.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| mhash
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| mongo
+1.5.4 {stable}
+| [label label-info]#2.8.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| msgpack
+0.5.5 {beta}
+| [label label-info]#2.16.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| mssql
+{php5}
+| [label label-info]#2.5.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| mysql
+1.0 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| mysqli
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| OAuth
+1.2.3 {stable}
+| [label label-info]#2.2.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| odbc
+{php5}
+| [label label-info]#2.10.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| openssl
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| pcntl
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| pcre
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| pdflib
+3.0.4 {stable}
+| [label label-info]#2.23.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| PDO
+1.0.4dev {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| pgsql
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| phar
+2.0.2 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| posix
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| pthreads
+2.0.7 {stable}
+| [label label-info]#2.16.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| rar
+3.0.2 {stable}
+| [label label-info]#2.23.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| readline
+2.0.1 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| recode
+2.0.1 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| Reflection
+{php5}
+| [label label-info]#2.3.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| riak
+1.2.0 {stable}
+| [label label-info]#2.26.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| session
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| shmop
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| SimpleXML
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| snmp
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| soap
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| sockets
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| solr
+2.0.0 {stable}
+| [label label-info]#2.5.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| sphinx
+1.3.2 {stable}
+| [label label-info]#2.5.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| spl
+0.2 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| sqlite3
+0.7-dev {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| sqlite
+2.0-dev {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| ssh2
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| standard
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| stomp
+{php5}
+| [label label-info]#2.16.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| svn
+1.0.2 {stable}
+| [label label-info]#2.13.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| sysvmsg
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| sysvsem
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| sysvshm
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| tidy
+2.0 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| tokenizer
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| uploadprogress
+1.0.3.1 {stable}
+| [label label-info]#2.16.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| varnish
+1.1.1 {stable}
+| [label label-info]#2.15.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| wddx
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| XCache
+3.1.0 {stable}
+| [label label-info]#2.8.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| xdebug
+2.2.5 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| xhprof
+0.9.4 {beta}
+| [label label-info]#2.5.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| xml
+{php5}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| xmlreader
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| xmlrpc
+0.51 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| xmlwriter
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| xsl
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| yaml
+1.1.1 {stable}
+| [label label-info]#2.5.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| Zend OPcache
+7.0.4-devFE {beta}
+| [label label-info]#2.15.0#
+
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| zip
+1.12.4 {stable}
+| [label label-info]#2.3.0#
+
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| zlib
+2.0 {stable}
+| [label label-default]#2.0.0#
+
+|===========================
