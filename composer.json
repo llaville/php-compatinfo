@@ -15,6 +15,7 @@
         "ext-pcre": "*",
         "ext-spl": "*",
         "ext-json": "*",
+        "symfony/console": "~2.5",
         "bartlett/php-reflect": "2.*"
     },
     "require-dev": {
