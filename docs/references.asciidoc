@@ -20,7 +20,7 @@ include::attributes.asciidoc[]
 * beta version {beta}
 * alpha version {alpha}
 * *prefetch strategy* : references are always loaded
-* *autodiscover strategy* : references loaded only when detected 
+* *autodiscover strategy* : references loaded only when detected
 --
 ====
 
@@ -218,24 +218,24 @@ include::attributes.asciidoc[]
 | [label label-info]#2.10.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | imagick
 3.1.2 {stable}
 | [label label-info]#2.10.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | imap
 {php5}
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | inclued
 0.1.3 {beta}
 | [label label-info]#2.8.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | intl
 {php5}
@@ -254,12 +254,12 @@ include::attributes.asciidoc[]
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | ldap
 {php5}
 | [label label-info]#2.2.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | libevent
 0.1.0 {beta}
@@ -272,12 +272,12 @@ include::attributes.asciidoc[]
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | lzf
 1.6.2 {stable}
 | [label label-info]#2.5.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | mailparse
 2.1.6 {stable}
@@ -296,13 +296,13 @@ include::attributes.asciidoc[]
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | memcached
 2.2.0 {stable}
 | [label label-info]#2.1.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | memcache
 3.0.8 {beta}
 | [label label-info]#2.1.0#
@@ -319,32 +319,32 @@ include::attributes.asciidoc[]
 1.5.4 {stable}
 | [label label-info]#2.8.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | msgpack
 0.5.5 {beta}
 | [label label-info]#2.16.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | mssql
 {php5}
 | [label label-info]#2.5.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | mysql
 1.0 {stable}
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | mysqli
 0.1 {stable}
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | OAuth
 1.2.3 {stable}
 | [label label-info]#2.2.0#
@@ -355,13 +355,13 @@ include::attributes.asciidoc[]
 {php5}
 | [label label-info]#2.10.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | openssl
 {php5}
 | [label label-default]#2.0.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | pcntl
 {php5}
@@ -385,7 +385,7 @@ include::attributes.asciidoc[]
 1.0.4dev {stable}
 | [label label-default]#2.0.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | pgsql
 {php5}
@@ -398,31 +398,31 @@ include::attributes.asciidoc[]
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | posix
 {php5}
 | [label label-default]#2.0.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | pthreads
 2.0.7 {stable}
 | [label label-info]#2.16.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | rar
 3.0.2 {stable}
 | [label label-info]#2.23.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | readline
 2.0.1 {stable}
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | recode
 2.0.1 {stable}
 | [label label-default]#2.0.0#
@@ -434,7 +434,7 @@ include::attributes.asciidoc[]
 | [label label-info]#2.3.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | riak
 1.2.0 {stable}
 | [label label-info]#2.26.0#
@@ -446,7 +446,7 @@ include::attributes.asciidoc[]
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | shmop
 {php5}
 | [label label-default]#2.0.0#
@@ -458,12 +458,12 @@ include::attributes.asciidoc[]
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | snmp
 {php5}
 | [label label-default]#2.0.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | soap
 {php5}
@@ -481,7 +481,7 @@ include::attributes.asciidoc[]
 2.0.0 {stable}
 | [label label-info]#2.5.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | sphinx
 1.3.2 {stable}
@@ -506,7 +506,7 @@ include::attributes.asciidoc[]
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | ssh2
 {php5}
 | [label label-default]#2.0.0#
@@ -518,37 +518,37 @@ include::attributes.asciidoc[]
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | stomp
 {php5}
 | [label label-info]#2.16.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | svn
 1.0.2 {stable}
 | [label label-info]#2.13.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | sysvmsg
 {php5}
 | [label label-default]#2.0.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | sysvsem
 {php5}
 | [label label-default]#2.0.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | sysvshm
 {php5}
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | tidy
 2.0 {stable}
 | [label label-default]#2.0.0#
@@ -560,7 +560,7 @@ include::attributes.asciidoc[]
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | uploadprogress
 1.0.3.1 {stable}
 | [label label-info]#2.16.0#
@@ -590,7 +590,7 @@ include::attributes.asciidoc[]
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | xhprof
 0.9.4 {beta}
 | [label label-info]#2.5.0#
@@ -608,7 +608,7 @@ include::attributes.asciidoc[]
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | xmlrpc
 0.51 {stable}
 | [label label-default]#2.0.0#
@@ -619,19 +619,19 @@ include::attributes.asciidoc[]
 0.1 {stable}
 | [label label-default]#2.0.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | xsl
 0.1 {stable}
 | [label label-default]#2.0.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | yaml
 1.1.1 {stable}
 | [label label-info]#2.5.0#
 
-| image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+| image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | Zend OPcache
 7.0.4-devFE {beta}
