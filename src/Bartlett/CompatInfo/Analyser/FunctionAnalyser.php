@@ -69,5 +69,9 @@ class FunctionAnalyser extends AbstractAnalyser
         foreach ($package->getFunctions() as $function) {
             $function->accept($this);
         }
+
+        foreach ($package->getDependencies() as $dependency) {
+            $dependency->accept($this);
+        }
     }
 }
