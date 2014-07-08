@@ -47,13 +47,6 @@ class ConsoleApplication extends Application
     public function __construct()
     {
         parent::__construct('phpCompatInfo', self::VERSION);
-
-        // The new tableHelper with footers feature
-        // @link https://github.com/symfony/Console/pull/10
-        $helper = new ConsoleHelper;
-        $this->getHelperSet()
-            ->set($helper)
-        ;
     }
 
     public function getLongVersion()
@@ -181,7 +174,7 @@ class ConsoleApplication extends Application
         return $var;
     }
 
-    public function versionHelper(array $args, $filter)
+    public static function versionHelper(array $args, $filter)
     {
         $rows = array();
         ksort($args);
@@ -206,40 +199,4 @@ class ConsoleApplication extends Application
         return $rows;
     }
 
-    public function listHelper(array $args, $versions, $filter, $title)
-    {
-        $rows = $this->versionHelper($args, $filter);
-
-        $headers = array($title, 'REF', 'EXT min/Max', 'PHP min/Max');
-
-        $versions = empty($versions['php.max'])
-            ? $versions['php.min']
-            : $versions['php.min'] . ' => ' . $versions['php.max']
-        ;
-
-        if ($filter) {
-            $footers = array(
-                sprintf('Total [%d/%d]', count($rows), count($args)),
-                '',
-                '',
-                $versions
-            );
-        } else {
-            $footers = array(
-                sprintf('Total [%d]', count($args)),
-                '',
-                '',
-                $versions
-            );
-        }
-
-        $table = $this->getHelperSet()
-            ->get('table2')
-            ->setLayout(TableHelper::LAYOUT_COMPACT)
-            ->setHeaders($headers)
-            ->setFooters($footers)
-            ->setRows($rows)
-        ;
-        return $table;
-    }
 }

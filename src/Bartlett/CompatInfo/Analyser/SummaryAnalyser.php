@@ -12,6 +12,10 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Bartlett\Reflect\Printer\Text;
+
+use Symfony\Component\Console\Output\OutputInterface;
+
 /**
  * This analyzer collects versions on all elements of a project.
  *
@@ -52,6 +56,80 @@ class SummaryAnalyser extends AbstractAnalyser
                 'php.max' => '',
             )
         );
+    }
+
+    /**
+     * Renders analyser report to output.
+     *
+     * @param object OutputInterface $output    Console Output
+     * @param string                 $phpFilter Filter on PHP version
+     */
+    public function render(OutputInterface $output, $phpFilter)
+    {
+        $count = $this->count;
+        $lines = array();
+
+        $lines['reportTitle'] = array(
+            '%s<info>Summary Analysis</info>',
+            array(PHP_EOL)
+        );
+
+        $lines['summary'] = array(
+            '%sSummary',
+            array(PHP_EOL)
+        );
+        $lines['extensions'] = array(
+            '  Extensions                                %10d',
+            array($count[self::METRICS_PREFIX . '.extensions'])
+        );
+        $lines['namespaces'] = array(
+            '  Namespaces                                %10d',
+            array($count['namespaces'])
+        );
+        $lines['interfaces'] = array(
+            '  Interfaces                                %10d',
+            array($count[self::METRICS_PREFIX . '.interfaces'])
+        );
+        $lines['traits'] = array(
+            '  Traits                                    %10d',
+            array($count[self::METRICS_PREFIX . '.traits'])
+        );
+        $lines['classes'] = array(
+            '  Classes                                   %10d',
+            array($count[self::METRICS_PREFIX . '.classes'])
+        );
+        $lines['methods'] = array(
+            '  Methods                                   %10d',
+            array($count[self::METRICS_PREFIX . '.methods'])
+        );
+        $lines['functions'] = array(
+            '  Functions                                 %10d',
+            array($count[self::METRICS_PREFIX . '.functions'])
+        );
+        $lines['constants'] = array(
+            '  Constants                                 %10d',
+            array($count[self::METRICS_PREFIX . '.constants'])
+        );
+        $lines['internalFunctions'] = array(
+            '  Internal Functions                        %10d',
+            array($count[self::METRICS_PREFIX . '.internals'])
+        );
+
+        $lines['versions'] = array(
+            '%sVersions',
+            array(PHP_EOL)
+        );
+        $lines['php.min'] = array(
+            '  PHP min                                   %10s',
+            array($count[self::METRICS_PREFIX . '.versions']['php.min'])
+        );
+        $lines['php.max'] = array(
+            '  PHP max                                   %10s',
+            array($count[self::METRICS_PREFIX . '.versions']['php.max'])
+        );
+
+        $printer = new Text;
+        $printer->write($output, $lines);
     }
 
     /**

@@ -12,6 +12,8 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Symfony\Component\Console\Output\OutputInterface;
+
 /**
  * This analyzer collects versions on all constants of a project.
  *
@@ -43,6 +45,25 @@ class ConstantAnalyser extends AbstractAnalyser
                 'php.min' => '4.0.0',
                 'php.max' => '',
             )
+        );
+    }
+
+    /**
+     * Renders analyser report to output.
+     *
+     * @param object OutputInterface $output    Console Output
+     * @param string                 $phpFilter Filter on PHP version
+     */
+    public function render(OutputInterface $output, $phpFilter)
+    {
+        $output->writeln('<info>Constants Analysis</info>' . PHP_EOL);
+
+        $this->listHelper(
+            $output,
+            $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP],
+            $this->count[self::METRICS_PREFIX . '.versions'],
+            $phpFilter,
+            'Constant'
         );
     }
 

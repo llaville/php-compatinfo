@@ -12,6 +12,8 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Symfony\Component\Console\Output\OutputInterface;
+
 /**
  * This analyzer collects versions on all namespaces of a project.
  *
@@ -26,5 +28,24 @@ namespace Bartlett\CompatInfo\Analyser;
 class NamespaceAnalyser extends SummaryAnalyser
 {
     const METRICS_PREFIX = 'na';
-    const METRICS_GROUP  = 'namespaces';    
+    const METRICS_GROUP  = 'namespaces';
+
+    /**
+     * Renders analyser report to output.
+     *
+     * @param object OutputInterface $output    Console Output
+     * @param string                 $phpFilter Filter on PHP version
+     */
+    public function render(OutputInterface $output, $phpFilter)
+    {
+        $output->writeln('<info>Namespaces Analysis</info>' . PHP_EOL);
+
+        $this->listHelper(
+            $output,
+            $this->count[self::METRICS_PREFIX . '.packages'],
+            $this->count[self::METRICS_PREFIX . '.versions'],
+            $phpFilter,
+            'Namespace'
+        );
+    }
 }

@@ -12,11 +12,16 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Bartlett\CompatInfo\ConsoleApplication;
 use Bartlett\CompatInfo\Reference\ReferenceLoader;
 use Bartlett\CompatInfo\Reference\Strategy\PreFetchStrategy;
 use Bartlett\CompatInfo\Reference\Strategy\AutoDiscoverStrategy;
 
 use Bartlett\Reflect\Analyser\AbstractAnalyser as ReflectAnalyser;
+
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Helper\Table;
+use Symfony\Component\Console\Helper\TableSeparator;
 
 /**
  * Provides common metrics for all CompatInfo analysers.
@@ -38,6 +43,61 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         'php.max' => '',
     );
     protected $loader;
+
+    /**
+     * Returns common pre-formatted lines report
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        /*
+            @deprecated
+            Will be removed in next version (Reflect 2.2)
+            See interface Bartlett\Reflect\Analyser\AnalyserInterface
+        */
+    }
+
+    /**
+     *
+     */
+    protected function listHelper(OutputInterface $output, array $args, $versions, $filter, $title)
+    {
+        $rows = ConsoleApplication::versionHelper($args, $filter);
+
+        $headers = array($title, 'REF', 'EXT min/Max', 'PHP min/Max');
+
+        $versions = empty($versions['php.max'])
+            ? $versions['php.min']
+            : $versions['php.min'] . ' => ' . $versions['php.max']
+        ;
+
+        if ($filter) {
+            $footers = array(
+                sprintf('<info>Total [%d/%d]</info>', count($rows), count($args)),
+                '',
+                '',
+                $versions
+            );
+        } else {
+            $footers = array(
+                sprintf('<info>Total [%d]</info>', count($args)),
+                '',
+                '',
+                $versions
+            );
+        }
+        $rows[] = new TableSeparator();
+        $rows[] = $footers;
+
+        $table = new Table($output);
+        $table
+            ->setHeaders($headers)
+            ->setRows($rows)
+            ->setStyle('compact')
+        ;
+        $table->render();
+    }
 
     /**
      * Explore dependencies (DependencyModel) of each namespace (PackageModel).
