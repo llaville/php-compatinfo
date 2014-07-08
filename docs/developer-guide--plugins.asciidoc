@@ -80,6 +80,7 @@ to specific events.
 <?php
 
 use Bartlett\CompatInfo;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 $compatinfo = new CompatInfo;
 
