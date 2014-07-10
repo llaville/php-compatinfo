@@ -67,4 +67,74 @@ class ExtensionAnalyser extends AbstractAnalyser
             'Extension'
         );
     }
+
+    /**
+     * Explore all elements of each namespace (PackageModel),
+     * that may used parameters with classes (type hinting).
+     *
+     * @param object $package Reflect the current namespace explored
+     *
+     * @return void
+     */
+    public function visitPackageModel($package)
+    {
+        // explore dependencies (DependencyModel)
+        parent::visitPackageModel($package);
+
+        // explore all user classes (ClassModel)
+        foreach ($package->getClasses() as $class) {
+            $class->accept($this);
+        }
+
+        // explore all user interfaces (ClassModel)
+        foreach ($package->getInterfaces() as $interface) {
+            $interface->accept($this);
+        }
+
+        // explore all user traits (ClassModel)
+        foreach ($package->getTraits() as $trait) {
+            $trait->accept($this);
+        }
+
+        // explore all user functions (FunctionModel)
+        foreach ($package->getFunctions() as $function) {
+            $function->accept($this);
+        }
+    }
+
+    /**
+     * Explore user classes (ClassModel) found in the current namespace.
+     *
+     * @param object $class Reflect the current user class explored
+     *
+     * @return void
+     */
+    public function visitClassModel($class)
+    {
+        parent::visitClassModel($class);
+
+        if ($this->testClass) {
+            // do not explore classes of PHPUnit tests suites
+            return;
+        }
+
+        foreach ($class->getMethods() as $method) {
+            $method->accept($this);
+        }
+    }
+
+    /**
+     * Explore methods (MethodModel) of each user classes
+     * found in the current namespace.
+     *
+     * @param object $method Reflect the current method explored
+     *
+     * @return void
+     */
+    public function visitMethodModel($method)
+    {
+        foreach ($method->getParameters() as $parameter) {
+            $parameter->accept($this);
+        }
+    }
 }
