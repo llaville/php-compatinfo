@@ -45,20 +45,6 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     protected $loader;
 
     /**
-     * Returns common pre-formatted lines report
-     *
-     * @return array
-     */
-    public function toArray()
-    {
-        /*
-            @deprecated
-            Will be removed in next version (Reflect 2.2)
-            See interface Bartlett\Reflect\Analyser\AnalyserInterface
-        */
-    }
-
-    /**
      *
      */
     protected function listHelper(OutputInterface $output, array $args, $versions, $filter, $title)
@@ -228,6 +214,10 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $this->count[static::METRICS_PREFIX . '.methods'][$name]['php.min'],
             $this->count[static::METRICS_PREFIX . '.methods'][$name]['php.max']
         );
+
+        foreach ($method->getParameters() as $parameter) {
+            $parameter->accept($this);
+        }
     }
 
     /**
@@ -286,6 +276,34 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         $argc = 0;
 
         $versions = $this->processInternal($name, $argc);
+        $type     = $this->loader->getTypeElement();
+
+        if ($type == static::METRICS_GROUP) {
+            $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
+            $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
+        }
+    }
+
+    /**
+     * Explore contents of each function parameter (ParameterModel)
+     * found in the current namespace.
+     *
+     * @param object $parameter Reflect the current parameter explored
+     *
+     * @return void
+     */
+    public function visitParameterModel($parameter)
+    {
+        $name = $parameter->getTypeHint();
+
+        if (empty($name)
+            || in_array(strtolower($name), array('callable', 'array'))
+        ) {
+            return;
+        }
+
+        // object instance
+        $versions = $this->processInternal($name);
         $type     = $this->loader->getTypeElement();
 
         if ($type == static::METRICS_GROUP) {
