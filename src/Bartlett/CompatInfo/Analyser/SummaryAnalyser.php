@@ -62,9 +62,10 @@ class SummaryAnalyser extends AbstractAnalyser
      * Renders analyser report to output.
      *
      * @param object OutputInterface $output    Console Output
-     * @param string                 $phpFilter Filter on PHP version
+     *
+     * @return void
      */
-    public function render(OutputInterface $output, $phpFilter)
+    public function render(OutputInterface $output)
     {
         $count = $this->count;
         $lines = array();

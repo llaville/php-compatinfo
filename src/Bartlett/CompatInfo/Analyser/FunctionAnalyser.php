@@ -47,9 +47,10 @@ class FunctionAnalyser extends AbstractAnalyser
      * Renders analyser report to output.
      *
      * @param object OutputInterface $output    Console Output
-     * @param string                 $phpFilter Filter on PHP version
+     *
+     * @return void
      */
-    public function render(OutputInterface $output, $phpFilter)
+    public function render(OutputInterface $output)
     {
         $output->writeln('<info>Functions Analysis</info>' . PHP_EOL);
 
@@ -57,7 +58,7 @@ class FunctionAnalyser extends AbstractAnalyser
             $output,
             $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP],
             $this->count[self::METRICS_PREFIX . '.versions'],
-            $phpFilter,
+            func_get_arg(1),
             'Function'
         );
     }

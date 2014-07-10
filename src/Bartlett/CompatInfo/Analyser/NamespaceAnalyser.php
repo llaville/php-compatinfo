@@ -34,9 +34,10 @@ class NamespaceAnalyser extends SummaryAnalyser
      * Renders analyser report to output.
      *
      * @param object OutputInterface $output    Console Output
-     * @param string                 $phpFilter Filter on PHP version
+     *
+     * @return void
      */
-    public function render(OutputInterface $output, $phpFilter)
+    public function render(OutputInterface $output)
     {
         $output->writeln('<info>Namespaces Analysis</info>' . PHP_EOL);
 
@@ -44,7 +45,7 @@ class NamespaceAnalyser extends SummaryAnalyser
             $output,
             $this->count[self::METRICS_PREFIX . '.packages'],
             $this->count[self::METRICS_PREFIX . '.versions'],
-            $phpFilter,
+            func_get_arg(1),
             'Namespace'
         );
     }
