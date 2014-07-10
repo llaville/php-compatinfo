@@ -187,11 +187,11 @@ class AnalyserRunCommand extends ProviderCommand
                 // No reports printed if there are no metrics.
                 return;
             }
-
-            // print Data Source headers
-            $analysers = array_map('strtolower', $analysers);
             $count = $metrics['DataSource'];
 
+            $analysers = array_map('strtolower', $analysers);
+
+            // print Data Source headers
             if ($count['directories'] > 0) {
                 $text = sprintf(
                     "\n" .
