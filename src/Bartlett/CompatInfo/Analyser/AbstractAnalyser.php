@@ -282,6 +282,21 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
             $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
         }
+
+        if ('extension_loaded' == $name) {
+            $args = $dependency->getArguments();
+
+            if ('Scalar_String' == $args[0]['type']) {
+                $name     = $args[0]['value'];
+                $versions = $this->processInternal($name);
+
+                if (!isset($this->count[static::METRICS_PREFIX . ".extensions"][$name])) {
+                    unset($versions['ref']);
+                    $this->count[static::METRICS_PREFIX . ".extensions"][$name] = $versions;
+                    $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
+                }
+            }
+        }
     }
 
     /**
