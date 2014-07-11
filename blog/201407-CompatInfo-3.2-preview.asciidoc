@@ -10,7 +10,7 @@
 :jumbotron-fullwidth:
 :footer-fullwidth:
 
-[id="post-1"]
+[id="post-2"]
 == {summary}
 
 [quote,Published by {author} on {revdate}]
