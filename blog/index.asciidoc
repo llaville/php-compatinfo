@@ -32,6 +32,9 @@ Subscribe to http://php5.laurent-laville.org/compatinfo/blog/rss.xml[RSS feed].
 ====
 
 [role="col-md-9"]
+include::201407-CompatInfo-3.2-preview-2.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]
 include::201407-CompatInfo-3.2-preview.asciidoc[]
 
 [role="col-md-9 col-md-offset-3"]
