@@ -81,7 +81,7 @@ class SummaryAnalyser extends AbstractAnalyser
         );
         $lines['extensions'] = array(
             '  Extensions                                %10d',
-            array($count[self::METRICS_PREFIX . '.extensions'])
+            array(count($count[self::METRICS_PREFIX . '.extensions']))
         );
         $lines['namespaces'] = array(
             '  Namespaces                                %10d',
@@ -89,31 +89,31 @@ class SummaryAnalyser extends AbstractAnalyser
         );
         $lines['interfaces'] = array(
             '  Interfaces                                %10d',
-            array($count[self::METRICS_PREFIX . '.interfaces'])
+            array(count($count[self::METRICS_PREFIX . '.interfaces']))
         );
         $lines['traits'] = array(
             '  Traits                                    %10d',
-            array($count[self::METRICS_PREFIX . '.traits'])
+            array(count($count[self::METRICS_PREFIX . '.traits']))
         );
         $lines['classes'] = array(
             '  Classes                                   %10d',
-            array($count[self::METRICS_PREFIX . '.classes'])
+            array(count($count[self::METRICS_PREFIX . '.classes']))
         );
         $lines['methods'] = array(
             '  Methods                                   %10d',
-            array($count[self::METRICS_PREFIX . '.methods'])
+            array(count($count[self::METRICS_PREFIX . '.methods']))
         );
         $lines['functions'] = array(
             '  Functions                                 %10d',
-            array($count[self::METRICS_PREFIX . '.functions'])
+            array(count($count[self::METRICS_PREFIX . '.functions']))
         );
         $lines['constants'] = array(
             '  Constants                                 %10d',
-            array($count[self::METRICS_PREFIX . '.constants'])
+            array(count($count[self::METRICS_PREFIX . '.constants']))
         );
         $lines['internalFunctions'] = array(
             '  Internal Functions                        %10d',
-            array($count[self::METRICS_PREFIX . '.internals'])
+            array(count($count[self::METRICS_PREFIX . '.internals']))
         );
 
         $lines['versions'] = array(
