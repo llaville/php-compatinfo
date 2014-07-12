@@ -6,7 +6,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class HttpExtension extends AbstractReference
 {
     const REF_NAME    = 'http';
-    const REF_VERSION = '2.0.6';    // 2014-04-24 (stable)
+    const REF_VERSION = '2.0.7';    // 2014-07-11 (stable)
 
     public function __construct()
     {

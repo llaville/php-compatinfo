@@ -202,7 +202,7 @@ include::attributes.asciidoc[]
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
 | image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 | http
-2.0.6 {stable}
+2.0.7 {stable}
 | [label label-info]#2.16.0#
 
 | image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
