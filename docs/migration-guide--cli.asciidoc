@@ -9,6 +9,31 @@ include::attributes.asciidoc[]
 :footer-fullwidth:
 
 
+== Progress Bar
+
+Since version [label label-success]#2.12#, there is a new progress bar (ALA PHPUnit).
+----
+PHP_CompatInfo 2.12.0 by Laurent Laville
+
+....CC......................................................  60 / 128 ( 46%)
+....C..C..........................................C....C.... 120 / 128 ( 93%)
+.C.....C
+----
+* each `C` character tell us that there is a source file with conditional code.
+
+
+With version [label label-primary]#3.2#, the progress bar (ALA Symfony Console Progress Helper)
+is activated with the first verbose level (+-v+).
+For example :
+----
+$ phpcompatinfo -v analyser:run <SOURCE>
+----
+
+Renders
+----
+    3/128 [>---------------------------]   0% Elapsed: 2 secs
+----
+
 == References
 
 If we want to display list of references supported, here is how to do with both versions :
@@ -359,5 +384,5 @@ $ phpcompatinfo provider:display <SOURCE>
 
 == Caching results
 
-CAUTION: Version [label label-success]#2.26# always cache results to speed-up later analysis. 
+CAUTION: Version [label label-success]#2.26# always cache results to speed-up later analysis.
 Version [label label-primary]#3.2# is able (optionally) to cache results only with other SAPI than CLI.
