@@ -7,7 +7,8 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Helper\TableHelper;
+use Symfony\Component\Console\Helper\Table;
+use Symfony\Component\Console\Helper\TableSeparator;
 
 use Bartlett\CompatInfo\Reference\ReferenceLoader;
 use Bartlett\CompatInfo\Reference\Strategy\PreFetchStrategy;
@@ -43,7 +44,7 @@ class ReferenceListCommand extends Command
 
             $headers = array('References', 'Version', 'Loaded');
             $footers = array(
-                sprintf('Total [%d]', count($refs)),
+                sprintf('<info>Total [%d]</info>', count($refs)),
                 '',
                 ''
             );
@@ -64,15 +65,16 @@ class ReferenceListCommand extends Command
                 }
             }
 
-            $this->getApplication()
-                ->getHelperSet()
-                ->get('table2')
-                ->setLayout(TableHelper::LAYOUT_COMPACT)
+            $rows[] = new TableSeparator();
+            $rows[] = $footers;
+
+            $table = new Table($output);
+            $table
                 ->setHeaders($headers)
-                ->setFooters($footers)
                 ->setRows($rows)
-                ->render($output)
+                ->setStyle('compact')
             ;
+            $table->render();
         }
     }
 }

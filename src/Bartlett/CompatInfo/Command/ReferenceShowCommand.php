@@ -2,12 +2,15 @@
 
 namespace Bartlett\CompatInfo\Command;
 
+use Bartlett\CompatInfo\ConsoleApplication;
+
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Helper\TableHelper;
+use Symfony\Component\Console\Helper\Table;
+use Symfony\Component\Console\Helper\TableSeparator;
 
 class ReferenceShowCommand extends Command
 {
@@ -98,6 +101,18 @@ class ReferenceShowCommand extends Command
         }
 
         $php = $input->getOption('php');
+        if ($php) {
+            if (!preg_match(
+                '/^\s*(==|!=|[<>]=?)?\s*(.*)$/',
+                $php,
+                $matches
+            )) {
+                throw new \InvalidArgumentException(
+                    sprintf('Don\'t understand "%s" as a version number.', $php)
+                );
+            }
+            $php = array($matches[1], $matches[2]);
+        }
 
         $filters = 0;
         if ($input->getOption('ini')) {
@@ -136,81 +151,94 @@ class ReferenceShowCommand extends Command
         if ($filters & self::FILTER_INI) {
             $iniEntries = $reference->getIniEntries();
             if (count($iniEntries)) {
-                $rows  = $this->getApplication()->versionHelper($iniEntries, $php);
-                $this->render($php, $rows, $iniEntries, 'IniEntries')
-                    ->render($output)
-                ;
+                $this->render(
+                    $output,
+                    $iniEntries,
+                    $php,
+                    'IniEntries'
+                );
             }
         }
 
         if ($filters & self::FILTER_CONSTANTS) {
             $constants = $reference->getConstants();
             if (count($constants)) {
-                $rows  = $this->getApplication()->versionHelper($constants, $php);
-                $this->render($php, $rows, $constants, 'Constants')
-                    ->render($output)
-                ;
+                $this->render(
+                    $output,
+                    $constants,
+                    $php,
+                    'Constants'
+                );
             }
         }
 
         if ($filters & self::FILTER_FUNCTIONS) {
             $functions = $reference->getFunctions();
             if (count($functions)) {
-                $rows  = $this->getApplication()->versionHelper($functions, $php);
-                $this->render($php, $rows, $functions, 'Functions')
-                    ->render($output)
-                ;
+                $this->render(
+                    $output,
+                    $functions,
+                    $php,
+                    'Functions'
+                );
             }
         }
 
         if ($filters & self::FILTER_INTERFACES) {
             $interfaces = $reference->getInterfaces();
             if (count($interfaces)) {
-                $rows  = $this->getApplication()->versionHelper($interfaces, $php);
-                $this->render($php, $rows, $interfaces, 'Interfaces')
-                    ->render($output)
-                ;
+                $this->render(
+                    $output,
+                    $interfaces,
+                    $php,
+                    'Interfaces'
+                );
             }
         }
 
         if ($filters & self::FILTER_CLASSES) {
             $classes = $reference->getClasses();
             if (count($classes)) {
-                $rows = $this->getApplication()->versionHelper($classes, $php);
-                $this->render($php, $rows, $classes, 'Classes')
-                    ->render($output)
-                ;
+                $this->render(
+                    $output,
+                    $classes,
+                    $php,
+                    'Classes'
+                );
             }
         }
     }
 
-    protected function render(&$php, &$rows, &$results, $title)
+    protected function render(OutputInterface $output, array $args, $filter, $title)
     {
+        $rows = ConsoleApplication::versionHelper($args, $filter);
+
         $headers = array($title, 'REF', 'EXT min/Max', 'PHP min/Max');
-        
-        if ($php) {
+
+        if ($filter) {
             $footers = array(
-                sprintf('Total [%d/%d]', count($rows), count($results)),
+                sprintf('<info>Total [%d/%d]</info>', count($rows), count($args)),
                 '',
                 '',
                 ''
             );
         } else {
             $footers = array(
-                sprintf('Total [%d]', count($results)),
+                sprintf('<info>Total [%d]</info>', count($args)),
                 '',
                 '',
                 ''
             );
         }
+        $rows[] = new TableSeparator();
+        $rows[] = $footers;
 
-        return $this->getApplication()
-            ->getHelperSet()
-            ->get('table2')
-            ->setLayout(TableHelper::LAYOUT_COMPACT)
+        $table = new Table($output);
+        $table
             ->setHeaders($headers)
-            ->setFooters($footers)
             ->setRows($rows)
+            ->setStyle('compact')
         ;
+        $table->render();
     }
 }
