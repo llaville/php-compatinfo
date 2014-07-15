@@ -1,0 +1,363 @@
+= CLI
+:description: Command-Line Interface
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+
+
+== References
+
+If we want to display list of references supported, here is how to do with both versions :
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo list-references
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo reference:list
+----
+
+Now, if you want to details each reference one by one identified by its name (+<REF>+ in following examples), and got :
+
+* Extensions
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo list --reference=ALL extensions
+or
+$ phpcompatinfo list-extensions --reference=ALL
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo reference:list
+----
+
+unfloat::[]
+
+* Interfaces
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo list --reference=ALL interfaces <REF>
+or
+$ phpcompatinfo list-interfaces --reference=ALL <REF>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo reference:show --interfaces <REF>
+----
+
+unfloat::[]
+
+* Classes
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo list --reference=ALL classes <REF>
+or
+$ phpcompatinfo list-classes --reference=ALL <REF>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo reference:show --classes <REF>
+----
+
+unfloat::[]
+
+* Functions
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo list --reference=ALL functions <REF>
+or
+$ phpcompatinfo list-functions --reference=ALL <REF>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo reference:show --functions <REF>
+----
+
+unfloat::[]
+
+* Constants
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo list --reference=ALL constants <REF>
+or
+$ phpcompatinfo list-constants --reference=ALL <REF>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo reference:show --constants <REF>
+----
+
+unfloat::[]
+
+* INI entries
+
+[role="col-md-6"]
+====
+CAUTION: Feature not provided by version [label label-success]#2.26#
+====
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo reference:show --ini <REF>
+----
+
+unfloat::[]
+
+And if you want to filter results on PHP version, do for example :
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo list --reference=ALL classes <REF> --filter-version="php_5.1.0" --filter-operator="ge"
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo reference:show --classes <REF> --php=">= 5.1.0"
+----
+
+== Print parses results
+
+Where +<SOURCE>+ identify the data source, directly in [label label-primary]#CompatInfo# 2.26,
+and via the JSON configuration file in version 3.2
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive <SOURCE>
+or
+$ phpcompatinfo print --reference=ALL --recursive --report summary <SOURCE>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo analyser:run <SOURCE>
+or
+$ phpcompatinfo analyser:run <SOURCE> summary
+----
+
+unfloat::[]
+
+And with additionals reports :
+
+* extension
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive --report extension <SOURCE>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo analyser:run <SOURCE> extension
+----
+
+unfloat::[]
+
+* namespace
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive --report namespace <SOURCE>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo analyser:run <SOURCE> namespace
+----
+
+unfloat::[]
+
+* trait
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive --report trait <SOURCE>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo analyser:run <SOURCE> trait
+----
+
+unfloat::[]
+
+* interface
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive --report interface <SOURCE>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo analyser:run <SOURCE> interface
+----
+
+unfloat::[]
+
+* class
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive --report class <SOURCE>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo analyser:run <SOURCE> class
+----
+
+unfloat::[]
+
+* function
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive --report function <SOURCE>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo analyser:run <SOURCE> function
+----
+
+unfloat::[]
+
+* constant
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive --report constant <SOURCE>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo analyser:run <SOURCE> constant
+----
+
+unfloat::[]
+
+* global
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive --report global <SOURCE>
+----
+
+[role="col-md-6"]
+====
+CAUTION: Feature not provided by version [label label-primary]#3.2#
+====
+
+unfloat::[]
+
+* condition
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive --report condition <SOURCE>
+----
+
+[role="col-md-6"]
+====
+CAUTION: Feature not provided by version [label label-primary]#3.2#
+====
+
+unfloat::[]
+
+* token
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive --report token <SOURCE>
+----
+
+[role="col-md-6"]
+====
+CAUTION: Feature not provided by version [label label-primary]#3.2#
+====
+
+unfloat::[]
+
+* xml
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo print --reference=ALL --recursive --report xml <SOURCE>
+----
+
+[role="col-md-6"]
+====
+CAUTION: Feature not provided by version [label label-primary]#3.2#
+====
+
+unfloat::[]
+
+* source
+
+[role="col-md-6"]
+.Version [label label-success]#2.26#
+----
+$ phpcompatinfo -v print --reference=ALL --report source <SOURCE>
+----
+
+[role="col-md-6"]
+.Version [label label-primary]#3.2#
+----
+$ phpcompatinfo provider:display <SOURCE>
+----
+
+== Caching results
+
+CAUTION: Version [label label-success]#2.26# always cache results to speed-up later analysis. 
+Version [label label-primary]#3.2# is able (optionally) to cache results only with other SAPI than CLI.
