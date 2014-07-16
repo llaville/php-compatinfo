@@ -26,10 +26,10 @@ include::attributes.asciidoc[]
 --
 ====
 
-[role="col-md-6"]
+[role="col-md-3"]
 ====
 [panel,info]
-.Statistics
+.Statistics v2
 --
 * [label label-default]#2.0.0# support 61 references
 * [label label-info]#2.1.0# support 63 references
@@ -44,6 +44,15 @@ include::attributes.asciidoc[]
 * [label label-info]#2.23.0# support 98 references
 * [label label-info]#2.25.0# support 99 references
 * [label label-info]#2.26.0# support 100 references
+--
+====
+
+[role="col-md-3"]
+====
+[panel,info]
+.Statistics v3
+--
+* [label label-default]#3.0.0# support 100 references
 --
 ====
 
