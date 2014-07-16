@@ -5,12 +5,27 @@ include::attributes.asciidoc[]
 :icons!:
 :jumbotron:
 :footer-fullwidth:
+
+ifdef::basebackend-bootstrap[]
+
 :php5:        progress:100[role="primary"]
 :stable:      progress:100[role="success"]
 :beta:        progress:90[role="warning"]
 :alpha:       progress:40[role="danger"]
+
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+
+:php5:        php5
+:stable:      stable
+:beta:        beta
+:alpha:       alpha
+
+endif::basebackend-bootstrap[]
+
 :checked:     image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
 :unchecked:   image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+
 
 [role="col-md-6"]
 ====
