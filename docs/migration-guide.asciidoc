@@ -41,4 +41,23 @@ link:migration-guide&#45;&#45;cli.html[Command Line Interface]
 endif::basebackend-bootstrap[]
 --
 ====
+
+[role="col-sm-3 hidden-xs"]
+image:icons/font-awesome/code.png[alt="XML",icon="code",iconsfont="font-awesome",size="9x"]
+
+[role="col-sm-9"]
+====
+[panel,info]
+.XML
+--
+How you can customize [label label-primary]#CompatInfo# in CLI mode only.
+
+ifdef::basebackend-bootstrap[]
+link:migration-guide&#45;&#45;xml.html["Configuration file",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:migration-guide&#45;&#45;xml.html[Configuration file]
+endif::basebackend-bootstrap[]
+--
+====
 endif::basebackend-html[]
