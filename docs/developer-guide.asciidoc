@@ -73,6 +73,13 @@ endif::basebackend-bootstrap[]
 ifndef::basebackend-bootstrap[]
 link:developer-guide&#45;&#45;plugins.html[Plugins]
 endif::basebackend-bootstrap[]
+
+[options="header,autowidth", cols="3,5", role="table table-bordered table-striped"]
+|===========================
+| Plugin | Description
+
+| link:developer-guide&#45;&#45;cache-plugin.html[Cache] | speed up future data source parsing
+|===========================
 --
 ====
 

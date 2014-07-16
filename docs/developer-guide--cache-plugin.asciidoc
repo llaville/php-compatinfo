@@ -1,0 +1,109 @@
+= Cache Plugin
+:description: Caching specifications to speed up future data source parsing.
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:icons!:
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+
+ifdef::basebackend-bootstrap[]
+
+[role="col-md-3"]
+====
+[panel,primary]
+.{toc-title}
+--
+* xref:_register_plugin[Register Plugin]
+* xref:_doctrine_adapter[Doctrine Adapter]
+** xref:_file_cache[File cache]
+--
+====
+endif::basebackend-bootstrap[]
+
+
+[role="col-md-9"]
+== Register Plugin
+
+WARNING: You can used this plugin (from PHP Reflect) only since [label label-primary]#CompatInfo# 3.2
+
+[source,php]
+----
+<?php
+
+use Bartlett\CompatInfo;
+
+use Bartlett\Reflect\Plugin\Cache\CachePlugin;
+
+$compatinfo = new CompatInfo;
+$compatinfo->addPlugin( new CachePlugin($cache) );
+----
+Where +$cache+ is an instance of object that must implement interface
+`Bartlett\Reflect\Plugin\Cache\CacheStorageInterface`.
+
+NOTE: Use the `Bartlett\Reflect\Plugin\Cache\DefaultCacheStorage` object 
+unless you want to change the cache storage behavior.
+
+
+[role="col-md-9 col-md-offset-3"]
+== Doctrine Adapter
+
+[role="lead"]
+Use one of the most famous caching solution, provided by the Doctrine project.
+
+[source,php]
+----
+<?php
+
+use Bartlett\CompatInfo;
+
+use Bartlett\Reflect\Plugin\Cache\CachePlugin;
+use Bartlett\Reflect\Plugin\Cache\DefaultCacheStorage;
+use Bartlett\Reflect\Cache\DoctrineCacheAdapter;
+
+use Doctrine\Common\Cache\FilesystemCache;
+
+$doctrineCache = new DoctrineCacheAdapter($backend);
+
+$cache = new DefaultCacheStorage($doctrineCache);
+
+$compatinfo = new CompatInfo;
+$compatinfo->addPlugin( new CachePlugin($cache) );
+----
+Where +$backend+ is an instance of object that must implement interface
+`Doctrine\Common\Cache\CacheProvider`.
+
+
+[role="col-md-9 col-md-offset-3"]
+== File cache
+
+[role="lead"]
+Doctrine File backend to store your Reflect results in the local file system.
+
+[source,php]
+----
+<?php
+
+use Bartlett\CompatInfo;
+
+use Bartlett\Reflect\Plugin\Cache\CachePlugin;
+use Bartlett\Reflect\Plugin\Cache\DefaultCacheStorage;
+use Bartlett\Reflect\Cache\DoctrineCacheAdapter;
+
+use Doctrine\Common\Cache\FilesystemCache;
+
+$backend = new FilesystemCache(sys_get_temp_dir() . '/phpreflect');
+
+$doctrineCache = new DoctrineCacheAdapter($backend);
+
+$cache = new DefaultCacheStorage($doctrineCache);
+
+$compatinfo = new CompatInfo;
+$compatinfo->addPlugin( new CachePlugin($cache) );
+----
+
+In the source code above, we use the standard Doctrine File cache provider, and store
+results in the default system temporary directory 
+( see php http://www.php.net/manual/en/function.sys-get-temp-dir.php[sys_get_temp_dir()] function ).
