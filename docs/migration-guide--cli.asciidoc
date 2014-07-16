@@ -384,5 +384,5 @@ $ phpcompatinfo provider:display <SOURCE>
 
 == Caching results
 
-CAUTION: Version [label label-success]#2.26# always cache results to speed-up later analysis.
+CAUTION: Version [label label-success]#2.26# may cache results to speed-up later analysis.
 Version [label label-primary]#3.2# is able (optionally) to cache results only with other SAPI than CLI.
