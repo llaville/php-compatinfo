@@ -199,7 +199,7 @@ $ phpcompatinfo reference:show --ini --php="== 4.3.0" apc
 include::reference-show-apc-filter-ini.out.asciidoc[]
 ----
 +
-NOTE: The possible operators are: +{lt}+, +{lt}=+, +{gt}+, +{gt}=+, +==+, +=+, +!=+, +<>+. 
+NOTE: The possible operators are: +&#60;+, +&#60;=+, +&#62;+, +&#62;=+, +==+, +=+, +!=+, +<>+.
 
 
 When the `Analyser` plugin is installed, following lines added into `analysers` section

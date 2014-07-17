@@ -1,4 +1,4 @@
-= API
+= Server API
 :description: Application Programming Interface
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
@@ -138,7 +138,13 @@ $compatinfo->parse();
 CAUTION: While [label label-primary]#CompatInfo# 2.26 audit all events
 (does not provide ability to filter them, unless by writing a new listener),
 version 3.2 let you choose and connect a function by event.
-See link:developer-guide&#45;&#45;plugins.html[Plugins] section of the Developer Guide.
+See
+ifdef::basebackend-docbook[]
+xref:_build_your_plugins[]
+endif::basebackend-docbook[]
+ifdef::basebackend-html[]
+link:developer-guide&#45;&#45;plugins.html[Plugins] section of the Developer Guide.
+endif::basebackend-html[]
 
 [role="col-md-6"]
 [source,php]

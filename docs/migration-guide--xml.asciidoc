@@ -136,7 +136,7 @@ CAUTION: Version [label label-primary]#3.2# does not provide ability to load ref
 All references are either pre-loaded (Prefetch Strategy) or loaded only when detected (AutoDiscover Strategy).
 
 ifdef::basebackend-docbook[]
-See xref:_references[]
+See xref:_references_included[]
 endif::basebackend-docbook[]
 ifdef::basebackend-html[]
 See link:references.html[References] details.
@@ -235,6 +235,9 @@ ifdef::basebackend-html[]
 link:developer-guide&#45;&#45;plugins.html[plugins] section in the Developer Guide for details about
 http://en.wikipedia.org/wiki/Event-driven_architecture[Event-Driven Architecture].
 endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_plugins[]
+endif::basebackend-docbook[]
 ====
 
 
@@ -266,7 +269,7 @@ CAUTION: Version [label label-primary]#3.2# does not provide ability to select a
 All references are either pre-loaded (Prefetch Strategy) or loaded only when detected (AutoDiscover Strategy).
 
 ifdef::basebackend-docbook[]
-See xref:_references[]
+See xref:_references_included[]
 endif::basebackend-docbook[]
 ifdef::basebackend-html[]
 See link:references.html[References] details.

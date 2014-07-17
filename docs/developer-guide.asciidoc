@@ -17,13 +17,15 @@ image:icons/font-awesome/code.png[alt="API",icon="code",iconsfont="font-awesome"
 
 [label label-primary]#CompatInfo# comes with a complete API.
 
+See xref:_api[]
+
 image:icons/font-awesome/puzzle-piece.png[alt="Plugins",icon="puzzle-piece",iconsfont="font-awesome",size="9x"]
 *Plugins*
 
 [label label-primary]#CompatInfo# uses a Symfony http://symfony.com/doc/current/components/event_dispatcher/index.html[EventDispatcher] Component
 to allow you to easily extend the features list.
 
-See xref:_plugins[]
+See xref:_build_your_plugins[]
 
 image:icons/font-awesome/search-plus.png[alt="Analysers",icon="search-plus",iconsfont="font-awesome",size="9x"]
 *Analysers*
@@ -32,7 +34,7 @@ image:icons/font-awesome/search-plus.png[alt="Analysers",icon="search-plus",icon
 http://en.wikipedia.org/wiki/Visitor_pattern[Visitor] pattern in a simple and effective way
 to make the render of your results truly customizable.
 
-See xref:_analysers[]
+See xref:_build_your_analysers[]
 --
 endif::basebackend-docbook[]
 

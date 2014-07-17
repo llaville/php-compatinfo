@@ -1,4 +1,4 @@
-= Analysers
+= Build your Analysers
 :description: How to customize the render of your results.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]

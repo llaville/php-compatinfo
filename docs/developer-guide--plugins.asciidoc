@@ -1,4 +1,4 @@
-= Plugins
+= Build your Plugins
 :description: How to extend the features list.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]

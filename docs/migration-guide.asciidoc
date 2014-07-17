@@ -11,20 +11,38 @@ include::attributes.asciidoc[]
 ifdef::basebackend-docbook[]
 [partintro]
 --
+image:icons/font-awesome/terminal.png[alt="CLI",icon="terminal",iconsfont="font-awesome",size="9x"]
+*CLI*
+
+Begin first with the commands of [label label-primary]#CompatInfo# in CLI mode.
+
+See xref:_cli[]
+
+image:icons/font-awesome/code.png[alt="XML",icon="code",iconsfont="font-awesome",size="9x"]
+*XML*
+
+How you can customize [label label-primary]#CompatInfo# in CLI mode only.
+
+See xref:_configuration_file[]
+
+image:icons/font-awesome/code.png[alt="XML",icon="code",iconsfont="font-awesome",size="9x"]
+*API*
+
+Due to namespaces, API are incompatible in versions 2 and 3. Here are code to do the same things.
+
+See xref:_server_api[]
+--
 endif::basebackend-docbook[]
+
+ifdef::basebackend-html[]
 [role="lead"]
 Because the version 3 is a full API rewrites, and used namespaces, your old code cannot migrate
 without a little change.
 
 We will try to explain how to do in few steps.
-ifdef::basebackend-docbook[]
---
-endif::basebackend-docbook[]
 
-
-ifdef::basebackend-html[]
 [role="col-sm-3 hidden-xs"]
-image:icons/font-awesome/terminal.png[alt="API",icon="terminal",iconsfont="font-awesome",size="9x"]
+image:icons/font-awesome/terminal.png[alt="CLI",icon="terminal",iconsfont="font-awesome",size="9x"]
 
 [role="col-sm-9"]
 ====
