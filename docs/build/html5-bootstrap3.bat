@@ -51,3 +51,10 @@ REM --
 ECHO BUILDING GETTING STARTED ...
 
 "%ASCIIDOC_BIN%" -b bootstrap -a linkcss -a navbar=fixed -a totop -a theme=%ASCIIDOC_THEME% getting-started.asciidoc
+
+REM --
+REM -- MAN page
+REM --
+ECHO BUILDING MAN PAGE ...
+
+"%ASCIIDOC_BIN%" -b bootstrap -a linkcss -a navbar=fixed -a totop -a theme=%ASCIIDOC_THEME% -d article phpcompatinfo.1.asciidoc
