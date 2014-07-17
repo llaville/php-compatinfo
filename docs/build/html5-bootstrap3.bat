@@ -58,3 +58,10 @@ REM --
 ECHO BUILDING MAN PAGE ...
 
 "%ASCIIDOC_BIN%" -b bootstrap -a linkcss -a navbar=fixed -a totop -a theme=%ASCIIDOC_THEME% -d article phpcompatinfo.1.asciidoc
+
+REM --
+REM -- REFERENCES page
+REM --
+ECHO BUILDING REFERENCES ...
+
+"%ASCIIDOC_BIN%" -b bootstrap -a linkcss -a navbar=fixed -a totop -a theme=%ASCIIDOC_THEME% references.asciidoc
