@@ -60,4 +60,20 @@ link:migration-guide&#45;&#45;xml.html[Configuration file]
 endif::basebackend-bootstrap[]
 --
 ====
+
+[role="col-sm-9 col-sm-offset-3"]
+====
+[panel,info]
+.API
+--
+Due to namespaces, API are incompatible in versions 2 and 3. Here are code to do the same things.
+
+ifdef::basebackend-bootstrap[]
+link:migration-guide&#45;&#45;api.html["Application Programming Interface",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:migration-guide&#45;&#45;api.html[Application Programming Interface]
+endif::basebackend-bootstrap[]
+--
+====
 endif::basebackend-html[]
