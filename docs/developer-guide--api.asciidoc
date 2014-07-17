@@ -17,6 +17,7 @@ ifdef::basebackend-bootstrap[]
 .{toc-title}
 --
 * xref:_source_provider[Source Provider]
+* xref:_handle_results[Handle Results]
 --
 ====
 :leveloffset: 1
@@ -26,6 +27,7 @@ endif::basebackend-bootstrap[]
 include::developer-guide--source-provider.asciidoc[]
 
 [role="col-md-9 col-md-offset-3"]
+include::developer-guide--handle-results.asciidoc[]
 
 ifdef::basebackend-bootstrap[]
 :leveloffset: 0

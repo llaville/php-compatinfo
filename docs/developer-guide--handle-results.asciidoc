@@ -1,0 +1,75 @@
+ifndef::basebackend-docbook[]
+
+= Handle Results
+:description: Learn how to explore and exploit parsing results.
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:icons!:
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+
+endif::basebackend-docbook[]
+
+
+== Using analysers
+
+[role="lead"]
+To explore and exploit results, we need first to parse the data source,
+and connect at least one analyser.
+
+On following example, we will use the standard `SummaryAnalyser`, but you are free
+to use any other analysers available and even your owns.
+
+IMPORTANT: Each analyser, should at least, implement the `Bartlett\Reflect\Analyser\AnalyserInterface`
+and provide a `getMetrics()` method (to return results).
+
+[source,php]
+----
+<?php
+require_once 'vendor/autoload.php';
+
+use Bartlett\CompatInfo;
+use Bartlett\CompatInfo\Analyser;
+
+use Bartlett\Reflect\ProviderManager;
+use Bartlett\Reflect\Provider\SymfonyFinderProvider;
+use Bartlett\Reflect\Plugin\Analyser\AnalyserPlugin;
+
+use Symfony\Component\Finder\Finder;
+
+$dirs = '/path/to/source';
+
+$finder = new Finder();
+$finder->files()
+    ->name('*.php')
+    ->in($dirs);
+
+$provider = new SymfonyFinderProvider($finder);
+
+$sourceId = 'dataSourceIdent';
+
+$pm = new ProviderManager;
+$pm->set($sourceId, $provider);
+
+$compatinfo = new CompatInfo;
+$compatinfo->setProviderManager($pm);
+$compatinfo->addPlugin(
+    new AnalyserPlugin(
+        array(
+            new Analyser\SummaryAnalyser(),
+        )
+    )
+);
+$compatinfo->parse();
+
+$metrics = $compatinfo->getMetrics();
+
+$versions   = $metrics[$sourceId]['sa.versions'];
+$classes    = $metrics[$sourceId]['sa.classes'];
+$functions  = $metrics[$sourceId]['sa.functions'];
+$extensions = $metrics[$sourceId]['sa.extensions'];
+----
+NOTE: `sa.` prefix corresponds to class constant METRICS_PREFIX of SummaryAnalyser.
