@@ -1,0 +1,203 @@
+= PHPCOMPATINFO(1)
+:doctype:     manpage
+include::attributes.asciidoc[]
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+
+
+== NAME
+phpcompatinfo - PHP library that parse any data source to find out the minimum version and extensions required for it to run.
+
+
+== SYNOPSIS
+*phpcompatinfo* ['options'] 'command' ['arguments']
+
+
+== DESCRIPTION
+The phpcompatinfo(1) command parse any data source, defined in a json configuration file, to find out
+elements, such as classes, interfaces, functions, constants, namespaces.
+
+
+== OPTIONS
+*-h, --help*::
+    Display this help message.
+
+*-q, --quiet*::
+    Do not output any message.
+
+*-v|vv|v, --verbose*::
+    Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug.
+
+*-V, --version*::
+    Display this application version.
+
+*--ansi*::
+    Force ANSI output.
+
+*--no-ansi*::
+    Disable ANSI output.
+
+*--profile*::
+    Display timing and memory usage information.
+
+
+== analyser:list COMMAND
+The phpcompatinfo(1) 'analyser:list' command is used to show what analysers are installed
+(see <<X1,CONF FILES>> section).
+
+
+== analyser:run COMMAND
+The phpcompatinfo(1) 'analyser:run' command is used to analyse a data source and display results.
+
+Usage:
+
+  phpcompatinfo analyser:run [--alias] [--redraw-freq="..."] source [analysers1] ... [analysersN]
+
+Where:
+
+*source*::
+  Identify a data source declared in a json configuration file (see <<X1,CONF FILES>> section)
+
+*--alias*::
+  If set, the source refers to its alias
+
+*--redraw-freq*::
+  How many times should the progress bar be updated? (default: 1)
+
+*analysers1* ... *analysersN*::
+  Identify one or more analyser to execute. See 'analyser:list' command to know what analysers are available.
+
+
+== plugin:list COMMAND
+The phpcompatinfo(1) 'plugin:list' command is used to show what plugins are installed
+(see <<X1,CONF FILES>> section).
+
+== provider:list COMMAND
+The phpcompatinfo(1) 'provider:list' command is used to show what data sources are declared
+in a json configuration file (see <<X1,CONF FILES>> section).
+
+== provider:show COMMAND
+The phpcompatinfo(1) 'provider:show' command is used to show files in data sources.
+
+Usage:
+
+  phpcompatinfo provider:show [--alias] source
+
+Where:
+
+*source*::
+  Identify a data source declared in a json configuration file (see <<X1,CONF FILES>> section)
+
+*--alias*::
+  If set, the source refers to its alias
+
+
+== provider:display COMMAND
+The phpcompatinfo(1) 'provider:display' command is used to show source code of a file in a data source.
+
+Usage:
+
+  phpcompatinfo provider:display [--alias] source file
+
+Where:
+
+*--alias*::
+  If set, the source refers to its alias
+
+*source*::
+  Identify a data source declared in a json configuration file (see <<X1,CONF FILES>> section)
+
+*file*::
+  Relative path to a file in the data source
+
+
+== reference:list COMMAND
+The phpcompatinfo(1) 'reference:list' command is used to list all references supported.
+
+Usage:
+
+  phpcompatinfo reference:list [--raw]
+
+Where:
+
+*--raw*::
+  Presents list in a raw format
+
+
+== reference:show COMMAND
+The phpcompatinfo(1) 'reference:show' command is used to introspect a reference.
+
+Usage:
+
+  phpcompatinfo reference:show [--php="..."] [--ini] [--constants] [--functions] [--interfaces] [--classes] [--raw] name
+
+Where:
+
+*--php*::
+  Filter results on PHP version
+
+*--ini*::
+  Show ini Entries
+
+*--constants*::
+  Show constants
+
+*--functions*::
+  Show functions
+
+*--interfaces*::
+  Show interfaces
+
+*--classes*::
+  Show classes
+
+*--raw*::
+  Presents list in a raw format
+
+*name*::
+  Name of a reference (case insensitive)
+
+
+== EXIT STATUS
+*0*::
+    Success
+
+*1*::
+    Failure (syntax or usage error; configuration error; unexpected error).
+
+[[X1]]
+== CONF FILES
+A configuration file contains data sources that can be analysed, but also optional plugins and analysers installed.
+Require configuration file is loaded in the following order:
+
+. The CONF_FILE specified by the environment variable `COMPATINFO`.
+. `phpcompatinfo.json` from the current directory.
+. `phpcompatinfo.json` from the User `$HOME/.config` directory.
+. `phpcompatinfo.json` from the `/etc` directory.
+
+
+== BUGS
+Report any issue at <https://github.com/llaville/php-compat-info/issues>
+
+
+== AUTHORS
+PHP_CompatInfo was originally written by Davey Shafik in 2004.
+
+Remi Collet, contributor of many extensions reference and unit tests, joined the project since version 2.0.0RC2
+
+The Command-Line Interface (CLI) version was introduced in version 2.0 and is written by Laurent Laville.
+
+
+== SEE ALSO
+Main web site: <http://php5.laurent-laville.org/compatinfo/>
+
+
+== COPYRIGHT
+Copyright \(C) 2010-2014 Laurent Laville.
+
+
+== LICENSE
+Free use of this software is granted under the terms of the BSD 3-clause license.
