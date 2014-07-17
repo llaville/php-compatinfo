@@ -19,45 +19,45 @@ REM -- WEB HTML CHUNKED FORMAT
 REM --
 ECHO GENERATING WEB HTML CHUNKED FORMAT ...
 
-"%A2X_BIN%" %1 --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked -D . phpreflect-book.asciidoc
+"%A2X_BIN%" %1 --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f chunked -D . phpcompatinfo-book.asciidoc
 
 REM --
 REM -- HTML HELP FORMAT
 REM --
 ECHO GENERATING HTML HELP FORMAT ...
 
-"%A2X_BIN%" %1 --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp -D . phpreflect-book.asciidoc
+"%A2X_BIN%" %1 --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f htmlhelp -D . phpcompatinfo-book.asciidoc
 
-"%HHC_BIN%" phpreflect-book.hhp
+"%HHC_BIN%" phpcompatinfo-book.hhp
 
 REM --
 REM -- PDF A4 FORMAT
 REM --
 ECHO GENERATING PDF A4 FORMAT ...
 
-"%A2X_BIN%" %1 %2 --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop phpreflect-book.asciidoc
+"%A2X_BIN%" %1 %2 --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop phpcompatinfo-book.asciidoc
 
-MOVE /Y phpreflect-book.pdf phpreflect-book-a4.pdf
+MOVE /Y phpcompatinfo-book.pdf phpcompatinfo-book-a4.pdf
 
 REM --
 REM -- PDF US FORMAT
 REM --
 ECHO GENERATING PDF US FORMAT ...
 
-"%A2X_BIN%" %1 %2 --xsl-file="%ASCIIDOC%"/docbook-xsl/fo-custom.xsl --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop phpreflect-book.asciidoc
+"%A2X_BIN%" %1 %2 --xsl-file="%ASCIIDOC%"/docbook-xsl/fo-custom.xsl --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f pdf --fop phpcompatinfo-book.asciidoc
 
-MOVE /Y phpreflect-book.pdf phpreflect-book-us.pdf
+MOVE /Y phpcompatinfo-book.pdf phpcompatinfo-book-us.pdf
 
 REM --
 REM -- ePUB FORMAT
 REM --
 ECHO GENERATING ePUB FORMAT ...
 
-"%A2X_BIN%" %1 %2 -a docinfo --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f epub phpreflect-book.asciidoc
+"%A2X_BIN%" %1 %2 -a docinfo --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f epub phpcompatinfo-book.asciidoc
 
 REM --
 REM -- Single xHTML page FORMAT
 REM --
 ECHO GENERATING Single xHTML page FORMAT ...
 
-"%A2X_BIN%" %1 %2 --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f xhtml phpreflect-book.asciidoc
+"%A2X_BIN%" %1 %2 --resource=./images -L --icons --stylesheet=./stylesheets/docbook-xsl.css -d book -f xhtml phpcompatinfo-book.asciidoc
