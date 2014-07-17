@@ -234,6 +234,7 @@ $ phpcompatinfo analyser:list
  Function      Bartlett\CompatInfo\Analyser\FunctionAnalyser
  Interface     Bartlett\CompatInfo\Analyser\InterfaceAnalyser
  Namespace     Bartlett\CompatInfo\Analyser\NamespaceAnalyser
+ Structure     Bartlett\Reflect\Analyser\StructureAnalyser
  Summary       Bartlett\CompatInfo\Analyser\SummaryAnalyser
  Trait         Bartlett\CompatInfo\Analyser\TraitAnalyser
 ----
