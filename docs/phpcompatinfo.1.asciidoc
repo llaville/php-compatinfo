@@ -1,5 +1,6 @@
 = PHPCOMPATINFO(1)
 :doctype:     manpage
+include::revision.asciidoc[]
 include::attributes.asciidoc[]
 :iconsfont:   font-awesome
 :jumbotron:
