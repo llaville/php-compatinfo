@@ -41,7 +41,9 @@ REM -- MIGRATION GUIDE
 REM --
 ECHO BUILDING MIGRATION GUIDE ...
 
-"%ASCIIDOC_BIN%" -b bootstrap -a linkcss -a navbar=fixed -a totop -a theme=%ASCIIDOC_THEME% migration-guide.asciidoc
+FOR %%f IN (migration-guide*.asciidoc) DO (
+"%ASCIIDOC_BIN%" -b bootstrap -a linkcss -a navbar=fixed -a totop -a theme=%ASCIIDOC_THEME% %%f
+)
 
 REM --
 REM -- GETTING STARTED page
