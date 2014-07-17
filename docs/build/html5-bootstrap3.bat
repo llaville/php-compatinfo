@@ -35,7 +35,6 @@ ECHO BUILDING DEVELOPER GUIDE ...
 FOR %%f IN (developer-guide*.asciidoc) DO (
 "%ASCIIDOC_BIN%" -b bootstrap -a linkcss -a navbar=fixed -a totop -a theme=%ASCIIDOC_THEME% %%f
 )
-"%ASCIIDOC_BIN%" -b bootstrap -a linkcss -a navbar=fixed -a totop -a theme=%ASCIIDOC_THEME% api-compared.asciidoc
 
 REM --
 REM -- MIGRATION GUIDE
