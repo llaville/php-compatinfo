@@ -98,7 +98,7 @@ class CompatInfo extends AbstractDispatcher
     }
 
     /**
-     * Returns all informations collected via VersionAnalyser
+     * Returns all informations collected via any analyser
      * and the Reflect AnalyserPlugin.
      *
      * @return array
