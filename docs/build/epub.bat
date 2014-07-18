@@ -8,6 +8,13 @@ REM --- Released under the Apache 2 license (http://www.apache.org/licenses/LICE
 REM --- (c) 2014 Laurent Laville
 REM ---
 
+REM
+REM     See http://www.pnotepad.org/devlog/archives/000173.html to learn hown to configure XML catalogs on Windows
+REM     Require to generate PDF correctly
+REM
+
+set XML_CATALOG_FILES=c:\xml\catalog.xml
+
 IF "%ASCIIDOC%"==""       SET "ASCIIDOC=C:\asciidoc-8.6.9"
 IF "%ASCIIDOC_BIN%"==""   SET "ASCIIDOC_BIN=%ASCIIDOC%\asciidoc.py"
 IF "%A2X_BIN%"==""        SET "A2X_BIN=%ASCIIDOC%\a2x.py"
