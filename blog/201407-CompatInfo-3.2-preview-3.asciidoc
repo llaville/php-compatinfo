@@ -1,0 +1,31 @@
+:doctitle:    CompatInfo 3.2 preview
+:description: Latest preview before stable release
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-07-18
+:pubdate:   Fri, 18 Jul 2014 15:49:15 +0200
+:summary:   Latest preview before stable release
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-4"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/calendar.png[alt="preview",icon="calendar",size="4x"]
+
+The next stable version 3.2 of [label label-primary]#CompatInfo# is now ready to be release as stable.
+
+We will wait final version of PHP 5.5.15 and PHP 5.4.31 before to publish it.
+
+If you want to test this preview version, you can either :
+
+* clone the GitHub repository at least since commit 2185d7e9d2
+* download the PHAR version at http://bartlett.laurent-laville.org/get/phpcompatinfo-3.1.0-121-g2185d7e.phar
+
+Full documentation is now available at 
+http://php5.laurent-laville.org/compatinfo/manual/3.2/en/
+____
