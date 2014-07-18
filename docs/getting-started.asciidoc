@@ -42,9 +42,10 @@ With both methods then you have this output :
 [role="cli-output"]
 ====
 ----
-phpCompatInfo version 3.1.0 build b9b813a906d0f2e18608c1c6d153418d99582622
+phpCompatInfo version 3.2.0 build ...
 ----
 ====
+NOTE: [big]#...# represents the Git commit hash of this version
 
 Other alternative installations are possible.
 Please refer to the
