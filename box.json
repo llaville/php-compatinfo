@@ -42,9 +42,9 @@
                     ],
                     "symfony": [
                         {
-                            "console": "2.5.0",
-                            "eventdispatcher": "2.5.0",
-                            "finder": "2.5.0"
+                            "console": "2.5.2",
+                            "eventdispatcher": "2.5.2",
+                            "finder": "2.5.2"
                         }
                     ],
                     "phpunit": [
