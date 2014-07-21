@@ -43,7 +43,7 @@
                 {
                     "nikic": [
                         {
-                            "PHP-Parser": "1.0.0-beta1"
+                            "php-parser": "1.0.0beta1"
                         }
                     ],
                     "symfony": [
