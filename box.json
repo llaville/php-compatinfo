@@ -58,9 +58,9 @@
                             "php-timer": "1.0.5"
                         }
                     ],
-                    "llaville": [
+                    "bartlett": [
                         {
-                            "php-reflect": "2.0.0"
+                            "php-reflect": "2.2.0"
                         }
                     ]
                 }
