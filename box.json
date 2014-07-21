@@ -6,6 +6,12 @@
     "compression": "GZ",
     "files": [
         "LICENSE",
+        "vendor/nikic/php-parser/LICENSE",
+        "vendor/symfony/console/Symfony/Component/Console/LICENSE",
+        "vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/LICENSE",
+        "vendor/symfony/finder/Symfony/Component/Finder/LICENSE",
+        "vendor/phpunit/php-timer/LICENSE",
+        "vendor/bartlett/php-reflect/LICENSE",
         "vendor/autoload.php"
     ],
     "finder": [
