@@ -48,7 +48,6 @@ class SummaryAnalyser extends AbstractAnalyser
             self::METRICS_PREFIX . '.methods'       => array(),
             self::METRICS_PREFIX . '.functions'     => array(),
             self::METRICS_PREFIX . '.constants'     => array(),
-            self::METRICS_PREFIX . '.internals'     => array(),
             self::METRICS_PREFIX . '.versions'      => array(
                 'ext.min' => '',
                 'ext.max' => '',
@@ -69,6 +68,16 @@ class SummaryAnalyser extends AbstractAnalyser
     {
         $count = $this->count;
         $lines = array();
+
+        $userFunctions = $internalFunctions = 0;
+
+        foreach ($count[self::METRICS_PREFIX . '.functions'] as $function) {
+            if ($function['ref'] == 'user') {
+                $userFunctions++;
+            } else {
+                $internalFunctions++;
+            }
+        }
 
         $lines['reportTitle'] = array(
             '%s<info>Summary Analysis</info>',
@@ -105,7 +114,8 @@ class SummaryAnalyser extends AbstractAnalyser
         );
         $lines['functions'] = array(
             '  Functions                                 %10d',
-            array(count($count[self::METRICS_PREFIX . '.functions']))
+            array($userFunctions)
+
         );
         $lines['constants'] = array(
             '  Constants                                 %10d',
@@ -113,7 +123,7 @@ class SummaryAnalyser extends AbstractAnalyser
         );
         $lines['internalFunctions'] = array(
             '  Internal Functions                        %10d',
-            array(count($count[self::METRICS_PREFIX . '.internals']))
+            array($internalFunctions)
         );
 
         $lines['versions'] = array(
@@ -175,22 +185,5 @@ class SummaryAnalyser extends AbstractAnalyser
         foreach ($package->getConstants() as $constant) {
             $constant->accept($this);
         }
-    }
-
-    /**
-     * Explore contents of each dependency (DependencyModel)
-     * found in the current namespace.
-     *
-     * @param object $dependency Reflect the current dependency explored
-     *
-     * @return void
-     */
-    public function visitDependencyModel($dependency)
-    {
-        $name = $dependency->getName();
-        $versions = $this->processInternal($name);
-        $this->count[static::METRICS_PREFIX . '.internals'][$name] = $versions;
-
-        $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
     }
 }
