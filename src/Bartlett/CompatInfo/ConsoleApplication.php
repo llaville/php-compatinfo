@@ -117,7 +117,7 @@ class ConsoleApplication extends Application
                             // add each command provided by the plugin
                             $cmd = array_shift($cmds);
                             if (strpos(get_class($cmd), 'AnalyserRunCommand')) {
-                                // replace Reflect Command by CompaInfo Command
+                                // replace Reflect Command by CompatInfo Command
                                 $cmd = new AnalyserRunCommand;
                             }
                             $commands[] = $cmd;
