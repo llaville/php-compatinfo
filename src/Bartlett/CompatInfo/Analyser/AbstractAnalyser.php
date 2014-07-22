@@ -230,7 +230,10 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     public function visitFunctionModel($function)
     {
         $name = $function->getName();
-        $this->count[static::METRICS_PREFIX . '.functions'][$name] = self::$php4;
+        $vers = self::$php4;
+        $vers['ref'] = 'user';
+
+        $this->count[static::METRICS_PREFIX . '.functions'][$name] = $vers;
 
         if ($function->inNamespace()) {
             $min = '5.3.0';
