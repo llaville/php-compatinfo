@@ -1,0 +1,92 @@
+:doctitle:    CompatInfo 3.2 preview
+:description: Enhance detection of class method.
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-07-22
+:pubdate:   Tue, 22 Jul 2014 12:18:21 +0200
+:summary:   Fixed issue GH-100 explained
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-5"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/calendar.png[alt="preview",icon="calendar",size="4x"]
+
+****
+The next stable version 3.2 of [label label-primary]#CompatInfo# is now finished to be release as stable.
+
+We will wait final version of PHP 5.5.15 and PHP 5.4.31 before to publish it.
+****
+
+It's the moment to explain new major improvement in class method detection that was fixed today :
+See https://github.com/llaville/php-compat-info/issues/100[GH-100] report.
+
+[WARNING]
+==========
+To solve the GH-100 issue, [label label-primary]#CompatInfo# 3.2 will need the new Reflect 2.2 API.
+
+See commits :
+
+ * https://github.com/llaville/php-reflect/commit/4605d289b3064787f0550891931472d59dd3dafa[4605d28] on Reflect
+ * https://github.com/llaville/php-reflect/commit/049e3ddcc114c7ac6b59d67822371cc7f8190cc6[049e3dd] on Reflect
+ * https://github.com/llaville/php-compat-info/commit/828eb334d6e4b12e5e9efc67b8b6c61d1d9a701d[828eb33] on CompatInfo
+==========
+
+.Summary Analysis will report something like:
+----
+Data Source Analysed
+
+Directories                                          1
+Files                                                1
+
+
+Summary Analysis
+
+Summary
+  Extensions                                         1
+  Namespaces                                         1
+  Interfaces                                         0
+  Traits                                             0
+  Classes                                            1
+  Methods                                            1
+  Functions                                          0
+  Constants                                          0
+  Internal Functions                                 0
+
+Versions
+  PHP min                                        5.3.0
+  PHP max
+----
+NOTE: Notice that we count now in this analyser the `Classes` (DateTime) and `Methods` (diff) used,
+and not only user elements.
+
+.Classes Analysis will report something like:
+----
+ Class     REF EXT min/Max PHP min/Max
+ DateTime      5.2.0       5.3.0
+ Total [1]                 5.3.0
+----
+NOTE: Version 5.3 is due to usage of `DateTime::diff` method.
+
+.Extensions Analysis will report something like:
+----
+ Extension REF EXT min/Max PHP min/Max
+ date          5.2.0       5.3.0
+ Total [1]                 5.3.0
+----
+NOTE: Version 5.3 is due to usage of `DateTime::diff` method.
+
+.Namespaces Analysis will report something like:
+----
+ Namespace REF EXT min/Max PHP min/Max
+ +global                   5.3.0
+ Total [1]                 5.3.0
+----
+NOTE: Version 5.3 is due to usage of `DateTime::diff` method.
+
+____
