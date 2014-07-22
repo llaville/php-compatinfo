@@ -270,17 +270,58 @@ abstract class AbstractAnalyser extends ReflectAnalyser
      *
      * @return void
      */
-   public function visitDependencyModel($dependency)
+    public function visitDependencyModel($dependency)
     {
         $name = $dependency->getName();
         $argc = 0;
 
-        $versions = $this->processInternal($name, $argc);
-        $type     = $this->loader->getTypeElement();
+        if ($dependency->isClassMethod()) {
+            list($element, $method) = explode('::', $name);
+            $name = $element;
+        } else {
+            $element = $name;
+        }
 
-        if ($type == static::METRICS_GROUP) {
+        $ref = $this->findReference($element);
+        if (!$ref) {
+            // stop here if user element
+            return;
+        }
+
+        if ($dependency->isClassMethod()) {
+            $elements = $ref->getClassMethods();
+
+            if (!isset($elements[$element][$method])) {
+                return;
+            }
+            $this->count[static::METRICS_PREFIX . '.methods'][$dependency->getName()]
+                = $elements[$element][$method];
+
+            $versions = $elements[$element][$method];
+            $type     = 'classes';
+
+            self::updateVersion(
+                $versions['php.min'],
+                $this->count[static::METRICS_PREFIX . '.extensions'][$ref->getName()]['php.min']
+            );
+            self::updateVersion(
+                $versions['php.max'],
+                $this->count[static::METRICS_PREFIX . '.extensions'][$ref->getName()]['php.max']
+            );
+        } else {
+            $versions = $this->processInternal($name, $argc);
+            $type     = $this->loader->getTypeElement();
+        }
+
+        if (in_array(static::METRICS_GROUP, array($type, 'internals', 'extensions', 'namespaces'))) {
             $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
             $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
+
+            $this->updatePackageVersion(
+                $versions['php.min'],
+                $versions['php.max'],
+                $dependency->getNamespaceName()
+            );
         }
 
         if ('extension_loaded' == $name) {

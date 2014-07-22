@@ -82,5 +82,11 @@ class ClassAnalyser extends AbstractAnalyser
         foreach ($package->getClasses() as $class) {
             $class->accept($this);
         }
+
+        foreach ($package->getDependencies() as $dependency) {
+            if ($dependency->isClassMethod()) {
+                $dependency->accept($this);
+            }
+        }
     }
 }
