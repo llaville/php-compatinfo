@@ -163,8 +163,6 @@ class ReferenceLoader implements \Countable
      */
     public function __toString()
     {
-        #$refs = $this->getProvidedReferences();   $refs = ( print_r( $refs, true ) ); return $refs;
-
         $eol = "\n";
         $str = '';
 
