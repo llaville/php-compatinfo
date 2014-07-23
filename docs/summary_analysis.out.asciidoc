@@ -2,20 +2,21 @@
 Data Source Analysed
 
 Directories                                          8
-Files                                              124
+Files                                              123
+
 
 Summary Analysis
 
 Summary
-  Extensions                                        11
+  Extensions                                        10
   Namespaces                                         8
-  Interfaces                                         3
+  Interfaces                                         4
   Traits                                             0
-  Classes                                          124
-  Methods                                          761
+  Classes                                          132
+  Methods                                          732
   Functions                                          3
-  Constants                                         12
-  Internal Functions                                84
+  Constants                                         11
+  Internal Functions                                43
 
 Versions
   PHP min                                        5.3.7
