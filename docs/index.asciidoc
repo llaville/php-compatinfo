@@ -42,7 +42,7 @@ endif::[]
 --
 [bg-success]*Stable Release*
 
-Next release will enhance stability on July 24, 2014.
+Last branch 3 release was published on July 24, 2014.
 
 ifdef::basebackend-bootstrap[]
 link:./manual/current/en/getting-started.html["Learn more",role="primary",options="block"]
