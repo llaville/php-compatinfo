@@ -45,7 +45,7 @@ Put a file named [label label-default]#composer.json# at the root of your projec
 ----
 {
     "require": {
-        "bartlett/php-compatinfo": "3.*"
+        "bartlett/php-compatinfo": "~3.2"
     }
 }
 ----
@@ -60,7 +60,7 @@ You can also use Composer to create a new project from an existing [label label-
 This is the equivalent of doing a git clone checkout followed by a composer install of the vendors.
 
 ----
-$ php composer.phar create-project bartlett/php-compatinfo path 3.*
+$ php composer.phar create-project bartlett/php-compatinfo path 3.2.0
 ----
 Where +path+ is your install directory.
 ====
