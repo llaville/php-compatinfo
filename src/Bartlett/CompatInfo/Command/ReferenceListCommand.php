@@ -41,6 +41,7 @@ class ReferenceListCommand extends Command
         } else {
             $rows = array();
             $refs = $loader->getProvidedReferences();
+            ksort($refs);
 
             $headers = array('References', 'Version', 'Loaded');
             $footers = array(
