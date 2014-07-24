@@ -48,6 +48,8 @@ class OpensslExtensionTest extends GenericTest
             // requires OPENSSL_VERSION_NUMBER >= 0x0090806fL
             // and !OPENSSL_NO_TLSEXT
             'OPENSSL_TLSEXT_SERVER_NAME',
+            // requires HAVE_EVP_PKEY_EC
+            'OPENSSL_KEYTYPE_EC',
         );
 
         self::$obj = new OpensslExtension();
