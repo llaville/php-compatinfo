@@ -556,7 +556,7 @@ endif::basebackend-docbook[]
 | {unchecked}
 | {checked}
 | ssh2
-{php5}
+0.12 {beta}
 | [label label-default]#2.0.0#
 
 | {checked}
@@ -568,7 +568,7 @@ endif::basebackend-docbook[]
 | {unchecked}
 | {checked}
 | stomp
-{php5}
+1.0.5 {stable}
 | [label label-info]#2.16.0#
 
 | {unchecked}

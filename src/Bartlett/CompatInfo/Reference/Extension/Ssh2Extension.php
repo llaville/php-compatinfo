@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class Ssh2Extension extends AbstractReference
 {
     const REF_NAME    = 'ssh2';
-    const REF_VERSION = '0.12'; // 2012-10-15
+    const REF_VERSION = '0.12';    // 2012-10-15 (beta)
 
     public function __construct()
     {

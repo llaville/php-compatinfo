@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class StompExtension extends AbstractReference
 {
     const REF_NAME    = 'stomp';
-    const REF_VERSION = '1.0.5'; // 2012-11-18
+    const REF_VERSION = '1.0.5';    // 2012-11-18 (stable)
 
     public function __construct()
     {

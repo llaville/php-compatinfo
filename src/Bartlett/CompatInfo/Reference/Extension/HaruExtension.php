@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class HaruExtension extends AbstractReference
 {
     const REF_NAME    = 'haru';
-    const REF_VERSION = '1.0.4'; // 2012-12-23
+    const REF_VERSION = '1.0.4';    // 2012-12-23 (stable)
 
     public function __construct()
     {
