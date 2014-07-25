@@ -18,10 +18,10 @@ _currently v{stable}_
 
 [role="col-md-6"]
 ====
-[panel,primary]
+[panel,warning]
 .v2
 --
-[bg-primary]*Stable Release*
+[bg-warning]*Stable Release, now unmaintained*
 
 Last branch 2 release was published on December 13, 2013.
 
@@ -37,10 +37,10 @@ endif::[]
 
 [role="col-md-6"]
 ====
-[panel,success]
+[panel,primary]
 .v3
 --
-[bg-success]*Stable Release*
+[bg-primary]*Stable Release*
 
 Last branch 3 release was published on July 24, 2014.
 
