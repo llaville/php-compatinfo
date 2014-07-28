@@ -1,0 +1,40 @@
+:doctitle:    CompatInfo 3.3 preview
+:description: part 1
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-07-28
+:pubdate:   Mon, 28 Jul 2014 18:54:00 +0200
+:summary:   A new command to validate json config file
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-7"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/clock-o.png[alt="future",icon="clock-o",size="4x"]
+
+[WARNING]
+====
+The [label label-primary]#CompatInfo# Command-Line Interface always needs a file in http://json.org/[JSON] format to run.
+It should be found either in the current, `$HOME/.config/`, or `/etc` directory.
+
+By setting the `COMPATINFO` environment variable it is possible to set the filename
+of `phpcompatinfo.json` to something else.
+
+E.g:  `COMPATINFO=my-phpcompatinfo.json`
+====
+
+It's very usefull to validate structure of the json configuration file before to run any command
+of [label label-primary]#CompatInfo#
+
+.Just run the command below
+====
+----
+$ phpcompatinfo validate
+----
+====
+____
