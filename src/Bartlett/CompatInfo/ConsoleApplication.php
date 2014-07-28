@@ -28,6 +28,7 @@ use Bartlett\Reflect\Command\PluginListCommand;
 use Bartlett\CompatInfo\Command\ReferenceListCommand;
 use Bartlett\CompatInfo\Command\ReferenceShowCommand;
 use Bartlett\CompatInfo\Command\AnalyserRunCommand;
+use Bartlett\CompatInfo\Command\ValidateCommand;
 
 /**
  * Console Application.
@@ -86,6 +87,7 @@ class ConsoleApplication extends Application
     protected function getDefaultCommands()
     {
         $commands   = parent::getDefaultCommands();
+        $commands[] = new ValidateCommand;
         $commands[] = new PluginListCommand;
         $commands[] = new ProviderListCommand;
         $commands[] = new ProviderShowCommand;
