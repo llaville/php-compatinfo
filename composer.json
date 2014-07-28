@@ -18,7 +18,8 @@
         "bartlett/php-reflect": "~2.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0"
+        "phpunit/phpunit": "~4.0",
+        "doctrine/cache": "~1.3"
     },
     "suggest": {
         "doctrine/cache": "Allow caching results, since bartlett/php-reflect 2.2"
