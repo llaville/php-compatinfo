@@ -12,6 +12,7 @@
         "vendor/symfony/finder/Symfony/Component/Finder/LICENSE",
         "vendor/phpunit/php-timer/LICENSE",
         "vendor/bartlett/php-reflect/LICENSE",
+        "vendor/seld/jsonlint/LICENSE",
         "vendor/autoload.php"
     ],
     "finder": [
@@ -35,6 +36,10 @@
         {
             "name": "*.php",
             "in": "vendor/bartlett/php-reflect/src"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/seld/jsonlint"
         }
     ],
     "metadata": [
@@ -61,6 +66,11 @@
                     "bartlett": [
                         {
                             "php-reflect": "2.2.0"
+                        }
+                    ],
+                    "seld": [
+                        {
+                            "jsonlint": "1.2.0"
                         }
                     ]
                 }
