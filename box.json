@@ -13,6 +13,7 @@
         "vendor/phpunit/php-timer/LICENSE",
         "vendor/bartlett/php-reflect/LICENSE",
         "vendor/seld/jsonlint/LICENSE",
+        "vendor/doctrine/cache/LICENSE",
         "vendor/autoload.php"
     ],
     "finder": [
@@ -40,6 +41,10 @@
         {
             "name": "*.php",
             "in": "vendor/seld/jsonlint"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/doctrine/cache/lib"
         }
     ],
     "metadata": [
@@ -71,6 +76,11 @@
                     "seld": [
                         {
                             "jsonlint": "1.2.0"
+                        }
+                    ],
+                    "doctrine": [
+                        {
+                            "cache": "1.3.0"
                         }
                     ]
                 }
