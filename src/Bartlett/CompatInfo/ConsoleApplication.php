@@ -113,7 +113,9 @@ class ConsoleApplication extends Application
             foreach ($plugins as $plugin) {
                 if (isset($plugin['class']) && is_string($plugin['class'])) {
                     // try to load the plugin
-                    if (class_exists($plugin['class'])) {
+                    if (class_exists($plugin['class'])
+                        && method_exists($plugin['class'], 'getCommands')
+                    ) {
                         $cmds = $plugin['class']::getCommands();
                         while (!empty($cmds)) {
                             // add each command provided by the plugin
