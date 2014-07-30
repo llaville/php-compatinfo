@@ -364,7 +364,7 @@ endif::basebackend-docbook[]
 | {checked}
 | {unchecked}
 | mongo
-1.5.4 {stable}
+1.5.5 {stable}
 | [label label-info]#2.8.0#
 
 | {checked}
