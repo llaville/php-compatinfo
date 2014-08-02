@@ -68,7 +68,7 @@ ifdef::basebackend-html[]
 .Statistics v3
 --
 * [label label-default]#3.0.0# support 100 references
-* [label label-info]#3.3.0# support 101 references
+* [label label-info]#3.3.0# support 102 references
 --
 ====
 endif::basebackend-html[]
@@ -91,6 +91,7 @@ ifdef::basebackend-docbook[]
 
 .Statistics v3
 * 3.0.0 support 100 references
+* 3.3.0 support 102 references
 endif::basebackend-docbook[]
 
 
@@ -679,6 +680,12 @@ endif::basebackend-docbook[]
 | xsl
 0.1 {stable}
 | [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| yac
+0.9.1 {beta}
+| [label label-info]#3.3.0#
 
 | {unchecked}
 | {checked}

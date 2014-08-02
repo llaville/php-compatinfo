@@ -1,6 +1,6 @@
 <?php
 /**
- * Unit tests for PHP_CompatInfo, yac extension Reference
+ * Unit tests for PHP_CompatInfo, Yac extension Reference
  *
  * PHP version 5
  *
@@ -12,7 +12,7 @@
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    GIT: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
- * @since      Class available since Release 3.2.1
+ * @since      Class available since Release 3.3.0
  */
 
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
@@ -22,7 +22,7 @@ use Bartlett\CompatInfo\Reference\Extension\YacExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
- * about yac extension
+ * about Yac extension
  *
  * @category   PHP
  * @package    PHP_CompatInfo
