@@ -68,6 +68,7 @@ ifdef::basebackend-html[]
 .Statistics v3
 --
 * [label label-default]#3.0.0# support 100 references
+* [label label-info]#3.3.0# support 101 references
 --
 ====
 endif::basebackend-html[]
@@ -576,6 +577,12 @@ endif::basebackend-docbook[]
 | svn
 1.0.2 {stable}
 | [label label-info]#2.13.0#
+
+| {unchecked}
+| {checked}
+| sync
+1.0.1 {stable}
+| [label label-info]#3.3.0#
 
 | {checked}
 | {unchecked}
