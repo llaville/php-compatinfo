@@ -45,6 +45,13 @@ class ApcuExtensionTest extends GenericTest
         self::$optionalcfgs = array(
             'apc.mmap_file_mask',  // build option
         );
+
+        if (PATH_SEPARATOR == ';') {
+            // Windows only
+            self::$ignoredconstants = array(
+                ' apc_register_serializer-0',   // on PHP 5.6 branch
+            );
+        }
         self::$obj = new ApcuExtension();
         parent::setUpBeforeClass();
     }
