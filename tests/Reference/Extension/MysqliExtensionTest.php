@@ -57,6 +57,7 @@ class MysqliExtensionTest extends GenericTest
             'MYSQLI_SERVER_PS_OUT_PARAMS',
             // requires MYSQL_VERSION_ID >= 50611 or MYSQLI_USE_MYSQLND
             'MYSQLI_OPT_CAN_HANDLE_EXPIRED_PASSWORDS',
+            'MYSQLI_CLIENT_CAN_HANDLE_EXPIRED_PASSWORDS',
         );
         self::$optionalfunctions = array(
             // Requires HAVE_EMBEDDED_MYSQLI

@@ -85,6 +85,13 @@ class MysqliExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.6.0RC3
+        if (version_compare($version, '5.6.0RC3', 'ge')) {
+            $release = $this->getR50600RC3();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR50000()
@@ -509,6 +516,23 @@ class MysqliExtension extends AbstractReference
         );
         $release->constants = array(
             'MYSQLI_STORE_RESULT_COPY_DATA'             => null,
+        );
+        return $release;
+    }
+
+    protected function getR50600RC3()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.6.0RC3',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2014-07-31',
+            'php.min' => '5.6.0RC3',
+            'php.max' => '',
+        );
+        $release->constants = array(
+            'MYSQLI_CLIENT_CAN_HANDLE_EXPIRED_PASSWORDS' => null,
         );
         return $release;
     }
