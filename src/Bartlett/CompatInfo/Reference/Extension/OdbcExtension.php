@@ -43,6 +43,13 @@ class OdbcExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.6.0RC3
+        if (version_compare($version, '5.6.0RC3', 'ge')) {
+            $release = $this->getR50600RC3();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR40000()
@@ -223,6 +230,25 @@ class OdbcExtension extends AbstractReference
         );
         $release->iniEntries = array(
             'odbc.default_cursortype'       => null,
+        );
+        return $release;
+    }
+
+    protected function getR50600RC3()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.6.0RC3',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2014-07-31',
+            'php.min' => '5.6.0RC3',
+            'php.max' => '',
+        );
+        $release->constants = array(
+            'SQL_WCHAR'                    => null,
+            'SQL_WVARCHAR'                 => null,
+            'SQL_WLONGVARCHAR'             => null,
         );
         return $release;
     }
