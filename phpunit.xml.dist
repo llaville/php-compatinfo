@@ -6,6 +6,7 @@
          stopOnError="false"
          stopOnFailure="false"
          stopOnIncomplete="false"
+         stopOnRisky="false"
          stopOnSkipped="false"
          strict="true"
          verbose="false">
