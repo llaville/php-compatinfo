@@ -5,7 +5,7 @@ namespace Bartlett\CompatInfo\Reference;
 abstract class AbstractReference implements ReferenceInterface
 {
     const LATEST_PHP_5_2 = '5.2.17';
-    const LATEST_PHP_5_3 = '5.3.28';
+    const LATEST_PHP_5_3 = '5.3.29RC1';
     const LATEST_PHP_5_4 = '5.4.31';
     const LATEST_PHP_5_5 = '5.5.15';
     const LATEST_PHP_5_6 = '5.6.0RC3';
