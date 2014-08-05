@@ -61,7 +61,13 @@ class OdbcExtensionTest extends GenericTest
             'SQL_INDEX_ALL',
             'SQL_ENSURE',
             'SQL_QUICK',
-        );    
+        );
+
+        if (PATH_SEPARATOR == ';') {
+            // Windows only
+            array_push(self::$optionalconstants, 'SQL_WCHAR', 'SQL_WVARCHAR', 'SQL_WLONGVARCHAR');
+        }
+
         self::$obj = new OdbcExtension();
         parent::setUpBeforeClass();
     }
