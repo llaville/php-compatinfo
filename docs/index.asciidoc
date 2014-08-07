@@ -5,6 +5,7 @@ include::attributes.asciidoc[]
 include::revision.asciidoc[]
 :stable:      3.2.0
 :icons!:
+:toc2!:
 :iconsfont:   font-awesome
 :jumbotron:
 :jumbotron-fullwidth:
@@ -12,16 +13,14 @@ include::revision.asciidoc[]
 :footer-fullwidth:
 
 
-== Releases
-
-_currently v{stable}_
+== Releases _currently v{stable}_
 
 [role="col-md-6"]
 ====
 [panel,warning]
 .v2
 --
-[bg-warning]*Stable Release, now unmaintained*
+[bg-warning]*Deprecated*
 
 Last branch 2 release was published on December 13, 2013.
 
