@@ -4,7 +4,8 @@
 :brand:       PHP CompatInfo
 :brandref:    https://github.com/llaville/php-compat-info
 :brandver:
-:sidebar:     right
+:toc2:
+:toc-placement: right
 :footer:
 :navinfo1:
 :iconsfont:   font-awesome
