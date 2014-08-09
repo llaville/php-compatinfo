@@ -44,9 +44,9 @@ class OdbcExtension extends AbstractReference
             $this->storage->attach($releases[--$count]);
         }
 
-        // 5.6.0RC3
-        if (version_compare($version, '5.6.0RC3', 'ge')) {
-            $release = $this->getR50600RC3();
+        // 5.4.32RC1
+        if (version_compare($version, '5.4.32RC1', 'ge')) {
+            $release = $this->getR50432RC1();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
@@ -234,15 +234,15 @@ class OdbcExtension extends AbstractReference
         return $release;
     }
 
-    protected function getR50600RC3()
+    protected function getR50432RC1()
     {
         $release = new \StdClass;
         $release->info = array(
-            'ext.min' => '5.6.0RC3',
+            'ext.min' => '5.4.32RC1',
             'ext.max' => '',
             'state'   => 'beta',
-            'date'    => '2014-07-31',
-            'php.min' => '5.6.0RC3',
+            'date'    => '2014-08-07',
+            'php.min' => '5.4.32RC1',
             'php.max' => '',
         );
         $release->constants = array(
