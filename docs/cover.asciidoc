@@ -30,8 +30,7 @@ unfloat::[]
 --
 * image:icons/font-awesome/files-o.png[alt="multiple html files",icon="files-o",iconsfont="font-awesome"] link:getting-started.html[Multiple HTML files]
 * image:icons/font-awesome/file-o.png[alt="single html file",icon="file-o",iconsfont="font-awesome"] link:phpcompatinfo-book.html[Single HTML file]
-* image:icons/font-awesome/file-pdf-o.png[alt="pdf file",icon="file",iconsfont="font-awesome"] link:phpcompatinfo-book-a4.pdf[PDF A4 file]
-* image:icons/font-awesome/file-pdf-o.png[alt="pdf file",icon="file",iconsfont="font-awesome"] link:phpcompatinfo-book-us.pdf[PDF US file]
+* image:icons/font-awesome/file-pdf-o.png[alt="pdf file",icon="file",iconsfont="font-awesome"] link:phpcompatinfo-book.pdf[PDF file]
 * image:icons/font-awesome/book.png[alt="epub file",icon="book",iconsfont="font-awesome"] link:phpcompatinfo-book.epub[ePub file]
 * image:icons/font-awesome/windows.png[alt="html help file",icon="windows",iconsfont="font-awesome"] [text-danger]*HTML Help file*
 --
@@ -43,9 +42,8 @@ unfloat::[]
 .Read it offline (download a zip archive)
 --
 * image:icons/font-awesome/files-o.png[alt="multiple html files",icon="files-o",iconsfont="font-awesome"] link:phpcompatinfo-book.chunked.zip[Multiple HTML files]
-* image:icons/font-awesome/file-o.png[alt="single html file",icon="file-o",iconsfont="font-awesome"] link:phpcompatinfo-book.html.zip[Single HTML file]
-* image:icons/font-awesome/file-pdf-o.png[alt="pdf file",icon="file",iconsfont="font-awesome"] link:phpcompatinfo-book.pdfa4.zip[PDF A4 file]
-* image:icons/font-awesome/file-pdf-o.png[alt="pdf file",icon="file",iconsfont="font-awesome"] link:phpcompatinfo-book.pdfus.zip[PDF US file]
+* image:icons/font-awesome/file-o.png[alt="single html file",icon="file-o",iconsfont="font-awesome"] link:phpcompatinfo-book.xhtml.zip[Single HTML file]
+* image:icons/font-awesome/file-pdf-o.png[alt="pdf file",icon="file",iconsfont="font-awesome"] link:phpcompatinfo-book.pdf.zip[PDF file]
 * image:icons/font-awesome/book.png[alt="epub file",icon="book",iconsfont="font-awesome"] link:phpcompatinfo-book.epub.zip[ePub file]
 * image:icons/font-awesome/windows.png[alt="html help file",icon="windows",iconsfont="font-awesome"] link:phpcompatinfo-book.chm.zip[HTML Help file]
 --
