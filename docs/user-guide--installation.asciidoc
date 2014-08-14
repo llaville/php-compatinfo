@@ -45,7 +45,7 @@ Put a file named [label label-default]#composer.json# at the root of your projec
 ----
 {
     "require": {
-        "bartlett/php-compatinfo": "~3.2"
+        "bartlett/php-compatinfo": "~3.3"
     }
 }
 ----
@@ -60,7 +60,7 @@ You can also use Composer to create a new project from an existing [label label-
 This is the equivalent of doing a git clone checkout followed by a composer install of the vendors.
 
 ----
-$ php composer.phar create-project bartlett/php-compatinfo path 3.2.0
+$ php composer.phar create-project bartlett/php-compatinfo path 3.3.0
 ----
 Where +path+ is your install directory.
 ====
@@ -72,16 +72,16 @@ a PHP Archive that contain all required dependencies of PHP [label label-primary
 bundled in a single file.
 
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo.phar
-$ chmod +x phpcompatinfo.phar
-$ mv phpcompatinfo.phar /usr/local/bin/phpcompatinfo
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.3.0-beta.phar
+$ chmod +x phpcompatinfo-3.3.0-beta.phar
+$ mv phpcompatinfo-3.3.0-beta.phar /usr/local/bin/phpcompatinfo
 $ phpcompatinfo
 ----
 
 You can also immediately use the PHAR after you have downloaded it.
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo.phar
-$ php phpcompatinfo.phar
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.3.0-beta.phar
+$ php phpcompatinfo-3.3.0-beta.phar
 ----
 
 ifdef::basebackend-bootstrap[]
