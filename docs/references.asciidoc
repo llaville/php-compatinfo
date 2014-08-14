@@ -3,7 +3,10 @@
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
 :icons!:
+:toc!:
+:toc2!:
 :jumbotron:
+:jumbotron-fullwidth:
 :footer-fullwidth:
 
 ifdef::basebackend-bootstrap[]
