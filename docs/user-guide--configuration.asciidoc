@@ -27,6 +27,7 @@ E.g:  `COMPATINFO=my-phpcompatinfo.json`
 ====
 
 The minimalist JSON file +phpcompatinfo.json+ is :
+[source,json]
 ----
 {
     "source-providers": [
@@ -100,6 +101,7 @@ of Symfony http://symfony.com/doc/current/components/finder.html[Finder] Compone
 
 The *Location* is the only mandatory criteria. It tells the Finder which directory to use for the search.
 
+[source,json]
 .In a simple directory
 ----
     {
@@ -110,6 +112,7 @@ The *Location* is the only mandatory criteria. It tells the Finder which directo
 NOTE: If you want to identify a data source easily by a short name, the alias (right of `as`)
 is compared with the +--alias+ option constraint.
 
+[source,json]
 .Search in several locations
 ----
     {
@@ -118,6 +121,7 @@ is compared with the +--alias+ option constraint.
     }
 ----
 
+[source,json]
 .Use wildcard characters to search in the directories matching a pattern:
 ----
     {
@@ -125,6 +129,7 @@ is compared with the +--alias+ option constraint.
     }
 ----
 
+[source,json]
 .Search directly in archives (phar, zip, tar) with the +phar://+ protocol
 ----
     {
@@ -132,6 +137,7 @@ is compared with the +--alias+ option constraint.
     }
 ----
 
+[source,json]
 .Restrict files by *name* and/or extension.
 ----
     {
@@ -140,6 +146,7 @@ is compared with the +--alias+ option constraint.
     }
 ----
 
+[source,json]
 .Restrict files by *size*.
 ----
     {
@@ -149,6 +156,7 @@ is compared with the +--alias+ option constraint.
     }
 ----
 
+[source,json]
 .Restrict files by last modified dates.
 ----
     {
@@ -159,6 +167,7 @@ is compared with the +--alias+ option constraint.
 
 By default, the Finder recursively traverse directories.
 
+[source,json]
 .Restrict the depth of traversing.
 ----
     {
@@ -176,6 +185,7 @@ There are a number of optional plugins you can use along with CompatInfo to add 
 The `Analyser` is the only mandatory plugin you should add to parse your data source.
 
 In your +phpcompatinfo.json+ configuration file, add in `plugins` section the following entry:
+[source,json]
 ----
     {
         "name": "Analyser",
@@ -236,6 +246,7 @@ There are a number of optional analysers you can use along with the Reflect Anal
 The `Summary` is the default analyser you should add to obtain results when you parse your data source.
 
 In your +phpcompatinfo.json+ configuration file, add in `analysers` section the following entry:
+[source,json]
 ----
     {
         "name": "Structure",
@@ -247,10 +258,12 @@ The `name` key identify the name you can optionally invoke with the `analyser:ru
 
 The two following commands do the same:
 
+[source,bash]
 .Used implicitly the summary analyser (default behavior)
 ----
 $ phpcompatinfo analyser:run .
 ----
+[source,bash]
 .Named explicitly the summary analyser
 ----
 $ phpcompatinfo analyser:run . summary

@@ -12,6 +12,7 @@ include::attributes.asciidoc[]
 == Progress Bar
 
 Since version [label label-success]#2.12#, there is a new progress bar (ALA PHPUnit).
+[role="output"]
 ----
 PHP_CompatInfo 2.12.0 by Laurent Laville
 
@@ -25,11 +26,13 @@ PHP_CompatInfo 2.12.0 by Laurent Laville
 With version [label label-primary]#3.2#, the progress bar (ALA Symfony Console Progress Helper)
 is activated with the first verbose level (+-v+).
 For example :
+[source,bash]
 ----
 $ phpcompatinfo -v analyser:run <SOURCE>
 ----
 
 Renders
+[role="output"]
 ----
     3/128 [>---------------------------]   0% Elapsed: 2 secs
 ----
@@ -39,12 +42,14 @@ Renders
 If we want to display list of references supported, here is how to do with both versions :
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo list-references
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo reference:list
@@ -55,6 +60,7 @@ Now, if you want to details each reference one by one identified by its name (+<
 * Extensions
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo list --reference=ALL extensions
@@ -63,6 +69,7 @@ $ phpcompatinfo list-extensions --reference=ALL
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo reference:list
@@ -73,6 +80,7 @@ unfloat::[]
 * Interfaces
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo list --reference=ALL interfaces <REF>
@@ -81,6 +89,7 @@ $ phpcompatinfo list-interfaces --reference=ALL <REF>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo reference:show --interfaces <REF>
@@ -91,6 +100,7 @@ unfloat::[]
 * Classes
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo list --reference=ALL classes <REF>
@@ -99,6 +109,7 @@ $ phpcompatinfo list-classes --reference=ALL <REF>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo reference:show --classes <REF>
@@ -109,6 +120,7 @@ unfloat::[]
 * Functions
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo list --reference=ALL functions <REF>
@@ -117,6 +129,7 @@ $ phpcompatinfo list-functions --reference=ALL <REF>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo reference:show --functions <REF>
@@ -127,6 +140,7 @@ unfloat::[]
 * Constants
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo list --reference=ALL constants <REF>
@@ -135,6 +149,7 @@ $ phpcompatinfo list-constants --reference=ALL <REF>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo reference:show --constants <REF>
@@ -150,6 +165,7 @@ CAUTION: Feature not provided by version [label label-success]#2.26#
 ====
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo reference:show --ini <REF>
@@ -160,12 +176,14 @@ unfloat::[]
 And if you want to filter results on PHP version, do for example :
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo list --reference=ALL classes <REF> --filter-version="php_5.1.0" --filter-operator="ge"
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo reference:show --classes <REF> --php=">= 5.1.0"
@@ -177,6 +195,7 @@ Where +<SOURCE>+ identify the data source, directly in [label label-primary]#Com
 and via the JSON configuration file in version 3.2
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive <SOURCE>
@@ -185,6 +204,7 @@ $ phpcompatinfo print --reference=ALL --recursive --report summary <SOURCE>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo analyser:run <SOURCE>
@@ -199,12 +219,14 @@ And with additionals reports :
 * extension
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive --report extension <SOURCE>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo analyser:run <SOURCE> extension
@@ -215,12 +237,14 @@ unfloat::[]
 * namespace
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive --report namespace <SOURCE>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo analyser:run <SOURCE> namespace
@@ -231,12 +255,14 @@ unfloat::[]
 * trait
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive --report trait <SOURCE>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo analyser:run <SOURCE> trait
@@ -247,12 +273,14 @@ unfloat::[]
 * interface
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive --report interface <SOURCE>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo analyser:run <SOURCE> interface
@@ -263,12 +291,14 @@ unfloat::[]
 * class
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive --report class <SOURCE>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo analyser:run <SOURCE> class
@@ -279,12 +309,14 @@ unfloat::[]
 * function
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive --report function <SOURCE>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo analyser:run <SOURCE> function
@@ -295,12 +327,14 @@ unfloat::[]
 * constant
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive --report constant <SOURCE>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo analyser:run <SOURCE> constant
@@ -311,6 +345,7 @@ unfloat::[]
 * global
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive --report global <SOURCE>
@@ -326,6 +361,7 @@ unfloat::[]
 * condition
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive --report condition <SOURCE>
@@ -341,6 +377,7 @@ unfloat::[]
 * token
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive --report token <SOURCE>
@@ -356,6 +393,7 @@ unfloat::[]
 * xml
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo print --reference=ALL --recursive --report xml <SOURCE>
@@ -371,12 +409,14 @@ unfloat::[]
 * source
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-success]#2.26#
 ----
 $ phpcompatinfo -v print --reference=ALL --report source <SOURCE>
 ----
 
 [role="col-md-6"]
+[source,bash]
 .Version [label label-primary]#3.2#
 ----
 $ phpcompatinfo provider:display <SOURCE>
@@ -384,5 +424,9 @@ $ phpcompatinfo provider:display <SOURCE>
 
 == Caching results
 
-CAUTION: Version [label label-success]#2.26# may cache results to speed-up later analysis.
-Version [label label-primary]#3.2# is able (optionally) to cache results only with other SAPI than CLI.
+[CAUTION] 
+=====
+* Version [label label-success]#2.26# may cache results to speed-up later analysis.
+* Version [label label-primary]#3.2# is able (optionally) to cache results only with other SAPI than CLI.
+* Version [label label-primary]#3.3# is able to cache results on all API including CLI.
+=====

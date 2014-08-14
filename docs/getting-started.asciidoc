@@ -24,6 +24,7 @@ link:{pharstable}[Download the latest version]
 endif::basebackend-bootstrap[]
 
 Make it executable, and put it into your `$PATH`.
+[source,bash]
 ----
 $ chmod +x phpcompatinfo.phar
 $ mv phpcompatinfo.phar /usr/local/bin/phpcompatinfo
@@ -32,6 +33,7 @@ $ phpcompatinfo --version
 ----
 
 You can also immediately use the PHAR after you have downloaded it.
+[source,bash]
 ----
 $ wget http://bartlett.laurent-laville.org/get/phpcompatinfo.phar
 $ php phpcompatinfo.phar --version
@@ -39,10 +41,10 @@ $ php phpcompatinfo.phar --version
 
 With both methods then you have this output :
 
-[role="cli-output"]
+[role="output"]
 ====
 ----
-phpCompatInfo version 3.2.0 build ...
+phpCompatInfo version 3.3.0-beta build ...
 ----
 ====
 NOTE: [big]#...# represents the Git commit hash of this version
@@ -59,6 +61,7 @@ for details on how to do this.
 
 [role="col-md-6"]
 == Configuration
+[source,json]
 .With the minimalist JSON file +phpcompatinfo.json+
 ----
 {
@@ -127,6 +130,7 @@ this entry provide list of your data sources to parse.
 Like [label label-primary]#CompatInfo# always needs a JSON file to run, Remi Collet
 https://github.com/llaville/php-compat-info/issues/120#issuecomment-46188900[shared]
 a workaround solution exposed here that allows to run :
+[source,bash]
 ----
 $ phpcompatinfo analyser:run .
 ----
@@ -153,7 +157,7 @@ $ phpcompatinfo analyser:run .
 ----
 and you should obtain something like this :
 
-[role="cli-output"]
+[role="output"]
 ====
 ----
 include::summary_analysis.out.asciidoc[]

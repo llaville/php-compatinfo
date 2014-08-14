@@ -42,6 +42,7 @@ These extensions are usually compiled and enabled by default.
 === Composer
 
 Put a file named [label label-default]#composer.json# at the root of your project, with the content below:
+[source,json]
 ----
 {
     "require": {
@@ -50,6 +51,7 @@ Put a file named [label label-default]#composer.json# at the root of your projec
 }
 ----
 And ask http://getcomposer.org/[Composer] to install the dependencies:
+[source,bash]
 ----
 $ php composer.phar install
 ----
@@ -59,6 +61,7 @@ $ php composer.phar install
 You can also use Composer to create a new project from an existing [label label-primary]#CompatInfo# package.
 This is the equivalent of doing a git clone checkout followed by a composer install of the vendors.
 
+[source,bash]
 ----
 $ php composer.phar create-project bartlett/php-compatinfo path 3.3.0
 ----
@@ -71,6 +74,7 @@ The recommended way for newbies, or just to have a look on features of this libr
 a PHP Archive that contain all required dependencies of PHP [label label-primary]#CompatInfo#
 bundled in a single file.
 
+[source,bash]
 ----
 $ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.3.0-beta.phar
 $ chmod +x phpcompatinfo-3.3.0-beta.phar
@@ -79,6 +83,7 @@ $ phpcompatinfo
 ----
 
 You can also immediately use the PHAR after you have downloaded it.
+[source,bash]
 ----
 $ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.3.0-beta.phar
 $ php phpcompatinfo-3.3.0-beta.phar
