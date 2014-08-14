@@ -10,23 +10,11 @@ include::attributes.asciidoc[]
 :footer-fullwidth:
 
 ifdef::basebackend-bootstrap[]
-
-[role="col-md-3"]
-====
-[panel,primary]
-.{toc-title}
---
-* xref:_source_provider[Source Provider]
-* xref:_handle_results[Handle Results]
---
-====
 :leveloffset: 1
 endif::basebackend-bootstrap[]
 
-[role="col-md-9"]
 include::developer-guide--source-provider.asciidoc[]
 
-[role="col-md-9 col-md-offset-3"]
 include::developer-guide--handle-results.asciidoc[]
 
 ifdef::basebackend-bootstrap[]
