@@ -193,6 +193,40 @@ The `class` key identify the name of the class that implement the plugin feature
 
 E.g: AnalyserPlugin footnote:[{rawurl}/src/Bartlett/Reflect/Plugin/Analyser/AnalyserPlugin.php]
 
+==== Cache Plugin
+
+WARNING: Available only since version 3.3.0-beta
+
+In your +phpcompatinfo.json+ configuration file, add in `plugins` section the following entry:
+[source,json]
+----
+    {
+        "name": "Cache",
+        "class": "Bartlett\\Reflect\\Plugin\\Cache\\CachePlugin",
+        "options": {
+            "adapter": "DoctrineCacheAdapter",
+            "backend": {
+                "class": "Doctrine\\Common\\Cache\\FilesystemCache",
+                "args": [
+                    "%{TEMP}/phpreflect"
+                ]
+            }
+        }
+    }
+----
+TIP: You may use any environment variable that will be replaced, at run-time, by their value. E.g: `TEMP`, `HOME`
+
+CAUTION: Take care to use the same configuration as in PHP Reflect, or you should not share the cache results.
+
+In previous configuration we used the Doctrine Cache adapter and its File system backend.
+See the same configuration applied with other SAPI, in
+ifdef::basebackend-html[]
+link:developer-guide&#45;&#45;cache-plugin.html#_file_cache[developer guide]
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_file_cache[]
+endif::basebackend-docbook[]
+
 
 === Analysers
 
