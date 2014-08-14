@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="PHP_CompatInfo" default="help">
-
-    <includepath classpath="${bartlettpackager.dir}/classes" />
-
-    <typedef name="mapping" classname="phing.types.Mapping" />
-
-    <taskdef name="pirum" classname="phing.tasks.ext.PirumTask" />
+<project name="bartlett/php-compatinfo" default="help">
 
     <!--
         ======================================================================
@@ -16,370 +10,161 @@
 
     <!--
         ======================================================================
+        Dependencies
+        - bartlett/phing-builder
+        ======================================================================
+    -->
+    <property name="phingBuilder.dir"            value="${phing.dir}" />
+
+    <!--
+        ======================================================================
         Project properties
         ======================================================================
     -->
-    <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
-    <property name="build.target"                value="${project.dir}/build" />
-    <property name="build.version"               value="2.26.0" />
+    <property name="build.short-version"         value="3.3" />
+    <property name="build.version"               value="${build.short-version}.0-beta" />
 
     <!--
         ======================================================================
-        Test by PHPUnit
+        Build PHAR distribution by Phing PharPackage Task
         ======================================================================
     -->
-    <property name="test.printsummary"           value="true" />
-    <property name="test.configuration"          value="${project.dir}/tests/phpunit.xml" />
-    <property name="test.exc-pattern"            value="**/PackageTest.php" />
-
-    <!--
-        ======================================================================
-        Docs by phpDocumentor
-        ======================================================================
-    -->
-    <property name="docs.phpdoctask"             value="phpdoc2" />
-    <property name="docs.inc-pattern"            value="PHP/**/*.php" />
-
-    <!--
-        ======================================================================
-        Docs by AsciiDoc
-        ======================================================================
-    -->
-    <property name="docs.asciidoc.home"          value="/asciidoc-8.6.8" />
-    <property name="docs.asciidoc.target"        value="${project.dir}/html" />
-    <property name="docs.theme-asciidoc"         value="flask" />
-    <property name="docs.book-source.name"       value="phpci-book" />
-    <property name="docs.html-books-list"        value="INSTALL,CHANGELOG,LICENSE,getting-started,basic-usage,command-line,xml-configuration,XSLT,UML,index" />
-    <property name="docs.htmlhelpworkshop.home"  value="C:\Program Files\HTML Help Workshop" />
-    <property name="docs.fo-xsl"                 value="${docs.asciidoc.home}/docbook-xsl/fo-custom.xsl" />
-    <property name="docs.build-dist"             value="true" />
-
-    <fileset id="asciidoc-assets" dir="${project.dir}/docs">
-        <include name="images**" />
-        <include name="js/asciidoc.js" />
-        <include name="styles/pygments.css" />
-        <include name="styles/toc2.css" />
-        <include name="styles/${docs.theme-asciidoc}.css" />
-        <exclude name="**/callouts/**" />
-        <exclude name="styles.css" />
-        <exclude name="**/Thumbs.db" />
-    </fileset>
-
-    <fileset id="html-books-assets" dir="${docs.asciidoc.target}">
-        <include name="images**" />
-        <include name="js/**" />
-        <include name="styles/**" />
-        <include name="INSTALL.html" />
-        <include name="CHANGELOG.html" />
-        <include name="LICENSE.html" />
-        <include name="getting-started.html" />
-        <include name="basic-usage.html" />
-        <include name="command-line.html" />
-        <include name="xml-configuration.html" />
-        <include name="XSLT.html" />
-        <include name="UML.html" />
-        <include name="index.html" />
-    </fileset>
-
-    <!--
-        ======================================================================
-        Package by PEAR_PackageFileManager2
-        ======================================================================
-    -->
-    <property name="package.properties"          value="${project.dir}/build/package.properties" />
-    <property name="package.summary"             value="${project.dir}/build/package_summary.txt" />
-    <property name="package.description"         value="${project.dir}/build/package_description.txt" />
-    <property name="package.release"             value="${project.dir}/build/${build.version}.txt" />
-    <property name="package.keep-assets"         value="false" />
-
-    <!-- maintainers list -->
-    <mapping name="maintainers" id="package-maintainers-ref">
-        <element>
-            <element key="handle" value="farell"/>
-            <element key="name" value="Laurent Laville"/>
-            <element key="email" value="pear@laurent-laville.org"/>
-            <element key="role" value="lead"/>
-        </element>
-        <element>
-            <element key="handle" value="remicollet" />
-            <element key="name" value="Remi Collet" />
-            <element key="role" value="contributor" />
-        </element>
-    </mapping>
-
-    <!-- filelist roles exceptions -->
-    <mapping name="exceptions" id="package-exceptions-ref">
-        <element key="LICENSE" value="doc" />
-        <element key="phpunit.xml" value="test" />
-        <element key="phpcompatinfo.xml.dist" value="cfg" />
-    </mapping>
-
-    <!-- filelist basedirectory install exceptions -->
-    <mapping name="installexceptions" id="package-installexceptions-ref">
-        <element key="phpcompatinfo.xml.dist" value="" />
-        <element key="scripts/phpci" value="" />
-        <element key="scripts/phpci.bat" value="" />
-    </mapping>
-
-    <!-- directories role -->
-    <mapping name="dir_roles" id="package-dir-roles-ref">
-        <element key="html" value="doc" />
-        <element key="tests" value="test" />
-        <element key="scripts" value="script" />
-    </mapping>
-
-    <!-- packages dependencies list -->
-    <mapping name="deps" id="package-deps-ref">
-        <!-- required -->
-        <element>
-            <element key="channel" value="pear.php.net" />
-            <element key="name" value="Console_CommandLine" />
-            <element key="version" value="1.2.0" />
-        </element>
-        <element>
-            <element key="channel" value="bartlett.laurent-laville.org" />
-            <element key="name" value="PHP_Reflect" />
-            <element key="version" value="1.9.0" />
-            <element key="max" value="1.99.0" />
-        </element>
-
-        <!-- optional -->
-        <element>
-            <element key="channel" value="pear.php.net" />
-            <element key="name" value="Net_Growl" />
-            <element key="version" value="2.6.0" />
-            <element key="optional" value="true" />
-        </element>
-        <element>
-            <element key="channel" value="pear.phpunit.de" />
-            <element key="name" value="PHPUnit" />
-            <element key="version" value="3.6.0" />
-            <element key="optional" value="true" />
-        </element>
-        <element>
-            <element key="channel" value="pear.phpunit.de" />
-            <element key="name" value="PHP_Timer" />
-            <element key="version" value="1.0.0" />
-            <element key="optional" value="true" />
-        </element>
-    </mapping>
-
-    <!-- extensions dependencies list -->
-    <mapping name="extdeps" id="package-extdeps-ref">
-        <element>
-            <element key="name" value="dom" />
-        </element>
-        <element>
-            <element key="name" value="libxml" />
-        </element>
-        <element>
-            <element key="name" value="pcre" />
-        </element>
-        <element>
-            <element key="name" value="SPL" />
-        </element>
-        <element>
-            <element key="name" value="Reflection" />
-        </element>
-    </mapping>
-
-    <!-- tasks replacements at run-time -->
-    <mapping name="replacements" id="package-rt-replacements-ref">
-        <element>
-            <element key="path" value="PHP/CompatInfo/CLI.php" />
-            <element key="type" value="pear-config" />
-            <element key="from" value="@cfg_dir@" />
-            <element key="to"   value="cfg_dir" />
-        </element>
-        <element>
-            <element key="path" value="scripts/phpci" />
-            <element key="type" value="pear-config" />
-            <element key="from" value="@php_bin@" />
-            <element key="to"   value="php_bin" />
-        </element>
-        <element>
-            <element key="path" value="scripts/phpci.bat" />
-            <element key="type" value="pear-config" />
-            <element key="from" value="@php_bin@" />
-            <element key="to"   value="php_bin" />
-        </element>
-        <element>
-            <element key="path" value="scripts/phpci.bat" />
-            <element key="type" value="pear-config" />
-            <element key="from" value="@bin_dir@" />
-            <element key="to"   value="bin_dir" />
-        </element>
-    </mapping>
-
-    <!-- files replacements at packaging-time -->
-    <patternset id="package-pt-replacements-ref">
-        <include name="PHP/**/*.php" />
-        <include name="tests/Reference/*.php" />
-        <include name="tests/*.php" />
-        <include name="scripts/phpci" />
-    </patternset>
-
-    <!-- End of line files tasks replacements -->
-    <mapping name="eol" id="package-eol-ref">
-        <element>
-            <element key="path" value="scripts/phpci.bat" />
-            <element key="type" value="windows" />
-        </element>
-    </mapping>
-
-    <!-- platform install conditions -->
-    <mapping name="installas" id="package-installas-ref">
-        <element key="windows">
-            <element>
-                <element key="path" value="scripts/phpci.bat" />
-                <element key="as" value="phpcompatinfo.bat" />
-            </element>
-            <element>
-                <element key="path" value="scripts/phpci" />
-                <element key="as" value="phpcompatinfo" />
-            </element>
-        </element>
-        <element>
-            <element>
-                <element key="path" value="scripts/phpci.bat" />
-                <element key="ignore" value="true" />
-            </element>
-            <element>
-                <element key="path" value="scripts/phpci" />
-                <element key="as" value="phpcompatinfo" />
-            </element>
-        </element>
-    </mapping>
-
-    <!-- filelist contents -->
-    <fileset dir="${project.dir}" id="package-contents-ref">
-        <include name="**" />
-
-        <exclude name="README.markdown" />
-        <exclude name="**/*.tgz" />
-        <exclude name="**/*.zip" />
-        <exclude name="**/*.pdf" />
-        <exclude name="**/*.epub" />
-        <exclude name="**/Thumbs.db" />
-        <exclude name="composer.json" />
-        <exclude name="package.xml" />
-        <exclude name="build**" />
-        <exclude name="contributions/**" />
-        <exclude name="docs/images/**" />
-        <exclude name="docs/js/**" />
-        <exclude name="docs/styles/**" />
-        <exclude name="docs/*" />
-        <exclude name="misc/phpcompatinfo.1*" />
-        <exclude name="vendor/**" />
-        <exclude name="**/netgrowl.php" />
-        <exclude name="**/PEAR.php" />
-        <exclude name="**/IssueTest2.php" />
-        <exclude name="**/PackageTest.php" />
-        <exclude name="**/source3657.php" />
-        <exclude name="**/source7813.php" />
-        <exclude name="**/source13873.php" />
-    </fileset>
-
-    <!--
-        ======================================================================
-        PEAR Channel Server by Pirum
-        ======================================================================
-    -->
-    <property name="server.basedir"              value="/var/pirum/servers/bartlett" />
-    <property name="server.pirum.force"          value="false" />
-    <property name="server.pirum.quiet"          value="true" />
-
-    <mapping name="server" id="pirum-server-ref">
-        <element key="name" value="bartlett.laurent-laville.org" />
-        <element key="summary" value="Bartlett PEAR Channel" />
-        <element key="alias" value="bartlett" />
-        <element key="url" value="http://bartlett.laurent-laville.org" />
-    </mapping>
-
-    <mapping name="releases" id="pirum-releases-ref">
-        <element key="add" value="${build.target}/${phing.project.name}-${build.version}.tgz" />
-    </mapping>
-
-    <!--
-        ======================================================================
-        PHAR version of CLI
-        ======================================================================
-    -->
-    <property name="phar.basedir"                value="${env.TMP}/${phing.project.name}/${DSTAMP}" />
-    <property name="phar.destfile"               value="phpcompatinfo.phar" />
+    <property name="phar.destfile"               value="phpcompatinfo-${build.version}.phar" />
     <property name="phar.compression"            value="gzip" />
-    <property name="phar.stub"                   value="pharStub.php" />
+    <property name="phar.stub"                   value="${project.dir}/phar-stub.php" />
     <property name="phar.alias"                  value="phpcompatinfo.phar" />
 
     <fileset dir="${project.dir}" id="phar-contents">
-        <include name="PHP/**" />
-        <include name="vendor/**" />
-        <exclude name="**/PEAR.php" />
-        <exclude name="**/netgrowl.php" />
+        <include name="LICENSE" />
+        <include name="vendor/nikic/php-parser/LICENSE" />
+        <include name="vendor/symfony/console/Symfony/Component/Console/LICENSE" />
+        <include name="vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/LICENSE" />
+        <include name="vendor/symfony/finder/Symfony/Component/Finder/LICENSE" />
+        <include name="vendor/phpunit/php-timer/LICENSE" />
+        <include name="vendor/seld/jsonlint/LICENSE" />
+        <include name="vendor/doctrine/cache/LICENSE" />
+        <include name="vendor/bartlett/php-reflect/LICENSE" />
+        <include name="vendor/autoload.php" />
+
+        <include name="vendor/composer/**/*.php" />
+        <include name="vendor/nikic/php-parser/lib/**/*.php" />
+        <include name="vendor/symfony/**/*.php" />
+        <exclude name="**/Tests/**" />
+        <include name="vendor/phpunit/php-timer/**/*.php" />
+        <include name="vendor/seld/jsonlint/**/*.php" />
+        <include name="vendor/doctrine/cache/lib/**/*.php" />
+        <include name="vendor/bartlett/php-reflect/src/**/*.php" />
+
+        <include name="src/**/*.php" />
+        <include name="bin/phpcompatinfo" />
     </fileset>
 
     <fileset dir="${project.dir}" id="phar-versions">
-        <include name="PHP/CompatInfo/CLI.php" />
+        <exclude name="**" />
     </fileset>
 
     <!--
         ======================================================================
-        Imported modules
+        Generate the full documentation
         ======================================================================
     -->
-    <property name="modules.test"                value="true" />
-    <property name="modules.docs"                value="true" />
-    <property name="modules.package"             value="true" />
-    <property name="modules.phar"                value="true" />
-    <property name="modules.server"              value="true" />
+    <property name="adoc.homedir"                value="C:/asciidoc-8.6.9" />
+    <property name="adoc.targetdir"              value="D:/laurent-laville.org/www/php5/compatinfo/manual/${build.short-version}/en" />
+    <property name="adoc.backend"                value="bootstrap" />
+    <property name="adoc.theme"                  value="" />
+    <property name="adoc.conf-file"              value="${project.dir}/docs/bootstrap3.conf" />
+    <property name="adoc.sourcedir"              value="${project.dir}/docs" />
 
-    <import file="${bartlettpackager.dir}/modules/build.xml" />
+    <property name="adoc.extension"              value=".asciidoc" />
+    <property name="adoc.hhc.homedir"            value="C:/Program Files/HTML Help Workshop" />
+
+    <!-- Assets of installed AsciiDoc-Bootstrap backend -->
+    <fileset dir="${env.USERPROFILE}/.asciidoc/backends/bootstrap" id="adoc-assets">
+        <include name="bootstrap/**" />
+        <include name="fonts/**" />
+        <include name="images/icons/ui.totop.png" />
+        <include name="javascripts/**" />
+        <include name="stylesheets/**" />
+        <exclude name="images/**/Thumbs.db" />
+    </fileset>
+
+    <fileset dir="${adoc.sourcedir}" id="adoc-project-assets">
+        <include name="stylesheets/cover.css" />
+        <include name="images/**" />
+        <exclude name="images/**/Thumbs.db" />
+    </fileset>
+
+    <fileset dir="${adoc.sourcedir}" id="adoc-sources">
+        <include name="index.asciidoc" />
+        <include name="cover.asciidoc" />
+        <include name="user-guide**.asciidoc" />
+        <include name="developer-guide.asciidoc" />
+        <include name="developer-guide--api.asciidoc" />
+        <include name="developer-guide--plugins.asciidoc" />
+        <include name="developer-guide--cache-plugin.asciidoc" />
+        <include name="developer-guide--analysers.asciidoc" />
+        <include name="migration-guide**.asciidoc" />
+        <include name="getting-started.asciidoc" />
+        <include name="references.asciidoc" />
+    </fileset>
+
+    <fileset dir="${adoc.sourcedir}" id="adoc-manpages">
+        <include name="phpcompatinfo.1.asciidoc" />
+    </fileset>
+
+    <fileset dir="${adoc.sourcedir}" id="adoc-books">
+        <include name="phpcompatinfo-book.asciidoc" />
+    </fileset>
+
+    <fileset dir="${adoc.sourcedir}" id="adoc-outputs">
+        <include name="user-guide**.html" />
+        <include name="developer-guide.html" />
+        <include name="developer-guide--api.html" />
+        <include name="developer-guide--plugins.html" />
+        <include name="developer-guide--cache-plugin.html" />
+        <include name="developer-guide--analysers.html" />
+        <include name="migration-guide**.html" />
+        <include name="getting-started.html" />
+        <include name="references.html" />
+        <include name="phpcompatinfo.1.html" />
+        <include name="phpcompatinfo-book.html" />
+        <include name="phpcompatinfo-book.epub" />
+        <include name="phpcompatinfo-book.pdf" />
+    </fileset>
+
+    <!--
+        ======================================================================
+        For each notifications by Phing GrowlNotify Task
+        ======================================================================
+    -->
+    <property name="notify.growl-password"       value="mamasam" />
+
+    <!--
+        ======================================================================
+        Imported modules of Phing Builder
+        (should be placed after user definitions)
+        ======================================================================
+    -->
+    <property name="modules.adoc"                value="true" />
+    <property name="modules.notify"              value="true" />
+    <property name="modules.phar"                value="true" />
+
+    <import file="${phingBuilder.dir}/modules/build.xml" />
 
     <!--
         ======================================================================
         Actions
         ======================================================================
     -->
-    <target name="test"    depends="test.all" />
-    <target name="docs"    depends="docs.all">
-        <phingcall target="docs.make-userguide">
-            <property name="userguide.format" value="pdf" />
-            <property name="docs.pdf-paper-type" value="a4" />
-        </phingcall>
-    </target>
-    <target name="package" depends="package.all" />
-    <target name="server"  depends="server.all" />
-    <target name="phar"    depends="phar.all" />
-    <target name="web">
-        <phingcall target="docs.make-web">
-            <property name="docs.asciidoc.target" value="/var/compatinfo/manual/current/en" />
-            <property name="docs.theme-asciidoc" value="flatly" />
-            <property name="docs.backend-asciidoc" value="bootstrap" />
-            <property name="docs.bootstrap-backend-opt" value="-a bsver=3 -a navbar=fixed -a jumbotron-fullwidth" />
-        </phingcall>
-    </target>
-
-    <target name="all"     depends="test.all,docs.all,package.all,server.all,phar.all" />
+    <target name="all" depends="adoc.all,phar.all" />
 
     <target name="help">
-        <echo>A toolchain manager for ${phing.project.name}              </echo>
-        <echo>                                                           </echo>
-        <echo>targets:                                                   </echo>
-        <echo>  test         Run Unit Test Suites                        </echo>
-        <echo>  docs         Generate API and User documentations        </echo>
-        <echo>  package      Generate the package.xml 2.0 and tarball    </echo>
-        <echo>  server       Build the PEAR Channel Server               </echo>
-        <echo>  phar         Make the phar version of CLI                </echo>
-        <echo>  all          Do all tasks above                          </echo>
+        <echo>A toolchain manager for ${phing.project.name} ${build.version}</echo>
+        <echo>                                                              </echo>
+        <echo>targets:                                                      </echo>
+        <echo>  adoc.all     Generate the full documentation                </echo>
+        <echo>  phar.all     Generate the PHAR version                      </echo>
+        <echo>  all          Do all tasks above                             </echo>
     </target>
-
-    <target name="make-web" />
-    <target name="make-api" />
-    <target name="make-userguide" />
-    <target name="make-userguide-archive" />
-    <target name="make-xml" />
-    <target name="make-tar" />
-    <target name="replacements" />
-    <target name="copy-assets" />
 
 </project>
