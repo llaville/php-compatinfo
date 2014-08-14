@@ -1,6 +1,5 @@
 :author:      Laurent Laville
 :keywords:    PHP, compatibility, version
-:mandir:      http://php5.laurent-laville.org/compatinfo/manual/3.2
 :brand:       PHP CompatInfo
 :brandref:    https://github.com/llaville/php-compat-info
 :brandver:
