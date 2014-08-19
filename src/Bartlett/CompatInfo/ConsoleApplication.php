@@ -18,7 +18,6 @@ use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Helper\TableHelper;
 
 use Bartlett\Reflect\Command\ProviderListCommand;
 use Bartlett\Reflect\Command\ProviderShowCommand;
