@@ -5,9 +5,10 @@ if (class_exists('Phar')) {
     Phar::interceptFileFuncs();
 
     if (!getenv("COMPATINFO")) {
+        $home  = defined('PHP_WINDOWS_VERSION_BUILD') ? 'USERPROFILE' : 'HOME';
         $files = array(
             realpath('./phpcompatinfo.json'),
-            getenv('HOME').'/.config/phpcompatinfo.json',
+            getenv($home).'/.config/phpcompatinfo.json',
             '/etc/phpcompatinfo.json',
         );
         foreach ($files as $file) {
