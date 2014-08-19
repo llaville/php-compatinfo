@@ -153,12 +153,14 @@ class ConsoleApplication extends Application
 
             if (file_exists($manifest)) {
                 $out = file_get_contents($manifest);
+                $exitCode = 0;
             } else {
                 $fmt = $this->getHelperSet()->get('formatter');
                 $out = $fmt->formatBlock('No manifest defined', 'error');
+                $exitCode = 1;
             }
             $output->writeln($out);
-            return 0;
+            return $exitCode;
         }
 
         $exitCode = parent::doRun($input, $output);
