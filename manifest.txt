@@ -1,0 +1,9 @@
+bartlett/php-compatinfo: v3@7af37da40888a9b948dd07a6421b356b5dfc5a44
+bartlett/php-reflect: 2.x-dev@bb48ff296937025e883fdaca7e1ad61c26868698
+doctrine/cache: v1.3.0
+nikic/php-parser: v1.0.0beta1
+phpunit/php-timer: 1.0.5
+seld/jsonlint: 1.2.0
+symfony/console: v2.5.3
+symfony/event-dispatcher: v2.5.3
+symfony/finder: v2.5.3

@@ -5,6 +5,7 @@
     "extract": false,
     "compression": "GZ",
     "files": [
+        "manifest.txt",
         "LICENSE",
         "vendor/nikic/php-parser/LICENSE",
         "vendor/symfony/console/Symfony/Component/Console/LICENSE",
@@ -45,46 +46,6 @@
         {
             "name": "*.php",
             "in": "vendor/doctrine/cache/lib"
-        }
-    ],
-    "metadata": [
-        {
-            "vendor": [
-                {
-                    "nikic": [
-                        {
-                            "php-parser": "1.0.0beta1"
-                        }
-                    ],
-                    "symfony": [
-                        {
-                            "console": "2.5.2",
-                            "eventdispatcher": "2.5.2",
-                            "finder": "2.5.2"
-                        }
-                    ],
-                    "phpunit": [
-                        {
-                            "php-timer": "1.0.5"
-                        }
-                    ],
-                    "bartlett": [
-                        {
-                            "php-reflect": "2.2.0"
-                        }
-                    ],
-                    "seld": [
-                        {
-                            "jsonlint": "1.2.0"
-                        }
-                    ],
-                    "doctrine": [
-                        {
-                            "cache": "1.3.0"
-                        }
-                    ]
-                }
-            ]
         }
     ],
     "git-commit": "git_commit",
