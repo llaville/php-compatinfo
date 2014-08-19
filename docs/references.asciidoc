@@ -255,7 +255,7 @@ endif::basebackend-docbook[]
 | {unchecked}
 | {checked}
 | http
-2.1.0RC2 {beta}
+2.1.0RC3 {beta}
 | [label label-info]#2.16.0#
 
 | {unchecked}
