@@ -65,14 +65,14 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 sprintf('<info>Total [%d/%d]</info>', count($rows), count($args)),
                 '',
                 '',
-                $versions
+                sprintf('<info>%s</info>', $versions)
             );
         } else {
             $footers = array(
                 sprintf('<info>Total [%d]</info>', count($args)),
                 '',
                 '',
-                $versions
+                sprintf('<info>%s</info>', $versions)
             );
         }
         $rows[] = new TableSeparator();
