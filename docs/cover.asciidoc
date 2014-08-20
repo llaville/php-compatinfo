@@ -1,8 +1,10 @@
 = Cover
 :description: PHP CompatInfo Book cover
-:icons!:
-:iconsfont:   font-awesome
-:theme:       flatly
+include::attributes.asciidoc[]
+:navbar!:
+:jumbotron!:
+:toc!:
+:toc2!:
 :stylesheet:  cover.css
 
 
