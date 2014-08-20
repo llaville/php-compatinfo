@@ -44,6 +44,8 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     );
     protected $loader;
 
+    private $currentNamespace;
+
     /**
      *
      */
@@ -95,6 +97,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     public function visitPackageModel($package)
     {
         parent::visitPackageModel($package);
+        $this->currentNamespace = $package->getName();
 
         foreach ($package->getDependencies() as $dependency) {
             $dependency->accept($this);
@@ -263,6 +266,11 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
         $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
         $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
+
+        $this->updatePackageVersion(
+            $versions['php.min'], $versions['php.max'],
+            $this->currentNamespace
+        );
     }
 
     /**
