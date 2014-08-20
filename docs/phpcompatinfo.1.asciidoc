@@ -73,6 +73,9 @@ Where:
 *--alias*::
   If set, the source refers to its alias
 
+*--php*::
+  Filter results on PHP version
+
 *--redraw-freq*::
   How many times should the progress bar be updated? (default: 1)
 
