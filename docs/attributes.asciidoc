@@ -16,3 +16,4 @@
 :idprefix:    _
 :gitbranch:   v3
 :rawbaseurl:  https://raw.githubusercontent.com/llaville/php-compat-info/{gitbranch}
+:gitproject:  https://github.com/llaville/php-compat-info
