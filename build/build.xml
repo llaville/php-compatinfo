@@ -85,11 +85,13 @@
         <include name="images/icons/ui.totop.png" />
         <include name="javascripts/**" />
         <include name="stylesheets/**" />
+        <exclude name="stylesheets/tocaffix.css" />
         <exclude name="images/**/Thumbs.db" />
     </fileset>
 
     <fileset dir="${adoc.sourcedir}" id="adoc-project-assets">
         <include name="stylesheets/cover.css" />
+        <include name="stylesheets/tocaffix.css" />
         <include name="images/**" />
         <exclude name="images/**/Thumbs.db" />
     </fileset>
