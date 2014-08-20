@@ -63,7 +63,7 @@ The phpcompatinfo(1) 'analyser:run' command is used to analyse a data source and
 
 Usage:
 
-  phpcompatinfo analyser:run [--alias] [--redraw-freq="..."] source [analysers1] ... [analysersN]
+  phpcompatinfo analyser:run [--alias] [--php="..."] [--redraw-freq="..."] source [analysers1] ... [analysersN]
 
 Where:
 
