@@ -420,6 +420,10 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         if (isset($this->count[static::METRICS_PREFIX . '.packages'])) {
             if (empty($pkg)) {
                 $pkg = '+global';
+                if (!isset($this->count[static::METRICS_PREFIX . '.packages'][$pkg]['ext.min'])) {
+                    $this->count[static::METRICS_PREFIX . '.packages'][$pkg]['ext.min'] = '';
+                    $this->count[static::METRICS_PREFIX . '.packages'][$pkg]['ext.max'] = '';
+                }
             }
             self::updateVersion(
                 $min,
