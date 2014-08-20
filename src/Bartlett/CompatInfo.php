@@ -2,7 +2,7 @@
 
 namespace Bartlett;
 
-use Bartlett\CompatInfo\Event\AbstractDispatcher;
+use Bartlett\Reflect\Event\AbstractDispatcher;
 use Bartlett\Reflect\ProviderManager;
 
 class CompatInfo extends AbstractDispatcher
