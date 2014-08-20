@@ -4,12 +4,6 @@ ifndef::basebackend-docbook[]
 :description: Installing PHP CompatInfo
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:icons!:
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
 
 endif::basebackend-docbook[]
 

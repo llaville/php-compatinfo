@@ -2,12 +2,6 @@
 :description: How to download, configure and use it in a basic way.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:icons!:
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
 :pharstable:  http://bartlett.laurent-laville.org/get/phpcompatinfo.phar
 
 

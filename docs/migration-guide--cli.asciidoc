@@ -2,11 +2,6 @@
 :description: Command-Line Interface
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
 
 
 == Progress Bar

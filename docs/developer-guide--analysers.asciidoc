@@ -2,12 +2,6 @@
 :description: How to customize the render of your results.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:icons!:
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
 
 
 [role="lead"]

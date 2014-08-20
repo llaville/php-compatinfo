@@ -2,11 +2,6 @@
 :description: How to customize the command line interface
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
 
 
 == Global options

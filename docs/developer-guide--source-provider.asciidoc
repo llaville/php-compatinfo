@@ -4,12 +4,6 @@ ifndef::basebackend-docbook[]
 :description: How to identify a data source and parse its contents.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:icons!:
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
 
 endif::basebackend-docbook[]
 

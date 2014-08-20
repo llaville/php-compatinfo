@@ -5,8 +5,12 @@
 :brandver:
 :toc2:
 :toc-placement: right
+:jumbotron:
+:jumbotron-fullwidth:
 :footer:
+:footer-fullwidth:
 :navinfo1:
+:icons!:
 :iconsfont:   font-awesome
 :imagesdir:   ./images
 :idprefix:    _

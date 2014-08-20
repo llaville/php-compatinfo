@@ -2,12 +2,6 @@
 :description: All you have to know about CompatInfo v3 architecture.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:icons!:
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
 
 ifdef::basebackend-docbook[]
 [partintro]

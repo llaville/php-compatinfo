@@ -2,11 +2,6 @@
 :doctype:     manpage
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
 
 
 == NAME

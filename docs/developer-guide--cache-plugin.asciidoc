@@ -2,12 +2,6 @@
 :description: Caching specifications to speed up future data source parsing.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:icons!:
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
 
 
 == Register Plugin

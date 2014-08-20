@@ -2,11 +2,6 @@
 :description: Migrating from version 2.26 to 3.2, and continue to keep your environment running.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
 
 ifdef::basebackend-docbook[]
 [partintro]

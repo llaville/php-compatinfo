@@ -2,12 +2,8 @@
 :description: Strategy to load each Reference with their versions
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:icons!:
 :toc!:
 :toc2!:
-:jumbotron:
-:jumbotron-fullwidth:
-:footer-fullwidth:
 
 ifdef::basebackend-bootstrap[]
 

@@ -2,12 +2,7 @@
 :description: Application Programming Interface
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:icons!:
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
+
 
 ifdef::basebackend-bootstrap[]
 :leveloffset: 1
