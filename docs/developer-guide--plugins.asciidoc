@@ -15,7 +15,7 @@ to communicate with each other by dispatching events and listening to them.
 
 === Event Dispatcher
 
-[label label-primary]#CompatInfo# implement interface `Bartlett\CompatInfo\Event\DispatcherInterface`.
+[label label-primary]#CompatInfo# implement interface `Bartlett\Reflect\Event\DispatcherInterface`.
 You can add event listeners and event subscribers to this object.
 
 [horizontal]
@@ -28,7 +28,7 @@ to invoke when the event is triggered. Event subscribers subscribe event listene
 
 === Getting an EventDispatcher
 
-You can get the EventDispatcher of `Bartlett\CompatInfo\Event\DispatcherInterface`
+You can get the EventDispatcher of `Bartlett\Reflect\Event\DispatcherInterface`
 by calling the +getEventDispatcher()+ method.
 
 Here is an example :
