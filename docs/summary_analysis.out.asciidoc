@@ -1,23 +1,18 @@
 
 Data Source Analysed
 
-Directories                                          8
-Files                                              123
+Directories                                          7
+Files                                              124
 
+Global Analysis
 
-Summary Analysis
-
-Summary
-  Extensions                                        10
-  Namespaces                                         8
-  Interfaces                                         4
-  Traits                                             0
-  Classes                                          132
-  Methods                                          732
-  Functions                                          3
-  Constants                                         11
-  Internal Functions                                43
-
-Versions
-  PHP min                                        5.3.7
-  PHP max
+                    Count PHP min Elements highlight
+ Extensions         11    5.3.7   intl
+ Namespaces         8     5.3.7   Bartlett\CompatInfo\Reference
+ Interfaces         3     5.3.0   Bartlett\CompatInfo\Reference\ReferenceInterface
+ Traits             0
+ Classes            134   5.3.0   Bartlett\CompatInfo\Reference\Extension\RecodeExtension
+ User Functions     5     5.3.0   Bartlett\CompatInfo\Reference\closure-288-322
+ Internal Functions 49    5.2.0   json_decode
+ Constants          11    5.3.7   INTL_ICU_VERSION
+ Total                    5.3.7
