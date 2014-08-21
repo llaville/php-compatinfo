@@ -63,7 +63,7 @@ The phpcompatinfo(1) 'analyser:run' command is used to analyse a data source and
 
 Usage:
 
-  phpcompatinfo analyser:run [--alias] [--php="..."] [--redraw-freq="..."] source [analysers1] ... [analysersN]
+  phpcompatinfo analyser:run [--alias] [--php[="..."]] [--redraw-freq="..."] source [analysers1] ... [analysersN]
 
 Where:
 
@@ -74,7 +74,7 @@ Where:
   If set, the source refers to its alias
 
 *--php*::
-  Filter results on PHP version
+  Filter results on PHP version  (default: ">= 4.0")
 
 *--redraw-freq*::
   How many times should the progress bar be updated? (default: 1)

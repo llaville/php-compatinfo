@@ -42,8 +42,9 @@ class AnalyserRunCommand extends ProviderCommand
             ->addOption(
                 'php',
                 null,
-                InputOption::VALUE_REQUIRED,
-                'Filter results on PHP version'
+                InputOption::VALUE_OPTIONAL,
+                'Filter results on PHP version',
+                '>= 4.0'
             )
             ->addOption(
                 'redraw-freq',
@@ -67,9 +68,8 @@ class AnalyserRunCommand extends ProviderCommand
         } else {
             $alias = false;
         }
-
-        $php = $input->getOption('php');
-        if ($php) {
+        if ($php = $input->hasParameterOption('--php')) {
+            $php = $input->getOption('php');
             if (!preg_match(
                 '/^\s*(==|!=|[<>]=?)?\s*(.*)$/',
                 $php,
