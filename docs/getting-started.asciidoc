@@ -2,7 +2,7 @@
 :description: How to download, configure and use it in a basic way.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:pharstable:  http://bartlett.laurent-laville.org/get/phpcompatinfo-3.3.0-beta.phar
+:pharstable:  http://bartlett.laurent-laville.org/get/phpcompatinfo-3.3.0.phar
 
 
 == Download
@@ -20,8 +20,8 @@ endif::basebackend-bootstrap[]
 Make it executable, and put it into your `$PATH`.
 [source,bash]
 ----
-$ chmod +x phpcompatinfo-3.3.0-beta.phar
-$ mv phpcompatinfo-3.3.0-beta.phar /usr/local/bin/phpcompatinfo
+$ chmod +x phpcompatinfo-3.3.0.phar
+$ mv phpcompatinfo-3.3.0.phar /usr/local/bin/phpcompatinfo
 
 $ phpcompatinfo --version
 ----
@@ -29,8 +29,8 @@ $ phpcompatinfo --version
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.3.0-beta.phar
-$ php phpcompatinfo-3.3.0-beta.phar --version
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.3.0.phar
+$ php phpcompatinfo-3.3.0.phar --version
 ----
 
 With both methods then you have this output :
@@ -38,7 +38,7 @@ With both methods then you have this output :
 [role="output"]
 ====
 ----
-phpCompatInfo version 3.3.0-beta build ...
+phpCompatInfo version 3.3.0 build ...
 ----
 ====
 NOTE: [big]#...# represents the Git commit hash of this version
@@ -146,6 +146,7 @@ IMPORTANT: Don't miss it, else you could not run the `analyser:run` command.
 
 With a default +phpcompatinfo.json+ as detailed above, put in the +src/+ folder of the
 [label label-primary]#CompatInfo# source code, and invoke the following command :
+[source,bash]
 ----
 $ phpcompatinfo analyser:run .
 ----
@@ -157,6 +158,19 @@ and you should obtain something like this :
 include::summary_analysis.out.asciidoc[]
 ----
 ====
+
+Let's explain the results. We have 11 extensions with `intl` that requires at least PHP 5.3.7,
+and so on for all others components.
+
+[WARNING]
+=====
+Since release 3.3.0 only, if you want to have a full report of all elements
+without to specify each analyser, just enter the following command :
+[source,bash]
+----
+$ phpcompatinfo analyser:run . --php
+----
+=====
 
 [role="col-md-12 clearfix"]
 == Summary

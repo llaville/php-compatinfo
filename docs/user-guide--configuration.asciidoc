@@ -199,7 +199,7 @@ E.g: AnalyserPlugin footnote:[{rawurl}/src/Bartlett/Reflect/Plugin/Analyser/Anal
 
 ==== Cache Plugin
 
-WARNING: Available only since version 3.3.0-beta
+WARNING: Available only since version 3.3.0
 
 In your +phpcompatinfo.json+ configuration file, add in `plugins` section the following entry:
 [source,json]
@@ -212,13 +212,15 @@ In your +phpcompatinfo.json+ configuration file, add in `plugins` section the fo
             "backend": {
                 "class": "Doctrine\\Common\\Cache\\FilesystemCache",
                 "args": [
-                    "%{TEMP}/phpreflect"
+                    "%{TEMP}/bartlett/cache"
                 ]
             }
         }
     }
 ----
 TIP: You may use any environment variable that will be replaced, at run-time, by their value. E.g: `TEMP`, `HOME`
+
+NOTE: Since release 3.3.0, the `HOME` syntax is compatible Linux/Windows.
 
 CAUTION: Take care to use the same configuration as in PHP Reflect, or you should not share the cache results.
 

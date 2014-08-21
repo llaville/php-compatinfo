@@ -71,7 +71,7 @@ use Bartlett\Reflect\Cache\DoctrineCacheAdapter;
 
 use Doctrine\Common\Cache\FilesystemCache;
 
-$backend = new FilesystemCache(sys_get_temp_dir() . '/phpcompatinfo');
+$backend = new FilesystemCache(sys_get_temp_dir() . '/bartlett/cache');
 
 $doctrineCache = new DoctrineCacheAdapter($backend);
 

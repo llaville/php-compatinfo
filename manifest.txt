@@ -1,5 +1,5 @@
-bartlett/php-compatinfo: v3@7af37da40888a9b948dd07a6421b356b5dfc5a44
-bartlett/php-reflect: 2.x-dev@bb48ff296937025e883fdaca7e1ad61c26868698
+bartlett/php-compatinfo: 3.3.0
+bartlett/php-reflect: 2.3.0
 doctrine/cache: v1.3.0
 nikic/php-parser: v1.0.0beta1
 phpunit/php-timer: 1.0.5
