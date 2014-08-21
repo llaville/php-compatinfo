@@ -2,6 +2,7 @@
 :doctype:     manpage
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
+:author!:
 
 
 == NAME
