@@ -1,13 +1,13 @@
 '\" t
 .\"     Title: phpcompatinfo
-.\"    Author: Laurent Laville
+.\"    Author: [see the "AUTHORS" section]
 .\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
-.\"      Date: 2014-07-14
+.\"      Date: 2014-08-21
 .\"    Manual: \ \&
-.\"    Source: \ \& 3.2.0
+.\"    Source: \ \& 3.3.0
 .\"  Language: English
 .\"
-.TH "PHPCOMPATINFO" "1" "2014\-07\-14" "\ \& 3\&.2\&.0" "\ \&"
+.TH "PHPCOMPATINFO" "1" "2014\-08\-21" "\ \& 3\&.3\&.0" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -71,6 +71,30 @@ Disable ANSI output\&.
 .RS 4
 Display timing and memory usage information\&.
 .RE
+.SH "VALIDATE COMMAND"
+.sp
+The phpcompatinfo(1) \fIvalidate\fR command is used to check syntax of your json configuration file
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo validate [file]
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Where:
+.PP
+\fBfile\fR
+.RS 4
+Path to
+phpcompatinfo\&.json
+file (optional)
+.RE
 .SH "ANALYSER:LIST COMMAND"
 .sp
 The phpcompatinfo(1) \fIanalyser:list\fR command is used to show what analysers are installed (see CONF FILES section)\&.
@@ -84,7 +108,7 @@ Usage:
 .RS 4
 .\}
 .nf
-phpcompatinfo analyser:run [\-\-alias] [\-\-redraw\-freq="\&.\&.\&."] source [analysers1] \&.\&.\&. [analysersN]
+phpcompatinfo analyser:run [\-\-alias] [\-\-php[="\&.\&.\&."]] [\-\-redraw\-freq="\&.\&.\&."] source [analysers1] \&.\&.\&. [analysersN]
 .fi
 .if n \{\
 .RE
@@ -102,6 +126,11 @@ section)
 \fB\-\-alias\fR
 .RS 4
 If set, the source refers to its alias
+.RE
+.PP
+\fB\-\-php\fR
+.RS 4
+Filter results on PHP version (default: ">= 4\&.0")
 .RE
 .PP
 \fB\-\-redraw\-freq\fR
@@ -348,9 +377,3 @@ Copyright (C) 2010\-2014 Laurent Laville\&.
 .SH "LICENSE"
 .sp
 Free use of this software is granted under the terms of the BSD 3\-clause license\&.
-.SH "AUTHOR"
-.PP
-\fBLaurent Laville\fR
-.RS 4
-Author.
-.RE
