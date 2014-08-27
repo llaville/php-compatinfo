@@ -73,6 +73,32 @@ $compatinfo->getEventDispatcher()->addListener(
 ----
 ====
 
+.Add a listener that will exploit each http://en.wikipedia.org/wiki/Abstract_syntax_tree[AST] of file parsed
+====
+[source,php]
+----
+<?php
+
+use Bartlett\CompatInfo;
+use Symfony\Component\EventDispatcher\GenericEvent;
+
+$compatinfo = new CompatInfo;
+
+$compatinfo->getEventDispatcher()->addListener(
+    'reflect.success',
+    function (GenericEvent $e) {
+        $ast = unserialize($e['ast']);
+        printf(
+            'Parsing Data source "%s", file "%s". AST = %s' . PHP_EOL,
+            $e['source'],
+            $e['file']->getPathname(),
+            print_r($ast, true)
+        );
+    }
+);
+----
+====
+
 === Event Subscribers
 
 Event subscribers are classes that implement interface `Symfony\Component\EventDispatcher\EventSubscriberInterface`.
