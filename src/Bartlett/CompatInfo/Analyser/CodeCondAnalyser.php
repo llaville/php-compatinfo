@@ -27,7 +27,7 @@ use Symfony\Component\Console\Helper\TableSeparator;
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Class available since Release 3.0.0RC1
  */
-class SummaryAnalyser extends AbstractAnalyser
+class CodeCondAnalyser extends AbstractAnalyser
 {
     const METRICS_PREFIX = 'sa';
     const METRICS_GROUP  = 'internals';
