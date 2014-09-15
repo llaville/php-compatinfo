@@ -43,6 +43,13 @@ class GmpExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.6.1RC1
+        if (version_compare($version, '5.6.1RC1', 'ge')) {
+            $release = $this->getR50601rc1();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR40004()
@@ -164,6 +171,31 @@ class GmpExtension extends AbstractReference
         $release->functions = array(
             'gmp_root'              => null,
             'gmp_rootrem'           => null,
+        );
+        return $release;
+    }
+
+    protected function getR50601rc1()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.6.1RC1',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2014-09-11',
+            'php.min' => '5.6.1RC1',
+            'php.max' => '',
+        );
+        $release->functions = array(
+            'gmp_import'            => null,
+            'gmp_export'            => null,
+        );
+        $release->constants = array(
+            'GMP_BIG_ENDIAN'        => null,
+            'GMP_LITTLE_ENDIAN'     => null,
+            'GMP_LSW_FIRST'         => null,
+            'GMP_MSW_FIRST'         => null,
+            'GMP_NATIVE_ENDIAN'     => null,
         );
         return $release;
     }
