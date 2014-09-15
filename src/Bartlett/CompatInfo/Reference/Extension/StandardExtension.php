@@ -197,6 +197,13 @@ class StandardExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.6.1RC1
+        if (version_compare($version, '5.6.1RC1', 'ge')) {
+            $release = $this->getR50601rc1();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR40000()
@@ -1563,6 +1570,23 @@ class StandardExtension extends AbstractReference
             'STREAM_CRYPTO_METHOD_TLSv1_1_SERVER'   => null,
             'STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT'   => null,
             'STREAM_CRYPTO_METHOD_TLSv1_2_SERVER'   => null,
+        );
+        return $release;
+    }
+
+    protected function getR50601rc1()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '5.6.1RC1',
+            'ext.max' => '',
+            'state'   => 'alpha',
+            'date'    => '2014-09-11',
+            'php.min' => '5.6.1RC1',
+            'php.max' => '',
+        );
+        $release->constants = array(
+            'INI_SCANNER_TYPED'                     => null,
         );
         return $release;
     }
