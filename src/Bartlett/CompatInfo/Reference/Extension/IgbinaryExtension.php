@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class IgbinaryExtension extends AbstractReference
 {
     const REF_NAME    = 'igbinary';
-    const REF_VERSION = '1.2.0';    // 2014-08-28 (stable)
+    const REF_VERSION = '1.2.1';    // 2014-08-29 (stable)
 
     public function __construct()
     {
