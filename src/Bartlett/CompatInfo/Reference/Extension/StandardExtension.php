@@ -1580,7 +1580,7 @@ class StandardExtension extends AbstractReference
         $release->info = array(
             'ext.min' => '5.6.1RC1',
             'ext.max' => '',
-            'state'   => 'alpha',
+            'state'   => 'beta',
             'date'    => '2014-09-11',
             'php.min' => '5.6.1RC1',
             'php.max' => '',
