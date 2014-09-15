@@ -9,7 +9,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class PthreadsExtension extends AbstractReference
 {
     const REF_NAME    = 'pthreads';
-    const REF_VERSION = '2.0.7';    // 2014-05-10 (stable)
+    const REF_VERSION = '2.0.8';    // 2014-09-15 (stable)
 
     public function __construct()
     {
@@ -63,6 +63,13 @@ class PthreadsExtension extends AbstractReference
         // 2.0.1
         if (version_compare($version, '2.0.1', 'ge')) {
             $release = $this->getR20001();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
+        // 2.0.8
+        if (version_compare($version, '2.0.8', 'ge')) {
+            $release = $this->getR20008();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
@@ -239,6 +246,46 @@ class PthreadsExtension extends AbstractReference
         );
         $release->constants = array(
             'PTHREADS_ALLOW_GLOBALS'        => null,
+        );
+        return $release;
+    }
+
+    protected function getR20008()
+    {
+        $release = new \StdClass;
+        $release->info = array(
+            'ext.min' => '2.0.8',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2014-09-15',
+            'php.min' => '5.3.0',
+            'php.max' => '',
+        );
+        $release->classes = array(
+            'Collectable'                   => array(
+                'methods' => array(
+                    'chunck'                => null,
+                    'count'                 => null,
+                    'getTerminationInfo'    => null,
+                    'isGarbage'             => null,
+                    'isRunning'             => null,
+                    'isTerminated'          => null,
+                    'isWaiting'             => null,
+                    'lock'                  => null,
+                    'merge'                 => null,
+                    'notify'                => null,
+                    'pop'                   => null,
+                    'run'                   => null,
+                    'setGarbage'            => null,
+                    'shift'                 => null,
+                    'synchronized'          => null,
+                    'unlock'                => null,
+                    'wait'                  => null,
+                ),
+                'staticMethods' => array(
+                    'extend'                => null,
+                )
+            )
         );
         return $release;
     }
