@@ -43,7 +43,7 @@ class SysvsemExtension extends AbstractReference
             'php.max' => '',
         );
         $release->functions = array(
-            'sem_acquire'                       => null,
+            'sem_acquire'                       => array('4.0.0', '5.6.1RC1'),
             'sem_get'                           => null,
             'sem_release'                       => null,
         );
