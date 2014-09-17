@@ -685,7 +685,7 @@ class CoreExtension extends AbstractReference
             'ArrayAccess'                       => null,
             'Iterator'                          => null,
             'IteratorAggregate'                 => null,
-            'Serializable'                      => null,
+            'Serializable'                      => array('php.min' => '5.1.0'),
             'Traversable'                       => null,
         );
         return $release;
