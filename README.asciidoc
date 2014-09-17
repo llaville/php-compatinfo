@@ -25,3 +25,62 @@ in http://php5.laurent-laville.org/compatinfo/manual/3.3/en/[English]
 to read it online or download to read it later (multiple formats).
 
 AsciiDoc source code are available on `docs` folder of the repository.
+
+== Contribute
+
+Contributions to source code and its documentation are always welcome.
+
+As developper, I'm always happy when I have the more informations as possible to check and find out issues.
+This is the reason why I've created a https://github.com/llaville/phpunit-LoggerTestListener[PHPUnit TestSuite Listener for compatible PSR-3 Loggers].
+
+If you want to use it, then :
+
+- install the component via Composer
+
+[source,bash]
+----
+$ php composer.phar require bartlett/phpunit-loggertestlistener=~1.1
+----
+
+- create a `phpunit.xml` file with at least following contents :
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    backupGlobals="true"
+    backupStaticAttributes="false"
+    bootstrap="tests/bootstrap.dev.php"
+    colors="false"
+    stopOnError="false"
+    stopOnFailure="false"
+    stopOnIncomplete="false"
+    stopOnRisky="false"
+    stopOnSkipped="false"
+    strict="true"
+    verbose="false"
+>
+    <filter>
+        <whitelist>
+        <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+    <listeners>
+        <listener class="Bartlett\LoggerTestListener">
+            <arguments>
+                <object class="Psr3Logger" />
+            </arguments>
+        </listener>
+    </listeners>
+    <testsuites>
+        <testsuite name="CompatInfo Test Suite">
+            <directory suffix="Test.php">tests/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
+----
+
+- configure your PSR-3 logger in the `tests\bootstrap.dev.php` file
+
+NOTE: Default will log all tests in local file `/var/logs/phpcompatinfo.log`
+and send a Growl notification of Test Suites summary when ended.
