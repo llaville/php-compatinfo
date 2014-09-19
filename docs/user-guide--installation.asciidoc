@@ -27,7 +27,6 @@ Before you install PHP [label label-primary]#CompatInfo#, you will need an opera
 with http://www.php.net[PHP] 5.3.0 or later installed,
 
 [label label-primary]#CompatInfo# requires the
-http://www.php.net/manual/en/book.intl.php[intl],
 http://www.php.net/manual/en/book.json.php[json],
 http://www.php.net/manual/en/book.libxml.php[libxml],
 http://www.php.net/manual/en/book.pcre.php[pcre], and
