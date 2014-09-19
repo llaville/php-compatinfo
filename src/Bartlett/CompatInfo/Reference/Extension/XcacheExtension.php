@@ -15,7 +15,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class XcacheExtension extends AbstractReference
 {
     const REF_NAME    = 'XCache';
-    const REF_VERSION = '3.1.0';    // 2013-10-10 (stable)
+    const REF_VERSION = '3.2.0';    // 2014-09-18 (stable)
 
     public function __construct()
     {
