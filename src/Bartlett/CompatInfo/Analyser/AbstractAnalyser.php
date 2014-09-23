@@ -359,8 +359,10 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 if (!isset($this->count[static::METRICS_PREFIX . '.' . $type][$name])) {
                     $this->count[static::METRICS_PREFIX . '.' . $type][$name] = $versions;
                 }
-                $this->count[static::METRICS_PREFIX . '.' . $type][$name]['optional']  = true;
-                $this->count[static::METRICS_PREFIX . '.extensions'][$ref]['optional'] = true;
+                $this->count[static::METRICS_PREFIX . '.' . $type][$name]['optional'] = true;
+                if ('user' !== $ref) {
+                    $this->count[static::METRICS_PREFIX . '.extensions'][$ref]['optional'] = true;
+                }
             }
         }
     }
