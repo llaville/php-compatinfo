@@ -216,6 +216,7 @@ class ConsoleApplication extends Application
                 }
             }
             $rows[] = array(
+                isset($versions['optional']) ? 'C' : ' ',
                 $arg,
                 isset($versions['ref']) ? $versions['ref'] : null,
                 empty($versions['ext.max'])

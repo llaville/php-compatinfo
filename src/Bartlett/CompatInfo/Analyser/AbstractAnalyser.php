@@ -53,7 +53,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     {
         $rows = ConsoleApplication::versionHelper($args, $filter);
 
-        $headers = array($title, 'REF', 'EXT min/Max', 'PHP min/Max');
+        $headers = array('', $title, 'REF', 'EXT min/Max', 'PHP min/Max');
 
         $versions = empty($versions['php.max'])
             ? $versions['php.min']
@@ -62,6 +62,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
         if ($filter) {
             $footers = array(
+                '',
                 sprintf('<info>Total [%d/%d]</info>', count($rows), count($args)),
                 '',
                 '',
@@ -69,6 +70,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             );
         } else {
             $footers = array(
+                '',
                 sprintf('<info>Total [%d]</info>', count($args)),
                 '',
                 '',
@@ -264,13 +266,15 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         $versions = $this->processInternal($name);
         $type     = $this->loader->getTypeElement();
 
-        $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
-        $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
+        if (!isset($this->count[static::METRICS_PREFIX . ".$type"][$name])) {
+            $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
+            $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
 
-        $this->updatePackageVersion(
-            $versions['php.min'], $versions['php.max'],
-            $this->currentNamespace
-        );
+            $this->updatePackageVersion(
+                $versions['php.min'], $versions['php.max'],
+                $this->currentNamespace
+            );
+        }
     }
 
     /**
@@ -325,28 +329,36 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         }
 
         if (in_array(static::METRICS_GROUP, array($type, 'internals', 'extensions', 'namespaces'))) {
-            $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
-            $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
+            if (!isset($this->count[static::METRICS_PREFIX . ".$type"][$name])) {
+                $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
+                $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
 
-            $this->updatePackageVersion(
-                $versions['php.min'],
-                $versions['php.max'],
-                $dependency->getNamespaceName()
-            );
+                $this->updatePackageVersion(
+                    $versions['php.min'],
+                    $versions['php.max'],
+                    $dependency->getNamespaceName()
+                );
+            }
         }
 
-        if ('extension_loaded' == $name) {
+        if ($dependency->isConditionalFunction()) {
             $args = $dependency->getArguments();
 
             if ('Scalar_String' == $args[0]['type']) {
                 $name     = $args[0]['value'];
                 $versions = $this->processInternal($name);
-
-                if (!isset($this->count[static::METRICS_PREFIX . ".extensions"][$name])) {
+                if ($dependency->getName() == 'extension_loaded') {
+                    // force type to avoid wrong categorization
+                    $type = 'extensions';
                     unset($versions['ref']);
-                    $this->count[static::METRICS_PREFIX . ".extensions"][$name] = $versions;
-                    $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
+                } else {
+                    // auto-detect category
+                    $type = $this->loader->getTypeElement();
                 }
+                if (!isset($this->count[static::METRICS_PREFIX . '.' . $type][$name])) {
+                    $this->count[static::METRICS_PREFIX . '.' . $type][$name] = $versions;
+                }
+                $this->count[static::METRICS_PREFIX . '.' . $type][$name]['optional'] = true;
             }
         }
     }
@@ -514,6 +526,8 @@ abstract class AbstractAnalyser extends ReflectAnalyser
      * @param string $element Name of element to search for Reference versions
      * @param int    $argc    (optional) Number of arguments used
      *                        in current $element signature
+     *
+     * @return array
      */
     protected function processInternal($element, $argc = 0)
     {
@@ -556,8 +570,6 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 $versions['php.max'],
                 $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['php.max']
             );
-
-            $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
         }
 
         return $versions;

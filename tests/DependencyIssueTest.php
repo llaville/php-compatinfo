@@ -41,6 +41,7 @@ use Symfony\Component\Finder\Finder;
 class DependencyIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH100 = 'GH#100';
+    const GH128 = 'GH#128';
 
     protected static $compatinfo;
 
@@ -60,8 +61,18 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
             )
         ;
 
+        $finder2 = new Finder();
+        $finder2->files()
+            ->name('gh128.php')
+            ->in(
+                dirname(__FILE__) . DIRECTORY_SEPARATOR .
+                '_files' . DIRECTORY_SEPARATOR
+            )
+        ;
+
         $pm = new ProviderManager;
         $pm->set(self::GH100, new SymfonyFinderProvider($finder));
+        $pm->set(self::GH128, new SymfonyFinderProvider($finder2));
 
         self::$compatinfo = new CompatInfo;
         self::$compatinfo->setProviderManager($pm);
@@ -93,6 +104,29 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             $expected,
             $metrics[self::GH100][$key]['php.min']
+        );
+    }
+
+    /**
+     * Regression test for bug GH#128
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/128
+     *       Detection of conditional code
+     * @group regression
+     * @return void
+     */
+    public function testBugGH128()
+    {
+        self::$compatinfo->parse(array(self::GH128));
+
+        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.versions';
+
+        $expected = '4.0.0';
+        $metrics  = self::$compatinfo->getMetrics();
+
+        $this->assertEquals(
+            $expected,
+            $metrics[self::GH128][$key]['php.min']
         );
     }
 }

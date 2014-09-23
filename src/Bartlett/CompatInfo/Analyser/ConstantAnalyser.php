@@ -77,8 +77,10 @@ class ConstantAnalyser extends AbstractAnalyser
      */
     public function visitPackageModel($package)
     {
-        $this->packages[] = $package->getName();
+        // explore dependencies (DependencyModel)
+        parent::visitPackageModel($package);
 
+        // explore all constants (ConstantModel)
         foreach ($package->getConstants() as $constant) {
             $constant->accept($this);
         }
