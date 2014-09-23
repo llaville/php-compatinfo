@@ -347,6 +347,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             if ('Scalar_String' == $args[0]['type']) {
                 $name     = $args[0]['value'];
                 $versions = $this->processInternal($name);
+                $ref      = $versions['ref'];
                 if ($dependency->getName() == 'extension_loaded') {
                     // force type to avoid wrong categorization
                     $type = 'extensions';
@@ -358,7 +359,8 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 if (!isset($this->count[static::METRICS_PREFIX . '.' . $type][$name])) {
                     $this->count[static::METRICS_PREFIX . '.' . $type][$name] = $versions;
                 }
-                $this->count[static::METRICS_PREFIX . '.' . $type][$name]['optional'] = true;
+                $this->count[static::METRICS_PREFIX . '.' . $type][$name]['optional']  = true;
+                $this->count[static::METRICS_PREFIX . '.extensions'][$ref]['optional'] = true;
             }
         }
     }
