@@ -75,10 +75,17 @@ class SummaryAnalyser extends AbstractAnalyser
                     return -1 * version_compare($a['php.min'], $b['php.min']);
                 }
             );
-            list($ext, $values) = each($elements);
+            $optional = 0;
+            do {
+                list($ext, $values) = each($elements);
+                if (isset($values['optional'])) {
+                    $optional++;
+                }
+            } while (isset($values['optional']));
             return array(
                 sprintf('<info>%s</info>', $title),
                 count($elements),
+                $optional,
                 $values['php.min'],
                 $ext
             );
@@ -119,7 +126,7 @@ class SummaryAnalyser extends AbstractAnalyser
                 }
             }
 
-            $headers = array('', 'Count', 'PHP min', 'Elements highlight');
+            $headers = array('', 'Count', 'Cond', 'PHP min', 'Elements highlight');
             $rows    = array();
 
             $elements = $count[self::METRICS_PREFIX . '.extensions'];
@@ -148,6 +155,7 @@ class SummaryAnalyser extends AbstractAnalyser
 
             $footers = array(
                 '<info>Total</info>',
+                '',
                 '',
                 sprintf(
                     '<info>%s</info>',
