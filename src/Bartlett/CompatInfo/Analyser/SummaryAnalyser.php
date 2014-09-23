@@ -76,11 +76,14 @@ class SummaryAnalyser extends AbstractAnalyser
                 }
             );
             $optional = 0;
-            do {
-                list($ext, $values) = each($elements);
+            foreach ($elements as $ext => $values) {
                 if (isset($values['optional'])) {
                     $optional++;
                 }
+            }
+            reset($elements);
+            do {
+                list($ext, $values) = each($elements);
             } while (isset($values['optional']));
             return array(
                 sprintf('<info>%s</info>', $title),
