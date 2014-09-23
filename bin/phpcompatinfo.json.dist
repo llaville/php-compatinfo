@@ -45,6 +45,10 @@
             "class": "Bartlett\\CompatInfo\\Analyser\\SummaryAnalyser"
         },
         {
+            "name": "Condition",
+            "class": "Bartlett\\CompatInfo\\Analyser\\CodeCondAnalyser"
+        },
+        {
             "name": "Structure",
             "class": "Bartlett\\Reflect\\Analyser\\StructureAnalyser"
         }
