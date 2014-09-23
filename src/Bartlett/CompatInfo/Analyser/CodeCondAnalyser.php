@@ -12,11 +12,7 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
-use Bartlett\CompatInfo\ConsoleApplication;
-
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Helper\Table;
-use Symfony\Component\Console\Helper\TableSeparator;
 
 /**
  * This analyzer collects versions on conditional code of a project.
@@ -61,49 +57,15 @@ class CodeCondAnalyser extends AbstractAnalyser
      */
     public function render(OutputInterface $output)
     {
-        $count = $this->count;
-
         $output->writeln('<info>Conditional Code Analysis</info>' . PHP_EOL);
 
-        $args     = $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP];
-        $versions = $this->count[self::METRICS_PREFIX . '.versions'];
-        $filter   = func_get_arg(1);
-        $title    = 'Condition';
-
-        $rows = ConsoleApplication::versionHelper($args, $filter);
-
-        $headers = array($title, '', '', 'PHP min/Max');
-
-        $versions = empty($versions['php.max'])
-            ? $versions['php.min']
-            : $versions['php.min'] . ' => ' . $versions['php.max']
-        ;
-
-        if ($filter) {
-            $footers = array(
-                sprintf('<info>Total [%d/%d]</info>', count($rows), count($args)),
-                '',
-                '',
-                sprintf('<info>%s</info>', $versions)
-            );
-        } else {
-            $footers = array(
-                sprintf('<info>Total [%d]</info>', count($args)),
-                '',
-                '',
-                sprintf('<info>%s</info>', $versions)
-            );
-        }
-        $rows[] = new TableSeparator();
-        $rows[] = $footers;
-
-        $table = new Table($output);
-        $table
-            ->setHeaders($headers)
-            ->setRows($rows)
-            ->setStyle('compact')
-        ;
-        $table->render();
+        $this->listHelper(
+            $output,
+            $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP],
+            $this->count[self::METRICS_PREFIX . '.versions'],
+            func_get_arg(1),
+            'Condition'
+        );
     }
 
     /**
@@ -119,15 +81,16 @@ class CodeCondAnalyser extends AbstractAnalyser
         $name = $dependency->getName();
 
         if ($dependency->isConditionalFunction()) {
+            $versions = $this->processInternal($name);
+            $args     = $dependency->getArguments();
 
-            if (!isset($this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP][$name])) {
-                $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP][$name] = array();
+            if ('Scalar_String' == $args[0]['type']) {
+                $versions = $this->processInternal($args[0]['value']);
+                $name     = sprintf('%s(%s)', $name, $args[0]['value']);
+                $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP][$name] = $versions;
+
+                $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
             }
-
-            $values = self::$php4;
-            $values['signature'] = (string) $dependency;
-
-            $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP][$name] = $values;
         }
     }
 }
