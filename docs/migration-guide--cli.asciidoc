@@ -363,9 +363,10 @@ $ phpcompatinfo print --reference=ALL --recursive --report condition <SOURCE>
 ----
 
 [role="col-md-6"]
-====
-CAUTION: Feature not provided by version [label label-primary]#3.2#
-====
+.Version [label label-primary]#3.4#
+----
+$ phpcompatinfo analyser:run <SOURCE> condition
+----
 
 unfloat::[]
 

@@ -23,7 +23,7 @@ when you invoke the `phpcompatinfo` command, you should obtain the following com
 [role="output"]
 ====
 ----
-phpCompatInfo version 3.3.0 build ...
+phpCompatInfo version 3.4.0 build ...
 
 Usage:
   [options] command [arguments]

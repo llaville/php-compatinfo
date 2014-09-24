@@ -32,6 +32,10 @@ include::developer-guide--api.asciidoc[]
 
 include::developer-guide--plugins.asciidoc[]
 
+include::developer-guide--cache-plugin.asciidoc[]
+
+include::developer-guide--log-plugin.asciidoc[]
+
 include::developer-guide--analysers.asciidoc[]
 :leveloffset: 0
 

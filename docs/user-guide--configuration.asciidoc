@@ -70,6 +70,10 @@ The minimalist JSON file +phpcompatinfo.json+ is :
             "class": "Bartlett\\CompatInfo\\Analyser\\SummaryAnalyser"
         },
         {
+            "name": "Condition",
+            "class": "Bartlett\\CompatInfo\\Analyser\\CodeCondAnalyser"
+        },
+        {
             "name": "Structure",
             "class": "Bartlett\\Reflect\\Analyser\\StructureAnalyser"
         }
@@ -233,6 +237,69 @@ ifdef::basebackend-docbook[]
 xref:_file_cache[]
 endif::basebackend-docbook[]
 
+==== Log Plugin
+
+WARNING: Available only since version 3.4.0
+
+In your +phpcompatinfo.json+ configuration file, add in `plugins` section the following entry:
+[source,json]
+----
+    {
+        "name": "Log",
+        "class": "Bartlett\\Reflect\\Plugin\\Log\\LogPlugin",
+        "options": {
+            "logger": {
+                "class": "YourLogger"
+            },
+            "conf": []
+        }
+    }
+----
+Where `YourLogger` identify your class logger (fully qualified. E.g `YourNamespace\YourLogger`).
+
+See the Developer Guide for definition examples of some loggers
+ifdef::basebackend-html[]
+link:developer-guide&#45;&#45;log-plugin.html#_using_your_private_logger[using private logger] or
+link:developer-guide&#45;&#45;log-plugin.html#_using_monolog[using monolog]
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_using_your_private_logger[] or
+xref:_using_monolog[]
+endif::basebackend-docbook[]
+
+
+And `conf` entry are custom plugin options to apply.
+
+For example, to suppress logging of `reflect.success` event, and remove contextual data
+on `reflect.complete` event, modify your +phpreflect.json+ configuration file as follow :
+
+[source,json]
+----
+    {
+        "name": "Log",
+        "class": "Bartlett\\Reflect\\Plugin\\Log\\LogPlugin",
+        "options": {
+            "logger": {
+                "class": "YourLogger"
+            },
+            "conf": {
+                "reflect.success": false,
+                "reflect.complete": {
+                    "context": false
+                }
+            }
+        }
+    }
+----
+
+All configuration options are available, see
+ifdef::basebackend-html[]
+link:developer-guide&#45;&#45;log-plugin.html#_register_plugin[Register Plugin] of Log section.
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_register_plugin[]
+endif::basebackend-docbook[]
+
 
 === Analysers
 
@@ -268,6 +335,41 @@ $ phpcompatinfo analyser:run . summary
 CAUTION: Each `name` key must be unique to avoid conflicts.
 
 The `class` key identify the name of the class that implement the analyser features.
+
+
+==== Conditional Code
+
+WARNING: Available only since version 3.4.0
+
+[label label-primary]#CompatInfo# is now capable to detect conditional code, mark each element
+in all analysers reporting, and exclude their versions from PHP min/max final results.
+
+Let's see with [label label-primary]#CompatInfo# source code, and explain results.
+
+The new condition analyser (`CodeCondAnalyser`), is able to produce such kind of report :
+
+[role="output"]
+====
+----
+include::condition_analysis.out.asciidoc[]
+----
+====
+
+That meens [label label-primary]#CompatInfo# need at least PHP 5.3.7 if you used all conditional features.
+But remember, that the minimum version is only PHP 5.3.0 (see summary report).
+
+[role="output"]
+====
+----
+include::summary_analysis.out.asciidoc[]
+----
+====
+
+The new `Cond` column tell you how many condition where found in each category.
+And of course the condition analyser give you the details.
+
+And finally, all other analysers show you with a `C` mark in front of element name
+when it's excluded from PHP min/max versions, and considered as conditional code.
 
 
 ifdef::basebackend-bootstrap[]

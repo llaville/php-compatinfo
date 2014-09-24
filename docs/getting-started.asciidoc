@@ -167,7 +167,7 @@ include::summary_analysis.out.asciidoc[]
 ----
 ====
 
-Let's explain the results. We have 11 extensions with `intl` that requires at least PHP 5.3.7,
+Let's explain the results. We have 12 extensions, 4 optionals due to conditional code, with `Core` that requires at least PHP 5.3.0,
 and so on for all others components.
 
 [WARNING]
@@ -178,7 +178,23 @@ without to specify each analyser, just enter the following command :
 ----
 $ phpcompatinfo analyser:run . --php
 ----
+
+Since release 3.4.0, the `condition` analyser results are also included.
 =====
+
+To see details of conditional code (`Cond` column in summary report), run following command :
+[source,bash]
+----
+$ phpcompatinfo analyser:run . condition
+----
+and you should obtain something like this :
+
+[role="output"]
+====
+----
+include::condition_analysis.out.asciidoc[]
+----
+====
 
 [role="col-md-12 clearfix"]
 == Summary

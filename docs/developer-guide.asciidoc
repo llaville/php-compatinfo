@@ -75,6 +75,7 @@ endif::basebackend-bootstrap[]
 | Plugin | Description
 
 | link:developer-guide&#45;&#45;cache-plugin.html[Cache] | speed up future data source parsing
+| link:developer-guide&#45;&#45;log-plugin.html[Log] | log events on any PSR-3 compatible logger
 |===========================
 --
 ====
