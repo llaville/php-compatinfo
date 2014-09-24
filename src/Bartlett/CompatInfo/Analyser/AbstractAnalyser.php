@@ -365,7 +365,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                     $this->count[static::METRICS_PREFIX . '.' . $type][$name] = $versions;
                 }
                 $this->count[static::METRICS_PREFIX . '.' . $type][$name]['optional'] = true;
-                if ('user' !== $ref) {
+                if ('user' !== $ref && 'Core' !== $ref) {
                     $this->count[static::METRICS_PREFIX . '.extensions'][$ref]['optional'] = true;
                 }
             }
