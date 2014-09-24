@@ -368,6 +368,13 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 if ('user' !== $ref && 'Core' !== $ref) {
                     $this->count[static::METRICS_PREFIX . '.extensions'][$ref]['optional'] = true;
                 }
+
+                $name = sprintf('%s(%s)', $dependency->getName(), $name);
+                $this->count[static::METRICS_PREFIX . '.conditions'][$name] = $versions;
+
+                if ('cca' == static::METRICS_PREFIX) {
+                    $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
+                }
             }
         }
     }

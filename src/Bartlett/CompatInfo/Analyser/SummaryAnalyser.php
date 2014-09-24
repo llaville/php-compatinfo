@@ -48,6 +48,7 @@ class SummaryAnalyser extends AbstractAnalyser
             self::METRICS_PREFIX . '.methods'       => array(),
             self::METRICS_PREFIX . '.functions'     => array(),
             self::METRICS_PREFIX . '.constants'     => array(),
+            self::METRICS_PREFIX . '.conditions'    => array(),
             self::METRICS_PREFIX . '.versions'      => array(
                 'ext.min' => '',
                 'ext.max' => '',
@@ -107,8 +108,22 @@ class SummaryAnalyser extends AbstractAnalyser
                 'Class'     => '.classes',
                 'Function'  => '.functions',
                 'Constant'  => '.constants',
+                'Condition' => '.conditions',
             );
             foreach ($reports as $title => $group) {
+                $count[self::METRICS_PREFIX . '.versions'] = self::$php4;
+
+                foreach ($count[self::METRICS_PREFIX . $group] as $key => $versions) {
+                    self::updateVersion(
+                        $versions['php.min'],
+                        $count[self::METRICS_PREFIX . '.versions']['php.min']
+                    );
+                    self::updateVersion(
+                        $versions['php.max'],
+                        $count[self::METRICS_PREFIX . '.versions']['php.min']
+                    );
+                }
+
                 $this->listHelper(
                     $output,
                     $count[self::METRICS_PREFIX . $group],

@@ -67,30 +67,4 @@ class CodeCondAnalyser extends AbstractAnalyser
             'Condition'
         );
     }
-
-    /**
-     * Explore contents of each dependency (DependencyModel)
-     * found in the current namespace.
-     *
-     * @param object $dependency Reflect the current dependency explored
-     *
-     * @return void
-     */
-    public function visitDependencyModel($dependency)
-    {
-        $name = $dependency->getName();
-
-        if ($dependency->isConditionalFunction()) {
-            $versions = $this->processInternal($name);
-            $args     = $dependency->getArguments();
-
-            if ('Scalar_String' == $args[0]['type']) {
-                $versions = $this->processInternal($args[0]['value']);
-                $name     = sprintf('%s(%s)', $name, $args[0]['value']);
-                $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP][$name] = $versions;
-
-                $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
-            }
-        }
-    }
 }
