@@ -40,7 +40,7 @@ class TidyExtension extends AbstractReference
 
     protected function getR00502()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.5.2',
             'ext.max' => '',
@@ -241,7 +241,7 @@ class TidyExtension extends AbstractReference
 
     protected function getR00700()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.7.0',
             'ext.max' => '',
@@ -264,7 +264,7 @@ class TidyExtension extends AbstractReference
 
     protected function getR20000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0',
             'ext.max' => '',

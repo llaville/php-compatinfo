@@ -25,7 +25,7 @@ class CtypeExtension extends AbstractReference
 
     protected function getR40004()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.4',
             'ext.max' => '',

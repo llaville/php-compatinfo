@@ -40,7 +40,7 @@ class RarExtension extends AbstractReference
 
     protected function getR20000b2()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0b2',
             'ext.max' => '',
@@ -73,7 +73,7 @@ class RarExtension extends AbstractReference
 
     protected function getR20000RC1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0RC1',
             'ext.max' => '',
@@ -93,7 +93,7 @@ class RarExtension extends AbstractReference
 
     protected function getR30000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.0',
             'ext.max' => '',

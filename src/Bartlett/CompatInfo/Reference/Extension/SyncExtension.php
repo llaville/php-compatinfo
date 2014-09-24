@@ -40,7 +40,7 @@ class SyncExtension extends AbstractReference
 
     protected function getR10000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.0',
             'ext.max' => '',

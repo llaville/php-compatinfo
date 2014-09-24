@@ -25,7 +25,7 @@ class GenderExtension extends AbstractReference
 
     protected function getR00600()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.6.0',
             'ext.max' => '',

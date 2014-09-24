@@ -54,7 +54,7 @@ class FilterExtension extends AbstractReference
 
     protected function getR00900()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.9.0',
             'ext.max' => '',
@@ -107,7 +107,7 @@ class FilterExtension extends AbstractReference
 
     protected function getR00902()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.9.2',
             'ext.max' => '',
@@ -127,7 +127,7 @@ class FilterExtension extends AbstractReference
 
     protected function getR00904()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.9.4',
             'ext.max' => '',
@@ -164,7 +164,7 @@ class FilterExtension extends AbstractReference
 
     protected function getR01000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.10.0',
             'ext.max' => '0.10.0',
@@ -185,7 +185,7 @@ class FilterExtension extends AbstractReference
 
     protected function getR01100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.11.0',
             'ext.max' => '',

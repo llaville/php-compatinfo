@@ -54,7 +54,7 @@ class LibeventExtension extends AbstractReference
 
     protected function getR00002()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.0.2',
             'ext.max' => '',
@@ -107,7 +107,7 @@ class LibeventExtension extends AbstractReference
 
     protected function getR00004()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.0.4',
             'ext.max' => '',
@@ -131,7 +131,7 @@ class LibeventExtension extends AbstractReference
 
     protected function getR00005()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.0.5',
             'ext.max' => '',
@@ -148,7 +148,7 @@ class LibeventExtension extends AbstractReference
 
     protected function getR00100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.1.0',
             'ext.max' => '',

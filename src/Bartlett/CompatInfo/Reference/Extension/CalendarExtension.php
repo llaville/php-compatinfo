@@ -46,7 +46,7 @@ class CalendarExtension extends AbstractReference
 
     protected function getR40000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.0',
             'ext.max' => '',
@@ -92,7 +92,7 @@ class CalendarExtension extends AbstractReference
 
     protected function getR40007()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.7',
             'ext.max' => '',
@@ -112,7 +112,7 @@ class CalendarExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',
@@ -132,7 +132,7 @@ class CalendarExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',

@@ -33,7 +33,7 @@ class XmlrpcExtension extends AbstractReference
 
     protected function getR40100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.1.0',
             'ext.max' => '',
@@ -62,7 +62,7 @@ class XmlrpcExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',

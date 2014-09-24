@@ -138,7 +138,7 @@ class GdExtension extends AbstractReference
 
     protected function getR40000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.0',
             'ext.max' => '',
@@ -247,7 +247,7 @@ class GdExtension extends AbstractReference
 
     protected function getR40001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.1',
             'ext.max' => '',
@@ -270,7 +270,7 @@ class GdExtension extends AbstractReference
 
     protected function getR40002()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.2',
             'ext.max' => '',
@@ -287,7 +287,7 @@ class GdExtension extends AbstractReference
 
     protected function getR40004()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.4',
             'ext.max' => '',
@@ -304,7 +304,7 @@ class GdExtension extends AbstractReference
 
     protected function getR40005()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.5',
             'ext.max' => '',
@@ -323,7 +323,7 @@ class GdExtension extends AbstractReference
 
     protected function getR40006()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.6',
             'ext.max' => '',
@@ -356,7 +356,7 @@ class GdExtension extends AbstractReference
 
     protected function getR40007()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.7',
             'ext.max' => '',
@@ -379,7 +379,7 @@ class GdExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',
@@ -401,7 +401,7 @@ class GdExtension extends AbstractReference
 
     protected function getR40302()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.2',
             'ext.max' => '',
@@ -421,7 +421,7 @@ class GdExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -441,7 +441,7 @@ class GdExtension extends AbstractReference
 
     protected function getR50100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.0',
             'ext.max' => '',
@@ -460,7 +460,7 @@ class GdExtension extends AbstractReference
 
     protected function getR50103()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.3',
             'ext.max' => '',
@@ -477,7 +477,7 @@ class GdExtension extends AbstractReference
 
     protected function getR50202()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.2',
             'ext.max' => '',
@@ -495,7 +495,7 @@ class GdExtension extends AbstractReference
 
     protected function getR50204()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.4',
             'ext.max' => '',
@@ -516,7 +516,7 @@ class GdExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',
@@ -533,7 +533,7 @@ class GdExtension extends AbstractReference
 
     protected function getR50400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.0',
             'ext.max' => '',
@@ -551,7 +551,7 @@ class GdExtension extends AbstractReference
 
     protected function getR50500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.0',
             'ext.max' => '',

@@ -103,7 +103,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR40000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.0',
             'ext.max' => '',
@@ -181,7 +181,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR40001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.1',
             'ext.max' => '',
@@ -199,7 +199,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR40003()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.3',
             'ext.max' => '',
@@ -221,7 +221,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR40006()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.6',
             'ext.max' => '',
@@ -238,7 +238,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR40200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.2.0',
             'ext.max' => '',
@@ -314,7 +314,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',
@@ -343,7 +343,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -361,7 +361,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR50100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.0',
             'ext.max' => '',
@@ -395,7 +395,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR50200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.0',
             'ext.max' => '',
@@ -412,7 +412,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR50404()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.4',
             'ext.max' => '',
@@ -434,7 +434,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR50600a1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.0alpha1',
             'ext.max' => '',
@@ -451,7 +451,7 @@ class PgsqlExtension extends AbstractReference
 
     protected function getR50600b1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.0beta1',
             'ext.max' => '',

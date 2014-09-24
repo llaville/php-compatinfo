@@ -51,7 +51,7 @@ class VarnishExtension extends AbstractReference
 
     protected function getR00300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.3',
             'ext.max' => '',
@@ -85,7 +85,7 @@ class VarnishExtension extends AbstractReference
 
     protected function getR00400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.4',
             'ext.max' => '',
@@ -102,7 +102,7 @@ class VarnishExtension extends AbstractReference
 
     protected function getR00800()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.8',
             'ext.max' => '',
@@ -123,7 +123,7 @@ class VarnishExtension extends AbstractReference
 
     protected function getR00902()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.9.2',
             'ext.max' => '',

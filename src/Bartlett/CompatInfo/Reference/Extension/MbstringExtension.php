@@ -82,7 +82,7 @@ class MbstringExtension extends AbstractReference
 
     protected function getR40006()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.6',
             'ext.max' => '',
@@ -139,7 +139,7 @@ class MbstringExtension extends AbstractReference
 
     protected function getR40200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.2.0',
             'ext.max' => '',
@@ -187,7 +187,7 @@ class MbstringExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',
@@ -212,7 +212,7 @@ class MbstringExtension extends AbstractReference
 
     protected function getR40403()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.4.3',
             'ext.max' => '',
@@ -229,7 +229,7 @@ class MbstringExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -246,7 +246,7 @@ class MbstringExtension extends AbstractReference
 
     protected function getR50102()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.2',
             'ext.max' => '',
@@ -263,7 +263,7 @@ class MbstringExtension extends AbstractReference
         
     protected function getR50200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.0',
             'ext.max' => '',
@@ -285,7 +285,7 @@ class MbstringExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',
@@ -302,7 +302,7 @@ class MbstringExtension extends AbstractReference
 
     protected function getR50401()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.1',
             'ext.max' => '',

@@ -26,7 +26,7 @@ class JsminExtension extends AbstractReference
 
     protected function getR00100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.1.0',
             'ext.max' => '',

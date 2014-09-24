@@ -89,7 +89,7 @@ class MongoExtension extends AbstractReference
 
     protected function getR00900()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.9.0',
             'ext.max' => '',
@@ -153,7 +153,7 @@ class MongoExtension extends AbstractReference
 
     protected function getR10001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.1',
             'ext.max' => '',
@@ -177,7 +177,7 @@ class MongoExtension extends AbstractReference
 
     protected function getR10003()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.3',
             'ext.max' => '',
@@ -195,7 +195,7 @@ class MongoExtension extends AbstractReference
 
     protected function getR10009()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.9',
             'ext.max' => '',
@@ -214,7 +214,7 @@ class MongoExtension extends AbstractReference
 
     protected function getR10203()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.2.3',
             'ext.max' => '',
@@ -233,7 +233,7 @@ class MongoExtension extends AbstractReference
 
     protected function getR10300RC1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.3.0RC1',
             'ext.max' => '',
@@ -251,7 +251,7 @@ class MongoExtension extends AbstractReference
 
     protected function getR10300RC3()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.3.0RC3',
             'ext.max' => '',
@@ -278,7 +278,7 @@ class MongoExtension extends AbstractReference
 
     protected function getR10402()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.4.2',
             'ext.max' => '',
@@ -295,7 +295,7 @@ class MongoExtension extends AbstractReference
 
     protected function getR10500a1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.5.0alpha1',
             'ext.max' => '',
@@ -355,7 +355,7 @@ class MongoExtension extends AbstractReference
 
     protected function getR10500RC1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.5.0RC1',
             'ext.max' => '',

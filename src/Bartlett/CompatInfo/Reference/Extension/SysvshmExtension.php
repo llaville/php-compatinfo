@@ -33,7 +33,7 @@ class SysvshmExtension extends AbstractReference
 
     protected function getR40000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.0',
             'ext.max' => '',
@@ -55,7 +55,7 @@ class SysvshmExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',

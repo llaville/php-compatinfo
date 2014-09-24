@@ -33,7 +33,7 @@ class ImagickExtension extends AbstractReference
 
     protected function getR20000a1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0a1',
             'ext.max' => '',
@@ -57,7 +57,7 @@ class ImagickExtension extends AbstractReference
 
     protected function getR30001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.1',
             'ext.max' => '',

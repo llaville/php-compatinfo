@@ -60,7 +60,7 @@ class GeoipExtension extends AbstractReference
 
     protected function getR00200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.2.0',
             'ext.max' => '',
@@ -104,7 +104,7 @@ class GeoipExtension extends AbstractReference
 
     protected function getR10001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.1',
             'ext.max' => '',
@@ -126,7 +126,7 @@ class GeoipExtension extends AbstractReference
 
     protected function getR10002()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.2',
             'ext.max' => '',
@@ -143,7 +143,7 @@ class GeoipExtension extends AbstractReference
 
     protected function getR10003()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.3',
             'ext.max' => '',
@@ -160,7 +160,7 @@ class GeoipExtension extends AbstractReference
 
     protected function getR10005()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.5',
             'ext.max' => '',
@@ -178,7 +178,7 @@ class GeoipExtension extends AbstractReference
 
     protected function getR10100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.1.0',
             'ext.max' => '',

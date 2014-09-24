@@ -39,7 +39,7 @@ class MemcachedExtension extends AbstractReference
 
     protected function getR00100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.1.0',
             'ext.max' => '',
@@ -57,7 +57,7 @@ class MemcachedExtension extends AbstractReference
 
     protected function getR20000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0',
             'ext.max' => '',
@@ -82,7 +82,7 @@ class MemcachedExtension extends AbstractReference
 
     protected function getR20200b1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.2.0b1',
             'ext.max' => '',

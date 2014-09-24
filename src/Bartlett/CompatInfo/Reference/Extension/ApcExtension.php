@@ -74,7 +74,7 @@ class ApcExtension extends AbstractReference
 
     protected function getR20000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0',
             'ext.max' => '',
@@ -103,7 +103,7 @@ class ApcExtension extends AbstractReference
 
     protected function getR30000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.0',
             'ext.max' => '',
@@ -131,7 +131,7 @@ class ApcExtension extends AbstractReference
 
     protected function getR30011()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.11',
             'ext.max' => '',
@@ -153,7 +153,7 @@ class ApcExtension extends AbstractReference
 
     protected function getR30013()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.13',
             'ext.max' => '',
@@ -171,7 +171,7 @@ class ApcExtension extends AbstractReference
 
     protected function getR30019()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.19',
             'ext.max' => '',
@@ -194,7 +194,7 @@ class ApcExtension extends AbstractReference
 
     protected function getR30101()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.1.1',
             'ext.max' => '',
@@ -244,7 +244,7 @@ class ApcExtension extends AbstractReference
 
     protected function getR30104()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.1.4',
             'ext.max' => '',
@@ -269,7 +269,7 @@ class ApcExtension extends AbstractReference
 
     protected function getR30112()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.1.12',
             'ext.max' => '',

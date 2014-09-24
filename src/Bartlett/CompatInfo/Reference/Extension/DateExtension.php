@@ -81,7 +81,7 @@ class DateExtension extends AbstractReference
 
     protected function getR40000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.0',
             'ext.max' => '',
@@ -108,7 +108,7 @@ class DateExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -127,7 +127,7 @@ class DateExtension extends AbstractReference
 
     protected function getR50100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.0',
             'ext.max' => '',
@@ -157,7 +157,7 @@ class DateExtension extends AbstractReference
 
     protected function getR50101()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.1',
             'ext.max' => '',
@@ -183,7 +183,7 @@ class DateExtension extends AbstractReference
 
     protected function getR50102()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.2',
             'ext.max' => '',
@@ -205,7 +205,7 @@ class DateExtension extends AbstractReference
 
     protected function getR50103()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.3',
             'ext.max' => '',
@@ -225,7 +225,7 @@ class DateExtension extends AbstractReference
 
     protected function getR50200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.0',
             'ext.max' => '',
@@ -262,7 +262,7 @@ class DateExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',
@@ -294,7 +294,7 @@ class DateExtension extends AbstractReference
 
     protected function getR50500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.0',
             'ext.max' => '',

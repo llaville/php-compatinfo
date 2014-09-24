@@ -135,7 +135,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR40004()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.4',
             'ext.max' => '',
@@ -175,7 +175,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR40006()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.6',
             'ext.max' => '',
@@ -215,7 +215,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR40200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.2.0',
             'ext.max' => '',
@@ -244,7 +244,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',
@@ -265,7 +265,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -285,7 +285,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.0',
             'ext.max' => '',
@@ -308,7 +308,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50202()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.2',
             'ext.max' => '',
@@ -327,7 +327,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50208()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.8',
             'ext.max' => '',
@@ -344,7 +344,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',
@@ -367,7 +367,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50302()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.2',
             'ext.max' => '',
@@ -384,7 +384,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50303()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.3',
             'ext.max' => '',
@@ -401,7 +401,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.0',
             'ext.max' => '',
@@ -422,7 +422,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50408()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.8',
             'ext.max' => '',
@@ -445,7 +445,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.0',
             'ext.max' => '',
@@ -462,7 +462,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50600a1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.0alpha1',
             'ext.max' => '',
@@ -490,7 +490,7 @@ class OpensslExtension extends AbstractReference
 
     protected function getR50600b1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.0beta1',
             'ext.max' => '',

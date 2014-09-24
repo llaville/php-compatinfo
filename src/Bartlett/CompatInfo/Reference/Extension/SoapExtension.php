@@ -33,7 +33,7 @@ class SoapExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -145,7 +145,7 @@ class SoapExtension extends AbstractReference
 
     protected function getR50500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.0',
             'ext.max' => '',

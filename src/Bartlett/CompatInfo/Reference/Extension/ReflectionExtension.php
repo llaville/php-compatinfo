@@ -32,7 +32,7 @@ class ReflectionExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -61,7 +61,7 @@ class ReflectionExtension extends AbstractReference
 
     protected function getR50400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.0',
             'ext.max' => '',

@@ -54,7 +54,7 @@ class GmpExtension extends AbstractReference
 
     protected function getR40004()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.4',
             'ext.max' => '',
@@ -115,7 +115,7 @@ class GmpExtension extends AbstractReference
 
     protected function getR50200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.0',
             'ext.max' => '',
@@ -132,7 +132,7 @@ class GmpExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',
@@ -159,7 +159,7 @@ class GmpExtension extends AbstractReference
 
     protected function getR50600a1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.0alpha1',
             'ext.max' => '',
@@ -177,7 +177,7 @@ class GmpExtension extends AbstractReference
 
     protected function getR50601rc1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.1RC1',
             'ext.max' => '',

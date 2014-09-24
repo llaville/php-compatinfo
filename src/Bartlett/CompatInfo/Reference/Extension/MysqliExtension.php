@@ -96,7 +96,7 @@ class MysqliExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -326,7 +326,7 @@ class MysqliExtension extends AbstractReference
 
     protected function getR50100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.0',
             'ext.max' => '',
@@ -343,7 +343,7 @@ class MysqliExtension extends AbstractReference
 
     protected function getR50205()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.5',
             'ext.max' => '',
@@ -360,7 +360,7 @@ class MysqliExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',
@@ -400,7 +400,7 @@ class MysqliExtension extends AbstractReference
 
     protected function getR50304()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.4',
             'ext.max' => '',
@@ -419,7 +419,7 @@ class MysqliExtension extends AbstractReference
 
     protected function getR50400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.0',
             'ext.max' => '',
@@ -439,7 +439,7 @@ class MysqliExtension extends AbstractReference
 
     protected function getR50412()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.12',
             'ext.max' => '',
@@ -456,7 +456,7 @@ class MysqliExtension extends AbstractReference
 
     protected function getR50500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.0',
             'ext.max' => '',
@@ -485,7 +485,7 @@ class MysqliExtension extends AbstractReference
 
     protected function getR50600a2()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.0alpha2',
             'ext.max' => '',
@@ -505,7 +505,7 @@ class MysqliExtension extends AbstractReference
 
     protected function getR50600b2()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.0beta2',
             'ext.max' => '',
@@ -522,7 +522,7 @@ class MysqliExtension extends AbstractReference
 
     protected function getR50600RC3()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.0RC3',
             'ext.max' => '',

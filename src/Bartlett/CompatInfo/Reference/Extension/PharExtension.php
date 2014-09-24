@@ -40,7 +40,7 @@ class PharExtension extends AbstractReference
 
     protected function getR10000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.0',
             'ext.max' => '',
@@ -63,7 +63,7 @@ class PharExtension extends AbstractReference
 
     protected function getR10100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.1.0',
             'ext.max' => '1.2.3',
@@ -80,7 +80,7 @@ class PharExtension extends AbstractReference
 
     protected function getR20000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0a1',
             'ext.max' => '',

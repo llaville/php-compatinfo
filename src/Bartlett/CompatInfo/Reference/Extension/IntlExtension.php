@@ -93,7 +93,7 @@ class IntlExtension extends AbstractReference
 
     protected function getR10000beta()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.0beta',
             'ext.max' => '',
@@ -353,7 +353,7 @@ class IntlExtension extends AbstractReference
 
     protected function getR10000RC1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.0RC1',
             'ext.max' => '',
@@ -404,7 +404,7 @@ class IntlExtension extends AbstractReference
 
     protected function getR10001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.1',
             'ext.max' => '',
@@ -421,7 +421,7 @@ class IntlExtension extends AbstractReference
 
     protected function getR10002()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.2',
             'ext.max' => '',
@@ -444,7 +444,7 @@ class IntlExtension extends AbstractReference
 
     protected function getR10003()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.3',
             'ext.max' => '',
@@ -464,7 +464,7 @@ class IntlExtension extends AbstractReference
 
     protected function getR10100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.1.0',
             'ext.max' => '',
@@ -490,7 +490,7 @@ class IntlExtension extends AbstractReference
 
     protected function getR20000b1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0b1',
             'ext.max' => '',
@@ -558,7 +558,7 @@ class IntlExtension extends AbstractReference
 
     protected function getR30000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.0',
             'ext.max' => '',
@@ -575,7 +575,7 @@ class IntlExtension extends AbstractReference
 
     protected function getR50500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.0',
             'ext.max' => '',
@@ -692,7 +692,7 @@ class IntlExtension extends AbstractReference
 
     protected function getR50501()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.1',
             'ext.max' => '',

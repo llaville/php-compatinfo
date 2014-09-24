@@ -61,7 +61,7 @@ class OauthExtension extends AbstractReference
 
     protected function getR09901()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.99.1',
             'ext.max' => '',
@@ -88,7 +88,7 @@ class OauthExtension extends AbstractReference
 
     protected function getR09905()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.99.5',
             'ext.max' => '',
@@ -109,7 +109,7 @@ class OauthExtension extends AbstractReference
 
     protected function getR09908()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.99.8',
             'ext.max' => '',
@@ -126,7 +126,7 @@ class OauthExtension extends AbstractReference
 
     protected function getR10000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.0',
             'ext.max' => '',
@@ -163,7 +163,7 @@ class OauthExtension extends AbstractReference
 
     protected function getR10100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.1.0',
             'ext.max' => '',
@@ -183,7 +183,7 @@ class OauthExtension extends AbstractReference
 
     protected function getR10200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.2',
             'ext.max' => '',

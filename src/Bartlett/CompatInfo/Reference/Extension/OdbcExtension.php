@@ -54,7 +54,7 @@ class OdbcExtension extends AbstractReference
 
     protected function getR40000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.0',
             'ext.max' => '',
@@ -182,7 +182,7 @@ class OdbcExtension extends AbstractReference
 
     protected function getR40002()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.2',
             'ext.max' => '',
@@ -200,7 +200,7 @@ class OdbcExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',
@@ -219,7 +219,7 @@ class OdbcExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',
@@ -254,7 +254,7 @@ class OdbcExtension extends AbstractReference
             '5.5.14',
             '5.5.15', 
         );
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min'       => '5.4.32RC1',
             'ext.max'       => '',

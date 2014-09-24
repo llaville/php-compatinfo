@@ -81,7 +81,7 @@ class TokenizerExtension extends AbstractReference
 
     protected function getR40200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.2.0',
             'ext.max' => '',
@@ -204,7 +204,7 @@ class TokenizerExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',
@@ -222,7 +222,7 @@ class TokenizerExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -252,7 +252,7 @@ class TokenizerExtension extends AbstractReference
 
     protected function getR50100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.0',
             'ext.max' => '',
@@ -269,7 +269,7 @@ class TokenizerExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',
@@ -291,7 +291,7 @@ class TokenizerExtension extends AbstractReference
 
     protected function getR50400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.0',
             'ext.max' => '',
@@ -311,7 +311,7 @@ class TokenizerExtension extends AbstractReference
 
     protected function getR50500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.0',
             'ext.max' => '',
@@ -329,7 +329,7 @@ class TokenizerExtension extends AbstractReference
 
     protected function getR50600a1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.0alpha1',
             'ext.max' => '',
@@ -346,7 +346,7 @@ class TokenizerExtension extends AbstractReference
 
     protected function getR50600rc1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.0RC1',
             'ext.max' => '',

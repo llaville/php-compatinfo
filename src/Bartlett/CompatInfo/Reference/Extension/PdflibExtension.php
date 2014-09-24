@@ -61,7 +61,7 @@ class PdflibExtension extends AbstractReference
 
     protected function getR20000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0',
             'ext.max' => '',
@@ -211,7 +211,7 @@ class PdflibExtension extends AbstractReference
 
     protected function getR20003()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.3',
             'ext.max' => '',
@@ -235,7 +235,7 @@ class PdflibExtension extends AbstractReference
 
     protected function getR20100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.1.0',
             'ext.max' => '',
@@ -267,7 +267,7 @@ class PdflibExtension extends AbstractReference
 
     protected function getR20110()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.1.10',
             'ext.max' => '',
@@ -284,7 +284,7 @@ class PdflibExtension extends AbstractReference
 
     protected function getR30001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.1',
             'ext.max' => '',
@@ -339,7 +339,7 @@ class PdflibExtension extends AbstractReference
 
     protected function getR30002()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.2',
             'ext.max' => '',

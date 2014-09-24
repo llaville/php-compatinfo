@@ -33,7 +33,7 @@ class UploadprogressExtension extends AbstractReference
 
     protected function getR00300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.3.0',
             'ext.max' => '',
@@ -53,7 +53,7 @@ class UploadprogressExtension extends AbstractReference
 
     protected function getR00900()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.9.0',
             'ext.max' => '',

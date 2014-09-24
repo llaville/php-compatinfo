@@ -34,7 +34,7 @@ class XmlwriterExtension extends AbstractReference
 
     protected function getR50102()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.2',
             'ext.max' => '',
@@ -93,7 +93,7 @@ class XmlwriterExtension extends AbstractReference
 
     protected function getR50200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.0',
             'ext.max' => '',

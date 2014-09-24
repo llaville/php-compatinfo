@@ -33,7 +33,7 @@ class FileinfoExtension extends AbstractReference
 
     protected function getR00100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.1.0',
             'ext.max' => '',
@@ -68,7 +68,7 @@ class FileinfoExtension extends AbstractReference
     protected function getR10005dev()
     {
         // enables by default in PHP 5.3.0
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.5-dev',
             'ext.max' => '',

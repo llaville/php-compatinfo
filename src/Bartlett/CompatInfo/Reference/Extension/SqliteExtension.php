@@ -26,7 +26,7 @@ class SqliteExtension extends AbstractReference
 
     protected function getR20000dev()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0-dev',
             'ext.max' => '',

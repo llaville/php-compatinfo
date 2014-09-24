@@ -72,7 +72,7 @@ class LibxmlExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -89,7 +89,7 @@ class LibxmlExtension extends AbstractReference
 
     protected function getR50100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.0',
             'ext.max' => '',
@@ -139,7 +139,7 @@ class LibxmlExtension extends AbstractReference
 
     protected function getR50211()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.11',
             'ext.max' => '',
@@ -156,7 +156,7 @@ class LibxmlExtension extends AbstractReference
 
     protected function getR50212()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.12',
             'ext.max' => '',
@@ -178,7 +178,7 @@ class LibxmlExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',
@@ -195,7 +195,7 @@ class LibxmlExtension extends AbstractReference
 
     protected function getR50400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.0',
             'ext.max' => '',
@@ -227,7 +227,7 @@ class LibxmlExtension extends AbstractReference
 
     protected function getR50502()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.2',
             'ext.max' => '',

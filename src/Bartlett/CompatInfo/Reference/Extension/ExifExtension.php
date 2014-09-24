@@ -40,7 +40,7 @@ class ExifExtension extends AbstractReference
 
     protected function getR40001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.1',
             'ext.max' => '',
@@ -68,7 +68,7 @@ class ExifExtension extends AbstractReference
 
     protected function getR40200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.2.0',
             'ext.max' => '',
@@ -87,7 +87,7 @@ class ExifExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',

@@ -172,7 +172,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR40000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.0',
             'ext.max' => '',
@@ -352,7 +352,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR40001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.1',
             'ext.max' => '',
@@ -372,7 +372,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR40002()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.2',
             'ext.max' => '',
@@ -390,7 +390,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR40004()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.4',
             'ext.max' => '',
@@ -408,7 +408,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR40007()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.7',
             'ext.max' => '',
@@ -425,7 +425,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR40100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.1.0',
             'ext.max' => '',
@@ -443,7 +443,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR40200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.2.0',
             'ext.max' => '',
@@ -463,7 +463,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',
@@ -494,7 +494,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR40310()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.10',
             'ext.max' => '',
@@ -512,7 +512,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR40400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.4.0',
             'ext.max' => '',
@@ -530,7 +530,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -558,7 +558,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50002()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.2',
             'ext.max' => '',
@@ -575,7 +575,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.0',
             'ext.max' => '',
@@ -600,7 +600,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.0',
             'ext.max' => '',
@@ -618,7 +618,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50207()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.7',
             'ext.max' => '',
@@ -641,7 +641,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',
@@ -693,7 +693,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50304()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.4',
             'ext.max' => '',
@@ -710,7 +710,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50306()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.6',
             'ext.max' => '',
@@ -728,7 +728,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50307()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.7',
             'ext.max' => '',
@@ -745,7 +745,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.0',
             'ext.max' => '',
@@ -781,7 +781,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.0',
             'ext.max' => '',
@@ -801,7 +801,7 @@ class CoreExtension extends AbstractReference
 
     protected function getR50600a3()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.6.0alpha3',
             'ext.max' => '',

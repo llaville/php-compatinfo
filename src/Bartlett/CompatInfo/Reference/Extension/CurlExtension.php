@@ -127,7 +127,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR40002()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.2',
             'ext.max' => '',
@@ -421,7 +421,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR40003()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.3',
             'ext.max' => '',
@@ -439,7 +439,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR40004()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.4',
             'ext.max' => '',
@@ -456,7 +456,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.0.0',
             'ext.max' => '',
@@ -481,7 +481,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.0',
             'ext.max' => '',
@@ -509,7 +509,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50103()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.1.3',
             'ext.max' => '',
@@ -529,7 +529,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.0',
             'ext.max' => '',
@@ -554,7 +554,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50201()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.1',
             'ext.max' => '',
@@ -575,7 +575,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50204()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.4',
             'ext.max' => '',
@@ -594,7 +594,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50210()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.10',
             'ext.max' => '',
@@ -611,7 +611,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.0',
             'ext.max' => '',
@@ -681,7 +681,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50302()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.2',
             'ext.max' => '',
@@ -711,7 +711,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50307()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.3.7',
             'ext.max' => '',
@@ -743,7 +743,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50407()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.7',
             'ext.max' => '',
@@ -772,7 +772,7 @@ class CurlExtension extends AbstractReference
 
     protected function getR50500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.0',
             'ext.max' => '',

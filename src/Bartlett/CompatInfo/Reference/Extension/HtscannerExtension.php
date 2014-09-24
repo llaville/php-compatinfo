@@ -47,7 +47,7 @@ class HtscannerExtension extends AbstractReference
 
     protected function getR00500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.5.0',
             'ext.max' => '',
@@ -65,7 +65,7 @@ class HtscannerExtension extends AbstractReference
 
     protected function getR00600()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.6.0',
             'ext.max' => '',
@@ -82,7 +82,7 @@ class HtscannerExtension extends AbstractReference
 
     protected function getR00700()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.7.0',
             'ext.max' => '',
@@ -99,7 +99,7 @@ class HtscannerExtension extends AbstractReference
 
     protected function getR10000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.0',
             'ext.max' => '',

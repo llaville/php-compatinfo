@@ -95,7 +95,7 @@ class MemcacheExtension extends AbstractReference
 
     protected function getR00200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.2',
             'ext.max' => '',
@@ -129,7 +129,7 @@ class MemcacheExtension extends AbstractReference
 
     protected function getR00400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.4',
             'ext.max' => '',
@@ -147,7 +147,7 @@ class MemcacheExtension extends AbstractReference
 
     protected function getR10000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0',
             'ext.max' => '',
@@ -164,7 +164,7 @@ class MemcacheExtension extends AbstractReference
 
     protected function getR20000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0',
             'ext.max' => '',
@@ -183,7 +183,7 @@ class MemcacheExtension extends AbstractReference
 
     protected function getR20002()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.2',
             'ext.max' => '',
@@ -202,7 +202,7 @@ class MemcacheExtension extends AbstractReference
 
     protected function getR20100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.1.0',
             'ext.max' => '',
@@ -223,7 +223,7 @@ class MemcacheExtension extends AbstractReference
 
     protected function getR20200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.2.0',
             'ext.max' => '',
@@ -244,7 +244,7 @@ class MemcacheExtension extends AbstractReference
 
     protected function getR30000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.0',
             'ext.max' => '',
@@ -272,7 +272,7 @@ class MemcacheExtension extends AbstractReference
 
     protected function getR30003()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.3',
             'ext.max' => '',
@@ -289,7 +289,7 @@ class MemcacheExtension extends AbstractReference
 
     protected function getR30004()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.4',
             'ext.max' => '',
@@ -306,7 +306,7 @@ class MemcacheExtension extends AbstractReference
 
     protected function getR30008()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.8',
             'ext.max' => '',

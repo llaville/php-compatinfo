@@ -83,7 +83,7 @@ class XcacheExtension extends AbstractReference
 
     protected function getR10000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0',
             'ext.max' => '',
@@ -320,7 +320,7 @@ class XcacheExtension extends AbstractReference
 
     protected function getR10200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.2.0',
             'ext.max' => '',
@@ -351,7 +351,7 @@ class XcacheExtension extends AbstractReference
 
     protected function getR10201()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.2.1',
             'ext.max' => '',
@@ -369,7 +369,7 @@ class XcacheExtension extends AbstractReference
 
     protected function getR10300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.3.0',
             'ext.max' => '',
@@ -403,7 +403,7 @@ class XcacheExtension extends AbstractReference
 
     protected function getR20000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0',
             'ext.max' => '',
@@ -439,7 +439,7 @@ class XcacheExtension extends AbstractReference
 
     protected function getR30000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.0',
             'ext.max' => '',
@@ -466,7 +466,7 @@ class XcacheExtension extends AbstractReference
 
     protected function getR30001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.0.1',
             'ext.max' => '',
@@ -484,7 +484,7 @@ class XcacheExtension extends AbstractReference
 
     protected function getR30100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '3.1.0',
             'ext.max' => '',

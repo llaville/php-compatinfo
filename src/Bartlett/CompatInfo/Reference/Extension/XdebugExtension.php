@@ -96,7 +96,7 @@ class XdebugExtension extends AbstractReference
 
     protected function getR10200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.2.0',
             'ext.max' => '',
@@ -151,7 +151,7 @@ class XdebugExtension extends AbstractReference
 
     protected function getR10300RC1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.3.0RC1',
             'ext.max' => '',
@@ -169,7 +169,7 @@ class XdebugExtension extends AbstractReference
 
     protected function getR20000beta1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0beta1',
             'ext.max' => '',
@@ -218,7 +218,7 @@ class XdebugExtension extends AbstractReference
 
     protected function getR20000beta2()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0beta2',
             'ext.max' => '',
@@ -238,7 +238,7 @@ class XdebugExtension extends AbstractReference
 
     protected function getR20000beta3()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0beta3',
             'ext.max' => '',
@@ -255,7 +255,7 @@ class XdebugExtension extends AbstractReference
 
     protected function getR20000beta4()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0beta4',
             'ext.max' => '',
@@ -277,7 +277,7 @@ class XdebugExtension extends AbstractReference
 
     protected function getR20000beta5()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0beta5',
             'ext.max' => '',
@@ -294,7 +294,7 @@ class XdebugExtension extends AbstractReference
 
     protected function getR20000beta6()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0beta6',
             'ext.max' => '',
@@ -317,7 +317,7 @@ class XdebugExtension extends AbstractReference
 
     protected function getR20000RC1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0RC1',
             'ext.max' => '',
@@ -346,7 +346,7 @@ class XdebugExtension extends AbstractReference
 
     protected function getR20100beta1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.1.0beta1',
             'ext.max' => '',
@@ -367,7 +367,7 @@ class XdebugExtension extends AbstractReference
 
     protected function getR20200RC1()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.2.0RC1',
             'ext.max' => '',

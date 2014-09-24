@@ -47,7 +47,7 @@ class EnchantExtension extends AbstractReference
 
     protected function getR00100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.1.0',
             'ext.max' => '',
@@ -80,7 +80,7 @@ class EnchantExtension extends AbstractReference
 
     protected function getR00200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.2.0',
             'ext.max' => '',
@@ -97,7 +97,7 @@ class EnchantExtension extends AbstractReference
 
     protected function getR10001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.1',
             'ext.max' => '',
@@ -114,7 +114,7 @@ class EnchantExtension extends AbstractReference
 
     protected function getR10100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.1.0',
             'ext.max' => '',

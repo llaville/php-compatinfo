@@ -55,7 +55,7 @@ class HttpExtension extends AbstractReference
 
     protected function getR00700()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.7.0',
             'ext.max' => '1.7.6',
@@ -87,7 +87,7 @@ class HttpExtension extends AbstractReference
 
     protected function getR10000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.0',
             'ext.max' => '1.7.6',
@@ -319,7 +319,7 @@ class HttpExtension extends AbstractReference
 
     protected function getR10300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.3.0',
             'ext.max' => '1.7.6',
@@ -347,7 +347,7 @@ class HttpExtension extends AbstractReference
 
     protected function getR10500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.5.0',
             'ext.max' => '1.7.6',
@@ -365,7 +365,7 @@ class HttpExtension extends AbstractReference
 
     protected function getR20000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0',
             'ext.max' => '',

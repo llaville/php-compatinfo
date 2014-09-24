@@ -61,7 +61,7 @@ class MysqlExtension extends AbstractReference
 
     protected function getR40000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.0',
             'ext.max' => '',
@@ -142,7 +142,7 @@ class MysqlExtension extends AbstractReference
 
     protected function getR40003()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.3',
             'ext.max' => '',
@@ -160,7 +160,7 @@ class MysqlExtension extends AbstractReference
 
     protected function getR40005()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.5',
             'ext.max' => '',
@@ -180,7 +180,7 @@ class MysqlExtension extends AbstractReference
 
     protected function getR40006()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.0.6',
             'ext.max' => '',
@@ -197,7 +197,7 @@ class MysqlExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',
@@ -229,7 +229,7 @@ class MysqlExtension extends AbstractReference
 
     protected function getR50203()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.3',
             'ext.max' => '',

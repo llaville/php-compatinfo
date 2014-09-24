@@ -77,7 +77,7 @@ class PthreadsExtension extends AbstractReference
 
     protected function getR00033()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.0.33',
             'ext.max' => '',
@@ -115,7 +115,7 @@ class PthreadsExtension extends AbstractReference
 
     protected function getR00036()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.0.36',
             'ext.max' => '',
@@ -132,7 +132,7 @@ class PthreadsExtension extends AbstractReference
 
     protected function getR00043()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.0.43',
             'ext.max' => '',
@@ -155,7 +155,7 @@ class PthreadsExtension extends AbstractReference
 
     protected function getR00100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.1.0',
             'ext.max' => '',
@@ -173,7 +173,7 @@ class PthreadsExtension extends AbstractReference
 
     protected function getR10000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.0',
             'ext.max' => '',
@@ -200,7 +200,7 @@ class PthreadsExtension extends AbstractReference
 
     protected function getR20000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.0',
             'ext.max' => '',
@@ -235,7 +235,7 @@ class PthreadsExtension extends AbstractReference
 
     protected function getR20001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.1',
             'ext.max' => '',
@@ -252,7 +252,7 @@ class PthreadsExtension extends AbstractReference
 
     protected function getR20008()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '2.0.8',
             'ext.max' => '',

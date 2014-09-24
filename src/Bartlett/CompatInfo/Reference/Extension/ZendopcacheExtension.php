@@ -51,7 +51,7 @@ class ZendopcacheExtension extends AbstractReference
 
     protected function getR70001()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '7.0.1',
             'ext.max' => '',
@@ -100,7 +100,7 @@ class ZendopcacheExtension extends AbstractReference
 
     protected function getR70002()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '7.0.2',
             'ext.max' => '',
@@ -117,7 +117,7 @@ class ZendopcacheExtension extends AbstractReference
 
     protected function getR70003dev()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '7.0.3-dev',       // (bundled in PHP 5.5.5)
             'ext.max' => '',
@@ -134,7 +134,7 @@ class ZendopcacheExtension extends AbstractReference
 
     protected function getR70004devFE()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '7.0.4-devFE',     // (bundled in PHP 5.5.11)
             'ext.max' => '',

@@ -53,7 +53,7 @@ class AmqpExtension extends AbstractReference
 
     protected function getR00100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.1.0',
             'ext.max' => '',
@@ -83,7 +83,7 @@ class AmqpExtension extends AbstractReference
 
     protected function getR10000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.0',
             'ext.max' => '',
@@ -127,7 +127,7 @@ class AmqpExtension extends AbstractReference
 
     protected function getR10008()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.8',
             'ext.max' => '',
@@ -147,7 +147,7 @@ class AmqpExtension extends AbstractReference
 
     protected function getR10010()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.0.10',
             'ext.max' => '',
@@ -165,7 +165,7 @@ class AmqpExtension extends AbstractReference
 
     protected function getR10300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.3.0',
             'ext.max' => '',

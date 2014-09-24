@@ -54,7 +54,7 @@ class Ssh2Extension extends AbstractReference
 
     protected function getR00500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.5',
             'ext.max' => '',
@@ -108,7 +108,7 @@ class Ssh2Extension extends AbstractReference
 
     protected function getR00700()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.7',
             'ext.max' => '',
@@ -125,7 +125,7 @@ class Ssh2Extension extends AbstractReference
 
     protected function getR00800()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.8',
             'ext.max' => '',
@@ -153,7 +153,7 @@ class Ssh2Extension extends AbstractReference
 
     protected function getR01000()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.10',
             'ext.max' => '',
@@ -173,7 +173,7 @@ class Ssh2Extension extends AbstractReference
 
     protected function getR01200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.12',
             'ext.max' => '',

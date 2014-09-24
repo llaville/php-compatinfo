@@ -75,7 +75,7 @@ class RiakExtension extends AbstractReference
 
     protected function getR00400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.4.0',
             'ext.max' => '',
@@ -103,7 +103,7 @@ class RiakExtension extends AbstractReference
 
     protected function getR00402()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.4.2',
             'ext.max' => '',
@@ -121,7 +121,7 @@ class RiakExtension extends AbstractReference
 
     protected function getR00500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.5.0',
             'ext.max' => '',
@@ -161,7 +161,7 @@ class RiakExtension extends AbstractReference
 
     protected function getR00600()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.6.0',
             'ext.max' => '',
@@ -196,7 +196,7 @@ class RiakExtension extends AbstractReference
 
     protected function getR00700()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.7.0',
             'ext.max' => '',
@@ -216,7 +216,7 @@ class RiakExtension extends AbstractReference
 
     protected function getR00800()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.8.0',
             'ext.max' => '',
@@ -235,7 +235,7 @@ class RiakExtension extends AbstractReference
 
     protected function getR00900()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '0.9.0',
             'ext.max' => '',
@@ -252,7 +252,7 @@ class RiakExtension extends AbstractReference
 
     protected function getR10100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '1.1.0',
             'ext.max' => '',

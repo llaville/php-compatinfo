@@ -88,7 +88,7 @@ class SocketsExtension extends AbstractReference
 
     protected function getR40100()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.1.0',
             'ext.max' => '',
@@ -214,7 +214,7 @@ class SocketsExtension extends AbstractReference
 
     protected function getR40200()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.2.0',
             'ext.max' => '',
@@ -232,7 +232,7 @@ class SocketsExtension extends AbstractReference
 
     protected function getR40300()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '4.3.0',
             'ext.max' => '',
@@ -312,7 +312,7 @@ class SocketsExtension extends AbstractReference
 
     protected function getR50204()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.4',
             'ext.max' => '',
@@ -330,7 +330,7 @@ class SocketsExtension extends AbstractReference
 
     protected function getR50207()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.7',
             'ext.max' => '',
@@ -347,7 +347,7 @@ class SocketsExtension extends AbstractReference
 
     protected function getR50210()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.2.10',
             'ext.max' => '',
@@ -364,7 +364,7 @@ class SocketsExtension extends AbstractReference
 
     protected function getR50400()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.0',
             'ext.max' => '',
@@ -397,7 +397,7 @@ class SocketsExtension extends AbstractReference
 
     protected function getR50410()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.10',
             'ext.max' => '',
@@ -414,7 +414,7 @@ class SocketsExtension extends AbstractReference
 
     protected function getR50418()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.4.18',
             'ext.max' => '',
@@ -433,7 +433,7 @@ class SocketsExtension extends AbstractReference
 
     protected function getR50500()
     {
-        $release = new \StdClass;
+        $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.0',
             'ext.max' => '',
