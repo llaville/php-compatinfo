@@ -209,9 +209,14 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
             // update object versions
             $class = $method->getClassName();
+            if (isset($this->count[static::METRICS_PREFIX . '.interfaces'][$class])) {
+                $type = 'interfaces';
+            } else {
+                $type = 'classes';
+            }
             self::updateVersion(
                 $min,
-                $this->count[static::METRICS_PREFIX . '.classes'][$class]['php.min']
+                $this->count[static::METRICS_PREFIX . ".$type"][$class]['php.min']
             );
         }
 
