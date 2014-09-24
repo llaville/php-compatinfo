@@ -70,17 +70,17 @@ bundled in a single file.
 
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.3.0.phar
-$ chmod +x phpcompatinfo-3.3.0.phar
-$ mv phpcompatinfo-3.3.0.phar /usr/local/bin/phpcompatinfo
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.4.0.phar
+$ chmod +x phpcompatinfo-3.4.0.phar
+$ mv phpcompatinfo-3.4.0.phar /usr/local/bin/phpcompatinfo
 $ phpcompatinfo
 ----
 
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.3.0.phar
-$ php phpcompatinfo-3.3.0.phar
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.4.0.phar
+$ php phpcompatinfo-3.4.0.phar
 ----
 
 ifdef::basebackend-bootstrap[]
