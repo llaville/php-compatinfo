@@ -114,6 +114,9 @@ class SummaryAnalyser extends AbstractAnalyser
                 $count[self::METRICS_PREFIX . '.versions'] = self::$php4;
 
                 foreach ($count[self::METRICS_PREFIX . $group] as $key => $versions) {
+                    if (isset($versions['optional'])) {
+                        continue;
+                    }
                     self::updateVersion(
                         $versions['php.min'],
                         $count[self::METRICS_PREFIX . '.versions']['php.min']
