@@ -135,19 +135,6 @@ class ReferenceShowCommand extends Command
             $filters = self::FILTER_NONE;
         }
 
-        if ($php) {
-            if (!preg_match(
-                '/^\s*(==|!=|[<>]=?)?\s*(.*)$/',
-                $php,
-                $matches
-            )) {
-                throw new \InvalidArgumentException(
-                    sprintf('Don\'t understand "%s" as a version number.', $php)
-                );
-            }
-            $php = array($matches[1], $matches[2]);
-        }
-
         if ($filters & self::FILTER_INI) {
             $iniEntries = $reference->getIniEntries();
             if (count($iniEntries)) {
@@ -213,10 +200,11 @@ class ReferenceShowCommand extends Command
     {
         $rows = ConsoleApplication::versionHelper($args, $filter);
 
-        $headers = array($title, 'REF', 'EXT min/Max', 'PHP min/Max');
+        $headers = array('', $title, 'REF', 'EXT min/Max', 'PHP min/Max');
 
         if ($filter) {
             $footers = array(
+                '',
                 sprintf('<info>Total [%d/%d]</info>', count($rows), count($args)),
                 '',
                 '',
@@ -224,6 +212,7 @@ class ReferenceShowCommand extends Command
             );
         } else {
             $footers = array(
+                '',
                 sprintf('<info>Total [%d]</info>', count($args)),
                 '',
                 '',
