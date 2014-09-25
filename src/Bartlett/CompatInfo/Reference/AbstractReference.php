@@ -294,6 +294,9 @@ abstract class AbstractReference implements ReferenceInterface
                         //'php.excludes'  => '',
                         //'parameters'    => null,
                     );
+                    if (isset($values['ext.min'])) {
+                        $versions['ext.min'] = $values['ext.min'];
+                    }
                     if (isset($values['ext.max'])) {
                         $versions['ext.max'] = $values['ext.max'];
                     }
