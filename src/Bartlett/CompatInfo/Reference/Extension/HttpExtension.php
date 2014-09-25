@@ -6,7 +6,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class HttpExtension extends AbstractReference
 {
     const REF_NAME    = 'http';
-    const REF_VERSION = '2.1.1';    // 2014-09-09 (stable)
+    const REF_VERSION = '2.1.2';    // 2014-09-25 (stable)
 
     public function __construct()
     {
@@ -50,6 +50,11 @@ class HttpExtension extends AbstractReference
                 $count = array_push($releases, $release);
                 $this->storage->attach($releases[--$count]);
             }
+            if (version_compare($version, '2.1.2', 'ge')) {
+                $release = $this->getR20102();
+                $count = array_push($releases, $release);
+                $this->storage->attach($releases[--$count]);
+            }
         }
     }
 
@@ -62,7 +67,7 @@ class HttpExtension extends AbstractReference
             'state'   => 'beta',
             'date'    => '2005-03-24',
             'php.min' => '4.3.0',
-            'php.max' => '',
+            'php.max' => self::LATEST_PHP_5_5,
         );
         $release->classes = array(
             'HttpRequest'                       => array(
@@ -94,7 +99,7 @@ class HttpExtension extends AbstractReference
             'state'   => 'stable',
             'date'    => '2006-06-08',
             'php.min' => '4.3.0',
-            'php.max' => '',
+            'php.max' => self::LATEST_PHP_5_5,
         );
         $release->iniEntries = array(
             'http.etag.mode'                    => null,
@@ -326,7 +331,7 @@ class HttpExtension extends AbstractReference
             'state'   => 'stable',
             'date'    => '2006-09-19',
             'php.min' => '4.3.0',
-            'php.max' => '',
+            'php.max' => self::LATEST_PHP_5_5,
         );
         $release->iniEntries = array(
             'http.request.datashare.connect'    => null,
@@ -354,7 +359,7 @@ class HttpExtension extends AbstractReference
             'state'   => 'stable',
             'date'    => '2007-02-20',
             'php.min' => '4.3.0',
-            'php.max' => '',
+            'php.max' => self::LATEST_PHP_5_5,
         );
         $release->iniEntries = array(
             'http.persistent.handles.limit'     => null,
@@ -434,6 +439,27 @@ class HttpExtension extends AbstractReference
             'http\\Client\\Curl\\SSL_VERSION_SSLv2'     => null,
             'http\\Client\\Curl\\SSL_VERSION_SSLv3'     => null,
             'http\\Client\\Curl\\SSL_VERSION_TLSv1'     => null,
+        );
+        return $release;
+    }
+
+    protected function getR20102()
+    {
+        $release = new \stdClass;
+        $release->info = array(
+            'ext.min' => '2.1.2',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2014-09-25',
+            'php.min' => '5.3.0',
+            'php.max' => '',
+        );
+        $release->constants = array(
+            'http\\Client\\Curl\\SSL_VERSION_TLSv1_0'      => null,
+            'http\\Client\\Curl\\SSL_VERSION_TLSv1_1'      => null,
+            'http\\Client\\Curl\\SSL_VERSION_TLSv1_2'      => null,
+            'http\\Client\\Curl\\AUTH_SPNEGO'              => null,
+            'http\\Client\\Curl\\POSTREDIR_303'            => null,
         );
         return $release;
     }

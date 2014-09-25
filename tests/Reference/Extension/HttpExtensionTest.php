@@ -42,6 +42,14 @@ class HttpExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
+        self::$optionalconstants = array(
+            // PHP_HTTP_CURL_VERSION(7,34,0)
+            'http\\Client\\Curl\\SSL_VERSION_TLSv1_0',
+            'http\\Client\\Curl\\SSL_VERSION_TLSv1_1',
+            'http\\Client\\Curl\\SSL_VERSION_TLSv1_2',
+            'http\\Client\\Curl\\AUTH_SPNEGO',
+            // PHP_HTTP_CURL_VERSION(7,38,0)
+        );
         self::$obj = new HttpExtension();
         parent::setUpBeforeClass();
     }
