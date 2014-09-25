@@ -357,9 +357,16 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                     // force type to avoid wrong categorization
                     $type = 'extensions';
                     unset($versions['ref']);
-                } else {
-                    // auto-detect category
-                    $type = $this->loader->getTypeElement();
+                } elseif ($dependency->getName() == 'function_exists') {
+                    $type = 'functions';
+                } elseif ($dependency->getName() == 'interface_exists') {
+                    $type = 'interfaces';
+                } elseif ($dependency->getName() == 'class_exists') {
+                    $type = 'classes';
+                } elseif ($dependency->getName() == 'trait_exists') {
+                    $type = 'traits';
+                } elseif ($dependency->getName() == 'defined') {
+                    $type = 'constants';
                 }
                 if (!isset($this->count[static::METRICS_PREFIX . '.' . $type][$name])) {
                     $this->count[static::METRICS_PREFIX . '.' . $type][$name] = $versions;
