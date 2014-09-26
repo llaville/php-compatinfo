@@ -9,7 +9,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class PthreadsExtension extends AbstractReference
 {
     const REF_NAME    = 'pthreads';
-    const REF_VERSION = '2.0.8';    // 2014-09-15 (stable)
+    const REF_VERSION = '2.0.9';    // 2014-09-24 (stable)
 
     public function __construct()
     {
@@ -87,28 +87,104 @@ class PthreadsExtension extends AbstractReference
             'php.max' => '',
         );
         $release->classes = array(
-            'Cond'                          => null,
-            'Mutex'                         => null,
+            'Cond'                          => array(
+                'methods' => array(
+                    '__construct'           => array('ext.min' => '0.0.39'),
+                ),
+                'staticMethods' => array(
+                    'create'                => array('ext.min' => '0.0.39'),
+                    'signal'                => array('ext.min' => '0.0.37'),
+                    'wait'                  => array('ext.min' => '0.0.37'),
+                    'broadcast'             => array('ext.min' => '0.0.37'),
+                    'destroy'               => array('ext.min' => '0.0.37'),
+                ),
+            ),
+            'Mutex'                         => array(
+                'methods' => array(
+                    '__construct'           => array('ext.min' => '0.0.39'),
+                ),
+                'staticMethods' => array(
+                    'create'                => array('ext.min' => '0.0.37'),
+                    'lock'                  => array('ext.min' => '0.0.37'),
+                    'trylock'               => array('ext.min' => '0.0.37'),
+                    'unlock'                => array('ext.min' => '0.0.37'),
+                    'destroy'               => array('ext.min' => '0.0.37'),
+                ),
+            ),
             'Thread'                        => array(
                 'methods' => array(
                     'detach'                => null,
                     'getCreatorId'          => null,
                     'getThreadId'           => null,
+                    'isRunning'             => null,
+                    'isWaiting'             => null,
                     'isJoined'              => null,
                     'isStarted'             => null,
+                    'isTerminated'          => array('ext.min' => '0.0.45'),
+                    'getTerminationInfo'    => array('ext.min' => '0.0.45'),
                     'join'                  => null,
                     'kill'                  => null,
                     'notify'                => null,
                     'start'                 => null,
                     'wait'                  => null,
+                    'run'                   => array('ext.min' => '2.0.0'),
+                    'synchronized'          => array('ext.min' => '0.0.40'),
+                    'lock'                  => array('ext.min' => '0.0.40'),
+                    'unlock'                => array('ext.min' => '0.0.40'),
+                    'merge'                 => array('ext.min' => '0.0.44'),
+                    'shift'                 => array('ext.min' => '0.0.45'),
+                    'chunk'                 => array('ext.min' => '0.0.45'),
+                    'pop'                   => array('ext.min' => '0.0.45'),
+                    'count'                 => array('ext.min' => '1.0.0'),
                 ),
                 'staticMethods' => array(
-                    'getCurrentThread'      => null,
-                    'getCurrentThreadId'    => null,
+                    'getCurrentThread'      => array('ext.min' => '1.0.0'),
+                    'getCurrentThreadId'    => array('ext.min' => '1.0.0'),
                     'globally'              => array('ext.min' => '2.0.1'),
+                    'extend'                => array('ext.min' => '2.0.8'),
+                    'from'                  => array('ext.min' => '2.0.9'),
                 ),
             ),
-            'Worker'                        => null,
+            'Worker'                        => array(
+                'methods' => array(
+                    'shutdown'              => array('ext.min' => '0.0.37'),
+                    'stack'                 => array('ext.min' => '0.0.37'),
+                    'unstack'               => array('ext.min' => '0.0.37'),
+                    'getStacked'            => array('ext.min' => '0.0.37'),
+                    'isShutdown'            => array('ext.min' => '0.0.37'),
+                    'isWorking'             => array('ext.min' => '0.0.37'),
+                    'start'                 => array('ext.min' => '0.0.37'),
+                    'join'                  => array('ext.min' => '0.0.37'),
+                    'detach'                => array('ext.min' => '0.0.37'),
+                    'isStarted'             => array('ext.min' => '0.0.37'),
+                    'isJoined'              => array('ext.min' => '0.0.37'),
+                    'getThreadId'           => array('ext.min' => '0.0.37'),
+                    'getCreatorId'          => array('ext.min' => '0.0.37'),
+                    'kill'                  => array('ext.min' => '0.0.37'),
+                    'run'                   => array('ext.min' => '0.0.37'),
+                    'wait'                  => array('ext.min' => '0.0.37'),
+                    'notify'                => array('ext.min' => '0.0.37'),
+                    'isRunning'             => array('ext.min' => '0.0.37'),
+                    'isWaiting'             => array('ext.min' => '0.0.37'),
+                    'isTerminated'          => array('ext.min' => '0.0.37'),
+                    'getTerminationInfo'    => array('ext.min' => '0.0.37'),
+                    'synchronized'          => array('ext.min' => '0.0.40'),
+                    'lock'                  => array('ext.min' => '0.0.40'),
+                    'unlock'                => array('ext.min' => '0.0.40'),
+                    'merge'                 => array('ext.min' => '0.0.44'),
+                    'shift'                 => array('ext.min' => '0.0.45'),
+                    'chunk'                 => array('ext.min' => '0.0.45'),
+                    'pop'                   => array('ext.min' => '0.0.45'),
+                    'count'                 => array('ext.min' => '1.0.0'),
+                ),
+                'staticMethods' => array(
+                    'getCurrentThread'      => array('ext.min' => '1.0.0'),
+                    'getCurrentThreadId'    => array('ext.min' => '1.0.0'),
+                    'globally'              => array('ext.min' => '2.0.1'),
+                    'extend'                => array('ext.min' => '2.0.8'),
+                    'from'                  => array('ext.min' => '2.0.9'),
+                ),
+            ),
         );
         return $release;
     }
@@ -228,6 +304,10 @@ class PthreadsExtension extends AbstractReference
                     'unlock'                => null,
                     'wait'                  => null,
                 ),
+                'staticMethods' => array(
+                    'extend'                => array('ext.min' => '2.0.8'),
+                    'from'                  => array('ext.min' => '2.0.9'),
+                ),
             ),
         );
         return $release;
@@ -264,7 +344,7 @@ class PthreadsExtension extends AbstractReference
         $release->classes = array(
             'Collectable'                   => array(
                 'methods' => array(
-                    'chunck'                => null,
+                    'chunk'                 => null,
                     'count'                 => null,
                     'getTerminationInfo'    => null,
                     'isGarbage'             => null,
@@ -284,6 +364,7 @@ class PthreadsExtension extends AbstractReference
                 ),
                 'staticMethods' => array(
                     'extend'                => null,
+                    'from'                  => array('ext.min' => '2.0.9'),
                 )
             )
         );
