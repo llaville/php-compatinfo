@@ -431,6 +431,60 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test that each class methods are defined in reference
+     *
+     * @depends testReference
+     * @group  reference
+     * @return void
+     */
+    public function testGetClassMethodsFromExtension()
+    {
+        if (!in_array(self::$ext, array('pthreads'))) {
+            $this->assertFalse(false);
+            return;
+        }
+
+        $extname   = self::$ext;
+        $extension = new \ReflectionExtension($extname);
+        $classes   = array_unique($extension->getClassNames());
+        $this->assertTrue(is_array($classes));
+
+        $nonStaticMethods = self::$obj->getClassMethods();
+        $staticMethods    = self::$obj->getClassStaticMethods();
+
+        foreach ($classes as $classname) {
+            $class   = new \ReflectionClass($classname);
+            if ($class->getName() != $classname) {
+                /* Skip class alias */
+                continue;
+            }
+            $methods = $class->getMethods();
+
+            foreach ($methods as $method) {
+                $methodname = $method->getName();
+                if ($method->isStatic()) {
+                    $this->assertArrayHasKey(
+                        $classname,
+                        $staticMethods,
+                        "Defined static method '$classname::$methodname' not known in Reference."
+                    );
+                    $this->assertArrayHasKey(
+                        $methodname,
+                        $staticMethods[$classname],
+                        "Defined static method '$classname::$methodname' not known in Reference."
+                    );
+                } else {
+                    $this->assertArrayHasKey(
+                        $methodname,
+                        $nonStaticMethods[$classname],
+                        "Defined method '$classname::$methodname' not known in Reference."
+                    );
+                }
+            }
+        }
+    }
+
+    /**
      * Test than all referenced interfaces exists
      *
      * @depends testReference
