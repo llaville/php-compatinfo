@@ -461,6 +461,9 @@ class GenericTest extends \PHPUnit_Framework_TestCase
             $methods = $class->getMethods();
 
             foreach ($methods as $method) {
+                if (!$method->isPublic()) {
+                    continue;
+                }
                 $methodname = $method->getName();
                 if ($method->isStatic()) {
                     $this->assertArrayHasKey(

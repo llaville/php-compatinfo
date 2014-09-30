@@ -108,7 +108,6 @@ class AmqpExtension extends AbstractReference
                     'getPrevious'           => null,
                     'getTraceAsString'      => null,
                     '__toString'            => null,
-                    '__clone'               => null,
                 ),
             ),
             'AMQPException'                 => array(
@@ -122,7 +121,6 @@ class AmqpExtension extends AbstractReference
                     'getPrevious'           => null,
                     'getTraceAsString'      => null,
                     '__toString'            => null,
-                    '__clone'               => null,
                 ),
             ),
             'AMQPExchange'                  => array(
@@ -158,7 +156,6 @@ class AmqpExtension extends AbstractReference
                     'getPrevious'           => null,
                     'getTraceAsString'      => null,
                     '__toString'            => null,
-                    '__clone'               => null,
                 ),
             ),
             'AMQPQueue'                     => array(
@@ -199,7 +196,6 @@ class AmqpExtension extends AbstractReference
                     'getPrevious'           => null,
                     'getTraceAsString'      => null,
                     '__toString'            => null,
-                    '__clone'               => null,
                 ),
             ),
         );
@@ -249,7 +245,6 @@ class AmqpExtension extends AbstractReference
                     'getPrevious'           => null,
                     'getTraceAsString'      => null,
                     '__toString'            => null,
-                    '__clone'               => null,
                 ),
             ),
             'AMQPEnvelope'                  => array(
