@@ -1,0 +1,17 @@
+= API
+:description: Application Programming Interface
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+
+
+ifdef::basebackend-bootstrap[]
+:leveloffset: 1
+endif::basebackend-bootstrap[]
+
+include::developer-guide--source-provider.asciidoc[]
+
+include::developer-guide--handle-results.asciidoc[]
+
+ifdef::basebackend-bootstrap[]
+:leveloffset: 0
+endif::basebackend-bootstrap[]

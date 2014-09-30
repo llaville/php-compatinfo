@@ -1,33 +1,38 @@
 <div class="row">
-    <div class="span4">
-        <ul class="nav nav-list">
-            <li class="nav-header"><i class="icon-tag"></i> About</li>
-            <li><a href="CHANGELOG.html">Changelog</a></li>
-            <li><a href="LICENSE.html">License</a></li>
+    <div class="col-md-3">
+        <h3>Links</h3>
+        <ul>
+            <li><a href="{gitproject}/issues">Report an issue</a></li>
+            <li><a href="http://php5.laurent-laville.org/compatinfo/blog/">Blog</a></li>
+            </li>
         </ul>
     </div>
-    <div class="span4">
-        <ul class="nav nav-list">
-            <li class="nav-header"><i class="icon-book"></i> Get Started</li>
-            <li><a href="http://bartlett.laurent-laville.org/get/PHP_CompatInfo-{revnumber}.tgz">Download</a></li>
-            <li><a href="INSTALL.html">Installation</a></li>
-            <li><a href="phpci-book.html">User Guide</a></li>
-        </ul>
-    </div>
-    <div class="span4">
-        <ul class="nav nav-list">
-            <li class="nav-header"><i class="icon-comment"></i> Get Help</li>
-            <li><a href="https://github.com/llaville/php-compat-info/issues">Report an issue</a></li>
-        </ul>
+    <div class="col-md-9">
+        <h3>About Us</h3>
+        <p>
+Credits to Davey Shafik.
+He introduced his <a href="http://pear.php.net/pepr/pepr-proposal-show.php?id=27">proposal</a>
+in 2004, that gave birth of a <a href="http://pear.php.net/package/PHP_CompatInfo">PEAR package</a>
+named PHP_CompatInfo.
+        </p>
+        <p>
+Thanks to Remi Collet, contributor on many extensions and unit tests since version 2.0.0RC2
+        </p>
+        <p>
+Laurent Laville has written all remaining architecture.
+        </p>
     </div>
 </div>
+<div class="row">&nbsp;</div>
 <div class="row">
-    <div class="span12">
+    <div class="col-md-9">
         <div id="footer-text">
             Version <span class="badge">{revnumber}</span><br>
             Last updated {docdate} {doctime}<br>
-            Built with <a href="https://github.com/llaville/asciidoc-bootstrap-backend">AsciiDoc-Bootstrap backend</a> {bootstrap-backend-version}            
+            Built with <a href="https://github.com/llaville/asciidoc-bootstrap-backend">AsciiDoc-Bootstrap backend</a> {bootstrap-backend-version}
         </div>
+    </div>
+    <div class="col-md-3">
         <div id="footer-badges">
             Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a>
             and <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>.

@@ -1,0 +1,47 @@
+= Official Blog of PHP CompatInfo
+:description: Archives of July 2014
+:brand:       https://github.com/llaville/php-compat-info
+:rssref:      http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+:icons!:
+:iconsfont:   font-awesome
+:imagesdir:   ./images
+
+
+[role="col-md-3"]
+====
+[panel,primary]
+.{toc-title}
+--
+* xref:post-7[A new command to validate json config file]
+* xref:post-6[CompatInfo 3.2.0 has just been released]
+* xref:post-5[Fixed issue GH-100 explained]
+* xref:post-4[Latest preview before stable release]
+* xref:post-3[Final touch before stable release planned next week]
+* xref:post-2[Analysers reports used the Symfony 2.5 Console Table Component]
+* xref:post-1[Release 3.2.0 planned]
+--
+====
+
+[role="col-md-9"]
+include::201407-CompatInfo-3.3-preview.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]
+include::201407-CompatInfo-3.2-released.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]
+include::201407-CompatInfo-3.2-finished.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]
+include::201407-CompatInfo-3.2-preview-3.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]
+include::201407-CompatInfo-3.2-preview-2.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]
+include::201407-CompatInfo-3.2-preview.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]
+include::201407-release-3.2-planned.asciidoc[]

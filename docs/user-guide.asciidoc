@@ -1,0 +1,81 @@
+= User Guide
+:description: Start using CompatInfo without writing a line of code
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+
+ifdef::basebackend-docbook[]
+[partintro]
+--
+NOTE: First visit, you are highly recommended to follow chapters in following order.
+
+. Installing all necessary [label label-primary]#CompatInfo# components. See xref:_installation[]
+. Configuring your project and get ready for your first parsing. See xref:_the_json_configuration_file[]
+. Running your first parses with the Command-Line interface. See xref:_the_command_line[]
+
+CAUTION: All you have to know if you want to upgrade from a previous version 2.x easily.
+
+See xref:_migration_guide[]
+
+NOTE: Basic [label label-primary]#CompatInfo# features does not match your needs.
+Learn how to extend or change some features/behaviors.
+
+See xref:_developer_guide[]
+--
+endif::basebackend-docbook[]
+
+ifdef::basebackend-html[]
+[role="col-md-12"]
+====
+[panel,success]
+.For all users
+--
+NOTE: First visit, you are highly recommended to follow chapters in following order.
+
+. link:user-guide&#45;&#45;installation.html[Installing] all necessary [label label-primary]#CompatInfo# components.
+. link:user-guide&#45;&#45;configuration.html[Configuring] your project and get ready for your first parsing.
+. link:user-guide&#45;&#45;commands.html[Running] your first parses with the Command-Line interface.
+
+ifdef::basebackend-bootstrap[]
+link:user-guide&#45;&#45;installation.html["Installing PHP CompatInfo",role="primary",icon="glyphicon-step-forward",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:user-guide&#45;&#45;installation.html[Installing PHP CompatInfo]
+endif::basebackend-bootstrap[]
+--
+====
+
+unfloat::[]
+
+[role="col-md-6"]
+====
+[panel,info]
+.Migrating from CompatInfo 2.x to 3.x
+--
+CAUTION: All you have to know if you want to upgrade from a previous version 2.x easily.
+
+ifdef::basebackend-bootstrap[]
+link:migration-guide.html["Migration Guide",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:migration-guide.html[Migration Guide]
+endif::basebackend-bootstrap[]
+--
+====
+
+[role="col-md-6"]
+====
+[panel,danger]
+.For Developers Only
+--
+NOTE: Basic [label label-primary]#CompatInfo# features does not match your needs.
+Learn how to extend or change some features/behaviors.
+
+ifdef::basebackend-bootstrap[]
+link:developer-guide.html["Developer Guide",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:developer-guide.html[Developer Guide]
+endif::basebackend-bootstrap[]
+--
+====
+endif::basebackend-html[]

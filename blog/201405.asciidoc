@@ -1,0 +1,31 @@
+= Official Blog of PHP CompatInfo
+:description: Archives of May 2014
+:brand:       https://github.com/llaville/php-compat-info
+:rssref:      http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+:icons!:
+:iconsfont:   font-awesome
+:imagesdir:   ./images
+
+
+[role="col-md-3"]
+====
+[panel,primary]
+.{toc-title}
+--
+* xref:post-3[CompatInfo 3.2.0 is not planned to be release soon]
+* xref:post-2[CompatInfo 3.1.0 has just been released]
+* xref:post-1[CompatInfo 3.0.0 has just been released]
+--
+====
+
+[role="col-md-9"]
+include::201405-CompatInfo-3.2.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]
+include::201405-CompatInfo-3.1-released.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]
+include::201405-CompatInfo-3.0-released.asciidoc[]

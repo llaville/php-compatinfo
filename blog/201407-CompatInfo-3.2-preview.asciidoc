@@ -1,0 +1,83 @@
+:doctitle:    CompatInfo 3.2 preview
+:description: Analysers reports
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-07-08
+:pubdate:   Tue, 08 Jul 2014 09:41:28 +0200
+:summary:   Analysers reports used the Symfony 2.5 Console Table Component
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-2"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/clock-o.png[alt="preview",icon="clock-o",size="4x"]
+
+[role="lead"]
+Data and render were separated on each analyser reports.
+
+While in previous verson 3.x, I've introduced a forked
+footnote:[https://github.com/llaville/php-compat-info/blob/v3/src/Bartlett/CompatInfo/ConsoleHelper.php]
+of Symfony Console TableHelper (with footer support),
+today CompatInfo 3.2 will used the new
+Symfony 2.5 http://symfony.com/doc/current/components/console/helpers/table.html[Console Table Helper].
+
+CAUTION: As mentionned by Symfony Team, the http://symfony.com/doc/current/components/console/helpers/tablehelper.html[Table Helper]
+was deprecated in Symfony 2.5 and will be removed in Symfony 3.0.
+
+We have two challenges to solve here :
+
+* introduces again the footer behavior
+* let each analyser choose to render results
+
+For the first challenge, here are the code used to simulate a footer.
+
+[source,php]
+----
+<?php
+
+use Symfony\Component\Console\Helper\Table;
+use Symfony\Component\Console\Helper\TableSeparator;
+
+$table = new Table($output);
+$table
+    ->setHeaders(array('ISBN', 'Title', 'Author'))
+    ->setRows(array(
+        array('99921-58-10-7', 'Divine Comedy', 'Dante Alighieri'),
+        array('9971-5-0210-0', 'A Tale of Two Cities', 'Charles Dickens'),
+        array('960-425-059-0', 'The Lord of the Rings', 'J. R. R. Tolkien'),
+        array('80-902734-1-6', 'And Then There Were None', 'Agatha Christie'),
+        new TableSeparator(),
+        array('<info>Footer col.1</info>','<info>Footer col.2</info>','<info>Footer col.3</info>'),
+    ))
+;
+$table->render();
+----
+that will render something like :
+
+image::table-20500_footer_default.png[alt="default style"]
+
+[source,php]
+.changes the default style to compact
+----
+<?php
+    $table->setStyle('compact');
+----
+that will render something like :
+
+image::table-20500_footer_compact.png[alt="compact style"]
+
+[source,php]
+.changes the default style to borderless
+----
+<?php
+    $table->setStyle('borderless');
+----
+that will render something like :
+
+image::table-20500_footer_borderless.png[alt="borderless style"]
+____

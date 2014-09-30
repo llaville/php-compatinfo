@@ -1,0 +1,28 @@
+:doctitle:    CompatInfo 3.0 preview
+:description: Phar version
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-02-20
+:pubdate:   Thu, 20 Feb 2014 09:26:04 +0100
+:summary:   CompatInfo 3.0.0RC1 PHAR version WARNING
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-4"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/comment.png[alt="update",icon="comment",size="4x",width=56]
+
+When I've packaged the PHAR version, I've not used any specific stub, but just
+the same launcher as git https://github.com/llaville/php-compat-info/blob/v3/bin/compatinfo[source code version].
+
+This is major reason you need to have previously installed PHP_Timer and Symfony/Class-Loader 2.4 or better.
+
+I'll fix this issue, to have a really phar version without any dependencies in first Release Candidate.
+
+Be aware, and sorry for disappointment !
+____

@@ -1,0 +1,32 @@
+:doctitle:    CompatInfo 3.2 preview
+:description: 
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-05-26
+:pubdate:   Mon, 26 May 2014 19:58:34 +0200
+:summary:   CompatInfo 3.2.0 is not planned to be release soon.
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-3"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/clock-o.png[alt="future",icon="clock-o",size="4x",width=56]
+
+When I've begun to release the new major version 3.x, I hoped to follow PHP 5 releases as I did in past
+with versions 2.x
+
+With lack of feedback during Release Candidates phases (more than 2 months), I've let passed a major regression
+since latest version 2.26
+
+Even, if I've found origine of issue, I'll take my time now to prepare a new STABLE version with
+a full documentation (user and developer).
+
+Until it come, there won't be new versions published.
+
+Only news will be published on this blog during transition from 3.1 to 3.2 and on the github project page.
+____

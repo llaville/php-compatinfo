@@ -1,0 +1,392 @@
+ifndef::basebackend-docbook[]
+
+= User Guide
+:description: Configuring PHP CompatInfo
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+
+endif::basebackend-docbook[]
+
+== The Json Configuration File
+
+[WARNING]
+====
+[label label-primary]#CompatInfo# always needs a file in http://json.org/[JSON] format to run.
+It should be found either in the current, `$HOME/.config/`, or `/etc` directory.
+
+By setting the `COMPATINFO` environment variable it is possible to set the filename
+of `phpcompatinfo.json` to something else.
+
+E.g:  `COMPATINFO=my-phpcompatinfo.json`
+====
+
+The minimalist JSON file +phpcompatinfo.json+ is :
+[source,json]
+----
+{
+    "source-providers": [
+        {
+            "in": ". as current",
+            "name": "/\\.(php|inc|phtml)$/"
+        }
+    ],
+    "plugins": [
+        {
+            "name": "Analyser",
+            "class": "Bartlett\\Reflect\\Plugin\\Analyser\\AnalyserPlugin"
+        }
+    ],
+    "analysers" : [
+        {
+            "name": "Namespace",
+            "class": "Bartlett\\CompatInfo\\Analyser\\NamespaceAnalyser"
+        },
+        {
+            "name": "Extension",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ExtensionAnalyser"
+        },
+        {
+            "name": "Interface",
+            "class": "Bartlett\\CompatInfo\\Analyser\\InterfaceAnalyser"
+        },
+        {
+            "name": "Trait",
+            "class": "Bartlett\\CompatInfo\\Analyser\\TraitAnalyser"
+        },
+        {
+            "name": "Class",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ClassAnalyser"
+        },
+        {
+            "name": "Function",
+            "class": "Bartlett\\CompatInfo\\Analyser\\FunctionAnalyser"
+        },
+        {
+            "name": "Constant",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ConstantAnalyser"
+        },
+        {
+            "name": "Summary",
+            "class": "Bartlett\\CompatInfo\\Analyser\\SummaryAnalyser"
+        },
+        {
+            "name": "Condition",
+            "class": "Bartlett\\CompatInfo\\Analyser\\CodeCondAnalyser"
+        },
+        {
+            "name": "Structure",
+            "class": "Bartlett\\Reflect\\Analyser\\StructureAnalyser"
+        }
+    ]
+}
+----
+
+source-providers::
+this entry provide list of your data sources to parse.
+
+plugins::
+this entry list all plugins added to the core base code of PHP [label label-primary]#CompatInfo#.
+
+analysers::
+this entry list all analysers that may be used with the `analyser:run` command.
+
+
+=== Source Providers
+
+[role="lead"]
+There are lot of way to filter your data source. Each rule follow the syntax
+of Symfony http://symfony.com/doc/current/components/finder.html[Finder] Component.
+
+The *Location* is the only mandatory criteria. It tells the Finder which directory to use for the search.
+
+[source,json]
+.In a simple directory
+----
+    {
+        "in": ". as current"
+    }
+----
+
+NOTE: If you want to identify a data source easily by a short name, the alias (right of `as`)
+is compared with the +--alias+ option constraint.
+
+[source,json]
+.Search in several locations
+----
+    {
+        "in": ". as current",
+        "in": "src/"
+    }
+----
+
+[source,json]
+.Use wildcard characters to search in the directories matching a pattern:
+----
+    {
+        "in": "src/Bartlett/R*"
+    }
+----
+
+[source,json]
+.Search directly in archives (phar, zip, tar) with the +phar://+ protocol
+----
+    {
+        "in": "phar://path/to/archive.zip"
+    }
+----
+
+[source,json]
+.Restrict files by *name* and/or extension.
+----
+    {
+        "in": "phar://path/to/archive.zip",
+        "name": "*.php"
+    }
+----
+
+[source,json]
+.Restrict files by *size*.
+----
+    {
+        "in": "phar://path/to/archive.zip",
+        "name": "*.php",
+        "size": "< 10K"
+    }
+----
+
+[source,json]
+.Restrict files by last modified dates.
+----
+    {
+        "in": ". as current",
+        "date": "since yesterday"
+    }
+----
+
+By default, the Finder recursively traverse directories.
+
+[source,json]
+.Restrict the depth of traversing.
+----
+    {
+        "in": ". as current",
+        "depth": "< 3"
+    }
+----
+
+
+=== Plugins
+
+[role="lead"]
+There are a number of optional plugins you can use along with CompatInfo to add more capabilities.
+
+The `Analyser` is the only mandatory plugin you should add to parse your data source.
+
+In your +phpcompatinfo.json+ configuration file, add in `plugins` section the following entry:
+[source,json]
+----
+    {
+        "name": "Analyser",
+        "class": "Bartlett\\Reflect\\Plugin\\Analyser\\AnalyserPlugin"
+    }
+----
+
+WARNING: The `Analyser` plugin is a component from Reflect, and not from CompatInfo. Take care of namespace !
+
+The `name` key identify the namespace of optional commands the plugin may provide.
+
+CAUTION: Each `name` key must be unique to avoid conflicts.
+
+The `class` key identify the name of the class that implement the plugin features.
+
+E.g: AnalyserPlugin footnote:[{rawurl}/src/Bartlett/Reflect/Plugin/Analyser/AnalyserPlugin.php]
+
+==== Cache Plugin
+
+WARNING: Available only since version 3.3.0
+
+In your +phpcompatinfo.json+ configuration file, add in `plugins` section the following entry:
+[source,json]
+----
+    {
+        "name": "Cache",
+        "class": "Bartlett\\Reflect\\Plugin\\Cache\\CachePlugin",
+        "options": {
+            "adapter": "DoctrineCacheAdapter",
+            "backend": {
+                "class": "Doctrine\\Common\\Cache\\FilesystemCache",
+                "args": [
+                    "%{TEMP}/bartlett/cache"
+                ]
+            }
+        }
+    }
+----
+TIP: You may use any environment variable that will be replaced, at run-time, by their value. E.g: `TEMP`, `HOME`
+
+NOTE: Since release 3.3.0, the `HOME` syntax is compatible Linux/Windows.
+
+CAUTION: Take care to use the same configuration as in PHP Reflect, or you should not share the cache results.
+
+In previous configuration we used the Doctrine Cache adapter and its File system backend.
+See the same configuration applied with other SAPI, in
+ifdef::basebackend-html[]
+link:developer-guide&#45;&#45;cache-plugin.html#_file_cache[developer guide]
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_file_cache[]
+endif::basebackend-docbook[]
+
+==== Log Plugin
+
+WARNING: Available only since version 3.4.0
+
+In your +phpcompatinfo.json+ configuration file, add in `plugins` section the following entry:
+[source,json]
+----
+    {
+        "name": "Log",
+        "class": "Bartlett\\Reflect\\Plugin\\Log\\LogPlugin",
+        "options": {
+            "logger": {
+                "class": "YourLogger"
+            },
+            "conf": []
+        }
+    }
+----
+Where `YourLogger` identify your class logger (fully qualified. E.g `YourNamespace\YourLogger`).
+
+See the Developer Guide for definition examples of some loggers
+ifdef::basebackend-html[]
+link:developer-guide&#45;&#45;log-plugin.html#_using_your_private_logger[using private logger] or
+link:developer-guide&#45;&#45;log-plugin.html#_using_monolog[using monolog]
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_using_your_private_logger[] or
+xref:_using_monolog[]
+endif::basebackend-docbook[]
+
+
+And `conf` entry are custom plugin options to apply.
+
+For example, to suppress logging of `reflect.success` event, and remove contextual data
+on `reflect.complete` event, modify your +phpreflect.json+ configuration file as follow :
+
+[source,json]
+----
+    {
+        "name": "Log",
+        "class": "Bartlett\\Reflect\\Plugin\\Log\\LogPlugin",
+        "options": {
+            "logger": {
+                "class": "YourLogger"
+            },
+            "conf": {
+                "reflect.success": false,
+                "reflect.complete": {
+                    "context": false
+                }
+            }
+        }
+    }
+----
+
+All configuration options are available, see
+ifdef::basebackend-html[]
+link:developer-guide&#45;&#45;log-plugin.html#_register_plugin[Register Plugin] of Log section.
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_register_plugin[]
+endif::basebackend-docbook[]
+
+
+=== Analysers
+
+[role="lead"]
+There are a number of optional analysers you can use along with the Reflect Analyser Plugin.
+
+The `Summary` is the default analyser you should add to obtain results when you parse your data source.
+
+In your +phpcompatinfo.json+ configuration file, add in `analysers` section the following entry:
+[source,json]
+----
+    {
+        "name": "Structure",
+        "class": "Bartlett\\CompatInfo\\Analyser\\SummaryAnalyser"
+    }
+----
+
+The `name` key identify the name you can optionally invoke with the `analyser:run` command.
+
+The two following commands do the same:
+
+[source,bash]
+.Used implicitly the summary analyser (default behavior)
+----
+$ phpcompatinfo analyser:run .
+----
+[source,bash]
+.Named explicitly the summary analyser
+----
+$ phpcompatinfo analyser:run . summary
+----
+
+CAUTION: Each `name` key must be unique to avoid conflicts.
+
+The `class` key identify the name of the class that implement the analyser features.
+
+
+==== Conditional Code
+
+WARNING: Available only since version 3.4.0
+
+[label label-primary]#CompatInfo# is now capable to detect conditional code, mark each element
+in all analysers reporting, and exclude their versions from PHP min/max final results.
+
+Let's see with [label label-primary]#CompatInfo# source code, and explain results.
+
+The new condition analyser (`CodeCondAnalyser`), is able to produce such kind of report :
+
+[role="output"]
+====
+----
+include::condition_analysis.out.asciidoc[]
+----
+====
+
+That meens [label label-primary]#CompatInfo# need at least PHP 5.3.7 if you used all conditional features.
+But remember, that the minimum version is only PHP 5.3.0 (see summary report).
+
+[role="output"]
+====
+----
+include::summary_analysis.out.asciidoc[]
+----
+====
+
+The new `Cond` column tell you how many condition where found in each category.
+And of course the condition analyser give you the details.
+
+And finally, all other analysers show you with a `C` mark in front of element name
+when it's excluded from PHP min/max versions, and considered as conditional code.
+
+
+ifdef::basebackend-bootstrap[]
+== Next
+
+link:user-guide&#45;&#45;commands.html["The Command-Line Interface",role="primary",icon="glyphicon-step-forward",options="block"]
+
+************************************************
+.Read more
+
+For developers who want to extend or change CompatInfo features.
+
+* Want to create a new plugin,
+have a look on developer's guide in the link:developer-guide&#45;&#45;plugins.html[Plugins] section.
+
+* Want to create a new analyser,
+have a look on developer's guide in the link:developer-guide&#45;&#45;analysers.html[Analysers] section.
+
+************************************************
+endif::[]

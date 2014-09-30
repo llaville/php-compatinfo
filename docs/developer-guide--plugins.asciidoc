@@ -1,0 +1,189 @@
+= Build your Plugins
+:description: How to extend the features list.
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+
+
+== Events
+
+[role="lead"]
+CompatInfo uses a Symfony http://symfony.com/doc/current/components/event_dispatcher/index.html[EventDispatcher] Component
+to allow you to easily extend the features list.
+
+The EventDispatcher component allow Reflect and [label label-primary]#CompatInfo# components
+to communicate with each other by dispatching events and listening to them.
+
+=== Event Dispatcher
+
+[label label-primary]#CompatInfo# implement interface `Bartlett\Reflect\Event\DispatcherInterface`.
+You can add event listeners and event subscribers to this object.
+
+[horizontal]
+listeners::
+Callable functions that are registered on an event dispatcher for specific events.
+
+subscribers::
+Classes that tell an event dispatcher what methods to listen to and what functions on the class
+to invoke when the event is triggered. Event subscribers subscribe event listeners to an event dispatcher.
+
+=== Getting an EventDispatcher
+
+You can get the EventDispatcher of `Bartlett\Reflect\Event\DispatcherInterface`
+by calling the +getEventDispatcher()+ method.
+
+Here is an example :
+
+[source,php]
+----
+<?php
+
+use Bartlett\CompatInfo;
+
+$compatinfo = new CompatInfo;
+
+$ed = $compatinfo->getEventDispatcher();
+----
+
+=== Adding Event Listeners
+
+After you have the event dispatcher, you can register event listeners that listen
+to specific events.
+
+.Add a listener that will echo out files when they are parsed
+====
+[source,php]
+----
+<?php
+
+use Bartlett\CompatInfo;
+use Symfony\Component\EventDispatcher\GenericEvent;
+
+$compatinfo = new CompatInfo;
+
+$compatinfo->getEventDispatcher()->addListener(
+    'reflect.progress',
+    function (GenericEvent $e) {
+        printf(
+            'Parsing Data source "%s" in progress ... File "%s"' . PHP_EOL,
+            $e['source'],
+            $e['file']->getPathname()
+        );
+    }
+);
+----
+====
+
+.Add a listener that will exploit each http://en.wikipedia.org/wiki/Abstract_syntax_tree[AST] of file parsed
+====
+[source,php]
+----
+<?php
+
+use Bartlett\CompatInfo;
+use Symfony\Component\EventDispatcher\GenericEvent;
+
+$compatinfo = new CompatInfo;
+
+$compatinfo->getEventDispatcher()->addListener(
+    'reflect.success',
+    function (GenericEvent $e) {
+        $ast = unserialize($e['ast']);
+        printf(
+            'Parsing Data source "%s", file "%s". AST = %s' . PHP_EOL,
+            $e['source'],
+            $e['file']->getPathname(),
+            print_r($ast, true)
+        );
+    }
+);
+----
+====
+
+=== Event Subscribers
+
+Event subscribers are classes that implement interface `Symfony\Component\EventDispatcher\EventSubscriberInterface`.
+They are used to register one or more event listeners to methods of the class.
+Event subscribers tell event dispatcher exactly which events to listen to and what method to invoke on the class.
+
+[label label-primary]#CompatInfo# plugins follow the event subscribers behaviors.
+Have a look on Reflect AnalyserPlugin :
+
+[source,php]
+----
+<?php
+class AnalyserPlugin implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents()
+    {
+        return array(
+            'reflect.complete' => 'onReflectComplete',
+        );
+    }
+}
+----
+
+This plugin registers event listeners to the `reflect.complete` event
+of a [label label-primary]#CompatInfo# parse request.
+
+When the `reflect.complete` event is emitted, the +onReflectComplete+ instance method
+of the plugin is invoked.
+
+=== Events lifecycle
+
+[options="header,autowidth", cols="3,5,3", role="table table-bordered table-striped"]
+|===========================
+| Event | Action | Informations available
+
+| reflect.progess  | Before to parse a new file of the data source.
+|
+`source` data source identifier or its alias
++
+`file` current file parsed in the data source
+
+| reflect.success | After parsing the current file ( A cached request will not trigger this event )
+|
+`source` data source identifier or its alias
++
+`file` current file parsed in the data source
++
+`ast` the http://en.wikipedia.org/wiki/Abstract_syntax_tree[Abstract Syntax Tree] result of https://github.com/nikic/PHP-Parser[PHP-Parser]
+
+| reflect.error | When PHP Parser raise an error
+|
+`source` data source identifier or its alias
++
+`file` current file parsed in the data source
++
+`error` PHP Parser error message
+
+| reflect.complete | When a parse request is over.
+|
+`source` data source identifier or its alias
+
+|===========================
+
+
+== Console Commands
+
+If your plugin should be accessible on the command line, and provides some new commands,
+you have to register them with the static +getCommands()+ method.
+
+Have a look on AnalyserPlugin, that provide two new commands: `analyser:list` and `analyser:run`.
+
+[source,php]
+----
+<?php
+class AnalyserPlugin implements EventSubscriberInterface
+{
+    public static function getCommands()
+    {
+        $commands   = array();
+        $commands[] = new AnalyserListCommand;
+        $commands[] = new AnalyserRunCommand;
+
+        return $commands;
+    }
+----
+
+CAUTION: If your plugin must not provide console command,
+your +getCommands()+ static method should return an empty php array.

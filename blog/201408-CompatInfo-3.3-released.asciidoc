@@ -1,0 +1,42 @@
+:doctitle:    CompatInfo 3.3 stable
+:description:
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-08-21
+:pubdate:   Thu, 21 Aug 2014 21:04:11 +0200
+:summary:   CompatInfo 3.3.0 has just been released.
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-2"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/rocket.png[alt="release",icon="rocket",size="4x",width=56]
+
+News :
+
+* Support new stable PHP versions 5.5.16, 5.4.32 and 5.3.29
+* Support PHP 5.6.0RC4
+* https://github.com/llaville/php-compat-info/issues/121[GH-121] feature request
+* add new `--manifest` option for PHAR distribution to show dependencies bundled
+* add new `validate` command to check syntax of your JSON configuration file
+* Support two new extensions `Sync` and `Yac`
+
+Changes :
+
+* `HOME` syntax is compatible both Linux and Windows to look for JSON configuration file 
+ (https://github.com/llaville/php-compat-info/issues/122[GH-122]), and file cache location (see cache plugin)
+* clean-up code (removed unused Use statements)
+* remove `require-dev` entries in composer.json
+* use the same event interface as Reflect rather than a clone
+* fixed PHP versions cell footer color
+* `--php` option has now a default filter value
+
+Download :
+
+link:http://bartlett.laurent-laville.org/get/phpcompatinfo-3.3.0.phar[caption="Download the PHAR version",role="primary",icon="glyphicon-download-alt"]
+____

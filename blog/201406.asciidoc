@@ -1,0 +1,23 @@
+= Official Blog of PHP CompatInfo
+:description: Archives of June 2014
+:brand:       https://github.com/llaville/php-compat-info
+:rssref:      http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+:icons!:
+:iconsfont:   font-awesome
+:imagesdir:   ./images
+
+
+[role="col-md-3"]
+====
+[panel,primary]
+.{toc-title}
+--
+* xref:post-1[User Documentation is on way]
+--
+====
+
+[role="col-md-9"]
+include::201406-user-documentation.asciidoc[]

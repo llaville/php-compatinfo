@@ -1,0 +1,132 @@
+ifndef::basebackend-docbook[]
+
+= Source Provider
+:description: How to identify a data source and parse its contents.
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+
+endif::basebackend-docbook[]
+
+== Data Source Identification
+
+[role="lead"]
+Identify the Data Source with the Symfony http://symfony.com/doc/current/components/finder.html[Finder] Component.
+
+WARNING: Now, and for the following chapters, we will not mention how you load the classes.
+Depending of the install strategy you've adopted, Composer or other, don't forget to load your autoloader.
+
+[label label-primary]#CompatInfo# uses the Reflect data source provider mechanism.
+You may either use the basic Symfony Finder, what we will do next, or use your own.
+
+WARNING: The `Provider` is a component from Reflect, and not from CompatInfo. Take care of namespace !
+
+=== Basic Provider with Symfony Finder
+
+[source,php]
+----
+<?php
+
+use Bartlett\Reflect\Provider\SymfonyFinderProvider;
+use Symfony\Component\Finder\Finder;
+
+$dirs = dirname(__DIR__) . '/sources';
+
+$finder = new Finder();
+$finder->files()
+    ->name('*.php')
+    ->in($dirs);
+
+$provider = new SymfonyFinderProvider($finder);
+----
+
+At this step, we have created a data source provider that is allowed to retrieve each element to parse.
+
+[label label-primary]#CompatInfo# need to know it. We attach then the previous provider instance
+to a *Provider Manager*, with a label ( e.g: +Single+ ) to identify it easily.
+
+[source,php]
+.Reflect Provider Manager with a unique data source
+----
+<?php
+
+use Bartlett\Reflect\ProviderManager;
+
+$pm = new ProviderManager;
+$pm->set('Single', $provider);
+----
+
+NOTE: A *Provider Manager* may provide one or more data source identifications.
+Equivalent to the `source-providers` section of the `phpcompatinfo.json` configuration file
+for the command-line interface.
+
+[source,php]
+.Reflect Provider Manager with multiple data sources
+----
+<?php
+
+use Bartlett\Reflect\ProviderManager;
+use Bartlett\Reflect\Provider\SymfonyFinderProvider;
+use Symfony\Component\Finder\Finder;
+
+$pm = new ProviderManager;
+
+// -- source 1
+$source1 = dirname(__DIR__) . '/sources/';
+
+$finder1 = new Finder();
+$finder1->files()
+    ->name('sample1.php')
+    ->in($source1);
+
+$pm->set('Sample', new SymfonyFinderProvider($finder1));
+
+// -- source 2
+$pharFile = dirname(__DIR__) . '/sources/pirus.phar';
+$source2  = 'phar://' . $pharFile;
+
+$finder2 = new Finder();
+$finder2->files()
+    ->path('/Pirus/')
+    ->name('*.php')
+    ->in($source2);
+
+$pm->set('Pirus', new SymfonyFinderProvider($finder2));
+----
+
+On this example [label label-primary]#CompatInfo# is able to parse contents
+of two data sources: +Sample+ and +Pirus+, all at once (default behavior) or individually.
+
+== Parse elements of the provider
+
+We reuse the provider manager instance (+$pm+) seen above (unique data source named +Single+ ).
+Then we ask [label label-primary]#CompatInfo# to parse its full contents.
+
+[source,php]
+----
+<?php
+
+use Bartlett\CompatInfo;
+
+$compatinfo = new CompatInfo;
+$compatinfo->setProviderManager($pm);
+$compatinfo->parse();
+----
+
+In case of multiple data sources, when you want to parse it individually rather than fully,
+use the following statements.
+
+[source,php]
+.Parse only Data Source named +Pirus+
+----
+<?php
+
+use Bartlett\CompatInfo;
+
+$compatinfo = new CompatInfo;
+$compatinfo->setProviderManager($pm);
+$compatinfo->parse(array('Pirus'));
+----
++Pirus+ is the data source label used on +$pm->set()+ statement.
+
+You have identified data sources and parsed its full contents.
+Now you are ready to handle the results.

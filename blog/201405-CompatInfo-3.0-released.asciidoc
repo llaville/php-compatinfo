@@ -1,0 +1,95 @@
+:doctitle:    CompatInfo 3.0 stable
+:description:
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-05-01
+:pubdate:   Thu, 01 May 2014 09:14:58 +0200
+:summary:   CompatInfo 3.0.0 has just been released.
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-1"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/rocket.png[alt="release",icon="rocket",size="4x",width=56]
+
+Support all 100 extensions as in version 2.26.0, with updates.
+
+Changes since RC2:
+
+* 30 more extensions were migrated from format 2.x to 3.x
+* fixed PHP warning with `reference:list` command
+* fixed conflict between Reflect and CompatInfo `analyser:run` command
+
+In waiting full documentation (that should be available before end of this month),
+here are some commands explained:
+
+NOTE: if you use the CLI version of CompatInfo, from PHAR or source code, you should
+add a `compatinfo.json` configuration file in the root of your project. Here is an
+https://github.com/llaville/php-compat-info/blob/v3/bin/phpcompatinfo.json[example], with
+some _source-providers_ declared (accept all Symfony Finder criteria), default _plugins_ required,
+and some _analysers_ (known as --report in CompatInfo 2.x)
+
+CAUTION: *UPDATE* Since this https://github.com/llaville/php-compat-info/commit/0f42ce862c5ac29f84e1786925129891d162cba9[commit],
+we have normalized names and old `compatinfo.json` was renamed to `phpcompatinfo.json`.
+
+.Example 1: Summary analyser (always available, and display as default report, if none provided)
+----
+$ compatinfo analyser:run --alias Reflect1
+----
+
+.Example 2: Extension analyser (with benchmark active if PHP_Timer installed)
+----
+$ compatinfo --profile analyser:run --alias CompatInfo2 extension
+----
+TIP: if you forget what analysers are available, uses the `analyser:list` command.
+
+.Example 3: List all References that may be detected by CompatInfo 3.0
+----
+$ compatinfo reference:list
+----
+
+.Example 4: Inspect full SPL Reference contents (that may be filtered by component; see reference:show options)
+----
+$ compatinfo reference:show spl
+----
+
+.Example 5: Inspect Reference contents filtered by PHP version (all elements in Core since PHP 5.3)
+----
+$ compatinfo reference:show --php=">= 5.3.0" core
+----
+
+.Example 6: List all Plugins configured for your CompatInfo version.
+----
+$ compatinfo plugin:list
+----
+
+.Example 7: List all data sources configured, that may be analysed by CompatInfo.
+----
+$ compatinfo provider:list
+----
+
+.Example 8: Show file list in a specific data source.
+----
+$ compatinfo provider:show --alias phing27
+----
+
+.What is planned for the next stable version:
+************************************************
+* Support new stable PHP versions 5.5.12 and 5.4.28
+* Improve the documentation.
+* Fixes all remaining issues (that could be detected: need user feedback)
+************************************************
+
+ifdef::basebackend-bootstrap[]
+link:http://bartlett.laurent-laville.org/get/phpcompatinfo-3.0.0.phar[caption="Download the PHAR version",role="primary",icon="glyphicon-download-alt"]
+endif::[]
+
+ifndef::basebackend-bootstrap[]
+link:http://bartlett.laurent-laville.org/get/phpcompatinfo-3.0.0.phar[Download the PHAR version]
+endif::[]
+____

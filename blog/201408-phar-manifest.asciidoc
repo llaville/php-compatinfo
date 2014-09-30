@@ -1,0 +1,45 @@
+:doctitle:    CompatInfo 3.3 preview
+:description: PHAR manifest
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-08-19
+:pubdate:   Tue, 19 Aug 2014 14:04:36 +0200
+:summary:   CompatInfo has a manifest for PHAR distribution
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-1"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/file-archive-o.png[alt="phar",icon="file-archive-o",size="4x"]
+
+[role="lead"]
+CompatInfo 3.3 and greater will have a manifest on each PHAR distribution.
+
+In Idea to simplify future maintenance, and to provide a way to know what are the dependencies bundled,
+today, I've introduced the new `--manifest` option (credits to Sebastian Bergmann).
+
+This option print the list of all dependencies and their versions, as follow :
+
+[source,bash]
+----
+$ phpcompatinfo --manifest
+----
+
+[role="output"]
+----
+bartlett/php-compatinfo: v3@7af37da40888a9b948dd07a6421b356b5dfc5a44
+bartlett/php-reflect: 2.x-dev@bb48ff296937025e883fdaca7e1ad61c26868698
+doctrine/cache: v1.3.0
+nikic/php-parser: v1.0.0beta1
+phpunit/php-timer: 1.0.5
+seld/jsonlint: 1.2.0
+symfony/console: v2.5.3
+symfony/event-dispatcher: v2.5.3
+symfony/finder: v2.5.3
+----
+____

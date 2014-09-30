@@ -1,0 +1,35 @@
+#!/usr/bin/env php
+<?php
+ini_set('memory_limit', -1);
+
+if (\Phar::running()) {
+    $vendorDir = 'phar://phpcompatinfo.phar/vendor';
+} else {
+    $baseDir   = dirname(__DIR__);
+    $vendorDir = $baseDir . '/vendor';
+
+    if (!getenv("COMPATINFO")) {
+        $home  = defined('PHP_WINDOWS_VERSION_BUILD') ? 'USERPROFILE' : 'HOME';
+        $files = array(
+            realpath('./phpcompatinfo.json'),
+            getenv($home).'/.config/phpcompatinfo.json',
+            '/etc/phpcompatinfo.json',
+        );
+        foreach ($files as $file) {
+            if (file_exists($file)) {
+                putenv("COMPATINFO=$file");
+                break;
+            }
+        }
+    }
+}
+require_once $vendorDir . '/autoload.php';
+
+if (PHP_SAPI !== 'cli') {
+    return;
+}
+
+use Bartlett\CompatInfo\ConsoleApplication as Application;
+
+$application = new Application();
+$application->run();

@@ -1,4 +1,0 @@
-PHP_CompatInfo will parse a file/folder/array to find out the minimum
-version and extensions required for it to run. CLI version has many reports
-(extension, interface, class, function, constant) to display and ability to show
-content of dictionary references.

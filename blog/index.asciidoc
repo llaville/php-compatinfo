@@ -1,25 +1,39 @@
-= Official Blog of PHP CompatInfo
+= {title}
+:title:       Official Blog of PHP CompatInfo
 :description: What's new on this project
-:brand: https://github.com/llaville/php-compat-info
-:rssref: http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:brand:       https://github.com/llaville/php-compat-info
+:rssref:      http://php5.laurent-laville.org/compatinfo/blog/rss.xml
+:jumbotron:
 :jumbotron-fullwidth:
+:footer-fullwidth:
 :icons!:
-:iconsfont: font-awesome
-:iconsfontdir: ./fonts/font-awesome
-:imagesdir: ./images
-:css-signature: blog
+:iconsfont:   font-aweseome
+:imagesdir:   ./images
 
-[role="well-sm"]
-**********
-*Stay tuned*
 
-Subscribe to RSS feed icon:rss-square[size="lg",link="http://php5.laurent-laville.org/compatinfo/blog/rss.xml"]
+[role="col-md-3"]
+====
+[panel,primary]
+.Stay tuned
+--
+Subscribe to http://php5.laurent-laville.org/compatinfo/blog/rss.xml[RSS feed].
+--
 
-*Archives*
-
-[style="archives"]
+[panel,success]
+.Archives
+--
 - 2014
 ** link:201401.html[January] [badge pull-right]#1#
-**********
+** link:201402.html[February] [badge pull-right]#5#
+** link:201404.html[April] [badge pull-right]#1#
+** link:201405.html[May] [badge pull-right]#3#
+** link:201406.html[June] [badge pull-right]#1#
+** link:201407.html[July] [badge pull-right]#7#
+--
+====
 
-include::201402-release-3.0.RC1-planned.asciidoc[]
+[role="col-md-9"]
+include::201408-CompatInfo-3.3-released.asciidoc[]
+
+[role="col-md-9 col-md-offset-3"]
+include::201408-phar-manifest.asciidoc[]

@@ -1,0 +1,71 @@
+{
+    "source-providers": [
+        {
+            "in": "phar:///var/dist/PHP_CompatInfo-2.0.0.zip as CompatInfo2",
+            "name": "*.php",
+            "path": "PHP/"
+        },
+        {
+            "in": "phar:///var/dist/PHP_Reflect-1.0.0.tar as Reflect1",
+            "path": "PHP/",
+            "name": "*.php"
+        },
+        {
+            "in": "phar:///var/dist/PHP_Reflect-1.0.0.tar as ReflectAL",
+            "path": "PHP/",
+            "name": "Autoload.php"
+        },
+        {
+            "in": "phar:///var/dist/phing-2.7.0.tgz as phing27",
+            "name": "*.php",
+            "path": "tasks/system",
+            "notPath": "contrib/",
+            "size": "< 4K"
+        },
+        {
+            "in": "phar:///var/dist/Zend-1.12.3.tgz as ZF1123",
+            "name": "*.php"
+        },
+        {
+            "in": "phar:///var/dist/Zend-1.12.3.tgz as ZFDate",
+            "name": "Date.php",
+            "depth": "== 1"
+        }
+    ],
+    "plugins": [
+        {
+            "name": "Analyser",
+            "class": "Bartlett\\Reflect\\Plugin\\Analyser\\AnalyserPlugin"
+        }
+    ],
+    "analysers" : [
+        {
+            "name": "Namespace",
+            "class": "Bartlett\\CompatInfo\\Analyser\\NamespaceAnalyser"
+        },
+        {
+            "name": "Extension",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ExtensionAnalyser"
+        },
+        {
+            "name": "Interface",
+            "class": "Bartlett\\CompatInfo\\Analyser\\InterfaceAnalyser"
+        },
+        {
+            "name": "Trait",
+            "class": "Bartlett\\CompatInfo\\Analyser\\TraitAnalyser"
+        },
+        {
+            "name": "Class",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ClassAnalyser"
+        },
+        {
+            "name": "Function",
+            "class": "Bartlett\\CompatInfo\\Analyser\\FunctionAnalyser"
+        },
+        {
+            "name": "Constant",
+            "class": "Bartlett\\CompatInfo\\Analyser\\ConstantAnalyser"
+        }
+    ]
+}

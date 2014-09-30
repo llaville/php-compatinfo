@@ -1,0 +1,58 @@
+{
+    "alias": "phpcompatinfo.phar",
+    "chmod": "0755",
+    "directories": ["src"],
+    "extract": false,
+    "compression": "GZ",
+    "files": [
+        "manifest.txt",
+        "LICENSE",
+        "vendor/nikic/php-parser/LICENSE",
+        "vendor/symfony/console/Symfony/Component/Console/LICENSE",
+        "vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/LICENSE",
+        "vendor/symfony/finder/Symfony/Component/Finder/LICENSE",
+        "vendor/phpunit/php-timer/LICENSE",
+        "vendor/bartlett/php-reflect/LICENSE",
+        "vendor/seld/jsonlint/LICENSE",
+        "vendor/doctrine/cache/LICENSE",
+        "vendor/autoload.php"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "in": "vendor/composer"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/nikic/php-parser/lib"
+        },
+        {
+            "name": "*.php",
+            "notPath": "/Tests/",
+            "in": "vendor/symfony"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/phpunit/php-timer"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/bartlett/php-reflect/src"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/seld/jsonlint"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/doctrine/cache/lib"
+        }
+    ],
+    "git-commit": "git_commit",
+    "git-version": "package_version",
+    "main": "bin/phpcompatinfo",
+    "output": "phpcompatinfo-@git-version@.phar",
+    "intercept": true,
+    "stub": "phar-stub.php",
+    "web": false
+}

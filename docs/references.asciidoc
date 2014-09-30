@@ -1,0 +1,713 @@
+= References included
+:description: Strategy to load each Reference with their versions
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:toc!:
+:toc2!:
+
+ifdef::basebackend-bootstrap[]
+
+:php5:        progress:100[role="primary"]
+:stable:      progress:100[role="success"]
+:beta:        progress:90[role="warning"]
+:alpha:       progress:40[role="danger"]
+
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+
+:php5:        php5
+:stable:      stable
+:beta:        beta
+:alpha:       alpha
+
+endif::basebackend-bootstrap[]
+
+:checked:     image:icons/font-awesome/check-square-o.png[alt="checked",icon="check-square-o",size="lg"]
+:unchecked:   image:icons/font-awesome/square-o.png[alt="unchecked",icon="square-o",size="lg"]
+
+ifdef::basebackend-html[]
+[role="col-md-6"]
+====
+[panel,info]
+.Legend
+--
+* included with PHP5 distribution {php5}
+* stable version {stable}
+* beta version {beta}
+* alpha version {alpha}
+* *prefetch strategy* : references are always loaded
+* *autodiscover strategy* : references loaded only when detected
+--
+====
+
+[role="col-md-3"]
+====
+[panel,info]
+.Statistics v2
+--
+* [label label-default]#2.0.0# support 61 references
+* [label label-info]#2.1.0# support 63 references
+* [label label-info]#2.2.0# support 65 references
+* [label label-info]#2.3.0# support 67 references
+* [label label-info]#2.5.0# support 75 references
+* [label label-info]#2.8.0# support 80 references
+* [label label-info]#2.10.0# support 83 references
+* [label label-info]#2.13.0# support 84 references
+* [label label-info]#2.15.0# support 86 references
+* [label label-info]#2.16.0# support 95 references
+* [label label-info]#2.23.0# support 98 references
+* [label label-info]#2.25.0# support 99 references
+* [label label-info]#2.26.0# support 100 references
+--
+====
+
+[role="col-md-3"]
+====
+[panel,info]
+.Statistics v3
+--
+* [label label-default]#3.0.0# support 100 references
+* [label label-info]#3.3.0# support 102 references
+--
+====
+endif::basebackend-html[]
+
+ifdef::basebackend-docbook[]
+.Statistics v2
+* 2.0.0 support 61 references
+* 2.1.0 support 63 references
+* 2.2.0 support 65 references
+* 2.3.0 support 67 references
+* 2.5.0 support 75 references
+* 2.8.0 support 80 references
+* 2.10.0 support 83 references
+* 2.13.0 support 84 references
+* 2.15.0 support 86 references
+* 2.16.0 support 95 references
+* 2.23.0 support 98 references
+* 2.25.0 support 99 references
+* 2.26.0 support 100 references
+
+.Statistics v3
+* 3.0.0 support 100 references
+* 3.3.0 support 102 references
+endif::basebackend-docbook[]
+
+
+[options="header,autowidth", role="table table-bordered table-striped"]
+|===========================
+| Prefetch | AutoDiscover | Reference | CompatInfo
+
+| {unchecked}
+| {checked}
+| amqp
+1.4.0 {stable}
+| [label label-info]#2.8.0#
+
+| {unchecked}
+| {checked}
+| apc
+3.1.13 {beta}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| apcu
+4.0.6 {beta}
+| [label label-info]#2.16.0#
+
+| {checked}
+| {unchecked}
+| bcmath
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| bz2
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| calendar
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| Core
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| ctype
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| curl
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| date
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| dom
+20031129 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| enchant
+1.1.0 {stable}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| ereg
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| exif
+{php5}
+| [label label-info]#2.5.0#
+
+| {checked}
+| {unchecked}
+| fileinfo
+1.0.5 {stable}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| filter
+0.11.0 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| ftp
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| gd
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| gender
+1.0.0 {stable}
+| [label label-info]#2.16.0#
+
+| {unchecked}
+| {checked}
+| geoip
+1.1.0 {beta}
+| [label label-info]#2.8.0#
+
+| {checked}
+| {unchecked}
+| gettext
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| gmp
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| haru
+1.0.4 {stable}
+| [label label-info]#2.16.0#
+
+| {unchecked}
+| {checked}
+| hash
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| htscanner
+1.0.1 {stable}
+| [label label-info]#2.23.0#
+
+| {unchecked}
+| {checked}
+| http
+2.1.2 {stable}
+| [label label-info]#2.16.0#
+
+| {unchecked}
+| {checked}
+| iconv
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| igbinary
+1.2.1 {stable}
+| [label label-info]#2.10.0#
+
+| {unchecked}
+| {checked}
+| imagick
+3.1.2 {stable}
+| [label label-info]#2.10.0#
+
+| {checked}
+| {unchecked}
+| imap
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| inclued
+0.1.3 {beta}
+| [label label-info]#2.8.0#
+
+| {checked}
+| {unchecked}
+| intl
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| jsmin
+0.1.1 {beta}
+| [label label-info]#2.25.0#
+
+| {unchecked}
+| {checked}
+| json
+1.2.1 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| ldap
+{php5}
+| [label label-info]#2.2.0#
+
+| {checked}
+| {unchecked}
+| libevent
+0.1.0 {beta}
+| [label label-info]#2.16.0#
+
+| {unchecked}
+| {checked}
+| libxml
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| lzf
+1.6.2 {stable}
+| [label label-info]#2.5.0#
+
+| {checked}
+| {unchecked}
+| mailparse
+2.1.6 {stable}
+| [label label-info]#2.5.0#
+
+| {checked}
+| {unchecked}
+| mbstring
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| mcrypt
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| memcached
+2.2.0 {stable}
+| [label label-info]#2.1.0#
+
+| {unchecked}
+| {checked}
+| memcache
+3.0.8 {beta}
+| [label label-info]#2.1.0#
+
+| {unchecked}
+| {checked}
+| mhash
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| mongo
+1.5.7 {stable}
+| [label label-info]#2.8.0#
+
+| {checked}
+| {unchecked}
+| msgpack
+0.5.5 {beta}
+| [label label-info]#2.16.0#
+
+| {checked}
+| {unchecked}
+| mssql
+{php5}
+| [label label-info]#2.5.0#
+
+| {unchecked}
+| {checked}
+| mysql
+1.0 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| mysqli
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| OAuth
+1.2.3 {stable}
+| [label label-info]#2.2.0#
+
+| {checked}
+| {unchecked}
+| odbc
+{php5}
+| [label label-info]#2.10.0#
+
+| {checked}
+| {unchecked}
+| openssl
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| pcntl
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| pcre
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| pdflib
+3.0.4 {stable}
+| [label label-info]#2.23.0#
+
+| {unchecked}
+| {checked}
+| PDO
+1.0.4dev {stable}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| pgsql
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| phar
+2.0.2 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| posix
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| pthreads
+2.0.9 {stable}
+| [label label-info]#2.16.0#
+
+| {unchecked}
+| {checked}
+| rar
+3.0.2 {stable}
+| [label label-info]#2.23.0#
+
+| {checked}
+| {unchecked}
+| readline
+2.0.1 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| recode
+2.0.1 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| Reflection
+{php5}
+| [label label-info]#2.3.0#
+
+| {unchecked}
+| {checked}
+| riak
+1.2.0 {stable}
+| [label label-info]#2.26.0#
+
+| {unchecked}
+| {checked}
+| session
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| shmop
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| SimpleXML
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| snmp
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| soap
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| sockets
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| solr
+2.0.0 {stable}
+| [label label-info]#2.5.0#
+
+| {checked}
+| {unchecked}
+| sphinx
+1.3.2 {stable}
+| [label label-info]#2.5.0#
+
+| {checked}
+| {unchecked}
+| spl
+0.2 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| sqlite3
+0.7-dev {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| sqlite
+2.0-dev {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| ssh2
+0.12 {beta}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| standard
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| stomp
+1.0.5 {stable}
+| [label label-info]#2.16.0#
+
+| {unchecked}
+| {checked}
+| svn
+1.0.2 {stable}
+| [label label-info]#2.13.0#
+
+| {unchecked}
+| {checked}
+| sync
+1.0.1 {stable}
+| [label label-info]#3.3.0#
+
+| {checked}
+| {unchecked}
+| sysvmsg
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| sysvsem
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| sysvshm
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| tidy
+2.0 {stable}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| tokenizer
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| uploadprogress
+1.0.3.1 {stable}
+| [label label-info]#2.16.0#
+
+| {unchecked}
+| {checked}
+| varnish
+1.1.1 {stable}
+| [label label-info]#2.15.0#
+
+| {unchecked}
+| {checked}
+| wddx
+{php5}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| XCache
+3.2.0 {stable}
+| [label label-info]#2.8.0#
+
+| {unchecked}
+| {checked}
+| xdebug
+2.2.5 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| xhprof
+0.9.4 {beta}
+| [label label-info]#2.5.0#
+
+| {checked}
+| {unchecked}
+| xml
+{php5}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| xmlreader
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| xmlrpc
+0.51 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| xmlwriter
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| {checked}
+| {unchecked}
+| xsl
+0.1 {stable}
+| [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| yac
+0.9.1 {beta}
+| [label label-info]#3.3.0#
+
+| {unchecked}
+| {checked}
+| yaml
+1.1.1 {stable}
+| [label label-info]#2.5.0#
+
+| {checked}
+| {unchecked}
+| Zend OPcache
+7.0.4-devFE {beta}
+| [label label-info]#2.15.0#
+
+| {unchecked}
+| {checked}
+| zip
+1.12.4 {stable}
+| [label label-info]#2.3.0#
+
+| {checked}
+| {unchecked}
+| zlib
+2.0 {stable}
+| [label label-default]#2.0.0#
+
+|===========================

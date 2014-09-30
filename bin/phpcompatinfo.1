@@ -1,0 +1,379 @@
+'\" t
+.\"     Title: phpcompatinfo
+.\"    Author: [see the "AUTHORS" section]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 2014-08-21
+.\"    Manual: \ \&
+.\"    Source: \ \& 3.3.0
+.\"  Language: English
+.\"
+.TH "PHPCOMPATINFO" "1" "2014\-08\-21" "\ \& 3\&.3\&.0" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+phpcompatinfo \- PHP library that parse any data source to find out the minimum version and extensions required for it to run\&.
+.SH "SYNOPSIS"
+.sp
+\fBphpcompatinfo\fR [\fIoptions\fR] \fIcommand\fR [\fIarguments\fR]
+.SH "DESCRIPTION"
+.sp
+The phpcompatinfo(1) command parse any data source, defined in a json configuration file, to find out elements, such as classes, interfaces, functions, constants, namespaces\&.
+.SH "OPTIONS"
+.PP
+\fB\-h, \-\-help\fR
+.RS 4
+Display this help message\&.
+.RE
+.PP
+\fB\-q, \-\-quiet\fR
+.RS 4
+Do not output any message\&.
+.RE
+.PP
+\fB\-v|vv|v, \-\-verbose\fR
+.RS 4
+Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug\&.
+.RE
+.PP
+\fB\-V, \-\-version\fR
+.RS 4
+Display this application version\&.
+.RE
+.PP
+\fB\-\-ansi\fR
+.RS 4
+Force ANSI output\&.
+.RE
+.PP
+\fB\-\-no\-ansi\fR
+.RS 4
+Disable ANSI output\&.
+.RE
+.PP
+\fB\-\-profile\fR
+.RS 4
+Display timing and memory usage information\&.
+.RE
+.SH "VALIDATE COMMAND"
+.sp
+The phpcompatinfo(1) \fIvalidate\fR command is used to check syntax of your json configuration file
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo validate [file]
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Where:
+.PP
+\fBfile\fR
+.RS 4
+Path to
+phpcompatinfo\&.json
+file (optional)
+.RE
+.SH "ANALYSER:LIST COMMAND"
+.sp
+The phpcompatinfo(1) \fIanalyser:list\fR command is used to show what analysers are installed (see CONF FILES section)\&.
+.SH "ANALYSER:RUN COMMAND"
+.sp
+The phpcompatinfo(1) \fIanalyser:run\fR command is used to analyse a data source and display results\&.
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo analyser:run [\-\-alias] [\-\-php[="\&.\&.\&."]] [\-\-redraw\-freq="\&.\&.\&."] source [analysers1] \&.\&.\&. [analysersN]
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Where:
+.PP
+\fBsource\fR
+.RS 4
+Identify a data source declared in a json configuration file (see
+CONF FILES
+section)
+.RE
+.PP
+\fB\-\-alias\fR
+.RS 4
+If set, the source refers to its alias
+.RE
+.PP
+\fB\-\-php\fR
+.RS 4
+Filter results on PHP version (default: ">= 4\&.0")
+.RE
+.PP
+\fB\-\-redraw\-freq\fR
+.RS 4
+How many times should the progress bar be updated? (default: 1)
+.RE
+.PP
+\fBanalysers1\fR \&... \fBanalysersN\fR
+.RS 4
+Identify one or more analyser to execute\&. See
+\fIanalyser:list\fR
+command to know what analysers are available\&.
+.RE
+.SH "PLUGIN:LIST COMMAND"
+.sp
+The phpcompatinfo(1) \fIplugin:list\fR command is used to show what plugins are installed (see CONF FILES section)\&.
+.SH "PROVIDER:LIST COMMAND"
+.sp
+The phpcompatinfo(1) \fIprovider:list\fR command is used to show what data sources are declared in a json configuration file (see CONF FILES section)\&.
+.SH "PROVIDER:SHOW COMMAND"
+.sp
+The phpcompatinfo(1) \fIprovider:show\fR command is used to show files in data sources\&.
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo provider:show [\-\-alias] source
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Where:
+.PP
+\fBsource\fR
+.RS 4
+Identify a data source declared in a json configuration file (see
+CONF FILES
+section)
+.RE
+.PP
+\fB\-\-alias\fR
+.RS 4
+If set, the source refers to its alias
+.RE
+.SH "PROVIDER:DISPLAY COMMAND"
+.sp
+The phpcompatinfo(1) \fIprovider:display\fR command is used to show source code of a file in a data source\&.
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo provider:display [\-\-alias] source file
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Where:
+.PP
+\fB\-\-alias\fR
+.RS 4
+If set, the source refers to its alias
+.RE
+.PP
+\fBsource\fR
+.RS 4
+Identify a data source declared in a json configuration file (see
+CONF FILES
+section)
+.RE
+.PP
+\fBfile\fR
+.RS 4
+Relative path to a file in the data source
+.RE
+.SH "REFERENCE:LIST COMMAND"
+.sp
+The phpcompatinfo(1) \fIreference:list\fR command is used to list all references supported\&.
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo reference:list [\-\-raw]
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Where:
+.PP
+\fB\-\-raw\fR
+.RS 4
+Presents list in a raw format
+.RE
+.SH "REFERENCE:SHOW COMMAND"
+.sp
+The phpcompatinfo(1) \fIreference:show\fR command is used to introspect a reference\&.
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo reference:show [\-\-php="\&.\&.\&."] [\-\-ini] [\-\-constants] [\-\-functions] [\-\-interfaces] [\-\-classes] [\-\-raw] name
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Where:
+.PP
+\fB\-\-php\fR
+.RS 4
+Filter results on PHP version
+.RE
+.PP
+\fB\-\-ini\fR
+.RS 4
+Show ini Entries
+.RE
+.PP
+\fB\-\-constants\fR
+.RS 4
+Show constants
+.RE
+.PP
+\fB\-\-functions\fR
+.RS 4
+Show functions
+.RE
+.PP
+\fB\-\-interfaces\fR
+.RS 4
+Show interfaces
+.RE
+.PP
+\fB\-\-classes\fR
+.RS 4
+Show classes
+.RE
+.PP
+\fB\-\-raw\fR
+.RS 4
+Presents list in a raw format
+.RE
+.PP
+\fBname\fR
+.RS 4
+Name of a reference (case insensitive)
+.RE
+.SH "EXIT STATUS"
+.PP
+\fB0\fR
+.RS 4
+Success
+.RE
+.PP
+\fB1\fR
+.RS 4
+Failure (syntax or usage error; configuration error; unexpected error)\&.
+.RE
+.SH "CONF FILES"
+.sp
+A configuration file contains data sources that can be analysed, but also optional plugins and analysers installed\&. Require configuration file is loaded in the following order:
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 1.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  1." 4.2
+.\}
+The CONF_FILE specified by the environment variable
+COMPATINFO\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 2.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  2." 4.2
+.\}
+phpcompatinfo\&.json
+from the current directory\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 3.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  3." 4.2
+.\}
+phpcompatinfo\&.json
+from the User
+$HOME/\&.config
+directory\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 4.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  4." 4.2
+.\}
+phpcompatinfo\&.json
+from the
+/etc
+directory\&.
+.RE
+.SH "BUGS"
+.sp
+Report any issue at https://github\&.com/llaville/php\-compat\-info/issues
+.SH "AUTHORS"
+.sp
+PHP_CompatInfo was originally written by Davey Shafik in 2004\&.
+.sp
+Remi Collet, contributor of many extensions reference and unit tests, joined the project since version 2\&.0\&.0RC2
+.sp
+The Command\-Line Interface (CLI) version was introduced in version 2\&.0 and is written by Laurent Laville\&.
+.SH "SEE ALSO"
+.sp
+Main web site: http://php5\&.laurent\-laville\&.org/compatinfo/
+.SH "COPYRIGHT"
+.sp
+Copyright (C) 2010\-2014 Laurent Laville\&.
+.SH "LICENSE"
+.sp
+Free use of this software is granted under the terms of the BSD 3\-clause license\&.

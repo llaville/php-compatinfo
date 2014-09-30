@@ -8,26 +8,18 @@
         "source": "https://github.com/llaville/php-compat-info",
         "issues": "https://github.com/llaville/php-compat-info/issues"
     },
-    "repositories": [
-        {
-            "type": "pear",
-            "url": "http://bartlett.laurent-laville.org"
-        }
-    ],
+    "minimum-stability": "beta",
     "require": {
         "php": ">=5.3.0",
-        "pear-pear/console_commandline": ">=1.2.0",
-        "pear-bartlett/php_reflect": ">=1.8.0,<=1.99.0",
-        "ext-dom": "*",
         "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
-        "ext-reflection": "*"
+        "ext-json": "*",
+        "bartlett/php-reflect": "~2.4",
+        "seld/jsonlint": "~1.1"
     },
     "suggest": {
-        "pear-pear/net_growl": ">=2.6.0",
-        "phpunit/phpunit": ">=3.6",
-        "phpunit/php-timer": ">=1.0.0"
+        "doctrine/cache": "Allow caching results, since bartlett/php-reflect 2.2"
     },
     "authors": [
         {
@@ -42,9 +34,13 @@
             "role": "Contributor"
         }
     ],
+    "bin": [
+        "bin/phpcompatinfo"
+    ],
     "autoload": {
-        "classmap": [
-            "PHP"
-        ]
+        "psr-0": {
+            "Bartlett\\": "src/",
+            "Bartlett\\Tests\\CompatInfo\\": "tests/"
+        }
     }
 }

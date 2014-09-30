@@ -1,0 +1,35 @@
+:doctitle:    CompatInfo 3.2 preview
+:description:
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-06-16
+:pubdate:   Mon, 16 Jun 2014 20:43:05 +0200
+:summary:   User Documentation is on way
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-1"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/clock-o.png[alt="future",icon="clock-o",size="4x",width=56]
+
+[role="lead"]
+Reason of silence / no commits since version 3.1.
+
+I've decided to focus my attention / energy, on the stability of next major version 3 
+(planned for the beginning of July).
+
+With lack of documentation, I understand that lot of people could not understand the new architecture.
+So I'm also focus on writing documentation with three guides :
+
+- a user guide for everyone 
+- a developer guide for those who want to extends phpcompatinfo
+- a migration guide to easily change from version 2.6 to 3.2
+
+I've begun today to rebuild the full blog with a new design built with incoming 
+https://github.com/llaville/asciidoc-bootstrap-backend[AsciiDoc-Bootstrap backend] 4.0
+____
