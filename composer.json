@@ -18,7 +18,9 @@
         "bartlett/php-reflect": "~2.4"
     },
     "suggest": {
-        "doctrine/cache": "Allow caching results, since bartlett/php-reflect 2.2"
+        "doctrine/cache": "Allow caching results, since bartlett/php-reflect 2.2",
+        "psr/log": "Allow logging events with the LogPlugin",
+        "monolog/monolog": "Allow logging events with the LogPlugin"
     },
     "authors": [
         {
