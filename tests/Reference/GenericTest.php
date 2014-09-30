@@ -52,6 +52,8 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     protected static $ignoredclasses       = array();
     protected static $ignoredinterfaces    = array();
 
+    protected static $extensions =  array('amqp','haru','pthreads');
+
     /**
      * Sets up the shared fixture.
      *
@@ -439,7 +441,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetClassMethodsFromExtension()
     {
-        if (!in_array(self::$ext, array('amqp','haru','pthreads'))) {
+        if (!in_array(self::$ext, self::$extensions)) {
             $this->assertFalse(false);
             return;
         }
@@ -483,6 +485,45 @@ class GenericTest extends \PHPUnit_Framework_TestCase
                         "Defined method '$classname::$methodname' not known in Reference."
                     );
                 }
+            }
+        }
+    }
+
+    /**
+     * Test that each class constants are defined in reference
+     *
+     * @depends testReference
+     * @group  reference
+     * @return void
+     */
+    public function testGetClassConstantsFromExtension()
+    {
+        if (!in_array(self::$ext, self::$extensions)) {
+            $this->assertFalse(false);
+            return;
+        }
+
+        $extname   = self::$ext;
+        $extension = new \ReflectionExtension($extname);
+        $classes   = array_unique($extension->getClassNames());
+        $this->assertTrue(is_array($classes));
+
+        $classconstants = self::$obj->getClassConstants();
+
+        foreach ($classes as $classname) {
+            $class   = new \ReflectionClass($classname);
+            if ($class->getName() != $classname) {
+                /* Skip class alias */
+                continue;
+            }
+            $constants = $class->getConstants();
+
+            foreach ($constants as $constantname => $constantvalue) {
+                $this->assertArrayHasKey(
+                    $constantname,
+                    $classconstants[$classname],
+                    "Defined class constant '$classname::$constantname' not known in Reference."
+                );
             }
         }
     }
