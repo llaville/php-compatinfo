@@ -15,8 +15,7 @@
         "ext-pcre": "*",
         "ext-spl": "*",
         "ext-json": "*",
-        "bartlett/php-reflect": "~2.4",
-        "seld/jsonlint": "~1.1"
+        "bartlett/php-reflect": "~2.4"
     },
     "suggest": {
         "doctrine/cache": "Allow caching results, since bartlett/php-reflect 2.2"
