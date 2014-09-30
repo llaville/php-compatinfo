@@ -439,7 +439,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetClassMethodsFromExtension()
     {
-        if (!in_array(self::$ext, array('amqp','pthreads'))) {
+        if (!in_array(self::$ext, array('amqp','haru','pthreads'))) {
             $this->assertFalse(false);
             return;
         }
