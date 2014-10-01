@@ -9,7 +9,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class PthreadsExtension extends AbstractReference
 {
     const REF_NAME    = 'pthreads';
-    const REF_VERSION = '2.0.9';    // 2014-09-24 (stable)
+    const REF_VERSION = '2.0.10';    // 2014-10-01 (stable)
 
     public function __construct()
     {

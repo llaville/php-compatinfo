@@ -455,7 +455,7 @@ endif::basebackend-docbook[]
 | {checked}
 | {unchecked}
 | pthreads
-2.0.9 {stable}
+2.0.10 {stable}
 | [label label-info]#2.16.0#
 
 | {unchecked}
