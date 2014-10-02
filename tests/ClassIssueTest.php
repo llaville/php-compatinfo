@@ -41,6 +41,7 @@ use Symfony\Component\Finder\Finder;
 class ClassIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH119 = 'GH#119';
+    const GH131 = 'GH#131';
 
     protected static $compatinfo;
 
@@ -60,8 +61,18 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
             )
         ;
 
+        $finder2 = new Finder();
+        $finder2->files()
+            ->name('gh131.php')
+            ->in(
+                dirname(__FILE__) . DIRECTORY_SEPARATOR .
+                '_files' . DIRECTORY_SEPARATOR
+            )
+        ;
+
         $pm = new ProviderManager;
         $pm->set(self::GH119, new SymfonyFinderProvider($finder));
+        $pm->set(self::GH131, new SymfonyFinderProvider($finder2));
 
         self::$compatinfo = new CompatInfo;
         self::$compatinfo->setProviderManager($pm);
@@ -93,6 +104,29 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             $expected,
             $metrics[self::GH119][$key]['php.min']
+        );
+    }
+
+    /**
+     * Regression test for bug GH#131
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/131
+     *       "Classes in extends clause are not recognized"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH131()
+    {
+        self::$compatinfo->parse(array(self::GH131));
+
+        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.versions';
+
+        $expected = '5.1.0';
+        $metrics  = self::$compatinfo->getMetrics();
+
+        $this->assertEquals(
+            $expected,
+            $metrics[self::GH131][$key]['php.min']
         );
     }
 }

@@ -639,6 +639,11 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             } else {
                 $min = '4.0.0';
             }
+
+            $versions = $this->processInternal($name);
+
+            $min = $versions['php.min'];
+            $max = $versions['php.max'];
         }
         return array($min, $max);
     }
