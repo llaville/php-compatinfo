@@ -201,7 +201,8 @@ class PthreadsExtension extends AbstractReference
             'php.max' => '',
         );
         $release->classes = array(
-            'Stackable'                     => null,
+            // alias of Threaded class
+            'stackable'                     => null,
         );
         return $release;
     }
