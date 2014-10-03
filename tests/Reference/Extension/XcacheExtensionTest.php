@@ -48,6 +48,8 @@ class XcacheExtensionTest extends GenericTest
             'xcache.optimizer',
             // removed in 1.2.0
             'xcache.coveragedumper',
+            // Windows only
+            'xcache.coredump_type',
         );
         self::$optionalfunctions = array(
             // Requires specific build options

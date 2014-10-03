@@ -79,6 +79,13 @@ class XcacheExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 3.2.0
+        if (version_compare($version, '3.2.0', 'ge')) {
+            $release = $this->getR30200();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR10000()
@@ -499,6 +506,26 @@ class XcacheExtension extends AbstractReference
             'XC_FAST_RET'                   => array('5.5.0', ''),
             'XC_GENERATOR_RETURN'           => array('5.5.0', ''),
             'XC_YIELD'                      => array('5.5.0', ''),
+        );
+        return $release;
+    }
+
+    protected function getR30200()
+    {
+        $release = new \stdClass;
+        $release->info = array(
+            'ext.min' => '3.2.0',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2014-09-18',
+            'php.min' => '5.3.0',
+            'php.max' => '',
+        );
+        $release->constants = array(
+            'XC_RECV_VARIADIC'              => array('5.6.0', ''),
+            'XC_SEND_UNPACK'                => array('5.6.0', ''),
+            'XC_POW'                        => array('5.6.0', ''),
+            'XC_ASSIGN_POW'                 => array('5.6.0', ''),
         );
         return $release;
     }
