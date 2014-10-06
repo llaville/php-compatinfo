@@ -41,6 +41,7 @@ use Symfony\Component\Finder\Finder;
 class ClassIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH119 = 'GH#119';
+    const GH129 = 'GH#129';
     const GH131 = 'GH#131';
 
     protected static $compatinfo;
@@ -61,6 +62,15 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
             )
         ;
 
+        $finder1 = new Finder();
+        $finder1->files()
+            ->name('gh129.php')
+            ->in(
+                dirname(__FILE__) . DIRECTORY_SEPARATOR .
+                '_files' . DIRECTORY_SEPARATOR
+            )
+        ;
+
         $finder2 = new Finder();
         $finder2->files()
             ->name('gh131.php')
@@ -72,6 +82,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
 
         $pm = new ProviderManager;
         $pm->set(self::GH119, new SymfonyFinderProvider($finder));
+        $pm->set(self::GH129, new SymfonyFinderProvider($finder1));
         $pm->set(self::GH131, new SymfonyFinderProvider($finder2));
 
         self::$compatinfo = new CompatInfo;
@@ -104,6 +115,34 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             $expected,
             $metrics[self::GH119][$key]['php.min']
+        );
+    }
+
+    /**
+     * Regression test for bug GH#129
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/129
+     *       "Non-empty classes are reported to require PHP 5.0.0"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH129()
+    {
+        self::$compatinfo->parse(array(self::GH129));
+
+        $methods = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.methods';
+        $metrics = self::$compatinfo->getMetrics();
+
+        // implicitly public method visibility
+        $this->assertEquals(
+            '4.0.0',
+            $metrics[self::GH129][$methods]['Foo::bar']['php.min']
+        );
+
+        // explicitly public method visibility
+        $this->assertEquals(
+            '5.0.0',
+            $metrics[self::GH129][$methods]['Foo::baz']['php.min']
         );
     }
 

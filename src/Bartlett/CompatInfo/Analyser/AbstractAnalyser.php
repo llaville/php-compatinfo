@@ -161,6 +161,11 @@ abstract class AbstractAnalyser extends ReflectAnalyser
      */
     public function visitPropertyModel($property)
     {
+        if ($property->isImplicitlyPublic()) {
+            // PHP4 syntax
+            return;
+        }
+
         // Property visibility
         if ($property->isPublic()
             || $property->isPrivate()
@@ -204,7 +209,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             || $method->isConstructor()
             || $method->isDestructor()
         ) {
-            $min = '5.0.0';
+            $min = $method->isImplicitlyPublic() ? '4.0.0' : '5.0.0';
             $this->count[static::METRICS_PREFIX . '.methods'][$name]['php.min'] = $min;
 
             // update object versions
