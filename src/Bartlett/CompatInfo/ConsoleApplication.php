@@ -29,6 +29,8 @@ use Bartlett\CompatInfo\Command\ReferenceShowCommand;
 use Bartlett\CompatInfo\Command\AnalyserRunCommand;
 use Bartlett\CompatInfo\Command\ValidateCommand;
 
+use SebastianBergmann\Version;
+
 /**
  * Console Application.
  *
@@ -51,15 +53,18 @@ class ConsoleApplication extends Application
 
     public function getLongVersion()
     {
+        $version = $this->getVersion();
+
+        if ('@' . 'package_version@' == $version) {
+            $version = new Version('3.5.0', dirname(dirname(dirname(__DIR__))));
+            $version = $version->getVersion();
+        }
+
         $version = sprintf(
             '<info>%s</info> version <comment>%s</comment>',
             $this->getName(),
-            '@' . 'package_version@' == $this->getVersion() ? 'DEV' : $this->getVersion()
+            $version
         );
-
-        if ('@' . 'git_commit@' !== '@git_commit@') {
-            $version .= sprintf(' build <comment>%s</comment>', '@git_commit@');
-        }
         return $version;
     }
 

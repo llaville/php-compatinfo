@@ -23,7 +23,7 @@ when you invoke the `phpcompatinfo` command, you should obtain the following com
 [role="output"]
 ====
 ----
-phpCompatInfo version 3.4.0 build ...
+phpCompatInfo version 3.5.0
 
 Usage:
   [options] command [arguments]
@@ -260,6 +260,7 @@ $ phpcompatinfo analyser:list
 ----
  Analyser Name Analyser Class
  Class         Bartlett\CompatInfo\Analyser\ClassAnalyser
+ Condition     Bartlett\CompatInfo\Analyser\CodeCondAnalyser
  Constant      Bartlett\CompatInfo\Analyser\ConstantAnalyser
  Extension     Bartlett\CompatInfo\Analyser\ExtensionAnalyser
  Function      Bartlett\CompatInfo\Analyser\FunctionAnalyser
