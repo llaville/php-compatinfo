@@ -29,8 +29,6 @@ use Bartlett\CompatInfo\Command\ReferenceShowCommand;
 use Bartlett\CompatInfo\Command\AnalyserRunCommand;
 use Bartlett\CompatInfo\Command\ValidateCommand;
 
-use SebastianBergmann\Version;
-
 /**
  * Console Application.
  *
@@ -56,7 +54,7 @@ class ConsoleApplication extends Application
         $version = $this->getVersion();
 
         if ('@' . 'package_version@' == $version) {
-            $version = new Version('3.5.0', dirname(dirname(dirname(__DIR__))));
+            $version = new \SebastianBergmann\Version('3.5.0', dirname(dirname(dirname(__DIR__))));
             $version = $version->getVersion();
         }
 
