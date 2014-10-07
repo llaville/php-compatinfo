@@ -1,11 +1,11 @@
-bartlett/php-compatinfo: 3.4.0
-bartlett/php-reflect: 2.4.0
+bartlett/php-compatinfo: master@aac2ba7c3fb07a003a0d924c3a2aec93649c7b70
+bartlett/php-reflect: dev-master@cf6f2311b1124fc9a31b6704db23549c9cc1734e
 doctrine/cache: v1.3.1
-monolog/monolog: 1.10.0
+monolog/monolog: 1.11.0
 nikic/php-parser: v1.0.0
 phpunit/php-timer: 1.0.5
 psr/log: 1.0.0
 seld/jsonlint: 1.3.0
-symfony/console: v2.5.4
-symfony/event-dispatcher: v2.5.4
-symfony/finder: v2.5.4
+symfony/console: v2.5.5
+symfony/event-dispatcher: v2.5.5
+symfony/finder: v2.5.5
