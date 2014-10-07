@@ -48,7 +48,6 @@
             "in": "vendor/doctrine/cache/lib"
         }
     ],
-    "git-commit": "git_commit",
     "git-version": "package_version",
     "main": "bin/phpcompatinfo",
     "output": "phpcompatinfo-@git-version@.phar",
