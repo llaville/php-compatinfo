@@ -41,29 +41,26 @@ class ReferenceListCommand extends Command
             $rows = array();
             $refs = $loader->getProvidedReferences();
             ksort($refs);
+            $loaded = 0;
 
             $headers = array('References', 'Version', 'Loaded');
-            $footers = array(
-                sprintf('<info>Total [%d]</info>', count($refs)),
-                '',
-                ''
-            );
 
             foreach ($refs as $name => $ref) {
-                if (isset($ref->loaded)) {
-                    $rows[] = array(
-                        $ref->name,
-                        $ref->version,
-                        $ref->loaded,
-                    );
-                } else {
-                    $rows[] = array(
-                        $name,
-                        '',
-                        ''
-                    );
+                $rows[] = array(
+                    $ref->name,
+                    $ref->version,
+                    $ref->loaded,
+                );
+                if (!empty($ref->loaded)) {
+                    $loaded++;
                 }
             }
+
+            $footers = array(
+                '<info>Total</info>',
+                sprintf('<info>[%d]</info>', count($refs)),
+                sprintf('<info>[%d]</info>', $loaded)
+            );
 
             $rows[] = new TableSeparator();
             $rows[] = $footers;
