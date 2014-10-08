@@ -168,8 +168,10 @@ class ReferenceLoader implements \Countable
 
         $refs = $this->getProvidedReferences();
 
+        $loadedCount = 0;
+
         $str .= sprintf(
-            'References [%d]%s',
+            'References [%d], loaded [%%loaded%%]%s',
             count($refs),
             $eol
         );
@@ -179,6 +181,7 @@ class ReferenceLoader implements \Countable
                 if (empty($ref->loaded)) {
                     $loaded = '';
                 } else {
+                    $loadedCount++;
                     $loaded = sprintf(' loaded%s',
                         $ref->loaded == $ref->version ? '' : ' ' . $ref->loaded
                     );
@@ -198,6 +201,7 @@ class ReferenceLoader implements \Countable
                 );
             }
         }
+        $str = str_replace('%loaded%', $loadedCount, $str);
         return $str;
     }
 }
