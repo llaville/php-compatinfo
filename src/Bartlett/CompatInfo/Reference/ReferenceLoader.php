@@ -176,11 +176,18 @@ class ReferenceLoader implements \Countable
 
         foreach ($refs as $name => $ref) {
             if (isset($ref->loaded)) {
+                if (empty($ref->loaded)) {
+                    $loaded = '';
+                } else {
+                    $loaded = sprintf(' loaded%s',
+                        $ref->loaded == $ref->version ? '' : ' ' . $ref->loaded
+                    );
+                }
                 $str .= sprintf(
-                    '  - Extension [ %s version %s loaded%s ]%s',
+                    '  - Extension [ %s version %s%s ]%s',
                     $ref->name,
                     $ref->version,
-                    $ref->loaded == $ref->version ? '' : ' ' . $ref->loaded,
+                    $loaded,
                     $eol
                 );
             } else {
