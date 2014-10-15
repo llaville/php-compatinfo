@@ -298,7 +298,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     public function visitDependencyModel($dependency)
     {
         $name = $dependency->getName();
-        $argc = 0;
+        $argc = count($dependency->getArguments());
 
         if ($dependency->isClassMethod()) {
             list($element, $method) = explode('::', $name);
@@ -568,6 +568,18 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $elements = array_change_key_case($elements);
             $versions = $elements[strtolower($element)];
             $versions['ref'] = $ref::REF_NAME;
+
+            if (isset($versions['parameters'])) {
+                $parameters = explode(',', $versions['parameters']);
+                $parameters = array_map('trim', $parameters);
+                $parameters = array_slice($parameters, 0, $argc);
+
+                $versions['parameters'] = $parameters;
+
+                if (!empty($parameters)) {
+                    $versions['php.min'] = array_pop($parameters);
+                }
+            }
         } else {
             // not found; probably user component or reference not yet supported
             $versions = self::$php4;
