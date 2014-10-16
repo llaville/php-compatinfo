@@ -1,0 +1,41 @@
+:doctitle:    CompatInfo 3.5 stable
+:description:
+:iconsfont: font-awesome
+:imagesdir: ./images
+:author:    Laurent Laville
+:revdate:   2014-10-16
+:pubdate:   Thu, 16 Oct 2014 15:18:24 +0200
+:summary:   CompatInfo 3.5.0 has just been released.
+:jumbotron:
+:jumbotron-fullwidth:
+:footer-fullwidth:
+
+[id="post-1"]
+== {summary}
+
+[quote,Published by {author} on {revdate}]
+____
+image:icons/font-awesome/rocket.png[alt="release",icon="rocket",size="4x",width=56]
+
+News :
+
+* Support new stable PHP versions 5.6.2, 5.5.18 and 5.4.34
+* The `reference:list` command show two counters (total and loaded references).
+
+Changes :
+
+* In CLI version, changed the longVersion display strategy.
+See commit https://github.com/llaville/php-compat-info/commit/936a1ce460510149cf2127345d6eafac41e52340[936a1ce].
+
+Bugs :
+
+* https://github.com/llaville/php-compat-info/issues/132[GH-132] : Minimum PHP version should take care of function arguments
+* https://github.com/llaville/php-compat-info/issues/131[GH-131] : Classes in extends clause are not recognized
+* https://github.com/llaville/php-compat-info/issues/130[GH-130] : Conditionally called function is reported as interface
+* https://github.com/llaville/php-compat-info/issues/129[GH-129] : Non-empty classes are reported to require PHP 5.0.0
+* https://github.com/llaville/php-compat-info/issues/126[GH-126] : Running CLI in local composer installation fails
+
+Download :
+
+link:http://bartlett.laurent-laville.org/get/phpcompatinfo-3.5.0.phar[caption="Download the PHAR version",role="primary",icon="glyphicon-download-alt"]
+____
