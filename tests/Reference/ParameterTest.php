@@ -74,8 +74,19 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
      */
     public function functionProvider()
     {
-        $prefetch   = new PreFetchStrategy();
-        $loadedRefs = $prefetch->getLoadedReferences();
+        /**
+         * NOTE :
+         * All data providers are executed before the call
+         * to the setUpBeforeClass static method.
+         * This is the reason why $loadedRefs in not initialized
+         * in setUpBeforeClass static method.
+         */
+        static $loadedRefs;
+
+        if ($loadedRefs === null) {
+            $prefetch   = new PreFetchStrategy();
+            $loadedRefs = $prefetch->getLoadedReferences();
+        }
 
         $functions = array();
 
