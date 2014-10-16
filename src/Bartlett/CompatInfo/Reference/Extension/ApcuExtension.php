@@ -6,7 +6,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class ApcuExtension extends AbstractReference
 {
     const REF_NAME    = 'apcu';
-    const REF_VERSION = '4.0.6';    // 2014-06-12 (beta)
+    const REF_VERSION = '4.0.7';    // 2014-10-11 (beta)
 
     public function __construct()
     {
