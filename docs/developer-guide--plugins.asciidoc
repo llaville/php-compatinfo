@@ -148,6 +148,14 @@ of the plugin is invoked.
 +
 `ast` the http://en.wikipedia.org/wiki/Abstract_syntax_tree[Abstract Syntax Tree] result of https://github.com/nikic/PHP-Parser[PHP-Parser]
 
+| reflect.cache | A previous cached request was found and return the AST.
+|
+`source` data source identifier or its alias
++
+`file` current file parsed in the data source
++
+`ast` the http://en.wikipedia.org/wiki/Abstract_syntax_tree[Abstract Syntax Tree] result of https://github.com/nikic/PHP-Parser[PHP-Parser]
+
 | reflect.error | When PHP Parser raise an error
 |
 `source` data source identifier or its alias
