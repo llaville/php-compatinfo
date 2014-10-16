@@ -8,6 +8,10 @@ if (\Phar::running()) {
     $baseDir   = dirname(__DIR__);
     $vendorDir = $baseDir . '/vendor';
 
+    if (!file_exists($vendorDir . '/autoload.php')) {
+        $vendorDir = dirname(dirname($baseDir));
+    }
+
     if (!getenv("COMPATINFO")) {
         $home  = defined('PHP_WINDOWS_VERSION_BUILD') ? 'USERPROFILE' : 'HOME';
         $files = array(
