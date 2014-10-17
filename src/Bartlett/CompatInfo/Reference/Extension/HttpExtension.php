@@ -7,13 +7,12 @@ class HttpExtension extends AbstractReference
 {
     const REF_NAME    = 'http';
     const REF_VERSION = '2.1.3';    // 2014-10-16 (stable)
-    const REF_DEPS    = array('curl');
 
     private $curl_version;
 
     public function __construct()
     {
-        parent::__construct(self::REF_NAME, self::REF_VERSION, self::REF_DEPS);
+        parent::__construct(self::REF_NAME, self::REF_VERSION, array('curl'));
 
         // cURL 24 bit version number
         $this->curl_version = $this->getMetaVersion('version_number', 'curl');
