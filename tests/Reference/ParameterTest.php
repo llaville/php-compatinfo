@@ -113,6 +113,7 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
      *
      * @return void
      * @group  reference
+     * @large
      * @dataProvider functionProvider
      */
     public function testGetFunctionsWithDefaultArguments($fctname, $extname)
@@ -158,6 +159,7 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
      *
      * @return void
      * @group  reference
+     * @large
      * @dataProvider functionProvider
      */
     public function testGetFunctionsWithOptionalArguments($fctname, $extname)
