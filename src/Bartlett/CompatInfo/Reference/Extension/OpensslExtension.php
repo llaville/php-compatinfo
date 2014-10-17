@@ -431,7 +431,7 @@ class OpensslExtension extends AbstractReference
             'php.min' => '5.4.8',
             'php.max' => '',
         );
-        if ($this->version_number > 0x0090708f) {
+        if ($this->version_number > 0x0090708f) { /* OpenSSL 0.9.7.8 */
             $release->constants = array(
                 'OPENSSL_ALGO_SHA224'               => null,
                 'OPENSSL_ALGO_SHA256'               => null,
