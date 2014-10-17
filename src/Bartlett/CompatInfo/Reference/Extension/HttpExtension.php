@@ -6,11 +6,17 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class HttpExtension extends AbstractReference
 {
     const REF_NAME    = 'http';
-    const REF_VERSION = '2.1.2';    // 2014-09-25 (stable)
+    const REF_VERSION = '2.1.3';    // 2014-10-16 (stable)
+    const REF_DEPS    = array('curl');
+
+    private $curl_version;
 
     public function __construct()
     {
-        parent::__construct(self::REF_NAME, self::REF_VERSION);
+        parent::__construct(self::REF_NAME, self::REF_VERSION, self::REF_DEPS);
+
+        // cURL 24 bit version number
+        $this->curl_version = $this->getMetaVersion('version_number', 'curl');
 
         $version  = $this->getCurrentVersion();
         $releases = array();
@@ -417,7 +423,6 @@ class HttpExtension extends AbstractReference
             'http\\Client\\Curl\\AUTH_ANY'              => null,
             'http\\Client\\Curl\\AUTH_BASIC'            => null,
             'http\\Client\\Curl\\AUTH_DIGEST'           => null,
-            'http\\Client\\Curl\\AUTH_DIGEST_IE'        => null,
             'http\\Client\\Curl\\AUTH_GSSNEG'           => null,
             'http\\Client\\Curl\\AUTH_NTLM'             => null,
             'http\\Client\\Curl\\HTTP_VERSION_1_0'      => null,
@@ -426,11 +431,7 @@ class HttpExtension extends AbstractReference
             'http\\Client\\Curl\\IPRESOLVE_ANY'         => null,
             'http\\Client\\Curl\\IPRESOLVE_V4'          => null,
             'http\\Client\\Curl\\IPRESOLVE_V6'          => null,
-            'http\\Client\\Curl\\POSTREDIR_301'         => null,
-            'http\\Client\\Curl\\POSTREDIR_302'         => null,
-            'http\\Client\\Curl\\POSTREDIR_ALL'         => null,
             'http\\Client\\Curl\\PROXY_HTTP'            => null,
-            'http\\Client\\Curl\\PROXY_HTTP_1_0'        => null,
             'http\\Client\\Curl\\PROXY_SOCKS4'          => null,
             'http\\Client\\Curl\\PROXY_SOCKS4A'         => null,
             'http\\Client\\Curl\\PROXY_SOCKS5'          => null,
@@ -440,6 +441,26 @@ class HttpExtension extends AbstractReference
             'http\\Client\\Curl\\SSL_VERSION_SSLv3'     => null,
             'http\\Client\\Curl\\SSL_VERSION_TLSv1'     => null,
         );
+        if ($this->curl_version >= 0x071301) { /* libcurl 7.19.1 */
+            $items = array(
+                'http\\Client\\Curl\\POSTREDIR_301'     => null,
+                'http\\Client\\Curl\\POSTREDIR_302'     => null,
+                'http\\Client\\Curl\\POSTREDIR_ALL'     => null,
+            );
+            $release->constants += $items;
+        }
+        if ($this->curl_version >= 0x071303) { /* libcurl 7.19.3 */
+            $items = array(
+                'http\\Client\\Curl\\AUTH_DIGEST_IE'    => null,
+            );
+            $release->constants += $items;
+        }
+        if ($this->curl_version >= 0x071304) { /* libcurl 7.19.4 */
+            $items = array(
+                'http\\Client\\Curl\\PROXY_HTTP_1_0'    => null,
+            );
+            $release->constants += $items;
+        }
         return $release;
     }
 
@@ -454,13 +475,28 @@ class HttpExtension extends AbstractReference
             'php.min' => '5.3.0',
             'php.max' => '',
         );
-        $release->constants = array(
-            'http\\Client\\Curl\\SSL_VERSION_TLSv1_0'      => null,
-            'http\\Client\\Curl\\SSL_VERSION_TLSv1_1'      => null,
-            'http\\Client\\Curl\\SSL_VERSION_TLSv1_2'      => null,
-            'http\\Client\\Curl\\AUTH_SPNEGO'              => null,
-            'http\\Client\\Curl\\POSTREDIR_303'            => null,
-        );
+        $release->constants = array();
+
+        if ($this->curl_version >= 0x072600) { /* libcurl 7.38 */
+            $items = array(
+                'http\\Client\\Curl\\AUTH_SPNEGO'           => null,
+            );
+            $release->constants += $items;
+        }
+        if ($this->curl_version >= 0x072200) { /* libcurl 7.34 */
+            $items = array(
+                'http\\Client\\Curl\\SSL_VERSION_TLSv1_0'   => null,
+                'http\\Client\\Curl\\SSL_VERSION_TLSv1_1'   => null,
+                'http\\Client\\Curl\\SSL_VERSION_TLSv1_2'   => null,
+            );
+            $release->constants += $items;
+        }
+        if ($this->curl_version >= 0x071a00) { /* libcurl 7.26 */
+            $items = array(
+                'http\\Client\\Curl\\POSTREDIR_303'         => null,
+            );
+            $release->constants += $items;
+        }
         return $release;
     }
 }
