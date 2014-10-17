@@ -14,12 +14,20 @@ abstract class AbstractReference implements ReferenceInterface
 
     private $name;
     private $version;
+    private $libVersions;
 
-    public function __construct($name, $version)
+    public function __construct($name, $version, array $libs = array())
     {
         $this->storage = new \SplObjectStorage;
         $this->name    = $name;
         $this->version = $version;
+
+        foreach ($libs as $extname) {
+            $version = $this->getMetaVersion('version_text', $extname);
+            if ($version) {
+                $this->libVersions[$extname] = $version;
+            }
+        }
     }
 
     public function __toString()
@@ -50,6 +58,25 @@ abstract class AbstractReference implements ReferenceInterface
             $this->getLatestVersion(),
             $eol
         );
+
+        $dependencies = $this->getLibVersion();
+        if (count($dependencies)) {
+            $str .= sprintf(
+                '%s  - Dependencies [%d] {%s',
+                $eol,
+                count($dependencies),
+                $eol
+            );
+            foreach ($dependencies as $dependency => $version) {
+                $str .= sprintf(
+                    '    %s [ version %s ]%s',
+                    $dependency,
+                    $version,
+                    $eol
+                );
+            }
+            $str .= $eol . '  }' . $eol;
+        }
 
         $iniEntries = $this->getIniEntries();
         if (count($iniEntries)) {
@@ -155,22 +182,42 @@ abstract class AbstractReference implements ReferenceInterface
         return $this->name;
     }
 
-    public function getMetaVersion($key = null)
+    public function getLibVersion($name = null)
     {
-        if ('curl' == $this->name && function_exists('curl_version')) {
+        if (isset($name) && array_key_exists($name, $this->libVersions)) {
+            return $this->libVersions[$name];
+        }
+        return $this->libVersions;
+    }
+
+    public function getMetaVersion($key = null, $extname = null)
+    {
+        if (in_array('curl', array($this->name, $extname))
+            && function_exists('curl_version')
+        ) {
             $meta = curl_version();
+            $meta['version_text'] = $meta['version'];
 
-        } elseif ('libxml' == $this->name) {
-            $meta = array('version_number' => LIBXML_VERSION);
+        } elseif (in_array('libxml', array($this->name, $extname))) {
+            $meta = array(
+                'version_number' => LIBXML_VERSION,
+                'version_text'   => LIBXML_DOTTED_VERSION,
+            );
 
-        } elseif ('intl' == $this->name) {
-            $meta = array('version_number' => defined('INTL_ICU_VERSION')
-                ? INTL_ICU_VERSION : false
+        } elseif (in_array('intl', array($this->name, $extname))) {
+            $meta = array(
+                'version_number' => defined('INTL_ICU_VERSION')
+                    ? INTL_ICU_VERSION : false,
+                'version_text'   => defined('INTL_ICU_VERSION')
+                    ? INTL_ICU_VERSION : false,
             );
             
-        } elseif ('openssl' == $this->name) {
-            $meta = array('version_number' => defined('OPENSSL_VERSION_NUMBER')
-                ? OPENSSL_VERSION_NUMBER : false
+        } elseif (in_array('openssl', array($this->name, $extname))) {
+            $meta = array(
+                'version_number' => defined('OPENSSL_VERSION_NUMBER')
+                    ? OPENSSL_VERSION_NUMBER : false,
+                'version_text'   => defined('OPENSSL_VERSION_TEXT')
+                    ? OPENSSL_VERSION_TEXT : false,
             );
         }
         if (isset($meta)) {
