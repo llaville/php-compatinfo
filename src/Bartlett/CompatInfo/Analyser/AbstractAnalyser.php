@@ -53,7 +53,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     {
         $rows = ConsoleApplication::versionHelper($args, $filter);
 
-        $headers = array('', $title, 'REF', 'EXT min/Max', 'PHP min/Max');
+        $headers = array(' ', $title, 'REF', 'EXT min/Max', 'PHP min/Max');
 
         $versions = empty($versions['php.max'])
             ? $versions['php.min']
