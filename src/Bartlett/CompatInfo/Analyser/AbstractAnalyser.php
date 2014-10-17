@@ -133,12 +133,12 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $type .= '.classes';
         }
         $this->count[$type][$name] = self::$php4;
+        $this->count[$type][$name] = $this->processClass($class);
 
-        list($min, $max) = $this->processClass($class);
-        $this->count[$type][$name]['php.min'] = $min;
-        $this->count[$type][$name]['php.max'] = $max;
-
-        $this->updateGlobalVersion($min, $max);
+        $this->updateGlobalVersion(
+            $this->count[$type][$name]['php.min'],
+            $this->count[$type][$name]['php.max']
+        );
 
         foreach ($class->getProperties() as $property) {
             $property->accept($this);
@@ -148,7 +148,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $method->accept($this);
         }
 
-        $this->updatePackageVersion($min, $max, $class->getNamespaceName());
+        $this->updatePackageVersion($this->count[$type][$name], $class->getNamespaceName());
     }
 
     /**
@@ -257,7 +257,10 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
             $this->updateGlobalVersion($min, $max);
 
-            $this->updatePackageVersion($min, $max, $function->getNamespaceName());
+            $this->updatePackageVersion(
+                $this->count[static::METRICS_PREFIX . '.functions'][$name],
+                $function->getNamespaceName()
+            );
         }
     }
 
@@ -281,7 +284,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
 
             $this->updatePackageVersion(
-                $versions['php.min'], $versions['php.max'],
+                $versions,
                 $this->currentNamespace
             );
         }
@@ -344,8 +347,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
 
                 $this->updatePackageVersion(
-                    $versions['php.min'],
-                    $versions['php.max'],
+                    $versions,
                     $dependency->getNamespaceName()
                 );
             }
@@ -457,28 +459,27 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     /**
      * Update the current namespace versions, only if metric is required.
      *
-     * @param string $min The PHP min version to check
-     * @param string $max The PHP max version to check
+     * @param array  $versions EXT and PHP min/max versions
      * @param string $pkg The current namespace name
      *
      * @return void
      */
-    protected function updatePackageVersion($min, $max, $pkg)
+    protected function updatePackageVersion($versions, $pkg)
     {
         if (isset($this->count[static::METRICS_PREFIX . '.packages'])) {
             if (empty($pkg)) {
                 $pkg = '+global';
-                if (!isset($this->count[static::METRICS_PREFIX . '.packages'][$pkg]['ext.min'])) {
-                    $this->count[static::METRICS_PREFIX . '.packages'][$pkg]['ext.min'] = '';
-                    $this->count[static::METRICS_PREFIX . '.packages'][$pkg]['ext.max'] = '';
-                }
+            }
+            if (!isset($this->count[static::METRICS_PREFIX . '.packages'][$pkg])) {
+                $this->count[static::METRICS_PREFIX . '.packages'][$pkg] = $versions;
+                unset($this->count[static::METRICS_PREFIX . '.packages'][$pkg]['ref']);
             }
             self::updateVersion(
-                $min,
+                $versions['php.min'],
                 $this->count[static::METRICS_PREFIX . '.packages'][$pkg]['php.min']
             );
             self::updateVersion(
-                $max,
+                $versions['php.max'],
                 $this->count[static::METRICS_PREFIX . '.packages'][$pkg]['php.max']
             );
         }
@@ -619,49 +620,54 @@ abstract class AbstractAnalyser extends ReflectAnalyser
      * Explore class/interface/trait signature
      *
      * @param object $model A ClassModel definition
+     *
+     * @return array
      */
     protected function processClass($model)
     {
-        $max        = '';
-        $name       = $model->getName();
-        $parent     = $model->getParentClass();
-        $interfaces = $model->getInterfaceNames();
+        $parent = $model->getParentClass();
 
-        if ($model->getName() == 'Generator') {
-            $min = '5.5.0';
-            $this->count[static::METRICS_PREFIX . '.classes'][$name]['php.min'] = $min;
-
-        } elseif ($model->isTrait()) {
-            $min = '5.4.0';
-            $this->count[static::METRICS_PREFIX . '.traits'][$name]['php.min'] = $min;
-
-        } elseif ($parent) {
+        if ($parent) {
             // inspect parent class and checks versions
             return $this->processClass($parent);
+        }
+        $name     = $model->getName();
+        $versions = $this->processInternal($name);
 
-        } elseif ($model->inNamespace()) {
-            $min = '5.3.0';
+        if ('user' == $versions['ref']) {
+            $interfaces = $model->getInterfaceNames();
 
-        } elseif ($model->isInterface() || !empty($interfaces)) {
-            $min = '5.0.0';
+            if ($model->getName() == 'Generator') {
+                $min = '5.5.0';
+                $this->count[static::METRICS_PREFIX . '.classes'][$name]['php.min'] = $min;
 
-        } else {
-            /**
-             * Look for PHP5 features
-             */
-            if ($model->isAbstract()
-                || $model->isFinal()
-            ) {
+            } elseif ($model->isTrait()) {
+                $min = '5.4.0';
+                $this->count[static::METRICS_PREFIX . '.traits'][$name]['php.min'] = $min;
+
+
+            } elseif ($model->inNamespace()) {
+                $min = '5.3.0';
+
+            } elseif ($model->isInterface() || !empty($interfaces)) {
                 $min = '5.0.0';
+
             } else {
-                $min = '4.0.0';
+                /**
+                 * Look for PHP5 features
+                 */
+                if ($model->isAbstract()
+                    || $model->isFinal()
+                ) {
+                    $min = '5.0.0';
+                } else {
+                    $min = '4.0.0';
+                }
             }
 
-            $versions = $this->processInternal($name);
-
-            $min = $versions['php.min'];
-            $max = $versions['php.max'];
+            $versions['php.min'] = $min;
         }
-        return array($min, $max);
+
+        return $versions;
     }
 }
