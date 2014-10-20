@@ -48,7 +48,7 @@ class PreFetchStrategy extends AbstractReferenceFinder implements ReferenceFinde
      *
      * @return string
      */
-    protected function find($element, $priorities)
+    public function find($element, $priorities)
     {
         $needle = strtolower($element);
         $index  = substr($needle, 0, 1);

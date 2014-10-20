@@ -4,6 +4,8 @@ namespace Bartlett\CompatInfo\Reference\Strategy;
 
 interface ReferenceFinderInterface
 {
+    public function find($element, $priorities);
+
     public function findAny($element);
     
     public function findInterface($element);
