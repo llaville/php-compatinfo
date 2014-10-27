@@ -190,32 +190,6 @@ class ConsoleApplication extends Application
         return $exitCode;
     }
 
-    /**
-     * Gets the json contents of COMPATINFO configuration file
-     *
-     * @return array
-     * @throws \Exception if configuration file does not exists or is invalid
-     */
-    public function getJsonConfigFile()
-    {
-        $path = realpath(getenv('COMPATINFO'));
-
-        if (!is_file($path)) {
-            throw new \Exception(
-                'Configuration file "' . $path . '" does not exists.'
-            );
-        }
-        $json = file_get_contents($path);
-        $var  = json_decode($json, true);
-
-        if (null === $var) {
-            throw new \Exception(
-                'The json configuration file has an invalid format.'
-            );
-        }
-        return $var;
-    }
-
     public static function versionHelper(array $args, $filter)
     {
         $rows = array();
