@@ -58,19 +58,23 @@ class ConsoleApplication extends Application
         return $this->env;
     }
 
-    public function getLongVersion()
+    public function getVersion()
     {
-        $version = $this->getVersion();
+        $version = parent::getVersion();
 
         if ('@' . 'package_version@' == $version) {
             $version = new \SebastianBergmann\Version('3.5.0', dirname(dirname(dirname(__DIR__))));
             $version = $version->getVersion();
         }
+        return $version;
+    }
 
+    public function getLongVersion()
+    {
         $version = sprintf(
             '<info>%s</info> version <comment>%s</comment>',
             $this->getName(),
-            $version
+            $this->getVersion()
         );
         return $version;
     }
