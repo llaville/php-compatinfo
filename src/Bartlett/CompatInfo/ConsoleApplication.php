@@ -44,9 +44,18 @@ class ConsoleApplication extends Application
 {
     const VERSION = '@package_version@';
 
+    private $env;
+
     public function __construct()
     {
+        $this->env = new Environment();
+
         parent::__construct('phpCompatInfo', self::VERSION);
+    }
+
+    public function getEnv()
+    {
+        return $this->env;
     }
 
     public function getLongVersion()
@@ -108,7 +117,7 @@ class ConsoleApplication extends Application
         $commands[] = new ReferenceShowCommand;
 
         try {
-            $var = $this->getJsonConfigFile();
+            $var = $this->env->getJsonConfigFile();
         } catch (\Exception $e) {
             // stop here if json config file is missing or invalid
         }
