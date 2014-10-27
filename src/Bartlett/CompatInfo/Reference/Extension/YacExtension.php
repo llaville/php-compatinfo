@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class YacExtension extends AbstractReference
 {
     const REF_NAME    = 'yac';
-    const REF_VERSION = '0.9.1';  // 2014-07-25 (beta)
+    const REF_VERSION = '0.9.2';  // 2014-10-22 (beta)
 
     public function __construct()
     {
