@@ -16,10 +16,17 @@
         "ext-json": "*",
         "bartlett/php-reflect": "~2.5"
     },
+    "require-dev": {
+        "doctrine/cache": "~1.3",
+        "psr/log": "~1.0",
+        "monolog/monolog": "~1.10",
+        "bartlett/phpunit-loggertestlistener": "~1.1"
+    },
     "suggest": {
         "doctrine/cache": "Allow caching results, since bartlett/php-reflect 2.2",
         "psr/log": "Allow logging events with the LogPlugin",
-        "monolog/monolog": "Allow logging events with the LogPlugin"
+        "monolog/monolog": "Allow logging events with the LogPlugin",
+        "bartlett/phpunit-loggertestlistener": "Allow logging unit tests to your favorite PSR-3 logger interface"
     },
     "authors": [
         {
