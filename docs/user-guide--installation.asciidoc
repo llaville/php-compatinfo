@@ -40,7 +40,7 @@ Put a file named [label label-default]#composer.json# at the root of your projec
 ----
 {
     "require": {
-        "bartlett/php-compatinfo": "~3.5"
+        "bartlett/php-compatinfo": "~3.6"
     }
 }
 ----
@@ -52,14 +52,22 @@ $ php composer.phar install
 
 [TIP]
 ====
+With composer `install` or `create-project` commands,
+if you want to disable installation of require-dev packages
+(`doctrine/cache`, `psr/log`, `monolog/monolog`, `bartlett/phpunit-loggertestlistener`),
+don't forget to specify the `--no-dev` option.
+====
+
+[TIP]
+====
 You can also use Composer to create a new project from an existing [label label-primary]#CompatInfo# package.
 This is the equivalent of doing a git clone checkout followed by a composer install of the vendors.
 
 [source,bash]
 ----
-$ php composer.phar create-project bartlett/php-compatinfo path 3.5.0
+$ php composer.phar create-project bartlett/php-compatinfo /path/to 3.6.0
 ----
-Where +path+ is your install directory.
+Where +/path/to+ is your install directory.
 ====
 
 === PHAR
@@ -70,17 +78,17 @@ bundled in a single file.
 
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.5.0.phar
-$ chmod +x phpcompatinfo-3.5.0.phar
-$ mv phpcompatinfo-3.5.0.phar /usr/local/bin/phpcompatinfo
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.6.0.phar
+$ chmod +x phpcompatinfo-3.6.0.phar
+$ mv phpcompatinfo-3.6.0.phar /usr/local/bin/phpcompatinfo
 $ phpcompatinfo
 ----
 
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.5.0.phar
-$ php phpcompatinfo-3.5.0.phar
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.6.0.phar
+$ php phpcompatinfo-3.6.0.phar
 ----
 
 ifdef::basebackend-bootstrap[]
