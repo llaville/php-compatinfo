@@ -50,6 +50,13 @@ class GmpExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.6.3RC1
+        if (version_compare($version, '5.6.3RC1', 'ge')) {
+            $release = $this->getR50603rc1();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR40004()
@@ -199,4 +206,23 @@ class GmpExtension extends AbstractReference
         );
         return $release;
     }
+
+    protected function getR50603rc1()
+    {
+        $release = new \stdClass;
+        $release->info = array(
+            'ext.min' => '5.6.3RC1',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2014-10-28',
+            'php.min' => '5.6.3RC1',
+            'php.max' => '',
+        );
+        $release->functions = array(
+            'gmp_random_bits'       => null,
+            'gmp_random_range'      => null,
+        );
+        return $release;
+    }
+
 }
