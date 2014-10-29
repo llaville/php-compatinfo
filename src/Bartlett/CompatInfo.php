@@ -1,10 +1,33 @@
 <?php
+/**
+ * The CompatInfo SAPI version.
+ *
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  GIT: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 
 namespace Bartlett;
 
 use Bartlett\Reflect\Event\AbstractDispatcher;
 use Bartlett\Reflect\ProviderManager;
 
+/**
+ * Base class of CompatInfo.
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ * @since    Class available since Release 3.0.0RC1
+ */
 class CompatInfo extends AbstractDispatcher
 {
     protected $pm;
@@ -53,7 +76,6 @@ class CompatInfo extends AbstractDispatcher
      * Adds one or more plugin to extends default behavior.
      *
      * @return self for fluent interface
-     * @throws \InvalidArgumentException if invalid plugin provided
      */
     public function addPlugin($plugin)
     {
