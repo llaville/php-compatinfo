@@ -1165,7 +1165,7 @@ class CurlExtension extends AbstractReference
             'ext.min' => '5.5.19RC1',
             'ext.max' => '',
             'state'   => 'stable',
-            'date'    => '2013-06-20',
+            'date'    => '2014-10-28',
             'php.min' => '5.5.19RC1',
             'php.max' => '',
         );
