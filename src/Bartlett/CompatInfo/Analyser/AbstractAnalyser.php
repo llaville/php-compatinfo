@@ -47,7 +47,13 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     private $currentNamespace;
 
     /**
+     * Helper to display all list results
      *
+     * @object $ouput    Instance of OutputInterface
+     * @array  $args     List of values to exploit
+     * @array  $versions Versions (min/Max) of PHP and EXT
+     * @mixed  $filter   PHP version to restrict results
+     * @string title     Title to display in head of the list
      */
     protected function listHelper(OutputInterface $output, array $args, $versions, $filter, $title)
     {
