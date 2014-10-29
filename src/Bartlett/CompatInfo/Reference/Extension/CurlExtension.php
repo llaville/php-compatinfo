@@ -123,6 +123,13 @@ class CurlExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
+
+        // 5.5.19RC1
+        if (version_compare($version, '5.5.19RC1', 'ge')) {
+            $release = $this->getR50519RC1();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
     }
 
     protected function getR40002()
@@ -1148,6 +1155,30 @@ class CurlExtension extends AbstractReference
         $release->classes = array(
             'CURLFile'                              => null,
         );
+        return $release;
+    }
+
+    protected function getR50519RC1()
+    {
+        $release = new \stdClass;
+        $release->info = array(
+            'ext.min' => '5.5.19RC1',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2013-06-20',
+            'php.min' => '5.5.19RC1',
+            'php.max' => '',
+        );
+        $release->constants = array();
+
+        if ($this->version_number >= 0x072200) { /* 7.34.0 */
+            $items = array(
+                'CURL_SSLVERSION_TLSv1_0'           => null,
+                'CURL_SSLVERSION_TLSv1_1'           => null,
+                'CURL_SSLVERSION_TLSv1_2'           => null,
+            );
+            $release->constants += $items;
+        }
         return $release;
     }
 }
