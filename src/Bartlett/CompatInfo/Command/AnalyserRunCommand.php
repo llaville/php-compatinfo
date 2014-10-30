@@ -170,86 +170,9 @@ class AnalyserRunCommand extends ProviderCommand
                 $compatinfo->addPlugin($analyser);
             }
 
-            foreach ($pluginsInstalled as $pluginInstalled) {
-                if (stripos($pluginInstalled['class'], 'cacheplugin') === false) {
-                    continue;
-                }
-                // cache plugin found
-
-                if (isset($pluginInstalled['options']['adapter'])) {
-                    $adapterClass = $pluginInstalled['options']['adapter'];
-                } else {
-                    // default cache adapter
-                    $adapterClass = 'DoctrineCacheAdapter';
-                }
-                if (strpos($adapterClass, '\\') === false) {
-                    // add default namespace
-                    $adapterClass = "Bartlett\\Reflect\\Cache\\" . $adapterClass;
-                }
-                if (!class_exists($adapterClass)) {
-                    throw new \InvalidArgumentException(
-                        sprintf(
-                            'Adapter "%s" cannot be loaded.',
-                            $adapterClass
-                        )
-                    );
-                }
-
-                if (!isset($pluginInstalled['options']['backend']['class'])) {
-                    throw new \InvalidArgumentException(
-                        sprintf(
-                            'Backend is missing for %s',
-                            $adapterClass
-                        )
-                    );
-                }
-                $backendClass = $pluginInstalled['options']['backend']['class'];
-
-                if (!class_exists($backendClass)) {
-                    throw new \InvalidArgumentException(
-                        sprintf(
-                            'Backend "%s" cannot be loaded.',
-                            $backendClass
-                        )
-                    );
-                }
-                $rc = new \ReflectionClass($backendClass);
-
-                if (isset($pluginInstalled['options']['backend']['args'])
-                    && is_array($pluginInstalled['options']['backend']['args'])
-                ) {
-                    $args = $pluginInstalled['options']['backend']['args'];
-                } else {
-                    $args = array();
-                }
-
-                for ($a = 0, $max = count($args); $a < $max; $a++) {
-                    // Expands variable from Environment on each argument
-                    $count = preg_match_all("/%{([^}]*)}/", $args[$a], $reg);
-                    for ($i = 0 ; $i < $count ; $i++) {
-                        if ($reg[1][$i] == 'HOME') {
-                            $reg[1][$i] = defined('PHP_WINDOWS_VERSION_BUILD')
-                                ? 'USERPROFILE' : 'HOME';
-                        }
-                        $val = getenv($reg[1][$i]);
-                        if ($val) {
-                            $args[$a] = str_replace(
-                                $reg[0][$i],
-                                $val,
-                                $args[$a]
-                            );
-                        }
-                    }
-                }
-                $backend = $rc->newInstanceArgs($args);
-
-                $cacheAdapter = new $adapterClass($backend);
-
-                $cache = new DefaultCacheStorage($cacheAdapter);
-
-                $cachePlugin = new $pluginInstalled['class']($cache);
+            if ($this->findCachePlugin($pluginsInstalled)) {
+                $cachePlugin = new $this->cachePluginConf['class']($this->cache);
                 $compatinfo->addPlugin($cachePlugin);
-                break;
             }
 
             if ($output->isVerbose()) {
