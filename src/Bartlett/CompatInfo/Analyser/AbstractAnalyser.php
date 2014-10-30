@@ -350,6 +350,8 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         if (in_array(static::METRICS_GROUP, array($type, 'internals', 'extensions', 'namespaces'))) {
             if (!isset($this->count[static::METRICS_PREFIX . ".$type"][$name])) {
                 $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
+            }
+            if (!isset($this->count[static::METRICS_PREFIX . ".$type"][$name]['optional'])) {
                 $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
 
                 $this->updatePackageVersion(
