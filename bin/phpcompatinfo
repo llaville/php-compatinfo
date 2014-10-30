@@ -27,7 +27,8 @@ if (\Phar::running()) {
         }
     }
 }
-require_once $vendorDir . '/autoload.php';
+$loader = require_once $vendorDir . '/autoload.php';
+$loader->setUseIncludePath(true);
 
 if (PHP_SAPI !== 'cli') {
     return;

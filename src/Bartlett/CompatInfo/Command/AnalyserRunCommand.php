@@ -174,6 +174,13 @@ class AnalyserRunCommand extends ProviderCommand
                 $cachePlugin = new $this->cachePluginConf['class']($this->cache);
                 $compatinfo->addPlugin($cachePlugin);
             }
+            if ($this->findLogPlugin($pluginsInstalled)) {
+                $logPlugin = new $this->logPluginConf['class'](
+                    $this->logger,
+                    $this->logPluginConf['options']['conf']
+                );
+                $compatinfo->addPlugin($logPlugin);
+            }
 
             if ($output->isVerbose()) {
                 $compatinfo->getEventDispatcher()->addListener(
