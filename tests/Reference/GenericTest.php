@@ -271,7 +271,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         if (is_null(self::$obj)) {
             return;
         }
-        $dict = self::$obj->getConstants();
+        $dict = self::$obj->getConstants(); error_log ( var_export ($dict, true ));
         $this->assertTrue(is_array($dict));
         foreach ($dict as $constname => $range) {
             $min = $range['php.min'];
@@ -283,7 +283,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
                 }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
-                    array_push(self::$ignoredconstants, $constname);
+                    array_push(self::$optionalconstants, $constname);
                 }
             }
             if (!in_array($constname, self::$optionalconstants)
