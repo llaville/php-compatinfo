@@ -271,7 +271,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         if (is_null(self::$obj)) {
             return;
         }
-        $dict = self::$obj->getConstants(); error_log ( var_export ($dict, true ));
+        $dict = self::$obj->getConstants();
         $this->assertTrue(is_array($dict));
         foreach ($dict as $constname => $range) {
             $min = $range['php.min'];
