@@ -1160,6 +1160,17 @@ class CurlExtension extends AbstractReference
 
     protected function getR50519RC1()
     {
+        $excludePhp506 = array(
+            '5.6.0',
+            '5.6.0RC1',
+            '5.6.0RC2',
+            '5.6.0RC3',
+            '5.6.0RC4',
+            '5.6.1',
+            '5.6.1RC1',
+            '5.6.2',
+        );
+
         $release = new \stdClass;
         $release->info = array(
             'ext.min' => '5.5.19RC1',
@@ -1173,9 +1184,15 @@ class CurlExtension extends AbstractReference
 
         if ($this->version_number >= 0x072200) { /* 7.34.0 */
             $items = array(
-                'CURL_SSLVERSION_TLSv1_0'           => null,
-                'CURL_SSLVERSION_TLSv1_1'           => null,
-                'CURL_SSLVERSION_TLSv1_2'           => null,
+                'CURL_SSLVERSION_TLSv1_0'           => array(
+                    'php.excludes' => $excludePhp506,
+                ),
+                'CURL_SSLVERSION_TLSv1_1'           => array(
+                    'php.excludes' => $excludePhp506,
+                ),
+                'CURL_SSLVERSION_TLSv1_2'           => array(
+                    'php.excludes' => $excludePhp506,
+                ),
             );
             $release->constants += $items;
         }
