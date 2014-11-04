@@ -205,7 +205,7 @@ class ConsoleApplication extends Application
                     continue;
                 }
             }
-            $rows[] = array(
+            $row = array(
                 isset($versions['optional']) ? 'C' : ' ',
                 $arg,
                 isset($versions['ref']) ? $versions['ref'] : null,
@@ -216,6 +216,14 @@ class ConsoleApplication extends Application
                     ? $versions['php.min']
                     : $versions['php.min'] . ' => ' . $versions['php.max'],
             );
+            /*
+                for reference:show command,
+                tell us if there are some PHP versions excluded
+             */
+            if (isset($versions['php.excludes'])) {
+                $row[0] = 'W';
+            }
+            $rows[] = $row;
         }
         return $rows;
     }
