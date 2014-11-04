@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "00b5d0e9146111179ca82ebb642e3158",
+    "hash": "52eafeb2dc7a4be27de5ca73fdee3d69",
     "packages": [
         {
             "name": "bartlett/php-reflect",
@@ -623,6 +624,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
+    "prefer-stable": false,
     "platform": {
         "php": ">=5.3.0",
         "ext-libxml": "*",
