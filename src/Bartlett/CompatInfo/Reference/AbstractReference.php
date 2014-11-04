@@ -274,7 +274,8 @@ abstract class AbstractReference implements ReferenceInterface
         $releases = array();
 
         foreach ($this->storage as $release) {
-            $releases[] = $release->info;
+            $id = sprintf('%s (%s)', $release->info['date'], $release->info['state']);
+            $releases[$id] = $release->info;
         }
         return $releases;
     }

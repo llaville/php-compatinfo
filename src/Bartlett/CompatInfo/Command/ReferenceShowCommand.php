@@ -19,7 +19,8 @@ class ReferenceShowCommand extends Command
     const FILTER_FUNCTIONS  = 4;
     const FILTER_INTERFACES = 8;
     const FILTER_CLASSES    = 16;
-    const FILTER_NONE       = 31;
+    const FILTER_RELEASES   = 32;
+    const FILTER_NONE       = 63;
 
     protected function configure()
     {
@@ -36,6 +37,12 @@ class ReferenceShowCommand extends Command
                 null,
                 InputOption::VALUE_REQUIRED,
                 'Filter results on PHP version'
+            )
+            ->addOption(
+                'releases',
+                null,
+                InputOption::VALUE_NONE,
+                'Show releases'
             )
             ->addOption(
                 'ini',
@@ -115,6 +122,9 @@ class ReferenceShowCommand extends Command
         }
 
         $filters = 0;
+        if ($input->getOption('releases')) {
+            $filters += self::FILTER_RELEASES;
+        }
         if ($input->getOption('ini')) {
             $filters += self::FILTER_INI;
         }
@@ -133,6 +143,18 @@ class ReferenceShowCommand extends Command
         if ($filters === 0) {
             // default to show all categories
             $filters = self::FILTER_NONE;
+        }
+
+        if ($filters & self::FILTER_RELEASES) {
+            $releases = $reference->getReleases();
+            if (count($releases)) {
+                $this->render(
+                    $output,
+                    $releases,
+                    $php,
+                    'Releases'
+                );
+            }
         }
 
         if ($filters & self::FILTER_INI) {
