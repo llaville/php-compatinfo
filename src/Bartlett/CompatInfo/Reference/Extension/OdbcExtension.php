@@ -252,7 +252,7 @@ class OdbcExtension extends AbstractReference
             '5.5.12',
             '5.5.13',
             '5.5.14',
-            '5.5.15', 
+            '5.5.15',
         );
         $release = new \stdClass;
         $release->info = array(
@@ -262,12 +262,17 @@ class OdbcExtension extends AbstractReference
             'date'          => '2014-08-07',
             'php.min'       => '5.4.32RC1',
             'php.max'       => '',
-            'php.excludes'  => $excludePhp505,
         );
         $release->constants = array(
-            'SQL_WCHAR'                    => null,
-            'SQL_WVARCHAR'                 => null,
-            'SQL_WLONGVARCHAR'             => null,
+            'SQL_WCHAR'                    => array(
+                'php.excludes'  => $excludePhp505,
+            ),
+            'SQL_WVARCHAR'                 => array(
+                'php.excludes'  => $excludePhp505,
+            ),
+            'SQL_WLONGVARCHAR'             => array(
+                'php.excludes'  => $excludePhp505,
+            ),
         );
         return $release;
     }
