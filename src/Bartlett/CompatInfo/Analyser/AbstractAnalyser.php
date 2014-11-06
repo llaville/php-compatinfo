@@ -286,6 +286,11 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         $type     = $this->loader->getTypeElement();
 
         if (!isset($this->count[static::METRICS_PREFIX . ".$type"][$name])) {
+            if ('user' == $versions['ref']) {
+                if (!$constant->isScalar()) {
+                    $versions['php.min'] = '5.6.0';
+                }
+            }
             $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
             $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
 
