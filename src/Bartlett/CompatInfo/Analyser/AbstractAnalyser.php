@@ -44,7 +44,8 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     );
     protected $loader;
 
-    private $currentNamespace;
+    protected $currentNamespace;
+    protected $currentModel;
 
     /**
      * Helper to display all list results
@@ -201,6 +202,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
      */
     public function visitMethodModel($method)
     {
+        $this->currentModel = $method;
         $name = $method->getName();
         $this->count[static::METRICS_PREFIX . '.methods'][$name] = self::$php4;
 
@@ -250,6 +252,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
      */
     public function visitFunctionModel($function)
     {
+        $this->currentModel = $function;
         $name = $function->getName();
         $vers = self::$php4;
         $vers['ref'] = 'user';
@@ -262,12 +265,16 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $this->count[static::METRICS_PREFIX . '.functions'][$name]['php.min'] = $min;
 
             $this->updateGlobalVersion($min, $max);
-
-            $this->updatePackageVersion(
-                $this->count[static::METRICS_PREFIX . '.functions'][$name],
-                $function->getNamespaceName()
-            );
         }
+
+        foreach ($function->getParameters() as $parameter) {
+            $parameter->accept($this);
+        }
+
+        $this->updatePackageVersion(
+            $this->count[static::METRICS_PREFIX . '.functions'][$name],
+            $function->getNamespaceName()
+        );
     }
 
     /**
@@ -421,6 +428,26 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         if (empty($name)
             || in_array(strtolower($name), array('callable', 'array'))
         ) {
+            if ($parameter->isVariadic()) {
+                $name = $this->currentModel->getName();
+
+                if ($this->currentModel instanceof \Bartlett\Reflect\Model\FunctionModel) {
+                    $type = 'functions';
+                } else {
+                    $type = 'classes';
+                }
+
+                /*
+                    update current function or method
+                    that used this ParameterModel as argument
+                 */
+                $min = '5.6.0';
+                self::updateVersion(
+                    $min,
+                    $this->count[static::METRICS_PREFIX . ".$type"][$name]['php.min']
+                );
+                $this->updateGlobalVersion($min, '');
+            }
             return;
         }
 
