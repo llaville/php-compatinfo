@@ -42,6 +42,7 @@ class PhpFeaturesTest extends \PHPUnit_Framework_TestCase
 {
     const GH140 = 'GH#140';
     const GH141 = 'GH#141';
+    const GH142 = 'GH#142';
 
     protected static $compatinfo;
 
@@ -67,9 +68,16 @@ class PhpFeaturesTest extends \PHPUnit_Framework_TestCase
             ->in($fixtures)
         ;
 
+        $finder2 = new Finder();
+        $finder2->files()
+            ->name('gh142.php')
+            ->in($fixtures)
+        ;
+
         $pm = new ProviderManager;
         $pm->set(self::GH140, new SymfonyFinderProvider($finder));
         $pm->set(self::GH141, new SymfonyFinderProvider($finder1));
+        $pm->set(self::GH142, new SymfonyFinderProvider($finder2));
 
         self::$compatinfo = new CompatInfo;
         self::$compatinfo->setProviderManager($pm);
@@ -109,7 +117,7 @@ class PhpFeaturesTest extends \PHPUnit_Framework_TestCase
      * Regression test for feature GH#141
      *
      * @link https://github.com/llaville/php-compat-info/issues/141
-     *       Constant scalar expressions are 5.6+
+     *       Variadic functions are 5.6+
      * @link http://php.net/manual/en/migration56.new-features.php#migration56.new-features.variadics
      * @group features
      * @return void
@@ -128,4 +136,29 @@ class PhpFeaturesTest extends \PHPUnit_Framework_TestCase
             $metrics[self::GH141][$key]['php.min']
         );
     }
+
+    /**
+     * Regression test for feature GH#142
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/142
+     *       Exponentiation is 5.6+
+     * @link http://php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH142()
+    {
+        self::$compatinfo->parse(array(self::GH142));
+
+        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.versions';
+
+        $expected = '5.6.0';
+        $metrics  = self::$compatinfo->getMetrics();
+
+        $this->assertEquals(
+            $expected,
+            $metrics[self::GH142][$key]['php.min']
+        );
+    }
+
 }

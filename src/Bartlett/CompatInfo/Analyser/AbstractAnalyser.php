@@ -328,6 +328,18 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $element = $name;
         }
 
+        if ($dependency->isInternalFunction()) {
+            /**
+             * checks for php/ext or user function
+             * if one argument use Exponentiation syntax
+             */
+            foreach ($dependency->getArguments() as $arg) {
+                if ('Expr_BinaryOp_Pow' == $arg['type']) {
+                    $this->updateGlobalVersion('5.6.0', '');
+                }
+            }
+        }
+
         $ref = $this->findReference($element);
         if (!$ref) {
             // stop here if user element
