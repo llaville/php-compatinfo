@@ -318,6 +318,9 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
         if (!isset($this->count[static::METRICS_PREFIX . ".$type"][$name])) {
             if ('user' == $versions['ref']) {
+                if ($constant->inNamespace()) {
+                    $versions['php.min'] = '5.3.0';
+                }
                 if (!$constant->isScalar()) {
                     $versions['php.min'] = '5.6.0';
                 }
