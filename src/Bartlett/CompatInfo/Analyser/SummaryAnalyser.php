@@ -220,6 +220,10 @@ class SummaryAnalyser extends AbstractAnalyser
 
         parent::visitPackageModel($package);
 
+        foreach ($package->getUses() as $use) {
+            $use->accept($this);
+        }
+
         foreach ($package->getClasses() as $class) {
             $class->accept($this);
         }

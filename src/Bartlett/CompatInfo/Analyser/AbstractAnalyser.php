@@ -114,6 +114,30 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     }
 
     /**
+     * Explore use statements (UseModel) found in the current namespace.
+     *
+     * @param object $use Reflect the current use statement explored
+     *
+     * @return void
+     */
+    public function visitUseModel($use)
+    {
+        $versions = self::$php4;
+
+        if ($use->isNormal()) {
+            $versions['php.min'] = '5.3.0';
+        } elseif ($use->isFunction() || $use->isConstant()) {
+            // use const, use function are PHP 5.6+
+            $versions['php.min'] = '5.6.0';
+        }
+        $this->count[static::METRICS_PREFIX . '.uses'][$use->getName()] = $versions;
+
+        $this->updatePackageVersion($versions, $this->currentNamespace);
+
+        $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
+    }
+
+    /**
      * Explore user classes (ClassModel) found in the current namespace.
      *
      * @param object $class Reflect the current user class explored
