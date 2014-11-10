@@ -62,6 +62,13 @@ class AnalyserRunCommand extends ProviderCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $var = parent::execute($input, $output);
+
+        if (is_int($var)) {
+            // json config file is missing or invalid
+            return $var;
+        }
+
         $source = trim($input->getArgument('source'));
         if ($input->getOption('alias')) {
             $alias = $source;
@@ -84,38 +91,10 @@ class AnalyserRunCommand extends ProviderCommand
 
         $analysers = $input->getArgument('analysers');
 
-        $var = $this->getApplication()->getEnv()->getJsonConfigFile();
-
-        if (!is_array($var)
-            || !isset($var['source-providers'])
-        ) {
-            throw new \Exception(
-                'The compatinfo.json file has an invalid format'
-            );
-        }
-
-        if (is_array($var['source-providers'])) {
-            $providers = $var['source-providers'];
-        } else {
-            $providers = array($var['source-providers']);
-        }
-
-        if (is_array($var['plugins'])) {
-            $pluginsInstalled = $var['plugins'];
-        } else {
-            $pluginsInstalled = array($var['plugins']);
-        }
-
-        if (is_array($var['analysers'])) {
-            $analysersInstalled = $var['analysers'];
-        } else {
-            $analysersInstalled = array($var['analysers']);
-        }
-
         $plugins = array();
         foreach ($analysers as $analyser) {
             $found = false;
-            foreach ($analysersInstalled as $analyserInstalled) {
+            foreach ($var['analysers'] as $analyserInstalled) {
                 if (strcasecmp($analyserInstalled['name'], $analyser) === 0) {
                     // analyser installed and available
                     $found = true;
@@ -138,7 +117,7 @@ class AnalyserRunCommand extends ProviderCommand
             $analysers[] = 'summary';
         }
 
-        foreach ($providers as $provider) {
+        foreach ($var['source-providers'] as $provider) {
             if ($this->findProvider($provider, $source, $alias) === false) {
                 continue;
             }
@@ -170,11 +149,11 @@ class AnalyserRunCommand extends ProviderCommand
                 $compatinfo->addPlugin($analyser);
             }
 
-            if ($this->findCachePlugin($pluginsInstalled)) {
+            if ($this->findCachePlugin($var['plugins'])) {
                 $cachePlugin = new $this->cachePluginConf['class']($this->cache);
                 $compatinfo->addPlugin($cachePlugin);
             }
-            if ($this->findLogPlugin($pluginsInstalled)) {
+            if ($this->findLogPlugin($var['plugins'])) {
                 $logPlugin = new $this->logPluginConf['class'](
                     $this->logger,
                     $this->logPluginConf['options']['conf']

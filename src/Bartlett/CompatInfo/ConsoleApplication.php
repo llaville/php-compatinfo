@@ -23,11 +23,11 @@ use Bartlett\Reflect\Command\ProviderListCommand;
 use Bartlett\Reflect\Command\ProviderShowCommand;
 use Bartlett\Reflect\Command\ProviderDisplayCommand;
 use Bartlett\Reflect\Command\PluginListCommand;
+use Bartlett\Reflect\Command\ValidateCommand;
 
 use Bartlett\CompatInfo\Command\ReferenceListCommand;
 use Bartlett\CompatInfo\Command\ReferenceShowCommand;
 use Bartlett\CompatInfo\Command\AnalyserRunCommand;
-use Bartlett\CompatInfo\Command\ValidateCommand;
 
 /**
  * Console Application.
@@ -112,7 +112,7 @@ class ConsoleApplication extends Application
     protected function getDefaultCommands()
     {
         $commands   = parent::getDefaultCommands();
-        $commands[] = new ValidateCommand;
+        $commands[] = $validateCmd = new ValidateCommand(null, $this);
         $commands[] = new PluginListCommand;
         $commands[] = new ProviderListCommand;
         $commands[] = new ProviderShowCommand;
@@ -121,21 +121,15 @@ class ConsoleApplication extends Application
         $commands[] = new ReferenceShowCommand;
 
         try {
-            $var = $this->env->getJsonConfigFile();
+            $var = $validateCmd->getJsonConfigFile();
         } catch (\Exception $e) {
             // stop here if json config file is missing or invalid
+            return $commands;
         }
 
-        if (isset($var['plugins'])) {
+        if (!empty($var['plugins'])) {
             // checks for additional commands
-
-            if (is_array($var['plugins'])) {
-                $plugins = $var['plugins'];
-            } else {
-                $plugins = array($var['plugins']);
-            }
-
-            foreach ($plugins as $plugin) {
+            foreach ($var['plugins'] as $plugin) {
                 if (isset($plugin['class']) && is_string($plugin['class'])) {
                     // try to load the plugin
                     if (class_exists($plugin['class'])
