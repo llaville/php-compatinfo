@@ -12,6 +12,8 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Bartlett\CompatInfo\Metrics;
+
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -27,8 +29,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class InterfaceAnalyser extends AbstractAnalyser
 {
-    const METRICS_PREFIX = 'ia';
-    const METRICS_GROUP  = 'interfaces';
+    const METRICS_PREFIX = Metrics::INTERFACE_ANALYSER;
+    const METRICS_GROUP  = Metrics::INTERFACES;
 
     /**
      * Initializes all metrics.
@@ -39,13 +41,9 @@ class InterfaceAnalyser extends AbstractAnalyser
     {
         $this->count = array(
             self::METRICS_PREFIX . '.' . self::METRICS_GROUP => array(),
-            self::METRICS_PREFIX . '.versions'               => array(
-                'ext.min' => '',
-                'ext.max' => '',
-                'php.min' => '5.0.0',
-                'php.max' => '',
-            )
+            self::METRICS_PREFIX . '.' . Metrics::VERSIONS   => self::$php4
         );
+        $this->count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS]['php.min'] = '5.0.0';
     }
 
     /**
@@ -62,7 +60,7 @@ class InterfaceAnalyser extends AbstractAnalyser
         $this->listHelper(
             $output,
             $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP],
-            $this->count[self::METRICS_PREFIX . '.versions'],
+            $this->count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS],
             func_get_arg(1),
             'Interface'
         );

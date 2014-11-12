@@ -12,6 +12,8 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Bartlett\CompatInfo\Metrics;
+
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -27,8 +29,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class NamespaceAnalyser extends SummaryAnalyser
 {
-    const METRICS_PREFIX = 'na';
-    const METRICS_GROUP  = 'namespaces';
+    const METRICS_PREFIX = Metrics::NAMESPACE_ANALYSER;
+    const METRICS_GROUP  = Metrics::PACKAGES;
 
     /**
      * Renders analyser report to output.
@@ -43,8 +45,8 @@ class NamespaceAnalyser extends SummaryAnalyser
 
         $this->listHelper(
             $output,
-            $this->count[self::METRICS_PREFIX . '.packages'],
-            $this->count[self::METRICS_PREFIX . '.versions'],
+            $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP],
+            $this->count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS],
             func_get_arg(1),
             'Namespace'
         );

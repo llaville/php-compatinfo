@@ -12,6 +12,8 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Bartlett\CompatInfo\Metrics;
+
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -27,8 +29,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class ClassAnalyser extends AbstractAnalyser
 {
-    const METRICS_PREFIX = 'cla';
-    const METRICS_GROUP  = 'classes';
+    const METRICS_PREFIX = Metrics::CLASS_ANALYSER;
+    const METRICS_GROUP  = Metrics::CLASSES;
 
     /**
      * Initializes all metrics.
@@ -39,12 +41,7 @@ class ClassAnalyser extends AbstractAnalyser
     {
         $this->count = array(
             self::METRICS_PREFIX . '.' . self::METRICS_GROUP => array(),
-            self::METRICS_PREFIX . '.versions'               => array(
-                'ext.min' => '',
-                'ext.max' => '',
-                'php.min' => '4.0.0',
-                'php.max' => '',
-            )
+            self::METRICS_PREFIX . '.' . Metrics::VERSIONS   => self::$php4
         );
     }
 
@@ -62,7 +59,7 @@ class ClassAnalyser extends AbstractAnalyser
         $this->listHelper(
             $output,
             $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP],
-            $this->count[self::METRICS_PREFIX . '.versions'],
+            $this->count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS],
             func_get_arg(1),
             'Class'
         );

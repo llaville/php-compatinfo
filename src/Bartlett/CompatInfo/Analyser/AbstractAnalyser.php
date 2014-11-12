@@ -12,6 +12,7 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Bartlett\CompatInfo\Metrics;
 use Bartlett\CompatInfo\ConsoleApplication;
 use Bartlett\CompatInfo\Reference\ReferenceLoader;
 use Bartlett\CompatInfo\Reference\Strategy\PreFetchStrategy;
@@ -130,7 +131,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             // use const, use function are PHP 5.6+
             $versions['php.min'] = '5.6.0';
         }
-        $this->count[static::METRICS_PREFIX . '.uses'][$use->getName()] = $versions;
+        $this->count[static::METRICS_PREFIX . '.' . Metrics::USES][$use->getName()] = $versions;
 
         $this->updatePackageVersion($versions, $this->currentNamespace);
 
@@ -154,14 +155,14 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         }
 
         $name = $class->getName();
-        $type = static::METRICS_PREFIX;
+        $type = static::METRICS_PREFIX . '.' ;
 
         if ($class->isTrait()) {
-            $type .= '.traits';
+            $type .= Metrics::TRAITS;
         } elseif ($class->isInterface()) {
-            $type .= '.interfaces';
+            $type .= Metrics::INTERFACES;
         } else {
-            $type .= '.classes';
+            $type .= Metrics::CLASSES;
         }
         $this->count[$type][$name] = self::$php4;
         $this->count[$type][$name] = $this->processClass($class);
@@ -209,7 +210,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $class = $property->getClassName();
             self::updateVersion(
                 $min,
-                $this->count[static::METRICS_PREFIX . '.classes'][$class]['php.min']
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::CLASSES][$class]['php.min']
             );
 
             $this->updateGlobalVersion($min, $max);
@@ -228,7 +229,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     {
         $this->currentModel = $method;
         $name = $method->getName();
-        $this->count[static::METRICS_PREFIX . '.methods'][$name] = self::$php4;
+        $this->count[static::METRICS_PREFIX . '.' . Metrics::METHODS][$name] = self::$php4;
 
         // Methods constructor/destructor, visibility
         // and modifiers (final, static, abstract)
@@ -242,11 +243,11 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             || $method->isDestructor()
         ) {
             $min = $method->isImplicitlyPublic() ? '4.0.0' : '5.0.0';
-            $this->count[static::METRICS_PREFIX . '.methods'][$name]['php.min'] = $min;
+            $this->count[static::METRICS_PREFIX . '.' . Metrics::METHODS][$name]['php.min'] = $min;
 
             // update object versions
             $class = $method->getClassName();
-            if (isset($this->count[static::METRICS_PREFIX . '.interfaces'][$class])) {
+            if (isset($this->count[static::METRICS_PREFIX . '.' . Metrics::INTERFACES][$class])) {
                 $type = 'interfaces';
             } else {
                 $type = 'classes';
@@ -258,8 +259,8 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         }
 
         $this->updateGlobalVersion(
-            $this->count[static::METRICS_PREFIX . '.methods'][$name]['php.min'],
-            $this->count[static::METRICS_PREFIX . '.methods'][$name]['php.max']
+            $this->count[static::METRICS_PREFIX . '.' . Metrics::METHODS][$name]['php.min'],
+            $this->count[static::METRICS_PREFIX . '.' . Metrics::METHODS][$name]['php.max']
         );
 
         foreach ($method->getParameters() as $parameter) {
@@ -281,12 +282,12 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         $vers = self::$php4;
         $vers['ref'] = 'user';
 
-        $this->count[static::METRICS_PREFIX . '.functions'][$name] = $vers;
+        $this->count[static::METRICS_PREFIX . '.' . Metrics::FUNCTIONS][$name] = $vers;
 
         if ($function->inNamespace()) {
             $min = '5.3.0';
             $max = '';
-            $this->count[static::METRICS_PREFIX . '.functions'][$name]['php.min'] = $min;
+            $this->count[static::METRICS_PREFIX . '.' . Metrics::FUNCTIONS][$name]['php.min'] = $min;
 
             $this->updateGlobalVersion($min, $max);
         }
@@ -296,7 +297,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         }
 
         $this->updatePackageVersion(
-            $this->count[static::METRICS_PREFIX . '.functions'][$name],
+            $this->count[static::METRICS_PREFIX . '.' . Metrics::FUNCTIONS][$name],
             $function->getNamespaceName()
         );
     }
@@ -379,7 +380,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             if (!isset($elements[$element][$method])) {
                 return;
             }
-            $this->count[static::METRICS_PREFIX . '.methods'][$dependency->getName()]
+            $this->count[static::METRICS_PREFIX . '.' . Metrics::METHODS][$dependency->getName()]
                 = $elements[$element][$method];
 
             $versions = $elements[$element][$method];
@@ -387,18 +388,18 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
             self::updateVersion(
                 $versions['php.min'],
-                $this->count[static::METRICS_PREFIX . '.extensions'][$ref->getName()]['php.min']
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$ref->getName()]['php.min']
             );
             self::updateVersion(
                 $versions['php.max'],
-                $this->count[static::METRICS_PREFIX . '.extensions'][$ref->getName()]['php.max']
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$ref->getName()]['php.max']
             );
         } else {
             $versions = $this->processInternal($name, $argc);
             $type     = $this->loader->getTypeElement();
         }
 
-        if (in_array(static::METRICS_GROUP, array($type, 'internals', 'extensions', 'namespaces'))) {
+        if (in_array(static::METRICS_GROUP, array($type, Metrics::SUMMARIES, Metrics::EXTENSIONS, Metrics::PACKAGES))) {
             if (!isset($this->count[static::METRICS_PREFIX . ".$type"][$name])) {
                 $this->count[static::METRICS_PREFIX . ".$type"][$name] = $versions;
             }
@@ -439,11 +440,11 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 }
                 $this->count[static::METRICS_PREFIX . '.' . $type][$name]['optional'] = true;
                 if ('user' !== $ref && 'Core' !== $ref) {
-                    $this->count[static::METRICS_PREFIX . '.extensions'][$ref]['optional'] = true;
+                    $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$ref]['optional'] = true;
                 }
 
                 $name = sprintf('%s(%s)', $dependency->getName(), $name);
-                $this->count[static::METRICS_PREFIX . '.conditions'][$name] = $versions;
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::CONDITIONS][$name] = $versions;
 
                 if ('cca' == static::METRICS_PREFIX) {
                     $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
@@ -527,11 +528,11 @@ abstract class AbstractAnalyser extends ReflectAnalyser
     {
         self::updateVersion(
             $min,
-            $this->count[static::METRICS_PREFIX . '.versions']['php.min']
+            $this->count[static::METRICS_PREFIX . '.' . Metrics::VERSIONS]['php.min']
         );
         self::updateVersion(
             $max,
-            $this->count[static::METRICS_PREFIX . '.versions']['php.max']
+            $this->count[static::METRICS_PREFIX . '.' . Metrics::VERSIONS]['php.max']
         );
     }
 
@@ -545,21 +546,21 @@ abstract class AbstractAnalyser extends ReflectAnalyser
      */
     protected function updatePackageVersion($versions, $pkg)
     {
-        if (isset($this->count[static::METRICS_PREFIX . '.packages'])) {
+        if (isset($this->count[static::METRICS_PREFIX . '.' . Metrics::PACKAGES])) {
             if (empty($pkg)) {
                 $pkg = '+global';
             }
-            if (!isset($this->count[static::METRICS_PREFIX . '.packages'][$pkg])) {
-                $this->count[static::METRICS_PREFIX . '.packages'][$pkg] = $versions;
-                unset($this->count[static::METRICS_PREFIX . '.packages'][$pkg]['ref']);
+            if (!isset($this->count[static::METRICS_PREFIX . '.' . Metrics::PACKAGES][$pkg])) {
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::PACKAGES][$pkg] = $versions;
+                unset($this->count[static::METRICS_PREFIX . '.' . Metrics::PACKAGES][$pkg]['ref']);
             }
             self::updateVersion(
                 $versions['php.min'],
-                $this->count[static::METRICS_PREFIX . '.packages'][$pkg]['php.min']
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::PACKAGES][$pkg]['php.min']
             );
             self::updateVersion(
                 $versions['php.max'],
-                $this->count[static::METRICS_PREFIX . '.packages'][$pkg]['php.max']
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::PACKAGES][$pkg]['php.max']
             );
         }
     }
@@ -669,26 +670,26 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         $refName = $versions['ref'];
 
         if ('user' !== $refName) {
-            if (!isset($this->count[static::METRICS_PREFIX . '.extensions'][$refName])) {
-                $this->count[static::METRICS_PREFIX . '.extensions'][$refName] = self::$php4;
+            if (!isset($this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$refName])) {
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$refName] = self::$php4;
             }
 
             static::updateVersion(
                 $versions['ext.min'],
-                $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['ext.min']
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$refName]['ext.min']
             );
             static::updateVersion(
                 $versions['ext.max'],
-                $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['ext.max']
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$refName]['ext.max']
             );
 
             static::updateVersion(
                 $versions['php.min'],
-                $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['php.min']
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$refName]['php.min']
             );
             static::updateVersion(
                 $versions['php.max'],
-                $this->count[static::METRICS_PREFIX . '.extensions'][$refName]['php.max']
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$refName]['php.max']
             );
         }
 
@@ -718,12 +719,11 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
             if ($model->getName() == 'Generator') {
                 $min = '5.5.0';
-                $this->count[static::METRICS_PREFIX . '.classes'][$name]['php.min'] = $min;
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::CLASSES][$name]['php.min'] = $min;
 
             } elseif ($model->isTrait()) {
                 $min = '5.4.0';
-                $this->count[static::METRICS_PREFIX . '.traits'][$name]['php.min'] = $min;
-
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::TRAITS][$name]['php.min'] = $min;
 
             } elseif ($model->inNamespace()) {
                 $min = '5.3.0';

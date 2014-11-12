@@ -12,6 +12,8 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Bartlett\CompatInfo\Metrics;
+
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -27,8 +29,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class TraitAnalyser extends AbstractAnalyser
 {
-    const METRICS_PREFIX = 'ta';
-    const METRICS_GROUP  = 'traits';
+    const METRICS_PREFIX = Metrics::TRAIT_ANALYSER;
+    const METRICS_GROUP  = Metrics::TRAITS;
 
     /**
      * Initializes all metrics.
@@ -39,13 +41,9 @@ class TraitAnalyser extends AbstractAnalyser
     {
         $this->count = array(
             self::METRICS_PREFIX . '.' . self::METRICS_GROUP => array(),
-            self::METRICS_PREFIX . '.versions'               => array(
-                'ext.min' => '',
-                'ext.max' => '',
-                'php.min' => '5.4.0',
-                'php.max' => '',
-            )
+            self::METRICS_PREFIX . '.' . Metrics::VERSIONS   => self::$php4
         );
+        $this->count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS]['php.min'] = '5.4.0';
     }
 
     /**
@@ -62,7 +60,7 @@ class TraitAnalyser extends AbstractAnalyser
         $this->listHelper(
             $output,
             $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP],
-            $this->count[self::METRICS_PREFIX . '.versions'],
+            $this->count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS],
             func_get_arg(1),
             'Trait'
         );

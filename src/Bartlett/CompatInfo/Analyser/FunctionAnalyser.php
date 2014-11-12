@@ -12,6 +12,8 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Bartlett\CompatInfo\Metrics;
+
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -27,19 +29,14 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class FunctionAnalyser extends AbstractAnalyser
 {
-    const METRICS_PREFIX = 'fa';
-    const METRICS_GROUP  = 'functions';
+    const METRICS_PREFIX = Metrics::FUNCTION_ANALYSER;
+    const METRICS_GROUP  = Metrics::FUNCTIONS;
 
     protected function init()
     {
         $this->count = array(
             self::METRICS_PREFIX . '.' . self::METRICS_GROUP => array(),
-            self::METRICS_PREFIX . '.versions'               => array(
-                'ext.min' => '',
-                'ext.max' => '',
-                'php.min' => '4.0.0',
-                'php.max' => '',
-            )
+            self::METRICS_PREFIX . '.' . Metrics::VERSIONS   => self::$php4
         );
     }
 
@@ -57,7 +54,7 @@ class FunctionAnalyser extends AbstractAnalyser
         $this->listHelper(
             $output,
             $this->count[self::METRICS_PREFIX . '.' . self::METRICS_GROUP],
-            $this->count[self::METRICS_PREFIX . '.versions'],
+            $this->count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS],
             func_get_arg(1),
             'Function'
         );

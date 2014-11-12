@@ -12,6 +12,8 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Bartlett\CompatInfo\Metrics;
+
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Helper\TableSeparator;
@@ -29,8 +31,8 @@ use Symfony\Component\Console\Helper\TableSeparator;
  */
 class SummaryAnalyser extends AbstractAnalyser
 {
-    const METRICS_PREFIX = 'sa';
-    const METRICS_GROUP  = 'internals';
+    const METRICS_PREFIX = Metrics::SUMMARY_ANALYSER;
+    const METRICS_GROUP  = Metrics::SUMMARIES;
 
     /**
      * Initializes all metrics.
@@ -40,21 +42,16 @@ class SummaryAnalyser extends AbstractAnalyser
     protected function init()
     {
         $this->count = array(
-            self::METRICS_PREFIX . '.packages'      => array(),
-            self::METRICS_PREFIX . '.extensions'    => array(),
-            self::METRICS_PREFIX . '.interfaces'    => array(),
-            self::METRICS_PREFIX . '.traits'        => array(),
-            self::METRICS_PREFIX . '.classes'       => array(),
-            self::METRICS_PREFIX . '.methods'       => array(),
-            self::METRICS_PREFIX . '.functions'     => array(),
-            self::METRICS_PREFIX . '.constants'     => array(),
-            self::METRICS_PREFIX . '.conditions'    => array(),
-            self::METRICS_PREFIX . '.versions'      => array(
-                'ext.min' => '',
-                'ext.max' => '',
-                'php.min' => '4.0.0',
-                'php.max' => '',
-            )
+            self::METRICS_PREFIX . '.' . Metrics::PACKAGES   => array(),
+            self::METRICS_PREFIX . '.' . Metrics::EXTENSIONS => array(),
+            self::METRICS_PREFIX . '.' . Metrics::INTERFACES => array(),
+            self::METRICS_PREFIX . '.' . Metrics::TRAITS     => array(),
+            self::METRICS_PREFIX . '.' . Metrics::CLASSES    => array(),
+            self::METRICS_PREFIX . '.' . Metrics::METHODS    => array(),
+            self::METRICS_PREFIX . '.' . Metrics::FUNCTIONS  => array(),
+            self::METRICS_PREFIX . '.' . Metrics::CONSTANTS  => array(),
+            self::METRICS_PREFIX . '.' . Metrics::CONDITIONS => array(),
+            self::METRICS_PREFIX . '.' . Metrics::VERSIONS   => self::$php4
         );
     }
 
@@ -101,36 +98,36 @@ class SummaryAnalyser extends AbstractAnalyser
 
         if ($filter) {
             $reports = array(
-                'Extension' => '.extensions',
-                'Namespace' => '.packages',
-                'Interface' => '.interfaces',
-                'Trait'     => '.traits',
-                'Class'     => '.classes',
-                'Function'  => '.functions',
-                'Constant'  => '.constants',
-                'Condition' => '.conditions',
+                'Extension' => Metrics::EXTENSIONS,
+                'Namespace' => Metrics::PACKAGES,
+                'Interface' => Metrics::INTERFACES,
+                'Trait'     => Metrics::TRAITS,
+                'Class'     => Metrics::CLASSES,
+                'Function'  => Metrics::FUNCTIONS,
+                'Constant'  => Metrics::CONSTANTS,
+                'Condition' => Metrics::CONDITIONS,
             );
             foreach ($reports as $title => $group) {
-                $count[self::METRICS_PREFIX . '.versions'] = self::$php4;
+                $count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS] = self::$php4;
 
-                foreach ($count[self::METRICS_PREFIX . $group] as $key => $versions) {
+                foreach ($count[self::METRICS_PREFIX . ".$group"] as $key => $versions) {
                     if (isset($versions['optional'])) {
                         continue;
                     }
                     self::updateVersion(
                         $versions['php.min'],
-                        $count[self::METRICS_PREFIX . '.versions']['php.min']
+                        $count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS]['php.min']
                     );
                     self::updateVersion(
                         $versions['php.max'],
-                        $count[self::METRICS_PREFIX . '.versions']['php.min']
+                        $count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS]['php.min']
                     );
                 }
 
                 $this->listHelper(
                     $output,
-                    $count[self::METRICS_PREFIX . $group],
-                    $count[self::METRICS_PREFIX . '.versions'],
+                    $count[self::METRICS_PREFIX . ".$group"],
+                    $count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS],
                     $filter,
                     $title
                 );
@@ -139,7 +136,7 @@ class SummaryAnalyser extends AbstractAnalyser
         } else {
             $userFunctions = $internalFunctions = array();
 
-            foreach ($count[self::METRICS_PREFIX . '.functions'] as $name => $function) {
+            foreach ($count[self::METRICS_PREFIX . '.' . Metrics::FUNCTIONS] as $name => $function) {
                 if ($function['ref'] == 'user') {
                     $userFunctions[$name] = $function;
                 } else {
@@ -150,19 +147,19 @@ class SummaryAnalyser extends AbstractAnalyser
             $headers = array('', 'Count', 'Cond', 'PHP min', 'Elements highlight');
             $rows    = array();
 
-            $elements = $count[self::METRICS_PREFIX . '.extensions'];
+            $elements = $count[self::METRICS_PREFIX . '.' . Metrics::EXTENSIONS];
             $rows[] = $limit($elements, 'Extensions');
 
-            $elements = $count[self::METRICS_PREFIX . '.packages'];
+            $elements = $count[self::METRICS_PREFIX . '.' . Metrics::PACKAGES];
             $rows[] = $limit($elements, 'Namespaces');
 
-            $elements = $count[self::METRICS_PREFIX . '.interfaces'];
+            $elements = $count[self::METRICS_PREFIX . '.' . Metrics::INTERFACES];
             $rows[] = $limit($elements, 'Interfaces');
 
-            $elements = $count[self::METRICS_PREFIX . '.traits'];
+            $elements = $count[self::METRICS_PREFIX . '.' . Metrics::TRAITS];
             $rows[] = $limit($elements, 'Traits');
 
-            $elements = $count[self::METRICS_PREFIX . '.classes'];
+            $elements = $count[self::METRICS_PREFIX . '.' . Metrics::CLASSES];
             $rows[] = $limit($elements, 'Classes');
 
             $elements = $userFunctions;
@@ -171,7 +168,7 @@ class SummaryAnalyser extends AbstractAnalyser
             $elements = $internalFunctions;
             $rows[] = $limit($elements, 'Internal Functions');
 
-            $elements = $count[self::METRICS_PREFIX . '.constants'];
+            $elements = $count[self::METRICS_PREFIX . '.' . Metrics::CONSTANTS];
             $rows[] = $limit($elements, 'Constants');
 
             $footers = array(
@@ -180,7 +177,7 @@ class SummaryAnalyser extends AbstractAnalyser
                 '',
                 sprintf(
                     '<info>%s</info>',
-                    $count[self::METRICS_PREFIX . '.versions']['php.min']
+                    $count[self::METRICS_PREFIX . '.' . Metrics::VERSIONS]['php.min']
                 ),
                 ''
             );
@@ -208,12 +205,12 @@ class SummaryAnalyser extends AbstractAnalyser
     {
         $name = $package->getName();
 
-        $this->count[static::METRICS_PREFIX . '.packages'][$name] = self::$php4;
+        $this->count[static::METRICS_PREFIX . '.' . Metrics::PACKAGES][$name] = self::$php4;
         if ('+global' !== $name) {
-            $this->count[static::METRICS_PREFIX . '.packages'][$name]['php.min'] = '5.3.0';
+            $this->count[static::METRICS_PREFIX . '.' . Metrics::PACKAGES][$name]['php.min'] = '5.3.0';
 
             $this->updateGlobalVersion(
-                $this->count[static::METRICS_PREFIX . '.packages'][$name]['php.min'],
+                $this->count[static::METRICS_PREFIX . '.' . Metrics::PACKAGES][$name]['php.min'],
                 ''
             );
         }
