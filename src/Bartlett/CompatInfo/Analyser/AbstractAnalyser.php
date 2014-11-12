@@ -418,7 +418,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
             if ('Scalar_String' == $args[0]['type']) {
                 $name     = $args[0]['value'];
-                $versions = $this->processInternal($name);
+                $versions = $this->processInternal($name, 0, true);
                 $ref      = $versions['ref'];
                 if ($dependency->getName() == 'extension_loaded') {
                     // force type to avoid wrong categorization
@@ -440,7 +440,10 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 }
                 $this->count[static::METRICS_PREFIX . '.' . $type][$name]['optional'] = true;
                 if ('user' !== $ref && 'Core' !== $ref) {
-                    $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$ref]['optional'] = true;
+                    $ext = $versions;
+                    unset($ext['ref']);
+                    $ext['optional'] = true;
+                    $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$ref] = $ext;
                 }
 
                 $name = sprintf('%s(%s)', $dependency->getName(), $name);
@@ -635,10 +638,10 @@ abstract class AbstractAnalyser extends ReflectAnalyser
      * @param string $element Name of element to search for Reference versions
      * @param int    $argc    (optional) Number of arguments used
      *                        in current $element signature
-     *
+     * @param bool   $cond    (optional) Conditional Code
      * @return array
      */
-    protected function processInternal($element, $argc = 0)
+    protected function processInternal($element, $argc = 0, $cond = false)
     {
         $ref = $this->findReference($element);
 
@@ -661,6 +664,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                     $versions['php.min'] = array_pop($parameters);
                 }
             }
+            $type = $this->loader->getTypeElement();
         } else {
             // not found; probably user component or reference not yet supported
             $versions = self::$php4;
@@ -669,7 +673,10 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
         $refName = $versions['ref'];
 
-        if ('user' !== $refName) {
+        if ('user' !== $refName
+            && $cond === false
+            && !isset($this->count[static::METRICS_PREFIX . ".$type"][$element]['optional'])
+        ) {
             if (!isset($this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$refName])) {
                 $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$refName] = self::$php4;
             }
