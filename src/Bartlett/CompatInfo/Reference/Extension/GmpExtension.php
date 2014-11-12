@@ -224,5 +224,4 @@ class GmpExtension extends AbstractReference
         );
         return $release;
     }
-
 }

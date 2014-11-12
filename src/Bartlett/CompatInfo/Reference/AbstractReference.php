@@ -331,7 +331,6 @@ abstract class AbstractReference implements ReferenceInterface
                 continue;
             }
             foreach ($release->{$meta} as $name => $values) {
-
                 // closure to retrieve all meta informations
                 $versioning = function ($values) use ($release) {
                     $versions = array(

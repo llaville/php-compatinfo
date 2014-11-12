@@ -151,8 +151,12 @@ class LdapExtension extends AbstractReference
             'ldap_modify'                   => null,
             'ldap_next_attribute'           => null,
             'ldap_next_entry'               => null,
-            'ldap_read'                     => array('4.0.0', '', '4.0.0, 4.0.0, 4.0.0, 4.0.0, 4.0.2, 4.0.2, 4.0.2, 4.0.2'),
-            'ldap_search'                   => array('4.0.0', '', '4.0.0, 4.0.0, 4.0.0, 4.0.0, 4.0.2, 4.0.2, 4.0.2, 4.0.2'),
+            'ldap_read'                     => array(
+                '4.0.0', '', '4.0.0, 4.0.0, 4.0.0, 4.0.0, 4.0.2, 4.0.2, 4.0.2, 4.0.2'
+            ),
+            'ldap_search'                   => array(
+                '4.0.0', '', '4.0.0, 4.0.0, 4.0.0, 4.0.0, 4.0.2, 4.0.2, 4.0.2, 4.0.2'
+            ),
             'ldap_unbind'                   => null,
         );
         return $release;

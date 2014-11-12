@@ -121,7 +121,8 @@ class LibxmlExtension extends AbstractReference
             'LIBXML_VERSION'                => null,
             'LIBXML_XINCLUDE'               => null,
         );
-        if ($this->version_number >= 20621) { /* 2.6.21 */
+        if ($this->version_number >= 20621) {
+            /* 2.6.21 */
             $items = array(
                 'LIBXML_COMPACT'            => null,
                 'LIBXML_NOXMLDECL'          => null,
@@ -167,7 +168,8 @@ class LibxmlExtension extends AbstractReference
         );
         $release->constants = array();
 
-        if ($this->version_number >= 20703) { /* 2.7.3 */
+        if ($this->version_number >= 20703) {
+            /* 2.7.3 */
             $items = array(
                 'LIBXML_PARSEHUGE'          => null,
             );
@@ -207,13 +209,15 @@ class LibxmlExtension extends AbstractReference
         $release->constants = array(
             'LIBXML_PEDANTIC'                   => null,
         );
-        if ($this->version_number >= 20707) { /* 2.7.7 */
+        if ($this->version_number >= 20707) {
+            /* 2.7.7 */
             $items = array(
                 'LIBXML_HTML_NOIMPLIED'         => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 20708) { /* 2.7.8 */
+        if ($this->version_number >= 20708) {
+            /* 2.7.8 */
             $items = array(
                 'LIBXML_HTML_NODEFDTD'          => null,
             );
@@ -237,7 +241,8 @@ class LibxmlExtension extends AbstractReference
             'php.max' => '',
         );
         $release->constants = array();
-        if ($this->version_number >= 20614) { /* 2.6.14 */
+        if ($this->version_number >= 20614) {
+            /* 2.6.14 */
             $items = array(
                 'LIBXML_SCHEMA_CREATE'      => null,
             );

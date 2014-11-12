@@ -182,7 +182,8 @@ class ReferenceLoader implements \Countable
                     $loaded = '';
                 } else {
                     $loadedCount++;
-                    $loaded = sprintf(' loaded%s',
+                    $loaded = sprintf(
+                        ' loaded%s',
                         $ref->loaded == $ref->version ? '' : ' ' . $ref->loaded
                     );
                 }

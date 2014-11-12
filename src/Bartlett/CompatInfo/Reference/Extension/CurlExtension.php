@@ -352,7 +352,8 @@ class CurlExtension extends AbstractReference
 
             'CURLVERSION_NOW'                       => null,
         );
-        if ($this->version_number >= 0x070a06) { /* 7.10.6 */
+        if ($this->version_number >= 0x070a06) {
+            /* 7.10.6 */
             $items = array(
                 'CURLAUTH_ANY'                      => null,
                 'CURLAUTH_ANYSAFE'                  => null,
@@ -365,7 +366,8 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070a07) { /* 7.10.7 */
+        if ($this->version_number >= 0x070a07) {
+            /* 7.10.7 */
             $items = array(
                 'CURLOPT_FTP_CREATE_MISSING_DIRS'
                                                     => null,
@@ -373,14 +375,16 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070a08) { /* 7.10.8 */
+        if ($this->version_number >= 0x070a08) {
+            /* 7.10.8 */
             $items = array(
                 'CURLE_FILESIZE_EXCEEDED'           => null,
                 'CURLE_LDAP_INVALID_URL'            => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070b00) { /* 7.11.0 */
+        if ($this->version_number >= 0x070b00) {
+            /* 7.11.0 */
             $items = array(
                 'CURLE_FTP_SSL_FAILED'              => null,
 
@@ -388,14 +392,16 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071002) { /* 7.16.2 */
+        if ($this->version_number >= 0x071002) {
+            /* 7.16.2 */
             $items = array(
                 'CURLOPT_CONNECTTIMEOUT_MS'         => null,
                 'CURLOPT_TIMEOUT_MS'                => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071304) { /* 7.19.4 */
+        if ($this->version_number >= 0x071304) {
+            /* 7.19.4 */
             $items = array(
                 'CURLOPT_PROTOCOLS'                 => null,
                 'CURLOPT_REDIR_PROTOCOLS'           => null,
@@ -501,7 +507,8 @@ class CurlExtension extends AbstractReference
             'CURLOPT_AUTOREFERER'           => null,
             'CURLOPT_COOKIESESSION'         => null,
         );
-        if ($this->version_number >= 0x070c02) { /* 7.12.2 */
+        if ($this->version_number >= 0x070c02) {
+            /* 7.12.2 */
             $items = array(
                 'CURLFTPAUTH_DEFAULT'       => null,
                 'CURLFTPAUTH_SSL'           => null,
@@ -546,7 +553,8 @@ class CurlExtension extends AbstractReference
             'php.max' => '',
         );
         $release->constants = array();
-        if ($this->version_number >= 0x070b00) { /* 7.11.0 */
+        if ($this->version_number >= 0x070b00) {
+            /* 7.11.0 */
             $items = array(
                 'CURLFTPSSL_ALL'            => null,
                 'CURLFTPSSL_CONTROL'        => null,
@@ -571,7 +579,8 @@ class CurlExtension extends AbstractReference
             'php.max' => '',
         );
         $release->constants = array();
-        if ($this->version_number >= 0x070b02) { /* 7.11.2 */
+        if ($this->version_number >= 0x070b02) {
+            /* 7.11.2 */
             $items = array(
                 'CURLOPT_TCP_NODELAY'       => null,
             );
@@ -630,7 +639,8 @@ class CurlExtension extends AbstractReference
         $release->constants = array(
             'CURLOPT_PROGRESSFUNCTION'              => null,
         );
-        if ($this->version_number >= 0x070a08) { /* 7.10.8 */
+        if ($this->version_number >= 0x070a08) {
+            /* 7.10.8 */
             $items = array(
                 'CURLOPT_IPRESOLVE'                 => null,
 
@@ -640,13 +650,15 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070f01) { /* 7.15.1 */
+        if ($this->version_number >= 0x070f01) {
+            /* 7.15.1 */
             $items = array(
                 'CURLOPT_FTP_FILEMETHOD'            => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070f03) { /* 7.15.3 */
+        if ($this->version_number >= 0x070f03) {
+            /* 7.15.3 */
             $items = array(
                 'CURLFTPMETHOD_MULTICWD'            => null,
                 'CURLFTPMETHOD_NOCWD'               => null,
@@ -654,7 +666,8 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071001) { /* 7.16.1 */
+        if ($this->version_number >= 0x071001) {
+            /* 7.16.1 */
             $items = array(
                 'CURLE_SSH'                         => null,
 
@@ -664,13 +677,15 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071101) { /* 7.17.1 */
+        if ($this->version_number >= 0x071101) {
+            /* 7.17.1 */
             $items = array(
                 'CURLOPT_SSH_HOST_PUBLIC_KEY_MD5'   => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071300) { /* 7.19.0 */
+        if ($this->version_number >= 0x071300) {
+            /* 7.19.0 */
             $items = array(
                 'CURLOPT_KEYPASSWD'                 => null,
 
@@ -698,13 +713,15 @@ class CurlExtension extends AbstractReference
             'php.max' => '',
         );
         $release->constants = array();
-        if ($this->version_number >= 0x070f00) { /* 7.15.0 */
+        if ($this->version_number >= 0x070f00) {
+            /* 7.15.0 */
             $items = array(
                 'CURLOPT_FTP_SKIP_PASV_IP'  => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071301) { /* 7.19.1 */
+        if ($this->version_number >= 0x071301) {
+            /* 7.19.1 */
             $items = array(
                 'CURLINFO_CERTINFO'         => null,
 
@@ -731,14 +748,16 @@ class CurlExtension extends AbstractReference
             'curl.cainfo'                       => null,
         );
         $release->constants = array();
-        if ($this->version_number >= 0x070f05) { /* 7.15.5 */
+        if ($this->version_number >= 0x070f05) {
+            /* 7.15.5 */
             $items = array(
                 'CURLOPT_MAX_RECV_SPEED_LARGE'  => null,
                 'CURLOPT_MAX_SEND_SPEED_LARGE'  => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071202) { /* 7.18.2 */
+        if ($this->version_number >= 0x071202) {
+            /* 7.18.2 */
             $items = array(
                 'CURLINFO_REDIRECT_URL'         => null,
             );
@@ -760,13 +779,15 @@ class CurlExtension extends AbstractReference
             'php.max' => '',
         );
         $release->constants = array();
-        if ($this->version_number >= 0x071300) { /* 7.19.0 */
+        if ($this->version_number >= 0x071300) {
+            /* 7.19.0 */
             $items = array(
                 'CURLINFO_PRIMARY_IP'       => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071500) { /* 7.21.0 */
+        if ($this->version_number >= 0x071500) {
+            /* 7.21.0 */
             $items = array(
                 'CURLINFO_LOCAL_IP'         => null,
                 'CURLINFO_LOCAL_PORT'       => null,
@@ -814,19 +835,22 @@ class CurlExtension extends AbstractReference
             'CURLSHOPT_SHARE'                       => null,
             'CURLSHOPT_UNSHARE'                     => null,
         );
-        if ($this->version_number >= 0x070a06) { /* 7.10.6 */
+        if ($this->version_number >= 0x070a06) {
+            /* 7.10.6 */
             $items = array(
                 'CURLAUTH_NONE'                     => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070a07) { /* 7.10.7 */
+        if ($this->version_number >= 0x070a07) {
+            /* 7.10.7 */
             $items = array(
                 'CURLINFO_HTTP_CONNECTCODE'         => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070a08) { /* 7.10.8 */
+        if ($this->version_number >= 0x070a08) {
+            /* 7.10.8 */
             $items = array(
                 'CURLINFO_HTTPAUTH_AVAIL'           => null,
                 'CURLINFO_RESPONSE_CODE'            => null,
@@ -837,32 +861,37 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070b00) { /* 7.11.0 */
+        if ($this->version_number >= 0x070b00) {
+            /* 7.11.0 */
             $items = array(
                 'CURLOPT_NETRC_FILE'                => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070c02) { /* 7.12.2 */
+        if ($this->version_number >= 0x070c02) {
+            /* 7.12.2 */
             $items = array(
                 'CURLINFO_OS_ERRNO'                 => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070c03) { /* 7.12.3 */
+        if ($this->version_number >= 0x070c03) {
+            /* 7.12.3 */
             $items = array(
                 'CURLINFO_NUM_CONNECTS'             => null,
                 'CURLINFO_SSL_ENGINES'              => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070d00) { /* 7.13.0 */
+        if ($this->version_number >= 0x070d00) {
+            /* 7.13.0 */
             $items = array(
                 'CURLOPT_FTP_ACCOUNT'               => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070e01) { /* 7.14.1 */
+        if ($this->version_number >= 0x070e01) {
+            /* 7.14.1 */
             $items = array(
                 'CURLINFO_COOKIELIST'               => null,
 
@@ -871,7 +900,8 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070f02) { /* 7.15.2 */
+        if ($this->version_number >= 0x070f02) {
+            /* 7.15.2 */
             $items = array(
                 'CURLOPT_CONNECT_ONLY'              => null,
                 'CURLOPT_LOCALPORT'                 => null,
@@ -879,19 +909,22 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070f04) { /* 7.15.4 */
+        if ($this->version_number >= 0x070f04) {
+            /* 7.15.4 */
             $items = array(
                 'CURLINFO_FTP_ENTRY_PATH'           => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x070f05) { /* 7.15.5 */
+        if ($this->version_number >= 0x070f05) {
+            /* 7.15.5 */
             $items = array(
                 'CURLOPT_FTP_ALTERNATIVE_TO_USER'   => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071000) { /* 7.16.0 */
+        if ($this->version_number >= 0x071000) {
+            /* 7.16.0 */
             $items = array(
                 'CURLOPT_SSL_SESSIONID_CACHE'       => null,
 
@@ -899,7 +932,8 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071001) { /* 7.16.1 */
+        if ($this->version_number >= 0x071001) {
+            /* 7.16.1 */
             $items = array(
                 'CURLOPT_FTP_SSL_CCC'               => null,
 
@@ -909,20 +943,23 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071002) { /* 7.16.2 */
+        if ($this->version_number >= 0x071002) {
+            /* 7.16.2 */
             $items = array(
                 'CURLOPT_HTTP_CONTENT_DECODING'     => null,
                 'CURLOPT_HTTP_TRANSFER_DECODING'    => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071003) { /* 7.16.3 */
+        if ($this->version_number >= 0x071003) {
+            /* 7.16.3 */
             $items = array(
                 'CURLMOPT_MAXCONNECTS'              => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071004) { /* 7.16.4 */
+        if ($this->version_number >= 0x071004) {
+            /* 7.16.4 */
             $items = array(
                 'CURLOPT_KRBLEVEL'                  => null,
                 'CURLOPT_NEW_DIRECTORY_PERMS'       => null,
@@ -930,7 +967,8 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071100) { /* 7.17.0 */
+        if ($this->version_number >= 0x071100) {
+            /* 7.17.0 */
             $items = array(
                 'CURLOPT_APPEND'                    => null,
                 'CURLOPT_DIRLISTONLY'               => null,
@@ -943,7 +981,8 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071200) { /* 7.18.0 */
+        if ($this->version_number >= 0x071200) {
+            /* 7.18.0 */
             $items = array(
                 'CURLOPT_PROXY_TRANSFER_MODE'       => null,
 
@@ -959,7 +998,8 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071300) { /* 7.19.0 */
+        if ($this->version_number >= 0x071300) {
+            /* 7.19.0 */
             $items = array(
                 'CURLINFO_APPCONNECT_TIME'          => null,
 
@@ -971,7 +1011,8 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071301) { /* 7.19.1 */
+        if ($this->version_number >= 0x071301) {
+            /* 7.19.1 */
             $items = array(
                 'CURLOPT_PASSWORD'                  => null,
                 'CURLOPT_PROXYPASSWORD'             => null,
@@ -980,13 +1021,15 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071303) { /* 7.19.3 */
+        if ($this->version_number >= 0x071303) {
+            /* 7.19.3 */
             $items = array(
                 'CURLAUTH_DIGEST_IE'                => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071304) { /* 7.19.4 */
+        if ($this->version_number >= 0x071304) {
+            /* 7.19.4 */
             $items = array(
                 'CURLINFO_CONDITION_UNMET'          => null,
 
@@ -997,13 +1040,15 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071306) { /* 7.19.6 */
+        if ($this->version_number >= 0x071306) {
+            /* 7.19.6 */
             $items = array(
                 'CURLOPT_SSH_KNOWNHOSTS'            => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071400) { /* 7.20.0 */
+        if ($this->version_number >= 0x071400) {
+            /* 7.20.0 */
             $items = array(
                 'CURLINFO_RTSP_CLIENT_CSEQ'         => null,
                 'CURLINFO_RTSP_CSEQ_RECV'           => null,
@@ -1042,7 +1087,8 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071500) { /* 7.21.0 */
+        if ($this->version_number >= 0x071500) {
+            /* 7.21.0 */
             $items = array(
                 'CURLOPT_FNMATCH_FUNCTION'          => null,
                 'CURLOPT_WILDCARDMATCH'             => null,
@@ -1060,13 +1106,15 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071502) { /* 7.21.2 */
+        if ($this->version_number >= 0x071502) {
+            /* 7.21.2 */
             $items = array(
                 'CURLPROTO_GOPHER'                  => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071503) { /* 7.21.3 */
+        if ($this->version_number >= 0x071503) {
+            /* 7.21.3 */
             $items = array(
                 'CURLAUTH_ONLY'                     => null,
 
@@ -1074,7 +1122,8 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071504) { /* 7.21.4 */
+        if ($this->version_number >= 0x071504) {
+            /* 7.21.4 */
             $items = array(
                 'CURLOPT_TLSAUTH_PASSWORD'          => null,
                 'CURLOPT_TLSAUTH_TYPE'              => null,
@@ -1084,14 +1133,16 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071506) { /* 7.21.6 */
+        if ($this->version_number >= 0x071506) {
+            /* 7.21.6 */
             $items = array(
                 'CURLOPT_ACCEPT_ENCODING'           => null,
                 'CURLOPT_TRANSFER_ENCODING'         => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071600) { /* 7.22.0 */
+        if ($this->version_number >= 0x071600) {
+            /* 7.22.0 */
             $items = array(
                 'CURLGSSAPI_DELEGATION_FLAG'        => null,
                 'CURLGSSAPI_DELEGATION_POLICY_FLAG' => null,
@@ -1100,14 +1151,16 @@ class CurlExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071800) { /* 7.24.0 */
+        if ($this->version_number >= 0x071800) {
+            /* 7.24.0 */
             $items = array(
                 'CURLOPT_ACCEPTTIMEOUT_MS'          => null,
                 'CURLOPT_DNS_SERVERS'               => null,
             );
             $release->constants += $items;
         }
-        if ($this->version_number >= 0x071900) { /* 7.25.0 */
+        if ($this->version_number >= 0x071900) {
+            /* 7.25.0 */
             $items = array(
                 'CURLOPT_MAIL_AUTH'                 => null,
                 'CURLOPT_SSL_OPTIONS'               => null,
@@ -1125,20 +1178,23 @@ class CurlExtension extends AbstractReference
             'curl_share_init'                       => null,
             'curl_share_setopt'                     => null,
         );
-        if ($this->version_number >= 0x070c00) { /* 7.12.0 */
+        if ($this->version_number >= 0x070c00) {
+            /* 7.12.0 */
             $items = array(
                 'curl_multi_strerror'               => null,
                 'curl_strerror'                     => null,
             );
             $release->functions += $items;
         }
-        if ($this->version_number >= 0x070c01) { /* 7.12.1 */
+        if ($this->version_number >= 0x070c01) {
+            /* 7.12.1 */
             $items = array(
                 'curl_reset'                        => null,
             );
             $release->functions += $items;
         }
-        if ($this->version_number >= 0x070f04) { /* 7.15.4 */
+        if ($this->version_number >= 0x070f04) {
+            /* 7.15.4 */
             $items = array(
                 'curl_escape'                       => null,
                 'curl_unescape'                     => null,
@@ -1146,7 +1202,8 @@ class CurlExtension extends AbstractReference
             );
             $release->functions += $items;
         }
-        if ($this->version_number >= 0x071200) { /* 7.18.0 */
+        if ($this->version_number >= 0x071200) {
+            /* 7.18.0 */
             $items = array(
                 'curl_pause'                        => null,
             );
@@ -1182,7 +1239,8 @@ class CurlExtension extends AbstractReference
         );
         $release->constants = array();
 
-        if ($this->version_number >= 0x072200) { /* 7.34.0 */
+        if ($this->version_number >= 0x072200) {
+            /* 7.34.0 */
             $items = array(
                 'CURL_SSLVERSION_TLSv1_0'           => array(
                     'php.excludes' => $excludePhp506,

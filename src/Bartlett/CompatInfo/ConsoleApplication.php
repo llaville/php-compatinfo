@@ -175,7 +175,6 @@ class ConsoleApplication extends Application
         $exitCode = parent::doRun($input, $output);
 
         if (true === $input->hasParameterOption('--profile')) {
-
             if (true === class_exists('\\PHP_Timer')) {
                 $text = sprintf(
                     '%s<comment>%s</comment>',
@@ -221,5 +220,4 @@ class ConsoleApplication extends Application
         }
         return $rows;
     }
-
 }

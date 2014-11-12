@@ -164,7 +164,7 @@ class AnalyserRunCommand extends ProviderCommand
             if ($output->isVerbose()) {
                 $compatinfo->getEventDispatcher()->addListener(
                     'reflect.progress',
-                    function (GenericEvent $e) use($progress) {
+                    function (GenericEvent $e) use ($progress) {
                         if ($progress instanceof ProgressHelper) {
                             $progress->advance();
                         }

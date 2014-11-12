@@ -30,7 +30,6 @@ abstract class AbstractReferenceFinder
 
         foreach ($iterator as $file) {
             if (fnmatch('*Extension.php', $file->getPathName())) {
-
                 $className = basename($file, '.php');
                 $extName   = strtolower(str_replace('Extension', '', $className));
 

@@ -72,5 +72,4 @@ class ImagickExtension extends AbstractReference
         );
         return $release;
     }
-
 }

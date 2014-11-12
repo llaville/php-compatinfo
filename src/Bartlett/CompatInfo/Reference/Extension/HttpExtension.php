@@ -440,7 +440,8 @@ class HttpExtension extends AbstractReference
             'http\\Client\\Curl\\SSL_VERSION_SSLv3'     => null,
             'http\\Client\\Curl\\SSL_VERSION_TLSv1'     => null,
         );
-        if ($this->curl_version >= 0x071301) { /* libcurl 7.19.1 */
+        if ($this->curl_version >= 0x071301) {
+            /* libcurl 7.19.1 */
             $items = array(
                 'http\\Client\\Curl\\POSTREDIR_301'     => null,
                 'http\\Client\\Curl\\POSTREDIR_302'     => null,
@@ -448,13 +449,15 @@ class HttpExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->curl_version >= 0x071303) { /* libcurl 7.19.3 */
+        if ($this->curl_version >= 0x071303) {
+            /* libcurl 7.19.3 */
             $items = array(
                 'http\\Client\\Curl\\AUTH_DIGEST_IE'    => null,
             );
             $release->constants += $items;
         }
-        if ($this->curl_version >= 0x071304) { /* libcurl 7.19.4 */
+        if ($this->curl_version >= 0x071304) {
+            /* libcurl 7.19.4 */
             $items = array(
                 'http\\Client\\Curl\\PROXY_HTTP_1_0'    => null,
             );
@@ -476,13 +479,15 @@ class HttpExtension extends AbstractReference
         );
         $release->constants = array();
 
-        if ($this->curl_version >= 0x072600) { /* libcurl 7.38 */
+        if ($this->curl_version >= 0x072600) {
+            /* libcurl 7.38 */
             $items = array(
                 'http\\Client\\Curl\\AUTH_SPNEGO'           => null,
             );
             $release->constants += $items;
         }
-        if ($this->curl_version >= 0x072200) { /* libcurl 7.34 */
+        if ($this->curl_version >= 0x072200) {
+            /* libcurl 7.34 */
             $items = array(
                 'http\\Client\\Curl\\SSL_VERSION_TLSv1_0'   => null,
                 'http\\Client\\Curl\\SSL_VERSION_TLSv1_1'   => null,
@@ -490,7 +495,8 @@ class HttpExtension extends AbstractReference
             );
             $release->constants += $items;
         }
-        if ($this->curl_version >= 0x071a00) { /* libcurl 7.26 */
+        if ($this->curl_version >= 0x071a00) {
+            /* libcurl 7.26 */
             $items = array(
                 'http\\Client\\Curl\\POSTREDIR_303'         => null,
             );
