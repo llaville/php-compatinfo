@@ -422,18 +422,18 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 $ref      = $versions['ref'];
                 if ($dependency->getName() == 'extension_loaded') {
                     // force type to avoid wrong categorization
-                    $type = 'extensions';
+                    $type = Metrics::EXTENSIONS;
                     unset($versions['ref']);
                 } elseif ($dependency->getName() == 'function_exists') {
-                    $type = 'functions';
+                    $type = Metrics::FUNCTIONS;
                 } elseif ($dependency->getName() == 'interface_exists') {
-                    $type = 'interfaces';
+                    $type = Metrics::INTERFACES;
                 } elseif ($dependency->getName() == 'class_exists') {
-                    $type = 'classes';
+                    $type = Metrics::CLASSES;
                 } elseif ($dependency->getName() == 'trait_exists') {
-                    $type = 'traits';
+                    $type = Metrics::TRAITS;
                 } elseif ($dependency->getName() == 'defined') {
-                    $type = 'constants';
+                    $type = Metrics::CONSTANTS;
                 }
                 if (!isset($this->count[static::METRICS_PREFIX . '.' . $type][$name])) {
                     $this->count[static::METRICS_PREFIX . '.' . $type][$name] = $versions;
