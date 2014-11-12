@@ -45,7 +45,7 @@ class LzfExtension extends AbstractReference
         );
         $release->functions = array(
             'lzf_compress'              => null,
-            'lzf_decompress'            => null,        
+            'lzf_decompress'            => null,
         );
         return $release;
     }

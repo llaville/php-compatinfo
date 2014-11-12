@@ -5,7 +5,7 @@ namespace Bartlett\CompatInfo\Reference;
 interface ReferenceInterface
 {
     public function getCurrentVersion();
-    
+
     public function getLatestVersion();
 
     public function getReleases();

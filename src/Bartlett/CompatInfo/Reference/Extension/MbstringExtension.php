@@ -57,7 +57,7 @@ class MbstringExtension extends AbstractReference
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
-        
+
         // 5.2.0
         if (version_compare($version, '5.2.0', 'ge')) {
             $release = $this->getR50200();
@@ -260,7 +260,7 @@ class MbstringExtension extends AbstractReference
         );
         return $release;
     }
-        
+
     protected function getR50200()
     {
         $release = new \stdClass;

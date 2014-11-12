@@ -7,7 +7,7 @@ interface ReferenceFinderInterface
     public function find($element, $priorities);
 
     public function findAny($element);
-    
+
     public function findInterface($element);
 
     public function findClass($element);
@@ -15,6 +15,6 @@ interface ReferenceFinderInterface
     public function findFunction($element);
 
     public function findConstant($element);
-    
+
     public function findIniEntry($element);
 }
