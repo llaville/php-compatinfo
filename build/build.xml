@@ -43,6 +43,8 @@
         <include name="vendor/phpunit/php-timer/LICENSE" />
         <include name="vendor/seld/jsonlint/LICENSE" />
         <include name="vendor/doctrine/cache/LICENSE" />
+        <include name="vendor/psr/log/LICENSE" />
+        <include name="vendor/monolog/monolog/LICENSE" />
         <include name="vendor/bartlett/php-reflect/LICENSE" />
         <include name="vendor/autoload.php" />
 
@@ -53,6 +55,8 @@
         <include name="vendor/phpunit/php-timer/**/*.php" />
         <include name="vendor/seld/jsonlint/**/*.php" />
         <include name="vendor/doctrine/cache/lib/**/*.php" />
+        <include name="vendor/psr/log/Psr/**/*.php" />
+        <include name="vendor/monolog/monolog/src/**/*.php" />
         <include name="vendor/bartlett/php-reflect/src/**/*.php" />
 
         <include name="src/**/*.php" />
