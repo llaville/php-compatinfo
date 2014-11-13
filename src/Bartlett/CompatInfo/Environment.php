@@ -17,6 +17,7 @@ use Bartlett\Reflect\AbstractEnvironment;
  */
 class Environment extends AbstractEnvironment
 {
-    const JSON_FILE = 'phpcompatinfo.json';
-    const ENV       = 'COMPATINFO';
+    const JSON_FILE   = 'phpcompatinfo.json';
+    const JSON_SCHEMA = 'phpreflect-schema.json';
+    const ENV         = 'COMPATINFO';
 }
