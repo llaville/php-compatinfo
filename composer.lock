@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "52eafeb2dc7a4be27de5ca73fdee3d69",
+    "hash": "84fae84e77461cde5e334e4c1ed995d1",
     "packages": [
         {
             "name": "bartlett/php-reflect",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-reflect.git",
-                "reference": "0e2a467f0b6f0c19ee61263bce97fb387408c6e3"
+                "reference": "191ca7c7e44a36a0cd1dfaf42c4af77d0a9974cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/0e2a467f0b6f0c19ee61263bce97fb387408c6e3",
-                "reference": "0e2a467f0b6f0c19ee61263bce97fb387408c6e3",
+                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/191ca7c7e44a36a0cd1dfaf42c4af77d0a9974cc",
+                "reference": "191ca7c7e44a36a0cd1dfaf42c4af77d0a9974cc",
                 "shasum": ""
             },
             "require": {
@@ -27,6 +27,7 @@
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "ext-tokenizer": "*",
+                "justinrainbow/json-schema": "~1.3",
                 "nikic/php-parser": "~1.0",
                 "php": ">=5.3.0",
                 "phpunit/php-timer": "~1.0",
@@ -36,7 +37,14 @@
                 "symfony/event-dispatcher": "~2.5",
                 "symfony/finder": "~2.5"
             },
+            "require-dev": {
+                "bartlett/phpunit-loggertestlistener": "~1.1",
+                "doctrine/cache": "~1.3",
+                "monolog/monolog": "~1.10",
+                "psr/log": "~1.0"
+            },
             "suggest": {
+                "bartlett/phpunit-loggertestlistener": "Allow logging unit tests to your favorite PSR-3 logger interface",
                 "doctrine/cache": "Allow caching results",
                 "monolog/monolog": "Allow logging events with the LogPlugin",
                 "psr/log": "Allow logging events with the LogPlugin"
@@ -47,8 +55,7 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "Bartlett\\": "src/",
-                    "Bartlett\\Tests\\Reflect\\": "tests/"
+                    "Bartlett\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -65,20 +72,86 @@
             ],
             "description": "Adds the ability to reverse-engineer classes, interfaces, functions, constants, namespaces, traits and more.",
             "homepage": "http://php5.laurent-laville.org/reflect/",
-            "time": "2014-10-16 12:13:07"
+            "time": "2014-11-13 14:06:06"
         },
         {
-            "name": "nikic/php-parser",
-            "version": "v1.0.1",
+            "name": "justinrainbow/json-schema",
+            "version": "1.3.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "b9a60372f26356feb85b4b9ca50a395a5f0d7f34"
+                "url": "https://github.com/justinrainbow/json-schema.git",
+                "reference": "87b54b460febed69726c781ab67462084e97a105"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/b9a60372f26356feb85b4b9ca50a395a5f0d7f34",
-                "reference": "b9a60372f26356feb85b4b9ca50a395a5f0d7f34",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/87b54b460febed69726c781ab67462084e97a105",
+                "reference": "87b54b460febed69726c781ab67462084e97a105",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "json-schema/json-schema-test-suite": "1.1.0",
+                "phpdocumentor/phpdocumentor": "~2",
+                "phpunit/phpunit": "~3.7"
+            },
+            "bin": [
+                "bin/validate-json"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "JsonSchema": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Bruno Prieto Reis",
+                    "email": "bruno.p.reis@gmail.com"
+                },
+                {
+                    "name": "Justin Rainbow",
+                    "email": "justin.rainbow@gmail.com"
+                },
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                },
+                {
+                    "name": "Robert Schönthal",
+                    "email": "seroscho@googlemail.com"
+                }
+            ],
+            "description": "A library to validate a json schema.",
+            "homepage": "https://github.com/justinrainbow/json-schema",
+            "keywords": [
+                "json",
+                "schema"
+            ],
+            "time": "2014-08-25 02:48:14"
+        },
+        {
+            "name": "nikic/php-parser",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser.git",
+                "reference": "a8ffc6fcfcbae268656c8acf1298e378ac1ee5f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/a8ffc6fcfcbae268656c8acf1298e378ac1ee5f1",
+                "reference": "a8ffc6fcfcbae268656c8acf1298e378ac1ee5f1",
                 "shasum": ""
             },
             "require": {
@@ -110,7 +183,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2014-10-14 19:40:07"
+            "time": "2014-11-04 22:12:46"
         },
         {
             "name": "phpunit/php-timer",

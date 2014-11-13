@@ -1,6 +1,7 @@
-bartlett/php-compatinfo: master@903b92f310feae6aaff9bd79e3072ddfa699bb73
-bartlett/php-reflect: 2.5.0
-nikic/php-parser: v1.0.1
+bartlett/php-compatinfo: 3.6.0
+bartlett/php-reflect: 2.6.0
+justinrainbow/json-schema: 1.3.7
+nikic/php-parser: v1.0.2
 phpunit/php-timer: 1.0.5
 sebastian/version: 1.0.3
 seld/jsonlint: 1.3.0

@@ -15,13 +15,13 @@ Have a look on master branch for previous stable API 2.0
 
 You can either :
 
-* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-3.5.0.phar[3.5.0]
-* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 3.5.0
+* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-3.6.0.phar[3.6.0]
+* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 3.6.0
 
 == Documentation
 
-The documentation for PHP CompatInfo 3.5 is available
-in http://php5.laurent-laville.org/compatinfo/manual/3.5/en/[English]
+The documentation for PHP CompatInfo 3.6 is available
+in http://php5.laurent-laville.org/compatinfo/manual/3.6/en/[English]
 to read it online or download to read it later (multiple formats).
 
 AsciiDoc source code are available on `docs` folder of the repository.
@@ -83,4 +83,4 @@ $ php composer.phar require bartlett/phpunit-loggertestlistener=~1.1
 - configure your PSR-3 logger in the `tests\bootstrap.dev.php` file
 
 NOTE: Default will log all tests in local file `/var/logs/phpcompatinfo.log`
-and send a Growl notification of Test Suites summary when ended.
+and send a Growl notification of Test Suites summary when ended (if growl server running).

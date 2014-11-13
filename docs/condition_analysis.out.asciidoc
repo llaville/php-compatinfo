@@ -2,7 +2,7 @@
 Data Source Analysed
 
 Directories                                          7
-Files                                              125
+Files                                              126
 
 Conditional Code Analysis
 
@@ -10,7 +10,7 @@ Conditional Code Analysis
    class_exists(\PHP_Timer)            user                 4.0.0
    defined(INTL_ICU_VERSION)           intl     2.0.0b1     5.3.7
    defined(OPENSSL_VERSION_NUMBER)     openssl  5.2.0       5.2.0
-   defined(PHP_WINDOWS_VERSION_BUILD)  Core     5.3.0       5.3.0
+   defined(OPENSSL_VERSION_TEXT)       openssl  5.2.0       5.2.0
    function_exists(curl_version)       curl     4.0.2       4.0.2
    function_exists(event_priority_set) libevent 0.0.5       5.3.0
    Total [6]                                                5.3.7
