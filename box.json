@@ -14,7 +14,9 @@
         "vendor/phpunit/php-timer/LICENSE",
         "vendor/bartlett/php-reflect/LICENSE",
         "vendor/seld/jsonlint/LICENSE",
+        "vendor/justinrainbow/json-schema/LICENSE",
         "vendor/doctrine/cache/LICENSE",
+        "vendor/bartlett/php-reflect/bin/phpreflect-schema.json",
         "vendor/autoload.php"
     ],
     "finder": [
@@ -42,6 +44,10 @@
         {
             "name": "*.php",
             "in": "vendor/seld/jsonlint"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/justinrainbow/json-schema/src"
         },
         {
             "name": "*.php",
