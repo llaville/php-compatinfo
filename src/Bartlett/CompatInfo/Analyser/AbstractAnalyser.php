@@ -322,7 +322,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 if ($constant->inNamespace()) {
                     $versions['php.min'] = '5.3.0';
                 }
-                if (!$constant->isScalar()) {
+                if ($constant->isScalar()) {
                     $versions['php.min'] = '5.6.0';
                 }
             }
