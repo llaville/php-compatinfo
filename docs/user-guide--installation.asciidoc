@@ -65,7 +65,7 @@ This is the equivalent of doing a git clone checkout followed by a composer inst
 
 [source,bash]
 ----
-$ php composer.phar create-project bartlett/php-compatinfo /path/to 3.6.0
+$ php composer.phar create-project bartlett/php-compatinfo /path/to 3.6.1
 ----
 Where +/path/to+ is your install directory.
 ====
@@ -78,17 +78,17 @@ bundled in a single file.
 
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.6.0.phar
-$ chmod +x phpcompatinfo-3.6.0.phar
-$ mv phpcompatinfo-3.6.0.phar /usr/local/bin/phpcompatinfo
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.6.1.phar
+$ chmod +x phpcompatinfo-3.6.1.phar
+$ mv phpcompatinfo-3.6.1.phar /usr/local/bin/phpcompatinfo
 $ phpcompatinfo
 ----
 
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.6.0.phar
-$ php phpcompatinfo-3.6.0.phar
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.6.1.phar
+$ php phpcompatinfo-3.6.1.phar
 ----
 
 ifdef::basebackend-bootstrap[]
