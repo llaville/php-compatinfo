@@ -85,14 +85,14 @@ class HashExtensionTest extends GenericTest
         // Since php 5.3.0 mhash is emulated by hash ext.
         // So this constants/functions are reported in "hash"
         if (version_compare(PHP_VERSION, '5.3.0', 'ge')) {
-            if (!extension_loaded('mash')) {
+            if (!extension_loaded('mhash')) {
                 // Only available if hash emulates mhash
                 // so will not be found, while in reference
                 self::$optionalfunctions = $mhashfunctions;
                 self::$optionalconstants = $mhashconstants;
             }
         } else {
-            if (extension_loaded('mash')) {
+            if (extension_loaded('mhash')) {
                 // Provided by mhash, not by hash
                 // so will be detected, while not in reference
                 self::$ignoredfunctions = $mhashfunctions;
