@@ -51,6 +51,10 @@
         {
             "name": "Structure",
             "class": "Bartlett\\Reflect\\Analyser\\StructureAnalyser"
+        },
+        {
+            "name": "Composer",
+            "class": "Bartlett\\Reflect\\Analyser\\ComposerAnalyser"
         }
     ]
 }
