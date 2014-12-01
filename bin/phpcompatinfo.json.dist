@@ -54,7 +54,7 @@
         },
         {
             "name": "Composer",
-            "class": "Bartlett\\Reflect\\Analyser\\ComposerAnalyser"
+            "class": "Bartlett\\CompatInfo\\Analyser\\ComposerAnalyser"
         }
     ]
 }

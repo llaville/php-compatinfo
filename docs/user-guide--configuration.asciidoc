@@ -79,7 +79,7 @@ The minimalist JSON file +phpcompatinfo.json+ is :
         },
         {
             "name": "Composer",
-            "class": "Bartlett\\Reflect\\Analyser\\ComposerAnalyser"
+            "class": "Bartlett\\CompatInfo\\Analyser\\ComposerAnalyser"
         }
     ]
 }
