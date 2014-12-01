@@ -269,6 +269,7 @@ $ phpcompatinfo analyser:list
  Structure     Bartlett\Reflect\Analyser\StructureAnalyser
  Summary       Bartlett\CompatInfo\Analyser\SummaryAnalyser
  Trait         Bartlett\CompatInfo\Analyser\TraitAnalyser
+ Composer      Bartlett\CompatInfo\Analyser\ComposerAnalyser
 ----
 
 analyser:run::
