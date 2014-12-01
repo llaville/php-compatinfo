@@ -21,11 +21,11 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * @category PHP
  * @package  PHP_CompatInfo
- * @author   Laurent Laville <pear@laurent-laville.org>
+ * @author   Jens Hassler <j.hassler@iwf.ch>
  * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version  Release: @package_version@
  * @link     http://php5.laurent-laville.org/compatinfo/
- * @since    Class available since Release 3.0.0RC1
+ * @since    2014-12-01
  */
 class ComposerAnalyser extends ExtensionAnalyser
 {
