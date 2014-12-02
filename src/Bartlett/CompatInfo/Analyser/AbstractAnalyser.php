@@ -368,6 +368,12 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             }
         }
 
+        if ($dependency->isPhpFeature()) {
+            if ($dependency->getName() == 'ArrayShortSyntax') {
+                $this->updateGlobalVersion('5.4.0', '');
+            }
+        }
+
         $ref = $this->findReference($element);
         if (!$ref) {
             // stop here if user element
