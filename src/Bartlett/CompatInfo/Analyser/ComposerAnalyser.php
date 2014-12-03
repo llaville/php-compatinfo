@@ -29,6 +29,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class ComposerAnalyser extends ExtensionAnalyser
 {
+    const JSON_PRETTY_PRINT = 128;
+
     /**
      * Renders analyser report to output.
      *
@@ -40,20 +42,29 @@ class ComposerAnalyser extends ExtensionAnalyser
     {
         $extensions = array();
 
-        if (!is_array($this->count['ea.extensions']) || count($this->count['ea.extensions']) == 0) {
+        $eaExtensionsStr = Metrics::EXTENSION_ANALYSER . '.' . Metrics::EXTENSIONS;
+        $eaVersionsStr   = Metrics::EXTENSION_ANALYSER . '.' . Metrics::VERSIONS;
+
+        if (!is_array($this->count[$eaExtensionsStr]) || count($this->count[$eaExtensionsStr]) == 0) {
             $output->writeln(json_encode($extensions));
         }
 
         // include PHP version
-        $extensions['php'] = '>= ' . $this->count['ea.versions']['php.min'];
+        $extensions['php'] = '>= ' . $this->count[$eaVersionsStr]['php.min'];
 
         // include extensions
-        foreach ($this->count['ea.extensions'] as $key => $val) {
-            $extensions['ext-' . $key] = '*';
+        foreach ($this->count[$eaExtensionsStr] as $key => $val) {
+            $extensions['ext-' . strtolower($key)] = '*';
         }
 
         // wrap
         $extensions = array('require' => $extensions);
-        $output->writeln(json_encode($extensions, JSON_PRETTY_PRINT));
+        $output->writeln(json_encode($extensions, self::JSON_PRETTY_PRINT));
     }
+
+    public function visitPackageModel($package)
+    {
+        AbstractAnalyser::visitPackageModel($package);
+    }
+
 }

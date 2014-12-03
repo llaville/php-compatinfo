@@ -26,6 +26,8 @@ class ComposerAnalyserTest extends \PHPUnit_Framework_TestCase
     /** @var  CompatInfo\Analyser\AbstractAnalyser[] $plugins*/
     protected static $plugins;
 
+    const JSON_PRETTY_PRINT = 128;
+
     /**
      * Sets up the shared fixture.
      *
@@ -66,14 +68,15 @@ class ComposerAnalyserTest extends \PHPUnit_Framework_TestCase
 
         $expected = array(
             'require' => array(
-                'php' => '>= 5.0.0',
+                'php' => '>= 5.1.0',
                 'ext-ldap' => '*',
                 'ext-gd' => '*',
                 'ext-sqlite' => '*',
+                'ext-spl' => '*'
             )
         );
 
-        $this->assertEquals(json_encode($expected, JSON_PRETTY_PRINT) . "\n", $jsonOutput);
+        $this->assertEquals(json_encode($expected, self::JSON_PRETTY_PRINT) . "\n", $jsonOutput);
     }
 
 
