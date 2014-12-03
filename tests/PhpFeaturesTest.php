@@ -44,6 +44,7 @@ class PhpFeaturesTest extends \PHPUnit_Framework_TestCase
     const GH141 = 'GH#141';
     const GH142 = 'GH#142';
     const GH143 = 'GH#143';
+    const GH148 = 'GH#148';
 
     protected static $compatinfo;
 
@@ -81,11 +82,18 @@ class PhpFeaturesTest extends \PHPUnit_Framework_TestCase
             ->in($fixtures)
         ;
 
+        $finder4 = new Finder();
+        $finder4->files()
+            ->name('gh148.php')
+            ->in($fixtures)
+        ;
+
         $pm = new ProviderManager;
         $pm->set(self::GH140, new SymfonyFinderProvider($finder));
         $pm->set(self::GH141, new SymfonyFinderProvider($finder1));
         $pm->set(self::GH142, new SymfonyFinderProvider($finder2));
         $pm->set(self::GH143, new SymfonyFinderProvider($finder3));
+        $pm->set(self::GH148, new SymfonyFinderProvider($finder4));
 
         self::$compatinfo = new CompatInfo;
         self::$compatinfo->setProviderManager($pm);
@@ -190,6 +198,30 @@ class PhpFeaturesTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             $expected,
             $metrics[self::GH143][$key]['php.min']
+        );
+    }
+
+    /**
+     * Regression test for feature GH#148
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/148
+     *       Array short syntax and array dereferencing not detected
+     * @link http://php.net/manual/en/migration54.new-features.php
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH148()
+    {
+        self::$compatinfo->parse(array(self::GH148));
+
+        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.versions';
+
+        $expected = '5.4.0';
+        $metrics  = self::$compatinfo->getMetrics();
+
+        $this->assertEquals(
+            $expected,
+            $metrics[self::GH148][$key]['php.min']
         );
     }
 }

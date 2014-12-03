@@ -122,7 +122,9 @@ class AnalyserRunCommand extends ProviderCommand
                 continue;
             }
 
-            if ($output->isQuiet()) {
+            $max = $this->finder->count();
+
+            if ($output->isQuiet() || $max == 0) {
                 $progress = false;
             } else {
                 $progress = $this->getApplication()
@@ -134,7 +136,6 @@ class AnalyserRunCommand extends ProviderCommand
                     $progress->setRedrawFrequency($freq);
                 }
 
-                $max = $this->finder->count();
                 $progress->start($output, $max);
             }
 
@@ -189,14 +190,17 @@ class AnalyserRunCommand extends ProviderCommand
             $analysers = array_map('strtolower', $analysers);
 
             // print Data Source headers
-            if ($count['directories'] > 0) {
-                $text = sprintf(
-                    "\n" .
-                    "Directories                                 %10d\n" .
-                    "Files                                       %10d\n",
-                    $count['directories'],
-                    $count['files']
-                );
+            $text = sprintf(
+                "\n" .
+                "Directories                                 %10d\n" .
+                "Files                                       %10d\n",
+                $count['directories'],
+                $count['files']
+            );
+            if ($count['files'] == 0) {
+                // Data Source is empty
+                $output->writeln($text);
+                return;
             }
             if (in_array('structure', $analysers)
                 && $count['testClasses'] > 0
