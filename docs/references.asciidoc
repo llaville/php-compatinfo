@@ -569,7 +569,7 @@ endif::basebackend-docbook[]
 | {unchecked}
 | {checked}
 | stomp
-1.0.5 {stable}
+1.0.6 {stable}
 | [label label-info]#2.16.0#
 
 | {unchecked}

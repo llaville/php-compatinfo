@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class StompExtension extends AbstractReference
 {
     const REF_NAME    = 'stomp';
-    const REF_VERSION = '1.0.5';    // 2012-11-18 (stable)
+    const REF_VERSION = '1.0.6';    // 2014-12-07 (stable)
 
     public function __construct()
     {
@@ -26,6 +26,13 @@ class StompExtension extends AbstractReference
         // 0.3.0
         if (version_compare($version, '0.3.0', 'ge')) {
             $release = $this->getR00300();
+            $count = array_push($releases, $release);
+            $this->storage->attach($releases[--$count]);
+        }
+
+        // 1.0.6
+        if (version_compare($version, '1.0.6', 'ge')) {
+            $release = $this->getR10006();
             $count = array_push($releases, $release);
             $this->storage->attach($releases[--$count]);
         }
@@ -90,6 +97,27 @@ class StompExtension extends AbstractReference
         );
         $release->functions = array(
             'stomp_connect_error'                   => null,
+        );
+        return $release;
+    }
+
+    protected function getR10006()
+    {
+        $release = new \stdClass;
+        $release->info = array(
+            'ext.min' => '1.0.6',
+            'ext.max' => '',
+            'state'   => 'stable',
+            'date'    => '2014-12-07',
+            'php.min' => '5.2.2',
+            'php.max' => '',
+        );
+        $release->iniEntries = array(
+            'stomp.default_username'    => null,
+            'stomp.default_password'    => null,
+        );
+        $release->functions = array(
+            'stomp_nack'                => null,
         );
         return $release;
     }
