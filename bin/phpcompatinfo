@@ -18,6 +18,7 @@ if (\Phar::running()) {
             realpath('./phpcompatinfo.json'),
             getenv($home).'/.config/phpcompatinfo.json',
             '/etc/phpcompatinfo.json',
+            __DIR__ . '/phpcompatinfo.json.dist'
         );
         foreach ($files as $file) {
             if (file_exists($file)) {

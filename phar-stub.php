@@ -10,6 +10,7 @@ if (class_exists('Phar')) {
             realpath('./phpcompatinfo.json'),
             getenv($home).'/.config/phpcompatinfo.json',
             '/etc/phpcompatinfo.json',
+            'phar://' . __FILE__ . '/bin/phpcompatinfo.json.dist'
         );
         foreach ($files as $file) {
             if (file_exists($file)) {

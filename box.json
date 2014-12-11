@@ -5,6 +5,7 @@
     "extract": false,
     "compression": "GZ",
     "files": [
+        "bin/phpcompatinfo.json.dist",
         "manifest.txt",
         "LICENSE",
         "vendor/nikic/php-parser/LICENSE",
