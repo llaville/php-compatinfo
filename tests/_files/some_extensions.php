@@ -1,5 +1,13 @@
 <?php
 
+function returnArray() {
+    // array short syntax requires PHP 5.4+
+    return ['one', 'two', 'three'];
+}
+
+// array dereferencing requires PHP 5.4+
+$arrayValue1 = returnArray()[0];
+
 // some extensions
 ldap_bind($rs);
 gd_info();

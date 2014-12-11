@@ -1,13 +1,21 @@
 <?php
 /**
- * ComposerAnalyserTest.php
- * 
- * @author Jens Hassler
- * @since  11/2014
+ * Unit tests for PHP_CompatInfo Composer analyser
+ *
+ * PHP version 5
+ *
+ * @category   PHP
+ * @package    PHP_CompatInfo
+ * @subpackage Tests
+ * @author     Jens Hassler <j.hassler@iwf.ch>
+ * @author     Laurent Laville <pear@laurent-laville.org>
+ * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version    GIT: $Id$
+ * @link       http://php5.laurent-laville.org/compatinfo/
+ * @since      Class available since Release 3.7.0
  */
 
 namespace Bartlett\Tests\CompatInfo;
-
 
 use Bartlett\CompatInfo;
 use Bartlett\Reflect\ProviderManager;
@@ -18,6 +26,19 @@ use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Finder\Finder;
 
+/**
+ * Tests for PHP_CompatInfo, retrieving extension elements,
+ * and versioning information.
+ *
+ * @category   PHP
+ * @package    PHP_CompatInfo
+ * @subpackage Tests
+ * @author     Laurent Laville <pear@laurent-laville.org>
+ * @author     Jens Hassler <j.hassler@iwf.ch>
+ * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version    Release: @package_version@
+ * @link       http://php5.laurent-laville.org/compatinfo/
+ */
 class ComposerAnalyserTest extends \PHPUnit_Framework_TestCase
 {
     /** @var  CompatInfo $compatinfo */
@@ -39,7 +60,7 @@ class ComposerAnalyserTest extends \PHPUnit_Framework_TestCase
         $finder->files()
             ->name('some_extensions.php')
             ->in(
-                dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR .
+                dirname(__DIR__) . DIRECTORY_SEPARATOR .
                 '_files' . DIRECTORY_SEPARATOR
             )
         ;
@@ -63,12 +84,12 @@ class ComposerAnalyserTest extends \PHPUnit_Framework_TestCase
         self::$compatinfo->parse(array('default'));
 
         $bufferedOutput = new BufferedOutput();
-        self::$plugins[0]->render($bufferedOutput, '>= 4.0');
+        self::$plugins[0]->render($bufferedOutput);
         $jsonOutput = $bufferedOutput->fetch();
 
         $expected = array(
             'require' => array(
-                'php' => '>= 5.1.0',
+                'php' => '>= 5.4.0',
                 'ext-ldap' => '*',
                 'ext-gd' => '*',
                 'ext-sqlite' => '*',
@@ -78,6 +99,4 @@ class ComposerAnalyserTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(json_encode($expected, self::JSON_PRETTY_PRINT) . "\n", $jsonOutput);
     }
-
-
-} 
+}
