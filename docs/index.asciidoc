@@ -3,7 +3,7 @@
 :description: Make it extremely easy to maintain your components compatibilities for reuse in your PHP applications.
 include::attributes.asciidoc[]
 include::revision.asciidoc[]
-:stable:      3.6.1
+:stable:      3.7.0
 :toc!:
 :toc2!:
 :navbar!:
@@ -37,7 +37,7 @@ endif::[]
 --
 [bg-primary]*Stable Release*
 
-Last branch 3 release was published on November 20, 2014.
+Last branch 3 release was published on December 11, 2014.
 
 ifdef::basebackend-bootstrap[]
 link:./manual/current/en/getting-started.html["Learn more",role="primary",options="block"]
