@@ -2,17 +2,17 @@
 Data Source Analysed
 
 Directories                                          7
-Files                                              125
+Files                                              127
 
 Global Analysis
 
                     Count Cond PHP min Elements highlight
- Extensions         12    4    5.3.0   Core
- Namespaces         8     0    5.3.0   Bartlett\CompatInfo\Reference\Extension
+ Extensions         11    4    5.3.0   Core
+ Namespaces         14    0    5.3.0   Bartlett\CompatInfo\Reference
  Interfaces         3     0    5.3.0   Bartlett\CompatInfo\Reference\ReferenceInterface
  Traits             0     0
- Classes            133   1    5.3.0   Bartlett\CompatInfo\Reference\Extension\RecodeExtension
- User Functions     5     0    5.3.0   Bartlett\CompatInfo\Reference\closure-288-325
- Internal Functions 52    2    5.2.0   json_decode
- Constants          12    3    5.3.0   __DIR__
+ Classes            140   1    5.3.0   Bartlett\CompatInfo\Reference\Extension\RarExtension
+ User Functions     5     0    5.3.0   Bartlett\CompatInfo\Reference\closure-335-372
+ Internal Functions 47    2    5.2.0   json_encode
+ Constants          13    3    5.3.0   __DIR__
  Total                         5.3.0
