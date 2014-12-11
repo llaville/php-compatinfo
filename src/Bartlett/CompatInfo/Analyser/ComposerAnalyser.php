@@ -1,6 +1,6 @@
 <?php
 /**
- * The CompatInfo Extension analyser accessible through the AnalyserPlugin.
+ * The CompatInfo Composer analyser accessible through the AnalyserPlugin.
  *
  * @category PHP
  * @package  PHP_CompatInfo
@@ -17,7 +17,7 @@ use Bartlett\CompatInfo\Metrics;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * This analyzer collects versions on all extensions of a project.
+ * This analyzer collects versions on all extensions of a project for Composer.
  *
  * @category PHP
  * @package  PHP_CompatInfo
@@ -66,5 +66,4 @@ class ComposerAnalyser extends ExtensionAnalyser
     {
         AbstractAnalyser::visitPackageModel($package);
     }
-
 }

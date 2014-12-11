@@ -372,7 +372,7 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             if (in_array(
                 $dependency->getName(),
                 array('ArrayShortSyntax', 'ArrayDereferencing')
-        )) {
+            )) {
                 $this->updateGlobalVersion('5.4.0', '');
             }
         }
