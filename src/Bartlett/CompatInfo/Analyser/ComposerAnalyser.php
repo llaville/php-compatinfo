@@ -54,7 +54,10 @@ class ComposerAnalyser extends ExtensionAnalyser
 
         // include extensions
         foreach ($this->count[$eaExtensionsStr] as $key => $val) {
-            $extensions['ext-' . strtolower($key)] = '*';
+            if (in_array($key, array('standard', 'Core'))) {
+                continue;
+            }
+            $extensions['ext-' . $key] = '*';
         }
 
         // wrap
