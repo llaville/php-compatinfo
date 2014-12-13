@@ -13,14 +13,12 @@ class MsgpackExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 0.5.2
         if (version_compare($version, '0.5.2', 'ge')) {
             $release = $this->getR00502();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

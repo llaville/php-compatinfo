@@ -13,42 +13,36 @@ class HashExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getLatestPhpVersion();
-        $releases = array();
+        $version = $this->getLatestPhpVersion();
 
         // 1.1
         if (version_compare($version, '1.1', 'ge')) {
             $release = $this->getR10100();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.3.0
         if (version_compare($version, '5.3.0', 'ge')) {
             $release = $this->getR50300();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.4.0
         if (version_compare($version, '5.4.0', 'ge')) {
             $release = $this->getR50400();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.5.0
         if (version_compare($version, '5.5.0', 'ge')) {
             $release = $this->getR50500();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.6.0beta1
         if (version_compare($version, '5.6.0beta1', 'ge')) {
             $release = $this->getR50600b1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

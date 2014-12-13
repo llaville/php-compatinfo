@@ -17,77 +17,66 @@ class IntlExtension extends AbstractReference
 
         $this->version_number = $this->getMetaVersion('version_number');
 
-        $version  = $this->getLatestVersion();
-        $releases = array();
+        $version = $this->getLatestVersion();
 
         // 1.0.0beta
         if (version_compare($version, '1.0.0beta', 'ge')) {
             $release = $this->getR10000beta();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.0.0RC1
         if (version_compare($version, '1.0.0RC1', 'ge')) {
             $release = $this->getR10000RC1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.0.1
         if (version_compare($version, '1.0.1', 'ge')) {
             $release = $this->getR10001();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.0.2
         if (version_compare($version, '1.0.2', 'ge')) {
             $release = $this->getR10002();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.0.3
         if (version_compare($version, '1.0.3', 'ge')) {
             $release = $this->getR10003();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.1.0
         if (version_compare($version, '1.1.0', 'ge')) {
             $release = $this->getR10100();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.0.0b1
         if (version_compare($version, '2.0.0b1', 'ge')) {
             $release = $this->getR20000b1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 3.0.0
         if (version_compare($version, '3.0.0', 'ge')) {
             $release = $this->getR30000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.5.0
         if (version_compare($version, '5.5.0', 'ge')) {
             $release = $this->getR50500();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.5.1
         if (version_compare($version, '5.5.1', 'ge')) {
             $release = $this->getR50501();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

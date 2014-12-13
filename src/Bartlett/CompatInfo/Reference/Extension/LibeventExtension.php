@@ -12,7 +12,7 @@ class LibeventExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
+        $version = $this->getCurrentVersion();
 
         if (PATH_SEPARATOR == ';') {
             // windows build issue
@@ -21,34 +21,29 @@ class LibeventExtension extends AbstractReference
                 $version = '0.0.5';
             }
         }
-        $releases = array();
 
         // 0.0.2
         if (version_compare($version, '0.0.2', 'ge')) {
             $release = $this->getR00002();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.0.4
         if (version_compare($version, '0.0.4', 'ge')) {
             $release = $this->getR00004();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.0.5
         if (version_compare($version, '0.0.5', 'ge')) {
             $release = $this->getR00005();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.1.0
         if (version_compare($version, '0.1.0', 'ge')) {
             $release = $this->getR00100();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

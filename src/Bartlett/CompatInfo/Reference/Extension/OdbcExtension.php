@@ -13,42 +13,36 @@ class OdbcExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getLatestPhpVersion();
-        $releases = array();
+        $version = $this->getLatestPhpVersion();
 
         // 4.0.0
         if (version_compare($version, '4.0.0', 'ge')) {
             $release = $this->getR40000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 4.0.2
         if (version_compare($version, '4.0.2', 'ge')) {
             $release = $this->getR40002();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 4.3.0
         if (version_compare($version, '4.3.0', 'ge')) {
             $release = $this->getR40300();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.3.0
         if (version_compare($version, '5.3.0', 'ge')) {
             $release = $this->getR50300();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.4.32RC1
         if (version_compare($version, '5.4.32RC1', 'ge')) {
             $release = $this->getR50432RC1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

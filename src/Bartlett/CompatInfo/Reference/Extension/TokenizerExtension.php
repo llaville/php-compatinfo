@@ -12,70 +12,60 @@ class TokenizerExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getLatestPhpVersion();
-        $releases = array();
+        $version = $this->getLatestPhpVersion();
 
         // 4.2.0
         if (version_compare($version, '4.2.0', 'ge')) {
             $release = $this->getR40200();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 4.3.0
         if (version_compare($version, '4.3.0', 'ge')) {
             $release = $this->getR40300();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.0.0
         if (version_compare($version, '5.0.0', 'ge')) {
             $release = $this->getR50000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.1.0
         if (version_compare($version, '5.1.0', 'ge')) {
             $release = $this->getR50100();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.3.0
         if (version_compare($version, '5.3.0', 'ge')) {
             $release = $this->getR50300();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.4.0
         if (version_compare($version, '5.4.0', 'ge')) {
             $release = $this->getR50400();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.5.0
         if (version_compare($version, '5.5.0', 'ge')) {
             $release = $this->getR50500();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.6.0alpha1
         if (version_compare($version, '5.6.0alpha1', 'ge')) {
             $release = $this->getR50600a1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.6.0RC1
         if (version_compare($version, '5.6.0RC1', 'ge')) {
             $release = $this->getR50600rc1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

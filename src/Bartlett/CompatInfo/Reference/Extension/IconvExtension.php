@@ -13,28 +13,24 @@ class IconvExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 4.0.5
         if (version_compare($version, '4.0.5', 'ge')) {
             $release = $this->getR40005();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 4.3.0
         if (version_compare($version, '4.3.0', 'ge')) {
             $release = $this->getR40300();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.0.0
         if (version_compare($version, '5.0.0', 'ge')) {
             $release = $this->getR50000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

@@ -13,8 +13,7 @@ class ZendopcacheExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // We forget version 7.0.0 (and previous non-free versions)
         // published as Zend Optimiser+
@@ -23,29 +22,25 @@ class ZendopcacheExtension extends AbstractReference
         // 7.0.1
         if (version_compare($version, '7.0.1', 'ge')) {
             $release = $this->getR70001();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 7.0.2
         if (version_compare($version, '7.0.2', 'ge')) {
             $release = $this->getR70002();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 7.0.3-dev
         if (version_compare($version, '7.0.3-dev', 'ge')) {
             $release = $this->getR70003dev();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 7.0.4-devFE
         if (version_compare($version, '7.0.4-devFE', 'ge')) {
             $release = $this->getR70004devFE();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

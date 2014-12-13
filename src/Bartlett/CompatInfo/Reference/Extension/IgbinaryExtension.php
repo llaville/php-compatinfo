@@ -13,14 +13,12 @@ class IgbinaryExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 1.1.1
         if (version_compare($version, '1.1.1', 'ge')) {
             $release = $this->getR10101();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

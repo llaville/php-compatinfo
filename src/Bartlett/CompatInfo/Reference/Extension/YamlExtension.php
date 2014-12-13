@@ -13,21 +13,18 @@ class YamlExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getLatestPhpVersion();
-        $releases = array();
+        $version = $this->getLatestPhpVersion();
 
         // 0.6.2
         if (version_compare($version, '0.6.2', 'ge')) {
             $release = $this->getR00602();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.0.0
         if (version_compare($version, '1.0.0', 'ge')) {
             $release = $this->getR10000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

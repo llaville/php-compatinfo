@@ -12,63 +12,54 @@ class ApcExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 2.0.0
         if (version_compare($version, '2.0.0', 'ge')) {
             $release = $this->getR20000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 3.0.0
         if (version_compare($version, '3.0.0', 'ge')) {
             $release = $this->getR30000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 3.0.11
         if (version_compare($version, '3.0.11', 'ge')) {
             $release = $this->getR30011();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 3.0.13
         if (version_compare($version, '3.0.13', 'ge')) {
             $release = $this->getR30013();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 3.0.19
         if (version_compare($version, '3.0.19', 'ge')) {
             $release = $this->getR30019();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 3.1.1
         if (version_compare($version, '3.1.1', 'ge')) {
             $release = $this->getR30101();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 3.1.4
         if (version_compare($version, '3.1.4', 'ge')) {
             $release = $this->getR30104();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 3.1.12
         if (version_compare($version, '3.1.12', 'ge')) {
             $release = $this->getR30112();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

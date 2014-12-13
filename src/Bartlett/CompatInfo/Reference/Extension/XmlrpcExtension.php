@@ -13,21 +13,18 @@ class XmlrpcExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getLatestPhpVersion();
-        $releases = array();
+        $version = $this->getLatestPhpVersion();
 
         // 4.1.0
         if (version_compare($version, '4.1.0', 'ge')) {
             $release = $this->getR40100();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 4.3.0
         if (version_compare($version, '4.3.0', 'ge')) {
             $release = $this->getR40300();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

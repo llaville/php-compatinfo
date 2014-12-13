@@ -12,28 +12,24 @@ class MemcachedExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 0.1.0
         if (version_compare($version, '0.1.0', 'ge')) {
             $release = $this->getR00100();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.0.0
         if (version_compare($version, '2.0.0', 'ge')) {
             $release = $this->getR20000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.2.0b1
         if (version_compare($version, '2.2.0b1', 'ge')) {
             $release = $this->getR20200b1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

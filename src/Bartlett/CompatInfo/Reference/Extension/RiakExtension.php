@@ -13,63 +13,54 @@ class RiakExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 0.4.0
         if (version_compare($version, '0.4.0', 'ge')) {
             $release = $this->getR00400();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.4.2
         if (version_compare($version, '0.4.2', 'ge')) {
             $release = $this->getR00402();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.5.0
         if (version_compare($version, '0.5.0', 'ge')) {
             $release = $this->getR00500();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.6.0
         if (version_compare($version, '0.6.0', 'ge')) {
             $release = $this->getR00600();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.7.0
         if (version_compare($version, '0.7.0', 'ge')) {
             $release = $this->getR00700();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.8.0
         if (version_compare($version, '0.8.0', 'ge')) {
             $release = $this->getR00800();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.9.0
         if (version_compare($version, '0.9.0', 'ge')) {
             $release = $this->getR00900();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.1.0
         if (version_compare($version, '1.1.0', 'ge')) {
             $release = $this->getR10100();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

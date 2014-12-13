@@ -12,35 +12,30 @@ class ApcuExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 4.0.0
         if (version_compare($version, '4.0.0', 'ge')) {
             $release = $this->getR40000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 4.0.1
         if (version_compare($version, '4.0.1', 'ge')) {
             $release = $this->getR40001();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 4.0.2
         if (version_compare($version, '4.0.2', 'ge')) {
             $release = $this->getR40002();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 4.0.3
         if (version_compare($version, '4.0.3', 'ge')) {
             $release = $this->getR40003();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

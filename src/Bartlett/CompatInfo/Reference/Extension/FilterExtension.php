@@ -13,42 +13,36 @@ class FilterExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 0.9.0
         if (version_compare($version, '0.9.0', 'ge')) {
             $release = $this->getR00900();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.9.2
         if (version_compare($version, '0.9.2', 'ge')) {
             $release = $this->getR00902();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.9.4
         if (version_compare($version, '0.9.4', 'ge')) {
             $release = $this->getR00904();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.10.0
         if (version_compare($version, '0.10.0', 'ge')) {
             $release = $this->getR01000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.11.0
         if (version_compare($version, '0.11.0', 'ge')) {
             $release = $this->getR01100();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

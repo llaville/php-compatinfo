@@ -13,28 +13,24 @@ class TidyExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 0.5.2
         if (version_compare($version, '0.5.2', 'ge')) {
             $release = $this->getR00502();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.7.0
         if (version_compare($version, '0.7.0', 'ge')) {
             $release = $this->getR00700();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.0
         if (version_compare($version, '2.0', 'ge')) {
             $release = $this->getR20000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

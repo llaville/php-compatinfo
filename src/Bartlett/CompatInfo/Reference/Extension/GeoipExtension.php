@@ -12,49 +12,42 @@ class GeoipExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 0.2.0
         if (version_compare($version, '0.2.0', 'ge')) {
             $release = $this->getR00200();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.0.1
         if (version_compare($version, '1.0.1', 'ge')) {
             $release = $this->getR10001();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.0.2
         if (version_compare($version, '1.0.2', 'ge')) {
             $release = $this->getR10002();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.0.3
         if (version_compare($version, '1.0.3', 'ge')) {
             $release = $this->getR10003();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.0.5
         if (version_compare($version, '1.0.5', 'ge')) {
             $release = $this->getR10005();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.1.0
         if (version_compare($version, '1.1.0', 'ge')) {
             $release = $this->getR10100();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

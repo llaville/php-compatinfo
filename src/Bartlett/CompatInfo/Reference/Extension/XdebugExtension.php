@@ -13,84 +13,72 @@ class XdebugExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 1.2.0
         if (version_compare($version, '1.2.0', 'ge')) {
             $release = $this->getR10200();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 1.3.0
         if (version_compare($version, '1.3.0RC1', 'ge')) {
             $release = $this->getR10300RC1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.0.0beta1
         if (version_compare($version, '2.0.0beta1', 'ge')) {
             $release = $this->getR20000beta1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.0.0beta2
         if (version_compare($version, '2.0.0beta2', 'ge')) {
             $release = $this->getR20000beta2();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.0.0beta3
         if (version_compare($version, '2.0.0beta3', 'ge')) {
             $release = $this->getR20000beta3();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.0.0beta4
         if (version_compare($version, '2.0.0beta4', 'ge')) {
             $release = $this->getR20000beta4();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.0.0beta5
         if (version_compare($version, '2.0.0beta5', 'ge')) {
             $release = $this->getR20000beta5();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.0.0beta6
         if (version_compare($version, '2.0.0beta6', 'ge')) {
             $release = $this->getR20000beta6();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.0.0RC1
         if (version_compare($version, '2.0.0RC1', 'ge')) {
             $release = $this->getR20000RC1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.1.0beta1
         if (version_compare($version, '2.1.0beta1', 'ge')) {
             $release = $this->getR20100beta1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 2.2.0RC1
         if (version_compare($version, '2.2.0RC1', 'ge')) {
             $release = $this->getR20200RC1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

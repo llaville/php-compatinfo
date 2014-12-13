@@ -13,56 +13,48 @@ class SplExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getLatestPhpVersion();
-        $releases = array();
+        $version = $this->getLatestPhpVersion();
 
         // 5.0.0
         if (version_compare($version, '5.0.0', 'ge')) {
             $release = $this->getR50000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.1.0
         if (version_compare($version, '5.1.0', 'ge')) {
             $release = $this->getR50100();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.1.2
         if (version_compare($version, '5.1.2', 'ge')) {
             $release = $this->getR50102();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.1.3
         if (version_compare($version, '5.1.3', 'ge')) {
             $release = $this->getR50103();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.2.0
         if (version_compare($version, '5.2.0', 'ge')) {
             $release = $this->getR50200();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.3.0
         if (version_compare($version, '5.3.0', 'ge')) {
             $release = $this->getR50300();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.4.0
         if (version_compare($version, '5.4.0', 'ge')) {
             $release = $this->getR50400();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

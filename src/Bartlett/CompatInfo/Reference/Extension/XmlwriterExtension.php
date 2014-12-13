@@ -14,21 +14,18 @@ class XmlwriterExtension extends AbstractReference
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
         //$version  = $this->getCurrentVersion();  // @FIXME
-        $version  = $this->getLatestPhpVersion();
-        $releases = array();
+        $version = $this->getLatestPhpVersion();
 
         // 5.1.2
         if (version_compare($version, '5.1.2', 'ge')) {
             $release = $this->getR50102();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 5.2.0
         if (version_compare($version, '5.2.0', 'ge')) {
             $release = $this->getR50200();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

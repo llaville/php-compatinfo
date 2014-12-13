@@ -13,42 +13,36 @@ class Ssh2Extension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 0.5
         if (version_compare($version, '0.5', 'ge')) {
             $release = $this->getR00500();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.7
         if (version_compare($version, '0.7', 'ge')) {
             $release = $this->getR00700();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.8
         if (version_compare($version, '0.8', 'ge')) {
             $release = $this->getR00800();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.10
         if (version_compare($version, '0.10', 'ge')) {
             $release = $this->getR01000();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 0.12
         if (version_compare($version, '0.12', 'ge')) {
             $release = $this->getR01200();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 

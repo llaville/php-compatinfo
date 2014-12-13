@@ -17,48 +17,41 @@ class HttpExtension extends AbstractReference
         // cURL 24 bit version number
         $this->curl_version = $this->getMetaVersion('version_number', 'curl');
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         if (version_compare($version, '2.0.0', 'lt')) {
             // 0.7.0
             if (version_compare($version, '0.7.0', 'ge')) {
                 $release = $this->getR00700();
-                $count = array_push($releases, $release);
-                $this->storage->attach($releases[--$count]);
+                $this->storage->attach($release);
             }
 
             // 1.0.0
             if (version_compare($version, '1.0.0', 'ge')) {
                 $release = $this->getR10000();
-                $count = array_push($releases, $release);
-                $this->storage->attach($releases[--$count]);
+                $this->storage->attach($release);
             }
 
             // 1.3.0
             if (version_compare($version, '1.3.0', 'ge')) {
                 $release = $this->getR10300();
-                $count = array_push($releases, $release);
-                $this->storage->attach($releases[--$count]);
+                $this->storage->attach($release);
             }
 
             // 1.5.0
             if (version_compare($version, '1.5.0', 'ge')) {
                 $release = $this->getR10500();
-                $count = array_push($releases, $release);
-                $this->storage->attach($releases[--$count]);
+                $this->storage->attach($release);
             }
         } else {
             // 2.0.0
             if (version_compare($version, '2.0.0', 'ge')) {
                 $release = $this->getR20000();
-                $count = array_push($releases, $release);
-                $this->storage->attach($releases[--$count]);
+                $this->storage->attach($release);
             }
             if (version_compare($version, '2.1.2', 'ge')) {
                 $release = $this->getR20102();
-                $count = array_push($releases, $release);
-                $this->storage->attach($releases[--$count]);
+                $this->storage->attach($release);
             }
         }
     }

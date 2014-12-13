@@ -13,21 +13,18 @@ class ImagickExtension extends AbstractReference
     {
         parent::__construct(self::REF_NAME, self::REF_VERSION);
 
-        $version  = $this->getCurrentVersion();
-        $releases = array();
+        $version = $this->getCurrentVersion();
 
         // 2.0.0a1
         if (version_compare($version, '2.0.0a1', 'ge')) {
             $release = $this->getR20000a1();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
 
         // 3.0.1
         if (version_compare($version, '3.0.1', 'ge')) {
             $release = $this->getR30001();
-            $count = array_push($releases, $release);
-            $this->storage->attach($releases[--$count]);
+            $this->storage->attach($release);
         }
     }
 
