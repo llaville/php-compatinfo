@@ -459,9 +459,6 @@ class OpensslExtension extends AbstractReference
             'openssl.cafile'                    => null,
             'openssl.capath'                    => null,
         );
-        $release->constants = array(
-            'OPENSSL_ALGO_SHA224'               => null,
-        );
         $release->functions = array(
             'openssl_spki_export'               => null,
             'openssl_spki_export_challenge'     => null,
