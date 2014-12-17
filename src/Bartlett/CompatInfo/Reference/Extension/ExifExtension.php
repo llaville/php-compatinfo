@@ -45,14 +45,6 @@ class ExifExtension extends AbstractReference
             'php.min' => '4.0.1',
             'php.max' => '',
         );
-        $release->iniEntries = array(
-            'exif.decode_jis_intel'         => null,
-            'exif.decode_jis_motorola'      => null,
-            'exif.decode_unicode_intel'     => null,
-            'exif.decode_unicode_motorola'  => null,
-            'exif.encode_jis'               => null,
-            'exif.encode_unicode'           => null,
-        );
         $release->functions = array(
             'read_exif_data'                => null,
         );
