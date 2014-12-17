@@ -22,8 +22,8 @@ abstract class AbstractReferenceFinder
     {
         $path = dirname(__DIR__) . '/Extension';
 
-        if ($uri = \Phar::running(false)) {
-            $iterator = new \RecursiveIteratorIterator(new \Phar($uri));
+        if (\Phar::running(false)) {
+            $iterator = new \Phar($path);
         } else {
             $iterator = new \DirectoryIterator($path);
         }
