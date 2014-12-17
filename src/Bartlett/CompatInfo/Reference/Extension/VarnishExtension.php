@@ -58,7 +58,6 @@ class VarnishExtension extends AbstractReference
         $release->classes = array(
             'VarnishAdmin'                  => null,
             'VarnishException'              => null,
-            'VarnishLog'                    => null,
             'VarnishStat'                   => null,
         );
         $release->constants = array(
