@@ -3,7 +3,7 @@
 :description: Make it extremely easy to maintain your components compatibilities for reuse in your PHP applications.
 include::attributes.asciidoc[]
 include::revision.asciidoc[]
-:stable:      3.7.1
+:stable:      3.7.0
 :toc!:
 :toc2!:
 :navbar!:
@@ -11,7 +11,7 @@ include::revision.asciidoc[]
 
 == Releases _currently v{stable}_
 
-[role="col-md-6"]
+[role="col-md-4"]
 ====
 [panel,warning]
 .v2
@@ -30,14 +30,14 @@ endif::[]
 --
 ====
 
-[role="col-md-6"]
+[role="col-md-4"]
 ====
 [panel,primary]
 .v3
 --
 [bg-primary]*Stable Release*
 
-Last branch 3 release was published on December DD, 2014.
+Last branch 3 release was published on December 11, 2014.
 
 ifdef::basebackend-bootstrap[]
 link:./manual/current/en/getting-started.html["Learn more",role="primary",options="block"]
@@ -46,6 +46,20 @@ endif::[]
 ifndef::basebackend-bootstrap[]
 link:./manual/current/en/getting-started.html[Learn more]
 endif::[]
+--
+====
+
+[role="col-md-4"]
+====
+[panel,danger]
+.v4
+--
+[bg-danger]*Alpha Release*
+
+First alpha is planned on December 22, 2014.
+
+Follow development on the 
+link:http://php5.laurent-laville.org/compatinfo/blog/["Official Blog",role="primary",options="block"]
 --
 ====
 
