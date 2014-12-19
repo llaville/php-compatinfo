@@ -9,16 +9,17 @@ that bundles all dependencies in a single file.
 
 Follow development on the http://php5.laurent-laville.org/compatinfo/blog[official Blog].
 
-Have a look on master branch for previous stable API 2.0
+Have a look on https://github.com/llaville/php-compat-info/releases/tag/2.26.0[tag 2.26.0] for previous stable API 2.0
 
 == Install
 
 You can either :
 
-* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-3.7.0.phar[3.7.0]
-* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 3.7.0
+* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-3.7.1.phar[3.7.1]
+* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 3.7.1
 
 NOTE: This is the last version of branch 3. New major version 4.0 is currently under developement.
+See https://github.com/llaville/php-compat-info/issues/152[Roadmap].
 
 == Documentation
 
