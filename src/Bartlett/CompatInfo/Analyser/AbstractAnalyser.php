@@ -671,9 +671,16 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
                 if (!empty($parameters)) {
                     $versions['php.min'] = array_pop($parameters);
+
+                    if (in_array($versions['ref'], array('Core', 'standard'))) {
+                        $versions['ext.min'] = $versions['php.min'];
+                    }
                 }
             }
             $type = $this->loader->getTypeElement();
+            if (!isset($this->count[static::METRICS_PREFIX . ".$type"][$element])) {
+                $this->count[static::METRICS_PREFIX . ".$type"][$element] = $versions;
+            }
         } else {
             // not found; probably user component or reference not yet supported
             $versions = self::$php4;
@@ -688,6 +695,28 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         ) {
             if (!isset($this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$refName])) {
                 $this->count[static::METRICS_PREFIX . '.' . Metrics::EXTENSIONS][$refName] = self::$php4;
+            }
+
+            if (isset($parameters) && !empty($parameters)) {
+                // when ref has a better version's signature, update it
+
+                static::updateVersion(
+                    $versions['ext.min'],
+                    $this->count[static::METRICS_PREFIX . ".$type"][$element]['ext.min']
+                );
+                static::updateVersion(
+                    $versions['ext.max'],
+                    $this->count[static::METRICS_PREFIX . ".$type"][$element]['ext.max']
+                );
+
+                static::updateVersion(
+                    $versions['php.min'],
+                    $this->count[static::METRICS_PREFIX . ".$type"][$element]['php.min']
+                );
+                static::updateVersion(
+                    $versions['php.max'],
+                    $this->count[static::METRICS_PREFIX . ".$type"][$element]['php.max']
+                );
             }
 
             static::updateVersion(

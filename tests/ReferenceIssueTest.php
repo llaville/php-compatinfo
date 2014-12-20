@@ -41,6 +41,7 @@ use Symfony\Component\Finder\Finder;
 class ReferenceIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH127 = 'GH#127';
+    const GH153 = 'GH#153';
 
     protected static $compatinfo;
 
@@ -51,17 +52,24 @@ class ReferenceIssueTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
+        $fixtures = dirname(__FILE__) . DIRECTORY_SEPARATOR
+            . '_files' . DIRECTORY_SEPARATOR;
+
         $finder = new Finder();
         $finder->files()
             ->name('gh127.php')
-            ->in(
-                dirname(__FILE__) . DIRECTORY_SEPARATOR .
-                '_files' . DIRECTORY_SEPARATOR
-            )
+            ->in($fixtures)
+        ;
+
+        $finder1 = new Finder();
+        $finder1->files()
+            ->name('gh153.php')
+            ->in($fixtures)
         ;
 
         $pm = new ProviderManager;
         $pm->set(self::GH127, new SymfonyFinderProvider($finder));
+        $pm->set(self::GH153, new SymfonyFinderProvider($finder1));
 
         self::$compatinfo = new CompatInfo;
         self::$compatinfo->setProviderManager($pm);
@@ -93,6 +101,30 @@ class ReferenceIssueTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             $expected,
             $metrics[self::GH127][$key]['php.min']
+        );
+    }
+
+    /**
+     * Regression test for bug GH#153
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/153
+     *       "global namespace reports highter requirements than everything else"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH153()
+    {
+        self::$compatinfo->parse(array(self::GH153));
+
+        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX .
+            '.' . CompatInfo\Metrics::FUNCTIONS;
+
+        $expected = '5.0.0';
+        $metrics  = self::$compatinfo->getMetrics();
+
+        $this->assertEquals(
+            $expected,
+            $metrics[self::GH153][$key]['md5']['php.min']
         );
     }
 }
