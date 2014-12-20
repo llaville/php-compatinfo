@@ -708,7 +708,6 @@ class StandardExtension extends AbstractReference
             'PATHINFO_BASENAME'             => null,
             'PATHINFO_DIRNAME'              => null,
             'PATHINFO_EXTENSION'            => null,
-            'PATHINFO_FILENAME'             => null,
             'PHP_URL_FRAGMENT'              => null,
             'PHP_URL_HOST'                  => null,
             'PHP_URL_PASS'                  => null,
@@ -1280,6 +1279,9 @@ class StandardExtension extends AbstractReference
             'array_fill_keys'               => null,
             'error_get_last'                => null,
             'memory_get_peak_usage'         => null,
+        );
+        $release->constants = array(
+            'PATHINFO_FILENAME'             => null,
         );
         return $release;
     }
