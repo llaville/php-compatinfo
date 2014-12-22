@@ -1264,6 +1264,23 @@ class StandardExtension extends AbstractReference
         return $release;
     }
 
+    protected function getR50200rc1()
+    {
+        $release = new \stdClass;
+        $release->info = array(
+            'ext.min' => '5.2.0RC1',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2006-07-24',
+            'php.min' => '5.2.0RC1',
+            'php.max' => '',
+        );
+        $release->constants = array(
+            'PATHINFO_FILENAME'             => null,
+        );
+        return $release;
+    }
+
     protected function getR50200()
     {
         $release = new \stdClass;
@@ -1279,9 +1296,6 @@ class StandardExtension extends AbstractReference
             'array_fill_keys'               => null,
             'error_get_last'                => null,
             'memory_get_peak_usage'         => null,
-        );
-        $release->constants = array(
-            'PATHINFO_FILENAME'             => null,
         );
         return $release;
     }
