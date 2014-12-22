@@ -293,7 +293,7 @@ endif::basebackend-docbook[]
 | {unchecked}
 | {checked}
 | jsmin
-0.1.1 {beta}
+1.0.0 {stable}
 | [label label-info]#2.25.0#
 
 | {unchecked}

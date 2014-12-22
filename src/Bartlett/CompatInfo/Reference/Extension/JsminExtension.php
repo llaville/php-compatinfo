@@ -7,7 +7,7 @@ use Bartlett\CompatInfo\Reference\AbstractReference;
 class JsminExtension extends AbstractReference
 {
     const REF_NAME    = 'jsmin';
-    const REF_VERSION = '0.1.1';    // 2013-09-14 (beta)
+    const REF_VERSION = '1.0.0';    // 2014-12-20 (stable)
 
     public function __construct()
     {
