@@ -111,6 +111,12 @@ class StandardExtension extends AbstractReference
             $this->storage->attach($release);
         }
 
+        // 5.2.0RC1
+        if (version_compare($version, '5.2.0RC1', 'ge')) {
+            $release = $this->getR50200rc1();
+            $this->storage->attach($release);
+        }
+
         // 5.2.1
         if (version_compare($version, '5.2.1', 'ge')) {
             $release = $this->getR50201();
