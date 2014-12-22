@@ -708,7 +708,6 @@ class StandardExtension extends AbstractReference
             'PATHINFO_BASENAME'             => null,
             'PATHINFO_DIRNAME'              => null,
             'PATHINFO_EXTENSION'            => null,
-            'PATHINFO_FILENAME'             => null,
             'PHP_URL_FRAGMENT'              => null,
             'PHP_URL_HOST'                  => null,
             'PHP_URL_PASS'                  => null,
@@ -1261,6 +1260,23 @@ class StandardExtension extends AbstractReference
         );
         $release->functions = array(
             'sys_getloadavg'                => null,
+        );
+        return $release;
+    }
+
+    protected function getR50200rc1()
+    {
+        $release = new \stdClass;
+        $release->info = array(
+            'ext.min' => '5.2.0RC1',
+            'ext.max' => '',
+            'state'   => 'beta',
+            'date'    => '2006-07-24',
+            'php.min' => '5.2.0RC1',
+            'php.max' => '',
+        );
+        $release->constants = array(
+            'PATHINFO_FILENAME'             => null,
         );
         return $release;
     }
