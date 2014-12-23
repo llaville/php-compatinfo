@@ -45,6 +45,7 @@ class PhpFeaturesTest extends \PHPUnit_Framework_TestCase
     const GH142 = 'GH#142';
     const GH143 = 'GH#143';
     const GH148 = 'GH#148';
+    const GH154 = 'GH#154';
 
     protected static $compatinfo;
 
@@ -88,12 +89,19 @@ class PhpFeaturesTest extends \PHPUnit_Framework_TestCase
             ->in($fixtures)
         ;
 
+        $finder5 = new Finder();
+        $finder5->files()
+            ->name('gh154.php')
+            ->in($fixtures)
+        ;
+
         $pm = new ProviderManager;
         $pm->set(self::GH140, new SymfonyFinderProvider($finder));
         $pm->set(self::GH141, new SymfonyFinderProvider($finder1));
         $pm->set(self::GH142, new SymfonyFinderProvider($finder2));
         $pm->set(self::GH143, new SymfonyFinderProvider($finder3));
         $pm->set(self::GH148, new SymfonyFinderProvider($finder4));
+        $pm->set(self::GH154, new SymfonyFinderProvider($finder5));
 
         self::$compatinfo = new CompatInfo;
         self::$compatinfo->setProviderManager($pm);
@@ -222,6 +230,30 @@ class PhpFeaturesTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             $expected,
             $metrics[self::GH148][$key]['php.min']
+        );
+    }
+
+    /**
+     * Regression test for feature GH#154
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/154
+     *       Class member access on instantiation
+     * @link http://php.net/manual/en/migration54.new-features.php
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH154()
+    {
+        self::$compatinfo->parse(array(self::GH154));
+
+        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.versions';
+
+        $expected = '5.4.0';
+        $metrics  = self::$compatinfo->getMetrics();
+
+        $this->assertEquals(
+            $expected,
+            $metrics[self::GH154][$key]['php.min']
         );
     }
 }

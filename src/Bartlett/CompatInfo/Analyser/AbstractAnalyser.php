@@ -370,8 +370,13 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
         if ($dependency->isPhpFeature()) {
             if (in_array(
-                $dependency->getName(),
-                array('ArrayShortSyntax', 'ArrayDereferencing')
+                $dependency->getPhpFeature(),
+                array(
+                    'ArrayShortSyntax',
+                    'ArrayDereferencing',
+                    'ClassMemberAccessOnDirectInstantiation',
+                    'ClassMemberAccessOnIndirectInstantiation'
+                )
             )) {
                 $this->updateGlobalVersion('5.4.0', '');
             }
