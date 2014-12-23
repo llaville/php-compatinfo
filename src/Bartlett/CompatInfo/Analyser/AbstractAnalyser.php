@@ -356,6 +356,8 @@ abstract class AbstractAnalyser extends ReflectAnalyser
             $element = $name;
         }
 
+        $versions = self::$php4;
+
         if ($dependency->isInternalFunction()) {
             /**
              * checks for php/ext or user function
@@ -363,7 +365,9 @@ abstract class AbstractAnalyser extends ReflectAnalyser
              */
             foreach ($dependency->getArguments() as $arg) {
                 if ('Expr_BinaryOp_Pow' == $arg['type']) {
-                    $this->updateGlobalVersion('5.6.0', '');
+                    $versions['php.min'] = '5.6.0';
+                    $this->updatePackageVersion($versions, $this->currentNamespace);
+                    $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
                 }
             }
         }
@@ -378,7 +382,9 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                     'ClassMemberAccessOnIndirectInstantiation'
                 )
             )) {
-                $this->updateGlobalVersion('5.4.0', '');
+                $versions['php.min'] = '5.4.0';
+                $this->updatePackageVersion($versions, $this->currentNamespace);
+                $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
             }
         }
 
