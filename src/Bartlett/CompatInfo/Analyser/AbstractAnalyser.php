@@ -282,7 +282,10 @@ abstract class AbstractAnalyser extends ReflectAnalyser
         $vers = self::$php4;
         $vers['ref'] = 'user';
 
-        $this->count[static::METRICS_PREFIX . '.' . Metrics::FUNCTIONS][$name] = $vers;
+        if (!isset($this->count[static::METRICS_PREFIX . '.' . Metrics::FUNCTIONS][$name])) {
+            // internal function has a higher priority than user function
+            $this->count[static::METRICS_PREFIX . '.' . Metrics::FUNCTIONS][$name] = $vers;
+        }
 
         if ($function->inNamespace()) {
             $min = '5.3.0';

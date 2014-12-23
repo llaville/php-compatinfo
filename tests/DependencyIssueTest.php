@@ -42,6 +42,7 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH100 = 'GH#100';
     const GH128 = 'GH#128';
+    const GH155 = 'GH#155';
 
     protected static $compatinfo;
 
@@ -52,27 +53,31 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
+        $fixtures = dirname(__FILE__) . DIRECTORY_SEPARATOR
+            . '_files' . DIRECTORY_SEPARATOR;
+
         $finder = new Finder();
         $finder->files()
             ->name('gh100.php')
-            ->in(
-                dirname(__FILE__) . DIRECTORY_SEPARATOR .
-                '_files' . DIRECTORY_SEPARATOR
-            )
+            ->in($fixtures)
         ;
 
         $finder2 = new Finder();
         $finder2->files()
             ->name('gh128.php')
-            ->in(
-                dirname(__FILE__) . DIRECTORY_SEPARATOR .
-                '_files' . DIRECTORY_SEPARATOR
-            )
+            ->in($fixtures)
+        ;
+
+        $finder3 = new Finder();
+        $finder3->files()
+            ->name('gh155.php')
+            ->in($fixtures)
         ;
 
         $pm = new ProviderManager;
         $pm->set(self::GH100, new SymfonyFinderProvider($finder));
         $pm->set(self::GH128, new SymfonyFinderProvider($finder2));
+        $pm->set(self::GH155, new SymfonyFinderProvider($finder3));
 
         self::$compatinfo = new CompatInfo;
         self::$compatinfo->setProviderManager($pm);
@@ -127,6 +132,29 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             $expected,
             $metrics[self::GH128][$key]['php.min']
+        );
+    }
+
+    /**
+     * Regression test for bug GH#155
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/155
+     *       Results depend on lexical order of fallback implementations
+     * @group regression
+     * @return void
+     */
+    public function testBugGH155()
+    {
+        self::$compatinfo->parse(array(self::GH155));
+
+        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.functions';
+
+        $expected = '5.2.0';
+        $metrics  = self::$compatinfo->getMetrics();
+
+        $this->assertEquals(
+            $expected,
+            $metrics[self::GH155][$key]['json_encode']['php.min']
         );
     }
 }
