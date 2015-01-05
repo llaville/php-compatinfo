@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\MysqliExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -76,7 +75,7 @@ class MysqliExtensionTest extends GenericTest
             'mysqli_stmt_more_results',
             'mysqli_stmt_next_result',
         );
-        self::$obj = new MysqliExtension();
+        self::$ext = 'MysqliExtension';
         parent::setUpBeforeClass();
     }
 }

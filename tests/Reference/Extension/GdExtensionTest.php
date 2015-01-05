@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\GdExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -66,7 +65,7 @@ class GdExtensionTest extends GenericTest
             self::$optionalfunctions[] = 'imageantialias';
         }
 
-        self::$obj = new GdExtension();
+        self::$ext = 'GdExtension';
         parent::setUpBeforeClass();
     }
 }

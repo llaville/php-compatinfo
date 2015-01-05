@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\EnchantExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -42,7 +41,7 @@ class EnchantExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$obj = new EnchantExtension();
+        self::$ext = 'EnchantExtension';
         parent::setUpBeforeClass();
     }
 }

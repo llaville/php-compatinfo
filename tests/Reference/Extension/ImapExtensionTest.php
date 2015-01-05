@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\ImapExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -46,7 +45,7 @@ class ImapExtensionTest extends GenericTest
             'imap_mutf7_to_utf8', // build option, HAVE_IMAP_MUTF7
             'imap_utf8_to_mutf7',
         );
-        self::$obj = new ImapExtension();
+        self::$ext = 'ImapExtension';
         parent::setUpBeforeClass();
     }
 }

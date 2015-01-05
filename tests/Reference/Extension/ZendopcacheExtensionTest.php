@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\ZendopcacheExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -48,7 +47,7 @@ class ZendopcacheExtensionTest extends GenericTest
                 'opcache.mmap_base',
             );
         }
-        self::$obj = new ZendopcacheExtension();
+        self::$ext = 'ZendopcacheExtension';
         parent::setUpBeforeClass();
     }
 }

@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\MhashExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -53,8 +52,8 @@ class MhashExtensionTest extends GenericTest
             'MHASH_SNEFRU128',
             'MHASH_SNEFRU256',
             'MHASH_WHIRLPOOL',
-        );    
-        self::$obj = new MhashExtension();
+        );
+        self::$ext = 'MhashExtension';
         parent::setUpBeforeClass();
     }
 }

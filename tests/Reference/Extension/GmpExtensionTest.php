@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\GmpExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -46,7 +45,7 @@ class GmpExtensionTest extends GenericTest
             'GMP',  // empty class in PHP 5.6
         );
 
-        self::$obj = new GmpExtension();
+        self::$ext = 'GmpExtension';
         parent::setUpBeforeClass();
     }
 }

@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\MysqlExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -48,7 +47,7 @@ class MysqlExtensionTest extends GenericTest
             'mysql_drop_db',
         );
 
-        self::$obj = new MysqlExtension();
+        self::$ext = 'MysqlExtension';
         parent::setUpBeforeClass();
     }
 }

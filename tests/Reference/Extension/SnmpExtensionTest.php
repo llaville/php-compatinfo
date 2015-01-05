@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\SnmpExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -55,7 +54,7 @@ class SnmpExtensionTest extends GenericTest
             );
         }
 
-        self::$obj = new SnmpExtension();
+        self::$ext = 'SnmpExtension';
         parent::setUpBeforeClass();
     }
 }

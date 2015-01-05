@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\ShmopExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -42,7 +41,7 @@ class ShmopExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$obj = new ShmopExtension();
+        self::$ext = 'ShmopExtension';
         parent::setUpBeforeClass();
     }
 }

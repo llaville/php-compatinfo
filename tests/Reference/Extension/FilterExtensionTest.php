@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\FilterExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -61,7 +60,7 @@ class FilterExtensionTest extends GenericTest
             'input_get_args',
         );
 
-        self::$obj = new FilterExtension();
+        self::$ext = 'FilterExtension';
         parent::setUpBeforeClass();
     }
 }

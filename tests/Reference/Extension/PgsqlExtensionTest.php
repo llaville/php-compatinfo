@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\PgsqlExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -46,7 +45,7 @@ class PgsqlExtensionTest extends GenericTest
             // Requires CONNECTION_SSL_STARTUP
             'PGSQL_CONNECTION_SSL_STARTUP',
         );
-        self::$obj = new PgsqlExtension();
+        self::$ext = 'PgsqlExtension';
         parent::setUpBeforeClass();
     }
 }

@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\SphinxExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -52,7 +51,7 @@ class SphinxExtensionTest extends GenericTest
             'SPH_RANK_TOTAL',
         );
 
-        self::$obj = new SphinxExtension();
+        self::$ext = 'SphinxExtension';
         parent::setUpBeforeClass();
     }
 }

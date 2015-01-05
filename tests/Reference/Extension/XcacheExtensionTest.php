@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\XcacheExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -60,7 +59,7 @@ class XcacheExtensionTest extends GenericTest
         self::$ignoredconstants = array(
             'XC_OPSPEC_FETCHTYPE',
         );
-        self::$obj = new XcacheExtension();
+        self::$ext = 'XcacheExtension';
         parent::setUpBeforeClass();
     }
 }

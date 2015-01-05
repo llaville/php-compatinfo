@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\MssqlExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -45,7 +44,7 @@ class MssqlExtensionTest extends GenericTest
         self::$optionalcfgs = array(
             'mssql.charset',  // build option, only when HAVE_FREETDS
         );
-        self::$obj = new MssqlExtension();
+        self::$ext = 'MssqlExtension';
         parent::setUpBeforeClass();
     }
 }

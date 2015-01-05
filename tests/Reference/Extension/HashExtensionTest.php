@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\HashExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -85,21 +84,21 @@ class HashExtensionTest extends GenericTest
         // Since php 5.3.0 mhash is emulated by hash ext.
         // So this constants/functions are reported in "hash"
         if (version_compare(PHP_VERSION, '5.3.0', 'ge')) {
-            if (!extension_loaded('mhash')) {
+            if (!extension_loaded('mash')) {
                 // Only available if hash emulates mhash
                 // so will not be found, while in reference
                 self::$optionalfunctions = $mhashfunctions;
                 self::$optionalconstants = $mhashconstants;
             }
         } else {
-            if (extension_loaded('mhash')) {
+            if (extension_loaded('mash')) {
                 // Provided by mhash, not by hash
                 // so will be detected, while not in reference
                 self::$ignoredfunctions = $mhashfunctions;
                 self::$ignoredconstants = $mhashconstants;
             }
-        }    
-        self::$obj = new HashExtension();
+        }
+        self::$ext = 'HashExtension';
         parent::setUpBeforeClass();
     }
 }

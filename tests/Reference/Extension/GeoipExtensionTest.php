@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\GeoipExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -51,7 +50,7 @@ class GeoipExtensionTest extends GenericTest
             // requires GeoIP C library 1.4.8 or higher (LIBGEOIP_VERSION >= 1004008)
             'GEOIP_NETSPEED_EDITION_REV1',
         );
-        self::$obj = new GeoipExtension();
+        self::$ext = 'GeoipExtension';
         parent::setUpBeforeClass();
     }
 }

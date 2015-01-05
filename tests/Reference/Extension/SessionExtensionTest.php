@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\SessionExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -45,8 +44,8 @@ class SessionExtensionTest extends GenericTest
         self::$optionalconstants = array(
             // Only defined after session_start
             'SID',
-        );    
-        self::$obj = new SessionExtension();
+        );
+        self::$ext = 'SessionExtension';
         parent::setUpBeforeClass();
     }
 }

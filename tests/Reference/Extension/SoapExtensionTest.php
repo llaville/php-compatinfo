@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\SoapExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -48,7 +47,7 @@ class SoapExtensionTest extends GenericTest
             'soap_encode_to_zval',
         );
 
-        self::$obj = new SoapExtension();
+        self::$ext = 'SoapExtension';
         parent::setUpBeforeClass();
     }
 }

@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\ApcuExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -52,7 +51,7 @@ class ApcuExtensionTest extends GenericTest
                 ' apc_register_serializer-0',   // on PHP 5.6 branch
             );
         }
-        self::$obj = new ApcuExtension();
+        self::$ext = 'ApcuExtension';
         parent::setUpBeforeClass();
     }
 }

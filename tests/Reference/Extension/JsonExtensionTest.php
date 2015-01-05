@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\JsonExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -50,8 +49,8 @@ class JsonExtensionTest extends GenericTest
         );
         self::$ignoredclasses = array(
             'JsonIncrementalParser',
-        );    
-        self::$obj = new JsonExtension();
+        );
+        self::$ext = 'JsonExtension';
         parent::setUpBeforeClass();
     }
 }

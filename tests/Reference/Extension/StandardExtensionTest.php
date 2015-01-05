@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\StandardExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -207,7 +206,7 @@ class StandardExtensionTest extends GenericTest
                 'STREAM_IPPROTO_RAW',
             );
         }
-        self::$obj = new StandardExtension();
+        self::$ext = 'StandardExtension';
         parent::setUpBeforeClass();
     }
 }

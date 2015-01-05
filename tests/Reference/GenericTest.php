@@ -18,6 +18,7 @@
 namespace Bartlett\Tests\CompatInfo\Reference;
 
 use Bartlett\CompatInfo\Reference\ReferenceInterface;
+use Bartlett\CompatInfo\Reference\ExtensionFactory;
 
 /**
  * Tests for the PHP_CompatInfo, retrieving components informations
@@ -62,6 +63,10 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
+        if (self::$ext) {
+            $name = strtolower(str_replace('Extension', '', self::$ext));
+            self::$obj = new ExtensionFactory($name);
+        }    
         if (!self::$obj instanceof ReferenceInterface) {
             self::$obj = null;
             return;

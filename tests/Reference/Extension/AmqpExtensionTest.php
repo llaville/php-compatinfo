@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\AmqpExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -42,20 +41,16 @@ class AmqpExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$obj  = new AmqpExtension();
-        $extversion = self::$obj->getCurrentVersion();
-
         if (PATH_SEPARATOR == ';') {
             // Win*
-            if ('0.1' === $extversion) {
-                // only available since version 1.0.8
-                array_push(self::$ignoredconstants, 'AMQP_OS_SOCKET_TIMEOUT_ERRNO');
-                // only available since version 1.0.0
-                array_push(self::$ignoredclasses, 'AMQPChannel', 'AMQPChannelException', 'AMQPEnvelope');
-            }
+            // only available since version 1.0.8
+            array_push(self::$ignoredconstants, 'AMQP_OS_SOCKET_TIMEOUT_ERRNO');
+            // only available since version 1.0.0
+            array_push(self::$ignoredclasses, 'AMQPChannel', 'AMQPChannelException', 'AMQPEnvelope');
         } else {
             // *nix
         }
+        self::$ext = 'AmqpExtension';
         parent::setUpBeforeClass();
     }
 }

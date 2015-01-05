@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\PharExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -46,7 +45,7 @@ class PharExtensionTest extends GenericTest
             // Available from phar 1.1.0 to 1.2.3, removed in 2.0.0
             'phar.extract_list'
         );
-        self::$obj = new PharExtension();
+        self::$ext = 'PharExtension';
         parent::setUpBeforeClass();
     }
 }

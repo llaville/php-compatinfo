@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\OdbcExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -45,9 +44,6 @@ class OdbcExtensionTest extends GenericTest
         // This constants require ODBC >= 3.0.0
         self::$optionalconstants = array(
             // Standard data types
-            'SQL_WCHAR',
-            'SQL_WVARCHAR',
-            'SQL_WLONGVARCHAR',
             'SQL_TYPE_DATE',
             'SQL_TYPE_TIME',
             'SQL_TYPE_TIMESTAMP',
@@ -66,7 +62,12 @@ class OdbcExtensionTest extends GenericTest
             'SQL_QUICK',
         );
 
-        self::$obj = new OdbcExtension();
+        if (PATH_SEPARATOR == ';') {
+            // Windows only
+            array_push(self::$optionalconstants, 'SQL_WCHAR', 'SQL_WVARCHAR', 'SQL_WLONGVARCHAR');
+        }
+
+        self::$ext = 'OdbcExtension';
         parent::setUpBeforeClass();
     }
 }

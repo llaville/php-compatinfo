@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\LibeventExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -42,8 +41,8 @@ class LibeventExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$obj = new LibeventExtension();
-        
+        self::$ext = 'LibeventExtension';
+
         if (PATH_SEPARATOR == ';') {
             // Win*
             array_push(self::$optionalfunctions, 'event_base_reinit');

@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\IntlExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -67,7 +66,7 @@ class IntlExtensionTest extends GenericTest
             'intl.use_exceptions'
         );
 
-        self::$obj = new IntlExtension();
+        self::$ext = 'IntlExtension';
         parent::setUpBeforeClass();
     }
 }
