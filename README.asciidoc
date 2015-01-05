@@ -15,8 +15,8 @@ Have a look on https://github.com/llaville/php-compat-info/releases/tag/2.26.0[t
 
 You can either :
 
-* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-3.7.1.phar[3.7.1]
-* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 3.7.1
+* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-3.7.2.phar[3.7.2]
+* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 3.7.2
 
 NOTE: This is the last version of branch 3. New major version 4.0 is currently under developement.
 See https://github.com/llaville/php-compat-info/issues/152[Roadmap].
