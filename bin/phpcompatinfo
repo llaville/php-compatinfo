@@ -1,9 +1,10 @@
 #!/usr/bin/env php
 <?php
 ini_set('memory_limit', -1);
+$appName = 'phpCompatInfo';
 
 if (\Phar::running()) {
-    $vendorDir = 'phar://phpcompatinfo.phar/vendor';
+    $vendorDir = 'phar://' . strtolower($appName) . '.phar/vendor';
 } else {
     $baseDir   = dirname(__DIR__);
     $vendorDir = $baseDir . '/vendor';
@@ -12,20 +13,8 @@ if (\Phar::running()) {
         $vendorDir = dirname(dirname($baseDir));
     }
 
-    if (!getenv("COMPATINFO")) {
-        $home  = defined('PHP_WINDOWS_VERSION_BUILD') ? 'USERPROFILE' : 'HOME';
-        $files = array(
-            realpath('./phpcompatinfo.json'),
-            getenv($home).'/.config/phpcompatinfo.json',
-            '/etc/phpcompatinfo.json',
-            __DIR__ . '/phpcompatinfo.json.dist'
-        );
-        foreach ($files as $file) {
-            if (file_exists($file)) {
-                putenv("COMPATINFO=$file");
-                break;
-            }
-        }
+    if (!getenv("BARTLETTRC")) {
+        putenv("BARTLETTRC=" . strtolower($appName) . '.json');
     }
 }
 $loader = require_once $vendorDir . '/autoload.php';
@@ -35,7 +24,10 @@ if (PHP_SAPI !== 'cli') {
     return;
 }
 
-use Bartlett\CompatInfo\ConsoleApplication as Application;
+use Bartlett\Reflect\Environment;
+use Bartlett\Reflect\Console\Application;
 
-$application = new Application();
+Environment::setScanDir();
+
+$application = new Application($appName, '4.0');
 $application->run();
