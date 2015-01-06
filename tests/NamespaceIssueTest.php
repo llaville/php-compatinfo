@@ -35,6 +35,7 @@ use Bartlett\Reflect\Client;
 class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH153 = 'gh153.php';
+    const GH155 = 'gh155.php';
 
     protected static $fixtures;
     protected static $api;
@@ -83,6 +84,47 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
                 'matches'      => 3,
             ),
             $functions['md5']
+        );
+    }
+
+    /**
+     * Regression test for bug GH#155
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/155
+     *       Results depend on lexical order of fallback implementations
+     * @group regression
+     * @return void
+     */
+    public function testBugGH155()
+    {
+        $dataSource = self::$fixtures . self::GH155;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+        $functions  = $metrics['CompatibilityAnalyser']['functions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.2.0',
+                'php.max'      => '',
+            ),
+            $versions
+        );
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'json',
+                'ext.min'      => '5.2.0',
+                'ext.max'      => '',
+                'php.min'      => '5.2.0',
+                'php.max'      => '',
+                'parameters'   => '',
+                'php.excludes' => '',
+                'arg.max'      => 1,
+                'matches'      => 1,
+                'optional'     => true,
+            ),
+            $functions['json_encode']
         );
     }
 }
