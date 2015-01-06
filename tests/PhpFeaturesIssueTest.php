@@ -37,6 +37,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     const GH140 = 'gh140.php';
     const GH141 = 'gh141.php';
     const GH142 = 'gh142.php';
+    const GH143 = 'gh143.php';
     const GH148 = 'gh148.php';
     const GH154 = 'gh154.php';
 
@@ -123,6 +124,31 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     public function testFeatureGH142()
     {
         $dataSource = self::$fixtures . self::GH142;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.6.0',
+                'php.max'      => '',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for feature GH#143
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/143
+     *       use const, use function are 5.6+
+     * @link http://php.net/manual/en/migration56.new-features.php#migration56.new-features.use
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH143()
+    {
+        $dataSource = self::$fixtures . self::GH143;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
         $versions   = $metrics['CompatibilityAnalyser']['versions'];
