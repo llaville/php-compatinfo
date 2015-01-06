@@ -34,6 +34,7 @@ use Bartlett\Reflect\Client;
  */
 class ClassIssueTest extends \PHPUnit_Framework_TestCase
 {
+    const GH119 = 'gh119.php';
     const GH129 = 'gh129.php';
     const GH131 = 'gh131.php';
 
@@ -57,20 +58,19 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Regression test for bug GH#129
+     * Regression test for bug GH#119
      *
-     * @link https://github.com/llaville/php-compat-info/issues/129
-     *       "Non-empty classes are reported to require PHP 5.0.0"
+     * @link https://github.com/llaville/php-compat-info/issues/119
+     *       "private" keyword reports as "Required PHP 4.0.0 (min)"
      * @group regression
      * @return void
      */
-    public function testBugGH129()
+    public function testBugGH119()
     {
-        $dataSource = self::$fixtures . self::GH129;
+        $dataSource = self::$fixtures . self::GH119;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
         $classes    = $metrics['CompatibilityAnalyser']['classes'];
-        $methods    = $metrics['CompatibilityAnalyser']['methods'];
 
         $this->assertEquals(
             array(
@@ -83,6 +83,23 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
             ),
             $classes['Foo']
         );
+    }
+
+    /**
+     * Regression test for bug GH#129
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/129
+     *       "Non-empty classes are reported to require PHP 5.0.0"
+     * @group regression
+     * @return void
+     * @see testBugGH119()
+     */
+    public function testBugGH129()
+    {
+        $dataSource = self::$fixtures . self::GH129;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $methods    = $metrics['CompatibilityAnalyser']['methods'];
 
         // implicitly public visibility
         $this->assertEquals(
