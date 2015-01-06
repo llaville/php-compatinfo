@@ -35,6 +35,7 @@ use Bartlett\Reflect\Client;
 class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH140 = 'gh140.php';
+    const GH141 = 'gh141.php';
     const GH148 = 'gh148.php';
     const GH154 = 'gh154.php';
 
@@ -70,6 +71,32 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     public function testFeatureGH140()
     {
         $dataSource = self::$fixtures . self::GH140;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.6.0',
+                'php.max'      => '',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for feature GH#141
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/141
+     *       Variadic functions are 5.6+
+     * @link http://php.net/manual/en/migration56.new-features.php#migration56.new-features.variadics
+     * @group features
+     * @group regression
+     * @return void
+     */
+    public function testFeatureGH141()
+    {
+        $dataSource = self::$fixtures . self::GH141;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
         $versions   = $metrics['CompatibilityAnalyser']['versions'];
