@@ -6,6 +6,10 @@ class Foo
 
     public $property;
 
+}
+
+class Foo2
+{
     function bar() {}
 
     public function baz() {}

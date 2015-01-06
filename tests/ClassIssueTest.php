@@ -34,6 +34,7 @@ use Bartlett\Reflect\Client;
  */
 class ClassIssueTest extends \PHPUnit_Framework_TestCase
 {
+    const GH129 = 'gh129.php';
     const GH131 = 'gh131.php';
 
     protected static $fixtures;
@@ -53,6 +54,61 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
 
         // request for a Bartlett\Reflect\Api\Analyser
         self::$api = $client->api('analyser');
+    }
+
+    /**
+     * Regression test for bug GH#129
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/129
+     *       "Non-empty classes are reported to require PHP 5.0.0"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH129()
+    {
+        $dataSource = self::$fixtures . self::GH129;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $classes    = $metrics['CompatibilityAnalyser']['classes'];
+        $methods    = $metrics['CompatibilityAnalyser']['methods'];
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'user',
+                'ext.min'      => '',
+                'ext.max'      => '',
+                'php.min'      => '5.0.0',
+                'php.max'      => '',
+                'matches'      => 0,
+            ),
+            $classes['Foo']
+        );
+
+        // implicitly public visibility
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'user',
+                'ext.min'      => '',
+                'ext.max'      => '',
+                'php.min'      => '4.0.0',
+                'php.max'      => '',
+                'matches'      => 0,
+            ),
+            $methods['Foo2::bar']
+        );
+
+        // public visibility
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'user',
+                'ext.min'      => '',
+                'ext.max'      => '',
+                'php.min'      => '5.0.0',
+                'php.max'      => '',
+                'matches'      => 0,
+            ),
+            $methods['Foo2::baz']
+        );
     }
 
     /**
