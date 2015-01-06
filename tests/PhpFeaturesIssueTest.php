@@ -34,6 +34,7 @@ use Bartlett\Reflect\Client;
  */
 class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
 {
+    const GH140 = 'gh140.php';
     const GH148 = 'gh148.php';
     const GH154 = 'gh154.php';
 
@@ -54,6 +55,32 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
 
         // request for a Bartlett\Reflect\Api\Analyser
         self::$api = $client->api('analyser');
+    }
+
+    /**
+     * Regression test for feature GH#140
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/140
+     *       Constant scalar expressions are 5.6+
+     * @link http://php.net/manual/en/migration56.new-features.php#migration56.new-features.const-scalar-exprs
+     * @group features
+     * @group regression
+     * @return void
+     */
+    public function testFeatureGH140()
+    {
+        $dataSource = self::$fixtures . self::GH140;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.6.0',
+                'php.max'      => '',
+            ),
+            $versions
+        );
     }
 
     /**
