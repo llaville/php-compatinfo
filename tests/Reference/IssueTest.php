@@ -17,7 +17,6 @@
 
 namespace Bartlett\Tests\CompatInfo\Reference;
 
-use Bartlett\Reflect\Environment;
 use Bartlett\Reflect\Client;
 
 /**
