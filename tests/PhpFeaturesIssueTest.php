@@ -34,6 +34,7 @@ use Bartlett\Reflect\Client;
  */
 class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
 {
+    const GH148 = 'gh148.php';
     const GH154 = 'gh154.php';
 
     protected static $fixtures;
@@ -53,6 +54,32 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
 
         // request for a Bartlett\Reflect\Api\Analyser
         self::$api = $client->api('analyser');
+    }
+
+    /**
+     * Regression test for feature GH#148
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/148
+     *       Array short syntax and array dereferencing not detected
+     * @link http://php.net/manual/en/migration54.new-features.php
+     * @group features
+     * @group regression
+     * @return void
+     */
+    public function testBugGH148()
+    {
+        $dataSource = self::$fixtures . self::GH148;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.4.0',
+                'php.max'      => '',
+            ),
+            $versions
+        );
     }
 
     /**
