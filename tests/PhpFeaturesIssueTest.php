@@ -36,6 +36,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH140 = 'gh140.php';
     const GH141 = 'gh141.php';
+    const GH142 = 'gh142.php';
     const GH148 = 'gh148.php';
     const GH154 = 'gh154.php';
 
@@ -97,6 +98,31 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     public function testFeatureGH141()
     {
         $dataSource = self::$fixtures . self::GH141;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.6.0',
+                'php.max'      => '',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for feature GH#142
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/142
+     *       Exponentiation is 5.6+
+     * @link http://php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH142()
+    {
+        $dataSource = self::$fixtures . self::GH142;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
         $versions   = $metrics['CompatibilityAnalyser']['versions'];
