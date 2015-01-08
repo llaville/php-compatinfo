@@ -12,9 +12,9 @@
 namespace Bartlett\CompatInfo\Analyser;
 
 use Bartlett\CompatInfo\Environment;
+use Bartlett\CompatInfo\Collection\ReferenceCollection;
 
 use Bartlett\Reflect\Analyser\AbstractAnalyser;
-use Bartlett\Reflect\Collection\ReferenceCollection;
 
 use PhpParser\Node;
 
