@@ -21,8 +21,8 @@
         Project properties
         ======================================================================
     -->
-    <property name="build.short-version"         value="3.7" />
-    <property name="build.version"               value="${build.short-version}.2" />
+    <property name="build.short-version"         value="4.0" />
+    <property name="build.version"               value="${build.short-version}.0-alpha2+1" />
 
     <!--
         ======================================================================
@@ -66,6 +66,7 @@
         <include name="bin/phpcompatinfo" />
         <include name="bin/phpcompatinfo.json.dist" />
         <include name="manifest.txt" />
+        <include name="data/compatinfo.sqlite" />
     </fileset>
 
     <fileset dir="${project.dir}" id="phar-versions">

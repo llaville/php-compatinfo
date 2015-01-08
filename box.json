@@ -8,6 +8,7 @@
         "bin/phpcompatinfo.json.dist",
         "manifest.txt",
         "LICENSE",
+        "data/compatinfo.sqlite",
         "vendor/nikic/php-parser/LICENSE",
         "vendor/symfony/console/Symfony/Component/Console/LICENSE",
         "vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/LICENSE",
