@@ -15,7 +15,7 @@
  * @since      Class available since Release 4.0.0-alpha2+1
  */
 
-namespace Bartlett\Tests\CompatInfo\Reference;
+namespace Bartlett\Tests\CompatInfo;
 
 use Bartlett\Reflect\Client;
 
