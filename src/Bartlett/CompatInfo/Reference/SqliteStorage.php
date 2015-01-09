@@ -2,7 +2,7 @@
 
 namespace Bartlett\CompatInfo\Reference;
 
-use Bartlett\Reflect\Environment;
+use Bartlett\CompatInfo\Environment;
 
 use PDO;
 
