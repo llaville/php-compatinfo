@@ -13,7 +13,6 @@
         "vendor/symfony/console/Symfony/Component/Console/LICENSE",
         "vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/LICENSE",
         "vendor/symfony/finder/Symfony/Component/Finder/LICENSE",
-        "vendor/phpunit/php-timer/LICENSE",
         "vendor/bartlett/php-reflect/LICENSE",
         "vendor/seld/jsonlint/LICENSE",
         "vendor/justinrainbow/json-schema/LICENSE",
@@ -37,10 +36,6 @@
         },
         {
             "name": "*.php",
-            "in": "vendor/phpunit/php-timer"
-        },
-        {
-            "name": "*.php",
             "in": "vendor/bartlett/php-reflect/src"
         },
         {
@@ -53,7 +48,23 @@
         },
         {
             "name": "*.php",
+            "in": "vendor/phpdocumentor/reflection-docblock/src"
+        },
+        {
+            "name": "*.php",
             "in": "vendor/doctrine/cache/lib"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/doctrine/collections/lib"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/psr/log/Psr"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/monolog/monolog/src"
         }
     ],
     "replacements": { "package_version": "4.0.0-alpha3" },
