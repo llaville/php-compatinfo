@@ -60,7 +60,7 @@
         <include name="vendor/psr/log/Psr/**/*.php" />
         <include name="vendor/monolog/monolog/src/**/*.php" />
         <include name="vendor/bartlett/php-reflect/src/**/*.php" />
-        <include name="vendor/bartlett/php-reflect/bin/phpreflect-schema.json" />
+        <include name="vendor/bartlett/php-reflect/bin/phpreflect.json-schema" />
 
         <include name="src/**/*.php" />
         <include name="bin/phpcompatinfo" />

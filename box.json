@@ -18,7 +18,7 @@
         "vendor/seld/jsonlint/LICENSE",
         "vendor/justinrainbow/json-schema/LICENSE",
         "vendor/doctrine/cache/LICENSE",
-        "vendor/bartlett/php-reflect/bin/phpreflect-schema.json",
+        "vendor/bartlett/php-reflect/bin/phpreflect.json-schema",
         "vendor/autoload.php"
     ],
     "finder": [
@@ -56,9 +56,9 @@
             "in": "vendor/doctrine/cache/lib"
         }
     ],
-    "git-version": "package_version",
+    "replacements": { "package_version": "4.0.0-alpha3" },
     "main": "bin/phpcompatinfo",
-    "output": "phpcompatinfo-@git-version@.phar",
+    "output": "phpcompatinfo-4.0.0-alpha3.phar",
     "intercept": true,
     "stub": "phar-stub.php",
     "web": false
