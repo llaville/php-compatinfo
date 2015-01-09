@@ -14,7 +14,7 @@
         "ext-pcre": "*",
         "ext-spl": "*",
         "ext-json": "*",
-        "bartlett/php-reflect": "~2.6"
+        "bartlett/php-reflect": "3.0.*@dev"
     },
     "require-dev": {
         "doctrine/cache": "~1.3",
