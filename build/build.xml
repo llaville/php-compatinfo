@@ -22,7 +22,7 @@
         ======================================================================
     -->
     <property name="build.short-version"         value="4.0" />
-    <property name="build.version"               value="${build.short-version}.0-alpha2+1" />
+    <property name="build.version"               value="${build.short-version}.0-alpha3" />
 
     <!--
         ======================================================================
@@ -37,12 +37,16 @@
     <fileset dir="${project.dir}" id="phar-contents">
         <include name="LICENSE" />
         <include name="vendor/nikic/php-parser/LICENSE" />
+        <include name="vendor/sebastian/version/LICENSE" />
         <include name="vendor/symfony/console/Symfony/Component/Console/LICENSE" />
         <include name="vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/LICENSE" />
         <include name="vendor/symfony/finder/Symfony/Component/Finder/LICENSE" />
+        <include name="vendor/symfony/stopwatch/Symfony/Component/Stopwatch/LICENSE" />
+        <include name="vendor/symfony/dependency-injection/Symfony/Component/DependencyInjection/LICENSE" />
         <include name="vendor/seld/jsonlint/LICENSE" />
         <include name="vendor/justinrainbow/json-schema/LICENSE" />
         <include name="vendor/doctrine/cache/LICENSE" />
+        <include name="vendor/doctrine/collections/LICENSE" />
         <include name="vendor/psr/log/LICENSE" />
         <include name="vendor/monolog/monolog/LICENSE" />
         <include name="vendor/bartlett/php-reflect/LICENSE" />
@@ -50,12 +54,14 @@
 
         <include name="vendor/composer/**/*.php" />
         <include name="vendor/nikic/php-parser/lib/**/*.php" />
+        <include name="vendor/sebastian/version/src/Version.php" />
         <include name="vendor/symfony/**/*.php" />
         <exclude name="**/Tests/**" />
         <include name="vendor/seld/jsonlint/**/*.php" />
         <include name="vendor/justinrainbow/json-schema/src/**/*.php" />
         <include name="vendor/phpdocumentor/reflection-docblock/src/**/*.php" />
         <include name="vendor/doctrine/cache/lib/**/*.php" />
+        <include name="vendor/doctrine/collections/lib/**/*.php" />
         <include name="vendor/psr/log/Psr/**/*.php" />
         <include name="vendor/monolog/monolog/src/**/*.php" />
         <include name="vendor/bartlett/php-reflect/src/**/*.php" />

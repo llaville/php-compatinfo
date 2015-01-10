@@ -10,13 +10,19 @@
         "LICENSE",
         "data/compatinfo.sqlite",
         "vendor/nikic/php-parser/LICENSE",
+        "vendor/sebastian/version/LICENSE",
         "vendor/symfony/console/Symfony/Component/Console/LICENSE",
         "vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/LICENSE",
         "vendor/symfony/finder/Symfony/Component/Finder/LICENSE",
-        "vendor/bartlett/php-reflect/LICENSE",
+        "vendor/symfony/stopwatch/Symfony/Component/Stopwatch/LICENSE",
+        "vendor/symfony/dependency-injection/Symfony/Component/DependencyInjection/LICENSE",
         "vendor/seld/jsonlint/LICENSE",
         "vendor/justinrainbow/json-schema/LICENSE",
         "vendor/doctrine/cache/LICENSE",
+        "vendor/doctrine/collections/LICENSE",
+        "vendor/psr/log/LICENSE",
+        "vendor/monolog/monolog/LICENSE",
+        "vendor/bartlett/php-reflect/LICENSE",
         "vendor/bartlett/php-reflect/bin/phpreflect.json-schema",
         "vendor/autoload.php"
     ],
@@ -30,17 +36,17 @@
             "in": "vendor/nikic/php-parser/lib"
         },
         {
+            "name": "Version.php",
+            "in": "vendor/sebastian/version/src"
+        },
+        {
             "name": "*.php",
             "notPath": "/Tests/",
             "in": "vendor/symfony"
         },
         {
             "name": "*.php",
-            "in": "vendor/bartlett/php-reflect/src"
-        },
-        {
-            "name": "*.php",
-            "in": "vendor/seld/jsonlint"
+            "in": "vendor/seld/jsonlint/src"
         },
         {
             "name": "*.php",
@@ -65,12 +71,16 @@
         {
             "name": "*.php",
             "in": "vendor/monolog/monolog/src"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/bartlett/php-reflect/src"
         }
     ],
     "replacements": { "package_version": "4.0.0-alpha3" },
     "main": "bin/phpcompatinfo",
     "output": "phpcompatinfo-4.0.0-alpha3.phar",
-    "intercept": true,
     "stub": "phar-stub.php",
-    "web": false
+    "web": false,
+    "shebang": false
 }
