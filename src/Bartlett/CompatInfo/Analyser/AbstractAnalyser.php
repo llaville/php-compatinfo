@@ -692,9 +692,6 @@ abstract class AbstractAnalyser extends ReflectAnalyser
                 }
             }
             $type = $this->loader->getTypeElement();
-            if (!isset($this->count[static::METRICS_PREFIX . ".$type"][$element])) {
-                $this->count[static::METRICS_PREFIX . ".$type"][$element] = $versions;
-            }
         } else {
             // not found; probably user component or reference not yet supported
             $versions = self::$php4;
@@ -713,6 +710,9 @@ abstract class AbstractAnalyser extends ReflectAnalyser
 
             if (isset($parameters) && !empty($parameters)) {
                 // when ref has a better version's signature, update it
+                if (!isset($this->count[static::METRICS_PREFIX . ".$type"][$element])) {
+                    $this->count[static::METRICS_PREFIX . ".$type"][$element] = $versions;
+                }
 
                 static::updateVersion(
                     $versions['ext.min'],
