@@ -729,7 +729,11 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 // cannot resolve variable argument
                 return;
             }
-            $versions = $this->references->find($context, $element->value);
+            if ('extensions' == $context) {
+                $versions = array();
+            } else {
+                $versions = $this->references->find($context, $element->value);
+            }
 
             // marked argument as optional
             $this->updateElementVersion($context, $element->value, $versions);
