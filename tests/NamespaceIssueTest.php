@@ -36,6 +36,7 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH153 = 'gh153.php';
     const GH155 = 'gh155.php';
+    const GH158 = 'gh158.php';
 
     protected static $fixtures;
     protected static $api;
@@ -125,6 +126,30 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
                 'optional'     => true,
             ),
             $functions['json_encode']
+        );
+    }
+
+    /**
+     * Regression test for bug GH#158
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/158
+     *       Total requirements do not include Constants
+     * @group regression
+     * @return void
+     */
+    public function testBugGH158()
+    {
+        $dataSource = self::$fixtures . self::GH158;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '4.3.10',
+                'php.max'      => '',
+            ),
+            $versions
         );
     }
 }
