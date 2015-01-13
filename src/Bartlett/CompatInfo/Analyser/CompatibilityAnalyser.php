@@ -823,7 +823,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $this->contextStack[] = array($element, $name);
 
         if ($node instanceof Node\Stmt\Use_) {
-            if ($node::TYPE_FUNCTION || $node::TYPE_CONSTANT) {
+            if (Node\Stmt\Use_::TYPE_FUNCTION == $node->type
+                || Node\Stmt\Use_::TYPE_CONSTANT == $node->type
+            ) {
                 // use const, use function
                 $versions = array('php.min' => '5.6.0');
                 $this->updateElementVersion($element, $name, $versions);
