@@ -117,6 +117,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->metrics[$context][$target]['optional'] = true;
 
             if ('methods' == $context) {
+                $target   = $values[0];
+                $context  = 'classes';
+                $versions = $this->references->find($context, $target);
+                // identified also the class
+                $this->updateElementVersion($context, $target, $versions);
+                $this->metrics[$context][$target]['optional'] = true;
+
                 $condition = sprintf('%s(%s::%s)', $element, $values[0], $values[1]);
             } else {
                 $condition = sprintf('%s(%s)', $element, $values[0]);

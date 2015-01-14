@@ -35,6 +35,7 @@ use Bartlett\Reflect\Client;
 class ConditionIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH128 = 'gh128.php';
+    const GH159 = 'gh159.php';
 
     protected static $fixtures;
     protected static $api;
@@ -76,6 +77,47 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
                 'php.max'      => '',
             ),
             $versions
+        );
+    }
+
+    /**
+     * Regression test for bug GH#159
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/159
+     *       Conditionally used class is reported as required
+     * @group regression
+     * @return void
+     */
+    public function testBugGH159()
+    {
+        $dataSource = self::$fixtures . self::GH159;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+        $classes    = $metrics['CompatibilityAnalyser']['classes'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '4.3.0',
+                'php.max'      => '',
+            ),
+            $versions
+        );
+
+        $this->assertArrayHasKey('Normalizer', $classes);
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'intl',
+                'ext.min'      => '1.0.0beta',
+                'ext.max'      => '',
+                'php.min'      => '5.3.0alpha1',
+                'php.max'      => '',
+                'arg.max'      => 0,
+                'matches'      => 0,
+                'optional'     => true,
+            ),
+            $classes['Normalizer']
         );
     }
 }
