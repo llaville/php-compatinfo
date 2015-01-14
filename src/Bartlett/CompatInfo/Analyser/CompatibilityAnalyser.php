@@ -13,6 +13,7 @@ namespace Bartlett\CompatInfo\Analyser;
 
 use Bartlett\CompatInfo\Environment;
 use Bartlett\CompatInfo\Collection\ReferenceCollection;
+use Bartlett\CompatInfo\PhpParser\ConditionalCodeNodeProcessor;
 
 use Bartlett\Reflect\Analyser\AbstractAnalyser;
 
@@ -83,6 +84,46 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $this->contextStack = array(
             array($element, $name)
         );
+
+        // checks if conditional code is present
+        $processor  = new ConditionalCodeNodeProcessor();
+        $conditions = $processor->traverse($nodes);
+
+        $conditionalFunctions = array(
+            'extension_loaded' => 'extensions',
+            'function_exists'  => 'functions',
+            'method_exists'    => 'methods',
+            'class_exists'     => 'classes',
+            'interface_exists' => 'interfaces',
+            'trait_exists'     => 'traits',
+            'defined'          => 'constants',
+        );
+
+        while (!empty($conditions)) {
+            $condition = array_shift($conditions);
+
+            // conditional code target
+            list($element, $values) = each($condition);
+            $context = $conditionalFunctions[$element];
+            $target  = ('methods' == $context) ? $values[1] : $values[0];
+
+            if ('extensions' == $context) {
+                $versions = array();
+            } else {
+                $versions = $this->references->find($context, $target);
+            }
+
+            $this->updateElementVersion($context, $target, $versions);
+            $this->metrics[$context][$target]['optional'] = true;
+
+            if ('methods' == $context) {
+                $condition = sprintf('%s(%s::%s)', $element, $values[0], $values[1]);
+            } else {
+                $condition = sprintf('%s(%s)', $element, $values[0]);
+            }
+            $this->updateElementVersion('conditions', $condition, $versions);
+            ++$this->metrics['conditions'][$condition]['matches'];
+        }
     }
 
     public function afterTraverse(array $nodes)
@@ -706,43 +747,6 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 return;
             }
             $this->updateElementVersion('constants', $name->value, self::$php4);
-            return;
-        }
-
-        $conditionalFunctions = array(
-            'extension_loaded' => 'extensions',
-            'function_exists'  => 'functions',
-            'class_exists'     => 'classes',
-            'interface_exists' => 'interfaces',
-            'trait_exists'     => 'traits',
-            'defined'          => 'constants',
-        );
-
-        if (array_key_exists($element, $conditionalFunctions)) {
-            // conditional functions
-            $name    = $element;
-            $context = $conditionalFunctions[$element];
-
-            $element = $node->args[0]->value;
-
-            if (!$element instanceof Node\Scalar\String) {
-                // cannot resolve variable argument
-                return;
-            }
-            if ('extensions' == $context) {
-                $versions = array();
-            } else {
-                $versions = $this->references->find($context, $element->value);
-            }
-
-            // marked argument as optional
-            $this->updateElementVersion($context, $element->value, $versions);
-            $this->metrics[$context][$element->value]['optional'] = true;
-
-            // update versions of conditional elements
-            $condition = sprintf('%s(%s)', $name, $element->value);
-            $this->updateElementVersion('conditions', $condition, $versions);
-            ++$this->metrics['conditions'][$condition]['matches'];
         }
     }
 
