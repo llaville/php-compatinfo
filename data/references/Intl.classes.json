@@ -108,7 +108,7 @@
         "name": "Normalizer",
         "ext_min": "1.0.0beta",
         "ext_max": "",
-        "php_min": "5.2.0",
+        "php_min": "5.3.0alpha1",
         "php_max": ""
     },
     {
