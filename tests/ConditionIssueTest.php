@@ -114,7 +114,7 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
                 'php.min'      => '5.3.0alpha1',
                 'php.max'      => '',
                 'arg.max'      => 0,
-                'matches'      => 0,
+                'matches'      => 1,
                 'optional'     => true,
             ),
             $classes['Normalizer']

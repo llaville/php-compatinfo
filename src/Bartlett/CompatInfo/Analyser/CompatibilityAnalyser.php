@@ -209,6 +209,11 @@ class CompatibilityAnalyser extends AbstractAnalyser
         ) {
             $this->computeClassMethodCallVersions($node);
 
+        } elseif ($node instanceof Node\Expr\StaticCall
+            && is_string($node->name)
+        ) {
+            $this->computeStaticClassMethodCallVersions($node);
+
         } elseif ($node instanceof Node\Stmt\Use_) {
             $this->computePhpFeatureVersions($node);
 
@@ -806,6 +811,38 @@ class CompatibilityAnalyser extends AbstractAnalyser
             // indirect method call
             return;
         }
+    }
+
+    /**
+     * Compute the version of the static method's class called.
+     *
+     * @param Node $node
+     *
+     * @return void
+     */
+    private function computeStaticClassMethodCallVersions(Node $node)
+    {
+        if (!$node->class instanceof Node\Name) {
+            // cannot resolved indirect call
+            return;
+        }
+
+        // identify class
+        $target   = (string) $node->class;
+        $context  = 'classes';
+        $versions = $this->references->find($context, $target);
+        $this->updateElementVersion($context, $target, $versions);
+        ++$this->metrics[$context][$target]['matches'];
+
+        // identify method
+        $target   = $node->name;
+        $context  = 'methods';
+        $versions = $this->references->find($context, $target, count($node->args));
+        $this->updateElementVersion($context, $target, $versions);
+        ++$this->metrics[$context][$target]['matches'];
+
+        // update current context that call this static method
+        $this->updateContextVersion($versions);
     }
 
     /**
