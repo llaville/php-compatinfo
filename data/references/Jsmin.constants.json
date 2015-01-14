@@ -1,0 +1,38 @@
+[
+    {
+        "ext_name_fk": 33,
+        "name": "JSMIN_ERROR_NONE",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.3.10",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 33,
+        "name": "JSMIN_ERROR_UNTERMINATED_COMMENT",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.3.10",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 33,
+        "name": "JSMIN_ERROR_UNTERMINATED_REGEX",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.3.10",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 33,
+        "name": "JSMIN_ERROR_UNTERMINATED_STRING",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.3.10",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

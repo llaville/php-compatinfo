@@ -1,0 +1,1752 @@
+[
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruAnnotation",
+        "name": "setHighlightMode",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruAnnotation",
+        "name": "setBorderStyle",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruAnnotation",
+        "name": "setIcon",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruAnnotation",
+        "name": "setOpened",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDestination",
+        "name": "setXYZ",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDestination",
+        "name": "setFit",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDestination",
+        "name": "setFitH",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDestination",
+        "name": "setFitV",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDestination",
+        "name": "setFitR",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDestination",
+        "name": "setFitB",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDestination",
+        "name": "setFitBH",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDestination",
+        "name": "setFitBV",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "resetError",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "addPage",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "insertPage",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "getCurrentPage",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "getEncoder",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "getCurrentEncoder",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "setCurrentEncoder",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "save",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "output",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "saveToStream",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "resetStream",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "getStreamSize",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "readFromStream",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "setPageLayout",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "getPageLayout",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "setPageMode",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "getPageMode",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "setInfoAttr",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "getInfoAttr",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "setInfoDateAttr",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "getFont",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "loadTTF",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "loadTTC",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "loadType1",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "loadPNG",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "loadJPEG",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "loadRaw",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "setPassword",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "setPermission",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "setEncryptionMode",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "setCompressionMode",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "setPagesConfiguration",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "setOpenAction",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "createOutline",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "addPageLabel",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "useJPFonts",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "useJPEncodings",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "useKRFonts",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "useKREncodings",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "useCNSFonts",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "useCNSEncodings",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "useCNTFonts",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruDoc",
+        "name": "useCNTEncodings",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruEncoder",
+        "name": "getType",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruEncoder",
+        "name": "getByteType",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruEncoder",
+        "name": "getUnicode",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruEncoder",
+        "name": "getWritingMode",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruException",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruException",
+        "name": "getMessage",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruException",
+        "name": "getCode",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruException",
+        "name": "getFile",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruException",
+        "name": "getLine",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruException",
+        "name": "getTrace",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruException",
+        "name": "getPrevious",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruException",
+        "name": "getTraceAsString",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruException",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruFont",
+        "name": "getFontName",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruFont",
+        "name": "getEncodingName",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruFont",
+        "name": "getUnicodeWidth",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruFont",
+        "name": "getAscent",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruFont",
+        "name": "getDescent",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruFont",
+        "name": "getXHeight",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruFont",
+        "name": "getCapHeight",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruFont",
+        "name": "getTextWidth",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruFont",
+        "name": "MeasureText",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruImage",
+        "name": "getSize",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruImage",
+        "name": "getWidth",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruImage",
+        "name": "getHeight",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruImage",
+        "name": "getBitsPerComponent",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruImage",
+        "name": "getColorSpace",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruImage",
+        "name": "setColorMask",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruImage",
+        "name": "setMaskImage",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruImage",
+        "name": "addSMask",
+        "static": false,
+        "ext_min": "1.0.3",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruOutline",
+        "name": "setOpened",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruOutline",
+        "name": "setDestination",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "drawImage",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setLineWidth",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setLineCap",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setLineJoin",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setMiterLimit",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setFlatness",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setDash",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "Concat",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getTransMatrix",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setTextMatrix",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getTextMatrix",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "moveTo",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "stroke",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "fill",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "eofill",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "lineTo",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "curveTo",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "curveTo2",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "curveTo3",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "rectangle",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "arc",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "circle",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "showText",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "showTextNextLine",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "textOut",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "beginText",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "endText",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setFontAndSize",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setCharSpace",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setWordSpace",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setHorizontalScaling",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setTextLeading",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setTextRenderingMode",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setTextRise",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "moveTextPos",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "fillStroke",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "eoFillStroke",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "closePath",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "endPath",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "ellipse",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "textRect",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "moveToNextLine",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setGrayFill",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setGrayStroke",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setRGBFill",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setRGBStroke",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setCMYKFill",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setCMYKStroke",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setWidth",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setHeight",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setSize",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setRotate",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getWidth",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getHeight",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "createDestination",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "createTextAnnotation",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "createLinkAnnotation",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "createURLAnnotation",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getTextWidth",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "MeasureText",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getGMode",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getCurrentPos",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getCurrentTextPos",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getCurrentFont",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getCurrentFontSize",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getLineWidth",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getLineCap",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getLineJoin",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getMiterLimit",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getDash",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getFlatness",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getCharSpace",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getWordSpace",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getHorizontalScaling",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getTextLeading",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getTextRenderingMode",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getTextRise",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getRGBFill",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getRGBStroke",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getCMYKFill",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getCMYKStroke",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getGrayFill",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getGrayStroke",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getFillingColorSpace",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "getStrokingColorSpace",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setSlideShow",
+        "static": false,
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "class_name": "HaruPage",
+        "name": "setZoom",
+        "static": false,
+        "ext_min": "1.0.3",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    }
+]

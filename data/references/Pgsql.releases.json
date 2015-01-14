@@ -1,0 +1,110 @@
+[
+    {
+        "ext_name_fk": 57,
+        "rel_version": "4.0.0",
+        "rel_date": "2000-05-22",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 57,
+        "rel_version": "4.0.1",
+        "rel_date": "2000-06-28",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.0.1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 57,
+        "rel_version": "4.0.3",
+        "rel_date": "2000-10-11",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.0.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 57,
+        "rel_version": "4.0.6",
+        "rel_date": "2001-06-23",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 57,
+        "rel_version": "4.2.0",
+        "rel_date": "2002-04-22",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 57,
+        "rel_version": "4.3.0",
+        "rel_date": "2002-12-27",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 57,
+        "rel_version": "5.0.0",
+        "rel_date": "2004-07-13",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 57,
+        "rel_version": "5.1.0",
+        "rel_date": "2005-11-24",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 57,
+        "rel_version": "5.2.0",
+        "rel_date": "2006-11-02",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 57,
+        "rel_version": "5.4.4",
+        "rel_date": "",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "5.4.4",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 57,
+        "rel_version": "5.6.0alpha1",
+        "rel_date": "2014-01-21",
+        "rel_state": "alpha",
+        "ext_max": "",
+        "php_min": "5.6.0alpha1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 57,
+        "rel_version": "5.6.0beta1",
+        "rel_date": "2014-04-11",
+        "rel_state": "beta",
+        "ext_max": "",
+        "php_min": "5.6.0beta1",
+        "php_max": ""
+    }
+]

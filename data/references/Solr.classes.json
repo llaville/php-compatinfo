@@ -1,0 +1,154 @@
+[
+    {
+        "ext_name_fk": 72,
+        "name": "SolrClient",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrClientException",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrDocument",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrDocumentField",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrException",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrGenericResponse",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrIllegalArgumentException",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrIllegalOperationException",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrInputDocument",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrModifiableParams",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrObject",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrParams",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrPingResponse",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrQuery",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrQueryResponse",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrResponse",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrServerException",
+        "ext_min": "1.1.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrUpdateResponse",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 72,
+        "name": "SolrUtils",
+        "ext_min": "0.9.11",
+        "ext_max": "",
+        "php_min": "5.2.3",
+        "php_max": ""
+    }
+]

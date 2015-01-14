@@ -1,0 +1,10 @@
+[
+    {
+        "ext_name_fk": 66,
+        "name": "SessionHandler",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    }
+]

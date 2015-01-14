@@ -1,0 +1,47 @@
+[
+    {
+        "ext_name_fk": 17,
+        "rel_version": "4.0.0",
+        "rel_date": "2000-05-22",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 17,
+        "rel_version": "4.0.3",
+        "rel_date": "2000-10-11",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.0.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 17,
+        "rel_version": "4.2.0",
+        "rel_date": "2002-04-22",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 17,
+        "rel_version": "4.3.0",
+        "rel_date": "2002-12-27",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 17,
+        "rel_version": "5.0.0",
+        "rel_date": "2004-07-13",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    }
+]

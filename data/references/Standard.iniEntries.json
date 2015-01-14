@@ -1,0 +1,98 @@
+[
+    {
+        "ext_name_fk": 78,
+        "name": "assert.active",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "assert.bail",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "assert.callback",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "assert.quiet_eval",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "assert.warning",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "auto_detect_line_endings",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "default_socket_timeout",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "from",
+        "ext_min": "5.3.4",
+        "ext_max": "",
+        "php_min": "5.3.4",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "safe_mode_allowed_env_vars",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "safe_mode_protected_env_vars",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "url_rewriter.tags",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "user_agent",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    }
+]

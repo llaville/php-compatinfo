@@ -1,0 +1,74 @@
+[
+    {
+        "ext_name_fk": 23,
+        "name": "HaruAnnotation",
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "name": "HaruDestination",
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "name": "HaruDoc",
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "name": "HaruEncoder",
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "name": "HaruException",
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "name": "HaruFont",
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "name": "HaruImage",
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "name": "HaruOutline",
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 23,
+        "name": "HaruPage",
+        "ext_min": "0.0.1",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": ""
+    }
+]

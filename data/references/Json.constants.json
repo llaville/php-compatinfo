@@ -1,0 +1,191 @@
+[
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_BIGINT_AS_STRING",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_ERROR_CTRL_CHAR",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_ERROR_DEPTH",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_ERROR_INF_OR_NAN",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_ERROR_NONE",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_ERROR_RECURSION",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_ERROR_STATE_MISMATCH",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_ERROR_SYNTAX",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_ERROR_UNSUPPORTED_TYPE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_ERROR_UTF8",
+        "ext_min": "5.3.3",
+        "ext_max": "",
+        "php_min": "5.3.3",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_FORCE_OBJECT",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_HEX_AMP",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_HEX_APOS",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_HEX_QUOT",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_HEX_TAG",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_NUMERIC_CHECK",
+        "ext_min": "5.3.3",
+        "ext_max": "",
+        "php_min": "5.3.3",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_OBJECT_AS_ARRAY",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_PARTIAL_OUTPUT_ON_ERROR",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_PRETTY_PRINT",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_UNESCAPED_SLASHES",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_UNESCAPED_UNICODE",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

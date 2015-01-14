@@ -1,0 +1,90 @@
+[
+    {
+        "ext_name_fk": 43,
+        "name": "memcache.allow_failover",
+        "ext_min": "2.0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache.chunk_size",
+        "ext_min": "2.0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache.compress_threshold",
+        "ext_min": "3.0.3",
+        "ext_max": "",
+        "php_min": "4.3.11",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache.default_port",
+        "ext_min": "2.0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache.hash_function",
+        "ext_min": "2.2.0",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache.hash_strategy",
+        "ext_min": "2.2.0",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache.lock_timeout",
+        "ext_min": "3.0.4",
+        "ext_max": "",
+        "php_min": "4.3.11",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache.max_failover_attempts",
+        "ext_min": "2.1.0",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache.protocol",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.11",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache.redundancy",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.11",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache.session_redundancy",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.11",
+        "php_max": ""
+    }
+]

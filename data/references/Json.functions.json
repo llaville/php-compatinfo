@@ -1,0 +1,42 @@
+[
+    {
+        "ext_name_fk": 34,
+        "name": "json_decode",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "5.2.0, 5.2.0, 5.3.0, 5.4.0",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "json_encode",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "json_last_error",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "json_last_error_msg",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

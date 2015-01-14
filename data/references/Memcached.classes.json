@@ -1,0 +1,26 @@
+[
+    {
+        "ext_name_fk": 42,
+        "name": "Memcached",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 42,
+        "name": "MemcachedException",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 42,
+        "name": "MemcachedServer",
+        "ext_min": "2.2.0b1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

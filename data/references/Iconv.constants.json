@@ -1,0 +1,38 @@
+[
+    {
+        "ext_name_fk": 27,
+        "name": "ICONV_IMPL",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "ICONV_MIME_DECODE_CONTINUE_ON_ERROR",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "ICONV_MIME_DECODE_STRICT",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "ICONV_VERSION",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

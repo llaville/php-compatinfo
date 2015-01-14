@@ -1,0 +1,92 @@
+[
+    {
+        "ext_name_fk": 61,
+        "name": "rar_allow_broken_set",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "rar_broken_is",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "rar_close",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "rar_comment_get",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "rar_entry_get",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "rar_list",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "rar_open",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "rar_solid_is",
+        "ext_min": "2.0.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "rar_wrapper_cache_stats",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

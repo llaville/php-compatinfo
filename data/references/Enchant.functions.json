@@ -1,0 +1,212 @@
+[
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_describe",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_dict_exists",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_free",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_free_dict",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_get_dict_path",
+        "ext_min": "1.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_get_error",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_init",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_list_dicts",
+        "ext_min": "1.0.1",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_request_dict",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_request_pwl_dict",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_set_dict_path",
+        "ext_min": "1.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_broker_set_ordering",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_dict_add_to_personal",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_dict_add_to_session",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_dict_check",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_dict_describe",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_dict_get_error",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_dict_is_in_session",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_dict_quick_check",
+        "ext_min": "0.2.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_dict_store_replacement",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 12,
+        "name": "enchant_dict_suggest",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

@@ -1,0 +1,272 @@
+[
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_clear_cache",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_coredump",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_count",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_coverager_decode",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_coverager_get",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_coverager_start",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_coverager_stop",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_dasm_file",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_dasm_string",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_dec",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_get",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_get_data_type",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_get_isref",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_get_op_type",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_get_opcode",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_get_opcode_spec",
+        "ext_min": "1.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_get_refcount",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_get_special_value",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_get_type",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_inc",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_info",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_is_autoglobal",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_isset",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_list",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_set",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_unset",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache_unset_by_prefix",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

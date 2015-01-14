@@ -1,0 +1,212 @@
+[
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_alarm",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_errno",
+        "ext_min": "5.3.4",
+        "ext_max": "",
+        "php_min": "5.3.4",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_exec",
+        "ext_min": "4.2.0",
+        "ext_max": "",
+        "php_min": "4.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_fork",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_get_last_error",
+        "ext_min": "5.3.4",
+        "ext_max": "",
+        "php_min": "5.3.4",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_getpriority",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_setpriority",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_signal",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_signal_dispatch",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_sigprocmask",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_sigtimedwait",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_sigwaitinfo",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_strerror",
+        "ext_min": "5.3.4",
+        "ext_max": "",
+        "php_min": "5.3.4",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_wait",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_waitpid",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_wexitstatus",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_wifexited",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_wifsignaled",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_wifstopped",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_wstopsig",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 53,
+        "name": "pcntl_wtermsig",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

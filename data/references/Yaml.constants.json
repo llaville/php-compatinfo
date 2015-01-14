@@ -1,0 +1,227 @@
+[
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_ANY_BREAK",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_ANY_ENCODING",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_ANY_SCALAR_STYLE",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_BINARY_TAG",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_BOOL_TAG",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_CRLN_BREAK",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_CR_BREAK",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_DOUBLE_QUOTED_SCALAR_STYLE",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_FLOAT_TAG",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_FOLDED_SCALAR_STYLE",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_INT_TAG",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_LITERAL_SCALAR_STYLE",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_LN_BREAK",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_MAP_TAG",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_MERGE_TAG",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_NULL_TAG",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_PHP_TAG",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_PLAIN_SCALAR_STYLE",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_SEQ_TAG",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_SINGLE_QUOTED_SCALAR_STYLE",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_STR_TAG",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_TIMESTAMP_TAG",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_UTF16BE_ENCODING",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_UTF16LE_ENCODING",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "YAML_UTF8_ENCODING",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

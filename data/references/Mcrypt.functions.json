@@ -1,0 +1,372 @@
+[
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_cbc",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_cfb",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_create_iv",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_decrypt",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_ecb",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_enc_get_algorithms_name",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_enc_get_block_size",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_enc_get_iv_size",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_enc_get_key_size",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_enc_get_modes_name",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_enc_get_supported_key_sizes",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_enc_is_block_algorithm",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_enc_is_block_algorithm_mode",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_enc_is_block_mode",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_enc_self_test",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_encrypt",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_generic",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_generic_deinit",
+        "ext_min": "4.0.7",
+        "ext_max": "",
+        "php_min": "4.0.7",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_generic_end",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_generic_init",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_get_block_size",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_get_cipher_name",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_get_iv_size",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_get_key_size",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_list_algorithms",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_list_modes",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_module_close",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_module_get_algo_block_size",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_module_get_algo_key_size",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_module_get_supported_key_sizes",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_module_is_block_algorithm",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_module_is_block_algorithm_mode",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_module_is_block_mode",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_module_open",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_module_self_test",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt_ofb",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mdecrypt_generic",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

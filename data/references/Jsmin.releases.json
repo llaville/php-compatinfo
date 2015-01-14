@@ -1,0 +1,11 @@
+[
+    {
+        "ext_name_fk": 33,
+        "rel_version": "0.1.0",
+        "rel_date": "2013-07-26",
+        "rel_state": "beta",
+        "ext_max": "",
+        "php_min": "5.3.10",
+        "php_max": ""
+    }
+]

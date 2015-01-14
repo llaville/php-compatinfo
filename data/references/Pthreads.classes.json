@@ -1,0 +1,66 @@
+[
+    {
+        "ext_name_fk": 60,
+        "name": "Collectable",
+        "ext_min": "2.0.8",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "name": "Cond",
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "name": "Mutex",
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "name": "Pool",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "name": "Thread",
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "name": "Threaded",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "name": "Worker",
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "name": "stackable",
+        "ext_min": "0.0.36",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    }
+]

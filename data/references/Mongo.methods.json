@@ -1,0 +1,52 @@
+[
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoClient",
+        "name": "getWriteConcern",
+        "static": false,
+        "ext_min": "1.5.0RC2",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoClient",
+        "name": "setWriteConcern",
+        "static": false,
+        "ext_min": "1.5.0RC2",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "aggregateCursor",
+        "static": false,
+        "ext_min": "1.5.0RC2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCursor",
+        "name": "maxTimeMS",
+        "static": false,
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoWriteBatch",
+        "name": "getBatchInfo",
+        "static": false,
+        "ext_min": "1.5.0RC2",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    }
+]

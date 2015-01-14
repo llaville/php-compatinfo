@@ -1,0 +1,22 @@
+[
+    {
+        "ext_name_fk": 87,
+        "name": "uploadprogress_get_contents",
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 87,
+        "name": "uploadprogress_get_info",
+        "ext_min": "0.3.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

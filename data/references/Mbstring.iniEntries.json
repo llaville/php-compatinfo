@@ -1,0 +1,82 @@
+[
+    {
+        "ext_name_fk": 40,
+        "name": "mbstring.detect_order",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 40,
+        "name": "mbstring.encoding_translation",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 40,
+        "name": "mbstring.func_overload",
+        "ext_min": "4.2.0",
+        "ext_max": "",
+        "php_min": "4.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 40,
+        "name": "mbstring.http_input",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 40,
+        "name": "mbstring.http_output",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 40,
+        "name": "mbstring.http_output_conv_mimetypes",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 40,
+        "name": "mbstring.internal_encoding",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 40,
+        "name": "mbstring.language",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 40,
+        "name": "mbstring.strict_detection",
+        "ext_min": "5.1.2",
+        "ext_max": "",
+        "php_min": "5.1.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 40,
+        "name": "mbstring.substitute_character",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": ""
+    }
+]

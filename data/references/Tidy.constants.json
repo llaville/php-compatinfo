@@ -1,0 +1,1199 @@
+[
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_ASP",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_CDATA",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_COMMENT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_DOCTYPE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_END",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_JSTE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_PHP",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_PROCINS",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_ROOT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_SECTION",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_START",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_STARTEND",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_TEXT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_NODETYPE_XMLDECL",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_A",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_ABBR",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_ACRONYM",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_ADDRESS",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_ALIGN",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_APPLET",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_AREA",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_B",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_BASE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_BASEFONT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_BDO",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_BGSOUND",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_BIG",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_BLINK",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_BLOCKQUOTE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_BODY",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_BR",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_BUTTON",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_CAPTION",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_CENTER",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_CITE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_CODE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_COL",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_COLGROUP",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_COMMENT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_DD",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_DEL",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_DFN",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_DIR",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_DIV",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_DL",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_DT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_EM",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_EMBED",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_FIELDSET",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_FONT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_FORM",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_FRAME",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_FRAMESET",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_H1",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_H2",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_H3",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_H4",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_H5",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_H6",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_HEAD",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_HR",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_HTML",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_I",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_IFRAME",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_ILAYER",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_IMG",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_INPUT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_INS",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_ISINDEX",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_KBD",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_KEYGEN",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_LABEL",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_LAYER",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_LEGEND",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_LI",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_LINK",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_LISTING",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_MAP",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_MARQUEE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_MENU",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_META",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_MULTICOL",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_NOBR",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_NOEMBED",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_NOFRAMES",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_NOLAYER",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_NOSAVE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_NOSCRIPT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_OBJECT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_OL",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_OPTGROUP",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_OPTION",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_P",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_PARAM",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_PLAINTEXT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_PRE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_Q",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_RB",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_RBC",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_RP",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_RT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_RTC",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_RUBY",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_S",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_SAMP",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_SCRIPT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_SELECT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_SERVER",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_SERVLET",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_SMALL",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_SPACER",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_SPAN",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_STRIKE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_STRONG",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_STYLE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_SUB",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_SUP",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_TABLE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_TBODY",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_TD",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_TEXTAREA",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_TFOOT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_TH",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_THEAD",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_TITLE",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_TR",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_TT",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_U",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_UL",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_UNKNOWN",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_VAR",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_WBR",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "TIDY_TAG_XMP",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

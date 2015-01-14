@@ -1,0 +1,56 @@
+[
+    {
+        "ext_name_fk": 61,
+        "name": "RAR_HOST_BEOS",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "RAR_HOST_MACOS",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "RAR_HOST_MSDOS",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "RAR_HOST_OS2",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "RAR_HOST_UNIX",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "RAR_HOST_WIN32",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

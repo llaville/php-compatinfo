@@ -1,0 +1,10 @@
+[
+    {
+        "ext_name_fk": 64,
+        "name": "Reflector",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    }
+]

@@ -1,0 +1,322 @@
+[
+    {
+        "ext_name_fk": 85,
+        "name": "ob_tidyhandler",
+        "ext_min": "2.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "5.3.29",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_access_count",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_clean_repair",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_config_count",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_create",
+        "ext_min": "0.5.2",
+        "ext_max": "0.5.3",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_diagnose",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_error_count",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_get_body",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_get_config",
+        "ext_min": "0.7.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_get_error_buffer",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_get_head",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_get_html",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_get_html_ver",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_get_opt_doc",
+        "ext_min": "2.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_get_output",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_get_release",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_get_root",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_get_status",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_getopt",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_is_xhtml",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_is_xml",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_load_config",
+        "ext_min": "0.5.2",
+        "ext_max": "1.2",
+        "php_min": "4.3.0",
+        "php_max": "4.4.9",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_load_config_enc",
+        "ext_min": "0.5.2",
+        "ext_max": "1.2",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_parse_file",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_parse_string",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_repair_file",
+        "ext_min": "0.7.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_repair_string",
+        "ext_min": "0.7.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_reset_config",
+        "ext_min": "0.7.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "4.4.9",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_save_config",
+        "ext_min": "0.5.2",
+        "ext_max": "1.2",
+        "php_min": "4.3.0",
+        "php_max": "4.4.9",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_set_encoding",
+        "ext_min": "0.5.2",
+        "ext_max": "1.2",
+        "php_min": "4.3.0",
+        "php_max": "4.4.9",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_setopt",
+        "ext_min": "0.5.2",
+        "ext_max": "1.2",
+        "php_min": "4.3.0",
+        "php_max": "4.4.9",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidy_warning_count",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

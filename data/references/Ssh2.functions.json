@@ -1,0 +1,322 @@
+[
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_auth_agent",
+        "ext_min": "0.12",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_auth_hostbased_file",
+        "ext_min": "0.7",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_auth_none",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_auth_password",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_auth_pubkey_file",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_connect",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_exec",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_fetch_stream",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_fingerprint",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_forward_accept",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_forward_listen",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_methods_negotiated",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_poll",
+        "ext_min": "0.8",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_publickey_add",
+        "ext_min": "0.10",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_publickey_init",
+        "ext_min": "0.10",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_publickey_list",
+        "ext_min": "0.10",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_publickey_remove",
+        "ext_min": "0.10",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_scp_recv",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_scp_send",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_sftp",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_sftp_chmod",
+        "ext_min": "0.12",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_sftp_lstat",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_sftp_mkdir",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_sftp_readlink",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_sftp_realpath",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_sftp_rename",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_sftp_rmdir",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_sftp_stat",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_sftp_symlink",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_sftp_unlink",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_shell",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 77,
+        "name": "ssh2_tunnel",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

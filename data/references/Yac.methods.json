@@ -1,0 +1,72 @@
+[
+    {
+        "ext_name_fk": 98,
+        "class_name": "Yac",
+        "name": "add",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 98,
+        "class_name": "Yac",
+        "name": "set",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 98,
+        "class_name": "Yac",
+        "name": "get",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 98,
+        "class_name": "Yac",
+        "name": "delete",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 98,
+        "class_name": "Yac",
+        "name": "flush",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 98,
+        "class_name": "Yac",
+        "name": "info",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 98,
+        "class_name": "Yac",
+        "name": "dump",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

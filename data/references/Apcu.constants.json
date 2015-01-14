@@ -1,0 +1,11 @@
+[
+    {
+        "ext_name_fk": 3,
+        "name": "APCU_APC_FULL_BC",
+        "ext_min": "4.0.1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

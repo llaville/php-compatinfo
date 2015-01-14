@@ -1,0 +1,26 @@
+[
+    {
+        "ext_name_fk": 50,
+        "name": "OAuth",
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAuthException",
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAuthProvider",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    }
+]

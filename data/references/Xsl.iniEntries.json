@@ -1,0 +1,10 @@
+[
+    {
+        "ext_name_fk": 97,
+        "name": "xsl.security_prefs",
+        "ext_min": "5.3.9",
+        "ext_max": "",
+        "php_min": "5.3.9",
+        "php_max": ""
+    }
+]

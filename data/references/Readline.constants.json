@@ -1,0 +1,11 @@
+[
+    {
+        "ext_name_fk": 62,
+        "name": "READLINE_LIB",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

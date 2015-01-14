@@ -1,0 +1,92 @@
+[
+    {
+        "ext_name_fk": 15,
+        "name": "FILEINFO_COMPRESS",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.2.17",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 15,
+        "name": "FILEINFO_CONTINUE",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 15,
+        "name": "FILEINFO_DEVICES",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 15,
+        "name": "FILEINFO_MIME",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 15,
+        "name": "FILEINFO_MIME_ENCODING",
+        "ext_min": "1.0.5-dev",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 15,
+        "name": "FILEINFO_MIME_TYPE",
+        "ext_min": "1.0.5-dev",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 15,
+        "name": "FILEINFO_NONE",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 15,
+        "name": "FILEINFO_PRESERVE_ATIME",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 15,
+        "name": "FILEINFO_RAW",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 15,
+        "name": "FILEINFO_SYMLINK",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]
