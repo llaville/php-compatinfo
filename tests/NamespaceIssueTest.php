@@ -106,7 +106,7 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(
             array(
-                'php.min'      => '5.2.0',
+                'php.min'      => '4.0.0',
                 'php.max'      => '',
             ),
             $versions
