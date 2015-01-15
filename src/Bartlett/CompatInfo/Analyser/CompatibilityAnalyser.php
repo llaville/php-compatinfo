@@ -566,6 +566,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
             // introduces parameter object (if not yet defined)
             $name = (string)$node->type;
+            $versions = $this->references->find('classes', $name);
             $this->updateElementVersion('classes', $name, $versions);
             ++$this->metrics['classes'][$name]['matches'];
         }
