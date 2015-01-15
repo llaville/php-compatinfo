@@ -836,6 +836,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
         ++$this->metrics[$context][$target]['matches'];
 
         // identify method
+        $context  = 'methods';
         $versions = $this->references->find($context, $node->name, count($node->args), $target);
         $target  .= '::' . $node->name;
         $this->updateElementVersion($context, $target, $versions);
