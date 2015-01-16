@@ -120,6 +120,7 @@ class DbInitCommand extends Command
         $progress->start();
 
         foreach ($extensions as $refName) {
+            $pdo->beginTransaction();
 
             $ext  = 'extensions';
             $progress->setMessage(
@@ -209,10 +210,11 @@ class DbInitCommand extends Command
                 $ref->addMethod($rec);
             }
 
+            $pdo->commit();
             $progress->advance();
         }
         $progress->finish();
-        $progress->clear();
+        $output->writeln('');
     }
 
     private function readJsonFile($refName, $ext)
