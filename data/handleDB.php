@@ -39,7 +39,7 @@ class DbBackupCommand extends Command
         $tempDir = $this->getApplication()->getAppTempDir() . '/backups';
 
         if (!file_exists($tempDir)) {
-            mkdir($tempDir);
+            mkdir($tempDir, 0755, true);
         }
         $sha1 = sha1_file($source);
         $dest = $tempDir . '/' . basename($source) . ".$sha1";
@@ -120,6 +120,7 @@ class DbInitCommand extends Command
         $progress->start();
 
         foreach ($extensions as $refName) {
+            $pdo->beginTransaction();
 
             $ext  = 'extensions';
             $progress->setMessage(
@@ -209,10 +210,11 @@ class DbInitCommand extends Command
                 $ref->addMethod($rec);
             }
 
+            $pdo->commit();
             $progress->advance();
         }
         $progress->finish();
-        $progress->clear();
+        $output->writeln('');
     }
 
     private function readJsonFile($refName, $ext)
