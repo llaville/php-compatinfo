@@ -39,6 +39,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
     const GH131 = 'gh131.php';
 
     protected static $fixtures;
+    protected static $analyserId;
     protected static $api;
 
     /**
@@ -50,6 +51,8 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
     {
         self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
             . 'fixtures' . DIRECTORY_SEPARATOR;
+
+        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
 
         $client = new Client();
 
@@ -70,7 +73,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH119;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $classes    = $metrics['CompatibilityAnalyser']['classes'];
+        $classes    = $metrics[self::$analyserId]['classes'];
 
         $this->assertEquals(
             array(
@@ -99,7 +102,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH129;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $methods    = $metrics['CompatibilityAnalyser']['methods'];
+        $methods    = $metrics[self::$analyserId]['methods'];
 
         // implicitly public visibility
         $this->assertEquals(
@@ -141,7 +144,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH131;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions  = $metrics['CompatibilityAnalyser']['versions'];
+        $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
             array(

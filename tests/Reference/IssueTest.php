@@ -37,6 +37,7 @@ class IssueTest extends \PHPUnit_Framework_TestCase
     const GH127 = 'gh127.php';
 
     protected static $fixtures;
+    protected static $analyserId;
     protected static $api;
 
     /**
@@ -48,6 +49,8 @@ class IssueTest extends \PHPUnit_Framework_TestCase
     {
         self::$fixtures = dirname(__DIR__) . DIRECTORY_SEPARATOR
             . 'fixtures' . DIRECTORY_SEPARATOR;
+
+        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
 
         $client = new Client();
 
@@ -68,7 +71,7 @@ class IssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH127;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+        $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
             array(

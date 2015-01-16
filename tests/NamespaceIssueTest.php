@@ -39,6 +39,7 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
     const GH158 = 'gh158.php';
 
     protected static $fixtures;
+    protected static $analyserId;
     protected static $api;
 
     /**
@@ -50,6 +51,8 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
     {
         self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
             . 'fixtures' . DIRECTORY_SEPARATOR;
+
+        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
 
         $client = new Client();
 
@@ -70,7 +73,7 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH153;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $functions  = $metrics['CompatibilityAnalyser']['functions'];
+        $functions  = $metrics[self::$analyserId]['functions'];
 
         $this->assertEquals(
             array(
@@ -101,8 +104,8 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH155;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
-        $functions  = $metrics['CompatibilityAnalyser']['functions'];
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $functions  = $metrics[self::$analyserId]['functions'];
 
         $this->assertEquals(
             array(
@@ -142,7 +145,7 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH158;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+        $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
             array(

@@ -39,6 +39,7 @@ use PDO;
 class ParameterTest extends \PHPUnit_Framework_TestCase
 {
     protected static $fixtures;
+    protected static $analyserId;
 
     /**
      * Sets up the shared fixture.
@@ -49,6 +50,8 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
     {
         self::$fixtures = dirname(__DIR__) . DIRECTORY_SEPARATOR
             . 'fixtures' . DIRECTORY_SEPARATOR;
+
+        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
     }
 
     /**
@@ -100,7 +103,7 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
         $analysers  = array('compatibility');
         // ... and get metrics
         $metrics   = $api->run($dataSource, $analysers);
-        $functions = $metrics['CompatibilityAnalyser']['functions'];
+        $functions = $metrics[self::$analyserId]['functions'];
 
         // retrieves function's parameters
         $parameters = $functions[$fctname]['parameters'];
@@ -108,7 +111,7 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
         $argc       = $functions[$fctname]['arg.max'];
 
         // when no arguments provided (default signature)
-        array_unshift($parameters, $functions[$fctname]['php.min']); 
+        array_unshift($parameters, $functions[$fctname]['php.min']);
 
         $this->assertEquals(
             $parameters[$argc],
@@ -144,7 +147,7 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
         $analysers  = array('compatibility');
         // ... and get metrics
         $metrics   = $api->run($dataSource, $analysers);
-        $functions = $metrics['CompatibilityAnalyser']['functions'];
+        $functions = $metrics[self::$analyserId]['functions'];
 
         // retrieves function's parameters
         $parameters = $functions[$fctname]['parameters'];
@@ -152,8 +155,8 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
         $argc       = $functions[$fctname]['arg.max'];
 
         // when no arguments provided (default signature)
-        array_unshift($parameters, $functions[$fctname]['php.min']); 
-        
+        array_unshift($parameters, $functions[$fctname]['php.min']);
+
         $this->assertEquals(
             $parameters[$argc],
             $functions[$fctname]['php.min'],

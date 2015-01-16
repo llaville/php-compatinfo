@@ -37,6 +37,7 @@ class FunctionIssueTest extends \PHPUnit_Framework_TestCase
     const GH130 = 'gh130.php';
 
     protected static $fixtures;
+    protected static $analyserId;
     protected static $api;
 
     /**
@@ -48,6 +49,8 @@ class FunctionIssueTest extends \PHPUnit_Framework_TestCase
     {
         self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
             . 'fixtures' . DIRECTORY_SEPARATOR;
+
+        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
 
         $client = new Client();
 
@@ -68,7 +71,7 @@ class FunctionIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH130;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $functions  = $metrics['CompatibilityAnalyser']['functions'];
+        $functions  = $metrics[self::$analyserId]['functions'];
 
         $this->assertArrayHasKey('foo', $functions);
 

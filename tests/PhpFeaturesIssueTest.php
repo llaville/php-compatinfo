@@ -42,6 +42,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     const GH154 = 'gh154.php';
 
     protected static $fixtures;
+    protected static $analyserId;
     protected static $api;
 
     /**
@@ -53,6 +54,8 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     {
         self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
             . 'fixtures' . DIRECTORY_SEPARATOR;
+
+        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
 
         $client = new Client();
 
@@ -75,7 +78,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH140;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+        $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
             array(
@@ -101,7 +104,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH141;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+        $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
             array(
@@ -126,7 +129,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH142;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+        $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
             array(
@@ -151,7 +154,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH143;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+        $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
             array(
@@ -177,7 +180,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH148;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+        $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
             array(
@@ -203,7 +206,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH154;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+        $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
             array(

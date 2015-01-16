@@ -38,6 +38,7 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
     const GH159 = 'gh159.php';
 
     protected static $fixtures;
+    protected static $analyserId;
     protected static $api;
 
     /**
@@ -49,6 +50,8 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
     {
         self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
             . 'fixtures' . DIRECTORY_SEPARATOR;
+
+        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
 
         $client = new Client();
 
@@ -69,7 +72,7 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH128;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
+        $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
             array(
@@ -93,8 +96,8 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH159;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
-        $classes    = $metrics['CompatibilityAnalyser']['classes'];
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $classes    = $metrics[self::$analyserId]['classes'];
 
         $this->assertEquals(
             array(

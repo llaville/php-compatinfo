@@ -37,6 +37,7 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
     const GH100 = 'gh100.php';
 
     protected static $fixtures;
+    protected static $analyserId;
     protected static $api;
 
     /**
@@ -48,6 +49,8 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
     {
         self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
             . 'fixtures' . DIRECTORY_SEPARATOR;
+
+        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
 
         $client = new Client();
 
@@ -68,9 +71,9 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
         $dataSource = self::$fixtures . self::GH100;
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics['CompatibilityAnalyser']['versions'];
-        $classes    = $metrics['CompatibilityAnalyser']['classes'];
-        $methods    = $metrics['CompatibilityAnalyser']['methods'];
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $classes    = $metrics[self::$analyserId]['classes'];
+        $methods    = $metrics[self::$analyserId]['methods'];
 
         $this->assertEquals(
             array(
