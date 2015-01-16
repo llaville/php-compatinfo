@@ -112,6 +112,13 @@ class CoreExtensionTest extends GenericTest
             'zend_thread_id',
         );
 
+        // special classes
+        self::$optionalclasses = array(
+            'parent',
+            'static',
+            'self',
+        );
+
         self::$ext = 'CoreExtension';
         parent::setUpBeforeClass();
     }
