@@ -39,7 +39,7 @@ class DbBackupCommand extends Command
         $tempDir = $this->getApplication()->getAppTempDir() . '/backups';
 
         if (!file_exists($tempDir)) {
-            mkdir($tempDir);
+            mkdir($tempDir, 0755, true);
         }
         $sha1 = sha1_file($source);
         $dest = $tempDir . '/' . basename($source) . ".$sha1";
