@@ -156,7 +156,7 @@
         "name": "SolrDisMaxQuery",
         "ext_min": "2.1.0",
         "ext_max": "",
-        "php_min": "5.2.3",
+        "php_min": "5.3.0",
         "php_max": ""
     }
 ]
