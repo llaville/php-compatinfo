@@ -533,7 +533,17 @@ class GenericTest extends \PHPUnit_Framework_TestCase
                 /* Skip class alias */
                 continue;
             }
-            $constants = $class->getConstants();
+
+            $parent = $class->getParentClass();
+            if ($parent) {
+                $constants = array();
+            } else {
+                $constants = $class->getConstants();
+            }
+
+            if (!array_key_exists($classname, $classconstants)) {
+                $classconstants[$classname] = array();
+            }
 
             foreach ($constants as $constantname => $constantvalue) {
                 $this->assertArrayHasKey(
