@@ -66,7 +66,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         if (self::$ext) {
             $name = strtolower(str_replace('Extension', '', self::$ext));
             self::$obj = new ExtensionFactory($name);
-        }    
+        }
         if (!self::$obj instanceof ReferenceInterface) {
             self::$obj = null;
             return;
@@ -470,6 +470,18 @@ class GenericTest extends \PHPUnit_Framework_TestCase
             foreach ($methods as $method) {
                 if (!$method->isPublic()) {
                     continue;
+                }
+                $from = $method->getDeclaringClass()->getName();
+
+                if ($from !== $classname) {
+                    // don't check inherit methods
+                    continue;
+                }
+                try {
+                    $method->getPrototype();
+                    // don't check prototype methods
+                    continue;
+                } catch (\ReflectionException $e) {
                 }
                 $methodname = $method->getName();
                 if ($method->isStatic()) {
