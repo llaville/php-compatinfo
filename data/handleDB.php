@@ -261,8 +261,14 @@ class DbUpdateCommand extends Command
         $data    = $this->readJsonFile($refName, $ext);
 
         if (!$data) {
+            if (json_last_error() == JSON_ERROR_NONE) {
+                $error = sprintf('File %s.%s.json does not exist.', $refName, $ext);
+            } else {
+                $error = sprintf('Cannot decode file %s.%s.json', $refName, $ext);
+            }
+
             $output->writeln(
-                sprintf('<error>File %s.%s.json does not exist.</error>', $refName, $ext)
+                sprintf('<error>%s</error>', $error)
             );
             return;
         }
