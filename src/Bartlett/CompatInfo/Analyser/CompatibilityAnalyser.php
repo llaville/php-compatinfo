@@ -1,5 +1,6 @@
 <?php
 /**
+ * Compatibility Analyser
  *
  * @category PHP
  * @package  PHP_CompatInfo
@@ -20,6 +21,8 @@ use Bartlett\Reflect\Analyser\AbstractAnalyser;
 use PhpParser\Node;
 
 /**
+ * This analyzer collects different metrics to find out the minimum version
+ * and the extensions required for a piece of code to run.
  *
  * @category PHP
  * @package  PHP_CompatInfo
@@ -46,6 +49,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
     private $contextStack;
     private $localVersions;
 
+    /**
+     * Initializes the compatibility analyser
+     */
     public function __construct()
     {
         $pdo = Environment::initRefDb();
@@ -66,6 +72,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $this->references = new ReferenceCollection(array(), $pdo);
     }
 
+    /**
+     * Called once before traversal.
+     *
+     * @param Node[] $nodes Array of nodes
+     *
+     * @return null|Node[] Array of nodes
+     */
     public function beforeTraverse(array $nodes)
     {
         parent::beforeTraverse($nodes);
@@ -133,6 +146,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
         }
     }
 
+    /**
+     * Called once after traversal.
+     *
+     * @param Node[] $nodes Array of nodes
+     *
+     * @return null|Node[] Array of nodes
+     */
     public function afterTraverse(array $nodes)
     {
         parent::afterTraverse($nodes);
@@ -140,6 +160,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $this->computeNamespaceVersions();
     }
 
+    /**
+     * Called when entering a node.
+     *
+     * @param Node $node Node
+     *
+     * @return null|Node Node
+     */
     public function enterNode(Node $node)
     {
         parent::enterNode($node);
@@ -172,6 +199,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
         }
     }
 
+    /**
+     * Called when leaving a node.
+     *
+     * @param Node $node Node
+     *
+     * @return null|Node|false|Node[] Node
+     */
     public function leaveNode(Node $node)
     {
         parent::leaveNode($node);
