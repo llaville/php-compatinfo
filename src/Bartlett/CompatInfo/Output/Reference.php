@@ -1,4 +1,14 @@
 <?php
+/**
+ * Default console output class for Reference Api.
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  GIT: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 
 namespace Bartlett\CompatInfo\Output;
 
@@ -8,16 +18,23 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Helper\TableSeparator;
 
 /**
- * Reference results
+ * Reference results default render on console
  *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ * @since    Class available since Release 4.0.0-alpha3
  */
 class Reference extends OutputFormatter
 {
     /**
+     * Prints the list of references (extensions) supported
      *
-     *
-     * @param OutputInterface $output
-     * @param array           $response
+     * @param OutputInterface $output   Console Output concrete instance
+     * @param array           $response References list
      *
      * @return void
      */
