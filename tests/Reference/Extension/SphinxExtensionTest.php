@@ -51,7 +51,7 @@ class SphinxExtensionTest extends GenericTest
             'SPH_RANK_TOTAL',
         );
 
-        self::$ext = 'SphinxExtension';
+        self::$ext = 'Sphinx';
         parent::setUpBeforeClass();
     }
 }

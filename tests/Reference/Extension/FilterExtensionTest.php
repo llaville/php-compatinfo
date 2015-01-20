@@ -60,7 +60,7 @@ class FilterExtensionTest extends GenericTest
             'input_get_args',
         );
 
-        self::$ext = 'FilterExtension';
+        self::$ext = 'Filter';
         parent::setUpBeforeClass();
     }
 }

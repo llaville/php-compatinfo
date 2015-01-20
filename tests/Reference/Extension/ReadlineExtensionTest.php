@@ -51,7 +51,7 @@ class ReadlineExtensionTest extends GenericTest
             'readline_redisplay',
         );
 
-        self::$ext = 'ReadlineExtension';
+        self::$ext = 'Readline';
         parent::setUpBeforeClass();
     }
 }

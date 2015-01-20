@@ -41,7 +41,7 @@ class ExifExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'ExifExtension';
+        self::$ext = 'Exif';
         parent::setUpBeforeClass();
     }
 }

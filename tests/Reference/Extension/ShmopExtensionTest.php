@@ -41,7 +41,7 @@ class ShmopExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'ShmopExtension';
+        self::$ext = 'Shmop';
         parent::setUpBeforeClass();
     }
 }

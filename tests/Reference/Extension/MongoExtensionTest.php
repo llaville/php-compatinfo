@@ -46,7 +46,7 @@ class MongoExtensionTest extends GenericTest
             'MongoUtil',
         );
 
-        self::$ext = 'MongoExtension';
+        self::$ext = 'Mongo';
         parent::setUpBeforeClass();
     }
 }

@@ -41,7 +41,7 @@ class ReflectionExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'ReflectionExtension';
+        self::$ext = 'Reflection';
         parent::setUpBeforeClass();
     }
 }

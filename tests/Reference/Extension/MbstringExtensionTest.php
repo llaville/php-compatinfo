@@ -41,7 +41,7 @@ class MbstringExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'MbstringExtension';
+        self::$ext = 'Mbstring';
         parent::setUpBeforeClass();
     }
 }

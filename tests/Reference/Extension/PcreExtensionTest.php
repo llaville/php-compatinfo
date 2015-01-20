@@ -41,7 +41,7 @@ class PcreExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'PcreExtension';
+        self::$ext = 'Pcre';
         parent::setUpBeforeClass();
     }
 }

@@ -41,7 +41,7 @@ class DateExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'DateExtension';
+        self::$ext = 'Date';
         parent::setUpBeforeClass();
     }
 }

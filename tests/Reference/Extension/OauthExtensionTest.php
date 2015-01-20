@@ -41,7 +41,7 @@ class OauthExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'OauthExtension';
+        self::$ext = 'Oauth';
         parent::setUpBeforeClass();
     }
 }

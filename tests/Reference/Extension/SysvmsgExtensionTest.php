@@ -41,7 +41,7 @@ class SysvmsgExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'SysvmsgExtension';
+        self::$ext = 'Sysvmsg';
         parent::setUpBeforeClass();
     }
 }

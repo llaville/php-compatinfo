@@ -41,7 +41,7 @@ class HaruExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'HaruExtension';
+        self::$ext = 'Haru';
         parent::setUpBeforeClass();
     }
 }

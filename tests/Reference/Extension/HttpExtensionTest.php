@@ -49,7 +49,7 @@ class HttpExtensionTest extends GenericTest
             // PHP_HTTP_CURL_VERSION(7,38,0)
             'http\\Client\\Curl\\AUTH_SPNEGO',
         );
-        self::$ext = 'HttpExtension';
+        self::$ext = 'Http';
         parent::setUpBeforeClass();
     }
 }

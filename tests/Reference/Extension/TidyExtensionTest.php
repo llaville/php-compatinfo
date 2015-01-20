@@ -50,7 +50,7 @@ class TidyExtensionTest extends GenericTest
             'tidy_load_config_enc',
         );
 
-        self::$ext = 'TidyExtension';
+        self::$ext = 'Tidy';
         parent::setUpBeforeClass();
     }
 }

@@ -41,7 +41,7 @@ class BcmathExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'BcmathExtension';
+        self::$ext = 'Bcmath';
         parent::setUpBeforeClass();
     }
 }

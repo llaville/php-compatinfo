@@ -41,7 +41,7 @@ class ZlibExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'ZlibExtension';
+        self::$ext = 'Zlib';
         parent::setUpBeforeClass();
     }
 }

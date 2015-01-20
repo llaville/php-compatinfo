@@ -45,7 +45,7 @@ class CurlExtensionTest extends GenericTest
             'CURLOPT_MUTE',
             'CURLOPT_PASSWDFUNCTION',
         );
-        self::$ext = 'CurlExtension';
+        self::$ext = 'Curl';
         parent::setUpBeforeClass();
     }
 }

@@ -41,7 +41,7 @@ class HtscannerExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'HtscannerExtension';
+        self::$ext = 'Htscanner';
         parent::setUpBeforeClass();
     }
 }

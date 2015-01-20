@@ -41,7 +41,7 @@ class JsminExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'JsminExtension';
+        self::$ext = 'Jsmin';
         parent::setUpBeforeClass();
     }
 }

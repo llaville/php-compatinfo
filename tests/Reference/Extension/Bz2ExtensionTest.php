@@ -41,7 +41,7 @@ class Bz2ExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'Bz2Extension';
+        self::$ext = 'Bz2';
         parent::setUpBeforeClass();
     }
 }

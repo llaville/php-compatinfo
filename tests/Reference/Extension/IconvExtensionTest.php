@@ -41,7 +41,7 @@ class IconvExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'IconvExtension';
+        self::$ext = 'Iconv';
         parent::setUpBeforeClass();
     }
 }

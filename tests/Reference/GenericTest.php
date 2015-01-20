@@ -64,7 +64,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     public static function setUpBeforeClass()
     {
         if (self::$ext) {
-            $name = strtolower(str_replace('Extension', '', self::$ext));
+            $name = strtolower(self::$ext);
             self::$obj = new ExtensionFactory($name);
         }
         if (!self::$obj instanceof ReferenceInterface) {

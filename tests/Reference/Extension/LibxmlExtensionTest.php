@@ -47,7 +47,7 @@ class LibxmlExtensionTest extends GenericTest
                 'LIBXML_HTML_NOIMPLIED',
             );
         }
-        self::$ext = 'LibxmlExtension';
+        self::$ext = 'Libxml';
         parent::setUpBeforeClass();
     }
 }

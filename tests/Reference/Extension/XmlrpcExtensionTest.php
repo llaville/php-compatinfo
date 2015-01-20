@@ -41,7 +41,7 @@ class XmlrpcExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'XmlrpcExtension';
+        self::$ext = 'Xmlrpc';
         parent::setUpBeforeClass();
     }
 }

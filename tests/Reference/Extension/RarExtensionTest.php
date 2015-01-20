@@ -41,7 +41,7 @@ class RarExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'RarExtension';
+        self::$ext = 'Rar';
         parent::setUpBeforeClass();
     }
 }

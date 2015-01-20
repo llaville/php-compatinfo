@@ -41,7 +41,7 @@ class PdoExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'PdoExtension';
+        self::$ext = 'Pdo';
         parent::setUpBeforeClass();
     }
 }

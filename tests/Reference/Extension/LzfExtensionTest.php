@@ -41,7 +41,7 @@ class LzfExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'LzfExtension';
+        self::$ext = 'Lzf';
         parent::setUpBeforeClass();
     }
 }

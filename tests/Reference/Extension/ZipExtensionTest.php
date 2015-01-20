@@ -41,7 +41,7 @@ class ZipExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'ZipExtension';
+        self::$ext = 'Zip';
         parent::setUpBeforeClass();
     }
 }

@@ -41,7 +41,7 @@ class ImagickExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'ImagickExtension';
+        self::$ext = 'Imagick';
         parent::setUpBeforeClass();
     }
 }

@@ -54,7 +54,7 @@ class SnmpExtensionTest extends GenericTest
             );
         }
 
-        self::$ext = 'SnmpExtension';
+        self::$ext = 'Snmp';
         parent::setUpBeforeClass();
     }
 }

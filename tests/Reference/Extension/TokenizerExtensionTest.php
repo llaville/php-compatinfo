@@ -41,7 +41,7 @@ class TokenizerExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'TokenizerExtension';
+        self::$ext = 'Tokenizer';
         parent::setUpBeforeClass();
     }
 }

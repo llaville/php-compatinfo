@@ -41,7 +41,7 @@ class WddxExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'WddxExtension';
+        self::$ext = 'Wddx';
         parent::setUpBeforeClass();
     }
 }

@@ -41,7 +41,7 @@ class EregExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'EregExtension';
+        self::$ext = 'Ereg';
         parent::setUpBeforeClass();
     }
 }

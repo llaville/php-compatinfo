@@ -54,7 +54,7 @@ class LdapExtensionTest extends GenericTest
             'ldap_set_rebind_proc',
         );
 
-        self::$ext = 'LdapExtension';
+        self::$ext = 'Ldap';
         parent::setUpBeforeClass();
     }
 }

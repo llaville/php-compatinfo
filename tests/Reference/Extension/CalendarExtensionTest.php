@@ -41,7 +41,7 @@ class CalendarExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'CalendarExtension';
+        self::$ext = 'Calendar';
         parent::setUpBeforeClass();
     }
 }

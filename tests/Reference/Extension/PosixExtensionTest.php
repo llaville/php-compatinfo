@@ -41,7 +41,7 @@ class PosixExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'PosixExtension';
+        self::$ext = 'Posix';
         parent::setUpBeforeClass();
     }
 }

@@ -41,7 +41,7 @@ class DomExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'DomExtension';
+        self::$ext = 'Dom';
         parent::setUpBeforeClass();
     }
 }

@@ -45,7 +45,7 @@ class PgsqlExtensionTest extends GenericTest
             // Requires CONNECTION_SSL_STARTUP
             'PGSQL_CONNECTION_SSL_STARTUP',
         );
-        self::$ext = 'PgsqlExtension';
+        self::$ext = 'Pgsql';
         parent::setUpBeforeClass();
     }
 }

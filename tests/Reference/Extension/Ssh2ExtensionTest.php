@@ -63,7 +63,7 @@ class Ssh2ExtensionTest extends GenericTest
             'SSH2_POLL_LISTENER_CLOSED',
         );
 
-        self::$ext = 'Ssh2Extension';
+        self::$ext = 'Ssh2';
         parent::setUpBeforeClass();
     }
 }

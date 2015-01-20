@@ -45,7 +45,7 @@ class PcntlExtensionTest extends GenericTest
             'SI_NOINFO'
         );
 
-        self::$ext = 'PcntlExtension';
+        self::$ext = 'Pcntl';
         parent::setUpBeforeClass();
     }
 }

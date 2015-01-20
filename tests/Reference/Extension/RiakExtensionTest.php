@@ -41,7 +41,7 @@ class RiakExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'RiakExtension';
+        self::$ext = 'Riak';
         parent::setUpBeforeClass();
     }
 }

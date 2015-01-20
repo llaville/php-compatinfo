@@ -41,7 +41,7 @@ class XmlwriterExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'XmlwriterExtension';
+        self::$ext = 'Xmlwriter';
         parent::setUpBeforeClass();
     }
 }

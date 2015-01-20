@@ -46,7 +46,7 @@ class XhprofExtensionTest extends GenericTest
             array_push(self::$ignoredconstants, 'XHPROF_FLAGS_LONGNAMES');
         }
 
-        self::$ext = 'XhprofExtension';
+        self::$ext = 'Xhprof';
         parent::setUpBeforeClass();
     }
 }

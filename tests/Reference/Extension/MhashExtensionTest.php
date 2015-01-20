@@ -53,7 +53,7 @@ class MhashExtensionTest extends GenericTest
             'MHASH_SNEFRU256',
             'MHASH_WHIRLPOOL',
         );
-        self::$ext = 'MhashExtension';
+        self::$ext = 'Mhash';
         parent::setUpBeforeClass();
     }
 }

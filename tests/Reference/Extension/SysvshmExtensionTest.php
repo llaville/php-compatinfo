@@ -41,7 +41,7 @@ class SysvshmExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'SysvshmExtension';
+        self::$ext = 'Sysvshm';
         parent::setUpBeforeClass();
     }
 }

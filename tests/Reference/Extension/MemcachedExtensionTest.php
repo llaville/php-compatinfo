@@ -41,7 +41,7 @@ class MemcachedExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'MemcachedExtension';
+        self::$ext = 'Memcached';
         parent::setUpBeforeClass();
     }
 }

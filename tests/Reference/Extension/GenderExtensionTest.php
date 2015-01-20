@@ -41,7 +41,7 @@ class GenderExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'GenderExtension';
+        self::$ext = 'Gender';
         parent::setUpBeforeClass();
     }
 }

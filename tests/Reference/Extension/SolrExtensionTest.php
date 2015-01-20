@@ -41,7 +41,7 @@ class SolrExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'SolrExtension';
+        self::$ext = 'Solr';
         parent::setUpBeforeClass();
     }
 }

@@ -41,7 +41,7 @@ class MsgpackExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'MsgpackExtension';
+        self::$ext = 'Msgpack';
         parent::setUpBeforeClass();
     }
 }

@@ -41,7 +41,7 @@ class SvnExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'SvnExtension';
+        self::$ext = 'Svn';
         parent::setUpBeforeClass();
     }
 }

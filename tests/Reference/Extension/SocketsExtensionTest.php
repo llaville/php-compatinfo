@@ -208,7 +208,7 @@ class SocketsExtensionTest extends GenericTest
             // requires HAVE_SOCKETPAIR
             'socket_create_pair',
         );
-        self::$ext = 'SocketsExtension';
+        self::$ext = 'Sockets';
         parent::setUpBeforeClass();
     }
 }

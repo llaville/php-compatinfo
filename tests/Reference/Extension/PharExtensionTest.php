@@ -45,7 +45,7 @@ class PharExtensionTest extends GenericTest
             // Available from phar 1.1.0 to 1.2.3, removed in 2.0.0
             'phar.extract_list'
         );
-        self::$ext = 'PharExtension';
+        self::$ext = 'Phar';
         parent::setUpBeforeClass();
     }
 }

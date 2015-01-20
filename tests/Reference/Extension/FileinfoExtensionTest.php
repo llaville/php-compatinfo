@@ -41,7 +41,7 @@ class FileinfoExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'FileinfoExtension';
+        self::$ext = 'Fileinfo';
         parent::setUpBeforeClass();
     }
 }

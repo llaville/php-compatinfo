@@ -113,7 +113,7 @@ class ApcExtensionTest extends GenericTest
                 'apc_delete_file',
             );
         }
-        self::$ext = 'ApcExtension';
+        self::$ext = 'Apc';
         parent::setUpBeforeClass();
     }
 }

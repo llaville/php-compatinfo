@@ -41,7 +41,7 @@ class PthreadsExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'PthreadsExtension';
+        self::$ext = 'Pthreads';
         parent::setUpBeforeClass();
     }
 }

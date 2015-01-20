@@ -41,7 +41,7 @@ class IgbinaryExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'IgbinaryExtension';
+        self::$ext = 'Igbinary';
         parent::setUpBeforeClass();
     }
 }

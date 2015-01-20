@@ -47,7 +47,7 @@ class MysqlExtensionTest extends GenericTest
             'mysql_drop_db',
         );
 
-        self::$ext = 'MysqlExtension';
+        self::$ext = 'Mysql';
         parent::setUpBeforeClass();
     }
 }

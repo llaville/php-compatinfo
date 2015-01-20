@@ -41,7 +41,7 @@ class RecodeExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'RecodeExtension';
+        self::$ext = 'Recode';
         parent::setUpBeforeClass();
     }
 }

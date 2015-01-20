@@ -41,7 +41,7 @@ class VarnishExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'VarnishExtension';
+        self::$ext = 'Varnish';
         parent::setUpBeforeClass();
     }
 }

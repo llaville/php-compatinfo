@@ -51,7 +51,7 @@ class OpensslExtensionTest extends GenericTest
             'OPENSSL_KEYTYPE_EC',
         );
 
-        self::$ext = 'OpensslExtension';
+        self::$ext = 'Openssl';
         parent::setUpBeforeClass();
     }
 }

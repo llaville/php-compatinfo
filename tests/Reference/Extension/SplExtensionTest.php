@@ -41,7 +41,7 @@ class SplExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'SplExtension';
+        self::$ext = 'Spl';
         parent::setUpBeforeClass();
     }
 }

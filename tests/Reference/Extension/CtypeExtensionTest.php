@@ -41,7 +41,7 @@ class CtypeExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'CtypeExtension';
+        self::$ext = 'Ctype';
         parent::setUpBeforeClass();
     }
 }

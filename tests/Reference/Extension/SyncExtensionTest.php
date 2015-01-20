@@ -41,7 +41,7 @@ class SyncExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'SyncExtension';
+        self::$ext = 'Sync';
         parent::setUpBeforeClass();
     }
 }

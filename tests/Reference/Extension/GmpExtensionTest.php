@@ -45,7 +45,7 @@ class GmpExtensionTest extends GenericTest
             'GMP',  // empty class in PHP 5.6
         );
 
-        self::$ext = 'GmpExtension';
+        self::$ext = 'Gmp';
         parent::setUpBeforeClass();
     }
 }

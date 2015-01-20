@@ -59,7 +59,7 @@ class XcacheExtensionTest extends GenericTest
         self::$ignoredconstants = array(
             'XC_OPSPEC_FETCHTYPE',
         );
-        self::$ext = 'XcacheExtension';
+        self::$ext = 'Xcache';
         parent::setUpBeforeClass();
     }
 }

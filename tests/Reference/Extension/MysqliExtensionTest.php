@@ -75,7 +75,7 @@ class MysqliExtensionTest extends GenericTest
             'mysqli_stmt_more_results',
             'mysqli_stmt_next_result',
         );
-        self::$ext = 'MysqliExtension';
+        self::$ext = 'Mysqli';
         parent::setUpBeforeClass();
     }
 }

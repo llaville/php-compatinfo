@@ -67,7 +67,7 @@ class OdbcExtensionTest extends GenericTest
             array_push(self::$optionalconstants, 'SQL_WCHAR', 'SQL_WVARCHAR', 'SQL_WLONGVARCHAR');
         }
 
-        self::$ext = 'OdbcExtension';
+        self::$ext = 'Odbc';
         parent::setUpBeforeClass();
     }
 }

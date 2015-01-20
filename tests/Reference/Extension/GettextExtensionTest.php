@@ -41,7 +41,7 @@ class GettextExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'GettextExtension';
+        self::$ext = 'Gettext';
         parent::setUpBeforeClass();
     }
 }

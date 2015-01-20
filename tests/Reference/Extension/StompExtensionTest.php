@@ -41,7 +41,7 @@ class StompExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'StompExtension';
+        self::$ext = 'Stomp';
         parent::setUpBeforeClass();
     }
 }

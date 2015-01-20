@@ -41,7 +41,7 @@ class YacExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'YacExtension';
+        self::$ext = 'Yac';
         parent::setUpBeforeClass();
     }
 }

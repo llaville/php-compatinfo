@@ -41,7 +41,7 @@ class UploadprogressExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'UploadprogressExtension';
+        self::$ext = 'Uploadprogress';
         parent::setUpBeforeClass();
     }
 }

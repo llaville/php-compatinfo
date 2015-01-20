@@ -41,7 +41,7 @@ class IncluedExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'IncluedExtension';
+        self::$ext = 'Inclued';
         parent::setUpBeforeClass();
     }
 }

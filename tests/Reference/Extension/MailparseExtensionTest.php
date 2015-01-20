@@ -41,7 +41,7 @@ class MailparseExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'MailparseExtension';
+        self::$ext = 'Mailparse';
         parent::setUpBeforeClass();
     }
 }

@@ -41,7 +41,7 @@ class SimplexmlExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'SimplexmlExtension';
+        self::$ext = 'Simplexml';
         parent::setUpBeforeClass();
     }
 }

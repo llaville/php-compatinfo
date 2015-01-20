@@ -41,7 +41,7 @@ class SysvsemExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'SysvsemExtension';
+        self::$ext = 'Sysvsem';
         parent::setUpBeforeClass();
     }
 }

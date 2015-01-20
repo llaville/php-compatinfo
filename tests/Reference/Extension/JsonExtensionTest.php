@@ -50,7 +50,7 @@ class JsonExtensionTest extends GenericTest
         self::$ignoredclasses = array(
             'JsonIncrementalParser',
         );
-        self::$ext = 'JsonExtension';
+        self::$ext = 'Json';
         parent::setUpBeforeClass();
     }
 }

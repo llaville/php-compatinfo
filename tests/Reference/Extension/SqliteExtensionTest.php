@@ -41,7 +41,7 @@ class SqliteExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'SqliteExtension';
+        self::$ext = 'Sqlite';
         parent::setUpBeforeClass();
     }
 }

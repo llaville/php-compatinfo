@@ -41,7 +41,7 @@ class YamlExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'YamlExtension';
+        self::$ext = 'Yaml';
         parent::setUpBeforeClass();
     }
 }

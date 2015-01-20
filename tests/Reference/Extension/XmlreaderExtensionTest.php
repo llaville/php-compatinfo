@@ -41,7 +41,7 @@ class XmlreaderExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'XmlreaderExtension';
+        self::$ext = 'Xmlreader';
         parent::setUpBeforeClass();
     }
 }

@@ -41,7 +41,7 @@ class EnchantExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'EnchantExtension';
+        self::$ext = 'Enchant';
         parent::setUpBeforeClass();
     }
 }
