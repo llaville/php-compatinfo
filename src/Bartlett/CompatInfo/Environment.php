@@ -22,6 +22,10 @@ class Environment
      */
     public static function initRefDb()
     {
+        if ($database = getenv('BARTLETT_COMPATINFO_DB')) {
+            return new \PDO('sqlite:' . $database);
+        }
+
         $database = 'compatinfo.sqlite';
         $tempDir  = sys_get_temp_dir() . '/bartlett';
 
