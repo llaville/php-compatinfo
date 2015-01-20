@@ -1,4 +1,14 @@
 <?php
+/**
+ * Display references summaries
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  GIT: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 
 namespace Bartlett\CompatInfo\Api\V3;
 
@@ -8,6 +18,17 @@ use Bartlett\Reflect\Api\V3\Common;
 
 use PDO;
 
+/**
+ * Api to obtain information about one or more references (extensions)
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ * @since    Class available since Release 4.0.0-alpha2+1
+ */
 class Reference extends Common
 {
     const LATEST_PHP_5_2 = '5.2.17';
@@ -23,10 +44,11 @@ class Reference extends Common
         }
     }
 
-    public function __invoke($arg)
-    {
-    }
-
+    /**
+     * List all references supported.
+     *
+     * @return array
+     */
     public function dir()
     {
         $pdo = Environment::initRefDb();
@@ -79,6 +101,11 @@ class Reference extends Common
         return array_values($rows);
     }
 
+    /**
+     * Gets the latest version of PHP available, corresponding to user platform.
+     *
+     * @return string
+     */
     public function getLatestPhpVersion()
     {
         if (version_compare(PHP_VERSION, '5.3', 'lt')) {

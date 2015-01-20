@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Display references summaries
  *
  * PHP version 5
  *
@@ -17,7 +17,7 @@ namespace Bartlett\CompatInfo\Api;
 use Bartlett\Reflect\Api\BaseApi;
 
 /**
- *
+ * Api to obtain information about one or more references (extensions)
  *
  * @category PHP
  * @package  PHP_CompatInfo
