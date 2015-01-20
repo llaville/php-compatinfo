@@ -1,4 +1,14 @@
 <?php
+/**
+ * Extension Factory.
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  GIT: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 
 namespace Bartlett\CompatInfo\Reference;
 
@@ -14,7 +24,6 @@ namespace Bartlett\CompatInfo\Reference;
  * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Class available since Release 4.0.0-alpha2
  */
-
 class ExtensionFactory implements ReferenceInterface
 {
     const LATEST_PHP_5_2 = '5.2.17';
@@ -27,12 +36,22 @@ class ExtensionFactory implements ReferenceInterface
 
     private $name;
 
+    /**
+     * Creates a new extension reference
+     *
+     * @param string $name Name of extension
+     */
     public function __construct($name)
     {
         $this->storage = new SqliteStorage($name);
         $this->name    = $name;
     }
 
+    /**
+     * Returns name of current extension
+     *
+     * @return string
+     */
     public function getName()
     {
         return $this->name;
@@ -77,6 +96,9 @@ class ExtensionFactory implements ReferenceInterface
         return false;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getCurrentVersion()
     {
         $version = phpversion($this->name);
@@ -92,6 +114,9 @@ class ExtensionFactory implements ReferenceInterface
         return $version;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getLatestVersion()
     {
         if (!empty($this->version)) {
@@ -117,46 +142,73 @@ class ExtensionFactory implements ReferenceInterface
         return self::LATEST_PHP_5_6;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getReleases()
     {
         return $this->storage->getMetaData('releases');
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getInterfaces()
     {
         return $this->storage->getMetaData('interfaces');
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getClasses()
     {
         return $this->storage->getMetaData('classes');
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getFunctions()
     {
         return $this->storage->getMetaData('functions');
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getConstants()
     {
         return $this->storage->getMetaData('constants');
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getIniEntries()
     {
         return $this->storage->getMetaData('iniEntries');
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getClassConstants()
     {
         return $this->storage->getMetaData('classConstants');
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getClassStaticMethods()
     {
         return $this->storage->getMetaData('classMethods', true);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getClassMethods()
     {
         return $this->storage->getMetaData('classMethods', false);

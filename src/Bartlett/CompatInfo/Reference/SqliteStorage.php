@@ -1,4 +1,14 @@
 <?php
+/**
+ * Reference DB Storage.
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  GIT: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 
 namespace Bartlett\CompatInfo\Reference;
 
@@ -6,6 +16,17 @@ use Bartlett\CompatInfo\Environment;
 
 use PDO;
 
+/**
+ * SQLite Reference Database.
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ * @since    Class available since Release 4.0.0-alpha2
+ */
 class SqliteStorage
 {
     private $name;
@@ -20,7 +41,9 @@ class SqliteStorage
     private $stmtConstants;
 
     /**
-     * Loads storage with all References in the database
+     * Creates a new storage corresponding to an extension in the database
+     *
+     * @param string $name Name of extension
      */
     public function __construct($name)
     {
@@ -28,6 +51,14 @@ class SqliteStorage
         $this->initialize();
     }
 
+    /**
+     * Gets a list of informations about an extension present in storage
+     *
+     * @param string $meta   Identify the meta information to retrieve
+     * @param bool   $static For class methods only
+     *
+     * @return array of meta informations
+     */
     public function getMetaData($meta, $static = false)
     {
         $stmt = 'stmt' . ucfirst($meta);
@@ -70,7 +101,7 @@ class SqliteStorage
     }
 
     /**
-     * Initialize the collection
+     * Initialize the storage
      *
      * @return void
      */
@@ -82,6 +113,11 @@ class SqliteStorage
         }
     }
 
+    /**
+     * Initializes DB statements
+     *
+     * @return void
+     */
     protected function doInitialize()
     {
         $pdo = Environment::initRefDb();
