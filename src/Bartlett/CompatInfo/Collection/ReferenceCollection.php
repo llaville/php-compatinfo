@@ -1,4 +1,14 @@
 <?php
+/**
+ * Reference Collection
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  GIT: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 
 namespace Bartlett\CompatInfo\Collection;
 
@@ -10,6 +20,13 @@ use PDO;
 /**
  * Reference collection that collect informations for the compatibility analyser.
  *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ * @since    Class available since Release 4.0.0-alpha3
  */
 class ReferenceCollection extends AbstractLazyCollection
 {
@@ -24,6 +41,12 @@ class ReferenceCollection extends AbstractLazyCollection
     private $stmtMethods;
     private $elements;
 
+    /**
+     * Creates a new Reference Collection
+     *
+     * @param array $elements Inital elements
+     * @param PDO   $pdo      PDO instance representing a connection to a database
+     */
     public function __construct(array $elements = array(), PDO $pdo = null)
     {
         $this->elements  = $elements;
@@ -31,6 +54,17 @@ class ReferenceCollection extends AbstractLazyCollection
         $this->dbal->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
+    /**
+     * Fetch the database to retrieve, when possible, element informations.
+     *
+     * @param string $group May be either 'classes', 'methods', 'functions',
+     *                      'constants', 'traits', 'interfaces'
+     * @param string $key   Name of elment to search for
+     * @param type $argc    Number of arguments used in current element signature
+     * @param type $extra   Name of class when searching for methods
+     *
+     * @return array
+     */
     public function find($group, $key, $argc = 0, $extra = null)
     {
         $this->initialize();
@@ -85,6 +119,11 @@ class ReferenceCollection extends AbstractLazyCollection
         return $result;
     }
 
+    /**
+     * Initializes collection and DB statements
+     *
+     * @return void
+     */
     protected function doInitialize()
     {
         $this->collection = new ArrayCollection();
