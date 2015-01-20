@@ -1,4 +1,14 @@
 <?php
+/**
+ * Compatibility Analyser formatter class for console output.
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  GIT: $Id$
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ */
 
 namespace Bartlett\CompatInfo\Console\Formatter;
 
@@ -7,8 +17,27 @@ use Bartlett\Reflect\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Helper\TableSeparator;
 
+/**
+ * Compatibility Analyser formatter class for console output.
+ *
+ * @category PHP
+ * @package  PHP_CompatInfo
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  Release: @package_version@
+ * @link     http://php5.laurent-laville.org/compatinfo/
+ * @since    Class available since Release 4.0.0-alpha3
+ */
 class CompatibilityOutputFormatter extends OutputFormatter
 {
+    /**
+     * Compatibility Analyser console output format
+     *
+     * @param OutputInterface $output   Console Output concrete instance
+     * @param array           $response Analyser Metrics
+     *
+     * @return void
+     */
     public function __invoke(OutputInterface $output, $response)
     {
         $filter = false;
@@ -40,6 +69,16 @@ class CompatibilityOutputFormatter extends OutputFormatter
         );
     }
 
+    /**
+     * Helper that convert analyser result to a formatted console table
+     *
+     * @param OutputInterface $output Console Output concrete instance
+     * @param string          $group  Identify group of elements
+     * @param array           $args   Parsing results of the $group
+     * @param mixed           $filter (reserved)
+     *
+     * @return void
+     */
     private function listHelper(OutputInterface $output, $group, $args, $filter)
     {
         $length = ('classes' == $group) ? -2 : -1;
@@ -113,6 +152,13 @@ class CompatibilityOutputFormatter extends OutputFormatter
         $this->tableHelper($output, $headers, $rows);
     }
 
+    /**
+     * Helper to print versions of each element in current group
+     *
+     * @param array $args   Parsing results
+     * @param mixed $filter (reserved)
+     * @return string
+     */
     private function versionHelper(array $args, $filter)
     {
         $rows = array();
