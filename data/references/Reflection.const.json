@@ -1,0 +1,65 @@
+[
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "IS_IMPLICIT_ABSTRACT",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "IS_EXPLICIT_ABSTRACT",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "IS_FINAL",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "IS_STATIC",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "IS_PUBLIC",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "IS_PROTECTED",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "IS_PRIVATE",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    }
+]

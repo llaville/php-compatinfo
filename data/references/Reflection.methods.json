@@ -1,0 +1,1572 @@
+[
+    {
+        "ext_name_fk": 64,
+        "class_name": "Reflection",
+        "name": "getModifierNames",
+        "static": true,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "Reflection",
+        "name": "export",
+        "static": true,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "Reflector",
+        "name": "export",
+        "static": true,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "Reflector",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "inNamespace",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "isClosure",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "isDeprecated",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "isInternal",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "isUserDefined",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "isGenerator",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "isVariadic",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getClosureThis",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getClosureScopeClass",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getDocComment",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getEndLine",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getExtension",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getExtensionName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getFileName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getNamespaceName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getNumberOfParameters",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getNumberOfRequiredParameters",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getParameters",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getShortName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getStartLine",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "getStaticVariables",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunctionAbstract",
+        "name": "returnsReference",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunction",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunction",
+        "name": "export",
+        "static": true,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunction",
+        "name": "isDisabled",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunction",
+        "name": "invoke",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunction",
+        "name": "invokeArgs",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionFunction",
+        "name": "getClosure",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "export",
+        "static": true,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "getName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "isPassedByReference",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "canBePassedByValue",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "getDeclaringFunction",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "getDeclaringClass",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "getClass",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "isArray",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "isCallable",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "allowsNull",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "getPosition",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "isOptional",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "isDefaultValueAvailable",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "getDefaultValue",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "isDefaultValueConstant",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "getDefaultValueConstantName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionParameter",
+        "name": "isVariadic",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "export",
+        "static": true,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "isPublic",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "isPrivate",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "isProtected",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "isAbstract",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "isFinal",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "isStatic",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "isConstructor",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "isDestructor",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "getClosure",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "getModifiers",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "invoke",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "invokeArgs",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "getDeclaringClass",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "getPrototype",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionMethod",
+        "name": "setAccessible",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "export",
+        "static": true,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "isInternal",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "isUserDefined",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "isInstantiable",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "isCloneable",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getFileName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getStartLine",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getEndLine",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getDocComment",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getConstructor",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "hasMethod",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getMethod",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getMethods",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "hasProperty",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getProperty",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getProperties",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "hasConstant",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getConstants",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getConstant",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getInterfaces",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getInterfaceNames",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "isInterface",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getTraits",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getTraitNames",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getTraitAliases",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "isTrait",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "isAbstract",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "isFinal",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getModifiers",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "isInstance",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "newInstance",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "newInstanceWithoutConstructor",
+        "static": false,
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "newInstanceArgs",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getParentClass",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "isSubclassOf",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getStaticProperties",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getStaticPropertyValue",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "setStaticPropertyValue",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getDefaultProperties",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "isIterateable",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "implementsInterface",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getExtension",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getExtensionName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "inNamespace",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getNamespaceName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionClass",
+        "name": "getShortName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionObject",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "export",
+        "static": true,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "getName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "getValue",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "setValue",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "isPublic",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "isPrivate",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "isProtected",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "isStatic",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "isDefault",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "getModifiers",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "getDeclaringClass",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "getDocComment",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionProperty",
+        "name": "setAccessible",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "export",
+        "static": true,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "getName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "getVersion",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "getFunctions",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "getConstants",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "getINIEntries",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "getClasses",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "getClassNames",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "getDependencies",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "info",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "isPersistent",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionExtension",
+        "name": "isTemporary",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionZendExtension",
+        "name": "export",
+        "static": true,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionZendExtension",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionZendExtension",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionZendExtension",
+        "name": "getName",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionZendExtension",
+        "name": "getVersion",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionZendExtension",
+        "name": "getAuthor",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionZendExtension",
+        "name": "getURL",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 64,
+        "class_name": "ReflectionZendExtension",
+        "name": "getCopyright",
+        "static": false,
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    }
+]
