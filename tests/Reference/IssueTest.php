@@ -35,6 +35,7 @@ use Bartlett\Reflect\Client;
 class IssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH127 = 'gh127.php';
+    const GH162 = 'gh162.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -76,6 +77,30 @@ class IssueTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             array(
                 'php.min'  => '5.1.0',
+                'php.max'  => '',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for bug GH#162
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/162
+     *       "ReflectionClass::newInstanceWithoutConstructor require PHP 5.4"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH162()
+    {
+        $dataSource = self::$fixtures . self::GH162;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'  => '5.4.0',
                 'php.max'  => '',
             ),
             $versions
