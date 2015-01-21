@@ -17,6 +17,7 @@ require_once __DIR__ . '/ReferenceCollection.php';
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -107,6 +108,22 @@ class DbInitCommand extends Command
             }
             $extensions = array($extension);
         }
+
+        // do a DB backup first
+        $command = $this->getApplication()->find('db:backup');
+        $arguments = array(
+            'command' => 'db:backup',
+        );
+        $input = new ArrayInput($arguments);
+        $returnCode = $command->run($input, $output);
+
+        if ($returnCode !== 0) {
+            $output->writeln('<error>DB backup not performed</error>');
+            return;
+        }
+
+        // then delete current DB before to init a new copy again
+        unlink($this->getApplication()->getDbFilename());
 
         $pdo = new \PDO('sqlite:' . $this->getApplication()->getDbFilename());
         $ref = new ReferenceCollection($pdo);
