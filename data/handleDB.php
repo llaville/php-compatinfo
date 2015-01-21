@@ -230,6 +230,8 @@ class DbInitCommand extends Command
             $pdo->commit();
             $progress->advance();
         }
+        $progress->setMessage('Database is built');
+        $progress->display();
         $progress->finish();
         $output->writeln('');
     }
