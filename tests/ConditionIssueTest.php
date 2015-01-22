@@ -36,6 +36,7 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH128 = 'gh128.php';
     const GH159 = 'gh159.php';
+    const GH160 = 'gh160';     // folder
 
     protected static $fixtures;
     protected static $analyserId;
@@ -121,6 +122,30 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
                 'optional'     => true,
             ),
             $classes['Normalizer']
+        );
+    }
+
+    /**
+     * Regression test for bug GH#160
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/160
+     *       Depending on parsing file order, some code conditions are not detected
+     * @group regression
+     * @return void
+     */
+    public function testBugGH160()
+    {
+        $dataSource = self::$fixtures . self::GH160;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '4.0.0',
+                'php.max'      => '',
+            ),
+            $versions
         );
     }
 }
