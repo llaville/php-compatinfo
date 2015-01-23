@@ -14,6 +14,8 @@
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 require_once __DIR__ . '/ReferenceCollection.php';
 
+use Bartlett\CompatInfo\Reference\ExtensionFactory;
+
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
@@ -387,6 +389,246 @@ class DbUpdateCommand extends Command
 }
 
 /**
+ * Update JSON files when a new PHP version is released.
+ */
+class DbReleaseCommand extends Command
+{
+    const JSON_PRETTY_PRINT = 128;
+
+    protected function configure()
+    {
+        $this->setName('db:release:php')
+            ->setDescription('Fix php.max versions on new PHP release')
+        ;
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $latest  = array();
+
+        $refName = 'Curl';
+        $ext     = 'constants';
+        $entry   = 'php_max';
+        $names   = array(
+            'CURLCLOSEPOLICY_CALLBACK'              => ExtensionFactory::LATEST_PHP_5_5,
+            'CURLCLOSEPOLICY_LEAST_RECENTLY_USED'   => ExtensionFactory::LATEST_PHP_5_5,
+            'CURLCLOSEPOLICY_LEAST_TRAFFIC'         => ExtensionFactory::LATEST_PHP_5_5,
+            'CURLCLOSEPOLICY_OLDEST'                => ExtensionFactory::LATEST_PHP_5_5,
+            'CURLCLOSEPOLICY_SLOWEST'               => ExtensionFactory::LATEST_PHP_5_5,
+            'CURLOPT_CLOSEPOLICY'                   => ExtensionFactory::LATEST_PHP_5_5,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Core';
+        $ext     = 'iniEntries';
+        $entry   = 'php_max';
+        $names   = array(
+            'allow_call_time_pass_reference'        => ExtensionFactory::LATEST_PHP_5_3,
+            'define_syslog_variables'               => ExtensionFactory::LATEST_PHP_5_3,
+            'highlight.bg'                          => ExtensionFactory::LATEST_PHP_5_3,
+            'magic_quotes_gpc'                      => ExtensionFactory::LATEST_PHP_5_3,
+            'magic_quotes_runtime'                  => ExtensionFactory::LATEST_PHP_5_3,
+            'magic_quotes_sybase'                   => ExtensionFactory::LATEST_PHP_5_3,
+            'register_globals'                      => ExtensionFactory::LATEST_PHP_5_3,
+            'safe_mode'                             => ExtensionFactory::LATEST_PHP_5_3,
+            'safe_mode_exec_dir'                    => ExtensionFactory::LATEST_PHP_5_3,
+            'y2k_compliance'                        => ExtensionFactory::LATEST_PHP_5_3,
+            'safe_mode_gid'                         => ExtensionFactory::LATEST_PHP_5_3,
+            'safe_mode_include_dir'                 => ExtensionFactory::LATEST_PHP_5_3,
+            'register_long_arrays'                  => ExtensionFactory::LATEST_PHP_5_3,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Core';
+        $ext     = 'constants';
+        $entry   = 'php_max';
+        $names   = array(
+            'ZEND_MULTIBYTE'                        => ExtensionFactory::LATEST_PHP_5_3,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Fileinfo';
+        $ext     = 'constants';
+        $entry   = 'php_max';
+        $names   = array(
+            'FILEINFO_COMPRESS'                     => ExtensionFactory::LATEST_PHP_5_2,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Http';
+        $ext     = 'releases';
+        $entry   = 'php_max';
+        $names   = array(
+            '0.7.0'                                 => ExtensionFactory::LATEST_PHP_5_5,
+            '1.0.0'                                 => ExtensionFactory::LATEST_PHP_5_5,
+            '1.3.0'                                 => ExtensionFactory::LATEST_PHP_5_5,
+            '1.5.0'                                 => ExtensionFactory::LATEST_PHP_5_5,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Iconv';
+        $ext     = 'functions';
+        $entry   = 'php_max';
+        $names   = array(
+            'ob_iconv_handler'                      => ExtensionFactory::LATEST_PHP_5_3,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Mysqli';
+        $ext     = 'functions';
+        $entry   = 'php_max';
+        $names   = array(
+            'mysqli_bind_param'                     => ExtensionFactory::LATEST_PHP_5_3,
+            'mysqli_bind_result'                    => ExtensionFactory::LATEST_PHP_5_3,
+            'mysqli_client_encoding'                => ExtensionFactory::LATEST_PHP_5_3,
+            'mysqli_disable_reads_from_master'      => ExtensionFactory::LATEST_PHP_5_2,
+            'mysqli_disable_rpl_parse'              => ExtensionFactory::LATEST_PHP_5_2,
+            'mysqli_enable_reads_from_master'       => ExtensionFactory::LATEST_PHP_5_2,
+            'mysqli_enable_rpl_parse'               => ExtensionFactory::LATEST_PHP_5_2,
+            'mysqli_fetch'                          => ExtensionFactory::LATEST_PHP_5_3,
+            'mysqli_get_metadata'                   => ExtensionFactory::LATEST_PHP_5_3,
+            'mysqli_master_query'                   => ExtensionFactory::LATEST_PHP_5_2,
+            'mysqli_param_count'                    => ExtensionFactory::LATEST_PHP_5_3,
+            'mysqli_rpl_parse_enabled'              => ExtensionFactory::LATEST_PHP_5_2,
+            'mysqli_rpl_probe'                      => ExtensionFactory::LATEST_PHP_5_2,
+            'mysqli_rpl_query_type'                 => ExtensionFactory::LATEST_PHP_5_2,
+            'mysqli_send_long_data'                 => ExtensionFactory::LATEST_PHP_5_3,
+            'mysqli_send_query'                     => ExtensionFactory::LATEST_PHP_5_2,
+            'mysqli_slave_query'                    => ExtensionFactory::LATEST_PHP_5_2,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Mysqli';
+        $ext     = 'constants';
+        $entry   = 'php_max';
+        $names   = array(
+            'MYSQLI_RPL_ADMIN'                      => ExtensionFactory::LATEST_PHP_5_2,
+            'MYSQLI_RPL_MASTER'                     => ExtensionFactory::LATEST_PHP_5_2,
+            'MYSQLI_RPL_SLAVE'                      => ExtensionFactory::LATEST_PHP_5_2,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Session';
+        $ext     = 'functions';
+        $entry   = 'php_max';
+        $names   = array(
+            'session_is_registered'                 => ExtensionFactory::LATEST_PHP_5_3,
+            'session_register'                      => ExtensionFactory::LATEST_PHP_5_3,
+            'session_unregister'                    => ExtensionFactory::LATEST_PHP_5_3,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Spl';
+        $ext     = 'interfaces';
+        $entry   = 'ext_max';
+        $names   = array(
+            'ArrayAccess'                           => ExtensionFactory::LATEST_PHP_5_2,
+            'Iterator'                              => ExtensionFactory::LATEST_PHP_5_2,
+            'IteratorAggregate'                     => ExtensionFactory::LATEST_PHP_5_2,
+            'Serializable'                          => ExtensionFactory::LATEST_PHP_5_2,
+            'Traversable'                           => ExtensionFactory::LATEST_PHP_5_2,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Spl';
+        $ext     = 'classes';
+        $entry   = 'ext_max';
+        $names   = array(
+            'SimpleXMLIterator'                     => ExtensionFactory::LATEST_PHP_5_2,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Standard';
+        $ext     = 'iniEntries';
+        $entry   = 'php_max';
+        $names   = array(
+            'safe_mode_allowed_env_vars'            => ExtensionFactory::LATEST_PHP_5_3,
+            'safe_mode_protected_env_vars'          => ExtensionFactory::LATEST_PHP_5_3,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Standard';
+        $ext     = 'functions';
+        $entry   = 'php_max';
+        $names   = array(
+            'define_syslog_variables'               => ExtensionFactory::LATEST_PHP_5_3,
+            'php_logo_guid'                         => ExtensionFactory::LATEST_PHP_5_4,
+            'php_real_logo_guid'                    => ExtensionFactory::LATEST_PHP_5_4,
+            'zend_logo_guid'                        => ExtensionFactory::LATEST_PHP_5_4,
+            'php_egg_logo_guid'                     => ExtensionFactory::LATEST_PHP_5_4,
+            'import_request_variables'              => ExtensionFactory::LATEST_PHP_5_3,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Standard';
+        $ext     = 'constants';
+        $entry   = 'php_max';
+        $names   = array(
+            'STREAM_ENFORCE_SAFE_MODE'              => ExtensionFactory::LATEST_PHP_5_3,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        $refName = 'Tidy';
+        $ext     = 'functions';
+        $entry   = 'php_max';
+        $names   = array(
+            'ob_tidyhandler'                        => ExtensionFactory::LATEST_PHP_5_3,
+        );
+        $latest[] = array($refName, $ext, $entry, $names);
+
+        // tag MAX version
+        while (!empty($latest)) {
+            list($refName, $ext, $entry, $names) = array_pop($latest);
+
+            $data = $this->readJsonFile($refName, $ext);
+
+            if (!$data) {
+                if (json_last_error() == JSON_ERROR_NONE) {
+                    $error = sprintf('File %s.%s.json does not exist.', $refName, $ext);
+                } else {
+                    $error = sprintf('Cannot decode file %s.%s.json', $refName, $ext);
+                }
+
+                $output->writeln(
+                    sprintf('<error>%s</error>', $error)
+                );
+                return;
+            }
+
+            $key = $ext == 'releases' ? 'rel_version' : 'name';
+
+            foreach ($data as &$element) {
+                if (array_key_exists($element[$key], $names)) {
+                    $element[$entry] = $names[$element[$key]];
+                }
+            }
+            $this->writeJsonFile($refName, $ext, $data);
+        }
+    }
+
+    private function readJsonFile($refName, $ext)
+    {
+        $filename = $this->getApplication()->getRefDir() . '/' . ucfirst($refName) . ".$ext.json";
+        if (!file_exists($filename)) {
+            return false;
+        }
+        $jsonStr = file_get_contents($filename);
+        $data    = json_decode($jsonStr, true);
+        return $data;
+    }
+
+    private function writeJsonFile($refName, $ext, $data)
+    {
+        $filename = $this->getApplication()->getRefDir() . '/' . ucfirst($refName) . ".$ext.json";
+        if (!file_exists($filename)) {
+            return false;
+        }
+        $jsonStr = json_encode($data, self::JSON_PRETTY_PRINT);
+        file_put_contents($filename, $jsonStr);
+    }
+}
+
+/**
  * Symfony Console Application to handle the SQLite compatinfo database.
  */
 class DbHandleApplication extends Application
@@ -398,6 +640,7 @@ class DbHandleApplication extends Application
         $defaultCommands[] = new DbBackupCommand();
         $defaultCommands[] = new DbInitCommand();
         $defaultCommands[] = new DbUpdateCommand();
+        $defaultCommands[] = new DbReleaseCommand();
 
         return $defaultCommands;
     }
