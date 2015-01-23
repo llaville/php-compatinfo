@@ -25,7 +25,7 @@ if (PHP_SAPI !== 'cli') {
 }
 
 use Bartlett\Reflect\Environment;
-use Bartlett\Reflect\Console\Application;
+use Bartlett\CompatInfo\Console\Application;
 
 Environment::setScanDir();
 

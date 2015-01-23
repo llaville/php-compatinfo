@@ -14,6 +14,7 @@
 class ReferenceCollection
 {
     private $dbal;
+    private $stmtVersions;
     private $stmtExtensions;
     private $stmtReleases;
     private $stmtRelease;
@@ -42,6 +43,11 @@ class ReferenceCollection
             $this->doInitialize();
             $this->initialized = true;
         }
+    }
+
+    public function addVersion($rec)
+    {
+        $this->changedElements('stmtVersions', $rec);
     }
 
     public function addExtension($rec)
@@ -245,6 +251,7 @@ class ReferenceCollection
 
     protected function doInitialize()
     {
+        $tblVersions   = 'bartlett_compatinfo_versions';
         $tblExtensions = 'bartlett_compatinfo_extensions';
         $tblReleases   = 'bartlett_compatinfo_releases';
         $tblIniEntries = 'bartlett_compatinfo_inientries';
@@ -255,6 +262,11 @@ class ReferenceCollection
         $tblConstants  = 'bartlett_compatinfo_constants';
         $tblClassConst = 'bartlett_compatinfo_const';
 
+        $this->dbal->exec(
+            'CREATE TABLE IF NOT EXISTS ' . $tblVersions .
+            ' (build_string VARCHAR(48), build_date INTEGER, build_release VARCHAR(24),' .
+            ' PRIMARY KEY (build_date))'
+        );
         $this->dbal->exec(
             'CREATE TABLE IF NOT EXISTS ' . $tblExtensions .
             ' (id INTEGER, name VARCHAR(32),' .
@@ -318,6 +330,11 @@ class ReferenceCollection
             ' ext_min VARCHAR(16), ext_max VARCHAR(16),' .
             ' php_min VARCHAR(16), php_max VARCHAR(16),' .
             ' PRIMARY KEY (ext_name_fk, class_name, name))'
+        );
+        $this->stmtVersions = $this->dbal->prepare(
+            'INSERT INTO ' . $tblVersions .
+            ' (build_string, build_date, build_release)' .
+            ' VALUES (:build_string, :build_date, :build_release)'
         );
         $this->stmtExtensions = $this->dbal->prepare(
             'INSERT INTO ' . $tblExtensions .

@@ -230,6 +230,13 @@ class DbInitCommand extends Command
             $pdo->commit();
             $progress->advance();
         }
+        $ref->addVersion(
+            array(
+                'build_string'  => date('M d Y H:i:s T'),
+                'build_date'    => date('YmdHis'),
+                'build_release' => '@package_version@',
+            )
+        );
         $progress->setMessage('Database is built');
         $progress->display();
         $progress->finish();

@@ -12,6 +12,8 @@
 
 namespace Bartlett\CompatInfo;
 
+use PDO;
+
 /**
  * Application Environment.
  *
@@ -28,7 +30,7 @@ class Environment
     /**
      * Initializes installation of the Reference database
      *
-     * @return \PDO Instance of pdo_sqlite
+     * @return PDO Instance of pdo_sqlite
      */
     public static function initRefDb()
     {
@@ -48,7 +50,26 @@ class Environment
             copy($source, $dest);
         }
 
-        $pdo = new \PDO('sqlite:' . $tempDir . '/' . $database);
+        $pdo = new PDO('sqlite:' . $tempDir . '/' . $database);
         return $pdo;
+    }
+
+    /**
+     *  Gets version informations about the Reference database
+     *
+     * @return array
+     */
+    public static function versionRefDb()
+    {
+        $pdo = self::initRefDb();
+
+        $stmt = $pdo->prepare(
+            'SELECT build_string as "build.string", build_date as "build.date",' .
+            ' build_release as "build.release"' .
+            ' FROM bartlett_compatinfo_versions' .
+            ' WHERE build_release = :release'
+        );
+        $stmt->execute(array('release' => '@package_version@'));
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
