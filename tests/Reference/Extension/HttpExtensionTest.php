@@ -51,5 +51,25 @@ class HttpExtensionTest extends GenericTest
         );
         self::$ext = 'Http';
         parent::setUpBeforeClass();
+
+        if (!is_null(self::$obj)) {
+            $currentVersion = self::$obj->getCurrentVersion();
+
+            // platform dependant
+            if (version_compare($currentVersion, '2.0.0', 'lt')) {
+                // v1, so all v2 releases are optionals
+                self::$optionalreleases = array('2.0.0');
+                array_push(self::$optionalreleases, '2.1.2');
+            } else {
+                // v2, so all v1 releases must not be checked
+                self::$optionalreleases = array(
+                    '0.7.0',
+                    '1.0.0',
+                    '1.3.0',
+                    '1.5.0',
+                    '1.7.0',
+                );
+            }
+        }
     }
 }
