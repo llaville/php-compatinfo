@@ -40,6 +40,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     protected static $ext = null;
 
     // Could be defined in Reference but missing (system dependant)
+    protected static $optionalreleases    = array();
     protected static $optionalcfgs        = array();
     protected static $optionalconstants   = array();
     protected static $optionalfunctions   = array();
@@ -117,6 +118,10 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $inientries = self::$obj->getIniEntries();
         $this->assertTrue(is_array($inientries));
         foreach ($inientries as $inientry => $range) {
+            if (in_array($range['ext.min'], self::$optionalreleases)) {
+                continue;
+            }
+
             $min = $range['php.min'];
             $max = $range['php.max'];
 
@@ -200,6 +205,10 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $fcts = self::$obj->getFunctions();
         $this->assertTrue(is_array($fcts));
         foreach ($fcts as $fctname => $range) {
+            if (in_array($range['ext.min'], self::$optionalreleases)) {
+                continue;
+            }
+
             $min = $range['php.min'];
             $max = $range['php.max'];
 
@@ -279,6 +288,10 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $dict = self::$obj->getConstants();
         $this->assertTrue(is_array($dict));
         foreach ($dict as $constname => $range) {
+            if (in_array($range['ext.min'], self::$optionalreleases)) {
+                continue;
+            }
+
             $min = $range['php.min'];
             $max = $range['php.max'];
 
@@ -361,6 +374,10 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $dict = self::$obj->getClasses();
         $this->assertTrue(is_array($dict));
         foreach ($dict as $classname => $range) {
+            if (in_array($range['ext.min'], self::$optionalreleases)) {
+                continue;
+            }
+
             $min = $range['php.min'];
             $max = $range['php.max'];
 
@@ -570,6 +587,10 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $dict = self::$obj->getInterfaces();
         $this->assertTrue(is_array($dict));
         foreach ($dict as $intname => $range) {
+            if (in_array($range['ext.min'], self::$optionalreleases)) {
+                continue;
+            }
+
             $min = $range['php.min'];
             $max = $range['php.max'];
 
