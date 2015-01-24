@@ -103,7 +103,7 @@ class ExtensionFactory implements ReferenceInterface
     {
         $version = phpversion($this->name);
         $pattern = '/^[0-9]+\.[0-9]+/';
-        if (empty($this->version) || !preg_match($pattern, $version)) {
+        if (!preg_match($pattern, $version)) {
             /**
              * When version is not provided by the extension, or not standard format
              * or we don't have it in our reference (ex snmp) because have no sense
