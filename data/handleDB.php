@@ -150,80 +150,48 @@ class DbInitCommand extends Command
             $ref->addExtension($data);
 
             $ext  = 'releases';
-            $progress->setMessage(
-                sprintf("Building %s (%s)", $ext, $refName)
-            );
-            $progress->display();
             $data = $this->readJsonFile($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addRelease($rec);
             }
 
             $ext  = 'interfaces';
-            $progress->setMessage(
-                sprintf("Building %s (%s)", $ext, $refName)
-            );
-            $progress->display();
             $data = $this->readJsonFile($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addInterface($rec);
             }
 
             $ext  = 'classes';
-            $progress->setMessage(
-                sprintf("Building %s (%s)", $ext, $refName)
-            );
-            $progress->display();
             $data = $this->readJsonFile($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addClass($rec);
             }
 
             $ext  = 'functions';
-            $progress->setMessage(
-                sprintf("Building %s (%s)", $ext, $refName)
-            );
-            $progress->display();
             $data = $this->readJsonFile($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addFunction($rec);
             }
 
             $ext  = 'constants';
-            $progress->setMessage(
-                sprintf("Building %s (%s)", $ext, $refName)
-            );
-            $progress->display();
             $data = $this->readJsonFile($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addConstant($rec);
             }
 
             $ext  = 'iniEntries';
-            $progress->setMessage(
-                sprintf("Building %s (%s)", $ext, $refName)
-            );
-            $progress->display();
             $data = $this->readJsonFile($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addIniEntry($rec);
             }
 
             $ext  = 'const';
-            $progress->setMessage(
-                sprintf("Building %s (%s)", $ext, $refName)
-            );
-            $progress->display();
             $data = $this->readJsonFile($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addClassConstant($rec);
             }
 
             $ext  = 'methods';
-            $progress->setMessage(
-                sprintf("Building %s (%s)", $ext, $refName)
-            );
-            $progress->display();
             $data = $this->readJsonFile($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addMethod($rec);
