@@ -73,6 +73,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
             return;
         }
         self::$ext = $extname = self::$obj->getName();
+        self::$optionalreleases = array();
 
         if (!extension_loaded($extname)) {
             // if dynamic extension load is activated
@@ -85,6 +86,15 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         }
         if (!extension_loaded($extname)) {
             self::$obj = null;
+        } else {
+            $releases       = array_keys(self::$obj->getReleases());
+            $currentVersion = self::$obj->getCurrentVersion();
+            // platform dependant
+            foreach ($releases as $rel_version) {
+                if (version_compare($currentVersion, $rel_version, 'lt')) {
+                    array_push(self::$optionalreleases, $rel_version);
+                }
+            }
         }
     }
 
