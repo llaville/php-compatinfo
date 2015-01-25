@@ -262,12 +262,20 @@ class DbInitCommand extends Command
                 'releases'   => array('4', '5'),
             ),
             'http' => array(
-                'classes'    => array('', '2'),
+                'classes'    => array('', '1', '2'),
                 'constants'  => array('', '2'),
                 'functions'  => array(''),
                 'iniEntries' => array('', '2'),
                 'interfaces' => array('2'),
                 'releases'   => array('', '1', '2'),
+            ),
+            'solr' => array(
+                'classes'    => array('', '1', '2'),
+                'constants'  => array(''),
+                'functions'  => array(''),
+                'releases'   => array('', '1', '2'),
+                'const'      => array(''),
+                'methods'    => array('', '2'),
             ),
         );
 
