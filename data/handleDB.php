@@ -180,53 +180,53 @@ class DbInitCommand extends Command
                 sprintf("Building %s (%s)", $ext, $refName)
             );
             $progress->display();
-            $data = $this->readJsonFile($refName, $ext);
+            $data = $this->readJsonFile($refName, $ext, '');
             $ref->addExtension($data);
 
             $ext  = 'releases';
-            $data = $this->readJsonFile($refName, $ext);
+            $data = $this->readData($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addRelease($rec);
             }
 
             $ext  = 'interfaces';
-            $data = $this->readJsonFile($refName, $ext);
+            $data = $this->readData($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addInterface($rec);
             }
 
             $ext  = 'classes';
-            $data = $this->readJsonFile($refName, $ext);
+            $data = $this->readData($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addClass($rec);
             }
 
             $ext  = 'functions';
-            $data = $this->readJsonFile($refName, $ext);
+            $data = $this->readData($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addFunction($rec);
             }
 
             $ext  = 'constants';
-            $data = $this->readJsonFile($refName, $ext);
+            $data = $this->readData($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addConstant($rec);
             }
 
             $ext  = 'iniEntries';
-            $data = $this->readJsonFile($refName, $ext);
+            $data = $this->readData($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addIniEntry($rec);
             }
 
             $ext  = 'const';
-            $data = $this->readJsonFile($refName, $ext);
+            $data = $this->readData($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addClassConstant($rec);
             }
 
             $ext  = 'methods';
-            $data = $this->readJsonFile($refName, $ext);
+            $data = $this->readData($refName, $ext);
             foreach ($data as $rec) {
                 $ref->addMethod($rec);
             }
@@ -245,6 +245,59 @@ class DbInitCommand extends Command
         $progress->display();
         $progress->finish();
         $output->writeln('');
+    }
+
+    /**
+     * Reads splitted JSON data files
+     */
+    private function readData($refName, $ext)
+    {
+        $majorReleases = array(
+            'core' => array(
+                'classes'    => array('4', '5'),
+                'constants'  => array('4', '5'),
+                'functions'  => array('4', '5'),
+                'iniEntries' => array('4', '5'),
+                'interfaces' => array('5'),
+                'releases'   => array('4', '5'),
+            ),
+            'http' => array(
+                'classes'    => array('', '2'),
+                'constants'  => array('', '2'),
+                'functions'  => array(''),
+                'iniEntries' => array('', '2'),
+                'interfaces' => array('2'),
+                'releases'   => array('', '1', '2'),
+            ),
+        );
+
+        if (array_key_exists($refName, $majorReleases)) {
+            $iterations = $majorReleases[$refName];
+            if (array_key_exists($ext, $iterations)) {
+                $iterations = $iterations[$ext];
+            } else {
+                $iterations = array('');
+            }
+        } else {
+            $iterations = array('');
+        }
+
+        $data = array();
+
+        foreach ($iterations as $major) {
+            $temp = $this->readJsonFile($refName, $ext, $major);
+            if (!$temp) {
+                if (json_last_error() == JSON_ERROR_NONE) {
+                    // missing files are optional until all extensions are fully documented
+                    continue;
+                } else {
+                    $error = sprintf('Cannot decode file %s%s.%s.json', $refName, $major, $ext);
+                }
+                throw new \RuntimeException($error);
+            }
+            $data = array_merge($data, $temp);
+        }
+        return $data;
     }
 }
 
@@ -473,9 +526,56 @@ class DbReleaseCommand extends Command
         $entry   = 'php_max';
         $names   = array(
             '0.7.0'                                 => ExtensionFactory::LATEST_PHP_5_5,
+        );
+        $latest[] = array($refName, $ext, $major, $entry, $names);
+
+        $refName = 'Http';
+        $ext     = 'releases';
+        $major   = '1';
+        $entry   = 'php_max';
+        $names   = array(
             '1.0.0'                                 => ExtensionFactory::LATEST_PHP_5_5,
             '1.3.0'                                 => ExtensionFactory::LATEST_PHP_5_5,
             '1.5.0'                                 => ExtensionFactory::LATEST_PHP_5_5,
+        );
+        $latest[] = array($refName, $ext, $major, $entry, $names);
+
+        $refName = 'Http';
+        $ext     = 'classes';
+        $major   = '';
+        $entry   = 'php_max';
+        $names   = array(
+            'HttpRequest'                           => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpResponse'                          => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpUtil'                              => ExtensionFactory::LATEST_PHP_5_5,
+        );
+        $latest[] = array($refName, $ext, $major, $entry, $names);
+
+        $refName = 'Http';
+        $ext     = 'classes';
+        $major   = '1';
+        $entry   = 'php_max';
+        $names   = array(
+            'HttpDeflateStream'                     => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpEncodingException'                 => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpException'                         => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpHeaderException'                   => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpInflateStream'                     => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpInvalidParamException'             => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpMalformedHeadersException'         => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpMessage'                           => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpMessageTypeException'              => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpQueryString'                       => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpQueryStringException'              => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpRequestException'                  => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpRequestMethodException'            => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpRequestPool'                       => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpRequestPoolException'              => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpResponseException'                 => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpRuntimeException'                  => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpSocketException'                   => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpUrlException'                      => ExtensionFactory::LATEST_PHP_5_5,
+            'HttpRequestDataShare'                  => ExtensionFactory::LATEST_PHP_5_5,
         );
         $latest[] = array($refName, $ext, $major, $entry, $names);
 
