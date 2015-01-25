@@ -21,6 +21,7 @@ use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -244,6 +245,13 @@ class DbUpdateCommand extends Command
                 InputArgument::REQUIRED,
                 'group of information to update in database (releases, classes, ...)'
             )
+            ->addOption(
+                'major',
+                null,
+                InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY,
+                'Which major versions to process?',
+                array('0', '1')
+            )
         ;
     }
 
@@ -254,19 +262,34 @@ class DbUpdateCommand extends Command
 
         $refName = ucfirst(strtolower($extension));
         $ext     = $group;
-        $data    = $this->readJsonFile($refName, $ext);
 
-        if (!$data) {
-            if (json_last_error() == JSON_ERROR_NONE) {
-                $error = sprintf('File %s.%s.json does not exist.', $refName, $ext);
-            } else {
-                $error = sprintf('Cannot decode file %s.%s.json', $refName, $ext);
+        $data = array();
+
+        foreach ($input->getOption('major') as $major) {
+
+            if (!preg_match('/^[0-9]+$/', $major)) {
+                $output->writeln('<error>Invalid major version</error>');
+                return;
+            }
+            if ($major === '0') {
+                $major = '';
             }
 
-            $output->writeln(
-                sprintf('<error>%s</error>', $error)
-            );
-            return;
+            $temp = $this->readJsonFile($refName, $ext, $major);
+
+            if (!$temp) {
+                if (json_last_error() == JSON_ERROR_NONE) {
+                    $error = sprintf('File %s.%s.json does not exist.', $refName, $ext);
+                } else {
+                    $error = sprintf('Cannot decode file %s.%s.json', $refName, $ext);
+                }
+
+                $output->writeln(
+                    sprintf('<error>%s</error>', $error)
+                );
+                return;
+            }
+            $data = array_merge($data, $temp);
         }
 
         $pdo = new \PDO('sqlite:' . $this->getApplication()->getDbFilename());
@@ -344,9 +367,11 @@ class DbUpdateCommand extends Command
         $output->writeln(PHP_EOL . $message);
     }
 
-    private function readJsonFile($refName, $ext)
+    private function readJsonFile($refName, $ext, $major)
     {
-        $filename = $this->getApplication()->getRefDir() . '/' . ucfirst($refName) . ".$ext.json";
+        $filename = $this->getApplication()->getRefDir() .
+            '/' . ucfirst($refName) . $major . ".$ext.json";
+
         if (!file_exists($filename)) {
             return false;
         }
