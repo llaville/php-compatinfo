@@ -18,12 +18,31 @@ use Bartlett\CompatInfo\Reference\ExtensionFactory;
 
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Command\Command as BaseCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+
+/**
+ * Common class to all 'db' commands
+ */
+class Command extends BaseCommand
+{
+    protected function readJsonFile($refName, $ext, $major)
+    {
+        $filename = $this->getApplication()->getRefDir() .
+            '/' . ucfirst($refName) . $major . ".$ext.json";
+
+        if (!file_exists($filename)) {
+            return false;
+        }
+        $jsonStr = file_get_contents($filename);
+        $data    = json_decode($jsonStr, true);
+        return $data;
+    }
+}
 
 /**
  * Backup copy of the database
@@ -213,17 +232,6 @@ class DbInitCommand extends Command
         $progress->finish();
         $output->writeln('');
     }
-
-    private function readJsonFile($refName, $ext)
-    {
-        $filename = $this->getApplication()->getRefDir() . '/' . ucfirst($refName) . ".$ext.json";
-        if (!file_exists($filename)) {
-            return array();
-        }
-        $jsonStr = file_get_contents($filename);
-        $data    = json_decode($jsonStr, true);
-        return $data;
-    }
 }
 
 /**
@@ -365,19 +373,6 @@ class DbUpdateCommand extends Command
         }
 
         $output->writeln(PHP_EOL . $message);
-    }
-
-    private function readJsonFile($refName, $ext, $major)
-    {
-        $filename = $this->getApplication()->getRefDir() .
-            '/' . ucfirst($refName) . $major . ".$ext.json";
-
-        if (!file_exists($filename)) {
-            return false;
-        }
-        $jsonStr = file_get_contents($filename);
-        $data    = json_decode($jsonStr, true);
-        return $data;
     }
 }
 
@@ -597,17 +592,6 @@ class DbReleaseCommand extends Command
             }
             $this->writeJsonFile($refName, $ext, $data);
         }
-    }
-
-    private function readJsonFile($refName, $ext)
-    {
-        $filename = $this->getApplication()->getRefDir() . '/' . ucfirst($refName) . ".$ext.json";
-        if (!file_exists($filename)) {
-            return false;
-        }
-        $jsonStr = file_get_contents($filename);
-        $data    = json_decode($jsonStr, true);
-        return $data;
     }
 
     private function writeJsonFile($refName, $ext, $data)
