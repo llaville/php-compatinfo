@@ -30,6 +30,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class Command extends BaseCommand
 {
+    const JSON_PRETTY_PRINT = 128;
+
     protected function readJsonFile($refName, $ext, $major)
     {
         $filename = $this->getApplication()->getRefDir() .
@@ -41,6 +43,18 @@ class Command extends BaseCommand
         $jsonStr = file_get_contents($filename);
         $data    = json_decode($jsonStr, true);
         return $data;
+    }
+
+    protected function writeJsonFile($refName, $ext, $major, $data)
+    {
+        $filename = $this->getApplication()->getRefDir() .
+            '/' . ucfirst($refName) . $major . ".$ext.json";
+
+        if (!file_exists($filename)) {
+            return false;
+        }
+        $jsonStr = json_encode($data, self::JSON_PRETTY_PRINT);
+        file_put_contents($filename, $jsonStr);
     }
 }
 
@@ -381,8 +395,6 @@ class DbUpdateCommand extends Command
  */
 class DbReleaseCommand extends Command
 {
-    const JSON_PRETTY_PRINT = 128;
-
     protected function configure()
     {
         $this->setName('db:release:php')
@@ -396,6 +408,7 @@ class DbReleaseCommand extends Command
 
         $refName = 'Curl';
         $ext     = 'constants';
+        $major   = '';
         $entry   = 'php_max';
         $names   = array(
             'CURLCLOSEPOLICY_CALLBACK'              => ExtensionFactory::LATEST_PHP_5_5,
@@ -405,10 +418,11 @@ class DbReleaseCommand extends Command
             'CURLCLOSEPOLICY_SLOWEST'               => ExtensionFactory::LATEST_PHP_5_5,
             'CURLOPT_CLOSEPOLICY'                   => ExtensionFactory::LATEST_PHP_5_5,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Core';
         $ext     = 'iniEntries';
+        $major   = '4';
         $entry   = 'php_max';
         $names   = array(
             'allow_call_time_pass_reference'        => ExtensionFactory::LATEST_PHP_5_3,
@@ -423,28 +437,39 @@ class DbReleaseCommand extends Command
             'y2k_compliance'                        => ExtensionFactory::LATEST_PHP_5_3,
             'safe_mode_gid'                         => ExtensionFactory::LATEST_PHP_5_3,
             'safe_mode_include_dir'                 => ExtensionFactory::LATEST_PHP_5_3,
+        );
+        $latest[] = array($refName, $ext, $major, $entry, $names);
+
+        $refName = 'Core';
+        $ext     = 'iniEntries';
+        $major   = '5';
+        $entry   = 'php_max';
+        $names   = array(
             'register_long_arrays'                  => ExtensionFactory::LATEST_PHP_5_3,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Core';
         $ext     = 'constants';
+        $major   = '5';
         $entry   = 'php_max';
         $names   = array(
             'ZEND_MULTIBYTE'                        => ExtensionFactory::LATEST_PHP_5_3,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Fileinfo';
         $ext     = 'constants';
+        $major   = '';
         $entry   = 'php_max';
         $names   = array(
             'FILEINFO_COMPRESS'                     => ExtensionFactory::LATEST_PHP_5_2,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Http';
         $ext     = 'releases';
+        $major   = '';
         $entry   = 'php_max';
         $names   = array(
             '0.7.0'                                 => ExtensionFactory::LATEST_PHP_5_5,
@@ -452,18 +477,20 @@ class DbReleaseCommand extends Command
             '1.3.0'                                 => ExtensionFactory::LATEST_PHP_5_5,
             '1.5.0'                                 => ExtensionFactory::LATEST_PHP_5_5,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Iconv';
         $ext     = 'functions';
+        $major   = '';
         $entry   = 'php_max';
         $names   = array(
             'ob_iconv_handler'                      => ExtensionFactory::LATEST_PHP_5_3,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Mysqli';
         $ext     = 'functions';
+        $major   = '';
         $entry   = 'php_max';
         $names   = array(
             'mysqli_bind_param'                     => ExtensionFactory::LATEST_PHP_5_3,
@@ -484,30 +511,33 @@ class DbReleaseCommand extends Command
             'mysqli_send_query'                     => ExtensionFactory::LATEST_PHP_5_2,
             'mysqli_slave_query'                    => ExtensionFactory::LATEST_PHP_5_2,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Mysqli';
         $ext     = 'constants';
+        $major   = '';
         $entry   = 'php_max';
         $names   = array(
             'MYSQLI_RPL_ADMIN'                      => ExtensionFactory::LATEST_PHP_5_2,
             'MYSQLI_RPL_MASTER'                     => ExtensionFactory::LATEST_PHP_5_2,
             'MYSQLI_RPL_SLAVE'                      => ExtensionFactory::LATEST_PHP_5_2,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Session';
         $ext     = 'functions';
+        $major   = '';
         $entry   = 'php_max';
         $names   = array(
             'session_is_registered'                 => ExtensionFactory::LATEST_PHP_5_3,
             'session_register'                      => ExtensionFactory::LATEST_PHP_5_3,
             'session_unregister'                    => ExtensionFactory::LATEST_PHP_5_3,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Spl';
         $ext     = 'interfaces';
+        $major   = '';
         $entry   = 'ext_max';
         $names   = array(
             'ArrayAccess'                           => ExtensionFactory::LATEST_PHP_5_2,
@@ -516,27 +546,30 @@ class DbReleaseCommand extends Command
             'Serializable'                          => ExtensionFactory::LATEST_PHP_5_2,
             'Traversable'                           => ExtensionFactory::LATEST_PHP_5_2,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Spl';
         $ext     = 'classes';
+        $major   = '';
         $entry   = 'ext_max';
         $names   = array(
             'SimpleXMLIterator'                     => ExtensionFactory::LATEST_PHP_5_2,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Standard';
         $ext     = 'iniEntries';
+        $major   = '';
         $entry   = 'php_max';
         $names   = array(
             'safe_mode_allowed_env_vars'            => ExtensionFactory::LATEST_PHP_5_3,
             'safe_mode_protected_env_vars'          => ExtensionFactory::LATEST_PHP_5_3,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Standard';
         $ext     = 'functions';
+        $major   = '';
         $entry   = 'php_max';
         $names   = array(
             'define_syslog_variables'               => ExtensionFactory::LATEST_PHP_5_3,
@@ -546,29 +579,31 @@ class DbReleaseCommand extends Command
             'php_egg_logo_guid'                     => ExtensionFactory::LATEST_PHP_5_4,
             'import_request_variables'              => ExtensionFactory::LATEST_PHP_5_3,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Standard';
         $ext     = 'constants';
+        $major   = '';
         $entry   = 'php_max';
         $names   = array(
             'STREAM_ENFORCE_SAFE_MODE'              => ExtensionFactory::LATEST_PHP_5_3,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         $refName = 'Tidy';
         $ext     = 'functions';
+        $major   = '';
         $entry   = 'php_max';
         $names   = array(
             'ob_tidyhandler'                        => ExtensionFactory::LATEST_PHP_5_3,
         );
-        $latest[] = array($refName, $ext, $entry, $names);
+        $latest[] = array($refName, $ext, $major, $entry, $names);
 
         // tag MAX version
         while (!empty($latest)) {
-            list($refName, $ext, $entry, $names) = array_pop($latest);
+            list($refName, $ext, $major, $entry, $names) = array_pop($latest);
 
-            $data = $this->readJsonFile($refName, $ext);
+            $data = $this->readJsonFile($refName, $ext, $major);
 
             if (!$data) {
                 if (json_last_error() == JSON_ERROR_NONE) {
@@ -590,18 +625,8 @@ class DbReleaseCommand extends Command
                     $element[$entry] = $names[$element[$key]];
                 }
             }
-            $this->writeJsonFile($refName, $ext, $data);
+            $this->writeJsonFile($refName, $ext, $major, $data);
         }
-    }
-
-    private function writeJsonFile($refName, $ext, $data)
-    {
-        $filename = $this->getApplication()->getRefDir() . '/' . ucfirst($refName) . ".$ext.json";
-        if (!file_exists($filename)) {
-            return false;
-        }
-        $jsonStr = json_encode($data, self::JSON_PRETTY_PRINT);
-        file_put_contents($filename, $jsonStr);
     }
 }
 
