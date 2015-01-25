@@ -1,16 +1,6 @@
 [
     {
         "ext_name_fk": 7,
-        "name": "class_alias",
-        "ext_min": "5.3.0",
-        "ext_max": "",
-        "php_min": "5.3.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
         "name": "class_exists",
         "ext_min": "4.0.0",
         "ext_max": "",
@@ -35,16 +25,6 @@
         "ext_min": "4.3.0",
         "ext_max": "",
         "php_min": "4.3.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "debug_print_backtrace",
-        "ext_min": "5.0.0",
-        "ext_max": "",
-        "php_min": "5.0.0",
         "php_max": "",
         "parameters": "",
         "php_excludes": ""
@@ -151,56 +131,6 @@
     },
     {
         "ext_name_fk": 7,
-        "name": "gc_collect_cycles",
-        "ext_min": "5.3.0",
-        "ext_max": "",
-        "php_min": "5.3.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "gc_disable",
-        "ext_min": "5.3.0",
-        "ext_max": "",
-        "php_min": "5.3.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "gc_enable",
-        "ext_min": "5.3.0",
-        "ext_max": "",
-        "php_min": "5.3.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "gc_enabled",
-        "ext_min": "5.3.0",
-        "ext_max": "",
-        "php_min": "5.3.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "get_called_class",
-        "ext_min": "5.3.0",
-        "ext_max": "",
-        "php_min": "5.3.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
         "name": "get_class",
         "ext_min": "4.0.0",
         "ext_max": "",
@@ -235,26 +165,6 @@
         "ext_min": "4.0.0",
         "ext_max": "",
         "php_min": "4.0.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "get_declared_interfaces",
-        "ext_min": "5.0.0",
-        "ext_max": "",
-        "php_min": "5.0.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "get_declared_traits",
-        "ext_min": "5.4.0",
-        "ext_max": "",
-        "php_min": "5.4.0",
         "php_max": "",
         "parameters": "",
         "php_excludes": ""
@@ -361,16 +271,6 @@
     },
     {
         "ext_name_fk": 7,
-        "name": "interface_exists",
-        "ext_min": "5.0.2",
-        "ext_max": "",
-        "php_min": "5.0.2",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
         "name": "is_a",
         "ext_min": "4.2.0",
         "ext_max": "",
@@ -421,16 +321,6 @@
     },
     {
         "ext_name_fk": 7,
-        "name": "property_exists",
-        "ext_min": "5.1.0",
-        "ext_max": "",
-        "php_min": "5.1.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
         "name": "restore_error_handler",
         "ext_min": "4.0.1",
         "ext_max": "",
@@ -441,30 +331,10 @@
     },
     {
         "ext_name_fk": 7,
-        "name": "restore_exception_handler",
-        "ext_min": "5.0.0",
-        "ext_max": "",
-        "php_min": "5.0.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
         "name": "set_error_handler",
         "ext_min": "4.0.1",
         "ext_max": "",
         "php_min": "4.0.1",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "set_exception_handler",
-        "ext_min": "5.0.0",
-        "ext_max": "",
-        "php_min": "5.0.0",
         "php_max": "",
         "parameters": "",
         "php_excludes": ""
@@ -521,16 +391,6 @@
     },
     {
         "ext_name_fk": 7,
-        "name": "trait_exists",
-        "ext_min": "5.4.0",
-        "ext_max": "",
-        "php_min": "5.4.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
         "name": "trigger_error",
         "ext_min": "4.0.1",
         "ext_max": "",
@@ -545,16 +405,6 @@
         "ext_min": "4.0.0",
         "ext_max": "",
         "php_min": "4.0.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "zend_thread_id",
-        "ext_min": "5.0.0",
-        "ext_max": "",
-        "php_min": "5.0.0",
         "php_max": "",
         "parameters": "",
         "php_excludes": ""

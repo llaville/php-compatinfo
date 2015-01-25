@@ -33,14 +33,6 @@
     },
     {
         "ext_name_fk": 7,
-        "name": "stdClass",
-        "ext_min": "4.0.0",
-        "ext_max": "",
-        "php_min": "4.0.0",
-        "php_max": ""
-    },
-    {
-        "ext_name_fk": 7,
         "name": "parent",
         "ext_min": "5.0.0",
         "ext_max": "",

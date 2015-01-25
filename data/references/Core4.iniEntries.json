@@ -185,14 +185,6 @@
     },
     {
         "ext_name_fk": 7,
-        "name": "enable_post_data_reading",
-        "ext_min": "5.4.0",
-        "ext_max": "",
-        "php_min": "5.4.0",
-        "php_max": ""
-    },
-    {
-        "ext_name_fk": 7,
         "name": "error_append_string",
         "ext_min": "4.0.0",
         "ext_max": "",
@@ -353,22 +345,6 @@
     },
     {
         "ext_name_fk": 7,
-        "name": "input_encoding",
-        "ext_min": "5.6.0alpha3",
-        "ext_max": "",
-        "php_min": "5.6.0alpha3",
-        "php_max": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "internal_encoding",
-        "ext_min": "5.6.0alpha3",
-        "ext_max": "",
-        "php_min": "5.6.0alpha3",
-        "php_max": ""
-    },
-    {
-        "ext_name_fk": 7,
         "name": "log_errors",
         "ext_min": "4.0.0",
         "ext_max": "",
@@ -497,14 +473,6 @@
     },
     {
         "ext_name_fk": 7,
-        "name": "output_encoding",
-        "ext_min": "5.6.0alpha3",
-        "ext_max": "",
-        "php_min": "5.6.0alpha3",
-        "php_max": ""
-    },
-    {
-        "ext_name_fk": 7,
         "name": "output_handler",
         "ext_min": "4.0.0",
         "ext_max": "",
@@ -557,14 +525,6 @@
         "ext_min": "4.0.0",
         "ext_max": "",
         "php_min": "4.0.0",
-        "php_max": "5.3.29"
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "register_long_arrays",
-        "ext_min": "5.0.0",
-        "ext_max": "",
-        "php_min": "5.0.0",
         "php_max": "5.3.29"
     },
     {
@@ -669,14 +629,6 @@
         "ext_min": "4.0.0",
         "ext_max": "",
         "php_min": "4.0.0",
-        "php_max": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "sys_temp_dir",
-        "ext_min": "5.5.0",
-        "ext_max": "",
-        "php_min": "5.5.0",
         "php_max": ""
     },
     {
@@ -797,14 +749,6 @@
         "ext_min": "4.0.0",
         "ext_max": "",
         "php_min": "4.0.0",
-        "php_max": ""
-    },
-    {
-        "ext_name_fk": 7,
-        "name": "zend.script_encoding",
-        "ext_min": "5.4.0",
-        "ext_max": "",
-        "php_min": "5.4.0",
         "php_max": ""
     }
 ]

@@ -1,0 +1,416 @@
+[
+    {
+        "ext_name_fk": 7,
+        "name": "DEBUG_BACKTRACE_IGNORE_ARGS",
+        "ext_min": "5.3.6",
+        "ext_max": "",
+        "php_min": "5.3.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "DEBUG_BACKTRACE_PROVIDE_OBJECT",
+        "ext_min": "5.3.6",
+        "ext_max": "",
+        "php_min": "5.3.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "E_DEPRECATED",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "E_RECOVERABLE_ERROR",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "E_STRICT",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "E_USER_DEPRECATED",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_BINARY",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_DEBUG",
+        "ext_min": "5.2.7",
+        "ext_max": "",
+        "php_min": "5.2.7",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_EXTRA_VERSION",
+        "ext_min": "5.2.7",
+        "ext_max": "",
+        "php_min": "5.2.7",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_MAJOR_VERSION",
+        "ext_min": "5.2.7",
+        "ext_max": "",
+        "php_min": "5.2.7",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_MANDIR",
+        "ext_min": "5.3.7",
+        "ext_max": "",
+        "php_min": "5.3.7",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_MAXPATHLEN",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_MINOR_VERSION",
+        "ext_min": "5.2.7",
+        "ext_max": "",
+        "php_min": "5.2.7",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_OUTPUT_HANDLER_CLEAN",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_OUTPUT_HANDLER_CLEANABLE",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_OUTPUT_HANDLER_DISABLED",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_OUTPUT_HANDLER_FINAL",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_OUTPUT_HANDLER_FLUSH",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_OUTPUT_HANDLER_FLUSHABLE",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_OUTPUT_HANDLER_REMOVABLE",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_OUTPUT_HANDLER_STARTED",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_OUTPUT_HANDLER_STDFLAGS",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_OUTPUT_HANDLER_WRITE",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_RELEASE_VERSION",
+        "ext_min": "5.2.7",
+        "ext_max": "",
+        "php_min": "5.2.7",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_VERSION_ID",
+        "ext_min": "5.2.7",
+        "ext_max": "",
+        "php_min": "5.2.7",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_WINDOWS_NT_DOMAIN_CONTROLLER",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_WINDOWS_NT_SERVER",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_WINDOWS_NT_WORKSTATION",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_WINDOWS_VERSION_BUILD",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_WINDOWS_VERSION_MAJOR",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_WINDOWS_VERSION_MINOR",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_WINDOWS_VERSION_PLATFORM",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_WINDOWS_VERSION_PRODUCTTYPE",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_WINDOWS_VERSION_SP_MAJOR",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_WINDOWS_VERSION_SP_MINOR",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_WINDOWS_VERSION_SUITEMASK",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "PHP_ZTS",
+        "ext_min": "5.2.7",
+        "ext_max": "",
+        "php_min": "5.2.7",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "UPLOAD_ERR_CANT_WRITE",
+        "ext_min": "5.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "UPLOAD_ERR_EXTENSION",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "ZEND_DEBUG_BUILD",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "ZEND_MULTIBYTE",
+        "ext_min": "5.3.4",
+        "ext_max": "",
+        "php_min": "5.3.4",
+        "php_max": "5.3.29",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "__COMPILER_HALT_OFFSET__",
+        "ext_min": "5.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "__DIR__",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "__METHOD__",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "__NAMESPACE__",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "__TRAIT__",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]
