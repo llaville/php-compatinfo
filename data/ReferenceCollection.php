@@ -264,7 +264,7 @@ class ReferenceCollection
 
         $this->dbal->exec(
             'CREATE TABLE IF NOT EXISTS ' . $tblVersions .
-            ' (build_string VARCHAR(48), build_date INTEGER, build_release VARCHAR(24),' .
+            ' (build_string VARCHAR(48), build_date INTEGER,' .
             ' PRIMARY KEY (build_date))'
         );
         $this->dbal->exec(
@@ -333,8 +333,8 @@ class ReferenceCollection
         );
         $this->stmtVersions = $this->dbal->prepare(
             'INSERT INTO ' . $tblVersions .
-            ' (build_string, build_date, build_release)' .
-            ' VALUES (:build_string, :build_date, :build_release)'
+            ' (build_string, build_date)' .
+            ' VALUES (:build_string, :build_date)'
         );
         $this->stmtExtensions = $this->dbal->prepare(
             'INSERT INTO ' . $tblExtensions .

@@ -237,8 +237,7 @@ class DbInitCommand extends Command
         $ref->addVersion(
             array(
                 'build_string'  => date('M d Y H:i:s T'),
-                'build_date'    => date('YmdHis'),
-                'build_release' => '@package_version@',
+                'build_date'    => date('YmdHis')
             )
         );
         $progress->setMessage('Database is built');

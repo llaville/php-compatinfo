@@ -64,12 +64,10 @@ class Environment
         $pdo = self::initRefDb();
 
         $stmt = $pdo->prepare(
-            'SELECT build_string as "build.string", build_date as "build.date",' .
-            ' build_release as "build.release"' .
-            ' FROM bartlett_compatinfo_versions' .
-            ' WHERE build_release = :release'
+            'SELECT build_string as "build.string", build_date as "build.date"' .
+            ' FROM bartlett_compatinfo_versions'
         );
-        $stmt->execute(array('release' => '@package_version@'));
+        $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
