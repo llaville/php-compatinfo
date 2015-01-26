@@ -156,7 +156,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      * @group  reference
      * @return void
      */
-    public function testGetIniEntriesFromExtension()
+    public function _testGetIniEntriesFromExtension()
     {
         $extname = self::$ext;
 
@@ -238,7 +238,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      * @group  reference
      * @return void
      */
-    public function testGetFunctionsFromExtension()
+    public function _testGetFunctionsFromExtension()
     {
         $ext = get_extension_funcs(self::$ext);
         if (!is_array($ext)) {
@@ -315,7 +315,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      * @group  reference
      * @return void
      */
-    public function testGetConstantsFromExtension()
+    public function _testGetConstantsFromExtension()
     {
         $extname = self::$ext;
         $const   = get_defined_constants(true);
@@ -397,7 +397,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      * @group  reference
      * @return void
      */
-    public function testGetClassesFromExtension()
+    public function _testGetClassesFromExtension()
     {
         $extname = self::$ext;
 
@@ -439,7 +439,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      * @group  reference
      * @return void
      */
-    public function testGetClassMethodsFromExtension()
+    public function _testGetClassMethodsFromExtension()
     {
         if (!in_array(self::$ext, self::$extensions)) {
             $this->assertFalse(false);
@@ -496,7 +496,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      * @group  reference
      * @return void
      */
-    public function testGetClassConstantsFromExtension()
+    public function _testGetClassConstantsFromExtension()
     {
         if (!in_array(self::$ext, self::$extensions)) {
             $this->assertFalse(false);
