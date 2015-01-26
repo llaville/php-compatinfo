@@ -77,9 +77,9 @@
             "in": "vendor/bartlett/php-reflect/src"
         }
     ],
-    "replacements": { "package_version": "4.0.0-alpha3" },
+    "git-version": "package_version",
     "main": "bin/phpcompatinfo",
-    "output": "phpcompatinfo-4.0.0-alpha3.phar",
+    "output": "phpcompatinfo-@git-version@.phar",
     "stub": "phar-stub.php",
     "web": false,
     "shebang": false
