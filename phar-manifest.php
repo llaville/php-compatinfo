@@ -3,7 +3,7 @@
 /**
  * Credits to Sebastian Bergmann (original author)
  */
-print 'bartlett/php-compatinfo: ';
+print 'bartlett/php-compatinfo: <info>';
 
 $tag = @exec('git describe --tags 2>&1');
 
@@ -15,16 +15,16 @@ if (strpos($tag, '-') === false && strpos($tag, 'No names found') === false) {
     print $branch . '@' . $hash;
 }
 
-print "\n";
+print "</info>\n";
 
 $lock = json_decode(file_get_contents(__DIR__ . '/composer.lock'));
 
 foreach ($lock->packages as $package) {
-    print $package->name . ': ' . $package->version;
+    print $package->name . ': <info>' . $package->version;
 
     if (!preg_match('/^[v= ]*(([0-9]+)(\\.([0-9]+)(\\.([0-9]+)(-([0-9]+))?(-?([a-zA-Z-+][a-zA-Z0-9\\.\\-:]*)?)?)?)?)$/', $package->version)) {
         print '@' . $package->source->reference;
     }
 
-    print "\n";
+    print "</info>\n";
 }
