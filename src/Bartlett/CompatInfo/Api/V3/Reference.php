@@ -13,6 +13,7 @@
 namespace Bartlett\CompatInfo\Api\V3;
 
 use Bartlett\CompatInfo\Environment;
+use Bartlett\CompatInfo\Reference\ExtensionFactory;
 
 use Bartlett\Reflect\Api\V3\Common;
 
@@ -31,12 +32,6 @@ use PDO;
  */
 class Reference extends Common
 {
-    const LATEST_PHP_5_2 = '5.2.17';
-    const LATEST_PHP_5_3 = '5.3.29';
-    const LATEST_PHP_5_4 = '5.4.36';
-    const LATEST_PHP_5_5 = '5.5.20';
-    const LATEST_PHP_5_6 = '5.6.4';
-
     public function __call($name, $args)
     {
         if ('list' == $name) {
@@ -85,7 +80,7 @@ class Reference extends Common
                          * in our reference (ex snmp) because have no sense
                          * be sure at least to return latest PHP version supported.
                          */
-                        $version = $this->getLatestPhpVersion();
+                        $version = ExtensionFactory::getLatestPhpVersion();
                     }
                 } else {
                     $version = '';
@@ -99,27 +94,5 @@ class Reference extends Common
 
         ksort($rows);
         return array_values($rows);
-    }
-
-    /**
-     * Gets the latest version of PHP available, corresponding to user platform.
-     *
-     * @return string
-     */
-    public function getLatestPhpVersion()
-    {
-        if (version_compare(PHP_VERSION, '5.3', 'lt')) {
-            return self::LATEST_PHP_5_2;
-        }
-        if (version_compare(PHP_VERSION, '5.4', 'lt')) {
-            return self::LATEST_PHP_5_3;
-        }
-        if (version_compare(PHP_VERSION, '5.5', 'lt')) {
-            return self::LATEST_PHP_5_4;
-        }
-        if (version_compare(PHP_VERSION, '5.6', 'lt')) {
-            return self::LATEST_PHP_5_5;
-        }
-        return self::LATEST_PHP_5_6;
     }
 }

@@ -109,7 +109,7 @@ class ExtensionFactory implements ReferenceInterface
              * or we don't have it in our reference (ex snmp) because have no sense
              * be sure at least to return latest PHP version supported.
              */
-            $version = $this->getLatestPhpVersion();
+            $version = self::getLatestPhpVersion();
         }
         return $version;
     }
@@ -125,7 +125,7 @@ class ExtensionFactory implements ReferenceInterface
         return $this->getLatestPhpVersion();
     }
 
-    public function getLatestPhpVersion()
+    public static function getLatestPhpVersion()
     {
         if (version_compare(PHP_VERSION, '5.3', 'lt')) {
             return self::LATEST_PHP_5_2;
