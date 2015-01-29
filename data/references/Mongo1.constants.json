@@ -232,5 +232,14 @@
         "php_min": "5.2.6",
         "php_max": "",
         "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_SUPPORTS_AUTH_MECHANISM_SCRAM_SHA1",
+        "ext_min": "1.6.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
     }
 ]
