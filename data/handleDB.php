@@ -263,6 +263,7 @@ class DbInitCommand extends Command
             'mongo' => array(
                 'classes'    => array('', '1', '2'),
                 'constants'  => array('1'),
+                'functions'  => array('1'),
                 'iniEntries' => array(''),
                 'interfaces' => array('1'),
                 'releases'   => array('', '1'),
