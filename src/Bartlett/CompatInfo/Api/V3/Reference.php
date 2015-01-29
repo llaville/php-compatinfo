@@ -95,4 +95,74 @@ class Reference extends Common
         ksort($rows);
         return array_values($rows);
     }
+
+    /**
+     * Show information about a reference.
+     *
+     * @param string   $name       Introspection of a reference (case insensitive)
+     * @param \Closure $closure    Function used to filter results
+     * @param mixed    $releases   Show releases
+     * @param mixed    $ini        Show ini Entries
+     * @param mixed    $constants  Show constants
+     * @param mixed    $functions  Show functions
+     * @param mixed    $interfaces Show interfaces
+     * @param mixed    $classes    Show classes
+     *
+     * @return array
+     */
+    public function show(
+        $name,
+        $closure,
+        $releases,
+        $ini,
+        $constants,
+        $functions,
+        $interfaces,
+        $classes
+    ) {
+        $reference = new ExtensionFactory($name);
+        $results   = array();
+        $summary   = array();
+
+        $raw = $reference->getReleases();
+        $summary['releases'] = count($raw);
+        if ($releases) {
+            $results['releases'] = $raw;
+        }
+
+        $raw = $reference->getIniEntries();
+        $summary['iniEntries'] = count($raw);
+        if ($ini) {
+            $results['iniEntries'] = $raw;
+        }
+
+        $raw = $reference->getConstants();
+        $summary['constants'] = count($raw);
+        if ($constants) {
+            $results['constants'] = $raw;
+        }
+
+        $raw = $reference->getFunctions();
+        $summary['functions'] = count($raw);
+        if ($functions) {
+            $results['functions'] = $raw;
+        }
+
+        $raw = $reference->getInterfaces();
+        $summary['interfaces'] = count($raw);
+        if ($interfaces) {
+            $results['interfaces'] = $raw;
+        }
+
+        $raw = $reference->getClasses();
+        $summary['classes'] = count($raw);
+        if ($classes) {
+            $results['classes'] = $raw;
+        }
+
+        if (empty($results)) {
+            return array('summary' => $summary);
+        }
+        return $closure($results);
+    }
 }

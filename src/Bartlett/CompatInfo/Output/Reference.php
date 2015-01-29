@@ -12,6 +12,8 @@
 
 namespace Bartlett\CompatInfo\Output;
 
+use Bartlett\CompatInfo\Util\Version;
+
 use Bartlett\Reflect\Console\Formatter\OutputFormatter;
 
 use Symfony\Component\Console\Output\OutputInterface;
@@ -73,5 +75,82 @@ class Reference extends OutputFormatter
         $rows[] = $footers;
 
         $this->tableHelper($output, $headers, $rows);
+    }
+
+    /**
+     * Show information about a reference.
+     *
+     * @param OutputInterface $output   Console Output concrete instance
+     * @param array           $response Reference informations
+     *
+     * @return void
+     */
+    public function show(OutputInterface $output, $response)
+    {
+        if (array_key_exists('summary', $response)) {
+            $summary = $response['summary'];
+            $output->writeln(sprintf('%s<info>Reference Summary</info>', PHP_EOL));
+            $summary['releases'] = array(
+                '  Releases                                  %10d',
+                array($summary['releases'])
+            );
+            $summary['iniEntries'] = array(
+                '  INI entries                               %10d',
+                array($summary['iniEntries'])
+            );
+            $summary['constants'] = array(
+                '  Constants                                 %10d',
+                array($summary['constants'])
+            );
+            $summary['functions'] = array(
+                '  Functions                                 %10d',
+                array($summary['functions'])
+            );
+            $summary['interfaces'] = array(
+                '  Interfaces                                %10d',
+                array($summary['interfaces'])
+            );
+            $summary['classes'] = array(
+                '  Classes                                   %10d',
+                array($summary['classes'])
+            );
+            $this->printFormattedLines($output, $summary);
+            return;
+        }
+
+        foreach ($response as $title => $values) {
+            $args = array();
+
+            foreach ($values as $key => $val) {
+                if (strcasecmp($title, 'releases') == 0) {
+                    $key = sprintf('%s (%s)', $val['date'], $val['state']);
+                }
+                $args[$key] = $val;
+            }
+
+            $rows = array();
+            ksort($args);
+
+            foreach ($args as $arg => $versions) {
+                $row = array(
+                    $arg,
+                    Version::ext($versions),
+                    Version::php($versions),
+                );
+                $rows[] = $row;
+            }
+
+            $headers = array(ucfirst($title), 'EXT min/Max', 'PHP min/Max');
+            $footers = array(
+                sprintf('<info>Total [%d]</info>', count($args)),
+                '',
+                ''
+            );
+            $rows[] = new TableSeparator();
+            $rows[] = $footers;
+
+            $this->tableHelper($output, $headers, $rows);
+            $output->writeln('');
+        }
     }
 }

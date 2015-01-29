@@ -39,4 +39,54 @@ class Reference extends BaseApi
     {
         return $this->request('reference/list');
     }
+
+    /**
+     * Show information about a reference.
+     *
+     * @param string $name       Introspection of a reference (case insensitive)
+     * @param mixed  $filter     Resource that provide a closure to filter results
+     * @param mixed  $releases   Show releases
+     * @param mixed  $ini        Show ini Entries
+     * @param mixed  $constants  Show constants
+     * @param mixed  $functions  Show functions
+     * @param mixed  $interfaces Show interfaces
+     * @param mixed  $classes    Show classes
+     *
+     * @return array
+     */
+    public function show(
+        $name,
+        $filter = false,
+        $releases = null,
+        $ini = null,
+        $constants = null,
+        $functions = null,
+        $interfaces = null,
+        $classes = null
+    ) {
+        if ($filter instanceof \Closure) {
+            $closure = $filter;
+
+        } elseif ($filter === false) {
+            $closure = function ($data) { return $data; };
+
+        } else {
+            if ($filterRes = stream_resolve_include_path($filter)) {
+                include_once $filterRes;
+            }
+            if (!isset($closure) || !is_callable($closure)) {
+                throw new \RuntimeException(
+                    sprintf(
+                        'Invalid filter provided by file "%s"',
+                        $filterRes ? : $filter
+                    )
+                );
+            }
+        }
+        return $this->request(
+            'reference/show',
+            'POST',
+            array($name, $closure, $releases, $ini, $constants, $functions, $interfaces, $classes)
+        );
+    }
 }
