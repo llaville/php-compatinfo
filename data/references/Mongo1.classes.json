@@ -1,0 +1,154 @@
+[
+    {
+        "ext_name_fk": 45,
+        "name": "MongoClient",
+        "ext_min": "1.3.0RC3",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoCommandCursor",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoCursorTimeoutException",
+        "ext_min": "1.0.3",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoDeleteBatch",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoDuplicateKeyException",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoExecutionTimeoutException",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoInsertBatch",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoInt32",
+        "ext_min": "1.0.9",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoInt64",
+        "ext_min": "1.0.9",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoLog",
+        "ext_min": "1.2.3",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoMaxKey",
+        "ext_min": "1.0.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoMinKey",
+        "ext_min": "1.0.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoPool",
+        "ext_min": "1.2.3",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoProtocolException",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoResultException",
+        "ext_min": "1.3.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoTimestamp",
+        "ext_min": "1.0.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoUpdateBatch",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoWriteBatch",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MongoWriteConcernException",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": ""
+    }
+]
