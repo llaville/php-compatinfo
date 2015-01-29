@@ -12,6 +12,8 @@
 
 namespace Bartlett\CompatInfo\Console\Formatter;
 
+use Bartlett\CompatInfo\Util\Version;
+
 use Bartlett\Reflect\Console\Formatter\OutputFormatter;
 
 use Symfony\Component\Console\Output\OutputInterface;
@@ -75,11 +77,10 @@ class CompatibilityOutputFormatter extends OutputFormatter
      * @param OutputInterface $output Console Output concrete instance
      * @param string          $group  Identify group of elements
      * @param array           $args   Parsing results of the $group
-     * @param mixed           $filter (reserved)
      *
      * @return void
      */
-    private function listHelper(OutputInterface $output, $group, $args, $filter)
+    private function listHelper(OutputInterface $output, $group, $args)
     {
         $length = ('classes' == $group) ? -2 : -1;
         $title  = substr($group, 0, $length);
@@ -113,74 +114,23 @@ class CompatibilityOutputFormatter extends OutputFormatter
                 }
             }
         }
+        $phpRequired = Version::php($versions);
 
         $output->writeln(
             sprintf('%s<info>%s Analysis</info>%s', PHP_EOL, ucfirst($group), PHP_EOL)
         );
 
-        $rows = $this->versionHelper($args, $filter);
-
-        $headers = array(' ', ucfirst($title), 'Matches', 'REF', 'EXT min/Max', 'PHP min/Max');
-
-        $versions = empty($versions['php.max'])
-            ? $versions['php.min']
-            : $versions['php.min'] . ' => ' . $versions['php.max']
-        ;
-
-        if ($filter) {
-            $footers = array(
-                '',
-                sprintf('<info>Total [%d/%d]</info>', count($rows), count($args)),
-                '',
-                '',
-                '',
-                sprintf('<info>%s</info>', $versions)
-            );
-        } else {
-            $footers = array(
-                '',
-                sprintf('<info>Total [%d]</info>', count($args)),
-                '',
-                '',
-                '',
-                sprintf('<info>%s</info>', $versions)
-            );
-        }
-        $rows[] = new TableSeparator();
-        $rows[] = $footers;
-
-        $this->tableHelper($output, $headers, $rows);
-    }
-
-    /**
-     * Helper to print versions of each element in current group
-     *
-     * @param array $args   Parsing results
-     * @param mixed $filter (reserved)
-     * @return string
-     */
-    private function versionHelper(array $args, $filter)
-    {
         $rows = array();
         ksort($args);
 
         foreach ($args as $arg => $versions) {
-            if ($filter) {
-                if (version_compare($versions['php.min'], $filter[1], $filter[0]) === false) {
-                    continue;
-                }
-            }
             $row = array(
                 isset($versions['optional']) ? 'C' : ' ',
                 $arg,
                 $versions['matches'] > 0 ? $versions['matches'] : '',
                 isset($versions['ext.name']) ? $versions['ext.name'] : '',
-                empty($versions['ext.max'])
-                    ? $versions['ext.min']
-                    : $versions['ext.min'] . ' => ' . $versions['ext.max'],
-                empty($versions['php.max'])
-                    ? $versions['php.min']
-                    : $versions['php.min'] . ' => ' . $versions['php.max'],
+                Version::ext($versions),
+                Version::php($versions),
             );
             /*
                 for reference:show command,
@@ -191,6 +141,19 @@ class CompatibilityOutputFormatter extends OutputFormatter
             }
             $rows[] = $row;
         }
-        return $rows;
+
+        $headers = array(' ', ucfirst($title), 'Matches', 'REF', 'EXT min/Max', 'PHP min/Max');
+        $footers = array(
+            '',
+            sprintf('<info>Total [%d]</info>', count($args)),
+            '',
+            '',
+            '',
+            sprintf('<info>%s</info>', $phpRequired)
+        );
+        $rows[] = new TableSeparator();
+        $rows[] = $footers;
+
+        $this->tableHelper($output, $headers, $rows);
     }
 }
