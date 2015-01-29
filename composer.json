@@ -9,7 +9,7 @@
         "issues": "https://github.com/llaville/php-compat-info/issues"
     },
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.3.2",
         "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
