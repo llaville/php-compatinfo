@@ -32,6 +32,17 @@ use Bartlett\Reflect\Console\Application as BaseApplication;
 class Application extends BaseApplication
 {
     /**
+     * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=phpCompatInfo
+     */
+    protected static $logo = "        _            ____                            _   ___        __
+  _ __ | |__  _ __  / ___|___  _ __ ___  _ __   __ _| |_|_ _|_ __  / _| ___
+ | '_ \| '_ \| '_ \| |   / _ \| '_ ` _ \| '_ \ / _` | __|| || '_ \| |_ / _ \
+ | |_) | | | | |_) | |__| (_) | | | | | | |_) | (_| | |_ | || | | |  _| (_) |
+ | .__/|_| |_| .__/ \____\___/|_| |_| |_| .__/ \__,_|\__|___|_| |_|_|  \___/
+ |_|         |_|                        |_|
+
+";
+    /**
      * Gets the application version (long format).
      *
      * @return string The application version
