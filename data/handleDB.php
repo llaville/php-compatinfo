@@ -285,6 +285,11 @@ class DbInitCommand extends Command
                 'const'      => array(''),
                 'methods'    => array('', '2'),
             ),
+            'xmldiff' => array(
+                'classes'    => array(''),
+                'releases'   => array('', '1'),
+                'methods'    => array(''),
+            ),
         );
 
         if (array_key_exists($refName, $majorReleases)) {

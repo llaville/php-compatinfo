@@ -68,6 +68,7 @@ ifdef::basebackend-html[]
 --
 * [label label-default]#3.0.0# support 100 references
 * [label label-info]#3.3.0# support 102 references
+* [label label-info]#4.0.0# support 103 references
 --
 ====
 endif::basebackend-html[]
@@ -91,6 +92,9 @@ ifdef::basebackend-docbook[]
 .Statistics v3
 * 3.0.0 support 100 references
 * 3.3.0 support 102 references
+
+.Statistics v4
+* 4.0.0 support 103 references
 endif::basebackend-docbook[]
 
 
@@ -655,6 +659,12 @@ endif::basebackend-docbook[]
 | xml
 {php5}
 | [label label-default]#2.0.0#
+
+| {unchecked}
+| {checked}
+| xmldiff
+1.1.1 {stable}
+| [label label-info]#4.0.0#
 
 | {unchecked}
 | {checked}

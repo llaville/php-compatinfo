@@ -1,0 +1,42 @@
+[
+    {
+        "ext_name_fk": 103,
+        "name": "XMLDiff\\Base",
+        "ext_min": "0.8.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 103,
+        "name": "XMLDiff\\DOM",
+        "ext_min": "0.8.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 103,
+        "name": "XMLDiff\\File",
+        "ext_min": "0.8.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 103,
+        "name": "XMLDiff\\Memory",
+        "ext_min": "0.8.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 103,
+        "name": "XMLDiff\\Exception",
+        "ext_min": "0.8.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    }
+]
