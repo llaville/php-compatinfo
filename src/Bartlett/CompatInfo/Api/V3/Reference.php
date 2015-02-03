@@ -55,7 +55,7 @@ class Reference extends Common
             ' php_min as "php.min", php_max as "php.max"' .
             ' FROM bartlett_compatinfo_releases r,  bartlett_compatinfo_extensions e' .
             ' WHERE r.ext_name_fk = e.id' .
-            ' ORDER BY e.name asc, date desc'
+            ' ORDER BY e.name asc, date desc, rel_version desc'
         );
 
         $rows = array();
