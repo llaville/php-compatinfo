@@ -58,8 +58,12 @@ class HttpExtensionTest extends GenericTest
             // platform dependant
             if (version_compare($currentVersion, '2.0.0', 'lt')) {
                 // v1, so all v2 releases are optionals
-                self::$optionalreleases = array('2.0.0');
-                array_push(self::$optionalreleases, '2.1.2');
+                $releases = array_keys(self::$obj->getReleases());
+                foreach ($releases as $rel_version) {
+                    if (version_compare($rel_version, '2.0.0', 'ge')) {
+                        array_push(self::$optionalreleases, $rel_version);
+                    }
+                }
             } else {
                 // v2, so all v1 releases must not be checked
                 self::$optionalreleases = array(
