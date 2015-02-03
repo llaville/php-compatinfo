@@ -54,7 +54,9 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     protected static $ignoredclasses       = array();
     protected static $ignoredinterfaces    = array();
 
-    protected static $extensions =  array('amqp','haru','pthreads','reflection','solr');
+    protected static $extensions =  array(
+        'amqp','haru','pthreads','reflection','solr','xmldiff',
+    );
 
     /**
      * Sets up the shared fixture.
