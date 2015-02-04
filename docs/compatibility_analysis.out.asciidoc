@@ -1,0 +1,146 @@
+
+Data Source Analysed
+
+Directories                                         11
+Files                                               13
+
+Extensions Analysis
+
+   Extension Matches REF      EXT min/Max PHP min/Max
+   Core              Core     5.3.0       5.3.0
+   PDO               PDO      5.1.0       5.1.0
+   curl              curl     4.0.2       4.0.2
+   intl              intl     2.0.0b1     5.3.7
+   libxml            libxml   5.1.0       5.1.0
+   openssl           openssl  5.2.0       5.2.0
+   pcre              pcre     4.0.0       4.0.0
+   spl               spl      5.1.0       5.1.0
+   standard          standard 5.3.2       5.3.2
+   Total [9]                              5.3.7
+
+Namespaces Analysis
+
+   Namespace                             Matches REF  EXT min/Max PHP min/Max
+   +global                                       Core             4.0.0
+   Bartlett\CompatInfo                           user             5.3.0
+   Bartlett\CompatInfo\Analyser                  user             5.3.0
+   Bartlett\CompatInfo\Api                       user             5.3.2
+   Bartlett\CompatInfo\Api\V3                    user             5.3.0
+   Bartlett\CompatInfo\Collection                user             5.3.0
+   Bartlett\CompatInfo\Console                   user             5.3.0
+   Bartlett\CompatInfo\Console\Formatter         user             5.3.0
+   Bartlett\CompatInfo\Output                    user             5.3.0
+   Bartlett\CompatInfo\PhpParser                 user             5.3.0
+   Bartlett\CompatInfo\Reference                 user             5.3.0
+   Bartlett\CompatInfo\Util                      user             5.3.0
+   Total [12]                                                     5.3.2
+
+Interfaces Analysis
+
+   Interface                                        Matches REF  EXT min/Max PHP min/Max
+   Bartlett\CompatInfo\Reference\ReferenceInterface         user             5.3.0
+   Total [1]                                                                 5.3.0
+
+No trait found
+
+Classes Analysis
+
+   Class                                                              Matches REF  EXT min/Max PHP min/Max
+   Bartlett\CompatInfo\Analyser\CompatibilityAnalyser                         user             5.3.0
+   Bartlett\CompatInfo\Api\Reference                                          user             5.3.2
+   Bartlett\CompatInfo\Api\V3\Reference                                       user             5.3.0
+   Bartlett\CompatInfo\Collection\ReferenceCollection                 1       user             5.3.0
+   Bartlett\CompatInfo\Console\Application                                    user             5.3.0
+   Bartlett\CompatInfo\Console\Formatter\CompatibilityOutputFormatter         user             5.3.0
+   Bartlett\CompatInfo\Environment                                    4       user             5.3.0
+   Bartlett\CompatInfo\Output\Reference                                       user             5.3.0
+   Bartlett\CompatInfo\PhpParser\ConditionalCodeNodeProcessor         1       user             5.3.0
+   Bartlett\CompatInfo\Reference\ExtensionFactory                     2       user             5.3.0
+   Bartlett\CompatInfo\Reference\SqliteStorage                        1       user             5.3.0
+   Bartlett\CompatInfo\Util\Version                                   5       user             5.3.0
+   Bartlett\Reflect\Analyser\AbstractAnalyser                         1       user             5.3.0
+   Bartlett\Reflect\Api\BaseApi                                       1       user             5.3.0
+   Bartlett\Reflect\Api\V3\Common                                     1       user             5.3.0
+   Bartlett\Reflect\Console\Application                               1       user             5.3.0
+   Bartlett\Reflect\Console\Formatter\OutputFormatter                 2       user             5.3.0
+   Bartlett\Reflect\PhpParser\NodeProcessorAbstract                   1       user             5.3.0
+   Doctrine\Common\Collections\AbstractLazyCollection                 1       user             5.3.0
+   Doctrine\Common\Collections\ArrayCollection                        1       user             5.3.0
+   PDO                                                                2       PDO  5.1.0       5.1.0
+   PhpParser\Node                                                     21      user             5.3.0
+   PhpParser\Node\Name                                                1       user             5.3.0
+   RuntimeException                                                   1       spl  5.1.0       5.1.0
+   Symfony\Component\Console\Helper\TableSeparator                    3       user             5.3.0
+   Symfony\Component\Console\Output\OutputInterface                   4       user             5.3.0
+   parent                                                             4       Core 5.0.0       5.0.0
+   self                                                               8       Core 5.0.0       5.0.0
+   stdClass                                                           1       Core 4.0.0       4.0.0
+   Total [29]                                                                                  5.3.2
+
+Functions Analysis
+
+   Function                    Matches REF      EXT min/Max PHP min/Max
+   array_key_exists            4       standard 4.0.7       4.0.7
+   array_map                   1       standard 4.0.6       4.0.6
+   array_merge                 1       standard 4.0.0       4.0.0
+   array_pop                   10      standard 4.0.0       4.0.0
+   array_shift                 1       standard 4.0.0       4.0.0
+   array_slice                 1       standard 4.0.0       4.0.0
+   array_values                1       standard 4.0.0       4.0.0
+   closure-71-71                       user                 5.3.0
+   copy                        1       standard 4.0.0       4.0.0
+   count                       11      standard 4.0.0       4.0.0
+ C curl_version                1       curl     4.0.2       4.0.2
+   defined                     4       Core     4.0.0       4.0.0
+   dirname                     3       standard 4.0.0       4.0.0
+   each                        1       Core     4.0.0       4.0.0
+   explode                     1       standard 4.0.0       4.0.0
+   extension_loaded            1       Core     4.0.0       4.0.0
+   file_exists                 2       standard 4.0.0       4.0.0
+   function_exists             1       Core     4.0.0       4.0.0
+   in_array                    6       standard 4.0.0       4.0.0
+   is_array                    1       standard 4.0.0       4.0.0
+   is_callable                 1       standard 4.0.6       4.0.6
+   is_string                   10      standard 4.0.0       4.0.0
+   ksort                       3       standard 4.0.0       4.0.0
+   mkdir                       1       standard 4.0.0       4.0.0
+   phpversion                  2       standard 4.0.0       4.0.0
+   preg_match                  2       pcre     4.0.0       4.0.0
+   sha1_file                   2       standard 4.3.0       4.3.0
+   sprintf                     22      standard 4.0.0       4.0.0
+   strcasecmp                  2       Core     4.0.0       4.0.0
+   stream_resolve_include_path 1       standard 5.3.2       5.3.2
+   strpos                      1       standard 4.0.0       4.0.0
+   strtolower                  1       standard 4.0.0       4.0.0
+   substr                      2       standard 4.0.0       4.0.0
+   sys_get_temp_dir            1       standard 5.2.1       5.2.1
+   ucfirst                     5       standard 4.0.0       4.0.0
+   version_compare             7       standard 4.0.7       4.0.7
+   Total [36]                                               5.3.2
+
+Constants Analysis
+
+   Constant               Matches REF     EXT min/Max PHP min/Max
+ C INTL_ICU_VERSION       2       intl    2.0.0b1     5.3.7
+   LIBXML_DOTTED_VERSION  1       libxml  5.1.0       5.1.0
+   LIBXML_VERSION         1       libxml  5.1.0       5.1.0
+ C OPENSSL_VERSION_NUMBER 1       openssl 5.2.0       5.2.0
+ C OPENSSL_VERSION_TEXT   1       openssl 5.2.0       5.2.0
+   PHP_EOL                5       Core    4.3.10      4.3.10
+   PHP_VERSION            4       Core    4.0.0       4.0.0
+   __DIR__                1       Core    5.3.0       5.3.0
+   false                  12      Core    4.0.0       4.0.0
+   null                   13      Core    4.0.0       4.0.0
+   true                   4       Core    4.0.0       4.0.0
+   Total [11]                                         5.3.0
+
+Conditions Analysis
+
+   Condition                       Matches REF     EXT min/Max PHP min/Max
+   defined(INTL_ICU_VERSION)       2       intl    2.0.0b1     5.3.7
+   defined(OPENSSL_VERSION_NUMBER) 1       openssl 5.2.0       5.2.0
+   defined(OPENSSL_VERSION_TEXT)   1       openssl 5.2.0       5.2.0
+   function_exists(curl_version)   1       curl    4.0.2       4.0.2
+   Total [4]                                                   5.3.7
+
+Requires PHP 5.3.2 (min)

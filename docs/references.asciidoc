@@ -1,5 +1,5 @@
 = References included
-:description: Strategy to load each Reference with their versions
+:description:
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
 :toc!:
@@ -32,8 +32,6 @@ ifdef::basebackend-html[]
 * stable version {stable}
 * beta version {beta}
 * alpha version {alpha}
-* *prefetch strategy* : references are always loaded
-* *autodiscover strategy* : references loaded only when detected
 --
 ====
 
@@ -65,6 +63,11 @@ ifdef::basebackend-html[]
 --
 * [label label-default]#3.0.0# support 100 references
 * [label label-info]#3.3.0# support 102 references
+--
+
+[panel,info]
+.Statistics v4
+--
 * [label label-info]#4.0.0# support 103 references
 --
 ====

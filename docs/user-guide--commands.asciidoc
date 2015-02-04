@@ -23,35 +23,66 @@ when you invoke the `phpcompatinfo` command, you should obtain the following com
 [role="output"]
 ====
 ----
-phpCompatInfo version 3.7.0
+        _            ____                            _   ___        __
+  _ __ | |__  _ __  / ___|___  _ __ ___  _ __   __ _| |_|_ _|_ __  / _| ___
+ | '_ \| '_ \| '_ \| |   / _ \| '_ ` _ \| '_ \ / _` | __|| || '_ \| |_ / _ \
+ | |_) | | | | |_) | |__| (_) | | | | | | |_) | (_| | |_ | || | | |  _| (_) |
+ | .__/|_| |_| .__/ \____\___/|_| |_| |_| .__/ \__,_|\__|___|_| |_|_|  \___/
+ |_|         |_|                        |_|
+
+phpCompatInfo version 4.0.0-beta1 DB built Feb 04 2015 09:40:14 CET
 
 Usage:
-  [options] command [arguments]
+ [options] command [arguments]
 
 Options:
-  --help           -h Display this help message.
-  --quiet          -q Do not output any message.
-  --verbose        -v|vv|vvv Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
-  --version        -V Display this application version.
-  --ansi              Force ANSI output.
-  --no-ansi           Disable ANSI output.
-  --no-interaction -n Do not ask any interactive question.
-  --profile           Display timing and memory usage information.
+ --help (-h)           Display this help message
+ --quiet (-q)          Do not output any message
+ --verbose (-v|vv|vvv) Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+ --version (-V)        Display this application version
+ --ansi                Force ANSI output
+ --no-ansi             Disable ANSI output
+ --no-interaction (-n) Do not ask any interactive question
+ --no-plugins          Disables all plugins.
+ --profile             Display timing and memory usage information.
+ --progress            Show progress bar.
+ --output              Write results to file or URL.
+ --manifest            Show which versions of dependencies are bundled.
 
 Available commands:
-  help               Displays help for a command
-  list               Lists commands
+ help                  Displays help for a command
+ list                  Lists commands
+analyser
+ analyser:list         List all analysers available.
+ analyser:run          Analyse a data source and display results.
+cache
+ cache:clear           Clear cache (any adapter and backend).
+config
+ config:validate       Validates a JSON configuration file.
 plugin
-  plugin:list        List all plugins installed.
-provider
-  provider:display   Show source of a file in a data source.
-  provider:list      List all data source providers.
-  provider:show      Show list of files in a data source.
+ plugin:list           List all plugins installed.
 reference
-  reference:list     List all references supported.
-  reference:show     Show information about a reference.
+ reference:list        List all references supported.
+ reference:show        Show information about a reference.
+reflection
+ reflection:class      Reports information about a user class present in a data source.
+ reflection:function   Reports information about a user function present in a data source.
 ----
 ====
+
+[horizontal]
+config:validate::
+Validates an optional JSON config file.
++
+[source,bash]
+----
+$ phpcompatinfo config:validate
+----
++
+[role="output"]
+----
+"/etc/phpcompatinfo.json" config file is valid.
+----
 
 [horizontal]
 plugin:list::
@@ -65,193 +96,30 @@ $ phpcompatinfo plugin:list
 +
 [role="output"]
 ----
- [Json Configuration]
- No plugins detected.
+No plugin installed.
 ----
 +
 [source,bash]
-.With only `Analyser` plugin configured, you will get
+.With only `Cache` plugin configured, you will get
 ----
 $ phpcompatinfo plugin:list
 ----
 +
 [role="output"]
 ----
- Plugin Name Plugin Class                                    Events Subscribed
- Analyser    Bartlett\Reflect\Plugin\Analyser\AnalyserPlugin reflect.complete
+ Plugin Class                           Events Subscribed
+ Bartlett\Reflect\Plugin\CachePlugin    reflect.progress
+                                        reflect.success
+                                        reflect.complete
 ----
-
-provider:list::
-List all data source providers configured in `source-providers` section of your `phpcompatinfo.json` config file.
-+
-[source,bash]
-.Result may vary depending of your current directory, but you will get something like
-----
-$ phpcompatinfo provider:list
-----
-+
-[role="output"]
-----
- Source Alias   Files
- .      current     46
-----
-
-provider:show::
-Show list of files corresponding to the (Symfony) Finder rules defined.
-+
-[source,bash]
-.With Reflect source files
-----
-$ phpcompatinfo provider:show .
-----
-+
-[source,bash]
-.Possible alternative
-----
-$ phpcompatinfo provider:show --alias current
-----
-+
-[role="output"]
-----
- Source                                                  Files
- .                                                       46
- Relative Path Name                                      Date                      Size
- Bartlett\Reflect\Analyser\AbstractAnalyser.php          2014-02-03T17:25:07+01:00    3475
- Bartlett\Reflect\Analyser\AnalyserInterface.php         2014-02-03T17:26:50+01:00     835
- Bartlett\Reflect\Analyser\StructureAnalyser.php         2014-02-23T17:31:16+01:00   12798
-
- <... more lines ...>
-----
-
-provider:display::
-Show source code of a file in one of the data source identified.
-+
-[source,bash]
-.With `Bartlett\Reflect.php` in the 'current' data source
-----
-$ phpcompatinfo provider:display . Bartlett\Reflect.php
-----
-+
-[source,bash]
-.Possible alternative
-----
-$ phpcompatinfo provider:display --alias current Bartlett\Reflect.php
-----
-+
-[role="output"]
-----
- Source
- .
- Relative Path Name Date Size
- Id    Token                          Line  Text
-     0 T_OPEN_TAG                         1 <?php
-     1 T_DOC_COMMENT                      2 /** * Reflect * Reverse-engineer
-     2 T_WHITESPACE                      15
-     3 T_NAMESPACE                       17 namespace
-     4 T_WHITESPACE                      17
-     5 T_STRING                          17 Bartlett
-     6 T_SEMICOLON                       17 ;
-
- <... more lines ...>
-----
-
-reference:list::
-Show the list of all references supported in this version.
-+
-[source,bash]
-----
-$ phpcompatinfo reference:list
-----
-+
-[role="output"]
-----
- References     Version     Loaded
- amqp           1.4.0       1.4.0
- apc            3.1.13      4.0.6
- apcu           4.0.4       4.0.6
-
- <... more lines ...>
-
- Zend OPcache   7.0.4-devFE 7.0.4-devFE
- zip            1.12.4      1.12.4
- zlib           2.0         2.0
- Total [100]
-----
-+
-[NOTE]
-====
-* Loaded version is referenced only if the corresponding extension is loaded from your `php.ini` configuration file.
-* For PHP extensions that are always enabled by default, the versions (current and loaded) depends of your platform.
-====
-
-reference:show::
-Introspection of a reference (case insensitive)
-+
-[source,bash]
-.For example, with `apc` reference
-----
-$ phpcompatinfo reference:show apc
-----
-+
-[role="output"]
-.List all elements of `apc` extension
-----
-include::reference-show-apc.out.asciidoc[]
-----
-+
-[source,bash]
-.List all elements of `apc` extension that requires at least PHP 5.1
-----
-$ phpcompatinfo reference:show --php=">= 5.1.0" apc
-----
-+
-[role="output"]
-----
-include::reference-show-apc-filter-php.out.asciidoc[]
-----
-+
-[source,bash]
-.List ini directives of `apc` extension, that require only PHP 4.3
-----
-$ phpcompatinfo reference:show --ini --php="== 4.3.0" apc
-----
-+
-[role="output"]
-----
-include::reference-show-apc-filter-ini.out.asciidoc[]
-----
-+
-NOTE: The possible operators are: +&#60;+, +&#60;=+, +&#62;+, +&#62;=+, +==+, +=+, +!=+, +<>+.
-
-
-When the `Analyser` plugin is installed, following lines added into `analysers` section
-[source,json]
-----
-    {
-        "name": "Analyser",
-        "class": "Bartlett\\Reflect\\Plugin\\Analyser\\AnalyserPlugin"
-    }
-----
-you will get two additionnal commands.
 
 [horizontal]
 analyser:list::
-List all analysers configured in `analysers` section of your `phpcompatinfo.json` config file.
+List all analysers configured in `analysers` section of your `phpcompatinfo.json` config file,
+and available by default.
 +
 [source,bash]
-.Without analysers, you will get
-----
-$ phpcompatinfo analyser:list
-----
-+
-[role="output"]
-----
- [Json Configuration]
- No analysers detected.
-----
-+
-[source,bash]
-.With only `Analyser` plugin configured, you will get
+.With only default analysers, you will get
 ----
 $ phpcompatinfo analyser:list
 ----
@@ -259,37 +127,45 @@ $ phpcompatinfo analyser:list
 [role="output"]
 ----
  Analyser Name Analyser Class
- Class         Bartlett\CompatInfo\Analyser\ClassAnalyser
- Composer      Bartlett\CompatInfo\Analyser\ComposerAnalyser
- Condition     Bartlett\CompatInfo\Analyser\CodeCondAnalyser
- Constant      Bartlett\CompatInfo\Analyser\ConstantAnalyser
- Extension     Bartlett\CompatInfo\Analyser\ExtensionAnalyser
- Function      Bartlett\CompatInfo\Analyser\FunctionAnalyser
- Interface     Bartlett\CompatInfo\Analyser\InterfaceAnalyser
- Namespace     Bartlett\CompatInfo\Analyser\NamespaceAnalyser
- Structure     Bartlett\Reflect\Analyser\StructureAnalyser
- Summary       Bartlett\CompatInfo\Analyser\SummaryAnalyser
- Trait         Bartlett\CompatInfo\Analyser\TraitAnalyser
+ loc           Bartlett\Reflect\Analyser\LocAnalyser
+ reflection    Bartlett\Reflect\Analyser\ReflectionAnalyser
+ structure     Bartlett\Reflect\Analyser\StructureAnalyser
+ compatibility Bartlett\CompatInfo\Analyser\CompatibilityAnalyser
 ----
-
++
 analyser:run::
-Parse a data source and display results. May wary depending of the data source and analyser used.
+Parse a data source and display results. May vary depending of the data source and analyser used.
 +
 [source,bash]
-.With `structure` analyser and the Reflect source code, you will get something like
+.With `compatibility` analyser and the CompatInfo source code, you will get something like
 ----
 $ phpcompatinfo analyser:run .
 ----
 +
 [source,bash]
-.Possible alternative
+.Possible alternative (if you use the default json config file)
 ----
 $ phpcompatinfo analyser:run --alias current
 ----
 +
 [role="output"]
 ----
-include::summary_analysis.out.asciidoc[]
+include::compatibility_analysis.out.asciidoc[]
+----
+
+[horizontal]
+reflection:class::
+Reports information about a user class present in a data source.
++
+[source,bash]
+.With the CompatInfo source code (`./src`), and `Bartlett\CompatInfo\Environment` class
+----
+$ phpcompatinfo reflection:class Bartlett\CompatInfo\Environment ./src
+----
++
+[role="output"]
+----
+include::reflection_class.out.asciidoc[]
 ----
 
 

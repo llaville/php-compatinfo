@@ -8,7 +8,7 @@ include::attributes.asciidoc[]
 :stylesheet:  cover.css
 
 
-== PHP CompatInfo 3
+== PHP CompatInfo 4
 
 [role="cover"]
 --
