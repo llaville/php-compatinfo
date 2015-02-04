@@ -47,7 +47,7 @@ class ZendopcacheExtensionTest extends GenericTest
                 'opcache.mmap_base',
             );
         }
-        self::$ext = 'Zendopcache';
+        self::$ext = 'Zend OPcache';
         parent::setUpBeforeClass();
     }
 }
