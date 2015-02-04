@@ -1,0 +1,226 @@
+[
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.enable",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.use_cwd",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.validate_timestamps",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.inherited_hack",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.dups_fix",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.revalidate_path",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.log_verbosity_level",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.memory_consumption",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.interned_strings_buffer",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.max_accelerated_files",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.max_wasted_percentage",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.consistency_checks",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.force_restart_timeout",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.revalidate_freq",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.preferred_memory_model",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.blacklist_filename",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.max_file_size",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.protect_memory",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.save_comments",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.load_comments",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.fast_shutdown",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.optimization_level",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.enable_file_override",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.enable_cli",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.error_log",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.mmap_base",
+        "ext_min": "7.0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.file_update_protection",
+        "ext_min": "7.0.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 100,
+        "name": "opcache.restrict_api",
+        "ext_min": "7.0.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

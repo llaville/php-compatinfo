@@ -294,6 +294,11 @@ class DbInitCommand extends Command
                 'releases'   => array('', '1'),
                 'methods'    => array(''),
             ),
+            'zendopcache' => array(
+                'functions'  => array('7'),
+                'releases'   => array('7'),
+                'iniEntries' => array('7'),
+            ),
         );
 
         if (array_key_exists($refName, $majorReleases)) {
