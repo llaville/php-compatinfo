@@ -18,6 +18,7 @@
         "vendor/symfony/dependency-injection/Symfony/Component/DependencyInjection/LICENSE",
         "vendor/seld/jsonlint/LICENSE",
         "vendor/justinrainbow/json-schema/LICENSE",
+        "vendor/phpdocumentor/reflection-docblock/LICENSE",
         "vendor/doctrine/cache/LICENSE",
         "vendor/doctrine/collections/LICENSE",
         "vendor/psr/log/LICENSE",

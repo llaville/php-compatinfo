@@ -22,7 +22,7 @@
         ======================================================================
     -->
     <property name="build.short-version"         value="4.0" />
-    <property name="build.version"               value="${build.short-version}.0-alpha3" />
+    <property name="build.version"               value="${build.short-version}.0-beta1" />
 
     <!--
         ======================================================================
@@ -45,6 +45,7 @@
         <include name="vendor/symfony/dependency-injection/Symfony/Component/DependencyInjection/LICENSE" />
         <include name="vendor/seld/jsonlint/LICENSE" />
         <include name="vendor/justinrainbow/json-schema/LICENSE" />
+        <include name="vendor/phpdocumentor/reflection-docblock/LICENSE" />
         <include name="vendor/doctrine/cache/LICENSE" />
         <include name="vendor/doctrine/collections/LICENSE" />
         <include name="vendor/psr/log/LICENSE" />
