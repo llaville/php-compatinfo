@@ -187,5 +187,14 @@
         "php_min": "5.4.0",
         "php_max": "",
         "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 34,
+        "name": "JSON_PRESERVE_ZERO_FRACTION",
+        "ext_min": "5.6.6RC1",
+        "ext_max": "",
+        "php_min": "5.6.6RC1",
+        "php_max": "",
+        "php_excludes": ""
     }
 ]
