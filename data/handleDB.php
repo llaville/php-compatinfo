@@ -609,6 +609,33 @@ class DbReleaseCommand extends Command
         );
         $latest[] = array($refName, $ext, $major, $entry, $names);
 
+        $refName = 'Http';
+        $ext     = 'iniEntries';
+        $major   = '';
+        $entry   = 'php_max';
+        $names   = array(
+            '*'                                     => ExtensionFactory::LATEST_PHP_5_5,
+        );
+        $latest[] = array($refName, $ext, $major, $entry, $names);
+
+        $refName = 'Http';
+        $ext     = 'functions';
+        $major   = '';
+        $entry   = 'php_max';
+        $names   = array(
+            '*'                                     => ExtensionFactory::LATEST_PHP_5_5,
+        );
+        $latest[] = array($refName, $ext, $major, $entry, $names);
+
+        $refName = 'Http';
+        $ext     = 'constants';
+        $major   = '';
+        $entry   = 'php_max';
+        $names   = array(
+            '*'                                     => ExtensionFactory::LATEST_PHP_5_5,
+        );
+        $latest[] = array($refName, $ext, $major, $entry, $names);
+
         $refName = 'Iconv';
         $ext     = 'functions';
         $major   = '';
@@ -753,6 +780,8 @@ class DbReleaseCommand extends Command
             foreach ($data as &$element) {
                 if (array_key_exists($element[$key], $names)) {
                     $element[$entry] = $names[$element[$key]];
+                } elseif (array_key_exists('*', $names)) {
+                    $element[$entry] = $names['*'];
                 }
             }
             $this->writeJsonFile($refName, $ext, $major, $data);
