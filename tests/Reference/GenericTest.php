@@ -55,7 +55,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     protected static $ignoredinterfaces    = array();
 
     protected static $extensions =  array(
-        'amqp','jsmin','haru','pthreads','reflection','solr','xmldiff','Zend OPcache',
+        'amqp','date','jsmin','haru','pthreads','reflection','solr','xmldiff','Zend OPcache',
     );
 
     /**
@@ -525,6 +525,11 @@ class GenericTest extends \PHPUnit_Framework_TestCase
                         "Defined static method '$classname::$methodname' not known in Reference."
                     );
                 } else {
+                    $this->assertArrayHasKey(
+                        $classname,
+                        $nonStaticMethods,
+                        "Defined method '$classname::$methodname' not known in Reference."
+                    );
                     $this->assertArrayHasKey(
                         $methodname,
                         $nonStaticMethods[$classname],
