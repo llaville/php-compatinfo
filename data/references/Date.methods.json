@@ -117,7 +117,9 @@
         "ext_min": "5.2.0",
         "ext_max": "",
         "php_min": "5.3.0",
-        "php_max": "5.4.37"
+        "php_max": "5.4.37",
+        "prototype": "DateTimeInterface",
+        "proto_since": "5.5.0"
     },
     {
         "ext_name_fk": 10,
@@ -127,7 +129,9 @@
         "ext_min": "5.2.0",
         "ext_max": "",
         "php_min": "5.2.0",
-        "php_max": "5.4.37"
+        "php_max": "5.4.37",
+        "prototype": "DateTimeInterface",
+        "proto_since": "5.5.0"
     },
     {
         "ext_name_fk": 10,
@@ -137,7 +141,9 @@
         "ext_min": "5.2.0",
         "ext_max": "",
         "php_min": "5.2.0",
-        "php_max": "5.4.37"
+        "php_max": "5.4.37",
+        "prototype": "DateTimeInterface",
+        "proto_since": "5.5.0"
     },
     {
         "ext_name_fk": 10,
@@ -147,7 +153,9 @@
         "ext_min": "5.2.0",
         "ext_max": "",
         "php_min": "5.2.0",
-        "php_max": "5.4.37"
+        "php_max": "5.4.37",
+        "prototype": "DateTimeInterface",
+        "proto_since": "5.5.0"
     },
     {
         "ext_name_fk": 10,
@@ -157,7 +165,9 @@
         "ext_min": "5.2.0",
         "ext_max": "",
         "php_min": "5.2.0",
-        "php_max": "5.4.37"
+        "php_max": "5.4.37",
+        "prototype": "DateTimeInterface",
+        "proto_since": "5.5.0"
     },
     {
         "ext_name_fk": 10,
