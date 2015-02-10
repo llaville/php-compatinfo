@@ -153,6 +153,11 @@ class ReferenceCollection
 
     public function addMethod($rec)
     {
+        if (!isset($rec['prototype'])) {
+            $rec['prototype']   = '';
+            $rec['proto_since'] = '';
+        }
+
         $criteria = array(
             'ext_name_fk' => $rec['ext_name_fk'],
             'class_name'  => $rec['class_name'],
@@ -306,6 +311,7 @@ class ReferenceCollection
             ' static INTEGER,'.
             ' ext_min VARCHAR(16), ext_max VARCHAR(16),' .
             ' php_min VARCHAR(16), php_max VARCHAR(16),' .
+            ' prototype VARCHAR(32), proto_since VARCHAR(16),' .
             ' PRIMARY KEY (ext_name_fk, class_name, name))'
         );
         $this->dbal->exec(
@@ -363,8 +369,8 @@ class ReferenceCollection
         );
         $this->stmtMethods = $this->dbal->prepare(
             'REPLACE INTO ' . $tblMethods .
-            ' (ext_name_fk, class_name, name, static, ext_min, ext_max, php_min, php_max)' .
-            ' VALUES (:ext_name_fk, :class_name, :name, :static, :ext_min, :ext_max, :php_min, :php_max)'
+            ' (ext_name_fk, class_name, name, static, ext_min, ext_max, php_min, php_max, prototype, proto_since)' .
+            ' VALUES (:ext_name_fk, :class_name, :name, :static, :ext_min, :ext_max, :php_min, :php_max, :prototype, :proto_since)'
         );
         $this->stmtFunctions = $this->dbal->prepare(
             'REPLACE INTO ' . $tblFunctions .
