@@ -57,15 +57,15 @@ class ReferenceCollection extends AbstractLazyCollection
     /**
      * Fetch the database to retrieve, when possible, element informations.
      *
-     * @param string $group May be either 'classes', 'methods', 'functions',
-     *                      'constants', 'traits', 'interfaces'
-     * @param string $key   Name of elment to search for
-     * @param type $argc    Number of arguments used in current element signature
-     * @param type $extra   Name of class when searching for methods
+     * @param string $group  May be either 'classes', 'methods', 'functions',
+     *                       'constants', 'traits', 'interfaces'
+     * @param string $key    Name of elment to search for
+     * @param int    $argc   Number of arguments used in current element signature
+     * @param string &$extra Name of class when searching for methods
      *
      * @return array
      */
-    public function find($group, $key, $argc = 0, $extra = null)
+    public function find($group, $key, $argc = 0, &$extra = null)
     {
         $this->initialize();
 
@@ -79,6 +79,18 @@ class ReferenceCollection extends AbstractLazyCollection
             }
             $this->$stmt->execute($inputParameters);
             $result = $this->$stmt->fetch(PDO::FETCH_ASSOC);
+
+            if (!empty($result['prototype'])) {
+                $prototype = $result['prototype'];
+                if (version_compare(PHP_VERSION, $result['proto_since'], 'ge')) {
+                    $extra = $prototype;
+                    $inputParameters[':class_name'] = $prototype;
+                    $this->$stmt->execute($inputParameters);
+                    $result = $this->$stmt->fetch(PDO::FETCH_ASSOC);
+                } else {
+                    $result['php.max'] = '';
+                }
+            }
 
             if (!$result) {
                 // when not found in database, should be a user or an unknown extension element
@@ -167,7 +179,8 @@ class ReferenceCollection extends AbstractLazyCollection
 
         $this->stmtMethods = $this->dbal->prepare(
             'SELECT e.name as "ext.name", ext_min as "ext.min", ext_max as "ext.max",' .
-            ' php_min as "php.min", php_max as "php.max"' .
+            ' php_min as "php.min", php_max as "php.max",' .
+            ' prototype, proto_since' .
             ' FROM bartlett_compatinfo_methods m,  bartlett_compatinfo_extensions e' .
             ' WHERE m.ext_name_fk = e.id' .
             ' AND m.class_name = :class_name AND m.name = :name COLLATE NOCASE'

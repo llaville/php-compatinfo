@@ -75,9 +75,11 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
         $classes    = $metrics[self::$analyserId]['classes'];
         $methods    = $metrics[self::$analyserId]['methods'];
 
+        $phpMin = version_compare(PHP_VERSION, '5.5.0', 'ge') ? '5.5.0' : '5.3.0';
+
         $this->assertEquals(
             array(
-                'php.min'      => '5.3.0',
+                'php.min'      => $phpMin,
                 'php.max'      => '',
             ),
             $versions
@@ -96,17 +98,36 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
             $classes['DateTime']
         );
 
-        $this->assertEquals(
-            array(
-                'ext.name'     => 'date',
-                'ext.min'      => '5.2.0',
-                'ext.max'      => '',
-                'php.min'      => '5.3.0',
-                'php.max'      => '',
-                'arg.max'      => 1,
-                'matches'      => 1,
-            ),
-            $methods['DateTime::diff']
-        );
+        if (version_compare(PHP_VERSION, '5.5.0', 'ge')) {
+            $this->assertEquals(
+                array(
+                    'ext.name'     => 'date',
+                    'ext.min'      => '5.5.0',
+                    'ext.max'      => '',
+                    'php.min'      => '5.5.0',
+                    'php.max'      => '',
+                    'prototype'    => '',
+                    'proto_since'  => '',
+                    'arg.max'      => 1,
+                    'matches'      => 1,
+                ),
+                $methods['DateTimeInterface::diff']
+            );
+        } else {
+            $this->assertEquals(
+                array(
+                    'ext.name'     => 'date',
+                    'ext.min'      => '5.2.0',
+                    'ext.max'      => '',
+                    'php.min'      => '5.3.0',
+                    'php.max'      => '',
+                    'prototype'    => 'DateTimeInterface',
+                    'proto_since'  => '5.5.0',
+                    'arg.max'      => 1,
+                    'matches'      => 1,
+                ),
+                $methods['DateTime::diff']
+            );
+        }
     }
 }
