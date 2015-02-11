@@ -35,6 +35,7 @@ use Bartlett\Reflect\Client;
 class DependencyIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH100 = 'gh100.php';
+    const GH165 = 'gh165.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -127,6 +128,37 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
                     'matches'      => 1,
                 ),
                 $methods['DateTime::diff']
+            );
+        }
+    }
+
+    /**
+     * Regression test for request GH#165
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/165
+     *       Find undeclared elements
+     * @group regression
+     * @return void
+     */
+    public function testBugGH165()
+    {
+        $dataSource = self::$fixtures . self::GH165;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $classes    = $metrics[self::$analyserId]['classes'];
+
+        $undeclaredClasses = array(
+            'Console_Table',
+            'Doctrine\Common\Cache\Cache',
+            'Foo\Foo',
+            'SebastianBergmann\Version',
+        );
+
+        foreach ($undeclaredClasses as $c) {
+            $this->assertArrayNotHasKey(
+                'declared',
+                $classes[$c],
+                "$c is marked as declared while definition is not provided"
             );
         }
     }
