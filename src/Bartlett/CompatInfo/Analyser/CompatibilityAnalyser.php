@@ -336,6 +336,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->metrics[$element][$name]['php.max']
         );
 
+        if (isset($versions['declared'])) {
+            $this->metrics[$element][$name]['declared'] = true;
+        }
+
         if ('user' == $versions['ext.name']) {
             return;
         }
@@ -456,9 +460,12 @@ class CompatibilityAnalyser extends AbstractAnalyser
             ++$this->metrics['classes'][$name]['matches'];
 
             // update only php versions of the current class
-            unset($versions['ext.name'], $versions['ext.min'], $versions['ext.max']);
-            $name = (string) $node->namespacedName;
-            $this->updateElementVersion('classes', $name, $versions);
+            if (isset($versions['php.min'])) {
+                $this->updateVersion($versions['php.min'], $min);
+            }
+            if (isset($versions['php.max'])) {
+                $this->updateVersion($versions['php.max'], $max);
+            }
         }
 
         // interfaces
@@ -473,7 +480,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
         $element  = 'classes';
         $name     = (string) $node->namespacedName;
-        $versions = array('php.min' => $min, 'php.max' => $max);
+        $versions = array('php.min' => $min, 'php.max' => $max, 'declared' => true);
         $this->updateElementVersion($element, $name, $versions);
         $this->contextStack[] = array($element, $name);
     }
@@ -498,7 +505,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
         $element  = 'interfaces';
         $name     = (string)$node->namespacedName;
-        $versions = array('php.min' => $min);
+        $versions = array('php.min' => $min, 'declared' => true);
         $this->updateElementVersion($element, $name, $versions);
         $this->contextStack[] = array($element, $name);
     }
@@ -515,7 +522,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $min      = '5.4.0';
         $element  = 'traits';
         $name     = (string)$node->namespacedName;
-        $versions = array('php.min' => $min);
+        $versions = array('php.min' => $min, 'declared' => true);
         $this->updateElementVersion($element, $name, $versions);
         $this->contextStack[] = array($element, $name);
     }

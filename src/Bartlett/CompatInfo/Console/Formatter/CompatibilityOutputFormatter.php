@@ -124,8 +124,18 @@ class CompatibilityOutputFormatter extends OutputFormatter
         ksort($args);
 
         foreach ($args as $arg => $versions) {
+            $flags = isset($versions['optional']) ? 'C' : ' ';
+
+            if (in_array($group, array('classes', 'interfaces', 'traits'))) {
+                if ('user' == $versions['ext.name']
+                    && !isset($versions['declared'])
+                ) {
+                    $flags .= 'U';
+                }
+            }
+
             $row = array(
-                isset($versions['optional']) ? 'C' : ' ',
+                $flags,
                 $arg,
                 $versions['matches'] > 0 ? $versions['matches'] : '',
                 isset($versions['ext.name']) ? $versions['ext.name'] : '',
@@ -142,7 +152,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
             $rows[] = $row;
         }
 
-        $headers = array(' ', ucfirst($title), 'Matches', 'REF', 'EXT min/Max', 'PHP min/Max');
+        $headers = array('  ', ucfirst($title), 'Matches', 'REF', 'EXT min/Max', 'PHP min/Max');
         $footers = array(
             '',
             sprintf('<info>Total [%d]</info>', count($args)),
