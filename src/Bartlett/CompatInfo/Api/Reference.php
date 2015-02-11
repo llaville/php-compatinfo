@@ -68,7 +68,9 @@ class Reference extends BaseApi
             $closure = $filter;
 
         } elseif ($filter === false) {
-            $closure = function ($data) { return $data; };
+            $closure = function ($data) {
+                return $data;
+            };
 
         } else {
             if ($filterRes = stream_resolve_include_path($filter)) {
