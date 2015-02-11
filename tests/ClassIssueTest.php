@@ -83,6 +83,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
                 'php.min'      => '5.0.0',
                 'php.max'      => '',
                 'matches'      => 0,
+                'declared'     => true,
             ),
             $classes['Foo']
         );
