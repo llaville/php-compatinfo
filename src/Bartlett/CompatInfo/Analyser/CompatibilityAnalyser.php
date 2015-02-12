@@ -60,6 +60,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             'versions'   => array(),
             'extensions' => array(),
             'namespaces' => array(),
+            'objects'    => array(),
             'interfaces' => array(),
             'traits'     => array(),
             'classes'    => array(),
@@ -316,7 +317,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $versions = array_merge(self::$php4, $versions);
 
         if (!isset($this->metrics[$element][$name])) {
-            $versions['matches'] = 0;
+            $versions['matches'] = isset($versions['matches']) ? : 0;
             $this->metrics[$element][$name] = $versions;
         }
 
@@ -448,7 +449,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
         // parent class
         if (isset($node->extends)) {
             $name     = (string) $node->extends;
-            $versions = $this->references->find('classes', $name);
+            $group    = $this->findObjectType($name);
+            $versions = $this->metrics[$group][$name];
             if ('user' == $versions['ext.name']) {
                 if ($node->extends->isFullyQualified()) {
                     $versions = array('php.min' => '5.3.0');
@@ -458,6 +460,11 @@ class CompatibilityAnalyser extends AbstractAnalyser
             }
             $this->updateElementVersion('classes', $name, $versions);
             ++$this->metrics['classes'][$name]['matches'];
+
+            if ('objects' == $group) {
+                // now object is categorized, remove from temp queue
+                unset($this->metrics[$group][$name]);
+            }
 
             // update only php versions of the current class
             if (isset($versions['php.min'])) {
@@ -471,8 +478,15 @@ class CompatibilityAnalyser extends AbstractAnalyser
         // interfaces
         foreach ($node->implements as $interface) {
             $name     = (string) $interface;
-            $versions = $this->references->find('interfaces', $name);
+            $group    = $this->findObjectType($name);
+            $versions = $this->metrics[$group][$name];
             $this->updateElementVersion('interfaces', $name, $versions);
+            ++$this->metrics['interfaces'][$name]['matches'];
+
+            if ('objects' == $group) {
+                // now object is categorized, remove from temp queue
+                unset($this->metrics[$group][$name]);
+            }
 
             $this->updateVersion($versions['php.min'], $min);
             $this->updateVersion($versions['php.max'], $max);
@@ -480,7 +494,17 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
         $element  = 'classes';
         $name     = (string) $node->namespacedName;
-        $versions = array('php.min' => $min, 'php.max' => $max, 'declared' => true);
+        $group    = $this->findObjectType($name);
+        $versions = $this->metrics[$group][$name];
+
+        if ('objects' == $group) {
+            // now object is categorized, remove from temp queue
+            unset($this->metrics[$group][$name]);
+        }
+        $versions = array_merge(
+            $versions,
+            array('php.min' => $min, 'php.max' => $max, 'declared' => true)
+        );
         $this->updateElementVersion($element, $name, $versions);
         $this->contextStack[] = array($element, $name);
     }
@@ -606,11 +630,54 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->updateElementVersion($element, $name, $versions);
 
             // introduces parameter object (if not yet defined)
-            $name = (string)$node->type;
-            $versions = $this->references->find('classes', $name);
-            $this->updateElementVersion('classes', $name, $versions);
-            ++$this->metrics['classes'][$name]['matches'];
+            $name  = (string)$node->type;
+            $group = $this->findObjectType($name);
+            ++$this->metrics[$group][$name]['matches'];
         }
+    }
+
+    /**
+     * Try to find the right object (interface | class) of type hint.
+     *
+     * Stay as group "objects" when undetermined.
+     *
+     * @param string $name Object's name
+     *
+     * @return string
+     */
+    private function findObjectType($name)
+    {
+        $group = 'objects';
+        if (isset($this->metrics[$group][$name])) {
+            // object is not yet categorized
+            return $group;
+        }
+
+        $groups = array('interfaces', 'classes');
+
+        foreach ($groups as $group) {
+            if (isset($this->metrics[$group][$name])) {
+                // we already know the category of object
+                return $group;
+            }
+        }
+
+        foreach ($groups as $group) {
+            // not yet known, try to detect for non user elements
+            $versions = $this->references->find($group, $name);
+
+            if ('user' == $versions['ext.name']) {
+                // remove the previously cached response before trying new attempt
+                $this->references->remove($name);
+            } else {
+                $this->updateElementVersion($group, $name, $versions);
+                return $group;
+            }
+        }
+        // cannot distinguish yet the right group (interfaces or classes)
+        $group = 'objects';
+        $this->updateElementVersion($group, $name, $versions);
+        return $group;
     }
 
     /**
