@@ -74,6 +74,31 @@ class CompatibilityAnalyser extends AbstractAnalyser
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function getMetrics()
+    {
+        /**
+         * All remaining objects in temp queue (referenced) are considered
+         * by default as classes.
+         * It may be interfaces, but without declaration, impossible to give
+         * the right group.
+         */
+        while (!empty($this->metrics['objects'])) {
+            list($name, $versions) = each($this->metrics['objects']);
+            array_shift($this->metrics['objects']);
+            $group = 'interfaces';
+            if (!isset($this->metrics[$group][$name])) {
+                $group = 'classes';
+            }
+            $this->updateElementVersion($group, $name, $versions);
+        }
+        unset($this->metrics['objects']);
+
+        return parent::getMetrics();
+    }
+
+    /**
      * Called once before traversal.
      *
      * @param Node[] $nodes Array of nodes
@@ -159,18 +184,6 @@ class CompatibilityAnalyser extends AbstractAnalyser
         parent::afterTraverse($nodes);
 
         $this->computeNamespaceVersions();
-
-        /**
-         * All remaining objects in temp queue (referenced) are considered
-         * by default as classes.
-         * It may be interfaces, but without declaration, impossible to give
-         * the right group.
-         */
-        while (!empty($this->metrics['objects'])) {
-            list($name, $versions) = each($this->metrics['objects']);
-            array_shift($this->metrics['objects']);
-            $this->updateElementVersion('classes', $name, $versions);
-        }
     }
 
     /**
