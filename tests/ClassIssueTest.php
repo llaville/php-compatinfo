@@ -37,6 +37,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
     const GH119 = 'gh119.php';
     const GH129 = 'gh129.php';
     const GH131 = 'gh131.php';
+    const GH166 = 'gh166.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -153,6 +154,48 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
                 'php.max'      => '',
             ),
             $versions
+        );
+    }
+
+    /**
+     * Regression test for bug GH#166
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/166
+     *       "Type hinting and objects"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH166()
+    {
+        $dataSource = self::$fixtures . self::GH166;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $classes    = $metrics[self::$analyserId]['classes'];
+        $interfaces = $metrics[self::$analyserId]['interfaces'];
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'spl',
+                'ext.min'      => '5.1.0',
+                'ext.max'      => '',
+                'php.min'      => '5.1.0',
+                'php.max'      => '',
+                'matches'      => 1,
+            ),
+            $interfaces['RecursiveIterator']
+        );
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'user',
+                'ext.min'      => '',
+                'ext.max'      => '',
+                'php.min'      => '5.1.0',
+                'php.max'      => '',
+                'matches'      => 0,
+                'declared'     => true,
+            ),
+            $classes['Foo']
         );
     }
 }

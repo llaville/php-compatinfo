@@ -159,6 +159,18 @@ class CompatibilityAnalyser extends AbstractAnalyser
         parent::afterTraverse($nodes);
 
         $this->computeNamespaceVersions();
+
+        /**
+         * All remaining objects in temp queue (referenced) are considered
+         * by default as classes.
+         * It may be interfaces, but without declaration, impossible to give
+         * the right group.
+         */
+        while (!empty($this->metrics['objects'])) {
+            list($name, $versions) = each($this->metrics['objects']);
+            array_shift($this->metrics['objects']);
+            $this->updateElementVersion('classes', $name, $versions);
+        }
     }
 
     /**
@@ -317,7 +329,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $versions = array_merge(self::$php4, $versions);
 
         if (!isset($this->metrics[$element][$name])) {
-            $versions['matches'] = isset($versions['matches']) ? : 0;
+            $versions['matches'] = isset($versions['matches']) ? $versions['matches'] : 0;
             $this->metrics[$element][$name] = $versions;
         }
 
@@ -371,6 +383,24 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $name,
             $versions
         );
+    }
+
+    /**
+     * Updates local versions (and non-user extension).
+     *
+     * @param array $versions
+     *
+     * @return void
+     */
+    protected function updateLocalVersions($versions)
+    {
+        if ($versions['ext.name'] !== 'user') {
+            // update versions of extension's $element
+            $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
+        }
+
+        $this->updateVersion($versions['php.min'], $this->localVersions['php.min']);
+        $this->updateVersion($versions['php.max'], $this->localVersions['php.max']);
     }
 
     /**
@@ -625,14 +655,18 @@ class CompatibilityAnalyser extends AbstractAnalyser
         } elseif ($node->type instanceof Node\Name\FullyQualified) {
             // type hint
 
-            // updates container (class, interface or trait) versions
-            $versions = array('php.min' => '5.3.0');
-            $this->updateElementVersion($element, $name, $versions);
-
             // introduces parameter object (if not yet defined)
             $name  = (string)$node->type;
             $group = $this->findObjectType($name);
             ++$this->metrics[$group][$name]['matches'];
+
+            // type hint object required at least PHP 5.0
+            $versions = $this->metrics[$group][$name];
+            $this->updateVersion('5.0.0', $versions['php.min']);
+
+            // updates container (class, interface or trait) method
+            $this->updateLocalVersions($versions);
+            $this->updateContextVersion($this->localVersions);
         }
     }
 
@@ -665,6 +699,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
         foreach ($groups as $group) {
             // not yet known, try to detect for non user elements
             $versions = $this->references->find($group, $name);
+            // arg.max is useless (nonsense) in this context
+            unset($versions['arg.max']);
 
             if ('user' == $versions['ext.name']) {
                 // remove the previously cached response before trying new attempt
@@ -1074,17 +1110,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             return;
         }
 
-        if ($versions['ext.name'] !== 'user') {
-            // update versions of extension's $element
-            $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
-
-            $this->updateVersion($versions['ext.min'], $this->localVersions['ext.min']);
-            $this->updateVersion($versions['ext.max'], $this->localVersions['ext.max']);
-        }
-
-        $this->updateVersion($versions['php.min'], $this->localVersions['php.min']);
-        $this->updateVersion($versions['php.max'], $this->localVersions['php.max']);
-
+        $this->updateLocalVersions($versions);
         $this->updateContextVersion($this->localVersions);
     }
 }
