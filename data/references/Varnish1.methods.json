@@ -1,0 +1,12 @@
+[
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishAdmin",
+        "name": "disconnect",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    }
+]

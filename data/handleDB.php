@@ -294,6 +294,12 @@ class DbInitCommand extends Command
                 'const'      => array(''),
                 'methods'    => array('', '2'),
             ),
+            'varnish' => array(
+                'classes'    => array(''),
+                'constants'  => array(''),
+                'releases'   => array('', '1'),
+                'methods'    => array('', '1'),
+            ),
             'xmldiff' => array(
                 'classes'    => array(''),
                 'releases'   => array('', '1'),
