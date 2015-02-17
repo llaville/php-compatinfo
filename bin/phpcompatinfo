@@ -1,6 +1,5 @@
 #!/usr/bin/env php
 <?php
-ini_set('memory_limit', -1);
 $appName = 'phpCompatInfo';
 
 if (\Phar::running()) {
