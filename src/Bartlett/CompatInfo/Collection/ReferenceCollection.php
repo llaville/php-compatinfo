@@ -82,14 +82,10 @@ class ReferenceCollection extends AbstractLazyCollection
 
             if (!empty($result['prototype'])) {
                 $prototype = $result['prototype'];
-                if (version_compare(PHP_VERSION, $result['proto_since'], 'ge')) {
-                    $extra = $prototype;
-                    $inputParameters[':class_name'] = $prototype;
-                    $this->$stmt->execute($inputParameters);
-                    $result = $this->$stmt->fetch(PDO::FETCH_ASSOC);
-                } else {
-                    $result['php.max'] = '';
-                }
+                $inputParameters[':class_name'] = $prototype;
+                $this->$stmt->execute($inputParameters);
+                $versions = $this->$stmt->fetch(PDO::FETCH_ASSOC);
+                $result['php.max'] = $versions['php.max'];
             }
 
             if (!$result) {

@@ -73,14 +73,11 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
         $analysers  = array('compatibility');
         $metrics    = self::$api->run($dataSource, $analysers);
         $versions   = $metrics[self::$analyserId]['versions'];
-        $classes    = $metrics[self::$analyserId]['classes'];
         $methods    = $metrics[self::$analyserId]['methods'];
-
-        $phpMin = version_compare(PHP_VERSION, '5.5.0', 'ge') ? '5.5.0' : '5.3.0';
 
         $this->assertEquals(
             array(
-                'php.min'      => $phpMin,
+                'php.min'      => '5.3.0',
                 'php.max'      => '',
             ),
             $versions
@@ -91,45 +88,15 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
                 'ext.name'     => 'date',
                 'ext.min'      => '5.2.0',
                 'ext.max'      => '',
-                'php.min'      => '5.2.0',
+                'php.min'      => '5.3.0',
                 'php.max'      => '',
+                'prototype'    => 'DateTimeInterface',
+                'proto_since'  => '5.5.0',
                 'arg.max'      => 1,
-                'matches'      => 2,
+                'matches'      => 1,
             ),
-            $classes['DateTime']
+            $methods['DateTime::diff']
         );
-
-        if (version_compare(PHP_VERSION, '5.5.0', 'ge')) {
-            $this->assertEquals(
-                array(
-                    'ext.name'     => 'date',
-                    'ext.min'      => '5.5.0',
-                    'ext.max'      => '',
-                    'php.min'      => '5.5.0',
-                    'php.max'      => '',
-                    'prototype'    => '',
-                    'proto_since'  => '',
-                    'arg.max'      => 1,
-                    'matches'      => 1,
-                ),
-                $methods['DateTimeInterface::diff']
-            );
-        } else {
-            $this->assertEquals(
-                array(
-                    'ext.name'     => 'date',
-                    'ext.min'      => '5.2.0',
-                    'ext.max'      => '',
-                    'php.min'      => '5.3.0',
-                    'php.max'      => '',
-                    'prototype'    => 'DateTimeInterface',
-                    'proto_since'  => '5.5.0',
-                    'arg.max'      => 1,
-                    'matches'      => 1,
-                ),
-                $methods['DateTime::diff']
-            );
-        }
     }
 
     /**
