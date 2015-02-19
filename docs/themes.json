@@ -1,0 +1,11 @@
+{
+  "themes":
+  [
+    {"name": "Default", "cssCdn": "stylesheets/asciidoc-bootstrap.min.css"},
+    {"name": "Cerulean", "cssCdn": "stylesheets/asciidoc-bootstrap.cerulean.min.css"},
+    {"name": "Flatly", "cssCdn": "stylesheets/asciidoc-bootstrap.flatly.min.css"},
+    {"name": "Readable", "cssCdn": "stylesheets/asciidoc-bootstrap.readable.min.css"},
+    {"name": "Sandstone", "cssCdn": "stylesheets/asciidoc-bootstrap.sandstone.min.css"},
+    {"name": "United", "cssCdn": "stylesheets/asciidoc-bootstrap.united.min.css"}
+  ]
+}
