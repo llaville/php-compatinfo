@@ -1,4 +1,4 @@
-= Build your Plugins
+= Plugins
 :description: How to extend the features list.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
@@ -10,7 +10,7 @@ include::attributes.asciidoc[]
 CompatInfo uses a Symfony http://symfony.com/doc/current/components/event_dispatcher/index.html[EventDispatcher] Component
 to allow you to easily extend the features list.
 
-The EventDispatcher component allow Reflect and [label label-primary]#CompatInfo# components
+The EventDispatcher component allow [label label-primary]#CompatInfo# components
 to communicate with each other by dispatching events and listening to them.
 
 === Event Dispatcher
@@ -37,11 +37,15 @@ Here is an example :
 ----
 <?php
 
-use Bartlett\CompatInfo;
+use Bartlett\Reflect\Client;
 
-$compatinfo = new CompatInfo;
+// creates an instance of client
+$client = new Client();
 
-$ed = $compatinfo->getEventDispatcher();
+// request for a Bartlett\Reflect\Api\Analyser
+$api = $client->api('analyser');
+
+$dispatcher = $api->getEventDispatcher();
 ----
 
 === Adding Event Listeners
@@ -55,12 +59,19 @@ to specific events.
 ----
 <?php
 
-use Bartlett\CompatInfo;
+use Bartlett\Reflect\Client;
+
 use Symfony\Component\EventDispatcher\GenericEvent;
 
-$compatinfo = new CompatInfo;
+// creates an instance of client
+$client = new Client();
 
-$compatinfo->getEventDispatcher()->addListener(
+// request for a Bartlett\Reflect\Api\Analyser
+$api = $client->api('analyser');
+
+$dispatcher = $api->getEventDispatcher();
+
+$dispatcher->addListener(
     'reflect.progress',
     function (GenericEvent $e) {
         printf(
@@ -73,31 +84,6 @@ $compatinfo->getEventDispatcher()->addListener(
 ----
 ====
 
-.Add a listener that will exploit each http://en.wikipedia.org/wiki/Abstract_syntax_tree[AST] of file parsed
-====
-[source,php]
-----
-<?php
-
-use Bartlett\CompatInfo;
-use Symfony\Component\EventDispatcher\GenericEvent;
-
-$compatinfo = new CompatInfo;
-
-$compatinfo->getEventDispatcher()->addListener(
-    'reflect.success',
-    function (GenericEvent $e) {
-        $ast = unserialize($e['ast']);
-        printf(
-            'Parsing Data source "%s", file "%s". AST = %s' . PHP_EOL,
-            $e['source'],
-            $e['file']->getPathname(),
-            print_r($ast, true)
-        );
-    }
-);
-----
-====
 
 === Event Subscribers
 
@@ -106,26 +92,32 @@ They are used to register one or more event listeners to methods of the class.
 Event subscribers tell event dispatcher exactly which events to listen to and what method to invoke on the class.
 
 [label label-primary]#CompatInfo# plugins follow the event subscribers behaviors.
-Have a look on Reflect AnalyserPlugin :
+Have a look on NotifierPlugin :
 
 [source,php]
 ----
 <?php
-class AnalyserPlugin implements EventSubscriberInterface
+
+use Bartlett\Reflect\Events;
+
+class NotifierPlugin implements PluginInterface, EventSubscriberInterface
 {
     public static function getSubscribedEvents()
     {
-        return array(
-            'reflect.complete' => 'onReflectComplete',
+        $events = array(
+            Events::PROGRESS => 'onNotification',
+            Events::ERROR    => 'onNotification',
+            Events::COMPLETE => 'onNotification',
         );
+        return $events;
     }
 }
 ----
 
 This plugin registers event listeners to the `reflect.complete` event
-of a [label label-primary]#CompatInfo# parse request.
+of a [label label-primary]#Reflect# parse request.
 
-When the `reflect.complete` event is emitted, the +onReflectComplete+ instance method
+When the `reflect.complete` event is emitted, the +onNotification+ instance method
 of the plugin is invoked.
 
 === Events lifecycle
@@ -148,14 +140,6 @@ of the plugin is invoked.
 +
 `ast` the http://en.wikipedia.org/wiki/Abstract_syntax_tree[Abstract Syntax Tree] result of https://github.com/nikic/PHP-Parser[PHP-Parser]
 
-| reflect.cache | A previous cached request was found and return the AST.
-|
-`source` data source identifier or its alias
-+
-`file` current file parsed in the data source
-+
-`ast` the http://en.wikipedia.org/wiki/Abstract_syntax_tree[Abstract Syntax Tree] result of https://github.com/nikic/PHP-Parser[PHP-Parser]
-
 | reflect.error | When PHP Parser raise an error
 |
 `source` data source identifier or its alias
@@ -171,27 +155,48 @@ of the plugin is invoked.
 |===========================
 
 
-== Console Commands
+== Register Plugins
 
-If your plugin should be accessible on the command line, and provides some new commands,
-you have to register them with the static +getCommands()+ method.
+[NOTE]
+==========
+In [label label-primary]#Reflect# API 2, and other SAPI than CLI,
+you have to register a plugin, if you want to use it.
 
-Have a look on AnalyserPlugin, that provide two new commands: `analyser:list` and `analyser:run`.
+In [label label-primary]#Reflect# API 3, it's no more necessary.
+All valid plugins defined in the JSON configuration file are automatically registered.
+==========
+
+IMPORTANT: You must define environment variables `BARTLETT_SCAN_DIR` and `BARTLETTRC`,
+otherwise the JSON config file will not found it.
+
+If you don't want to use any plugins, and de-activated all at once, follow this pattern.
 
 [source,php]
 ----
 <?php
-class AnalyserPlugin implements EventSubscriberInterface
-{
-    public static function getCommands()
-    {
-        $commands   = array();
-        $commands[] = new AnalyserListCommand;
-        $commands[] = new AnalyserRunCommand;
 
-        return $commands;
-    }
+use Bartlett\Reflect\Environment;
+use Bartlett\Reflect\Client;
+
+// set default values for BARTLETT_SCAN_DIR
+Environment::setScanDir()
+
+// set default value for BARTLETTRC
+putenv("BARTLETTRC=phpcompatinfo.json");
+
+// creates an instance of client
+$client = new Client();
+
+// request for a Bartlett\Reflect\Api\Analyser
+$api = $client->api('analyser');
+
+// de activate all plugins
+$api->activatePlugins(false);
+
+// perform request, on a data source with default analyser (compatibility)
+$dataSource = dirname(__DIR__) . '/src';
+$analysers  = array('compatibility');
+
+// equivalent to CLI command `phpcompatinfo analyser:run ../src`
+$metrics = $api->run($dataSource, $analysers);
 ----
-
-CAUTION: If your plugin must not provide console command,
-your +getCommands()+ static method should return an empty php array.

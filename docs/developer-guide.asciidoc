@@ -1,5 +1,5 @@
 = Developer Guide
-:description: All you have to know about CompatInfo v3 architecture.
+:description: All you have to know about CompatInfo v4 architecture.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
 
@@ -76,6 +76,7 @@ endif::basebackend-bootstrap[]
 
 | link:developer-guide&#45;&#45;cache-plugin.html[Cache] | speed up future data source parsing
 | link:developer-guide&#45;&#45;log-plugin.html[Log] | log events on any PSR-3 compatible logger
+| link:developer-guide&#45;&#45;notifier-plugin.html[Notifier] | notifies application events via different systems
 |===========================
 --
 ====

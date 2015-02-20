@@ -5,164 +5,144 @@ include::attributes.asciidoc[]
 
 == Register Plugin
 
-WARNING: You can used this plugin (from PHP Reflect) only since [label label-primary]#CompatInfo# 3.4
+If you want to use default logger `Bartlett\Reflect\Plugin\Log\DefaultLogger`,
+skip this section.
+
+If you want to use your own version of log plugin, use following pattern.
 
 [source,php]
 ----
 <?php
 
-use Bartlett\CompatInfo;
-use Bartlett\Reflect\Plugin\Log\LogPlugin;
+namespace YourNamespace;
 
-// Optional plugin configuration
-$opt = array();
+use Bartlett\Reflect\Plugin\LogPlugin as BaseLogPlugin;
 
-$compatinfo = new CompatInfo;
-$compatinfo->addPlugin( new LogPlugin($logger, $opt) );
-----
-Where +$logger+ is an instance of object that must implement interface
-`Psr\Log\LoggerInterface` (http://www.php-fig.org/psr/psr-3/[PSR-3]).
-
-And +$opt+ is an array to configure what events and its details you would like to have.
-
-[options="header,autowidth", cols="3,5,3", role="table table-bordered table-striped"]
-|===========================
-| Event | Log Level | Message Template (with/without placeholders)
-
-| reflect.progess  
-| Psr3\Log\Level\LogLevel::INFO 
-| Parsing file "\{file}" in progress.
-
-| reflect.success  
-| Psr3\Log\Level\LogLevel::INFO 
-| AST built.
-
-| reflect.cache
-| Psr3\Log\Level\LogLevel::INFO 
-| AST built by a previous request.
-
-| reflect.error
-| Psr3\Log\Level\LogLevel::ERROR 
-| Parser has detected an error on file "\{file}". "\{error}".
-
-| reflect.complete
-| Psr3\Log\Level\LogLevel::NOTICE 
-| Parsing data source "\{source}" completed.
-
-|===========================
-
-For example, if you want to deactivate logging on `reflect.success` event, then give the following options :
-
-[source,php]
-----
-<?php
-
-$opt = array(
-    'reflect.success' => false,
-);
+class LogPlugin extends BaseLogPlugin
+{
+    // all additional code you need
+}
 ----
 
-Or, if you don't want to have contextual data sent to logger :
+And the configuration in JSON file :
 
-[source,php]
+[source,json]
 ----
-<?php
+{
+    "source-providers": [
+    ],
+    "plugins": [
+        {
+            "name": "Logger",
+            "class": "YourNamespace\\LogPlugin",
+            "options": []
+        }
+    ],
+    "analysers" : [
+    ],
+    "services": [
+    ]
+}
+----
 
-$opt = array(
-    'reflect.success' => array(
-        'level'    => LogLevel::INFO,
-        'template' => 'AST built.',
-        'context'  => false,
-    ),
-);
+
+== Default logger
+
+[role="lead"]
+Use a solution similar to ErrorLogHandler of Monolog project.
+
+[source,json]
 ----
+{
+    "source-providers": [
+    ],
+    "plugins": [
+        {
+            "name": "Logger",
+            "class": "Bartlett\\Reflect\\Plugin\\LogPlugin",
+            "options": []
+        }
+    ],
+    "analysers" : [
+    ],
+    "services": [
+    ]
+}
+----
+
+It logs records at `Psr\Log\LogLevel::INFO` level or highter, identified
+by channel name `DefaultLoggerChannel`.
+
 
 == Using your private logger
 
 [role="lead"]
-Use your own logger, that must be compatible PSR-3.
+Use your own logger, that must be compatible http://www.php-fig.org/psr/psr-3/[PSR-3].
 
 [source,php]
 ----
 <?php
 
-use Bartlett\CompatInfo;
-use Bartlett\Reflect\Plugin\Log\LogPlugin;
+namespace YourNamespace;
 
 use Psr\Log\AbstractLogger;
 
 class YourLogger extends AbstractLogger
 {
-    private $channel;
-
-    public function __construct($name = 'YourLoggerChannel')
-    {
-        $this->channel = $name;
-    }
-
     public function log($level, $message, array $context = array())
     {
-        error_log(
-            sprintf(
-                '%s.%s: %s',
-                $this->channel,
-                strtoupper($level),
-                $this->interpolate($message, $context)
-            )
-        );
-    }
-
-    protected function interpolate($message, array $context = array())
-    {
-        // build a replacement array with braces around the context keys
-        $replace = array();
-        foreach ($context as $key => $val) {
-            $replace['{' . $key . '}'] = $val;
-        }
-
-        // interpolate replacement values into the message and return
-        return strtr($message, $replace);
     }
 }
-
-// Create the main logger
-$logger = new YourLogger('CompatInfo');
-
-// Optional plugin configuration
-$opt = array();
-
-$compatinfo = new CompatInfo;
-$compatinfo->addPlugin( new LogPlugin($logger, $opt) );
 ----
+
+And identify it in the JSON config file, as follow
+
+[source,json]
+----
+{
+    "source-providers": [
+    ],
+    "plugins": [
+        {
+            "name": "Logger",
+            "class": "YourNamespace\\LogPlugin"
+        }
+    ],
+    "analysers" : [
+    ],
+    "services": [
+    ]
+}
+----
+
+Or even
+
+[source,json]
+----
+{
+    "source-providers": [
+    ],
+    "plugins": [
+        {
+            "name": "Logger",
+            "class": "Bartlett\\Reflect\\Plugin\\LogPlugin",
+            "options": "YourNamespace\\YourLogger"
+        }
+    ],
+    "analysers" : [
+    ],
+    "services": [
+    ]
+}
+----
+
+See full example at {rawbaseurl}/examples/api_analyser_run_with_logger.php
+
 
 == Using Monolog
 
 [role="lead"]
 Use one of the most famous logging solution compatible PSR-3.
-
-[source,php]
-----
-<?php
-
-use Bartlett\CompatInfo;
-use Bartlett\Reflect\Plugin\Log\LogPlugin;
-
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-
-// Create some handlers
-$stream = new StreamHandler('/var/logs/phpcompatinfo.log');
-
-// Create the main logger
-$logger = new Logger('CompatInfo');
-$logger->pushHandler($stream);
-
-// Optional plugin configuration
-$opt = array();
-
-$compatinfo = new CompatInfo;
-$compatinfo->addPlugin( new LogPlugin($logger, $opt) );
-----
 
 WARNING: If you want to use Monolog with [label label-primary]#CompatInfo# on CLI mode,
 then you should use a wrapper like this.
@@ -170,6 +150,8 @@ then you should use a wrapper like this.
 [source,php]
 ----
 <?php
+
+namespace YourNamespace;
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -181,5 +163,26 @@ class YourLogger extends Logger
         $stream = new StreamHandler('/var/logs/phpcompatinfo.log');
         parent::__construct($name, array($stream));
     }
+}
+----
+
+And with JSON config file as follow
+
+[source,json]
+----
+{
+    "source-providers": [
+    ],
+    "plugins": [
+        {
+            "name": "Logger",
+            "class": "Bartlett\\Reflect\\Plugin\\LogPlugin",
+            "options": "YourNamespace\\YourLogger"
+        }
+    ],
+    "analysers" : [
+    ],
+    "services": [
+    ]
 }
 ----
