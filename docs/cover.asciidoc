@@ -2,6 +2,7 @@
 :description: PHP CompatInfo Book cover
 include::attributes.asciidoc[]
 :navbar!:
+:themeswitcher!:
 :jumbotron!:
 :toc!:
 :toc2!:

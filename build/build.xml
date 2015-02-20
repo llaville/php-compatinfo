@@ -123,6 +123,7 @@
         <include name="developer-guide--plugins.asciidoc" />
         <include name="developer-guide--cache-plugin.asciidoc" />
         <include name="developer-guide--log-plugin.asciidoc" />
+        <include name="developer-guide--notifier-plugin.asciidoc" />
         <include name="developer-guide--analysers.asciidoc" />
         <include name="migration-guide**.asciidoc" />
         <include name="getting-started.asciidoc" />
@@ -144,6 +145,7 @@
         <include name="developer-guide--plugins.html" />
         <include name="developer-guide--cache-plugin.html" />
         <include name="developer-guide--log-plugin.html" />
+        <include name="developer-guide--notifier-plugin.html" />
         <include name="developer-guide--analysers.html" />
         <include name="migration-guide**.html" />
         <include name="getting-started.html" />
