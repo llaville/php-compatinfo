@@ -1,5 +1,5 @@
 = Build your Analysers
-:description: How to customize the render of your results.
+:description: How to extend analyser CompatInfo's features.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
 
@@ -10,76 +10,70 @@ in a simple and effective way to make the render of your results truly customiza
 
 == Visitor pattern
 
-Each +Analyser+ class must implement interface +Bartlett\Reflect\Visitor\VisitorInterface+.
+Each +Analyser+ class must implement two interfaces +Bartlett\Reflect\Analyser\AnalyserInterface+,
+and  +PhpParser\NodeVisitor+.
 
-WARNING: Abstract visitor is a component of Reflect, and not CompatInfo. Take care of namespace !
-
-[source,php]
-----
-<?php
-
-namespace Bartlett\Reflect\Visitor;
-
-use Bartlett\Reflect\Model\Visitable;
-
-interface VisitorInterface
-{
-    public function visit(Visitable $visitable);
-}
-----
-
-Each element that need to be explored by your analyser should have a visit method accordingly.
-
-* For packages, we need to implement a *visitPackageModel* method.
-* For classes, we need to implement a *visitClassModel* method.
-* For properties, we need to implement a *visitPropertyModel* method.
-* For methods, we need to implement a *visitMethodModel* method.
-* For functions, we need to implement a *visitFunctionModel* method.
-* For constants, we need to implement a *visitConstantModel* method.
-* For includes, we need to implement a *visitIncludeModel* method.
-* For dependencies, we need to implement a *visitDependencyModel* method.
-
-NOTE: Abstract class `Bartlett\Reflect\Visitor\AbstractVisitor`,
-that implement interface +Bartlett\Reflect\Visitor\VisitorInterface+,
-holds a basic visitor.
+Your first own analyser may start like that :
 
 [source,php]
 ----
 <?php
 
-use Bartlett\Reflect\Visitor\AbstractVisitor;
+namespace YourNamespace;
 
-class Analyser extends AbstractVisitor
+use Bartlett\Reflect\Analyser\AnalyserInterface;
+use PhpParser\NodeVisitor;
+
+class YourAnalyser implements AnalyserInterface, NodeVisitor
 {
-    public function visitPackageModel($package)
+    //
+    // AnalyserInterface methods
+    //
+
+    public function setSubject(Reflect $reflect)
     {
     }
 
-    public function visitClassModel($class)
+    public function setTokens(array $tokens)
     {
     }
 
-    public function visitMethodModel($method)
+    public function setCurrentFile($path)
     {
     }
 
-    public function visitPropertyModel($property)
+    public function getMetrics()
     {
     }
 
-    public function visitFunctionModel($function)
+    public function getName()
     {
     }
 
-    public function visitConstantModel($constant)
+    public function getNamespace()
     {
     }
 
-    public function visitIncludeModel($include)
+    public function getShortName()
     {
     }
 
-    public function visitDependencyModel($dependency)
+    //
+    // NodeVisitor methods
+    //
+    public function beforeTraverse(array $nodes)
+    {
+    }
+
+    public function enterNode(Node $node)
+    {
+    }
+
+    public function leaveNode(Node $node)
+    {
+    }
+
+    public function afterTraverse(array $nodes)
     {
     }
 }
@@ -95,9 +89,11 @@ Your analyser became as simple like that:
 ----
 <?php
 
+namespace YourNamespace;
+
 use Bartlett\Reflect\Analyser\AbstractAnalyser;
 
-class Analyser extends AbstractAnalyser
+class YourAnalyser extends AbstractAnalyser
 {
 }
 ----
@@ -106,7 +102,35 @@ class Analyser extends AbstractAnalyser
 
 == Print results
 
-Once you have used visit methods to explore parsing results, you will need to return
-formatted data ready to be print.
+Once all nodes of AST built by PHP-Parser were traversed, you have to publish your results
+with the +getMetrics()+ method.
 
-To do so, you should implement the +render()+ method of +Bartlett\Reflect\Analyser\AnalyserInterface+.
+Results must be organized as a +key+/+values+ pair array, where +key+ is the fully qualified name of your analyser
+(E.g: +YourNamespace\YourAnalyser+), and +values+ are your metrics (free organization).
+
+At end of API +analyser+/+run+, your metrics are returned, and may be exploited as you want.
+You are free to create a custom render or not. 
+If no output formatter is provided in namespace +YourNamespace\Console\Formatter+, a simple PHP +print_r()+ format is returned.
+
+NOTE: This is the default format in debug mode (verbose level 3 in CLI).
+
+Here is a pattern of skeleton.
+
+[source,php]
+----
+<?php
+
+namespace YourNamespace\Console\Formatter;
+
+use Symfony\Component\Console\Output\OutputInterface;
+
+class YourAnalyserOutputFormatter 
+{
+    // $output   === instance of console output
+    // $response === your metrics returned by the +YourNamespace\YourAnalyser\getMetrics()+ 
+    
+    public function __invoke(OutputInterface $output, $response)
+    {
+    }
+}
+---- 

@@ -15,7 +15,7 @@ the default bundled growl notifier is not for you. Skip this section.
 * Growl for Mac
 ====
 
-You'll add to configure your plugin in your `phpreflect.json` file, as follow :
+You'll add to configure your plugin in your `phpcompatinfo.json` file, as follow :
 
 [source,json]
 ----
@@ -51,7 +51,7 @@ use Bartlett\Reflect\Plugin\Notifier\GrowlNotifier as BaseGrowlNotifier;
 
 class MyGrowlNotifier extends BaseGrowlNotifier
 {
-    public function __construct($application = 'myPhpReflect', $notifications = array(),
+    public function __construct($application = 'myPhpCompatInfo', $notifications = array(),
         $password = '', $options = array()
     {
         parent::__construct($application, $notifications, $password, $options);
@@ -59,7 +59,7 @@ class MyGrowlNotifier extends BaseGrowlNotifier
 }
 ----
 
-We have changed the Growl Application Name to `myPhpReflect`, and used the `udp` protocol.
+We have changed the Growl Application Name to `myPhpCompatInfo`, and used the `udp` protocol.
 
 TIP: See http://growl.laurent-laville.org/ to learn more about PEAR/Net_Growl package.
 
@@ -83,7 +83,7 @@ use Bartlett\Reflect\Client;
 Environment::setScanDir()
 
 // set default value for BARTLETTRC
-putenv("BARTLETTRC=phpreflect.json");
+putenv("BARTLETTRC=phpcompatinfo.json");
 
 // creates an instance of client
 $client = new Client();
@@ -95,7 +95,7 @@ $api = $client->api('analyser');
 $dataSource = dirname(__DIR__) . '/src';
 $analysers  = array('structure');
 
-// equivalent to CLI command `phpreflect analyser:run ../src`
+// equivalent to CLI command `phpcompatinfo analyser:run ../src`
 $metrics = $api->run($dataSource, $analysers);
 
 var_export($metrics);
