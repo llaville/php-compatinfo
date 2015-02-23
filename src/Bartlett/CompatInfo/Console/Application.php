@@ -57,6 +57,10 @@ class Application extends BaseApplication
             $this->getVersion(),
             $v['build.string']
         );
+        if (extension_loaded('xdebug')) {
+            $version .= PHP_EOL . PHP_EOL .
+                '<warning>You are encouraged to unload xdebug extension to speed up execution.</warning>';
+        }
         return $version;
     }
 }
