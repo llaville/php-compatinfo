@@ -175,7 +175,7 @@ endif::basebackend-docbook[]
 | [label label-default]#2.0.0#
 
 | gender
-1.0.0 {stable}
+1.1.0 {stable}
 | [label label-info]#2.16.0#
 
 | geoip
@@ -203,7 +203,7 @@ endif::basebackend-docbook[]
 | [label label-info]#2.23.0#
 
 | http
-2.1.4 {stable}
+2.2.1 {stable}
 | [label label-info]#2.16.0#
 
 | iconv
@@ -231,7 +231,7 @@ endif::basebackend-docbook[]
 | [label label-default]#2.0.0#
 
 | jsmin
-1.0.0 {stable}
+1.1.0 {stable}
 | [label label-info]#2.25.0#
 
 | json
@@ -279,7 +279,7 @@ endif::basebackend-docbook[]
 | [label label-default]#2.0.0#
 
 | mongo
-1.5.8 {stable}
+1.6.3 {stable}
 | [label label-info]#2.8.0#
 
 | msgpack
@@ -387,7 +387,7 @@ endif::basebackend-docbook[]
 | [label label-default]#2.0.0#
 
 | solr
-2.0.0 {stable}
+2.1.0 {stable}
 | [label label-info]#2.5.0#
 
 | sphinx
@@ -451,7 +451,7 @@ endif::basebackend-docbook[]
 | [label label-info]#2.16.0#
 
 | varnish
-1.1.1 {stable}
+1.2.1 {stable}
 | [label label-info]#2.15.0#
 
 | wddx
@@ -463,7 +463,7 @@ endif::basebackend-docbook[]
 | [label label-info]#2.8.0#
 
 | xdebug
-2.2.6 {stable}
+2.2.7 {stable}
 | [label label-default]#2.0.0#
 
 | xhprof
