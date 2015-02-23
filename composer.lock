@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-reflect.git",
-                "reference": "e7f804ee1dbe5cdc419f0bb26a56afd4f68e329f"
+                "reference": "54865a0dcc72a9eef36dfe1e5780855ea7111cb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/e7f804ee1dbe5cdc419f0bb26a56afd4f68e329f",
-                "reference": "e7f804ee1dbe5cdc419f0bb26a56afd4f68e329f",
+                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/54865a0dcc72a9eef36dfe1e5780855ea7111cb6",
+                "reference": "54865a0dcc72a9eef36dfe1e5780855ea7111cb6",
                 "shasum": ""
             },
             "require": {
@@ -76,7 +76,7 @@
             ],
             "description": "Adds the ability to reverse-engineer classes, interfaces, functions, constants, namespaces, traits and more.",
             "homepage": "http://php5.laurent-laville.org/reflect/",
-            "time": "2015-02-19 17:51:08"
+            "time": "2015-02-23 13:21:51"
         },
         {
             "name": "doctrine/collections",
