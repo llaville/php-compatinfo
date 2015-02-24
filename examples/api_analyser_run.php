@@ -13,10 +13,6 @@
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-if (!defined('JSON_PRETTY_PRINT')) {
-    define('JSON_PRETTY_PRINT', 128);
-}
-
 use Bartlett\Reflect\Client;
 
 // creates an instance of client
@@ -35,9 +31,4 @@ $metrics = $api->run($dataSource, $analysers);
 // ... and also
 // equivalent to CLI command `phpcompatinfo analyser:run --format=json ../src`
 
-$metrics = json_encode(
-    $metrics['Bartlett\\CompatInfo\\Analyser\\CompatibilityAnalyser'],
-    JSON_PRETTY_PRINT
-);
-
-var_export($metrics);
+echo $metrics;
