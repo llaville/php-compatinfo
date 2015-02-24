@@ -1,5 +1,5 @@
 = Migration Guide v3
-:description: Migrating from version 2.26 to 3.7, and continue to keep your environment running.
+:description: Migrating from version 2.26 to 3.2 (min), and continue to keep your environment running.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
 

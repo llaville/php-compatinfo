@@ -2,7 +2,7 @@
 :description: How to download, configure and use it in a basic way.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:pharstable:  http://bartlett.laurent-laville.org/get/phpcompatinfo-4.0.0-beta2.phar
+:pharstable:  http://bartlett.laurent-laville.org/get/phpcompatinfo-4.0.0-beta3.phar
 
 
 == Download
@@ -20,8 +20,8 @@ endif::basebackend-bootstrap[]
 Make it executable, and put it into your `$PATH`.
 [source,bash]
 ----
-$ chmod +x phpcompatinfo-4.0.0-beta2.phar
-$ mv phpcompatinfo-4.0.0-beta2.phar /usr/local/bin/phpcompatinfo
+$ chmod +x phpcompatinfo-4.0.0-beta3.phar
+$ mv phpcompatinfo-4.0.0-beta3.phar /usr/local/bin/phpcompatinfo
 
 $ phpcompatinfo --version
 ----
@@ -29,8 +29,8 @@ $ phpcompatinfo --version
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-4.0.0-beta2.phar
-$ php phpcompatinfo-4.0.0-beta2.phar --version
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-4.0.0-beta3.phar
+$ php phpcompatinfo-4.0.0-beta3.phar --version
 ----
 
 With both methods then you have this output :
@@ -38,7 +38,7 @@ With both methods then you have this output :
 [role="output"]
 ====
 ----
-phpCompatInfo version 4.0.0-beta2 DB built Feb 20 2015 09:51:51 CET
+phpCompatInfo version 4.0.0-beta3 DB built Feb 20 2015 09:51:51 CET
 ----
 ====
 
