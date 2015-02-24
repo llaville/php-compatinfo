@@ -301,6 +301,12 @@ class DbInitCommand extends Command
                 'releases'   => array('', '1'),
                 'methods'    => array('', '1'),
             ),
+            'xdebug' => array(
+                'constants'  => array('2'),
+                'functions'  => array('1', '2'),
+                'iniEntries' => array('1', '2'),
+                'releases'   => array('1', '2'),
+            ),
             'xmldiff' => array(
                 'classes'    => array(''),
                 'releases'   => array('', '1'),
