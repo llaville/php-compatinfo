@@ -8,5 +8,7 @@
     "plugins": [
     ],
     "analysers" : [
+    ],
+    "services" : [
     ]
 }
