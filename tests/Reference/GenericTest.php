@@ -55,7 +55,18 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     protected static $ignoredinterfaces    = array();
 
     protected static $extensions =  array(
-        'amqp','date','jsmin','haru','mongo','pthreads','reflection','solr','varnish','xmldiff','Zend OPcache',
+        'amqp',
+        'date',
+        'jsmin',
+        'haru',
+        'mongo',
+        'pthreads',
+        'reflection',
+        'solr',
+        'varnish',
+        'xdebug',
+        'xmldiff',
+        'Zend OPcache',
     );
 
     /**

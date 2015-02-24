@@ -168,5 +168,15 @@
         "php_max": "",
         "parameters": "",
         "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 91,
+        "name": "xdebug_code_coverage_started",
+        "ext_min": "2.3.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
     }
 ]

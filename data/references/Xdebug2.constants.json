@@ -43,5 +43,32 @@
         "php_min": "4.3.0",
         "php_max": "",
         "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 91,
+        "name": "XDEBUG_TRACE_NAKED_FILENAME",
+        "ext_min": "2.3.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 91,
+        "name": "XDEBUG_STACK_NO_DESC",
+        "ext_min": "2.3.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 91,
+        "name": "XDEBUG_CC_BRANCH_CHECK",
+        "ext_min": "2.3.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
     }
 ]

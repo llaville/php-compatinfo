@@ -262,5 +262,53 @@
         "ext_max": "",
         "php_min": "4.3.0",
         "php_max": ""
+    },
+    {
+        "ext_name_fk": 91,
+        "name": "xdebug.trace_enable_trigger_value",
+        "ext_min": "2.3.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 91,
+        "name": "xdebug.force_display_errors",
+        "ext_min": "2.3.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 91,
+        "name": "xdebug.force_error_reporting",
+        "ext_min": "2.3.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 91,
+        "name": "xdebug.halt_level",
+        "ext_min": "2.3.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 91,
+        "name": "xdebug.max_stack_frames",
+        "ext_min": "2.3.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 91,
+        "name": "xdebug.profiler_enable_trigger_value",
+        "ext_min": "2.3.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
     }
 ]
