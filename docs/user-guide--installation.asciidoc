@@ -14,10 +14,10 @@ CompatInfo may be installed in several ways, choose your favorite.
 
 WARNING: Please read the
 ifdef::basebackend-bootstrap[]
-link:migration-guide.html[migration guide]
+link:migration-guide-3.html[migration guide v3]
 endif::basebackend-bootstrap[]
 ifdef::basebackend-docbook[]
-xref:_migration_guide[]
+xref:_migration_guide_v3[]
 endif::basebackend-docbook[]
 in case you are upgrading from a version 2.x of PHP CompatInfo.
 
@@ -41,7 +41,7 @@ Put a file named [label label-default]#composer.json# at the root of your projec
 ----
 {
     "require": {
-        "bartlett/php-compatinfo": "4.0.0-beta2"
+        "bartlett/php-compatinfo": "4.0.0-beta3"
     }
 }
 ----
@@ -66,7 +66,7 @@ This is the equivalent of doing a git clone checkout followed by a composer inst
 
 [source,bash]
 ----
-$ php composer.phar create-project bartlett/php-compatinfo /path/to/install 4.0.0-beta2
+$ php composer.phar create-project bartlett/php-compatinfo /path/to/install 4.0.0-beta3
 ----
 Where +/path/to/install+ is your install directory.
 ====
@@ -79,17 +79,17 @@ bundled in a single file.
 
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-4.0.0-beta2.phar
-$ chmod +x phpcompatinfo-4.0.0-beta2.phar
-$ mv phpcompatinfo-4.0.0-beta2.phar /usr/local/bin/phpcompatinfo
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-4.0.0-beta3.phar
+$ chmod +x phpcompatinfo-4.0.0-beta3.phar
+$ mv phpcompatinfo-4.0.0-beta3.phar /usr/local/bin/phpcompatinfo
 $ phpcompatinfo
 ----
 
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-4.0.0-beta2.phar
-$ php phpcompatinfo-4.0.0-beta2.phar
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-4.0.0-beta3.phar
+$ php phpcompatinfo-4.0.0-beta3.phar
 ----
 
 ifdef::basebackend-bootstrap[]
