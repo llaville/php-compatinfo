@@ -1,5 +1,0 @@
-Additions and changes:
-- update xcache reference to 3.0.3
-
-Bug fixes:
-- none

@@ -1,8 +1,0 @@
-New major version and API rewritten specially for PHP 5.3 and greater.
-
-Additions and changes since RC1:
-
-* phar version is now a single file with all dependencies bundled.
-* console application respect now plug-and-play protocol.
-
-*The final stable version is planned for Wed, 30 April 2014.*

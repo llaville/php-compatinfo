@@ -1,7 +1,0 @@
-Additions and changes:
-- first release that support final stable version of PHP 5.5
-- update xcache reference to 3.0.2
-- update http reference to 1.7.6
-
-Bug fixes:
-- none

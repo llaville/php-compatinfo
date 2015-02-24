@@ -1,7 +1,0 @@
-Additions and changes:
-- phar --version switch now print the latest version rather than DEV
-- add new function setExcludeVersions() in abstract PHP_CompatInfo_Reference_PluginsAbstract class
-  that allow to exclude one or more version for an element ( related to issue GH-99 )
-
-Bug fixes:
-- GH-99: SO_BINDTODEVICE exists in php >= 5.4.18 and >= 5.5.1 (so not in 5.5.0)
