@@ -1,5 +1,5 @@
-bartlett/php-compatinfo: <info>4.0.0-beta2</info>
-bartlett/php-reflect: <info>3.0.0-beta2</info>
+bartlett/php-compatinfo: <info>4.0.0-beta3</info>
+bartlett/php-reflect: <info>3.0.0-beta3</info>
 doctrine/collections: <info>v1.2</info>
 justinrainbow/json-schema: <info>1.3.7</info>
 nikic/php-parser: <info>v1.1.0</info>

@@ -38,7 +38,7 @@ With both methods then you have this output :
 [role="output"]
 ====
 ----
-phpCompatInfo version 4.0.0-beta3 DB built Feb 24 2015 19:57:20 CET
+phpCompatInfo version 4.0.0-beta3 DB built Feb 27 2015 08:28:03 CET
 ----
 ====
 

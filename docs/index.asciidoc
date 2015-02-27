@@ -25,7 +25,7 @@ include::revision.asciidoc[]
 It was published on {stablePubDate}.
 
 ifdef::basebackend-bootstrap[]
-link:./manual/current/en/getting-started.html["Learn more",role="primary",options="block"]
+link:./manual/current/en/getting-started.html["Learn more",role="primary",icon="glyphicon-book",options="block"]
 endif::[]
 
 ifndef::basebackend-bootstrap[]
@@ -44,7 +44,7 @@ endif::[]
 It was published on {devPubDate}.
 
 ifdef::basebackend-bootstrap[]
-link:./manual/4.0/en/getting-started.html["Learn more",role="primary",options="block"]
+link:./manual/4.0/en/getting-started.html["Learn more",role="primary",icon="glyphicon-book",options="block"]
 endif::[]
 
 ifndef::basebackend-bootstrap[]
@@ -126,7 +126,7 @@ unfloat::[]
 {brand} is open source. It's hosted, developed, and maintained on GitHub.
 
 ifdef::basebackend-bootstrap[]
-link:{gitproject}["View the GitHub Project",role="primary",options="block"]
+link:{gitproject}["View the GitHub Project",role="primary",icon="glyphicon-eye-open",options="block"]
 endif::[]
 
 ifndef::basebackend-bootstrap[]
