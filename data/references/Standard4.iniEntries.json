@@ -57,14 +57,6 @@
     },
     {
         "ext_name_fk": 78,
-        "name": "from",
-        "ext_min": "5.3.4",
-        "ext_max": "",
-        "php_min": "5.3.4",
-        "php_max": ""
-    },
-    {
-        "ext_name_fk": 78,
         "name": "safe_mode_allowed_env_vars",
         "ext_min": "4.0.0",
         "ext_max": "",
