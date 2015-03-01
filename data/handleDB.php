@@ -742,7 +742,7 @@ class DbReleaseCommand extends Command
 
         $refName = 'Standard';
         $ext     = 'iniEntries';
-        $major   = '';
+        $major   = '4';
         $entry   = 'php_max';
         $names   = array(
             'safe_mode_allowed_env_vars'            => ExtensionFactory::LATEST_PHP_5_3,
@@ -752,7 +752,7 @@ class DbReleaseCommand extends Command
 
         $refName = 'Standard';
         $ext     = 'functions';
-        $major   = '';
+        $major   = '4';
         $entry   = 'php_max';
         $names   = array(
             'define_syslog_variables'               => ExtensionFactory::LATEST_PHP_5_3,
@@ -766,7 +766,7 @@ class DbReleaseCommand extends Command
 
         $refName = 'Standard';
         $ext     = 'constants';
-        $major   = '';
+        $major   = '4';
         $entry   = 'php_max';
         $names   = array(
             'STREAM_ENFORCE_SAFE_MODE'              => ExtensionFactory::LATEST_PHP_5_3,
