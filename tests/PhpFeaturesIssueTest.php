@@ -40,6 +40,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     const GH143 = 'gh143.php';
     const GH148 = 'gh148.php';
     const GH154 = 'gh154.php';
+    const GH168 = 'gh168.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -214,6 +215,56 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
                 'php.max'      => '',
             ),
             $versions
+        );
+    }
+
+    /**
+     * Regression test for feature GH#168
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/168
+     *       Wrong version on global const variable definition
+     * @group features
+     * @group regression
+     * @return void
+     */
+    public function testBugGH168()
+    {
+        $dataSource = self::$fixtures . self::GH168;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $constants  = $metrics[self::$analyserId]['constants'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.3.0',
+                'php.max'      => '',
+            ),
+            $versions
+        );
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'user',
+                'ext.min'      => '',
+                'ext.max'      => '',
+                'php.min'      => '4.0.0',
+                'php.max'      => '',
+                'matches'      => 0,
+            ),
+            $constants['BAR']
+        );
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'user',
+                'ext.min'      => '',
+                'ext.max'      => '',
+                'php.min'      => '5.3.0',
+                'php.max'      => '',
+                'matches'      => 1,
+            ),
+            $constants['FOO']
         );
     }
 }

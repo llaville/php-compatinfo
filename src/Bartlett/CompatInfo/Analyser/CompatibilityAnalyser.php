@@ -295,6 +295,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 if ($versions === null) {
                     $versions = self::$php4;
 
+                    list($element, $name) = array_pop($this->contextStack);
+                    $this->contextStack[] = array($element, $name);
+
+                    if ('namespaces' == $element) {
+                        $versions['php.min'] = '5.3.0';
+                    }
+
                     if (!$const->value instanceof Node\Scalar) {
                         // Constant scalar expressions
                         $versions['php.min'] = '5.6.0';
