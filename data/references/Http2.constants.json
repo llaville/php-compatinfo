@@ -304,5 +304,14 @@
         "php_min": "5.3.0",
         "php_max": "",
         "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\HTTP_VERSION_2_0",
+        "ext_min": "2.3.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
     }
 ]
