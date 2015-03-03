@@ -68,7 +68,7 @@ ifdef::basebackend-html[]
 [panel,info]
 .Statistics v4
 --
-* [label label-info]#4.0.0# support 103 references
+* [label label-info]#4.0.0# support 104 references
 --
 ====
 endif::basebackend-html[]
@@ -353,6 +353,10 @@ endif::basebackend-docbook[]
 | recode
 2.0.1 {stable}
 | [label label-default]#2.0.0#
+
+| redis
+2.2.7 {stable}
+| [label label-default]#4.0.0#
 
 | Reflection
 {php5}
