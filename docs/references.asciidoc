@@ -68,7 +68,7 @@ ifdef::basebackend-html[]
 [panel,info]
 .Statistics v4
 --
-* [label label-info]#4.0.0# support 104 references
+* [label label-info]#4.0.0# support 105 references
 --
 ====
 endif::basebackend-html[]
@@ -94,7 +94,7 @@ ifdef::basebackend-docbook[]
 * 3.3.0 support 102 references
 
 .Statistics v4
-* 4.0.0 support 103 references
+* 4.0.0 support 105 references
 endif::basebackend-docbook[]
 
 
@@ -449,6 +449,10 @@ endif::basebackend-docbook[]
 | tokenizer
 0.1 {stable}
 | [label label-default]#2.0.0#
+
+| uopz
+2.0.7 {stable}
+| [label label-info]#4.0.0#
 
 | uploadprogress
 1.0.3.1 {stable}

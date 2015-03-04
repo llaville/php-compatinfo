@@ -64,6 +64,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         'redis',
         'reflection',
         'solr',
+        'uopz',
         'varnish',
         'xdebug',
         'xmldiff',

@@ -312,6 +312,12 @@ class DbInitCommand extends Command
                 'const'      => array(''),
                 'methods'    => array('', '2'),
             ),
+            'uopz' => array(
+                'constants'  => array('2'),
+                'functions'  => array('2'),
+                'iniEntries' => array('2'),
+                'releases'   => array('2'),
+            ),
             'varnish' => array(
                 'classes'    => array(''),
                 'constants'  => array(''),
