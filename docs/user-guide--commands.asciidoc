@@ -59,6 +59,11 @@ cache
  cache:clear           Clear cache (any adapter and backend).
 config
  config:validate       Validates a JSON configuration file.
+diagnose
+ diagnose:run          Diagnoses the system to identify common errors.
+diagram
+ diagram:class         Generates diagram about a user class present in a data source.
+ diagram:package       Generates diagram about namespaces in a data source.
 plugin
  plugin:list           List all plugins installed.
 reference
@@ -82,6 +87,49 @@ $ phpcompatinfo config:validate
 [role="output"]
 ----
 "/etc/phpcompatinfo.json" config file is valid.
+----
+
+[horizontal]
+diagnose:run::
+Diagnoses the system to identify common errors.
++
+[source,bash]
+----
+$ phpcompatinfo diagnose:run
+----
++
+[role="output"]
+----
+Checking php settings:
+- Requires PHP 5.3.2 or better OK
+- php.ini file loaded C:\UwAmp\bin\php\php-5.6.6\php.ini
+- date extension loaded YES
+- json extension loaded YES
+- pcre extension loaded YES
+- phar extension loaded YES
+- reflection extension loaded YES
+- spl extension loaded YES
+- tokenizer extension loaded YES
+----
++
+TIP: Use verbose level 2 for more details, and level 3 to get raw response
+
+[horizontal]
+diagram:class::
+Generates diagram about a user class present in a data source.
++
+[source,bash]
+----
+$ phpcompatinfo diagram:class Bartlett\Reflect\Plugin\LogPlugin ./src
+----
+
+[horizontal]
+diagram:package::
+Generates diagram about namespaces in a data source.
++
+[source,bash]
+----
+$ phpcompatinfo diagram:package --engine=graphviz ./src
 ----
 
 [horizontal]
