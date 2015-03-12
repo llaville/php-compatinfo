@@ -281,6 +281,8 @@ class DbInitCommand extends Command
             'gender' => array(
                 'classes'    => array(''),
                 'releases'   => array('', '1'),
+                'const'      => array('', '1'),
+                'methods'    => array(''),
             ),
             'http' => array(
                 'classes'    => array('', '1', '2'),

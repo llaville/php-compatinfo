@@ -57,6 +57,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     protected static $extensions =  array(
         'amqp',
         'date',
+        'gender',
         'haru',
         'jsmin',
         'mongo',

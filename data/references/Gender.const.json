@@ -1,0 +1,560 @@
+[
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "IS_FEMALE",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "IS_MOSTLY_FEMALE",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "IS_MALE",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "IS_MOSTLY_MALE",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "IS_UNISEX_NAME",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "IS_A_COUPLE",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "NAME_NOT_FOUND",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "ERROR_IN_NAME",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "ANY_COUNTRY",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "BRITAIN",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "IRELAND",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "USA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "SPAIN",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "PORTUGAL",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "ITALY",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "MALTA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "FRANCE",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "BELGIUM",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "LUXEMBOURG",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "NETHERLANDS",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "GERMANY",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "EAST_FRISIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "AUSTRIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "SWISS",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "ICELAND",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "DENMARK",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "NORWAY",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "SWEDEN",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "FINLAND",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "ESTONIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "LATVIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "LITHUANIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "POLAND",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "CZECH_REP",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "SLOVAKIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "HUNGARY",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "ROMANIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "BULGARIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "BOSNIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "CROATIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "KOSOVO",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "MACEDONIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "MONTENEGRO",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "SERBIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "SLOVENIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "ALBANIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "GREECE",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "RUSSIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "BELARUS",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "MOLDOVA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "UKRAINE",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "ARMENIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "AZERBAIJAN",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "GEORGIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "KAZAKH_UZBEK",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "TURKEY",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "ARABIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "ISRAEL",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "CHINA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "INDIA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "JAPAN",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 19,
+        "class_name": "Gender\\Gender",
+        "name": "KOREA",
+        "ext_min": "0.6.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    }
+]
