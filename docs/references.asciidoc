@@ -279,7 +279,7 @@ endif::basebackend-docbook[]
 | [label label-default]#2.0.0#
 
 | mongo
-1.6.3 {stable}
+1.6.5 {stable}
 | [label label-info]#2.8.0#
 
 | msgpack
