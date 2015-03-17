@@ -10,6 +10,7 @@ include::revision.asciidoc[]
 :toc!:
 :toc2!:
 :navbar!:
+:themeswitcher!:
 :jumboinfo:
 
 
