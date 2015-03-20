@@ -6,6 +6,6 @@
         "rel_state": "beta",
         "ext_max": "1.7.6",
         "php_min": "4.3.0",
-        "php_max": "5.5.22"
+        "php_max": "5.5.23"
     }
 ]

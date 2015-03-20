@@ -86,7 +86,7 @@
         "ext_min": "4.0.2",
         "ext_max": "",
         "php_min": "4.0.2",
-        "php_max": "5.5.22",
+        "php_max": "5.5.23",
         "php_excludes": ""
     },
     {
@@ -95,7 +95,7 @@
         "ext_min": "4.0.2",
         "ext_max": "",
         "php_min": "4.0.2",
-        "php_max": "5.5.22",
+        "php_max": "5.5.23",
         "php_excludes": ""
     },
     {
@@ -104,7 +104,7 @@
         "ext_min": "4.0.2",
         "ext_max": "",
         "php_min": "4.0.2",
-        "php_max": "5.5.22",
+        "php_max": "5.5.23",
         "php_excludes": ""
     },
     {
@@ -113,7 +113,7 @@
         "ext_min": "4.0.2",
         "ext_max": "",
         "php_min": "4.0.2",
-        "php_max": "5.5.22",
+        "php_max": "5.5.23",
         "php_excludes": ""
     },
     {
@@ -122,7 +122,7 @@
         "ext_min": "4.0.2",
         "ext_max": "",
         "php_min": "4.0.2",
-        "php_max": "5.5.22",
+        "php_max": "5.5.23",
         "php_excludes": ""
     },
     {
@@ -1463,7 +1463,7 @@
         "ext_min": "4.0.2",
         "ext_max": "",
         "php_min": "4.0.2",
-        "php_max": "5.5.22",
+        "php_max": "5.5.23",
         "php_excludes": ""
     },
     {
@@ -3823,5 +3823,23 @@
         "php_min": "5.5.0",
         "php_max": "",
         "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 9,
+        "name": "CURLPROXY_SOCKS4A",
+        "ext_min": "5.5.23RC1",
+        "ext_max": "",
+        "php_min": "5.5.23RC1",
+        "php_max": "",
+        "php_excludes": "5.6.0, 5.6.0RC1, 5.6.0RC2, 5.6.0RC3, 5.6.0RC4, 5.6.1, 5.6.1RC1, 5.6.2, 5.6.3, 5.6.4, 5.6.5, 5.6.6"
+    },
+    {
+        "ext_name_fk": 9,
+        "name": "CURLPROXY_SOCKS5_HOSTNAME",
+        "ext_min": "5.5.23RC1",
+        "ext_max": "",
+        "php_min": "5.5.23RC1",
+        "php_max": "",
+        "php_excludes": "5.6.0, 5.6.0RC1, 5.6.0RC2, 5.6.0RC3, 5.6.0RC4, 5.6.1, 5.6.1RC1, 5.6.2, 5.6.3, 5.6.4, 5.6.5, 5.6.6"
     }
 ]

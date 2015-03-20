@@ -1934,7 +1934,6 @@
         "php_max": "",
         "php_excludes": ""
     },
-
     {
         "ext_name_fk": 78,
         "name": "PHP_URL_FRAGMENT",
@@ -2160,7 +2159,6 @@
         "php_max": "",
         "php_excludes": ""
     },
-
     {
         "ext_name_fk": 78,
         "name": "STREAM_CLIENT_ASYNC_CONNECT",
