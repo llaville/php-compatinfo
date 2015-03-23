@@ -42,6 +42,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
         'ext.max'  => '',
         'php.min'  => '4.0.0',
         'php.max'  => '',
+        'php.all'  => '',
     );
 
     private $aliases;
@@ -398,11 +399,24 @@ class CompatibilityAnalyser extends AbstractAnalyser
         list($element, $name) = array_pop($this->contextStack);
         $this->contextStack[] = array($element, $name);
 
-        $this->updateElementVersion(
-            $element,
-            $name,
-            $versions
-        );
+        if (in_array($element, array('namespaces', 'classes', 'traits'))) {
+            if ('namespaces' == $element) {
+                $key = 'php.all';
+            } else {
+                $key = 'php.min';
+            }
+            self::updateVersion(
+                $versions[$key],
+                $this->metrics[$element][$name]['php.all']
+            );
+
+        } else {
+            $this->updateElementVersion(
+                $element,
+                $name,
+                $versions
+            );
+        }
     }
 
     /**
@@ -414,6 +428,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     protected function updateLocalVersions($versions)
     {
+        $versions = array_merge(self::$php4, $versions);
+
         if ($versions['ext.name'] !== 'user') {
             // update versions of extension's $element
             $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
@@ -428,15 +444,17 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @param string $min The PHP min version to check
      * @param string $max The PHP max version to check
+     * @param string $all The PHP min version to check for all components
      *
      * @return void
      */
-    protected function updateGlobalVersion($min, $max)
+    protected function updateGlobalVersion($min, $max, $all)
     {
         if (empty($this->metrics['versions'])) {
             $this->metrics['versions'] = array(
                 'php.min'  => '4.0.0',
                 'php.max'  => '',
+                'php.all'  => '',
             );
         }
 
@@ -447,6 +465,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
         self::updateVersion(
             $max,
             $this->metrics['versions']['php.max']
+        );
+        self::updateVersion(
+            $all,
+            $this->metrics['versions']['php.all']
         );
     }
 
@@ -623,7 +645,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             } else {
                 $versions = array('php.min' => '5.0.0');
             }
-            $this->updateElementVersion($element, $name, $versions);
+            $this->updateLocalVersions($versions);
             $this->contextStack[] = array($element, $name);
             return;
         }
@@ -686,7 +708,6 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
             // updates container (class, interface or trait) method
             $this->updateLocalVersions($versions);
-            $this->updateContextVersion($this->localVersions);
         }
     }
 
@@ -814,7 +835,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
         }
 
-        $this->updateGlobalVersion($versions['php.min'], $versions['php.max']);
+        $this->updateGlobalVersion($versions['php.min'], $versions['php.max'] , $versions['php.all']);
     }
 
     /**
@@ -883,6 +904,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function computeFunctionVersions(Node $node)
     {
+        $this->updateContextVersion($this->localVersions);
+
         // remove function context
         array_pop($this->contextStack);
 
@@ -1007,7 +1030,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
         ++$this->metrics[$context][$target]['matches'];
 
         // update current context that call this static method
-        $this->updateContextVersion($versions);
+        $this->updateLocalVersions($versions);
     }
 
     /**
@@ -1131,6 +1154,5 @@ class CompatibilityAnalyser extends AbstractAnalyser
         }
 
         $this->updateLocalVersions($versions);
-        $this->updateContextVersion($this->localVersions);
     }
 }

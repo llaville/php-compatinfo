@@ -32,6 +32,8 @@ use Symfony\Component\Console\Helper\TableSeparator;
  */
 class CompatibilityOutputFormatter extends OutputFormatter
 {
+    private $metrics;
+
     /**
      * Compatibility Analyser console output format
      *
@@ -42,6 +44,8 @@ class CompatibilityOutputFormatter extends OutputFormatter
      */
     public function __invoke(OutputInterface $output, $response)
     {
+        $this->metrics = $response;
+
         $filter = false;
         $groups = array(
             'extensions',
@@ -61,12 +65,20 @@ class CompatibilityOutputFormatter extends OutputFormatter
         } else {
             $max = sprintf(', PHP %s (max)', $response['versions']['php.max']);
         }
+
+        if (empty($response['versions']['php.all'])) {
+            $all = '';
+        } else {
+            $all = sprintf(', PHP %s (all)', $response['versions']['php.all']);
+        }
+
         $output->writeln(
             sprintf(
-                '%s<php>Requires %s%s</php>',
+                '%s<php>Requires %s%s%s</php>',
                 PHP_EOL,
                 $min,
-                $max
+                $max,
+                $all
             )
         );
     }
@@ -96,6 +108,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
             'ext.max'  => '',
             'php.min'  => '4.0.0',
             'php.max'  => '',
+            'php.all'  => '',
         );
         // compute global versions of the $group
         foreach ($args as $name => $base) {
@@ -104,7 +117,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
                 continue;
             }
             foreach ($base as $id => $version) {
-                if (!in_array(substr($id, -3), array('min', 'max'))
+                if (!in_array(substr($id, -3), array('min', 'max', 'all'))
                     || 'arg.max' == $id
                 ) {
                     continue;
@@ -115,6 +128,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
             }
         }
         $phpRequired = Version::php($versions);
+        $phpAll      = Version::all($versions);
 
         $output->writeln(
             sprintf('%s<info>%s Analysis</info>%s', PHP_EOL, ucfirst($group), PHP_EOL)
@@ -141,6 +155,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
                 isset($versions['ext.name']) ? $versions['ext.name'] : '',
                 Version::ext($versions),
                 Version::php($versions),
+                Version::all($versions),
             );
             /*
                 for reference:show command,
@@ -150,20 +165,45 @@ class CompatibilityOutputFormatter extends OutputFormatter
                 $row[0] = 'W';
             }
             $rows[] = $row;
+
+            if (in_array($group, array('classes', 'interfaces', 'traits'))
+                && $output->isVerbose()
+                && !in_array($arg, array('parent', 'self', 'static'))
+            ) {
+                $this->getMethods($arg, $rows);
+            }
         }
 
-        $headers = array('  ', ucfirst($title), 'Matches', 'REF', 'EXT min/Max', 'PHP min/Max');
+        $headers = array('  ', ucfirst($title), 'Matches', 'REF', 'EXT min/Max', 'PHP min/Max', 'PHP all');
         $footers = array(
             '',
             sprintf('<info>Total [%d]</info>', count($args)),
             '',
             '',
             '',
-            sprintf('<info>%s</info>', $phpRequired)
+            sprintf('<info>%s</info>', $phpRequired),
+            sprintf('<info>%s</info>', $phpAll)
         );
         $rows[] = new TableSeparator();
         $rows[] = $footers;
 
         $this->tableHelper($output, $headers, $rows);
+    }
+
+    private function getMethods($className, &$rows)
+    {
+        foreach ($this->metrics['methods'] as $method => $versions) {
+            if (strpos($method, "$className::") === 0) {
+                $rows[] = array(
+                    ' ',
+                    sprintf('<info>function</info> %s', str_replace("$className::", '', $method)),
+                    $versions['matches'] > 0 ? $versions['matches'] : '',
+                    isset($versions['ext.name']) ? $versions['ext.name'] : '',
+                    Version::ext($versions),
+                    Version::php($versions),
+                    Version::all($versions),
+                );
+            }
+        }
     }
 }

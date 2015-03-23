@@ -40,4 +40,14 @@ class Version
             ? $versions['php.min']
             : $versions['php.min'] . ' => ' . $versions['php.max'];
     }
+
+    public static function all($versions)
+    {
+        if (!empty($versions['php.all'])) {
+            if (version_compare($versions['php.all'], $versions['php.min'], '>')) {
+                return $versions['php.all'];
+            }
+        }
+        return '';
+    }
 }
