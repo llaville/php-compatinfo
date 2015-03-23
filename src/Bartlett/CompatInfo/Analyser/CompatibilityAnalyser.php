@@ -296,8 +296,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 if ($versions === null) {
                     $versions = self::$php4;
 
-                    list($element, $name) = array_pop($this->contextStack);
-                    $this->contextStack[] = array($element, $name);
+                    list($element, $name) = end($this->contextStack);
 
                     if ('namespaces' == $element) {
                         $versions['php.min'] = '5.3.0';
@@ -396,8 +395,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     protected function updateContextVersion($versions)
     {
-        list($element, $name) = array_pop($this->contextStack);
-        $this->contextStack[] = array($element, $name);
+        list($element, $name) = end($this->contextStack);
 
         if (in_array($element, array('namespaces', 'classes', 'traits'))) {
             if ('namespaces' == $element) {
@@ -635,8 +633,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $this->initLocalScope();
 
         if ($node instanceof Node\Stmt\ClassMethod) {
-            list($element, $name) = array_pop($this->contextStack);
-            $this->contextStack[] = array($element, $name);
+            list($element, $name) = end($this->contextStack);
 
             $element  = 'methods';
             $name     = sprintf('%s::%s', $name, $node->name);
@@ -687,8 +684,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function initFunctionArguments(Node $node)
     {
-        list($element, $name) = array_pop($this->contextStack);
-        $this->contextStack[] = array($element, $name);
+        list($element, $name) = end($this->contextStack);
 
         if ($node->variadic) {
             // Variadic functions
@@ -1055,8 +1051,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function computePhpFeatureVersions(Node $node)
     {
-        list($element, $name) = array_pop($this->contextStack);
-        $this->contextStack[] = array($element, $name);
+        list($element, $name) = end($this->contextStack);
 
         if ($node instanceof Node\Stmt\Use_) {
             if (Node\Stmt\Use_::TYPE_FUNCTION == $node->type
