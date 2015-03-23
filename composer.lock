@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9543d3358b66c13ad76fc6b38187e2da",
+    "hash": "412b74df9112a0784aa812d6b7a744a7",
     "packages": [
         {
             "name": "bartlett/php-reflect",
@@ -713,6 +713,53 @@
             "time": "2014-09-17 09:12:57"
         },
         {
+            "name": "bartlett/umlwriter",
+            "version": "1.0.0-RC1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/llaville/umlwriter.git",
+                "reference": "0fe1c3a19280e4cd9f136ff3347ae9d0110758ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/llaville/umlwriter/zipball/0fe1c3a19280e4cd9f136ff3347ae9d0110758ca",
+                "reference": "0fe1c3a19280e4cd9f136ff3347ae9d0110758ca",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "andrewsville/php-token-reflection": "~1.4",
+                "bartlett/php-reflect": "3.0.0-RC1"
+            },
+            "suggest": {
+                "andrewsville/php-token-reflection": "Reverse-engine compatible solution 2",
+                "bartlett/php-reflect": "Reverse-engine compatible solution 1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Bartlett\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Laurent Laville",
+                    "email": "pear@laurent-laville.org",
+                    "homepage": "https://github.com/llaville",
+                    "role": "Lead"
+                }
+            ],
+            "description": "Create UML class diagrams from your PHP source.",
+            "homepage": "http://php5.laurent-laville.org/umlwriter/",
+            "time": "2015-03-19 20:11:01"
+        },
+        {
             "name": "doctrine/cache",
             "version": "v1.4.0",
             "source": {
@@ -897,7 +944,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "bartlett/php-reflect": 5
+        "bartlett/php-reflect": 5,
+        "bartlett/umlwriter": 5
     },
     "prefer-stable": false,
     "prefer-lowest": false,
