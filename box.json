@@ -25,6 +25,7 @@
         "vendor/monolog/monolog/LICENSE",
         "vendor/bartlett/php-reflect/LICENSE",
         "vendor/bartlett/php-reflect/bin/phpreflect.json-schema",
+        "vendor/bartlett/umlwriter/LICENSE",
         "vendor/autoload.php"
     ],
     "finder": [
@@ -76,6 +77,10 @@
         {
             "name": "*.php",
             "in": "vendor/bartlett/php-reflect/src"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/bartlett/umlwriter/src"
         }
     ],
     "git-version": "package_version",

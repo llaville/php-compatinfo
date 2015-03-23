@@ -51,6 +51,7 @@
         <include name="vendor/psr/log/LICENSE" />
         <include name="vendor/monolog/monolog/LICENSE" />
         <include name="vendor/bartlett/php-reflect/LICENSE" />
+        <include name="vendor/bartlett/umlwriter/LICENSE" />
         <include name="vendor/autoload.php" />
 
         <include name="vendor/composer/**/*.php" />
@@ -67,6 +68,7 @@
         <include name="vendor/monolog/monolog/src/**/*.php" />
         <include name="vendor/bartlett/php-reflect/src/**/*.php" />
         <include name="vendor/bartlett/php-reflect/bin/phpreflect.json-schema" />
+        <include name="vendor/bartlett/umlwriter/src/**/*.php" />
 
         <include name="src/**/*.php" />
         <include name="bin/phpcompatinfo" />
