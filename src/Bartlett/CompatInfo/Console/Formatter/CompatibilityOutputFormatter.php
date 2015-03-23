@@ -116,6 +116,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
             'ext.name' => 'user',
             'ext.min'  => '',
             'ext.max'  => '',
+            'ext.all'  => '',
             'php.min'  => '4.0.0',
             'php.max'  => '',
             'php.all'  => '',

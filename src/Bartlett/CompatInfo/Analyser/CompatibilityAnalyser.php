@@ -40,6 +40,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
         'ext.name' => 'user',
         'ext.min'  => '',
         'ext.max'  => '',
+        'ext.all'  => '',
         'php.min'  => '4.0.0',
         'php.max'  => '',
         'php.all'  => '',
@@ -116,8 +117,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
             'ext.name' => 'Core',
             'ext.min'  => '',
             'ext.max'  => '',
+            'ext.all'  => '',
             'php.min'  => '4.0.0',
             'php.max'  => '',
+            'php.all'  => '',
         );
         $this->updateElementVersion($element, $name, $versions);
         $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
@@ -361,8 +364,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
         }
 
         self::updateVersion(
-            $versions['php.min'],
-            $this->metrics[$element][$name]['php.min']
+            ('namespaces' == $element) ? $versions['php.all'] : $versions['php.min'],
+            $this->metrics[$element][$name]['php.all']
         );
         self::updateVersion(
             $versions['php.max'],
@@ -378,7 +381,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
         }
         self::updateVersion(
             $versions['ext.min'],
-            $this->metrics[$element][$name]['ext.min']
+            $this->metrics[$element][$name]['ext.all']
         );
         self::updateVersion(
             $versions['ext.max'],
@@ -397,24 +400,11 @@ class CompatibilityAnalyser extends AbstractAnalyser
     {
         list($element, $name) = end($this->contextStack);
 
-        if (in_array($element, array('namespaces', 'classes', 'traits'))) {
-            if ('namespaces' == $element) {
-                $key = 'php.all';
-            } else {
-                $key = 'php.min';
-            }
-            self::updateVersion(
-                $versions[$key],
-                $this->metrics[$element][$name]['php.all']
-            );
-
-        } else {
-            $this->updateElementVersion(
-                $element,
-                $name,
-                $versions
-            );
-        }
+        $this->updateElementVersion(
+            $element,
+            $name,
+            $versions
+        );
     }
 
     /**
