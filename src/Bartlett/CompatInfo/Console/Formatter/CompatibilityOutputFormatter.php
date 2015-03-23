@@ -94,6 +94,16 @@ class CompatibilityOutputFormatter extends OutputFormatter
      */
     private function listHelper(OutputInterface $output, $group, $args)
     {
+        if (in_array($group, array(
+            'extensions',
+            'namespaces',
+            'interfaces', 'traits', 'classes',
+        ))) {
+            $withPhpAll = true;
+        } else {
+            $withPhpAll = false;
+        }
+
         $length = ('classes' == $group) ? -2 : -1;
         $title  = substr($group, 0, $length);
 
@@ -174,16 +184,22 @@ class CompatibilityOutputFormatter extends OutputFormatter
             }
         }
 
-        $headers = array('  ', ucfirst($title), 'Matches', 'REF', 'EXT min/Max', 'PHP min/Max', 'PHP all');
+        $headers = array('  ', ucfirst($title), 'Matches', 'REF', 'EXT min/Max', 'PHP min/Max');
+        if ($withPhpAll) {
+            $headers[] = 'PHP all';
+        }
+
         $footers = array(
             '',
             sprintf('<info>Total [%d]</info>', count($args)),
             '',
             '',
             '',
-            sprintf('<info>%s</info>', $phpRequired),
-            sprintf('<info>%s</info>', $phpAll)
+            sprintf('<info>%s</info>', $phpRequired)
         );
+        if ($withPhpAll) {
+            $footers[] = sprintf('<info>%s</info>', $phpAll);
+        }
         $rows[] = new TableSeparator();
         $rows[] = $footers;
 
