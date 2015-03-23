@@ -15,7 +15,7 @@
         "ext-spl": "*",
         "ext-json": "*",
         "ext-pdo_sqlite": "*",
-        "bartlett/php-reflect": "3.0.*@dev"
+        "bartlett/php-reflect": "3.0.0-RC2"
     },
     "require-dev": {
         "doctrine/cache": "~1.3",
