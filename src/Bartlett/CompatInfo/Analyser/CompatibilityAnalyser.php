@@ -1105,9 +1105,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $versions = $node->getAttribute('compatinfo');
         if ($versions === null) {
             // find reference info
-            $versions = $this->references->find($context, $element, count($node->args), $extra);
+            $argc     = isset($node->args) ? count($node->args) : 0;
+            $versions = $this->references->find($context, $element, $argc, $extra);
 
-            if (is_array($node->args)) {
+            if ($argc) {
                 foreach ($node->args as $arg) {
                     if ($arg->value instanceof Node\Expr\BinaryOp\Pow) {
                         // Exponentiation
