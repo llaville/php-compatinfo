@@ -1,2 +1,2 @@
-:revdate:    2015-03-04
-:revnumber:  4.0.0-RC1
+:revdate:    2015-03-24
+:revnumber:  4.0.0-RC2

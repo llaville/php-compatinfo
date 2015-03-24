@@ -5,8 +5,8 @@ include::attributes.asciidoc[]
 include::revision.asciidoc[]
 :stable:        3.7.3
 :stablePubDate: January 26, 2015
-:dev:           4.0.0-RC1
-:devPubDate:    Marth 4, 2015
+:dev:           4.0.0-RC2
+:devPubDate:    Marth 24, 2015
 :toc!:
 :toc2!:
 :navbar!:
