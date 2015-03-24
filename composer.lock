@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "412b74df9112a0784aa812d6b7a744a7",
+    "hash": "bf2c7dc2d003c30706ee018f0189ca36",
     "packages": [
         {
             "name": "bartlett/php-reflect",
-            "version": "3.0.0-RC2",
+            "version": "3.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-reflect.git",
-                "reference": "1a01f2a904ce437cdbc75f09b91471fa967d4300"
+                "reference": "66ac1a2986cef1017fb6067a9fa5468ffd0c8681"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/1a01f2a904ce437cdbc75f09b91471fa967d4300",
-                "reference": "1a01f2a904ce437cdbc75f09b91471fa967d4300",
+                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/66ac1a2986cef1017fb6067a9fa5468ffd0c8681",
+                "reference": "66ac1a2986cef1017fb6067a9fa5468ffd0c8681",
                 "shasum": ""
             },
             "require": {
@@ -30,7 +30,7 @@
                 "ext-spl": "*",
                 "ext-tokenizer": "*",
                 "justinrainbow/json-schema": "~1.3",
-                "nikic/php-parser": "~1.0",
+                "nikic/php-parser": "1.1.*",
                 "php": ">=5.3.2",
                 "phpdocumentor/reflection-docblock": "~2.0",
                 "sebastian/version": "~1.0",
@@ -78,7 +78,7 @@
             ],
             "description": "Adds the ability to reverse-engineer classes, interfaces, functions, constants, namespaces, traits and more.",
             "homepage": "http://php5.laurent-laville.org/reflect/",
-            "time": "2015-03-20 11:18:06"
+            "time": "2015-03-24 13:31:08"
         },
         {
             "name": "doctrine/collections",
@@ -150,16 +150,16 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "1.3.7",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "87b54b460febed69726c781ab67462084e97a105"
+                "reference": "680d026082c3aa234b2d8617c50e9c73999913ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/87b54b460febed69726c781ab67462084e97a105",
-                "reference": "87b54b460febed69726c781ab67462084e97a105",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/680d026082c3aa234b2d8617c50e9c73999913ba",
+                "reference": "680d026082c3aa234b2d8617c50e9c73999913ba",
                 "shasum": ""
             },
             "require": {
@@ -212,20 +212,20 @@
                 "json",
                 "schema"
             ],
-            "time": "2014-08-25 02:48:14"
+            "time": "2015-03-23 20:38:38"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v1.2.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "edbf162e4cf116102d95eb635608b7d310cc01c6"
+                "reference": "ac05ef6f95bf8361549604b6031c115f92f39528"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/edbf162e4cf116102d95eb635608b7d310cc01c6",
-                "reference": "edbf162e4cf116102d95eb635608b7d310cc01c6",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/ac05ef6f95bf8361549604b6031c115f92f39528",
+                "reference": "ac05ef6f95bf8361549604b6031c115f92f39528",
                 "shasum": ""
             },
             "require": {
@@ -235,7 +235,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.0-dev"
                 }
             },
             "autoload": {
@@ -257,7 +257,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-03-22 16:17:25"
+            "time": "2015-01-18 11:29:59"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -944,7 +944,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "bartlett/php-reflect": 5,
+        "bartlett/php-reflect": 20,
         "bartlett/umlwriter": 5
     },
     "prefer-stable": false,
