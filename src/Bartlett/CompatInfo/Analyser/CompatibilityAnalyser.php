@@ -111,6 +111,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
     {
         parent::beforeTraverse($nodes);
 
+        $this->initLocalScope();
+
         $element  = 'namespaces';
         $name     = self::GLOBAL_NAMESPACE;
         $versions = array(
@@ -148,7 +150,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             // conditional code target
             list($element, $values) = each($condition);
             $context = $conditionalFunctions[$element];
-            $target  = ('methods' == $context) ? $values[1] : $values[0];
+            $target  = ('methods' == $context) ? ($values[0] .'::'. $values[1]) : $values[0];
 
             if ('extensions' == $context) {
                 $versions = array();
@@ -225,7 +227,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->initClassAliasResolver($node);
 
         } elseif ($node instanceof Node\Param) {
-            $this->initFunctionArguments($node);
+            /*
+               With NameResolver concept issue
+               @link https://github.com/nikic/PHP-Parser/issues/188
+               I proceed function parameters twice
+             */
+            $versions = $this->initFunctionArguments($node);
+            $this->updateLocalVersions($versions);
         }
     }
 
@@ -379,14 +387,16 @@ class CompatibilityAnalyser extends AbstractAnalyser
         if ('user' == $versions['ext.name']) {
             return;
         }
-        self::updateVersion(
-            $versions['ext.min'],
-            $this->metrics[$element][$name]['ext.all']
-        );
-        self::updateVersion(
-            $versions['ext.max'],
-            $this->metrics[$element][$name]['ext.max']
-        );
+        if ('extensions' == $element) {
+            self::updateVersion(
+                $versions['ext.min'],
+                $this->metrics[$element][$name]['ext.all']
+            );
+            self::updateVersion(
+                $versions['ext.max'],
+                $this->metrics[$element][$name]['ext.max']
+            );
+        }
     }
 
     /**
@@ -414,7 +424,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    protected function updateLocalVersions($versions)
+    protected function updateLocalVersions($versions, $conditionalCode = false)
     {
         $versions = array_merge(self::$php4, $versions);
 
@@ -423,8 +433,18 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
         }
 
-        $this->updateVersion($versions['php.min'], $this->localVersions['php.min']);
-        $this->updateVersion($versions['php.max'], $this->localVersions['php.max']);
+        if (isset($versions['declared'])) {
+            $this->localVersions['declared'] = $versions['declared'];
+        }
+
+        if (!$conditionalCode) {
+            $this->updateVersion($versions['php.min'], $this->localVersions['php.min']);
+            $this->updateVersion($versions['php.max'], $this->localVersions['php.max']);
+        }
+        $this->updateVersion($versions['php.min'], $this->localVersions['php.all']);
+
+        // update parent container
+        $this->updateContextVersion($this->localVersions);
     }
 
     /**
@@ -565,8 +585,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $versions,
             array('php.min' => $min, 'php.max' => $max, 'declared' => true)
         );
-        $this->updateElementVersion($element, $name, $versions);
         $this->contextStack[] = array($element, $name);
+        $this->updateLocalVersions($versions);
     }
 
     /**
@@ -628,39 +648,44 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $element  = 'methods';
             $name     = sprintf('%s::%s', $name, $node->name);
             if ($this->isImplicitlyPublicFunction($this->tokens, $node)) {
-                $versions = array();
+                $min = '4.0.0';
             } else {
-                $versions = array('php.min' => '5.0.0');
+                $min = '5.0.0';
             }
-            $this->updateLocalVersions($versions);
-            $this->contextStack[] = array($element, $name);
-            return;
-        }
-
-        if ($node instanceof Node\Expr\Closure) {
-            $min  = '5.3.0';
-            $name = sprintf(
-                'closure-%d-%d',
-                $node->getAttribute('startLine', 0),
-                $node->getAttribute('endLine', 0)
-            );
 
         } else {
-            if (isset($node->namespacedName)
-                && $node->namespacedName instanceof Node\Name
-                && $node->namespacedName->isQualified()
-            ) {
-                $min = '5.3.0';
+            $element  = 'functions';
+
+            if ($node instanceof Node\Expr\Closure) {
+                $min  = '5.3.0';
+                $name = sprintf(
+                    'closure-%d-%d',
+                    $node->getAttribute('startLine', 0),
+                    $node->getAttribute('endLine', 0)
+                );
+
             } else {
-                $min = '4.0.0';
+                if (isset($node->namespacedName)
+                    && $node->namespacedName instanceof Node\Name
+                    && $node->namespacedName->isQualified()
+                ) {
+                    $min = '5.3.0';
+                } else {
+                    $min = '4.0.0';
+                }
+                $name = (string)$node->namespacedName;
             }
-            $name = (string)$node->namespacedName;
         }
 
-        $element  = 'functions';
+        // checks function parameters
+        foreach ($node->params as $param) {
+            $versions = $this->initFunctionArguments($param);
+            self::updateVersion($versions['php.min'], $min);
+        }
+
         $versions = array('php.min' => $min);
-        $this->updateElementVersion($element, $name, $versions);
         $this->contextStack[] = array($element, $name);
+        $this->updateLocalVersions($versions);
     }
 
     /**
@@ -669,16 +694,14 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @param Node $node
      *
-     * @return void
+     * @return array
      * @link http://www.php.net/manual/en/functions.arguments.php
      */
     private function initFunctionArguments(Node $node)
     {
-        list($element, $name) = end($this->contextStack);
-
         if ($node->variadic) {
             // Variadic functions
-            $this->updateVersion('5.6.0', $this->localVersions['php.min']);
+            $versions = array('php.min' => '5.6.0');
 
         } elseif ($node->type instanceof Node\Name\FullyQualified) {
             // type hint
@@ -690,11 +713,12 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
             // type hint object required at least PHP 5.0
             $versions = $this->metrics[$group][$name];
-            $this->updateVersion('5.0.0', $versions['php.min']);
+            self::updateVersion('5.0.0', $versions['php.min']);
 
-            // updates container (class, interface or trait) method
-            $this->updateLocalVersions($versions);
+        } else {
+            $versions = array('php.min' => '4.0.0');
         }
+        return $versions;
     }
 
     /**
@@ -813,15 +837,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
     {
         list($element, $name) = array_pop($this->contextStack);
 
-        $versions = $this->metrics[$element][$name];
-
         if (self::GLOBAL_NAMESPACE == $name) {
-            // global namespace is part of Core
-            $versions['ext.min'] = '4.0.0';
-            $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
+            $versions = $this->localVersions;
+        } else {
+            $versions = $this->metrics[$element][$name];
         }
 
-        $this->updateGlobalVersion($versions['php.min'], $versions['php.max'] , $versions['php.all']);
+        $this->updateGlobalVersion($versions['php.min'], $versions['php.max'], $versions['php.all']);
     }
 
     /**
@@ -840,7 +862,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
         $versions = $this->metrics['classes'][(string)$node->namespacedName];
 
-        $this->updateContextVersion($versions);
+        if (version_compare($versions['php.all'], '5.0.0', 'eq')) {
+            // PHP4 compatibility for properties and methods visibility
+            $versions['php.min'] = $versions['php.all'];
+            $this->metrics['classes'][(string)$node->namespacedName] = $versions;
+        }
+
+        $this->updateLocalVersions($versions);
     }
 
     /**
@@ -1041,15 +1069,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function computePhpFeatureVersions(Node $node)
     {
-        list($element, $name) = end($this->contextStack);
-
         if ($node instanceof Node\Stmt\Use_) {
             if (Node\Stmt\Use_::TYPE_FUNCTION == $node->type
                 || Node\Stmt\Use_::TYPE_CONSTANT == $node->type
             ) {
                 // use const, use function
                 $versions = array('php.min' => '5.6.0');
-                $this->updateElementVersion($element, $name, $versions);
+                $this->updateLocalVersions($versions);
             }
 
         } elseif ($node instanceof Node\Stmt\Property) {
@@ -1059,14 +1085,14 @@ class CompatibilityAnalyser extends AbstractAnalyser
             } else {
                 $versions = array('php.min' => '5.0.0');
             }
-            $this->updateElementVersion($element, $name, $versions);
+            $this->updateLocalVersions($versions);
 
         } elseif ($node instanceof Node\Expr\Array_) {
             if ($this->isShortArraySyntax($this->tokens, $node)) {
                 // Array Short Syntax
                 // http://php.net/manual/en/migration54.new-features.php
                 $versions = array('php.min' => '5.4.0');
-                $this->updateElementVersion($element, $name, $versions);
+                $this->updateLocalVersions($versions);
             }
 
         } elseif ($node instanceof Node\Expr\ArrayDimFetch
@@ -1075,7 +1101,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             // Array Dereferencing
             // http://php.net/manual/en/migration54.new-features.php
             $versions = array('php.min' => '5.4.0');
-            $this->updateElementVersion($element, $name, $versions);
+            $this->updateLocalVersions($versions);
 
         } elseif ($node instanceof Node\Expr\MethodCall
             && is_string($node->name)
@@ -1086,7 +1112,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 // Class Member Access On Instantiation
                 // http://php.net/manual/en/migration54.new-features.php
                 $versions = array('php.min' => '5.4.0');
-                $this->updateElementVersion($element, $name, $versions);
+                $this->updateLocalVersions($versions);
             }
         }
     }
@@ -1107,6 +1133,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             // find reference info
             $argc     = isset($node->args) ? count($node->args) : 0;
             $versions = $this->references->find($context, $element, $argc, $extra);
+            $versions['ext.all'] = $versions['php.all'] = '';
 
             if ($argc) {
                 foreach ($node->args as $arg) {
@@ -1130,15 +1157,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $this->updateElementVersion($context, $element, $versions);
         ++$this->metrics[$context][$element]['matches'];
 
-
-        if (isset($this->metrics[$context][$element]['optional'])) {
-            // do not update context when conditional code found
-            if ($versions['ext.name'] !== 'user') {
-                $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
-            }
-            return;
-        }
-
-        $this->updateLocalVersions($versions);
+        // update local context
+        $this->updateLocalVersions(
+            $versions,
+            isset($this->metrics[$context][$element]['optional'])
+        );
     }
 }

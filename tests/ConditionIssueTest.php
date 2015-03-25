@@ -79,6 +79,7 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '4.0.0',
                 'php.max'      => '',
+                'php.all'      => '5.4.0',
             ),
             $versions
         );
@@ -104,6 +105,7 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '4.3.0',
                 'php.max'      => '',
+                'php.all'      => '4.3.0',
             ),
             $versions
         );
@@ -115,8 +117,10 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
                 'ext.name'     => 'intl',
                 'ext.min'      => '1.0.0beta',
                 'ext.max'      => '',
+                'ext.all'      => '',
                 'php.min'      => '5.3.0alpha1',
                 'php.max'      => '',
+                'php.all'      => '5.3.0alpha1',
                 'arg.max'      => 0,
                 'matches'      => 1,
                 'optional'     => true,
@@ -144,6 +148,7 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '4.0.0',
                 'php.max'      => '',
+                'php.all'      => '5.6.0alpha1',
             ),
             $versions
         );

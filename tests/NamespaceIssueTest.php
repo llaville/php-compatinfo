@@ -78,10 +78,12 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             array(
                 'ext.name'     => 'standard',
-                'ext.min'      => '5.0.0',
+                'ext.min'      => '4.0.0',
                 'ext.max'      => '',
-                'php.min'      => '5.0.0',
+                'ext.all'      => '',
+                'php.min'      => '4.0.0',
                 'php.max'      => '',
+                'php.all'      => '5.0.0',
                 'parameters'   => array('4.0.0', '5.0.0'),
                 'php.excludes' => '',
                 'arg.max'      => 2,
@@ -111,6 +113,7 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '4.0.0',
                 'php.max'      => '',
+                'php.all'      => '5.2.0',
             ),
             $versions
         );
@@ -120,8 +123,10 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
                 'ext.name'     => 'json',
                 'ext.min'      => '5.2.0',
                 'ext.max'      => '',
+                'ext.all'      => '',
                 'php.min'      => '5.2.0',
                 'php.max'      => '',
+                'php.all'      => '5.2.0',
                 'parameters'   => '',
                 'php.excludes' => '',
                 'arg.max'      => 1,
@@ -151,6 +156,7 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '4.3.10',
                 'php.max'      => '',
+                'php.all'      => '4.3.10',
             ),
             $versions
         );

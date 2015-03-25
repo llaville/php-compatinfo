@@ -81,8 +81,10 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
                 'ext.name'     => 'user',
                 'ext.min'      => '',
                 'ext.max'      => '',
+                'ext.all'      => '',
                 'php.min'      => '5.0.0',
                 'php.max'      => '',
+                'php.all'      => '5.0.0',
                 'matches'      => 0,
                 'declared'     => true,
             ),
@@ -112,8 +114,10 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
                 'ext.name'     => 'user',
                 'ext.min'      => '',
                 'ext.max'      => '',
+                'ext.all'      => '',
                 'php.min'      => '4.0.0',
                 'php.max'      => '',
+                'php.all'      => '4.0.0',
                 'matches'      => 0,
             ),
             $methods['Foo2::bar']
@@ -125,8 +129,10 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
                 'ext.name'     => 'user',
                 'ext.min'      => '',
                 'ext.max'      => '',
+                'ext.all'      => '',
                 'php.min'      => '5.0.0',
                 'php.max'      => '',
+                'php.all'      => '5.0.0',
                 'matches'      => 0,
             ),
             $methods['Foo2::baz']
@@ -152,6 +158,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '5.1.0',
                 'php.max'      => '',
+                'php.all'      => '5.1.0',
             ),
             $versions
         );
@@ -178,8 +185,10 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
                 'ext.name'     => 'spl',
                 'ext.min'      => '5.1.0',
                 'ext.max'      => '',
+                'ext.all'      => '',
                 'php.min'      => '5.1.0',
                 'php.max'      => '',
+                'php.all'      => '5.1.0',
                 'matches'      => 1,
             ),
             $interfaces['RecursiveIterator']
@@ -190,8 +199,10 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
                 'ext.name'     => 'user',
                 'ext.min'      => '',
                 'ext.max'      => '',
-                'php.min'      => '5.1.0',
+                'ext.all'      => '',
+                'php.min'      => '4.0.0',
                 'php.max'      => '',
+                'php.all'      => '5.1.0',
                 'matches'      => 0,
                 'declared'     => true,
             ),

@@ -78,6 +78,7 @@ class IssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'  => '5.1.0',
                 'php.max'  => '',
+                'php.all'  => '5.1.0',
             ),
             $versions
         );
@@ -102,6 +103,7 @@ class IssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'  => '5.4.0',
                 'php.max'  => '',
+                'php.all'  => '5.4.0',
             ),
             $versions
         );

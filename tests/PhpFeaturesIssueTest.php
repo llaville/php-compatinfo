@@ -85,6 +85,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '5.6.0',
                 'php.max'      => '',
+                'php.all'      => '5.6.0',
             ),
             $versions
         );
@@ -111,6 +112,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '5.6.0',
                 'php.max'      => '',
+                'php.all'      => '5.6.0',
             ),
             $versions
         );
@@ -136,6 +138,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '5.6.0',
                 'php.max'      => '',
+                'php.all'      => '5.6.0',
             ),
             $versions
         );
@@ -161,6 +164,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '5.6.0',
                 'php.max'      => '',
+                'php.all'      => '5.6.0',
             ),
             $versions
         );
@@ -187,6 +191,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '5.4.0',
                 'php.max'      => '',
+                'php.all'      => '5.4.0',
             ),
             $versions
         );
@@ -213,6 +218,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '5.4.0',
                 'php.max'      => '',
+                'php.all'      => '5.4.0',
             ),
             $versions
         );
@@ -239,6 +245,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '5.3.0',
                 'php.max'      => '',
+                'php.all'      => '5.3.0',
             ),
             $versions
         );
@@ -248,8 +255,10 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
                 'ext.name'     => 'user',
                 'ext.min'      => '',
                 'ext.max'      => '',
+                'ext.all'      => '',
                 'php.min'      => '4.0.0',
                 'php.max'      => '',
+                'php.all'      => '4.0.0',
                 'matches'      => 0,
             ),
             $constants['BAR']
@@ -260,8 +269,10 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
                 'ext.name'     => 'user',
                 'ext.min'      => '',
                 'ext.max'      => '',
+                'ext.all'      => '',
                 'php.min'      => '5.3.0',
                 'php.max'      => '',
+                'php.all'      => '5.3.0',
                 'matches'      => 1,
             ),
             $constants['FOO']
