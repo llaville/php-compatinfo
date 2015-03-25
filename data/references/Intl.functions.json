@@ -436,7 +436,7 @@
         "ext_max": "",
         "php_min": "5.2.4",
         "php_max": "",
-        "parameters": "",
+        "parameters": "5.2.4, 5.2.4, 5.4.0RC3, 5.4.0RC3",
         "php_excludes": ""
     },
     {
@@ -446,7 +446,7 @@
         "ext_max": "",
         "php_min": "5.2.4",
         "php_max": "",
-        "parameters": "",
+        "parameters": "5.2.4, 5.2.4, 5.4.0RC3, 5.4.0RC3",
         "php_excludes": ""
     },
     {
