@@ -1,4 +1,4 @@
-bartlett/php-compatinfo: <info>4.0.0-RC2</info>
+bartlett/php-compatinfo: <info>4.0@76f7ebe2b41d9cacc0c984f534940183cc567b95</info>
 bartlett/php-reflect: <info>3.0.x-dev@66ac1a2986cef1017fb6067a9fa5468ffd0c8681</info>
 doctrine/collections: <info>v1.2</info>
 justinrainbow/json-schema: <info>1.4.0</info>
@@ -11,3 +11,8 @@ symfony/dependency-injection: <info>v2.6.5</info>
 symfony/event-dispatcher: <info>v2.6.5</info>
 symfony/finder: <info>v2.6.5</info>
 symfony/stopwatch: <info>v2.6.5</info>
+bartlett/phpunit-loggertestlistener: <info>1.1.0</info>
+bartlett/umlwriter: <info>1.0.0-RC1</info>
+doctrine/cache: <info>v1.4.0</info>
+monolog/monolog: <info>1.13.1</info>
+psr/log: <info>1.0.0</info>
