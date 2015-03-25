@@ -19,7 +19,7 @@ print "</info>\n";
 
 $lock = json_decode(file_get_contents(__DIR__ . '/composer.lock'));
 
-foreach ($lock->packages as $package) {
+$packages = function ($package) {
     print $package->name . ': <info>' . $package->version;
 
     if (!preg_match('/^[v= ]*(([0-9]+)(\\.([0-9]+)(\\.([0-9]+)(-([0-9]+))?(-?([a-zA-Z-+][a-zA-Z0-9\\.\\-:]*)?)?)?)?)$/', $package->version)) {
@@ -27,4 +27,12 @@ foreach ($lock->packages as $package) {
     }
 
     print "</info>\n";
+};
+
+foreach ($lock->packages as $package) {
+    $packages($package);
+}
+
+foreach ($lock->{'packages-dev'} as $package) {
+    $packages($package);
 }
