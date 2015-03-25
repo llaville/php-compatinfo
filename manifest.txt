@@ -1,8 +1,8 @@
 bartlett/php-compatinfo: <info>4.0.0-RC2</info>
-bartlett/php-reflect: <info>3.0.0-RC2</info>
+bartlett/php-reflect: <info>3.0.x-dev@66ac1a2986cef1017fb6067a9fa5468ffd0c8681</info>
 doctrine/collections: <info>v1.2</info>
-justinrainbow/json-schema: <info>1.3.7</info>
-nikic/php-parser: <info>v1.2.0</info>
+justinrainbow/json-schema: <info>1.4.0</info>
+nikic/php-parser: <info>v1.1.0</info>
 phpdocumentor/reflection-docblock: <info>2.0.4</info>
 sebastian/version: <info>1.0.4</info>
 seld/jsonlint: <info>1.3.1</info>
