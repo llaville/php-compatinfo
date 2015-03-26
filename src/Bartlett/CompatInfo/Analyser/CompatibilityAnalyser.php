@@ -526,6 +526,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
         }
         $max = '';
 
+        $element  = 'classes';
+        $name     = (string) $node->namespacedName;
+        $this->contextStack[] = array($element, $name);
+
         // parent class
         if (isset($node->extends)) {
             $name     = (string) $node->extends;
@@ -545,14 +549,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 // now object is categorized, remove from temp queue
                 unset($this->metrics[$group][$name]);
             }
-
-            // update only php versions of the current class
-            if (isset($versions['php.min'])) {
-                $this->updateVersion($versions['php.min'], $min);
-            }
-            if (isset($versions['php.max'])) {
-                $this->updateVersion($versions['php.max'], $max);
-            }
+            $this->updateLocalVersions($versions);
         }
 
         // interfaces
@@ -567,12 +564,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 // now object is categorized, remove from temp queue
                 unset($this->metrics[$group][$name]);
             }
-
-            $this->updateVersion($versions['php.min'], $min);
-            $this->updateVersion($versions['php.max'], $max);
+            $this->updateLocalVersions($versions);
         }
 
-        $element  = 'classes';
         $name     = (string) $node->namespacedName;
         $group    = $this->findObjectType($name);
         $versions = $this->metrics[$group][$name];
@@ -585,7 +579,6 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $versions,
             array('php.min' => $min, 'php.max' => $max, 'declared' => true)
         );
-        $this->contextStack[] = array($element, $name);
         $this->updateLocalVersions($versions);
     }
 

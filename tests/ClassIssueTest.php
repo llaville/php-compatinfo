@@ -38,6 +38,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
     const GH129 = 'gh129.php';
     const GH131 = 'gh131.php';
     const GH166 = 'gh166.php';
+    const GH171 = 'gh171.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -208,5 +209,35 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
             ),
             $classes['Foo']
         );
+    }
+
+    /**
+     * Regression test for bug GH#171
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/171
+     *       "Missing extension on class inheritance"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH171()
+    {
+        $dataSource = self::$fixtures . self::GH171;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $extensions = $metrics[self::$analyserId]['extensions'];
+
+        $provideExtensions = array(
+            'Core',
+            'xmlwriter',
+            'mongo',
+        );
+
+        foreach ($provideExtensions as $e) {
+            $this->assertArrayHasKey(
+                $e,
+                $extensions,
+                "Extension $e is not found in analysis results while it should be"
+            );
+        }
     }
 }
