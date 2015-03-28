@@ -851,16 +851,6 @@
     },
     {
         "ext_name_fk": 23,
-        "class_name": "HaruImage",
-        "name": "addSMask",
-        "static": false,
-        "ext_min": "1.0.3",
-        "ext_max": "",
-        "php_min": "5.1.3",
-        "php_max": ""
-    },
-    {
-        "ext_name_fk": 23,
         "class_name": "HaruOutline",
         "name": "setOpened",
         "static": false,
@@ -1735,16 +1725,6 @@
         "name": "setSlideShow",
         "static": false,
         "ext_min": "0.0.1",
-        "ext_max": "",
-        "php_min": "5.1.3",
-        "php_max": ""
-    },
-    {
-        "ext_name_fk": 23,
-        "class_name": "HaruPage",
-        "name": "setZoom",
-        "static": false,
-        "ext_min": "1.0.3",
         "ext_max": "",
         "php_min": "5.1.3",
         "php_max": ""

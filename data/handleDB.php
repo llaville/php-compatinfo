@@ -284,6 +284,10 @@ class DbInitCommand extends Command
                 'const'      => array('', '1'),
                 'methods'    => array(''),
             ),
+            'haru' => array(
+                'releases'   => array('', '1'),
+                'methods'    => array('', '1'),
+            ),
             'http' => array(
                 'classes'    => array('', '1', '2'),
                 'constants'  => array('', '2'),
