@@ -288,6 +288,10 @@ class DbInitCommand extends Command
                 'releases'   => array('', '1'),
                 'methods'    => array('', '1'),
             ),
+            'htscanner' => array(
+                'iniEntries' => array('', '1'),
+                'releases'   => array('', '1'),
+            ),
             'http' => array(
                 'classes'    => array('', '1', '2'),
                 'constants'  => array('', '2'),
