@@ -28,7 +28,4 @@ $analysers  = array('compatibility');
 // equivalent to CLI command `phpcompatinfo analyser:run ../src`
 $metrics = $api->run($dataSource, $analysers);
 
-// ... and also
-// equivalent to CLI command `phpcompatinfo analyser:run --format=json ../src`
-
 echo $metrics;
