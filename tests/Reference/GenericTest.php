@@ -61,6 +61,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         'haru',
         'htscanner',
         'igbinary',
+        'inclued',
         'jsmin',
         'mongo',
         'pthreads',
