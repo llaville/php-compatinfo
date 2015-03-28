@@ -302,6 +302,11 @@ class DbInitCommand extends Command
                 'const'      => array('2'),
                 'methods'    => array('2'),
             ),
+            'igbinary' => array(
+                'functions'  => array('1'),
+                'iniEntries' => array('1'),
+                'releases'   => array('1'),
+            ),
             'jsmin' => array(
                 'constants'  => array(''),
                 'functions'  => array(''),
