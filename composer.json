@@ -1,6 +1,7 @@
 {
     "name": "bartlett/php-compatinfo",
     "description": "Find out the minimum version and the extensions required for a piece of code to run",
+    "keywords": ["compatibility", "version"],
     "type": "library",
     "license": "BSD-3-Clause",
     "homepage": "http://php5.laurent-laville.org/compatinfo/",
