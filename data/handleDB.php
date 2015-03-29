@@ -316,6 +316,14 @@ class DbInitCommand extends Command
                 'functions'  => array('', '1'),
                 'releases'   => array('', '1'),
             ),
+            'mailparse' => array(
+                'classes'    => array(''),
+                'constants'  => array(''),
+                'functions'  => array(''),
+                'iniEntries' => array(''),
+                'releases'   => array('', '2'),
+                'methods'    => array(''),
+            ),
             'redis' => array(
                 'classes'    => array('2'),
                 'iniEntries' => array('2'),

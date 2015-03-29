@@ -54,6 +54,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     protected static $ignoredclasses       = array();
     protected static $ignoredinterfaces    = array();
 
+    // References fully documented
     protected static $extensions =  array(
         'amqp',
         'date',
@@ -64,6 +65,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         'inclued',
         'jsmin',
         'lzf',
+        'mailparse',
         'mongo',
         'pthreads',
         'redis',

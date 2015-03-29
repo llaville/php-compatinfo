@@ -7,5 +7,41 @@
         "ext_max": "",
         "php_min": "4.3.0",
         "php_max": ""
+    },
+    {
+        "ext_name_fk": 39,
+        "rel_version": "0.9.1",
+        "rel_date": "2003-01-03",
+        "rel_state": "beta",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 39,
+        "rel_version": "0.9.2",
+        "rel_date": "2003-06-19",
+        "rel_state": "beta",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 39,
+        "rel_version": "0.9.3",
+        "rel_date": "2003-07-26",
+        "rel_state": "beta",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 39,
+        "rel_version": "0.9.4",
+        "rel_date": "2003-11-08",
+        "rel_state": "beta",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
     }
 ]
