@@ -332,6 +332,13 @@ class DbInitCommand extends Command
                 'const'      => array(''),
                 'methods'    => array(''),
             ),
+            'oauth' => array(
+                'classes'    => array('', '1'),
+                'constants'  => array('', '1'),
+                'functions'  => array(''),
+                'releases'   => array('', '1'),
+                'methods'    => array('', '1'),
+            ),
             'redis' => array(
                 'classes'    => array('2'),
                 'iniEntries' => array('2'),

@@ -1,0 +1,242 @@
+[
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "setRSACertificate",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "setRequestEngine",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "setTimestamp",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "generateSignature",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "setTimeout",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "getLastResponseHeaders",
+        "static": false,
+        "ext_min": "1.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "setSSLChecks",
+        "static": false,
+        "ext_min": "1.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "getRequestHeader",
+        "static": false,
+        "ext_min": "1.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "consumerHandler",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "tokenHandler",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "timestampNonceHandler",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "callconsumerHandler",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "calltokenHandler",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "callTimestampNonceHandler",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "checkOAuthRequest",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "isRequestTokenEndpoint",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "setRequestTokenPath",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "addRequiredParameter",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "reportProblem",
+        "static": true,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "setParam",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "removeRequiredParameter",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "generateToken",
+        "static": true,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuthProvider",
+        "name": "is2LeggedEndpoint",
+        "static": false,
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    }
+]

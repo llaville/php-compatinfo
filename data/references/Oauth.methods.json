@@ -1,0 +1,192 @@
+[
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "getRequestToken",
+        "static": false,
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "getAccessToken",
+        "static": false,
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "getLastResponse",
+        "static": false,
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "getLastResponseInfo",
+        "static": false,
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "setToken",
+        "static": false,
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "setVersion",
+        "static": false,
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "setAuthType",
+        "static": false,
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "setNonce",
+        "static": false,
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "fetch",
+        "static": false,
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "enableDebug",
+        "static": false,
+        "ext_min": "0.99.4",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "disableDebug",
+        "static": false,
+        "ext_min": "0.99.4",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "enableSSLChecks",
+        "static": false,
+        "ext_min": "0.99.5",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "disableSSLChecks",
+        "static": false,
+        "ext_min": "0.99.5",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "enableRedirects",
+        "static": false,
+        "ext_min": "0.99.5",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "disableRedirects",
+        "static": false,
+        "ext_min": "0.99.5",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "setCAPath",
+        "static": false,
+        "ext_min": "0.99.8",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "getCAPath",
+        "static": false,
+        "ext_min": "0.99.8",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "class_name": "OAuth",
+        "name": "__destruct",
+        "static": false,
+        "ext_min": "0.99.5",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    }
+]
