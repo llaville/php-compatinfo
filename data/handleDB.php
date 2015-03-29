@@ -312,6 +312,10 @@ class DbInitCommand extends Command
                 'functions'  => array(''),
                 'releases'   => array('', '1'),
             ),
+            'lzf' => array(
+                'functions'  => array('', '1'),
+                'releases'   => array('', '1'),
+            ),
             'redis' => array(
                 'classes'    => array('2'),
                 'iniEntries' => array('2'),

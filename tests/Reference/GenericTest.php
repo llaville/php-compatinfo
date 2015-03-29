@@ -63,6 +63,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         'igbinary',
         'inclued',
         'jsmin',
+        'lzf',
         'mongo',
         'pthreads',
         'redis',
