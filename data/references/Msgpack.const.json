@@ -1,0 +1,11 @@
+[
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePack",
+        "name": "OPT_PHPONLY",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    }
+]

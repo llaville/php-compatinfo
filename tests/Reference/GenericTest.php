@@ -67,6 +67,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         'lzf',
         'mailparse',
         'mongo',
+        'msgpack',
         'pthreads',
         'redis',
         'reflection',

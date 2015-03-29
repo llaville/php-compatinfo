@@ -324,6 +324,14 @@ class DbInitCommand extends Command
                 'releases'   => array('', '2'),
                 'methods'    => array(''),
             ),
+            'msgpack' => array(
+                'classes'    => array(''),
+                'functions'  => array(''),
+                'iniEntries' => array(''),
+                'releases'   => array(''),
+                'const'      => array(''),
+                'methods'    => array(''),
+            ),
             'redis' => array(
                 'classes'    => array('2'),
                 'iniEntries' => array('2'),
