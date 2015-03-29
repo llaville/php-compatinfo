@@ -69,6 +69,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         'mongo',
         'msgpack',
         'oauth',
+        'pdflib',
         'pthreads',
         'redis',
         'reflection',

@@ -61,38 +61,8 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_add_path_point",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_add_pdflink",
         "ext_min": "2.0.0",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_add_portfolio_file",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_add_portfolio_folder",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",
@@ -141,16 +111,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_align",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_arc",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -191,16 +151,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_begin_dpart",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_begin_font",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -221,16 +171,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_begin_glyph_ext",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_begin_item",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -243,16 +183,6 @@
         "ext_name_fk": 55,
         "name": "pdf_begin_layer",
         "ext_min": "2.0.0",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_begin_mc",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",
@@ -291,16 +221,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_begin_pattern_ext",
-        "ext_min": "3.0.2",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_begin_template",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -331,16 +251,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_circular_arc",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_clip",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -353,26 +263,6 @@
         "ext_name_fk": 55,
         "name": "pdf_close",
         "ext_min": "2.0.0",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_close_font",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_close_graphics",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",
@@ -463,16 +353,6 @@
         "ext_name_fk": 55,
         "name": "pdf_continue_text",
         "ext_min": "2.0.0",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_convert_to_unicode",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",
@@ -601,16 +481,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_delete_path",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_delete_pvf",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -641,36 +511,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_draw_path",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_ellipse",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_elliptical_arc",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_encoding_set_char",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -683,16 +523,6 @@
         "ext_name_fk": 55,
         "name": "pdf_end_document",
         "ext_min": "2.0.0",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_end_dpart",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",
@@ -791,16 +621,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_end_template_ext",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_endpath",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -813,16 +633,6 @@
         "ext_name_fk": 55,
         "name": "pdf_fill",
         "ext_min": "2.0.0",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_fill_graphicsblock",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",
@@ -873,16 +683,6 @@
         "ext_name_fk": 55,
         "name": "pdf_findfont",
         "ext_min": "2.0.0",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_fit_graphics",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",
@@ -981,16 +781,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_get_option",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_get_parameter",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -1021,16 +811,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_get_string",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_get_value",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -1051,58 +831,8 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_info_graphics",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_info_image",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_info_matchbox",
         "ext_min": "2.1.0",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_info_path",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_info_pdi_page",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_info_pvf",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",
@@ -1171,28 +901,8 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_load_asset",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_load_font",
         "ext_min": "2.0.0",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_load_graphics",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",
@@ -1223,16 +933,6 @@
         "ext_name_fk": 55,
         "name": "pdf_makespotcolor",
         "ext_min": "2.0.0",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_mc_point",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",
@@ -1381,46 +1081,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_poca_delete",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_poca_insert",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_poca_new",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_poca_remove",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_process_pdi",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -1521,16 +1181,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_set_graphics_option",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_set_gstate",
         "ext_min": "2.0.0",
         "ext_max": "",
@@ -1561,28 +1211,8 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_set_option",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_set_parameter",
         "ext_min": "2.0.0",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_set_text_option",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",
@@ -1891,16 +1521,6 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_utf16_to_utf32",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_utf16_to_utf8",
         "ext_min": "2.0.3",
         "ext_max": "",
@@ -1921,28 +1541,8 @@
     },
     {
         "ext_name_fk": 55,
-        "name": "pdf_utf32_to_utf8",
-        "ext_min": "3.0.1",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
         "name": "pdf_utf8_to_utf16",
         "ext_min": "2.0.3",
-        "ext_max": "",
-        "php_min": "5.2.0",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 55,
-        "name": "pdf_utf8_to_utf32",
-        "ext_min": "3.0.1",
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": "",

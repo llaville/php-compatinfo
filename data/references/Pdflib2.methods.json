@@ -1,0 +1,1332 @@
+[
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlibException",
+        "name": "get_apiname",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlibException",
+        "name": "get_errmsg",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlibException",
+        "name": "get_errnum",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "activate_item",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "add_nameddest",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "add_table_cell",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "add_textflow",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "add_thumbnail",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "arc",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "arcn",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "begin_document",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "begin_font",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "begin_glyph",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "begin_item",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "begin_layer",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "begin_page_ext",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "begin_pattern",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "begin_template",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "begin_template_ext",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "circle",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "clip",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "close_image",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "close_pdi",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "close_pdi_document",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "close_pdi_page",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "closepath",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "closepath_fill_stroke",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "closepath_stroke",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "concat",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "continue_text",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "create_3dview",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "create_action",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "create_annotation",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "create_bookmark",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "create_field",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "create_fieldgroup",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "create_gstate",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "create_pvf",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "create_textflow",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "curveto",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "define_layer",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "delete_pvf",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "delete_table",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "delete_textflow",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "encoding_set_char",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "end_document",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "end_font",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "end_glyph",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "end_item",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "end_layer",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "end_mc",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "end_page_ext",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "end_pattern",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "end_template",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "endpath",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "fill",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "fill_imageblock",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "fill_pdfblock",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "fill_stroke",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "fill_textblock",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "fit_image",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "fit_pdi_page",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "fit_table",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "fit_textflow",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "fit_textline",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "get_apiname",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "get_buffer",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "get_errmsg",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "get_errnum",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "get_parameter",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "get_pdi_value",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "get_value",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "info_font",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "info_matchbox",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "info_table",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "info_textflow",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "info_textline",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "initgraphics",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "lineto",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "load_3ddata",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "load_font",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "load_iccprofile",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "load_image",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "makespotcolor",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "moveto",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "open_pdi_document",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "open_pdi_page",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "pcos_get_number",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "pcos_get_string",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "pcos_get_stream",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "process_pdi",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "rect",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "restore",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "resume_page",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "rotate",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "save",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "scale",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "set_gstate",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "set_info",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "set_layer_dependency",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "set_parameter",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "set_text_pos",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "set_value",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "setcolor",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "setdash",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "setdashpattern",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "setflat",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "setfont",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "setlinecap",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "setlinejoin",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "setlinewidth",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "setmatrix",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "setmiterlimit",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "shading",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "shading_pattern",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "shfill",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "show",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "show_xy",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "skew",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "stringwidth",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "stroke",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "suspend_page",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "translate",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "utf16_to_utf8",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "utf32_to_utf8",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "utf8_to_utf16",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "delete",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "get_pdi_parameter",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "open_pdi",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "open_image",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "setpolydash",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 55,
+        "class_name": "PDFlib",
+        "name": "show_boxed",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

@@ -339,6 +339,12 @@ class DbInitCommand extends Command
                 'releases'   => array('', '1'),
                 'methods'    => array('', '1'),
             ),
+            'pdflib' => array(
+                'classes'    => array('2'),
+                'functions'  => array('2', '3'),
+                'releases'   => array('1', '2', '3'),
+                'methods'    => array('2', '3'),
+            ),
             'redis' => array(
                 'classes'    => array('2'),
                 'iniEntries' => array('2'),
