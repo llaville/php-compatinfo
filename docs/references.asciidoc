@@ -483,7 +483,7 @@ endif::basebackend-docbook[]
 | [label label-default]#2.0.0#
 
 | xmldiff
-1.1.1 {stable}
+1.1.2 {stable}
 | [label label-info]#4.0.0#
 
 | xmlreader
