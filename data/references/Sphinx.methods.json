@@ -1,326 +1,322 @@
 [
     {
         "ext_name_fk": 73,
-        "name": "SEARCHD_ERROR",
+        "class_name": "SphinxClient",
+        "name": "__construct",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SEARCHD_OK",
+        "class_name": "SphinxClient",
+        "name": "addQuery",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SEARCHD_RETRY",
+        "class_name": "SphinxClient",
+        "name": "buildExcerpts",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SEARCHD_WARNING",
+        "class_name": "SphinxClient",
+        "name": "buildKeywords",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_ATTR_BOOL",
+        "class_name": "SphinxClient",
+        "name": "getLastError",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_ATTR_FLOAT",
+        "class_name": "SphinxClient",
+        "name": "getLastWarning",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_ATTR_INTEGER",
+        "class_name": "SphinxClient",
+        "name": "escapeString",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_ATTR_MULTI",
+        "class_name": "SphinxClient",
+        "name": "query",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_ATTR_ORDINAL",
+        "class_name": "SphinxClient",
+        "name": "resetFilters",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_ATTR_TIMESTAMP",
+        "class_name": "SphinxClient",
+        "name": "resetGroupBy",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_FILTER_FLOATRANGE",
+        "class_name": "SphinxClient",
+        "name": "runQueries",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_FILTER_RANGE",
+        "class_name": "SphinxClient",
+        "name": "setArrayResult",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_FILTER_VALUES",
+        "class_name": "SphinxClient",
+        "name": "setConnectTimeout",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_GROUPBY_ATTR",
+        "class_name": "SphinxClient",
+        "name": "setFieldWeights",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_GROUPBY_ATTRPAIR",
+        "class_name": "SphinxClient",
+        "name": "setFilter",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_GROUPBY_DAY",
+        "class_name": "SphinxClient",
+        "name": "setFilterFloatRange",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_GROUPBY_MONTH",
+        "class_name": "SphinxClient",
+        "name": "setFilterRange",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_GROUPBY_WEEK",
+        "class_name": "SphinxClient",
+        "name": "setGeoAnchor",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_GROUPBY_YEAR",
+        "class_name": "SphinxClient",
+        "name": "setGroupBy",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_MATCH_ALL",
+        "class_name": "SphinxClient",
+        "name": "setGroupDistinct",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_MATCH_ANY",
+        "class_name": "SphinxClient",
+        "name": "setIndexWeights",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_MATCH_BOOLEAN",
+        "class_name": "SphinxClient",
+        "name": "setIDRange",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_MATCH_EXTENDED",
+        "class_name": "SphinxClient",
+        "name": "setLimits",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_MATCH_EXTENDED2",
+        "class_name": "SphinxClient",
+        "name": "setMatchMode",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_MATCH_FULLSCAN",
+        "class_name": "SphinxClient",
+        "name": "setMaxQueryTime",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_MATCH_PHRASE",
+        "class_name": "SphinxClient",
+        "name": "setRankingMode",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_RANK_BM25",
+        "class_name": "SphinxClient",
+        "name": "setRetries",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_RANK_NONE",
+        "class_name": "SphinxClient",
+        "name": "setServer",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_RANK_PROXIMITY_BM25",
+        "class_name": "SphinxClient",
+        "name": "setSortMode",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_RANK_WORDCOUNT",
+        "class_name": "SphinxClient",
+        "name": "updateAttributes",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_SORT_ATTR_ASC",
+        "class_name": "SphinxClient",
+        "name": "__sleep",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     },
     {
         "ext_name_fk": 73,
-        "name": "SPH_SORT_ATTR_DESC",
+        "class_name": "SphinxClient",
+        "name": "__wakeup",
+        "static": false,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 73,
-        "name": "SPH_SORT_EXPR",
-        "ext_min": "0.1.0",
-        "ext_max": "",
-        "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 73,
-        "name": "SPH_SORT_EXTENDED",
-        "ext_min": "0.1.0",
-        "ext_max": "",
-        "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 73,
-        "name": "SPH_SORT_RELEVANCE",
-        "ext_min": "0.1.0",
-        "ext_max": "",
-        "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 73,
-        "name": "SPH_SORT_TIME_SEGMENTS",
-        "ext_min": "0.1.0",
-        "ext_max": "",
-        "php_min": "5.1.3",
-        "php_max": "",
-        "php_excludes": ""
+        "php_max": ""
     }
 ]

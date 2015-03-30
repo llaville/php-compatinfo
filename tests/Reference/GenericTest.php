@@ -76,6 +76,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         'reflection',
         'riak',
         'solr',
+        'sphinx',
         'uopz',
         'varnish',
         'xdebug',
