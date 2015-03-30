@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bf2c7dc2d003c30706ee018f0189ca36",
+    "hash": "f8481cb961c74d3e7331fec190ddd84b",
     "packages": [
         {
             "name": "bartlett/php-reflect",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-reflect.git",
-                "reference": "66ac1a2986cef1017fb6067a9fa5468ffd0c8681"
+                "reference": "2c88d1a80d38bc700ebeb1ff927b6a4ef64b430b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/66ac1a2986cef1017fb6067a9fa5468ffd0c8681",
-                "reference": "66ac1a2986cef1017fb6067a9fa5468ffd0c8681",
+                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/2c88d1a80d38bc700ebeb1ff927b6a4ef64b430b",
+                "reference": "2c88d1a80d38bc700ebeb1ff927b6a4ef64b430b",
                 "shasum": ""
             },
             "require": {
@@ -30,7 +30,7 @@
                 "ext-spl": "*",
                 "ext-tokenizer": "*",
                 "justinrainbow/json-schema": "~1.3",
-                "nikic/php-parser": "1.1.*",
+                "nikic/php-parser": "~1.1",
                 "php": ">=5.3.2",
                 "phpdocumentor/reflection-docblock": "~2.0",
                 "sebastian/version": "~1.0",
@@ -43,7 +43,7 @@
             },
             "require-dev": {
                 "bartlett/phpunit-loggertestlistener": "~1.1",
-                "bartlett/umlwriter": "1.0.0-RC1",
+                "bartlett/umlwriter": "~1.0",
                 "doctrine/cache": "~1.3",
                 "monolog/monolog": "~1.10",
                 "psr/log": "~1.0"
@@ -78,7 +78,11 @@
             ],
             "description": "Adds the ability to reverse-engineer classes, interfaces, functions, constants, namespaces, traits and more.",
             "homepage": "http://php5.laurent-laville.org/reflect/",
-            "time": "2015-03-24 13:31:08"
+            "keywords": [
+                "reflection",
+                "reverse-engineer"
+            ],
+            "time": "2015-03-30 09:22:03"
         },
         {
             "name": "doctrine/collections",
@@ -150,16 +154,16 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "680d026082c3aa234b2d8617c50e9c73999913ba"
+                "reference": "2465fe486c864e30badaa4d005ebdf89dbc503f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/680d026082c3aa234b2d8617c50e9c73999913ba",
-                "reference": "680d026082c3aa234b2d8617c50e9c73999913ba",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/2465fe486c864e30badaa4d005ebdf89dbc503f3",
+                "reference": "2465fe486c864e30badaa4d005ebdf89dbc503f3",
                 "shasum": ""
             },
             "require": {
@@ -212,20 +216,20 @@
                 "json",
                 "schema"
             ],
-            "time": "2015-03-23 20:38:38"
+            "time": "2015-03-27 16:41:39"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v1.1.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "ac05ef6f95bf8361549604b6031c115f92f39528"
+                "reference": "dba7524b3724f25b947cd26a580787c55c8a6f9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/ac05ef6f95bf8361549604b6031c115f92f39528",
-                "reference": "ac05ef6f95bf8361549604b6031c115f92f39528",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/dba7524b3724f25b947cd26a580787c55c8a6f9b",
+                "reference": "dba7524b3724f25b947cd26a580787c55c8a6f9b",
                 "shasum": ""
             },
             "require": {
@@ -235,7 +239,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -257,7 +261,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-01-18 11:29:59"
+            "time": "2015-03-24 19:10:28"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -714,29 +718,34 @@
         },
         {
             "name": "bartlett/umlwriter",
-            "version": "1.0.0-RC1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/umlwriter.git",
-                "reference": "0fe1c3a19280e4cd9f136ff3347ae9d0110758ca"
+                "reference": "48f1e73fd3716824830185342319e8217e87cc3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/umlwriter/zipball/0fe1c3a19280e4cd9f136ff3347ae9d0110758ca",
-                "reference": "0fe1c3a19280e4cd9f136ff3347ae9d0110758ca",
+                "url": "https://api.github.com/repos/llaville/umlwriter/zipball/48f1e73fd3716824830185342319e8217e87cc3e",
+                "reference": "48f1e73fd3716824830185342319e8217e87cc3e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.0",
+                "sebastian/version": "~1.0",
+                "symfony/console": "~2.5"
             },
             "require-dev": {
                 "andrewsville/php-token-reflection": "~1.4",
-                "bartlett/php-reflect": "3.0.0-RC1"
+                "bartlett/php-reflect": "3.0.*@dev"
             },
             "suggest": {
-                "andrewsville/php-token-reflection": "Reverse-engine compatible solution 2",
-                "bartlett/php-reflect": "Reverse-engine compatible solution 1"
+                "andrewsville/php-token-reflection": "Reverse-engine, alternative solution",
+                "bartlett/php-reflect": "Reverse-engine, default solution"
             },
+            "bin": [
+                "bin/umlwriter"
+            ],
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -757,7 +766,7 @@
             ],
             "description": "Create UML class diagrams from your PHP source.",
             "homepage": "http://php5.laurent-laville.org/umlwriter/",
-            "time": "2015-03-19 20:11:01"
+            "time": "2015-03-26 16:52:42"
         },
         {
             "name": "doctrine/cache",
@@ -945,7 +954,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "bartlett/php-reflect": 20,
-        "bartlett/umlwriter": 5
+        "bartlett/umlwriter": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

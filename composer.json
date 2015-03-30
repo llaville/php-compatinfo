@@ -23,7 +23,7 @@
         "psr/log": "~1.0",
         "monolog/monolog": "~1.10",
         "bartlett/phpunit-loggertestlistener": "~1.1",
-        "bartlett/umlwriter": "1.0.0-RC1"
+        "bartlett/umlwriter": "dev-master"
     },
     "suggest": {
         "doctrine/cache": "Allow caching results, since bartlett/php-reflect 2.2",
