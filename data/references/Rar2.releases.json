@@ -1,0 +1,29 @@
+[
+    {
+        "ext_name_fk": 61,
+        "rel_version": "2.0.0b2",
+        "rel_date": "2009-12-08",
+        "rel_state": "beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "rel_version": "2.0.0RC1",
+        "rel_date": "2010-01-17",
+        "rel_state": "beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "rel_version": "2.0.0",
+        "rel_date": "2010-04-20",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

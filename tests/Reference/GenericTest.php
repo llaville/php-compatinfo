@@ -71,6 +71,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         'oauth',
         'pdflib',
         'pthreads',
+        'rar',
         'redis',
         'reflection',
         'solr',

@@ -1,0 +1,32 @@
+[
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarArchive",
+        "name": "isBroken",
+        "static": false,
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarArchive",
+        "name": "setAllowBroken",
+        "static": false,
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "getPosition",
+        "static": false,
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]
