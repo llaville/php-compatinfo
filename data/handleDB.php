@@ -387,6 +387,13 @@ class DbInitCommand extends Command
                 'releases'   => array('', '1'),
                 'methods'    => array(''),
             ),
+            'stomp' => array(
+                'classes'    => array(''),
+                'iniEntries' => array('', '1'),
+                'functions'  => array('', '1'),
+                'releases'   => array('', '1'),
+                'methods'    => array('', '1'),
+            ),
             'uopz' => array(
                 'constants'  => array('2'),
                 'functions'  => array('2'),

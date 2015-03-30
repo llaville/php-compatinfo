@@ -1,0 +1,162 @@
+[
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "getSessionId",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "__destruct",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "send",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "subscribe",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "hasFrame",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "readFrame",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "unsubscribe",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "begin",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "commit",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "abort",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "ack",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "error",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "setReadTimeout",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "Stomp",
+        "name": "getReadTimeout",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "class_name": "StompFrame",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    }
+]

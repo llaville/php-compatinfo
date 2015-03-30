@@ -111,16 +111,6 @@
     },
     {
         "ext_name_fk": 79,
-        "name": "stomp_nack",
-        "ext_min": "1.0.6",
-        "ext_max": "",
-        "php_min": "5.2.2",
-        "php_max": "",
-        "parameters": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 79,
         "name": "stomp_read_frame",
         "ext_min": "0.1.0",
         "ext_max": "",

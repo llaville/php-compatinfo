@@ -1,0 +1,12 @@
+[
+    {
+        "ext_name_fk": 79,
+        "class_name": "StompException",
+        "name": "getDetails",
+        "static": false,
+        "ext_min": "1.0.1",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    }
+]
