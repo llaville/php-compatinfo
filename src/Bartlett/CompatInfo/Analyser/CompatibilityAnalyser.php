@@ -225,15 +225,6 @@ class CompatibilityAnalyser extends AbstractAnalyser
             && $node->expr instanceof Node\Expr\New_
         ) {
             $this->initClassAliasResolver($node);
-
-        } elseif ($node instanceof Node\Param) {
-            /*
-               With NameResolver concept issue
-               @link https://github.com/nikic/PHP-Parser/issues/188
-               I proceed function parameters twice
-             */
-            $versions = $this->initFunctionArguments($node);
-            $this->updateLocalVersions($versions);
         }
     }
 
