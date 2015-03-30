@@ -9,14 +9,6 @@
     },
     {
         "ext_name_fk": 65,
-        "name": "Riak\\Output\\ConflictResolver",
-        "ext_min": "1.1.0",
-        "ext_max": "",
-        "php_min": "5.3.0",
-        "php_max": ""
-    },
-    {
-        "ext_name_fk": 65,
         "name": "Riak\\Output\\KeyStreamOutput",
         "ext_min": "0.5.0",
         "ext_max": "",

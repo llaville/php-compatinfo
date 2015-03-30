@@ -366,6 +366,13 @@ class DbInitCommand extends Command
                 'const'      => array('2'),
                 'methods'    => array('2'),
             ),
+            'riak' => array(
+                'classes'    => array('', '1'),
+                'iniEntries' => array('', '1'),
+                'interfaces' => array('', '1'),
+                'releases'   => array('', '1'),
+                'methods'    => array('', '1'),
+            ),
             'solr' => array(
                 'classes'    => array('', '1', '2'),
                 'constants'  => array(''),
