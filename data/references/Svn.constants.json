@@ -289,15 +289,6 @@
     },
     {
         "ext_name_fk": 80,
-        "name": "SVN_REVISION_UNSPECIFIED",
-        "ext_min": "1.0.0",
-        "ext_max": "",
-        "php_min": "4.0.0",
-        "php_max": "",
-        "php_excludes": ""
-    },
-    {
-        "ext_name_fk": 80,
         "name": "SVN_SHOW_UPDATES",
         "ext_min": "0.3",
         "ext_max": "",
