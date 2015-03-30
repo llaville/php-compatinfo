@@ -433,6 +433,13 @@ class DbInitCommand extends Command
                 'releases'   => array('7'),
                 'iniEntries' => array('7'),
             ),
+            'zip' => array(
+                'functions'  => array('1'),
+                'releases'   => array('1'),
+                'classes'    => array('1'),
+                'methods'    => array('1'),
+                'const'      => array('1'),
+            ),
         );
 
         if (array_key_exists($refName, $majorReleases)) {
