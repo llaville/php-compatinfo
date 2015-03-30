@@ -79,6 +79,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         'sphinx',
         'stomp',
         'uopz',
+        'uploadprogress',
         'varnish',
         'xdebug',
         'xmldiff',

@@ -406,6 +406,11 @@ class DbInitCommand extends Command
                 'iniEntries' => array('2'),
                 'releases'   => array('2'),
             ),
+            'uploadprogress' => array(
+                'functions'  => array(''),
+                'iniEntries' => array(''),
+                'releases'   => array('', '1'),
+            ),
             'varnish' => array(
                 'classes'    => array(''),
                 'constants'  => array(''),
