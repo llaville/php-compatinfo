@@ -1,0 +1,740 @@
+[
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Debug",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Error",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_CLI",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_SessOpen",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_SessClose",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BackendOpen",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BackendReuse",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BackendClose",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_HttpGarbage",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Backend",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Length",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_FetchError",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ReqMethod",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ReqURL",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ReqProtocol",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ReqStatus",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ReqReason",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ReqHeader",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ReqUnset",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ReqLost",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_RespMethod",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_RespURL",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_RespProtocol",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_RespStatus",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_RespReason",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_RespHeader",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_RespUnset",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_RespLost",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BereqMethod",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BereqURL",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BereqProtocol",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BereqStatus",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BereqReason",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BereqHeader",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BereqUnset",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BereqLost",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BerespMethod",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BerespURL",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BerespProtocol",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BerespStatus",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BerespReason",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BerespHeader",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BerespUnset",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BerespLost",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ObjMethod",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ObjURL",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ObjProtocol",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ObjStatus",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ObjReason",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ObjHeader",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ObjUnset",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ObjLost",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BogoHeader",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_LostHeader",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_TTL",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Fetch_Body",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_VCL_acl",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_VCL_call",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_VCL_trace",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_VCL_return",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ReqStart",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Hit",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_HitPass",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ExpBan",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ExpKill",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_WorkThread",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ESI_xmlerror",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Hash",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Backend_health",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_VCL_Log",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_VCL_Error",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Gzip",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Link",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Begin",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_End",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_VSL",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Storage",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_Timestamp",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ReqAcct",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_ESI_BodyBytes",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_PipeAcct",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 88,
+        "class_name": "VarnishLog",
+        "name": "TAG_BereqAcct",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    }
+]
