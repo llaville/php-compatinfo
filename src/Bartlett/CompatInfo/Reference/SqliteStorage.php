@@ -73,6 +73,8 @@ class SqliteStorage
             if (!empty($row['php.excludes'])) {
                 $row['php.excludes'] = explode(',', $row['php.excludes']);
                 $row['php.excludes'] = array_map('trim', $row['php.excludes']);
+            } else {
+                $row['php.excludes'] = array();
             }
         }
 

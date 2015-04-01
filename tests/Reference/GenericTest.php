@@ -167,9 +167,6 @@ class GenericTest extends \PHPUnit_Framework_TestCase
             $max = $range['php.max'];
 
             if (array_key_exists('php.excludes', $range)) {
-                if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
-                }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
                     array_push(self::$optionalcfgs, $inientry);
@@ -254,9 +251,6 @@ class GenericTest extends \PHPUnit_Framework_TestCase
             $max = $range['php.max'];
 
             if (array_key_exists('php.excludes', $range)) {
-                if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
-                }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
                     array_push(self::$optionalfunctions, $fctname);
@@ -337,9 +331,6 @@ class GenericTest extends \PHPUnit_Framework_TestCase
             $max = $range['php.max'];
 
             if (array_key_exists('php.excludes', $range)) {
-                if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
-                }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
                     array_push(self::$optionalconstants, $constname);
@@ -423,9 +414,6 @@ class GenericTest extends \PHPUnit_Framework_TestCase
             $max = $range['php.max'];
 
             if (array_key_exists('php.excludes', $range)) {
-                if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
-                }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
                     array_push(self::$ignoredclasses, $constname);
@@ -641,9 +629,6 @@ class GenericTest extends \PHPUnit_Framework_TestCase
             $max = $range['php.max'];
 
             if (array_key_exists('php.excludes', $range)) {
-                if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
-                }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
                     array_push(self::$optionalinterfaces, $intname);
