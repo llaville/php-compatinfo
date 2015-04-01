@@ -44,6 +44,9 @@ class GmpExtensionTest extends GenericTest
         self::$ignoredclasses = array(
             'GMP',  // empty class in PHP 5.6
         );
+        self::$optionalconstants = array(
+            'GMP_MPIR_VERSION', // optional in source code
+        );
 
         self::$ext = 'Gmp';
         parent::setUpBeforeClass();
