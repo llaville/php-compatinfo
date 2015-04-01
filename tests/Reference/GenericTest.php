@@ -630,7 +630,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
             }
 
             foreach ($constants as $constantname => $constantvalue) {
-                if (in_array("$classname::$constantname", self::$optionalconstants)) {
+                if (in_array("$classname::$constantname", self::$ignoredconstants)) {
                     continue;
                 }
                 $this->assertArrayHasKey(
