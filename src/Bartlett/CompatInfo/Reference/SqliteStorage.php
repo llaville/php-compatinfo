@@ -79,7 +79,7 @@ class SqliteStorage
         $result = array();
 
         if ('classMethods' == $meta) {
-            foreach ($rows as $row) {
+            foreach ($rows as &$row) {
                 if ($static && $row['static'] != 1) {
                     continue;
                 }
@@ -89,14 +89,14 @@ class SqliteStorage
                 $result[$className][$name] = $row;
             }
         } elseif ('classConstants' == $meta) {
-            foreach ($rows as $row) {
+            foreach ($rows as &$row) {
                 $className = $row['class_name'];
                 $name = $row['name'];
                 unset($row['name'], $row['class_name']);
                 $result[$className][$name] = $row;
             }
         } elseif ('releases' == $meta) {
-            foreach ($rows as $row) {
+            foreach ($rows as &$row) {
                 $name = $row['ext.min'];
                 $result[$name] = $row;
             }
