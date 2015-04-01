@@ -79,5 +79,41 @@
         "ext_max": "",
         "php_min": "5.3.0",
         "php_max": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Url",
+        "name": "PARSE_MBLOC",
+        "ext_min": "2.2.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+    },
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Url",
+        "name": "PARSE_MBUTF8",
+        "ext_min": "2.2.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+    },
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Url",
+        "name": "PARSE_TOIDN",
+        "ext_min": "2.2.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+    },
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Url",
+        "name": "PARSE_TOPCT",
+        "ext_min": "2.2.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
     }
 ]
