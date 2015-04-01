@@ -580,5 +580,15 @@
         "ext_max": "",
         "php_min": "5.5.0",
         "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "createFromImmutable",
+        "static": true,
+        "ext_min": "5.6.8RC1",
+        "ext_max": "",
+        "php_min": "5.6.8RC1",
+        "php_max": ""
     }
 ]
