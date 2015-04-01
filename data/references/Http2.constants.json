@@ -271,7 +271,7 @@
     },
     {
         "ext_name_fk": 26,
-        "name": "http\\Url\\PARSE_MBLOC",
+        "name": "http\\Url::PARSE_MBLOC",
         "ext_min": "2.2.0RC1",
         "ext_max": "",
         "php_min": "5.3.0",
@@ -280,7 +280,7 @@
     },
     {
         "ext_name_fk": 26,
-        "name": "http\\Url\\PARSE_MBUTF8",
+        "name": "http\\Url::PARSE_MBUTF8",
         "ext_min": "2.2.0RC1",
         "ext_max": "",
         "php_min": "5.3.0",
@@ -289,7 +289,7 @@
     },
     {
         "ext_name_fk": 26,
-        "name": "http\\Url\\PARSE_TOIDN",
+        "name": "http\\Url::PARSE_TOIDN",
         "ext_min": "2.2.0RC1",
         "ext_max": "",
         "php_min": "5.3.0",
@@ -298,7 +298,7 @@
     },
     {
         "ext_name_fk": 26,
-        "name": "http\\Url\\PARSE_TOPCT",
+        "name": "http\\Url::PARSE_TOPCT",
         "ext_min": "2.2.0RC1",
         "ext_max": "",
         "php_min": "5.3.0",
