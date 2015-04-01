@@ -34,6 +34,7 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class AmqpExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Amqp';
     /**
      * Sets up the shared fixture.
      *
@@ -50,7 +51,6 @@ class AmqpExtensionTest extends GenericTest
         } else {
             // *nix
         }
-        self::$ext = 'Amqp';
         parent::setUpBeforeClass();
     }
 }

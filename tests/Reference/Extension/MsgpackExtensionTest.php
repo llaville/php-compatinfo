@@ -34,14 +34,5 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class MsgpackExtensionTest extends GenericTest
 {
-    /**
-     * Sets up the shared fixture.
-     *
-     * @return void
-     */
-    public static function setUpBeforeClass()
-    {
-        self::$ext = 'Msgpack';
-        parent::setUpBeforeClass();
-    }
+    const EXTNAME = 'Msgpack';
 }

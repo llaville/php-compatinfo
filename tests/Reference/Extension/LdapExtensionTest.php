@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class LdapExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Ldap';
+
     /**
      * Sets up the shared fixture.
      *
@@ -54,7 +56,6 @@ class LdapExtensionTest extends GenericTest
             'ldap_set_rebind_proc',
         );
 
-        self::$ext = 'Ldap';
         parent::setUpBeforeClass();
     }
 }

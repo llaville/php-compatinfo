@@ -34,14 +34,5 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class EregExtensionTest extends GenericTest
 {
-    /**
-     * Sets up the shared fixture.
-     *
-     * @return void
-     */
-    public static function setUpBeforeClass()
-    {
-        self::$ext = 'Ereg';
-        parent::setUpBeforeClass();
-    }
+    const EXTNAME = 'Ereg';
 }

@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class XhprofExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Xhprof';
+
     /**
      * Sets up the shared fixture.
      *
@@ -46,7 +48,6 @@ class XhprofExtensionTest extends GenericTest
             array_push(self::$ignoredconstants, 'XHPROF_FLAGS_LONGNAMES');
         }
 
-        self::$ext = 'Xhprof';
         parent::setUpBeforeClass();
     }
 }

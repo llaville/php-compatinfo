@@ -34,14 +34,5 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class ZipExtensionTest extends GenericTest
 {
-    /**
-     * Sets up the shared fixture.
-     *
-     * @return void
-     */
-    public static function setUpBeforeClass()
-    {
-        self::$ext = 'Zip';
-        parent::setUpBeforeClass();
-    }
+    const EXTNAME = 'Zip';
 }

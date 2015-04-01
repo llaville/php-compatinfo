@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class SnmpExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Snmp';
+
     /**
      * Sets up the shared fixture.
      *
@@ -54,7 +56,6 @@ class SnmpExtensionTest extends GenericTest
             );
         }
 
-        self::$ext = 'Snmp';
         parent::setUpBeforeClass();
     }
 }

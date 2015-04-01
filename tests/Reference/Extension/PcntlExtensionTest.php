@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class PcntlExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Pcntl';
+
     /**
      * Sets up the shared fixture.
      *
@@ -45,7 +47,6 @@ class PcntlExtensionTest extends GenericTest
             'SI_NOINFO'
         );
 
-        self::$ext = 'Pcntl';
         parent::setUpBeforeClass();
     }
 }

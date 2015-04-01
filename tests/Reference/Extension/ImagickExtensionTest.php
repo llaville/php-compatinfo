@@ -34,14 +34,5 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class ImagickExtensionTest extends GenericTest
 {
-    /**
-     * Sets up the shared fixture.
-     *
-     * @return void
-     */
-    public static function setUpBeforeClass()
-    {
-        self::$ext = 'Imagick';
-        parent::setUpBeforeClass();
-    }
+    const EXTNAME = 'Imagick';
 }

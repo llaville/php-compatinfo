@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class ReadlineExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Readline';
+
     /**
      * Sets up the shared fixture.
      *
@@ -51,7 +53,6 @@ class ReadlineExtensionTest extends GenericTest
             'readline_redisplay',
         );
 
-        self::$ext = 'Readline';
         parent::setUpBeforeClass();
     }
 }

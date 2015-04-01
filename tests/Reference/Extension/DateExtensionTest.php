@@ -34,14 +34,5 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class DateExtensionTest extends GenericTest
 {
-    /**
-     * Sets up the shared fixture.
-     *
-     * @return void
-     */
-    public static function setUpBeforeClass()
-    {
-        self::$ext = 'Date';
-        parent::setUpBeforeClass();
-    }
+    const EXTNAME = 'Date';
 }

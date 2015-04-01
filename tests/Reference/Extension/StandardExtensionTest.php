@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class StandardExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Standard';
+
     /**
      * Sets up the shared fixture.
      *
@@ -206,7 +208,6 @@ class StandardExtensionTest extends GenericTest
                 'STREAM_IPPROTO_RAW',
             );
         }
-        self::$ext = 'Standard';
         parent::setUpBeforeClass();
     }
 }

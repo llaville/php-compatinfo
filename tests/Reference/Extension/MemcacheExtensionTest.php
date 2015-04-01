@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class MemcacheExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Memcache';
+
     /**
      * Sets up the shared fixture.
      *
@@ -64,7 +66,6 @@ class MemcacheExtensionTest extends GenericTest
             );
         }
 
-        self::$ext = 'Memcache';
         parent::setUpBeforeClass();
     }
 }

@@ -34,14 +34,5 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class XmlrpcExtensionTest extends GenericTest
 {
-    /**
-     * Sets up the shared fixture.
-     *
-     * @return void
-     */
-    public static function setUpBeforeClass()
-    {
-        self::$ext = 'Xmlrpc';
-        parent::setUpBeforeClass();
-    }
+    const EXTNAME = 'Xmlrpc';
 }

@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class MhashExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Mhash';
+
     /**
      * Sets up the shared fixture.
      *
@@ -53,7 +55,6 @@ class MhashExtensionTest extends GenericTest
             'MHASH_SNEFRU256',
             'MHASH_WHIRLPOOL',
         );
-        self::$ext = 'Mhash';
         parent::setUpBeforeClass();
     }
 }

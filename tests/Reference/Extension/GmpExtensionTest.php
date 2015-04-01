@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class GmpExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Gmp';
+
     /**
      * Sets up the shared fixture.
      *
@@ -45,10 +47,8 @@ class GmpExtensionTest extends GenericTest
             'GMP',  // empty class in PHP 5.6
         );
         self::$optionalconstants = array(
-            'GMP_MPIR_VERSION', // optional in source code
+            'GMP_MPIR_VERSION',
         );
-
-        self::$ext = 'Gmp';
         parent::setUpBeforeClass();
     }
 }

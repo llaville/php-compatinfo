@@ -95,6 +95,10 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
+        /* This make overload of setUpBeforeClass uneeded */
+        if (@constant('static::EXTNAME')) {
+            self::$ext = static::EXTNAME;
+        }
         if (self::$ext) {
             $name = strtolower(self::$ext);
             self::$obj = new ExtensionFactory($name);
@@ -315,22 +319,40 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Provides constant list in reference
+     */
+    public function constantsFromReference() {
+        if (!@constant('static::EXTNAME')) {
+            $this->markTestSkipped('Not ready');
+        }
+        $name = strtolower(static::EXTNAME);
+        $obj = new ExtensionFactory($name);
+        if (is_null($obj)) {
+            return array();
+        }
+        $dict = $obj->getConstants();
+        if (empty($dict)) {
+            $this->markTestSkipped('No constant');
+        }
+        $set = array();
+        foreach ($dict as $constname => $range) {
+            $set[] = array($constname,$range);
+        }
+        return $set;
+    }
+
+    /**
      * Test than all referenced constants exists
      *
      * @depends testReference
      * @group  reference
+     * @dataProvider constantsFromReference
      * @return void
      */
-    public function testGetConstantsFromReference()
+    public function testGetConstantsFromReference($constname, $range)
     {
-        if (is_null(self::$obj)) {
-            return;
-        }
-        $dict = self::$obj->getConstants();
-        $this->assertTrue(is_array($dict));
-        foreach ($dict as $constname => $range) {
             if (in_array($range['ext.min'], self::$optionalreleases)) {
-                continue;
+                return;
             }
 
             $min = $range['php.min'];
@@ -364,7 +386,6 @@ class GenericTest extends \PHPUnit_Framework_TestCase
                     );
                 }
             }
-        }
     }
 
     /**

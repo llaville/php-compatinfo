@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class TidyExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Tidy';
+
     /**
      * Sets up the shared fixture.
      *
@@ -50,7 +52,6 @@ class TidyExtensionTest extends GenericTest
             'tidy_load_config_enc',
         );
 
-        self::$ext = 'Tidy';
         parent::setUpBeforeClass();
     }
 }

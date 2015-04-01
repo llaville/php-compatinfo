@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class PgsqlExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Pgsql';
+
     /**
      * Sets up the shared fixture.
      *
@@ -45,7 +47,6 @@ class PgsqlExtensionTest extends GenericTest
             // Requires CONNECTION_SSL_STARTUP
             'PGSQL_CONNECTION_SSL_STARTUP',
         );
-        self::$ext = 'Pgsql';
         parent::setUpBeforeClass();
     }
 }

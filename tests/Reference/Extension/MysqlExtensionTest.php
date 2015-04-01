@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class MysqlExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Mysql';
+
     /**
      * Sets up the shared fixture.
      *
@@ -47,7 +49,6 @@ class MysqlExtensionTest extends GenericTest
             'mysql_drop_db',
         );
 
-        self::$ext = 'Mysql';
         parent::setUpBeforeClass();
     }
 }

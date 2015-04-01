@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class XslExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Xsl';
+
     /**
      * Sets up the shared fixture.
      *
@@ -56,7 +58,6 @@ class XslExtensionTest extends GenericTest
                 'XSL_SECPREF_WRITE_NETWORK',
             );
         }
-        self::$ext = 'Xsl';
         parent::setUpBeforeClass();
     }
 }

@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class JsonExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Json';
+
     /**
      * Sets up the shared fixture.
      *
@@ -50,7 +52,6 @@ class JsonExtensionTest extends GenericTest
         self::$ignoredclasses = array(
             'JsonIncrementalParser',
         );
-        self::$ext = 'Json';
         parent::setUpBeforeClass();
     }
 }
