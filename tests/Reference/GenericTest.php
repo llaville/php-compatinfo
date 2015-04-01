@@ -149,22 +149,37 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Provides constant list in reference
+     */
+    public function provideIniEntriesFromReference() {
+        $name = strtolower(static::EXTNAME);
+        $obj = new ExtensionFactory($name);
+        if (is_null($obj)) {
+            return array();
+        }
+        $inientries = $obj->getIniEntries();
+        if (empty($inientries)) {
+            $this->markTestSkipped('No configuration option');
+        }
+        $set = array();
+        foreach ($inientries as $inientry => $range) {
+            $set[] = array($inientry, $range);
+        }
+        return $set;
+    }
+
+    /**
      * Test than all referenced ini entries exists
      *
      * @depends testReference
      * @group  reference
+     * @dataProvider provideIniEntriesFromReference
      * @return void
      */
-    public function testGetIniEntriesFromReference()
+    public function testGetIniEntriesFromReference($inientry, $range)
     {
-        if (is_null(self::$obj)) {
-            return;
-        }
-        $inientries = self::$obj->getIniEntries();
-        $this->assertTrue(is_array($inientries));
-        foreach ($inientries as $inientry => $range) {
             if (in_array($range['ext.min'], self::$optionalreleases)) {
-                continue;
+                return;
             }
 
             $min = $range['php.min'];
@@ -201,7 +216,6 @@ class GenericTest extends \PHPUnit_Framework_TestCase
                     );
                 }
             }
-        }
     }
 
     /**
@@ -321,10 +335,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     /**
      * Provides constant list in reference
      */
-    public function constantsFromReference() {
-        if (!@constant('static::EXTNAME')) {
-            $this->markTestSkipped('Not ready');
-        }
+    public function provideConstantsFromReference() {
         $name = strtolower(static::EXTNAME);
         $obj = new ExtensionFactory($name);
         if (is_null($obj)) {
@@ -336,7 +347,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         }
         $set = array();
         foreach ($dict as $constname => $range) {
-            $set[] = array($constname,$range);
+            $set[] = array($constname, $range);
         }
         return $set;
     }
@@ -346,7 +357,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      *
      * @depends testReference
      * @group  reference
-     * @dataProvider constantsFromReference
+     * @dataProvider provideConstantsFromReference
      * @return void
      */
     public function testGetConstantsFromReference($constname, $range)
