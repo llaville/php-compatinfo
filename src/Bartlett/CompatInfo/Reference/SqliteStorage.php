@@ -66,6 +66,16 @@ class SqliteStorage
         $this->$stmt->execute(array(':name' => $this->name));
         $rows = $this->$stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        foreach ($rows as &$row) {
+            if (!array_key_exists('php.excludes', $row)) {
+                continue;
+            }
+            if (!empty($row['php.excludes'])) {
+                $row['php.excludes'] = explode(',', $row['php.excludes']);
+                $row['php.excludes'] = array_map('trim', $row['php.excludes']);
+            }
+        }
+
         $result = array();
 
         if ('classMethods' == $meta) {
@@ -91,7 +101,7 @@ class SqliteStorage
                 $result[$name] = $row;
             }
         } else {
-            foreach ($rows as $row) {
+            foreach ($rows as &$row) {
                 $name = $row['name'];
                 unset($row['name']);
                 $result[$name] = $row;
