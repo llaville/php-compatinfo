@@ -35,4 +35,17 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
 class RedisExtensionTest extends GenericTest
 {
     const EXTNAME = 'Redis';
+
+    /**
+     * Sets up the shared fixture.
+     *
+     * @return void
+     */
+    public static function setUpBeforeClass()
+    {
+        self::$optionalconstants = array(
+            'Redis::SERIALIZER_IGBINARY', // Build time option
+        );
+        parent::setUpBeforeClass();
+    }
 }
