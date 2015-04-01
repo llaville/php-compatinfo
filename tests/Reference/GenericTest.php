@@ -168,7 +168,8 @@ class GenericTest extends \PHPUnit_Framework_TestCase
 
             if (array_key_exists('php.excludes', $range)) {
                 if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
+                    $range['php.excludes'] = explode(',', $range['php.excludes']);
+                    $range['php.excludes'] = array_map("trim", $range['php.excludes']);
                 }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
@@ -255,7 +256,8 @@ class GenericTest extends \PHPUnit_Framework_TestCase
 
             if (array_key_exists('php.excludes', $range)) {
                 if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
+                    $range['php.excludes'] = explode(',', $range['php.excludes']);
+                    $range['php.excludes'] = array_map("trim", $range['php.excludes']);
                 }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
@@ -425,7 +427,8 @@ class GenericTest extends \PHPUnit_Framework_TestCase
 
             if (array_key_exists('php.excludes', $range)) {
                 if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
+                    $range['php.excludes'] = explode(',', $range['php.excludes']);
+                    $range['php.excludes'] = array_map("trim", $range['php.excludes']);
                 }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
@@ -643,7 +646,8 @@ class GenericTest extends \PHPUnit_Framework_TestCase
 
             if (array_key_exists('php.excludes', $range)) {
                 if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
+                    $range['php.excludes'] = explode(',', $range['php.excludes']);
+                    $range['php.excludes'] = array_map("trim", $range['php.excludes']);
                 }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
