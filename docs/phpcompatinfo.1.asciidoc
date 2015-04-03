@@ -50,6 +50,34 @@ elements, such as classes, interfaces, functions, constants, namespaces.
    Show which versions of dependencies are bundled (PHAR version only).
 
 
+== analyser:list COMMAND
+The phpcompatinfo(1) 'analyser:list' command is used to show what analysers are installed
+(see <<X1,CONF FILES>> section).
+
+
+== analyser:run COMMAND
+The phpcompatinfo(1) 'analyser:run' command is used to analyse a data source and display results.
+
+Usage:
+
+  phpcompatinfo analyser:run [--alias] [--format="..."] source [analysers1] ... [analysersN]
+
+Where:
+
+*source*::
+  Identify a data source; may be declared in a json configuration file (see <<X1,CONF FILES>> section)
+
+*--alias*::
+  If set, the source refers to its alias
+
+*--format*::
+  If set, convert result to a specific format. (default: "json")
+
+*analysers1* ... *analysersN*::
+  Identify one or more analyser to execute. See 'analyser:list' command to know what analysers are available.
+  (default: ["compatibility"])
+
+
 == config:validate COMMAND
 The phpcompatinfo(1) 'config:validate' command is used to check syntax of your json configuration file
 
@@ -112,37 +140,51 @@ Where:
   Graphical syntax. (default: "plantuml")
 
 
-== analyser:list COMMAND
-The phpcompatinfo(1) 'analyser:list' command is used to show what analysers are installed
-(see <<X1,CONF FILES>> section).
-
-
-== analyser:run COMMAND
-The phpcompatinfo(1) 'analyser:run' command is used to analyse a data source and display results.
-
-Usage:
-
-  phpcompatinfo analyser:run [--alias] [--format="..."] source [analysers1] ... [analysersN]
-
-Where:
-
-*source*::
-  Identify a data source; may be declared in a json configuration file (see <<X1,CONF FILES>> section)
-
-*--alias*::
-  If set, the source refers to its alias
-
-*--format*::
-  If set, convert result to a specific format. (default: "json")
-
-*analysers1* ... *analysersN*::
-  Identify one or more analyser to execute. See 'analyser:list' command to know what analysers are available.
-  (default: ["compatibility"])
-
-
 == plugin:list COMMAND
 The phpcompatinfo(1) 'plugin:list' command is used to show what plugins are installed
 (see <<X1,CONF FILES>> section).
+
+
+== reference:list COMMAND
+The phpcompatinfo(1) 'reference:list' command is used to list all references supported.
+
+Usage:
+
+  phpcompatinfo reference:list
+
+
+== reference:show COMMAND
+The phpcompatinfo(1) 'reference:show' command is used to introspect a reference.
+
+Usage:
+
+  phpcompatinfo reference:show [--filter[="..."]] [--releases] [--ini] [--constants] [--functions] [--interfaces] [--classes] name
+
+Where:
+
+*name*::
+  Introspection of a reference (case insensitive)
+
+*--filter*::
+  Resource that provide a closure to filter results (default: false)
+
+*--releases*::
+  Show releases
+
+*--ini*::
+  Show ini Entries
+
+*--constants*::
+  Show constants
+
+*--functions*::
+  Show functions
+
+*--interfaces*::
+  Show interfaces
+
+*--classes*::
+  Show classes
 
 
 == reflection:class COMMAND
@@ -187,48 +229,6 @@ Where:
 
 *--format*::
   Format of result to return. False when raw text. (default: false)
-
-
-== reference:list COMMAND
-The phpcompatinfo(1) 'reference:list' command is used to list all references supported.
-
-Usage:
-
-  phpcompatinfo reference:list
-
-
-== reference:show COMMAND
-The phpcompatinfo(1) 'reference:show' command is used to introspect a reference.
-
-Usage:
-
-  phpcompatinfo reference:show [--filter[="..."]] [--releases] [--ini] [--constants] [--functions] [--interfaces] [--classes] name
-
-Where:
-
-*name*::
-  Introspection of a reference (case insensitive)
-
-*--filter*::
-  Resource that provide a closure to filter results (default: false)
-
-*--releases*::
-  Show releases
-
-*--ini*::
-  Show ini Entries
-
-*--constants*::
-  Show constants
-
-*--functions*::
-  Show functions
-
-*--interfaces*::
-  Show interfaces
-
-*--classes*::
-  Show classes
 
 
 == EXIT STATUS
