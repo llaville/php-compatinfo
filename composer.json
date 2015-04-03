@@ -16,14 +16,14 @@
         "ext-spl": "*",
         "ext-json": "*",
         "ext-pdo_sqlite": "*",
-        "bartlett/php-reflect": "3.0.*@dev"
+        "bartlett/php-reflect": "~3.0"
     },
     "require-dev": {
         "doctrine/cache": "~1.3",
         "psr/log": "~1.0",
         "monolog/monolog": "~1.10",
         "bartlett/phpunit-loggertestlistener": "~1.1",
-        "bartlett/umlwriter": "dev-master"
+        "bartlett/umlwriter": "~1.0"
     },
     "suggest": {
         "doctrine/cache": "Allow caching results, since bartlett/php-reflect 2.2",
