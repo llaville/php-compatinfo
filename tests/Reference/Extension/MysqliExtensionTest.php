@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class MysqliExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Mysqli';
+
     /**
      * Sets up the shared fixture.
      *
@@ -75,7 +77,6 @@ class MysqliExtensionTest extends GenericTest
             'mysqli_stmt_more_results',
             'mysqli_stmt_next_result',
         );
-        self::$ext = 'Mysqli';
         parent::setUpBeforeClass();
     }
 }

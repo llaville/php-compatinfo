@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class Ssh2ExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Ssh2';
+
     /**
      * Sets up the shared fixture.
      *
@@ -63,7 +65,6 @@ class Ssh2ExtensionTest extends GenericTest
             'SSH2_POLL_LISTENER_CLOSED',
         );
 
-        self::$ext = 'Ssh2';
         parent::setUpBeforeClass();
     }
 }

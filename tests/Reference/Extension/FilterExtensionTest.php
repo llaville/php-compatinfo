@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class FilterExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Filter';
+
     /**
      * Sets up the shared fixture.
      *
@@ -60,7 +62,6 @@ class FilterExtensionTest extends GenericTest
             'input_get_args',
         );
 
-        self::$ext = 'Filter';
         parent::setUpBeforeClass();
     }
 }

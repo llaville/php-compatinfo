@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class HashExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Hash';
+
     /**
      * Sets up the shared fixture.
      *

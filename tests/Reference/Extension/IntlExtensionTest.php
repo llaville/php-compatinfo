@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class IntlExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Intl';
+
     /**
      * Sets up the shared fixture.
      *
@@ -66,7 +68,6 @@ class IntlExtensionTest extends GenericTest
             'intl.use_exceptions'
         );
 
-        self::$ext = 'Intl';
         parent::setUpBeforeClass();
     }
 }

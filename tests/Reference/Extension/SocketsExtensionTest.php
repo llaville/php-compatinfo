@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class SocketsExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Sockets';
+
     /**
      * Sets up the shared fixture.
      *
@@ -208,7 +210,6 @@ class SocketsExtensionTest extends GenericTest
             // requires HAVE_SOCKETPAIR
             'socket_create_pair',
         );
-        self::$ext = 'Sockets';
         parent::setUpBeforeClass();
     }
 }

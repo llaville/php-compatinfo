@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class GdExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Gd';
+
     /**
      * Sets up the shared fixture.
      *
@@ -65,7 +67,6 @@ class GdExtensionTest extends GenericTest
             self::$optionalfunctions[] = 'imageantialias';
         }
 
-        self::$ext = 'Gd';
         parent::setUpBeforeClass();
     }
 }

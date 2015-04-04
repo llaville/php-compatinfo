@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class XcacheExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Xcache';
+
     /**
      * Sets up the shared fixture.
      *
@@ -59,7 +61,6 @@ class XcacheExtensionTest extends GenericTest
         self::$ignoredconstants = array(
             'XC_OPSPEC_FETCHTYPE',
         );
-        self::$ext = 'Xcache';
         parent::setUpBeforeClass();
     }
 }

@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class CoreExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Core';
+
     /**
      * Sets up the shared fixture.
      *
@@ -119,7 +121,6 @@ class CoreExtensionTest extends GenericTest
             'self',
         );
 
-        self::$ext = 'Core';
         parent::setUpBeforeClass();
     }
 }

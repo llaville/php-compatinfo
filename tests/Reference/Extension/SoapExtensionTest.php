@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class SoapExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Soap';
+
     /**
      * Sets up the shared fixture.
      *
@@ -47,7 +49,6 @@ class SoapExtensionTest extends GenericTest
             'soap_encode_to_zval',
         );
 
-        self::$ext = 'Soap';
         parent::setUpBeforeClass();
     }
 }

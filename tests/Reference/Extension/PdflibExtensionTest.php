@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class PdflibExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Pdflib';
+
     /**
      * Sets up the shared fixture.
      *
@@ -84,7 +86,6 @@ class PdflibExtensionTest extends GenericTest
             'pdf_utf8_to_utf32',
             'pdf_utf32_to_utf8',
         );
-        self::$ext = 'Pdflib';
         parent::setUpBeforeClass();
     }
 }

@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class McryptExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Mcrypt';
+
     /**
      * Sets up the shared fixture.
      *
@@ -79,7 +81,6 @@ class McryptExtensionTest extends GenericTest
         self::$ignoredconstants = array(
             'MCRYPT_BLOWFISH_COMPAT',
         );
-        self::$ext = 'Mcrypt';
         parent::setUpBeforeClass();
     }
 }

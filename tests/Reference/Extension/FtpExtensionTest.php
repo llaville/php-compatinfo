@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class FtpExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Ftp';
+
     /**
      * Sets up the shared fixture.
      *
@@ -46,7 +48,6 @@ class FtpExtensionTest extends GenericTest
             'ftp_ssl_connect',
         );
 
-        self::$ext = 'Ftp';
         parent::setUpBeforeClass();
     }
 }

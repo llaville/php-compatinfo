@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class CurlExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Curl';
+
     /**
      * Sets up the shared fixture.
      *
@@ -45,7 +47,6 @@ class CurlExtensionTest extends GenericTest
             'CURLOPT_MUTE',
             'CURLOPT_PASSWDFUNCTION',
         );
-        self::$ext = 'Curl';
         parent::setUpBeforeClass();
     }
 }

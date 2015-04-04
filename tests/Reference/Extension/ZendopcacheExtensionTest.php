@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class ZendopcacheExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Zend OPcache';
+
     /**
      * Sets up the shared fixture.
      *
@@ -47,7 +49,6 @@ class ZendopcacheExtensionTest extends GenericTest
                 'opcache.mmap_base',
             );
         }
-        self::$ext = 'Zend OPcache';
         parent::setUpBeforeClass();
     }
 }

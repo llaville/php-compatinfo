@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class ApcExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Apc';
+
     /**
      * Sets up the shared fixture.
      *
@@ -113,7 +115,6 @@ class ApcExtensionTest extends GenericTest
                 'apc_delete_file',
             );
         }
-        self::$ext = 'Apc';
         parent::setUpBeforeClass();
     }
 }

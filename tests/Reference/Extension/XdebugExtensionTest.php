@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class XdebugExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Xdebug';
+
     /**
      * Sets up the shared fixture.
      *
@@ -62,7 +64,6 @@ class XdebugExtensionTest extends GenericTest
             }
         }
 
-        self::$ext = 'Xdebug';
         parent::setUpBeforeClass();
     }
 }

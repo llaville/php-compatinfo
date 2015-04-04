@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class OdbcExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Odbc';
+
     /**
      * Sets up the shared fixture.
      *
@@ -67,7 +69,6 @@ class OdbcExtensionTest extends GenericTest
             array_push(self::$optionalconstants, 'SQL_WCHAR', 'SQL_WVARCHAR', 'SQL_WLONGVARCHAR');
         }
 
-        self::$ext = 'Odbc';
         parent::setUpBeforeClass();
     }
 }

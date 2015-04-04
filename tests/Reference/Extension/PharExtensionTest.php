@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class PharExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Phar';
+
     /**
      * Sets up the shared fixture.
      *
@@ -45,7 +47,6 @@ class PharExtensionTest extends GenericTest
             // Available from phar 1.1.0 to 1.2.3, removed in 2.0.0
             'phar.extract_list'
         );
-        self::$ext = 'Phar';
         parent::setUpBeforeClass();
     }
 }

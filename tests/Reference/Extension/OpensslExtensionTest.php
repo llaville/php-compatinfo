@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class OpensslExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Openssl';
+
     /**
      * Sets up the shared fixture.
      *
@@ -51,7 +53,6 @@ class OpensslExtensionTest extends GenericTest
             'OPENSSL_KEYTYPE_EC',
         );
 
-        self::$ext = 'Openssl';
         parent::setUpBeforeClass();
     }
 }

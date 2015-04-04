@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class LibeventExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Libevent';
+
     /**
      * Sets up the shared fixture.
      *
@@ -41,8 +43,6 @@ class LibeventExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$ext = 'Libevent';
-
         if (PATH_SEPARATOR == ';') {
             // Win*
             array_push(self::$optionalfunctions, 'event_base_reinit');

@@ -34,14 +34,5 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class UploadprogressExtensionTest extends GenericTest
 {
-    /**
-     * Sets up the shared fixture.
-     *
-     * @return void
-     */
-    public static function setUpBeforeClass()
-    {
-        self::$ext = 'Uploadprogress';
-        parent::setUpBeforeClass();
-    }
+    const EXTNAME = 'Uploadprogress';
 }

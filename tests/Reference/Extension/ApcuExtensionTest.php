@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class ApcuExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Apcu';
+
     /**
      * Sets up the shared fixture.
      *
@@ -51,7 +53,6 @@ class ApcuExtensionTest extends GenericTest
                 ' apc_register_serializer-0',   // on PHP 5.6 branch
             );
         }
-        self::$ext = 'Apcu';
         parent::setUpBeforeClass();
     }
 }

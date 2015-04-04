@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class SphinxExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Sphinx';
+
     /**
      * Sets up the shared fixture.
      *
@@ -53,7 +55,6 @@ class SphinxExtensionTest extends GenericTest
             'SERIALIZER_IGBINARY'
         );
 
-        self::$ext = 'Sphinx';
         parent::setUpBeforeClass();
     }
 }

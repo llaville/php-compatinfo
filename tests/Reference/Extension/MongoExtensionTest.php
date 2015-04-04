@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class MongoExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Mongo';
+
     /**
      * Sets up the shared fixture.
      *
@@ -46,7 +48,6 @@ class MongoExtensionTest extends GenericTest
             'MongoUtil',
         );
 
-        self::$ext = 'Mongo';
         parent::setUpBeforeClass();
     }
 }

@@ -34,6 +34,8 @@ use Bartlett\Tests\CompatInfo\Reference\GenericTest;
  */
 class LibxmlExtensionTest extends GenericTest
 {
+    const EXTNAME = 'Libxml';
+
     /**
      * Sets up the shared fixture.
      *
@@ -47,7 +49,6 @@ class LibxmlExtensionTest extends GenericTest
                 'LIBXML_HTML_NOIMPLIED',
             );
         }
-        self::$ext = 'Libxml';
         parent::setUpBeforeClass();
     }
 }
