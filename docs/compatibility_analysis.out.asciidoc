@@ -6,25 +6,25 @@ Files                                               13
 
 Extensions Analysis
 
-    Extension Matches REF      EXT min/Max PHP min/Max
-    Core              Core     5.3.0       5.3.0
-    PDO       1       PDO      5.1.0       5.1.0
+    Extension Matches REF      EXT min/Max PHP min/Max PHP all
+    Core              Core                 4.0.0       5.3.0
+    PDO               PDO      5.1.0       5.1.0
     curl              curl     4.0.2       4.0.2
     intl              intl     2.0.0b1     5.3.7
     libxml            libxml   5.1.0       5.1.0
     openssl           openssl  5.2.0       5.2.0
     pcre              pcre     4.0.0       4.0.0
     spl               spl      5.1.0       5.1.0
-    standard          standard 5.3.2       5.3.2
+    standard          standard 4.0.0       4.0.0       5.3.2
     Total [9]                              5.3.7
 
 Namespaces Analysis
 
-    Namespace                             Matches REF  EXT min/Max PHP min/Max
+    Namespace                             Matches REF  EXT min/Max PHP min/Max PHP all
     +global                                       Core             4.0.0
     Bartlett\CompatInfo                           user             5.3.0
     Bartlett\CompatInfo\Analyser                  user             5.3.0
-    Bartlett\CompatInfo\Api                       user             5.3.2
+    Bartlett\CompatInfo\Api                       user             5.3.0       5.3.2
     Bartlett\CompatInfo\Api\V3                    user             5.3.0
     Bartlett\CompatInfo\Collection                user             5.3.0
     Bartlett\CompatInfo\Console                   user             5.3.0
@@ -33,11 +33,11 @@ Namespaces Analysis
     Bartlett\CompatInfo\PhpParser                 user             5.3.0
     Bartlett\CompatInfo\Reference                 user             5.3.0
     Bartlett\CompatInfo\Util                      user             5.3.0
-    Total [12]                                                     5.3.2
+    Total [12]                                                     5.3.0       5.3.2
 
 Interfaces Analysis
 
-    Interface                                        Matches REF  EXT min/Max PHP min/Max
+    Interface                                        Matches REF  EXT min/Max PHP min/Max PHP all
     Bartlett\CompatInfo\Reference\ReferenceInterface 1       user             5.3.0
     Total [1]                                                                 5.3.0
 
@@ -45,9 +45,9 @@ No trait found
 
 Classes Analysis
 
-    Class                                                              Matches REF  EXT min/Max PHP min/Max
+    Class                                                              Matches REF  EXT min/Max PHP min/Max PHP all
     Bartlett\CompatInfo\Analyser\CompatibilityAnalyser                         user             5.3.0
-    Bartlett\CompatInfo\Api\Reference                                          user             5.3.2
+    Bartlett\CompatInfo\Api\Reference                                          user             5.3.0       5.3.2
     Bartlett\CompatInfo\Api\V3\Reference                                       user             5.3.0
     Bartlett\CompatInfo\Collection\ReferenceCollection                 1       user             5.3.0
     Bartlett\CompatInfo\Console\Application                                    user             5.3.0
@@ -57,7 +57,7 @@ Classes Analysis
     Bartlett\CompatInfo\PhpParser\ConditionalCodeNodeProcessor         1       user             5.3.0
     Bartlett\CompatInfo\Reference\ExtensionFactory                     2       user             5.3.0
     Bartlett\CompatInfo\Reference\SqliteStorage                        1       user             5.3.0
-    Bartlett\CompatInfo\Util\Version                                   5       user             5.3.0
+    Bartlett\CompatInfo\Util\Version                                   10      user             5.3.0
   U Bartlett\Reflect\Analyser\AbstractAnalyser                         1       user             5.3.0
   U Bartlett\Reflect\Api\BaseApi                                       1       user             5.3.0
   U Bartlett\Reflect\Api\V3\Common                                     1       user             5.3.0
@@ -73,17 +73,17 @@ Classes Analysis
   U Symfony\Component\Console\Helper\TableSeparator                    3       user             5.3.0
   U Symfony\Component\Console\Output\OutputInterface                   4       user             5.3.0
     parent                                                             5       Core 5.0.0       5.0.0
-    self                                                               8       Core 5.0.0       5.0.0
+    self                                                               11      Core 5.0.0       5.0.0
     stdClass                                                           1       Core 4.0.0       4.0.0
-    Total [29]                                                                                  5.3.2
+    Total [29]                                                                                  5.3.0       5.3.2
 
 Functions Analysis
 
     Function                    Matches REF      EXT min/Max PHP min/Max
-    array_key_exists            4       standard 4.0.7       4.0.7
-    array_map                   1       standard 4.0.6       4.0.6
-    array_merge                 2       standard 4.0.0       4.0.0
-    array_pop                   10      standard 4.0.0       4.0.0
+    array_key_exists            5       standard 4.0.7       4.0.7
+    array_map                   2       standard 4.0.6       4.0.6
+    array_merge                 3       standard 4.0.0       4.0.0
+    array_pop                   6       standard 4.0.0       4.0.0
     array_shift                 2       standard 4.0.0       4.0.0
     array_slice                 1       standard 4.0.0       4.0.0
     array_values                1       standard 4.0.0       4.0.0
@@ -94,12 +94,12 @@ Functions Analysis
     defined                     4       Core     4.0.0       4.0.0
     dirname                     3       standard 4.0.0       4.0.0
     each                        2       Core     4.0.0       4.0.0
-    explode                     1       standard 4.0.0       4.0.0
+    end                         3       standard 4.0.0       4.0.0
+    explode                     2       standard 4.0.0       4.0.0
     extension_loaded            1       Core     4.0.0       4.0.0
     file_exists                 2       standard 4.0.0       4.0.0
     function_exists             1       Core     4.0.0       4.0.0
-    in_array                    7       standard 4.0.0       4.0.0
-    is_array                    1       standard 4.0.0       4.0.0
+    in_array                    10      standard 4.0.0       4.0.0
     is_callable                 1       standard 4.0.6       4.0.6
     is_string                   10      standard 4.0.0       4.0.0
     ksort                       3       standard 4.0.0       4.0.0
@@ -107,16 +107,17 @@ Functions Analysis
     phpversion                  2       standard 4.0.0       4.0.0
     preg_match                  2       pcre     4.0.0       4.0.0
     sha1_file                   2       standard 4.3.0       4.3.0
-    sprintf                     22      standard 4.0.0       4.0.0
+    sprintf                     25      standard 4.0.0       4.0.0
+    str_replace                 1       standard 4.0.0       4.0.0
     strcasecmp                  2       Core     4.0.0       4.0.0
     stream_resolve_include_path 1       standard 5.3.2       5.3.2
-    strpos                      1       standard 4.0.0       4.0.0
+    strpos                      2       standard 4.0.0       4.0.0
     strtolower                  1       standard 4.0.0       4.0.0
     substr                      2       standard 4.0.0       4.0.0
     sys_get_temp_dir            1       standard 5.2.1       5.2.1
     ucfirst                     5       standard 4.0.0       4.0.0
-    version_compare             7       standard 4.0.7       4.0.7
-    Total [36]                                               5.3.2
+    version_compare             9       standard 4.0.7       4.0.7
+    Total [37]                                               5.3.2
 
 Constants Analysis
 
@@ -129,9 +130,9 @@ Constants Analysis
     PHP_EOL                5       Core    4.3.10      4.3.10
     PHP_VERSION            4       Core    4.0.0       4.0.0
     __DIR__                1       Core    5.3.0       5.3.0
-    false                  12      Core    4.0.0       4.0.0
+    false                  14      Core    4.0.0       4.0.0
     null                   13      Core    4.0.0       4.0.0
-    true                   8       Core    4.0.0       4.0.0
+    true                   9       Core    4.0.0       4.0.0
     Total [11]                                         5.3.0
 
 Conditions Analysis
@@ -143,6 +144,4 @@ Conditions Analysis
     function_exists(curl_version)   1       curl    4.0.2       4.0.2
     Total [4]                                                   5.3.7
 
-Requires PHP 5.3.2 (min)
-
-Time: 11.58 seconds, Memory: 11.50Mb
+Requires PHP 5.3.2 (min), PHP 5.3.2 (all)

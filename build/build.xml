@@ -22,7 +22,7 @@
         ======================================================================
     -->
     <property name="build.short-version"         value="4.0" />
-    <property name="build.version"               value="${build.short-version}.0-RC1" />
+    <property name="build.version"               value="${build.short-version}.0" />
 
     <!--
         ======================================================================
@@ -141,6 +141,8 @@
     </fileset>
 
     <fileset dir="${adoc.sourcedir}" id="adoc-outputs">
+        <include name="index.html" />
+        <include name="cover.html" />
         <include name="user-guide**.html" />
         <include name="developer-guide.html" />
         <include name="developer-guide--api.html" />

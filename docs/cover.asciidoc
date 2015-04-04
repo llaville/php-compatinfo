@@ -13,8 +13,13 @@ include::attributes.asciidoc[]
 
 [role="cover"]
 --
-image:icons/font-awesome/code.png[alt="code",icon="code",iconsfont="font-awesome",size="5x"]
-image:icons/font-awesome/check-square-o.png[alt="code",icon="check-square-o",iconsfont="font-awesome",size="9x"]
+[subs="none"]
+++++++++++++++++++++++++++++++++++++++
+<span class="fa-stack">
+    <i class="fa fa-check-square-o fa-stack-1x iconsfont-3x" style="bottom: -0.2em; left: 2em; color: #A0F0D7"></i>
+    <i class="fa fa-puzzle-piece iconsfont-9x" style="color:#1AECB9"></i>
+</span>
+++++++++++++++++++++++++++++++++++++++
 --
 
 [role="bg-info"]

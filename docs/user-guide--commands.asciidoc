@@ -30,7 +30,7 @@ when you invoke the `phpcompatinfo` command, you should obtain the following com
  | .__/|_| |_| .__/ \____\___/|_| |_| |_| .__/ \__,_|\__|___|_| |_|_|  \___/
  |_|         |_|                        |_|
 
-phpCompatInfo version 4.0.0-RC2 DB built Mar 25 2015 07:58:29 CET
+phpCompatInfo version 4.0.0 DB built Apr 04 2015 08:34:02 CEST
 
 Usage:
  [options] command [arguments]
@@ -72,6 +72,19 @@ reference
 reflection
  reflection:class      Reports information about a user class present in a data source.
  reflection:function   Reports information about a user function present in a data source.
+
+Auto-Diagnose:
+
+Checking php settings:
+- Requires PHP 5.3.2 or better OK
+- php.ini file loaded C:\UwAmp\bin\php\php-5.6.7\php.ini
+- date extension loaded YES
+- json extension loaded YES
+- pcre extension loaded YES
+- phar extension loaded YES
+- reflection extension loaded YES
+- spl extension loaded YES
+- tokenizer extension loaded YES
 ----
 ====
 
@@ -102,7 +115,7 @@ $ phpcompatinfo diagnose:run
 ----
 Checking php settings:
 - Requires PHP 5.3.2 or better OK
-- php.ini file loaded C:\UwAmp\bin\php\php-5.6.6\php.ini
+- php.ini file loaded C:\UwAmp\bin\php\php-5.6.7\php.ini
 - date extension loaded YES
 - json extension loaded YES
 - pcre extension loaded YES

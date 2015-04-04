@@ -23,7 +23,7 @@ ifndef::basebackend-bootstrap[]
 endif::basebackend-bootstrap[]
 
 ifdef::basebackend-html[]
-[role="col-md-6"]
+[role="col-md-12"]
 ====
 [panel,info]
 .Legend
@@ -35,7 +35,7 @@ ifdef::basebackend-html[]
 --
 ====
 
-[role="col-md-3"]
+[role="col-md-6"]
 ====
 [panel,info]
 .Statistics v2
@@ -56,7 +56,7 @@ ifdef::basebackend-html[]
 --
 ====
 
-[role="col-md-3"]
+[role="col-md-6"]
 ====
 [panel,info]
 .Statistics v3

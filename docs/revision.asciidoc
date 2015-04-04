@@ -1,2 +1,6 @@
-:revdate:    2015-03-25
-:revnumber:  4.0.0-RC2
+:revdate:           2015-04-04
+:revnumber:         4.0.0
+:deprecated:        3.7.3
+:deprecatedPubDate: January 26, 2015
+:stable:            4.0.0
+:stablePubDate:     April 4, 2015
