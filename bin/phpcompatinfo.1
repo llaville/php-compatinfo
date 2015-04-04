@@ -2,12 +2,12 @@
 .\"     Title: phpcompatinfo
 .\"    Author: [see the "AUTHORS" section]
 .\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
-.\"      Date: 2015-02-20
+.\"      Date: 2015-04-04
 .\"    Manual: \ \&
-.\"    Source: \ \& 4.0.0-beta2
+.\"    Source: \ \& 4.0.0
 .\"  Language: English
 .\"
-.TH "PHPCOMPATINFO" "1" "2015\-02\-20" "\ \& 4\&.0\&.0\-beta2" "\ \&"
+.TH "PHPCOMPATINFO" "1" "2015\-04\-04" "\ \& 4\&.0\&.0" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -86,30 +86,6 @@ Write results to file or URL\&.
 .RS 4
 Show which versions of dependencies are bundled (PHAR version only)\&.
 .RE
-.SH "CONFIG:VALIDATE COMMAND"
-.sp
-The phpcompatinfo(1) \fIconfig:validate\fR command is used to check syntax of your json configuration file
-.sp
-Usage:
-.sp
-.if n \{\
-.RS 4
-.\}
-.nf
-phpcompatinfo config:validate [file]
-.fi
-.if n \{\
-.RE
-.\}
-.sp
-Where:
-.PP
-\fBfile\fR
-.RS 4
-Path to
-phpcompatinfo\&.json
-file (optional)
-.RE
 .SH "ANALYSER:LIST COMMAND"
 .sp
 The phpcompatinfo(1) \fIanalyser:list\fR command is used to show what analysers are installed (see CONF FILES section)\&.
@@ -154,9 +130,193 @@ Identify one or more analyser to execute\&. See
 \fIanalyser:list\fR
 command to know what analysers are available\&. (default: ["compatibility"])
 .RE
+.SH "CONFIG:VALIDATE COMMAND"
+.sp
+The phpcompatinfo(1) \fIconfig:validate\fR command is used to check syntax of your json configuration file
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo config:validate [file]
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Where:
+.PP
+\fBfile\fR
+.RS 4
+Path to
+phpcompatinfo\&.json
+file (optional)
+.RE
+.SH "DIAGNOSE:RUN COMMAND"
+.sp
+The phpcompatinfo(1) \fIdiagnose:run\fR command is used to identify common errors on a platform\&.
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo diagnose:run [\-vv|\-vvv]
+.fi
+.if n \{\
+.RE
+.\}
+.SH "DIAGRAM:CLASS COMMAND"
+.sp
+The phpcompatinfo(1) \fIdiagram:class\fR command is used to generate diagram about a user class present in a data source
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo diagram:class [\-\-alias] [\-\-engine[="\&.\&.\&."]] argument source
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Where:
+.PP
+\fBargument\fR
+.RS 4
+Name of the class to inspect
+.RE
+.PP
+\fBsource\fR
+.RS 4
+Identify a data source; may be declared in a json configuration file (see
+CONF FILES
+section)
+.RE
+.PP
+\fB\-\-alias\fR
+.RS 4
+If set, the source refers to its alias
+.RE
+.PP
+\fB\-\-engine\fR
+.RS 4
+Graphical syntax\&. (default: "plantuml")
+.RE
+.SH "DIAGRAM:PACKAGE COMMAND"
+.sp
+The phpcompatinfo(1) \fIdiagram:package\fR command is used to generate diagram about namespaces in a data source
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo diagram:package [\-\-alias] [\-\-engine[="\&.\&.\&."]] source
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Where:
+.PP
+\fBsource\fR
+.RS 4
+Identify a data source; may be declared in a json configuration file (see
+CONF FILES
+section)
+.RE
+.PP
+\fB\-\-alias\fR
+.RS 4
+If set, the source refers to its alias
+.RE
+.PP
+\fB\-\-engine\fR
+.RS 4
+Graphical syntax\&. (default: "plantuml")
+.RE
 .SH "PLUGIN:LIST COMMAND"
 .sp
 The phpcompatinfo(1) \fIplugin:list\fR command is used to show what plugins are installed (see CONF FILES section)\&.
+.SH "REFERENCE:LIST COMMAND"
+.sp
+The phpcompatinfo(1) \fIreference:list\fR command is used to list all references supported\&.
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo reference:list
+.fi
+.if n \{\
+.RE
+.\}
+.SH "REFERENCE:SHOW COMMAND"
+.sp
+The phpcompatinfo(1) \fIreference:show\fR command is used to introspect a reference\&.
+.sp
+Usage:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+phpcompatinfo reference:show [\-\-filter[="\&.\&.\&."]] [\-\-releases] [\-\-ini] [\-\-constants] [\-\-functions] [\-\-interfaces] [\-\-classes] name
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Where:
+.PP
+\fBname\fR
+.RS 4
+Introspection of a reference (case insensitive)
+.RE
+.PP
+\fB\-\-filter\fR
+.RS 4
+Resource that provide a closure to filter results (default: false)
+.RE
+.PP
+\fB\-\-releases\fR
+.RS 4
+Show releases
+.RE
+.PP
+\fB\-\-ini\fR
+.RS 4
+Show ini Entries
+.RE
+.PP
+\fB\-\-constants\fR
+.RS 4
+Show constants
+.RE
+.PP
+\fB\-\-functions\fR
+.RS 4
+Show functions
+.RE
+.PP
+\fB\-\-interfaces\fR
+.RS 4
+Show interfaces
+.RE
+.PP
+\fB\-\-classes\fR
+.RS 4
+Show classes
+.RE
 .SH "REFLECTION:CLASS COMMAND"
 .sp
 The phpcompatinfo(1) \fIreflection:class\fR command is used to give information about a user class present in a data source\&.
@@ -234,78 +394,6 @@ If set, the source refers to its alias
 \fB\-\-format\fR
 .RS 4
 Format of result to return\&. False when raw text\&. (default: false)
-.RE
-.SH "REFERENCE:LIST COMMAND"
-.sp
-The phpcompatinfo(1) \fIreference:list\fR command is used to list all references supported\&.
-.sp
-Usage:
-.sp
-.if n \{\
-.RS 4
-.\}
-.nf
-phpcompatinfo reference:list
-.fi
-.if n \{\
-.RE
-.\}
-.SH "REFERENCE:SHOW COMMAND"
-.sp
-The phpcompatinfo(1) \fIreference:show\fR command is used to introspect a reference\&.
-.sp
-Usage:
-.sp
-.if n \{\
-.RS 4
-.\}
-.nf
-phpcompatinfo reference:show [\-\-filter[="\&.\&.\&."]] [\-\-releases] [\-\-ini] [\-\-constants] [\-\-functions] [\-\-interfaces] [\-\-classes] name
-.fi
-.if n \{\
-.RE
-.\}
-.sp
-Where:
-.PP
-\fBname\fR
-.RS 4
-Introspection of a reference (case insensitive)
-.RE
-.PP
-\fB\-\-filter\fR
-.RS 4
-Resource that provide a closure to filter results (default: false)
-.RE
-.PP
-\fB\-\-releases\fR
-.RS 4
-Show releases
-.RE
-.PP
-\fB\-\-ini\fR
-.RS 4
-Show ini Entries
-.RE
-.PP
-\fB\-\-constants\fR
-.RS 4
-Show constants
-.RE
-.PP
-\fB\-\-functions\fR
-.RS 4
-Show functions
-.RE
-.PP
-\fB\-\-interfaces\fR
-.RS 4
-Show interfaces
-.RE
-.PP
-\fB\-\-classes\fR
-.RS 4
-Show classes
 .RE
 .SH "EXIT STATUS"
 .PP
