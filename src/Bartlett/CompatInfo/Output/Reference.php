@@ -114,6 +114,14 @@ class Reference extends OutputFormatter
                 '  Classes                                   %10d',
                 array($summary['classes'])
             );
+            $summary['methods'] = array(
+                '  Methods                                   %10d',
+                array($summary['methods'])
+            );
+            $summary['static methods'] = array(
+                '  Static Methods                            %10d',
+                array($summary['static methods'])
+            );
             $this->printFormattedLines($output, $summary);
             return;
         }
@@ -124,6 +132,15 @@ class Reference extends OutputFormatter
             foreach ($values as $key => $val) {
                 if (strcasecmp($title, 'releases') == 0) {
                     $key = sprintf('%s (%s)', $val['date'], $val['state']);
+
+                } elseif (strcasecmp($title, 'methods') == 0
+                    || strcasecmp($title, 'static methods') == 0
+                ) {
+                    foreach ($val as $meth => $v) {
+                        $k = sprintf('%s::%s', $key, $meth);
+                        $args[$k] = $v;
+                    }
+                    continue;
                 }
                 $args[$key] = $val;
             }

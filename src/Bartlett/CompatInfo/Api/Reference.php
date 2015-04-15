@@ -51,6 +51,7 @@ class Reference extends BaseApi
      * @param mixed  $functions  Show functions
      * @param mixed  $interfaces Show interfaces
      * @param mixed  $classes    Show classes
+     * @param mixed  $methods    Show methods
      *
      * @return array
      */
@@ -62,7 +63,8 @@ class Reference extends BaseApi
         $constants = null,
         $functions = null,
         $interfaces = null,
-        $classes = null
+        $classes = null,
+        $methods = null
     ) {
         if ($filter instanceof \Closure) {
             $closure = $filter;
@@ -88,7 +90,7 @@ class Reference extends BaseApi
         return $this->request(
             'reference/show',
             'POST',
-            array($name, $closure, $releases, $ini, $constants, $functions, $interfaces, $classes)
+            array($name, $closure, $releases, $ini, $constants, $functions, $interfaces, $classes, $methods)
         );
     }
 }

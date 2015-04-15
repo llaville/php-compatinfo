@@ -107,6 +107,7 @@ class Reference extends Common
      * @param mixed    $functions  Show functions
      * @param mixed    $interfaces Show interfaces
      * @param mixed    $classes    Show classes
+     * @param mixed    $methods    Show methods
      *
      * @return array
      */
@@ -118,7 +119,8 @@ class Reference extends Common
         $constants,
         $functions,
         $interfaces,
-        $classes
+        $classes,
+        $methods
     ) {
         $reference = new ExtensionFactory($name);
         $results   = array();
@@ -158,6 +160,24 @@ class Reference extends Common
         $summary['classes'] = count($raw);
         if ($classes) {
             $results['classes'] = $raw;
+        }
+
+        $raw = $reference->getClassMethods();
+        $summary['methods'] = 0;
+        foreach ($raw as $values) {
+            $summary['methods'] += count($values);
+        }
+        if ($methods) {
+            $results['methods'] = $raw;
+        }
+
+        $raw = $reference->getClassStaticMethods();
+        $summary['static methods'] = 0;
+        foreach ($raw as $values) {
+            $summary['static methods'] += count($values);
+        }
+        if ($methods) {
+            $results['static methods'] = $raw;
         }
 
         if (empty($results)) {
