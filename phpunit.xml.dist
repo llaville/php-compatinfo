@@ -9,7 +9,6 @@
     stopOnIncomplete="false"
     stopOnRisky="false"
     stopOnSkipped="false"
-    strict="true"
     verbose="false"
 >
     <filter>
