@@ -515,7 +515,7 @@ endif::basebackend-docbook[]
 | [label label-info]#2.15.0#
 
 | zip
-1.12.4 {stable}
+1.12.5 {stable}
 | [label label-info]#2.3.0#
 
 | zlib

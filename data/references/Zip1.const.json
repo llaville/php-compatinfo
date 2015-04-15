@@ -628,5 +628,14 @@
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_Z_CPM",
+        "ext_min": "1.12.5",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
     }
 ]
