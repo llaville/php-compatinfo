@@ -9,19 +9,19 @@ that bundles all dependencies in a single file.
 
 Follow development on the http://php5.laurent-laville.org/compatinfo/blog[official Blog].
 
-Have a look on https://github.com/llaville/php-compat-info/releases/tag/3.7.3[tag 3.7.3] for previous stable API 3.0
+Have a look on https://github.com/llaville/php-compat-info/releases/tag/3.7.4[tag 3.7.4] for previous stable API 3.0
 
 == Install
 
 You can either :
 
-* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-4.0.0.phar[4.0.0]
-* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 4.0.0
+* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-4.1.0.phar[4.1.0]
+* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 4.1.0
 
 == Documentation
 
-The documentation for PHP CompatInfo 4.0 is available
-in http://php5.laurent-laville.org/compatinfo/manual/4.0/en/[English]
+The documentation for PHP CompatInfo 4.1 is available
+in http://php5.laurent-laville.org/compatinfo/manual/4.1/en/[English]
 to read it online or download to read it later (multiple formats).
 
 AsciiDoc source code are available on `docs` folder of the repository.
@@ -39,7 +39,7 @@ If you want to use it, then :
 
 [source,bash]
 ----
-$ php composer.phar require bartlett/phpunit-loggertestlistener=~1.1
+$ php composer.phar require bartlett/phpunit-loggertestlistener=~1.3
 ----
 
 - create a `phpunit.xml` file with at least following contents :
