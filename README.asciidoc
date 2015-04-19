@@ -21,7 +21,7 @@ You can either :
 
 The documentation for PHP CompatInfo 4.1
 in http://php5.laurent-laville.org/compatinfo/manual/4.1/en/[English]
-is available online or downloadable offline to read it later (multiple formats).
+is available online or downloadable offline to read it later (multiple formats available).
 
 AsciiDoc source code is available on `docs` folder of the repository.
 
