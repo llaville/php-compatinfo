@@ -30,7 +30,7 @@ AsciiDoc source code are available on `docs` folder of the repository.
 
 Contributions to source code and its documentation are always welcome.
 
-As developper, I'm always happy when I have the more information as possible to check and find out issues.
+As a developer, I'm always happy when I have more information as possible to check and find out issues.
 This is the reason why I've created a https://github.com/llaville/phpunit-LoggerTestListener[PHPUnit TestSuite Listener for compatible PSR-3 Loggers].
 
 If you want to use it, then :
@@ -81,5 +81,5 @@ $ php composer.phar require bartlett/phpunit-loggertestlistener=~1.3
 
 - configure your PSR-3 logger in the `tests\bootstrap.dev.php` file
 
-NOTE: Default will log all tests in local file `/var/logs/phpcompatinfo.log`
-and send a Growl notification of Test Suites summary when ended (if growl server running).
+NOTE: By default will log all tests in local file `/var/logs/phpcompatinfo.log`
+and send a Growl notification of Test Suites summary when ended (if growl server is running).
