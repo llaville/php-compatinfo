@@ -251,7 +251,7 @@ endif::basebackend-docbook[]
 | [label label-default]#2.0.0#
 
 | lzf
-1.6.2 {stable}
+1.6.3 {stable}
 | [label label-info]#2.5.0#
 
 | mailparse
