@@ -36,6 +36,7 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH100 = 'gh100.php';
     const GH165 = 'gh165.php';
+    const GH194 = 'gh194.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -131,5 +132,50 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
                 "$c is marked as declared while definition is not provided"
             );
         }
+    }
+
+    /**
+     * Regression test for bug GH#194
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/194
+     *       Static method calls don't properly adjust total requirements
+     * @group regression
+     * @return void
+     */
+    public function testBugGH194()
+    {
+        $dataSource = self::$fixtures . self::GH194;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $methods    = $metrics[self::$analyserId]['methods'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.3.0alpha1',
+                'php.max'      => '',
+                'php.all'      => '5.3.0alpha1',
+            ),
+            $versions
+        );
+
+        $this->assertArrayHasKey('Normalizer::normalize', $methods);
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'intl',
+                'ext.min'      => '1.0.0beta',
+                'ext.max'      => '',
+                'ext.all'      => '',
+                'php.min'      => '5.3.0alpha1',
+                'php.max'      => '',
+                'php.all'      => '5.3.0alpha1',
+                'arg.max'      => 1,
+                'matches'      => 1,
+                'prototype'    => '',
+                'proto_since'  => '',
+            ),
+            $methods['Normalizer::normalize']
+        );
     }
 }

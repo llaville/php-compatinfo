@@ -1,0 +1,2 @@
+<?php
+Normalizer::normalize('foo');
