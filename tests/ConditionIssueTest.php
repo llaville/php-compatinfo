@@ -79,7 +79,7 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '4.0.0',
                 'php.max'      => '',
-                'php.all'      => '5.4.0',
+                'php.all'      => '5.4.0RC3',
             ),
             $versions
         );
@@ -105,7 +105,7 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
             array(
                 'php.min'      => '4.3.0',
                 'php.max'      => '',
-                'php.all'      => '4.3.0',
+                'php.all'      => '5.3.0alpha1',
             ),
             $versions
         );
