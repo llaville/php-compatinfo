@@ -164,6 +164,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 $versions = $this->references->find($context, $target, 0, $extra);
             }
 
+            if ('methods' == $context) {
+                $target = $values[0] . '::' . $values[1];
+            }
             $this->updateElementVersion($context, $target, $versions);
             $this->metrics[$context][$target]['optional'] = true;
 
@@ -1033,8 +1036,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $this->updateElementVersion($context, $target, $versions);
         ++$this->metrics[$context][$target]['matches'];
 
+        $conditionalCode = isset($this->metrics[$context][$target]['optional']);
+
         // update current context that call this static method
-        $this->updateLocalVersions($versions);
+        $this->updateLocalVersions($versions, $conditionalCode);
     }
 
     /**
