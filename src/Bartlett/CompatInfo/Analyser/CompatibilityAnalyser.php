@@ -150,12 +150,18 @@ class CompatibilityAnalyser extends AbstractAnalyser
             // conditional code target
             list($element, $values) = each($condition);
             $context = $conditionalFunctions[$element];
-            $target  = ('methods' == $context) ? ($values[0] .'::'. $values[1]) : $values[0];
+            if ('methods' == $context) {
+                $target = $values[1];  // method name
+                $extra  = $values[0];  //  class name
+            } else {
+                $target = $values[0];
+                $extra  = null;
+            }
 
             if ('extensions' == $context) {
                 $versions = array();
             } else {
-                $versions = $this->references->find($context, $target);
+                $versions = $this->references->find($context, $target, 0, $extra);
             }
 
             $this->updateElementVersion($context, $target, $versions);
