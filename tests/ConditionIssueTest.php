@@ -37,6 +37,7 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
     const GH128 = 'gh128.php';
     const GH159 = 'gh159.php';
     const GH160 = 'gh160';     // folder
+    const GH195 = 'gh195.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -151,6 +152,52 @@ class ConditionIssueTest extends \PHPUnit_Framework_TestCase
                 'php.all'      => '5.6.0alpha1',
             ),
             $versions
+        );
+    }
+
+    /**
+     * Regression test for bug GH#195
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/195
+     *       Absolutely namespaced classes not properly detected with class_exists()
+     * @group regression
+     * @return void
+     */
+    public function testBugGH195()
+    {
+        $dataSource = self::$fixtures . self::GH195;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $methods    = $metrics[self::$analyserId]['methods'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '4.0.0',
+                'php.max'      => '',
+                'php.all'      => '5.3.0alpha1',
+            ),
+            $versions
+        );
+
+        $this->assertArrayHasKey('Normalizer::normalize', $methods);
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'intl',
+                'ext.min'      => '1.0.0beta',
+                'ext.max'      => '',
+                'ext.all'      => '',
+                'php.min'      => '5.3.0alpha1',
+                'php.max'      => '',
+                'php.all'      => '5.3.0alpha1',
+                'prototype'    => '',
+                'proto_since'  => '',
+                'arg.max'      => 1,
+                'matches'      => 1,
+                'optional'     => true,
+            ),
+            $methods['Normalizer::normalize']
         );
     }
 }

@@ -149,6 +149,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
             // conditional code target
             list($element, $values) = each($condition);
+            $values[0] = ltrim($values[0], "\\");
             $context = $conditionalFunctions[$element];
             if ('methods' == $context) {
                 $target = $values[1];  // method name
@@ -1029,12 +1030,19 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $this->updateElementVersion($context, $target, $versions);
         ++$this->metrics[$context][$target]['matches'];
 
+        $conditionalCode = isset($this->metrics[$context][$target]['optional']);
+
         // identify method
         $context  = 'methods';
         $versions = $this->references->find($context, $node->name, count($node->args), $target);
         $target  .= '::' . $node->name;
         $this->updateElementVersion($context, $target, $versions);
         ++$this->metrics[$context][$target]['matches'];
+
+        if ($conditionalCode) {
+            // tag method as optional if at least class is optional
+            $this->metrics[$context][$target]['optional'] = true;
+        }
 
         $conditionalCode = isset($this->metrics[$context][$target]['optional']);
 
