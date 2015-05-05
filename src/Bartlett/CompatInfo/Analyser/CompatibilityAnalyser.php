@@ -538,7 +538,12 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $versions = $this->metrics[$group][$name];
             if ('user' == $versions['ext.name']) {
                 if ($node->extends->isFullyQualified()) {
-                    $versions = array('php.min' => '5.3.0');
+                    if (count($node->extends->parts) === 1) {
+                        // PHP4 syntax (global namespace)
+                        $versions = array('php.min' => '4.0.0');
+                    } else {
+                        $versions = array('php.min' => '5.3.0');
+                    }
                 } else {
                     $versions = array();
                 }

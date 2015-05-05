@@ -39,6 +39,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
     const GH131 = 'gh131.php';
     const GH166 = 'gh166.php';
     const GH171 = 'gh171.php';
+    const GH199 = 'gh199.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -239,5 +240,30 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
                 "Extension $e is not found in analysis results while it should be"
             );
         }
+    }
+
+    /**
+     * Regression test for bug GH#199
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/199
+     *       "Class inheritance lifts requirements to >= PHP 5.3.0"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH199()
+    {
+        $dataSource = self::$fixtures . self::GH199;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '4.0.0',
+                'php.max'      => '',
+                'php.all'      => '4.0.0',
+            ),
+            $versions
+        );
     }
 }
