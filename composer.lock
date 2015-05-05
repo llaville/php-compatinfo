@@ -218,16 +218,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v1.2.2",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "08f97eb4efa029e2fafb6d8c98b71731bf0cf621"
+                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/08f97eb4efa029e2fafb6d8c98b71731bf0cf621",
-                "reference": "08f97eb4efa029e2fafb6d8c98b71731bf0cf621",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/dff239267fd1befa1cd40430c9ed12591aa720ca",
+                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca",
                 "shasum": ""
             },
             "require": {
@@ -237,7 +237,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -259,7 +259,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-04-03 14:33:59"
+            "time": "2015-05-02 15:40:40"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -673,16 +673,16 @@
     "packages-dev": [
         {
             "name": "bartlett/phpunit-loggertestlistener",
-            "version": "1.3.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/phpunit-LoggerTestListener.git",
-                "reference": "1b3f6d3ec4b2d60a7c2dbadd947feefb44b1b800"
+                "reference": "7ad1d57a5f51490d09e2395d15d791c469353264"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/phpunit-LoggerTestListener/zipball/1b3f6d3ec4b2d60a7c2dbadd947feefb44b1b800",
-                "reference": "1b3f6d3ec4b2d60a7c2dbadd947feefb44b1b800",
+                "url": "https://api.github.com/repos/llaville/phpunit-LoggerTestListener/zipball/7ad1d57a5f51490d09e2395d15d791c469353264",
+                "reference": "7ad1d57a5f51490d09e2395d15d791c469353264",
                 "shasum": ""
             },
             "require": {
@@ -690,9 +690,11 @@
                 "psr/log": "~1.0"
             },
             "require-dev": {
+                "bartlett/monolog-callbackfilterhandler": "~1.0",
                 "monolog/monolog": "~1.10"
             },
             "suggest": {
+                "bartlett/monolog-callbackfilterhandler": "Advanced filtering strategies for Monolog",
                 "monolog/monolog": "For advanced logging strategies"
             },
             "type": "library",
@@ -715,7 +717,7 @@
             ],
             "description": "PHPUnit Test Suite listener for compatible PSR-3 logger",
             "homepage": "https://github.com/llaville/phpunit-LoggerTestListener",
-            "time": "2015-04-13 18:37:12"
+            "time": "2015-05-04 11:26:44"
         },
         {
             "name": "bartlett/umlwriter",
