@@ -28,4 +28,4 @@ $analysers  = array('compatibility');
 // equivalent to CLI command `phpcompatinfo analyser:run ../src`
 $metrics = $api->run($dataSource, $analysers);
 
-echo $metrics;
+var_export($metrics);
