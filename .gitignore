@@ -1,5 +1,6 @@
 Thumbs.db
 *.tgz
+*.zip
 *.phar
 vendor/
 phpunit.xml
