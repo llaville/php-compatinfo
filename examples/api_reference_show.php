@@ -30,7 +30,7 @@ $api = $client->api('reference');
 $infos = $api->show('amqp');
 
 // OR get releases only
-//$infos = $api->show('amqp', false, true);
+$infos = $api->show('amqp', false, true);
 
 // OR get classes only, filtered by a closure
 $closure = function ($data) {
@@ -47,6 +47,6 @@ $closure = function ($data) {
     }
     return $data;
 };
-//$infos = $api->show('amqp', $closure, false, false, false, false, false, true);
+$infos = $api->show('amqp', $closure, false, false, false, false, false, true);
 
 var_export($infos);
