@@ -46,7 +46,6 @@ class CompatibilityOutputFormatter extends OutputFormatter
     {
         $this->metrics = $response;
 
-        $filter = false;
         $groups = array(
             'extensions',
             'namespaces',
@@ -55,7 +54,14 @@ class CompatibilityOutputFormatter extends OutputFormatter
             'conditions',
         );
         foreach ($groups as $group) {
-            $this->listHelper($output, $group, $response[$group], $filter);
+            $args = array_key_exists($group, $response) ? $response[$group] : false;
+            $this->listHelper($output, $group, $args);
+        }
+
+        if (!array_key_exists('versions', $response)
+            || empty($response['versions'])
+        ) {
+            return;
         }
 
         $min = sprintf('PHP %s (min)', $response['versions']['php.min']);
@@ -88,7 +94,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
      *
      * @param OutputInterface $output Console Output concrete instance
      * @param string          $group  Identify group of elements
-     * @param array           $args   Parsing results of the $group
+     * @param mixed           $args   Parsing results of the $group
      *
      * @return void
      */
@@ -106,6 +112,11 @@ class CompatibilityOutputFormatter extends OutputFormatter
 
         $length = ('classes' == $group) ? -2 : -1;
         $title  = substr($group, 0, $length);
+
+        if (!is_array($args)) {
+            // metrics of the $group are not available
+            return;
+        }
 
         if (empty($args)) {
             $output->writeln(sprintf('%s<warning>No %s found</warning>', PHP_EOL, $title));
