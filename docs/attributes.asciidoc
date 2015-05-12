@@ -14,6 +14,6 @@
 :iconsfont:   font-awesome
 :imagesdir:   ./images
 :idprefix:    _
-:gitbranch:   4.0
+:gitbranch:   master
 :rawbaseurl:  https://raw.githubusercontent.com/llaville/php-compat-info/{gitbranch}
 :gitproject:  https://github.com/llaville/php-compat-info
