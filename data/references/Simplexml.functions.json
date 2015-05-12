@@ -1,0 +1,32 @@
+[
+    {
+        "ext_name_fk": 68,
+        "name": "simplexml_import_dom",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 68,
+        "name": "simplexml_load_file",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 68,
+        "name": "simplexml_load_string",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

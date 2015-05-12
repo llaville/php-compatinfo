@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\PdflibExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -85,7 +84,7 @@ class PdflibExtensionTest extends GenericTest
             'pdf_utf8_to_utf32',
             'pdf_utf32_to_utf8',
         );
-        self::$obj = new PdflibExtension();
+        self::$ext = 'Pdflib';
         parent::setUpBeforeClass();
     }
 }

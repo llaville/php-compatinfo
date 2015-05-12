@@ -1,0 +1,74 @@
+[
+    {
+        "ext_name_fk": 32,
+        "name": "IntlBreakIterator",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "IntlCalendar",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "IntlCodePointBreakIterator",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "IntlGregorianCalendar",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "IntlIterator",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "IntlPartsIterator",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "IntlRuleBasedBreakIterator",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "IntlTimeZone",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "UConverter",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    }
+]

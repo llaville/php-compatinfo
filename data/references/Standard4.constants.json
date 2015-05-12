@@ -1,0 +1,2684 @@
+[
+    {
+        "ext_name_fk": 78,
+        "name": "ABDAY_1",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABDAY_2",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABDAY_3",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABDAY_4",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABDAY_5",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABDAY_6",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABDAY_7",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_1",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_10",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_11",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_12",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_2",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_3",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_4",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_5",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_6",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_7",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_8",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ABMON_9",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ALT_DIGITS",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "AM_STR",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ASSERT_ACTIVE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ASSERT_BAIL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ASSERT_CALLBACK",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ASSERT_QUIET_EVAL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ASSERT_WARNING",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CASE_LOWER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CASE_UPPER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CHAR_MAX",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CODESET",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CONNECTION_ABORTED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CONNECTION_NORMAL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CONNECTION_TIMEOUT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "COUNT_NORMAL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "COUNT_RECURSIVE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CREDITS_ALL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CREDITS_DOCS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CREDITS_FULLPAGE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CREDITS_GENERAL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CREDITS_GROUP",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CREDITS_MODULES",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CREDITS_QA",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CREDITS_SAPI",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CRNCYSTR",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CRYPT_BLOWFISH",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CRYPT_EXT_DES",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CRYPT_MD5",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CRYPT_SALT_LENGTH",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "CRYPT_STD_DES",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DAY_1",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DAY_2",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DAY_3",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DAY_4",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DAY_5",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DAY_6",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DAY_7",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DIRECTORY_SEPARATOR",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_A",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_A6",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_AAAA",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_ALL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_ANY",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_CNAME",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_HINFO",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_MX",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_NAPTR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_NS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_PTR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_SOA",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_SRV",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "DNS_TXT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "D_FMT",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "D_T_FMT",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ENT_COMPAT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ENT_NOQUOTES",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ENT_QUOTES",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ERA",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ERA_D_FMT",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ERA_D_T_FMT",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "ERA_T_FMT",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "EXTR_IF_EXISTS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "EXTR_OVERWRITE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "EXTR_PREFIX_ALL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "EXTR_PREFIX_IF_EXISTS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "EXTR_PREFIX_INVALID",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "EXTR_PREFIX_SAME",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "EXTR_REFS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "EXTR_SKIP",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "FILE_APPEND",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "FILE_IGNORE_NEW_LINES",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "FILE_NO_DEFAULT_CONTEXT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "FILE_SKIP_EMPTY_LINES",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "FILE_USE_INCLUDE_PATH",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "FNM_CASEFOLD",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "FNM_NOESCAPE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "FNM_PATHNAME",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "FNM_PERIOD",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "GLOB_BRACE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "GLOB_ERR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "GLOB_MARK",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "GLOB_NOCHECK",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "GLOB_NOESCAPE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "GLOB_NOSORT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "GLOB_ONLYDIR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "HTML_ENTITIES",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "HTML_SPECIALCHARS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_BMP",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_GIF",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_IFF",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_JB2",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_JP2",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_JPC",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_JPEG",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_JPEG2000",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_JPX",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_PNG",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_PSD",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_SWC",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_SWF",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_TIFF_II",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_TIFF_MM",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_WBMP",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "IMAGETYPE_XBM",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INF",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INFO_ALL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INFO_CONFIGURATION",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INFO_CREDITS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INFO_ENVIRONMENT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INFO_GENERAL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INFO_LICENSE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INFO_MODULES",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INFO_VARIABLES",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INI_ALL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INI_PERDIR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INI_SYSTEM",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "INI_USER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LC_ALL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LC_COLLATE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LC_CTYPE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LC_MESSAGES",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LC_MONETARY",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LC_NUMERIC",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LC_TIME",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOCK_EX",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOCK_NB",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOCK_SH",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOCK_UN",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_ALERT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_AUTH",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_AUTHPRIV",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_CONS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_CRIT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_CRON",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_DAEMON",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_DEBUG",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_EMERG",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_ERR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_INFO",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_KERN",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_LOCAL0",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_LOCAL1",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_LOCAL2",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_LOCAL3",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_LOCAL4",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_LOCAL5",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_LOCAL6",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_LOCAL7",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_LPR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_MAIL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_NDELAY",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_NEWS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_NOTICE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_NOWAIT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_ODELAY",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_PERROR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_PID",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_SYSLOG",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_USER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_UUCP",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "LOG_WARNING",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_1",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_10",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_11",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_12",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_2",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_3",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_4",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_5",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_6",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_7",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_8",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "MON_9",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_1_PI",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_2_PI",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_2_SQRTPI",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_E",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_EULER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_LN10",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_LN2",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_LNPI",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_LOG10E",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_LOG2E",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_PI",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_PI_2",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_PI_4",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_SQRT1_2",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_SQRT2",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_SQRT3",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "M_SQRTPI",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "NAN",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "NOEXPR",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PATHINFO_BASENAME",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PATHINFO_DIRNAME",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PATHINFO_EXTENSION",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PATH_SEPARATOR",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PHP_URL_FRAGMENT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PHP_URL_HOST",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PHP_URL_PASS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PHP_URL_PATH",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PHP_URL_PORT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PHP_URL_QUERY",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PHP_URL_SCHEME",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PHP_URL_USER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PM_STR",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PSFS_ERR_FATAL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PSFS_FEED_ME",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PSFS_FLAG_FLUSH_CLOSE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PSFS_FLAG_FLUSH_INC",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PSFS_FLAG_NORMAL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "PSFS_PASS_ON",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "RADIXCHAR",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "SEEK_CUR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "SEEK_END",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "SEEK_SET",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "SORT_ASC",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "SORT_DESC",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "SORT_LOCALE_STRING",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "SORT_NUMERIC",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "SORT_REGULAR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "SORT_STRING",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_CLIENT_ASYNC_CONNECT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_CLIENT_CONNECT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_CLIENT_PERSISTENT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_CRYPTO_METHOD_SSLv23_CLIENT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_CRYPTO_METHOD_SSLv23_SERVER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_CRYPTO_METHOD_SSLv2_CLIENT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_CRYPTO_METHOD_SSLv2_SERVER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_CRYPTO_METHOD_SSLv3_CLIENT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_CRYPTO_METHOD_SSLv3_SERVER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_CRYPTO_METHOD_TLS_CLIENT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_CRYPTO_METHOD_TLS_SERVER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_ENFORCE_SAFE_MODE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_FILTER_ALL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_FILTER_READ",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_FILTER_WRITE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_IGNORE_URL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_IPPROTO_IP",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_MKDIR_RECURSIVE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_MUST_SEEK",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_AUTH_REQUIRED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_AUTH_RESULT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_COMPLETED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_CONNECT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_FAILURE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_FILE_SIZE_IS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_MIME_TYPE_IS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_PROGRESS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_REDIRECTED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_RESOLVE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_SEVERITY_ERR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_SEVERITY_INFO",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_NOTIFY_SEVERITY_WARN",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_OOB",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_PEEK",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_PF_INET",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_PF_INET6",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_PF_UNIX",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_REPORT_ERRORS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_SERVER_BIND",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_SERVER_LISTEN",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_SHUT_RD",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_SHUT_RDWR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_SHUT_WR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_SOCK_DGRAM",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_SOCK_RAW",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_SOCK_RDM",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_SOCK_SEQPACKET",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_SOCK_STREAM",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_URL_STAT_LINK",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_URL_STAT_QUIET",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STREAM_USE_PATH",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STR_PAD_BOTH",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STR_PAD_LEFT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "STR_PAD_RIGHT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "THOUSEP",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "T_FMT",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "T_FMT_AMPM",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "YESEXPR",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

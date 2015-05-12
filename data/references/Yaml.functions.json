@@ -1,0 +1,52 @@
+[
+    {
+        "ext_name_fk": 99,
+        "name": "yaml_emit",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "yaml_emit_file",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "yaml_parse",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "yaml_parse_file",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "yaml_parse_url",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

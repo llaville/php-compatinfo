@@ -1,0 +1,72 @@
+[
+    {
+        "ext_name_fk": 82,
+        "name": "msg_get_queue",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 82,
+        "name": "msg_queue_exists",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 82,
+        "name": "msg_receive",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 82,
+        "name": "msg_remove_queue",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 82,
+        "name": "msg_send",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 82,
+        "name": "msg_set_queue",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 82,
+        "name": "msg_stat_queue",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "ext_name_fk": 14,
+        "name": "EXIF_USE_MBSTRING",
+        "ext_min": "4.0.1",
+        "ext_max": "",
+        "php_min": "4.0.1",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

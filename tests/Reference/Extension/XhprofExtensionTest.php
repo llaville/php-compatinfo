@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\XhprofExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -47,7 +46,7 @@ class XhprofExtensionTest extends GenericTest
             array_push(self::$ignoredconstants, 'XHPROF_FLAGS_LONGNAMES');
         }
 
-        self::$obj = new XhprofExtension();
+        self::$ext = 'Xhprof';
         parent::setUpBeforeClass();
     }
 }

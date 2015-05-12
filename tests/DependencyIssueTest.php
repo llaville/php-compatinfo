@@ -12,21 +12,15 @@
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    GIT: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
- * @since      Class available since Release 3.2.0
+ * @since      Class available since Release 4.0.0-alpha2+1
  */
 
 namespace Bartlett\Tests\CompatInfo;
 
-use Bartlett\CompatInfo;
-
-use Bartlett\Reflect\ProviderManager;
-use Bartlett\Reflect\Provider\SymfonyFinderProvider;
-use Bartlett\Reflect\Plugin\Analyser\AnalyserPlugin;
-
-use Symfony\Component\Finder\Finder;
+use Bartlett\Reflect\Client;
 
 /**
- * Tests for PHP_CompatInfo, retrieving dependency elements,
+ * Tests for PHP_CompatInfo, retrieving reference elements,
  * and versioning information.
  *
  * @category   PHP
@@ -40,12 +34,13 @@ use Symfony\Component\Finder\Finder;
  */
 class DependencyIssueTest extends \PHPUnit_Framework_TestCase
 {
-    const GH100 = 'GH#100';
-    const GH128 = 'GH#128';
-    const GH155 = 'GH#155';
-    const GH170 = 'GH#170';
+    const GH100 = 'gh100.php';
+    const GH165 = 'gh165.php';
+    const GH194 = 'gh194.php';
 
-    protected static $compatinfo;
+    protected static $fixtures;
+    protected static $analyserId;
+    protected static $api;
 
     /**
      * Sets up the shared fixture.
@@ -54,47 +49,15 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-        $fixtures = dirname(__FILE__) . DIRECTORY_SEPARATOR
-            . '_files' . DIRECTORY_SEPARATOR;
+        self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
+            . 'fixtures' . DIRECTORY_SEPARATOR;
 
-        $finder = new Finder();
-        $finder->files()
-            ->name('gh100.php')
-            ->in($fixtures)
-        ;
+        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
 
-        $finder2 = new Finder();
-        $finder2->files()
-            ->name('gh128.php')
-            ->in($fixtures)
-        ;
+        $client = new Client();
 
-        $finder3 = new Finder();
-        $finder3->files()
-            ->name('gh155.php')
-            ->in($fixtures)
-        ;
-
-        $finder4 = new Finder();
-        $finder4->files()
-            ->name('gh170.php')
-            ->in($fixtures)
-        ;
-
-        $pm = new ProviderManager;
-        $pm->set(self::GH100, new SymfonyFinderProvider($finder));
-        $pm->set(self::GH128, new SymfonyFinderProvider($finder2));
-        $pm->set(self::GH155, new SymfonyFinderProvider($finder3));
-        $pm->set(self::GH170, new SymfonyFinderProvider($finder4));
-
-        self::$compatinfo = new CompatInfo;
-        self::$compatinfo->setProviderManager($pm);
-
-        $plugins = array(
-            new CompatInfo\Analyser\SummaryAnalyser
-        );
-        $analyser = new AnalyserPlugin($plugins);
-        self::$compatinfo->addPlugin($analyser);
+        // request for a Bartlett\Reflect\Api\Analyser
+        self::$api = $client->api('analyser');
     }
 
     /**
@@ -107,85 +70,112 @@ class DependencyIssueTest extends \PHPUnit_Framework_TestCase
      */
     public function testBugGH100()
     {
-        self::$compatinfo->parse(array(self::GH100));
-
-        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.versions';
-
-        $expected = '5.3.0';
-        $metrics  = self::$compatinfo->getMetrics();
+        $dataSource = self::$fixtures . self::GH100;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $methods    = $metrics[self::$analyserId]['methods'];
 
         $this->assertEquals(
-            $expected,
-            $metrics[self::GH100][$key]['php.min']
+            array(
+                'php.min'      => '5.3.0',
+                'php.max'      => '',
+                'php.all'      => '5.3.0',
+            ),
+            $versions
+        );
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'date',
+                'ext.min'      => '5.2.0',
+                'ext.max'      => '',
+                'ext.all'      => '',
+                'php.min'      => '5.3.0',
+                'php.max'      => '',
+                'php.all'      => '5.3.0',
+                'prototype'    => 'DateTimeInterface',
+                'proto_since'  => '5.5.0',
+                'arg.max'      => 1,
+                'matches'      => 1,
+            ),
+            $methods['DateTime::diff']
         );
     }
 
     /**
-     * Regression test for bug GH#128
+     * Regression test for request GH#165
      *
-     * @link https://github.com/llaville/php-compat-info/issues/128
-     *       Detection of conditional code
+     * @link https://github.com/llaville/php-compat-info/issues/165
+     *       Find undeclared elements
      * @group regression
      * @return void
      */
-    public function testBugGH128()
+    public function testBugGH165()
     {
-        self::$compatinfo->parse(array(self::GH128));
+        $dataSource = self::$fixtures . self::GH165;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $classes    = $metrics[self::$analyserId]['classes'];
 
-        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.versions';
-
-        $expected = '4.0.0';
-        $metrics  = self::$compatinfo->getMetrics();
-
-        $this->assertEquals(
-            $expected,
-            $metrics[self::GH128][$key]['php.min']
+        $undeclaredClasses = array(
+            'Console_Table',
+            'Doctrine\Common\Cache\Cache',
+            'Foo\Foo',
+            'SebastianBergmann\Version',
         );
+
+        foreach ($undeclaredClasses as $c) {
+            $this->assertArrayNotHasKey(
+                'declared',
+                $classes[$c],
+                "$c is marked as declared while definition is not provided"
+            );
+        }
     }
 
     /**
-     * Regression test for bug GH#155
+     * Regression test for bug GH#194
      *
-     * @link https://github.com/llaville/php-compat-info/issues/155
-     *       Results depend on lexical order of fallback implementations
+     * @link https://github.com/llaville/php-compat-info/issues/194
+     *       Static method calls don't properly adjust total requirements
      * @group regression
      * @return void
      */
-    public function testBugGH155()
+    public function testBugGH194()
     {
-        self::$compatinfo->parse(array(self::GH155));
-
-        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.functions';
-
-        $expected = '5.2.0';
-        $metrics  = self::$compatinfo->getMetrics();
+        $dataSource = self::$fixtures . self::GH194;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $methods    = $metrics[self::$analyserId]['methods'];
 
         $this->assertEquals(
-            $expected,
-            $metrics[self::GH155][$key]['json_encode']['php.min']
+            array(
+                'php.min'      => '5.3.0alpha1',
+                'php.max'      => '',
+                'php.all'      => '5.3.0alpha1',
+            ),
+            $versions
         );
-    }
 
-    /**
-     * Regression test for bug GH#170
-     *
-     * @link https://github.com/llaville/php-compat-info/issues/170
-     *       Constant scalar expression detection
-     * @group regression
-     * @return void
-     */
-    public function testBugGH170()
-    {
-        self::$compatinfo->parse(array(self::GH170));
-
-        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.versions';
-
-        $expected = '5.3.0';
-        $metrics  = self::$compatinfo->getMetrics();
+        $this->assertArrayHasKey('Normalizer::normalize', $methods);
 
         $this->assertEquals(
-            $expected,
-            $metrics[self::GH170][$key]['php.min']
+            array(
+                'ext.name'     => 'intl',
+                'ext.min'      => '1.0.0beta',
+                'ext.max'      => '',
+                'ext.all'      => '',
+                'php.min'      => '5.3.0alpha1',
+                'php.max'      => '',
+                'php.all'      => '5.3.0alpha1',
+                'arg.max'      => 1,
+                'matches'      => 1,
+                'prototype'    => '',
+                'proto_since'  => '',
+            ),
+            $methods['Normalizer::normalize']
         );
     }
 }

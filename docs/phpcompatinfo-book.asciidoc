@@ -17,13 +17,22 @@ include::user-guide--installation.asciidoc[]
 include::user-guide--configuration.asciidoc[]
 include::user-guide--commands.asciidoc[]
 
-include::migration-guide.asciidoc[]
+include::migration-guide-3.asciidoc[]
 :leveloffset: 1
-include::migration-guide--cli.asciidoc[]
+include::migration-guide-3--cli.asciidoc[]
 
-include::migration-guide--xml.asciidoc[]
+include::migration-guide-3--xml.asciidoc[]
 
-include::migration-guide--api.asciidoc[]
+include::migration-guide-3--api.asciidoc[]
+:leveloffset: 0
+
+include::migration-guide-4.asciidoc[]
+:leveloffset: 1
+include::migration-guide-4--cli.asciidoc[]
+
+include::migration-guide-4--json.asciidoc[]
+
+include::migration-guide-4--api.asciidoc[]
 :leveloffset: 0
 
 include::developer-guide.asciidoc[]
@@ -35,6 +44,8 @@ include::developer-guide--plugins.asciidoc[]
 include::developer-guide--cache-plugin.asciidoc[]
 
 include::developer-guide--log-plugin.asciidoc[]
+
+include::developer-guide--notifier-plugin.asciidoc[]
 
 include::developer-guide--analysers.asciidoc[]
 :leveloffset: 0

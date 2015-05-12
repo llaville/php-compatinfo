@@ -1,0 +1,236 @@
+[
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "ATOM",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "COOKIE",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "ISO8601",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "RFC822",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "RFC850",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "RFC1036",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "RFC1123",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "RFC2822",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "RFC3339",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "RSS",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "W3C",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "AFRICA",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "AMERICA",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "ANTARCTICA",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "ARCTIC",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "ASIA",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "ATLANTIC",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "AUSTRALIA",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "EUROPE",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "INDIAN",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "PACIFIC",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "UTC",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "ALL",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "ALL_WITH_BC",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "PER_COUNTRY",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DatePeriod",
+        "name": "EXCLUDE_START_DATE",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    }
+]

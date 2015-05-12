@@ -14,21 +14,22 @@ CompatInfo may be installed in several ways, choose your favorite.
 
 WARNING: Please read the
 ifdef::basebackend-bootstrap[]
-link:migration-guide.html[migration guide]
+link:migration-guide-3.html[migration guide v3]
 endif::basebackend-bootstrap[]
 ifdef::basebackend-docbook[]
-xref:_migration_guide[]
+xref:_migration_guide_v3[]
 endif::basebackend-docbook[]
 in case you are upgrading from a version 2.x of PHP CompatInfo.
 
 === Requirements
 
 Before you install PHP [label label-primary]#CompatInfo#, you will need an operating system
-with http://www.php.net[PHP] 5.3.0 or later installed,
+with http://www.php.net[PHP] 5.3.2 or later installed,
 
 [label label-primary]#CompatInfo# requires the
 http://www.php.net/manual/en/book.json.php[json],
 http://www.php.net/manual/en/book.libxml.php[libxml],
+http://www.php.net/manual/en/book.pdo.php[pdo],
 http://www.php.net/manual/en/book.pcre.php[pcre], and
 http://www.php.net/manual/en/book.spl.php[spl] extensions.
 These extensions are usually compiled and enabled by default.
@@ -40,7 +41,7 @@ Put a file named [label label-default]#composer.json# at the root of your projec
 ----
 {
     "require": {
-        "bartlett/php-compatinfo": "~3.7"
+        "bartlett/php-compatinfo": "4.1.0"
     }
 }
 ----
@@ -65,9 +66,9 @@ This is the equivalent of doing a git clone checkout followed by a composer inst
 
 [source,bash]
 ----
-$ php composer.phar create-project bartlett/php-compatinfo /path/to 3.7.4
+$ php composer.phar create-project bartlett/php-compatinfo /path/to/install 4.1.0
 ----
-Where +/path/to+ is your install directory.
+Where +/path/to/install+ is your install directory.
 ====
 
 === PHAR
@@ -78,17 +79,17 @@ bundled in a single file.
 
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.7.4.phar
-$ chmod +x phpcompatinfo-3.7.4.phar
-$ mv phpcompatinfo-3.7.4.phar /usr/local/bin/phpcompatinfo
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-4.1.0.phar
+$ chmod +x phpcompatinfo-4.1.0.phar
+$ mv phpcompatinfo-4.1.0.phar /usr/local/bin/phpcompatinfo
 $ phpcompatinfo
 ----
 
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.7.4.phar
-$ php phpcompatinfo-3.7.4.phar
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-4.1.0.phar
+$ php phpcompatinfo-4.1.0.phar
 ----
 
 ifdef::basebackend-bootstrap[]

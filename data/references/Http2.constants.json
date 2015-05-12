@@ -1,0 +1,281 @@
+[
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\AUTH_ANY",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\AUTH_BASIC",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\AUTH_DIGEST",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\AUTH_DIGEST_IE",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\AUTH_GSSNEG",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\AUTH_NTLM",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\AUTH_SPNEGO",
+        "ext_min": "2.1.2",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\HTTP_VERSION_1_0",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\HTTP_VERSION_1_1",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\HTTP_VERSION_ANY",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\IPRESOLVE_ANY",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\IPRESOLVE_V4",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\IPRESOLVE_V6",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\POSTREDIR_301",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\POSTREDIR_302",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\POSTREDIR_303",
+        "ext_min": "2.1.2",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\POSTREDIR_ALL",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\PROXY_HTTP",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\PROXY_HTTP_1_0",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\PROXY_SOCKS4",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\PROXY_SOCKS4A",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\PROXY_SOCKS5",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\PROXY_SOCKS5_HOSTNAME",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\SSL_VERSION_ANY",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\SSL_VERSION_SSLv2",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\SSL_VERSION_SSLv3",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\SSL_VERSION_TLSv1",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\SSL_VERSION_TLSv1_0",
+        "ext_min": "2.1.2",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\SSL_VERSION_TLSv1_1",
+        "ext_min": "2.1.2",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\SSL_VERSION_TLSv1_2",
+        "ext_min": "2.1.2",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "name": "http\\Client\\Curl\\HTTP_VERSION_2_0",
+        "ext_min": "2.3.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

@@ -1,24 +1,14 @@
 #!/usr/bin/env php
 <?php
 if (class_exists('Phar')) {
-    Phar::mapPhar('phpcompatinfo.phar');
-    Phar::interceptFileFuncs();
+    $appName = 'phpCompatInfo';
 
-    if (!getenv("COMPATINFO")) {
-        $home  = defined('PHP_WINDOWS_VERSION_BUILD') ? 'USERPROFILE' : 'HOME';
-        $files = array(
-            realpath('./phpcompatinfo.json'),
-            getenv($home).'/.config/phpcompatinfo.json',
-            '/etc/phpcompatinfo.json',
-            'phar://' . __FILE__ . '/bin/phpcompatinfo.json.dist'
-        );
-        foreach ($files as $file) {
-            if (file_exists($file)) {
-                putenv("COMPATINFO=$file");
-                break;
-            }
-        }
+    Phar::mapPhar(strtolower($appName) . '.phar');
+
+    if (!getenv("BARTLETTRC")) {
+        putenv("BARTLETTRC=" . strtolower($appName) . '.json');
     }
-    require 'phar://' . __FILE__ . '/bin/phpcompatinfo';
+
+    require 'phar://' . __FILE__ . '/bin/' . strtolower($appName);
 }
 __HALT_COMPILER();

@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\ReadlineExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -52,7 +51,7 @@ class ReadlineExtensionTest extends GenericTest
             'readline_redisplay',
         );
 
-        self::$obj = new ReadlineExtension();
+        self::$ext = 'Readline';
         parent::setUpBeforeClass();
     }
 }

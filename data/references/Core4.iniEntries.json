@@ -1,0 +1,754 @@
+[
+    {
+        "ext_name_fk": 7,
+        "name": "SMTP",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "allow_call_time_pass_reference",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "allow_url_fopen",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "allow_url_include",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "always_populate_raw_post_data",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "arg_separator.input",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "arg_separator.output",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "asp_tags",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "auto_append_file",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "auto_globals_jit",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "auto_prepend_file",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "browscap",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "default_charset",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "default_mimetype",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "define_syslog_variables",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "disable_classes",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "disable_functions",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "display_errors",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "display_startup_errors",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "doc_root",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "docref_ext",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "docref_root",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "enable_dl",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "error_append_string",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "error_log",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "error_prepend_string",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "error_reporting",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "exit_on_timeout",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "expose_php",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "extension_dir",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "file_uploads",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "highlight.bg",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "highlight.comment",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "highlight.default",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "highlight.html",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "highlight.keyword",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "highlight.string",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "html_errors",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "ignore_repeated_errors",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "ignore_repeated_source",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "ignore_user_abort",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "implicit_flush",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "include_path",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "log_errors",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "log_errors_max_len",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "magic_quotes_gpc",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "magic_quotes_runtime",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "magic_quotes_sybase",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "mail.add_x_header",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "mail.force_extra_parameters",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "mail.log",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "max_execution_time",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "max_file_uploads",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "max_input_nesting_level",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "max_input_time",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "max_input_vars",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "memory_limit",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "open_basedir",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "output_buffering",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "output_handler",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "post_max_size",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "precision",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "realpath_cache_size",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "realpath_cache_ttl",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "register_argc_argv",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "register_globals",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "report_memleaks",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "report_zend_debug",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "request_order",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "safe_mode",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "safe_mode_exec_dir",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "safe_mode_gid",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "safe_mode_include_dir",
+        "ext_min": "4.1.0",
+        "ext_max": "",
+        "php_min": "4.1.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "sendmail_from",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "sendmail_path",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "serialize_precision",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "short_open_tag",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "smtp_port",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "sql.safe_mode",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "track_errors",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "unserialize_callback_func",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "upload_max_filesize",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "upload_tmp_dir",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "user_dir",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "user_ini.cache_ttl",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "user_ini.filename",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "variables_order",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "windows.show_crt_warning",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "xmlrpc_error_number",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "xmlrpc_errors",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "y2k_compliance",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "5.3.29"
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "zend.detect_unicode",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "zend.enable_gc",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 7,
+        "name": "zend.multibyte",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    }
+]

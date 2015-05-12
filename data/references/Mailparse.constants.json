@@ -1,0 +1,29 @@
+[
+    {
+        "ext_name_fk": 39,
+        "name": "MAILPARSE_EXTRACT_OUTPUT",
+        "ext_min": "0.9",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 39,
+        "name": "MAILPARSE_EXTRACT_RETURN",
+        "ext_min": "0.9",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 39,
+        "name": "MAILPARSE_EXTRACT_STREAM",
+        "ext_min": "0.9",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

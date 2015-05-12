@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\TidyExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -51,7 +50,7 @@ class TidyExtensionTest extends GenericTest
             'tidy_load_config_enc',
         );
 
-        self::$obj = new TidyExtension();
+        self::$ext = 'Tidy';
         parent::setUpBeforeClass();
     }
 }

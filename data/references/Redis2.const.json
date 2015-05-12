@@ -1,0 +1,182 @@
+[
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "REDIS_NOT_FOUND",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "REDIS_STRING",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "REDIS_SET",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "REDIS_LIST",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "REDIS_ZSET",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "REDIS_HASH",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "ATOMIC",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "MULTI",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "PIPELINE",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "OPT_SERIALIZER",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "OPT_PREFIX",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "OPT_READ_TIMEOUT",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "SERIALIZER_NONE",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "SERIALIZER_PHP",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "SERIALIZER_IGBINARY",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "OPT_SCAN",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "SCAN_RETRY",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "SCAN_NORETRY",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "AFTER",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 104,
+        "class_name": "Redis",
+        "name": "BEFORE",
+        "ext_min": "2.2.3",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

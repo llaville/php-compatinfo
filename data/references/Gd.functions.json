@@ -1,0 +1,1082 @@
+[
+    {
+        "ext_name_fk": 18,
+        "name": "gd_info",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "image2wbmp",
+        "ext_min": "4.0.5",
+        "ext_max": "",
+        "php_min": "4.0.5",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageaffine",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageaffinematrixconcat",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageaffinematrixget",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagealphablending",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageantialias",
+        "ext_min": "4.3.2",
+        "ext_max": "",
+        "php_min": "4.3.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagearc",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagechar",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecharup",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorallocate",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorallocatealpha",
+        "ext_min": "4.3.2",
+        "ext_max": "",
+        "php_min": "4.3.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorat",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorclosest",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorclosestalpha",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorclosesthwb",
+        "ext_min": "4.0.1",
+        "ext_max": "",
+        "php_min": "4.0.1",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolordeallocate",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorexact",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorexactalpha",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolormatch",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorresolve",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorresolvealpha",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorset",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorsforindex",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolorstotal",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecolortransparent",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageconvolution",
+        "ext_min": "5.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecopy",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecopymerge",
+        "ext_min": "4.0.1",
+        "ext_max": "",
+        "php_min": "4.0.1",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecopymergegray",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecopyresampled",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecopyresized",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreate",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatefromgd",
+        "ext_min": "4.0.7",
+        "ext_max": "",
+        "php_min": "4.0.7",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatefromgd2",
+        "ext_min": "4.0.7",
+        "ext_max": "",
+        "php_min": "4.0.7",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatefromgd2part",
+        "ext_min": "4.0.7",
+        "ext_max": "",
+        "php_min": "4.0.7",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatefromgif",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatefromjpeg",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatefrompng",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatefromstring",
+        "ext_min": "4.0.4",
+        "ext_max": "",
+        "php_min": "4.0.4",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatefromwbmp",
+        "ext_min": "4.0.1",
+        "ext_max": "",
+        "php_min": "4.0.1",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatefromwebp",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatefromxbm",
+        "ext_min": "4.0.1",
+        "ext_max": "",
+        "php_min": "4.0.1",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatefromxpm",
+        "ext_min": "4.0.1",
+        "ext_max": "",
+        "php_min": "4.0.1",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecreatetruecolor",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecrop",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagecropauto",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagedashedline",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagedestroy",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageellipse",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagefill",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagefilledarc",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagefilledellipse",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagefilledpolygon",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagefilledrectangle",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagefilltoborder",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagefilter",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageflip",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagefontheight",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagefontwidth",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageftbbox",
+        "ext_min": "4.0.7",
+        "ext_max": "",
+        "php_min": "4.0.7",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagefttext",
+        "ext_min": "4.0.7",
+        "ext_max": "",
+        "php_min": "4.0.7",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagegammacorrect",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagegd",
+        "ext_min": "4.0.7",
+        "ext_max": "",
+        "php_min": "4.0.7",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagegd2",
+        "ext_min": "4.0.7",
+        "ext_max": "",
+        "php_min": "4.0.7",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagegif",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagegrabscreen",
+        "ext_min": "5.2.2",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagegrabwindow",
+        "ext_min": "5.2.2",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageinterlace",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageistruecolor",
+        "ext_min": "4.3.2",
+        "ext_max": "",
+        "php_min": "4.3.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagejpeg",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagelayereffect",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageline",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imageloadfont",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagepalettecopy",
+        "ext_min": "4.0.1",
+        "ext_max": "",
+        "php_min": "4.0.1",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagepalettetotruecolor",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagepng",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagepolygon",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagepsbbox",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagepsencodefont",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagepsextendfont",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagepsfreefont",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagepsloadfont",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagepsslantfont",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagepstext",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagerectangle",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagerotate",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagesavealpha",
+        "ext_min": "4.3.2",
+        "ext_max": "",
+        "php_min": "4.3.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagescale",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagesetbrush",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagesetinterpolation",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagesetpixel",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagesetstyle",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagesetthickness",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagesettile",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagestring",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagestringup",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagesx",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagesy",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagetruecolortopalette",
+        "ext_min": "4.0.6",
+        "ext_max": "",
+        "php_min": "4.0.6",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagettfbbox",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagettftext",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagetypes",
+        "ext_min": "4.0.2",
+        "ext_max": "",
+        "php_min": "4.0.2",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagewbmp",
+        "ext_min": "4.0.1",
+        "ext_max": "",
+        "php_min": "4.0.1",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagewebp",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "imagexbm",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "jpeg2wbmp",
+        "ext_min": "4.0.5",
+        "ext_max": "",
+        "php_min": "4.0.5",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "png2wbmp",
+        "ext_min": "4.0.5",
+        "ext_max": "",
+        "php_min": "4.0.5",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

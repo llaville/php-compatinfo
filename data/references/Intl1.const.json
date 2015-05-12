@@ -1,0 +1,1109 @@
+[
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "DEFAULT_VALUE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "PRIMARY",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "SECONDARY",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "TERTIARY",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "DEFAULT_STRENGTH",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "QUATERNARY",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "IDENTICAL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "OFF",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "ON",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "SHIFTED",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "NON_IGNORABLE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "LOWER_FIRST",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "UPPER_FIRST",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "FRENCH_COLLATION",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "ALTERNATE_HANDLING",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "CASE_FIRST",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "CASE_LEVEL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "NORMALIZATION_MODE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "STRENGTH",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "HIRAGANA_QUATERNARY_MODE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "NUMERIC_COLLATION",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "SORT_REGULAR",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "SORT_STRING",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Collator",
+        "name": "SORT_NUMERIC",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PATTERN_DECIMAL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "DECIMAL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "CURRENCY",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PERCENT",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "SCIENTIFIC",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "SPELLOUT",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "ORDINAL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "DURATION",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PATTERN_RULEBASED",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "IGNORE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "DEFAULT_STYLE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "ROUND_CEILING",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "ROUND_FLOOR",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "ROUND_DOWN",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "ROUND_UP",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "ROUND_HALFEVEN",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "ROUND_HALFDOWN",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "ROUND_HALFUP",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PAD_BEFORE_PREFIX",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PAD_AFTER_PREFIX",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PAD_BEFORE_SUFFIX",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PAD_AFTER_SUFFIX",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PARSE_INT_ONLY",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "GROUPING_USED",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "DECIMAL_ALWAYS_SHOWN",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "MAX_INTEGER_DIGITS",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "MIN_INTEGER_DIGITS",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "INTEGER_DIGITS",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "MAX_FRACTION_DIGITS",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "MIN_FRACTION_DIGITS",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "FRACTION_DIGITS",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "MULTIPLIER",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "GROUPING_SIZE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "ROUNDING_MODE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "ROUNDING_INCREMENT",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "FORMAT_WIDTH",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PADDING_POSITION",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "SECONDARY_GROUPING_SIZE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "SIGNIFICANT_DIGITS_USED",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "MIN_SIGNIFICANT_DIGITS",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "MAX_SIGNIFICANT_DIGITS",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "LENIENT_PARSE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "POSITIVE_PREFIX",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "POSITIVE_SUFFIX",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "NEGATIVE_PREFIX",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "NEGATIVE_SUFFIX",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PADDING_CHARACTER",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "CURRENCY_CODE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "DEFAULT_RULESET",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PUBLIC_RULESETS",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "DECIMAL_SEPARATOR_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "GROUPING_SEPARATOR_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PATTERN_SEPARATOR_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PERCENT_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "ZERO_DIGIT_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "DIGIT_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "MINUS_SIGN_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PLUS_SIGN_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "CURRENCY_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "INTL_CURRENCY_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "MONETARY_SEPARATOR_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "EXPONENTIAL_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PERMILL_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "PAD_ESCAPE_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "INFINITY_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "NAN_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "SIGNIFICANT_DIGIT_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "MONETARY_GROUPING_SEPARATOR_SYMBOL",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "TYPE_DEFAULT",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "TYPE_INT32",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "TYPE_INT64",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "TYPE_DOUBLE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "NumberFormatter",
+        "name": "TYPE_CURRENCY",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Normalizer",
+        "name": "NONE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.3.0alpha1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Normalizer",
+        "name": "FORM_D",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.3.0alpha1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Normalizer",
+        "name": "NFD",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.3.0alpha1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Normalizer",
+        "name": "FORM_KD",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.3.0alpha1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Normalizer",
+        "name": "NFKD",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.3.0alpha1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Normalizer",
+        "name": "FORM_C",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.3.0alpha1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Normalizer",
+        "name": "NFC",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.3.0alpha1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Normalizer",
+        "name": "FORM_KC",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.3.0alpha1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Normalizer",
+        "name": "NFKC",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.3.0alpha1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Locale",
+        "name": "ACTUAL_LOCALE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Locale",
+        "name": "VALID_LOCALE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Locale",
+        "name": "DEFAULT_LOCALE",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Locale",
+        "name": "LANG_TAG",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Locale",
+        "name": "EXTLANG_TAG",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Locale",
+        "name": "SCRIPT_TAG",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Locale",
+        "name": "REGION_TAG",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Locale",
+        "name": "VARIANT_TAG",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Locale",
+        "name": "GRANDFATHERED_LANG_TAG",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "Locale",
+        "name": "PRIVATE_TAG",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlDateFormatter",
+        "name": "FULL",
+        "ext_min": "1.0.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlDateFormatter",
+        "name": "LONG",
+        "ext_min": "1.0.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlDateFormatter",
+        "name": "MEDIUM",
+        "ext_min": "1.0.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlDateFormatter",
+        "name": "SHORT",
+        "ext_min": "1.0.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlDateFormatter",
+        "name": "NONE",
+        "ext_min": "1.0.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlDateFormatter",
+        "name": "GREGORIAN",
+        "ext_min": "1.0.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlDateFormatter",
+        "name": "TRADITIONAL",
+        "ext_min": "1.0.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": ""
+    }
+]

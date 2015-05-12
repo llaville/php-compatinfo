@@ -1,0 +1,192 @@
+[
+    {
+        "ext_name_fk": 2,
+        "name": "apc_add",
+        "ext_min": "3.0.13",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_bin_dump",
+        "ext_min": "3.1.4",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_bin_dumpfile",
+        "ext_min": "3.1.4",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_bin_load",
+        "ext_min": "3.1.4",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_bin_loadfile",
+        "ext_min": "3.1.4",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_cache_info",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_cas",
+        "ext_min": "3.1.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_clear_cache",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_compile_file",
+        "ext_min": "3.0.13",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_dec",
+        "ext_min": "3.1.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_define_constants",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_delete",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_delete_file",
+        "ext_min": "3.1.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_exists",
+        "ext_min": "3.1.4",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_fetch",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_inc",
+        "ext_min": "3.1.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_load_constants",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_sma_info",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 2,
+        "name": "apc_store",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

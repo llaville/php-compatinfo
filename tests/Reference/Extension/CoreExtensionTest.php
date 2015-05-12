@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\CoreExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -113,7 +112,14 @@ class CoreExtensionTest extends GenericTest
             'zend_thread_id',
         );
 
-        self::$obj = new CoreExtension();
+        // special classes
+        self::$optionalclasses = array(
+            'parent',
+            'static',
+            'self',
+        );
+
+        self::$ext = 'Core';
         parent::setUpBeforeClass();
     }
 }

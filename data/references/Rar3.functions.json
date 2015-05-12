@@ -1,0 +1,32 @@
+[
+    {
+        "ext_name_fk": 61,
+        "name": "rar_allow_broken_set",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "rar_broken_is",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "name": "rar_wrapper_cache_stats",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

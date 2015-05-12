@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\OpensslExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -52,7 +51,7 @@ class OpensslExtensionTest extends GenericTest
             'OPENSSL_KEYTYPE_EC',
         );
 
-        self::$obj = new OpensslExtension();
+        self::$ext = 'Openssl';
         parent::setUpBeforeClass();
     }
 }

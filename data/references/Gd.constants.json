@@ -1,0 +1,740 @@
+[
+    {
+        "ext_name_fk": 18,
+        "name": "GD_BUNDLED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "GD_EXTRA_VERSION",
+        "ext_min": "5.2.4",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "GD_MAJOR_VERSION",
+        "ext_min": "5.2.4",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "GD_MINOR_VERSION",
+        "ext_min": "5.2.4",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "GD_RELEASE_VERSION",
+        "ext_min": "5.2.4",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "GD_VERSION",
+        "ext_min": "5.2.4",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_AFFINE_ROTATE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_AFFINE_SCALE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_AFFINE_SHEAR_HORIZONTAL",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_AFFINE_SHEAR_VERTICAL",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_AFFINE_TRANSLATE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_ARC_CHORD",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_ARC_EDGED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_ARC_NOFILL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_ARC_PIE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_ARC_ROUNDED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_BELL",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_BESSEL",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_BICUBIC",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_BICUBIC_FIXED",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_BILINEAR_FIXED",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_BLACKMAN",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_BOX",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_BSPLINE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_CATMULLROM",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_COLOR_BRUSHED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_COLOR_STYLED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_COLOR_STYLEDBRUSHED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_COLOR_TILED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_COLOR_TRANSPARENT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_CROP_BLACK",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_CROP_DEFAULT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_CROP_SIDES",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_CROP_THRESHOLD",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_CROP_TRANSPARENT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_CROP_WHITE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_EFFECT_ALPHABLEND",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_EFFECT_NORMAL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_EFFECT_OVERLAY",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_EFFECT_REPLACE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_BRIGHTNESS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_COLORIZE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_CONTRAST",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_EDGEDETECT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_EMBOSS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_GAUSSIAN_BLUR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_GRAYSCALE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_MEAN_REMOVAL",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_NEGATE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_PIXELATE",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_SELECTIVE_BLUR",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FILTER_SMOOTH",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FLIP_BOTH",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FLIP_HORIZONTAL",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_FLIP_VERTICAL",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_GAUSSIAN",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_GD2_COMPRESSED",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_GD2_RAW",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_GENERALIZED_CUBIC",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_GIF",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_HAMMING",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_HANNING",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_HERMITE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_JPEG",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_JPG",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_MITCHELL",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_NEAREST_NEIGHBOUR",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_PNG",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_POWER",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_QUADRATIC",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_SINC",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_TRIANGLE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_WBMP",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_WEIGHTED4",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "IMG_XPM",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "PNG_ALL_FILTERS",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "PNG_FILTER_AVG",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "PNG_FILTER_NONE",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "PNG_FILTER_PAETH",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "PNG_FILTER_SUB",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "PNG_FILTER_UP",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 18,
+        "name": "PNG_NO_FILTER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

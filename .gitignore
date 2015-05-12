@@ -1,9 +1,6 @@
-.project
-pull.sh
-PHP/CompatInfo/Reference/extension_pattern.php
-runtests
 Thumbs.db
 *.tgz
+*.zip
 *.phar
 vendor/
 phpunit.xml

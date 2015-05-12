@@ -1,0 +1,90 @@
+[
+    {
+        "ext_name_fk": 1,
+        "name": "amqp.auto_ack",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 1,
+        "name": "amqp.connect_timeout",
+        "ext_min": "1.3.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 1,
+        "name": "amqp.host",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 1,
+        "name": "amqp.login",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 1,
+        "name": "amqp.password",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 1,
+        "name": "amqp.port",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 1,
+        "name": "amqp.prefetch_count",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 1,
+        "name": "amqp.read_timeout",
+        "ext_min": "1.0.10",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 1,
+        "name": "amqp.timeout",
+        "ext_min": "1.0.8",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 1,
+        "name": "amqp.vhost",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 1,
+        "name": "amqp.write_timeout",
+        "ext_min": "1.0.10",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

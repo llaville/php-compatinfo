@@ -1,0 +1,232 @@
+[
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_add",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_add_server",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_append",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.11",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_cas",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.11",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_close",
+        "ext_min": "0.4",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_connect",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_debug",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_decrement",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_delete",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_flush",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_get",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_get_extended_stats",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_get_server_status",
+        "ext_min": "2.1.0",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_get_stats",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_get_version",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_increment",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_pconnect",
+        "ext_min": "0.4",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_prepend",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.11",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_replace",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_set",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_set_compress_threshold",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_set_failure_callback",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "4.3.11",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 43,
+        "name": "memcache_set_server_params",
+        "ext_min": "2.1.0",
+        "ext_max": "",
+        "php_min": "4.3.3",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

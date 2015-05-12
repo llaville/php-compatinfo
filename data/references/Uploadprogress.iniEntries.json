@@ -1,0 +1,26 @@
+[
+    {
+        "ext_name_fk": 87,
+        "name": "uploadprogress.file.contents_template",
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 87,
+        "name": "uploadprogress.file.filename_template",
+        "ext_min": "0.3.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 87,
+        "name": "uploadprogress.get_contents",
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

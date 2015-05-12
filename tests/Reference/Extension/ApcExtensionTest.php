@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\ApcExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -114,7 +113,7 @@ class ApcExtensionTest extends GenericTest
                 'apc_delete_file',
             );
         }
-        self::$obj = new ApcExtension();
+        self::$ext = 'Apc';
         parent::setUpBeforeClass();
     }
 }

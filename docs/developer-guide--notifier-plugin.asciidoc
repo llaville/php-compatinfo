@@ -1,0 +1,102 @@
+= Notifier Plugin
+:description: Notifies application events via different systems.
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+
+== Register Plugin
+
+Two ways depending of SAPI used.
+
+If you're on Windows or Mac platform, you may have Growl. If you're on Linux,
+the default bundled growl notifier is not for you. Skip this section.
+[NOTE]
+====
+* Growl for Windows
+* Growl for Mac
+====
+
+You'll add to configure your plugin in your `phpcompatinfo.json` file, as follow :
+
+[source,json]
+----
+    {
+        "name": "Notifier",
+        "class": "Bartlett\\Reflect\\Plugin\\NotifierPlugin",
+        "options" : "Bartlett\\CompatInfo\\Plugin\\Notifier\\GrowlNotifier"
+    }
+----
+
+* The `name` key is (since version 3.0.0-alpha1) comment only.
+* The `class` key identify the name of the class that implement the plugin (must be fully qualified).
+* The `options` key identify the name of the class that implement the notifier (must be fully qualified).
+
+Default behaviors are :
+
+* do not notify `reflect.progress` and `reflect.success` events (`enabled` option set to false)
+* notify `reflect.error` and `reflect.complete` events, and keep them displayed (`sticky` option set to true).
+* used the new `gntp` protocol rather than `udp` basic protocol.
+
+If one or all of those behaviors does not match your need, here is how to change it.
+
+Creates your own growl notifier class, (E.g: `YourNamespace\MyGrowlNotifier`)
+and put it in somewhere in your `include_path`.
+
+[source,php]
+----
+<?php
+
+namespace YourNamespace;
+
+use Bartlett\Reflect\Plugin\Notifier\GrowlNotifier as BaseGrowlNotifier;
+
+class MyGrowlNotifier extends BaseGrowlNotifier
+{
+    public function __construct($application = 'myPhpCompatInfo', $notifications = array(),
+        $password = '', $options = array()
+    {
+        parent::__construct($application, $notifications, $password, $options);
+    }
+}
+----
+
+We have changed the Growl Application Name to `myPhpCompatInfo`, and used the `udp` protocol.
+
+TIP: See http://growl.laurent-laville.org/ to learn more about PEAR/Net_Growl package.
+
+=== With CLI
+
+You have just to run the `analyser:run` command, and you will be notified when parse is completed.
+
+=== Other SAPI
+
+This is the standard analyser run process as defined in following script.
+Default behavior is to activate all plugins that can be registered in the `PluginManager`.
+
+[source,php]
+----
+<?php
+
+use Bartlett\Reflect\Environment;
+use Bartlett\Reflect\Client;
+
+// set default values for BARTLETT_SCAN_DIR
+Environment::setScanDir()
+
+// set default value for BARTLETTRC
+putenv("BARTLETTRC=phpcompatinfo.json");
+
+// creates an instance of client
+$client = new Client();
+
+// request for a Bartlett\Reflect\Api\Analyser
+$api = $client->api('analyser');
+
+// perform request, on a data source with default analyser (structure)
+$dataSource = dirname(__DIR__) . '/src';
+$analysers  = array('structure');
+
+// equivalent to CLI command `phpcompatinfo analyser:run ../src`
+$metrics = $api->run($dataSource, $analysers);
+
+var_export($metrics);
+----

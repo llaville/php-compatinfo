@@ -1,0 +1,82 @@
+[
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Env\\Request",
+        "name": "getCookie",
+        "static": true,
+        "ext_min": "2.2.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Env\\Response",
+        "name": "setCookie",
+        "static": true,
+        "ext_min": "2.2.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Header\\Parser",
+        "name": "getState",
+        "static": true,
+        "ext_min": "2.3.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Header\\Parser",
+        "name": "parse",
+        "static": true,
+        "ext_min": "2.3.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Header\\Parser",
+        "name": "stream",
+        "static": true,
+        "ext_min": "2.3.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Message\\Parser",
+        "name": "configure",
+        "static": true,
+        "ext_min": "2.3.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Message\\Parser",
+        "name": "getAvailableOptions",
+        "static": true,
+        "ext_min": "2.3.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "class_name": "http\\Message\\Parser",
+        "name": "getAvailableConfiguration",
+        "static": true,
+        "ext_min": "2.3.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    }
+]

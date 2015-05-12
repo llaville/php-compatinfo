@@ -1,0 +1,128 @@
+[
+    {
+        "ext_name_fk": 97,
+        "name": "LIBEXSLT_DOTTED_VERSION",
+        "ext_min": "5.1.2",
+        "ext_max": "",
+        "php_min": "5.1.2",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "LIBEXSLT_VERSION",
+        "ext_min": "5.1.2",
+        "ext_max": "",
+        "php_min": "5.1.2",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "LIBXSLT_DOTTED_VERSION",
+        "ext_min": "5.1.2",
+        "ext_max": "",
+        "php_min": "5.1.2",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "LIBXSLT_VERSION",
+        "ext_min": "5.1.2",
+        "ext_max": "",
+        "php_min": "5.1.2",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "XSL_CLONE_ALWAYS",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "XSL_CLONE_AUTO",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "XSL_CLONE_NEVER",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "XSL_SECPREF_CREATE_DIRECTORY",
+        "ext_min": "5.3.9",
+        "ext_max": "",
+        "php_min": "5.3.9",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "XSL_SECPREF_DEFAULT",
+        "ext_min": "5.3.9",
+        "ext_max": "",
+        "php_min": "5.3.9",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "XSL_SECPREF_NONE",
+        "ext_min": "5.3.9",
+        "ext_max": "",
+        "php_min": "5.3.9",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "XSL_SECPREF_READ_FILE",
+        "ext_min": "5.3.9",
+        "ext_max": "",
+        "php_min": "5.3.9",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "XSL_SECPREF_READ_NETWORK",
+        "ext_min": "5.3.9",
+        "ext_max": "",
+        "php_min": "5.3.9",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "XSL_SECPREF_WRITE_FILE",
+        "ext_min": "5.3.9",
+        "ext_max": "",
+        "php_min": "5.3.9",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 97,
+        "name": "XSL_SECPREF_WRITE_NETWORK",
+        "ext_min": "5.3.9",
+        "ext_max": "",
+        "php_min": "5.3.9",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

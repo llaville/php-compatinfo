@@ -1,0 +1,20 @@
+[
+    {
+        "ext_name_fk": 96,
+        "rel_version": "5.1.2",
+        "rel_date": "2006-01-12",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "5.1.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 96,
+        "rel_version": "5.2.0",
+        "rel_date": "2006-11-02",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

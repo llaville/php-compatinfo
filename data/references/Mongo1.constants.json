@@ -1,0 +1,245 @@
+[
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAMS",
+        "ext_min": "1.4.2",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_IO_COMPLETED",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_IO_PROGRESS",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_IO_READ",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_IO_WRITE",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_BATCHINSERT",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_CMD_DELETE",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_CMD_INSERT",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_CMD_UPDATE",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_DELETE",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_GETMORE",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_INSERT",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_KILLCURSOR",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_QUERY",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_RESPONSE_HEADER",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_UPDATE",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_WRITE_BATCH",
+        "ext_min": "1.5.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_LOG_WRITE_REPLY",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_TYPE_IO_INIT",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_STREAM_NOTIFY_TYPE_LOG",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_SUPPORTS_AUTH_MECHANISM_GSSAPI",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_SUPPORTS_AUTH_MECHANISM_MONGODB_CR",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_SUPPORTS_AUTH_MECHANISM_MONGODB_X509",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_SUPPORTS_AUTH_MECHANISM_PLAIN",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_SUPPORTS_SSL",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_SUPPORTS_STREAMS",
+        "ext_min": "1.5.0alpha1",
+        "ext_max": "",
+        "php_min": "5.2.6",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "name": "MONGO_SUPPORTS_AUTH_MECHANISM_SCRAM_SHA1",
+        "ext_min": "1.6.0RC1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

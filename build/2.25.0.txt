@@ -1,9 +1,0 @@
-Additions and changes:
-- update mongo reference to 1.4.5
-- update varnish reference to 1.1.1
-- add new jsmin reference (0.1.1)
-- fixed the test skeleton template now unit test suites used shared fixtures
-
-Bug fixes:
-- GH-105: detect PHP-5.4 feature : Short array syntax declaration
-- GH-106: detect PHP-5.4 feature : Short array syntax on function call

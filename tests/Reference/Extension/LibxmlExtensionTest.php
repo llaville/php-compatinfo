@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\LibxmlExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -48,7 +47,7 @@ class LibxmlExtensionTest extends GenericTest
                 'LIBXML_HTML_NOIMPLIED',
             );
         }
-        self::$obj = new LibxmlExtension();
+        self::$ext = 'Libxml';
         parent::setUpBeforeClass();
     }
 }

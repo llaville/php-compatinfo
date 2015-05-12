@@ -1,0 +1,209 @@
+[
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_BAD_NONCE",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_BAD_TIMESTAMP",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_CONSUMER_KEY_REFUSED",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_CONSUMER_KEY_UNKNOWN",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_HTTP_METHOD_DELETE",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_INVALID_SIGNATURE",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_OK",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_PARAMETER_ABSENT",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_REQENGINE_CURL",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_REQENGINE_STREAMS",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_SIGNATURE_METHOD_REJECTED",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_SIG_METHOD_HMACSHA256",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_SIG_METHOD_PLAINTEXT",
+        "ext_min": "1.2",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_SIG_METHOD_RSASHA1",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_SSLCHECK_BOTH",
+        "ext_min": "1.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_SSLCHECK_HOST",
+        "ext_min": "1.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_SSLCHECK_NONE",
+        "ext_min": "1.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_SSLCHECK_PEER",
+        "ext_min": "1.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_TOKEN_EXPIRED",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_TOKEN_REJECTED",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_TOKEN_REVOKED",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_TOKEN_USED",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_VERIFIER_INVALID",
+        "ext_min": "1.0.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

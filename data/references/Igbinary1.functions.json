@@ -1,0 +1,22 @@
+[
+    {
+        "ext_name_fk": 28,
+        "name": "igbinary_serialize",
+        "ext_min": "1.1.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 28,
+        "name": "igbinary_unserialize",
+        "ext_min": "1.1.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

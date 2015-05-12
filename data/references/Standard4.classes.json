@@ -1,0 +1,18 @@
+[
+    {
+        "ext_name_fk": 78,
+        "name": "Directory",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 78,
+        "name": "__PHP_Incomplete_Class",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    }
+]

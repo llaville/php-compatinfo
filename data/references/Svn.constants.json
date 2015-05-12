@@ -1,0 +1,470 @@
+[
+    {
+        "ext_name_fk": 80,
+        "name": "PHP_SVN_AUTH_PARAM_IGNORE_SSL_VERIFY_ERRORS",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_ALL",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_AUTH_PARAM_CONFIG",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_AUTH_PARAM_CONFIG_DIR",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_AUTH_PARAM_DEFAULT_PASSWORD",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_AUTH_PARAM_DEFAULT_USERNAME",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_AUTH_PARAM_DONT_STORE_PASSWORDS",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_AUTH_PARAM_NON_INTERACTIVE",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_AUTH_PARAM_NO_AUTH_CACHE",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_AUTH_PARAM_SERVER_GROUP",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_AUTH_PARAM_SSL_SERVER_CERT_INFO",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_AUTH_PARAM_SSL_SERVER_FAILURES",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_DISCOVER_CHANGED_PATHS",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_FS_CONFIG_FS_TYPE",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_FS_TYPE_BDB",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_FS_TYPE_FSFS",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_NODE_DIR",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_NODE_FILE",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_NODE_NONE",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_NODE_UNKNOWN",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_NON_RECURSIVE",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_NO_IGNORE",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_OMIT_MESSAGES",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_PROP_REVISION_AUTHOR",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_PROP_REVISION_DATE",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_PROP_REVISION_LOG",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_PROP_REVISION_ORIG_DATE",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_REVISION_BASE",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_REVISION_COMMITTED",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_REVISION_HEAD",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_REVISION_INITIAL",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_REVISION_PREV",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_SHOW_UPDATES",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_STOP_ON_COPY",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_SCHEDULE_ADD",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_SCHEDULE_DELETE",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_SCHEDULE_NORMAL",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_SCHEDULE_REPLACE",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_ADDED",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_CONFLICTED",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_DELETED",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_EXTERNAL",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_IGNORED",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_INCOMPLETE",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_MERGED",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_MISSING",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_MODIFIED",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_NONE",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_NORMAL",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_OBSTRUCTED",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_REPLACED",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "SVN_WC_STATUS_UNVERSIONED",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

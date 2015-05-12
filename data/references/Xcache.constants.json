@@ -1,0 +1,1793 @@
+[
+    {
+        "ext_name_fk": 90,
+        "name": "XCACHE_MODULES",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XCACHE_VERSION",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ADD",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ADD_ARRAY_ELEMENT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ADD_CHAR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ADD_INTERFACE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ADD_STRING",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ADD_TRAIT",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ADD_VAR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_ADD",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_BW_AND",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_BW_OR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_BW_XOR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_CONCAT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_DIM",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_DIV",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_MOD",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_MUL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_OBJ",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_POW",
+        "ext_min": "3.2.0",
+        "ext_max": "",
+        "php_min": "5.6.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_REF",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_SL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_SR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ASSIGN_SUB",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_BEGIN_SILENCE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_BIND_TRAITS",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_BOOL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_BOOL_NOT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_BOOL_XOR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_BRK",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_BW_AND",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_BW_NOT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_BW_OR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_BW_XOR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_CASE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_CAST",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_CATCH",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_CLONE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_CONCAT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_CONT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_DECLARE_CLASS",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_DECLARE_CONST",
+        "ext_min": "1.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_DECLARE_FUNCTION",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_DECLARE_INHERITED_CLASS",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_DECLARE_INHERITED_CLASS_DELAYED",
+        "ext_min": "1.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_DECLARE_LAMBDA_FUNCTION",
+        "ext_min": "1.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_DISCARD_EXCEPTION",
+        "ext_min": "3.1.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_DIV",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_DO_FCALL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_DO_FCALL_BY_NAME",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ECHO",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_END_SILENCE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_EXIT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_EXT_FCALL_BEGIN",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_EXT_FCALL_END",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_EXT_NOP",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_EXT_STMT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FAST_CALL",
+        "ext_min": "3.1.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FAST_RET",
+        "ext_min": "3.1.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_CLASS",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_CONSTANT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_DIM_FUNC_ARG",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_DIM_IS",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_DIM_R",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_DIM_RW",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_DIM_TMP_VAR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_DIM_UNSET",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_DIM_W",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_FUNC_ARG",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_IS",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_OBJ_FUNC_ARG",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_OBJ_IS",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_OBJ_R",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_OBJ_RW",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_OBJ_UNSET",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_OBJ_W",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_R",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_RW",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_UNSET",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FETCH_W",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FE_FETCH",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FE_RESET",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_FREE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_GENERATOR_RETURN",
+        "ext_min": "3.1.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_GOTO",
+        "ext_min": "1.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_HANDLE_EXCEPTION",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_INCLUDE_OR_EVAL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_INIT_ARRAY",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_INIT_FCALL_BY_NAME",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_INIT_METHOD_CALL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_INIT_NS_FCALL_BY_NAME",
+        "ext_min": "1.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_INIT_STATIC_METHOD_CALL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_INIT_STRING",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_INSTANCEOF",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ISSET_ISEMPTY_DIM_OBJ",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ISSET_ISEMPTY_PROP_OBJ",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_ISSET_ISEMPTY_VAR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_ARRAY",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_BOOL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_CONST",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_CONSTANT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_CONSTANT_ARRAY",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_CV",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_DOUBLE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_EQUAL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_IDENTICAL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_LONG",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_NOT_EQUAL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_NOT_IDENTICAL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_NULL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_OBJECT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_RESOURCE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_SMALLER",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_SMALLER_OR_EQUAL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_STRING",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_TMP_VAR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_UNICODE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_UNUSED",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_IS_VAR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_JMP",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_JMPNZ",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_JMPNZ_EX",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_JMPZ",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_JMPZNZ",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_JMPZ_EX",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_JMP_SET",
+        "ext_min": "1.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_JMP_SET_VAR",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_MOD",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_MUL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_NEW",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_NOP",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_NULL?",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_ARG",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_ASSIGN",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_BIT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_BRK",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_CAST",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_CLASS",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_CONT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_DECLARE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_FCALL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_FCLASS",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_FE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_FETCH",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_IFACE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_INCLUDE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_INIT_FCALL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_ISSET",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_JMPADDR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_OPLINE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_SEND",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_SEND_NOREF",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_STD",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_TMP",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_UCLASS",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_UNUSED",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OPSPEC_VAR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_OP_DATA",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_POST_DEC",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_POST_DEC_OBJ",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_POST_INC",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_POST_INC_OBJ",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_POW",
+        "ext_min": "3.2.0",
+        "ext_max": "",
+        "php_min": "5.6.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_PRE_DEC",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_PRE_DEC_OBJ",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_PRE_INC",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_PRE_INC_OBJ",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_PRINT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_QM_ASSIGN",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_QM_ASSIGN_VAR",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_RAISE_ABSTRACT_ERROR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_RECV",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_RECV_INIT",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_RECV_VARIADIC",
+        "ext_min": "3.2.0",
+        "ext_max": "",
+        "php_min": "5.6.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_RETURN",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_RETURN_BY_REF",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_SEND_REF",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_SEND_UNPACK",
+        "ext_min": "3.2.0",
+        "ext_max": "",
+        "php_min": "5.6.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_SEND_VAL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_SEND_VAR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_SEND_VAR_NO_REF",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_SEPARATE",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_SIZEOF_TEMP_VARIABLE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_SL",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_SR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_SUB",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_SWITCH_FREE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_THROW",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_TICKS",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_TYPE_PHP",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_TYPE_VAR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_UNDEF",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_UNSET_DIM",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_UNSET_OBJ",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_UNSET_VAR",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_USER_OPCODE",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_VERIFY_ABSTRACT_CLASS",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "XC_YIELD",
+        "ext_min": "3.1.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

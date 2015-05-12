@@ -1,0 +1,12 @@
+[
+    {
+        "ext_name_fk": 56,
+        "name": "pdo_drivers",
+        "ext_min": "5.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

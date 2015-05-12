@@ -1,0 +1,42 @@
+[
+    {
+        "ext_name_fk": 46,
+        "name": "msgpack_pack",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "name": "msgpack_serialize",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "name": "msgpack_unpack",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "name": "msgpack_unserialize",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

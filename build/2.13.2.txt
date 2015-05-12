@@ -1,5 +1,0 @@
-Additions and changes:
-- fixes PHP_Reflect minimum dependency to 1.6.1
-
-Bug fixes:
-- none

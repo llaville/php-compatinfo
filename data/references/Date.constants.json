@@ -1,0 +1,128 @@
+[
+    {
+        "ext_name_fk": 10,
+        "name": "DATE_ATOM",
+        "ext_min": "5.1.1",
+        "ext_max": "",
+        "php_min": "5.1.1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "DATE_COOKIE",
+        "ext_min": "5.1.1",
+        "ext_max": "",
+        "php_min": "5.1.1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "DATE_ISO8601",
+        "ext_min": "5.1.1",
+        "ext_max": "",
+        "php_min": "5.1.1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "DATE_RFC1036",
+        "ext_min": "5.1.1",
+        "ext_max": "",
+        "php_min": "5.1.1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "DATE_RFC1123",
+        "ext_min": "5.1.1",
+        "ext_max": "",
+        "php_min": "5.1.1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "DATE_RFC2822",
+        "ext_min": "5.1.1",
+        "ext_max": "",
+        "php_min": "5.1.1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "DATE_RFC3339",
+        "ext_min": "5.1.3",
+        "ext_max": "",
+        "php_min": "5.1.3",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "DATE_RFC822",
+        "ext_min": "5.1.1",
+        "ext_max": "",
+        "php_min": "5.1.1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "DATE_RFC850",
+        "ext_min": "5.1.1",
+        "ext_max": "",
+        "php_min": "5.1.1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "DATE_RSS",
+        "ext_min": "5.1.1",
+        "ext_max": "",
+        "php_min": "5.1.1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "DATE_W3C",
+        "ext_min": "5.1.1",
+        "ext_max": "",
+        "php_min": "5.1.1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "SUNFUNCS_RET_DOUBLE",
+        "ext_min": "5.1.2",
+        "ext_max": "",
+        "php_min": "5.1.2",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "SUNFUNCS_RET_STRING",
+        "ext_min": "5.1.2",
+        "ext_max": "",
+        "php_min": "5.1.2",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "name": "SUNFUNCS_RET_TIMESTAMP",
+        "ext_min": "5.1.2",
+        "ext_max": "",
+        "php_min": "5.1.2",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

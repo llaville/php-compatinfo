@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\PcntlExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -46,7 +45,7 @@ class PcntlExtensionTest extends GenericTest
             'SI_NOINFO'
         );
 
-        self::$obj = new PcntlExtension();
+        self::$ext = 'Pcntl';
         parent::setUpBeforeClass();
     }
 }

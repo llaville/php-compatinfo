@@ -1,0 +1,18 @@
+[
+    {
+        "ext_name_fk": 32,
+        "name": "intl.default_locale",
+        "ext_min": "1.0.0beta",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "intl.error_level",
+        "ext_min": "1.0.3",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": ""
+    }
+]

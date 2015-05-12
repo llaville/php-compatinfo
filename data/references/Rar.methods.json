@@ -1,0 +1,102 @@
+[
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "extract",
+        "static": false,
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "getName",
+        "static": false,
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "getUnpackedSize",
+        "static": false,
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "getPackedSize",
+        "static": false,
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "getHostOs",
+        "static": false,
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "getFileTime",
+        "static": false,
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "getCrc",
+        "static": false,
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "getAttr",
+        "static": false,
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "getVersion",
+        "static": false,
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "getMethod",
+        "static": false,
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

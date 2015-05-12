@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\SocketsExtension;
 
 /**
  * Tests for the PHP_CompatInfo class, retrieving components informations
@@ -209,7 +208,7 @@ class SocketsExtensionTest extends GenericTest
             // requires HAVE_SOCKETPAIR
             'socket_create_pair',
         );
-        self::$obj = new SocketsExtension();
+        self::$ext = 'Sockets';
         parent::setUpBeforeClass();
     }
 }

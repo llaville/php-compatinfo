@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\HttpExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -50,7 +49,31 @@ class HttpExtensionTest extends GenericTest
             // PHP_HTTP_CURL_VERSION(7,38,0)
             'http\\Client\\Curl\\AUTH_SPNEGO',
         );
-        self::$obj = new HttpExtension();
+        self::$ext = 'Http';
         parent::setUpBeforeClass();
+
+        if (!is_null(self::$obj)) {
+            $currentVersion = self::$obj->getCurrentVersion();
+
+            // platform dependant
+            if (version_compare($currentVersion, '2.0.0', 'lt')) {
+                // v1, so all v2 releases are optionals
+                $releases = array_keys(self::$obj->getReleases());
+                foreach ($releases as $rel_version) {
+                    if (version_compare($rel_version, '2.0.0', 'ge')) {
+                        array_push(self::$optionalreleases, $rel_version);
+                    }
+                }
+            } else {
+                // v2, so all v1 releases must not be checked
+                self::$optionalreleases = array(
+                    '0.7.0',
+                    '1.0.0',
+                    '1.3.0',
+                    '1.5.0',
+                    '1.7.0',
+                );
+            }
+        }
     }
 }

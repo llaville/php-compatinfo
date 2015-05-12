@@ -12,21 +12,15 @@
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @version    GIT: $Id$
  * @link       http://php5.laurent-laville.org/compatinfo/
- * @since      Class available since Release 3.2.0
+ * @since      Class available since Release 4.0.0-alpha2+1
  */
 
 namespace Bartlett\Tests\CompatInfo;
 
-use Bartlett\CompatInfo;
-
-use Bartlett\Reflect\ProviderManager;
-use Bartlett\Reflect\Provider\SymfonyFinderProvider;
-use Bartlett\Reflect\Plugin\Analyser\AnalyserPlugin;
-
-use Symfony\Component\Finder\Finder;
+use Bartlett\Reflect\Client;
 
 /**
- * Tests for PHP_CompatInfo, retrieving class elements,
+ * Tests for PHP_CompatInfo, retrieving reference elements,
  * and versioning information.
  *
  * @category   PHP
@@ -40,11 +34,16 @@ use Symfony\Component\Finder\Finder;
  */
 class ClassIssueTest extends \PHPUnit_Framework_TestCase
 {
-    const GH119 = 'GH#119';
-    const GH129 = 'GH#129';
-    const GH131 = 'GH#131';
+    const GH119 = 'gh119.php';
+    const GH129 = 'gh129.php';
+    const GH131 = 'gh131.php';
+    const GH166 = 'gh166.php';
+    const GH171 = 'gh171.php';
+    const GH199 = 'gh199.php';
 
-    protected static $compatinfo;
+    protected static $fixtures;
+    protected static $analyserId;
+    protected static $api;
 
     /**
      * Sets up the shared fixture.
@@ -53,46 +52,15 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-        $finder = new Finder();
-        $finder->files()
-            ->name('gh119.php')
-            ->in(
-                dirname(__FILE__) . DIRECTORY_SEPARATOR .
-                '_files' . DIRECTORY_SEPARATOR
-            )
-        ;
+        self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
+            . 'fixtures' . DIRECTORY_SEPARATOR;
 
-        $finder1 = new Finder();
-        $finder1->files()
-            ->name('gh129.php')
-            ->in(
-                dirname(__FILE__) . DIRECTORY_SEPARATOR .
-                '_files' . DIRECTORY_SEPARATOR
-            )
-        ;
+        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
 
-        $finder2 = new Finder();
-        $finder2->files()
-            ->name('gh131.php')
-            ->in(
-                dirname(__FILE__) . DIRECTORY_SEPARATOR .
-                '_files' . DIRECTORY_SEPARATOR
-            )
-        ;
+        $client = new Client();
 
-        $pm = new ProviderManager;
-        $pm->set(self::GH119, new SymfonyFinderProvider($finder));
-        $pm->set(self::GH129, new SymfonyFinderProvider($finder1));
-        $pm->set(self::GH131, new SymfonyFinderProvider($finder2));
-
-        self::$compatinfo = new CompatInfo;
-        self::$compatinfo->setProviderManager($pm);
-
-        $plugins = array(
-            new CompatInfo\Analyser\SummaryAnalyser
-        );
-        $analyser = new AnalyserPlugin($plugins);
-        self::$compatinfo->addPlugin($analyser);
+        // request for a Bartlett\Reflect\Api\Analyser
+        self::$api = $client->api('analyser');
     }
 
     /**
@@ -105,16 +73,24 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
      */
     public function testBugGH119()
     {
-        self::$compatinfo->parse(array(self::GH119));
-
-        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.versions';
-
-        $expected = '5.0.0';
-        $metrics  = self::$compatinfo->getMetrics();
+        $dataSource = self::$fixtures . self::GH119;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $classes    = $metrics[self::$analyserId]['classes'];
 
         $this->assertEquals(
-            $expected,
-            $metrics[self::GH119][$key]['php.min']
+            array(
+                'ext.name'     => 'user',
+                'ext.min'      => '',
+                'ext.max'      => '',
+                'ext.all'      => '',
+                'php.min'      => '5.0.0',
+                'php.max'      => '',
+                'php.all'      => '5.0.0',
+                'matches'      => 0,
+                'declared'     => true,
+            ),
+            $classes['Foo']
         );
     }
 
@@ -125,24 +101,43 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
      *       "Non-empty classes are reported to require PHP 5.0.0"
      * @group regression
      * @return void
+     * @see testBugGH119()
      */
     public function testBugGH129()
     {
-        self::$compatinfo->parse(array(self::GH129));
+        $dataSource = self::$fixtures . self::GH129;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $methods    = $metrics[self::$analyserId]['methods'];
 
-        $methods = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.methods';
-        $metrics = self::$compatinfo->getMetrics();
-
-        // implicitly public method visibility
+        // implicitly public visibility
         $this->assertEquals(
-            '4.0.0',
-            $metrics[self::GH129][$methods]['Foo::bar']['php.min']
+            array(
+                'ext.name'     => 'user',
+                'ext.min'      => '',
+                'ext.max'      => '',
+                'ext.all'      => '',
+                'php.min'      => '4.0.0',
+                'php.max'      => '',
+                'php.all'      => '4.0.0',
+                'matches'      => 0,
+            ),
+            $methods['Foo2::bar']
         );
 
-        // explicitly public method visibility
+        // public visibility
         $this->assertEquals(
-            '5.0.0',
-            $metrics[self::GH129][$methods]['Foo::baz']['php.min']
+            array(
+                'ext.name'     => 'user',
+                'ext.min'      => '',
+                'ext.max'      => '',
+                'ext.all'      => '',
+                'php.min'      => '5.0.0',
+                'php.max'      => '',
+                'php.all'      => '5.0.0',
+                'matches'      => 0,
+            ),
+            $methods['Foo2::baz']
         );
     }
 
@@ -156,16 +151,119 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
      */
     public function testBugGH131()
     {
-        self::$compatinfo->parse(array(self::GH131));
-
-        $key = CompatInfo\Analyser\SummaryAnalyser::METRICS_PREFIX . '.versions';
-
-        $expected = '5.1.0';
-        $metrics  = self::$compatinfo->getMetrics();
+        $dataSource = self::$fixtures . self::GH131;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
-            $expected,
-            $metrics[self::GH131][$key]['php.min']
+            array(
+                'php.min'      => '5.1.0',
+                'php.max'      => '',
+                'php.all'      => '5.1.0',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for bug GH#166
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/166
+     *       "Type hinting and objects"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH166()
+    {
+        $dataSource = self::$fixtures . self::GH166;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $classes    = $metrics[self::$analyserId]['classes'];
+        $interfaces = $metrics[self::$analyserId]['interfaces'];
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'spl',
+                'ext.min'      => '5.1.0',
+                'ext.max'      => '',
+                'ext.all'      => '',
+                'php.min'      => '5.1.0',
+                'php.max'      => '',
+                'php.all'      => '5.1.0',
+                'matches'      => 1,
+            ),
+            $interfaces['RecursiveIterator']
+        );
+
+        $this->assertEquals(
+            array(
+                'ext.name'     => 'user',
+                'ext.min'      => '',
+                'ext.max'      => '',
+                'ext.all'      => '',
+                'php.min'      => '4.0.0',
+                'php.max'      => '',
+                'php.all'      => '5.1.0',
+                'matches'      => 0,
+                'declared'     => true,
+            ),
+            $classes['Foo']
+        );
+    }
+
+    /**
+     * Regression test for bug GH#171
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/171
+     *       "Missing extension on class inheritance"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH171()
+    {
+        $dataSource = self::$fixtures . self::GH171;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $extensions = $metrics[self::$analyserId]['extensions'];
+
+        $provideExtensions = array(
+            'Core',
+            'xmlwriter',
+            'mongo',
+        );
+
+        foreach ($provideExtensions as $e) {
+            $this->assertArrayHasKey(
+                $e,
+                $extensions,
+                "Extension $e is not found in analysis results while it should be"
+            );
+        }
+    }
+
+    /**
+     * Regression test for bug GH#199
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/199
+     *       "Class inheritance lifts requirements to >= PHP 5.3.0"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH199()
+    {
+        $dataSource = self::$fixtures . self::GH199;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '4.0.0',
+                'php.max'      => '',
+                'php.all'      => '4.0.0',
+            ),
+            $versions
         );
     }
 }

@@ -1,0 +1,20 @@
+[
+    {
+        "ext_name_fk": 13,
+        "rel_version": "4.0.0",
+        "rel_date": "2000-05-22",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 13,
+        "rel_version": "4.0.1",
+        "rel_date": "2000-06-28",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "4.0.1",
+        "php_max": ""
+    }
+]

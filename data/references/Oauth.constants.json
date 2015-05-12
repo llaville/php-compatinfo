@@ -1,0 +1,83 @@
+[
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_AUTH_TYPE_AUTHORIZATION",
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_AUTH_TYPE_FORM",
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_AUTH_TYPE_NONE",
+        "ext_min": "0.99.5",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_AUTH_TYPE_URI",
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_HTTP_METHOD_GET",
+        "ext_min": "0.99.5",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_HTTP_METHOD_HEAD",
+        "ext_min": "0.99.5",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_HTTP_METHOD_POST",
+        "ext_min": "0.99.5",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_HTTP_METHOD_PUT",
+        "ext_min": "0.99.5",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 50,
+        "name": "OAUTH_SIG_METHOD_HMACSHA1",
+        "ext_min": "0.99.1",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

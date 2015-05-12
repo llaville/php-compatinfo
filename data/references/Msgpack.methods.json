@@ -1,0 +1,122 @@
+[
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePack",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePack",
+        "name": "setOption",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePack",
+        "name": "pack",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePack",
+        "name": "unpack",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePack",
+        "name": "unpacker",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePackUnpacker",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePackUnpacker",
+        "name": "__destruct",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePackUnpacker",
+        "name": "setOption",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePackUnpacker",
+        "name": "feed",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePackUnpacker",
+        "name": "execute",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePackUnpacker",
+        "name": "data",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "class_name": "MessagePackUnpacker",
+        "name": "reset",
+        "static": false,
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    }
+]

@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\XslExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -57,7 +56,7 @@ class XslExtensionTest extends GenericTest
                 'XSL_SECPREF_WRITE_NETWORK',
             );
         }
-        self::$obj = new XslExtension();
+        self::$ext = 'Xsl';
         parent::setUpBeforeClass();
     }
 }

@@ -1,0 +1,641 @@
+[
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CREATE",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "EXCL",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CHECKCONS",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OVERWRITE",
+        "ext_min": "1.7.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "FL_NOCASE",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "FL_NODIR",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "FL_COMPRESSED",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "FL_UNCHANGED",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_DEFAULT",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_STORE",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_SHRINK",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_REDUCE_1",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_REDUCE_2",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_REDUCE_3",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_REDUCE_4",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_IMPLODE",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_DEFLATE",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_DEFLATE64",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_PKWARE_IMPLODE",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_BZIP2",
+        "ext_min": "1.11.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_LZMA",
+        "ext_min": "1.11.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_TERSE",
+        "ext_min": "1.11.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_LZ77",
+        "ext_min": "1.11.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_WAVPACK",
+        "ext_min": "1.11.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "CM_PPMD",
+        "ext_min": "1.11.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_OK",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_MULTIDISK",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_RENAME",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_CLOSE",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_SEEK",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_READ",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_WRITE",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_CRC",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_ZIPCLOSED",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_NOENT",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_EXISTS",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_OPEN",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_TMPOPEN",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_ZLIB",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_MEMORY",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_CHANGED",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_COMPNOTSUPP",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_EOF",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_INVAL",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_NOZIP",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_INTERNAL",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_INCONS",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_REMOVE",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "ER_DELETED",
+        "ext_min": "1.6.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_DOS",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_AMIGA",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_OPENVMS",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_UNIX",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_VM_CMS",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_ATARI_ST",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_OS_2",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_MACINTOSH",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_Z_SYSTEM",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_Z_CPM",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_WINDOWS_NTFS",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_MVS",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_VSE",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_ACORN_RISC",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_VFAT",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_ALTERNATE_MVS",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_BEOS",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_TANDEM",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_OS_400",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_OS_X",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_DEFAULT",
+        "ext_min": "1.12.4",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "OPSYS_Z_CPM",
+        "ext_min": "1.12.5",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

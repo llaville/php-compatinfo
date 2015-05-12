@@ -1,0 +1,582 @@
+[
+    {
+        "ext_name_fk": 80,
+        "name": "svn_add",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_auth_get_parameter",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_auth_set_parameter",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_blame",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_cat",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_checkout",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_cleanup",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_client_version",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_commit",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_config_ensure",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_copy",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_delete",
+        "ext_min": "0.4",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_diff",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_export",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_abort_txn",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_apply_text",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_begin_txn2",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_change_node_prop",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_check_path",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_contents_changed",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_copy",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_delete",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_dir_entries",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_file_contents",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_file_length",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_is_dir",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_is_file",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_make_dir",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_make_file",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_node_created_rev",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_node_prop",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_props_changed",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_revision_prop",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_revision_root",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_txn_root",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_fs_youngest_rev",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_import",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_info",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_lock",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_log",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_ls",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_mkdir",
+        "ext_min": "0.4",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_move",
+        "ext_min": "0.4",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_propget",
+        "ext_min": "0.4",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_proplist",
+        "ext_min": "0.4",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_repos_create",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_repos_fs",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_repos_fs_begin_txn_for_commit",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_repos_fs_commit_txn",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_repos_hotcopy",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_repos_open",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_repos_recover",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_resolved",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_revert",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_status",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_switch",
+        "ext_min": "0.3",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_unlock",
+        "ext_min": "0.5",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 80,
+        "name": "svn_update",
+        "ext_min": "0.1",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

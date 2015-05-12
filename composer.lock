@@ -4,47 +4,53 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3c8adcf84f1c7fefa9bef64d8b81e641",
+    "hash": "bcea0209af563d3593c0e2cb25ed1e84",
     "packages": [
         {
             "name": "bartlett/php-reflect",
-            "version": "2.6.3",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-reflect.git",
-                "reference": "49ca03d6dd152b7c3cabf7b1fd8bfe8bb12bd88e"
+                "reference": "daa49a81e1ba8a7bea1af71e787285870dc3d2ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/49ca03d6dd152b7c3cabf7b1fd8bfe8bb12bd88e",
-                "reference": "49ca03d6dd152b7c3cabf7b1fd8bfe8bb12bd88e",
+                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/daa49a81e1ba8a7bea1af71e787285870dc3d2ba",
+                "reference": "daa49a81e1ba8a7bea1af71e787285870dc3d2ba",
                 "shasum": ""
             },
             "require": {
+                "doctrine/collections": "~1.2",
                 "ext-date": "*",
                 "ext-json": "*",
                 "ext-pcre": "*",
+                "ext-phar": "*",
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "ext-tokenizer": "*",
                 "justinrainbow/json-schema": "~1.3",
-                "nikic/php-parser": "~1.0",
-                "php": ">=5.3.0",
-                "phpunit/php-timer": "~1.0",
+                "nikic/php-parser": "^1.2.2",
+                "php": ">=5.3.2",
+                "phpdocumentor/reflection-docblock": "~2.0",
                 "sebastian/version": "~1.0",
                 "seld/jsonlint": "~1.1",
                 "symfony/console": "~2.5",
+                "symfony/dependency-injection": "~2.5",
                 "symfony/event-dispatcher": "~2.5",
-                "symfony/finder": "~2.5"
+                "symfony/finder": "~2.5",
+                "symfony/stopwatch": "~2.5"
             },
             "require-dev": {
-                "bartlett/phpunit-loggertestlistener": "~1.1",
+                "bartlett/phpunit-loggertestlistener": "~1.3",
+                "bartlett/umlwriter": "~1.0",
                 "doctrine/cache": "~1.3",
                 "monolog/monolog": "~1.10",
                 "psr/log": "~1.0"
             },
             "suggest": {
                 "bartlett/phpunit-loggertestlistener": "Allow logging unit tests to your favorite PSR-3 logger interface",
+                "bartlett/umlwriter": "Allow writing UML class diagrams (Graphviz or PlantUML)",
                 "doctrine/cache": "Allow caching results",
                 "monolog/monolog": "Allow logging events with the LogPlugin",
                 "psr/log": "Allow logging events with the LogPlugin"
@@ -72,7 +78,77 @@
             ],
             "description": "Adds the ability to reverse-engineer classes, interfaces, functions, constants, namespaces, traits and more.",
             "homepage": "http://php5.laurent-laville.org/reflect/",
-            "time": "2015-04-15 09:17:38"
+            "keywords": [
+                "reflection",
+                "reverse-engineer"
+            ],
+            "time": "2015-04-16 06:13:08"
+        },
+        {
+            "name": "doctrine/collections",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/collections.git",
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Collections\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Collections Abstraction library",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "array",
+                "collections",
+                "iterator"
+            ],
+            "time": "2015-04-14 22:21:58"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -142,16 +218,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v1.2.2",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "08f97eb4efa029e2fafb6d8c98b71731bf0cf621"
+                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/08f97eb4efa029e2fafb6d8c98b71731bf0cf621",
-                "reference": "08f97eb4efa029e2fafb6d8c98b71731bf0cf621",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/dff239267fd1befa1cd40430c9ed12591aa720ca",
+                "reference": "dff239267fd1befa1cd40430c9ed12591aa720ca",
                 "shasum": ""
             },
             "require": {
@@ -161,7 +237,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -183,51 +259,56 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-04-03 14:33:59"
+            "time": "2015-05-02 15:40:40"
         },
         {
-            "name": "phpunit/php-timer",
-            "version": "1.0.5",
+            "name": "phpdocumentor/reflection-docblock",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "19689d4354b295ee3d8c54b4f42c3efb69cbc17c"
+                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+                "reference": "d68dbdc53dc358a816f00b300704702b2eaff7b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/19689d4354b295ee3d8c54b4f42c3efb69cbc17c",
-                "reference": "19689d4354b295ee3d8c54b4f42c3efb69cbc17c",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/d68dbdc53dc358a816f00b300704702b2eaff7b8",
+                "reference": "d68dbdc53dc358a816f00b300704702b2eaff7b8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "dflydev/markdown": "~1.0",
+                "erusev/parsedown": "~1.0"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
             "autoload": {
-                "classmap": [
-                    "PHP/"
-                ]
+                "psr-0": {
+                    "phpDocumentor": [
+                        "src/"
+                    ]
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                ""
-            ],
             "license": [
-                "BSD-3-Clause"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Sebastian Bergmann",
-                    "email": "sb@sebastian-bergmann.de",
-                    "role": "lead"
+                    "name": "Mike van Riel",
+                    "email": "mike.vanriel@naenius.com"
                 }
             ],
-            "description": "Utility class for timing",
-            "homepage": "https://github.com/sebastianbergmann/php-timer/",
-            "keywords": [
-                "timer"
-            ],
-            "time": "2013-08-02 07:42:54"
+            "time": "2015-02-03 12:10:50"
         },
         {
             "name": "sebastian/version",
@@ -369,6 +450,67 @@
             "time": "2015-03-30 15:54:10"
         },
         {
+            "name": "symfony/dependency-injection",
+            "version": "v2.6.6",
+            "target-dir": "Symfony/Component/DependencyInjection",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/DependencyInjection.git",
+                "reference": "8e9007012226b4bd41f8afed855c452cf5edc3a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/8e9007012226b4bd41f8afed855c452cf5edc3a6",
+                "reference": "8e9007012226b4bd41f8afed855c452cf5edc3a6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "conflict": {
+                "symfony/expression-language": "<2.6"
+            },
+            "require-dev": {
+                "symfony/config": "~2.2",
+                "symfony/expression-language": "~2.6",
+                "symfony/phpunit-bridge": "~2.7",
+                "symfony/yaml": "~2.1"
+            },
+            "suggest": {
+                "symfony/config": "",
+                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\DependencyInjection\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony DependencyInjection Component",
+            "homepage": "http://symfony.com",
+            "time": "2015-03-30 15:54:10"
+        },
+        {
             "name": "symfony/event-dispatcher",
             "version": "v2.6.6",
             "target-dir": "Symfony/Component/EventDispatcher",
@@ -476,21 +618,71 @@
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
             "time": "2015-03-30 15:54:10"
+        },
+        {
+            "name": "symfony/stopwatch",
+            "version": "v2.6.6",
+            "target-dir": "Symfony/Component/Stopwatch",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Stopwatch.git",
+                "reference": "5f196e84b5640424a166d2ce9cca161ce1e9d912"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Stopwatch/zipball/5f196e84b5640424a166d2ce9cca161ce1e9d912",
+                "reference": "5f196e84b5640424a166d2ce9cca161ce1e9d912",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Stopwatch\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Stopwatch Component",
+            "homepage": "http://symfony.com",
+            "time": "2015-03-22 16:55:57"
         }
     ],
     "packages-dev": [
         {
             "name": "bartlett/phpunit-loggertestlistener",
-            "version": "1.3.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/phpunit-LoggerTestListener.git",
-                "reference": "1b3f6d3ec4b2d60a7c2dbadd947feefb44b1b800"
+                "reference": "7ad1d57a5f51490d09e2395d15d791c469353264"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/phpunit-LoggerTestListener/zipball/1b3f6d3ec4b2d60a7c2dbadd947feefb44b1b800",
-                "reference": "1b3f6d3ec4b2d60a7c2dbadd947feefb44b1b800",
+                "url": "https://api.github.com/repos/llaville/phpunit-LoggerTestListener/zipball/7ad1d57a5f51490d09e2395d15d791c469353264",
+                "reference": "7ad1d57a5f51490d09e2395d15d791c469353264",
                 "shasum": ""
             },
             "require": {
@@ -498,9 +690,11 @@
                 "psr/log": "~1.0"
             },
             "require-dev": {
+                "bartlett/monolog-callbackfilterhandler": "~1.0",
                 "monolog/monolog": "~1.10"
             },
             "suggest": {
+                "bartlett/monolog-callbackfilterhandler": "Advanced filtering strategies for Monolog",
                 "monolog/monolog": "For advanced logging strategies"
             },
             "type": "library",
@@ -523,7 +717,64 @@
             ],
             "description": "PHPUnit Test Suite listener for compatible PSR-3 logger",
             "homepage": "https://github.com/llaville/phpunit-LoggerTestListener",
-            "time": "2015-04-13 18:37:12"
+            "time": "2015-05-04 11:26:44"
+        },
+        {
+            "name": "bartlett/umlwriter",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/llaville/umlwriter.git",
+                "reference": "c883bf1f80370397198c5eae0615173380fa6119"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/llaville/umlwriter/zipball/c883bf1f80370397198c5eae0615173380fa6119",
+                "reference": "c883bf1f80370397198c5eae0615173380fa6119",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "sebastian/version": "~1.0",
+                "symfony/console": "~2.5"
+            },
+            "require-dev": {
+                "andrewsville/php-token-reflection": "~1.4",
+                "bartlett/php-reflect": "3.0.*@dev"
+            },
+            "suggest": {
+                "andrewsville/php-token-reflection": "Reverse-engine, alternative solution",
+                "bartlett/php-reflect": "Reverse-engine, default solution"
+            },
+            "bin": [
+                "bin/umlwriter"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Bartlett\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Laurent Laville",
+                    "email": "pear@laurent-laville.org",
+                    "homepage": "https://github.com/llaville",
+                    "role": "Lead"
+                }
+            ],
+            "description": "Create UML class diagrams from your PHP source.",
+            "homepage": "http://php5.laurent-laville.org/umlwriter/",
+            "keywords": [
+                "graphviz",
+                "plantuml",
+                "uml"
+            ],
+            "time": "2015-04-02 11:07:20"
         },
         {
             "name": "doctrine/cache",
@@ -713,11 +964,12 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.3.0",
+        "php": ">=5.3.2",
         "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-pdo_sqlite": "*"
     },
     "platform-dev": []
 }

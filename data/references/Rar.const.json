@@ -1,0 +1,56 @@
+[    
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "HOST_MSDOS",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "HOST_OS2",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "HOST_WIN32",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "HOST_UNIX",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "HOST_MACOS",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "HOST_BEOS",
+        "ext_min": "0.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }    
+]

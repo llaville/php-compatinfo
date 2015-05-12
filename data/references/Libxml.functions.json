@@ -1,0 +1,72 @@
+[
+    {
+        "ext_name_fk": 37,
+        "name": "libxml_clear_errors",
+        "ext_min": "5.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 37,
+        "name": "libxml_disable_entity_loader",
+        "ext_min": "5.2.11",
+        "ext_max": "",
+        "php_min": "5.2.11",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 37,
+        "name": "libxml_get_errors",
+        "ext_min": "5.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 37,
+        "name": "libxml_get_last_error",
+        "ext_min": "5.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 37,
+        "name": "libxml_set_external_entity_loader",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 37,
+        "name": "libxml_set_streams_context",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 37,
+        "name": "libxml_use_internal_errors",
+        "ext_min": "5.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

@@ -1,0 +1,594 @@
+[
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "__set_state",
+        "static": true,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "modify",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "setTimezone",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "setTime",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "setDate",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "setISODate",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "createFromFormat",
+        "static": true,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "getLastErrors",
+        "static": true,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "add",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "sub",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "diff",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "5.4.37",
+        "prototype": "DateTimeInterface",
+        "proto_since": "5.5.0"
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "format",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "5.4.37",
+        "prototype": "DateTimeInterface",
+        "proto_since": "5.5.0"
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "__wakeup",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "5.4.37",
+        "prototype": "DateTimeInterface",
+        "proto_since": "5.5.0"
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "getTimezone",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "5.4.37",
+        "prototype": "DateTimeInterface",
+        "proto_since": "5.5.0"
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "getOffset",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "5.4.37",
+        "prototype": "DateTimeInterface",
+        "proto_since": "5.5.0"
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "getTimestamp",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "5.4.37",
+        "prototype": "DateTimeInterface",
+        "proto_since": "5.5.0"
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "setTimestamp",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "__set_state",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "createFromFormat",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "getLastErrors",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "modify",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "add",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "sub",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "setTimezone",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "setTime",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "setDate",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "setISODate",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "setTimestamp",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeImmutable",
+        "name": "createFromMutable",
+        "static": true,
+        "ext_min": "5.6.0beta1",
+        "ext_max": "",
+        "php_min": "5.6.0beta1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "__wakeup",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "__set_state",
+        "static": true,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "getName",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "getOffset",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "getTransitions",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "getLocation",
+        "static": false,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "listAbbreviations",
+        "static": true,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeZone",
+        "name": "listIdentifiers",
+        "static": true,
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateInterval",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateInterval",
+        "name": "__wakeup",
+        "static": false,
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateInterval",
+        "name": "__set_state",
+        "static": true,
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateInterval",
+        "name": "format",
+        "static": false,
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateInterval",
+        "name": "createFromDateString",
+        "static": true,
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DatePeriod",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DatePeriod",
+        "name": "__wakeup",
+        "static": false,
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DatePeriod",
+        "name": "__set_state",
+        "static": true,
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DatePeriod",
+        "name": "getStartDate",
+        "static": false,
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.6.5RC1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DatePeriod",
+        "name": "getEndDate",
+        "static": false,
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.6.5RC1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DatePeriod",
+        "name": "getDateInterval",
+        "static": false,
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.6.5RC1",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeInterface",
+        "name": "format",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeInterface",
+        "name": "getTimezone",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeInterface",
+        "name": "getOffset",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeInterface",
+        "name": "getTimestamp",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeInterface",
+        "name": "diff",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTimeInterface",
+        "name": "__wakeup",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 10,
+        "class_name": "DateTime",
+        "name": "createFromImmutable",
+        "static": true,
+        "ext_min": "5.6.8RC1",
+        "ext_max": "",
+        "php_min": "5.6.8RC1",
+        "php_max": ""
+    }
+]

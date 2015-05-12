@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\Bz2Extension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -42,7 +41,7 @@ class Bz2ExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$obj = new Bz2Extension();
+        self::$ext = 'Bz2';
         parent::setUpBeforeClass();
     }
 }

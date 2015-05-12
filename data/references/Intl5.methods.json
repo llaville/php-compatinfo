@@ -1,0 +1,1172 @@
+[
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "createWordInstance",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "createLineInstance",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "createCharacterInstance",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "createSentenceInstance",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "createTitleInstance",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "createCodePointInstance",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "getText",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "setText",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "first",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "last",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "previous",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "next",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "current",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "following",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "preceding",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "isBoundary",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "getLocale",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "getPartsIterator",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "getErrorCode",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "getErrorMessage",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "createInstance",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getKeywordValuesForLocale",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getNow",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getAvailableLocales",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "get",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getTime",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "setTime",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "add",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "setTimeZone",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "after",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "before",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "set",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "roll",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "clear",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "fieldDifference",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getActualMaximum",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getActualMinimum",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getDayOfWeekType",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getFirstDayOfWeek",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getGreatestMinimum",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getLeastMaximum",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getLocale",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getMaximum",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getMinimalDaysInFirstWeek",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getMinimum",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getTimeZone",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getType",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getWeekendTransition",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "inDaylightTime",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "isEquivalentTo",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "isLenient",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "isSet",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "isWeekend",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "setFirstDayOfWeek",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "setLenient",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "setMinimalDaysInFirstWeek",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "equals",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getRepeatedWallTimeOption",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getSkippedWallTimeOption",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "setRepeatedWallTimeOption",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "setSkippedWallTimeOption",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "fromDateTime",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "toDateTime",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getErrorCode",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "getErrorMessage",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCodePointBreakIterator",
+        "name": "getLastCodePoint",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlGregorianCalendar",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlGregorianCalendar",
+        "name": "setGregorianChange",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlGregorianCalendar",
+        "name": "getGregorianChange",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlGregorianCalendar",
+        "name": "isLeapYear",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlPartsIterator",
+        "name": "getBreakIterator",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlRuleBasedBreakIterator",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlRuleBasedBreakIterator",
+        "name": "getRules",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlRuleBasedBreakIterator",
+        "name": "getRuleStatus",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlRuleBasedBreakIterator",
+        "name": "getRuleStatusVec",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlRuleBasedBreakIterator",
+        "name": "getBinaryRules",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "createTimeZone",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "fromDateTimeZone",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "createDefault",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getGMT",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getUnknown",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "createEnumeration",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "countEquivalentIDs",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "createTimeZoneIDEnumeration",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getCanonicalID",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getRegion",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getTZDataVersion",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getEquivalentID",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getID",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "useDaylightTime",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getOffset",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getRawOffset",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "hasSameRules",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getDisplayName",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getDSTSavings",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "toDateTimeZone",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getErrorCode",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "getErrorMessage",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "setSourceEncoding",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "setDestinationEncoding",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "getSourceEncoding",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "getDestinationEncoding",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "getSourceType",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "getDestinationType",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "getSubstChars",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "setSubstChars",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "toUCallback",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "fromUCallback",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "convert",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "transcode",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "getErrorCode",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "getErrorMessage",
+        "static": false,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "reasonText",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "getAvailable",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "getAliases",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "getStandards",
+        "static": true,
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    }
+]

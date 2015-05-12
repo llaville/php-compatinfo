@@ -1,0 +1,317 @@
+[
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_READONLY",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_HIDDEN",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_SYSTEM",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_DIRECTORY",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_ARCHIVE",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_DEVICE",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_NORMAL",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_TEMPORARY",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_SPARSE_FILE",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_REPARSE_POINT",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_COMPRESSED",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_OFFLINE",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_NOT_CONTENT_INDEXED",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_ENCRYPTED",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_WIN_VIRTUAL",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_WORLD_EXECUTE",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_WORLD_WRITE",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_WORLD_READ",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_GROUP_EXECUTE",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_GROUP_WRITE",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_GROUP_READ",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_OWNER_EXECUTE",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_OWNER_WRITE",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_OWNER_READ",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_STICKY",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_SETGID",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_SETUID",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_FINAL_QUARTET",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_FIFO",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_CHAR_DEV",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_DIRECTORY",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_BLOCK_DEV",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_REGULAR_FILE",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_SYM_LINK",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "ATTRIBUTE_UNIX_SOCKET",
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

@@ -40,18 +40,14 @@ elements, such as classes, interfaces, functions, constants, namespaces.
 *--profile*::
     Display timing and memory usage information.
 
+*--progress*::
+    Show progress bar.
 
-== validate COMMAND
-The phpcompatinfo(1) 'validate' command is used to check syntax of your json configuration file
+*--output*::
+    Write results to file or URL.
 
-Usage:
-
-  phpcompatinfo validate [file]
-
-Where:
-
-*file*::
-  Path to `phpcompatinfo.json` file (optional)
+*--manifest*::
+   Show which versions of dependencies are bundled (PHAR version only).
 
 
 == analyser:list COMMAND
@@ -64,67 +60,89 @@ The phpcompatinfo(1) 'analyser:run' command is used to analyse a data source and
 
 Usage:
 
-  phpcompatinfo analyser:run [--alias] [--php[="..."]] [--redraw-freq="..."] source [analysers1] ... [analysersN]
+  phpcompatinfo analyser:run [--alias] [--format="..."] source [analysers1] ... [analysersN]
 
 Where:
 
 *source*::
-  Identify a data source declared in a json configuration file (see <<X1,CONF FILES>> section)
+  Identify a data source; may be declared in a json configuration file (see <<X1,CONF FILES>> section)
 
 *--alias*::
   If set, the source refers to its alias
 
-*--php*::
-  Filter results on PHP version  (default: ">= 4.0")
-
-*--redraw-freq*::
-  How many times should the progress bar be updated? (default: 1)
+*--format*::
+  If set, convert result to a specific format. (default: "json")
 
 *analysers1* ... *analysersN*::
   Identify one or more analyser to execute. See 'analyser:list' command to know what analysers are available.
+  (default: ["compatibility"])
+
+
+== config:validate COMMAND
+The phpcompatinfo(1) 'config:validate' command is used to check syntax of your json configuration file
+
+Usage:
+
+  phpcompatinfo config:validate [file]
+
+Where:
+
+*file*::
+  Path to `phpcompatinfo.json` file (optional)
+
+
+== diagnose:run COMMAND
+The phpcompatinfo(1) 'diagnose:run' command is used to identify common errors on a platform.
+
+Usage:
+
+  phpcompatinfo diagnose:run [-vv|-vvv]
+
+
+== diagram:class COMMAND
+The phpcompatinfo(1) 'diagram:class' command is used to generate diagram about a user class present in a data source
+
+Usage:
+
+  phpcompatinfo diagram:class [--alias] [--engine[="..."]] argument source
+
+Where:
+
+*argument*::
+  Name of the class to inspect
+
+*source*::
+  Identify a data source; may be declared in a json configuration file (see <<X1,CONF FILES>> section)
+
+*--alias*::
+  If set, the source refers to its alias
+
+*--engine*::
+  Graphical syntax. (default: "plantuml")
+
+
+== diagram:package COMMAND
+The phpcompatinfo(1) 'diagram:package' command is used to generate diagram about namespaces in a data source
+
+Usage:
+
+  phpcompatinfo diagram:package [--alias] [--engine[="..."]] source
+
+Where:
+
+*source*::
+  Identify a data source; may be declared in a json configuration file (see <<X1,CONF FILES>> section)
+
+*--alias*::
+  If set, the source refers to its alias
+
+*--engine*::
+  Graphical syntax. (default: "plantuml")
 
 
 == plugin:list COMMAND
 The phpcompatinfo(1) 'plugin:list' command is used to show what plugins are installed
 (see <<X1,CONF FILES>> section).
-
-== provider:list COMMAND
-The phpcompatinfo(1) 'provider:list' command is used to show what data sources are declared
-in a json configuration file (see <<X1,CONF FILES>> section).
-
-== provider:show COMMAND
-The phpcompatinfo(1) 'provider:show' command is used to show files in data sources.
-
-Usage:
-
-  phpcompatinfo provider:show [--alias] source
-
-Where:
-
-*source*::
-  Identify a data source declared in a json configuration file (see <<X1,CONF FILES>> section)
-
-*--alias*::
-  If set, the source refers to its alias
-
-
-== provider:display COMMAND
-The phpcompatinfo(1) 'provider:display' command is used to show source code of a file in a data source.
-
-Usage:
-
-  phpcompatinfo provider:display [--alias] source file
-
-Where:
-
-*--alias*::
-  If set, the source refers to its alias
-
-*source*::
-  Identify a data source declared in a json configuration file (see <<X1,CONF FILES>> section)
-
-*file*::
-  Relative path to a file in the data source
 
 
 == reference:list COMMAND
@@ -132,12 +150,7 @@ The phpcompatinfo(1) 'reference:list' command is used to list all references sup
 
 Usage:
 
-  phpcompatinfo reference:list [--raw]
-
-Where:
-
-*--raw*::
-  Presents list in a raw format
+  phpcompatinfo reference:list
 
 
 == reference:show COMMAND
@@ -145,12 +158,18 @@ The phpcompatinfo(1) 'reference:show' command is used to introspect a reference.
 
 Usage:
 
-  phpcompatinfo reference:show [--php="..."] [--ini] [--constants] [--functions] [--interfaces] [--classes] [--raw] name
+  phpcompatinfo reference:show [--filter[="..."]] [--releases] [--ini] [--constants] [--functions] [--interfaces] [--classes] name
 
 Where:
 
-*--php*::
-  Filter results on PHP version
+*name*::
+  Introspection of a reference (case insensitive)
+
+*--filter*::
+  Resource that provide a closure to filter results (default: false)
+
+*--releases*::
+  Show releases
 
 *--ini*::
   Show ini Entries
@@ -167,11 +186,49 @@ Where:
 *--classes*::
   Show classes
 
-*--raw*::
-  Presents list in a raw format
 
-*name*::
-  Name of a reference (case insensitive)
+== reflection:class COMMAND
+The phpcompatinfo(1) 'reflection:class' command is used to give information about a user class present in a data source.
+
+Usage:
+
+  phpcompatinfo reflection:class [--alias] [--return="..."] argument source
+
+Where:
+
+*argument*::
+  Name of the class to reflect.
+
+*source*::
+  Identify a data source; may be declared in a json configuration file (see <<X1,CONF FILES>> section)
+
+*--alias*::
+  If set, the source refers to its alias
+
+*--format*::
+  Format of result to return. False when raw text. (default: false)
+
+
+== reflection:function COMMAND
+The phpcompatinfo(1) 'reflection:function' command is used to give information about a user function present in a data source.
+
+Usage:
+
+  phpcompatinfo reflection:function [--alias] [--return="..."] argument source
+
+Where:
+
+*argument*::
+  Name of the function to reflect.
+
+*source*::
+  Identify a data source; may be declared in a json configuration file (see <<X1,CONF FILES>> section)
+
+*--alias*::
+  If set, the source refers to its alias
+
+*--format*::
+  Format of result to return. False when raw text. (default: false)
 
 
 == EXIT STATUS
@@ -186,7 +243,7 @@ Where:
 A configuration file contains data sources that can be analysed, but also optional plugins and analysers installed.
 Require configuration file is loaded in the following order:
 
-. The CONF_FILE specified by the environment variable `COMPATINFO`.
+. The CONF_FILE specified by the environment variables `BARTLETTRC` and `BARTLETT_SCAN_DIR`.
 . `phpcompatinfo.json` from the current directory.
 . `phpcompatinfo.json` from the User `$HOME/.config` directory.
 . `phpcompatinfo.json` from the `/etc` directory.
@@ -209,7 +266,7 @@ Main web site: <http://php5.laurent-laville.org/compatinfo/>
 
 
 == COPYRIGHT
-Copyright \(C) 2010-2014 Laurent Laville.
+Copyright \(C) 2010-2015 Laurent Laville.
 
 
 == LICENSE

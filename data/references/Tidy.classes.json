@@ -1,0 +1,18 @@
+[
+    {
+        "ext_name_fk": 85,
+        "name": "tidy",
+        "ext_min": "0.5.2",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 85,
+        "name": "tidyNode",
+        "ext_min": "0.7.0",
+        "ext_max": "",
+        "php_min": "5.0.1",
+        "php_max": ""
+    }
+]

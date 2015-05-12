@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\CurlExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -46,7 +45,7 @@ class CurlExtensionTest extends GenericTest
             'CURLOPT_MUTE',
             'CURLOPT_PASSWDFUNCTION',
         );
-        self::$obj = new CurlExtension();
+        self::$ext = 'Curl';
         parent::setUpBeforeClass();
     }
 }

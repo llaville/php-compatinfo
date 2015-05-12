@@ -1,0 +1,83 @@
+= Migration Guide v3
+:description: Migrating from version 2.26 to 3.2 (min), and continue to keep your environment running.
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+
+ifdef::basebackend-docbook[]
+[partintro]
+--
+image:icons/font-awesome/terminal.png[alt="CLI",icon="terminal",iconsfont="font-awesome",size="9x"]
+*CLI*
+
+Begin first with the commands of [label label-primary]#CompatInfo# in CLI mode.
+
+See xref:_cli[]
+
+image:icons/font-awesome/code.png[alt="XML",icon="code",iconsfont="font-awesome",size="9x"]
+*XML*
+
+How you can customize [label label-primary]#CompatInfo# in CLI mode only.
+
+See xref:_configuration_file[]
+
+image:icons/font-awesome/code.png[alt="XML",icon="code",iconsfont="font-awesome",size="9x"]
+*API*
+
+Due to namespaces, API are incompatible in versions 2 and 3. Here are code to do the same things.
+
+See xref:_server_api[]
+--
+endif::basebackend-docbook[]
+
+ifdef::basebackend-html[]
+[role="lead"]
+Because the version 3 is a full API rewrites, and used namespaces, your old code cannot migrate
+without a little change.
+
+We will try to explain how to do in few steps.
+
+====
+[panel,info,terminal,font-awesome]
+.CLI
+--
+Begin first with the commands of [label label-primary]#CompatInfo# in CLI mode.
+
+ifdef::basebackend-bootstrap[]
+link:migration-guide-3&#45;&#45;cli.html["Command Line Interface",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:migration-guide-3&#45;&#45;cli.html[Command Line Interface]
+endif::basebackend-bootstrap[]
+--
+====
+
+====
+[panel,info,code,font-awesome]
+.XML
+--
+How you can customize [label label-primary]#CompatInfo# in CLI mode only.
+
+ifdef::basebackend-bootstrap[]
+link:migration-guide-3&#45;&#45;xml.html["Configuration file",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:migration-guide-3&#45;&#45;xml.html[Configuration file]
+endif::basebackend-bootstrap[]
+--
+====
+
+====
+[panel,info,code,font-awesome]
+.API
+--
+Due to namespaces, API are incompatible in versions 2 and 3. Here are code to do the same things.
+
+ifdef::basebackend-bootstrap[]
+link:migration-guide-3&#45;&#45;api.html["Application Programming Interface",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:migration-guide-3&#45;&#45;api.html[Application Programming Interface]
+endif::basebackend-bootstrap[]
+--
+====
+endif::basebackend-html[]

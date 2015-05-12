@@ -18,6 +18,7 @@
 namespace Bartlett\Tests\CompatInfo\Reference;
 
 use Bartlett\CompatInfo\Reference\ReferenceInterface;
+use Bartlett\CompatInfo\Reference\ExtensionFactory;
 
 /**
  * Tests for the PHP_CompatInfo, retrieving components informations
@@ -39,6 +40,7 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     protected static $ext = null;
 
     // Could be defined in Reference but missing (system dependant)
+    protected static $optionalreleases    = array();
     protected static $optionalcfgs        = array();
     protected static $optionalconstants   = array();
     protected static $optionalfunctions   = array();
@@ -52,7 +54,39 @@ class GenericTest extends \PHPUnit_Framework_TestCase
     protected static $ignoredclasses       = array();
     protected static $ignoredinterfaces    = array();
 
-    protected static $extensions =  array('amqp','haru','pthreads');
+    // References fully documented
+    protected static $extensions =  array(
+        'amqp',
+        'date',
+        'gender',
+        'haru',
+        'htscanner',
+        'igbinary',
+        'inclued',
+        'intl',
+        'jsmin',
+        'lzf',
+        'mailparse',
+        'mongo',
+        'msgpack',
+        'oauth',
+        'pdflib',
+        'pthreads',
+        'rar',
+        'redis',
+        'reflection',
+        'riak',
+        'solr',
+        'sphinx',
+        'stomp',
+        'uopz',
+        'uploadprogress',
+        'varnish',
+        'xdebug',
+        'xmldiff',
+        'Zend OPcache',
+        'zip',
+    );
 
     /**
      * Sets up the shared fixture.
@@ -62,11 +96,16 @@ class GenericTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
+        if (self::$ext) {
+            $name = strtolower(self::$ext);
+            self::$obj = new ExtensionFactory($name);
+        }
         if (!self::$obj instanceof ReferenceInterface) {
             self::$obj = null;
             return;
         }
         self::$ext = $extname = self::$obj->getName();
+        self::$optionalreleases = array();
 
         if (!extension_loaded($extname)) {
             // if dynamic extension load is activated
@@ -79,6 +118,15 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         }
         if (!extension_loaded($extname)) {
             self::$obj = null;
+        } else {
+            $releases       = array_keys(self::$obj->getReleases());
+            $currentVersion = self::$obj->getCurrentVersion();
+            // platform dependant
+            foreach ($releases as $rel_version) {
+                if (version_compare($currentVersion, $rel_version, 'lt')) {
+                    array_push(self::$optionalreleases, $rel_version);
+                }
+            }
         }
     }
 
@@ -112,13 +160,14 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $inientries = self::$obj->getIniEntries();
         $this->assertTrue(is_array($inientries));
         foreach ($inientries as $inientry => $range) {
+            if (in_array($range['ext.min'], self::$optionalreleases)) {
+                continue;
+            }
+
             $min = $range['php.min'];
             $max = $range['php.max'];
 
             if (array_key_exists('php.excludes', $range)) {
-                if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
-                }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
                     array_push(self::$optionalcfgs, $inientry);
@@ -195,13 +244,14 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $fcts = self::$obj->getFunctions();
         $this->assertTrue(is_array($fcts));
         foreach ($fcts as $fctname => $range) {
+            if (in_array($range['ext.min'], self::$optionalreleases)) {
+                continue;
+            }
+
             $min = $range['php.min'];
             $max = $range['php.max'];
 
             if (array_key_exists('php.excludes', $range)) {
-                if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
-                }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
                     array_push(self::$optionalfunctions, $fctname);
@@ -274,13 +324,14 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $dict = self::$obj->getConstants();
         $this->assertTrue(is_array($dict));
         foreach ($dict as $constname => $range) {
+            if (in_array($range['ext.min'], self::$optionalreleases)) {
+                continue;
+            }
+
             $min = $range['php.min'];
             $max = $range['php.max'];
 
             if (array_key_exists('php.excludes', $range)) {
-                if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
-                }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
                     array_push(self::$optionalconstants, $constname);
@@ -356,13 +407,14 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $dict = self::$obj->getClasses();
         $this->assertTrue(is_array($dict));
         foreach ($dict as $classname => $range) {
+            if (in_array($range['ext.min'], self::$optionalreleases)) {
+                continue;
+            }
+
             $min = $range['php.min'];
             $max = $range['php.max'];
 
             if (array_key_exists('php.excludes', $range)) {
-                if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
-                }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
                     array_push(self::$ignoredclasses, $constname);
@@ -466,6 +518,18 @@ class GenericTest extends \PHPUnit_Framework_TestCase
                 if (!$method->isPublic()) {
                     continue;
                 }
+                $from = $method->getDeclaringClass()->getName();
+
+                if ($from !== $classname) {
+                    // don't check inherit methods
+                    continue;
+                }
+                try {
+                    $method->getPrototype();
+                    // don't check prototype methods
+                    continue;
+                } catch (\ReflectionException $e) {
+                }
                 $methodname = $method->getName();
                 if ($method->isStatic()) {
                     $this->assertArrayHasKey(
@@ -479,6 +543,11 @@ class GenericTest extends \PHPUnit_Framework_TestCase
                         "Defined static method '$classname::$methodname' not known in Reference."
                     );
                 } else {
+                    $this->assertArrayHasKey(
+                        $classname,
+                        $nonStaticMethods,
+                        "Defined method '$classname::$methodname' not known in Reference."
+                    );
                     $this->assertArrayHasKey(
                         $methodname,
                         $nonStaticMethods[$classname],
@@ -516,7 +585,17 @@ class GenericTest extends \PHPUnit_Framework_TestCase
                 /* Skip class alias */
                 continue;
             }
-            $constants = $class->getConstants();
+
+            $parent = $class->getParentClass();
+            if ($parent) {
+                $constants = array();
+            } else {
+                $constants = $class->getConstants();
+            }
+
+            if (!array_key_exists($classname, $classconstants)) {
+                $classconstants[$classname] = array();
+            }
 
             foreach ($constants as $constantname => $constantvalue) {
                 $this->assertArrayHasKey(
@@ -543,13 +622,14 @@ class GenericTest extends \PHPUnit_Framework_TestCase
         $dict = self::$obj->getInterfaces();
         $this->assertTrue(is_array($dict));
         foreach ($dict as $intname => $range) {
+            if (in_array($range['ext.min'], self::$optionalreleases)) {
+                continue;
+            }
+
             $min = $range['php.min'];
             $max = $range['php.max'];
 
             if (array_key_exists('php.excludes', $range)) {
-                if (!is_array($range['php.excludes'])) {
-                    $range['php.excludes'] = array($range['php.excludes']);
-                }
                 if (in_array(PHP_VERSION, $range['php.excludes'])) {
                     // We are in min/max, so add it as optional
                     array_push(self::$optionalinterfaces, $intname);

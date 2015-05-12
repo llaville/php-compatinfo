@@ -1,0 +1,10 @@
+[
+    {
+        "ext_name_fk": 37,
+        "name": "LibXMLError",
+        "ext_min": "5.1.0",
+        "ext_max": "",
+        "php_min": "5.1.0",
+        "php_max": ""
+    }
+]

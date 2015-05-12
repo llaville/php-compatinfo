@@ -1,0 +1,392 @@
+[
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_array_query",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_busy_timeout",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_changes",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_close",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_column",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_create_aggregate",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_create_function",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_current",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_error_string",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_escape_string",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_exec",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_factory",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_fetch_all",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_fetch_array",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_fetch_column_types",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "5.0.0, 5.0.0, 5.1.0",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_fetch_object",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_fetch_single",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_fetch_string",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_field_name",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_has_more",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_has_prev",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_last_error",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_last_insert_rowid",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_libencoding",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_libversion",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_next",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_num_fields",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_num_rows",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_open",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_popen",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_prev",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_query",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_rewind",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_seek",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_single_query",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_udf_decode_binary",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_udf_encode_binary",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_unbuffered_query",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 76,
+        "name": "sqlite_valid",
+        "ext_min": "2.0-dev",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

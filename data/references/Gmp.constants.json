@@ -1,0 +1,92 @@
+[
+    {
+        "ext_name_fk": 22,
+        "name": "GMP_BIG_ENDIAN",
+        "ext_min": "5.6.1RC1",
+        "ext_max": "",
+        "php_min": "5.6.1RC1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 22,
+        "name": "GMP_LITTLE_ENDIAN",
+        "ext_min": "5.6.1RC1",
+        "ext_max": "",
+        "php_min": "5.6.1RC1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 22,
+        "name": "GMP_LSW_FIRST",
+        "ext_min": "5.6.1RC1",
+        "ext_max": "",
+        "php_min": "5.6.1RC1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 22,
+        "name": "GMP_MPIR_VERSION",
+        "ext_min": "5.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 22,
+        "name": "GMP_MSW_FIRST",
+        "ext_min": "5.6.1RC1",
+        "ext_max": "",
+        "php_min": "5.6.1RC1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 22,
+        "name": "GMP_NATIVE_ENDIAN",
+        "ext_min": "5.6.1RC1",
+        "ext_max": "",
+        "php_min": "5.6.1RC1",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 22,
+        "name": "GMP_ROUND_MINUSINF",
+        "ext_min": "4.0.4",
+        "ext_max": "",
+        "php_min": "4.0.4",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 22,
+        "name": "GMP_ROUND_PLUSINF",
+        "ext_min": "4.0.4",
+        "ext_max": "",
+        "php_min": "4.0.4",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 22,
+        "name": "GMP_ROUND_ZERO",
+        "ext_min": "4.0.4",
+        "ext_max": "",
+        "php_min": "4.0.4",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 22,
+        "name": "GMP_VERSION",
+        "ext_min": "4.0.4",
+        "ext_max": "",
+        "php_min": "4.0.4",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

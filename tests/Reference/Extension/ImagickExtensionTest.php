@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\ImagickExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -42,7 +41,7 @@ class ImagickExtensionTest extends GenericTest
      */
     public static function setUpBeforeClass()
     {
-        self::$obj = new ImagickExtension();
+        self::$ext = 'Imagick';
         parent::setUpBeforeClass();
     }
 }

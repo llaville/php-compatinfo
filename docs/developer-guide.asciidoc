@@ -1,5 +1,5 @@
 = Developer Guide
-:description: All you have to know about CompatInfo v3 architecture.
+:description: All you have to know about CompatInfo v4 architecture.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
 
@@ -33,12 +33,8 @@ See xref:_build_your_analysers[]
 endif::basebackend-docbook[]
 
 ifdef::basebackend-html[]
-[role="col-sm-3 hidden-xs"]
-image:icons/font-awesome/code.png[alt="API",icon="code",iconsfont="font-awesome",size="9x"]
-
-[role="col-sm-9"]
 ====
-[panel,info]
+[panel,info,code,font-awesome]
 .API
 --
 [label label-primary]#CompatInfo# comes with a complete API.
@@ -52,12 +48,8 @@ endif::basebackend-bootstrap[]
 --
 ====
 
-[role="col-sm-3 hidden-xs"]
-image:icons/font-awesome/puzzle-piece.png[alt="Plugins",icon="puzzle-piece",iconsfont="font-awesome",size="9x"]
-
-[role="col-sm-9"]
 ====
-[panel,info]
+[panel,info,puzzle-piece,font-awesome]
 .Plugins
 --
 [label label-primary]#CompatInfo# uses a Symfony http://symfony.com/doc/current/components/event_dispatcher/index.html[EventDispatcher] Component
@@ -76,16 +68,13 @@ endif::basebackend-bootstrap[]
 
 | link:developer-guide&#45;&#45;cache-plugin.html[Cache] | speed up future data source parsing
 | link:developer-guide&#45;&#45;log-plugin.html[Log] | log events on any PSR-3 compatible logger
+| link:developer-guide&#45;&#45;notifier-plugin.html[Notifier] | notifies application events via different systems
 |===========================
 --
 ====
 
-[role="col-sm-3 hidden-xs"]
-image:icons/font-awesome/search-plus.png[alt="Analysers",icon="search-plus",iconsfont="font-awesome",size="9x"]
-
-[role="col-sm-9"]
 ====
-[panel,info]
+[panel,info,search-plus,font-awesome]
 .Analysers
 --
 [label label-primary]#CompatInfo# uses analysers that implements the

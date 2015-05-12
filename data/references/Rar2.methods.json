@@ -1,0 +1,132 @@
+[
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarArchive",
+        "name": "open",
+        "static": true,
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarArchive",
+        "name": "getEntries",
+        "static": false,
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarArchive",
+        "name": "getEntry",
+        "static": false,
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarArchive",
+        "name": "isSolid",
+        "static": false,
+        "ext_min": "2.0.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarArchive",
+        "name": "getComment",
+        "static": false,
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarArchive",
+        "name": "close",
+        "static": false,
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarArchive",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "getStream",
+        "static": false,
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "isDirectory",
+        "static": false,
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "isEncrypted",
+        "static": false,
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarEntry",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "2.0.0b2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarException",
+        "name": "setUsingExceptions",
+        "static": true,
+        "ext_min": "2.0.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 61,
+        "class_name": "RarException",
+        "name": "isUsingExceptions",
+        "static": true,
+        "ext_min": "2.0.0RC1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

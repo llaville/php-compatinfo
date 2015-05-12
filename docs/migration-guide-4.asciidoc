@@ -1,0 +1,83 @@
+= Migration Guide v4
+:description: Migrating from version 3.2 (min) to 4.0 (min), and continue to keep your environment running.
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+
+ifdef::basebackend-docbook[]
+[partintro]
+--
+image:icons/font-awesome/terminal.png[alt="CLI",icon="terminal",iconsfont="font-awesome",size="9x"]
+*CLI*
+
+Begin first with the commands of [label label-primary]#CompatInfo# in CLI mode.
+
+See xref:_cli[]
+
+image:icons/font-awesome/code.png[alt="JSON",icon="code",iconsfont="font-awesome",size="9x"]
+*JSON*
+
+How you can customize [label label-primary]#CompatInfo# for all SAPI.
+
+See xref:_configuration_file[]
+
+image:icons/font-awesome/code.png[alt="API",icon="code",iconsfont="font-awesome",size="9x"]
+*API*
+
+API are incompatible in versions 3 and 4. Here are code to do the same things.
+
+See xref:_server_api[]
+--
+endif::basebackend-docbook[]
+
+ifdef::basebackend-html[]
+[role="lead"]
+Because the version 4 is a full API rewrites, and used namespaces, your old code cannot migrate
+without a little change.
+
+We will try to explain how to do in few steps.
+
+====
+[panel,info,terminal,font-awesome]
+.CLI
+--
+Begin first with the commands of [label label-primary]#CompatInfo# in CLI mode.
+
+ifdef::basebackend-bootstrap[]
+link:migration-guide-4&#45;&#45;cli.html["Command Line Interface",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:migration-guide-4&#45;&#45;cli.html[Command Line Interface]
+endif::basebackend-bootstrap[]
+--
+====
+
+====
+[panel,info,code,font-awesome]
+.JSON
+--
+How you can customize [label label-primary]#CompatInfo# for all SAPI.
+
+ifdef::basebackend-bootstrap[]
+link:migration-guide-4&#45;&#45;json.html["Configuration file",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:migration-guide-4&#45;&#45;json.html[Configuration file]
+endif::basebackend-bootstrap[]
+--
+====
+
+====
+[panel,info,code,font-awesome]
+.API
+--
+API are incompatible in versions 3 and 4. Here are code to do the same things.
+
+ifdef::basebackend-bootstrap[]
+link:migration-guide-4&#45;&#45;api.html["Application Programming Interface",role="primary",icon="glyphicon-book",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:migration-guide-4&#45;&#45;api.html[Application Programming Interface]
+endif::basebackend-bootstrap[]
+--
+====
+endif::basebackend-html[]

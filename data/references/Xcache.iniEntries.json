@@ -1,0 +1,266 @@
+[
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.admin.enable_auth",
+        "ext_min": "1.2.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.admin.pass",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.admin.user",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.allocator",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.cacher",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.coredump_directory",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.coredump_type",
+        "ext_min": "3.0.1",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.count",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.coveragedump_directory",
+        "ext_min": "1.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.coveragedumper",
+        "ext_min": "1.0",
+        "ext_max": "1.2.0",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.coverager",
+        "ext_min": "1.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.coverager_autostart",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.disable_on_crash",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.experimental",
+        "ext_min": "2.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.gc_interval",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.mmap_path",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.optimizer",
+        "ext_min": "1.3.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.readonly_protection",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.shm_scheme",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.size",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.slots",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.stat",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.test",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.ttl",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.var_allocator",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.var_count",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.var_gc_interval",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.var_maxttl",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.var_namespace",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.var_namespace_mode",
+        "ext_min": "3.0.0",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.var_size",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.var_slots",
+        "ext_min": "1.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 90,
+        "name": "xcache.var_ttl",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

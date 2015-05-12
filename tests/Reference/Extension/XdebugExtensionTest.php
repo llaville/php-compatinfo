@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\XdebugExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -62,8 +61,8 @@ class XdebugExtensionTest extends GenericTest
                 );
             }
         }
-    
-        self::$obj = new XdebugExtension();
+
+        self::$ext = 'Xdebug';
         parent::setUpBeforeClass();
     }
 }

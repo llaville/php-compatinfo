@@ -1,0 +1,42 @@
+[
+    {
+        "ext_name_fk": 99,
+        "name": "yaml.decode_binary",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "yaml.decode_timestamp",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "yaml.output_canonical",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "yaml.output_indent",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "yaml.output_width",
+        "ext_min": "0.6.2",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

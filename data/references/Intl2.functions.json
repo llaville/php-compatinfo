@@ -1,0 +1,72 @@
+[
+    {
+        "ext_name_fk": 32,
+        "name": "transliterator_create",
+        "ext_min": "2.0.0b1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "transliterator_create_from_rules",
+        "ext_min": "2.0.0b1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "transliterator_create_inverse",
+        "ext_min": "2.0.0b1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "transliterator_get_error_code",
+        "ext_min": "2.0.0b1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "transliterator_get_error_message",
+        "ext_min": "2.0.0b1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "transliterator_list_ids",
+        "ext_min": "2.0.0b1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "transliterator_transliterate",
+        "ext_min": "2.0.0b1",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

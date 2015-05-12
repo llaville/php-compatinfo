@@ -1,0 +1,128 @@
+[
+    {
+        "ext_name_fk": 54,
+        "name": "PCRE_VERSION",
+        "ext_min": "5.2.4",
+        "ext_max": "",
+        "php_min": "5.2.4",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_BACKTRACK_LIMIT_ERROR",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_BAD_UTF8_ERROR",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_BAD_UTF8_OFFSET_ERROR",
+        "ext_min": "5.2.9",
+        "ext_max": "",
+        "php_min": "5.2.9",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_GREP_INVERT",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_INTERNAL_ERROR",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_NO_ERROR",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_OFFSET_CAPTURE",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_PATTERN_ORDER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_RECURSION_LIMIT_ERROR",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_SET_ORDER",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_SPLIT_DELIM_CAPTURE",
+        "ext_min": "4.0.5",
+        "ext_max": "",
+        "php_min": "4.0.5",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_SPLIT_NO_EMPTY",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 54,
+        "name": "PREG_SPLIT_OFFSET_CAPTURE",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "",
+        "php_excludes": ""
+    }
+]

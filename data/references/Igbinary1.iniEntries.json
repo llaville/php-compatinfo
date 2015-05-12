@@ -1,0 +1,10 @@
+[
+    {
+        "ext_name_fk": 28,
+        "name": "igbinary.compact_strings",
+        "ext_min": "1.1.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    }
+]

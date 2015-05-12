@@ -1,0 +1,42 @@
+[
+    {
+        "ext_name_fk": 79,
+        "name": "stomp.default_broker",
+        "ext_min": "0.1.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "name": "stomp.default_connection_timeout_sec",
+        "ext_min": "0.3.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "name": "stomp.default_connection_timeout_usec",
+        "ext_min": "0.3.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "name": "stomp.default_read_timeout_sec",
+        "ext_min": "0.3.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 79,
+        "name": "stomp.default_read_timeout_usec",
+        "ext_min": "0.3.0",
+        "ext_max": "",
+        "php_min": "5.2.2",
+        "php_max": ""
+    }
+]

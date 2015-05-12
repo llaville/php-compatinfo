@@ -1,0 +1,112 @@
+[
+    {
+        "ext_name_fk": 27,
+        "name": "iconv",
+        "ext_min": "4.0.5",
+        "ext_max": "",
+        "php_min": "4.0.5",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "iconv_get_encoding",
+        "ext_min": "4.0.5",
+        "ext_max": "",
+        "php_min": "4.0.5",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "iconv_mime_decode",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "iconv_mime_decode_headers",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "iconv_mime_encode",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "iconv_set_encoding",
+        "ext_min": "4.0.5",
+        "ext_max": "",
+        "php_min": "4.0.5",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "iconv_strlen",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "iconv_strpos",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "iconv_strrpos",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "iconv_substr",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": "",
+        "parameters": "",
+        "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 27,
+        "name": "ob_iconv_handler",
+        "ext_min": "4.0.5",
+        "ext_max": "",
+        "php_min": "4.0.5",
+        "php_max": "5.3.29",
+        "parameters": "",
+        "php_excludes": ""
+    }
+]

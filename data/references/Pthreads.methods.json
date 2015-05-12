@@ -1,0 +1,612 @@
+[
+    {
+        "ext_name_fk": 60,
+        "class_name": "Cond",
+        "name": "create",
+        "static": true,
+        "ext_min": "0.0.39",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Cond",
+        "name": "signal",
+        "static": true,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Cond",
+        "name": "wait",
+        "static": true,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Cond",
+        "name": "broadcast",
+        "static": true,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Cond",
+        "name": "destroy",
+        "static": true,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Mutex",
+        "name": "create",
+        "static": true,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Mutex",
+        "name": "lock",
+        "static": true,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Mutex",
+        "name": "trylock",
+        "static": true,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Mutex",
+        "name": "unlock",
+        "static": true,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Mutex",
+        "name": "destroy",
+        "static": true,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Cond",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.0.39",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Mutex",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.0.39",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "detach",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "getCreatorId",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "getThreadId",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "isRunning",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "isWaiting",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "isJoined",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "isStarted",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "isTerminated",
+        "static": false,
+        "ext_min": "0.0.45",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "getTerminationInfo",
+        "static": false,
+        "ext_min": "0.0.45",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "join",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "kill",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "notify",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "start",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "wait",
+        "static": false,
+        "ext_min": "0.0.33",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "synchronized",
+        "static": false,
+        "ext_min": "0.0.40",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "lock",
+        "static": false,
+        "ext_min": "0.0.40",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "unlock",
+        "static": false,
+        "ext_min": "0.0.40",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "merge",
+        "static": false,
+        "ext_min": "0.0.44",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "shift",
+        "static": false,
+        "ext_min": "0.0.45",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "chunk",
+        "static": false,
+        "ext_min": "0.0.45",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Thread",
+        "name": "pop",
+        "static": false,
+        "ext_min": "0.0.45",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "shutdown",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "stack",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "unstack",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "getStacked",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "isShutdown",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "isWorking",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "start",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "join",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "detach",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "isStarted",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "isJoined",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "getThreadId",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "getCreatorId",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "kill",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "run",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "wait",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "notify",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "isRunning",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "isWaiting",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "isTerminated",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "getTerminationInfo",
+        "static": false,
+        "ext_min": "0.0.37",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "synchronized",
+        "static": false,
+        "ext_min": "0.0.40",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "lock",
+        "static": false,
+        "ext_min": "0.0.40",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "unlock",
+        "static": false,
+        "ext_min": "0.0.40",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "merge",
+        "static": false,
+        "ext_min": "0.0.44",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "shift",
+        "static": false,
+        "ext_min": "0.0.45",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "chunk",
+        "static": false,
+        "ext_min": "0.0.45",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 60,
+        "class_name": "Worker",
+        "name": "pop",
+        "static": false,
+        "ext_min": "0.0.45",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    }
+]

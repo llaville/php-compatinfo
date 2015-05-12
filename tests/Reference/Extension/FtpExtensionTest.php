@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\FtpExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -47,7 +46,7 @@ class FtpExtensionTest extends GenericTest
             'ftp_ssl_connect',
         );
 
-        self::$obj = new FtpExtension();
+        self::$ext = 'Ftp';
         parent::setUpBeforeClass();
     }
 }

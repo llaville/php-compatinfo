@@ -1,0 +1,18 @@
+[
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt.algorithms_dir",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 41,
+        "name": "mcrypt.modes_dir",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    }
+]

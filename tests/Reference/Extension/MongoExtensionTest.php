@@ -18,7 +18,6 @@
 namespace Bartlett\Tests\CompatInfo\Reference\Extension;
 
 use Bartlett\Tests\CompatInfo\Reference\GenericTest;
-use Bartlett\CompatInfo\Reference\Extension\MongoExtension;
 
 /**
  * Tests for PHP_CompatInfo, retrieving components informations
@@ -46,8 +45,8 @@ class MongoExtensionTest extends GenericTest
             // only available with 0.9.0
             'MongoUtil',
         );
-        
-        self::$obj = new MongoExtension();
+
+        self::$ext = 'Mongo';
         parent::setUpBeforeClass();
     }
 }

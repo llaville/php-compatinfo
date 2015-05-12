@@ -1,0 +1,942 @@
+[
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "getSlaveOkay",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "setSlaveOkay",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "lastError",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "prevError",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "resetError",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "forceError",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "getSlave",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "switchSlave",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "setPoolSize",
+        "static": true,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "getPoolSize",
+        "static": true,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "Mongo",
+        "name": "poolDebug",
+        "static": true,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "__get",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "getGridFS",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "getSlaveOkay",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "setSlaveOkay",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "getReadPreference",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "setReadPreference",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "getWriteConcern",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "setWriteConcern",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "getProfilingLevel",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "setProfilingLevel",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "drop",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "repair",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "selectCollection",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "createCollection",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "dropCollection",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "listCollections",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "getCollectionNames",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "getCollectionInfo",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "createDBRef",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "getDBRef",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "execute",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "command",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "lastError",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "prevError",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "resetError",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "forceError",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDB",
+        "name": "authenticate",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "getName",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "drop",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "validate",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "insert",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "batchInsert",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "update",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "remove",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "find",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "findOne",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "ensureIndex",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "deleteIndex",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "deleteIndexes",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "getIndexInfo",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "count",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "save",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "createDBRef",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCollection",
+        "name": "getDBRef",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCursor",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCursor",
+        "name": "hasNext",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCursor",
+        "name": "getNext",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCursor",
+        "name": "limit",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCursor",
+        "name": "skip",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCursor",
+        "name": "sort",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCursor",
+        "name": "hint",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCursor",
+        "name": "reset",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFS",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFS",
+        "name": "storeFile",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFS",
+        "name": "storeBytes",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFS",
+        "name": "storeUpload",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFS",
+        "name": "delete",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFS",
+        "name": "get",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFS",
+        "name": "put",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFSFile",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFSFile",
+        "name": "getFilename",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFSFile",
+        "name": "getSize",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFSFile",
+        "name": "write",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFSFile",
+        "name": "getBytes",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoGridFSCursor",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoId",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoId",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCode",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoCode",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoRegex",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoRegex",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDate",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDate",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoBinData",
+        "name": "__construct",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoBinData",
+        "name": "__toString",
+        "static": false,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDBRef",
+        "name": "create",
+        "static": true,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDBRef",
+        "name": "isRef",
+        "static": true,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 45,
+        "class_name": "MongoDBRef",
+        "name": "get",
+        "static": true,
+        "ext_min": "0.9.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    }
+]

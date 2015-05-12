@@ -2,7 +2,7 @@
 :description: How to download, configure and use it in a basic way.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:pharstable:  http://bartlett.laurent-laville.org/get/phpcompatinfo-3.7.4.phar
+:pharstable:  http://bartlett.laurent-laville.org/get/phpcompatinfo-4.1.0.phar
 
 
 == Download
@@ -20,8 +20,8 @@ endif::basebackend-bootstrap[]
 Make it executable, and put it into your `$PATH`.
 [source,bash]
 ----
-$ chmod +x phpcompatinfo-3.7.4.phar
-$ mv phpcompatinfo-3.7.4.phar /usr/local/bin/phpcompatinfo
+$ chmod +x phpcompatinfo-4.1.0.phar
+$ mv phpcompatinfo-4.1.0.phar /usr/local/bin/phpcompatinfo
 
 $ phpcompatinfo --version
 ----
@@ -29,8 +29,8 @@ $ phpcompatinfo --version
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-3.7.4.phar
-$ php phpcompatinfo-3.7.4.phar --version
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-4.1.0.phar
+$ php phpcompatinfo-4.1.0.phar --version
 ----
 
 With both methods then you have this output :
@@ -38,7 +38,7 @@ With both methods then you have this output :
 [role="output"]
 ====
 ----
-phpCompatInfo version 3.7.4
+phpCompatInfo version 4.1.0 DB built Apr 16 2015 09:24:43 CEST
 ----
 ====
 
@@ -65,48 +65,10 @@ for details on how to do this.
         }
     ],
     "plugins": [
-        {
-            "name": "Analyser",
-            "class": "Bartlett\\Reflect\\Plugin\\Analyser\\AnalyserPlugin"
-        }
     ],
-    "analysers" : [
-        {
-            "name": "Namespace",
-            "class": "Bartlett\\CompatInfo\\Analyser\\NamespaceAnalyser"
-        },
-        {
-            "name": "Extension",
-            "class": "Bartlett\\CompatInfo\\Analyser\\ExtensionAnalyser"
-        },
-        {
-            "name": "Interface",
-            "class": "Bartlett\\CompatInfo\\Analyser\\InterfaceAnalyser"
-        },
-        {
-            "name": "Trait",
-            "class": "Bartlett\\CompatInfo\\Analyser\\TraitAnalyser"
-        },
-        {
-            "name": "Class",
-            "class": "Bartlett\\CompatInfo\\Analyser\\ClassAnalyser"
-        },
-        {
-            "name": "Function",
-            "class": "Bartlett\\CompatInfo\\Analyser\\FunctionAnalyser"
-        },
-        {
-            "name": "Constant",
-            "class": "Bartlett\\CompatInfo\\Analyser\\ConstantAnalyser"
-        },
-        {
-            "name": "Summary",
-            "class": "Bartlett\\CompatInfo\\Analyser\\SummaryAnalyser"
-        },
-        {
-            "name": "Condition",
-            "class": "Bartlett\\CompatInfo\\Analyser\\CodeCondAnalyser"
-        }
+    "analysers": [
+    ],
+    "services": [
     ]
 }
 ----
@@ -120,39 +82,29 @@ xref:_the_json_configuration_file[]
 endif::basebackend-docbook[]
 for details on how to do this.
 
+NOTE: The JSON configuration file is no more required for basic usage.
+Reserved to advanced users.
+
 [role="col-md-6"]
 == Structure
 
 source-providers::
 this entry provide list of your data sources to parse.
-+
-[TIP]
-====
-Like [label label-primary]#CompatInfo# always needs a JSON file to run, Remi Collet
-https://github.com/llaville/php-compat-info/issues/120#issuecomment-46188900[shared]
-a workaround solution exposed here that allows to run :
-[source,bash]
-----
-$ phpcompatinfo analyser:run .
-----
-====
 
 plugins::
 this entry list all plugins added to the core base code of PHP Reflect.
-+
-CAUTION: Don't forget to add at least this default content, else the `analyser:run`
-and `analyser:list` commands wouldn't be available.
 
 analysers::
 this entry list all analysers that may be used with the `analyser:run` command.
-+
-IMPORTANT: Don't miss it, else you could not run the `analyser:run` command.
+
+services::
+this entry list all services that may be used with this application.
 
 [role="col-md-12 clearfix"]
 == Execution
 
-With a default +phpcompatinfo.json+ as detailed above, put in the +src/+ folder of the
-[label label-primary]#CompatInfo# source code, and invoke the following command :
+With the
+[label label-primary]#CompatInfo# source code, invoke the following command :
 [source,bash]
 ----
 $ phpcompatinfo analyser:run .
@@ -162,38 +114,10 @@ and you should obtain something like this :
 [role="output"]
 ====
 ----
-include::summary_analysis.out.asciidoc[]
+include::compatibility_analysis.out.asciidoc[]
 ----
 ====
 
-Let's explain the results. We have 12 extensions, 4 optionals due to conditional code, with `Core` that requires at least PHP 5.3.0,
-and so on for all others components.
-
-[WARNING]
-=====
-Since release 3.3.0 only, if you want to have a full report of all elements
-without to specify each analyser, just enter the following command :
-[source,bash]
-----
-$ phpcompatinfo analyser:run . --php
-----
-
-Since release 3.4.0, the `condition` analyser results are also included.
-=====
-
-To see details of conditional code (`Cond` column in summary report), run following command :
-[source,bash]
-----
-$ phpcompatinfo analyser:run . condition
-----
-and you should obtain something like this :
-
-[role="output"]
-====
-----
-include::condition_analysis.out.asciidoc[]
-----
-====
 
 [role="col-md-12 clearfix"]
 == Summary
@@ -202,7 +126,7 @@ include::condition_analysis.out.asciidoc[]
 Let's review what we've done :
 
 * downloaded the latest stable PHAR version.
-* prepared your JSON configuration file that is required to run [label label-primary]#CompatInfo# commands.
+* prepared a minimalist JSON configuration file that is OPTIONAL to run [label label-primary]#CompatInfo# commands.
 * executed your first parse on the [label label-primary]#CompatInfo# data source.
 
 [role="col-md-12 clearfix"]

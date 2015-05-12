@@ -1,0 +1,266 @@
+[
+    {
+        "ext_name_fk": 66,
+        "name": "session.auto_start",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.bug_compat_42",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "5.4.0"
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.bug_compat_warn",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": "5.4.0"
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.cache_expire",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.cache_limiter",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.cookie_domain",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.cookie_httponly",
+        "ext_min": "5.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.cookie_lifetime",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.cookie_path",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.cookie_secure",
+        "ext_min": "4.0.4",
+        "ext_max": "",
+        "php_min": "4.0.4",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.entropy_file",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.entropy_length",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.gc_divisor",
+        "ext_min": "4.3.2",
+        "ext_max": "",
+        "php_min": "4.3.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.gc_maxlifetime",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.gc_probability",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.hash_bits_per_character",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.hash_function",
+        "ext_min": "5.0.0",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.name",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.referer_check",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.save_handler",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.save_path",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.serialize_handler",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.upload_progress.cleanup",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.upload_progress.enabled",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.upload_progress.freq",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.upload_progress.min_freq",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.upload_progress.name",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.upload_progress.prefix",
+        "ext_min": "5.4.0",
+        "ext_max": "",
+        "php_min": "5.4.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.use_cookies",
+        "ext_min": "4.0.0",
+        "ext_max": "",
+        "php_min": "4.0.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.use_only_cookies",
+        "ext_min": "4.3.0",
+        "ext_max": "",
+        "php_min": "4.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.use_strict_mode",
+        "ext_min": "5.5.2",
+        "ext_max": "",
+        "php_min": "5.5.2",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "session.use_trans_sid",
+        "ext_min": "4.0.3",
+        "ext_max": "",
+        "php_min": "4.0.3",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 66,
+        "name": "url_rewriter.tags",
+        "ext_min": "4.0.4",
+        "ext_max": "",
+        "php_min": "4.0.4",
+        "php_max": ""
+    }
+]

@@ -1,0 +1,992 @@
+[
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "DONE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "WORD_NONE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "WORD_NONE_LIMIT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "WORD_NUMBER",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "WORD_NUMBER_LIMIT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "WORD_LETTER",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "WORD_LETTER_LIMIT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "WORD_KANA",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "WORD_KANA_LIMIT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "WORD_IDEO",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "WORD_IDEO_LIMIT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "LINE_SOFT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "LINE_SOFT_LIMIT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "LINE_HARD",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "LINE_HARD_LIMIT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "SENTENCE_TERM",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "SENTENCE_TERM_LIMIT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "SENTENCE_SEP",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlBreakIterator",
+        "name": "SENTENCE_SEP_LIMIT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_ERA",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_YEAR",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_MONTH",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_WEEK_OF_YEAR",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_WEEK_OF_MONTH",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_DATE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_DAY_OF_YEAR",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_DAY_OF_WEEK",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_DAY_OF_WEEK_IN_MONTH",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_AM_PM",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_HOUR",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_HOUR_OF_DAY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_MINUTE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_SECOND",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_MILLISECOND",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_ZONE_OFFSET",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_DST_OFFSET",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_YEAR_WOY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_DOW_LOCAL",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_EXTENDED_YEAR",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_JULIAN_DAY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_MILLISECONDS_IN_DAY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_IS_LEAP_MONTH",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_FIELD_COUNT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "FIELD_DAY_OF_MONTH",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "DOW_SUNDAY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "DOW_MONDAY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "DOW_TUESDAY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "DOW_WEDNESDAY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "DOW_THURSDAY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "DOW_FRIDAY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "DOW_SATURDAY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "DOW_TYPE_WEEKDAY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "DOW_TYPE_WEEKEND",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "DOW_TYPE_WEEKEND_OFFSET",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "DOW_TYPE_WEEKEND_CEASE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "WALLTIME_FIRST",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "WALLTIME_LAST",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlCalendar",
+        "name": "WALLTIME_NEXT_VALID",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "DISPLAY_SHORT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "DISPLAY_LONG",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "DISPLAY_SHORT_GENERIC",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "DISPLAY_LONG_GENERIC",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "DISPLAY_SHORT_GMT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "DISPLAY_LONG_GMT",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "DISPLAY_SHORT_COMMONLY_USED",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "DISPLAY_GENERIC_LOCATION",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "TYPE_ANY",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "TYPE_CANONICAL",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "IntlTimeZone",
+        "name": "TYPE_CANONICAL_LOCATION",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "REASON_UNASSIGNED",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "REASON_ILLEGAL",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "REASON_IRREGULAR",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "REASON_RESET",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "REASON_CLOSE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "REASON_CLONE",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "UNSUPPORTED_CONVERTER",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "SBCS",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "DBCS",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "MBCS",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LATIN_1",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "UTF8",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "UTF16_BigEndian",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "UTF16_LittleEndian",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "UTF32_BigEndian",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "UTF32_LittleEndian",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "EBCDIC_STATEFUL",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "ISO_2022",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_1",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_2",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_3",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_4",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_5",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_6",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_8",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_11",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_16",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_17",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_18",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_19",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "LMBCS_LAST",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "HZ",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "SCSU",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "ISCII",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "US_ASCII",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "UTF7",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "BOCU1",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "UTF16",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "UTF32",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "CESU8",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "class_name": "UConverter",
+        "name": "IMAP_MAILBOX",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
+    }
+]
