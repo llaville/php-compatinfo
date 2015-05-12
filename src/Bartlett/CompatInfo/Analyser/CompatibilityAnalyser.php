@@ -301,6 +301,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
         ) {
             $this->computePhpFeatureVersions($node);
 
+        } elseif ($node instanceof Node\Stmt\Goto_) {
+            $this->computePhpFeatureVersions($node);
+
         } elseif ($node instanceof Node\Stmt\Const_) {
             foreach ($node->consts as $const) {
                 // user constant does not require to search in REF database
@@ -1122,6 +1125,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 $versions = array('php.min' => '5.4.0');
                 $this->updateLocalVersions($versions);
             }
+
+        } elseif ($node instanceof Node\Stmt\Goto_) {
+            $versions = array('php.min' => '5.3.0');
+            $this->updateLocalVersions($versions);
         }
     }
 

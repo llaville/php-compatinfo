@@ -41,6 +41,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     const GH148 = 'gh148.php';
     const GH154 = 'gh154.php';
     const GH168 = 'gh168.php';
+    const GH200 = 'gh200.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -276,6 +277,32 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
                 'matches'      => 1,
             ),
             $constants['FOO']
+        );
+    }
+
+    /**
+     * Regression test for feature GH#200
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/200
+     *       goto statement is not checked
+     * @link http://php.net/manual/en/control-structures.goto.php
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH200()
+    {
+        $dataSource = self::$fixtures . self::GH200;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.3.0',
+                'php.max'      => '',
+                'php.all'      => '5.3.0',
+            ),
+            $versions
         );
     }
 }
