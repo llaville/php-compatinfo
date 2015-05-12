@@ -8,7 +8,7 @@ that bundles all dependencies in a single file.
 
 Follow development on the http://php5.laurent-laville.org/compatinfo/blog[official Blog].
 
-Have a look on https://github.com/llaville/php-compat-info/releases/tag/3.7.4[tag 3.7.4] for previous stable API 3.0
+Have a look on https://github.com/llaville/php-compat-info/tree/3.7[branch 3.7] for previous stable API 3.x
 
 == Install
 
