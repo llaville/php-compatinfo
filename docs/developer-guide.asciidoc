@@ -29,6 +29,14 @@ http://en.wikipedia.org/wiki/Visitor_pattern[Visitor] pattern in a simple and ef
 to make the render of your results truly customizable.
 
 See xref:_build_your_analysers[]
+
+image:icons/font-awesome/filter.png[alt="Filters",icon="filter",iconsfont="font-awesome",size="9x"]
+*Filters*
+
+[label label-primary]#CompatInfo# can filter results, since version [label label-info]#4.2#,
+to make the render of your results truly customizable.
+
+See xref:_build_your_filters[]
 --
 endif::basebackend-docbook[]
 
@@ -86,6 +94,22 @@ link:developer-guide&#45;&#45;analysers.html["Analysers",role="primary",icon="gl
 endif::basebackend-bootstrap[]
 ifndef::basebackend-bootstrap[]
 link:developer-guide&#45;&#45;analysers.html[Analysers]
+endif::basebackend-bootstrap[]
+--
+====
+
+====
+[panel,info,filter,font-awesome]
+.Filters
+--
+[label label-primary]#CompatInfo# can filter results, since version [label label-info]#4.2#,
+to make the render of your results truly customizable.
+
+ifdef::basebackend-bootstrap[]
+link:developer-guide&#45;&#45;filters.html["Filters",role="primary",icon="glyphicon-filter",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:developer-guide&#45;&#45;filters.html[Filters]
 endif::basebackend-bootstrap[]
 --
 ====
