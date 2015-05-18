@@ -21,7 +21,7 @@
         Project properties
         ======================================================================
     -->
-    <property name="build.short-version"         value="4.1" />
+    <property name="build.short-version"         value="4.2" />
     <property name="build.version"               value="${build.short-version}.0" />
 
     <!--
@@ -184,6 +184,17 @@
         Actions
         ======================================================================
     -->
+    <property name="php.homedir"                 value="C:/UwAmp/bin/php/php-5.6.9" />
+
+    <target name="update:compatibility_analysis">
+        <exec executable="${php.homedir}/php">
+            <arg path="${project.dir}/bin/phpcompatinfo" />
+            <arg value="--output=${project.dir}/docs/compatibility_analysis.out.asciidoc.NEW" />
+            <arg value="analyser:run" />
+            <arg value="${project.dir}/src" />
+        </exec>
+    </target>
+
     <target name="all" depends="adoc.all,phar.all" />
 
     <target name="help">
