@@ -60,18 +60,21 @@ The phpcompatinfo(1) 'analyser:run' command is used to analyse a data source and
 
 Usage:
 
-  phpcompatinfo analyser:run [--alias] [--format="..."] source [analysers1] ... [analysersN]
+  phpcompatinfo analyser:run [--alias] [--format[="..."]] [--filter[="..."]] source [analysers1] ... [analysersN]
 
 Where:
-
-*source*::
-  Identify a data source; may be declared in a json configuration file (see <<X1,CONF FILES>> section)
 
 *--alias*::
   If set, the source refers to its alias
 
 *--format*::
-  If set, convert result to a specific format. (default: "json")
+  If set, convert result to a specific format. (default: false)
+
+*--filter*::
+  Resource that provide a closure to filter results. (default: false)
+
+*source*::
+  Identify a data source; may be declared in a json configuration file (see <<X1,CONF FILES>> section)
 
 *analysers1* ... *analysersN*::
   Identify one or more analyser to execute. See 'analyser:list' command to know what analysers are available.
