@@ -38,5 +38,13 @@
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": ""
+    },
+    {
+        "ext_name_fk": 99,
+        "name": "yaml.decode_php",
+        "ext_min": "1.2.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
     }
 ]
