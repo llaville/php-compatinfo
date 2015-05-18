@@ -419,7 +419,7 @@ endif::basebackend-docbook[]
 | [label label-default]#2.0.0#
 
 | stomp
-1.0.6 {stable}
+1.0.7 {stable}
 | [label label-info]#2.16.0#
 
 | svn
