@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cef4d823e63a752f75b0489fa63aba71",
+    "hash": "6e891b2326314f1fad95bba238189405",
     "packages": [
         {
             "name": "bartlett/php-reflect",
@@ -676,6 +676,110 @@
     ],
     "packages-dev": [
         {
+            "name": "bartlett/monolog-callbackfilterhandler",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/llaville/monolog-callbackfilterhandler.git",
+                "reference": "8ada2b01b48e8f06e578ccba9d5c867a2420cba7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/llaville/monolog-callbackfilterhandler/zipball/8ada2b01b48e8f06e578ccba9d5c867a2420cba7",
+                "reference": "8ada2b01b48e8f06e578ccba9d5c867a2420cba7",
+                "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "~1.10",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bartlett\\": "src/Bartlett"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Laurent Laville",
+                    "email": "pear@laurent-laville.org",
+                    "homepage": "https://github.com/llaville",
+                    "role": "Lead"
+                }
+            ],
+            "description": "Monolog handler wrapper that filters records based on a list of callback functions",
+            "homepage": "http://php5.laurent-laville.org/callbackfilterhandler/",
+            "keywords": [
+                "handler",
+                "log",
+                "logger",
+                "logging"
+            ],
+            "time": "2015-04-21 11:26:29"
+        },
+        {
+            "name": "bartlett/monolog-growlhandler",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/llaville/monolog-growlhandler.git",
+                "reference": "b6371bcba38096b292f944385e5696d5cd516378"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/llaville/monolog-growlhandler/zipball/b6371bcba38096b292f944385e5696d5cd516378",
+                "reference": "b6371bcba38096b292f944385e5696d5cd516378",
+                "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "~1.10",
+                "pear-pear.php.net/net_growl": "~2.7",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "bartlett/monolog-callbackfilterhandler": "~1.0",
+                "bartlett/phpunit-loggertestlistener": "~1.5"
+            },
+            "suggest": {
+                "bartlett/monolog-callbackfilterhandler": "Advanced filtering strategies for Monolog",
+                "bartlett/phpunit-loggertestlistener": "Allow logging unit tests to your favorite PSR-3 logger interface"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bartlett\\": "src/Bartlett"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Laurent Laville",
+                    "email": "pear@laurent-laville.org",
+                    "homepage": "https://github.com/llaville",
+                    "role": "Lead"
+                }
+            ],
+            "description": "Monolog handler that send notifications to Growl on Mac OS X and Windows",
+            "homepage": "http://php5.laurent-laville.org/growlhandler/",
+            "keywords": [
+                "gntp",
+                "growl",
+                "handler",
+                "log",
+                "logger",
+                "logging",
+                "notifications"
+            ],
+            "time": "2015-05-11 09:24:19"
+        },
+        {
             "name": "bartlett/phpunit-loggertestlistener",
             "version": "1.5.0",
             "source": {
@@ -922,6 +1026,38 @@
                 "psr-3"
             ],
             "time": "2015-03-09 09:58:04"
+        },
+        {
+            "name": "pear-pear.php.net/Net_Growl",
+            "version": "2.7.0",
+            "dist": {
+                "type": "file",
+                "url": "https://pear.php.net/get/Net_Growl-2.7.0.tgz",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "ext-pcre": "*",
+                "ext-spl": "*",
+                "php": ">=5.2.0.0"
+            },
+            "replace": {
+                "pear-pear/net_growl": "== 2.7.0.0"
+            },
+            "type": "pear-library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "include-path": [
+                "/"
+            ],
+            "license": [
+                "BSD License"
+            ],
+            "description": "Growl is a MACOSX application that listen to notifications sent by\napplications and displays them on the desktop using different display\nstyles. Net_Growl offers the possibility to send notifications to Growl\nfrom your PHP application through network communication using UDP."
         },
         {
             "name": "psr/log",
