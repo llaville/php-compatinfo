@@ -77,7 +77,7 @@ Auto-Diagnose:
 
 Checking php settings:
 - Requires PHP 5.3.2 or better OK
-- php.ini file loaded C:\UwAmp\bin\php\php-5.6.7\php.ini
+- php.ini file loaded C:\UwAmp\bin\php\php-5.6.9\php.ini
 - date extension loaded YES
 - json extension loaded YES
 - pcre extension loaded YES
@@ -115,7 +115,7 @@ $ phpcompatinfo diagnose:run
 ----
 Checking php settings:
 - Requires PHP 5.3.2 or better OK
-- php.ini file loaded C:\UwAmp\bin\php\php-5.6.7\php.ini
+- php.ini file loaded C:\UwAmp\bin\php\php-5.6.9\php.ini
 - date extension loaded YES
 - json extension loaded YES
 - pcre extension loaded YES
@@ -213,6 +213,8 @@ $ phpcompatinfo analyser:run --alias current
 ----
 include::compatibility_analysis.out.asciidoc[]
 ----
++
+NOTE: The `PHP all` column tell us which version is required when all code features are used
 
 [horizontal]
 reflection:class::
