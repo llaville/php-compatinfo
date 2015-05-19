@@ -48,6 +48,8 @@ include::developer-guide--log-plugin.asciidoc[]
 include::developer-guide--notifier-plugin.asciidoc[]
 
 include::developer-guide--analysers.asciidoc[]
+
+include::developer-guide--filters.asciidoc[]
 :leveloffset: 0
 
 include::references.asciidoc[]

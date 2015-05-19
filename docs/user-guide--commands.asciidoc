@@ -30,7 +30,7 @@ when you invoke the `phpcompatinfo` command, you should obtain the following com
  | .__/|_| |_| .__/ \____\___/|_| |_| |_| .__/ \__,_|\__|___|_| |_|_|  \___/
  |_|         |_|                        |_|
 
-phpCompatInfo version 4.1.0 DB built Apr 16 2015 09:24:43 CEST
+phpCompatInfo version 4.2.0 DB built May 19 2015 08:22:43 CEST
 
 Usage:
  [options] command [arguments]
@@ -215,6 +215,20 @@ include::compatibility_analysis.out.asciidoc[]
 ----
 +
 NOTE: The `PHP all` column tell us which version is required when all code features are used
++
+[source,bash]
+.Since version [label label-primary]#4.2#, you can filter results with a user closure
+----
+$ phpcompatinfo analyser:run --filter=YourFilters.php .
+----
++
+NOTE: Learn more on
+ifdef::basebackend-bootstrap[]
+link:developer-guide&#45;&#45;filters.html[developer's guide]
+endif::basebackend-bootstrap[]
+ifdef::basebackend-docbook[]
+chapter xref:_build_your_filters[]
+endif::basebackend-docbook[]
 
 [horizontal]
 reflection:class::

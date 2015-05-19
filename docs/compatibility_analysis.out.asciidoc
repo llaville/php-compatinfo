@@ -80,16 +80,16 @@ Classes Analysis
 Functions Analysis
 
     Function                    Matches REF      EXT min/Max PHP min/Max
-    array_key_exists            5       standard 4.0.7       4.0.7
+    array_key_exists            7       standard 4.0.7       4.0.7
     array_map                   2       standard 4.0.6       4.0.6
     array_merge                 3       standard 4.0.0       4.0.0
     array_pop                   6       standard 4.0.0       4.0.0
     array_shift                 2       standard 4.0.0       4.0.0
     array_slice                 1       standard 4.0.0       4.0.0
     array_values                1       standard 4.0.0       4.0.0
-    closure-71-73                       user                 5.3.0
+    closure-73-75                       user                 5.3.0
     copy                        1       standard 4.0.0       4.0.0
-    count                       11      standard 4.0.0       4.0.0
+    count                       14      standard 4.0.0       4.0.0
  C  curl_version                1       curl     4.0.2       4.0.2
     defined                     4       Core     4.0.0       4.0.0
     dirname                     3       standard 4.0.0       4.0.0
@@ -100,16 +100,18 @@ Functions Analysis
     file_exists                 2       standard 4.0.0       4.0.0
     function_exists             1       Core     4.0.0       4.0.0
     in_array                    10      standard 4.0.0       4.0.0
+    is_array                    1       standard 4.0.0       4.0.0
     is_callable                 1       standard 4.0.6       4.0.6
     is_string                   10      standard 4.0.0       4.0.0
     ksort                       3       standard 4.0.0       4.0.0
+    ltrim                       1       standard 4.0.0       4.0.0
     mkdir                       1       standard 4.0.0       4.0.0
     phpversion                  2       standard 4.0.0       4.0.0
     preg_match                  2       pcre     4.0.0       4.0.0
     sha1_file                   2       standard 4.3.0       4.3.0
-    sprintf                     25      standard 4.0.0       4.0.0
+    sprintf                     26      standard 4.0.0       4.0.0
     str_replace                 1       standard 4.0.0       4.0.0
-    strcasecmp                  2       Core     4.0.0       4.0.0
+    strcasecmp                  4       Core     4.0.0       4.0.0
     stream_resolve_include_path 1       standard 5.3.2       5.3.2
     strpos                      2       standard 4.0.0       4.0.0
     strtolower                  1       standard 4.0.0       4.0.0
@@ -117,7 +119,7 @@ Functions Analysis
     sys_get_temp_dir            1       standard 5.2.1       5.2.1
     ucfirst                     5       standard 4.0.0       4.0.0
     version_compare             9       standard 4.0.7       4.0.7
-    Total [37]                                               5.3.2
+    Total [39]                                               5.3.2
 
 Constants Analysis
 
@@ -131,8 +133,8 @@ Constants Analysis
     PHP_VERSION            4       Core    4.0.0       4.0.0
     __DIR__                1       Core    5.3.0       5.3.0
     false                  14      Core    4.0.0       4.0.0
-    null                   13      Core    4.0.0       4.0.0
-    true                   9       Core    4.0.0       4.0.0
+    null                   15      Core    4.0.0       4.0.0
+    true                   10      Core    4.0.0       4.0.0
     Total [11]                                         5.3.0
 
 Conditions Analysis

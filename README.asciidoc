@@ -14,13 +14,13 @@ Have a look on https://github.com/llaville/php-compat-info/tree/3.7[branch 3.7] 
 
 You can either :
 
-* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-4.1.0.phar[4.1.0]
-* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 4.1.0
+* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-4.2.0.phar[4.2.0]
+* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 4.2.0
 
 == Documentation
 
-The documentation for PHP CompatInfo 4.1
-in http://php5.laurent-laville.org/compatinfo/manual/4.1/en/[English]
+The documentation for PHP CompatInfo 4.2
+in http://php5.laurent-laville.org/compatinfo/manual/4.2/en/[English]
 is available online or downloadable offline to read it later (multiple formats available).
 
 AsciiDoc source code is available on `docs` folder of the repository.
@@ -29,16 +29,21 @@ AsciiDoc source code is available on `docs` folder of the repository.
 
 Contributions to source code and its documentation are always welcome.
 
-As a developer, I'm always happy when I have more information as possible to check and find out issues.
+As developper, I'm always happy when I have the more informations as possible to check and find out issues.
 This is the reason why I've created a https://github.com/llaville/phpunit-LoggerTestListener[PHPUnit TestSuite Listener for compatible PSR-3 Loggers].
+
+Recently, on attempt to https://github.com/llaville/php-compat-info/issues/189[enhance GenericTest] for unit tests,
+I've wrote a new PHPUnit ResultPrinter class, that is based on PSR-3 logger concept.
+You can learn more on this http://php5.laurent-laville.org/compatinfo/blog/201505-PHPUnit-ResultPrinter.html[post]
+in the CompatInfo's blog.
 
 If you want to use it, then :
 
-- install the component via Composer
+- install all the components via Composer
 
 [source,bash]
 ----
-$ php composer.phar require bartlett/phpunit-loggertestlistener=~1.3
+$ php composer.phar require --dev bartlett/php-compatinfo
 ----
 
 - create a `phpunit.xml` file with at least following contents :
@@ -63,13 +68,6 @@ $ php composer.phar require bartlett/phpunit-loggertestlistener=~1.3
         <directory suffix=".php">src/</directory>
         </whitelist>
     </filter>
-    <listeners>
-        <listener class="Bartlett\LoggerTestListener">
-            <arguments>
-                <object class="Psr3Logger" />
-            </arguments>
-        </listener>
-    </listeners>
     <testsuites>
         <testsuite name="CompatInfo Test Suite">
             <directory suffix="Test.php">tests/</directory>
@@ -78,7 +76,42 @@ $ php composer.phar require bartlett/phpunit-loggertestlistener=~1.3
 </phpunit>
 ----
 
-- configure your PSR-3 logger in the `tests\bootstrap.dev.php` file
+- configure the PSR-3 logger in `tests\MonologConsoleLogger.php`, if you want to change some behaviors.
 
-NOTE: By default will log all tests in local file `/var/logs/phpcompatinfo.log`
-and send a Growl notification of Test Suites summary when ended (if growl server is running).
+NOTE: Default will log all PHPUnit events in local file `phpunit-phpcompatinfo-php<PHP_VERSION_ID>.log`
+and log events corresponding to PHPUnit mode (`--verbose`, `--debug`) to the console.
+
+NOTE: If you've a Growl client installed and running, you will be notified at end of tests run.
+
+.Output look like
+----
+PHPUnit 4.6.6 by Sebastian Bergmann and contributors.
+
+Configuration read from C:\home\github\php-compat-info\phpunit.xml
+
+CompatInfo Test Suite:
+
+    Test suite started with 1372 tests
+
+Bartlett\Tests\CompatInfo\ClassIssueTest:
+
+    Test suite started with 6 tests
+
+Bartlett\Tests\CompatInfo\ClassIssueTest:
+
+    Test suite ended. Results OK. Tests: 6, Assertions: 10
+
+Bartlett\Tests\CompatInfo\ConditionIssueTest:
+
+    Test suite started with 4 tests
+
+< ... MORE LINES ...>
+
+CompatInfo Test Suite:
+
+    Test suite ended. Results OK. Tests: 1108, Assertions: 15465, Skipped: 22
+
+Time: 3.42 minutes, Memory: 35.25Mb, References: 105
+
+Results OK. Tests: 1130, Assertions: 15465, Skipped: 264
+----

@@ -127,6 +127,7 @@
         <include name="developer-guide--log-plugin.asciidoc" />
         <include name="developer-guide--notifier-plugin.asciidoc" />
         <include name="developer-guide--analysers.asciidoc" />
+        <include name="developer-guide--filters.asciidoc" />
         <include name="migration-guide**.asciidoc" />
         <include name="getting-started.asciidoc" />
         <include name="references.asciidoc" />
@@ -151,6 +152,7 @@
         <include name="developer-guide--log-plugin.html" />
         <include name="developer-guide--notifier-plugin.html" />
         <include name="developer-guide--analysers.html" />
+        <include name="developer-guide--filters.html" />
         <include name="migration-guide**.html" />
         <include name="getting-started.html" />
         <include name="references.html" />
@@ -186,7 +188,7 @@
     -->
     <property name="php.homedir"                 value="C:/UwAmp/bin/php/php-5.6.9" />
 
-    <target name="update:compatibility_analysis">
+    <target name="update:rep">
         <exec executable="${php.homedir}/php">
             <arg path="${project.dir}/bin/phpcompatinfo" />
             <arg value="--output=${project.dir}/docs/compatibility_analysis.out.asciidoc.NEW" />
@@ -204,6 +206,7 @@
         <echo>  adoc.all     Generate the full documentation                </echo>
         <echo>  phar.all     Generate the PHAR version                      </echo>
         <echo>  all          Do all tasks above                             </echo>
+        <echo>  update:rep   Update reports before building all docs        </echo>
     </target>
 
 </project>

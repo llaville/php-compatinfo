@@ -2,12 +2,12 @@
 .\"     Title: phpcompatinfo
 .\"    Author: [see the "AUTHORS" section]
 .\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
-.\"      Date: 2015-04-04
+.\"      Date: 2015-05-19
 .\"    Manual: \ \&
-.\"    Source: \ \& 4.0.0
+.\"    Source: \ \& 4.2.0
 .\"  Language: English
 .\"
-.TH "PHPCOMPATINFO" "1" "2015\-04\-04" "\ \& 4\&.0\&.0" "\ \&"
+.TH "PHPCOMPATINFO" "1" "2015\-05\-19" "\ \& 4\&.2\&.0" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -99,20 +99,13 @@ Usage:
 .RS 4
 .\}
 .nf
-phpcompatinfo analyser:run [\-\-alias] [\-\-format="\&.\&.\&."] source [analysers1] \&.\&.\&. [analysersN]
+phpcompatinfo analyser:run [\-\-alias] [\-\-format[="\&.\&.\&."]] [\-\-filter[="\&.\&.\&."]] source [analysers1] \&.\&.\&. [analysersN]
 .fi
 .if n \{\
 .RE
 .\}
 .sp
 Where:
-.PP
-\fBsource\fR
-.RS 4
-Identify a data source; may be declared in a json configuration file (see
-CONF FILES
-section)
-.RE
 .PP
 \fB\-\-alias\fR
 .RS 4
@@ -121,7 +114,19 @@ If set, the source refers to its alias
 .PP
 \fB\-\-format\fR
 .RS 4
-If set, convert result to a specific format\&. (default: "json")
+If set, convert result to a specific format\&. (default: false)
+.RE
+.PP
+\fB\-\-filter\fR
+.RS 4
+Resource that provide a closure to filter results\&. (default: false)
+.RE
+.PP
+\fBsource\fR
+.RS 4
+Identify a data source; may be declared in a json configuration file (see
+CONF FILES
+section)
 .RE
 .PP
 \fBanalysers1\fR \&... \fBanalysersN\fR
