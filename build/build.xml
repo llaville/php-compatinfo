@@ -21,66 +21,8 @@
         Project properties
         ======================================================================
     -->
-    <property name="build.short-version"         value="4.2" />
+    <property name="build.short-version"         value="4.3" />
     <property name="build.version"               value="${build.short-version}.0" />
-
-    <!--
-        ======================================================================
-        Build PHAR distribution by Phing PharPackage Task
-        ======================================================================
-    -->
-    <property name="phar.destfile"               value="phpcompatinfo-${build.version}.phar" />
-    <property name="phar.compression"            value="gzip" />
-    <property name="phar.stub"                   value="${project.dir}/phar-stub.php" />
-    <property name="phar.alias"                  value="phpcompatinfo.phar" />
-
-    <fileset dir="${project.dir}" id="phar-contents">
-        <include name="LICENSE" />
-        <include name="vendor/nikic/php-parser/LICENSE" />
-        <include name="vendor/sebastian/version/LICENSE" />
-        <include name="vendor/symfony/console/Symfony/Component/Console/LICENSE" />
-        <include name="vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/LICENSE" />
-        <include name="vendor/symfony/finder/Symfony/Component/Finder/LICENSE" />
-        <include name="vendor/symfony/stopwatch/Symfony/Component/Stopwatch/LICENSE" />
-        <include name="vendor/symfony/dependency-injection/Symfony/Component/DependencyInjection/LICENSE" />
-        <include name="vendor/seld/jsonlint/LICENSE" />
-        <include name="vendor/justinrainbow/json-schema/LICENSE" />
-        <include name="vendor/phpdocumentor/reflection-docblock/LICENSE" />
-        <include name="vendor/doctrine/cache/LICENSE" />
-        <include name="vendor/doctrine/collections/LICENSE" />
-        <include name="vendor/psr/log/LICENSE" />
-        <include name="vendor/monolog/monolog/LICENSE" />
-        <include name="vendor/bartlett/php-reflect/LICENSE" />
-        <include name="vendor/bartlett/umlwriter/LICENSE" />
-        <include name="vendor/autoload.php" />
-
-        <include name="vendor/composer/**/*.php" />
-        <include name="vendor/nikic/php-parser/lib/**/*.php" />
-        <include name="vendor/sebastian/version/src/Version.php" />
-        <include name="vendor/symfony/**/*.php" />
-        <exclude name="**/Tests/**" />
-        <include name="vendor/seld/jsonlint/**/*.php" />
-        <include name="vendor/justinrainbow/json-schema/src/**/*.php" />
-        <include name="vendor/phpdocumentor/reflection-docblock/src/**/*.php" />
-        <include name="vendor/doctrine/cache/lib/**/*.php" />
-        <include name="vendor/doctrine/collections/lib/**/*.php" />
-        <include name="vendor/psr/log/Psr/**/*.php" />
-        <include name="vendor/monolog/monolog/src/**/*.php" />
-        <include name="vendor/bartlett/php-reflect/src/**/*.php" />
-        <include name="vendor/bartlett/php-reflect/bin/phpreflect.json-schema" />
-        <include name="vendor/bartlett/umlwriter/src/**/*.php" />
-
-        <include name="src/**/*.php" />
-        <include name="bin/phpcompatinfo" />
-        <include name="bin/phpcompatinfo.json.dist" />
-        <include name="manifest.txt" />
-        <include name="data/compatinfo.sqlite" />
-    </fileset>
-
-    <fileset dir="${project.dir}" id="phar-versions">
-        <include name="src/**/*.php" />
-        <include name="tests/**/*.php" />
-    </fileset>
 
     <!--
         ======================================================================
@@ -110,7 +52,7 @@
 
     <fileset dir="${adoc.sourcedir}" id="adoc-project-assets">
         <include name="stylesheets/cover.css" />
-        <include name="stylesheets/tocaffix.css" />
+        <include name="stylesheets/tocmmenu.css" />
         <include name="themes.json" />
         <include name="images/**" />
         <exclude name="images/**/Thumbs.db" />
@@ -177,7 +119,6 @@
     -->
     <property name="modules.adoc"                value="true" />
     <property name="modules.notify"              value="true" />
-    <property name="modules.phar"                value="true" />
 
     <import file="${phingBuilder.dir}/modules/build.xml" />
 
@@ -186,7 +127,7 @@
         Actions
         ======================================================================
     -->
-    <property name="php.homedir"                 value="C:/UwAmp/bin/php/php-5.6.9" />
+    <property name="php.homedir"                 value="C:/UwAmp/bin/php/php-5.6.10" />
 
     <target name="update:rep">
         <exec executable="${php.homedir}/php">
@@ -197,14 +138,13 @@
         </exec>
     </target>
 
-    <target name="all" depends="adoc.all,phar.all" />
+    <target name="all" depends="adoc.all" />
 
     <target name="help">
         <echo>A toolchain manager for ${phing.project.name} ${build.version}</echo>
         <echo>                                                              </echo>
         <echo>targets:                                                      </echo>
         <echo>  adoc.all     Generate the full documentation                </echo>
-        <echo>  phar.all     Generate the PHAR version                      </echo>
         <echo>  all          Do all tasks above                             </echo>
         <echo>  update:rep   Update reports before building all docs        </echo>
     </target>
