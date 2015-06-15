@@ -3,8 +3,6 @@
 :brand:       PHP CompatInfo
 :brandref:    http://php5.laurent-laville.org/compatinfo/
 :brandver:
-:toc2:
-:toc-placement: right
 :jumbotron:
 :jumbotron-fullwidth:
 :footer:
