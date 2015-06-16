@@ -297,7 +297,8 @@
         "php_min": "5.2.4",
         "php_max": "",
         "parameters": "",
-        "php_excludes": ""
+        "php_excludes": "",
+        "deprecated": "5.5.0"
     },
     {
         "ext_name_fk": 32,
