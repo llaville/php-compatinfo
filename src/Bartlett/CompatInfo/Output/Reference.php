@@ -153,13 +153,15 @@ class Reference extends OutputFormatter
                     $arg,
                     Version::ext($versions),
                     Version::php($versions),
+                    Version::deprecated($versions),
                 );
                 $rows[] = $row;
             }
 
-            $headers = array(ucfirst($title), 'EXT min/Max', 'PHP min/Max');
+            $headers = array(ucfirst($title), 'EXT min/Max', 'PHP min/Max', 'Deprecated');
             $footers = array(
                 sprintf('<info>Total [%d]</info>', count($args)),
+                '',
                 '',
                 ''
             );

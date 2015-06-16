@@ -50,4 +50,12 @@ class Version
         }
         return '';
     }
+
+    public static function deprecated($versions)
+    {
+        if (isset($versions['deprecated'])) {
+            return $versions['deprecated'];
+        }
+        return '';
+    }
 }
