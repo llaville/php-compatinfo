@@ -30,7 +30,7 @@ when you invoke the `phpcompatinfo` command, you should obtain the following com
  | .__/|_| |_| .__/ \____\___/|_| |_| |_| .__/ \__,_|\__|___|_| |_|_|  \___/
  |_|         |_|                        |_|
 
-phpCompatInfo version 4.2.0 DB built May 19 2015 08:22:43 CEST
+phpCompatInfo version 4.3.0 DB built Jun 16 2015 10:05:54 CEST
 
 Usage:
  [options] command [arguments]
