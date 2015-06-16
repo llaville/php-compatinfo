@@ -146,7 +146,8 @@ class SqliteStorage
         $this->stmtIniEntries = $pdo->prepare(
             'SELECT i.name,' .
             ' ext_min as "ext.min", ext_max as "ext.max",' .
-            ' php_min as "php.min", php_max as "php.max"' .
+            ' php_min as "php.min", php_max as "php.max",' .
+            ' deprecated' .
             ' FROM bartlett_compatinfo_inientries i,  bartlett_compatinfo_extensions e' .
             ' WHERE i.ext_name_fk = e.id AND e.name = :name COLLATE NOCASE'
         );
@@ -187,7 +188,8 @@ class SqliteStorage
             'SELECT f.name,' .
             ' e.name as "ext.name", ext_min as "ext.min", ext_max as "ext.max",' .
             ' php_min as "php.min", php_max as "php.max",' .
-            ' parameters, php_excludes as "php.excludes"' .
+            ' parameters, php_excludes as "php.excludes",' .
+            ' deprecated' .
             ' FROM bartlett_compatinfo_functions f,  bartlett_compatinfo_extensions e' .
             ' WHERE f.ext_name_fk = e.id AND e.name = :name COLLATE NOCASE'
         );

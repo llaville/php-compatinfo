@@ -33,6 +33,7 @@ class ReferenceCollection extends AbstractLazyCollection
     // database abstraction layer
     private $dbal;
 
+    private $stmtIniEntries;
     private $stmtTraits;
     private $stmtClasses;
     private $stmtInterfaces;
@@ -136,6 +137,15 @@ class ReferenceCollection extends AbstractLazyCollection
     {
         $this->collection = new ArrayCollection();
 
+        $this->stmtIniEntries = $this->dbal->prepare(
+            'SELECT i.name,' .
+            ' ext_min as "ext.min", ext_max as "ext.max",' .
+            ' php_min as "php.min", php_max as "php.max",' .
+            ' deprecated' .
+            ' FROM bartlett_compatinfo_inientries i,  bartlett_compatinfo_extensions e' .
+            ' WHERE i.ext_name_fk = e.id AND i.name = :name COLLATE NOCASE'
+        );
+
         $this->stmtTraits = $this->dbal->prepare(
             'SELECT e.name as "ext.name", ext_min as "ext.min", ext_max as "ext.max",' .
             ' php_min as "php.min", php_max as "php.max"' .
@@ -160,7 +170,8 @@ class ReferenceCollection extends AbstractLazyCollection
         $this->stmtFunctions = $this->dbal->prepare(
             'SELECT e.name as "ext.name", ext_min as "ext.min", ext_max as "ext.max",' .
             ' php_min as "php.min", php_max as "php.max",' .
-            ' parameters, php_excludes as "php.excludes"' .
+            ' parameters, php_excludes as "php.excludes",' .
+            ' deprecated' .
             ' FROM bartlett_compatinfo_functions f,  bartlett_compatinfo_extensions e' .
             ' WHERE f.ext_name_fk = e.id AND f.name = :name COLLATE NOCASE'
         );
