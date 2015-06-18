@@ -35,6 +35,14 @@ if (PHP_SAPI !== 'cli') {
     return;
 }
 
+if (\Phar::running()) {
+    try {
+        Bartlett\CompatInfo\Environment::checkRequirements();
+    } catch (\RuntimeException $e) {
+        die ($e->getMessage());
+    }
+}
+
 use Bartlett\Reflect\Environment;
 use Bartlett\CompatInfo\Console\Application;
 

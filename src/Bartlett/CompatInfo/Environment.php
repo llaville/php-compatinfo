@@ -27,6 +27,8 @@ use PDO;
  */
 class Environment
 {
+    const PHP_MIN = '5.3.2';
+
     /**
      * Initializes installation of the Reference database
      *
@@ -55,7 +57,7 @@ class Environment
     }
 
     /**
-     *  Gets version informations about the Reference database
+     * Gets version informations about the Reference database
      *
      * @return array
      */
@@ -69,5 +71,38 @@ class Environment
         );
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Checks the minimum requirements on current platform for the phar distribution
+     *
+     * @throws \RuntimeException when min requirements does not match
+     */
+    public static function checkRequirements()
+    {
+        $error = '';
+
+        if (version_compare(PHP_VERSION, self::PHP_MIN, '<')) {
+            $error .= sprintf(
+                "\n- Expected PHP %s or above, actual version is %s",
+                self::PHP_MIN,
+                PHP_VERSION
+            );
+        }
+
+        $ext = 'pdo_sqlite';
+        if (!extension_loaded($ext)) {
+            $error .= sprintf(
+                "\n- Expected PHP extension %s loaded to use SQLite DataBase, is missing",
+                $ext
+            );
+        }
+
+        if (!empty($error)) {
+            throw new \RuntimeException(
+                'Your platform does not statisfy CompatInfo minimum requirements' .
+                $error
+            );
+        }
     }
 }
