@@ -29,7 +29,7 @@ with http://www.php.net[PHP] 5.3.2 or later installed,
 [label label-primary]#CompatInfo# requires the
 http://www.php.net/manual/en/book.json.php[json],
 http://www.php.net/manual/en/book.libxml.php[libxml],
-http://www.php.net/manual/en/book.pdo.php[pdo],
+http://www.php.net/manual/en/book.pdo.php[pdo] (http://www.php.net/manual/en/ref.pdo-sqlite.php[sqlite driver]),
 http://www.php.net/manual/en/book.pcre.php[pcre], and
 http://www.php.net/manual/en/book.spl.php[spl] extensions.
 These extensions are usually compiled and enabled by default.
