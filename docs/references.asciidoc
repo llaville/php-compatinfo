@@ -471,7 +471,7 @@ endif::basebackend-docbook[]
 | [label label-info]#2.8.0#
 
 | xdebug
-2.3.2 {stable}
+2.3.3 {stable}
 | [label label-default]#2.0.0#
 
 | xhprof
