@@ -16,7 +16,7 @@
         "ext_max": "",
         "php_min": "5.0.0",
         "php_max": "",
-        "parameters": "",
+        "parameters": "5.0.0, 5.4.0",
         "php_excludes": ""
     },
     {
