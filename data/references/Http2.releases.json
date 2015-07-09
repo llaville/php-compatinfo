@@ -214,5 +214,23 @@
         "ext_max": "",
         "php_min": "5.3.0",
         "php_max": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "rel_version": "2.5.0RC1",
+        "rel_date": "2015-05-21",
+        "rel_state": "beta",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 26,
+        "rel_version": "2.5.0",
+        "rel_date": "2015-07-09",
+        "rel_state": "stable",
+        "ext_max": "",
+        "php_min": "5.3.0",
+        "php_max": ""
     }
 ]
