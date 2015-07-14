@@ -70,5 +70,13 @@
         "ext_max": "",
         "php_min": "5.5.0",
         "php_max": ""
+    },
+    {
+        "ext_name_fk": 32,
+        "name": "IntlException",
+        "ext_min": "5.5.0",
+        "ext_max": "",
+        "php_min": "5.5.0",
+        "php_max": ""
     }
 ]
