@@ -333,8 +333,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
         } elseif ($node instanceof Node\Scalar\MagicConst) {
             $this->computeConstantVersions($node, $node->getName());
 
-        } else if ( $node instanceof Node\Expr\Empty_ ) {
-            $this->computePhpFeatureVersions( $node );
+        } elseif ($node instanceof Node\Expr\Empty_) {
+            $this->computePhpFeatureVersions($node);
         }
     }
 
@@ -1133,19 +1133,17 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $versions = array('php.min' => '5.3.0');
             $this->updateLocalVersions($versions);
 
-        } else if ( $node instanceof Node\Expr\Empty_ ) {
-
+        } elseif ($node instanceof Node\Expr\Empty_) {
             // If the parameter of empty() is an arbitrary expression,
             // and not just a variable.
-            if ( $node->expr instanceof Node\Expr
+            if ($node->expr instanceof Node\Expr
                 && ! $node->expr instanceof Node\Expr\Variable
                 && ! $node->expr instanceof Node\Expr\ArrayDimFetch
-                && ! $node->expr instanceof Node\Expr\PropertyFetch ) {
-
+                && ! $node->expr instanceof Node\Expr\PropertyFetch) {
                 // Prior to PHP 5.5, empty() only supports variables
                 // http://php.net/manual/en/function.empty.php
-                $versions = array( 'php.min' => '5.5.0' );
-                $this->updateLocalVersions( $versions );
+                $versions = array('php.min' => '5.5.0');
+                $this->updateLocalVersions($versions);
             }
 
         }
