@@ -42,6 +42,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     const GH154 = 'gh154.php';
     const GH168 = 'gh168.php';
     const GH200 = 'gh200.php';
+    const GH207 = 'gh207.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -301,6 +302,32 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
                 'php.min'      => '5.3.0',
                 'php.max'      => '',
                 'php.all'      => '5.3.0',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for feature GH#207
+     *
+     * @link https://github.com/llaville/php-compat-info/pull/207
+     *       goto statement is not checked
+     * @link http://php.net/manual/en/migration55.new-features.php#migration55.new-features.empty
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH207()
+    {
+        $dataSource = self::$fixtures . self::GH207;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.5.0',
+                'php.max'      => '',
+                'php.all'      => '5.5.0',
             ),
             $versions
         );
