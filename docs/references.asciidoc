@@ -203,7 +203,7 @@ endif::basebackend-docbook[]
 | [label label-info]#2.23.0#
 
 | http
-2.5.0 {stable}
+2.5.1 {stable}
 | [label label-info]#2.16.0#
 
 | iconv
