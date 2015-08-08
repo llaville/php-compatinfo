@@ -5,7 +5,7 @@
         "ext_min": "0.7.0",
         "ext_max": "",
         "php_min": "4.3.0",
-        "php_max": "5.5.27"
+        "php_max": "5.5.28"
     },
     {
         "ext_name_fk": 26,
@@ -13,7 +13,7 @@
         "ext_min": "0.7.0",
         "ext_max": "",
         "php_min": "4.3.0",
-        "php_max": "5.5.27"
+        "php_max": "5.5.28"
     },
     {
         "ext_name_fk": 26,
@@ -21,6 +21,6 @@
         "ext_min": "0.7.0",
         "ext_max": "",
         "php_min": "4.3.0",
-        "php_max": "5.5.27"
+        "php_max": "5.5.28"
     }
 ]
