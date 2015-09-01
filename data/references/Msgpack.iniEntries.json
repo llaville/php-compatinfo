@@ -22,5 +22,13 @@
         "ext_max": "",
         "php_min": "5.0.0",
         "php_max": ""
+    },
+    {
+        "ext_name_fk": 46,
+        "name": "msgpack.use_str8_serialization",
+        "ext_min": "0.5.7",
+        "ext_max": "",
+        "php_min": "5.0.0",
+        "php_max": ""
     }
 ]
