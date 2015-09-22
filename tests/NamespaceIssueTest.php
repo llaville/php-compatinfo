@@ -128,7 +128,7 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
                 'php.min'      => '5.2.0',
                 'php.max'      => '',
                 'php.all'      => '5.2.0',
-                'parameters'   => '',
+                'parameters'   => array('5.2.0', '5.3.0', '5.5.0'),
                 'php.excludes' => '',
                 'deprecated'   => '',
                 'arg.max'      => 1,
