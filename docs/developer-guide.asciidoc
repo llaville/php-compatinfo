@@ -1,5 +1,5 @@
 = Developer Guide
-:description: All you have to know about CompatInfo v4 architecture.
+:description: All you have to know about CompatInfo v5 architecture.
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
 

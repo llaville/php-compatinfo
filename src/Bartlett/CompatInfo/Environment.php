@@ -27,7 +27,7 @@ use PDO;
  */
 class Environment
 {
-    const PHP_MIN = '5.3.2';
+    const PHP_MIN = '5.4.0';
 
     /**
      * Initializes installation of the Reference database

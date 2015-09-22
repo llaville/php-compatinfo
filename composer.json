@@ -16,13 +16,13 @@
         }
     ],
     "require": {
-        "php": ">=5.3.2",
+        "php": ">=5.4.0",
         "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
         "ext-json": "*",
         "ext-pdo_sqlite": "*",
-        "bartlett/php-reflect": "~3.1"
+        "bartlett/php-reflect": "~4.0"
     },
     "require-dev": {
         "doctrine/cache": "~1.3",

@@ -24,7 +24,7 @@ in case you are upgrading from a version 2.x of PHP CompatInfo.
 === Requirements
 
 Before you install PHP [label label-primary]#CompatInfo#, you will need an operating system
-with http://www.php.net[PHP] 5.3.2 or later installed,
+with http://www.php.net[PHP] 5.4.0 or later installed,
 
 [label label-primary]#CompatInfo# requires the
 http://www.php.net/manual/en/book.json.php[json],
@@ -41,7 +41,7 @@ Put a file named [label label-default]#composer.json# at the root of your projec
 ----
 {
     "require": {
-        "bartlett/php-compatinfo": "4.4.0"
+        "bartlett/php-compatinfo": "5.0.0"
     }
 }
 ----
@@ -66,7 +66,7 @@ This is the equivalent of doing a git clone checkout followed by a composer inst
 
 [source,bash]
 ----
-$ php composer.phar create-project bartlett/php-compatinfo /path/to/install 4.4.0
+$ php composer.phar create-project bartlett/php-compatinfo /path/to/install 5.0.0
 ----
 Where +/path/to/install+ is your install directory.
 ====
@@ -79,17 +79,17 @@ bundled in a single file.
 
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-4.4.0.phar
-$ chmod +x phpcompatinfo-4.4.0.phar
-$ mv phpcompatinfo-4.4.0.phar /usr/local/bin/phpcompatinfo
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-5.0.0.phar
+$ chmod +x phpcompatinfo-5.0.0.phar
+$ mv phpcompatinfo-5.0.0.phar /usr/local/bin/phpcompatinfo
 $ phpcompatinfo
 ----
 
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-4.4.0.phar
-$ php phpcompatinfo-4.4.0.phar
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-5.0.0.phar
+$ php phpcompatinfo-5.0.0.phar
 ----
 
 ifdef::basebackend-bootstrap[]

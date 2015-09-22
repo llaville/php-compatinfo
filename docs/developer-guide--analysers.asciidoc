@@ -30,6 +30,18 @@ class YourAnalyser implements AnalyserInterface, NodeVisitor
     // AnalyserInterface methods
     //
 
+    public function getSubject()
+    {
+    }
+
+    public function getCurrentFile()
+    {
+    }
+
+    public function getTokens()
+    {
+    }
+
     public function setSubject(Reflect $reflect)
     {
     }
