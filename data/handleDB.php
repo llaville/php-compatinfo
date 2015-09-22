@@ -357,7 +357,7 @@ class DbInitCommand extends Command
             'pthreads' => array(
                 'classes'    => array('', '1', '2'),
                 'constants'  => array('', '2'),
-                'releases'   => array('', '1', '2'),
+                'releases'   => array('', '1', '2', '3'),
                 'methods'    => array('', '1', '2'),
             ),
             'rar' => array(
