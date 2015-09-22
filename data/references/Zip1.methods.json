@@ -348,5 +348,25 @@
         "ext_max": "",
         "php_min": "5.2.0",
         "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "setCompressionName",
+        "static": false,
+        "ext_min": "1.13.0",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
+    },
+    {
+        "ext_name_fk": 101,
+        "class_name": "ZipArchive",
+        "name": "setCompressionIndex",
+        "static": false,
+        "ext_min": "1.13.1",
+        "ext_max": "",
+        "php_min": "5.2.0",
+        "php_max": ""
     }
 ]
