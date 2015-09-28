@@ -59,12 +59,12 @@
         "bin/phpcompatinfo"
     ],
     "autoload": {
-        "psr-0": {
-            "Bartlett\\": "src/"
+        "psr-4": {
+            "Bartlett\\": "src/Bartlett"
         }
     },
     "autoload-dev": {
-        "psr-0": {
+        "psr-4": {
             "Bartlett\\Tests\\CompatInfo\\": "tests/"
         }
     }
