@@ -391,7 +391,7 @@ endif::basebackend-docbook[]
 | [label label-default]#2.0.0#
 
 | solr
-2.1.0 {stable}
+2.2.1 {stable}
 | [label label-info]#2.5.0#
 
 | sphinx

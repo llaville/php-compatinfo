@@ -387,8 +387,8 @@ class DbInitCommand extends Command
                 'constants'  => array(''),
                 'functions'  => array(''),
                 'releases'   => array('', '1', '2'),
-                'const'      => array(''),
-                'methods'    => array('', '2'),
+                'const'      => array('', '2'),
+                'methods'    => array('', '1', '2'),
             ),
             'sphinx' => array(
                 'classes'    => array(''),
