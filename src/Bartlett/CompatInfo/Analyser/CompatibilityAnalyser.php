@@ -379,12 +379,21 @@ class CompatibilityAnalyser extends AbstractAnalyser
         }
 
         self::updateVersion(
-            ('namespaces' == $element) ? $versions['php.all'] : $versions['php.min'],
+            $versions['php.min'],
             $this->metrics[$element][$name]['php.all']
+        );
+
+        self::updateVersion(
+            $versions['php.min'],
+            $this->metrics[$element][$name]['php.min']
         );
         self::updateVersion(
             $versions['php.max'],
             $this->metrics[$element][$name]['php.max']
+        );
+        self::updateVersion(
+            $versions['php.all'],
+            $this->metrics[$element][$name]['php.all']
         );
 
         if (isset($versions['declared'])) {
@@ -392,66 +401,68 @@ class CompatibilityAnalyser extends AbstractAnalyser
         }
 
         if ('user' == $versions['ext.name']) {
+            $this->metrics[$element][$name]['ext.min'] = '';
+            $this->metrics[$element][$name]['ext.max'] = '';
             return;
         }
-        if ('extensions' == $element) {
-            self::updateVersion(
-                $versions['ext.min'],
-                $this->metrics[$element][$name]['ext.all']
-            );
-            self::updateVersion(
-                $versions['ext.max'],
-                $this->metrics[$element][$name]['ext.max']
-            );
-        }
-    }
 
-    /**
-     * Updates parent container (class|interface|trait|namespace|method)
-     *
-     * @param array $versions
-     *
-     * @return void
-     */
-    protected function updateContextVersion($versions)
-    {
-        list($element, $name) = end($this->contextStack);
-
-        $this->updateElementVersion(
-            $element,
-            $name,
-            $versions
+        self::updateVersion(
+            $versions['ext.min'],
+            $this->metrics[$element][$name]['ext.min']
+        );
+        self::updateVersion(
+            $versions['ext.max'],
+            $this->metrics[$element][$name]['ext.max']
         );
     }
 
     /**
-     * Updates local versions (and non-user extension).
+     * Updates parent container context
      *
-     * @param array $versions
+     * @param array $versions (optional) Version informations
      *
      * @return void
      */
-    protected function updateLocalVersions($versions, $conditionalCode = false)
+    protected function updateContextVersion(array $versions = null)
     {
-        $versions = array_merge(self::$php4, $versions);
-
-        if ($versions['ext.name'] !== 'user') {
-            // update versions of extension's $element
-            $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
+        if (count ($this->contextStack) > 1) {
+            list($celement, $cname) = array_pop($this->contextStack);
+        } else {
+            list($celement, $cname) = end($this->contextStack);
         }
 
-        if (isset($versions['declared'])) {
-            $this->localVersions['declared'] = $versions['declared'];
+        if (!isset($versions)) {
+            // retrieve current context informations
+            $versions = $this->metrics[$celement][$cname];
+        }
+        $versions = array_replace(self::$php4, $versions);
+
+        list($pelement, $pname) = end($this->contextStack);
+
+        self::updateVersion(
+            $versions['php.all'],
+            $this->metrics[$pelement][$pname]['php.all']
+        );
+
+        self::updateVersion(
+            $versions['php.max'],
+            $this->metrics[$pelement][$pname]['php.max']
+        );
+
+        self::updateVersion(
+            $versions['php.min'],
+            $this->metrics[$pelement][$pname]['php.all']
+        );
+
+        if (isset($this->metrics[$celement][$cname]['optional'])) {
+            // conditional code
+            return;
         }
 
-        if (!$conditionalCode) {
-            $this->updateVersion($versions['php.min'], $this->localVersions['php.min']);
-            $this->updateVersion($versions['php.max'], $this->localVersions['php.max']);
-        }
-        $this->updateVersion($versions['php.min'], $this->localVersions['php.all']);
-
-        // update parent container
-        $this->updateContextVersion($this->localVersions);
+        self::updateVersion(
+            $versions['php.min'],
+            $this->metrics[$pelement][$pname]['php.min']
+        );
     }
 
     /**
@@ -534,14 +545,20 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $max = '';
 
         $element  = 'classes';
-        $name     = (string) $node->namespacedName;
-        $this->contextStack[] = array($element, $name);
+        $classname = (string) $node->namespacedName;
+        $this->contextStack[] = array($element, $classname);
 
         // parent class
         if (isset($node->extends)) {
             $name     = (string) $node->extends;
             $group    = $this->findObjectType($name);
             $versions = $this->metrics[$group][$name];
+
+            if ($versions['ext.name'] !== 'user') {
+                // update versions of extension's $element
+                $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
+            }
+
             if ('user' == $versions['ext.name']) {
                 if ($node->extends->isFullyQualified()) {
                     if (count($node->extends->parts) === 1) {
@@ -561,7 +578,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 // now object is categorized, remove from temp queue
                 unset($this->metrics[$group][$name]);
             }
-            $this->updateLocalVersions($versions);
+
+            $versions['ext.name'] = 'user';
+            $this->updateElementVersion('classes', $classname, $versions);
         }
 
         // interfaces
@@ -572,11 +591,18 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->updateElementVersion('interfaces', $name, $versions);
             ++$this->metrics['interfaces'][$name]['matches'];
 
+            if ($versions['ext.name'] !== 'user') {
+                // update versions of extension's $element
+                $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
+            }
+
             if ('objects' == $group) {
                 // now object is categorized, remove from temp queue
                 unset($this->metrics[$group][$name]);
             }
-            $this->updateLocalVersions($versions);
+
+            $versions['ext.name'] = 'user';
+            $this->updateElementVersion('classes', $classname, $versions);
         }
 
         $name     = (string) $node->namespacedName;
@@ -587,11 +613,12 @@ class CompatibilityAnalyser extends AbstractAnalyser
             // now object is categorized, remove from temp queue
             unset($this->metrics[$group][$name]);
         }
-        $versions = array_merge(
+
+        $versions = array_replace(
             $versions,
-            array('php.min' => $min, 'php.max' => $max, 'declared' => true)
+            array('ext.name' => 'user', 'declared' => true)
         );
-        $this->updateLocalVersions($versions);
+        $this->updateElementVersion('classes', $classname, $versions);
     }
 
     /**
@@ -689,8 +716,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
         }
 
         $versions = array('php.min' => $min);
+        $this->updateElementVersion($element, $name, $versions);
         $this->contextStack[] = array($element, $name);
-        $this->updateLocalVersions($versions);
     }
 
     /**
@@ -773,7 +800,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
     }
 
     /**
-     * Initialize local scope environment (reference versions and class aliases)
+     * Initialize local scope environment
      *
      * @return void
      */
@@ -784,9 +811,6 @@ class CompatibilityAnalyser extends AbstractAnalyser
          * to resolve method calls in local scope (class method or function)
          */
         $this->aliases = array();
-
-        // initialize reference versions
-        $this->localVersions = self::$php4;
     }
 
     /**
@@ -840,13 +864,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function computeNamespaceVersions()
     {
-        list($element, $name) = array_pop($this->contextStack);
+        list($element, $name) = end($this->contextStack);
 
-        if (self::GLOBAL_NAMESPACE == $name) {
-            $versions = $this->localVersions;
-        } else {
-            $versions = $this->metrics[$element][$name];
-        }
+        $versions = $this->metrics[$element][$name];
 
         $this->updateGlobalVersion($versions['php.min'], $versions['php.max'], $versions['php.all']);
     }
@@ -862,18 +882,18 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function computeClassVersions(Node $node)
     {
-        // remove class context
-        array_pop($this->contextStack);
+        list($element, $name) = end($this->contextStack);
 
-        $versions = $this->metrics['classes'][(string)$node->namespacedName];
+        $versions = $this->metrics[$element][$name];
 
         if (version_compare($versions['php.all'], '5.0.0', 'eq')) {
             // PHP4 compatibility for properties and methods visibility
             $versions['php.min'] = $versions['php.all'];
-            $this->metrics['classes'][(string)$node->namespacedName] = $versions;
+            $this->metrics[$element][$name] = $versions;
         }
 
-        $this->updateLocalVersions($versions);
+        // update parent context
+        $this->updateContextVersion();
     }
 
     /**
@@ -885,12 +905,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function computeInterfaceVersions(Node $node)
     {
-        // remove interface context
-        array_pop($this->contextStack);
-
-        $versions = $this->metrics['interfaces'][(string)$node->namespacedName];
-
-        $this->updateContextVersion($versions);
+        // update parent context
+        $this->updateContextVersion();
     }
 
     /**
@@ -904,12 +920,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function computeTraitVersions(Node $node)
     {
-        // remove trait context
-        array_pop($this->contextStack);
-
-        $versions = $this->metrics['traits'][(string)$node->namespacedName];
-
-        $this->updateContextVersion($versions);
+        // update parent context
+        $this->updateContextVersion();
     }
 
     /**
@@ -923,12 +935,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function computeFunctionVersions(Node $node)
     {
-        $this->updateContextVersion($this->localVersions);
-
-        // remove function context
-        array_pop($this->contextStack);
-
-        $this->updateContextVersion($this->localVersions);
+        // update parent context
+        $this->updateContextVersion();
     }
 
     /**
@@ -965,7 +973,14 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 // cannot resolved indirect definition
                 return;
             }
-            $this->updateElementVersion('constants', $name->value, self::$php4);
+            $element = 'constants';
+            $name    = $name->value;
+            $this->updateElementVersion($element, $name, self::$php4);
+
+            $this->contextStack[] = array($element, $name);
+
+            // update parent context
+            $this->updateContextVersion($this->metrics[$element][$name]);
         }
     }
 
@@ -1055,10 +1070,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->metrics[$context][$target]['optional'] = true;
         }
 
-        $conditionalCode = isset($this->metrics[$context][$target]['optional']);
+        $this->contextStack[] = array($context, $target);
 
-        // update current context that call this static method
-        $this->updateLocalVersions($versions, $conditionalCode);
+        // update context that call this static method
+        $this->updateContextVersion();
     }
 
     /**
@@ -1083,30 +1098,36 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function computePhpFeatureVersions(Node $node)
     {
+        list($element, $name) = end($this->contextStack);
+
         if ($node instanceof Node\Stmt\Use_) {
             if (Node\Stmt\Use_::TYPE_FUNCTION == $node->type
                 || Node\Stmt\Use_::TYPE_CONSTANT == $node->type
             ) {
                 // use const, use function
                 $versions = array('php.min' => '5.6.0');
-                $this->updateLocalVersions($versions);
+                // update current and parent context
+                $this->updateElementVersion($element, $name, $versions);
+                $this->updateContextVersion($versions);
             }
 
         } elseif ($node instanceof Node\Stmt\Property) {
             // implicitly public visibility is PHP 4 syntax
             if ($this->isImplicitlyPublicProperty($this->tokens, $node)) {
-                $versions = array();
-            } else {
-                $versions = array('php.min' => '5.0.0');
+                return;
             }
-            $this->updateLocalVersions($versions);
+            $versions = array('php.min' => '5.0.0');
+            // update current context only
+            $this->updateElementVersion($element, $name, $versions);
 
         } elseif ($node instanceof Node\Expr\Array_) {
             if ($this->isShortArraySyntax($this->tokens, $node)) {
                 // Array Short Syntax
                 // http://php.net/manual/en/migration54.new-features.php
                 $versions = array('php.min' => '5.4.0');
-                $this->updateLocalVersions($versions);
+                // update current and parent context
+                $this->updateElementVersion($element, $name, $versions);
+                $this->updateContextVersion($versions);
             }
 
         } elseif ($node instanceof Node\Expr\ArrayDimFetch
@@ -1115,7 +1136,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
             // Array Dereferencing
             // http://php.net/manual/en/migration54.new-features.php
             $versions = array('php.min' => '5.4.0');
-            $this->updateLocalVersions($versions);
+            // update current and parent context
+            $this->updateElementVersion($element, $name, $versions);
+            $this->updateContextVersion($versions);
 
         } elseif ($node instanceof Node\Expr\MethodCall
             && is_string($node->name)
@@ -1126,12 +1149,16 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 // Class Member Access On Instantiation
                 // http://php.net/manual/en/migration54.new-features.php
                 $versions = array('php.min' => '5.4.0');
-                $this->updateLocalVersions($versions);
+                // update current and parent context
+                $this->updateElementVersion($element, $name, $versions);
+                $this->updateContextVersion($versions);
             }
 
         } elseif ($node instanceof Node\Stmt\Goto_) {
             $versions = array('php.min' => '5.3.0');
-            $this->updateLocalVersions($versions);
+            // update current and parent context
+            $this->updateElementVersion($element, $name, $versions);
+            $this->updateContextVersion($versions);
 
         } elseif ($node instanceof Node\Expr\Empty_) {
             // If the parameter of empty() is an arbitrary expression,
@@ -1143,9 +1170,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 // Prior to PHP 5.5, empty() only supports variables
                 // http://php.net/manual/en/function.empty.php
                 $versions = array('php.min' => '5.5.0');
-                $this->updateLocalVersions($versions);
+                // update current and parent context
+                $this->updateElementVersion($element, $name, $versions);
+                $this->updateContextVersion($versions);
             }
-
         }
     }
 
@@ -1189,10 +1217,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
         $this->updateElementVersion($context, $element, $versions);
         ++$this->metrics[$context][$element]['matches'];
 
-        // update local context
-        $this->updateLocalVersions(
-            $versions,
-            isset($this->metrics[$context][$element]['optional'])
-        );
+        $this->contextStack[] = array($context, $element);
+
+        // update parent context
+        $this->updateContextVersion($versions);
     }
 }

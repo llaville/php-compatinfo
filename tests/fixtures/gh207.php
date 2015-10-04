@@ -10,3 +10,5 @@ if (empty(always_false())) {
 if (empty(true)) {
     echo "This will not be printed.\n";
 }
+
+function foo() {}

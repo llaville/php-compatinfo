@@ -202,7 +202,7 @@ class ClassIssueTest extends \PHPUnit_Framework_TestCase
                 'ext.min'      => '',
                 'ext.max'      => '',
                 'ext.all'      => '',
-                'php.min'      => '4.0.0',
+                'php.min'      => '5.1.0',
                 'php.max'      => '',
                 'php.all'      => '5.1.0',
                 'matches'      => 0,

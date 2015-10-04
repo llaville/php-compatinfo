@@ -78,10 +78,10 @@ class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             array(
                 'ext.name'     => 'standard',
-                'ext.min'      => '4.0.0',
+                'ext.min'      => '5.0.0',
                 'ext.max'      => '',
                 'ext.all'      => '',
-                'php.min'      => '4.0.0',
+                'php.min'      => '5.0.0',
                 'php.max'      => '',
                 'php.all'      => '5.0.0',
                 'parameters'   => array('4.0.0', '5.0.0'),
