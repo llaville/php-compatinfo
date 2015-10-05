@@ -1,4 +1,4 @@
-bartlett/php-compatinfo: <info>master@995b1e0989a3c9ed48aa1ca5801a72e0f29d33ef</info>
+bartlett/php-compatinfo: <info>4.5.0</info>
 bartlett/php-reflect: <info>3.1.1</info>
 doctrine/collections: <info>v1.3.0</info>
 justinrainbow/json-schema: <info>1.5.0</info>
