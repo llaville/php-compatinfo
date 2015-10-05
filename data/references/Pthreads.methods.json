@@ -163,7 +163,7 @@
         "ext_name_fk": 60,
         "class_name": "Thread",
         "name": "getCurrentThreadId",
-        "static": false,
+        "static": true,
         "ext_min": "0.1.0",
         "ext_max": "",
         "php_min": "5.3.0",
