@@ -1221,5 +1221,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
         // update parent context
         $this->updateContextVersion($versions);
+
+        if ($versions['ext.name'] !== 'user') {
+            // update versions of extension's $element
+            $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
+        }
     }
 }
