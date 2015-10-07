@@ -339,7 +339,7 @@ endif::basebackend-docbook[]
 | [label label-default]#2.0.0#
 
 | pthreads
-3.0.7 {stable}
+3.0.8 {stable}
 | [label label-info]#2.16.0#
 
 | rar
