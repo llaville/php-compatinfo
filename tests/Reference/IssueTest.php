@@ -36,6 +36,7 @@ class IssueTest extends \PHPUnit_Framework_TestCase
 {
     const GH127 = 'gh127.php';
     const GH162 = 'gh162.php';
+    const GH210 = '../fixtures/vfsStream-1.6.0.zip';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -107,5 +108,42 @@ class IssueTest extends \PHPUnit_Framework_TestCase
             ),
             $versions
         );
+    }
+
+    /**
+     * Regression test for bug GH#210
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/210
+     *       "Regression in 4.5 : missing extensions"
+     * @group regression
+     * @group large
+     * @return void
+     */
+    public function testBugGH210()
+    {
+        $dataSource = self::$fixtures . self::GH210;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $extensions = $metrics[self::$analyserId]['extensions'];
+
+        $provideExtensions = array(
+            'Core',
+            'standard',
+            'dom',
+            'date',
+            'posix',
+            'pcre',
+            'spl',
+            'xml',
+            'zip',
+        );
+
+        foreach ($provideExtensions as $e) {
+            $this->assertArrayHasKey(
+                $e,
+                $extensions,
+                "Extension $e is not found in analysis results while it should be"
+            );
+        }
     }
 }
