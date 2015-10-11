@@ -12,7 +12,7 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
-use Bartlett\CompatInfo\Environment;
+use Bartlett\CompatInfoDb\Environment;
 use Bartlett\CompatInfo\Collection\ReferenceCollection;
 use Bartlett\CompatInfo\PhpParser\ConditionalCodeNodeProcessor;
 

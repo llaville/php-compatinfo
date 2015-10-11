@@ -14,7 +14,7 @@
 
 namespace Bartlett\CompatInfo\Console;
 
-use Bartlett\CompatInfo\Environment;
+use Bartlett\CompatInfoDb\Environment;
 
 use Bartlett\Reflect\Console\Application as BaseApplication;
 

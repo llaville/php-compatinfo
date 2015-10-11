@@ -2,7 +2,7 @@
 
 namespace Bartlett\CompatInfo\Sniffs\PHP;
 
-use Bartlett\CompatInfo\Environment;
+use Bartlett\CompatInfoDb\Environment;
 use Bartlett\CompatInfo\Collection\ReferenceCollection;
 
 use Bartlett\Reflect\Sniffer\SniffAbstract;

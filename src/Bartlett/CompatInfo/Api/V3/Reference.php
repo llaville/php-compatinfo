@@ -12,7 +12,7 @@
 
 namespace Bartlett\CompatInfo\Api\V3;
 
-use Bartlett\CompatInfo\Environment;
+use Bartlett\CompatInfoDb\Environment;
 use Bartlett\CompatInfoDb\ExtensionFactory;
 
 use Bartlett\Reflect\Api\V3\Common;
