@@ -99,7 +99,6 @@ class ResultPrinter extends \PHPUnit_TextUI_ResultPrinter
 
         $this->logger->notice(
             \PHP_Timer::resourceUsage() .
-            sprintf(", References: %d", $numReferences) .
             "\n",
             array('operation' => __FUNCTION__)
         );
