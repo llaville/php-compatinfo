@@ -43,6 +43,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     const GH168 = 'gh168.php';
     const GH200 = 'gh200.php';
     const GH207 = 'gh207.php';
+    const GH211 = 'gh211.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -328,6 +329,32 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
                 'php.min'      => '5.5.0',
                 'php.max'      => '',
                 'php.all'      => '5.5.0',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for feature GH#211
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/211
+     *       PHP 5.6 **-Operator not recognized
+     * @link http://php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH211()
+    {
+        $dataSource = self::$fixtures . self::GH211;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.6.0',
+                'php.max'      => '',
+                'php.all'      => '5.6.0',
             ),
             $versions
         );
