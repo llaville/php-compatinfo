@@ -40,6 +40,7 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
 {
     protected static $fixtures;
     protected static $analyserId;
+    protected static $api;
 
     /**
      * Sets up the shared fixture.
@@ -52,6 +53,11 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
             . 'fixtures' . DIRECTORY_SEPARATOR;
 
         self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
+
+        $client = new Client();
+
+        // request for a Bartlett\Reflect\Api\Analyser
+        self::$api = $client->api('analyser');
     }
 
     /**
@@ -94,15 +100,10 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
             "$extname::$fctname function does not have test file for default arguments"
         );
 
-        $client = new Client();
-
-        // request for a Bartlett\Reflect\Api\Analyser
-        $api = $client->api('analyser');
-
         $dataSource = self::$fixtures . $fctname . '.18881d.php';
         $analysers  = array('compatibility');
         // ... and get metrics
-        $metrics   = $api->run($dataSource, $analysers);
+        $metrics   = self::$api->run($dataSource, $analysers);
         $functions = $metrics[self::$analyserId]['functions'];
 
         // retrieves function's parameters
@@ -138,15 +139,10 @@ class ParameterTest extends \PHPUnit_Framework_TestCase
             "$extname::$fctname function does not have test file for optional arguments"
         );
 
-        $client = new Client();
-
-        // request for a Bartlett\Reflect\Api\Analyser
-        $api = $client->api('analyser');
-
         $dataSource = self::$fixtures . $fctname . '.18881o.php';
         $analysers  = array('compatibility');
         // ... and get metrics
-        $metrics   = $api->run($dataSource, $analysers);
+        $metrics   = self::$api->run($dataSource, $analysers);
         $functions = $metrics[self::$analyserId]['functions'];
 
         // retrieves function's parameters
