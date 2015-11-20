@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-compatinfo-db.git",
-                "reference": "8fd98321cb9ee414321d9685d1da12922af78f43"
+                "reference": "913a01036fb04e4aa0604a8032b507c0654c6325"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-compatinfo-db/zipball/8fd98321cb9ee414321d9685d1da12922af78f43",
-                "reference": "8fd98321cb9ee414321d9685d1da12922af78f43",
+                "url": "https://api.github.com/repos/llaville/php-compatinfo-db/zipball/913a01036fb04e4aa0604a8032b507c0654c6325",
+                "reference": "913a01036fb04e4aa0604a8032b507c0654c6325",
                 "shasum": ""
             },
             "require": {
@@ -75,7 +75,7 @@
                 "compatibility",
                 "database"
             ],
-            "time": "2015-11-17 21:15:59"
+            "time": "2015-11-20 19:43:11"
         },
         {
             "name": "bartlett/php-reflect",
