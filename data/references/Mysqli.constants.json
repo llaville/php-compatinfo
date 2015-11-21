@@ -988,5 +988,14 @@
         "php_min": "5.0.0",
         "php_max": "",
         "php_excludes": ""
+    },
+    {
+        "ext_name_fk": 49,
+        "name": "MYSQLI_TYPE_JSON",
+        "ext_min": "5.6.15RC1",
+        "ext_max": "",
+        "php_min": "5.6.15RC1",
+        "php_max": "",
+        "php_excludes": ""
     }
 ]
