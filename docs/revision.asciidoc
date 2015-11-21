@@ -1,6 +1,6 @@
-:revdate:           2015-10-09
-:revnumber:         4.5.1
+:revdate:           2015-11-21
+:revnumber:         4.5.2
 :deprecated:        3.7.4
 :deprecatedPubDate: April 15, 2015
-:stable:            4.5.1
-:stablePubDate:     October 9, 2015
+:stable:            4.5.2
+:stablePubDate:     November 21, 2015
