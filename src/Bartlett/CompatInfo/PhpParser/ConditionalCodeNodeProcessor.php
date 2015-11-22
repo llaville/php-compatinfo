@@ -65,7 +65,7 @@ class ConditionalCodeNodeProcessor extends NodeProcessorAbstract
 
         $element = $node->args[0]->value;
 
-        if (!$element instanceof Node\Scalar\String) {
+        if (!$element instanceof Node\Scalar\String_) {
             // cannot resolve variable argument
             return;
         }
@@ -74,7 +74,7 @@ class ConditionalCodeNodeProcessor extends NodeProcessorAbstract
             // check also 2nd argument of method_exists
             $method = $node->args[1]->value;
 
-            if (!$method instanceof Node\Scalar\String) {
+            if (!$method instanceof Node\Scalar\String_) {
                 // cannot resolve method name argument
                 return;
             }

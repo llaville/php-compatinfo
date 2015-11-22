@@ -961,7 +961,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
         if (strcasecmp('define', $element) === 0) {
             // user defined constant
             $name = $node->args[0]->value;
-            if (!$name instanceof Node\Scalar\String) {
+            if (!$name instanceof Node\Scalar\String_) {
                 // cannot resolved indirect definition
                 return;
             }
