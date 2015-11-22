@@ -8,7 +8,7 @@ that bundles all dependencies in a single file.
 
 Follow development on the http://php5.laurent-laville.org/compatinfo/blog[official Blog].
 
-Have a look on https://github.com/llaville/php-compat-info/tree/4.4[branch 4.4] for previous stable API 4.x
+Have a look on https://github.com/llaville/php-compat-info/tree/4.5[branch 4.5] for previous stable API 4.x
 
 == Install
 
