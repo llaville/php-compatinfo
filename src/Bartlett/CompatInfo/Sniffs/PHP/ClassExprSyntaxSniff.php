@@ -21,7 +21,7 @@ class ClassExprSyntaxSniff extends SniffAbstract
         parent::enterSniff();
 
         $this->classExprSyntax = array();
-   }
+    }
 
     public function leaveSniff()
     {

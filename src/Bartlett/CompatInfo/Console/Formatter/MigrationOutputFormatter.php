@@ -145,8 +145,12 @@ class MigrationOutputFormatter extends OutputFormatter
 
                 } elseif (in_array(
                     $group,
-                    array(Metrics::DEPRECATED_FUNCTIONS, Metrics::DEPRECATED_DIRECTIVES, Metrics::DEPRECATED_ASSIGN_REFS))
-                ) {
+                    array(
+                        Metrics::DEPRECATED_FUNCTIONS,
+                        Metrics::DEPRECATED_DIRECTIVES,
+                        Metrics::DEPRECATED_ASSIGN_REFS
+                    )
+                )) {
                     $label = 'deprecated';
                     if (Metrics::DEPRECATED_ASSIGN_REFS == $group) {
                         $element = isset($this->labels[$group]) ? $this->labels[$group] : $group;
@@ -213,7 +217,7 @@ class MigrationOutputFormatter extends OutputFormatter
                         $label = 'removed';
                     }
 
-                } elseif(Metrics::ANONYMOUS_FUNCTION == $group) {
+                } elseif (Metrics::ANONYMOUS_FUNCTION == $group) {
                     if ('this' == $element) {
                         $grp = Metrics::ANONYMOUS_FUNCTION_1;
                         $element = isset($this->labels[$grp]) ? $this->labels[$grp] : $group;

@@ -54,5 +54,4 @@ trait AbstractChange
     {
         return $this->isSameElement($name, $compare);
     }
-
 }

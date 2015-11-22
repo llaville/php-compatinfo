@@ -70,19 +70,14 @@ class IntroducedSniff extends SniffAbstract
 
         // Function call
         if ($this->isFuncCall($node)) {
-
         // Function
         } elseif ($this->isNewFunc($node)) {
-
         // Class instantiation call
         } elseif ($this->isClassCall($node)) {
-
         // Class, Interface, Trait
         } elseif ($this->isNewClass($node)) {
-
         // Constant
         } elseif ($this->isNewConst($node)) {
-
         }
 
         $this->condFunc  = null;
@@ -253,5 +248,4 @@ class IntroducedSniff extends SniffAbstract
         }
         return false;
     }
-
 }

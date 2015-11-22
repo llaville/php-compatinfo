@@ -24,7 +24,7 @@ class BinaryNumberFormatSniff extends SniffAbstract
         $this->binaryNumberFormat = array();
 
         $this->tokens = $this->visitor->getTokens();
-   }
+    }
 
     public function leaveSniff()
     {

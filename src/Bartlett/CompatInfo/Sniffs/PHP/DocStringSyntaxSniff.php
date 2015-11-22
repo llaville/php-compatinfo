@@ -69,8 +69,8 @@ class DocStringSyntaxSniff extends SniffAbstract
                     );
                 }
                 $this->docStringSyntax[$name]['spots'][] = $this->getCurrentSpot($node);
-            }
-            elseif ($this->isNowdocSyntax($node)) {
+
+            } elseif ($this->isNowdocSyntax($node)) {
                 $name = 'nowdoc';
 
                 if (!isset($this->docStringSyntax[$name])) {
