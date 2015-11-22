@@ -9,7 +9,7 @@
     stopOnIncomplete="false"
     stopOnRisky="false"
     stopOnSkipped="false"
-    verbose="false"
+    verbose="true"
 >
     <filter>
         <whitelist>
