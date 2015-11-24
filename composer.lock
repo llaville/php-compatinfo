@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a72eb49dc04c40cf772662fc8cbf0e8e",
-    "content-hash": "9f94276d7a1428e068cdb7792638ba25",
+    "hash": "0f6d188b885aefacd4834fa17629fd2f",
+    "content-hash": "f569c444f755a3e34899983413571a4d",
     "packages": [
         {
             "name": "bartlett/php-compatinfo-db",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-compatinfo-db.git",
-                "reference": "913a01036fb04e4aa0604a8032b507c0654c6325"
+                "reference": "537f626b2337ff84a0472e98d8b56ef970f06eea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-compatinfo-db/zipball/913a01036fb04e4aa0604a8032b507c0654c6325",
-                "reference": "913a01036fb04e4aa0604a8032b507c0654c6325",
+                "url": "https://api.github.com/repos/llaville/php-compatinfo-db/zipball/537f626b2337ff84a0472e98d8b56ef970f06eea",
+                "reference": "537f626b2337ff84a0472e98d8b56ef970f06eea",
                 "shasum": ""
             },
             "require": {
@@ -75,7 +75,7 @@
                 "compatibility",
                 "database"
             ],
-            "time": "2015-11-20 19:43:11"
+            "time": "2015-11-24 21:53:44"
         },
         {
             "name": "bartlett/php-reflect",
@@ -83,12 +83,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-reflect.git",
-                "reference": "6a71104f026c77cf301f7742f959c699110484d5"
+                "reference": "1812207ed139d6e501c500eb981aade7bc5d78aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/6a71104f026c77cf301f7742f959c699110484d5",
-                "reference": "6a71104f026c77cf301f7742f959c699110484d5",
+                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/1812207ed139d6e501c500eb981aade7bc5d78aa",
+                "reference": "1812207ed139d6e501c500eb981aade7bc5d78aa",
                 "shasum": ""
             },
             "require": {
@@ -157,7 +157,7 @@
                 "reflection",
                 "reverse-engineer"
             ],
-            "time": "2015-11-22 15:35:08"
+            "time": "2015-11-23 18:59:48"
         },
         {
             "name": "composer/semver",
@@ -1244,18 +1244,11 @@
             "alias_normalized": "4.0.0.0",
             "version": "4.0.9999999.9999999-dev",
             "package": "bartlett/php-reflect"
-        },
-        {
-            "alias": "1.0.0",
-            "alias_normalized": "1.0.0.0",
-            "version": "9999999-dev",
-            "package": "bartlett/php-compatinfo-db"
         }
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "bartlett/php-reflect": 20,
-        "bartlett/php-compatinfo-db": 20
+        "bartlett/php-reflect": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
