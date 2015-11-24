@@ -23,7 +23,7 @@
         "ext-json": "*",
         "ext-pdo_sqlite": "*",
         "bartlett/php-reflect": "4.0.x-dev as 4.0.0",
-        "bartlett/php-compatinfo-db": "dev-master as 1.0.0"
+        "bartlett/php-compatinfo-db": "~1.0"
     },
     "require-dev": {
         "doctrine/cache": "~1.3",
