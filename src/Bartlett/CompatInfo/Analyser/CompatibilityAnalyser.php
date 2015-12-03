@@ -283,6 +283,11 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->computeClassMethodCallVersions($node);
 
         } elseif ($node instanceof Node\Expr\StaticCall
+            && $node->class instanceof Node\Expr\Variable
+        ) {
+            $this->computePhpFeatureVersions($node);
+
+        } elseif ($node instanceof Node\Expr\StaticCall
             && is_string($node->name)
         ) {
             $this->computeStaticClassMethodCallVersions($node);
@@ -1146,6 +1151,11 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 $this->updateLocalVersions($versions);
             }
 
+        } elseif ($node instanceof Node\Expr\StaticCall
+            && $node->class instanceof Node\Expr\Variable
+        ) {
+            $versions = array('php.min' => '5.3.0');
+            $this->updateLocalVersions($versions);
         }
     }
 
