@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0f6d188b885aefacd4834fa17629fd2f",
-    "content-hash": "f569c444f755a3e34899983413571a4d",
+    "hash": "e32da42be361c2bcc23e00d8587d3b3a",
+    "content-hash": "a76f7ce84bfaa818cd77827622ec2a89",
     "packages": [
         {
             "name": "bartlett/php-compatinfo-db",
@@ -79,16 +79,16 @@
         },
         {
             "name": "bartlett/php-reflect",
-            "version": "4.0.x-dev",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-reflect.git",
-                "reference": "1812207ed139d6e501c500eb981aade7bc5d78aa"
+                "reference": "e8da05ee5d7469f8a48d6d28ed0bcd8eaf8ef79e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/1812207ed139d6e501c500eb981aade7bc5d78aa",
-                "reference": "1812207ed139d6e501c500eb981aade7bc5d78aa",
+                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/e8da05ee5d7469f8a48d6d28ed0bcd8eaf8ef79e",
+                "reference": "e8da05ee5d7469f8a48d6d28ed0bcd8eaf8ef79e",
                 "shasum": ""
             },
             "require": {
@@ -157,7 +157,7 @@
                 "reflection",
                 "reverse-engineer"
             ],
-            "time": "2015-11-23 18:59:48"
+            "time": "2015-12-04 18:56:37"
         },
         {
             "name": "composer/semver",
@@ -1079,16 +1079,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.5.1",
+            "version": "v1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e"
+                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
-                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/47c7128262da274f590ae6f86eb137a7a64e82af",
+                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af",
                 "shasum": ""
             },
             "require": {
@@ -1145,7 +1145,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-11-02 18:35:48"
+            "time": "2015-12-03 10:50:37"
         },
         {
             "name": "monolog/monolog",
@@ -1295,18 +1295,9 @@
             "time": "2012-12-21 11:40:51"
         }
     ],
-    "aliases": [
-        {
-            "alias": "4.0.0",
-            "alias_normalized": "4.0.0.0",
-            "version": "4.0.9999999.9999999-dev",
-            "package": "bartlett/php-reflect"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "bartlett/php-reflect": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
