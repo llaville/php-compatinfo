@@ -21,8 +21,8 @@
         Project properties
         ======================================================================
     -->
-    <property name="build.short-version"         value="4.5" />
-    <property name="build.version"               value="${build.short-version}.2" />
+    <property name="build.short-version"         value="5.0" />
+    <property name="build.version"               value="${build.short-version}.0" />
 
     <!--
         ======================================================================

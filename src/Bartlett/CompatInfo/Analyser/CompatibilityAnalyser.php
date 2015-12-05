@@ -12,7 +12,7 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
-use Bartlett\CompatInfo\Environment;
+use Bartlett\CompatInfoDb\Environment;
 use Bartlett\CompatInfo\Collection\ReferenceCollection;
 use Bartlett\CompatInfo\PhpParser\ConditionalCodeNodeProcessor;
 
@@ -281,6 +281,11 @@ class CompatibilityAnalyser extends AbstractAnalyser
             && is_string($node->name)
         ) {
             $this->computeClassMethodCallVersions($node);
+
+        } elseif ($node instanceof Node\Expr\StaticCall
+            && $node->class instanceof Node\Expr\Variable
+        ) {
+            $this->computePhpFeatureVersions($node);
 
         } elseif ($node instanceof Node\Expr\StaticCall
             && is_string($node->name)
@@ -972,7 +977,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
         if (strcasecmp('define', $element) === 0) {
             // user defined constant
             $name = $node->args[0]->value;
-            if (!$name instanceof Node\Scalar\String) {
+            if (!$name instanceof Node\Scalar\String_) {
                 // cannot resolved indirect definition
                 return;
             }
@@ -1178,12 +1183,11 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 $this->updateContextVersion($versions);
             }
 
-        } elseif ($node instanceof Node\Expr\AssignOp\Pow) {
-            // Exponentiation
-            $versions = array('php.min' => '5.6.0');
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
+        } elseif ($node instanceof Node\Expr\StaticCall
+            && $node->class instanceof Node\Expr\Variable
+        ) {
+            $versions = array('php.min' => '5.3.0');
+            $this->updateLocalVersions($versions);
         }
     }
 

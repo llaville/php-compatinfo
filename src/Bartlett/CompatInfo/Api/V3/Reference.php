@@ -12,8 +12,8 @@
 
 namespace Bartlett\CompatInfo\Api\V3;
 
-use Bartlett\CompatInfo\Environment;
-use Bartlett\CompatInfo\Reference\ExtensionFactory;
+use Bartlett\CompatInfoDb\Environment;
+use Bartlett\CompatInfoDb\ExtensionFactory;
 
 use Bartlett\Reflect\Api\V3\Common;
 

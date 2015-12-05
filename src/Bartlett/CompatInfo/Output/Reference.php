@@ -12,6 +12,7 @@
 
 namespace Bartlett\CompatInfo\Output;
 
+use Bartlett\CompatInfoDb\Environment;
 use Bartlett\CompatInfo\Util\Version;
 
 use Bartlett\Reflect\Console\Formatter\OutputFormatter;
@@ -33,6 +34,22 @@ use Symfony\Component\Console\Helper\TableSeparator;
 class Reference extends OutputFormatter
 {
     /**
+     * Prints the database current build version
+     *
+     * @param OutputInterface $output Console Output concrete instance
+     */
+    protected function printDbBuildVersion(OutputInterface $output)
+    {
+        $output->writeln(
+            sprintf(
+                '<info>Reference Database Version</info> => %s%s',
+                Environment::versionRefDb()['build.version'],
+                PHP_EOL
+            )
+        );
+    }
+
+    /**
      * Prints the list of references (extensions) supported
      *
      * @param OutputInterface $output   Console Output concrete instance
@@ -42,6 +59,8 @@ class Reference extends OutputFormatter
      */
     public function dir(OutputInterface $output, $response)
     {
+        $this->printDbBuildVersion($output);
+
         $loaded  = 0;
         $headers = array('Reference', 'Version', 'State', 'Release Date', 'Loaded');
 
@@ -87,6 +106,8 @@ class Reference extends OutputFormatter
      */
     public function show(OutputInterface $output, $response)
     {
+        $this->printDbBuildVersion($output);
+
         if (array_key_exists('summary', $response)) {
             $summary = $response['summary'];
             $output->writeln(sprintf('%s<info>Reference Summary</info>', PHP_EOL));

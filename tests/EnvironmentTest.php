@@ -16,10 +16,10 @@
 
 namespace Bartlett\Tests\CompatInfo;
 
-use Bartlett\CompatInfo\Environment;
+use Bartlett\CompatInfoDb\Environment;
 
 /**
- * Unit Test Case that covers Bartlett\CompatInfo\Environment
+ * Unit Test Case that covers Bartlett\CompatInfoDb\Environment
  *
  * @category   PHP
  * @package    PHP_CompatInfo
@@ -56,7 +56,7 @@ class EnvironmentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Bartlett\CompatInfo\Environment::initRefDb
+     * @covers Bartlett\CompatInfoDb\Environment::initRefDb
      *
      * @return void
      */
