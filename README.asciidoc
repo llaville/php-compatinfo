@@ -29,89 +29,10 @@ AsciiDoc source code is available on `docs` folder of the repository.
 
 Contributions to source code and its documentation are always welcome.
 
-As developper, I'm always happy when I have the more informations as possible to check and find out issues.
-This is the reason why I've created a https://github.com/llaville/phpunit-LoggerTestListener[PHPUnit TestSuite Listener for compatible PSR-3 Loggers].
+== Authors
 
-Recently, on attempt to https://github.com/llaville/php-compat-info/issues/189[enhance GenericTest] for unit tests,
-I've wrote a new PHPUnit ResultPrinter class, that is based on PSR-3 logger concept.
-You can learn more on this http://php5.laurent-laville.org/compatinfo/blog/201505-PHPUnit-ResultPrinter.html[post]
-in the CompatInfo's blog.
+* Laurent Laville
 
-If you want to use it, then :
+== License
 
-- install all the components via Composer
-
-[source,bash]
-----
-$ php composer.phar require --dev bartlett/php-compatinfo
-----
-
-- create a `phpunit.xml` file with at least following contents :
-
-[source,xml]
-----
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit
-    backupGlobals="false"
-    backupStaticAttributes="false"
-    bootstrap="tests/bootstrap.dev.php"
-    colors="false"
-    stopOnError="false"
-    stopOnFailure="false"
-    stopOnIncomplete="false"
-    stopOnRisky="false"
-    stopOnSkipped="false"
-    verbose="false"
->
-    <filter>
-        <whitelist>
-        <directory suffix=".php">src/</directory>
-        </whitelist>
-    </filter>
-    <testsuites>
-        <testsuite name="CompatInfo Test Suite">
-            <directory suffix="Test.php">tests/</directory>
-        </testsuite>
-    </testsuites>
-</phpunit>
-----
-
-- configure the PSR-3 logger in `tests\MonologConsoleLogger.php`, if you want to change some behaviors.
-
-NOTE: Default will log all PHPUnit events in local file `phpunit-phpcompatinfo-php<PHP_VERSION_ID>.log`
-and log events corresponding to PHPUnit mode (`--verbose`, `--debug`) to the console.
-
-NOTE: If you've a Growl client installed and running, you will be notified at end of tests run.
-
-.Output look like
-----
-PHPUnit 4.6.6 by Sebastian Bergmann and contributors.
-
-Configuration read from C:\home\github\php-compat-info\phpunit.xml
-
-CompatInfo Test Suite:
-
-    Test suite started with 1372 tests
-
-Bartlett\Tests\CompatInfo\ClassIssueTest:
-
-    Test suite started with 6 tests
-
-Bartlett\Tests\CompatInfo\ClassIssueTest:
-
-    Test suite ended. Results OK. Tests: 6, Assertions: 10
-
-Bartlett\Tests\CompatInfo\ConditionIssueTest:
-
-    Test suite started with 4 tests
-
-< ... MORE LINES ...>
-
-CompatInfo Test Suite:
-
-    Test suite ended. Results OK. Tests: 1108, Assertions: 15465, Skipped: 22
-
-Time: 3.42 minutes, Memory: 35.25Mb, References: 105
-
-Results OK. Tests: 1130, Assertions: 15465, Skipped: 264
-----
+This handler is licensed under the BSD-3-clauses License - see the `LICENSE` file for details

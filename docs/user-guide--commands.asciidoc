@@ -30,24 +30,24 @@ when you invoke the `phpcompatinfo` command, you should obtain the following com
  | .__/|_| |_| .__/ \____\___/|_| |_| |_| .__/ \__,_|\__|___|_| |_|_|  \___/
  |_|         |_|                        |_|
 
-phpCompatInfo version 4.4.0 DB built Jul 11 2015 09:22:57 CEST
+phpCompatInfo version 5.0.0 DB built Dec 04 2015 21:00:36 CET
 
 Usage:
  [options] command [arguments]
 
 Options:
- --help (-h)           Display this help message
- --quiet (-q)          Do not output any message
- --verbose (-v|vv|vvv) Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
- --version (-V)        Display this application version
- --ansi                Force ANSI output
- --no-ansi             Disable ANSI output
- --no-interaction (-n) Do not ask any interactive question
- --no-plugins          Disables all plugins.
- --profile             Display timing and memory usage information.
- --progress            Show progress bar.
- --output              Write results to file or URL.
- --manifest            Show which versions of dependencies are bundled.
+  -h, --help            Display this help message
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi            Force ANSI output
+      --no-ansi         Disable ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+      --no-plugins      Disables all plugins.
+      --profile         Display timing and memory usage information.
+      --progress        Show progress bar.
+      --output=OUTPUT   Write results to file or URL.
+      --manifest        Show which versions of dependencies are bundled.
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 
 Available commands:
  help                  Displays help for a command
@@ -76,8 +76,8 @@ reflection
 Auto-Diagnose:
 
 Checking php settings:
-- Requires PHP 5.3.2 or better OK
-- php.ini file loaded C:\UwAmp\bin\php\php-5.6.9\php.ini
+- Requires PHP 5.4.0 or better OK
+- php.ini file loaded C:\UwAmp\bin\php\php-5.6.16\php.ini
 - date extension loaded YES
 - json extension loaded YES
 - pcre extension loaded YES
@@ -114,8 +114,8 @@ $ phpcompatinfo diagnose:run
 [role="output"]
 ----
 Checking php settings:
-- Requires PHP 5.3.2 or better OK
-- php.ini file loaded C:\UwAmp\bin\php\php-5.6.9\php.ini
+- Requires PHP 5.4.0 or better OK
+- php.ini file loaded C:\UwAmp\bin\php\php-5.6.16\php.ini
 - date extension loaded YES
 - json extension loaded YES
 - pcre extension loaded YES
