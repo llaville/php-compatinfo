@@ -8,7 +8,6 @@
         "bin/phpcompatinfo.json.dist",
         "manifest.txt",
         "LICENSE",
-        "data/compatinfo.sqlite",
         "vendor/nikic/php-parser/LICENSE",
         "vendor/sebastian/version/LICENSE",
         "vendor/symfony/console/LICENSE",
@@ -23,6 +22,7 @@
         "vendor/doctrine/collections/LICENSE",
         "vendor/psr/log/LICENSE",
         "vendor/monolog/monolog/LICENSE",
+        "vendor/bartlett/php-compatinfo-db/LICENSE",
         "vendor/bartlett/php-reflect/LICENSE",
         "vendor/bartlett/php-reflect/bin/phpreflect.json-schema",
         "vendor/bartlett/umlwriter/LICENSE",
@@ -77,6 +77,10 @@
         {
             "name": "*.php",
             "in": "vendor/bartlett/php-reflect/src"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/bartlett/php-compatinfo-db/src"
         },
         {
             "name": "*.php",
