@@ -358,6 +358,11 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
         } elseif ($node instanceof Node\Expr\AssignOp\Pow) {
             $this->computePhpFeatureVersions($node);
+
+        } elseif ($node instanceof Node\Expr\ClassConstFetch
+            && strcasecmp('class', $node->name) === 0
+        ) {
+            $this->computePhpFeatureVersions($node);
         }
     }
 
@@ -1233,6 +1238,14 @@ class CompatibilityAnalyser extends AbstractAnalyser
             && $node->default instanceof Node\Expr\BinaryOp
         ) {
             $versions = array('php.min' => '5.6.0');
+            // update current and parent context
+            $this->updateElementVersion($element, $name, $versions);
+            $this->updateContextVersion($versions);
+
+        } elseif ($node instanceof Node\Expr\ClassConstFetch
+            && strcasecmp('class', $node->name) === 0
+        ) {
+            $versions = array('php.min' => '5.5.0');
             // update current and parent context
             $this->updateElementVersion($element, $name, $versions);
             $this->updateContextVersion($versions);
