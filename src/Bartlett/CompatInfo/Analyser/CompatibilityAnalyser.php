@@ -1183,6 +1183,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 $this->updateContextVersion($versions);
             }
 
+        } elseif ($node instanceof Node\Expr\AssignOp\Pow) {
+            // Exponentiation
+            $versions = array('php.min' => '5.6.0');
+            // update current and parent context
+            $this->updateElementVersion($element, $name, $versions);
+            $this->updateContextVersion($versions);
+
         } elseif ($node instanceof Node\Expr\StaticCall
             && $node->class instanceof Node\Expr\Variable
         ) {
