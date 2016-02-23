@@ -331,6 +331,21 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 $this->computeConstantVersions($const, $const->name);
             }
 
+        } elseif ($node instanceof Node\Const_
+            && !$node->value instanceof Node\Scalar
+        ) {
+            $this->computePhpFeatureVersions($node);
+
+        } elseif ($node instanceof Node\Param
+            && $node->default instanceof Node\Expr\BinaryOp
+        ) {
+            $this->computePhpFeatureVersions($node);
+
+        } elseif ($node instanceof Node\Stmt\PropertyProperty
+            && $node->default instanceof Node\Expr\BinaryOp
+        ) {
+            $this->computePhpFeatureVersions($node);
+
         } elseif ($node instanceof Node\Expr\ConstFetch) {
             $name = (string) $node->name;
             $this->computeConstantVersions($node, $name);
@@ -1194,6 +1209,30 @@ class CompatibilityAnalyser extends AbstractAnalyser
             && $node->class instanceof Node\Expr\Variable
         ) {
             $versions = array('php.min' => '5.3.0');
+            // update current and parent context
+            $this->updateElementVersion($element, $name, $versions);
+            $this->updateContextVersion($versions);
+
+        } elseif ($node instanceof Node\Const_
+            && !$node->value instanceof Node\Scalar
+        ) {
+            $versions = array('php.min' => '5.6.0');
+            // update current and parent context
+            $this->updateElementVersion($element, $name, $versions);
+            $this->updateContextVersion($versions);
+
+        } elseif ($node instanceof Node\Param
+            && $node->default instanceof Node\Expr\BinaryOp
+        ) {
+            $versions = array('php.min' => '5.6.0');
+            // update current and parent context
+            $this->updateElementVersion($element, $name, $versions);
+            $this->updateContextVersion($versions);
+
+        } elseif ($node instanceof Node\Stmt\PropertyProperty
+            && $node->default instanceof Node\Expr\BinaryOp
+        ) {
+            $versions = array('php.min' => '5.6.0');
             // update current and parent context
             $this->updateElementVersion($element, $name, $versions);
             $this->updateContextVersion($versions);
