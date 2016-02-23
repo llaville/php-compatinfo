@@ -1187,7 +1187,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
             && $node->class instanceof Node\Expr\Variable
         ) {
             $versions = array('php.min' => '5.3.0');
-            $this->updateLocalVersions($versions);
+            // update current and parent context
+            $this->updateElementVersion($element, $name, $versions);
+            $this->updateContextVersion($versions);
         }
     }
 
