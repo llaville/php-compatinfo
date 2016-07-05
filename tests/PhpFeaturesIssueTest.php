@@ -45,6 +45,8 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     const GH207 = 'gh207.php';
     const GH211 = 'gh211.php';
     const GH213 = 'gh213.php';
+    const GH215 = 'gh215.php';
+    const GH218 = 'gh218.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -381,6 +383,56 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
                 'php.min'      => '5.3.0',
                 'php.max'      => '',
                 'php.all'      => '5.3.0',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for feature GH#215
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/215
+     *       Constant expressions with scalar expression not detected
+     * @link http://php.net/manual/en/migration56.new-features.php
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH215()
+    {
+        $dataSource = self::$fixtures . self::GH215;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.6.0',
+                'php.max'      => '',
+                'php.all'      => '5.6.0',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for feature GH#218
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/218
+     *       "::class" not detected as php 5.5
+     * @link http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH218()
+    {
+        $dataSource = self::$fixtures . self::GH218;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.5.0',
+                'php.max'      => '',
+                'php.all'      => '5.5.0',
             ),
             $versions
         );
