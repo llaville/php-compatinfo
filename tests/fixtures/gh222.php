@@ -1,0 +1,1 @@
+<?php class Foo { const BAR = -1; } ?>

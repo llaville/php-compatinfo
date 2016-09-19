@@ -1256,7 +1256,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
         } elseif ($node instanceof Node\Const_
             && !$node->value instanceof Node\Scalar
         ) {
-            $versions = array('php.min' => '5.6.0');
+            if (property_exists($node->value, 'expr')) {
+                // e.g: unary minus, unary plus expressions
+                $versions = array('php.min' => '4.0.0');
+            } else {
+                // scalar expression
+                $versions = array('php.min' => '5.6.0');
+            }
             // update current and parent context
             $this->updateElementVersion($element, $name, $versions);
             $this->updateContextVersion($versions);
