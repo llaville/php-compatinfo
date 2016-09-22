@@ -39,7 +39,8 @@ if (\Phar::running()) {
     try {
         Bartlett\CompatInfoDb\Environment::checkRequirements();
     } catch (\RuntimeException $e) {
-        die ($e->getMessage(). PHP_EOL);
+        echo $e->getMessage(), PHP_EOL;
+        exit(1);
     }
 }
 
