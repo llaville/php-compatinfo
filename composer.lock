@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "bartlett/php-compatinfo-db",
-            "version": "1.15.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-compatinfo-db.git",
-                "reference": "fb7e67241a17fd0576bebd7c7eebd3e3e1f99177"
+                "reference": "9a7253f5aae8e0fdb2e6dfa59b63bef66a50296f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-compatinfo-db/zipball/fb7e67241a17fd0576bebd7c7eebd3e3e1f99177",
-                "reference": "fb7e67241a17fd0576bebd7c7eebd3e3e1f99177",
+                "url": "https://api.github.com/repos/llaville/php-compatinfo-db/zipball/9a7253f5aae8e0fdb2e6dfa59b63bef66a50296f",
+                "reference": "9a7253f5aae8e0fdb2e6dfa59b63bef66a50296f",
                 "shasum": ""
             },
             "require": {
@@ -75,7 +75,7 @@
                 "compatibility",
                 "database"
             ],
-            "time": "2016-11-19 15:23:09"
+            "time": "2016-12-15 21:28:37"
         },
         {
             "name": "bartlett/php-reflect",
