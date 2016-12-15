@@ -577,16 +577,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.8.14",
+            "version": "v2.8.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "a871ba00e0f604dceac64c56c27f99fbeaf4854e"
+                "reference": "d5643cd095e5e37d31e004bb2606b5dd7e96602f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/a871ba00e0f604dceac64c56c27f99fbeaf4854e",
-                "reference": "a871ba00e0f604dceac64c56c27f99fbeaf4854e",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d5643cd095e5e37d31e004bb2606b5dd7e96602f",
+                "reference": "d5643cd095e5e37d31e004bb2606b5dd7e96602f",
                 "shasum": ""
             },
             "require": {
@@ -634,7 +634,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-15 23:02:12"
+            "time": "2016-12-06 11:59:35"
         },
         {
             "name": "symfony/debug",
@@ -695,16 +695,16 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v2.8.14",
+            "version": "v2.8.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "9d2c5033ca70ceade8d7584f997a9d3943f0fe5f"
+                "reference": "51a7b5385fb0f42e5edbdb2cfbad1a011ecdaee7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/9d2c5033ca70ceade8d7584f997a9d3943f0fe5f",
-                "reference": "9d2c5033ca70ceade8d7584f997a9d3943f0fe5f",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/51a7b5385fb0f42e5edbdb2cfbad1a011ecdaee7",
+                "reference": "51a7b5385fb0f42e5edbdb2cfbad1a011ecdaee7",
                 "shasum": ""
             },
             "require": {
@@ -754,11 +754,11 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-18 21:10:01"
+            "time": "2016-12-08 14:41:31"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.8.14",
+            "version": "v2.8.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -818,16 +818,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.14",
+            "version": "v2.8.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "0023b024363dfc0cd21262e556f25a291fe8d7fd"
+                "reference": "c0f10576335743b881ac1ed39d18c0fa66048775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/0023b024363dfc0cd21262e556f25a291fe8d7fd",
-                "reference": "0023b024363dfc0cd21262e556f25a291fe8d7fd",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/c0f10576335743b881ac1ed39d18c0fa66048775",
+                "reference": "c0f10576335743b881ac1ed39d18c0fa66048775",
                 "shasum": ""
             },
             "require": {
@@ -863,7 +863,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-03 07:52:58"
+            "time": "2016-12-13 09:38:12"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -926,7 +926,7 @@
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v2.8.14",
+            "version": "v2.8.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
@@ -1258,16 +1258,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.21.0",
+            "version": "1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "f42fbdfd53e306bda545845e4dbfd3e72edb4952"
+                "reference": "bad29cb8d18ab0315e6c477751418a82c850d558"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f42fbdfd53e306bda545845e4dbfd3e72edb4952",
-                "reference": "f42fbdfd53e306bda545845e4dbfd3e72edb4952",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bad29cb8d18ab0315e6c477751418a82c850d558",
+                "reference": "bad29cb8d18ab0315e6c477751418a82c850d558",
                 "shasum": ""
             },
             "require": {
@@ -1278,7 +1278,7 @@
                 "psr/log-implementation": "1.0.0"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "^2.4.9",
+                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
                 "jakub-onderka/php-parallel-lint": "0.9",
@@ -1332,7 +1332,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-07-29 03:23:52"
+            "time": "2016-11-26 00:15:39"
         },
         {
             "name": "pear-pear.php.net/Net_Growl",
