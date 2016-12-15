@@ -37,6 +37,7 @@ class IssueTest extends \PHPUnit_Framework_TestCase
     const GH127 = 'gh127.php';
     const GH162 = 'gh162.php';
     const GH210 = '../fixtures/vfsStream-1.6.0.zip';
+    const GH220 = 'gh220.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -145,5 +146,30 @@ class IssueTest extends \PHPUnit_Framework_TestCase
                 "Extension $e is not found in analysis results while it should be"
             );
         }
+    }
+
+    /**
+     * Regression test for bug GH#220
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/220
+     *       "Did not detect Blowfish on crypt"
+     * @group regression
+     * @return void
+     */
+    public function testBugGH220()
+    {
+        $dataSource = self::$fixtures . self::GH220;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.3.7',
+                'php.max'      => '',
+                'php.all'      => '5.3.7',
+            ),
+            $versions
+        );
     }
 }

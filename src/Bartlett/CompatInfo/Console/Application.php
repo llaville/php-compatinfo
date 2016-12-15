@@ -52,9 +52,10 @@ class Application extends BaseApplication
         $v = Environment::versionRefDb();
 
         return sprintf(
-            '<info>%s</info> version <comment>%s</comment> DB built <comment>%s</comment>',
+            '<info>%s</info> version <comment>%s</comment> DB version <comment>%s</comment> built <comment>%s</comment>',
             $this->getName(),
             $this->getVersion(),
+            $v['build.version'],
             $v['build.string']
         );
     }

@@ -16,8 +16,8 @@ CAUTION: Branch 4.5 will not accept any more any feature requests. Consider to a
 
 You can either :
 
-* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-5.0.0.phar[5.0.0]
-* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 5.0.0
+* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-5.0.2.phar[5.0.2]
+* install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master or the stable version 5.0.2
 
 == Documentation
 

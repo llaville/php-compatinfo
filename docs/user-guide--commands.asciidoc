@@ -30,10 +30,10 @@ when you invoke the `phpcompatinfo` command, you should obtain the following com
  | .__/|_| |_| .__/ \____\___/|_| |_| |_| .__/ \__,_|\__|___|_| |_|_|  \___/
  |_|         |_|                        |_|
 
-phpCompatInfo version 5.0.0 DB built Dec 04 2015 21:00:36 CET
+phpCompatInfo version 5.0.2 DB version 1.16.0 built Dec 15 2016 22:20:52 CET
 
 Usage:
- [options] command [arguments]
+ command [options] [arguments]
 
 Options:
   -h, --help            Display this help message
@@ -77,7 +77,7 @@ Auto-Diagnose:
 
 Checking php settings:
 - Requires PHP 5.4.0 or better OK
-- php.ini file loaded C:\UwAmp\bin\php\php-5.6.16\php.ini
+- php.ini file loaded C:\UwAmp\bin\php\php-5.6.23\php.ini
 - date extension loaded YES
 - json extension loaded YES
 - pcre extension loaded YES
@@ -115,7 +115,7 @@ $ phpcompatinfo diagnose:run
 ----
 Checking php settings:
 - Requires PHP 5.4.0 or better OK
-- php.ini file loaded C:\UwAmp\bin\php\php-5.6.16\php.ini
+- php.ini file loaded C:\UwAmp\bin\php\php-5.6.23\php.ini
 - date extension loaded YES
 - json extension loaded YES
 - pcre extension loaded YES

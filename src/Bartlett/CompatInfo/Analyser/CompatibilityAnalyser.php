@@ -1009,6 +1009,41 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
             // update parent context
             $this->updateContextVersion($this->metrics[$element][$name]);
+
+        } elseif (strcasecmp('crypt', $element) === 0) {
+            // not elegant catch, but the best I can do to solve issue GH-220
+            // before refactoring monolithic CompatibilityAnalyser
+
+            if (count($node->args) == 1) {
+                // no salt provided
+                return;
+            }
+
+            $salt = $node->args[1]->value;
+            if (!$salt instanceof Node\Scalar\String_) {
+                // cannot resolved indirect definition
+                return;
+            }
+
+            // @link http://www.php.net/manual/en/function.crypt.php
+            if (in_array(substr($salt->value, 0 ,4), ['$2a$', '$2x$', '$2y$'])) {
+                // Blowfish
+                $versions = array('php.min' => '5.3.7', 'ext.name' => 'standard');
+                $node->setAttribute('compatinfo', $versions);
+                $this->computeInternalVersions($node, $element, 'functions');
+
+            } elseif (in_array(substr($salt->value, 0 ,3), ['$5$', '$6$'])) {
+                // SHA-256 and SHA-512
+                $versions = array('php.min' => '5.3.2', 'ext.name' => 'standard');
+                $node->setAttribute('compatinfo', $versions);
+                $this->computeInternalVersions($node, $element, 'functions');
+
+            } elseif (in_array(substr($salt->value, 0 ,3), ['$1$'])) {
+                // SHA-256 and SHA-512
+                $versions = array('php.min' => '5.3.0', 'ext.name' => 'standard');
+                $node->setAttribute('compatinfo', $versions);
+                $this->computeInternalVersions($node, $element, 'functions');
+            }
         }
     }
 
@@ -1221,7 +1256,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
         } elseif ($node instanceof Node\Const_
             && !$node->value instanceof Node\Scalar
         ) {
-            $versions = array('php.min' => '5.6.0');
+            if (property_exists($node->value, 'expr')) {
+                // e.g: unary minus, unary plus expressions
+                $versions = array('php.min' => '4.0.0');
+            } else {
+                // scalar expression
+                $versions = array('php.min' => '5.6.0');
+            }
             // update current and parent context
             $this->updateElementVersion($element, $name, $versions);
             $this->updateContextVersion($versions);

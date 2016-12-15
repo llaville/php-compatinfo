@@ -47,6 +47,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     const GH213 = 'gh213.php';
     const GH215 = 'gh215.php';
     const GH218 = 'gh218.php';
+    const GH222 = 'gh222.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -433,6 +434,30 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
                 'php.min'      => '5.5.0',
                 'php.max'      => '',
                 'php.all'      => '5.5.0',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for feature GH#222
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/222
+     *       Negative constant marked as PHP 5.6
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH222()
+    {
+        $dataSource = self::$fixtures . self::GH222;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $this->assertEquals(
+            array(
+                'php.min'      => '4.0.0',
+                'php.max'      => '',
+                'php.all'      => '4.0.0',
             ),
             $versions
         );
