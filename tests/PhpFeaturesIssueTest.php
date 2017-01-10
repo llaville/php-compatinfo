@@ -48,6 +48,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     const GH215 = 'gh215.php';
     const GH218 = 'gh218.php';
     const GH222 = 'gh222.php';
+    const GH226 = 'gh226.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -458,6 +459,30 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
                 'php.min'      => '4.0.0',
                 'php.max'      => '',
                 'php.all'      => '4.0.0',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for feature GH#226
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/226
+     *       Does not detect Generators
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH226()
+    {
+        $dataSource = self::$fixtures . self::GH226;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.5.0',
+                'php.max'      => '',
+                'php.all'      => '5.5.0',
             ),
             $versions
         );
