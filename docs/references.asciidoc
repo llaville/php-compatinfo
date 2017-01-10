@@ -50,6 +50,7 @@ ifdef::basebackend-html[]
 * [label label-default]#5.0.0# support https://github.com/llaville/php-compatinfo-db[105 references]
 * [label label-info]#5.0.1# support https://github.com/llaville/php-compatinfo-db[105 references]
 * [label label-info]#5.0.2# support https://github.com/llaville/php-compatinfo-db[105 references]
+* [label label-info]#5.0.3# support https://github.com/llaville/php-compatinfo-db[105 references]
 --
 ====
 endif::basebackend-html[]
@@ -82,4 +83,5 @@ ifdef::basebackend-docbook[]
 * 5.0.0 support 105 references
 * 5.0.1 support 105 references
 * 5.0.2 support 105 references
+* 5.0.3 support 105 references
 endif::basebackend-docbook[]
