@@ -13,9 +13,9 @@ use PhpParser\Node;
  */
 class MagicMethodsSniff extends SniffAbstract
 {
-    private $php501;
-    private $php503;
-    private $php506;
+    private $mm501;
+    private $mm503;
+    private $mm506;
 
     private $magicMethods;
 
