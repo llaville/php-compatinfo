@@ -1064,7 +1064,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
         if ($caller instanceof Node\Expr\New_) {
             // class member access on instantiation
-            return $this->computePhpFeatureVersions($node);
+            $this->computePhpFeatureVersions($node);
+            return;
         }
 
         if ($caller instanceof Node\Expr\PropertyFetch) {
