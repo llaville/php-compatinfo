@@ -295,6 +295,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
         } elseif ($node instanceof Node\Stmt\Use_) {
             $this->computePhpFeatureVersions($node);
 
+        } elseif ($node instanceof Node\Stmt\TraitUse) {
+            $this->computePhpFeatureVersions($node);
+
         } elseif ($node instanceof Node\Stmt\Property) {
             $this->computePhpFeatureVersions($node);
 
@@ -1177,6 +1180,12 @@ class CompatibilityAnalyser extends AbstractAnalyser
                 $this->updateElementVersion($element, $name, $versions);
                 $this->updateContextVersion($versions);
             }
+
+        } elseif ($node instanceof Node\Stmt\TraitUse) {
+            $versions = array('php.min' => '5.4.0');
+            // update current and parent context
+            $this->updateElementVersion($element, $name, $versions);
+            $this->updateContextVersion($versions);
 
         } elseif ($node instanceof Node\Stmt\Property) {
             // implicitly public visibility is PHP 4 syntax
