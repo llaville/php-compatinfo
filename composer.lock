@@ -4,20 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+    "hash": "c776d320558e42153b8611ee47d0b6e9",
     "content-hash": "6408a0f9b113aa5eb629b333cbe71de1",
     "packages": [
         {
             "name": "bartlett/php-compatinfo-db",
-            "version": "1.18.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-compatinfo-db.git",
-                "reference": "4e11b397994a314fc49c3176fee59bd269f07b53"
+                "reference": "9a7253f5aae8e0fdb2e6dfa59b63bef66a50296f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-compatinfo-db/zipball/4e11b397994a314fc49c3176fee59bd269f07b53",
-                "reference": "4e11b397994a314fc49c3176fee59bd269f07b53",
+                "url": "https://api.github.com/repos/llaville/php-compatinfo-db/zipball/9a7253f5aae8e0fdb2e6dfa59b63bef66a50296f",
+                "reference": "9a7253f5aae8e0fdb2e6dfa59b63bef66a50296f",
                 "shasum": ""
             },
             "require": {
@@ -74,7 +75,7 @@
                 "compatibility",
                 "database"
             ],
-            "time": "2017-02-24T11:57:41+00:00"
+            "time": "2016-12-15 21:28:37"
         },
         {
             "name": "bartlett/php-reflect",
@@ -156,7 +157,7 @@
                 "reflection",
                 "reverse-engineer"
             ],
-            "time": "2016-09-22T18:49:42+00:00"
+            "time": "2016-09-22 18:49:42"
         },
         {
             "name": "composer/semver",
@@ -218,7 +219,7 @@
                 "validation",
                 "versioning"
             ],
-            "time": "2016-08-30T16:08:34+00:00"
+            "time": "2016-08-30 16:08:34"
         },
         {
             "name": "doctrine/collections",
@@ -284,7 +285,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14T22:21:58+00:00"
+            "time": "2015-04-14 22:21:58"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -350,7 +351,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2016-01-25T15:43:01+00:00"
+            "time": "2016-01-25 15:43:01"
         },
         {
             "name": "nikic/php-parser",
@@ -395,7 +396,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-09-19T14:15:08+00:00"
+            "time": "2015-09-19 14:15:08"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -444,7 +445,7 @@
                     "email": "mike.vanriel@naenius.com"
                 }
             ],
-            "time": "2015-02-03T12:10:50+00:00"
+            "time": "2015-02-03 12:10:50"
         },
         {
             "name": "psr/log",
@@ -491,7 +492,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10T12:19:37+00:00"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "sebastian/version",
@@ -526,7 +527,7 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "time": "2015-06-21T13:59:46+00:00"
+            "time": "2015-06-21 13:59:46"
         },
         {
             "name": "seld/jsonlint",
@@ -572,7 +573,7 @@
                 "parser",
                 "validator"
             ],
-            "time": "2016-11-14T17:59:58+00:00"
+            "time": "2016-11-14 17:59:58"
         },
         {
             "name": "symfony/console",
@@ -633,7 +634,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-12-06T11:59:35+00:00"
+            "time": "2016-12-06 11:59:35"
         },
         {
             "name": "symfony/debug",
@@ -690,7 +691,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-30T07:22:48+00:00"
+            "time": "2016-07-30 07:22:48"
         },
         {
             "name": "symfony/dependency-injection",
@@ -753,7 +754,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2016-12-08T14:41:31+00:00"
+            "time": "2016-12-08 14:41:31"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -813,7 +814,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-13T01:43:15+00:00"
+            "time": "2016-10-13 01:43:15"
         },
         {
             "name": "symfony/finder",
@@ -862,7 +863,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-12-13T09:38:12+00:00"
+            "time": "2016-12-13 09:38:12"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -921,7 +922,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14T01:06:16+00:00"
+            "time": "2016-11-14 01:06:16"
         },
         {
             "name": "symfony/stopwatch",
@@ -970,7 +971,7 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
-            "time": "2016-06-29T05:29:29+00:00"
+            "time": "2016-06-29 05:29:29"
         }
     ],
     "packages-dev": [
@@ -1018,7 +1019,7 @@
                 "logger",
                 "logging"
             ],
-            "time": "2015-04-21T11:26:29+00:00"
+            "time": "2015-04-21 11:26:29"
         },
         {
             "name": "bartlett/monolog-growlhandler",
@@ -1076,7 +1077,7 @@
                 "logging",
                 "notifications"
             ],
-            "time": "2015-05-11T09:24:19+00:00"
+            "time": "2015-05-11 09:24:19"
         },
         {
             "name": "bartlett/phpunit-loggertestlistener",
@@ -1126,7 +1127,7 @@
             ],
             "description": "PHPUnit Test Suite listener for compatible PSR-3 logger",
             "homepage": "https://github.com/llaville/phpunit-LoggerTestListener",
-            "time": "2015-10-23T18:14:09+00:00"
+            "time": "2015-10-23 18:14:09"
         },
         {
             "name": "bartlett/umlwriter",
@@ -1183,7 +1184,7 @@
                 "plantuml",
                 "uml"
             ],
-            "time": "2015-12-09T19:43:25+00:00"
+            "time": "2015-12-09 19:43:25"
         },
         {
             "name": "doctrine/cache",
@@ -1253,7 +1254,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-10-29T11:16:17+00:00"
+            "time": "2016-10-29 11:16:17"
         },
         {
             "name": "monolog/monolog",
@@ -1331,7 +1332,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-11-26T00:15:39+00:00"
+            "time": "2016-11-26 00:15:39"
         },
         {
             "name": "pear-pear.php.net/Net_Growl",
