@@ -562,6 +562,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function initUserClass(Node $node)
     {
+        if (!isset($node->namespacedName)) {
+            $node->namespacedName = null; // anonymous class
+        }
         if (isset($node->namespacedName)
             && $node->namespacedName instanceof Node\Name
             && $node->namespacedName->isQualified()
