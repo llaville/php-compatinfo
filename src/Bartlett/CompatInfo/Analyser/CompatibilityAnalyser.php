@@ -325,7 +325,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
                         $versions['php.min'] = '5.3.0';
                     }
 
-                    if (!$const->value instanceof Node\Scalar) {
+                    if ($const->value instanceof Node\Expr\ConstFetch) {
+                        $versions['php.min'] = '5.3.0';
+                    } elseif (!$const->value instanceof Node\Scalar) {
                         // Constant scalar expressions
                         $versions['php.min'] = '5.6.0';
                     }
@@ -562,6 +564,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function initUserClass(Node $node)
     {
+        if (!isset($node->namespacedName)) {
+            $node->namespacedName = null; // anonymous class
+        }
         if (isset($node->namespacedName)
             && $node->namespacedName instanceof Node\Name
             && $node->namespacedName->isQualified()
@@ -1272,6 +1277,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
             if (property_exists($node->value, 'expr')) {
                 // e.g: unary minus, unary plus expressions
                 $versions = array('php.min' => '4.0.0');
+            } elseif ($node->value instanceof Node\Expr\ConstFetch) {
+                $versions = array('php.min' => '5.3.0');
             } else {
                 // scalar expression
                 $versions = array('php.min' => '5.6.0');

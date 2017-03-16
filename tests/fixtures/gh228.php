@@ -1,0 +1,2 @@
+<?php
+const FOO = null;
