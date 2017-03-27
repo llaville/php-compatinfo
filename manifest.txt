@@ -1,4 +1,4 @@
-bartlett/php-compatinfo: <info>5.0.4</info>
+bartlett/php-compatinfo: <info>5.0.6</info>
 bartlett/php-compatinfo-db: <info>1.19.0</info>
 bartlett/php-reflect: <info>4.0.2</info>
 composer/semver: <info>1.4.2</info>
