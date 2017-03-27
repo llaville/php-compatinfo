@@ -371,6 +371,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
         } elseif ($node instanceof Node\Expr\Yield_) {
             $this->computePhpFeatureVersions($node);
+
+        } elseif ($node instanceof Node\Expr\Variable) {
+            $this->computePhpFeatureVersions($node);
         }
     }
 
@@ -1316,6 +1319,14 @@ class CompatibilityAnalyser extends AbstractAnalyser
             // update current and parent context
             $this->updateElementVersion($element, $name, $versions);
             $this->updateContextVersion($versions);
+
+        } elseif ($node instanceof Node\Expr\Variable) {
+            if ('functions' == $element && strpos($name, 'closure') === 0) {
+                $versions = array('php.min' => '5.4.0');
+                // update current and parent context
+                $this->updateElementVersion($element, $name, $versions);
+                $this->updateContextVersion($versions);
+            }
         }
     }
 
