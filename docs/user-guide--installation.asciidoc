@@ -41,7 +41,7 @@ Put a file named [label label-default]#composer.json# at the root of your projec
 ----
 {
     "require": {
-        "bartlett/php-compatinfo": "5.0.6"
+        "bartlett/php-compatinfo": "5.0.7"
     }
 }
 ----
@@ -66,7 +66,7 @@ This is the equivalent of doing a git clone checkout followed by a composer inst
 
 [source,bash]
 ----
-$ php composer.phar create-project bartlett/php-compatinfo /path/to/install 5.0.6
+$ php composer.phar create-project bartlett/php-compatinfo /path/to/install 5.0.7
 ----
 Where +/path/to/install+ is your install directory.
 ====
@@ -79,17 +79,17 @@ bundled in a single file.
 
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-5.0.6.phar
-$ chmod +x phpcompatinfo-5.0.6.phar
-$ mv phpcompatinfo-5.0.6.phar /usr/local/bin/phpcompatinfo
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-5.0.7.phar
+$ chmod +x phpcompatinfo-5.0.7.phar
+$ mv phpcompatinfo-5.0.7.phar /usr/local/bin/phpcompatinfo
 $ phpcompatinfo
 ----
 
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-5.0.6.phar
-$ php phpcompatinfo-5.0.6.phar
+$ wget http://bartlett.laurent-laville.org/get/phpcompatinfo-5.0.7.phar
+$ php phpcompatinfo-5.0.7.phar
 ----
 
 ifdef::basebackend-bootstrap[]
