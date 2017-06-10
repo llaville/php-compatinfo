@@ -52,6 +52,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     const GH227 = 'gh227.php';
     const GH228 = 'gh228.php';
     const GH229 = 'gh229.php';
+    const GH231 = 'gh231.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -558,6 +559,30 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
                 'php.min'      => '5.4.0',
                 'php.max'      => '',
                 'php.all'      => '5.4.0',
+            ),
+            $versions
+        );
+    }
+
+    /**
+     * Regression test for feature GH#231
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/231
+     *       Closures that work in PHP 5.3 are reported as requiring 5.4
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH231()
+    {
+        $dataSource = self::$fixtures . self::GH231;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $this->assertEquals(
+            array(
+                'php.min'      => '5.3.0',
+                'php.max'      => '',
+                'php.all'      => '5.3.0',
             ),
             $versions
         );

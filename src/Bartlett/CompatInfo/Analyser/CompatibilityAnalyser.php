@@ -1322,7 +1322,11 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
         } elseif ($node instanceof Node\Expr\Variable) {
             if ('functions' == $element && strpos($name, 'closure') === 0) {
-                $versions = array('php.min' => '5.4.0');
+                if ('this' == $node->name) {
+                    $versions = array('php.min' => '5.4.0');
+                } else {
+                    $versions = array('php.min' => '5.3.0');
+                }
                 // update current and parent context
                 $this->updateElementVersion($element, $name, $versions);
                 $this->updateContextVersion($versions);
