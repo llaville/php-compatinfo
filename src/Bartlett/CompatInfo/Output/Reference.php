@@ -135,6 +135,10 @@ class Reference extends OutputFormatter
                 '  Classes                                   %10d',
                 array($summary['classes'])
             );
+            $summary['class-constants'] = array(
+                '  Class Constants                           %10d',
+                array($summary['class-constants'])
+            );
             $summary['methods'] = array(
                 '  Methods                                   %10d',
                 array($summary['methods'])
@@ -156,6 +160,7 @@ class Reference extends OutputFormatter
 
                 } elseif (strcasecmp($title, 'methods') == 0
                     || strcasecmp($title, 'static methods') == 0
+                    || strcasecmp($title, 'class-constants') == 0
                 ) {
                     foreach ($val as $meth => $v) {
                         $k = sprintf('%s::%s', $key, $meth);
