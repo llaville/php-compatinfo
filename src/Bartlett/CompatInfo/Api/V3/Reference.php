@@ -46,54 +46,8 @@ class Reference extends Common
      */
     public function dir()
     {
-        $pdo = Environment::initRefDb();
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $stmt = $pdo->query(
-            'SELECT e.name, rel_date as "date", rel_state as "state",' .
-            ' rel_version as "ext.min", ext_max as "ext.max",' .
-            ' php_min as "php.min", php_max as "php.max"' .
-            ' FROM bartlett_compatinfo_releases r,  bartlett_compatinfo_extensions e' .
-            ' WHERE r.ext_name_fk = e.id' .
-            ' ORDER BY e.name asc, date desc, rel_version desc'
-        );
-
-        $rows = array();
-
-        foreach ($stmt as $rec) {
-            $key = strtolower($rec['name']);
-
-            if (!empty($rec['date']) && !array_key_exists($key, $rows)) {
-                $ref = new \stdClass;
-                $ref->name    = $rec['name'];
-                $ref->version = $rec['ext.min'];
-                $ref->state   = $rec['state'];
-                $ref->date    = $rec['date'];
-
-                if (extension_loaded($ref->name)) {
-                    $version = phpversion($ref->name);
-                    $pattern = '/^[0-9]+\.[0-9]+/';
-                    if (!preg_match($pattern, $version)) {
-                        /**
-                         * When version is not provided by the extension,
-                         * or not standard format or we don't have it
-                         * in our reference (ex snmp) because have no sense
-                         * be sure at least to return latest PHP version supported.
-                         */
-                        $version = ExtensionFactory::getLatestPhpVersion();
-                    }
-                } else {
-                    $version = '';
-                }
-                $ref->loaded   = $version;
-                $ref->outdated = version_compare($ref->version, $version, 'gt') ;
-
-                $rows[$key] = $ref;
-            }
-        }
-
-        ksort($rows);
-        return array_values($rows);
+        $factory = new ExtensionFactory(null);
+        return $factory->getExtensions();
     }
 
     /**
@@ -108,6 +62,7 @@ class Reference extends Common
      * @param mixed    $interfaces Show interfaces
      * @param mixed    $classes    Show classes
      * @param mixed    $methods    Show methods
+     * @param mixed    $classConstants Show class constants
      *
      * @return array
      */
@@ -120,7 +75,8 @@ class Reference extends Common
         $functions,
         $interfaces,
         $classes,
-        $methods
+        $methods,
+        $classConstants
     ) {
         $reference = new ExtensionFactory($name);
         $results   = array();
@@ -160,6 +116,15 @@ class Reference extends Common
         $summary['classes'] = count($raw);
         if ($classes) {
             $results['classes'] = $raw;
+        }
+
+        $raw = $reference->getClassConstants();
+        $summary['class-constants'] = 0;
+        foreach ($raw as $values) {
+            $summary['class-constants'] += count($values);
+        }
+        if ($classConstants) {
+            $results['class-constants'] = $raw;
         }
 
         $raw = $reference->getClassMethods();
