@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6408a0f9b113aa5eb629b333cbe71de1",
+    "content-hash": "56511a8db514b55fd022d3462b2da8bf",
     "packages": [
         {
             "name": "bartlett/php-compatinfo-db",
-            "version": "1.22.0",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-compatinfo-db.git",
-                "reference": "a5e1d789569589efbc9949f7df3a28215111b169"
+                "reference": "865499fbcaffc54bdabf0667ab771bc7328cd2bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-compatinfo-db/zipball/a5e1d789569589efbc9949f7df3a28215111b169",
-                "reference": "a5e1d789569589efbc9949f7df3a28215111b169",
+                "url": "https://api.github.com/repos/llaville/php-compatinfo-db/zipball/865499fbcaffc54bdabf0667ab771bc7328cd2bb",
+                "reference": "865499fbcaffc54bdabf0667ab771bc7328cd2bb",
                 "shasum": ""
             },
             "require": {
@@ -74,7 +74,7 @@
                 "compatibility",
                 "database"
             ],
-            "time": "2017-06-10T07:56:32+00:00"
+            "time": "2017-07-17T11:41:26+00:00"
         },
         {
             "name": "bartlett/php-reflect",
