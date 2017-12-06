@@ -1250,7 +1250,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
             if ($node->expr instanceof Node\Expr
                 && ! $node->expr instanceof Node\Expr\Variable
                 && ! $node->expr instanceof Node\Expr\ArrayDimFetch
-                && ! $node->expr instanceof Node\Expr\PropertyFetch) {
+                && ! $node->expr instanceof Node\Expr\PropertyFetch
+                && ! $node->expr instanceof Node\Expr\StaticPropertyFetch
+            ) {
                 // Prior to PHP 5.5, empty() only supports variables
                 // http://php.net/manual/en/function.empty.php
                 $versions = array('php.min' => '5.5.0');
