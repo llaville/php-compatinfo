@@ -17,6 +17,8 @@
         "vendor/symfony/dependency-injection/LICENSE",
         "vendor/seld/jsonlint/LICENSE",
         "vendor/justinrainbow/json-schema/LICENSE",
+        "vendor/phpdocumentor/reflection-common/LICENSE",
+        "vendor/phpdocumentor/type-resolver/LICENSE",
         "vendor/phpdocumentor/reflection-docblock/LICENSE",
         "vendor/doctrine/cache/LICENSE",
         "vendor/doctrine/collections/LICENSE",
@@ -54,6 +56,14 @@
         {
             "name": "*.php",
             "in": "vendor/justinrainbow/json-schema/src"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/phpdocumentor/reflection-common/src"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/phpdocumentor/type-resolver/src"
         },
         {
             "name": "*.php",
