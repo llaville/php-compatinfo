@@ -11,8 +11,10 @@
         "vendor/nikic/php-parser/LICENSE",
         "vendor/sebastian/version/LICENSE",
         "vendor/symfony/console/LICENSE",
+        "vendor/symfony/debug/LICENSE",
         "vendor/symfony/event-dispatcher/LICENSE",
         "vendor/symfony/finder/LICENSE",
+        "vendor/symfony/polyfill-mbstring/LICENSE",
         "vendor/symfony/stopwatch/LICENSE",
         "vendor/symfony/dependency-injection/LICENSE",
         "vendor/seld/jsonlint/LICENSE",
@@ -24,6 +26,7 @@
         "vendor/doctrine/cache/LICENSE",
         "vendor/doctrine/collections/LICENSE",
         "vendor/psr/log/LICENSE",
+        "vendor/psr/container/LICENSE",
         "vendor/monolog/monolog/LICENSE",
         "vendor/bartlett/php-compatinfo-db/LICENSE",
         "vendor/bartlett/php-compatinfo-db/data/compatinfo.sqlite",
@@ -85,6 +88,10 @@
         {
             "name": "*.php",
             "in": "vendor/psr/log/Psr"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/psr/container/src"
         },
         {
             "name": "*.php",
