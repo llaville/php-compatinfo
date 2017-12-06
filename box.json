@@ -20,6 +20,7 @@
         "vendor/phpdocumentor/reflection-common/LICENSE",
         "vendor/phpdocumentor/type-resolver/LICENSE",
         "vendor/phpdocumentor/reflection-docblock/LICENSE",
+        "vendor/webmozart/assert/LICENSE",
         "vendor/doctrine/cache/LICENSE",
         "vendor/doctrine/collections/LICENSE",
         "vendor/psr/log/LICENSE",
@@ -68,6 +69,10 @@
         {
             "name": "*.php",
             "in": "vendor/phpdocumentor/reflection-docblock/src"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/webmozart/assert/src"
         },
         {
             "name": "*.php",
