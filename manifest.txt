@@ -1,6 +1,6 @@
-bartlett/php-compatinfo: <info>5.0.9</info>
+bartlett/php-compatinfo: <info>5.0.10</info>
 bartlett/php-compatinfo-db: <info>1.26.0</info>
-bartlett/php-reflect: <info>4.1.0</info>
+bartlett/php-reflect: <info>4.2.0</info>
 composer/semver: <info>1.4.2</info>
 doctrine/collections: <info>v1.4.0</info>
 justinrainbow/json-schema: <info>1.6.1</info>
