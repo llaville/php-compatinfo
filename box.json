@@ -26,7 +26,6 @@
         "vendor/doctrine/cache/LICENSE",
         "vendor/doctrine/collections/LICENSE",
         "vendor/psr/log/LICENSE",
-        "vendor/psr/container/LICENSE",
         "vendor/monolog/monolog/LICENSE",
         "vendor/bartlett/php-compatinfo-db/LICENSE",
         "vendor/bartlett/php-compatinfo-db/data/compatinfo.sqlite",
@@ -88,10 +87,6 @@
         {
             "name": "*.php",
             "in": "vendor/psr/log/Psr"
-        },
-        {
-            "name": "*.php",
-            "in": "vendor/psr/container/src"
         },
         {
             "name": "*.php",
