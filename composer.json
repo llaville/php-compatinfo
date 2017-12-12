@@ -22,7 +22,7 @@
         "ext-spl": "*",
         "ext-json": "*",
         "ext-pdo_sqlite": "*",
-        "bartlett/php-reflect": "^4.0",
+        "bartlett/php-reflect": "^4.2",
         "bartlett/php-compatinfo-db": "^1.23"
     },
     "require-dev": {
