@@ -68,5 +68,11 @@
         "psr-4": {
             "Bartlett\\Tests\\CompatInfo\\": "tests/"
         }
+    },
+    "config": {
+        "platform": {
+            "php": "5.5.0"
+        },
+        "optimize-autoloader": true
     }
 }
