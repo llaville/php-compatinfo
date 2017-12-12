@@ -54,6 +54,7 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
     const GH229 = 'gh229.php';
     const GH231 = 'gh231.php';
     const GH238 = 'gh238.php';
+    const GH239 = 'gh239.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -612,5 +613,24 @@ class PhpFeaturesIssueTest extends \PHPUnit_Framework_TestCase
             ),
             $versions
         );
+    }
+
+    /**
+     * Regression test for feature GH#239
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/239
+     *       list short syntax available since PHP 7.1
+     * @link https://wiki.php.net/rfc/short_list_syntax
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH239()
+    {
+        $dataSource = self::$fixtures . self::GH239;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $errors     = $metrics['errors'];
+
+        $this->assertCount(1, $errors);
     }
 }
