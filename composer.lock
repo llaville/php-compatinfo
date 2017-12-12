@@ -78,20 +78,20 @@
         },
         {
             "name": "bartlett/php-reflect",
-            "version": "4.1.0",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-reflect.git",
-                "reference": "458d9deef8ce3b96e7f51164b9e00507d8cd575b"
+                "reference": "c6804456bf956a75470b9714936f99a316d9f32d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/458d9deef8ce3b96e7f51164b9e00507d8cd575b",
-                "reference": "458d9deef8ce3b96e7f51164b9e00507d8cd575b",
+                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/c6804456bf956a75470b9714936f99a316d9f32d",
+                "reference": "c6804456bf956a75470b9714936f99a316d9f32d",
                 "shasum": ""
             },
             "require": {
-                "doctrine/collections": "~1.2",
+                "doctrine/collections": ">=1.2 <1.5",
                 "ext-date": "*",
                 "ext-json": "*",
                 "ext-pcre": "*",
@@ -99,26 +99,26 @@
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "ext-tokenizer": "*",
-                "justinrainbow/json-schema": "~1.3",
-                "nikic/php-parser": "~2.1",
+                "justinrainbow/json-schema": "^1.3",
+                "nikic/php-parser": "^2.1",
                 "php": ">=5.4.0",
-                "phpdocumentor/reflection-docblock": "~3.0",
-                "sebastian/version": "~1.0|~2.0",
-                "seld/jsonlint": "~1.1",
-                "symfony/console": "~2.5|~3.0",
-                "symfony/dependency-injection": "~2.5|~3.0",
-                "symfony/event-dispatcher": "~2.5|~3.0",
-                "symfony/finder": "~2.5|~3.0",
-                "symfony/stopwatch": "~2.5|~3.0"
+                "phpdocumentor/reflection-docblock": "^3.0",
+                "sebastian/version": "^1.0|^2.0",
+                "seld/jsonlint": "^1.1",
+                "symfony/console": "^2.5|^3.0",
+                "symfony/dependency-injection": "^2.5|^3.0",
+                "symfony/event-dispatcher": "^2.5|^3.0",
+                "symfony/finder": "^2.5|^3.0",
+                "symfony/stopwatch": "^2.5|^3.0"
             },
             "require-dev": {
-                "bartlett/monolog-callbackfilterhandler": "~1.0",
-                "bartlett/monolog-growlhandler": "~1.0",
-                "bartlett/phpunit-loggertestlistener": "~1.5",
-                "bartlett/umlwriter": "~1.0",
-                "doctrine/cache": "~1.3",
-                "monolog/monolog": "~1.10",
-                "psr/log": "~1.0"
+                "bartlett/monolog-callbackfilterhandler": "^1.0",
+                "bartlett/monolog-growlhandler": "^1.0",
+                "bartlett/phpunit-loggertestlistener": "^1.5",
+                "bartlett/umlwriter": "^1.0",
+                "doctrine/cache": "^1.3",
+                "monolog/monolog": "^1.10",
+                "psr/log": "^1.0"
             },
             "suggest": {
                 "bartlett/monolog-callbackfilterhandler": "Advanced filtering strategies for Monolog",
@@ -156,7 +156,7 @@
                 "reflection",
                 "reverse-engineer"
             ],
-            "time": "2017-04-10T18:04:35+00:00"
+            "time": "2017-12-12T08:07:09+00:00"
         },
         {
             "name": "composer/semver",
