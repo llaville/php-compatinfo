@@ -78,16 +78,16 @@
         },
         {
             "name": "bartlett/php-reflect",
-            "version": "4.2.1",
+            "version": "4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/llaville/php-reflect.git",
-                "reference": "48b8e0f7770509a1e426abd412c0ad51011ff6e4"
+                "reference": "7fe0e8e023b3126344a1bc5c2a408d49249001eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/48b8e0f7770509a1e426abd412c0ad51011ff6e4",
-                "reference": "48b8e0f7770509a1e426abd412c0ad51011ff6e4",
+                "url": "https://api.github.com/repos/llaville/php-reflect/zipball/7fe0e8e023b3126344a1bc5c2a408d49249001eb",
+                "reference": "7fe0e8e023b3126344a1bc5c2a408d49249001eb",
                 "shasum": ""
             },
             "require": {
@@ -156,7 +156,7 @@
                 "reflection",
                 "reverse-engineer"
             ],
-            "time": "2017-12-12T11:55:38+00:00"
+            "time": "2017-12-14T08:48:34+00:00"
         },
         {
             "name": "composer/semver",
