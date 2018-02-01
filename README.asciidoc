@@ -22,7 +22,7 @@ PHP 5.5.0 or above.
 
 You can either :
 
-* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-5.0.11.phar[5.0.11]
+* download the phar version http://bartlett.laurent-laville.org/get/phpcompatinfo-5.0.12.phar[5.0.12]
 * install via https://packagist.org/packages/bartlett/php-compatinfo/[packagist] the current source dev-master
 
 == Documentation

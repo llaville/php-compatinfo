@@ -22,7 +22,7 @@
         ======================================================================
     -->
     <property name="build.short-version"         value="5.0" />
-    <property name="build.version"               value="${build.short-version}.11" />
+    <property name="build.version"               value="${build.short-version}.12" />
 
     <!--
         ======================================================================
