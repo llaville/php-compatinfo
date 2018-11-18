@@ -32,7 +32,7 @@ use Bartlett\Reflect\Client;
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
  */
-class IssueTest extends \PHPUnit_Framework_TestCase
+class IssueTest extends \PHPUnit\Framework\TestCase
 {
     const GH127 = 'gh127.php';
     const GH162 = 'gh162.php';

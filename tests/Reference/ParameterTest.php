@@ -36,7 +36,7 @@ use PDO;
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
  */
-class ParameterTest extends \PHPUnit_Framework_TestCase
+class ParameterTest extends \PHPUnit\Framework\TestCase
 {
     protected static $fixtures;
     protected static $analyserId;
