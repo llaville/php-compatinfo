@@ -629,6 +629,7 @@ class PhpFeaturesIssueTest extends \PHPUnit\Framework\TestCase
         $metrics    = self::$api->run($dataSource, $analysers);
         $errors     = $metrics['errors'];
 
-        $this->assertCount(1, $errors);
+        // no error detected since we use PHP-Parser 3.1 (for parsing PHP 5.2 to PHP 7.2)
+        $this->assertCount(0, $errors);
     }
 }
