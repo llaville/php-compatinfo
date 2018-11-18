@@ -8,8 +8,7 @@
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Laurent Laville <pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    GIT: $Id$
+ * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
  * @link       http://php5.laurent-laville.org/reflect/
  * @since      Class available since Release 3.6.0
  */
@@ -25,8 +24,7 @@ use Bartlett\CompatInfoDb\Environment;
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Laurent Laville <pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
+ * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
  * @link       http://php5.laurent-laville.org/reflect/
  */
 class EnvironmentTest extends \PHPUnit\Framework\TestCase

@@ -8,8 +8,7 @@
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Laurent Laville <pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    GIT: $Id$
+ * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
  * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 4.2.0
  */
@@ -31,8 +30,7 @@ use Psr\Log\LogLevel;
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Laurent Laville <pear@laurent-laville.org>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @version    Release: @package_version@
+ * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
  * @link       http://php5.laurent-laville.org/compatinfo/
  */
 class ResultPrinter extends \PHPUnit_TextUI_ResultPrinter
