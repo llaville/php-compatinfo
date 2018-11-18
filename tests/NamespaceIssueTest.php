@@ -32,7 +32,7 @@ use Bartlett\Reflect\Client;
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/compatinfo/
  */
-class NamespaceIssueTest extends \PHPUnit_Framework_TestCase
+class NamespaceIssueTest extends \PHPUnit\Framework\TestCase
 {
     const GH153 = 'gh153.php';
     const GH155 = 'gh155.php';

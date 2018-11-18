@@ -29,7 +29,7 @@ use Bartlett\CompatInfoDb\Environment;
  * @version    Release: @package_version@
  * @link       http://php5.laurent-laville.org/reflect/
  */
-class EnvironmentTest extends \PHPUnit_Framework_TestCase
+class EnvironmentTest extends \PHPUnit\Framework\TestCase
 {
     protected static $pdo;
 
