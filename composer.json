@@ -16,7 +16,8 @@
         "ext-spl": "*",
         "ext-json": "*",
         "ext-pdo_sqlite": "*",
-        "bartlett/php-reflect": "4.3.x-dev",
+        "bartlett/php-reflect": "^4.3",
+        "nikic/php-parser": "^3.1",
         "bartlett/php-compatinfo-db": "^1.23",
         "psr/log": "^1.0"
     },
