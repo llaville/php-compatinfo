@@ -19,18 +19,6 @@ if (\Phar::running()) {
 $loader = require_once $vendorDir . '/autoload.php';
 $loader->setUseIncludePath(true);
 
-if (\Phar::running()) {
-    if ($home) {
-        // when optional resources are not embedded in phar distribution,
-        // avoid PHP Warnings, and lookup first in global vendor dir (COMPOSER_HOME) if exists
-        $classMapfiltered = $fallbackClassMap($loader->getClassMap(), 'Net_Growl');
-        $loader->addClassMap($classMapfiltered);
-
-        // try to find PEAR Net_Growl classes package in folder $fallbackNetGrowlDir (see phar-stub.php)
-        $loader->add(false, $fallbackNetGrowlDir);
-    }
-}
-
 if (PHP_SAPI !== 'cli') {
     return;
 }
