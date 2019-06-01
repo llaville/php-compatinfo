@@ -15,10 +15,11 @@
         "ext-pcre": "*",
         "ext-spl": "*",
         "ext-json": "*",
+        "ext-pdo": "*",
         "ext-pdo_sqlite": "*",
         "bartlett/php-reflect": "^4.3",
         "nikic/php-parser": "^3.1",
-        "bartlett/php-compatinfo-db": "^1.23",
+        "bartlett/php-compatinfo-db": "^1.23|^2.0",
         "psr/log": "^1.0"
     },
     "require-dev": {

@@ -11,7 +11,7 @@
 
 namespace Bartlett\CompatInfo\Output;
 
-use Bartlett\CompatInfoDb\Environment;
+use Bartlett\CompatInfo\Util\Database;
 use Bartlett\CompatInfo\Util\Version;
 
 use Bartlett\Reflect\Console\Formatter\OutputFormatter;
@@ -41,7 +41,7 @@ class Reference extends OutputFormatter
         $output->writeln(
             sprintf(
                 '<info>Reference Database Version</info> => %s%s',
-                Environment::versionRefDb()['build.version'],
+                Database::versionRefDb()['build.version'],
                 PHP_EOL
             )
         );

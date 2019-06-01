@@ -13,7 +13,7 @@
 
 namespace Bartlett\CompatInfo\Console;
 
-use Bartlett\CompatInfoDb\Environment;
+use Bartlett\CompatInfo\Util\Database;
 
 use Bartlett\Reflect\Console\Application as BaseApplication;
 
@@ -47,7 +47,7 @@ class Application extends BaseApplication
      */
     public function getLongVersion()
     {
-        $v = Environment::versionRefDb();
+        $v = Database::versionRefDb();
 
         return sprintf(
             '<info>%s</info> version <comment>%s</comment> DB version <comment>%s</comment> built <comment>%s</comment>',

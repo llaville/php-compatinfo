@@ -11,7 +11,6 @@
 
 namespace Bartlett\CompatInfo\Api\V3;
 
-use Bartlett\CompatInfoDb\Environment;
 use Bartlett\CompatInfoDb\ExtensionFactory;
 
 use Bartlett\Reflect\Api\V3\Common;
@@ -44,7 +43,10 @@ class Reference extends Common
      */
     public function dir()
     {
-        $factory = new ExtensionFactory(null);
+        // keep compatibility between CompatInfo DB 1.x (deprecated) and 2.x
+        $name = class_exists('Bartlett\\CompatInfoDb\\Environment') ? null : '';
+
+        $factory = new ExtensionFactory($name);
         return $factory->getExtensions();
     }
 

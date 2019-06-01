@@ -2,7 +2,7 @@
 
 namespace Bartlett\CompatInfo\Sniffs\PHP;
 
-use Bartlett\CompatInfoDb\Environment;
+use Bartlett\CompatInfo\Util\Database;
 
 use Bartlett\Reflect\Sniffer\SniffAbstract;
 
@@ -32,7 +32,7 @@ class RemovedSniff extends SniffAbstract
         /**
          * Initializes CompatInfo DB
          */
-        $pdo = Environment::initRefDb();
+        $pdo = Database::initRefDb();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $this->doInitialize($pdo);

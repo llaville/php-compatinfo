@@ -15,7 +15,7 @@
 
 namespace Bartlett\Tests\CompatInfo;
 
-use Bartlett\CompatInfoDb\Environment;
+use Bartlett\CompatInfo\Util\Database;
 
 /**
  * Unit Test Case that covers Bartlett\CompatInfoDb\Environment
@@ -39,7 +39,7 @@ class EnvironmentTest extends \PHPUnit\Framework\TestCase
      */
     public static function setUpBeforeClass()
     {
-        self::$pdo = Environment::initRefDb();
+        self::$pdo = Database::initRefDb();
     }
 
     /**
@@ -54,14 +54,12 @@ class EnvironmentTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers Bartlett\CompatInfoDb\Environment::initRefDb
-     *
      * @return void
      */
     public function testInitRefDb()
     {
         try {
-            $pdo = Environment::initRefDb();
+            $pdo = Database::initRefDb();
 
         } catch (\Exception $e) {
             $this->fail(

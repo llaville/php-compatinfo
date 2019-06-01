@@ -2,7 +2,7 @@
 
 namespace Bartlett\CompatInfo\Sniffs\PHP;
 
-use Bartlett\CompatInfoDb\Environment;
+use Bartlett\CompatInfo\Util\Database;
 
 use Bartlett\Reflect\Sniffer\SniffAbstract;
 
@@ -41,7 +41,7 @@ class DeprecatedSniff extends SniffAbstract
         /**
          * Initializes CompatInfo DB
          */
-        $this->dbal = Environment::initRefDb();
+        $this->dbal = Database::initRefDb();
         $this->dbal->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $this->doInitialize();

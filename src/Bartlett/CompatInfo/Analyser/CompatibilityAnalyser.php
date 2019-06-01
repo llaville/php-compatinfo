@@ -11,7 +11,7 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
-use Bartlett\CompatInfoDb\Environment;
+use Bartlett\CompatInfo\Util\Database;
 use Bartlett\CompatInfo\Collection\ReferenceCollection;
 use Bartlett\CompatInfo\PhpParser\ConditionalCodeNodeProcessor;
 
@@ -54,7 +54,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     public function __construct()
     {
-        $pdo = Environment::initRefDb();
+        $pdo = Database::initRefDb();
 
         $this->metrics = array(
             'versions'   => array(),

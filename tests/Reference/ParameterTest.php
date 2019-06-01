@@ -16,7 +16,7 @@
 
 namespace Bartlett\Tests\CompatInfo\Reference;
 
-use Bartlett\CompatInfoDb\Environment;
+use Bartlett\CompatInfo\Util\Database;
 
 use Bartlett\Reflect\Client;
 
@@ -65,7 +65,7 @@ class ParameterTest extends \PHPUnit\Framework\TestCase
      */
     public function functionProvider()
     {
-        $pdo = Environment::initRefDb();
+        $pdo = Database::initRefDb();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $stmt = $pdo->prepare(
