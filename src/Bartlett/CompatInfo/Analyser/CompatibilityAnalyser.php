@@ -85,7 +85,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
          * the right group.
          */
         while (!empty($this->metrics['objects'])) {
-            list($name, $versions) = each($this->metrics['objects']);
+            $name = key($this->metrics['objects']);
+            $versions = $this->metrics['objects'][$name];
+
             array_shift($this->metrics['objects']);
             $group = 'interfaces';
             if (!isset($this->metrics[$group][$name])) {
@@ -146,7 +148,9 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $condition = array_shift($conditions);
 
             // conditional code target
-            list($element, $values) = each($condition);
+            $element = key($condition);
+            $values  = $condition[$element];
+
             $values[0] = ltrim($values[0], "\\");
             $context = $conditionalFunctions[$element];
             if ('methods' == $context) {
