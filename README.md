@@ -21,7 +21,7 @@ that bundles all dependencies in a single file.
 
 You can either :
 
-* download the phar version [5.1.0](http://bartlett.laurent-laville.org/get/phpcompatinfo-5.1.0.phar)
+* download the phar version [5.2.1](http://bartlett.laurent-laville.org/get/phpcompatinfo-5.2.1.phar)
 * install via [packagist](https://packagist.org/packages/bartlett/php-compatinfo/) the current source dev-master
 
 ## PHP5 users only
