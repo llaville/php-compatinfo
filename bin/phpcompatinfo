@@ -23,7 +23,9 @@ if (PHP_SAPI !== 'cli') {
     return;
 }
 
-if (\Phar::running()) {
+$compatInfoDbV1 = class_exists(Bartlett\CompatInfoDb\Environment::class);
+
+if (\Phar::running() && $compatInfoDbV1) {
     try {
         Bartlett\CompatInfoDb\Environment::checkRequirements();
     } catch (\RuntimeException $e) {
@@ -36,5 +38,5 @@ use Bartlett\CompatInfo\Console\Application;
 
 Environment::setScanDir();
 
-$application = new Application($appName, '5.1');
+$application = new Application($appName, '5.2.1');
 $application->run();
