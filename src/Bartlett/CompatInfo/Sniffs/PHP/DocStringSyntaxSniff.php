@@ -100,7 +100,7 @@ class DocStringSyntaxSniff extends SniffAbstract
     {
         $i = $node->getAttribute('startTokenPos');
         return (strpos($this->tokens[$i][1], "<<<") === 0
-            && $this->tokens[$i][1]{3} !== "'"
+            && $this->tokens[$i][1][3] !== "'"
         );
     }
 
