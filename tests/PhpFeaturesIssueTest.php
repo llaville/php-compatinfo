@@ -53,6 +53,7 @@ class PhpFeaturesIssueTest extends \PHPUnit\Framework\TestCase
     const GH231 = 'gh231.php';
     const GH238 = 'gh238.php';
     const GH239 = 'gh239.php';
+    const GH260 = 'gh260.php';
 
     protected static $fixtures;
     protected static $analyserId;
@@ -631,5 +632,29 @@ class PhpFeaturesIssueTest extends \PHPUnit\Framework\TestCase
 
         // no error detected since we use PHP-Parser 3.1 (for parsing PHP 5.2 to PHP 7.2)
         $this->assertCount(0, $errors);
+    }
+
+    /**
+     * Regression test for feature GH#260
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/260
+     *       Null Coalescing Operator (??) available since PHP 7.0.0-alpha1
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH260()
+    {
+        $dataSource = self::$fixtures . self::GH260;
+        $analysers  = array('compatibility');
+        $metrics    = self::$api->run($dataSource, $analysers);
+        $versions   = $metrics[self::$analyserId]['versions'];
+        $this->assertEquals(
+            array(
+                'php.min'      => '7.0.0',
+                'php.max'      => '',
+                'php.all'      => '7.0.0',
+            ),
+            $versions
+        );
     }
 }
