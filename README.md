@@ -9,9 +9,7 @@ can find the minimum version and the extensions required for a piece of code to 
 It is distributed as source code (install via composer) and a PHAR version
 that bundles all dependencies in a single file.
 
-**CAUTION:** Branch 4.5 will not accept any more any feature requests.
-
-**CAUTION:** Branch 5.0 will not accept any more any feature requests.
+**CAUTION:** Branch 5.2 will not accept anymore any feature requests.
 
 # Requirements
 
@@ -19,10 +17,12 @@ that bundles all dependencies in a single file.
 
 # Installation
 
-You can either :
+The recommended way to install this library is [through composer](http://getcomposer.org).
+If you don't know yet what is composer, have a look [on introduction](http://getcomposer.org/doc/00-intro.md).
 
-* download the phar version [5.2.1](http://bartlett.laurent-laville.org/get/phpcompatinfo-5.2.1.phar)
-* install via [packagist](https://packagist.org/packages/bartlett/php-compatinfo/) the current source dev-master
+```bash
+composer require bartlett/php-compat-info
+```
 
 ## PHP5 users only
 
@@ -55,4 +55,4 @@ AsciiDoc source code are available on `docs` folder of the repository.
 
 # License
 
-This handler is licensed under the BSD-3-clauses License - see the `LICENSE` file for details
+This software is licensed under the BSD-3-clauses License - see the `LICENSE` file for details
