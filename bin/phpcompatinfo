@@ -38,5 +38,5 @@ use Bartlett\CompatInfo\Console\Application;
 
 Environment::setScanDir();
 
-$application = new Application($appName, '5.2.1');
+$application = new Application($appName, '5.2.2');
 $application->run();
