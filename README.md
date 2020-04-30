@@ -21,7 +21,7 @@ The recommended way to install this library is [through composer](http://getcomp
 If you don't know yet what is composer, have a look [on introduction](http://getcomposer.org/doc/00-intro.md).
 
 ```bash
-composer require bartlett/php-compat-info
+composer require bartlett/php-compatinfo
 ```
 
 ## PHP5 users only
