@@ -6,3 +6,4 @@ Thumbs.db
 vendor/
 phpunit.xml
 composer.lock
+.idea
