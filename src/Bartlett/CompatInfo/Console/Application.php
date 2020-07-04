@@ -45,7 +45,7 @@ class Application extends BaseApplication
      *
      * @return string The application version
      */
-    public function getLongVersion()
+    public function getLongVersion(): string
     {
         $v = Database::versionRefDb();
 

@@ -10,15 +10,14 @@
         "issues": "https://github.com/llaville/php-compat-info/issues"
     },
     "require": {
-        "php": "^5.5|^7.0",
+        "php": "^7.1.3",
         "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
         "ext-json": "*",
         "ext-pdo": "*",
         "ext-pdo_sqlite": "*",
-        "bartlett/php-reflect": "^4.3",
-        "nikic/php-parser": "^3.1",
+        "bartlett/php-reflect": "4.4.x-dev as 4.4.0",
         "bartlett/php-compatinfo-db": "^2.0",
         "psr/log": "^1.0"
     },
@@ -60,6 +59,12 @@
             "Bartlett\\Tests\\CompatInfo\\": "tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/llaville/php-reflect"
+        }
+    ],
     "config": {
         "optimize-autoloader": true
     }
