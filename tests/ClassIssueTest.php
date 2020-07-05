@@ -2,7 +2,7 @@
 /**
  * Unit tests for PHP_CompatInfo package, issues reported
  *
- * PHP version 5
+ * PHP version 7
  *
  * @category   PHP
  * @package    PHP_CompatInfo
@@ -10,7 +10,6 @@
  * @author     Laurent Laville <pear@laurent-laville.org>
  * @author     Remi Collet <Remi@FamilleCollet.com>
  * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 4.0.0-alpha2+1
  */
 
@@ -28,7 +27,6 @@ use Bartlett\Reflect\Client;
  * @author     Laurent Laville <pear@laurent-laville.org>
  * @author     Remi Collet <Remi@FamilleCollet.com>
  * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link       http://php5.laurent-laville.org/compatinfo/
  */
 class ClassIssueTest extends \PHPUnit\Framework\TestCase
 {

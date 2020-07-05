@@ -2,14 +2,13 @@
 /**
  * Prints the result of a TestRunner run using a PSR-3 logger.
  *
- * PHP version 5
+ * PHP version 7
  *
  * @category   PHP
  * @package    PHP_CompatInfo
  * @subpackage Tests
  * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link       http://php5.laurent-laville.org/compatinfo/
  * @since      Class available since Release 4.2.0
  */
 
@@ -31,7 +30,6 @@ use Psr\Log\LogLevel;
  * @subpackage Tests
  * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link       http://php5.laurent-laville.org/compatinfo/
  */
 class ResultPrinter extends \PHPUnit_TextUI_ResultPrinter
 {
