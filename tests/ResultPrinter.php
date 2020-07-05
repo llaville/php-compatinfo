@@ -31,7 +31,7 @@ use Psr\Log\LogLevel;
  * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
  */
-class ResultPrinter extends \PHPUnit_TextUI_ResultPrinter
+class ResultPrinter implements \PHPUnit\TextUI\ResultPrinter
 {
     use LoggerTestListenerTrait, LoggerAwareTrait;
 
@@ -70,7 +70,7 @@ class ResultPrinter extends \PHPUnit_TextUI_ResultPrinter
     /**
      * {@inheritDoc}
      */
-    public function printResult(\PHPUnit_Framework_TestResult $result)
+    public function printResult(\PHPUnit\Framework\TestResult $result)
     {
         $this->printHeader();
         $this->printFooter($result);
