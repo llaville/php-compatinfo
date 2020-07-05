@@ -6,6 +6,12 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Changed
+
+- Drop support to PHP 5
+- Drop support to CompatInfoDB 1.x
+- Sets PHP minimum requirement to 7.1.3
+
 ## [5.2.3] - 2020-04-29
 
 ### Fixed
