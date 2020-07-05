@@ -46,7 +46,6 @@ class CompatibilityAnalyser extends AbstractAnalyser
     private $aliases;
     private $references;
     private $contextStack;
-    private $localVersions;
 
     /**
      * Initializes the compatibility analyser
@@ -279,7 +278,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->computeFunctionCallVersions($node);
 
         } elseif ($node instanceof Node\Expr\MethodCall
-            && is_string($node->name)
+            && $node->name instanceof Node\Identifier
         ) {
             $this->computeClassMethodCallVersions($node);
 
@@ -289,7 +288,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->computePhpFeatureVersions($node);
 
         } elseif ($node instanceof Node\Expr\StaticCall
-            && is_string($node->name)
+            && $node->name instanceof Node\Identifier
         ) {
             $this->computeStaticClassMethodCallVersions($node);
 
@@ -1142,8 +1141,8 @@ class CompatibilityAnalyser extends AbstractAnalyser
 
         // identify method
         $context  = 'methods';
-        $versions = $this->references->find($context, $node->name, count($node->args), $target);
-        $target  .= '::' . $node->name;
+        $versions = $this->references->find($context, (string) $node->name, count($node->args), $target);
+        $target  .= '::' . (string) $node->name;
         $this->updateElementVersion($context, $target, $versions);
         ++$this->metrics[$context][$target]['matches'];
 
@@ -1229,7 +1228,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->updateContextVersion($versions);
 
         } elseif ($node instanceof Node\Expr\MethodCall
-            && is_string($node->name)
+            && $node->name instanceof Node\Identifier
         ) {
             $caller = $node->var;
 
