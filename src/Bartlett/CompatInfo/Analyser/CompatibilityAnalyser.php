@@ -163,7 +163,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             if ('extensions' == $context) {
                 $versions = array();
             } else {
-                $versions = $this->references->find($context, $target, 0, $extra);
+                $versions = $this->references->find($context, (string) $target, 0, $extra);
             }
 
             if ('methods' == $context) {
@@ -175,7 +175,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             if ('methods' == $context) {
                 $target   = $values[0];
                 $context  = 'classes';
-                $versions = $this->references->find($context, $target);
+                $versions = $this->references->find($context, (string) $target);
                 // identified also the class
                 $this->updateElementVersion($context, $target, $versions);
                 $this->metrics[$context][$target]['optional'] = true;
@@ -366,7 +366,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->computePhpFeatureVersions($node);
 
         } elseif ($node instanceof Node\Expr\ClassConstFetch
-            && strcasecmp('class', $node->name) === 0
+            && strcasecmp('class', (string) $node->name) === 0
         ) {
             $this->computePhpFeatureVersions($node);
 
@@ -808,7 +808,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return string
      */
-    private function findObjectType($name)
+    private function findObjectType(string $name)
     {
         $group = 'objects';
         if (isset($this->metrics[$group][$name])) {
@@ -1349,13 +1349,14 @@ class CompatibilityAnalyser extends AbstractAnalyser
     /**
      * Compute the version of an internal function.
      *
-     * @param Node   $node
+     * @param Node $node
      * @param string $element
      * @param string $context
+     * @param null $extra
      *
      * @return void
      */
-    private function computeInternalVersions(Node $node, $element, $context, $extra = null)
+    private function computeInternalVersions(Node $node, string $element, string $context, $extra = null)
     {
         $versions = $node->getAttribute('compatinfo');
         if ($versions === null) {

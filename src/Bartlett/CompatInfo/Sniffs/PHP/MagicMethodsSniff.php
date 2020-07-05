@@ -47,7 +47,7 @@ class MagicMethodsSniff extends SniffAbstract
         parent::enterNode($node);
 
         if ($node instanceof Node\Stmt\ClassMethod) {
-            $name = $node->name;
+            $name = (string) $node->name;
 
             if (in_array($name, $this->mm501)) {
                 $version = '5.1.0';

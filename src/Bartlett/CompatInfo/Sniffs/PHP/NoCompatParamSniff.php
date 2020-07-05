@@ -71,11 +71,11 @@ class NoCompatParamSniff extends SniffAbstract
     {
         foreach ($node->params as $param) {
             // auto-global
-            if (in_array($param->name, $this->autoGlobals)) {
+            if (in_array((string) $param->var->name, $this->autoGlobals)) {
                 return true;
 
             // $this
-            } elseif ($param->name == 'this'
+            } elseif ((string) $param->var->name == 'this'
                 && $node instanceof Node\Stmt\ClassMethod
                 && !$node->isStatic()
             ) {

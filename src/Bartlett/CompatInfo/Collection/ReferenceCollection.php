@@ -57,13 +57,13 @@ class ReferenceCollection extends AbstractLazyCollection
      *
      * @param string $group  May be either 'classes', 'methods', 'functions',
      *                       'constants', 'traits', 'interfaces'
-     * @param string $key    Name of elment to search for
+     * @param string $key    Name of element to search for
      * @param int    $argc   Number of arguments used in current element signature
      * @param string &$extra Name of class when searching for methods
      *
      * @return array
      */
-    public function find($group, $key, $argc = 0, &$extra = null)
+    public function find(string $group, string $key, int $argc = 0, ?string &$extra = null)
     {
         $this->initialize();
 

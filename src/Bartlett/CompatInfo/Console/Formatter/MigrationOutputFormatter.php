@@ -208,7 +208,7 @@ class MigrationOutputFormatter extends OutputFormatter
                     } else {
                         $element = $message;
                     }
-                    if (strpos($message, 'undefined') === false) {
+                    if (!isset($message) || strpos($message, 'undefined') === false) {
                         $label = 'added';
                     } else {
                         $label = 'removed';

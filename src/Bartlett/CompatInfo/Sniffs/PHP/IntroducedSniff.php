@@ -180,7 +180,7 @@ class IntroducedSniff extends SniffAbstract
             $context = 'traits';
             $ctx     = substr($context, 0, -1);
         }
-        $name     = $node->name;
+        $name     = (string) $node->name;
         $versions = $this->references->find($context, $name);
 
         if ($versions['ext.name'] !== 'user') {

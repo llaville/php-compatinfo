@@ -27,7 +27,7 @@ trait AbstractChange
         if (!is_string($name) && !method_exists($name, '__toString')) {
             return false;
         }
-        return strcasecmp($name, $compare) === 0;
+        return strcasecmp((string) $name, $compare) === 0;
     }
 
     public function isConditionalFunc(Node $node)
