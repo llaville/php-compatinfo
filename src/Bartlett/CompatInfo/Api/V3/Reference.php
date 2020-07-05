@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 /**
  * Display references summaries
  *
@@ -6,7 +7,6 @@
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 namespace Bartlett\CompatInfo\Api\V3;
@@ -24,7 +24,6 @@ use PDO;
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Class available since Release 4.0.0-alpha2+1
  */
 class Reference extends Common

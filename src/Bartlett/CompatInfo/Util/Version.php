@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
+
 /**
  * Helper class to format version string.
  *
- * PHP version 5
+ * PHP version 7
  *
  * @category PHP
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 namespace Bartlett\CompatInfo\Util;
@@ -20,7 +20,6 @@ namespace Bartlett\CompatInfo\Util;
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Class available since Release 4.0.0-alpha3+1
  */
 class Version

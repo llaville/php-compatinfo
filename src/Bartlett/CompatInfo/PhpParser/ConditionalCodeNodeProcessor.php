@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 /**
  * Concrete Node processor to check if conditional code is present.
  *
@@ -6,7 +7,6 @@
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 namespace Bartlett\CompatInfo\PhpParser;
@@ -22,7 +22,6 @@ use PhpParser\Node;
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Class available since Release 4.0.0-alpha3
  */
 class ConditionalCodeNodeProcessor extends NodeProcessorAbstract

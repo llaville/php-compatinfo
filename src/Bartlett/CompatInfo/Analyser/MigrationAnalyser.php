@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 /**
  * Migration Analyser
  *
@@ -6,7 +7,6 @@
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 namespace Bartlett\CompatInfo\Analyser;
@@ -25,7 +25,6 @@ use Bartlett\Reflect\Analyser\AbstractSniffAnalyser;
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Class available since Release 5.0.0
  */
 class MigrationAnalyser extends AbstractSniffAnalyser

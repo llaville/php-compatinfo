@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
+
 /**
  * Display references summaries
  *
- * PHP version 5
+ * PHP version 7
  *
  * @category PHP
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 namespace Bartlett\CompatInfo\Api;
@@ -22,7 +22,6 @@ use Bartlett\Reflect\Api\BaseApi;
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Class available since Release 4.0.0-alpha2+1
  */
 class Reference extends BaseApi

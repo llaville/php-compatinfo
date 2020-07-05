@@ -11,6 +11,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - Drop support to PHP 5
 - Drop support to CompatInfoDB 1.x
 - Sets PHP minimum requirement to 7.1.3
+- Clean-up phpDoc tags
 
 ## [5.2.3] - 2020-04-29
 

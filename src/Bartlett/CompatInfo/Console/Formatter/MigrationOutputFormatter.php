@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 /**
  * Migration Analyser formatter class for console output.
  *
@@ -6,7 +7,6 @@
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  */
 
 namespace Bartlett\CompatInfo\Console\Formatter;
@@ -24,7 +24,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Class available since Release 5.0.0
  */
 class MigrationOutputFormatter extends OutputFormatter
