@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * Concrete Node processor to check if conditional code is present.
  *
