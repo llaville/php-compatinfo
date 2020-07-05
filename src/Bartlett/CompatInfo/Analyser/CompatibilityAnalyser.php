@@ -334,7 +334,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
                     }
                     $const->setAttribute('compatinfo', $versions);
                 }
-                $this->computeConstantVersions($const, $const->name);
+                $this->computeConstantVersions($const, (string) $const->name);
             }
 
         } elseif ($node instanceof Node\Const_
@@ -1110,7 +1110,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             }
             $qualifiedClassName = $this->aliases[$caller->name];
 
-            $this->computeInternalVersions($node, $node->name, 'methods', $qualifiedClassName);
+            $this->computeInternalVersions($node, (string) $node->name, 'methods', $qualifiedClassName);
         } else {
             // indirect method call
             return;
@@ -1166,7 +1166,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeConstantVersions(Node $node, $name)
+    private function computeConstantVersions(Node $node, string $name)
     {
         $this->computeInternalVersions($node, $name, 'constants');
     }
@@ -1313,7 +1313,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
             $this->updateContextVersion($versions);
 
         } elseif ($node instanceof Node\Expr\ClassConstFetch
-            && strcasecmp('class', $node->name) === 0
+            && strcasecmp('class', (string) $node->name) === 0
         ) {
             $versions = array('php.min' => '5.5.0');
             // update current and parent context
