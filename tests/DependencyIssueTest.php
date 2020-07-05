@@ -43,7 +43,7 @@ class DependencyIssueTest extends \PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
             . 'fixtures' . DIRECTORY_SEPARATOR;

@@ -35,7 +35,7 @@ class EnvironmentTest extends \PHPUnit\Framework\TestCase
      * @return void
      * @link   http://phpunit.de/manual/current/en/fixtures.html#fixtures.sharing-fixture
      */
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         self::$pdo = Database::initRefDb();
     }
@@ -46,7 +46,7 @@ class EnvironmentTest extends \PHPUnit\Framework\TestCase
      * @return void
      * @link   http://phpunit.de/manual/current/en/fixtures.html#fixtures.sharing-fixture
      */
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         self::$pdo = null;
     }
