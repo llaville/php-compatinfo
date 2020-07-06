@@ -23,16 +23,6 @@ if (PHP_SAPI !== 'cli') {
     return;
 }
 
-$compatInfoDbV1 = class_exists(Bartlett\CompatInfoDb\Environment::class);
-
-if (\Phar::running() && $compatInfoDbV1) {
-    try {
-        Bartlett\CompatInfoDb\Environment::checkRequirements();
-    } catch (\RuntimeException $e) {
-        die ($e->getMessage());
-    }
-}
-
 use Bartlett\Reflect\Environment;
 use Bartlett\CompatInfo\Console\Application;
 

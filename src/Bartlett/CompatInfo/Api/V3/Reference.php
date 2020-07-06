@@ -43,10 +43,7 @@ class Reference extends Common
      */
     public function dir(): array
     {
-        // keep compatibility between CompatInfo DB 1.x (deprecated) and 2.x
-        $name = class_exists('Bartlett\\CompatInfoDb\\Environment') ? null : '';
-
-        $factory = new ExtensionFactory($name);
+        $factory = new ExtensionFactory('');
         return $factory->getExtensions();
     }
 
