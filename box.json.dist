@@ -6,36 +6,66 @@
         "bin/phpcompatinfo.json.dist",
         "manifest.txt",
         "LICENSE",
-        "vendor/nikic/php-parser/LICENSE",
-        "vendor/sebastian/version/LICENSE",
-        "vendor/symfony/console/LICENSE",
-        "vendor/symfony/event-dispatcher/LICENSE",
-        "vendor/symfony/finder/LICENSE",
-        "vendor/symfony/polyfill-mbstring/LICENSE",
-        "vendor/symfony/stopwatch/LICENSE",
-        "vendor/symfony/dependency-injection/LICENSE",
-        "vendor/seld/jsonlint/LICENSE",
-        "vendor/justinrainbow/json-schema/LICENSE",
-        "vendor/phpdocumentor/reflection-common/LICENSE",
-        "vendor/phpdocumentor/type-resolver/LICENSE",
-        "vendor/phpdocumentor/reflection-docblock/LICENSE",
-        "vendor/webmozart/assert/LICENSE",
-        "vendor/doctrine/cache/LICENSE",
-        "vendor/doctrine/collections/LICENSE",
-        "vendor/psr/container/LICENSE",
-        "vendor/psr/log/LICENSE",
-        "vendor/monolog/monolog/LICENSE",
         "vendor/bartlett/php-compatinfo-db/LICENSE",
         "vendor/bartlett/php-compatinfo-db/data/compatinfo.sqlite",
         "vendor/bartlett/php-reflect/LICENSE",
         "vendor/bartlett/php-reflect/bin/phpreflect.json-schema",
-        "vendor/zendframework/zenddiagnostics/LICENSE.md",
+        "vendor/composer/package-versions-deprecated/LICENSE",
+        "vendor/composer/semver/LICENSE",
+        "vendor/doctrine/cache/LICENSE",
+        "vendor/doctrine/collections/LICENSE",
+        "vendor/jean85/pretty-package-versions/LICENSE",
+        "vendor/justinrainbow/json-schema/LICENSE",
+        "vendor/laminas/laminas-diagnostics/LICENSE.md",
+        "vendor/laminas/laminas-zendframework-bridge/LICENSE.md",
+        "vendor/monolog/monolog/LICENSE",
+        "vendor/nikic/php-parser/LICENSE",
+        "vendor/phpdocumentor/reflection-common/LICENSE",
+        "vendor/phpdocumentor/reflection-docblock/LICENSE",
+        "vendor/phpdocumentor/type-resolver/LICENSE",
+        "vendor/psr/container/LICENSE",
+        "vendor/psr/event-dispatcher/LICENSE",
+        "vendor/psr/log/LICENSE",
+        "vendor/sebastian/version/LICENSE",
+        "vendor/seld/jsonlint/LICENSE",
+        "vendor/symfony/console/LICENSE",
+        "vendor/symfony/dependency-injection/LICENSE",
+        "vendor/symfony/deprecation-contracts/LICENSE",
+        "vendor/symfony/event-dispatcher/LICENSE",
+        "vendor/symfony/event-dispatcher-contracts/LICENSE",
+        "vendor/symfony/finder/LICENSE",
+        "vendor/symfony/polyfill-ctype/LICENSE",
+        "vendor/symfony/polyfill-intl-grapheme/LICENSE",
+        "vendor/symfony/polyfill-intl-normalizer/LICENSE",
+        "vendor/symfony/polyfill-mbstring/LICENSE",
+        "vendor/symfony/polyfill-php73/LICENSE",
+        "vendor/symfony/polyfill-php80/LICENSE",
+        "vendor/symfony/service-contracts/LICENSE",
+        "vendor/symfony/stopwatch/LICENSE",
+        "vendor/symfony/string/LICENSE",
+        "vendor/webmozart/assert/LICENSE",
         "vendor/autoload.php"
     ],
     "finder": [
         {
             "name": "*.php",
             "in": "vendor/composer"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/jean85/pretty-package-versions/src"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/laminas/laminas-diagnostics/src"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/laminas/laminas-zendframework-bridge/src"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/league/tactician/src"
         },
         {
             "name": "*.php",
@@ -88,6 +118,10 @@
         },
         {
             "name": "*.php",
+            "in": "vendor/psr/event-dispatcher/src"
+        },
+        {
+            "name": "*.php",
             "in": "vendor/psr/log/Psr"
         },
         {
@@ -101,10 +135,6 @@
         {
             "name": "*.php",
             "in": "vendor/bartlett/php-compatinfo-db/src"
-        },
-        {
-            "name": "*.php",
-            "in": "vendor/zendframework/zenddiagnostics/src"
         }
     ],
     "stub": "phar-stub.php"
