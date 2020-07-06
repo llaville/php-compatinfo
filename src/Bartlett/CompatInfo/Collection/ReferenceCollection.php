@@ -63,7 +63,7 @@ class ReferenceCollection extends AbstractLazyCollection
      *
      * @return array
      */
-    public function find(string $group, string $key, int $argc = 0, ?string &$extra = null)
+    public function find(string $group, string $key, int $argc = 0, ?string &$extra = null): array
     {
         $this->initialize();
 
@@ -130,7 +130,7 @@ class ReferenceCollection extends AbstractLazyCollection
      *
      * @return void
      */
-    protected function doInitialize()
+    protected function doInitialize(): void
     {
         $this->collection = new ArrayCollection();
 

@@ -74,7 +74,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
     /**
      * {@inheritDoc}
      */
-    public function getMetrics()
+    public function getMetrics(): array
     {
         /**
          * All remaining objects in temp queue (referenced) are considered
@@ -99,11 +99,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
     }
 
     /**
-     * Called once before traversal.
-     *
-     * @param Node[] $nodes Array of nodes
-     *
-     * @return null|Node[] Array of nodes
+     * {@inheritDoc}
      */
     public function beforeTraverse(array $nodes)
     {
@@ -189,11 +185,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
     }
 
     /**
-     * Called once after traversal.
-     *
-     * @param Node[] $nodes Array of nodes
-     *
-     * @return null|Node[] Array of nodes
+     * {@inheritDoc}
      */
     public function afterTraverse(array $nodes)
     {
@@ -203,11 +195,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
     }
 
     /**
-     * Called when entering a node.
-     *
-     * @param Node $node Node
-     *
-     * @return null|Node Node
+     * {@inheritDoc}
      */
     public function enterNode(Node $node)
     {
@@ -239,11 +227,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
     }
 
     /**
-     * Called when leaving a node.
-     *
-     * @param Node $node Node
-     *
-     * @return null|Node|false|Node[] Node
+     * {@inheritDoc}
      */
     public function leaveNode(Node $node)
     {
@@ -388,7 +372,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    protected static function updateVersion($current, &$base)
+    protected static function updateVersion(string $current, string &$base): void
     {
         if (version_compare($current, $base, 'gt')) {
             $base = $current;
@@ -404,7 +388,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    protected function updateElementVersion($element, $name, $versions)
+    protected function updateElementVersion(string $element, string $name, array $versions): void
     {
         $versions = array_merge(self::$php4, $versions);
 
@@ -465,7 +449,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    protected function updateContextVersion(array $versions = null)
+    protected function updateContextVersion(array $versions = null): void
     {
         if (count ($this->contextStack) > 1) {
             list($celement, $cname) = array_pop($this->contextStack);
@@ -516,7 +500,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    protected function updateGlobalVersion($min, $max, $all)
+    protected function updateGlobalVersion(string $min, string $max, string $all): void
     {
         if (empty($this->metrics['versions'])) {
             $this->metrics['versions'] = array(
@@ -547,7 +531,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function iniUserNamespace(Node $node)
+    private function iniUserNamespace(Node $node): void
     {
         if (!isset($node->name)) {
             // Namespace without name
@@ -568,7 +552,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function initUserClass(Node $node)
+    private function initUserClass(Node $node): void
     {
         if (!isset($node->namespacedName)) {
             $node->namespacedName = null; // anonymous class
@@ -673,7 +657,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function initUserInterface(Node $node)
+    private function initUserInterface(Node $node): void
     {
         if (isset($node->namespacedName)
             && $node->namespacedName instanceof Node\Name
@@ -698,7 +682,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function initUserTrait(Node $node)
+    private function initUserTrait(Node $node): void
     {
         $min      = '5.4.0';
         $element  = 'traits';
@@ -715,7 +699,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function initUserFunction(Node $node)
+    private function initUserFunction(Node $node): void
     {
         $this->initLocalScope();
 
@@ -774,7 +758,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      * @return array
      * @link http://www.php.net/manual/en/functions.arguments.php
      */
-    private function initFunctionArguments(Node $node)
+    private function initFunctionArguments(Node $node): array
     {
         if ($node->variadic) {
             // Variadic functions
@@ -807,7 +791,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return string
      */
-    private function findObjectType(string $name)
+    private function findObjectType(string $name): string
     {
         $group = 'objects';
         if (isset($this->metrics[$group][$name])) {
@@ -849,7 +833,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function initLocalScope()
+    private function initLocalScope(): void
     {
         /*
          * reset class aliases
@@ -865,7 +849,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function initClassAliasResolver(Node $node)
+    private function initClassAliasResolver(Node $node): void
     {
         // variable or property that hold an instance of a new class statement
         $class = $node->expr->class;
@@ -907,7 +891,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeNamespaceVersions()
+    private function computeNamespaceVersions(): void
     {
         list($element, $name) = end($this->contextStack);
 
@@ -925,7 +909,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeClassVersions(Node $node)
+    private function computeClassVersions(Node $node): void
     {
         list($element, $name) = end($this->contextStack);
 
@@ -948,7 +932,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeInterfaceVersions(Node $node)
+    private function computeInterfaceVersions(Node $node): void
     {
         // update parent context
         $this->updateContextVersion();
@@ -963,7 +947,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeTraitVersions(Node $node)
+    private function computeTraitVersions(Node $node): void
     {
         // update parent context
         $this->updateContextVersion();
@@ -978,7 +962,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeFunctionVersions(Node $node)
+    private function computeFunctionVersions(Node $node): void
     {
         // update parent context
         $this->updateContextVersion();
@@ -991,7 +975,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeClassCallVersions(Node $node)
+    private function computeClassCallVersions(Node $node): void
     {
         $element = (string) $node->class;
 
@@ -1005,7 +989,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeFunctionCallVersions(Node $node)
+    private function computeFunctionCallVersions(Node $node): void
     {
         $element = (string) $node->name;
 
@@ -1071,7 +1055,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeClassMethodCallVersions(Node $node)
+    private function computeClassMethodCallVersions(Node $node): void
     {
         // direct call from a local variable or a property
         $caller = $node->var;
@@ -1123,7 +1107,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeStaticClassMethodCallVersions(Node $node)
+    private function computeStaticClassMethodCallVersions(Node $node): void
     {
         if (!$node->class instanceof Node\Name) {
             // cannot resolved indirect call
@@ -1165,7 +1149,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeConstantVersions(Node $node, string $name)
+    private function computeConstantVersions(Node $node, string $name): void
     {
         $this->computeInternalVersions($node, $name, 'constants');
     }
@@ -1177,7 +1161,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computePhpFeatureVersions(Node $node)
+    private function computePhpFeatureVersions(Node $node): void
     {
         list($element, $name) = end($this->contextStack);
 
@@ -1355,7 +1339,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
      *
      * @return void
      */
-    private function computeInternalVersions(Node $node, string $element, string $context, $extra = null)
+    private function computeInternalVersions(Node $node, string $element, string $context, $extra = null): void
     {
         $versions = $node->getAttribute('compatinfo');
         if ($versions === null) {

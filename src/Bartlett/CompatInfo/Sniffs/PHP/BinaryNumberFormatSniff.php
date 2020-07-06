@@ -17,7 +17,7 @@ class BinaryNumberFormatSniff extends SniffAbstract
     private $binaryNumberFormat;
     private $tokens;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
@@ -26,7 +26,7 @@ class BinaryNumberFormatSniff extends SniffAbstract
         $this->tokens = $this->visitor->getTokens();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -38,7 +38,11 @@ class BinaryNumberFormatSniff extends SniffAbstract
         }
     }
 
-    public function leaveNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function leaveNode(Node $node): void
     {
         parent::leaveNode($node);
 
@@ -58,7 +62,7 @@ class BinaryNumberFormatSniff extends SniffAbstract
         }
     }
 
-    protected function isBinaryNumberFormat($node)
+    protected function isBinaryNumberFormat(Node $node): bool
     {
         $i = $node->getAttribute('startTokenPos');
         return ($node instanceof Node\Scalar\LNumber

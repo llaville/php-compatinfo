@@ -15,6 +15,7 @@ use Bartlett\CompatInfoDb\ExtensionFactory;
 
 use Bartlett\Reflect\Api\V3\Common;
 
+use Closure;
 use PDO;
 
 /**
@@ -28,7 +29,7 @@ use PDO;
  */
 class Reference extends Common
 {
-    public function __call($name, $args)
+    public function __call(string $name, array $args)
     {
         if ('list' == $name) {
             return $this->dir();
@@ -40,7 +41,7 @@ class Reference extends Common
      *
      * @return array
      */
-    public function dir()
+    public function dir(): array
     {
         // keep compatibility between CompatInfo DB 1.x (deprecated) and 2.x
         $name = class_exists('Bartlett\\CompatInfoDb\\Environment') ? null : '';
@@ -53,7 +54,7 @@ class Reference extends Common
      * Show information about a reference.
      *
      * @param string   $name       Introspection of a reference (case insensitive)
-     * @param \Closure $closure    Function used to filter results
+     * @param Closure  $closure    Function used to filter results
      * @param mixed    $releases   Show releases
      * @param mixed    $ini        Show ini Entries
      * @param mixed    $constants  Show constants
@@ -66,8 +67,8 @@ class Reference extends Common
      * @return array
      */
     public function show(
-        $name,
-        $closure,
+        string $name,
+        Closure $closure,
         $releases,
         $ini,
         $constants,
@@ -76,7 +77,7 @@ class Reference extends Common
         $classes,
         $methods,
         $classConstants
-    ) {
+    ): array {
         $reference = new ExtensionFactory($name);
         $results   = array();
         $summary   = array();

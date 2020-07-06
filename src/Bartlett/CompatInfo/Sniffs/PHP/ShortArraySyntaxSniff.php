@@ -19,7 +19,7 @@ class ShortArraySyntaxSniff extends SniffAbstract
     private $shortArraySyntax;
     private $tokens;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
@@ -28,7 +28,7 @@ class ShortArraySyntaxSniff extends SniffAbstract
         $this->tokens = $this->visitor->getTokens();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -40,7 +40,11 @@ class ShortArraySyntaxSniff extends SniffAbstract
         }
     }
 
-    public function leaveNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function leaveNode(Node $node): void
     {
         parent::leaveNode($node);
 
@@ -62,7 +66,7 @@ class ShortArraySyntaxSniff extends SniffAbstract
         }
     }
 
-    protected function isShortArraySyntax($node)
+    protected function isShortArraySyntax(Node $node): bool
     {
         $i = $node->getAttribute('startTokenPos');
         return is_string($this->tokens[$i]);

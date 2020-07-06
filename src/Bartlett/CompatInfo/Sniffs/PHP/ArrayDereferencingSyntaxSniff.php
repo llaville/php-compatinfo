@@ -18,14 +18,14 @@ class ArrayDereferencingSyntaxSniff extends SniffAbstract
 {
     private $arrayDereferencingSyntax;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
         $this->arrayDereferencingSyntax = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -37,7 +37,11 @@ class ArrayDereferencingSyntaxSniff extends SniffAbstract
         }
     }
 
-    public function leaveNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function leaveNode(Node $node): void
     {
         parent::leaveNode($node);
 

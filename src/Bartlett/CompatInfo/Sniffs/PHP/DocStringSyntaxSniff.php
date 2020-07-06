@@ -22,7 +22,7 @@ class DocStringSyntaxSniff extends SniffAbstract
     private $tokens;
     private $currentProperty;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
@@ -31,7 +31,7 @@ class DocStringSyntaxSniff extends SniffAbstract
         $this->tokens = $this->visitor->getTokens();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -43,7 +43,11 @@ class DocStringSyntaxSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 
@@ -87,7 +91,11 @@ class DocStringSyntaxSniff extends SniffAbstract
         }
     }
 
-    public function leaveNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function leaveNode(Node $node): void
     {
         parent::leaveNode($node);
 
@@ -96,7 +104,7 @@ class DocStringSyntaxSniff extends SniffAbstract
         }
     }
 
-    protected function isHeredocSyntax($node)
+    protected function isHeredocSyntax(Node $node): bool
     {
         $i = $node->getAttribute('startTokenPos');
         return (strpos($this->tokens[$i][1], "<<<") === 0
@@ -104,7 +112,7 @@ class DocStringSyntaxSniff extends SniffAbstract
         );
     }
 
-    protected function isNowdocSyntax($node)
+    protected function isNowdocSyntax(Node $node): bool
     {
         $i = $node->getAttribute('startTokenPos');
         return (strpos($this->tokens[$i][1], "<<<'") === 0);

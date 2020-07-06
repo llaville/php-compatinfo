@@ -17,14 +17,14 @@ class VariadicFunctionSniff extends SniffAbstract
 {
     private $variadicFunction;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
         $this->variadicFunction = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -36,7 +36,11 @@ class VariadicFunctionSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 
@@ -57,7 +61,7 @@ class VariadicFunctionSniff extends SniffAbstract
         }
     }
 
-    protected function isVariadicFunction($node)
+    protected function isVariadicFunction(Node $node): bool
     {
         if ($node instanceof Node\Stmt\Function_
             || $node instanceof Node\Expr\Closure

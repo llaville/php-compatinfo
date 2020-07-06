@@ -34,7 +34,7 @@ class DeprecatedSniff extends SniffAbstract
 
     private $collection;
 
-    public function setUpBeforeSniff()
+    public function setUpBeforeSniff(): void
     {
         parent::setUpBeforeSniff();
 
@@ -66,7 +66,7 @@ class DeprecatedSniff extends SniffAbstract
         $this->deprecatedAssignRefs = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -90,7 +90,11 @@ class DeprecatedSniff extends SniffAbstract
         }
     }
 
-    public function leaveNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function leaveNode(Node $node): void
     {
         parent::leaveNode($node);
 
@@ -140,7 +144,7 @@ class DeprecatedSniff extends SniffAbstract
         }
     }
 
-    protected function isDeprecatedFunc($node)
+    protected function isDeprecatedFunc(Node $node): bool
     {
         return ($node instanceof Node\Expr\FuncCall
             && $node->name instanceof Node\Name
@@ -148,7 +152,7 @@ class DeprecatedSniff extends SniffAbstract
         );
     }
 
-    protected function isDeprecatedDirective($node)
+    protected function isDeprecatedDirective(Node $node): bool
     {
         return ($node instanceof Node\Expr\FuncCall
             && $node->name instanceof Node\Name
@@ -158,7 +162,7 @@ class DeprecatedSniff extends SniffAbstract
         );
     }
 
-    protected function isDeprecatedAssignRef($node)
+    protected function isDeprecatedAssignRef(Node $node): bool
     {
         return ($node instanceof Node\Expr\AssignRef
             && $node->expr instanceof Node\Expr\New_

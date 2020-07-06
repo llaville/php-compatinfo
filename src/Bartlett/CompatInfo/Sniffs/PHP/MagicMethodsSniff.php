@@ -19,7 +19,7 @@ class MagicMethodsSniff extends SniffAbstract
 
     private $magicMethods;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
@@ -30,7 +30,7 @@ class MagicMethodsSniff extends SniffAbstract
         $this->magicMethods = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -42,7 +42,7 @@ class MagicMethodsSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 

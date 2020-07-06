@@ -39,7 +39,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
      *
      * @return void
      */
-    public function __invoke(OutputInterface $output, $response)
+    public function __invoke(OutputInterface $output, array $response): void
     {
         $this->metrics = $response;
 
@@ -95,7 +95,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
      *
      * @return void
      */
-    private function listHelper(OutputInterface $output, $group, $args)
+    private function listHelper(OutputInterface $output, string $group, $args): void
     {
         if (in_array($group, array(
             'extensions',
@@ -215,7 +215,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
         $this->tableHelper($output, $headers, $rows);
     }
 
-    private function getMethods($className, &$rows)
+    private function getMethods(string $className, &$rows): void
     {
         foreach ($this->metrics['methods'] as $method => $versions) {
             if (strpos($method, "$className::") === 0) {

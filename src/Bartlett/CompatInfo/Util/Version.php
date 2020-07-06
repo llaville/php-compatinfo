@@ -24,21 +24,21 @@ namespace Bartlett\CompatInfo\Util;
  */
 class Version
 {
-    public static function ext($versions)
+    public static function ext(array $versions): string
     {
         return empty($versions['ext.max'])
             ? $versions['ext.min']
             : $versions['ext.min'] . ' => ' . $versions['ext.max'];
     }
 
-    public static function php($versions)
+    public static function php(array $versions): string
     {
         return empty($versions['php.max'])
             ? $versions['php.min']
             : $versions['php.min'] . ' => ' . $versions['php.max'];
     }
 
-    public static function all($versions)
+    public static function all(array $versions): string
     {
         if (!empty($versions['php.all'])) {
             if (version_compare($versions['php.all'], $versions['php.min'], '>')) {
@@ -48,7 +48,7 @@ class Version
         return '';
     }
 
-    public static function deprecated($versions)
+    public static function deprecated(array $versions): string
     {
         if (isset($versions['deprecated'])) {
             return $versions['deprecated'];

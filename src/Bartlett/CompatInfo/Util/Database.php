@@ -12,7 +12,7 @@ use PDO;
  */
 class Database
 {
-    public static function versionRefDb()
+    public static function versionRefDb(): array
     {
         $pdo = DatabaseFactory::create('sqlite');
 
@@ -24,7 +24,7 @@ class Database
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public static function initRefDb()
+    public static function initRefDb(): PDO
     {
         return DatabaseFactory::create('sqlite');
     }

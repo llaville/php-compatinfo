@@ -15,14 +15,14 @@ class NullCoalesceOperatorSniff extends SniffAbstract
 {
     private $nullCoalesceOperator;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
         $this->nullCoalesceOperator = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -34,7 +34,11 @@ class NullCoalesceOperatorSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 

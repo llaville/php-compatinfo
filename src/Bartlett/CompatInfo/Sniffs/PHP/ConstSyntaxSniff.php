@@ -16,13 +16,13 @@ class ConstSyntaxSniff extends SniffAbstract
 {
     private $constSyntax;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
         $this->constSyntax = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -34,7 +34,7 @@ class ConstSyntaxSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 
@@ -74,11 +74,12 @@ class ConstSyntaxSniff extends SniffAbstract
     }
 
     /**
-     *
+     * @param Node $node
+     * @return bool
      * @link https://github.com/llaville/php-compat-info/issues/140
      * @link http://php.net/manual/en/migration56.new-features.php#migration56.new-features.const-scalar-exprs
      */
-    protected function isConstantScalarExpression($node)
+    protected function isConstantScalarExpression(Node $node): bool
     {
         foreach ($node->consts as $const) {
             if (!$const->value instanceof Node\Scalar) {

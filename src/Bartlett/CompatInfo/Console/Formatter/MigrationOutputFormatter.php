@@ -59,7 +59,7 @@ class MigrationOutputFormatter extends OutputFormatter
      *
      * @return void
      */
-    public function __invoke(OutputInterface $output, $response)
+    public function __invoke(OutputInterface $output, array $response): void
     {
         $this->printHeader($output);
 
@@ -76,7 +76,7 @@ class MigrationOutputFormatter extends OutputFormatter
      *
      * @return void
      */
-    protected function printHeader(OutputInterface $output)
+    protected function printHeader(OutputInterface $output): void
     {
         $output->writeln(
             sprintf('%s<info>Migration Analysis</info>%s', PHP_EOL, PHP_EOL)
@@ -90,7 +90,7 @@ class MigrationOutputFormatter extends OutputFormatter
      *
      * @return void
      */
-    protected function printFooter(OutputInterface $output)
+    protected function printFooter(OutputInterface $output): void
     {
         $output->writeln(
             sprintf(
@@ -110,7 +110,7 @@ class MigrationOutputFormatter extends OutputFormatter
      *
      * @return void
      */
-    protected function printBody(OutputInterface $output, $response)
+    protected function printBody(OutputInterface $output, array $response): void
     {
         $genericTemplate = '%s%s is <%s>%s</%s> since <info>%s</info>';
 

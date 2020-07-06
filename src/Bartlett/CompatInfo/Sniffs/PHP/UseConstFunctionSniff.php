@@ -16,14 +16,14 @@ class UseConstFunctionSniff extends SniffAbstract
 {
     private $useConstFunction;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
         $this->useConstFunction = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -35,7 +35,11 @@ class UseConstFunctionSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 
@@ -56,7 +60,7 @@ class UseConstFunctionSniff extends SniffAbstract
         }
     }
 
-    protected function isUseConstFunction($node)
+    protected function isUseConstFunction(Node $node): bool
     {
         return ($node instanceof Node\Stmt\Use_
             && in_array(

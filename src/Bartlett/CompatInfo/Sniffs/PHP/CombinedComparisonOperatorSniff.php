@@ -15,14 +15,14 @@ class CombinedComparisonOperatorSniff extends SniffAbstract
 {
     private $combinedComparisonOperator;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
         $this->combinedComparisonOperator = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -34,7 +34,11 @@ class CombinedComparisonOperatorSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 

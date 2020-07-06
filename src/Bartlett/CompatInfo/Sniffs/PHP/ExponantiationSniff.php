@@ -17,14 +17,14 @@ class ExponantiationSniff extends SniffAbstract
 {
     private $exponantiation;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
         $this->exponantiation = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -36,7 +36,11 @@ class ExponantiationSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 
@@ -57,7 +61,7 @@ class ExponantiationSniff extends SniffAbstract
         }
     }
 
-    protected function isPowOperator($node)
+    protected function isPowOperator(Node $node): bool
     {
         return ($node instanceof Node\Expr\BinaryOp\Pow
             || $node instanceof Node\Expr\AssignOp\Pow

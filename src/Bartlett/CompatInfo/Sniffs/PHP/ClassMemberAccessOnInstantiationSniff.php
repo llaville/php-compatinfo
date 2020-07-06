@@ -18,14 +18,14 @@ class ClassMemberAccessOnInstantiationSniff extends SniffAbstract
 {
     private $classMemberAccessOnInstantiation;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
         $this->classMemberAccessOnInstantiation = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -37,7 +37,7 @@ class ClassMemberAccessOnInstantiationSniff extends SniffAbstract
         }
     }
 
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): void
     {
         parent::leaveNode($node);
 

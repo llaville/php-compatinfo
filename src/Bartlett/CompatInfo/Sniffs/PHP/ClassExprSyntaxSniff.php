@@ -16,14 +16,14 @@ class ClassExprSyntaxSniff extends SniffAbstract
 {
     private $classExprSyntax;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
         $this->classExprSyntax = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -35,7 +35,11 @@ class ClassExprSyntaxSniff extends SniffAbstract
         }
     }
 
-    public function leaveNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function leaveNode(Node $node): void
     {
         parent::leaveNode($node);
 
@@ -55,7 +59,7 @@ class ClassExprSyntaxSniff extends SniffAbstract
         }
     }
 
-    protected function isClassExprSyntax($node)
+    protected function isClassExprSyntax(Node $node): bool
     {
         return ($node instanceof Node\Expr\StaticCall
             && $node->class instanceof Node\Name

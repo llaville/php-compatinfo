@@ -15,14 +15,14 @@ class ReturnTypeDeclarationSniff extends SniffAbstract
 {
     private $returnTypeDeclaration;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
         $this->returnTypeDeclaration = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -34,7 +34,10 @@ class ReturnTypeDeclarationSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    /**
+     * @return void
+     */
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 
@@ -55,7 +58,7 @@ class ReturnTypeDeclarationSniff extends SniffAbstract
         }
     }
 
-    protected function hasReturnType($node)
+    protected function hasReturnType(Node $node): bool
     {
         if ($node instanceof Node\Stmt\ClassMethod
             || $node instanceof Node\Stmt\Function_

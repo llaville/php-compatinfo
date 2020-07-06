@@ -19,7 +19,7 @@ class NoCompatCallFromGlobalSniff extends SniffAbstract
     private $noCompat;
     private $references;
 
-    public function setUpBeforeSniff()
+    public function setUpBeforeSniff(): void
     {
         parent::setUpBeforeSniff();
 
@@ -44,7 +44,7 @@ class NoCompatCallFromGlobalSniff extends SniffAbstract
         $this->noCompat = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -56,7 +56,11 @@ class NoCompatCallFromGlobalSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function enterNode(Node $node): void
     {
         if ($node instanceof Node\Expr\FuncCall
             && $node->name instanceof Node\Name

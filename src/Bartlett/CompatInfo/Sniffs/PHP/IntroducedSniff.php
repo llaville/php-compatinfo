@@ -18,7 +18,7 @@ class IntroducedSniff extends SniffAbstract
     private $introduced;
     private $references;
 
-    public function setUpBeforeSniff()
+    public function setUpBeforeSniff(): void
     {
         parent::setUpBeforeSniff();
 
@@ -34,7 +34,7 @@ class IntroducedSniff extends SniffAbstract
         //xdebug_start_trace();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -47,7 +47,11 @@ class IntroducedSniff extends SniffAbstract
         //xdebug_stop_trace();
     }
 
-    public function enterNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 
@@ -64,7 +68,11 @@ class IntroducedSniff extends SniffAbstract
         }
     }
 
-    public function leaveNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function leaveNode(Node $node): void
     {
         parent::leaveNode($node);
 
@@ -84,7 +92,7 @@ class IntroducedSniff extends SniffAbstract
         $this->condConst = null;
     }
 
-    protected function pushElement($name, $severity, $version, Node $node, $message = null)
+    protected function pushElement(string $name, string $severity, string $version, Node $node, string $message = null): void
     {
         if (!isset($this->introduced[$name])) {
             $this->introduced[$name] = array(
@@ -99,12 +107,12 @@ class IntroducedSniff extends SniffAbstract
         $this->introduced[$name]['spots'][] = $this->getCurrentSpot($node);
     }
 
-    protected function isNewFunc(Node $node)
+    protected function isNewFunc(Node $node): bool
     {
         if (!$node instanceof Node\Stmt\Function_) {
             return false;
         }
-        $name     = $node->name;
+        $name     = (string) $node->name;
         $versions = $this->references->find('functions', $name);
 
         if ($versions['ext.name'] === 'user') {
@@ -127,7 +135,7 @@ class IntroducedSniff extends SniffAbstract
         return false;
     }
 
-    protected function isFuncCall(Node $node)
+    protected function isFuncCall(Node $node): bool
     {
         if ($node instanceof Node\Expr\FuncCall
             && $node->name instanceof Node\Name
@@ -164,7 +172,7 @@ class IntroducedSniff extends SniffAbstract
         return false;
     }
 
-    protected function isNewClass(Node $node)
+    protected function isNewClass(Node $node): bool
     {
         if (!$node instanceof Node\Stmt\ClassLike) {
             return false;
@@ -199,7 +207,7 @@ class IntroducedSniff extends SniffAbstract
         return true;
     }
 
-    protected function isClassCall(Node $node)
+    protected function isClassCall(Node $node): bool
     {
         if ($node instanceof Node\Expr\New_
             && $node->class instanceof Node\Name
@@ -217,11 +225,11 @@ class IntroducedSniff extends SniffAbstract
         return false;
     }
 
-    protected function isNewConst(Node $node)
+    protected function isNewConst(Node $node): bool
     {
         if ($node instanceof Node\Expr\FuncCall
             && $node->name instanceof Node\Name
-            && $this->isSameFunc($node->name, 'define')
+            && $this->isSameFunc((string) $node->name, 'define')
         ) {
             $name = $node->args[0]->value->value;
 

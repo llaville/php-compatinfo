@@ -15,7 +15,7 @@ class ShortOpenTagSniff extends SniffAbstract
     private $shortOpenTag;
     private $tokens;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
@@ -24,7 +24,7 @@ class ShortOpenTagSniff extends SniffAbstract
         $this->tokens = $this->visitor->getTokens();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -36,7 +36,11 @@ class ShortOpenTagSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 
@@ -58,7 +62,7 @@ class ShortOpenTagSniff extends SniffAbstract
         }
     }
 
-    protected function isShortOpenTag($node)
+    protected function isShortOpenTag(Node $node): bool
     {
         $i = $node->getAttribute('startTokenPos');
         return (strpos($this->tokens[$i][1], '<?=') === 0);

@@ -15,14 +15,14 @@ class AnonymousClassSniff extends SniffAbstract
 {
     private $anonymousClass;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
         $this->anonymousClass = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -34,7 +34,11 @@ class AnonymousClassSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 
@@ -55,7 +59,7 @@ class AnonymousClassSniff extends SniffAbstract
         }
     }
 
-    protected function isAnonymousClass($node)
+    protected function isAnonymousClass(Node $node): bool
     {
         return ($node instanceof Node\Expr\New_
             && $node->class instanceof Node\Stmt\Class_

@@ -15,6 +15,8 @@ namespace Bartlett\CompatInfo\Api;
 
 use Bartlett\Reflect\Api\BaseApi;
 
+use Closure;
+
 /**
  * Api to obtain information about one or more references (extensions)
  *
@@ -32,7 +34,7 @@ class Reference extends BaseApi
      * @return array
      * @alias  list
      */
-    public function dir()
+    public function dir(): array
     {
         return $this->request('reference/list');
     }
@@ -54,7 +56,7 @@ class Reference extends BaseApi
      * @return array
      */
     public function show(
-        $name,
+        string $name,
         $filter = false,
         $releases = null,
         $ini = null,
@@ -64,8 +66,8 @@ class Reference extends BaseApi
         $classes = null,
         $methods = null,
         $classConstants = null
-    ) {
-        if ($filter instanceof \Closure) {
+    ): array {
+        if ($filter instanceof Closure) {
             $closure = $filter;
 
         } elseif ($filter === false) {

@@ -34,8 +34,10 @@ class Reference extends OutputFormatter
      * Prints the database current build version
      *
      * @param OutputInterface $output Console Output concrete instance
+     *
+     * @return void
      */
-    protected function printDbBuildVersion(OutputInterface $output)
+    protected function printDbBuildVersion(OutputInterface $output): void
     {
         $output->writeln(
             sprintf(
@@ -54,7 +56,7 @@ class Reference extends OutputFormatter
      *
      * @return void
      */
-    public function dir(OutputInterface $output, $response)
+    public function dir(OutputInterface $output, array $response): void
     {
         $this->printDbBuildVersion($output);
 
@@ -101,7 +103,7 @@ class Reference extends OutputFormatter
      *
      * @return void
      */
-    public function show(OutputInterface $output, $response)
+    public function show(OutputInterface $output, array $response): void
     {
         $this->printDbBuildVersion($output);
 

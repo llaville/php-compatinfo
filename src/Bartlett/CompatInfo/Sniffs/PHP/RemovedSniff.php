@@ -25,7 +25,7 @@ class RemovedSniff extends SniffAbstract
 
     private $references;
 
-    public function setUpBeforeSniff()
+    public function setUpBeforeSniff(): void
     {
         parent::setUpBeforeSniff();
 
@@ -55,7 +55,7 @@ class RemovedSniff extends SniffAbstract
         $this->removed = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -67,7 +67,11 @@ class RemovedSniff extends SniffAbstract
         }
     }
 
-    public function leaveNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function leaveNode(Node $node): void
     {
         parent::leaveNode($node);
 
@@ -107,7 +111,7 @@ class RemovedSniff extends SniffAbstract
         }
     }
 
-    protected function getRemovedVersion($max)
+    protected function getRemovedVersion(string $max): string
     {
         if (version_compare($max, '5.3', 'lt')) {
             $version = '5.3.0';
@@ -123,11 +127,13 @@ class RemovedSniff extends SniffAbstract
 
         } elseif (version_compare($max, '7.0', 'lt')) {
             $version = '7.0.0';
+        } else {
+            $version = '8.0.0';
         }
         return $version;
     }
 
-    protected function isRemovedFunc(Node $node)
+    protected function isRemovedFunc(Node $node): bool
     {
         return ($node instanceof Node\Expr\FuncCall
             && $node->name instanceof Node\Name
@@ -135,7 +141,7 @@ class RemovedSniff extends SniffAbstract
         );
     }
 
-    protected function isRemovedConst(Node $node)
+    protected function isRemovedConst(Node $node): bool
     {
         return ($node instanceof Node\Expr\ConstFetch
             && $node->name instanceof Node\Name
@@ -146,9 +152,10 @@ class RemovedSniff extends SniffAbstract
     /**
      * Initializes DB statements
      *
+     * @param PDO $pdo
      * @return void
      */
-    protected function doInitialize(PDO $pdo)
+    protected function doInitialize(PDO $pdo): void
     {
         $this->stmtIniEntries = $pdo->prepare(
             'SELECT i.name,' .

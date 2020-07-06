@@ -26,14 +26,14 @@ class NoCompatParamSniff extends SniffAbstract
         '_SESSION', '_GET', '_POST', '_COOKIE', '_SERVER', '_ENV', '_REQUEST', '_FILES'
     );
 
-    public function setUpBeforeSniff()
+    public function setUpBeforeSniff(): void
     {
         parent::setUpBeforeSniff();
 
         $this->noCompat = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -45,7 +45,11 @@ class NoCompatParamSniff extends SniffAbstract
         }
     }
 
-    public function leaveNode(Node $node)
+    /**
+     * @param Node $node
+     * @return void
+     */
+    public function leaveNode(Node $node): void
     {
         if (($node instanceof Node\FunctionLike)
             && $this->hasParamShadowGlobal($node)
@@ -67,7 +71,7 @@ class NoCompatParamSniff extends SniffAbstract
         }
     }
 
-    protected function hasParamShadowGlobal(Node $node)
+    protected function hasParamShadowGlobal(Node $node): bool
     {
         foreach ($node->params as $param) {
             // auto-global

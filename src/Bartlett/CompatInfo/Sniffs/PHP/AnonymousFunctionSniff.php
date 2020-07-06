@@ -17,14 +17,14 @@ class AnonymousFunctionSniff extends SniffAbstract
 {
     private $anonymousFunction;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
         $this->anonymousFunction = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -36,7 +36,7 @@ class AnonymousFunctionSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): void
     {
         parent::enterNode($node);
 

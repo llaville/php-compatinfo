@@ -32,14 +32,14 @@ class NoCompatMagicMethodsSniff extends SniffAbstract
 {
     private $noCompat;
 
-    public function setUpBeforeSniff()
+    public function setUpBeforeSniff(): void
     {
         parent::setUpBeforeSniff();
 
         $this->noCompat = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -51,7 +51,7 @@ class NoCompatMagicMethodsSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): void
     {
         if (!$node instanceof Node\Stmt\ClassMethod) {
             return;

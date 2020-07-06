@@ -18,14 +18,14 @@ class NoCompatRegisterGlobalsSniff extends SniffAbstract
 {
     private $noCompat;
 
-    public function setUpBeforeSniff()
+    public function setUpBeforeSniff(): void
     {
         parent::setUpBeforeSniff();
 
         $this->noCompat = array();
     }
 
-    public function leaveSniff()
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -37,7 +37,7 @@ class NoCompatRegisterGlobalsSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): void
     {
         if (!$this->hasRegisterLongArray($node)) {
             return;
@@ -62,7 +62,7 @@ class NoCompatRegisterGlobalsSniff extends SniffAbstract
         $this->noCompat[$name]['spots'][] = $this->getCurrentSpot($node);
     }
 
-    protected function hasRegisterLongArray(Node $node)
+    protected function hasRegisterLongArray(Node $node): bool
     {
         return $node instanceof Node\Expr\Variable
             && is_string($node->name)

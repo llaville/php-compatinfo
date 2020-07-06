@@ -18,7 +18,7 @@ class KeywordReservedSniff extends SniffAbstract
     private $forbiddenNames;
     private $keywordReserved;
 
-    public function enterSniff()
+    public function enterSniff(): void
     {
         parent::enterSniff();
 
@@ -102,7 +102,8 @@ class KeywordReservedSniff extends SniffAbstract
 
         $this->keywordReserved = array();
     }
-    public function leaveSniff()
+
+    public function leaveSniff(): void
     {
         parent::leaveSniff();
 
@@ -114,7 +115,7 @@ class KeywordReservedSniff extends SniffAbstract
         }
     }
 
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): void
     {
         if ($node instanceof Node\Stmt\Class_
             || $node instanceof Node\Stmt\Interface_
