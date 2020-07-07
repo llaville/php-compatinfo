@@ -31,7 +31,6 @@ class IntroducedSniff extends SniffAbstract
         $this->references = new ReferenceCollection(array(), $pdo);
 
         $this->introduced = array();
-        //xdebug_start_trace();
     }
 
     public function leaveSniff(): void
@@ -44,7 +43,6 @@ class IntroducedSniff extends SniffAbstract
                 array(Metrics::INTRODUCED => $this->introduced)
             );
         }
-        //xdebug_stop_trace();
     }
 
     /**
