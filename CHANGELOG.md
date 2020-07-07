@@ -12,6 +12,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - Drop support to CompatInfoDB 1.x
 - Sets PHP minimum requirement to 7.1.3
 - Clean-up phpDoc tags
+- `jean85/pretty-package-versions` handles now the Application version rather than `sebastian/version`
 
 ## [5.2.3] - 2020-04-29
 

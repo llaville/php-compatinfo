@@ -1,9 +1,9 @@
 #!/usr/bin/env php
 <?php
-$appName = 'phpCompatInfo';
+$appName = 'phpcompatinfo';
 
 if (\Phar::running()) {
-    $vendorDir = 'phar://' . strtolower($appName) . '.phar/vendor';
+    $vendorDir = 'phar://' . $appName . '.phar/vendor';
 } else {
     $baseDir   = dirname(__DIR__);
     $vendorDir = $baseDir . '/vendor';
@@ -13,7 +13,7 @@ if (\Phar::running()) {
     }
 
     if (!getenv("BARTLETTRC")) {
-        putenv("BARTLETTRC=" . strtolower($appName) . '.json');
+        putenv("BARTLETTRC=" . $appName . '.json');
     }
 }
 $loader = require_once $vendorDir . '/autoload.php';
@@ -28,5 +28,5 @@ use Bartlett\CompatInfo\Console\Application;
 
 Environment::setScanDir();
 
-$application = new Application($appName, '5.2.3');
+$application = new Application();
 $application->run();

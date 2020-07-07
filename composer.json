@@ -19,6 +19,7 @@
         "ext-pdo_sqlite": "*",
         "bartlett/php-reflect": "^4.4",
         "bartlett/php-compatinfo-db": "^2.0",
+        "jean85/pretty-package-versions": "^1.5",
         "psr/log": "^1.0"
     },
     "require-dev": {

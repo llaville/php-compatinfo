@@ -14,8 +14,11 @@
 namespace Bartlett\CompatInfo\Console;
 
 use Bartlett\CompatInfo\Util\Database;
-
 use Bartlett\Reflect\Console\Application as BaseApplication;
+
+use Jean85\PrettyVersions;
+
+use OutOfBoundsException;
 
 /**
  * Console Application.
@@ -28,6 +31,9 @@ use Bartlett\Reflect\Console\Application as BaseApplication;
  */
 class Application extends BaseApplication
 {
+    public const NAME = 'phpCompatInfo';
+    public const VERSION = '5.3.x-dev';
+
     /**
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=phpCompatInfo
      */
@@ -39,6 +45,17 @@ class Application extends BaseApplication
  |_|         |_|                        |_|
 
 ";
+
+    public function __construct()
+    {
+        try {
+            $version = PrettyVersions::getVersion('bartlett/php-compatinfo')->getPrettyVersion();
+        } catch (OutOfBoundsException $e) {
+            $version = self::VERSION;
+        }
+        parent::__construct(self::NAME, $version);
+    }
+
     /**
      * Gets the application version (long format).
      *
