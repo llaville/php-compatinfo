@@ -17,7 +17,7 @@
         "ext-json": "*",
         "ext-pdo": "*",
         "ext-pdo_sqlite": "*",
-        "bartlett/php-reflect": "4.4.x-dev as 4.4.0",
+        "bartlett/php-reflect": "^4.4",
         "bartlett/php-compatinfo-db": "^2.0",
         "psr/log": "^1.0"
     },
@@ -53,12 +53,6 @@
             "Bartlett\\Tests\\CompatInfo\\": "tests/"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/llaville/php-reflect"
-        }
-    ],
     "config": {
         "optimize-autoloader": true
     }
