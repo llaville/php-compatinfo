@@ -32,7 +32,7 @@ use OutOfBoundsException;
 class Application extends BaseApplication
 {
     public const NAME = 'phpCompatInfo';
-    public const VERSION = '5.3.x-dev';
+    public const VERSION = '5.3.0';
 
     /**
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=phpCompatInfo
