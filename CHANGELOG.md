@@ -6,6 +6,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [5.3.0] - 2020-07-08
+
 ### Changed
 
 - Drop support to PHP 5
