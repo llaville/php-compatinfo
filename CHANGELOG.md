@@ -6,6 +6,41 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Added
+
+- introduces new `DeclareSniff` to enhance PHP 7 declare control structure detection - (see also [GH-268](https://github.com/llaville/php-compat-info/issues/268))
+- new `AnonymousClassSniff` to detect anonymous class - (see also [GH-269](https://github.com/llaville/php-compat-info/issues/269))
+- new `ReturnTypeDeclarationSniff` to enhance PHP 7 detection - (see also [GH-233](https://github.com/llaville/php-compat-info/issues/233). Thanks to @CybotTM)
+- new `ParamTypeDeclarationSniff` to detect type hint on function signatures - (see also [GH-273](https://github.com/llaville/php-compat-info/issues/273))
+- new `ReservedSniff` to enhance PHP 7 detection - (see also [GH-186](https://github.com/llaville/php-compat-info/issues/186). Thanks to @fabiang)
+- uses new `NullCoalesceOperatorSniff` instead of internal compatibility analyser code - (see also [GH-260](https://github.com/llaville/php-compat-info/issues/260))
+- new `PowOperatorSniff` to solve issues [GH-142](https://github.com/llaville/php-compat-info/issues/142) and [GH-211](https://github.com/llaville/php-compat-info/issues/211)
+- new `UseTraitSniff` to solve issue [GH-227](https://github.com/llaville/php-compat-info/issues/227)
+- new `ClassMemberAccessSniff` to solve issue [GH-154](https://github.com/llaville/php-compat-info/issues/154)
+- new `GeneratorSniff` to solve issue [GH-226](https://github.com/llaville/php-compat-info/issues/226)
+- new `GotoSniff` to solve issue [GH-200](https://github.com/llaville/php-compat-info/issues/200)
+- new `EmptySniff` to solve issues [GH-207](https://github.com/llaville/php-compat-info/pull/207) and [GH-238](https://github.com/llaville/php-compat-info/issues/238)
+- new `PropertyDeclarationSniff` to solve issue [GH-119](https://github.com/llaville/php-compat-info/issues/119)
+- new `MagicClassConstantSniff` to solve issue [GH-218](https://github.com/llaville/php-compat-info/issues/218)
+- new `CryptStringSniff` to solve issue [GH-220](https://github.com/llaville/php-compat-info/issues/220)
+- new `ConditionalCodeSniff` to detection conditional code
+- replaces metrics structure by an OOP mechanism (Profiler/Profile/DataCollector)
+
+### Changed
+
+- [Application version strategy](https://github.com/llaville/php-compat-info/issues/267) : `composer/package-versions-deprecated` is used to handle version in Composer/Git strategy
+- speed-up analysis process by removing priority file queue that is no more necessary
+
+### Removed
+
+- Removes usage of `jean85/pretty-package-versions` package to handle Composer/Git version strategy
+- column `matches` in compatibility analyser output
+- `php.all` information that was confusing for lot of users
+
+### Fixed
+
+- issue [GH-275](https://github.com/llaville/php-compat-info/issues/275) Missing extension when class name FQN is resolved under user namespace
+
 ## [5.3.0] - 2020-07-08
 
 ### Changed

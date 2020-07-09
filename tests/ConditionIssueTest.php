@@ -15,185 +15,166 @@
 
 namespace Bartlett\Tests\CompatInfo;
 
-use Bartlett\Reflect\Client;
-
 /**
- * Tests for PHP_CompatInfo, retrieving reference elements,
- * and versioning information.
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @subpackage Tests
- * @author     Laurent Laville <pear@laurent-laville.org>
- * @author     Remi Collet <Remi@FamilleCollet.com>
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * @link https://github.com/llaville/php-compat-info/issues/128
+ * @link https://github.com/llaville/php-compat-info/issues/159
+ * @link https://github.com/llaville/php-compat-info/issues/160
+ * @link https://github.com/llaville/php-compat-info/issues/195
  */
-class ConditionIssueTest extends \PHPUnit\Framework\TestCase
+final class ConditionIssueTest extends TestCase
 {
-    const GH128 = 'gh128.php';
-    const GH159 = 'gh159.php';
-    const GH160 = 'gh160';     // folder
-    const GH195 = 'gh195.php';
-
-    protected static $fixtures;
-    protected static $analyserId;
-    protected static $api;
-
     /**
-     * Sets up the shared fixture.
-     *
-     * @return void
+     * {@inheritDoc}
      */
     public static function setUpBeforeClass(): void
     {
-        self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
-            . 'fixtures' . DIRECTORY_SEPARATOR;
+        parent::setUpBeforeClass();
 
-        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
-
-        $client = new Client();
-
-        // request for a Bartlett\Reflect\Api\Analyser
-        self::$api = $client->api('analyser');
+        self::$fixtures .= 'conditions' . DIRECTORY_SEPARATOR;
     }
 
     /**
-     * Regression test for bug GH#128
+     * Regression test for issue #128
      *
      * @link https://github.com/llaville/php-compat-info/issues/128
      *       Detection of conditional code
+     * @link https://www.php.net/manual/en/function.idn-to-ascii.php
      * @group regression
      * @return void
      */
-    public function testBugGH128()
+    public function testRegressionGH128()
     {
-        $dataSource = self::$fixtures . self::GH128;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
+        $dataSource = 'gh128.php';
+        $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
-            array(
-                'php.min'      => '4.0.0',
-                'php.max'      => '',
-                'php.all'      => '5.4.0RC3',
-            ),
-            $versions
+            '5.4.0RC3',
+            $versions['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $versions['php.max']
         );
     }
 
     /**
-     * Regression test for bug GH#159
+     * Regression test for issue #159
      *
      * @link https://github.com/llaville/php-compat-info/issues/159
      *       Conditionally used class is reported as required
      * @group regression
      * @return void
      */
-    public function testBugGH159()
+    public function testRegressionGH159()
     {
-        $dataSource = self::$fixtures . self::GH159;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
+        $dataSource = 'gh159.php';
+        $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];
         $classes    = $metrics[self::$analyserId]['classes'];
 
         $this->assertEquals(
-            array(
-                'php.min'      => '4.3.0',
-                'php.max'      => '',
-                'php.all'      => '5.3.0alpha1',
-            ),
-            $versions
+            '5.3.0alpha1',
+            $versions['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $versions['php.max']
         );
 
         $this->assertArrayHasKey('Normalizer', $classes);
 
         $this->assertEquals(
-            array(
-                'ext.name'     => 'intl',
-                'ext.min'      => '1.0.0beta',
-                'ext.max'      => '',
-                'ext.all'      => '',
-                'php.min'      => '5.3.0alpha1',
-                'php.max'      => '',
-                'php.all'      => '5.3.0alpha1',
-                'arg.max'      => 0,
-                'matches'      => 1,
-                'optional'     => true,
-            ),
-            $classes['Normalizer']
+            '5.3.0alpha1',
+            $classes['Normalizer']['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $classes['Normalizer']['php.max']
+        );
+        $this->assertEquals(
+            'intl',
+            $classes['Normalizer']['ext.name']
+        );
+        $this->assertEquals(
+            '1.0.0beta',
+            $classes['Normalizer']['ext.min']
+        );
+        $this->assertEquals(
+            '',
+            $classes['Normalizer']['ext.max']
         );
     }
 
     /**
-     * Regression test for bug GH#160
+     * Regression test for issue #160
      *
      * @link https://github.com/llaville/php-compat-info/issues/160
      *       Depending on parsing file order, some code conditions are not detected
      * @group regression
      * @return void
      */
-    public function testBugGH160()
+    public function testRegressionGH160()
     {
-        $dataSource = self::$fixtures . self::GH160;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
+        $dataSource = 'gh160';
+        $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
-            array(
-                'php.min'      => '4.0.0',
-                'php.max'      => '',
-                'php.all'      => '5.6.0alpha1',
-            ),
-            $versions
+            '5.6.0alpha1',
+            $versions['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $versions['php.max']
         );
     }
 
     /**
-     * Regression test for bug GH#195
+     * Regression test for issue #195
      *
      * @link https://github.com/llaville/php-compat-info/issues/195
      *       Absolutely namespaced classes not properly detected with class_exists()
      * @group regression
      * @return void
      */
-    public function testBugGH195()
+    public function testRegressionGH195()
     {
-        $dataSource = self::$fixtures . self::GH195;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
+        $dataSource = 'gh195.php';
+        $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];
         $methods    = $metrics[self::$analyserId]['methods'];
 
         $this->assertEquals(
-            array(
-                'php.min'      => '4.0.0',
-                'php.max'      => '',
-                'php.all'      => '5.3.0alpha1',
-            ),
-            $versions
+            '5.3.0alpha1',
+            $versions['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $versions['php.max']
         );
 
-        $this->assertArrayHasKey('Normalizer::normalize', $methods);
+        $this->assertArrayHasKey('Normalizer\normalize', $methods);
 
         $this->assertEquals(
-            array(
-                'ext.name'     => 'intl',
-                'ext.min'      => '1.0.0beta',
-                'ext.max'      => '',
-                'ext.all'      => '',
-                'php.min'      => '5.3.0alpha1',
-                'php.max'      => '',
-                'php.all'      => '5.3.0alpha1',
-                'prototype'    => '',
-                'proto_since'  => '',
-                'arg.max'      => 1,
-                'matches'      => 1,
-                'optional'     => true,
-            ),
-            $methods['Normalizer::normalize']
+            '5.3.0alpha1',
+            $methods['Normalizer\normalize']['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $methods['Normalizer\normalize']['php.max']
+        );
+        $this->assertEquals(
+            'intl',
+            $methods['Normalizer\normalize']['ext.name']
+        );
+        $this->assertEquals(
+            '1.0.0beta',
+            $methods['Normalizer\normalize']['ext.min']
+        );
+        $this->assertEquals(
+            '',
+            $methods['Normalizer\normalize']['ext.max']
         );
     }
 }

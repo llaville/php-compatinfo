@@ -15,100 +15,78 @@
 
 namespace Bartlett\Tests\CompatInfo\Reference;
 
-use Bartlett\Reflect\Client;
+use Bartlett\Tests\CompatInfo\Sniffs\SniffTestCase;
 
 /**
- * Tests for PHP_CompatInfo, retrieving reference elements,
- * and versioning information.
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @subpackage Tests
- * @author     Laurent Laville <pear@laurent-laville.org>
- * @author     Remi Collet <Remi@FamilleCollet.com>
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * @link https://github.com/llaville/php-compat-info/issues/127
+ * @link https://github.com/llaville/php-compat-info/issues/162
+ * @link https://github.com/llaville/php-compat-info/issues/210
+ * @link https://github.com/llaville/php-compat-info/issues/275
  */
-class IssueTest extends \PHPUnit\Framework\TestCase
+final class IssueTest extends SniffTestCase
 {
-    const GH127 = 'gh127.php';
-    const GH162 = 'gh162.php';
-    const GH210 = '../fixtures/vfsStream-1.6.0.zip';
-    const GH220 = 'gh220.php';
-
-    protected static $fixtures;
-    protected static $analyserId;
-    protected static $api;
-
     /**
-     * Sets up the shared fixture.
-     *
-     * @return void
+     * {@inheritDoc}
      */
     public static function setUpBeforeClass(): void
     {
-        self::$fixtures = dirname(__DIR__) . DIRECTORY_SEPARATOR
-            . 'fixtures' . DIRECTORY_SEPARATOR;
+        parent::setUpBeforeClass();
 
-        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
-
-        $client = new Client();
-
-        // request for a Bartlett\Reflect\Api\Analyser
-        self::$api = $client->api('analyser');
+        self::$fixtures .= '..' . DIRECTORY_SEPARATOR . 'references' . DIRECTORY_SEPARATOR;
     }
 
     /**
-     * Regression test for bug GH#127
+     * Regression test for issue #127
      *
      * @link https://github.com/llaville/php-compat-info/issues/127
      *       "Interface Serializable is reported to require PHP 5.3"
      * @group regression
      * @return void
      */
-    public function testBugGH127()
+    public function testRegressionGH127()
     {
-        $dataSource = self::$fixtures . self::GH127;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
+        $dataSource = 'gh127.php';
+        $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
-            array(
-                'php.min'  => '5.1.0',
-                'php.max'  => '',
-                'php.all'  => '5.1.0',
-            ),
-            $versions
+            '5.1.0',
+            $versions['php.min']
+        );
+
+        $this->assertEquals(
+            '',
+            $versions['php.max']
         );
     }
 
     /**
-     * Regression test for bug GH#162
+     * Regression test for issue #162
      *
      * @link https://github.com/llaville/php-compat-info/issues/162
      *       "ReflectionClass::newInstanceWithoutConstructor require PHP 5.4"
      * @group regression
      * @return void
      */
-    public function testBugGH162()
+    public function testRegressionGH162()
     {
-        $dataSource = self::$fixtures . self::GH162;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
+        $dataSource = 'gh162.php';
+        $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
-            array(
-                'php.min'  => '5.4.0',
-                'php.max'  => '',
-                'php.all'  => '5.4.0',
-            ),
-            $versions
+            '5.4.0',
+            $versions['php.min']
+        );
+
+        $this->assertEquals(
+            '',
+            $versions['php.max']
         );
     }
 
     /**
-     * Regression test for bug GH#210
+     * Regression test for issue #210
      *
      * @link https://github.com/llaville/php-compat-info/issues/210
      *       "Regression in 4.5 : missing extensions"
@@ -116,14 +94,13 @@ class IssueTest extends \PHPUnit\Framework\TestCase
      * @group large
      * @return void
      */
-    public function testBugGH210()
+    public function testRegressionGH210()
     {
-        $dataSource = self::$fixtures . self::GH210;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
+        $dataSource = 'vfsStream-1.6.0.zip';
+        $metrics    = $this->executeAnalysis($dataSource);
         $extensions = $metrics[self::$analyserId]['extensions'];
 
-        $provideExtensions = array(
+        $provideExtensions = [
             'Core',
             'standard',
             'dom',
@@ -133,7 +110,7 @@ class IssueTest extends \PHPUnit\Framework\TestCase
             'spl',
             'xml',
             'zip',
-        );
+        ];
 
         foreach ($provideExtensions as $e) {
             $this->assertArrayHasKey(
@@ -145,27 +122,36 @@ class IssueTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Regression test for bug GH#220
+     * Regression test for issue #275
      *
-     * @link https://github.com/llaville/php-compat-info/issues/220
-     *       "Did not detect Blowfish on crypt"
+     * @link https://github.com/llaville/php-compat-info/issues/275
+     *       "Missing extension when class name FQN is resolved under user namespace"
      * @group regression
      * @return void
      */
-    public function testBugGH220()
+    public function testRegressionGH275()
     {
-        $dataSource = self::$fixtures . self::GH220;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics[self::$analyserId]['versions'];
+        $dataSource = 'vfsStreamZipTestCase.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $extensions = $metrics[self::$analyserId]['extensions'];
+
+        $this->assertArrayHasKey('zip', $extensions);
 
         $this->assertEquals(
-            array(
-                'php.min'      => '5.3.7',
-                'php.max'      => '',
-                'php.all'      => '5.3.7',
-            ),
-            $versions
+            '0.1.0',
+            $extensions['zip']['ext.min']
+        );
+        $this->assertEquals(
+            '',
+            $extensions['zip']['ext.max']
+        );
+        $this->assertEquals(
+            '4.0.0',
+            $extensions['zip']['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $extensions['zip']['php.max']
         );
     }
 }

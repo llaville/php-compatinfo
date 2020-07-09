@@ -1,9 +1,12 @@
 #!/usr/bin/env php
 <?php
-$appName = 'phpcompatinfo';
+
+if (PHP_SAPI !== 'cli') {
+    return;
+}
 
 if (\Phar::running()) {
-    $vendorDir = 'phar://' . $appName . '.phar/vendor';
+    $vendorDir = 'phar://phpcompatinfo.phar/vendor';
 } else {
     $baseDir   = dirname(__DIR__);
     $vendorDir = $baseDir . '/vendor';
@@ -11,22 +14,14 @@ if (\Phar::running()) {
     if (!file_exists($vendorDir . '/autoload.php')) {
         $vendorDir = dirname(dirname($baseDir));
     }
-
-    if (!getenv("BARTLETTRC")) {
-        putenv("BARTLETTRC=" . $appName . '.json');
-    }
 }
-$loader = require_once $vendorDir . '/autoload.php';
-$loader->setUseIncludePath(true);
+require_once $vendorDir . '/autoload.php';
 
-if (PHP_SAPI !== 'cli') {
-    return;
-}
+use Bartlett\CompatInfo\Console\ApplicationInterface;
 
-use Bartlett\Reflect\Environment;
-use Bartlett\CompatInfo\Console\Application;
+/** @var \Symfony\Component\DependencyInjection\ContainerBuilder $container */
+$container = require dirname(__DIR__) . '/config/container.php';
 
-Environment::setScanDir();
-
-$application = new Application();
-$application->run();
+$app = $container->get(ApplicationInterface::class);
+$app->setContainer($container);
+exit($app->run());

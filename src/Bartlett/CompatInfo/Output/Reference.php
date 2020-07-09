@@ -65,16 +65,22 @@ class Reference extends OutputFormatter
 
         foreach ($response as $ref) {
             if (empty($ref->loaded) || $ref->outdated) {
-                $name = sprintf('<warning>%s</warning>', $ref->name);
+                $style = 'warning';
+                $style = $output->getFormatter()->hasStyle($style) ? $style : 'comment';
+                $name = sprintf('<%s>%s</%s>', $style, $ref->name, $style);
             } else {
                 $name = $ref->name;
             }
+            $style  = 'ext';
+            $style1 = $output->getFormatter()->hasStyle($style) ? $style : 'comment';
+            $style  = 'php';
+            $style2 = $output->getFormatter()->hasStyle($style) ? $style : 'comment';
             $rows[] = array(
                 $name,
-                sprintf('<ext>%s</ext>', $ref->version),
+                sprintf('<%s>%s</%s>', $style1, $ref->version, $style1),
                 $ref->state,
                 $ref->date,
-                sprintf('<php>%s</php>', $ref->loaded),
+                sprintf('<%s>%s</%s>', $style2, $ref->loaded, $style2),
             );
             if (!empty($ref->loaded)) {
                 $loaded++;

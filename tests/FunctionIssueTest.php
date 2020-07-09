@@ -15,76 +15,46 @@
 
 namespace Bartlett\Tests\CompatInfo;
 
-use Bartlett\Reflect\Client;
-
 /**
- * Tests for PHP_CompatInfo, retrieving reference elements,
- * and versioning information.
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @subpackage Tests
- * @author     Laurent Laville <pear@laurent-laville.org>
- * @author     Remi Collet <Remi@FamilleCollet.com>
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * @link https://github.com/llaville/php-compat-info/issues/130
  */
-class FunctionIssueTest extends \PHPUnit\Framework\TestCase
+final class FunctionIssueTest extends TestCase
 {
-    const GH130 = 'gh130.php';
-
-    protected static $fixtures;
-    protected static $analyserId;
-    protected static $api;
-
     /**
-     * Sets up the shared fixture.
-     *
-     * @return void
+     * {@inheritDoc}
      */
     public static function setUpBeforeClass(): void
     {
-        self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
-            . 'fixtures' . DIRECTORY_SEPARATOR;
+        parent::setUpBeforeClass();
 
-        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
-
-        $client = new Client();
-
-        // request for a Bartlett\Reflect\Api\Analyser
-        self::$api = $client->api('analyser');
+        self::$fixtures .= 'features' . DIRECTORY_SEPARATOR;
     }
 
     /**
-     * Regression test for bug GH#130
+     * Regression test for issue #130
      *
      * @link https://github.com/llaville/php-compat-info/issues/130
      *       "Conditionally called function is reported as interface"
      * @group regression
      * @return void
      */
-    public function testBugGH130()
+    public function testRegressionGH130()
     {
-        $dataSource = self::$fixtures . self::GH130;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
+        $dataSource = 'gh130.php';
+        $metrics    = $this->executeAnalysis($dataSource);
         $functions  = $metrics[self::$analyserId]['functions'];
 
-        $this->assertArrayHasKey('foo', $functions);
-
         $this->assertEquals(
-            array(
-                'ext.name'     => 'user',
-                'ext.min'      => '',
-                'ext.max'      => '',
-                'ext.all'      => '',
-                'php.min'      => '4.0.0',
-                'php.max'      => '',
-                'php.all'      => '4.0.0',
-                'arg.max'      => 0,
-                'matches'      => 1,
-                'optional'     => true,
-            ),
-            $functions['foo']
+            '4.0.0',
+            $functions['foo']['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $functions['foo']['php.max']
+        );
+        $this->assertTrue(
+            $functions['foo']['optional'] ?? false,
+            'Expected optional foo function, none specified.'
         );
     }
 }

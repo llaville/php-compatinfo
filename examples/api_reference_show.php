@@ -11,13 +11,12 @@
  * @package  PHP_CompatInfo
  * @author   Laurent Laville <pear@laurent-laville.org>
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link     http://php5.laurent-laville.org/compatinfo/
  * @since    Example available since Release 4.0.0-alpha3+1
  */
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-use Bartlett\Reflect\Client;
+use Bartlett\CompatInfo\Client;
 
 // creates an instance of client
 $client = new Client();

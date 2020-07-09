@@ -11,13 +11,20 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Bartlett\CompatInfo\Collection\SniffCollection;
+use Bartlett\CompatInfo\DataCollector\DataCollectorInterface;
+use Bartlett\CompatInfo\DataCollector\ErrorHandler;
+use Bartlett\CompatInfo\DataCollector\Normalizer\NodeNormalizer;
+use Bartlett\CompatInfo\DataCollector\VersionDataCollector;
+use Bartlett\CompatInfo\PhpParser\NodeVisitor\FilterVisitor;
+use Bartlett\CompatInfo\Profiler\Profiler;
 use Bartlett\CompatInfo\Util\Database;
 use Bartlett\CompatInfo\Collection\ReferenceCollection;
-use Bartlett\CompatInfo\PhpParser\ConditionalCodeNodeProcessor;
-
-use Bartlett\Reflect\Analyser\AbstractAnalyser;
 
 use PhpParser\Node;
+
+use function call_user_func;
+use function property_exists;
 
 /**
  * This analyzer collects different metrics to find out the minimum version
@@ -29,73 +36,54 @@ use PhpParser\Node;
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
  * @since    Class available since Release 4.0.0-alpha2+1
  */
-class CompatibilityAnalyser extends AbstractAnalyser
+class CompatibilityAnalyser extends AbstractSniffAnalyser
 {
-    const GLOBAL_NAMESPACE = '+global';
-
-    protected static $php4 = array(
-        'ext.name' => 'user',
-        'ext.min'  => '',
-        'ext.max'  => '',
-        'ext.all'  => '',
-        'php.min'  => '4.0.0',
-        'php.max'  => '',
-        'php.all'  => '',
-    );
+    protected const ANALYSER_NODE_ATTRIBUTE = 'bartlett.data_collector';
+    protected const PARENT_NODE_ATTRIBUTE = 'bartlett.parent';
+    protected const NAMESPACED_NAME_NODE_ATTRIBUTE = 'bartlett.name';
+    protected const COLLECTOR_NAME = self::class;
 
     private $aliases;
     private $references;
-    private $contextStack;
+    private $profiler;
+
+    /** @var ErrorHandler */
+    private $errorHandler;
 
     /**
      * Initializes the compatibility analyser
+     *
+     * @param Profiler $profiler
+     * @param SniffCollection $sniffCollection
      */
-    public function __construct()
+    public function __construct(Profiler $profiler, SniffCollection $sniffCollection)
     {
         $pdo = Database::initRefDb();
+        $this->references = new ReferenceCollection([], $pdo);
 
-        $this->metrics = array(
-            'versions'   => array(),
-            'extensions' => array(),
-            'namespaces' => array(),
-            'objects'    => array(),
-            'interfaces' => array(),
-            'traits'     => array(),
-            'classes'    => array(),
-            'methods'    => array(),
-            'functions'  => array(),
-            'constants'  => array(),
-            'conditions' => array(),
+        $visitor = new FilterVisitor(
+            new NodeNormalizer()
         );
 
-        $this->references = new ReferenceCollection(array(), $pdo);
+        $this->profiler = $profiler;
+        $this->profiler->addCollector(
+            (new VersionDataCollector($visitor))->setName(self::COLLECTOR_NAME)
+        );
+
+        $this->sniffs = $sniffCollection;
+
+        parent::__construct(self::PARENT_NODE_ATTRIBUTE, self::ANALYSER_NODE_ATTRIBUTE);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getMetrics(): array
+    public function setErrorHandler(ErrorHandler $errorHandler): void
     {
-        /**
-         * All remaining objects in temp queue (referenced) are considered
-         * by default as classes.
-         * It may be interfaces, but without declaration, impossible to give
-         * the right group.
-         */
-        while (!empty($this->metrics['objects'])) {
-            $name = key($this->metrics['objects']);
-            $versions = $this->metrics['objects'][$name];
+        $this->errorHandler = $errorHandler;
 
-            array_shift($this->metrics['objects']);
-            $group = 'interfaces';
-            if (!isset($this->metrics[$group][$name])) {
-                $group = 'classes';
-            }
-            $this->updateElementVersion($group, $name, $versions);
+        foreach ($this->profiler->getCollectors() as $collector) {
+            /** @var DataCollectorInterface $collector */
+            $collector->addFile($this->getCurrentFile());
+            $collector->addErrors($this->errorHandler->getErrors());
         }
-        unset($this->metrics['objects']);
-
-        return parent::getMetrics();
     }
 
     /**
@@ -105,83 +93,7 @@ class CompatibilityAnalyser extends AbstractAnalyser
     {
         parent::beforeTraverse($nodes);
 
-        $this->initLocalScope();
-
-        $element  = 'namespaces';
-        $name     = self::GLOBAL_NAMESPACE;
-        $versions = array(
-            'ext.name' => 'Core',
-            'ext.min'  => '',
-            'ext.max'  => '',
-            'ext.all'  => '',
-            'php.min'  => '4.0.0',
-            'php.max'  => '',
-            'php.all'  => '',
-        );
-        $this->updateElementVersion($element, $name, $versions);
-        $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
-        $this->contextStack = array(
-            array($element, $name)
-        );
-
-        // checks if conditional code is present
-        $processor  = new ConditionalCodeNodeProcessor();
-        $conditions = $processor->traverse($nodes);
-
-        $conditionalFunctions = array(
-            'extension_loaded' => 'extensions',
-            'function_exists'  => 'functions',
-            'method_exists'    => 'methods',
-            'class_exists'     => 'classes',
-            'interface_exists' => 'interfaces',
-            'trait_exists'     => 'traits',
-            'defined'          => 'constants',
-        );
-
-        while (!empty($conditions)) {
-            $condition = array_shift($conditions);
-
-            // conditional code target
-            $element = key($condition);
-            $values  = $condition[$element];
-
-            $values[0] = ltrim($values[0], "\\");
-            $context = $conditionalFunctions[$element];
-            if ('methods' == $context) {
-                $target = $values[1];  // method name
-                $extra  = $values[0];  //  class name
-            } else {
-                $target = $values[0];
-                $extra  = null;
-            }
-
-            if ('extensions' == $context) {
-                $versions = array();
-            } else {
-                $versions = $this->references->find($context, (string) $target, 0, $extra);
-            }
-
-            if ('methods' == $context) {
-                $target = $values[0] . '::' . $values[1];
-            }
-            $this->updateElementVersion($context, $target, $versions);
-            $this->metrics[$context][$target]['optional'] = true;
-
-            if ('methods' == $context) {
-                $target   = $values[0];
-                $context  = 'classes';
-                $versions = $this->references->find($context, (string) $target);
-                // identified also the class
-                $this->updateElementVersion($context, $target, $versions);
-                $this->metrics[$context][$target]['optional'] = true;
-
-                $condition = sprintf('%s(%s::%s)', $element, $values[0], $values[1]);
-            } else {
-                $condition = sprintf('%s(%s)', $element, $values[0]);
-            }
-            $this->updateElementVersion('conditions', $condition, $versions);
-            ++$this->metrics['conditions'][$condition]['matches'];
-        }
+        $this->aliases = [];
     }
 
     /**
@@ -191,7 +103,10 @@ class CompatibilityAnalyser extends AbstractAnalyser
     {
         parent::afterTraverse($nodes);
 
-        $this->computeNamespaceVersions();
+        foreach ($this->profiler->getCollectors() as $collector) {
+            /** @var DataCollectorInterface $collector */
+            $collector->collect($nodes);
+        }
     }
 
     /**
@@ -199,31 +114,13 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     public function enterNode(Node $node)
     {
-        parent::enterNode($node);
+        $this->contextCallback = [$this, 'enter' . str_replace('_', '', $node->getType())];
 
-        if ($node instanceof Node\Stmt\Namespace_) {
-            $this->iniUserNamespace($node);
-
-        } elseif ($node instanceof Node\Stmt\Class_) {
-            $this->initUserClass($node);
-
-        } elseif ($node instanceof Node\Stmt\Interface_) {
-            $this->initUserInterface($node);
-
-        } elseif ($node instanceof Node\Stmt\Trait_) {
-            $this->initUserTrait($node);
-
-        } elseif ($node instanceof Node\Stmt\Function_
-            || $node instanceof Node\Expr\Closure
-            || $node instanceof Node\Stmt\ClassMethod
-        ) {
-            $this->initUserFunction($node);
-
-        } elseif ($node instanceof Node\Expr\Assign
-            && $node->expr instanceof Node\Expr\New_
-        ) {
-            $this->initClassAliasResolver($node);
+        if (!empty($this->contextCallback) && is_callable($this->contextCallback)) {
+            call_user_func($this->contextCallback, $node);
         }
+
+        parent::enterNode($node);
     }
 
     /**
@@ -231,631 +128,171 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     public function leaveNode(Node $node)
     {
+        if ($node instanceof Node\Scalar\MagicConst) {
+            $this->contextCallback = [$this, 'leaveScalarMagicConst'];
+        } else {
+            $this->contextCallback = [$this, 'leave' . str_replace('_', '', $node->getType())];
+        }
+
+        if (!empty($this->contextCallback) && is_callable($this->contextCallback)) {
+            call_user_func($this->contextCallback, $node);
+        }
+
         parent::leaveNode($node);
+    }
 
-        if ($node instanceof Node\Stmt\Namespace_) {
-            $this->computeNamespaceVersions();
+    // ---
+    // >>> Leave nodes callback(s) ------------------------------------------------------------------------------------
+    // ---
 
-        } elseif ($node instanceof Node\Stmt\Class_) {
-            $this->computeClassVersions($node);
-
-        } elseif ($node instanceof Node\Stmt\Interface_) {
-            $this->computeInterfaceVersions($node);
-
-        } elseif ($node instanceof Node\Stmt\Trait_) {
-            $this->computeTraitVersions($node);
-
-        } elseif ($node instanceof Node\Stmt\Function_
-            || $node instanceof Node\Expr\Closure
-            || $node instanceof Node\Stmt\ClassMethod
-        ) {
-            $this->computeFunctionVersions($node);
-
-        } elseif ($node instanceof Node\Expr\New_
-            && $node->class instanceof Node\Name
-        ) {
-            $this->computeClassCallVersions($node);
-
-        } elseif ($node instanceof Node\Expr\FuncCall
-            && $node->name instanceof Node\Name
-        ) {
-            $this->computeFunctionCallVersions($node);
-
-        } elseif ($node instanceof Node\Expr\MethodCall
-            && $node->name instanceof Node\Identifier
-        ) {
-            $this->computeClassMethodCallVersions($node);
-
-        } elseif ($node instanceof Node\Expr\StaticCall
-            && $node->class instanceof Node\Expr\Variable
-        ) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Expr\StaticCall
-            && $node->name instanceof Node\Identifier
-        ) {
-            $this->computeStaticClassMethodCallVersions($node);
-
-        } elseif ($node instanceof Node\Stmt\Use_) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Stmt\TraitUse) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Stmt\Property) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Expr\Array_) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Expr\ArrayDimFetch
-            && $node->var instanceof Node\Expr\FuncCall
-        ) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Stmt\Goto_) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Stmt\Const_) {
-            foreach ($node->consts as $const) {
-                // user constant does not require to search in REF database
-                $versions = $const->getAttribute('compatinfo');
-                if ($versions === null) {
-                    $versions = self::$php4;
-
-                    list($element, $name) = end($this->contextStack);
-
-                    if ('namespaces' == $element) {
-                        $versions['php.min'] = '5.3.0';
-                    }
-
-                    if ($const->value instanceof Node\Expr\ConstFetch) {
-                        $versions['php.min'] = '5.3.0';
-                    } elseif (!$const->value instanceof Node\Scalar) {
-                        // Constant scalar expressions
-                        $versions['php.min'] = '5.6.0';
-                    }
-                    $const->setAttribute('compatinfo', $versions);
-                }
-                $this->computeConstantVersions($const, (string) $const->name);
-            }
-
-        } elseif ($node instanceof Node\Const_
-            && !$node->value instanceof Node\Scalar
-        ) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Param
-            && $node->default instanceof Node\Expr\BinaryOp
-        ) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Stmt\PropertyProperty
-            && $node->default instanceof Node\Expr\BinaryOp
-        ) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Expr\ConstFetch) {
-            $name = (string) $node->name;
-            $this->computeConstantVersions($node, $name);
-
-        } elseif ($node instanceof Node\Scalar\MagicConst) {
-            $this->computeConstantVersions($node, $node->getName());
-
-        } elseif ($node instanceof Node\Expr\Empty_) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Expr\AssignOp\Pow) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Expr\ClassConstFetch
-            && strcasecmp('class', (string) $node->name) === 0
-        ) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Expr\Yield_) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Expr\Variable) {
-            $this->computePhpFeatureVersions($node);
-
-        } elseif ($node instanceof Node\Expr\BinaryOp\Coalesce) {
-            $this->computePhpFeatureVersions($node);
-        }
+    private function leaveExprAssign(Node\Expr\Assign $node): void
+    {
+        $this->initClassAliasResolver($node);
     }
 
     /**
-     * Update the base version if current ref version is greater
+     * Compute the version of the class called.
      *
-     * @param string $current Current version
-     * @param string &$base   Base version
-     *
+     * @param Node\Expr\New_ $node
      * @return void
      */
-    protected static function updateVersion(string $current, string &$base): void
+    private function leaveExprNew(Node\Expr\New_ $node): void
     {
-        if (version_compare($current, $base, 'gt')) {
-            $base = $current;
+        if (!$node->class instanceof Node\Name) {
+            return;
         }
+        $this->computeInternalVersions($node, (string) $node->class, 'classes');
     }
 
     /**
-     * Update an element versions of the project
+     * Compute the version of the function called (user or internal).
      *
-     * @param string $element
-     * @param string $name
-     * @param array  $versions
-     *
+     * @param Node\Expr\FuncCall $node
      * @return void
      */
-    protected function updateElementVersion(string $element, string $name, array $versions): void
+    private function leaveExprFuncCall(Node\Expr\FuncCall $node): void
     {
-        $versions = array_merge(self::$php4, $versions);
+        static $conditions = [];
 
-        if (!isset($this->metrics[$element][$name])) {
-            $versions['matches'] = isset($versions['matches']) ? $versions['matches'] : 0;
-            $this->metrics[$element][$name] = $versions;
-        }
-
-        if (isset($this->metrics[$element][$name]['arg.max'])
-            && isset($versions['arg.max'])
-            && $this->metrics[$element][$name]['arg.max'] < $versions['arg.max']
-        ) {
-            $this->metrics[$element][$name]['arg.max'] = $versions['arg.max'];
-        }
-
-        self::updateVersion(
-            $versions['php.min'],
-            $this->metrics[$element][$name]['php.all']
-        );
-
-        self::updateVersion(
-            $versions['php.min'],
-            $this->metrics[$element][$name]['php.min']
-        );
-        self::updateVersion(
-            $versions['php.max'],
-            $this->metrics[$element][$name]['php.max']
-        );
-        self::updateVersion(
-            $versions['php.all'],
-            $this->metrics[$element][$name]['php.all']
-        );
-
-        if (isset($versions['declared'])) {
-            $this->metrics[$element][$name]['declared'] = true;
-        }
-
-        if ('user' == $versions['ext.name']) {
-            $this->metrics[$element][$name]['ext.min'] = '';
-            $this->metrics[$element][$name]['ext.max'] = '';
+        if (!$node->name instanceof Node\Name) {
+            // indirect name can not be resolved
             return;
         }
 
-        self::updateVersion(
-            $versions['ext.min'],
-            $this->metrics[$element][$name]['ext.min']
-        );
-        self::updateVersion(
-            $versions['ext.max'],
-            $this->metrics[$element][$name]['ext.max']
-        );
-    }
-
-    /**
-     * Updates parent container context
-     *
-     * @param array $versions (optional) Version informations
-     *
-     * @return void
-     */
-    protected function updateContextVersion(array $versions = null): void
-    {
-        if (count ($this->contextStack) > 1) {
-            list($celement, $cname) = array_pop($this->contextStack);
-        } else {
-            list($celement, $cname) = end($this->contextStack);
-        }
-
-        if (!isset($versions)) {
-            // retrieve current context informations
-            $versions = $this->metrics[$celement][$cname];
-        }
-        $versions = array_replace(self::$php4, $versions);
-
-        list($pelement, $pname) = end($this->contextStack);
-
-        self::updateVersion(
-            $versions['php.all'],
-            $this->metrics[$pelement][$pname]['php.all']
-        );
-
-        self::updateVersion(
-            $versions['php.max'],
-            $this->metrics[$pelement][$pname]['php.max']
-        );
-
-        self::updateVersion(
-            $versions['php.min'],
-            $this->metrics[$pelement][$pname]['php.all']
-        );
-
-        if (isset($this->metrics[$celement][$cname]['optional'])) {
-            // conditional code
+        $versions = $node->getAttribute(self::ANALYSER_NODE_ATTRIBUTE);
+        if (!empty($versions) && isset($versions['opt.name'])) {
+            // conditional code found; skip it because already proceed by ConditionalCodeSniff
+            $conditions[] = $versions['opt.name'];
             return;
         }
 
-        self::updateVersion(
-            $versions['php.min'],
-            $this->metrics[$pelement][$pname]['php.min']
-        );
+        $name = (string) $node->name;
+        if (in_array($name, $conditions)) {
+            // conditional code must not be compute to `php.min`
+            return;
+        }
+
+        $this->computeInternalVersions($node, (string) $node->name, 'functions');
     }
 
     /**
-     * Update the global versions of the project
+     * Compute the version of the method called (user or internal).
      *
-     * @param string $min The PHP min version to check
-     * @param string $max The PHP max version to check
-     * @param string $all The PHP min version to check for all components
-     *
+     * @param Node\Expr\MethodCall $node
      * @return void
      */
-    protected function updateGlobalVersion(string $min, string $max, string $all): void
+    private function leaveExprMethodCall(Node\Expr\MethodCall $node): void
     {
-        if (empty($this->metrics['versions'])) {
-            $this->metrics['versions'] = array(
-                'php.min'  => '4.0.0',
-                'php.max'  => '',
-                'php.all'  => '',
-            );
+        $caller = $node->var;
+
+        if (!$caller instanceof Node\Expr\Variable) {
+            return;
         }
 
-        self::updateVersion(
-            $min,
-            $this->metrics['versions']['php.min']
-        );
-        self::updateVersion(
-            $max,
-            $this->metrics['versions']['php.max']
-        );
-        self::updateVersion(
-            $all,
-            $this->metrics['versions']['php.all']
-        );
+        if (!is_string($caller->name) && !$caller->name instanceof Node\Identifier) {
+            // indirect method call
+            return;
+        }
+        if (!isset($this->aliases[(string) $caller->name])) {
+            // class name resolver failure
+            return;
+        }
+
+        if (!$node->name instanceof Node\Identifier) {
+            // indirect method call
+            return;
+        }
+
+        $qualifiedClassName = $this->aliases[(string) $caller->name];
+        $this->computeInternalVersions($node, (string) $node->name, 'methods', $qualifiedClassName);
+
+        $node->setAttribute(self::NAMESPACED_NAME_NODE_ATTRIBUTE, $qualifiedClassName . '\\'. (string) $node->name);
     }
 
     /**
-     * Initialize a new User Namespace
+     * Compute the version of the method statically called (user or internal).
      *
-     * @param Node $node
-     *
+     * @param Node\Expr\StaticCall $node
      * @return void
      */
-    private function iniUserNamespace(Node $node): void
+    private function leaveExprStaticCall(Node\Expr\StaticCall $node): void
     {
-        if (!isset($node->name)) {
-            // Namespace without name
-            $node->name = new Node\Name(self::GLOBAL_NAMESPACE);
+        if ($node->class instanceof Node\Expr\Variable) {
+            // Dynamic access to static methods is now possible since PHP 5.3
+            // @link https://www.php.net/manual/en/migration53.new-features.php
+            $this->updateNodeElementVersion($node, self::ANALYSER_NODE_ATTRIBUTE, ['php.min' => '5.3.0']);
+            return;
         }
 
-        $element  = 'namespaces';
-        $name     = (string)$node->name;
-        $versions = array('php.min' => '5.3.0');
-        $this->updateElementVersion($element, $name, $versions);
-        $this->contextStack[] = array($element, $name);
+        if (!$node->name instanceof Node\Identifier) {
+            // method name is not predictable; see also ClassExprSyntaxSniff for alternative
+            return;
+        }
+
+        if (!$node->class instanceof Node\Name) {
+            // cannot resolved indirect call
+            return;
+        }
+
+        $className = (string) $node->class;
+        $this->computeInternalVersions($node, (string) $node->name, 'methods', $className);
+
+        $node->setAttribute(self::NAMESPACED_NAME_NODE_ATTRIBUTE, $className . '\\'. (string) $node->name);
     }
 
     /**
-     * Initialize a new User Class
+     * Compute the version of magic constants fetch (internal).
      *
-     * @param Node $node
-     *
+     * @param Node\Scalar\MagicConst $node
      * @return void
      */
-    private function initUserClass(Node $node): void
+    private function leaveScalarMagicConst(Node\Scalar\MagicConst $node): void
     {
-        if (!isset($node->namespacedName)) {
-            $node->namespacedName = null; // anonymous class
-        }
-        if (isset($node->namespacedName)
-            && $node->namespacedName instanceof Node\Name
-            && $node->namespacedName->isQualified()
-        ) {
-            $min = '5.3.0';
-        } else {
-            if ($node->isAbstract()
-                || $node->isFinal()
-            ) {
-                $min = '5.0.0';
-            } else {
-                $min = '4.0.0';
-            }
-        }
-        $max = '';
-
-        $element  = 'classes';
-        $classname = (string) $node->namespacedName;
-        $this->contextStack[] = array($element, $classname);
-
-        // parent class
-        if (isset($node->extends)) {
-            $name     = (string) $node->extends;
-            $group    = $this->findObjectType($name);
-            $versions = $this->metrics[$group][$name];
-
-            if ($versions['ext.name'] !== 'user') {
-                // update versions of extension's $element
-                $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
-            }
-
-            if ('user' == $versions['ext.name']) {
-                if ($node->extends->isFullyQualified()) {
-                    if (count($node->extends->parts) === 1) {
-                        // PHP4 syntax (global namespace)
-                        $versions = array('php.min' => '4.0.0');
-                    } else {
-                        $versions = array('php.min' => '5.3.0');
-                    }
-                } else {
-                    $versions = array();
-                }
-            }
-            $this->updateElementVersion('classes', $name, $versions);
-            ++$this->metrics['classes'][$name]['matches'];
-
-            if ('objects' == $group) {
-                // now object is categorized, remove from temp queue
-                unset($this->metrics[$group][$name]);
-            }
-
-            $versions['ext.name'] = 'user';
-            $this->updateElementVersion('classes', $classname, $versions);
-        }
-
-        // interfaces
-        foreach ($node->implements as $interface) {
-            $name     = (string) $interface;
-            $group    = $this->findObjectType($name);
-            $versions = $this->metrics[$group][$name];
-            $this->updateElementVersion('interfaces', $name, $versions);
-            ++$this->metrics['interfaces'][$name]['matches'];
-
-            if ($versions['ext.name'] !== 'user') {
-                // update versions of extension's $element
-                $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
-            }
-
-            if ('objects' == $group) {
-                // now object is categorized, remove from temp queue
-                unset($this->metrics[$group][$name]);
-            }
-
-            $versions['ext.name'] = 'user';
-            $this->updateElementVersion('classes', $classname, $versions);
-        }
-
-        $name     = (string) $node->namespacedName;
-        $group    = $this->findObjectType($name);
-        $versions = $this->metrics[$group][$name];
-
-        if ('objects' == $group) {
-            // now object is categorized, remove from temp queue
-            unset($this->metrics[$group][$name]);
-        }
-
-        $versions = array_replace(
-            $versions,
-            array('ext.name' => 'user', 'declared' => true)
-        );
-        $this->updateElementVersion('classes', $classname, $versions);
+        $this->computeInternalVersions($node, $node->getName(), 'constants');
     }
 
-    /**
-     * Initialize a new User Interface
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function initUserInterface(Node $node): void
-    {
-        if (isset($node->namespacedName)
-            && $node->namespacedName instanceof Node\Name
-            && $node->namespacedName->isQualified()
-        ) {
-            $min = '5.3.0';
-        } else {
-            $min = '5.0.0';
-        }
-
-        $element  = 'interfaces';
-        $name     = (string)$node->namespacedName;
-        $versions = array('php.min' => $min, 'declared' => true);
-        $this->updateElementVersion($element, $name, $versions);
-        $this->contextStack[] = array($element, $name);
-    }
-
-    /**
-     * Initialize a new User Trait
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function initUserTrait(Node $node): void
-    {
-        $min      = '5.4.0';
-        $element  = 'traits';
-        $name     = (string)$node->namespacedName;
-        $versions = array('php.min' => $min, 'declared' => true);
-        $this->updateElementVersion($element, $name, $versions);
-        $this->contextStack[] = array($element, $name);
-    }
-
-    /**
-     * Initialize a new User Function (anonymous or qualified) or a Method
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function initUserFunction(Node $node): void
-    {
-        $this->initLocalScope();
-
-        if ($node instanceof Node\Stmt\ClassMethod) {
-            list($element, $name) = end($this->contextStack);
-
-            $element  = 'methods';
-            $name     = sprintf('%s::%s', $name, $node->name);
-            if ($this->isImplicitlyPublicFunction($this->tokens, $node)) {
-                $min = '4.0.0';
-            } else {
-                $min = '5.0.0';
-            }
-
-        } else {
-            $element  = 'functions';
-
-            if ($node instanceof Node\Expr\Closure) {
-                $min  = '5.3.0';
-                $name = sprintf(
-                    'closure-%d-%d',
-                    $node->getAttribute('startLine', 0),
-                    $node->getAttribute('endLine', 0)
-                );
-
-            } else {
-                if (isset($node->namespacedName)
-                    && $node->namespacedName instanceof Node\Name
-                    && $node->namespacedName->isQualified()
-                ) {
-                    $min = '5.3.0';
-                } else {
-                    $min = '4.0.0';
-                }
-                $name = (string)$node->namespacedName;
-            }
-        }
-
-        // checks function parameters
-        foreach ($node->params as $param) {
-            $versions = $this->initFunctionArguments($param);
-            self::updateVersion($versions['php.min'], $min);
-        }
-
-        $versions = array('php.min' => $min);
-        $this->updateElementVersion($element, $name, $versions);
-        $this->contextStack[] = array($element, $name);
-    }
-
-    /**
-     * Checks for function arguments
-     * (anonymous or qualified function, class|interface|trait method)
-     *
-     * @param Node $node
-     *
-     * @return array
-     * @link http://www.php.net/manual/en/functions.arguments.php
-     */
-    private function initFunctionArguments(Node $node): array
-    {
-        if ($node->variadic) {
-            // Variadic functions
-            $versions = array('php.min' => '5.6.0');
-
-        } elseif ($node->type instanceof Node\Name\FullyQualified) {
-            // type hint
-
-            // introduces parameter object (if not yet defined)
-            $name  = (string)$node->type;
-            $group = $this->findObjectType($name);
-            ++$this->metrics[$group][$name]['matches'];
-
-            // type hint object required at least PHP 5.0
-            $versions = $this->metrics[$group][$name];
-            self::updateVersion('5.0.0', $versions['php.min']);
-
-        } else {
-            $versions = array('php.min' => '4.0.0');
-        }
-        return $versions;
-    }
-
-    /**
-     * Try to find the right object (interface | class) of type hint.
-     *
-     * Stay as group "objects" when undetermined.
-     *
-     * @param string $name Object's name
-     *
-     * @return string
-     */
-    private function findObjectType(string $name): string
-    {
-        $group = 'objects';
-        if (isset($this->metrics[$group][$name])) {
-            // object is not yet categorized
-            return $group;
-        }
-
-        $groups = array('interfaces', 'classes');
-
-        foreach ($groups as $group) {
-            if (isset($this->metrics[$group][$name])) {
-                // we already know the category of object
-                return $group;
-            }
-        }
-
-        foreach ($groups as $group) {
-            // not yet known, try to detect for non user elements
-            $versions = $this->references->find($group, $name);
-            // arg.max is useless (nonsense) in this context
-            unset($versions['arg.max']);
-
-            if ('user' == $versions['ext.name']) {
-                // remove the previously cached response before trying new attempt
-                $this->references->remove($name);
-            } else {
-                $this->updateElementVersion($group, $name, $versions);
-                return $group;
-            }
-        }
-        // cannot distinguish yet the right group (interfaces or classes)
-        $group = 'objects';
-        $this->updateElementVersion($group, $name, $versions);
-        return $group;
-    }
-
-    /**
-     * Initialize local scope environment
-     *
-     * @return void
-     */
-    private function initLocalScope(): void
-    {
-        /*
-         * reset class aliases
-         * to resolve method calls in local scope (class method or function)
-         */
-        $this->aliases = array();
-    }
+    // ---
+    // <<< Leave nodes callback(s) ------------------------------------------------------------------------------------
+    // ---
 
     /**
      * Creates an alias that identify the original class.
      *
-     * @param Node $node
+     * @param Node\Expr\Assign $node
      *
      * @return void
      */
-    private function initClassAliasResolver(Node $node): void
+    private function initClassAliasResolver(Node\Expr\Assign $node): void
     {
+        if (!property_exists($node->expr, 'class')) {
+            return;
+        }
+
         // variable or property that hold an instance of a new class statement
         $class = $node->expr->class;
 
         if (!$class instanceof Node\Name) {
-            /*
+            /**
              * when the class name is an expression,
              * we consider it as unresolved
              */
@@ -884,452 +321,6 @@ class CompatibilityAnalyser extends AbstractAnalyser
     }
 
     /**
-     * Compute the namespace's version.
-     *
-     * This is the sum of all versions of class, interface, trait, function,
-     * and internal function.
-     *
-     * @return void
-     */
-    private function computeNamespaceVersions(): void
-    {
-        list($element, $name) = end($this->contextStack);
-
-        $versions = $this->metrics[$element][$name];
-
-        $this->updateGlobalVersion($versions['php.min'], $versions['php.max'], $versions['php.all']);
-    }
-
-    /**
-     * Compute the class's version.
-     *
-     * This is the sum of all method's versions
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function computeClassVersions(Node $node): void
-    {
-        list($element, $name) = end($this->contextStack);
-
-        $versions = $this->metrics[$element][$name];
-
-        if (version_compare($versions['php.all'], '5.0.0', 'eq')) {
-            // PHP4 compatibility for properties and methods visibility
-            $versions['php.min'] = $versions['php.all'];
-            $this->metrics[$element][$name] = $versions;
-        }
-
-        // update parent context
-        $this->updateContextVersion();
-    }
-
-    /**
-     * Compute the interface's version.
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function computeInterfaceVersions(Node $node): void
-    {
-        // update parent context
-        $this->updateContextVersion();
-    }
-
-    /**
-     * Compute the trait's version.
-     *
-     * This is the sum of all method's versions
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function computeTraitVersions(Node $node): void
-    {
-        // update parent context
-        $this->updateContextVersion();
-    }
-
-    /**
-     * Compute the function's version.
-     *
-     * This is the sum of all extension's elements versions
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function computeFunctionVersions(Node $node): void
-    {
-        // update parent context
-        $this->updateContextVersion();
-    }
-
-    /**
-     * Compute the version of the class called.
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function computeClassCallVersions(Node $node): void
-    {
-        $element = (string) $node->class;
-
-        $this->computeInternalVersions($node, $element, 'classes');
-    }
-
-    /**
-     * Compute the version of the function called (user or internal).
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function computeFunctionCallVersions(Node $node): void
-    {
-        $element = (string) $node->name;
-
-        $this->computeInternalVersions($node, $element, 'functions');
-
-        if (strcasecmp('define', $element) === 0) {
-            // user defined constant
-            $name = $node->args[0]->value;
-            if (!$name instanceof Node\Scalar\String_) {
-                // cannot resolved indirect definition
-                return;
-            }
-            $element = 'constants';
-            $name    = $name->value;
-            $this->updateElementVersion($element, $name, self::$php4);
-
-            $this->contextStack[] = array($element, $name);
-
-            // update parent context
-            $this->updateContextVersion($this->metrics[$element][$name]);
-
-        } elseif (strcasecmp('crypt', $element) === 0) {
-            // not elegant catch, but the best I can do to solve issue GH-220
-            // before refactoring monolithic CompatibilityAnalyser
-
-            if (count($node->args) == 1) {
-                // no salt provided
-                return;
-            }
-
-            $salt = $node->args[1]->value;
-            if (!$salt instanceof Node\Scalar\String_) {
-                // cannot resolved indirect definition
-                return;
-            }
-
-            // @link http://www.php.net/manual/en/function.crypt.php
-            if (in_array(substr($salt->value, 0 ,4), ['$2a$', '$2x$', '$2y$'])) {
-                // Blowfish
-                $versions = array('php.min' => '5.3.7', 'ext.name' => 'standard');
-                $node->setAttribute('compatinfo', $versions);
-                $this->computeInternalVersions($node, $element, 'functions');
-
-            } elseif (in_array(substr($salt->value, 0 ,3), ['$5$', '$6$'])) {
-                // SHA-256 and SHA-512
-                $versions = array('php.min' => '5.3.2', 'ext.name' => 'standard');
-                $node->setAttribute('compatinfo', $versions);
-                $this->computeInternalVersions($node, $element, 'functions');
-
-            } elseif (in_array(substr($salt->value, 0 ,3), ['$1$'])) {
-                // SHA-256 and SHA-512
-                $versions = array('php.min' => '5.3.0', 'ext.name' => 'standard');
-                $node->setAttribute('compatinfo', $versions);
-                $this->computeInternalVersions($node, $element, 'functions');
-            }
-        }
-    }
-
-    /**
-     * Compute the version of the method's class called.
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function computeClassMethodCallVersions(Node $node): void
-    {
-        // direct call from a local variable or a property
-        $caller = $node->var;
-
-        if ($caller instanceof Node\Expr\New_) {
-            // class member access on instantiation
-            $this->computePhpFeatureVersions($node);
-            return;
-        }
-
-        if ($caller instanceof Node\Expr\PropertyFetch) {
-            if (!is_string($caller->name)) {
-                // indirect method call
-                return;
-            }
-            $propertyName = $caller->name;
-            if ($caller->var instanceof Node\Expr\Variable
-                && is_string($caller->var->name)
-                && isset($this->aliases[$caller->var->name . '_' . $propertyName])
-            ) {
-                $qualifiedClassName = $this->aliases[$caller->var->name . '_' . $propertyName];
-            } else {
-                // class name resolver failure
-                return;
-            }
-
-        } elseif ($caller instanceof Node\Expr\Variable) {
-            if (!is_string($caller->name)) {
-                // indirect method call
-                return;
-            }
-            if (!isset($this->aliases[$caller->name])) {
-                // class name resolver failure
-                return;
-            }
-            $qualifiedClassName = $this->aliases[$caller->name];
-
-            $this->computeInternalVersions($node, (string) $node->name, 'methods', $qualifiedClassName);
-        } else {
-            // indirect method call
-            return;
-        }
-    }
-
-    /**
-     * Compute the version of the static method's class called.
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function computeStaticClassMethodCallVersions(Node $node): void
-    {
-        if (!$node->class instanceof Node\Name) {
-            // cannot resolved indirect call
-            return;
-        }
-
-        // identify class
-        $target   = (string) $node->class;
-        $context  = 'classes';
-        $versions = $this->references->find($context, $target);
-        $this->updateElementVersion($context, $target, $versions);
-        ++$this->metrics[$context][$target]['matches'];
-
-        $conditionalCode = isset($this->metrics[$context][$target]['optional']);
-
-        // identify method
-        $context  = 'methods';
-        $versions = $this->references->find($context, (string) $node->name, count($node->args), $target);
-        $target  .= '::' . (string) $node->name;
-        $this->updateElementVersion($context, $target, $versions);
-        ++$this->metrics[$context][$target]['matches'];
-
-        if ($conditionalCode) {
-            // tag method as optional if at least class is optional
-            $this->metrics[$context][$target]['optional'] = true;
-        }
-
-        $this->contextStack[] = array($context, $target);
-
-        // update context that call this static method
-        $this->updateContextVersion();
-    }
-
-    /**
-     * Compute the version of the constant (user or internal).
-     *
-     * @param Node   $node
-     * @param string $name
-     *
-     * @return void
-     */
-    private function computeConstantVersions(Node $node, string $name): void
-    {
-        $this->computeInternalVersions($node, $name, 'constants');
-    }
-
-    /**
-     * Compute the version of specific PHP feature.
-     *
-     * @param Node $node
-     *
-     * @return void
-     */
-    private function computePhpFeatureVersions(Node $node): void
-    {
-        list($element, $name) = end($this->contextStack);
-
-        if ($node instanceof Node\Stmt\Use_) {
-            if (Node\Stmt\Use_::TYPE_FUNCTION == $node->type
-                || Node\Stmt\Use_::TYPE_CONSTANT == $node->type
-            ) {
-                // use const, use function
-                $versions = array('php.min' => '5.6.0');
-                // update current and parent context
-                $this->updateElementVersion($element, $name, $versions);
-                $this->updateContextVersion($versions);
-            }
-
-        } elseif ($node instanceof Node\Stmt\TraitUse) {
-            $versions = array('php.min' => '5.4.0');
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
-
-        } elseif ($node instanceof Node\Stmt\Property) {
-            // implicitly public visibility is PHP 4 syntax
-            if ($this->isImplicitlyPublicProperty($this->tokens, $node)) {
-                return;
-            }
-            $versions = array('php.min' => '5.0.0');
-            // update current context only
-            $this->updateElementVersion($element, $name, $versions);
-
-        } elseif ($node instanceof Node\Expr\Array_) {
-            if ($this->isShortArraySyntax($this->tokens, $node)) {
-                // Array Short Syntax
-                // http://php.net/manual/en/migration54.new-features.php
-                $versions = array('php.min' => '5.4.0');
-                // update current and parent context
-                $this->updateElementVersion($element, $name, $versions);
-                $this->updateContextVersion($versions);
-            }
-
-        } elseif ($node instanceof Node\Expr\ArrayDimFetch
-            && $node->var instanceof Node\Expr\FuncCall
-        ) {
-            // Array Dereferencing
-            // http://php.net/manual/en/migration54.new-features.php
-            $versions = array('php.min' => '5.4.0');
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
-
-        } elseif ($node instanceof Node\Expr\MethodCall
-            && $node->name instanceof Node\Identifier
-        ) {
-            $caller = $node->var;
-
-            if ($caller instanceof Node\Expr\New_) {
-                // Class Member Access On Instantiation
-                // http://php.net/manual/en/migration54.new-features.php
-                $versions = array('php.min' => '5.4.0');
-                // update current and parent context
-                $this->updateElementVersion($element, $name, $versions);
-                $this->updateContextVersion($versions);
-            }
-
-        } elseif ($node instanceof Node\Stmt\Goto_) {
-            $versions = array('php.min' => '5.3.0');
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
-
-        } elseif ($node instanceof Node\Expr\Empty_) {
-            // If the parameter of empty() is an arbitrary expression,
-            // and not just a variable.
-            if ($node->expr instanceof Node\Expr
-                && ! $node->expr instanceof Node\Expr\Variable
-                && ! $node->expr instanceof Node\Expr\ArrayDimFetch
-                && ! $node->expr instanceof Node\Expr\PropertyFetch
-                && ! $node->expr instanceof Node\Expr\StaticPropertyFetch
-            ) {
-                // Prior to PHP 5.5, empty() only supports variables
-                // http://php.net/manual/en/function.empty.php
-                $versions = array('php.min' => '5.5.0');
-                // update current and parent context
-                $this->updateElementVersion($element, $name, $versions);
-                $this->updateContextVersion($versions);
-            }
-
-        } elseif ($node instanceof Node\Expr\AssignOp\Pow) {
-            // Exponentiation
-            $versions = array('php.min' => '5.6.0');
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
-
-        } elseif ($node instanceof Node\Expr\StaticCall
-            && $node->class instanceof Node\Expr\Variable
-        ) {
-            $versions = array('php.min' => '5.3.0');
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
-
-        } elseif ($node instanceof Node\Const_
-            && !$node->value instanceof Node\Scalar
-        ) {
-            if (property_exists($node->value, 'expr')) {
-                // e.g: unary minus, unary plus expressions
-                $versions = array('php.min' => '4.0.0');
-            } elseif ($node->value instanceof Node\Expr\ConstFetch) {
-                $versions = array('php.min' => '5.3.0');
-            } else {
-                // scalar expression
-                $versions = array('php.min' => '5.6.0');
-            }
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
-
-        } elseif ($node instanceof Node\Param
-            && $node->default instanceof Node\Expr\BinaryOp
-        ) {
-            $versions = array('php.min' => '5.6.0');
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
-
-        } elseif ($node instanceof Node\Stmt\PropertyProperty
-            && $node->default instanceof Node\Expr\BinaryOp
-        ) {
-            $versions = array('php.min' => '5.6.0');
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
-
-        } elseif ($node instanceof Node\Expr\ClassConstFetch
-            && strcasecmp('class', (string) $node->name) === 0
-        ) {
-            $versions = array('php.min' => '5.5.0');
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
-
-        } elseif ($node instanceof Node\Expr\Yield_) {
-            $versions = array('php.min' => '5.5.0');
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
-
-        } elseif ($node instanceof Node\Expr\BinaryOp\Coalesce) {
-            $versions = array('php.min' => '7.0.0');
-            // update current and parent context
-            $this->updateElementVersion($element, $name, $versions);
-            $this->updateContextVersion($versions);
-
-        } elseif ($node instanceof Node\Expr\Variable) {
-            if ('functions' == $element && strpos($name, 'closure') === 0) {
-                if ('this' == $node->name) {
-                    $versions = array('php.min' => '5.4.0');
-                } else {
-                    $versions = array('php.min' => '5.3.0');
-                }
-                // update current and parent context
-                $this->updateElementVersion($element, $name, $versions);
-                $this->updateContextVersion($versions);
-            }
-        }
-    }
-
-    /**
      * Compute the version of an internal function.
      *
      * @param Node $node
@@ -1341,43 +332,15 @@ class CompatibilityAnalyser extends AbstractAnalyser
      */
     private function computeInternalVersions(Node $node, string $element, string $context, $extra = null): void
     {
-        $versions = $node->getAttribute('compatinfo');
+        $versions = $node->getAttribute(self::ANALYSER_NODE_ATTRIBUTE);
         if ($versions === null) {
             // find reference info
             $argc     = isset($node->args) ? count($node->args) : 0;
             $versions = $this->references->find($context, $element, $argc, $extra);
             $versions['ext.all'] = $versions['php.all'] = '';
 
-            if ($argc) {
-                foreach ($node->args as $arg) {
-                    if ($arg->value instanceof Node\Expr\BinaryOp\Pow) {
-                        // Exponentiation
-                        $this->updateVersion('5.6.0', $versions['php.min']);
-                    }
-                }
-            }
-
             // cache to speed-up later uses
-            $node->setAttribute('compatinfo', $versions);
-        }
-        $node->setAttribute('fileName', $this->file);
-
-        if ('methods' == $context) {
-            $element = sprintf('%s::%s', $extra, $element);
-        }
-
-        // update versions of $element
-        $this->updateElementVersion($context, $element, $versions);
-        ++$this->metrics[$context][$element]['matches'];
-
-        $this->contextStack[] = array($context, $element);
-
-        // update parent context
-        $this->updateContextVersion($versions);
-
-        if ($versions['ext.name'] !== 'user') {
-            // update versions of extension's $element
-            $this->updateElementVersion('extensions', $versions['ext.name'], $versions);
+            $node->setAttribute(self::ANALYSER_NODE_ATTRIBUTE, $versions);
         }
     }
 }
