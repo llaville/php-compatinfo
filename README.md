@@ -2,9 +2,9 @@
 # PHP CompatInfo
 
 | Stable | Upcoming |
-|:----------------:|:----------:|
+|:------:|:--------:|
 | [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/php-compatinfo)](https://packagist.org/packages/bartlett/php-compatinfo) | [![Unstable Version](https://img.shields.io/packagist/vpre/bartlett/php-compatinfo)](https://packagist.org/packages/bartlett/php-compatinfo) |
-| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo)](https://php.net/) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo)](https://php.net/) |
+| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo)](https://php.net/) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/5.4.x-dev?color=orange)](https://php.net/) |
 
 **PHP CompatInfo** is a library that
 can find the minimum version and the extensions required for a piece of code to run.
