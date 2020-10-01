@@ -1,0 +1,21 @@
+{
+    "title": "PHP CompatInfo",
+    "tagline": "Library that find out the minimum version and the extensions required for a piece of code to run",
+    "html": {
+        "theme": "daux-navy",
+        "auto_toc": false,
+        "breadcrumbs": true,
+        "breadcrumb_separator": "Chevrons",
+        "toggle_code": true,
+        "date_modified": true,
+        "inherit_index": true,
+        "search": true,
+        "repo": "llaville/php-compat-info",
+        "links": {
+            "GitHub Repository": "https://github.com/llaville/php-compat-info",
+            "Help/Support/Bugs": "https://github.com/llaville/php-compat-info/issues",
+            "Packagist": "https://packagist.org/packages/bartlett/php-compatinfo"
+        },
+        "powered_by": "Powered by Daux.io"
+    }
+}

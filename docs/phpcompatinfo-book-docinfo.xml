@@ -1,6 +1,0 @@
-<mediaobject role="cover">
-  <imageobject>
-    <imagedata fileref="cover.png" format="PNG"/>
-  </imageobject>
-  <textobject><phrase>PHP CompatInfo, The Book</phrase></textobject>
-</mediaobject>

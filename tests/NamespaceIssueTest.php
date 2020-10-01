@@ -15,148 +15,77 @@
 
 namespace Bartlett\Tests\CompatInfo;
 
-use Bartlett\Reflect\Client;
-
 /**
- * Tests for PHP_CompatInfo, retrieving reference elements,
- * and versioning information.
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @subpackage Tests
- * @author     Laurent Laville <pear@laurent-laville.org>
- * @author     Remi Collet <Remi@FamilleCollet.com>
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * @link https://github.com/llaville/php-compat-info/issues/153
+ * @link https://github.com/llaville/php-compat-info/issues/155
  */
-class NamespaceIssueTest extends \PHPUnit\Framework\TestCase
+final class NamespaceIssueTest extends TestCase
 {
-    const GH153 = 'gh153.php';
-    const GH155 = 'gh155.php';
-    const GH158 = 'gh158.php';
-
-    protected static $fixtures;
-    protected static $analyserId;
-    protected static $api;
-
     /**
-     * Sets up the shared fixture.
-     *
-     * @return void
+     * {@inheritDoc}
      */
     public static function setUpBeforeClass(): void
     {
-        self::$fixtures = __DIR__ . DIRECTORY_SEPARATOR
-            . 'fixtures' . DIRECTORY_SEPARATOR;
+        parent::setUpBeforeClass();
 
-        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
-
-        $client = new Client();
-
-        // request for a Bartlett\Reflect\Api\Analyser
-        self::$api = $client->api('analyser');
+        self::$fixtures .= 'conditions' . DIRECTORY_SEPARATOR;
     }
 
     /**
-     * Regression test for bug GH#153
+     * Regression test for issue #153
      *
      * @link https://github.com/llaville/php-compat-info/issues/153
-     *       "global namespace reports highter requirements than everything else"
+     *       "global namespace reports higher requirements than everything else"
      * @group regression
      * @return void
      */
-    public function testBugGH153()
+    public function testRegressionGH153()
     {
-        $dataSource = self::$fixtures . self::GH153;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
+        $dataSource = 'gh153.php';
+        $metrics    = $this->executeAnalysis($dataSource);
         $functions  = $metrics[self::$analyserId]['functions'];
 
         $this->assertEquals(
-            array(
-                'ext.name'     => 'standard',
-                'ext.min'      => '5.0.0',
-                'ext.max'      => '',
-                'ext.all'      => '',
-                'php.min'      => '5.0.0',
-                'php.max'      => '',
-                'php.all'      => '5.0.0',
-                'parameters'   => array('4.0.0', '5.0.0'),
-                'php.excludes' => '',
-                'deprecated'   => '',
-                'arg.max'      => 2,
-                'matches'      => 3,
-            ),
-            $functions['md5']
+            '5.0.0',
+            $functions['md5']['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $functions['md5']['php.max']
         );
     }
 
     /**
-     * Regression test for bug GH#155
+     * Regression test for issue #155
      *
      * @link https://github.com/llaville/php-compat-info/issues/155
      *       Results depend on lexical order of fallback implementations
      * @group regression
      * @return void
      */
-    public function testBugGH155()
+    public function testRegressionGH155()
     {
-        $dataSource = self::$fixtures . self::GH155;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
+        $dataSource = 'gh155.php';
+        $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];
         $functions  = $metrics[self::$analyserId]['functions'];
 
         $this->assertEquals(
-            array(
-                'php.min'      => '4.0.0',
-                'php.max'      => '',
-                'php.all'      => '5.2.0',
-            ),
-            $versions
+            '5.2.0',
+            $versions['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $versions['php.max']
         );
 
         $this->assertEquals(
-            array(
-                'ext.name'     => 'json',
-                'ext.min'      => '5.2.0',
-                'ext.max'      => '',
-                'ext.all'      => '',
-                'php.min'      => '5.2.0',
-                'php.max'      => '',
-                'php.all'      => '5.2.0',
-                'parameters'   => array('5.2.0', '5.3.0', '5.5.0'),
-                'php.excludes' => '',
-                'deprecated'   => '',
-                'arg.max'      => 1,
-                'matches'      => 1,
-                'optional'     => true,
-            ),
-            $functions['json_encode']
+            '5.2.0',
+            $functions['json_encode']['php.min']
         );
-    }
-
-    /**
-     * Regression test for bug GH#158
-     *
-     * @link https://github.com/llaville/php-compat-info/issues/158
-     *       Total requirements do not include Constants
-     * @group regression
-     * @return void
-     */
-    public function testBugGH158()
-    {
-        $dataSource = self::$fixtures . self::GH158;
-        $analysers  = array('compatibility');
-        $metrics    = self::$api->run($dataSource, $analysers);
-        $versions   = $metrics[self::$analyserId]['versions'];
-
         $this->assertEquals(
-            array(
-                'php.min'      => '4.3.10',
-                'php.max'      => '',
-                'php.all'      => '4.3.10',
-            ),
-            $versions
+            '',
+            $functions['json_encode']['php.max']
         );
     }
 }

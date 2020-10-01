@@ -18,12 +18,22 @@
     </filter>
     <testsuites>
         <testsuite name="CompatInfo Test Suite">
-            <directory suffix="Test.php">tests/</directory>
+            <directory suffix="Test.php">tests/PhpParser/</directory>
+            <directory suffix="Test.php">tests/Reference/</directory>
+            <directory suffix="Test.php">tests/Sniffs/</directory>
+            <file>tests/ClassIssueTest.php</file>
+            <file>tests/ConditionIssueTest.php</file>
+            <file>tests/DependencyIssueTest.php</file>
+            <file>tests/EnvironmentTest.php</file>
+            <file>tests/FunctionIssueTest.php</file>
+            <file>tests/NamespaceIssueTest.php</file>
+            <file>tests/PhpFeaturesIssueTest.php</file>
         </testsuite>
     </testsuites>
     <groups>
         <exclude>
             <group>large</group>
+            <group>not_implemented</group>
         </exclude>
     </groups>
 </phpunit>

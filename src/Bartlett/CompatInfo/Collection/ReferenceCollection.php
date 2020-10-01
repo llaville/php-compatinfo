@@ -25,11 +25,12 @@ use PDO;
  * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
  * @since    Class available since Release 4.0.0-alpha3
  */
-class ReferenceCollection extends AbstractLazyCollection
+final class ReferenceCollection extends AbstractLazyCollection implements ReferenceCollectionInterface
 {
     // database abstraction layer
     private $dbal;
 
+    private $stmtExtensions;
     private $stmtIniEntries;
     private $stmtTraits;
     private $stmtClasses;
@@ -42,8 +43,8 @@ class ReferenceCollection extends AbstractLazyCollection
     /**
      * Creates a new Reference Collection
      *
-     * @param array $elements Inital elements
-     * @param PDO   $pdo      PDO instance representing a connection to a database
+     * @param array $elements Initial elements
+     * @param PDO|null $pdo PDO instance representing a connection to a database
      */
     public function __construct(array $elements = array(), PDO $pdo = null)
     {
@@ -53,15 +54,7 @@ class ReferenceCollection extends AbstractLazyCollection
     }
 
     /**
-     * Fetch the database to retrieve, when possible, element informations.
-     *
-     * @param string $group  May be either 'classes', 'methods', 'functions',
-     *                       'constants', 'traits', 'interfaces'
-     * @param string $key    Name of element to search for
-     * @param int    $argc   Number of arguments used in current element signature
-     * @param string &$extra Name of class when searching for methods
-     *
-     * @return array
+     * {@inheritDoc}
      */
     public function find(string $group, string $key, int $argc = 0, ?string &$extra = null): array
     {
@@ -77,6 +70,12 @@ class ReferenceCollection extends AbstractLazyCollection
             }
             $this->$stmt->execute($inputParameters);
             $result = $this->$stmt->fetch(PDO::FETCH_ASSOC);
+
+            // @FIXME : patch in waiting new php-compatinfo-db release 3.0 with extensions extra db fields
+            if ('extensions' == $group) {
+                $result['ext.min'] = $result['ext.max'] = $result['php.min'] = $result['php.max'] = '';
+                $result['ext.name'] = $key;
+            }
 
             if (!empty($result['prototype'])) {
                 $prototype = $result['prototype'];
@@ -128,11 +127,20 @@ class ReferenceCollection extends AbstractLazyCollection
     /**
      * Initializes collection and DB statements
      *
-     * @return void
+     * {@inheritDoc}
      */
     protected function doInitialize(): void
     {
         $this->collection = new ArrayCollection();
+
+        $this->stmtExtensions = $this->dbal->prepare(
+            'SELECT name as "ext.name"' .
+            // @FIXME : patch in waiting new php-compatinfo-db release 3.0 with extensions extra db fields
+            //' ext_min as "ext.min", ext_max as "ext.max",' .
+            //' php_min as "php.min", php_max as "php.max",' .
+            ' FROM bartlett_compatinfo_extensions' .
+            ' WHERE name = :name COLLATE NOCASE'
+        );
 
         $this->stmtIniEntries = $this->dbal->prepare(
             'SELECT i.name,' .

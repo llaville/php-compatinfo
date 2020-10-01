@@ -25,7 +25,7 @@ use Bartlett\CompatInfo\Util\Database;
  * @author     Laurent Laville <pear@laurent-laville.org>
  * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
  */
-class EnvironmentTest extends \PHPUnit\Framework\TestCase
+final class EnvironmentTest extends \PHPUnit\Framework\TestCase
 {
     protected static $pdo;
 

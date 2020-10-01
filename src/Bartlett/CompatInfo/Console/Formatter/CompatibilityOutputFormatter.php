@@ -12,7 +12,6 @@
 namespace Bartlett\CompatInfo\Console\Formatter;
 
 use Bartlett\CompatInfo\Util\Version;
-
 use Bartlett\Reflect\Console\Formatter\OutputFormatter;
 
 use Symfony\Component\Console\Output\OutputInterface;
@@ -47,12 +46,13 @@ class CompatibilityOutputFormatter extends OutputFormatter
             'extensions',
             'namespaces',
             'interfaces', 'traits', 'classes',
+            'generators',
             'functions',  'constants',
             'conditions',
         );
         foreach ($groups as $group) {
             $args = array_key_exists($group, $response) ? $response[$group] : false;
-            $this->listHelper($output, $group, $args);
+            $this->listHelper($output, $group, $args, count($args));
         }
 
         if (!array_key_exists('versions', $response)
@@ -69,19 +69,17 @@ class CompatibilityOutputFormatter extends OutputFormatter
             $max = sprintf(', PHP %s (max)', $response['versions']['php.max']);
         }
 
-        if (empty($response['versions']['php.all'])) {
-            $all = '';
-        } else {
-            $all = sprintf(', PHP %s (all)', $response['versions']['php.all']);
-        }
+        $style = 'php';
+        $style = $output->getFormatter()->hasStyle($style) ? $style : 'comment';
 
         $output->writeln(
             sprintf(
-                '%s<php>Requires %s%s%s</php>',
+                '%s<%s>Requires %s%s</%s>',
                 PHP_EOL,
+                $style,
                 $min,
                 $max,
-                $all
+                $style
             )
         );
     }
@@ -92,21 +90,12 @@ class CompatibilityOutputFormatter extends OutputFormatter
      * @param OutputInterface $output Console Output concrete instance
      * @param string          $group  Identify group of elements
      * @param mixed           $args   Parsing results of the $group
+     * @param int             $total  Total of results in the $group
      *
      * @return void
      */
-    private function listHelper(OutputInterface $output, string $group, $args): void
+    private function listHelper(OutputInterface $output, string $group, $args, int $total): void
     {
-        if (in_array($group, array(
-            'extensions',
-            'namespaces',
-            'interfaces', 'traits', 'classes',
-        ))) {
-            $withPhpAll = true;
-        } else {
-            $withPhpAll = false;
-        }
-
         $length = ('classes' == $group) ? -2 : -1;
         $title  = substr($group, 0, $length);
 
@@ -116,7 +105,10 @@ class CompatibilityOutputFormatter extends OutputFormatter
         }
 
         if (empty($args)) {
-            $output->writeln(sprintf('%s<warning>No %s found</warning>', PHP_EOL, $title));
+            $style = 'warning';
+            $style = $output->getFormatter()->hasStyle($style) ? $style : 'comment';
+
+            $output->writeln(sprintf('%s<%s>No %s found</%s>', PHP_EOL, $style, $title, $style));
             return;
         }
 
@@ -147,7 +139,6 @@ class CompatibilityOutputFormatter extends OutputFormatter
             }
         }
         $phpRequired = Version::php($versions);
-        $phpAll      = Version::all($versions);
 
         $output->writeln(
             sprintf('%s<info>%s Analysis</info>%s', PHP_EOL, ucfirst($group), PHP_EOL)
@@ -161,7 +152,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
 
             if (in_array($group, array('classes', 'interfaces', 'traits'))) {
                 if ('user' == $versions['ext.name']
-                    && !isset($versions['declared'])
+                    && ($versions['declared'] ?? false) === false
                 ) {
                     $flags .= 'U';
                 }
@@ -170,11 +161,9 @@ class CompatibilityOutputFormatter extends OutputFormatter
             $row = array(
                 $flags,
                 $arg,
-                $versions['matches'] > 0 ? $versions['matches'] : '',
                 isset($versions['ext.name']) ? $versions['ext.name'] : '',
                 Version::ext($versions),
                 Version::php($versions),
-                Version::all($versions),
             );
             /*
                 for reference:show command,
@@ -193,22 +182,15 @@ class CompatibilityOutputFormatter extends OutputFormatter
             }
         }
 
-        $headers = array('  ', ucfirst($title), 'Matches', 'REF', 'EXT min/Max', 'PHP min/Max');
-        if ($withPhpAll) {
-            $headers[] = 'PHP all';
-        }
+        $headers = array('  ', ucfirst($title), 'REF', 'EXT min/Max', 'PHP min/Max');
 
         $footers = array(
             '',
-            sprintf('<info>Total [%d]</info>', count($args)),
-            '',
+            sprintf('<info>Total [%d]</info>', $total),
             '',
             '',
             sprintf('<info>%s</info>', $phpRequired)
         );
-        if ($withPhpAll) {
-            $footers[] = sprintf('<info>%s</info>', $phpAll);
-        }
         $rows[] = new TableSeparator();
         $rows[] = $footers;
 
@@ -218,15 +200,13 @@ class CompatibilityOutputFormatter extends OutputFormatter
     private function getMethods(string $className, &$rows): void
     {
         foreach ($this->metrics['methods'] as $method => $versions) {
-            if (strpos($method, "$className::") === 0) {
+            if (strpos($method, "$className\\") === 0) {
                 $rows[] = array(
                     ' ',
-                    sprintf('<info>function</info> %s', str_replace("$className::", '', $method)),
-                    $versions['matches'] > 0 ? $versions['matches'] : '',
+                    sprintf('<info>function</info> %s', str_replace("$className\\", '', $method)),
                     isset($versions['ext.name']) ? $versions['ext.name'] : '',
                     Version::ext($versions),
                     Version::php($versions),
-                    Version::all($versions),
                 );
             }
         }

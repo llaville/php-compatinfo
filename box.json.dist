@@ -1,9 +1,8 @@
 {
-    "directories": ["src"],
+    "directories": ["src", "config"],
     "compression": "GZ",
     "dump-autoload": false,
     "files": [
-        "bin/phpcompatinfo.json.dist",
         "manifest.txt",
         "LICENSE",
         "vendor/bartlett/php-compatinfo-db/LICENSE",
@@ -12,37 +11,35 @@
         "vendor/bartlett/php-reflect/bin/phpreflect.json-schema",
         "vendor/composer/package-versions-deprecated/LICENSE",
         "vendor/composer/semver/LICENSE",
-        "vendor/doctrine/cache/LICENSE",
         "vendor/doctrine/collections/LICENSE",
-        "vendor/jean85/pretty-package-versions/LICENSE",
         "vendor/justinrainbow/json-schema/LICENSE",
         "vendor/laminas/laminas-diagnostics/LICENSE.md",
         "vendor/laminas/laminas-zendframework-bridge/LICENSE.md",
         "vendor/monolog/monolog/LICENSE",
         "vendor/nikic/php-parser/LICENSE",
+        "vendor/paragonie/random_compat/LICENSE",
         "vendor/phpdocumentor/reflection-common/LICENSE",
         "vendor/phpdocumentor/reflection-docblock/LICENSE",
         "vendor/phpdocumentor/type-resolver/LICENSE",
         "vendor/psr/container/LICENSE",
-        "vendor/psr/event-dispatcher/LICENSE",
         "vendor/psr/log/LICENSE",
+        "vendor/ramsey/uuid/LICENSE",
         "vendor/sebastian/version/LICENSE",
         "vendor/seld/jsonlint/LICENSE",
+        "vendor/symfony/config/LICENSE",
         "vendor/symfony/console/LICENSE",
         "vendor/symfony/dependency-injection/LICENSE",
-        "vendor/symfony/deprecation-contracts/LICENSE",
         "vendor/symfony/event-dispatcher/LICENSE",
         "vendor/symfony/event-dispatcher-contracts/LICENSE",
+        "vendor/symfony/filesystem/LICENSE",
         "vendor/symfony/finder/LICENSE",
         "vendor/symfony/polyfill-ctype/LICENSE",
-        "vendor/symfony/polyfill-intl-grapheme/LICENSE",
-        "vendor/symfony/polyfill-intl-normalizer/LICENSE",
         "vendor/symfony/polyfill-mbstring/LICENSE",
         "vendor/symfony/polyfill-php73/LICENSE",
         "vendor/symfony/polyfill-php80/LICENSE",
+        "vendor/symfony/serializer/LICENSE",
         "vendor/symfony/service-contracts/LICENSE",
         "vendor/symfony/stopwatch/LICENSE",
-        "vendor/symfony/string/LICENSE",
         "vendor/webmozart/assert/LICENSE",
         "vendor/autoload.php"
     ],
@@ -50,10 +47,6 @@
         {
             "name": "*.php",
             "in": "vendor/composer"
-        },
-        {
-            "name": "*.php",
-            "in": "vendor/jean85/pretty-package-versions/src"
         },
         {
             "name": "*.php",
@@ -70,6 +63,14 @@
         {
             "name": "*.php",
             "in": "vendor/nikic/php-parser/lib"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/paragonie/random_compat/lib"
+        },
+        {
+            "name": "*.php",
+            "in": "vendor/ramsey/uuid/src"
         },
         {
             "name": "Version.php",
@@ -106,19 +107,11 @@
         },
         {
             "name": "*.php",
-            "in": "vendor/doctrine/cache/lib"
-        },
-        {
-            "name": "*.php",
             "in": "vendor/doctrine/collections/lib"
         },
         {
             "name": "*.php",
             "in": "vendor/psr/container/src"
-        },
-        {
-            "name": "*.php",
-            "in": "vendor/psr/event-dispatcher/src"
         },
         {
             "name": "*.php",

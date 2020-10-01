@@ -16,44 +16,23 @@
 namespace Bartlett\Tests\CompatInfo\Reference;
 
 use Bartlett\CompatInfo\Util\Database;
-
-use Bartlett\Reflect\Client;
+use Bartlett\Tests\CompatInfo\Sniffs\SniffTestCase;
 
 use PDO;
 
 /**
- * Tests for PHP_CompatInfo, retrieving reference elements,
- * and versioning information.
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @subpackage Tests
- * @author     Laurent Laville <pear@laurent-laville.org>
- * @author     Remi Collet <Remi@FamilleCollet.com>
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * Tests function signatures with default and optional arguments
  */
-class ParameterTest extends \PHPUnit\Framework\TestCase
+final class ParameterTest extends SniffTestCase
 {
-    protected static $fixtures;
-    protected static $analyserId;
-    protected static $api;
-
     /**
-     * Sets up the shared fixture.
-     *
-     * @return void
+     * {@inheritDoc}
      */
     public static function setUpBeforeClass(): void
     {
-        self::$fixtures = dirname(__DIR__) . DIRECTORY_SEPARATOR
-            . 'fixtures' . DIRECTORY_SEPARATOR;
+        parent::setUpBeforeClass();
 
-        self::$analyserId = 'Bartlett\CompatInfo\Analyser\CompatibilityAnalyser';
-
-        $client = new Client();
-
-        // request for a Bartlett\Reflect\Api\Analyser
-        self::$api = $client->api('analyser');
+        self::$fixtures .= '..' . DIRECTORY_SEPARATOR . 'references' . DIRECTORY_SEPARATOR;
     }
 
     /**
@@ -71,11 +50,9 @@ class ParameterTest extends \PHPUnit\Framework\TestCase
             ' FROM bartlett_compatinfo_functions f,  bartlett_compatinfo_extensions e' .
             ' WHERE f.ext_name_fk = e.id AND f.parameters != "" '
         );
-
         $stmt->execute();
-        $functions = $stmt->fetchAll(PDO::FETCH_NUM);
 
-        return $functions;
+        return $stmt->fetchAll(PDO::FETCH_NUM);
     }
 
     /**
@@ -89,18 +66,20 @@ class ParameterTest extends \PHPUnit\Framework\TestCase
      * @large
      * @dataProvider functionProvider
      */
-    public function testGetFunctionsWithDefaultArguments($fctname, $extname)
+    public function testGetFunctionsWithDefaultArguments(string $fctname, string $extname)
     {
         $this->assertFileExists(
             self::$fixtures . $fctname . '.18881d.php',
             "$extname::$fctname function does not have test file for default arguments"
         );
 
-        $dataSource = self::$fixtures . $fctname . '.18881d.php';
-        $analysers  = array('compatibility');
+        $dataSource = $fctname . '.18881d.php';
+
         // ... and get metrics
-        $metrics   = self::$api->run($dataSource, $analysers);
+        $metrics   = $this->executeAnalysis($dataSource);
         $functions = $metrics[self::$analyserId]['functions'];
+
+        $this->assertArrayHasKey($fctname, $functions);
 
         // retrieves function's parameters
         $parameters = $functions[$fctname]['parameters'];
@@ -128,18 +107,19 @@ class ParameterTest extends \PHPUnit\Framework\TestCase
      * @large
      * @dataProvider functionProvider
      */
-    public function testGetFunctionsWithOptionalArguments($fctname, $extname)
+    public function testGetFunctionsWithOptionalArguments(string $fctname, string $extname)
     {
         $this->assertFileExists(
             self::$fixtures . $fctname . '.18881o.php',
             "$extname::$fctname function does not have test file for optional arguments"
         );
 
-        $dataSource = self::$fixtures . $fctname . '.18881o.php';
-        $analysers  = array('compatibility');
+        $dataSource = $fctname . '.18881o.php';
         // ... and get metrics
-        $metrics   = self::$api->run($dataSource, $analysers);
+        $metrics   = $this->executeAnalysis($dataSource);
         $functions = $metrics[self::$analyserId]['functions'];
+
+        $this->assertArrayHasKey($fctname, $functions);
 
         // retrieves function's parameters
         $parameters = $functions[$fctname]['parameters'];

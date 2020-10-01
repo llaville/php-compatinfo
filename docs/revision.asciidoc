@@ -1,6 +1,0 @@
-:revdate:           2018-02-01
-:revnumber:         5.0.12
-:deprecated:        4.5.2
-:deprecatedPubDate: November 21, 2015
-:stable:            5.0.12
-:stablePubDate:     February 01, 2018

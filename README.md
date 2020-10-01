@@ -76,16 +76,29 @@ No warning found.
 
 ## Documentation
 
-The documentation for PHP CompatInfo 5.0
-in [English](http://php5.laurent-laville.org/compatinfo/manual/5.0/en/)
-is available online or downloadable offline to read it later (multiple formats available).
+Full documentation is written in MarkDown format, and HTML export is possible with [Daux.io](https://github.com/dauxio/daux.io).
+See output results at http://bartlett.laurent-laville.org/php-compatinfo/ or raw `*.md` files in `docs` folder.
 
-AsciiDoc source code are available on `docs` folder of the repository.
+**Table of Contents**
+
+* **Features**
+  - Parse source code in format PHP 5.2 to PHP 7.4
+  - Detect PHP features for each Major/minor versions
+  - Detect versions of all directives, constants, functions, classes, interfaces of 100 extensions and more
+  - Display/Inspect list of extensions, and their versions supported
+
+* **Components**
+  - PHP-Parser [Node Visitors](docs/01_Components/01_PHP-Parser/Visitors.md)
+  - [Profiler](docs/01_Components/02_Profiler/Collectors.md)
+  - Collection of [Sniffs](docs/01_Components/03_Sniffs/Features.md)
+
+* **Configurations**
+  - Use of PSR11 containers to [configure](docs/02_Configs/README.md) application services.
 
 ## Contributors
 
 * Laurent Laville (Lead Dev)
-* Thanks to Nikita Popov who wrote a marvellous [PHP Parser](https://github.com/nikic/PHP-Parser) and simplify the job of PHP Reflect.
+* Thanks to Nikita Popov who wrote a marvellous [PHP Parser](https://github.com/nikic/PHP-Parser).
 * Thanks also to Remi Collet, a contributor of first hours.
 
 [![](https://sourcerer.io/fame/llaville/llaville/php-compat-info/images/0)](https://sourcerer.io/fame/llaville/llaville/php-compat-info/links/0)

@@ -1,0 +1,2 @@
+<?php
+(clone $foo)->bar();
