@@ -6,6 +6,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [5.4.0] - 2020-10-01
+
 ### Added
 
 - introduces new `DeclareSniff` to enhance PHP 7 declare control structure detection - (see also [GH-268](https://github.com/llaville/php-compat-info/issues/268))
