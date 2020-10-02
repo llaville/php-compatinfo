@@ -71,7 +71,7 @@ final class NamespaceIssueTest extends TestCase
         $functions  = $metrics[self::$analyserId]['functions'];
 
         $this->assertEquals(
-            '5.2.0',
+            '4.0.0',
             $versions['php.min']
         );
         $this->assertEquals(
@@ -87,5 +87,6 @@ final class NamespaceIssueTest extends TestCase
             '',
             $functions['json_encode']['php.max']
         );
+        $this->assertTrue($functions['json_encode']['optional']);
     }
 }
