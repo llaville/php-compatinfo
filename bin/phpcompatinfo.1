@@ -34,7 +34,7 @@ phpcompatinfo \- PHP library that parse any data source to find out the minimum 
 \fBphpcompatinfo\fR [\fIoptions\fR] \fIcommand\fR [\fIarguments\fR]
 .SH "DESCRIPTION"
 .sp
-The phpcompatinfo(1) command parse any data source, defined in a json configuration file, to find out elements, such as classes, interfaces, functions, constants, namespaces\&.
+The phpcompatinfo(1) command parse any data source to find out elements, such as classes, interfaces, functions, constants, namespaces\&.
 .SH "OPTIONS"
 .PP
 \fB\-h, \-\-help\fR
@@ -79,16 +79,13 @@ Show progress bar\&.
 .PP
 \fB\-\-output\fR
 .RS 4
-Write results to file or URL\&.
+Write results to file\&.
 .RE
 .PP
 \fB\-\-manifest\fR
 .RS 4
 Show which versions of dependencies are bundled (PHAR version only)\&.
 .RE
-.SH "ANALYSER:LIST COMMAND"
-.sp
-The phpcompatinfo(1) \fIanalyser:list\fR command is used to show what analysers are installed (see CONF FILES section)\&.
 .SH "ANALYSER:RUN COMMAND"
 .sp
 The phpcompatinfo(1) \fIanalyser:run\fR command is used to analyse a data source and display results\&.
@@ -99,157 +96,18 @@ Usage:
 .RS 4
 .\}
 .nf
-phpcompatinfo analyser:run [\-\-alias] [\-\-format[="\&.\&.\&."]] [\-\-filter[="\&.\&.\&."]] source [analysers1] \&.\&.\&. [analysersN]
+phpcompatinfo analyser:run source
 .fi
 .if n \{\
 .RE
 .\}
 .sp
 Where:
-.PP
-\fB\-\-alias\fR
-.RS 4
-If set, the source refers to its alias
-.RE
-.PP
-\fB\-\-format\fR
-.RS 4
-If set, convert result to a specific format\&. (default: false)
-.RE
-.PP
-\fB\-\-filter\fR
-.RS 4
-Resource that provide a closure to filter results\&. (default: false)
 .RE
 .PP
 \fBsource\fR
 .RS 4
-Identify a data source; may be declared in a json configuration file (see
-CONF FILES
-section)
-.RE
-.PP
-\fBanalysers1\fR \&... \fBanalysersN\fR
-.RS 4
-Identify one or more analyser to execute\&. See
-\fIanalyser:list\fR
-command to know what analysers are available\&. (default: ["compatibility"])
-.RE
-.SH "CONFIG:VALIDATE COMMAND"
-.sp
-The phpcompatinfo(1) \fIconfig:validate\fR command is used to check syntax of your json configuration file
-.sp
-Usage:
-.sp
-.if n \{\
-.RS 4
-.\}
-.nf
-phpcompatinfo config:validate [file]
-.fi
-.if n \{\
-.RE
-.\}
-.sp
-Where:
-.PP
-\fBfile\fR
-.RS 4
-Path to
-phpcompatinfo\&.json
-file (optional)
-.RE
-.SH "DIAGNOSE:RUN COMMAND"
-.sp
-The phpcompatinfo(1) \fIdiagnose:run\fR command is used to identify common errors on a platform\&.
-.sp
-Usage:
-.sp
-.if n \{\
-.RS 4
-.\}
-.nf
-phpcompatinfo diagnose:run [\-vv|\-vvv]
-.fi
-.if n \{\
-.RE
-.\}
-.SH "DIAGRAM:CLASS COMMAND"
-.sp
-The phpcompatinfo(1) \fIdiagram:class\fR command is used to generate diagram about a user class present in a data source
-.sp
-Usage:
-.sp
-.if n \{\
-.RS 4
-.\}
-.nf
-phpcompatinfo diagram:class [\-\-alias] [\-\-engine[="\&.\&.\&."]] argument source
-.fi
-.if n \{\
-.RE
-.\}
-.sp
-Where:
-.PP
-\fBargument\fR
-.RS 4
-Name of the class to inspect
-.RE
-.PP
-\fBsource\fR
-.RS 4
-Identify a data source; may be declared in a json configuration file (see
-CONF FILES
-section)
-.RE
-.PP
-\fB\-\-alias\fR
-.RS 4
-If set, the source refers to its alias
-.RE
-.PP
-\fB\-\-engine\fR
-.RS 4
-Graphical syntax\&. (default: "plantuml")
-.RE
-.SH "DIAGRAM:PACKAGE COMMAND"
-.sp
-The phpcompatinfo(1) \fIdiagram:package\fR command is used to generate diagram about namespaces in a data source
-.sp
-Usage:
-.sp
-.if n \{\
-.RS 4
-.\}
-.nf
-phpcompatinfo diagram:package [\-\-alias] [\-\-engine[="\&.\&.\&."]] source
-.fi
-.if n \{\
-.RE
-.\}
-.sp
-Where:
-.PP
-\fBsource\fR
-.RS 4
-Identify a data source; may be declared in a json configuration file (see
-CONF FILES
-section)
-.RE
-.PP
-\fB\-\-alias\fR
-.RS 4
-If set, the source refers to its alias
-.RE
-.PP
-\fB\-\-engine\fR
-.RS 4
-Graphical syntax\&. (default: "plantuml")
-.RE
-.SH "PLUGIN:LIST COMMAND"
-.sp
-The phpcompatinfo(1) \fIplugin:list\fR command is used to show what plugins are installed (see CONF FILES section)\&.
+Identify a data source
 .SH "REFERENCE:LIST COMMAND"
 .sp
 The phpcompatinfo(1) \fIreference:list\fR command is used to list all references supported\&.
@@ -322,84 +180,6 @@ Show interfaces
 .RS 4
 Show classes
 .RE
-.SH "REFLECTION:CLASS COMMAND"
-.sp
-The phpcompatinfo(1) \fIreflection:class\fR command is used to give information about a user class present in a data source\&.
-.sp
-Usage:
-.sp
-.if n \{\
-.RS 4
-.\}
-.nf
-phpcompatinfo reflection:class [\-\-alias] [\-\-return="\&.\&.\&."] argument source
-.fi
-.if n \{\
-.RE
-.\}
-.sp
-Where:
-.PP
-\fBargument\fR
-.RS 4
-Name of the class to reflect\&.
-.RE
-.PP
-\fBsource\fR
-.RS 4
-Identify a data source; may be declared in a json configuration file (see
-CONF FILES
-section)
-.RE
-.PP
-\fB\-\-alias\fR
-.RS 4
-If set, the source refers to its alias
-.RE
-.PP
-\fB\-\-format\fR
-.RS 4
-Format of result to return\&. False when raw text\&. (default: false)
-.RE
-.SH "REFLECTION:FUNCTION COMMAND"
-.sp
-The phpcompatinfo(1) \fIreflection:function\fR command is used to give information about a user function present in a data source\&.
-.sp
-Usage:
-.sp
-.if n \{\
-.RS 4
-.\}
-.nf
-phpcompatinfo reflection:function [\-\-alias] [\-\-return="\&.\&.\&."] argument source
-.fi
-.if n \{\
-.RE
-.\}
-.sp
-Where:
-.PP
-\fBargument\fR
-.RS 4
-Name of the function to reflect\&.
-.RE
-.PP
-\fBsource\fR
-.RS 4
-Identify a data source; may be declared in a json configuration file (see
-CONF FILES
-section)
-.RE
-.PP
-\fB\-\-alias\fR
-.RS 4
-If set, the source refers to its alias
-.RE
-.PP
-\fB\-\-format\fR
-.RS 4
-Format of result to return\&. False when raw text\&. (default: false)
-.RE
 .SH "EXIT STATUS"
 .PP
 \fB0\fR
@@ -409,64 +189,7 @@ Success
 .PP
 \fB1\fR
 .RS 4
-Failure (syntax or usage error; configuration error; unexpected error)\&.
-.RE
-.SH "CONF FILES"
-.sp
-A configuration file contains data sources that can be analysed, but also optional plugins and analysers installed\&. Require configuration file is loaded in the following order:
-.sp
-.RS 4
-.ie n \{\
-\h'-04' 1.\h'+01'\c
-.\}
-.el \{\
-.sp -1
-.IP "  1." 4.2
-.\}
-The CONF_FILE specified by the environment variables
-BARTLETTRC
-and
-BARTLETT_SCAN_DIR\&.
-.RE
-.sp
-.RS 4
-.ie n \{\
-\h'-04' 2.\h'+01'\c
-.\}
-.el \{\
-.sp -1
-.IP "  2." 4.2
-.\}
-phpcompatinfo\&.json
-from the current directory\&.
-.RE
-.sp
-.RS 4
-.ie n \{\
-\h'-04' 3.\h'+01'\c
-.\}
-.el \{\
-.sp -1
-.IP "  3." 4.2
-.\}
-phpcompatinfo\&.json
-from the User
-$HOME/\&.config
-directory\&.
-.RE
-.sp
-.RS 4
-.ie n \{\
-\h'-04' 4.\h'+01'\c
-.\}
-.el \{\
-.sp -1
-.IP "  4." 4.2
-.\}
-phpcompatinfo\&.json
-from the
-/etc
-directory\&.
+Failure (syntax or usage error; unexpected error)\&.
 .RE
 .SH "BUGS"
 .sp
@@ -480,10 +203,10 @@ Remi Collet, contributor of many extensions reference and unit tests, joined the
 The Command\-Line Interface (CLI) version was introduced in version 2\&.0 and is written by Laurent Laville\&.
 .SH "SEE ALSO"
 .sp
-Main web site: http://php5\&.laurent\-laville\&.org/compatinfo/
+Main web site: http://bartlett\&.laurent\-laville\&.org/php\-compatinfo/
 .SH "COPYRIGHT"
 .sp
-Copyright (C) 2010\-2015 Laurent Laville\&.
+Copyright (C) 2010\-2020 Laurent Laville\&.
 .SH "LICENSE"
 .sp
 Free use of this software is granted under the terms of the BSD 3\-clause license\&.

@@ -1,13 +1,9 @@
 #!/usr/bin/env php
 <?php
-$appName = 'phpCompatInfo';
+$appName = 'phpcompatinfo';
 
-Phar::mapPhar(strtolower($appName) . '.phar');
+Phar::mapPhar($appName . '.phar');
 
-if (!getenv("BARTLETTRC")) {
-    putenv("BARTLETTRC=" . strtolower($appName) . '.json');
-}
-
-require 'phar://' . __FILE__ . '/bin/' . strtolower($appName);
+require 'phar://' . __FILE__ . '/bin/' . $appName;
 
 __HALT_COMPILER();
