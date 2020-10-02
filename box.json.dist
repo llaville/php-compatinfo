@@ -15,9 +15,7 @@
         "vendor/justinrainbow/json-schema/LICENSE",
         "vendor/laminas/laminas-diagnostics/LICENSE.md",
         "vendor/laminas/laminas-zendframework-bridge/LICENSE.md",
-        "vendor/monolog/monolog/LICENSE",
         "vendor/nikic/php-parser/LICENSE",
-        "vendor/paragonie/random_compat/LICENSE",
         "vendor/phpdocumentor/reflection-common/LICENSE",
         "vendor/phpdocumentor/reflection-docblock/LICENSE",
         "vendor/phpdocumentor/type-resolver/LICENSE",
@@ -63,10 +61,6 @@
         {
             "name": "*.php",
             "in": "vendor/nikic/php-parser/lib"
-        },
-        {
-            "name": "*.php",
-            "in": "vendor/paragonie/random_compat/lib"
         },
         {
             "name": "*.php",
@@ -116,10 +110,6 @@
         {
             "name": "*.php",
             "in": "vendor/psr/log/Psr"
-        },
-        {
-            "name": "*.php",
-            "in": "vendor/monolog/monolog/src"
         },
         {
             "name": "*.php",
