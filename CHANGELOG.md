@@ -6,6 +6,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Fixed
+
+- [GH-279](https://github.com/llaville/php-compat-info/issues/279) - Implicit Composer requirement to doctrine/collection (thanks to @remicollet to his report GH-276)
+
 ## [5.4.0] - 2020-10-01
 
 ### Added
