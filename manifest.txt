@@ -33,4 +33,3 @@ symfony/serializer: <info>v4.4.13</info>
 symfony/service-contracts: <info>v1.1.9</info>
 symfony/stopwatch: <info>v4.4.13</info>
 webmozart/assert: <info>1.9.1</info>
-monolog/monolog: <info>1.25.5</info>

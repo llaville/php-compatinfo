@@ -20,12 +20,7 @@ print "</info>\n";
 $lock = json_decode(file_get_contents(__DIR__ . '/composer.lock'));
 
 // packages that may be installed but not distributed in the phar version
-$excludes = array(
-    'bartlett/phpunit-loggertestlistener',
-    'bartlett/monolog-callbackfilterhandler',
-    'bartlett/monolog-growlhandler',
-    'pear-pear.php.net/Net_Growl',
-);
+$excludes = array();
 
 $packages = function ($package) use ($excludes) {
     if (in_array($package->name, $excludes)) {

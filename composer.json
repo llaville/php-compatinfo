@@ -26,9 +26,6 @@
         "symfony/config": "^4.4|^5.0",
         "symfony/dependency-injection": "^4.4|^5.0"
     },
-    "require-dev": {
-        "monolog/monolog": "^1.10"
-    },
     "authors": [
         {
             "name": "Laurent Laville",
