@@ -205,9 +205,9 @@ final class VersionDataCollector extends DataCollector
         $this->data[$group][$name]['optional'] = true;
 
         if (!isset($this->extensions[$versions['ext.name']])) {
-            $versions['optional'] = true;
             $this->extensions[$versions['ext.name']] = $versions;
         }
+        $this->extensions[$versions['ext.name']]['optional'] = true;
 
         if (!isset($this->data[$type][$id])) {
             unset(

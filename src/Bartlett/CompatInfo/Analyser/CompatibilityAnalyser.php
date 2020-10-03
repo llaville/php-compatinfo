@@ -271,6 +271,23 @@ class CompatibilityAnalyser extends AbstractSniffAnalyser
         $this->computeInternalVersions($node, $node->getName(), 'constants');
     }
 
+    /**
+     * Compute the version of standard constants fetch (user or internal).
+     *
+     * @param Node\Expr\ConstFetch $node
+     * @return void
+     */
+    private function leaveExprConstFetch(Node\Expr\ConstFetch $node): void
+    {
+        $parent = $node->getAttribute(self::PARENT_NODE_ATTRIBUTE);
+
+        if ($parent instanceof Node\Stmt\Const_) {
+            return;
+        }
+
+        $this->computeInternalVersions($node, (string) $node->name, 'constants');
+    }
+
     // ---
     // <<< Leave nodes callback(s) ------------------------------------------------------------------------------------
     // ---
