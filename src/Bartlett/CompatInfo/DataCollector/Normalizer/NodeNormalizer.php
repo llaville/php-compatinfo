@@ -54,7 +54,7 @@ class NodeNormalizer implements NormalizerInterface
             } else {
                 $parentId = false;
             }
-            if ($parentId) {
+            if ($parentId !== false) {
                 $parents[] = [$this->getType($parentNode) => $parentId];
             }
 
