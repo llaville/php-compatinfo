@@ -38,7 +38,7 @@ final class BinaryNumberFormatSniff extends SniffAbstract
         if (!$this->isBinaryNumberFormat($node)) {
             return null;
         }
-        $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.4.0']);
+        $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['ext.name' => 'Core', 'ext.min' => '5.4.0', 'php.min' => '5.4.0']);
     }
 
     private function isBinaryNumberFormat(Node $node): bool
