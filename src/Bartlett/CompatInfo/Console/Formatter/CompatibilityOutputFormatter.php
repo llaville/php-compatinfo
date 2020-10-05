@@ -201,8 +201,9 @@ class CompatibilityOutputFormatter extends OutputFormatter
     {
         foreach ($this->metrics['methods'] as $method => $versions) {
             if (strpos($method, "$className\\") === 0) {
+                $flags = isset($versions['optional']) ? 'C' : ' ';
                 $rows[] = array(
-                    ' ',
+                    $flags,
                     sprintf('<info>function</info> %s', str_replace("$className\\", '', $method)),
                     isset($versions['ext.name']) ? $versions['ext.name'] : '',
                     Version::ext($versions),
