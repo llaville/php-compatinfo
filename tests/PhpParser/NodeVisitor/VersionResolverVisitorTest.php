@@ -67,7 +67,7 @@ final class VersionResolverVisitorTest extends NodeVisitorTestCase
         );
 
         $this->assertEquals(
-            'user',
+            'spl',
             $classes['Foo']['ext.name']
         );
         $this->assertEquals(

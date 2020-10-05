@@ -74,7 +74,7 @@ final class ConditionIssueTest extends TestCase
         $classes    = $metrics[self::$analyserId]['classes'];
 
         $this->assertEquals(
-            '5.3.0alpha1',
+            '4.3.0',
             $versions['php.min']
         );
         $this->assertEquals(
