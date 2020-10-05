@@ -12,6 +12,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - [GH-278](https://github.com/llaville/php-compat-info/issues/278) - Clean-up BARTLETTRC references and MAN page (thanks to @remicollet to his report GH-276)
 - [GH-279](https://github.com/llaville/php-compat-info/issues/279) - Implicit Composer requirement to doctrine/collection (thanks to @remicollet to his report GH-276)
 - [GH-280](https://github.com/llaville/php-compat-info/issues/280) - Tests failure with PHPUnit on version 5.4.0 (thanks to @remicollet to his report GH-276)
+- [GH-281](https://github.com/llaville/php-compat-info/issues/281) - `--output` doesn't work anymore (thanks to @remicollet)
 - [PR-282](https://github.com/llaville/php-compat-info/pull/282) - Named parameters confusion with PHP 8 (thanks to @remicollet)
 
 ## [5.4.0] - 2020-10-01

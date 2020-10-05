@@ -309,8 +309,9 @@ class CommandFactory
 
             $args['sniffCollection'] = $app->getContainer()->get(SniffCollection::class);
 
+            $profiler = new Profiler(Uuid::uuid4()->toString());
+
             if (true === $input->hasParameterOption('--profile')) {
-                $profiler = new Profiler(Uuid::uuid4()->toString());
                 $args['profiler'] = $profiler;
             }
 
@@ -324,9 +325,7 @@ class CommandFactory
                 $response = $e;
             }
 
-            if (true === $input->hasParameterOption('--profile')
-                && true === $input->hasParameterOption('--output')
-            ) {
+            if (true === $input->hasParameterOption('--output')) {
                 $profile = $profiler->collect();
                 $data = $profile->getData();
                 $token = key($data);
