@@ -6,10 +6,13 @@ use PhpParser\NodeVisitor;
 
 use function array_fill_keys;
 use function array_filter;
+use function array_key_exists;
+use function array_merge;
 use function array_pop;
 use function array_replace;
 use function explode;
 use function implode;
+use function in_array;
 use function strpos;
 
 /**
@@ -26,25 +29,10 @@ final class VersionDataCollector extends DataCollector
     /** @var array */
     private $versions = [];
 
-    public function __construct(NodeVisitor $visitor)
+    public function __construct(NodeVisitor $visitor, array $keysAllowed)
     {
         parent::__construct($visitor);
-
-        $this->dataKeysAllowed = [
-            'versions',
-            'extensions',
-            'namespaces',
-            'classes',
-            'interfaces',
-            'traits',
-            'methods',
-            'generators',
-            'functions',
-            'constants',
-            'directives',
-            'conditions'
-        ];
-
+        $this->dataKeysAllowed = $keysAllowed;
         $this->reset();
     }
 
@@ -53,18 +41,29 @@ final class VersionDataCollector extends DataCollector
      */
     public function collect(array $nodes): array
     {
-        $dataVisited = parent::collect($nodes);
+        $elements = parent::collect($nodes);
 
-        foreach($dataVisited as $item) {
-            if (isset($item['versions']['opt.group'])) {
-                $this->handleCodeWithCondition($item['id'], $item['type'], $item['versions']);
+        foreach ($elements as $element) {
+            $group = $element['type'];
+            $name = $element['id'];
+            $versions = array_replace(self::$php4, $element['versions']);
+
+            if (isset($this->data[$group][$name])) {
+                $this->updateElementVersion($this->data[$group][$name], $versions);
             } else {
-                $this->handleCodeWithoutCondition($item['id'], $item['type'], $item['versions'], $item['parents']);
+                if (isset($versions['opt.group'])) {
+                    $this->handleCodeWithCondition($name, $group, $versions);
+                    unset(
+                        $versions['opt.name'],
+                        $versions['opt.group'],
+                        $versions['opt.versions']
+                    );
+                } else {
+                    $versions['parents'] = $element['parents'];
+                }
+                $this->data[$group][$name] = $versions;
             }
         }
-
-        $this->data['versions'] = $this->versions;
-        $this->data['extensions'] = $this->extensions;
 
         return $this->data;
     }
@@ -81,6 +80,61 @@ final class VersionDataCollector extends DataCollector
         }, ARRAY_FILTER_USE_KEY);
         $this->extensions = [];
         $this->data = array_fill_keys($this->dataKeysAllowed, []);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getData(): array
+    {
+        $data = array_merge(
+            ['versions' => ['php.min' => '4.0.0', 'php.max' => '']],
+            $this->data
+        );
+
+        foreach($data as $group => $elements) {
+            if (in_array($group, ['versions', 'extensions', 'conditions'])) {
+                // skip un-computable elements
+                continue;
+            }
+
+            foreach ($elements as $name => $versions) {
+                $optional = ($versions['optional'] ?? false) === true;
+
+                $extName = $versions['ext.name'];
+                if ('user' !== $extName) {
+                    $this->updateExtension($extName, $data['extensions'], $versions);
+                }
+
+                if ($optional) {
+                    if (!in_array($versions['ext.name'], ['Core', 'standard', 'user'])) {
+                        $data['extensions'][$versions['ext.name']]['optional'] = true;
+                    }
+                    // do not compute conditional code
+                    continue;
+                }
+
+                // Updates all parent context elements
+                foreach ($versions['parents'] ?? [] as $parent) {
+                    $type = key($parent);
+                    $id = reset($parent);
+                    if (isset($data[$type][$id] )|| array_key_exists($id, $data[$type])) {
+                        $this->updateElementVersion($data[$type][$id], $versions);
+                    }
+                }
+
+                // Updates the global versions (only php.min and php.max) of the data source scanned
+                unset($versions['ext.name']);
+                $this->updateElementVersion($data['versions'], $versions);
+            }
+
+            if (!in_array($group, $this->dataKeysAllowed)) {
+                // do not keep temporary nodes used by sniffs to detect language features
+                unset($data[$group]);
+            }
+        }
+
+        return $data;
     }
 
     public function getVersions(): array
@@ -143,38 +197,6 @@ final class VersionDataCollector extends DataCollector
         return $this->data['conditions'] ?? [];
     }
 
-    private function handleCodeWithoutCondition(string $id, string $group, array $versions, array $parents): void
-    {
-        if (isset($this->data[$group][$id])) {
-            if (isset($this->data[$group][$id]['optional'])) {
-                return;
-            }
-            $this->updateElementVersion($this->data[$group][$id], $versions);
-            $versions = $this->data[$group][$id];
-        } else {
-            $versions = array_replace(self::$php4, $versions);
-            $this->data[$group][$id] = $versions;
-        }
-
-        $extName = $this->data[$group][$id]['ext.name'];
-        if ('user' !== $extName && ($this->data[$group][$id]['optional'] ?? false) === false) {
-            $this->updateExtension($extName, $this->extensions, $versions);
-        }
-        unset($versions['ext.name']);
-
-        foreach ($parents as $parent) {
-            // Updates all parent context elements
-            $type = key($parent);
-            $id = reset($parent);
-            if (isset($this->data[$type][$id])) {
-                $this->updateElementVersion($this->data[$type][$id], $versions);
-            }
-        }
-
-        // Updates the global versions of the data source scanned
-        $this->updateElementVersion($this->versions, $versions);
-    }
-
     private function handleCodeWithCondition(string $id, string $type, array $condition): void
     {
         $name = $condition['opt.name'];
@@ -192,30 +214,21 @@ final class VersionDataCollector extends DataCollector
 
         $this->data['conditions'][sprintf('%s(%s)', $id, $name)] = $versions;
 
-        if ('methods' === $group) {
-            $parts = explode('\\', $name);
-            array_pop($parts);
-            $name = implode('\\', $parts);
-            $group = 'classes';
-        }
-
         if (!isset($this->data[$group][$name])) {
             $this->data[$group][$name] = $versions;
         }
         $this->data[$group][$name]['optional'] = true;
 
-        if (!isset($this->extensions[$versions['ext.name']])) {
-            $this->extensions[$versions['ext.name']] = $versions;
-        }
-        $this->extensions[$versions['ext.name']]['optional'] = true;
+        if ('methods' === $group) {
+            $parts = explode('\\', $name);
+            array_pop($parts);
+            $name = implode('\\', $parts);
+            $group = 'classes';
 
-        if (!isset($this->data[$type][$id])) {
-            unset(
-                $condition['opt.name'],
-                $condition['opt.group'],
-                $condition['opt.versions']
-            );
-            $this->data[$type][$id] = $condition;
+            if (!isset($this->data[$group][$name])) {
+                $this->data[$group][$name] = $versions;
+            }
+            $this->data[$group][$name]['optional'] = true;
         }
     }
 }

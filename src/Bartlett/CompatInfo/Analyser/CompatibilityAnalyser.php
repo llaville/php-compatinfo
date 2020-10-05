@@ -24,6 +24,7 @@ use Bartlett\CompatInfo\Collection\ReferenceCollection;
 use PhpParser\Node;
 
 use function call_user_func;
+use function in_array;
 use function property_exists;
 
 /**
@@ -47,9 +48,6 @@ class CompatibilityAnalyser extends AbstractSniffAnalyser
     private $references;
     private $profiler;
 
-    /** @var ErrorHandler */
-    private $errorHandler;
-
     /**
      * Initializes the compatibility analyser
      *
@@ -61,13 +59,27 @@ class CompatibilityAnalyser extends AbstractSniffAnalyser
         $pdo = Database::initRefDb();
         $this->references = new ReferenceCollection([], $pdo);
 
+        $keysAllowed = [
+            'extensions',
+            'namespaces',
+            'classes',
+            'interfaces',
+            'traits',
+            'methods',
+            'generators',
+            'functions',
+            'constants',
+            'directives',
+            'conditions',
+
+        ];
         $visitor = new FilterVisitor(
             new NodeNormalizer()
         );
 
         $this->profiler = $profiler;
         $this->profiler->addCollector(
-            (new VersionDataCollector($visitor))->setName(self::COLLECTOR_NAME)
+            (new VersionDataCollector($visitor, $keysAllowed))->setName(self::COLLECTOR_NAME)
         );
 
         $this->sniffs = $sniffCollection;
@@ -77,12 +89,10 @@ class CompatibilityAnalyser extends AbstractSniffAnalyser
 
     public function setErrorHandler(ErrorHandler $errorHandler): void
     {
-        $this->errorHandler = $errorHandler;
-
         foreach ($this->profiler->getCollectors() as $collector) {
             /** @var DataCollectorInterface $collector */
             $collector->addFile($this->getCurrentFile());
-            $collector->addErrors($this->errorHandler->getErrors());
+            $collector->addErrors($errorHandler->getErrors());
         }
     }
 
@@ -107,6 +117,16 @@ class CompatibilityAnalyser extends AbstractSniffAnalyser
             /** @var DataCollectorInterface $collector */
             $collector->collect($nodes);
         }
+    }
+
+    /**
+     * Compute final results, only when all data sources are parsed, analysed and versions data collected
+     *
+     * @return array
+     */
+    public function getData(): array
+    {
+        return $this->profiler->getCollector(self::COLLECTOR_NAME)->getData();
     }
 
     /**

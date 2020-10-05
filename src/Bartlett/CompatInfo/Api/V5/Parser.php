@@ -23,6 +23,8 @@ use PhpParser\ParserFactory;
 
 use Symfony\Component\Finder\Finder;
 
+use Exception;
+
 /**
  * @since Class available since Release 5.4.0
  */
@@ -68,7 +70,7 @@ class Parser extends AbstractDispatcher
      * @param Profiler $profiler
      *
      * @return Profile
-     * @throws \Exception
+     * @throws Exception
      */
     public function parse(Finder $queue, ErrorHandler $errorHandler, Profiler $profiler)
     {
@@ -144,7 +146,7 @@ class Parser extends AbstractDispatcher
         $this->analyser->tearDownAfterVisitor();
 
         // end of parsing the data source
-        $event = $this->dispatch(
+        $this->dispatch(
             new CompleteEvent($this, array('source' => $this->dataSourceId))
         );
 

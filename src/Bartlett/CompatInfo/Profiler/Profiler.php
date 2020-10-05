@@ -7,6 +7,9 @@ use Bartlett\CompatInfo\DataCollector\DataCollectorInterface;
 use Exception;
 use function array_merge;
 
+/**
+ * @since 5.4.0
+ */
 final class Profiler implements CollectorInterface
 {
     use CollectorTrait;
