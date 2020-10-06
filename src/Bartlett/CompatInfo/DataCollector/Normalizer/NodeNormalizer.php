@@ -9,8 +9,6 @@ use PhpParser\Node;
 
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-use LogicException;
-
 class NodeNormalizer implements NormalizerInterface
 {
     /** @var string */
@@ -27,12 +25,7 @@ class NodeNormalizer implements NormalizerInterface
         $this->attributeNamespacedName = $context['nodeAttributeNamespacedName'] ?? 'bartlett.name';
 
         if (!$this->supportsNormalization($node, $format)) {
-            throw new LogicException(
-                sprintf(
-                    'Invalid resource %s to transform. Verify NodeNormalizer::supportsNormalization() logic!',
-                    $node->getType()
-                )
-            );
+            return null;
         }
 
         if (null === $this->name) {

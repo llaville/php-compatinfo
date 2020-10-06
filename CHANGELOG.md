@@ -6,6 +6,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Changed
+
+- `NodeNormalizer` did not raise anymore a `LogicException` when node is not support
+
 ### Fixed
 
 - [GH-277](https://github.com/llaville/php-compat-info/issues/277) - Clean-up Monolog references (thanks to @remicollet to his report GH-276)
