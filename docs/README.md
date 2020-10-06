@@ -31,9 +31,9 @@ the [PHP-Parser](https://github.com/nikic/PHP-Parser) library.
 
   * Arrays (2)
   * Classes (6)
-  * Constants (2)
+  * Constants (3)
   * ControlStructures (2)
-  * Expressions (2)
+  * Expressions (3)
   * FunctionDeclarations (3)
   * Generators (1)
   * Keywords (1)
