@@ -6,6 +6,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [5.4.1] - 2020-10-06
+
 ### Changed
 
 - `NodeNormalizer` did not raise anymore a `LogicException` when node is not support
