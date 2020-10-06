@@ -114,12 +114,14 @@ class NodeNormalizer implements NormalizerInterface
             || $data instanceof ClassFullyQualified
         ) {
             $this->name = (string) $data;
-        } elseif ($data instanceof Node\Expr\StaticCall && $data->class instanceof Node\Name) {
-            if ($data->name instanceof Node\Scalar\String_) {
-                // Class::{expr}() syntax
-                $this->name = sprintf("%s::{'%s'}", $data->class, $data->name->value);
-            } else {
-                $this->name = (string) $data->getAttribute($this->attributeNamespacedName);
+        } elseif ($data instanceof Node\Expr\StaticCall) {
+            if ($data->class instanceof Node\Name) {
+                if ($data->name instanceof Node\Scalar\String_) {
+                    // Class::{expr}() syntax
+                    $this->name = sprintf("%s::{'%s'}", $data->class, $data->name->value);
+                } else {
+                    $this->name = (string) $data->getAttribute($this->attributeNamespacedName);
+                }
             }
         } elseif ($this->isConstantDefineExpression($data)) {
             $name = $data->args[0]->value;
