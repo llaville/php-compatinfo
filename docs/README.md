@@ -47,3 +47,11 @@ the [PHP-Parser](https://github.com/nikic/PHP-Parser) library.
 Load a config for CLI Application with the `--config` option.
 
 Read [How to Load --config With Services in Symfony Console](https://tomasvotruba.com/blog/2018/05/14/how-to-load-config-with-services-in-symfony-console/) to learn more.
+
+## [Conditional Code](03_Conditional_Code/1_Introduction.md)
+
+Learn what code is consider as conditional, detected or not (with CompatInfo 5.4)
+
+- [Indirect calls](03_Conditional_Code/2_Indirect_Call.md)
+- [Multiple signatures](03_Conditional_Code/3_Multiple_Signature.md)
+- [Other limitations](03_Conditional_Code/100_Limitation.md)
