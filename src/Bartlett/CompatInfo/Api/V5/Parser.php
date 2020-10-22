@@ -130,6 +130,7 @@ class Parser extends AbstractDispatcher
                         )
                     );
                 }
+                $errorHandler->clearErrors();
                 continue; // skip to next file of the data source
             }
 
