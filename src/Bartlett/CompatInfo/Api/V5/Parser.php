@@ -16,6 +16,7 @@ use Bartlett\Reflect\Event\ErrorEvent;
 use Bartlett\Reflect\Event\ProgressEvent;
 use Bartlett\Reflect\Event\SuccessEvent;
 
+use PhpParser\Error;
 use PhpParser\Lexer\Emulative;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitor;
@@ -107,6 +108,11 @@ class Parser extends AbstractDispatcher
                 file_get_contents($file->getPathname()),
                 $errorHandler
             );
+            if (empty($stmts)) {
+                $errorHandler->handleError(
+                    new Error('File has no contents', ['startLine' => 1])
+                );
+            }
 
             $this->analyser->setCurrentFile($file);
             $this->analyser->setErrorHandler($errorHandler);
