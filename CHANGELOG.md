@@ -6,6 +6,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Fixed
+
+- [GH-284](https://github.com/llaville/php-compat-info/issues/284) - Errors while running on empty files
+
 ## [5.4.1] - 2020-10-06
 
 ### Changed
