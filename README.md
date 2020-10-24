@@ -3,9 +3,9 @@
 
 | Stable | Upcoming |
 |:------:|:--------:|
-| [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/php-compatinfo)](https://packagist.org/packages/bartlett/php-compatinfo) |   |
-| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo)](https://php.net/) |   |
-| [![Branch Master](https://img.shields.io/badge/branch-master-blue)](https://github.com/llaville/php-compat-info) |   |
+| [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/php-compatinfo)](https://packagist.org/packages/bartlett/php-compatinfo) | [![Unstable Version](https://img.shields.io/packagist/vpre/bartlett/php-compatinfo)](https://packagist.org/packages/bartlett/php-compatinfo) |
+| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo)](https://php.net/) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/6.0.x-dev?color=orange)](https://php.net/) |
+| [![Branch Master](https://img.shields.io/badge/branch-master-blue)](https://github.com/llaville/php-compat-info) | [![Branch 6.0](https://img.shields.io/badge/branch-6.0-orange)](https://github.com/llaville/php-compatinfo/tree/6.0) |
 
 **PHP CompatInfo** is a library that
 can find the minimum version and the extensions required for a piece of code to run.
