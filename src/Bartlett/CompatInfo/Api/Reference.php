@@ -75,19 +75,19 @@ class Reference extends BaseApi
                 return $data;
             };
 
-        } else {
-            if ($filterRes = stream_resolve_include_path($filter)) {
-                include_once $filterRes;
-            }
-            if (!isset($closure) || !is_callable($closure)) {
-                throw new \RuntimeException(
-                    sprintf(
-                        'Invalid filter provided by file "%s"',
-                        $filterRes ? : $filter
-                    )
-                );
-            }
+        } elseif ($filterRes = stream_resolve_include_path($filter)) {
+            include_once $filterRes;
         }
+
+        if (!isset($closure) || !is_callable($closure)) {
+            throw new \RuntimeException(
+                sprintf(
+                    'Invalid filter provided by file "%s"',
+                    $filterRes ? : $filter
+                )
+            );
+        }
+
         return $this->request(
             'reference/show',
             'POST',
