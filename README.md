@@ -4,7 +4,7 @@
 | Stable | Upcoming |
 |:------:|:--------:|
 | [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/php-compatinfo)](https://packagist.org/packages/bartlett/php-compatinfo) | [![Unstable Version](https://img.shields.io/packagist/vpre/bartlett/php-compatinfo)](https://packagist.org/packages/bartlett/php-compatinfo) |
-| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo)](https://php.net/) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/6.0.x-dev?color=orange)](https://php.net/) |
+| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo)](https://www.php.net/supported-versions.php) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/6.0.x-dev?color=orange)](https://www.php.net/supported-versions.php) |
 | [![Branch Master](https://img.shields.io/badge/branch-master-blue)](https://github.com/llaville/php-compat-info) | [![Branch 6.0](https://img.shields.io/badge/branch-6.0-orange)](https://github.com/llaville/php-compat-info/tree/6.0) |
 
 **PHP CompatInfo** is a library that
