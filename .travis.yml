@@ -1,0 +1,29 @@
+# TravisCI configuration for bartlett/php-compatinfo
+
+language: "php"
+os:
+  - "linux"
+dist: "bionic"
+
+php:
+  - "7.4"
+  - "7.3"
+  - "7.2"
+  - "8.0snapshot"
+
+cache:
+  directories:
+    - "${HOME}/.composer/cache"
+
+before_install:
+  - "phpenv config-rm xdebug.ini"
+  # Use Composer v1
+  - "composer self-update --1"
+  - "composer validate --strict"
+
+install:
+  - "composer update"
+
+script:
+  - "bin/phpcompatinfo.phar diagnose:run"
+  - "phpunit --verbose"
