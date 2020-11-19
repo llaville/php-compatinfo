@@ -11,6 +11,10 @@ php:
   - "7.2"
   - "8.0snapshot"
 
+jobs:
+  allow_failures:
+    - php: "8.0snapshot"
+
 cache:
   directories:
     - "${HOME}/.composer/cache"
@@ -25,5 +29,5 @@ install:
   - "composer update"
 
 script:
-  - "bin/phpcompatinfo.phar diagnose:run"
   - "phpunit --verbose"
+  - "bin/phpcompatinfo.phar analyser:run src/"
