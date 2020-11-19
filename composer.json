@@ -31,6 +31,9 @@
         "symfony/serializer": "^4.4|^5.0",
         "symfony/stopwatch": "^4.4|^5.0"
     },
+    "require-dev": {
+        "humbug/box": "^3.7"
+    },
     "authors": [
         {
             "name": "Laurent Laville",
@@ -57,6 +60,20 @@
             "Bartlett\\Tests\\CompatInfo\\": "tests/"
         }
     },
+    "scripts": {
+        "compile-box": "box compile",
+        "post-install-cmd": [
+          "@compile-box"
+        ],
+        "post-update-cmd": [
+          "@compile-box"
+        ]
+    },
+    "scripts-descriptions": {
+        "compile-box": "Compiles application with box-project/box to build PHAR version"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
         "optimize-autoloader": true
     }

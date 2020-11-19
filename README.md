@@ -28,52 +28,13 @@ composer require bartlett/php-compatinfo
 
 ## Build PHAR distribution
 
-To build PHAR distribution, you'll need to get a copy of this project https://github.com/humbug/box
+Since release **5.4.2** building of phar version of application is part of composer automated process.
 
-**WARNING**: Don't forget to run following command (before compiling archive), if you want to have a PHAR manifest up-to-date !
-```bash
-php phar-manifest.php > manifest.txt
-```
+Either when you install or update project with Composer, the `bin/phpcompatinfo.phar` file will be built.
 
-Run following command
-```bash
-box.phar compile
-```
-
-You should get output that look like
-```
-Box version 3.8.4@120b0a3 2019-12-13 17:22:43 UTC
-
- // Loading the configuration file "/shared/backups/bartlett/php-compat-info/box.json.dist".
-
-🔨  Building the PHAR "/shared/backups/bartlett/php-compat-info/bin/phpcompatinfo.phar"
-
-? Removing the existing PHAR "/shared/backups/bartlett/php-compat-info/bin/phpcompatinfo.phar"
-? No compactor to register
-? Adding main file: /shared/backups/bartlett/php-compat-info/bin/phpcompatinfo
-? Adding requirements checker
-? Adding binary files
-    > No file found
-? Auto-discover files? No
-? Exclude dev files? No
-? Adding files
-    > 1129 file(s)
-? Using stub file: /shared/backups/bartlett/php-compat-info/phar-stub.php
-? Skipping dumping the Composer autoloader
-? Removing the Composer dump artefacts
-? Compressing with the algorithm "GZ"
-    > Warning: the extension "zlib" will now be required to execute the PHAR
-? Setting file permissions to 0755
-* Done.
-
-No recommendation found.
-No warning found.
-
- // PHAR: 1155 files (1.65MB)
- // You can inspect the generated PHAR with the "info" command.
-
- // Memory usage: 25.54MB (peak: 26.54MB), time: 1sec
-```
+**NOTE**
+- You may avoid this by invoking composer command with `--no-scripts` option.
+- You may also rebuild the phar file by invoking `composer compile-box` command (shortcut of `run`, `run-script`).
 
 ## Documentation
 

@@ -6,6 +6,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Changed
+
+- [GH-270](https://github.com/llaville/php-compat-info/issues/270) - Composer Automation to build PHAR distribution
+
 ### Fixed
 
 - [GH-284](https://github.com/llaville/php-compat-info/issues/284) - Errors while running on empty files

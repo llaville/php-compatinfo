@@ -32,6 +32,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface ;
 
 use PackageVersions\Versions;
 
+use Phar;
 use function substr_count;
 
 /**
@@ -46,7 +47,7 @@ use function substr_count;
 class Application extends BaseApplication implements ApplicationInterface
 {
     public const NAME = 'phpCompatInfo';
-    public const VERSION = '5.4.1';
+    public const VERSION = '5.4.2';
     public const API_NAMESPACE = 'Bartlett\CompatInfo\Api\\';
 
     /**
@@ -197,7 +198,7 @@ class Application extends BaseApplication implements ApplicationInterface
      */
     public function doRun(InputInterface $input, OutputInterface $output): int
     {
-        if (\Phar::running()
+        if (Phar::running()
             && true === $input->hasParameterOption('--manifest')
         ) {
             $manifest = 'phar://' . strtolower($this->getName()) . '.phar/manifest.txt';
@@ -225,14 +226,6 @@ class Application extends BaseApplication implements ApplicationInterface
     protected function getDefaultInputDefinition(): InputDefinition
     {
         $definition = parent::getDefaultInputDefinition();
-        $definition->addOption(
-            new InputOption(
-                'config',
-                'c',
-                InputOption::VALUE_REQUIRED,
-                'Read configuration from PHP file.'
-            )
-        );
         $definition->addOption(
             new InputOption(
                 'profile',
@@ -265,13 +258,13 @@ class Application extends BaseApplication implements ApplicationInterface
                 'Display debugging information.'
             )
         );
-        if (\Phar::running()) {
+        if (!Phar::running()) {
             $definition->addOption(
                 new InputOption(
-                    'manifest',
-                    null,
-                    InputOption::VALUE_NONE,
-                    'Show which versions of dependencies are bundled.'
+                    'config',
+                    'c',
+                    InputOption::VALUE_REQUIRED,
+                    'Read configuration from PHP file.'
                 )
             );
         }

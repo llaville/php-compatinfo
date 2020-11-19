@@ -1,21 +1,41 @@
 #!/usr/bin/env php
 <?php
+// @link https://www.tomasvotruba.cz/blog/2018/08/02/5-gotchas-of-the-bin-file-in-php-cli-applications/
 
 if (PHP_SAPI !== 'cli') {
     return;
 }
 
-if (\Phar::running()) {
-    $vendorDir = 'phar://phpcompatinfo.phar/vendor';
-} else {
-    $baseDir   = dirname(__DIR__);
-    $vendorDir = $baseDir . '/vendor';
+gc_disable(); // performance boost
 
-    if (!file_exists($vendorDir . '/autoload.php')) {
-        $vendorDir = dirname(dirname($baseDir));
+if (\Phar::running()) {
+    $possibleAutoloadPaths = [
+        'phar://phpcompatinfo.phar/vendor/autoload.php'
+    ];
+} else {
+    $possibleAutoloadPaths = [
+        // local dev repository
+        __DIR__ . '/../vendor/autoload.php',
+        // dependency
+        __DIR__ . '/../../../../vendor/autoload.php',
+    ];
+}
+
+$isAutoloadFound = false;
+foreach ($possibleAutoloadPaths as $possibleAutoloadPath) {
+    if (file_exists($possibleAutoloadPath)) {
+        require_once $possibleAutoloadPath;
+        $isAutoloadFound = true;
+        break;
     }
 }
-require_once $vendorDir . '/autoload.php';
+
+if ($isAutoloadFound === false) {
+    throw new RuntimeException(sprintf(
+        'Unable to find "vendor/autoload.php" in "%s" paths.',
+        implode('", "', $possibleAutoloadPaths)
+    ));
+}
 
 use Bartlett\CompatInfo\Console\ApplicationInterface;
 
