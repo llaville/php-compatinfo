@@ -196,33 +196,6 @@ class Application extends BaseApplication implements ApplicationInterface
     /**
      * {@inheritDoc}
      */
-    public function doRun(InputInterface $input, OutputInterface $output): int
-    {
-        if (Phar::running()
-            && true === $input->hasParameterOption('--manifest')
-        ) {
-            $manifest = 'phar://' . strtolower($this->getName()) . '.phar/manifest.txt';
-
-            if (file_exists($manifest)) {
-                $out = file_get_contents($manifest);
-                $exitCode = 0;
-            } else {
-                $fmt = $this->getHelperSet()->get('formatter');
-                $out = $fmt->formatBlock('No manifest defined', 'error');
-                $exitCode = 1;
-            }
-            $output->writeln($out);
-            return $exitCode;
-        }
-
-        $exitCode = parent::doRun($input, $output);
-
-        return $exitCode;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     protected function getDefaultInputDefinition(): InputDefinition
     {
         $definition = parent::getDefaultInputDefinition();

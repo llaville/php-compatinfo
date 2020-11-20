@@ -6,8 +6,11 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [5.4.2] - 2020-11-20
+
 ### Changed
 
+- Phar manifest (`--manifest` option) is no more available. Will be back in major version 6.0 with another format.
 - [GH-270](https://github.com/llaville/php-compat-info/issues/270) - Composer Automation to build PHAR distribution
 - [PR-289](https://github.com/llaville/php-compat-info/pull/289) - Link the EOL page of php.net in README (thanks to @szepeviktor)
 
