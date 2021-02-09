@@ -8,40 +8,21 @@ if (PHP_SAPI !== 'cli') {
 
 gc_disable(); // performance boost
 
-if (\Phar::running()) {
-    $possibleAutoloadPaths = [
-        'phar://phpcompatinfo.phar/vendor/autoload.php'
-    ];
-} else {
-    $possibleAutoloadPaths = [
-        // local dev repository
-        __DIR__ . '/../vendor/autoload.php',
-        // dependency
-        __DIR__ . '/../../../../vendor/autoload.php',
-    ];
-}
+require_once dirname(__DIR__) . '/config/bootstrap.php';
 
-$isAutoloadFound = false;
-foreach ($possibleAutoloadPaths as $possibleAutoloadPath) {
-    if (file_exists($possibleAutoloadPath)) {
-        require_once $possibleAutoloadPath;
-        $isAutoloadFound = true;
-        break;
-    }
-}
+use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\ContainerFactory;
+use Bartlett\CompatInfo\Presentation\Console\ApplicationInterface;
+use Bartlett\CompatInfo\Presentation\Console\CommandLoaderInterface;
 
-if ($isAutoloadFound === false) {
-    throw new RuntimeException(sprintf(
-        'Unable to find "vendor/autoload.php" in "%s" paths.',
-        implode('", "', $possibleAutoloadPaths)
-    ));
-}
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-use Bartlett\CompatInfo\Console\ApplicationInterface;
-
-/** @var \Symfony\Component\DependencyInjection\ContainerBuilder $container */
-$container = require dirname(__DIR__) . '/config/container.php';
+/** @var ContainerBuilder $container */
+$container = (new ContainerFactory())->create();
 
 $app = $container->get(ApplicationInterface::class);
 $app->setContainer($container);
+
+// @link https://symfony.com/doc/current/console/lazy_commands.html
+$app->setCommandLoader($container->get(CommandLoaderInterface::class));
+
 exit($app->run());

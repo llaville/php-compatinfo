@@ -2,7 +2,7 @@
 <phpunit
     backupGlobals="false"
     backupStaticAttributes="false"
-    bootstrap="tests/bootstrap.php"
+    bootstrap="config/bootstrap.php"
     colors="true"
     stopOnError="false"
     stopOnFailure="false"
@@ -17,17 +17,17 @@
         </whitelist>
     </filter>
     <testsuites>
-        <testsuite name="CompatInfo Test Suite">
+        <testsuite name="parser">
             <directory suffix="Test.php">tests/PhpParser/</directory>
+        </testsuite>
+        <testsuite name="reference">
             <directory suffix="Test.php">tests/Reference/</directory>
+        </testsuite>
+        <testsuite name="sniffs">
             <directory suffix="Test.php">tests/Sniffs/</directory>
-            <file>tests/ClassIssueTest.php</file>
-            <file>tests/ConditionIssueTest.php</file>
-            <file>tests/DependencyIssueTest.php</file>
-            <file>tests/EnvironmentTest.php</file>
-            <file>tests/FunctionIssueTest.php</file>
-            <file>tests/NamespaceIssueTest.php</file>
-            <file>tests/PhpFeaturesIssueTest.php</file>
+        </testsuite>
+        <testsuite name="features">
+            <directory suffix="IssueTest.php">tests/</directory>
         </testsuite>
     </testsuites>
     <groups>

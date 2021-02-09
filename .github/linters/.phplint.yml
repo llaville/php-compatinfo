@@ -1,0 +1,8 @@
+path: .
+jobs: 5
+extensions:
+    - php
+exclude:
+    - tests/fixtures
+    - vendor
+warning: false

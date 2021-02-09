@@ -13,12 +13,15 @@
  * @since      Class available since Release 3.5.0
  */
 
-namespace Bartlett\Tests\CompatInfo\Reference;
+namespace Bartlett\CompatInfo\Tests\Reference;
 
-use Bartlett\CompatInfo\Util\Database;
-use Bartlett\Tests\CompatInfo\Sniffs\SniffTestCase;
+use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\ContainerFactory;
+use Bartlett\CompatInfo\Tests\Sniffs\SniffTestCase;
+use Bartlett\CompatInfoDb\Infrastructure\Persistence\Doctrine\Entity\Function_ as FunctionEntity;
 
-use PDO;
+use Doctrine\ORM\EntityManagerInterface;
+
+use Generator;
 
 /**
  * Tests function signatures with default and optional arguments
@@ -38,21 +41,19 @@ final class ParameterTest extends SniffTestCase
     /**
      * Data Provider to test functions with default and optional arguments.
      *
-     * @return array
+     * @return Generator
      */
-    public function functionProvider()
+    public function functionProvider(): Generator
     {
-        $pdo = Database::initRefDb();
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $container = (new ContainerFactory())->create();
+        $entityManager = $container->get(EntityManagerInterface::class);
+        $repository = $entityManager->getRepository(FunctionEntity::class);
 
-        $stmt = $pdo->prepare(
-            'SELECT f.name, e.name as "ext.name" ' .
-            ' FROM bartlett_compatinfo_functions f,  bartlett_compatinfo_extensions e' .
-            ' WHERE f.ext_name_fk = e.id AND f.parameters != "" '
-        );
-        $stmt->execute();
-
-        return $stmt->fetchAll(PDO::FETCH_NUM);
+        foreach ($repository->findAll() as $entity) {
+            if (!empty($entity->getParameters())) {
+                yield [$entity->getName(), $entity->getExtension()->getName()];
+            }
+        }
     }
 
     /**

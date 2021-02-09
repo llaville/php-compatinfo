@@ -1,4 +1,5 @@
-### Default Services and Parameters
+<!-- markdownlint-disable MD013 -->
+# Default Services and Parameters
 
 The closure returned by `config/default.php` file allows loading the following services:
 

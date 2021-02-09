@@ -10,17 +10,15 @@
         "issues": "https://github.com/llaville/php-compat-info/issues"
     },
     "require": {
-        "php": "^7.1.3|^8.0",
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
         "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
-        "ext-json": "*",
-        "ext-pdo": "*",
-        "ext-pdo_sqlite": "*",
-        "bartlett/php-reflect": "^4.4",
-        "bartlett/php-compatinfo-db": "^2.0",
-        "doctrine/collections": "^1.4",
+        "bartlett/php-compatinfo-db": "^3.6",
         "composer/package-versions-deprecated": "^1.8",
+        "doctrine/collections": "^1.4",
+        "nikic/php-parser": "^4.10",
         "psr/log": "^1.0",
         "ramsey/uuid": "^3.9|^4.0",
         "symfony/config": "^4.4|^5.0",
@@ -32,7 +30,8 @@
         "symfony/stopwatch": "^4.4|^5.0"
     },
     "require-dev": {
-        "humbug/box": "^3.7"
+        "composer/composer": "^2.0",
+        "symfony/phpunit-bridge": "^5.1"
     },
     "authors": [
         {
@@ -52,29 +51,38 @@
     ],
     "autoload": {
         "psr-4": {
-            "Bartlett\\": "src/Bartlett"
-        }
+            "Bartlett\\CompatInfo\\": "src/"
+        },
+        "files": ["src/Infrastructure/Framework/Symfony/Polyfill.php"]
     },
     "autoload-dev": {
         "psr-4": {
-            "Bartlett\\Tests\\CompatInfo\\": "tests/"
+            "Bartlett\\CompatInfo\\Tests\\": "tests/"
         }
     },
     "scripts": {
-        "compile-box": "box compile",
+        "setup-database": [
+            "mkdir -p ${HOME}/.cache/bartlett/ && touch ${HOME}/.cache/bartlett/compatinfo-db.sqlite",
+            "export DATABASE_URL=sqlite:///${HOME}/.cache/bartlett/compatinfo-db.sqlite"
+        ],
         "post-install-cmd": [
-          "@compile-box"
+            "Bartlett\\CompatInfo\\ComposerScripts::preparePharMetadata",
+            "@setup-database",
+            "vendor/bin/doctrine orm:schema-tool:create",
+            "vendor/bartlett/php-compatinfo-db/bin/compatinfo-db db:init"
         ],
         "post-update-cmd": [
-          "@compile-box"
+            "Bartlett\\CompatInfo\\ComposerScripts::preparePharMetadata",
+            "@setup-database"
         ]
     },
     "scripts-descriptions": {
-        "compile-box": "Compiles application with box-project/box to build PHAR version"
+        "setup-database": "Initializes SQLite database from JSON files in data directory."
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
+        "sort-packages": true,
         "optimize-autoloader": true
     }
 }

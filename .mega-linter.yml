@@ -1,0 +1,35 @@
+PRINT_ALPACA: false
+SHOW_ELAPSED_TIME: true
+EXCLUDED_DIRECTORIES: [".git"]
+IGNORE_GITIGNORED_FILES: true
+ENABLE:
+    - ACTION
+    - EDITORCONFIG
+    - JSON
+    - MARKDOWN
+    - PHP
+    - YAML
+DISABLE_LINTERS:
+    - JSON_JSONLINT
+    - JSON_V8R
+    - MARKDOWN_MARKDOWN_TABLE_FORMATTER
+    - MARKDOWN_MARKDOWN_LINK_CHECK
+    - PHP_BUILTIN
+    - PHP_PSALM
+EDITORCONFIG_EDITORCONFIG_CHECKER_CLI_LINT_MODE: project
+JSON_PRETTIER_FILTER_REGEX_EXCLUDE: "(composer.json)"
+MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: "(\\.github)"
+PHP_PHPSTAN_CLI_LINT_MODE: project # to avoid https://github.com/nvuillam/mega-linter/issues/725
+PHP_PHPCS_CLI_LINT_MODE: project
+PHP_PHPCS_CONFIG_FILE: ".phpcs.xml.dist"
+PHP_PHPCS_ARGUMENTS: "-n"
+PHP_PHPLINT_CLI_LINT_MODE: project
+YAML_PRETTIER_FILTER_REGEX_EXCLUDE: "(mkdocs\\.yml|\\.github)" # As it cannot be added in .gitignore for ML actionlint linter
+YAML_YAMLLINT_FILTER_REGEX_EXCLUDE: "(\\.github)" # As it cannot be added in .gitignore for ML actionlint linter
+CONFIG_REPORTER: false
+UPDATED_SOURCES_REPORTER: false
+#TEXT_REPORTER: true # cannot be set to true, and should use default value (true), otherwise TAP REPORTER is also generated. See https://github.com/nvuillam/mega-linter/issues/744
+CONSOLE_REPORTER: true
+LOG_FILE: mega-linter-v5.log
+LOG_LEVEL: INFO
+PRINT_ALL_FILES: false

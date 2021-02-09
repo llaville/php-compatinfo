@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 -->
+# About
 
 Before version 5.4, PHP CompatInfo used JSON config file
 handled by PHP Reflect [Api/V3/Config](https://github.com/llaville/php-reflect/blob/master/src/Bartlett/Reflect/Api/V3/Config.php) object,

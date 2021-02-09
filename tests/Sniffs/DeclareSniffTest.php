@@ -12,7 +12,7 @@
  * @since      Class available since Release 5.4.0
  */
 
-namespace Bartlett\Tests\CompatInfo\Sniffs;
+namespace Bartlett\CompatInfo\Tests\Sniffs;
 
 /**
  * Declare

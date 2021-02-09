@@ -1,5 +1,5 @@
-
-## Limitation
+<!-- markdownlint-disable MD013 -->
+# Limitation
 
 ```php
 // @link https://github.com/nikic/PHP-Parser/blob/v4.10.0/lib/PhpParser/Lexer.php#L413-L433
@@ -31,13 +31,15 @@ Later, in another script or even the same one, if we used these constants we wil
 but it's not the reality.
 
 Example with
+
 ```php
 // @link https://github.com/nikic/PHP-Parser/blob/v4.10.0/lib/PhpParser/Lexer.php#L110
 $tokens[] = [\T_BAD_CHARACTER, $chr, $line];
 ```
 
 Console output tell us
-```
+
+```text
 Constants Analysis
 
     Constant                   REF       EXT min/Max PHP min/Max

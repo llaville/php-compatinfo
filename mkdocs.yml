@@ -1,0 +1,48 @@
+---
+site_name: PHP Compatinfo
+site_url: https://llaville.github.io/php-compatinfo
+repo_url: https://github.com/llaville/php-compatinfo  # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#repository
+site_author: Laurent Laville
+edit_uri: ""  # hide edit button -- https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#edit-button
+theme:
+    name: material
+    palette:  # Color palette toggle -- https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle
+        # editorconfig-checker-disable
+        - scheme: default
+          primary: lime
+          toggle:
+              icon: material/lightbulb-outline
+              name: Switch to dark mode
+        - scheme: slate
+          toggle:
+              icon: material/lightbulb
+              name: Switch to light mode
+        # editorconfig-checker-enable
+    features:
+        - navigation.instant  # Instant loading -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#instant-loading
+        - navigation.tabs  # Navigation tabs -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-tabs
+        - navigation.indexes  # Section index pages -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages
+        - navigation.top  # Back-To-Top button -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#back-to-top-button
+markdown_extensions:
+    - pymdownx.highlight  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight
+    - pymdownx.superfences  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences
+nav:
+    - "Home": README.md
+    - "Getting-Started": getting-started.md
+    - "Components":
+          - "PHP Parser":
+                - "Visitors": 01_Components/01_PHP-Parser/Visitors.md
+          - "Profiler":
+                - "Data Collectors": 01_Components/02_Profiler/Collectors.md
+          - "Sniffs": 01_Components/03_Sniffs/Features.md
+          - "Extensions": 01_Components/04_Extensions/Hooks.md
+          - "Configurations":
+                - "About": 02_Configs/README.md
+                - "Default": 02_Configs/Default.md
+                - "None": 02_Configs/None.md
+          - "Conditional Code":
+                - "Introduction": 03_Conditional_Code/1_Introduction.md
+                - "Indirect Call": 03_Conditional_Code/2_Indirect_Call.md
+                - "Multiple Signature": 03_Conditional_Code/3_Multiple_Signature.md
+                - "Some Limitation": 03_Conditional_Code/100_Limitation.md
+          - "Exclude Directories": 04_Exclude_Folders/README.md

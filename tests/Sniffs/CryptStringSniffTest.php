@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\Tests\CompatInfo\Sniffs;
+namespace Bartlett\CompatInfo\Tests\Sniffs;
 
 /**
  * @link https://github.com/llaville/php-compat-info/issues/220
@@ -16,7 +16,7 @@ final class CryptStringSniffTest extends SniffTestCase
 
         self::$fixtures .= 'strings' . DIRECTORY_SEPARATOR;
     }
-    
+
     /**
      * Regression test for issue #220
      *

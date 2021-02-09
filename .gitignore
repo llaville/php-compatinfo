@@ -1,9 +1,95 @@
-Thumbs.db
+######################################
+# CUSTOM
+######################################
+
+###### Composer dependencies ######
+vendor/
+
+###### PHPLint ######
+.phplint-cache
+
+###### PHPUnit ######
+.phpunit.result.cache
+
+###### Box ######
+.box.metadata.cache
+
+###### Mega-Linter ######
+report/
+
+
+######################################
+# GENERIC
+######################################
+
+###### std ######
+*.lock
+*.log
+
+###### patches/diffs ######
+*.patch
+*.diff
+*.orig
+*.rej
+
+###### archives ######
 *.tgz
 *.zip
 *.phar
-*.log
-vendor/
-phpunit.xml
-composer.lock
-.idea
+
+###### git ######
+.gitignore
+# cannot ignore .github folder because Mega-Linter ACTION_ACTIONLINT be check
+.git
+
+######################################
+# Operating Systems
+######################################
+
+###### OSX ######
+._*
+.DS*
+.Spotlight-V100
+.Trashes
+
+###### Windows ######
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+
+######################################
+# Editors
+######################################
+
+###### Sublime ######
+*.sublime-workspace
+*.sublime-project
+
+###### Eclipse ######
+.classpath
+.buildpath
+.project
+.settings/
+
+###### Netbeans ######
+nbproject/private/
+
+###### Intellij IDE ######
+.idea/
+.idea_modules/
+
+###### vim ######
+*.swp
+*.swo
+*~
+
+###### TextMate ######
+.tm_properties
+*.tmproj
+
+###### BBEdit ######
+*.bbprojectd
+*.bbproject

@@ -1,27 +1,36 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\Tests\CompatInfo;
-
-use Bartlett\CompatInfo\Analyser\CompatibilityAnalyser;
-use Bartlett\CompatInfo\Client;
-
 /**
  * Common Class TestCase
  *
  * @link https://phpunit.readthedocs.io/en/9.3/writing-tests-for-phpunit.html
- * @since 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Tests;
+
+use Bartlett\CompatInfo\Application\Analyser\CompatibilityAnalyser;
+use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;
+use Bartlett\CompatInfo\Application\Query\QueryBusInterface;
+use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\ContainerFactory;
+
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+
+use Exception;
+use function reset;
+
+/**
+ * @since Release 5.4.0, 6.0.0
  */
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     protected static $fixtures;
     protected static $analyserId;
-    protected static $api;
-    protected static $sniffs;
 
     /**
      * Sets up the shared fixture.
      *
      * @return void
+     * @throws Exception
      */
     public static function setUpBeforeClass(): void
     {
@@ -30,11 +39,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         ;
 
         self::$analyserId = CompatibilityAnalyser::class;
-
-        $client = new Client();
-
-        // request for a Bartlett\CompatInfo\Api\Analyser
-        self::$api = $client->api('analyser');
     }
 
     /**
@@ -42,14 +46,18 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      *
      * @param string $dataSource
      * @return array
+     * @throws Exception
      */
     protected function executeAnalysis(string $dataSource): array
     {
-        $profile = self::$api->run(self::$fixtures . $dataSource, false, self::$sniffs);
+        $compatibilityQuery = new GetCompatibilityQuery(self::$fixtures . $dataSource, [], false);
 
+        /** @var ContainerBuilder $container */
+        $container = (new ContainerFactory())->create();
+        $queryBus = $container->get(QueryBusInterface::class);
+
+        $profile = $queryBus->query($compatibilityQuery);
         $data = $profile->getData();
-        $token = key($data);
-
-        return $data[$token];
+        return reset($data);
     }
 }

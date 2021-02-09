@@ -13,9 +13,9 @@
  * @since      Class available since Release 3.4.0
  */
 
-namespace Bartlett\Tests\CompatInfo\Reference;
+namespace Bartlett\CompatInfo\Tests\Reference;
 
-use Bartlett\Tests\CompatInfo\Sniffs\SniffTestCase;
+use Bartlett\CompatInfo\Tests\Sniffs\SniffTestCase;
 
 /**
  * @link https://github.com/llaville/php-compat-info/issues/127
@@ -101,7 +101,7 @@ final class IssueTest extends SniffTestCase
         $extensions = $metrics[self::$analyserId]['extensions'];
 
         $provideExtensions = [
-            'Core',
+            'core',
             'standard',
             'dom',
             'date',

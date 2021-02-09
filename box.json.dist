@@ -1,5 +1,6 @@
 {
     "directories": ["bin", "config", "src", "vendor"],
     "compression": "GZ",
-    "stub": "phar-stub.php"
+    "stub": "phar-stub.php",
+    "metadata": "Bartlett\\CompatInfo\\ComposerScripts::getPharMetadata"
 }
