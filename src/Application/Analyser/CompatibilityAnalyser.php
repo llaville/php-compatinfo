@@ -54,6 +54,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     private $currentFile;
     private $tokens;
     private $metrics = [];
+    private $contextCallback;
 
     use VersionUpdater;
 
