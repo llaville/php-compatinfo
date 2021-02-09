@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\Tests\CompatInfo\Sniffs;
+namespace Bartlett\CompatInfo\Tests\Sniffs;
 
-use Bartlett\CompatInfo\Collection\SniffCollection;
-use Bartlett\Tests\CompatInfo\TestCase;
+use Bartlett\CompatInfo\Application\Collection\SniffCollection;
+use Bartlett\CompatInfo\Tests\TestCase;
 
 /**
  * Base class for all sniffs test case
@@ -21,7 +21,6 @@ abstract class SniffTestCase extends TestCase
 
         self::$fixtures .= 'sniffs' . DIRECTORY_SEPARATOR;
 
-        $container = require __DIR__ . '/../../config/container.php';
-        self::$sniffs = $container->get(SniffCollection::class);
+        self::$sniffs = self::$container->get(SniffCollection::class);
     }
 }

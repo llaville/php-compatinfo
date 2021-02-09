@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\Tests\CompatInfo\Sniffs;
+namespace Bartlett\CompatInfo\Tests\Sniffs;
 
 /**
  * Combined Comparison (Spaceship) Operator since PHP 7.0.0 alpha1

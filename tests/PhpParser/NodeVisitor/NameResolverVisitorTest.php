@@ -1,10 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\Tests\CompatInfo\PhpParser\NodeVisitor;
+/**
+ * NameResolver to initialize full qualified name on new attribute specified by option
+ * - nodeAttributeNamespacedName
+ * rather than use the `namespacedName` property of each node to avoid possible conflicts
+ */
 
-use Bartlett\CompatInfo\PhpParser\NodeVisitor\NameResolverVisitor;
-use Bartlett\CompatInfo\PhpParser\NodeVisitor\ParentContextVisitor;
-use Bartlett\Tests\CompatInfo\TestCase;
+namespace Bartlett\CompatInfo\Tests\PhpParser\NodeVisitor;
+
+use Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\NameResolverVisitor;
+use Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\ParentContextVisitor;
+use Bartlett\CompatInfo\Tests\TestCase;
 
 use PhpParser\Lexer\Emulative;
 use PhpParser\Node;
@@ -12,11 +18,7 @@ use PhpParser\NodeTraverser;
 use PhpParser\ParserFactory;
 
 /**
- * NameResolver to initialize full qualified name on new attribute specified by option
- * - nodeAttributeNamespacedName
- * rather than use the `namespacedName` property of each node to avoid possible conflicts
- *
- * @since Class available since Release 5.4.0
+ * @since Release 5.4.0
  */
 final class NameResolverVisitorTest extends TestCase
 {

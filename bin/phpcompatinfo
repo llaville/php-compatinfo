@@ -37,11 +37,21 @@ if ($isAutoloadFound === false) {
     ));
 }
 
-use Bartlett\CompatInfo\Console\ApplicationInterface;
 
-/** @var \Symfony\Component\DependencyInjection\ContainerBuilder $container */
+use Bartlett\CompatInfo\Presentation\Console\ApplicationInterface;
+use Bartlett\CompatInfo\Presentation\Console\CommandLoaderInterface;
+
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+
+putenv('APP_ENV=' . ($_SERVER['APP_ENV'] ?? $_ENV['APP_ENV'] ?? 'prod'));
+
+/** @var ContainerBuilder $container */
 $container = require dirname(__DIR__) . '/config/container.php';
 
 $app = $container->get(ApplicationInterface::class);
 $app->setContainer($container);
+
+// @link https://symfony.com/doc/current/console/lazy_commands.html
+$app->setCommandLoader($container->get(CommandLoaderInterface::class));
+
 exit($app->run());

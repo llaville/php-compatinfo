@@ -1,11 +1,21 @@
 <?php declare(strict_types=1);
 
-use Bartlett\CompatInfo\Collection\SniffCollection;
-use Bartlett\CompatInfo\Console\Application;
-use Bartlett\CompatInfo\Console\ApplicationInterface;
-use Bartlett\CompatInfo\Sniffs\SniffInterface;
+use Bartlett\CompatInfo\Application\Event\Dispatcher\EventDispatcher;
+use Bartlett\CompatInfo\Application\Event\Subscriber\ProgressEventSubscriber;
+use Bartlett\CompatInfo\Presentation\Console\Application;
+use Bartlett\CompatInfo\Presentation\Console\ApplicationInterface;
+use Bartlett\CompatInfo\Presentation\Console\CommandLoaderInterface;
+use Bartlett\CompatInfo\Presentation\Console\FactoryCommandLoader;
+use Bartlett\CompatInfo\Presentation\Console\Input\Input;
+use Bartlett\CompatInfo\Presentation\Console\Output\Output;
+use function Bartlett\CompatInfo\Infrastructure\Framework\Symfony\service;
 
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
 use function Symfony\Component\DependencyInjection\Loader\Configurator\tagged_iterator;
 
 /**
@@ -22,24 +32,33 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services->defaults()
         ->autowire()
+    ;
+
+    $services->set(InputInterface::class, Input::class)
+        // for configuration option of bin file
+        ->public()
+    ;
+    $services->set(OutputInterface::class, Output::class)
+        // for configuration option of bin file
         ->public()
     ;
 
     $services->set(ApplicationInterface::class, Application::class)
+        ->call('setDispatcher', [service(EventDispatcherInterface::class)])
         // for bin file
         ->public()
     ;
 
-    // @link https://symfony.com/doc/current/service_container/tags.html#autoconfiguring-tags
-    $services->instanceof(SniffInterface::class)
-        ->tag('phpcompatinfo.compatibility_sniff')
+    // @link https://symfony.com/doc/current/console/lazy_commands.html#factorycommandloader
+    $services->set(CommandLoaderInterface::class, FactoryCommandLoader::class)
+        ->arg('$commands', tagged_iterator('console.command'))
+        // for bin file
+        ->public()
     ;
 
-    $services->load('Bartlett\CompatInfo\Sniffs\\', __DIR__ . '/../../src/Bartlett/CompatInfo/Sniffs')
+    $services->set(ProgressEventSubscriber::class)
     ;
+    $services->alias(EventSubscriberInterface::class . ' $progressEventSubscriber', ProgressEventSubscriber::class);
 
-    // @link https://symfony.com/doc/current/service_container/tags.html#reference-tagged-services
-    $services->set(SniffCollection::class, SniffCollection::class)
-        ->args([tagged_iterator('phpcompatinfo.compatibility_sniff')])
-    ;
+    $services->alias(EventDispatcherInterface::class . ' $compatibilityEventDispatcher', EventDispatcher::class);
 };

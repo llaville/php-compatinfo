@@ -13,7 +13,7 @@
  * @since      Class available since Release 4.0.0-alpha2+1
  */
 
-namespace Bartlett\Tests\CompatInfo;
+namespace Bartlett\CompatInfo\Tests;
 
 /**
  * @link https://github.com/llaville/php-compat-info/issues/171
@@ -46,7 +46,7 @@ final class ClassIssueTest extends TestCase
         $extensions = $metrics[self::$analyserId]['extensions'];
 
         $provideExtensions = [
-            'Core',
+            'core',
             'xmlwriter',
             'mongo',
         ];
