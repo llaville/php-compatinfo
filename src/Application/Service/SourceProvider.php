@@ -5,7 +5,6 @@ namespace Bartlett\CompatInfo\Application\Service;
 use Symfony\Component\Finder\Finder;
 
 use function is_dir;
-use function is_file;
 use function pathinfo;
 use function realpath;
 use function substr;
@@ -27,7 +26,7 @@ class SourceProvider
 
         if (is_dir($src)) {
             $provider = ['in' => $src];
-        } elseif (is_file($src)) {
+        } else {
             $ext = pathinfo($src, PATHINFO_EXTENSION);
 
             if (in_array($ext, ['phar', 'zip', 'gz', 'tar', 'tgz', 'rar'])) {
