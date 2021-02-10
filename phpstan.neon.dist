@@ -1,8 +1,7 @@
 parameters:
     level: 2
     paths:
-        - src
+        - src/
     ignoreErrors:
-        # Because https://github.com/phpstan/phpstan/issues/1332 not yet released.
-        # See https://github.com/phpstan/phpstan/milestone/8
-        - '#but return statement is missing.#'
+        # TODO Add explicit return statements.
+        - '#null but return statement is missing\.$#'
