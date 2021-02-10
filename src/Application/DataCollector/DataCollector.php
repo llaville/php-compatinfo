@@ -29,7 +29,7 @@ abstract class DataCollector implements DataCollectorInterface
     /** @var string[] */
     protected $files = [];
 
-    /** @var Error[] */
+    /** @var string[] */
     protected $errors = [];
 
     /** @var NodeVisitor */
