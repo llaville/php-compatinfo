@@ -12,11 +12,11 @@ use Bartlett\CompatInfo\Application\Profiler\Profile;
 use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;
 use Bartlett\CompatInfo\Presentation\Console\Style;
 
+use Bartlett\CompatInfo\Presentation\Console\StyleInterface;
 use Symfony\Component\Console\Helper\TableSeparator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\StyleInterface;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 
 use function array_key_exists;
@@ -85,11 +85,11 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
         return self::SUCCESS;
     }
 
-    private function printReport(StyleInterface $output, array $response)
+    private function printReport(StyleInterface $output, array $response): void
     {
         if (empty($response)) {
             // No reports printed if there are no metrics.
-            $output->writeln('<info>No metrics.</info>');
+            $output->warning('No metrics.');
             return;
         }
 
@@ -123,15 +123,21 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
         }
 
         if (count($errors)) {
-            $output->writeln('<info>Errors found</info>');
+            $output->caution(
+                sprintf(
+                    'Found %d error%s, while parsing data source',
+                    count($errors),
+                    count($errors) > 1 ? 's' : ''
+                )
+            );
 
             foreach ($errors as $msg) {
                 $text = sprintf(
-                    '%s <info>></info> %s',
-                    PHP_EOL,
+                    '<error>!</error> %s',
+
                     $msg
                 );
-                $output->writeln($text);
+                $output->text($text);
             }
         }
 
@@ -167,16 +173,7 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
         $style = 'php';
         $style = $output->getFormatter()->hasStyle($style) ? $style : 'comment';
 
-        $output->writeln(
-            sprintf(
-                '%s<%s>Requires %s%s</%s>',
-                PHP_EOL,
-                $style,
-                $min,
-                $max,
-                $style
-            )
-        );
+        $output->success(sprintf('Requires %s%s', $min, $max));
     }
 
     private function formatSection(string $section, StyleInterface $io): void

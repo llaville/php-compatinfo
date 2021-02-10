@@ -16,10 +16,10 @@ namespace Bartlett\CompatInfo\Application\Event\Subscriber;
 
 use Bartlett\CompatInfo\Application\Event\ProgressEvent;
 use Bartlett\CompatInfo\Presentation\Console\Style;
+use Bartlett\CompatInfo\Presentation\Console\StyleInterface;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\StyleInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 use function count;

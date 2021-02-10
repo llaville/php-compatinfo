@@ -7,6 +7,6 @@ use PhpParser\NodeVisitor;
 /**
  * @since Release 6.0.0
  */
-interface SniffAnalyserInterface extends AnalyserInterface, SniffVisitorInterface, NodeVisitor
+interface SniffAnalyserInterface extends SniffVisitorInterface, NodeVisitor
 {
 }

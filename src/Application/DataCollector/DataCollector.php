@@ -8,9 +8,10 @@
 
 namespace Bartlett\CompatInfo\Application\DataCollector;
 
+use Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\NodeVisitor;
+
 use PhpParser\Error;
 use PhpParser\NodeTraverser;
-use PhpParser\NodeVisitor;
 
 use Symfony\Component\Finder\SplFileInfo;
 

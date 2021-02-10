@@ -8,7 +8,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 /**
  * @since Release 6.0.0
  */
-final class Style extends SymfonyStyle
+final class Style extends SymfonyStyle implements StyleInterface
 {
     /**
      * {@inheritDoc}
@@ -52,10 +52,9 @@ final class Style extends SymfonyStyle
     }
 
     /**
-     * @param mixed $lines
-     * @param string $format
+     * {@inheritDoc}
      */
-    public function columns($lines, string $format)
+    public function columns($lines, string $format): void
     {
         if (!is_array($lines)) {
             $lines = [$lines];

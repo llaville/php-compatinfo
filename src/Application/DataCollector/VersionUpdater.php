@@ -27,7 +27,7 @@ trait VersionUpdater
      * Updates the base version if current ref version is greater
      *
      * @param string $current Current version
-     * @param string &$base   Base version
+     * @param string $base    Base version
      * @return bool
      */
     protected function updateVersion(string $current, string &$base): bool
@@ -42,7 +42,7 @@ trait VersionUpdater
     /**
      * Updates the version of a specific element.
      *
-     * @param array &$target
+     * @param array $target
      * @param array $versions
      * @return bool
      */

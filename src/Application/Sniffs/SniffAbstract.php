@@ -45,6 +45,9 @@ abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterfa
     // NodeVisitorAbstract inheritance
     // public function beforeTraverse(array $nodes)    { }
 
+    /**
+     * {@inheritDoc}
+     */
     public function enterNode(Node $node)
     {
         if (!empty($this->contextCallback) && is_callable($this->contextCallback)) {
@@ -121,35 +124,6 @@ abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterfa
             return '';
         }
         return ($node->name instanceof Node\Name || $node->name instanceof Node\Identifier) ? (string) $node->name : '';
-    }
-
-    /**
-     * @param Node $node
-     * @return array
-     *
-     * @psalm-return array{file: false|string, line: mixed}
-     */
-    protected function getCurrentSpot(Node $node): array
-    {
-        return [
-            'file'    => realpath($this->visitor->getCurrentFile()->getPathname()),
-            'line'    => $node->getLine()
-        ];
-    }
-
-    /**
-     * @param string $version
-     * @param string $operator
-     * @param string $severity
-     *
-     * @return string
-     */
-    protected function getCurrentSeverity(string $version, string $operator = 'lt', string $severity = 'error'): string
-    {
-        if (version_compare(PHP_VERSION, $version, $operator)) {
-            return 'warning';
-        }
-        return $severity;
     }
 
     /**

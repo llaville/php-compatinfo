@@ -47,6 +47,7 @@ final class ConditionalCodeSniff extends SniffAbstract
         if (!$this->isConditionalCode($node)) {
             return null;
         }
+        /** @var Node\Expr\FuncCall $node */
 
         $versions =
             $this->references->find(
@@ -56,7 +57,10 @@ final class ConditionalCodeSniff extends SniffAbstract
             )
         ;
 
-        $extra = ('methods' === $this->group) ? $node->args[0]->value->value : null;
+        /** @var Node\Scalar\String_ $arg */
+        $arg = $node->args[0]->value;
+
+        $extra = ('methods' === $this->group) ? $arg->value : null;
 
         $data = $node->getAttribute($this->attributeKeyStore, $versions);
         $data['opt.name'] = ('methods' === $this->group) ? $extra . '\\' . $this->opt : $this->opt;

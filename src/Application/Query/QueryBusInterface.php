@@ -7,4 +7,9 @@ namespace Bartlett\CompatInfo\Application\Query;
  */
 interface QueryBusInterface
 {
+    /**
+     * @param QueryInterface $query
+     * @return mixed
+     */
+    public function query(QueryInterface $query);
 }

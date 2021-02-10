@@ -15,7 +15,7 @@ use function array_replace;
 /**
  * @since Release 5.4.0
  */
-class FilterVisitor extends FindingVisitor
+class FilterVisitor extends FindingVisitor implements NodeVisitor
 {
     /** @var NormalizerInterface */
     protected $normalizer;
@@ -41,6 +41,9 @@ class FilterVisitor extends FindingVisitor
         parent::__construct($filterCallback);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getCollection(): Collection
     {
         $collection = new ArrayCollection($this->getFoundNodes());

@@ -24,9 +24,7 @@ final class Throwing implements ErrorHandler
     }
 
     /**
-     * Check whether there are any errors.
-     *
-     * @return bool
+     * {@inheritDoc}
      */
     public function hasErrors(): bool
     {
@@ -34,12 +32,17 @@ final class Throwing implements ErrorHandler
     }
 
     /**
-     * Get collected errors.
-     *
-     * @return array
+     * {@inheritDoc}
      */
     public function getErrors(): array
     {
         return [];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function clearErrors(): void
+    {
     }
 }

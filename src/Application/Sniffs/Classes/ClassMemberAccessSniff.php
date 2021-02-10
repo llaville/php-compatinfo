@@ -27,6 +27,7 @@ final class ClassMemberAccessSniff extends SniffAbstract
         if (!$this->isClassMemberAccess($node)) {
             return null;
         }
+        /** @var Node\Expr\MethodCall $node */
 
         $caller = $node->var;
 

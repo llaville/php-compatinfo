@@ -2,7 +2,8 @@
 
 namespace Bartlett\CompatInfo\Application\DataCollector;
 
-use PhpParser\NodeVisitor;
+use Bartlett\CompatInfo\Application\DataCollector\Normalizer\NodeNormalizer;
+use Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\FilterVisitor;
 
 use function array_fill_keys;
 use function array_filter;
@@ -29,8 +30,12 @@ final class VersionDataCollector extends DataCollector
     /** @var array */
     private $versions = [];
 
-    public function __construct(NodeVisitor $visitor, array $keysAllowed)
+    public function __construct(array $keysAllowed)
     {
+        $visitor = new FilterVisitor(
+            new NodeNormalizer()
+        );
+
         parent::__construct($visitor);
         $this->dataKeysAllowed = $keysAllowed;
         $this->reset();

@@ -9,7 +9,7 @@ namespace Bartlett\CompatInfo\Application\Analyser;
 /**
  * @since Release 6.0.0
  */
-interface SniffVisitorInterface
+interface SniffVisitorInterface extends AnalyserInterface
 {
     public function setUpBeforeVisitor(): void;
     public function tearDownAfterVisitor(): void;

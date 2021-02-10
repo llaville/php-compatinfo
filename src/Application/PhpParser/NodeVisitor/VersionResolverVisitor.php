@@ -173,7 +173,16 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
     private function resolveTypeVersions(Node $node): string
     {
         $groups = ['interfaces', 'classes'];
-        $name = (string) ($node instanceof Node\NullableType ? $node->type : $node);
+        $name = $node instanceof Node\NullableType ? $node->type : $node;
+
+        if ($name instanceof Node\Name || $name instanceof Node\Identifier) {
+            $name = (string) $name;
+        }
+
+        if (!is_string($name)) {
+            // Node undetected, returns default
+            return 'classes';
+        }
 
         foreach ($groups as $group) {
             // not yet known, try to detect for non user elements

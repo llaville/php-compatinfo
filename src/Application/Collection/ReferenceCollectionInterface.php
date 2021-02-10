@@ -2,10 +2,12 @@
 
 namespace Bartlett\CompatInfo\Application\Collection;
 
+use Doctrine\Common\Collections\Collection;
+
 /**
  * @since Release 5.4.0
  */
-interface ReferenceCollectionInterface
+interface ReferenceCollectionInterface extends Collection
 {
     /**
      * Fetch the database to retrieve, when possible, element informations.

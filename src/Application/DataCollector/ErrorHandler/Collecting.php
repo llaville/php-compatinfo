@@ -26,9 +26,7 @@ final class Collecting extends ArrayCollection implements ErrorHandler
     }
 
     /**
-     * Get collected errors.
-     *
-     * @return Error[]
+     * {@inheritDoc}
      */
     public function getErrors(): array
     {
@@ -36,9 +34,7 @@ final class Collecting extends ArrayCollection implements ErrorHandler
     }
 
     /**
-     * Check whether there are any errors.
-     *
-     * @return bool
+     * {@inheritDoc}
      */
     public function hasErrors(): bool
     {
@@ -46,9 +42,7 @@ final class Collecting extends ArrayCollection implements ErrorHandler
     }
 
     /**
-     * Reset/clear collected errors.
-     *
-     * @return void
+     * {@inheritDoc}
      */
     public function clearErrors(): void
     {

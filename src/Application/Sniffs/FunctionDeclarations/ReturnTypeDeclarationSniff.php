@@ -25,6 +25,7 @@ final class ReturnTypeDeclarationSniff extends SniffAbstract
         if (!$this->hasReturnType($node)) {
             return null;
         }
+        /** @var Node\FunctionLike $node */
 
         $returnType = $node->getReturnType();
 

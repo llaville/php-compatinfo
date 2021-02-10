@@ -17,10 +17,8 @@ namespace Bartlett\CompatInfo\Application\Analyser;
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Application\Collection\SniffCollection;
 use Bartlett\CompatInfo\Application\DataCollector\ErrorHandler;
-use Bartlett\CompatInfo\Application\DataCollector\Normalizer\NodeNormalizer;
 use Bartlett\CompatInfo\Application\DataCollector\VersionDataCollector;
 use Bartlett\CompatInfo\Application\DataCollector\VersionUpdater;
-use Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\FilterVisitor;
 use Bartlett\CompatInfo\Application\Profiler\CollectorInterface;
 
 use PhpParser\Node;
@@ -84,15 +82,11 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
             'constants',
             'directives',
             'conditions',
-
         ];
-        $visitor = new FilterVisitor(
-            new NodeNormalizer()
-        );
 
         $this->profiler = $profiler;
         $this->profiler->addCollector(
-            (new VersionDataCollector($visitor, $keysAllowed))->setName(self::COLLECTOR_NAME)
+            (new VersionDataCollector($keysAllowed))->setName(self::COLLECTOR_NAME)
         );
 
         parent::__construct($sniffCollection, self::PARENT_NODE_ATTRIBUTE, self::ANALYSER_NODE_ATTRIBUTE);
