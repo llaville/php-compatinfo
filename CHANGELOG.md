@@ -6,6 +6,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Fixed
+
+- [#286](https://github.com/llaville/php-compat-info/issues/286) - Mass method signature mismatch
+
 ## [5.4.2] - 2020-11-20
 
 ### Changed
