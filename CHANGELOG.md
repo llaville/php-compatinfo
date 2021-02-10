@@ -110,7 +110,11 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - add support to PHP-Parser 3.1 for running on PHP >= 5.5 and for parsing code PHP 5.2 to PHP 7.2
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/5.2.3...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/5.4.2...HEAD
+[5.4.2]: https://github.com/llaville/php-compat-info/compare/5.4.1...5.4.2
+[5.4.1]: https://github.com/llaville/php-compat-info/compare/5.4.0...5.4.1
+[5.4.0]: https://github.com/llaville/php-compat-info/compare/5.3.0...5.4.0
+[5.3.0]: https://github.com/llaville/php-compat-info/compare/5.2.3...5.3.0
 [5.2.3]: https://github.com/llaville/php-compat-info/compare/5.2.2...5.2.3
 [5.2.2]: https://github.com/llaville/php-compat-info/compare/5.2.1...5.2.2
 [5.2.1]: https://github.com/llaville/php-compat-info/compare/5.2.0....5.2.1
