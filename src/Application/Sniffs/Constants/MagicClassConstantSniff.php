@@ -34,5 +34,6 @@ final class MagicClassConstantSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.5.0']);
+        return null;
     }
 }

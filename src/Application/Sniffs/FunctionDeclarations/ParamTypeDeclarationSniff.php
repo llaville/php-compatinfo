@@ -1,14 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
-
-use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
-use function strtolower;
-
 /**
  * Parameters Type Declaration
  *
@@ -24,6 +15,19 @@ use function strtolower;
  *
  * @see tests/Sniffs/ParamTypeDeclarationSniffTest
  * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
+
+use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+use function strtolower;
+
+/**
+ * @since Release 5.4.0
  */
 final class ParamTypeDeclarationSniff extends SniffAbstract
 {
@@ -95,5 +99,6 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, $versions);
+        return null;
     }
 }

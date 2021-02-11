@@ -29,5 +29,6 @@ final class UseTraitSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.4.0']);
+        return null;
     }
 }

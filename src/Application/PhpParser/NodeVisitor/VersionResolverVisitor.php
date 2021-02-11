@@ -101,6 +101,8 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
 
         $currentVersions['declared'] = true;
         $node->setAttribute($this->attributeKey, $currentVersions);
+
+        return null;
     }
 
     /**

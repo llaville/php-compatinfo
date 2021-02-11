@@ -69,6 +69,8 @@ final class ConditionalCodeSniff extends SniffAbstract
         $data['opt.group'] = $this->group;
         $data['opt.versions'] = $this->references->find($this->group, $this->opt, 0, $extra);
         $node->setAttribute($this->attributeKeyStore, $data);
+
+        return null;
     }
 
     /**

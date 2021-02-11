@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\Operators;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * Use of Elvis syntax (middle portion of ternary operator missing) since PHP 5.3
  *
@@ -13,7 +7,16 @@ use PhpParser\Node;
  * @since https://www.php.net/manual/en/language.operators.comparison.php#language.operators.comparison.ternary
  *
  * @see tests/Sniffs/ShortTernaryOperatorSniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\Operators;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class ShortTernaryOperatorSniff extends SniffAbstract
 {
@@ -29,5 +32,7 @@ final class ShortTernaryOperatorSniff extends SniffAbstract
         if (null === $node->if) {
             $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.3.0']);
         }
+
+        return null;
     }
 }

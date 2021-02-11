@@ -32,5 +32,6 @@ final class ArrayDereferencingSyntaxSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '5.4.0']);
+        return null;
     }
 }

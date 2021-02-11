@@ -62,6 +62,7 @@ final class NameResolverVisitor extends NameResolver
             $name = $this->concatParentRecursive($node);
             $node->setAttribute($this->attributeNamespacedName, (string) $name);
         }
+        return null;
     }
 
     /**

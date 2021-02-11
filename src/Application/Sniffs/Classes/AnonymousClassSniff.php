@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * Anonymous classes since PHP 7.0.0 alpha1
  *
@@ -13,7 +7,16 @@ use PhpParser\Node;
  * @link https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.anonymous-classes
  *
  * @see tests/Sniffs/AnonymousClassSniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class AnonymousClassSniff extends SniffAbstract
 {
@@ -29,6 +32,7 @@ final class AnonymousClassSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '7.0.0alpha1']);
+        return null;
     }
 
     private function isAnonymousClass(Node $node): bool

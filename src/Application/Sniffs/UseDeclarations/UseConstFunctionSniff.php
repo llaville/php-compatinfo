@@ -31,6 +31,7 @@ final class UseConstFunctionSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.6.0']);
+        return null;
     }
 
     private function isUseConstFunction(Node $node): bool

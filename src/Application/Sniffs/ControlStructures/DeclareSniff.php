@@ -1,5 +1,14 @@
 <?php declare(strict_types=1);
 
+/**
+ * Declare control structures
+ *
+ * @link https://www.php.net/manual/en/control-structures.declare.php
+ * @link https://wiki.php.net/rfc/scalar_type_hints_v5#strict_types_declare_directive
+ *
+ * @see tests/Sniffs/DeclareSniffTest
+ */
+
 namespace Bartlett\CompatInfo\Application\Sniffs\ControlStructures;
 
 use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
@@ -8,13 +17,7 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 use PhpParser\Node;
 
 /**
- * Declare control structures
- *
- * @link https://www.php.net/manual/en/control-structures.declare.php
- * @link https://wiki.php.net/rfc/scalar_type_hints_v5#strict_types_declare_directive
- *
- * @see tests/Sniffs/DeclareSniffTest
- * @since Class available since Release 5.4.0
+ * @since Release 5.4.0
  */
 final class DeclareSniff extends SniffAbstract
 {
@@ -51,5 +54,6 @@ final class DeclareSniff extends SniffAbstract
 
             $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $this->directives->get($key)]);
         }
+        return null;
     }
 }

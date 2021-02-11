@@ -1,5 +1,13 @@
 <?php declare(strict_types=1);
 
+/**
+ * Class::{expr}() syntax is available since PHP 5.4
+ *
+ * @link https://www.php.net/manual/en/migration54.new-features.php
+ *
+ * @see tests/Sniffs/ClassExprSyntaxSniffTest
+ */
+
 namespace Bartlett\CompatInfo\Application\Sniffs\Expressions;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -7,12 +15,7 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 use PhpParser\Node;
 
 /**
- * Class::{expr}() syntax is available since PHP 5.4
- *
- * @link https://www.php.net/manual/en/migration54.new-features.php
- *
- * @see tests/Sniffs/ClassExprSyntaxSniffTest
- * @since Class available since Release 5.4.0
+ * @since Release 5.4.0
  */
 final class ClassExprSyntaxSniff extends SniffAbstract
 {
@@ -25,6 +28,7 @@ final class ClassExprSyntaxSniff extends SniffAbstract
             return null;
         }
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.4.0']);
+        return null;
     }
 
     private function isClassExprSyntax(Node $node): bool

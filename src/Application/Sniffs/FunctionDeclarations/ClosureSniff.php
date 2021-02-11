@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * Closures are available since PHP 5.3
  *
@@ -19,7 +13,16 @@ use PhpParser\Node;
  * @link https://www.php.net/manual/en/functions.anonymous.php#functions.anonymous-functions.static
  *
  * @see tests/Sniffs/ClosureSniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class ClosureSniff extends SniffAbstract
 {
@@ -52,7 +55,7 @@ final class ClosureSniff extends SniffAbstract
         if (in_array($name, ['this', 'self', 'parent', 'static'])) {
             // Use of $this | self | parent | static inside a closure is allowed since PHP 5.4
             $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '5.4.0']);
-            return null;
         }
+        return null;
     }
 }

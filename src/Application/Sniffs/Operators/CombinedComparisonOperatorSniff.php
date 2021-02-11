@@ -1,5 +1,13 @@
 <?php declare(strict_types=1);
 
+/**
+ * Combined Comparison (Spaceship) Operator since PHP 7.0.0 alpha1
+ *
+ * @link https://wiki.php.net/rfc/combined-comparison-operator
+ *
+ * @see tests/Sniffs/CombinedComparisonOperatorSniffTest
+ */
+
 namespace Bartlett\CompatInfo\Application\Sniffs\Operators;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -7,12 +15,7 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 use PhpParser\Node;
 
 /**
- * Combined Comparison (Spaceship) Operator since PHP 7.0.0 alpha1
- *
- * @link https://wiki.php.net/rfc/combined-comparison-operator
- *
- * @see tests/Sniffs/CombinedComparisonOperatorSniffTest
- * @since Class available since Release 5.4.0
+ * @since Release 5.4.0
  */
 final class CombinedComparisonOperatorSniff extends SniffAbstract
 {
@@ -26,5 +29,6 @@ final class CombinedComparisonOperatorSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '7.0.0alpha1']);
+        return null;
     }
 }

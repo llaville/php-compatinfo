@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * Property declarations
  *
@@ -13,7 +7,16 @@ use PhpParser\Node;
  * @link https://www.php.net/manual/en/language.oop5.visibility.php#language.oop5.visibility-members
  *
  * @see tests/Sniffs/PropertyDeclarationSniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class PropertyDeclarationSniff extends SniffAbstract
 {
@@ -33,5 +36,6 @@ final class PropertyDeclarationSniff extends SniffAbstract
             $min = '5.0.0';
         }
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min]);
+        return null;
     }
 }

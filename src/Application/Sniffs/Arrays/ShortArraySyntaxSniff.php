@@ -43,6 +43,7 @@ final class ShortArraySyntaxSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '5.4.0']);
+        return null;
     }
 
     private function isShortArraySyntax(Node $node): bool

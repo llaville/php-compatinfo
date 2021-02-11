@@ -62,6 +62,7 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
         foreach ($this->sniffs as $sniff) {
             $sniff->enterSniff();
         }
+        return null;
     }
 
     /**
@@ -72,6 +73,7 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
         foreach ($this->sniffs as $sniff) {
             $sniff->enterNode($node);
         }
+        return null;
     }
 
     /**
@@ -82,6 +84,7 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
         foreach ($this->sniffs as $sniff) {
             $sniff->leaveNode($node);
         }
+        return null;
     }
 
     /**
@@ -92,5 +95,6 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
         foreach ($this->sniffs as $sniff) {
             $sniff->leaveSniff();
         }
+        return null;
     }
 }

@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * Typed properties are available since PHP 7.4
  *
@@ -14,7 +8,16 @@ use PhpParser\Node;
  * @link https://www.php.net/manual/en/language.oop5.properties.php#language.oop5.properties.typed-properties
  *
  * @see tests/Sniffs/TypedPropertySniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class TypedPropertySniff extends SniffAbstract
 {
@@ -30,5 +33,6 @@ final class TypedPropertySniff extends SniffAbstract
         if (null !== $node->type) {
             $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '7.4.0']);
         }
+        return null;
     }
 }

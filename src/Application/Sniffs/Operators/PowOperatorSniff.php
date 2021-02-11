@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\Operators;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * Exponentiation is PHP 5.6 or greater
  *
@@ -14,7 +8,16 @@ use PhpParser\Node;
  * @link https://www.php.net/manual/en/function.pow.php
  *
  * @see tests/Sniffs/PowOperatorSniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\Operators;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class PowOperatorSniff extends SniffAbstract
 {
@@ -28,6 +31,7 @@ final class PowOperatorSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.6.0']);
+        return null;
     }
 
     private function isPowOperator(Node $node): bool

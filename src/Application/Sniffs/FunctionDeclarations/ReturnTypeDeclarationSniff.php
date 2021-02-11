@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * Return Type Declarations since PHP 7.0.0 alpha1
  *
@@ -13,7 +7,16 @@ use PhpParser\Node;
  * @link https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.return-type-declarations
  *
  * @see tests/Sniffs/ReturnTypeDeclarationSniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class ReturnTypeDeclarationSniff extends SniffAbstract
 {
@@ -39,6 +42,7 @@ final class ReturnTypeDeclarationSniff extends SniffAbstract
             $min = '7.0.0alpha1';
         }
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min]);
+        return null;
     }
 
     private function hasReturnType(Node $node): bool

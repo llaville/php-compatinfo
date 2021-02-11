@@ -64,6 +64,8 @@ final class ParentContextVisitor extends NodeVisitorAbstract
             }
             return $nodes;
         }
+
+        return null;
     }
 
     /**
@@ -83,6 +85,7 @@ final class ParentContextVisitor extends NodeVisitorAbstract
         ) {
             $this->stack[] = $node;
         }
+        return null;
     }
 
     /**
@@ -98,5 +101,6 @@ final class ParentContextVisitor extends NodeVisitorAbstract
         ) {
             array_pop($this->stack);
         }
+        return null;
     }
 }

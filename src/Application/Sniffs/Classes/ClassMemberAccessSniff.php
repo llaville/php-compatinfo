@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * Class member access
  * - on instantiation (since PHP 5.4)
@@ -15,7 +9,16 @@ use PhpParser\Node;
  * @link https://www.php.net/manual/en/migration54.new-features.php
  *
  * @see tests/Sniffs/ClassMemberAccessSniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class ClassMemberAccessSniff extends SniffAbstract
 {
@@ -40,6 +43,7 @@ final class ClassMemberAccessSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min]);
+        return null;
     }
 
     private function isClassMemberAccess(Node $node): bool

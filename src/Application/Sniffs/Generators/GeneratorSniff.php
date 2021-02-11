@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\Generators;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * Generators :
  * - was introduced in PHP 5.5
@@ -20,7 +14,16 @@ use PhpParser\Node;
  * @link https://www.php.net/manual/en/class.generator
  *
  * @see tests/Sniffs/GeneratorSniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\Generators;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class GeneratorSniff extends SniffAbstract
 {
@@ -39,5 +42,6 @@ final class GeneratorSniff extends SniffAbstract
             return null;
         }
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min]);
+        return null;
     }
 }

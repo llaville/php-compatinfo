@@ -1,5 +1,13 @@
 <?php declare(strict_types=1);
 
+/**
+ * Specific text processing with PHP crypt function.
+ *
+ * @link https://www.php.net/manual/en/function.crypt.php
+ *
+ * @see tests/Sniffs/CryptStringSniffTest
+ */
+
 namespace Bartlett\CompatInfo\Application\Sniffs\TextProcessing;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -9,12 +17,7 @@ use function in_array;
 use function substr;
 
 /**
- * Specific text processing with PHP crypt function.
- *
- * @link https://www.php.net/manual/en/function.crypt.php
- *
- * @see tests/Sniffs/CryptStringSniffTest
- * @since Class available since Release 5.4.0
+ * @since Release 5.4.0
  */
 final class CryptStringSniff extends SniffAbstract
 {
@@ -63,5 +66,6 @@ final class CryptStringSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min, 'ext.name' => 'standard']);
+        return null;
     }
 }

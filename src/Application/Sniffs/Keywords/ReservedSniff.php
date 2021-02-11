@@ -1,12 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\Keywords;
-
-use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * You cannot use any of the following words to name classes, interfaces or traits.
  *
@@ -15,7 +8,17 @@ use PhpParser\Node;
  * @link https://wiki.php.net/rfc/reserve_more_types_in_php_7
  *
  * @see tests/Sniffs/KeywordReservedSniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\Keywords;
+
+use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class ReservedSniff extends SniffAbstract
 {

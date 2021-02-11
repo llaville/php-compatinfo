@@ -1,5 +1,13 @@
 <?php declare(strict_types=1);
 
+/**
+ * Class method declarations
+ *
+ * @link https://www.php.net/manual/en/language.oop5.visibility.php#language.oop5.visiblity-methods
+ *
+ * @see tests/Sniffs/MethodDeclarationSniffTest
+ */
+
 namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -7,12 +15,7 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 use PhpParser\Node;
 
 /**
- * Class method declarations
- *
- * @link https://www.php.net/manual/en/language.oop5.visibility.php#language.oop5.visiblity-methods
- *
- * @see tests/Sniffs/MethodDeclarationSniffTest
- * @since Class available since Release 5.4.0
+ * @since Release 5.4.0
  */
 final class MethodDeclarationSniff extends SniffAbstract
 {
@@ -32,5 +35,6 @@ final class MethodDeclarationSniff extends SniffAbstract
             $min = '5.0.0';
         }
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min]);
+        return null;
     }
 }

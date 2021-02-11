@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\Expressions;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * Empty expressions
  *
@@ -14,7 +8,16 @@ use PhpParser\Node;
  * @link https://www.php.net/manual/en/function.empty.php
  *
  * @see tests/Sniffs/EmptySniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\Expressions;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class EmptySniff extends SniffAbstract
 {
@@ -36,5 +39,7 @@ final class EmptySniff extends SniffAbstract
             // Prior to PHP 5.5, empty() only supports variables
             $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.5.0']);
         }
+
+        return null;
     }
 }

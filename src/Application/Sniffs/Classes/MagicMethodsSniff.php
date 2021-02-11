@@ -1,5 +1,13 @@
 <?php declare(strict_types=1);
 
+/**
+ * Report use of magic methods
+ *
+ * @link https://www.php.net/manual/en/language.oop5.magic.php
+ *
+ * @see tests/Sniffs/MagicMethodsSniffTest
+ */
+
 namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -7,12 +15,7 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 use PhpParser\Node;
 
 /**
- * Report use of magic methods
- *
- * @link https://www.php.net/manual/en/language.oop5.magic.php
- *
- * @see tests/Sniffs/MagicMethodsSniffTest
- * @since Class available since Release 5.4.0
+ * @since Release 5.4.0
  */
 final class MagicMethodsSniff extends SniffAbstract
 {
@@ -56,5 +59,6 @@ final class MagicMethodsSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min]);
+        return null;
     }
 }

@@ -154,6 +154,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
         parent::beforeTraverse($nodes);
 
         $this->aliases = [];
+        return null;
     }
 
     /**
@@ -166,6 +167,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
         foreach ($this->profiler->getCollectors() as $collector) {
             $collector->collect($nodes);
         }
+        return null;
     }
 
     /**
@@ -189,7 +191,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
             call_user_func($this->contextCallback, $node);
         }
 
-        parent::enterNode($node);
+        return parent::enterNode($node);
     }
 
     /**
@@ -207,7 +209,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
             call_user_func($this->contextCallback, $node);
         }
 
-        parent::leaveNode($node);
+        return parent::leaveNode($node);
     }
 
     // ---
