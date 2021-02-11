@@ -14,7 +14,7 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
  */
 final class NodeNormalizer implements NormalizerInterface
 {
-    /** @var string */
+    /** @var null|string */
     private $name;
 
     /** @var string */

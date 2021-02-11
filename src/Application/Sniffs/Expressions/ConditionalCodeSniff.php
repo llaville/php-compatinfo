@@ -1,15 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\Expressions;
-
-use Bartlett\CompatInfo\Application\Collection\ReferenceCollection;
-use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
-use function ltrim;
-
 /**
  * Detect conditional code identified by :
  * - [extension_loaded](https://www.php.net/manual/en/function.extension-loaded.php)
@@ -21,7 +11,19 @@ use function ltrim;
  * - [defined](https://www.php.net/manual/en/function.defined)
  *
  * @see tests/Sniffs/ConditionalCodeSniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\Expressions;
+
+use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+use function ltrim;
+
+/**
+ * @since Release 5.4.0
  */
 final class ConditionalCodeSniff extends SniffAbstract
 {
@@ -31,7 +33,7 @@ final class ConditionalCodeSniff extends SniffAbstract
     /** @var string */
     private $group;
 
-    /** @var ReferenceCollection */
+    /** @var ReferenceCollectionInterface */
     private $references;
 
     public function __construct(ReferenceCollectionInterface $referenceCollection)

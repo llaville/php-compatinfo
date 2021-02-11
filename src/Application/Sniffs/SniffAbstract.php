@@ -22,7 +22,7 @@ use PhpParser\NodeVisitorAbstract;
  */
 abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterface
 {
-    /** @var callable */
+    /** @var null|callable */
     protected $contextCallback;
 
     /** @var string */

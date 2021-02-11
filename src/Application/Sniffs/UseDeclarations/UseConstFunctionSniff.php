@@ -1,11 +1,5 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\CompatInfo\Application\Sniffs\UseDeclarations;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
 /**
  * Use const, use function are PHP 5.6 or greater
  *
@@ -14,7 +8,16 @@ use PhpParser\Node;
  * @link https://www.php.net/manual/en/language.namespaces.importing.php
  *
  * @see tests/Sniffs/UseConstFunctionSniffTest
- * @since Class available since Release 5.4.0
+ */
+
+namespace Bartlett\CompatInfo\Application\Sniffs\UseDeclarations;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+/**
+ * @since Release 5.4.0
  */
 final class UseConstFunctionSniff extends SniffAbstract
 {
@@ -24,7 +27,7 @@ final class UseConstFunctionSniff extends SniffAbstract
     public function enterNode(Node $node)
     {
         if (!$this->isUseConstFunction($node)) {
-            return;
+            return null;
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.6.0']);
