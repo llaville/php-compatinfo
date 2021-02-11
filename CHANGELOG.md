@@ -10,6 +10,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - [#286](https://github.com/llaville/php-compat-info/issues/286) - Mass method signature mismatch
 - [#292](https://github.com/llaville/php-compat-info/issues/292) - Uncaught Error: Object of class PhpParser\Node\UnionType could not be converted to string
+- [#294](https://github.com/llaville/php-compat-info/issues/294) - Method signature inheritance issue (thanks @szepeviktor)
 
 ## [5.4.2] - 2020-11-20
 

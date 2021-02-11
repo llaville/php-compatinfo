@@ -2,6 +2,3 @@ parameters:
     level: 2
     paths:
         - src/
-    ignoreErrors:
-        # TODO Add explicit return statements.
-        - '#null but return statement is missing\.$#'
