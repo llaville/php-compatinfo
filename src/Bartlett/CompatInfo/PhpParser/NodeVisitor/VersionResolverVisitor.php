@@ -106,6 +106,11 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
     private function handleParameters(Node\FunctionLike $node, array $currentVersions): array
     {
         foreach ($node->getParams() as $param) {
+            if ($param->type instanceof Node\UnionType) {
+                $this->updateElementVersion($currentVersions, ['php.min' => '8.0.0']);
+                continue;
+            }
+
             if (null !== $param->type) {
                 $group = $this->resolveTypeVersions($param->type);
                 $attributes = $param->type->getAttributes();
@@ -166,7 +171,17 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
     private function resolveTypeVersions(Node $node): string
     {
         $groups = ['interfaces', 'classes'];
-        $name = (string) ($node instanceof Node\NullableType ? $node->type : $node);
+        $name = $node instanceof Node\NullableType ? $node->type : $node;
+
+        if ($name instanceof Node\Name || $name instanceof Node\Identifier) {
+            $name = (string) $name;
+        }
+
+        if (!is_string($name)) {
+            // Node undetected, returns default
+            return 'classes';
+        }
+
         $extra = null;
 
         foreach ($groups as $group) {

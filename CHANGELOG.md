@@ -6,6 +6,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Fixed
+
+- [GH-292](https://github.com/llaville/php-compat-info/issues/292) - Uncaught Error: Object of class PhpParser\Node\UnionType could not be converted to string
+
 ## [5.4.2] - 2020-11-20
 
 ### Changed
