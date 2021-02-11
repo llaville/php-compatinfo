@@ -21,6 +21,7 @@ namespace Bartlett\CompatInfo\Tests;
  * @link https://github.com/llaville/php-compat-info/issues/222
  * @link https://github.com/llaville/php-compat-info/issues/228
  * @link https://github.com/llaville/php-compat-info/issues/239
+ * @link https://github.com/llaville/php-compat-info/issues/292
  */
 final class PhpFeaturesIssueTest extends TestCase
 {
@@ -157,5 +158,30 @@ final class PhpFeaturesIssueTest extends TestCase
 
         // no error detected since we use PHP-Parser 3.1 (for parsing PHP 5.2 to PHP 7.2)
         $this->assertCount(0, $errors);
+    }
+
+    /**
+     * Regression test for feature #292
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/292
+     *       Uncaught Error: Object of class PhpParser\Node\UnionType could not be converted to string
+     * @link https://wiki.php.net/rfc/union_types_v2
+     * @group features
+     * @return void
+     */
+    public function testFeatureGH292()
+    {
+        $dataSource = 'gh292.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $classes    = $metrics[self::$analyserId]['classes'];
+
+        $this->assertEquals(
+            '8.0.0',
+            $classes['ProxyManagerTestAsset\ClassWithPhp80TypedMethods']['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $classes['ProxyManagerTestAsset\ClassWithPhp80TypedMethods']['php.max']
+        );
     }
 }
