@@ -9,8 +9,13 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Fixed
 
 - [#286](https://github.com/llaville/php-compat-info/issues/286) - Mass method signature mismatch
-- [#292](https://github.com/llaville/php-compat-info/issues/292) - Uncaught Error: Object of class PhpParser\Node\UnionType could not be converted to string
 - [#294](https://github.com/llaville/php-compat-info/issues/294) - Method signature inheritance issue (thanks @szepeviktor)
+
+## [5.4.3] - 2021-02-12
+
+### Fixed
+
+- [GH-292](https://github.com/llaville/php-compat-info/issues/292) - Uncaught Error: Object of class PhpParser\Node\UnionType could not be converted to string
 
 ## [5.4.2] - 2020-11-20
 
@@ -116,7 +121,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - add support to PHP-Parser 3.1 for running on PHP >= 5.5 and for parsing code PHP 5.2 to PHP 7.2
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/5.4.2...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/5.4.3...HEAD
+[5.4.3]: https://github.com/llaville/php-compat-info/compare/5.4.2...5.4.3
 [5.4.2]: https://github.com/llaville/php-compat-info/compare/5.4.1...5.4.2
 [5.4.1]: https://github.com/llaville/php-compat-info/compare/5.4.0...5.4.1
 [5.4.0]: https://github.com/llaville/php-compat-info/compare/5.3.0...5.4.0
