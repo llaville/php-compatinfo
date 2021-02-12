@@ -55,7 +55,7 @@ class FilterVisitor extends FindingVisitor implements NodeVisitor
         ;
 
         return
-            $mappedCollection->filter(function ($value, $key) {
+            $mappedCollection->filter(function (array $value) {
                 return null !== $value;
             })
         ;

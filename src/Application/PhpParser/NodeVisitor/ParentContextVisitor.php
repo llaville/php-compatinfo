@@ -55,14 +55,16 @@ final class ParentContextVisitor extends NodeVisitorAbstract
         $foundNodes = $visitor->getFoundNodes();
 
         if (0 === count($foundNodes)) {
+            /** @var Node\Stmt[] $newNodes */
+            $newNodes = $nodes;
             // global namespace is not explicitly specified in source code ... we will add it
             if ($nodes[0] instanceof Node\Stmt\Declare_) {
-                $declare = array_shift($nodes);
-                $nodes = [$declare, new Node\Stmt\Namespace_(null, $nodes)];
+                $declare = array_shift($newNodes);
+                $newNodes = [$declare, new Node\Stmt\Namespace_(null, $newNodes)];
             } else {
-                $nodes = [new Node\Stmt\Namespace_(null, $nodes)];
+                $newNodes = [new Node\Stmt\Namespace_(null, $newNodes)];
             }
-            return $nodes;
+            return $newNodes;
         }
 
         return null;
