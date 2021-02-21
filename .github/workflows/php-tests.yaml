@@ -21,7 +21,6 @@ jobs:
                 - 7.2
                 - 7.3
                 - 7.4
-                - 8.0
               include:
                 -
                   os: ubuntu-18.04
@@ -43,13 +42,8 @@ jobs:
                   php: 7.4
                   extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
                   tools: phpunit
-                -
-                  os: ubuntu-18.04
-                  php: 8.0
-                  extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                  tools: phpunit
 
-        name: "Test CompatInfo on ${{ matrix.os }} with PHP ${{ matrix.php }}"
+        name: "CompatInfo on ${{ matrix.os }} with PHP ${{ matrix.php }}"
 
         steps:
             -
@@ -69,7 +63,7 @@ jobs:
                 uses: "ramsey/composer-install@v1"
                 with:
                     dependency-versions: "highest"
-                    composer-options: "--prefer-dist --no-scripts --ignore-platform-req=php"
+                    composer-options: "--prefer-dist --no-scripts"
 
             -
                 name: Unit tests
