@@ -69,7 +69,7 @@ jobs:
                 uses: "ramsey/composer-install@v1"
                 with:
                     dependency-versions: "highest"
-                    composer-options: "--prefer-dist --no-scripts"
+                    composer-options: "--prefer-dist --no-scripts --ignore-platform-req=php"
 
             -
                 name: Unit tests
