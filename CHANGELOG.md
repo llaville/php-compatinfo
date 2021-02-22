@@ -6,6 +6,12 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [5.4.4] - 2021-02-22
+
+### Added
+
+- [GH-271](https://github.com/llaville/php-compat-info/issues/271) CI with Github Actions Workflow
+
 ### Removed
 
 - Composer Automation to build PHAR distribution (removed only `humbug/box` dev dependency)
@@ -120,7 +126,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - add support to PHP-Parser 3.1 for running on PHP >= 5.5 and for parsing code PHP 5.2 to PHP 7.2
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/5.4.3...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/5.4.4...HEAD
+[5.4.4]: https://github.com/llaville/php-compat-info/compare/5.4.3...5.4.4
 [5.4.3]: https://github.com/llaville/php-compat-info/compare/5.4.2...5.4.3
 [5.4.2]: https://github.com/llaville/php-compat-info/compare/5.4.1...5.4.2
 [5.4.1]: https://github.com/llaville/php-compat-info/compare/5.4.0...5.4.1
