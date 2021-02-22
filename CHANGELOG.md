@@ -6,6 +6,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Removed
+
+- Composer Automation to build PHAR distribution (removed only `humbug/box` dev dependency)
+
 ## [5.4.3] - 2021-02-12
 
 ### Fixed

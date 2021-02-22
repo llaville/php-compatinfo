@@ -21,6 +21,7 @@ jobs:
                 - 7.2
                 - 7.3
                 - 7.4
+                - 8.0
               include:
                 -
                   os: ubuntu-18.04
@@ -40,6 +41,11 @@ jobs:
                 -
                   os: ubuntu-18.04
                   php: 7.4
+                  extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
+                  tools: phpunit
+                -
+                  os: ubuntu-18.04
+                  php: 8.0
                   extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
                   tools: phpunit
 
@@ -63,7 +69,7 @@ jobs:
                 uses: "ramsey/composer-install@v1"
                 with:
                     dependency-versions: "highest"
-                    composer-options: "--prefer-dist --no-scripts"
+                    composer-options: "--prefer-dist"
 
             -
                 name: Unit tests
