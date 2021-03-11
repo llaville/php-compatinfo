@@ -43,21 +43,31 @@ jobs:
         name: "CompatInfo on ${{ matrix.os }} with PHP ${{ matrix.php }}"
 
         steps:
-            -   name: Checkout
+            -
+                name: Checkout
                 uses: actions/checkout@v2
 
-            -   name: Setup PHP
+            -
+                name: Setup PHP
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php }}
                     extensions: ${{ matrix.extensions }}
                     tools: ${{ matrix.tools }}
 
-            -   name: Install Composer dependencies
+            -
+                name: Install Composer dependencies
                 uses: "ramsey/composer-install@v1"
                 with:
                     dependency-versions: "highest"
                     composer-options: "--prefer-dist"
 
-            -   name: Unit tests
+            -
+                name: Build Database
+                run: |
+                    vendor/bin/doctrine orm:schema-tool:create
+                    vendor/bartlett/php-compatinfo-db/bin/compatinfo-db db:init
+
+            -
+                name: Unit tests
                 run: phpunit --group features,large,reference,regression,default
