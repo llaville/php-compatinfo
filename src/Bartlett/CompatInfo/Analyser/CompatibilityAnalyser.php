@@ -11,6 +11,7 @@
 
 namespace Bartlett\CompatInfo\Analyser;
 
+use Bartlett\CompatInfo\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Collection\SniffCollection;
 use Bartlett\CompatInfo\DataCollector\DataCollectorInterface;
 use Bartlett\CompatInfo\DataCollector\ErrorHandler;
@@ -18,8 +19,6 @@ use Bartlett\CompatInfo\DataCollector\Normalizer\NodeNormalizer;
 use Bartlett\CompatInfo\DataCollector\VersionDataCollector;
 use Bartlett\CompatInfo\PhpParser\NodeVisitor\FilterVisitor;
 use Bartlett\CompatInfo\Profiler\Profiler;
-use Bartlett\CompatInfo\Util\Database;
-use Bartlett\CompatInfo\Collection\ReferenceCollection;
 
 use PhpParser\Node;
 
@@ -53,11 +52,14 @@ class CompatibilityAnalyser extends AbstractSniffAnalyser
      *
      * @param Profiler $profiler
      * @param SniffCollection $sniffCollection
+     * @param ReferenceCollectionInterface $referenceCollection
      */
-    public function __construct(Profiler $profiler, SniffCollection $sniffCollection)
-    {
-        $pdo = Database::initRefDb();
-        $this->references = new ReferenceCollection([], $pdo);
+    public function __construct(
+        Profiler $profiler,
+        SniffCollection $sniffCollection,
+        ReferenceCollectionInterface $referenceCollection
+    ) {
+        $this->references = $referenceCollection;
 
         $keysAllowed = [
             'extensions',

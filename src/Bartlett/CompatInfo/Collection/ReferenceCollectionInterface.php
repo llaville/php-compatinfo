@@ -2,7 +2,13 @@
 
 namespace Bartlett\CompatInfo\Collection;
 
-interface ReferenceCollectionInterface
+use Doctrine\Common\Collections\Collection;
+
+/**
+ * @template-extends Collection<string, array>
+ * @since Release 5.4.0
+ */
+interface ReferenceCollectionInterface extends Collection
 {
     /**
      * Fetch the database to retrieve, when possible, element informations.
@@ -13,7 +19,7 @@ interface ReferenceCollectionInterface
      * @param int $argc Number of arguments used in current element signature
      * @param string|null $extra Name of class when searching for methods
      *
-     * @return array
+     * @return string[]
      */
-    public function find(string $group, string $key, int $argc = 0, ?string &$extra = null): array;
+    public function find(string $group, string $key, int $argc = 0, ?string $extra = null): array;
 }

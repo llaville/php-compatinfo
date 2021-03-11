@@ -13,6 +13,7 @@
 
 namespace Bartlett\CompatInfo\Api;
 
+use Bartlett\CompatInfoDb\Application\Query\Show\ShowHandler;
 use Bartlett\Reflect\Api\BaseApi;
 
 use Closure;
@@ -36,22 +37,23 @@ class Reference extends BaseApi
      */
     public function dir(): array
     {
-        return $this->request('reference/list');
+        return $this->request('reference/list', 'GET', func_get_args());
     }
 
     /**
      * Show information about a reference.
      *
-     * @param string $name       Introspection of a reference (case insensitive)
-     * @param mixed  $filter     Resource that provide a closure to filter results
-     * @param mixed  $releases   Show releases
-     * @param mixed  $ini        Show ini Entries
-     * @param mixed  $constants  Show constants
-     * @param mixed  $functions  Show functions
-     * @param mixed  $interfaces Show interfaces
-     * @param mixed  $classes    Show classes
-     * @param mixed  $methods    Show methods
-     * @param mixed  $classConstants Show class constants
+     * @param string $name Introspection of a reference (case insensitive)
+     * @param mixed $filter Resource that provide a closure to filter results
+     * @param mixed $releases Show releases
+     * @param mixed $ini Show ini Entries
+     * @param mixed $constants Show constants
+     * @param mixed $functions Show functions
+     * @param mixed $interfaces Show interfaces
+     * @param mixed $classes Show classes
+     * @param mixed $methods Show methods
+     * @param mixed $classConstants Show class constants
+     * @param ShowHandler|null $showHandler
      *
      * @return array
      */
@@ -65,7 +67,8 @@ class Reference extends BaseApi
         $interfaces = null,
         $classes = null,
         $methods = null,
-        $classConstants = null
+        $classConstants = null,
+        ShowHandler $showHandler = null
     ): array {
         if ($filter instanceof Closure) {
             $closure = $filter;
@@ -91,7 +94,7 @@ class Reference extends BaseApi
         return $this->request(
             'reference/show',
             'POST',
-            array($name, $closure, $releases, $ini, $constants, $functions, $interfaces, $classes, $methods, $classConstants)
+            array($name, $closure, $releases, $ini, $constants, $functions, $interfaces, $classes, $methods, $classConstants, $showHandler)
         );
     }
 }

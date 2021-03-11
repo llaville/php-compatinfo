@@ -14,6 +14,7 @@
 namespace Bartlett\CompatInfo\Api\V5;
 
 use Bartlett\CompatInfo\Analyser\CompatibilityAnalyser;
+use Bartlett\CompatInfo\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Collection\SniffCollection;
 use Bartlett\CompatInfo\DataCollector\ErrorHandler\Collecting as CollectingError;
 use Bartlett\CompatInfo\DataCollector\ErrorHandler\Throwing as ThrowingError;
@@ -54,13 +55,14 @@ class Analyser extends SourceProvider
      *
      * @param string $source Path to the data source or its alias
      * @param bool $stop_on_failure Stop execution upon first error generated during lexing, parsing or some other operation
+     * @param ReferenceCollectionInterface|null $referenceCollection
      * @param SniffCollection|null $sniffCollection
      * @param Profiler|null $profiler
      *
      * @return Profile
      * @throws Exception
      */
-    public function run(string $source, bool $stop_on_failure = null, SniffCollection $sniffCollection = null, Profiler $profiler = null): Profile
+    public function run(string $source, bool $stop_on_failure = null, ReferenceCollectionInterface $referenceCollection = null, SniffCollection $sniffCollection = null, Profiler $profiler = null): Profile
     {
         if (null === $profiler) {
             $profiler = new Profiler(sha1($source));
@@ -78,7 +80,10 @@ class Analyser extends SourceProvider
             );
         }
 
-        $parser = new Parser(new CompatibilityAnalyser($profiler, $sniffCollection));
+        $parser = new Parser(
+            new CompatibilityAnalyser($profiler, $sniffCollection, $referenceCollection),
+            $referenceCollection
+        );
         $parser->setEventDispatcher($this->eventDispatcher);
         $parser->setDataSourceId($source);
 

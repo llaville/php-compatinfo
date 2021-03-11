@@ -14,9 +14,12 @@
 namespace Bartlett\CompatInfo\Console;
 
 use Bartlett\CompatInfo\Client;
+use Bartlett\CompatInfo\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Collection\SniffCollection;
 use Bartlett\CompatInfo\Profiler\Profile;
 use Bartlett\CompatInfo\Profiler\Profiler;
+use Bartlett\CompatInfoDb\Application\Query\ListRef\ListHandler;
+use Bartlett\CompatInfoDb\Application\Query\Show\ShowHandler;
 use Bartlett\Reflect\Event\ProgressEvent;
 
 use Ramsey\Uuid\Uuid;
@@ -307,12 +310,22 @@ class CommandFactory
                 $progress->start();
             }
 
-            $args['sniffCollection'] = $app->getContainer()->get(SniffCollection::class);
+            if ('analyser' == $namespace) {
+                $args['referenceCollection'] = $app->getContainer()->get(ReferenceCollectionInterface::class);
 
-            $profiler = new Profiler(Uuid::uuid4()->toString());
+                $args['sniffCollection'] = $app->getContainer()->get(SniffCollection::class);
 
-            if (true === $input->hasParameterOption('--profile')) {
-                $args['profiler'] = $profiler;
+                $profiler = new Profiler(Uuid::uuid4()->toString());
+
+                if (true === $input->hasParameterOption('--profile')) {
+                    $args['profiler'] = $profiler;
+                }
+            } else {
+                if ('dir' === $methodName) {
+                    $args['listHandler'] = $app->getContainer()->get(ListHandler::class);
+                } else {
+                    $args['showHandler'] = $app->getContainer()->get(ShowHandler::class);
+                }
             }
 
             // calls the Api method

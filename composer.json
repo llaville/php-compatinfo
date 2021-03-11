@@ -10,7 +10,7 @@
         "issues": "https://github.com/llaville/php-compat-info/issues"
     },
     "require": {
-        "php": "^7.1.3|^8.0",
+        "php": "^7.2|^8.0",
         "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
@@ -18,7 +18,7 @@
         "ext-pdo": "*",
         "ext-pdo_sqlite": "*",
         "bartlett/php-reflect": "^4.4",
-        "bartlett/php-compatinfo-db": "^2.0",
+        "bartlett/php-compatinfo-db": "^3.3",
         "doctrine/collections": "^1.4",
         "composer/package-versions-deprecated": "^1.8",
         "psr/log": "^1.0",
@@ -56,6 +56,24 @@
         "psr-4": {
             "Bartlett\\Tests\\CompatInfo\\": "tests/"
         }
+    },
+    "scripts": {
+        "setup-database": [
+            "mkdir -p ${HOME}/.cache/bartlett/ && touch ${HOME}/.cache/bartlett/compatinfo-db.sqlite",
+            "export DATABASE_URL=sqlite:///${HOME}/.cache/bartlett/compatinfo-db.sqlite",
+            "vendor/bin/doctrine orm:generate-proxies"
+        ],
+        "post-install-cmd": [
+            "@setup-database",
+            "vendor/bin/doctrine orm:schema-tool:create",
+            "vendor/bartlett/php-compatinfo-db/bin/compatinfo-db db:init"
+        ],
+        "post-update-cmd": [
+            "@setup-database"
+        ]
+    },
+    "scripts-descriptions": {
+        "setup-database": "Initializes SQLite database from JSON files in data directory."
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

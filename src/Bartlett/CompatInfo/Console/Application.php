@@ -47,7 +47,7 @@ use function substr_count;
 class Application extends BaseApplication implements ApplicationInterface
 {
     public const NAME = 'phpCompatInfo';
-    public const VERSION = '5.4.4';
+    public const VERSION = '5.5.0';
     public const API_NAMESPACE = 'Bartlett\CompatInfo\Api\\';
 
     /**
@@ -138,14 +138,11 @@ class Application extends BaseApplication implements ApplicationInterface
      */
     public function getLongVersion(): string
     {
-        $v = Database::versionRefDb();
-
         return sprintf(
-            '<info>%s</info> version <comment>%s</comment> DB version <comment>%s</comment> built <comment>%s</comment>',
+            '<info>%s</info> version <comment>%s</comment> DB version <comment>%s</comment>',
             $this->getName(),
             $this->getVersion(),
-            $v['build.version'],
-            $v['build.string']
+            \Bartlett\CompatInfoDb\Presentation\Console\ApplicationInterface::VERSION
         );
     }
 

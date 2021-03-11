@@ -1,11 +1,17 @@
 <?php declare(strict_types=1);
 
+use Bartlett\CompatInfo\Collection\ReferenceCollection;
+use Bartlett\CompatInfo\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Console\Input\Input;
 use Bartlett\CompatInfo\Console\Output\Output;
 use Bartlett\CompatInfo\Event\Dispatcher\EventDispatcher;
 use Bartlett\CompatInfo\Event\Subscriber\LogEventSubscriber;
 use Bartlett\CompatInfo\Event\Subscriber\ProfileEventSubscriber;
 use Bartlett\CompatInfo\Logger\DefaultLogger;
+use Bartlett\CompatInfoDb\Application\Query\ListRef\ListHandler;
+use Bartlett\CompatInfoDb\Application\Query\Show\ShowHandler;
+use Bartlett\CompatInfoDb\Domain\Repository\FunctionRepository;
+use Bartlett\CompatInfoDb\Infrastructure\Persistence\Doctrine\Repository\FunctionRepository as InfrastructureFunctionRepository;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
@@ -25,7 +31,9 @@ use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
  * @param ContainerConfigurator $containerConfigurator
  * @return void
  */
-return static function (ContainerConfigurator $containerConfigurator): void {
+return static function (ContainerConfigurator $containerConfigurator): void
+{
+    $containerConfigurator->import(dirname(__DIR__,2) . '/vendor/bartlett/php-compatinfo-db/config/set/default.php');
     $containerConfigurator->import(__DIR__ . '/common.php');
 
     $parameters = $containerConfigurator->parameters();
@@ -64,5 +72,24 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ref(ProfileEventSubscriber::class),
             ref(LogEventSubscriber::class)
         ])
+    ;
+
+    $services->set(ReferenceCollectionInterface::class, ReferenceCollection::class)
+        // for unit tests
+        ->public()
+    ;
+
+    $services->set(ListHandler::class)
+        // to reuse php-compatinfo-db handler(s)
+        ->public()
+    ;
+    $services->set(ShowHandler::class)
+        // to reuse php-compatinfo-db handler(s)
+        ->public()
+    ;
+
+    $services->alias(FunctionRepository::class, InfrastructureFunctionRepository::class)
+        // for unit tests (ParameterTest)
+        ->public()
     ;
 };

@@ -2,14 +2,13 @@
 
 namespace Bartlett\CompatInfo\Api\V5;
 
-use Bartlett\CompatInfo\Collection\ReferenceCollection;
+use Bartlett\CompatInfo\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\DataCollector\ErrorHandler;
 use Bartlett\CompatInfo\PhpParser\NodeVisitor\NameResolverVisitor;
 use Bartlett\CompatInfo\PhpParser\NodeVisitor\ParentContextVisitor;
 use Bartlett\CompatInfo\PhpParser\NodeVisitor\VersionResolverVisitor;
 use Bartlett\CompatInfo\Profiler\Profile;
 use Bartlett\CompatInfo\Profiler\Profiler;
-use Bartlett\CompatInfo\Util\Database;
 use Bartlett\Reflect\Event\AbstractDispatcher;
 use Bartlett\Reflect\Event\CompleteEvent;
 use Bartlett\Reflect\Event\ErrorEvent;
@@ -33,11 +32,15 @@ class Parser extends AbstractDispatcher
 {
     private $dataSourceId;
     private $analyser;
+    private $references;
 
-    public function __construct(NodeVisitor $analyser)
-    {
+    public function __construct(
+        NodeVisitor $analyser,
+        ReferenceCollectionInterface $referenceCollection
+    ) {
         $analyser->setParserSubject($this);
         $this->analyser = $analyser;
+        $this->references = $referenceCollection;
     }
 
     /**
@@ -85,8 +88,7 @@ class Parser extends AbstractDispatcher
         $traverser->addVisitor(new ParentContextVisitor());
         $traverser->addVisitor(new NameResolverVisitor());
 
-        $pdo = Database::initRefDb();
-        $traverser->addVisitor(new VersionResolverVisitor(new ReferenceCollection([], $pdo)));
+        $traverser->addVisitor(new VersionResolverVisitor($this->references));
 
         $traverser->addVisitor($this->analyser);
 

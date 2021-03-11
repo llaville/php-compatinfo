@@ -101,7 +101,7 @@ final class IssueTest extends SniffTestCase
         $extensions = $metrics[self::$analyserId]['extensions'];
 
         $provideExtensions = [
-            'Core',
+            'core',
             'standard',
             'dom',
             'date',

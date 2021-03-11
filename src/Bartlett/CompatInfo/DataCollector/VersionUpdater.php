@@ -58,6 +58,9 @@ trait VersionUpdater
                 // updates versions part only on above keys
                 continue;
             }
+            if (null === $value) {
+                continue;
+            }
             if ($this->updateVersion($versions[$key] ?? '', $value)) {
                 $updated = true;
             }

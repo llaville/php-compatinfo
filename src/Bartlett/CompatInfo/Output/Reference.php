@@ -11,9 +11,10 @@
 
 namespace Bartlett\CompatInfo\Output;
 
-use Bartlett\CompatInfo\Util\Database;
-use Bartlett\CompatInfo\Util\Version;
-
+use Bartlett\CompatInfoDb\Domain\ValueObject\Constant_;
+use Bartlett\CompatInfoDb\Domain\ValueObject\Function_;
+use Bartlett\CompatInfoDb\Domain\ValueObject\Release;
+use Bartlett\CompatInfoDb\Presentation\Console\ApplicationInterface;
 use Bartlett\Reflect\Console\Formatter\OutputFormatter;
 
 use Symfony\Component\Console\Output\OutputInterface;
@@ -42,7 +43,7 @@ class Reference extends OutputFormatter
         $output->writeln(
             sprintf(
                 '<info>Reference Database Version</info> => %s%s',
-                Database::versionRefDb()['build.version'],
+                ApplicationInterface::VERSION,
                 PHP_EOL
             )
         );
@@ -148,59 +149,83 @@ class Reference extends OutputFormatter
                 '  Methods                                   %10d',
                 array($summary['methods'])
             );
-            $summary['static methods'] = array(
-                '  Static Methods                            %10d',
-                array($summary['static methods'])
-            );
             $this->printFormattedLines($output, $summary);
             return;
         }
 
-        foreach ($response as $title => $values) {
+        foreach ($response as $title => $data) {
             $args = array();
 
-            foreach ($values as $key => $val) {
-                if (strcasecmp($title, 'releases') == 0) {
-                    $key = sprintf('%s (%s)', $val['date'], $val['state']);
-
-                } elseif (strcasecmp($title, 'methods') == 0
-                    || strcasecmp($title, 'static methods') == 0
-                    || strcasecmp($title, 'class-constants') == 0
-                ) {
-                    foreach ($val as $meth => $v) {
-                        $k = sprintf('%s::%s', $key, $meth);
-                        $args[$k] = $v;
+            foreach ($data as $key => $domain) {
+                if ($domain instanceof Release) {
+                    $key = sprintf(
+                        '%s (%s) - %s',
+                        $domain->getDate()->format('Y-m-d'),
+                        $domain->getState(),
+                        $domain->getVersion()
+                    );
+                } elseif ($domain instanceof Function_ || $domain instanceof Constant_) {
+                    $key = $domain->getName();
+                    if (!empty($domain->getDeclaringClass())) {
+                        $key = $domain->getDeclaringClass() . '::' . $key;
                     }
-                    continue;
+                } else {
+                    $key = $domain->getName();
                 }
-                $args[$key] = $val;
+
+                $args[$key] = [
+                    $this->ext($domain) ? : $domain->getVersion(),
+                    $this->php($domain),
+                    ''
+                ];
             }
 
-            $rows = array();
             ksort($args);
 
-            foreach ($args as $arg => $versions) {
-                $row = array(
-                    $arg,
-                    Version::ext($versions),
-                    Version::php($versions),
-                    Version::deprecated($versions),
-                );
-                $rows[] = $row;
+            $results = [];
+            foreach ($args as $key => $values) {
+                $parts = explode(' - ', $key);
+                array_unshift($values, $parts[0]);
+                $results[] = $values;
             }
 
-            $headers = array(ucfirst($title), 'EXT min/Max', 'PHP min/Max', 'Deprecated');
-            $footers = array(
-                sprintf('<info>Total [%d]</info>', count($args)),
+            $output->writeln(sprintf('%s<info>%s</info>', PHP_EOL, ucfirst($title)));
+
+            $headers = ['', 'EXT min/Max', 'PHP min/Max', 'Deprecated'];
+            $footers = [
+                sprintf('<info>Total [%d]</info>', count($results)),
                 '',
                 '',
                 ''
-            );
+            ];
+            $rows = $results;
             $rows[] = new TableSeparator();
             $rows[] = $footers;
-
             $this->tableHelper($output, $headers, $rows);
-            $output->writeln('');
         }
+    }
+
+    /**
+     * @param object $domain
+     * @return string
+     */
+    private function ext($domain): string
+    {
+        return empty($domain->getExtMax())
+            ? $domain->getExtMin()
+            : $domain->getExtMin() . ' => ' . $domain->getExtMax()
+            ;
+    }
+
+    /**
+     * @param object $domain
+     * @return string
+     */
+    private function php($domain): string
+    {
+        return empty($domain->getPhpMax())
+            ? $domain->getPhpMin()
+            : $domain->getPhpMin() . ' => ' . $domain->getPhpMax()
+            ;
     }
 }

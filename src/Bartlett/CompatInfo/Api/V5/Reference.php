@@ -11,12 +11,26 @@
 
 namespace Bartlett\CompatInfo\Api\V5;
 
-use Bartlett\CompatInfoDb\ExtensionFactory;
-
+use Bartlett\CompatInfoDb\Application\Query\ListRef\ListHandler;
+use Bartlett\CompatInfoDb\Application\Query\ListRef\ListQuery;
+use Bartlett\CompatInfoDb\Application\Query\Show\ShowHandler;
+use Bartlett\CompatInfoDb\Application\Query\Show\ShowQuery;
+use Bartlett\CompatInfoDb\Domain\ValueObject\Constant_;
+use Bartlett\CompatInfoDb\Domain\ValueObject\Extension;
+use Bartlett\CompatInfoDb\Domain\ValueObject\Function_;
+use Bartlett\CompatInfoDb\Domain\ValueObject\Platform;
+use Bartlett\CompatInfoDb\Infrastructure\Persistence\Doctrine\Entity\Release;
+use Bartlett\CompatInfoDb\Presentation\Console\ApplicationInterface;
+use Bartlett\CompatInfoDb\Presentation\Console\StyleInterface;
 use Bartlett\Reflect\Api\V3\Common;
 
 use Closure;
-use PDO;
+use stdClass;
+use Symfony\Component\Console\Helper\TableSeparator;
+use function array_values;
+use function extension_loaded;
+use function ksort;
+use function version_compare;
 
 /**
  * Api to obtain information about one or more references (extensions)
@@ -32,35 +46,68 @@ class Reference extends Common
     public function __call(string $name, array $args)
     {
         if ('list' == $name) {
-            return $this->dir();
+            return $this->dir(...$args);
         }
+        return null;
     }
 
     /**
      * List all references supported.
      *
+     * @param ListHandler $handler
      * @return array
      */
-    public function dir(): array
+    public function dir(ListHandler $handler): array
     {
-        $factory = new ExtensionFactory('');
-        return $factory->getExtensions();
+        $query = new ListQuery(true, false, ApplicationInterface::VERSION);
+
+        /** @var Platform $platform */
+        $platform = $handler($query);
+
+        $rows = [];
+
+        foreach ($platform->getExtensions() as $extension) {
+            $key = $extension->getName();
+
+            $releases = $extension->getReleases();
+            /** @var Release $latest */
+            $latest = $releases->last();
+
+            $ref = new stdClass();
+            $ref->name = $key;
+            $ref->version = $latest->getVersion();
+            $ref->state = $latest->getState();
+            $ref->date = $latest->getDate()->format('Y-m-d');
+
+            if (extension_loaded($key)) {
+                $version = \phpversion($key);
+            } else {
+                $version = '';
+            }
+            $ref->loaded   = $version;
+            $ref->outdated = version_compare($ref->version, $version, 'gt') ;
+
+            $rows[$key] = $ref;
+        }
+
+        ksort($rows);
+        return array_values($rows);
     }
 
     /**
      * Show information about a reference.
      *
-     * @param string   $name       Introspection of a reference (case insensitive)
-     * @param Closure  $closure    Function used to filter results
-     * @param mixed    $releases   Show releases
-     * @param mixed    $ini        Show ini Entries
-     * @param mixed    $constants  Show constants
-     * @param mixed    $functions  Show functions
-     * @param mixed    $interfaces Show interfaces
-     * @param mixed    $classes    Show classes
-     * @param mixed    $methods    Show methods
-     * @param mixed    $classConstants Show class constants
-     *
+     * @param string $name Introspection of a reference (case insensitive)
+     * @param Closure $closure Function used to filter results
+     * @param mixed $releases Show releases
+     * @param mixed $ini Show ini Entries
+     * @param mixed $constants Show constants
+     * @param mixed $functions Show functions
+     * @param mixed $interfaces Show interfaces
+     * @param mixed $classes Show classes
+     * @param mixed $methods Show methods
+     * @param mixed $classConstants Show class constants
+     * @param ShowHandler $handler
      * @return array
      */
     public function show(
@@ -73,73 +120,63 @@ class Reference extends Common
         $interfaces,
         $classes,
         $methods,
-        $classConstants
+        $classConstants,
+        ShowHandler $handler
     ): array {
-        $reference = new ExtensionFactory($name);
+        $query = new ShowQuery($name, $releases, $ini, $constants, $functions, $interfaces, $classes, $methods, $classConstants);
+
+        /** @var Extension $extension */
+        $reference = $handler($query);
+
         $results   = array();
         $summary   = array();
 
         $raw = $reference->getReleases();
         $summary['releases'] = count($raw);
-        if ($releases) {
+        if ($query->isReleases()) {
             $results['releases'] = $raw;
         }
 
         $raw = $reference->getIniEntries();
         $summary['iniEntries'] = count($raw);
-        if ($ini) {
+        if ($query->isIni()) {
             $results['iniEntries'] = $raw;
         }
 
         $raw = $reference->getConstants();
         $summary['constants'] = count($raw);
-        if ($constants) {
+        if ($query->isConstants()) {
             $results['constants'] = $raw;
         }
 
         $raw = $reference->getFunctions();
         $summary['functions'] = count($raw);
-        if ($functions) {
+        if ($query->isFunctions()) {
             $results['functions'] = $raw;
         }
 
         $raw = $reference->getInterfaces();
         $summary['interfaces'] = count($raw);
-        if ($interfaces) {
+        if ($query->isInterfaces()) {
             $results['interfaces'] = $raw;
         }
 
         $raw = $reference->getClasses();
         $summary['classes'] = count($raw);
-        if ($classes) {
+        if ($query->isClasses()) {
             $results['classes'] = $raw;
         }
 
         $raw = $reference->getClassConstants();
-        $summary['class-constants'] = 0;
-        foreach ($raw as $values) {
-            $summary['class-constants'] += count($values);
-        }
-        if ($classConstants) {
+        $summary['class-constants'] = count($raw);
+        if ($query->isClassConstants()) {
             $results['class-constants'] = $raw;
         }
 
-        $raw = $reference->getClassMethods();
-        $summary['methods'] = 0;
-        foreach ($raw as $values) {
-            $summary['methods'] += count($values);
-        }
-        if ($methods) {
+        $raw = $reference->getMethods();
+        $summary['methods'] = count($raw);
+        if ($query->isMethods()) {
             $results['methods'] = $raw;
-        }
-
-        $raw = $reference->getClassStaticMethods();
-        $summary['static methods'] = 0;
-        foreach ($raw as $values) {
-            $summary['static methods'] += count($values);
-        }
-        if ($methods) {
-            $results['static methods'] = $raw;
         }
 
         if (empty($results)) {

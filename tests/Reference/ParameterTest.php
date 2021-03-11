@@ -15,10 +15,10 @@
 
 namespace Bartlett\Tests\CompatInfo\Reference;
 
-use Bartlett\CompatInfo\Util\Database;
+use Bartlett\CompatInfoDb\Domain\Repository\FunctionRepository;
 use Bartlett\Tests\CompatInfo\Sniffs\SniffTestCase;
 
-use PDO;
+use function in_array;
 
 /**
  * Tests function signatures with default and optional arguments
@@ -42,17 +42,21 @@ final class ParameterTest extends SniffTestCase
      */
     public function functionProvider()
     {
-        $pdo = Database::initRefDb();
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $stmt = $pdo->prepare(
-            'SELECT f.name, e.name as "ext.name" ' .
-            ' FROM bartlett_compatinfo_functions f,  bartlett_compatinfo_extensions e' .
-            ' WHERE f.ext_name_fk = e.id AND f.parameters != "" '
-        );
-        $stmt->execute();
-
-        return $stmt->fetchAll(PDO::FETCH_NUM);
+        $container = require __DIR__ . '/../../config/container.php';
+        $repository = $container->get(FunctionRepository::class);
+        $functions = [];
+        foreach ($repository->getAll() as $function) {
+            if (!in_array($function->getExtensionName(), ['core', 'standard'])) {
+                continue;
+            }
+            if (empty($function->getParameters())) {
+                continue;
+            }
+            if (empty($function->getDeclaringClass())) {
+                $functions[] = [$function->getName(), $function->getExtensionName()];
+            }
+        }
+        return $functions;
     }
 
     /**

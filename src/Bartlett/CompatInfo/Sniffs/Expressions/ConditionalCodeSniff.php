@@ -3,12 +3,11 @@
 namespace Bartlett\CompatInfo\Sniffs\Expressions;
 
 use Bartlett\CompatInfo\Collection\ReferenceCollection;
+use Bartlett\CompatInfo\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Sniffs\SniffAbstract;
-use Bartlett\CompatInfo\Util\Database;
 
 use PhpParser\Node;
 
-use PDO;
 use function ltrim;
 
 /**
@@ -35,20 +34,9 @@ final class ConditionalCodeSniff extends SniffAbstract
     /** @var ReferenceCollection */
     private $references;
 
-    /**
-     * {@inheritDoc}
-     */
-    public function setUpBeforeSniff(): void
+    public function __construct(ReferenceCollectionInterface $referenceCollection)
     {
-        parent::setUpBeforeSniff();
-
-        /**
-         * Initializes CompatInfo DB
-         */
-        $pdo = Database::initRefDb();
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $this->references = new ReferenceCollection([], $pdo);
+        $this->references = $referenceCollection;
     }
 
     /**

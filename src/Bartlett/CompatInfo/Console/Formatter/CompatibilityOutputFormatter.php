@@ -133,7 +133,7 @@ class CompatibilityOutputFormatter extends OutputFormatter
                 ) {
                     continue;
                 }
-                if (version_compare($version, $versions[$id], 'gt')) {
+                if (version_compare($version ?? '', $versions[$id], 'gt')) {
                     $versions[$id] = $version;
                 }
             }
