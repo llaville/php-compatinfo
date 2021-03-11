@@ -18,7 +18,7 @@
         "ext-pdo": "*",
         "ext-pdo_sqlite": "*",
         "bartlett/php-reflect": "^4.4",
-        "bartlett/php-compatinfo-db": "^3.3",
+        "bartlett/php-compatinfo-db": "dev-proxies",
         "doctrine/collections": "^1.4",
         "composer/package-versions-deprecated": "^1.8",
         "psr/log": "^1.0",
@@ -60,8 +60,7 @@
     "scripts": {
         "setup-database": [
             "mkdir -p ${HOME}/.cache/bartlett/ && touch ${HOME}/.cache/bartlett/compatinfo-db.sqlite",
-            "export DATABASE_URL=sqlite:///${HOME}/.cache/bartlett/compatinfo-db.sqlite",
-            "vendor/bin/doctrine orm:generate-proxies"
+            "export DATABASE_URL=sqlite:///${HOME}/.cache/bartlett/compatinfo-db.sqlite"
         ],
         "post-install-cmd": [
             "@setup-database",
