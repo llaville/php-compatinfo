@@ -6,6 +6,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [5.5.1] - 2021-03-13
+
+- Autoloader regression when using as dependency in another project
+
 ## [5.5.0] - 2021-03-13
 
 **CAUTION:** uses `config/bootstrap.php` to apply autoloader and initialize environment variables (`APP_ENV` and `APP_PROXY_DIR`)

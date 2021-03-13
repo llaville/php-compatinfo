@@ -8,32 +8,7 @@ if (PHP_SAPI !== 'cli') {
 
 gc_disable(); // performance boost
 
-if (\Phar::running()) {
-    $possibleAutoloadPaths = [
-        'phar://phpcompatinfo.phar/config/bootstrap.php'
-    ];
-} else {
-    $possibleAutoloadPaths = [
-        // local dev repository
-        dirname(__DIR__) . '/config/bootstrap.php',
-    ];
-}
-
-$isAutoloadFound = false;
-foreach ($possibleAutoloadPaths as $possibleAutoloadPath) {
-    if (file_exists($possibleAutoloadPath)) {
-        require_once $possibleAutoloadPath;
-        $isAutoloadFound = true;
-        break;
-    }
-}
-
-if ($isAutoloadFound === false) {
-    throw new RuntimeException(sprintf(
-        'Unable to find "config/bootstrap.php" in "%s" paths.',
-        implode('", "', $possibleAutoloadPaths)
-    ));
-}
+require_once dirname(__DIR__) . '/config/bootstrap.php';
 
 use Bartlett\CompatInfo\Console\ApplicationInterface;
 
