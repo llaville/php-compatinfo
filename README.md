@@ -28,13 +28,8 @@ composer require bartlett/php-compatinfo
 
 ## Build PHAR distribution
 
-Since release **5.4.2** building of phar version of application is part of composer automated process.
-
-Either when you install or update project with Composer, the `bin/phpcompatinfo.phar` file will be built.
-
-**NOTE**
-- You may avoid this by invoking composer command with `--no-scripts` option.
-- You may also rebuild the phar file by invoking `composer compile-box` command (shortcut of `run`, `run-script`).
+Uses the [BOX](https://github.com/box-project/box/) to compile your phar version of application.
+Configuration file (`box.json.dist`) is provided with each release of phpCompatInfo.
 
 ## Documentation
 

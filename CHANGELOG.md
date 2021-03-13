@@ -6,12 +6,14 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
-## [5.5.0] - 2021-03-dd
+## [5.5.0] - 2021-03-13
+
+**CAUTION:** uses `config/bootstrap.php` to apply autoloader and initialize environment variables (`APP_ENV` and `APP_PROXY_DIR`)
 
 ### Changed
 
 - raise PHP minimum requirement to version 7.2
-- raise `bartlett/php-compatinfo-db` dependency to version 3.3
+- raise `bartlett/php-compatinfo-db` dependency to version 3.4
 
 ## [5.4.4] - 2021-02-22
 
