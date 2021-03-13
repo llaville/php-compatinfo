@@ -65,8 +65,8 @@ jobs:
             -
                 name: Build Database
                 run: |
-                    vendor/bin/doctrine orm:schema-tool:create
-                    vendor/bartlett/php-compatinfo-db/bin/compatinfo-db db:init
+                    vendor/bin/doctrine orm:schema-tool:create --ansi
+                    vendor/bartlett/php-compatinfo-db/bin/compatinfo-db db:init --ansi
 
             -
                 name: Unit tests
