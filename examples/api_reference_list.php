@@ -38,7 +38,7 @@
  * @since    Example available since Release 4.0.0-alpha3
  */
 
-require_once dirname(__DIR__) . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/config/bootstrap.php';
 
 use Bartlett\CompatInfo\Client;
 

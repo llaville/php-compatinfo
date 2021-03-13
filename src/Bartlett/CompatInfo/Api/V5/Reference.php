@@ -15,19 +15,16 @@ use Bartlett\CompatInfoDb\Application\Query\ListRef\ListHandler;
 use Bartlett\CompatInfoDb\Application\Query\ListRef\ListQuery;
 use Bartlett\CompatInfoDb\Application\Query\Show\ShowHandler;
 use Bartlett\CompatInfoDb\Application\Query\Show\ShowQuery;
-use Bartlett\CompatInfoDb\Domain\ValueObject\Constant_;
 use Bartlett\CompatInfoDb\Domain\ValueObject\Extension;
-use Bartlett\CompatInfoDb\Domain\ValueObject\Function_;
 use Bartlett\CompatInfoDb\Domain\ValueObject\Platform;
 use Bartlett\CompatInfoDb\Infrastructure\Persistence\Doctrine\Entity\Release;
 use Bartlett\CompatInfoDb\Presentation\Console\ApplicationInterface;
-use Bartlett\CompatInfoDb\Presentation\Console\StyleInterface;
 use Bartlett\Reflect\Api\V3\Common;
 
 use Closure;
 use stdClass;
-use Symfony\Component\Console\Helper\TableSeparator;
 use function array_values;
+use function array_walk;
 use function extension_loaded;
 use function ksort;
 use function version_compare;
@@ -46,6 +43,11 @@ class Reference extends Common
     public function __call(string $name, array $args)
     {
         if ('list' == $name) {
+            if (count($args) === 0) {
+                $container = require dirname(__DIR__, 5) . '/config/container.php';
+                $handler = $container->get(ListHandler::class);
+                return $this->dir($handler);
+            }
             return $this->dir(...$args);
         }
         return null;
@@ -123,7 +125,14 @@ class Reference extends Common
         $classConstants,
         ShowHandler $handler
     ): array {
-        $query = new ShowQuery($name, $releases, $ini, $constants, $functions, $interfaces, $classes, $methods, $classConstants);
+        $flags = [$releases, $ini, $constants, $functions, $interfaces, $classes, $methods, $classConstants];
+        array_walk($flags, function(&$value) {
+            if (null === $value) {
+                $value = true;
+            }
+        });
+
+        $query = new ShowQuery($name, ...$flags);
 
         /** @var Extension $extension */
         $reference = $handler($query);

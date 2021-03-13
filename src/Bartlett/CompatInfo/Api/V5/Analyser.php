@@ -72,6 +72,12 @@ class Analyser extends SourceProvider
             $sniffCollection = new SniffCollection(new ArrayIterator([]));
         }
 
+        if (null === $referenceCollection) {
+            /** @var \Symfony\Component\DependencyInjection\ContainerBuilder $container */
+            $container = require dirname(__DIR__, 5) . '/config/container.php';
+            $referenceCollection = $container->get(ReferenceCollectionInterface::class);
+        }
+
         $finder = $this->getFinder($source);
 
         if ($finder === null) {
