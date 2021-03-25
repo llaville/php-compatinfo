@@ -5,6 +5,7 @@ namespace Bartlett\Tests\CompatInfo;
 use Bartlett\CompatInfo\Analyser\CompatibilityAnalyser;
 use Bartlett\CompatInfo\Client;
 use Bartlett\CompatInfo\Collection\ReferenceCollectionInterface;
+use Bartlett\CompatInfo\Collection\SniffCollection;
 
 /**
  * Common Class TestCase
@@ -17,8 +18,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     protected static $fixtures;
     protected static $analyserId;
     protected static $api;
-    protected static $sniffs;
-    protected static $references;
 
     /**
      * Sets up the shared fixture.
@@ -37,9 +36,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
         // request for a Bartlett\CompatInfo\Api\Analyser
         self::$api = $client->api('analyser');
-
-        $container = require __DIR__ . '/../config/container.php';
-        self::$references = $container->get(ReferenceCollectionInterface::class);
     }
 
     /**
@@ -50,7 +46,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      */
     protected function executeAnalysis(string $dataSource): array
     {
-        $profile = self::$api->run(self::$fixtures . $dataSource, false, self::$references, self::$sniffs);
+        $container = require __DIR__ . '/../config/container.php';
+        $references = $container->get(ReferenceCollectionInterface::class);
+        $sniffs = $container->get(SniffCollection::class);
+
+        $profile = self::$api->run(self::$fixtures . $dataSource, false, $references, $sniffs);
 
         $data = $profile->getData();
         $token = key($data);
