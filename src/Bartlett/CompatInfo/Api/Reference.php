@@ -69,7 +69,7 @@ class Reference extends BaseApi
         $methods = null,
         $classConstants = null,
         ShowHandler $showHandler = null
-    ): array {
+    ) {
         if (null === $showHandler) {
             $container = require dirname(__DIR__, 4) . '/config/container.php';
             $showHandler = $container->get(ShowHandler::class);

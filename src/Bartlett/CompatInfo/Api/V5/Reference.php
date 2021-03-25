@@ -124,7 +124,7 @@ class Reference extends Common
         $methods,
         $classConstants,
         ShowHandler $handler
-    ): array {
+    ) {
         $flags = [$releases, $ini, $constants, $functions, $interfaces, $classes, $methods, $classConstants];
         array_walk($flags, function(&$value) {
             if (null === $value) {
@@ -136,6 +136,12 @@ class Reference extends Common
 
         /** @var Extension $extension */
         $reference = $handler($query);
+
+        if (null === $reference) {
+            throw new \RuntimeException(
+                sprintf('Extension "%s" is not available', $query->getExtension())
+            );
+        }
 
         $results   = array();
         $summary   = array();
