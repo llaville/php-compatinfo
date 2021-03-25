@@ -15,11 +15,18 @@
 
 namespace Bartlett\Tests\CompatInfo;
 
+use Exception;
+use function array_diff;
+use function array_filter;
+use function array_keys;
+use function version_compare;
+
 /**
  * @link https://github.com/llaville/php-compat-info/issues/128
  * @link https://github.com/llaville/php-compat-info/issues/159
  * @link https://github.com/llaville/php-compat-info/issues/160
  * @link https://github.com/llaville/php-compat-info/issues/195
+ * @link https://github.com/llaville/php-compat-info/issues/301
  */
 final class ConditionIssueTest extends TestCase
 {
@@ -41,6 +48,7 @@ final class ConditionIssueTest extends TestCase
      * @link https://www.php.net/manual/en/function.idn-to-ascii.php
      * @group regression
      * @return void
+     * @throws Exception
      */
     public function testRegressionGH128()
     {
@@ -65,6 +73,7 @@ final class ConditionIssueTest extends TestCase
      *       Conditionally used class is reported as required
      * @group regression
      * @return void
+     * @throws Exception
      */
     public function testRegressionGH159()
     {
@@ -113,6 +122,7 @@ final class ConditionIssueTest extends TestCase
      *       Depending on parsing file order, some code conditions are not detected
      * @group regression
      * @return void
+     * @throws Exception
      */
     public function testRegressionGH160()
     {
@@ -137,6 +147,7 @@ final class ConditionIssueTest extends TestCase
      *       Absolutely namespaced classes not properly detected with class_exists()
      * @group regression
      * @return void
+     * @throws Exception
      */
     public function testRegressionGH195()
     {
@@ -176,5 +187,50 @@ final class ConditionIssueTest extends TestCase
             '',
             $methods['Normalizer\normalize']['ext.max']
         );
+    }
+
+    /**
+     * Regression test for issue #301
+     *
+     * @link https://github.com/llaville/php-compat-info/issues/301
+     *       Multiple conditions not displayed
+     * @group regression
+     * @return void
+     * @throws Exception
+     */
+    public function testRegressionGH301()
+    {
+        $dataSource = 'gh301';
+        $metrics = $this->executeAnalysis($dataSource);
+
+        $functions = $metrics[self::$analyserId]['functions'];
+        $functions = array_filter($functions, function($function) {
+            return ($function['optional'] ?? false) && version_compare($function['ext.min'], '8.0.0alpha1', 'eq');
+        });
+        $diff = array_diff(
+            array_keys($functions),
+            [
+                'fdiv',
+                'preg_last_error_msg',
+                'str_contains',
+                'str_starts_with',
+                'str_ends_with',
+                'get_debug_type',
+                'get_resource_id',
+            ]
+        );
+        $this->assertCount(0, $diff, 'Conditional functions analysis does not match');
+
+        $constants = $metrics[self::$analyserId]['constants'];
+        $constants = array_filter($constants, function($constant) {
+            return ($constant['optional'] ?? false) && version_compare($constant['ext.min'], '8.0.0alpha1', 'eq');
+        });
+        $diff = array_diff(
+            array_keys($constants),
+            [
+                'FILTER_VALIDATE_BOOL',
+            ]
+        );
+        $this->assertCount(0, $diff, 'Conditional constants analysis does not match');
     }
 }

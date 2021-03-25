@@ -6,7 +6,13 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Fixed
+
+- [GH-301](https://github.com/llaville/php-compat-info/issues/301) Multiple conditions not displayed
+
 ## [5.5.1] - 2021-03-13
+
+### Fixed
 
 - Autoloader regression when using as dependency in another project
 

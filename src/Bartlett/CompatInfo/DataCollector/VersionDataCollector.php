@@ -48,19 +48,19 @@ final class VersionDataCollector extends DataCollector
             $name = $element['id'];
             $versions = array_replace(self::$php4, $element['versions']);
 
+            if (isset($versions['opt.group'])) {
+                $this->handleCodeWithCondition($name, $versions);
+                unset(
+                    $versions['opt.name'],
+                    $versions['opt.group'],
+                    $versions['opt.versions']
+                );
+            } else {
+                $versions['parents'] = $element['parents'];
+            }
             if (isset($this->data[$group][$name])) {
                 $this->updateElementVersion($this->data[$group][$name], $versions);
             } else {
-                if (isset($versions['opt.group'])) {
-                    $this->handleCodeWithCondition($name, $group, $versions);
-                    unset(
-                        $versions['opt.name'],
-                        $versions['opt.group'],
-                        $versions['opt.versions']
-                    );
-                } else {
-                    $versions['parents'] = $element['parents'];
-                }
                 $this->data[$group][$name] = $versions;
             }
         }
@@ -107,7 +107,7 @@ final class VersionDataCollector extends DataCollector
                 }
 
                 if ($optional) {
-                    if (!in_array($versions['ext.name'], ['Core', 'standard', 'user'])) {
+                    if (!in_array($versions['ext.name'], ['core', 'standard', 'user'])) {
                         $data['extensions'][$versions['ext.name']]['optional'] = true;
                     }
                     // do not compute conditional code
@@ -118,7 +118,7 @@ final class VersionDataCollector extends DataCollector
                 foreach ($versions['parents'] ?? [] as $parent) {
                     $type = key($parent);
                     $id = reset($parent);
-                    if (isset($data[$type][$id] )|| array_key_exists($id, $data[$type])) {
+                    if (isset($data[$type][$id]) || array_key_exists($id, $data[$type])) {
                         $this->updateElementVersion($data[$type][$id], $versions);
                     }
                 }
@@ -149,7 +149,7 @@ final class VersionDataCollector extends DataCollector
 
     public function getNamespaces(): array
     {
-        return $this->data['namespace'] ?? [];
+        return $this->data['namespaces'] ?? [];
     }
 
     public function getClasses(): array
@@ -197,7 +197,7 @@ final class VersionDataCollector extends DataCollector
         return $this->data['conditions'] ?? [];
     }
 
-    private function handleCodeWithCondition(string $id, string $type, array $condition): void
+    private function handleCodeWithCondition(string $id, array $condition): void
     {
         $name = $condition['opt.name'];
         $group = $condition['opt.group'];
