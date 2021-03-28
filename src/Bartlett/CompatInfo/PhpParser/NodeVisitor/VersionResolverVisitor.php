@@ -46,7 +46,7 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
 
         if ($node instanceof Node\Stmt\Namespace_) {
             if (null === $node->name) {
-                $currentVersions['ext.name'] = 'Core';
+                $currentVersions['ext.name'] = 'core';
             } else {
                 $currentVersions['php.min'] = '5.3.0';
             }
