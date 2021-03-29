@@ -46,7 +46,7 @@ final class ClassIssueTest extends TestCase
         $extensions = $metrics[self::$analyserId]['extensions'];
 
         $provideExtensions = [
-            'Core',
+            'core',
             'xmlwriter',
             'mongo',
         ];
