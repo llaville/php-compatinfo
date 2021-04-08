@@ -6,6 +6,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Added
+
+- [GH-305](https://github.com/llaville/php-compat-info/issues/305) `--exclude` option to be able to filter data source
+
 ### Fixed
 
 - [GH-301](https://github.com/llaville/php-compat-info/issues/301) Multiple conditions not displayed

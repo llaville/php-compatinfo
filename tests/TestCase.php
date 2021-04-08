@@ -50,7 +50,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         $references = $container->get(ReferenceCollectionInterface::class);
         $sniffs = $container->get(SniffCollection::class);
 
-        $profile = self::$api->run(self::$fixtures . $dataSource, false, $references, $sniffs);
+        $profile = self::$api->run(self::$fixtures . $dataSource, [], false, $references, $sniffs);
 
         $data = $profile->getData();
         $token = key($data);

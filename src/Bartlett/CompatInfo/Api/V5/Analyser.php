@@ -54,6 +54,7 @@ class Analyser extends SourceProvider
      * Analyse a data source and display results.
      *
      * @param string $source Path to the data source or its alias
+     * @param array $exclude Sets excluded file or directory names for scanning
      * @param bool $stop_on_failure Stop execution upon first error generated during lexing, parsing or some other operation
      * @param ReferenceCollectionInterface|null $referenceCollection
      * @param SniffCollection|null $sniffCollection
@@ -62,7 +63,7 @@ class Analyser extends SourceProvider
      * @return Profile
      * @throws Exception
      */
-    public function run(string $source, bool $stop_on_failure = null, ReferenceCollectionInterface $referenceCollection = null, SniffCollection $sniffCollection = null, Profiler $profiler = null): Profile
+    public function run(string $source, array $exclude = [], bool $stop_on_failure = null, ReferenceCollectionInterface $referenceCollection = null, SniffCollection $sniffCollection = null, Profiler $profiler = null): Profile
     {
         if (null === $profiler) {
             $profiler = new Profiler(sha1($source));
@@ -78,7 +79,7 @@ class Analyser extends SourceProvider
             $referenceCollection = $container->get(ReferenceCollectionInterface::class);
         }
 
-        $finder = $this->getFinder($source);
+        $finder = $this->getFinder($source, $exclude);
 
         if ($finder === null) {
             throw new RuntimeException(

@@ -16,7 +16,7 @@ use const PATH_SEPARATOR;
  */
 class SourceProvider
 {
-    public function getFinder(string $source): ?Finder
+    public function getFinder(string $source, array $exclude): ?Finder
     {
         $source = trim($source);
 
@@ -61,6 +61,7 @@ class SourceProvider
         $finder
             ->files()
             ->in($provider['in'])
+            ->exclude($exclude)
             ->name($provider['name'])
         ;
         if (isset($provider['depth'])) {
