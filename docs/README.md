@@ -55,3 +55,9 @@ Learn what code is consider as conditional, detected or not (with CompatInfo 5.4
 - [Indirect calls](03_Conditional_Code/2_Indirect_Call.md)
 - [Multiple signatures](03_Conditional_Code/3_Multiple_Signature.md)
 - [Other limitations](03_Conditional_Code/100_Limitation.md)
+
+## [Exclude folder(s)](04_Exclude_Folders/README.md)
+
+Sometimes you don't want to scan a certain directory while analysing data source.
+
+Learn in this chapter how to do from console (CLI) or php script (API).
