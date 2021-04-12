@@ -15,6 +15,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - [GH-301](https://github.com/llaville/php-compat-info/issues/301) Multiple conditions not displayed
 - [GH-303](https://github.com/llaville/php-compat-info/issues/303) Report unavailable extension more clearly
 - issue (on static context) when running single TestCase with commit [14b16b3](https://github.com/llaville/php-compat-info/commit/14b16b3a2454316d699ab4a587497e24f0f87235)
+- report unavailable database more clearly
 
 ## [5.5.1] - 2021-03-13
 

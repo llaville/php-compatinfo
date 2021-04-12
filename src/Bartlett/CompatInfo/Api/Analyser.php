@@ -33,12 +33,10 @@ class Analyser extends BaseApi
      * Analyse a data source and display results.
      *
      * @param string $source Path to the data source
-     * @param array $exclude Sets excluded file or directory names for scanning
+     * @param array $exclude Sets excluded directory names for scanning
      * @param bool $stop_on_failure Stop execution upon first error generated during lexing, parsing or some other operation
-     *
-     * @return Profile
      */
-    public function run(string $source, array $exclude = [], bool $stop_on_failure = null): Profile
+    public function run(string $source, array $exclude = [], bool $stop_on_failure = null)
     {
         return $this->request('analyser/run', 'POST', func_get_args());
     }

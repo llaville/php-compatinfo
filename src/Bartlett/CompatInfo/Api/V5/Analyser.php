@@ -21,6 +21,8 @@ use Bartlett\CompatInfo\DataCollector\ErrorHandler\Throwing as ThrowingError;
 use Bartlett\CompatInfo\Profiler\Profile;
 use Bartlett\CompatInfo\Profiler\Profiler;
 
+use Doctrine\DBAL\Exception\ConnectionException;
+
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 use ArrayIterator;
@@ -54,7 +56,7 @@ class Analyser extends SourceProvider
      * Analyse a data source and display results.
      *
      * @param string $source Path to the data source or its alias
-     * @param array $exclude Sets excluded file or directory names for scanning
+     * @param array $exclude Sets excluded directory names for scanning
      * @param bool $stop_on_failure Stop execution upon first error generated during lexing, parsing or some other operation
      * @param ReferenceCollectionInterface|null $referenceCollection
      * @param SniffCollection|null $sniffCollection
@@ -97,6 +99,10 @@ class Analyser extends SourceProvider
         // create compatible nikic/php-parser Throwing and Collecting objects
         $errorHandler = $stop_on_failure ? new ThrowingError() : new CollectingError();
 
-        return $parser->parse($finder, $errorHandler, $profiler);
+        try {
+            return $parser->parse($finder, $errorHandler, $profiler);
+        } catch (ConnectionException $e) {
+            throw new \RuntimeException('Please setup database first.');
+        }
     }
 }
