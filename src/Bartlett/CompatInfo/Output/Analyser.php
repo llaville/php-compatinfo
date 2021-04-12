@@ -17,6 +17,8 @@ use Bartlett\Reflect\Console\Formatter\OutputFormatter;
 
 use Symfony\Component\Console\Output\OutputInterface;
 
+use function array_map;
+
 /**
  * Analyser results default render on console
  *
@@ -57,20 +59,38 @@ class Analyser extends OutputFormatter
 
         // print Data Source summaries
         if (count($files) > 0) {
-            $text = sprintf(
+            $output->writeln(sprintf(
                 "%s" .
-                "Directories                                 %10d%s" .
-                "Files                                       %10d%s" .
-                "Errors                                      %10d%s",
+                "Directories                                 %10d",
                 PHP_EOL,
                 count($directories),
-                PHP_EOL,
-                count($files),
-                PHP_EOL,
-                count($errors),
-                PHP_EOL
-            );
-            $output->writeln($text);
+            ));
+            if ($output->isVerbose()) {
+                $directories = array_map(function ($dir) {
+                    return '  <info>+</info> ' . $dir;
+                }, $directories);
+                $output->writeln('');
+                $output->writeln($directories);
+                $output->writeln('');
+            }
+
+            $output->writeln(sprintf(
+                "Files                                       %10d",
+                count($files)
+            ));
+            if ($output->isVerbose()) {
+                $files = array_map(function($file) {
+                    return '  <info>+</info> ' . $file;
+                }, $files);
+                $output->writeln('');
+                $output->writeln($files);
+                $output->writeln('');
+            }
+
+            $output->writeln(sprintf(
+                "Errors                                      %10d",
+                count($errors)
+            ));
         }
 
         if (count($errors)) {

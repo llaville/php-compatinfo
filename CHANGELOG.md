@@ -9,6 +9,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Added
 
 - [GH-305](https://github.com/llaville/php-compat-info/issues/305) `--exclude` option to be able to filter data source
+- Display list of directories and files scanned when verbose mode is active on console
 
 ### Fixed
 
