@@ -17,7 +17,12 @@ use Bartlett\Reflect\Console\Formatter\OutputFormatter;
 
 use Symfony\Component\Console\Output\OutputInterface;
 
+use const PHP_EOL;
 use function array_map;
+use function array_unique;
+use function count;
+use function dirname;
+use function sprintf;
 
 /**
  * Analyser results default render on console
@@ -63,7 +68,7 @@ class Analyser extends OutputFormatter
                 "%s" .
                 "Directories                                 %10d",
                 PHP_EOL,
-                count($directories),
+                count($directories)
             ));
             if ($output->isVerbose()) {
                 $directories = array_map(function ($dir) {
