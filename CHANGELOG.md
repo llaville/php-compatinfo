@@ -6,6 +6,14 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [5.5.3] - 2021-05-03
+
+### Fixed
+
+**CAUTION** Previous version 5.5.2 was displayed as 5.5.1
+
+- [PR 306](https://github.com/llaville/php-compat-info/pull/306) Fixed trailing comma syntax issue with PHP 7.2 (thanks to @nickolasburr)
+
 ## [5.5.2] - 2021-04-12
 
 ### Added
@@ -155,7 +163,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - add support to PHP-Parser 3.1 for running on PHP >= 5.5 and for parsing code PHP 5.2 to PHP 7.2
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/5.5.2...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/5.5.3...HEAD
+[5.5.3]: https://github.com/llaville/php-compat-info/compare/5.5.2...5.5.3
 [5.5.2]: https://github.com/llaville/php-compat-info/compare/5.5.1...5.5.2
 [5.5.1]: https://github.com/llaville/php-compat-info/compare/5.5.0...5.5.1
 [5.5.0]: https://github.com/llaville/php-compat-info/compare/5.4.4...5.5.0
