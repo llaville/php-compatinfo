@@ -92,7 +92,7 @@ final class VersionDataCollector extends DataCollector
             $this->data
         );
 
-        foreach($data as $group => $elements) {
+        foreach ($data as $group => $elements) {
             if (in_array($group, ['versions', 'extensions', 'conditions'])) {
                 // skip un-computable elements
                 continue;

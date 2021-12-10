@@ -77,12 +77,10 @@ class Reference extends BaseApi
 
         if ($filter instanceof Closure) {
             $closure = $filter;
-
         } elseif ($filter === false) {
             $closure = function ($data) {
                 return $data;
             };
-
         } else {
             if ($filterRes = stream_resolve_include_path($filter)) {
                 include_once $filterRes;

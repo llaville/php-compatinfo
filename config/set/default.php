@@ -31,9 +31,8 @@ use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
  * @param ContainerConfigurator $containerConfigurator
  * @return void
  */
-return static function (ContainerConfigurator $containerConfigurator): void
-{
-    $containerConfigurator->import(dirname(__DIR__,2) . '/vendor/bartlett/php-compatinfo-db/config/set/default.php');
+return static function (ContainerConfigurator $containerConfigurator): void {
+    $containerConfigurator->import(dirname(__DIR__, 2) . '/vendor/bartlett/php-compatinfo-db/config/set/default.php');
     $containerConfigurator->import(__DIR__ . '/common.php');
 
     $parameters = $containerConfigurator->parameters();

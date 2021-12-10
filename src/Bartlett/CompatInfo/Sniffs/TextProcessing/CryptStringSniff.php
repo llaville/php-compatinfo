@@ -49,13 +49,13 @@ final class CryptStringSniff extends SniffAbstract
             return null;
         }
 
-        if (in_array(substr($salt->value, 0 ,4), ['$2a$', '$2x$', '$2y$'])) {
+        if (in_array(substr($salt->value, 0, 4), ['$2a$', '$2x$', '$2y$'])) {
             // Blowfish
             $min = '5.3.7';
-        } elseif (in_array(substr($salt->value, 0 ,3), ['$5$', '$6$'])) {
+        } elseif (in_array(substr($salt->value, 0, 3), ['$5$', '$6$'])) {
             // SHA-256 and SHA-512
             $min = '5.3.2';
-        } elseif (in_array(substr($salt->value, 0 ,3), ['$1$'])) {
+        } elseif (in_array(substr($salt->value, 0, 3), ['$1$'])) {
             // SHA-256 and SHA-512
             $min = '5.3.0';
         } else {

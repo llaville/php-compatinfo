@@ -55,7 +55,8 @@ class CompatibilityOutputFormatter extends OutputFormatter
             $this->listHelper($output, $group, $args, count($args));
         }
 
-        if (!array_key_exists('versions', $response)
+        if (
+            !array_key_exists('versions', $response)
             || empty($response['versions'])
         ) {
             return;
@@ -128,7 +129,8 @@ class CompatibilityOutputFormatter extends OutputFormatter
                 continue;
             }
             foreach ($base as $id => $version) {
-                if (!in_array(substr($id, -3), array('min', 'max', 'all'))
+                if (
+                    !in_array(substr($id, -3), array('min', 'max', 'all'))
                     || 'arg.max' == $id
                 ) {
                     continue;
@@ -151,7 +153,8 @@ class CompatibilityOutputFormatter extends OutputFormatter
             $flags = isset($versions['optional']) ? 'C' : ' ';
 
             if (in_array($group, array('classes', 'interfaces', 'traits'))) {
-                if ('user' == $versions['ext.name']
+                if (
+                    'user' == $versions['ext.name']
                     && ($versions['declared'] ?? false) === false
                 ) {
                     $flags .= 'U';
@@ -174,7 +177,8 @@ class CompatibilityOutputFormatter extends OutputFormatter
             }
             $rows[] = $row;
 
-            if (in_array($group, array('classes', 'interfaces', 'traits'))
+            if (
+                in_array($group, array('classes', 'interfaces', 'traits'))
                 && $output->isVerbose()
                 && !in_array($arg, array('parent', 'self', 'static'))
             ) {

@@ -27,5 +27,4 @@ final class ClassConstantSniff extends SniffAbstract
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '4.0.0']);
     }
-
 }

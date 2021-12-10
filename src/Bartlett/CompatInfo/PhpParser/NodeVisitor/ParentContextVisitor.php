@@ -72,7 +72,8 @@ final class ParentContextVisitor extends NodeVisitorAbstract
             $node->setAttribute($this->attributeParentKey, $this->stack[count($this->stack) - 1]);
         }
 
-        if ($node instanceof Node\Stmt\Namespace_
+        if (
+            $node instanceof Node\Stmt\Namespace_
             || $node instanceof Node\Stmt\ClassLike
             || $node instanceof Node\FunctionLike
             || $node instanceof Node\Stmt\Property
@@ -87,7 +88,8 @@ final class ParentContextVisitor extends NodeVisitorAbstract
      */
     public function leaveNode(Node $node)
     {
-        if ($node instanceof Node\Stmt\Namespace_
+        if (
+            $node instanceof Node\Stmt\Namespace_
             || $node instanceof Node\Stmt\ClassLike
             || $node instanceof Node\FunctionLike
             || $node instanceof Node\Stmt\Property

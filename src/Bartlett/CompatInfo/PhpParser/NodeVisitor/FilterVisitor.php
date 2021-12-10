@@ -43,7 +43,7 @@ class FilterVisitor extends FindingVisitor
         $collection = new ArrayCollection($this->getFoundNodes());
 
         $mappedCollection =
-            $collection->map(function($node) {
+            $collection->map(function ($node) {
                 return $this->normalizer->normalize($node, '', $this->context);
             })
         ;

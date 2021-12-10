@@ -248,7 +248,7 @@ class CompatibilityAnalyser extends AbstractSniffAnalyser
         $qualifiedClassName = $this->aliases[(string) $caller->name];
         $this->computeInternalVersions($node, (string) $node->name, 'methods', $qualifiedClassName);
 
-        $node->setAttribute(self::NAMESPACED_NAME_NODE_ATTRIBUTE, $qualifiedClassName . '\\'. (string) $node->name);
+        $node->setAttribute(self::NAMESPACED_NAME_NODE_ATTRIBUTE, $qualifiedClassName . '\\' . (string) $node->name);
     }
 
     /**
@@ -279,7 +279,7 @@ class CompatibilityAnalyser extends AbstractSniffAnalyser
         $className = (string) $node->class;
         $this->computeInternalVersions($node, (string) $node->name, 'methods', $className);
 
-        $node->setAttribute(self::NAMESPACED_NAME_NODE_ATTRIBUTE, $className . '\\'. (string) $node->name);
+        $node->setAttribute(self::NAMESPACED_NAME_NODE_ATTRIBUTE, $className . '\\' . (string) $node->name);
     }
 
     /**
@@ -338,21 +338,22 @@ class CompatibilityAnalyser extends AbstractSniffAnalyser
             return;
         }
         $assign = $node->var;
-        if ($assign instanceof Node\Expr\PropertyFetch
+        if (
+            $assign instanceof Node\Expr\PropertyFetch
             && is_string($assign->name)
         ) {
             $property = $assign->name;
 
-            if ($assign->var instanceof Node\Expr\Variable
+            if (
+                $assign->var instanceof Node\Expr\Variable
                 && is_string($assign->var->name)
-                && is_string($property)
             ) {
                 $object = $assign->var->name;
 
-                $this->aliases[$object .'_'. $property] = (string) $class;
+                $this->aliases[$object . '_' . $property] = (string) $class;
             }
-
-        } elseif ($assign instanceof Node\Expr\Variable
+        } elseif (
+            $assign instanceof Node\Expr\Variable
             && is_string($assign->name)
         ) {
             $this->aliases[$assign->name] = (string) $class;

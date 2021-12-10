@@ -83,7 +83,7 @@ class Parser extends AbstractDispatcher
                 'comments', 'startLine', 'endLine', 'startTokenPos', 'endTokenPos'
             )
         ));
-        $parser = (new ParserFactory)->create(ParserFactory::PREFER_PHP7, $lexer);
+        $parser = (new ParserFactory())->create(ParserFactory::PREFER_PHP7, $lexer);
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new ParentContextVisitor());
         $traverser->addVisitor(new NameResolverVisitor());
@@ -95,7 +95,7 @@ class Parser extends AbstractDispatcher
         $this->analyser->setUpBeforeVisitor();
 
         // analyse each file of the data source
-        foreach($queue as $file) {
+        foreach ($queue as $file) {
             $event = $this->dispatch(
                 new ProgressEvent(
                     $this,

@@ -101,7 +101,8 @@ class NodeNormalizer implements NormalizerInterface
             $this->name = implode(', ', $keys);
         } elseif ($data instanceof Node\Scalar\MagicConst) {
             $this->name = $data->getName();
-        } elseif ($data instanceof Node\Expr\BinaryOp\Coalesce
+        } elseif (
+            $data instanceof Node\Expr\BinaryOp\Coalesce
             || $data instanceof Node\Expr\BinaryOp\Pow
             || $data instanceof Node\Expr\AssignOp\Pow
             || $data instanceof Node\Expr\Ternary
@@ -110,7 +111,8 @@ class NodeNormalizer implements NormalizerInterface
             || $data instanceof Node\Scalar\LNumber
         ) {
             $this->name = '';
-        } elseif ($data instanceof InterfaceFullyQualified
+        } elseif (
+            $data instanceof InterfaceFullyQualified
             || $data instanceof ClassFullyQualified
         ) {
             $this->name = (string) $data;

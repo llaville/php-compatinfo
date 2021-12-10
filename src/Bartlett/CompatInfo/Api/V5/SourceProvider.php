@@ -65,7 +65,7 @@ class SourceProvider
             ->name($provider['name'])
         ;
         if (isset($provider['depth'])) {
-            $finder->depth('== ' .$provider['depth']);
+            $finder->depth('== ' . $provider['depth']);
         }
         return $finder;
     }

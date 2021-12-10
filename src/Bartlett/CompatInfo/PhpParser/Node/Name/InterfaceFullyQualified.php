@@ -6,9 +6,8 @@ use PhpParser\Node\Name\FullyQualified;
 
 class InterfaceFullyQualified extends FullyQualified
 {
-    public function getType() : string
+    public function getType(): string
     {
         return 'Name_InterfaceFullyQualified';
     }
-
 }

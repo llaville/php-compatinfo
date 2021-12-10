@@ -212,7 +212,8 @@ class CommandFactory
                 } else {
                     $mode = InputOption::VALUE_OPTIONAL;
                 }
-                if (isset($params[$pos])
+                if (
+                    isset($params[$pos])
                     && strcasecmp((string) $params[$pos]->getType(), 'array') === 0
                 ) {
                     $mode = InputOption::VALUE_IS_ARRAY | $mode;
@@ -229,7 +230,8 @@ class CommandFactory
                     $default = null;
                     $mode    = InputArgument::REQUIRED;
                 }
-                if (isset($params[$pos])
+                if (
+                    isset($params[$pos])
                     && strcasecmp((string) $params[$pos]->getType(), 'array') === 0
                 ) {
                     $mode = InputArgument::IS_ARRAY | $mode;
@@ -361,7 +363,7 @@ class CommandFactory
             if ($response instanceof \Exception) {
                 if (substr_count($response->getMessage(), "\n") > 0) {
                     // message on multiple lines
-                    $fmt = new FormatterHelper;
+                    $fmt = new FormatterHelper();
                     $output->writeln(
                         $fmt->formatBlock(
                             explode("\n", $response->getMessage()),
@@ -376,7 +378,8 @@ class CommandFactory
             }
 
             $result = new $outputFormatter();
-            if (!method_exists($result, $methodName)
+            if (
+                !method_exists($result, $methodName)
                 || !is_callable(array($result, $methodName))
                 || $output->isDebug()
             ) {
@@ -400,7 +403,7 @@ class CommandFactory
             $result->$methodName($output, $collectors);
 
             if (isset($target)) {
-                $output->writeln(PHP_EOL . '<comment>Profile results are being logged as JSON format to</comment> '. $target);
+                $output->writeln(PHP_EOL . '<comment>Profile results are being logged as JSON format to</comment> ' . $target);
             }
         };
     }

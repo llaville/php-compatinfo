@@ -6,7 +6,7 @@ use PhpParser\Node\Name\FullyQualified;
 
 class ClassFullyQualified extends FullyQualified
 {
-    public function getType() : string
+    public function getType(): string
     {
         return 'Name_ClassFullyQualified';
     }

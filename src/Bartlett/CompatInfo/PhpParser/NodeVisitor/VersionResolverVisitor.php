@@ -50,7 +50,6 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
             } else {
                 $currentVersions['php.min'] = '5.3.0';
             }
-
         } elseif ($node instanceof Node\Stmt\Class_) {
             if (null !== $node->extends) {
                 $versions = $this->resolveClassVersions($node->extends, 'classes');
@@ -61,16 +60,13 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
                 $versions = $this->resolveClassVersions($interface, 'interfaces');
                 $this->updateElementVersion($currentVersions, $versions);
             }
-
         } elseif ($node instanceof Node\Stmt\Interface_) {
             foreach ($node->extends as $interface) {
                 $versions = $this->resolveClassVersions($interface, 'interfaces');
                 $this->updateElementVersion($currentVersions, $versions);
             }
-
         } elseif ($node instanceof Node\Stmt\Trait_) {
             $currentVersions['php.min'] = '5.4.0';
-
         } elseif ($node instanceof Node\FunctionLike) {
             if ($node instanceof Node\Expr\ArrowFunction) {
                 // @link https://www.php.net/manual/en/functions.arrow.php
@@ -86,7 +82,6 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
             }
 
             $currentVersions = $this->handleParameters($node, $currentVersions);
-
         } else {
             // do nothing on other nodes
             return null;
@@ -150,12 +145,12 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
         if ('user' == $versions['ext.name']) {
             if ('interfaces' === $group) {
                 $min = $name->isQualified() ? '5.3.0' : '5.0.0';
-                $this->updateVersion($min,$versions['php.min']);
+                $this->updateVersion($min, $versions['php.min']);
             } else {
                 if ($name->isUnqualified()) {
                     // PHP4 syntax (global namespace)
                     $min = '4.0.0';
-                    $this->updateVersion($min,$versions['php.min']);
+                    $this->updateVersion($min, $versions['php.min']);
                 }
             }
         }

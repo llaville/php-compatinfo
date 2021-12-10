@@ -52,7 +52,8 @@ final class NameResolverVisitor extends NameResolver
             } else {
                 $node->setAttribute($this->attributeNamespacedName, (string) $node->namespacedName);
             }
-        } elseif ($node instanceof Node\FunctionLike
+        } elseif (
+            $node instanceof Node\FunctionLike
             || $node instanceof Node\Const_
             || $node instanceof Node\Expr\Yield_
             || $node instanceof Node\Expr\YieldFrom
@@ -94,7 +95,8 @@ final class NameResolverVisitor extends NameResolver
                 $node->getAttribute('startLine', 0),
                 $node->getAttribute('endLine', 0)
             );
-        } elseif ($node instanceof Node\Expr\Yield_
+        } elseif (
+            $node instanceof Node\Expr\Yield_
             || $node instanceof Node\Expr\YieldFrom
         ) {
             $name = sprintf(

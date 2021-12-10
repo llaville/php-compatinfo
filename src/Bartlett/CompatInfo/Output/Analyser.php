@@ -84,7 +84,7 @@ class Analyser extends OutputFormatter
                 count($files)
             ));
             if ($output->isVerbose()) {
-                $files = array_map(function($file) {
+                $files = array_map(function ($file) {
                     return '  <info>+</info> ' . $file;
                 }, $files);
                 $output->writeln('');

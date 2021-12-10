@@ -28,7 +28,8 @@ final class EmptySniff extends SniffAbstract
         }
 
         // If the parameter of empty() is an arbitrary expression, and not just a variable.
-        if (! $node->expr instanceof Node\Expr\Variable
+        if (
+            ! $node->expr instanceof Node\Expr\Variable
             && ! $node->expr instanceof Node\Expr\ArrayDimFetch
             && ! $node->expr instanceof Node\Expr\PropertyFetch
             && ! $node->expr instanceof Node\Expr\StaticPropertyFetch

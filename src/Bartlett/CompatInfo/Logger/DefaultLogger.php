@@ -64,7 +64,8 @@ class DefaultLogger extends AbstractLogger
         $this->channel = $name;
         $this->level   = array_search($level, self::$levels);
 
-        if (isset($handler)
+        if (
+            isset($handler)
             && is_object($handler)
             && method_exists($handler, 'handle')
             && is_callable(array($handler, 'handle'))
@@ -135,7 +136,8 @@ class DefaultLogger extends AbstractLogger
                 $record['message'],
                 PHP_EOL
             ),
-            3, $this->destination
+            3,
+            $this->destination
         );
     }
 
@@ -158,15 +160,16 @@ class DefaultLogger extends AbstractLogger
 
         $replacements = array();
         foreach ($record['context'] as $key => $val) {
-            if (is_null($val)
+            if (
+                is_null($val)
                 || is_scalar($val)
                 || (is_object($val) && method_exists($val, "__toString"))
             ) {
-                $replacements['{'.$key.'}'] = $val;
+                $replacements['{' . $key . '}'] = $val;
             } elseif (is_object($val)) {
-                $replacements['{'.$key.'}'] = '[object '.get_class($val).']';
+                $replacements['{' . $key . '}'] = '[object ' . get_class($val) . ']';
             } else {
-                $replacements['{'.$key.'}'] = '['.gettype($val).']';
+                $replacements['{' . $key . '}'] = '[' . gettype($val) . ']';
             }
         }
 

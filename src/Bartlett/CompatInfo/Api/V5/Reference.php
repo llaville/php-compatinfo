@@ -126,7 +126,7 @@ class Reference extends Common
         ShowHandler $handler
     ) {
         $flags = [$releases, $ini, $constants, $functions, $interfaces, $classes, $methods, $classConstants];
-        array_walk($flags, function(&$value) {
+        array_walk($flags, function (&$value) {
             if (null === $value) {
                 $value = true;
             }
