@@ -1,5 +1,5 @@
-
-## Introduction
+<!-- markdownlint-disable MD013 -->
+# Introduction
 
 What is considered as a conditional code ?
 
@@ -39,7 +39,7 @@ Class C
 
 When we run analyser, we got this output :
 
-```
+```text
 Data Source Analysed
 
 Directories                                          1

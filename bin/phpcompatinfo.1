@@ -2,12 +2,12 @@
 .\"     Title: phpcompatinfo
 .\"    Author: [see the "AUTHORS" section]
 .\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
-.\"      Date: 2015-05-19
+.\"      Date: 2021-03-14
 .\"    Manual: \ \&
-.\"    Source: \ \& 4.2.0
+.\"    Source: \ \& 6.0.0
 .\"  Language: English
 .\"
-.TH "PHPCOMPATINFO" "1" "2015\-05\-19" "\ \& 4\&.2\&.0" "\ \&"
+.TH "PHPCOMPATINFO" "1" "2021\-03\-14" "\ \& 6\&.0\&.0" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -108,9 +108,9 @@ Where:
 \fBsource\fR
 .RS 4
 Identify a data source
-.SH "REFERENCE:LIST COMMAND"
+.SH "DB:LIST COMMAND"
 .sp
-The phpcompatinfo(1) \fIreference:list\fR command is used to list all references supported\&.
+The phpcompatinfo(1) db:list\fR command is used to list all references supported\&.
 .sp
 Usage:
 .sp
@@ -118,14 +118,20 @@ Usage:
 .RS 4
 .\}
 .nf
-phpcompatinfo reference:list
+phpcompatinfo db:list [\-\-all]
 .fi
 .if n \{\
 .RE
 .\}
-.SH "REFERENCE:SHOW COMMAND"
 .sp
-The phpcompatinfo(1) \fIreference:show\fR command is used to introspect a reference\&.
+Where:
+.PP
+\fB\-\-all\fR
+.RS 4
+List all references
+.SH "DB:SHOW COMMAND"
+.sp
+The phpcompatinfo(1) db:show\fR command is used to introspect a reference\&.
 .sp
 Usage:
 .sp
@@ -133,7 +139,7 @@ Usage:
 .RS 4
 .\}
 .nf
-phpcompatinfo reference:show [\-\-filter[="\&.\&.\&."]] [\-\-releases] [\-\-ini] [\-\-constants] [\-\-functions] [\-\-interfaces] [\-\-classes] name
+phpcompatinfo db:show [\-\-releases] [\-\-ini] [\-\-constants] [\-\-functions] [\-\-interfaces] [\-\-classes] [\-\-methods] [\-\-class\-constants] name
 .fi
 .if n \{\
 .RE
@@ -144,11 +150,6 @@ Where:
 \fBname\fR
 .RS 4
 Introspection of a reference (case insensitive)
-.RE
-.PP
-\fB\-\-filter\fR
-.RS 4
-Resource that provide a closure to filter results (default: false)
 .RE
 .PP
 \fB\-\-releases\fR
@@ -179,6 +180,16 @@ Show interfaces
 \fB\-\-classes\fR
 .RS 4
 Show classes
+.RE
+.PP
+\fB\-\-methods\fR
+.RS 4
+Show methods
+.RE
+.PP
+\fB\-\-class\-constants\fR
+.RS 4
+Show class constants
 .RE
 .SH "EXIT STATUS"
 .PP

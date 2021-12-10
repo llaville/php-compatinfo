@@ -1,15 +1,17 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\Tests\CompatInfo\PhpParser\NodeVisitor;
+namespace Bartlett\CompatInfo\Tests\PhpParser\NodeVisitor;
 
 /**
  * NodeVisitor Resolver to initialize base php.min version
  * of namespaces, classes, interfaces, traits and functions declaration
  *
- * @since Class available since Release 5.4.0
- *
  * @link https://github.com/llaville/php-compat-info/issues/131
  * @link https://github.com/llaville/php-compat-info/issues/166
+ */
+
+/**
+ * @since Release 5.4.0
  */
 final class VersionResolverVisitorTest extends NodeVisitorTestCase
 {

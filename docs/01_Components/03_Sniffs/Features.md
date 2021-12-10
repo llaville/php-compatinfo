@@ -1,4 +1,5 @@
-### Sniffs
+<!-- markdownlint-disable MD013 -->
+# Sniffs
 
 Before version 5.4, PHP CompatInfo and its compatibility analyser was monolithic code.
 
@@ -8,26 +9,26 @@ and allows to extend it more easily.
 Each sniff, is in charge to detect a PHP language feature.
 Here is the list of features supported and their corresponding sniffs :
 
-#### [PHP 5.0](https://www.php.net/manual/en/migration50.php)
+## [PHP 5.0](https://www.php.net/manual/en/migration50.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
 | Classes  | MethodDeclarationSniff  | [Method Visibility](https://www.php.net/manual/en/language.oop5.visibility.php#language.oop5.visiblity-methods) |
 | Classes  | PropertyDeclarationSniff  | [Properties](https://www.php.net/manual/en/language.oop5.properties.php) |
 
-#### [PHP 5.1](https://www.php.net/manual/en/migration51.php)
+## [PHP 5.1](https://www.php.net/manual/en/migration51.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
 | Classes  | MagicMethodsSniff  | [Magic Methods](https://www.php.net/manual/en/language.oop5.magic.php) |
 
-#### [PHP 5.2](https://www.php.net/manual/en/migration52.php)
+## [PHP 5.2](https://www.php.net/manual/en/migration52.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
 |   |   |   |
 
-#### [PHP 5.3](https://www.php.net/manual/en/migration53.php)
+## [PHP 5.3](https://www.php.net/manual/en/migration53.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
@@ -40,7 +41,7 @@ Here is the list of features supported and their corresponding sniffs :
 |   | `VersionResolverVisitor`            | [Namespaces](https://www.php.net/manual/en/language.namespaces.php) |
 | TextProcessing | CryptStringSniff  | [CRYPT_BLOWFISH security fix details](https://www.php.net/security/crypt_blowfish.php) |
 
-#### [PHP 5.4](https://www.php.net/manual/en/migration54.php)
+## [PHP 5.4](https://www.php.net/manual/en/migration54.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
@@ -52,7 +53,7 @@ Here is the list of features supported and their corresponding sniffs :
 | UseDeclarations | UseTraitSniff  | [Traits](https://www.php.net/manual/en/language.oop5.traits.php) |
 |   | `VersionResolverVisitor`     | [Traits](https://www.php.net/manual/en/language.oop5.traits.php) |
 
-#### [PHP 5.5](https://www.php.net/manual/en/migration55.php)
+## [PHP 5.5](https://www.php.net/manual/en/migration55.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
@@ -60,7 +61,7 @@ Here is the list of features supported and their corresponding sniffs :
 | Expressions | EmptySniff               | [empty() supports arbitrary expressions](https://www.php.net/manual/en/migration55.new-features.php#migration55.new-features.empty) |
 | Generators  | GeneratorSniff           | [Generators](https://www.php.net/manual/en/language.generators.php) |
 
-#### [PHP 5.6](https://www.php.net/manual/en/migration56.php)
+## [PHP 5.6](https://www.php.net/manual/en/migration56.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
@@ -69,7 +70,7 @@ Here is the list of features supported and their corresponding sniffs :
 | Operators       | PowOperatorSniff       | [Exponentiation](https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation) |
 | UseDeclarations | UseConstFunctionSniff  | [use function and use const](https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.use) |
 
-#### [PHP 7.0](https://www.php.net/manual/en/migration70.php)
+## [PHP 7.0](https://www.php.net/manual/en/migration70.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
@@ -85,7 +86,7 @@ Here is the list of features supported and their corresponding sniffs :
 | Generators  | GeneratorSniff       | [Generator Return Expressions](https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.generator-return-expressions) |
 | Generators  | GeneratorSniff       | [Generator Delegation](https://www.php.net/manual/en/language.generators.syntax.php#control-structures.yield.from) |
 
-#### [PHP 7.1](https://www.php.net/manual/en/migration71.php)
+## [PHP 7.1](https://www.php.net/manual/en/migration71.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
@@ -99,26 +100,26 @@ Here is the list of features supported and their corresponding sniffs :
 |   |   | [Multi catch exception handling](https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.mulit-catch-exception-handling) |
 |   |   | [Support for keys in list()](https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.support-for-keys-in-list) |
 
-#### [PHP 7.2](https://www.php.net/manual/en/migration72.php)
+## [PHP 7.2](https://www.php.net/manual/en/migration72.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
 | Keywords  | ReservedSniff  | [New object type](https://www.php.net/manual/en/migration72.new-features.php#migration72.new-features.object-type) |
 
-#### [PHP 7.3](https://www.php.net/manual/en/migration73.php)
+## [PHP 7.3](https://www.php.net/manual/en/migration73.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
 |   |   |   |
 
-#### [PHP 7.4](https://www.php.net/manual/en/migration74.php)
+## [PHP 7.4](https://www.php.net/manual/en/migration74.php)
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
 | Classes  | TypedPropertySniff  | [Typed properties](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.typed-properties) |
 |   | `VersionResolverVisitor`   | [Arrow functions](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.arrow-functions) |
 
-#### Special cases
+## Special cases
 
 * **Namespaces** declaration have no sniff, because its detected by the `VersionResolverVisitor`
 * **Classes** declaration have no sniff, because its detected by the `VersionResolverVisitor`

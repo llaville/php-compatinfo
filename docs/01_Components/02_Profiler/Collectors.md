@@ -1,11 +1,12 @@
-### Profiler
+<!-- markdownlint-disable MD013 -->
+# Profiler
 
 The `Profiler` Component of new architecture 5.4 gets its information using services called "DataCollector".
 
 This is the same data collected during source code analysis that are passed to different views displayed
 to the User.
 
-#### Data Collectors
+## Data Collectors
 
 While walking the AST, different [visitors](../01_PHP-Parser/Visitors.md) will initialize context and capture results
 of the PHP versions detected of all elements (namespaces, classes, interfaces, traits, methods, functions, constants).
@@ -17,7 +18,7 @@ that have an `nodeAttributeKeyStore` attribute.
 
 The `VersionDataCollector` is a specific data collector to `CompatibilityAnalyser`.
 
-#### VersionDataCollector
+## VersionDataCollector
 
 The `VersionDataCollector` is in charge to initialize minimum PHP versions of all major elements
 (namespaces, classes, interfaces, traits, methods, functions, constants) of a source file.

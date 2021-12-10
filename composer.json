@@ -10,17 +10,15 @@
         "issues": "https://github.com/llaville/php-compat-info/issues"
     },
     "require": {
-        "php": "^7.2|^8.0",
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
         "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
-        "ext-json": "*",
-        "ext-pdo": "*",
-        "ext-pdo_sqlite": "*",
-        "bartlett/php-reflect": "^4.4",
         "bartlett/php-compatinfo-db": "^3.6",
-        "doctrine/collections": "^1.4",
         "composer/package-versions-deprecated": "^1.8",
+        "doctrine/collections": "^1.4",
+        "nikic/php-parser": "^4.10",
         "psr/log": "^1.0",
         "ramsey/uuid": "^3.9|^4.0",
         "symfony/config": "^4.4|^5.0",
@@ -30,6 +28,10 @@
         "symfony/dependency-injection": "^4.4|^5.0",
         "symfony/serializer": "^4.4|^5.0",
         "symfony/stopwatch": "^4.4|^5.0"
+    },
+    "require-dev": {
+        "composer/composer": "^2.0",
+        "symfony/phpunit-bridge": "^5.1"
     },
     "authors": [
         {
@@ -49,12 +51,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "Bartlett\\": "src/Bartlett"
-        }
+            "Bartlett\\CompatInfo\\": "src/"
+        },
+        "files": ["src/Infrastructure/Framework/Symfony/Polyfill.php"]
     },
     "autoload-dev": {
         "psr-4": {
-            "Bartlett\\Tests\\CompatInfo\\": "tests/"
+            "Bartlett\\CompatInfo\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -63,11 +66,13 @@
             "export DATABASE_URL=sqlite:///${HOME}/.cache/bartlett/compatinfo-db.sqlite"
         ],
         "post-install-cmd": [
+            "Bartlett\\CompatInfo\\ComposerScripts::preparePharMetadata",
             "@setup-database",
             "vendor/bin/doctrine orm:schema-tool:create",
             "vendor/bartlett/php-compatinfo-db/bin/compatinfo-db db:init"
         ],
         "post-update-cmd": [
+            "Bartlett\\CompatInfo\\ComposerScripts::preparePharMetadata",
             "@setup-database"
         ]
     },
@@ -77,6 +82,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
+        "sort-packages": true,
         "optimize-autoloader": true
     }
 }

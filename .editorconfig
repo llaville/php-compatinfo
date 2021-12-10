@@ -17,3 +17,6 @@ end_of_line = crlf
 # PHP should follow the PSR-2 standard
 [*.php]
 indent_size = 4
+
+[*.md]
+indent_size = unset

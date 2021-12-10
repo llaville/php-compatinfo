@@ -1,6 +1,7 @@
-### Visitors
+<!-- markdownlint-disable MD013 -->
+# Visitors
 
-#### ParentContextVisitor
+## ParentContextVisitor
 
 The AST does not store parent nodes by default. However, the `ParentContextVisitor` is used to achieve this
 in the following context: when elements are either _class_, _interface_, _trait_,
@@ -32,7 +33,7 @@ PHP versions detected are :
 - **5.4.0** for short array usage in `returnArray` function.
 - **5.4.0** for usage of array dereferencing syntax when calling `returnArray` function.
 
-#### NameResolverVisitor
+## NameResolverVisitor
 
 The `NameResolverVisitor` is applied to resolve names of each major elements
 where the PHP versions should be detected. It extends the basic [Name Resolver](https://github.com/nikic/PHP-Parser/blob/master/doc/component/Name_resolution.markdown#the-nameresolver-visitor)
@@ -47,7 +48,7 @@ _function_, _closure_, _method_, _arrow function_ and _property_.
 After running this visitor, the parent node can be obtained through `$node->getAttribute('bartlett.parent')`.
 This will be useful with the `CompatibilityAnalyser` that should give PHP versions of each element including in their parent context.
 
-#### VersionResolverVisitor
+## VersionResolverVisitor
 
 The `VersionResolverVisitor` is in charge to initialize PHP versions on each element (_namespace_, _class_, _interface_, _trait_,
 _function_, _closure_, _method_ or _arrow function_ nodes) of source code context.
@@ -71,7 +72,7 @@ The version resolver accepts an instance of `Bartlett\CompatInfo\Collection\Refe
 
 This collection referenced all information in the SQLite database.
 
-#### FilterVisitor
+## FilterVisitor
 
 The `FilterVisitor` is applied to retrieve all AST nodes that have attributes identified by `nodeAttributeKeyStore` option.
 

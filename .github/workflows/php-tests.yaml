@@ -8,7 +8,7 @@ on:
     pull_request:
         branches:
             - master
-            - 5.5
+            - 6.0
         paths-ignore:
             - 'docs/**'
 
@@ -77,25 +77,20 @@ jobs:
             matrix:
                 include:
                     -
-                        os: ubuntu-18.04
-                        php: 7.2
-                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit:7.5.20
-                    -
-                        os: ubuntu-18.04
-                        php: 7.3
-                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit
-                    -
                         os: ubuntu-latest
                         php: 7.4
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit
+                        tools: phpstan,phpunit
                     -
                         os: ubuntu-latest
                         php: 8.0
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit
+                        tools: phpstan,phpunit
+                    -
+                        os: ubuntu-latest
+                        php: 8.1
+                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
+                        tools: phpstan,phpunit
 
         name: Compatibility Info
 

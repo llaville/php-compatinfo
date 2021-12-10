@@ -1,5 +1,5 @@
-
-## Multiple signatures
+<!-- markdownlint-disable MD013 -->
+# Multiple signatures
 
 Face to this source code, CompatInfo is unable to know what `idn_to_ascii` signature is the minimum.
 
@@ -17,7 +17,8 @@ We know ([idn_to_ascii changelog](https://www.php.net/manual/en/function.idn-to-
 that by using `$variant` parameter, the minimum PHP version required is **7.4.0**, otherwise it's only **5.2.4**
 
 So the console output look like
-```
+
+```text
 Data Source Analysed
 
 Directories                                          1

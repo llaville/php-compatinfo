@@ -1,5 +1,5 @@
-
-## Indirect calls
+<!-- markdownlint-disable MD013 -->
+# Indirect calls
 
 By indirect calls, CompatInfo is unable (yet) to resolve such type of code.
 

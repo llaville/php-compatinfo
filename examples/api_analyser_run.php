@@ -11,19 +11,29 @@
 
 require_once dirname(__DIR__) . '/config/bootstrap.php';
 
-use Bartlett\CompatInfo\Client;
+use Bartlett\CompatInfo\Application\Profiler\Profile;
+use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;
+use Bartlett\CompatInfo\Application\Query\QueryBusInterface;
 
-// creates an instance of client
-$client = new Client();
+use Symfony\Component\Messenger\Exception\HandlerFailedException;
 
-// request for a Bartlett\Reflect\Api\Analyser
-$api = $client->api('analyser');
+$container = require dirname(__DIR__) . '/config/container.php';
+
+$queryBus = $container->get(QueryBusInterface::class);
 
 // perform request, on a data source with default analyser
 $dataSource = dirname(__DIR__) . '/src';
 
 // equivalent to CLI command `phpcompatinfo analyser:run ../src`
-/** @var \Bartlett\CompatInfo\Profiler\Profile $profile */
-$profile = $api->run($dataSource);
-
-var_export($profile->getData());
+$compatibilityQuery = new GetCompatibilityQuery($dataSource, false);
+try {
+    /** @var Profile $profile */
+    $profile = $queryBus->query($compatibilityQuery);
+    $data = $profile->getData();
+    $dump = reset($data);
+    var_export($dump);
+} catch (HandlerFailedException $e) {
+    foreach ($e->getNestedExceptions() as $ex) {
+        printf('Exception -- %s >> %s%s' . $ex->getMessage(), $ex->getTraceAsString(), PHP_EOL);
+    };
+}

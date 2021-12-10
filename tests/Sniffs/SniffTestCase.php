@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Bartlett\Tests\CompatInfo\Sniffs;
+namespace Bartlett\CompatInfo\Tests\Sniffs;
 
-use Bartlett\Tests\CompatInfo\TestCase;
+use Bartlett\CompatInfo\Tests\TestCase;
 
 /**
  * Base class for all sniffs test case

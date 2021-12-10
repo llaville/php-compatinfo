@@ -1,46 +1,73 @@
-# Table Of Contents
+<!-- markdownlint-disable MD013 -->
+# About
+
+**PHP CompatInfo** is a library that
+can find the minimum version and the extensions required for a piece of code to run.
+
+Running on PHP greater or equal than 7.3 for parsing source code in a format PHP 5.2 to PHP 8.1
+
+## Features
+
+- Parse source code in format PHP 5.2 to PHP 8.1
+- Detect PHP features for each Major/minor versions
+- Detect versions of all directives, constants, functions, classes, interfaces of 100 extensions and more
+- Display/Inspect list of extensions, and their versions supported
 
 ## [Components](01_Components)
 
-* Parsing PHP 5 and PHP 7 code into an abstract syntax tree (AST) is provided by
+- Parsing PHP 5, PHP 7 or PHP 8 code into an abstract syntax tree (AST) is provided by
 the [PHP-Parser](https://github.com/nikic/PHP-Parser) library.
 
-* Contextual elements and minimum PHP versions detection provided by following node visitors.
+- Contextual elements and minimum PHP versions detection provided by following node visitors.
 
 ### PHP-Parser [Node Visitors](01_Components/01_PHP-Parser/Visitors.md)
 
-  * Parent references with the `ParentContextVisitor`
-
-  * Name Resolution with the `NameResolverVisitor`
-
-  * Version Resolution with the `VersionResolverVisitor`
+- Parent references with the `ParentContextVisitor`
+- Name Resolution with the `NameResolverVisitor`
+- Version Resolution with the `VersionResolverVisitor`
 
 ### [Profiler](01_Components/02_Profiler/Collectors.md)
 
-  * Data Collector(s) with common `DataCollector` and specialized `VersionDataCollector` classes
-
-  * Data Collector(s) contract with the `CollectorInterface`
-
-  * Collector Handler for both Profile and Profiler with `CollectorTrait`
-
-  * Profile information for a single data source with `Profile`
+- Data Collector(s) with common `DataCollector` and specialized `VersionDataCollector` classes
+- Data Collector(s) contract with the `CollectorInterface`
+- Collector Handler for both Profile and Profiler with `CollectorTrait`
+- Profile information for a single data source with `Profile`
 
 ### [Sniffs](01_Components/03_Sniffs/Features.md)
 
-  They are grouped by categories to solve PHP features (from 4.0 to 7.4)
+They are grouped by categories to solve PHP features (from 4.0 to 7.4)
 
-  * Arrays (2)
-  * Classes (6)
-  * Constants (3)
-  * ControlStructures (2)
-  * Expressions (3)
-  * FunctionDeclarations (3)
-  * Generators (1)
-  * Keywords (1)
-  * Numbers (1)
-  * Operators (4)
-  * TextProcessing (1)
-  * UseDeclarations (2)
+- Arrays (2)
+- Classes (6)
+- Constants (3)
+- ControlStructures (2)
+- Expressions (3)
+- FunctionDeclarations (3)
+- Generators (1)
+- Keywords (1)
+- Numbers (1)
+- Operators (4)
+- TextProcessing (1)
+- UseDeclarations (2)
+
+### [Extensions](01_Components/04_Extensions/Hooks.md)
+
+PHPCompatInfo can be extended by registering objects that implement one or more of the following interfaces:
+
+- `BeforeAnalysisInterface`
+- `AfterAnalysisInterface`
+- `BeforeFileAnalysisInterface`
+- `AfterFileAnalysisInterface`
+- `BeforeTraverseAstInterface`
+- `AfterTraverseAstInterface`
+- `BeforeProcessNodeInterface`
+- `AfterProcessNodeInterface`
+- `BeforeSetupSniffInterface`
+- `AfterTearDownSniffInterface`
+- `BeforeProcessSniffInterface`
+- `AfterProcessSniffInterface`
+
+Furthermore, extensions may implement the `Symfony\Component\EventDispatcher\EventSubscriberInterface` in order to have its event handlers automatically registered with the EventDispatcher when the extension is loaded.
 
 ## [Configuration(s)](02_Configs/README.md)
 

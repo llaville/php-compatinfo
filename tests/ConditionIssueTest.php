@@ -13,7 +13,13 @@
  * @since      Class available since Release 4.0.0-alpha2+1
  */
 
-namespace Bartlett\Tests\CompatInfo;
+namespace Bartlett\CompatInfo\Tests;
+
+use Exception;
+use function array_diff;
+use function array_filter;
+use function array_keys;
+use function version_compare;
 
 use Exception;
 use function array_diff;

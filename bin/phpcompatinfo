@@ -10,11 +10,19 @@ gc_disable(); // performance boost
 
 require_once dirname(__DIR__) . '/config/bootstrap.php';
 
-use Bartlett\CompatInfo\Console\ApplicationInterface;
+use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\ContainerFactory;
+use Bartlett\CompatInfo\Presentation\Console\ApplicationInterface;
+use Bartlett\CompatInfo\Presentation\Console\CommandLoaderInterface;
 
-/** @var \Symfony\Component\DependencyInjection\ContainerBuilder $container */
-$container = require dirname(__DIR__) . '/config/container.php';
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+
+/** @var ContainerBuilder $container */
+$container = (new ContainerFactory())->create();
 
 $app = $container->get(ApplicationInterface::class);
 $app->setContainer($container);
+
+// @link https://symfony.com/doc/current/console/lazy_commands.html
+$app->setCommandLoader($container->get(CommandLoaderInterface::class));
+
 exit($app->run());

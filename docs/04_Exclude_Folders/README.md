@@ -1,4 +1,9 @@
-### With Console (CLI)
+<!-- markdownlint-disable MD013 -->
+# About
+
+Two different ways to exclude directories from scan.
+
+## With Console (CLI)
 
 Since version 5.5.2, you can provide the new `--exclude` option. This option accept multiple values as shown next:
 
@@ -6,18 +11,20 @@ Since version 5.5.2, you can provide the new `--exclude` option. This option acc
 bin/phpcompatinfo analyser:run . --exclude vendor --exclude tests
 ```
 
-### With php script (API)
+## With php script (API)
 
 ```php
 require_once 'config/bootstrap.php';
 
-use Bartlett\CompatInfo\Client;
+use Bartlett\CompatInfo\Application\Profiler\Profile;
+use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;
+use Bartlett\CompatInfo\Application\Query\QueryBusInterface;
 
-// creates an instance of client
-$client = new Client();
+use Symfony\Component\Messenger\Exception\HandlerFailedException;
 
-// request for a Bartlett\Reflect\Api\Analyser
-$api = $client->api('analyser');
+$container = require 'config/container.php';
+
+$queryBus = $container->get(QueryBusInterface::class);
 
 // perform request, on a data source with default analyser
 $dataSource = __DIR__;
@@ -25,8 +32,16 @@ $dataSource = __DIR__;
 $excludeDirs = ['vendor', 'tests'];
 
 // equivalent to CLI command `phpcompatinfo analyser:run . --exclude vendor --exclude tests`
-/** @var \Bartlett\CompatInfo\Profiler\Profile $profile */
-$profile = $api->run($dataSource, $excludeDirs);
-
-var_export($profile->getData());
+$compatibilityQuery = new GetCompatibilityQuery($dataSource, $excludeDirs, false);
+try {
+    /** @var Profile $profile */
+    $profile = $queryBus->query($compatibilityQuery);
+    $data = $profile->getData();
+    $dump = reset($data);
+    var_export($dump);
+} catch (HandlerFailedException $e) {
+    foreach ($e->getNestedExceptions() as $ex) {
+        printf('Exception -- %s >> %s%s' . $ex->getMessage(), $ex->getTraceAsString(), PHP_EOL);
+    };
+}
 ```

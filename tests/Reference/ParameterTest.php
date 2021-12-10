@@ -13,12 +13,15 @@
  * @since      Class available since Release 3.5.0
  */
 
-namespace Bartlett\Tests\CompatInfo\Reference;
+namespace Bartlett\CompatInfo\Tests\Reference;
 
-use Bartlett\CompatInfoDb\Domain\Repository\FunctionRepository;
-use Bartlett\Tests\CompatInfo\Sniffs\SniffTestCase;
+use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\ContainerFactory;
+use Bartlett\CompatInfo\Tests\Sniffs\SniffTestCase;
+use Bartlett\CompatInfoDb\Infrastructure\Persistence\Doctrine\Entity\Function_ as FunctionEntity;
 
-use function in_array;
+use Doctrine\ORM\EntityManagerInterface;
+
+use Generator;
 
 /**
  * Tests function signatures with default and optional arguments
@@ -38,25 +41,19 @@ final class ParameterTest extends SniffTestCase
     /**
      * Data Provider to test functions with default and optional arguments.
      *
-     * @return array
+     * @return Generator
      */
-    public function functionProvider()
+    public function functionProvider(): Generator
     {
-        $container = require __DIR__ . '/../../config/container.php';
-        $repository = $container->get(FunctionRepository::class);
-        $functions = [];
-        foreach ($repository->getAll() as $function) {
-            if (!in_array($function->getExtensionName(), ['core', 'standard'])) {
-                continue;
-            }
-            if (empty($function->getParameters())) {
-                continue;
-            }
-            if (empty($function->getDeclaringClass())) {
-                $functions[] = [$function->getName(), $function->getExtensionName()];
+        $container = (new ContainerFactory())->create();
+        $entityManager = $container->get(EntityManagerInterface::class);
+        $repository = $entityManager->getRepository(FunctionEntity::class);
+
+        foreach ($repository->findAll() as $entity) {
+            if (!empty($entity->getParameters())) {
+                yield [$entity->getName(), $entity->getExtension()->getName()];
             }
         }
-        return $functions;
     }
 
     /**
