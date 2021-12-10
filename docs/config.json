@@ -10,10 +10,10 @@
         "date_modified": true,
         "inherit_index": true,
         "search": true,
-        "repo": "llaville/php-compat-info",
+        "repo": "llaville/php-compatinfo",
         "links": {
-            "GitHub Repository": "https://github.com/llaville/php-compat-info",
-            "Help/Support/Bugs": "https://github.com/llaville/php-compat-info/issues",
+            "GitHub Repository": "https://github.com/llaville/php-compatinfo",
+            "Help/Support/Bugs": "https://github.com/llaville/php-compatinfo/issues",
             "Packagist": "https://packagist.org/packages/bartlett/php-compatinfo"
         },
         "powered_by": "Powered by Daux.io"
