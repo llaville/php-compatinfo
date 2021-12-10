@@ -14,10 +14,13 @@ require_once dirname(__DIR__) . '/config/bootstrap.php';
 use Bartlett\CompatInfo\Application\Profiler\Profile;
 use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;
 use Bartlett\CompatInfo\Application\Query\QueryBusInterface;
+use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\ContainerFactory;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 
-$container = require dirname(__DIR__) . '/config/container.php';
+/** @var ContainerBuilder $container */
+$container = (new ContainerFactory())->create();
 
 $queryBus = $container->get(QueryBusInterface::class);
 
@@ -25,7 +28,7 @@ $queryBus = $container->get(QueryBusInterface::class);
 $dataSource = dirname(__DIR__) . '/src';
 
 // equivalent to CLI command `phpcompatinfo analyser:run ../src`
-$compatibilityQuery = new GetCompatibilityQuery($dataSource, false);
+$compatibilityQuery = new GetCompatibilityQuery($dataSource, [], false);
 try {
     /** @var Profile $profile */
     $profile = $queryBus->query($compatibilityQuery);
