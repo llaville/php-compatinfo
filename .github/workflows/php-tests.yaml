@@ -8,7 +8,6 @@ on:
     pull_request:
         branches:
             - master
-            - 6.0
         paths-ignore:
             - 'docs/**'
 
