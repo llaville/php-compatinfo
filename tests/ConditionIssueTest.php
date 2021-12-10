@@ -21,12 +21,6 @@ use function array_filter;
 use function array_keys;
 use function version_compare;
 
-use Exception;
-use function array_diff;
-use function array_filter;
-use function array_keys;
-use function version_compare;
-
 /**
  * @link https://github.com/llaville/php-compat-info/issues/128
  * @link https://github.com/llaville/php-compat-info/issues/159
