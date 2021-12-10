@@ -53,6 +53,7 @@ class Reference extends BaseApi
      * @param mixed $classes Show classes
      * @param mixed $methods Show methods
      * @param mixed $classConstants Show class constants
+     * @param mixed $dependencies Show dependencies
      * @param ShowHandler|null $showHandler
      *
      * @return array
@@ -68,6 +69,7 @@ class Reference extends BaseApi
         $classes = null,
         $methods = null,
         $classConstants = null,
+        $dependencies = null,
         ShowHandler $showHandler = null
     ) {
         if (null === $showHandler) {
@@ -97,7 +99,7 @@ class Reference extends BaseApi
         return $this->request(
             'reference/show',
             'POST',
-            array($name, $closure, $releases, $ini, $constants, $functions, $interfaces, $classes, $methods, $classConstants, $showHandler)
+            array($name, $closure, $releases, $ini, $constants, $functions, $interfaces, $classes, $methods, $classConstants, $dependencies, $showHandler)
         );
     }
 }

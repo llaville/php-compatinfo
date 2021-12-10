@@ -11,11 +11,15 @@
 
 namespace Bartlett\CompatInfo\Output;
 
+use Bartlett\CompatInfoDb\Domain\Factory\LibraryVersionProviderTrait;
 use Bartlett\CompatInfoDb\Domain\ValueObject\Constant_;
+use Bartlett\CompatInfoDb\Domain\ValueObject\Dependency;
 use Bartlett\CompatInfoDb\Domain\ValueObject\Function_;
 use Bartlett\CompatInfoDb\Domain\ValueObject\Release;
 use Bartlett\CompatInfoDb\Presentation\Console\ApplicationInterface;
 use Bartlett\Reflect\Console\Formatter\OutputFormatter;
+
+use Composer\Semver\Semver;
 
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Helper\TableSeparator;
@@ -31,6 +35,8 @@ use Symfony\Component\Console\Helper\TableSeparator;
  */
 class Reference extends OutputFormatter
 {
+    use LibraryVersionProviderTrait;
+
     /**
      * Prints the database current build version
      *
@@ -149,8 +155,17 @@ class Reference extends OutputFormatter
                 '  Methods                                   %10d',
                 array($summary['methods'])
             );
+            $summary['dependencies'] = array(
+                '  Dependencies                              %10d',
+                array($summary['dependencies'])
+            );
             $this->printFormattedLines($output, $summary);
             return;
+        }
+
+        if (array_key_exists('dependencies', $response)) {
+            $this->formatDependency($response['dependencies'], $output);
+            unset($response['dependencies']);
         }
 
         foreach ($response as $title => $data) {
@@ -227,5 +242,38 @@ class Reference extends OutputFormatter
             ? $domain->getPhpMin()
             : $domain->getPhpMin() . ' => ' . $domain->getPhpMax()
             ;
+    }
+
+    /**
+     * @param Dependency[] $data
+     * @param OutputInterface $output
+     * @return void
+     */
+    private function formatDependency(array $data, OutputInterface $output): void
+    {
+        $rows = [];
+        $failures = 0;
+        foreach ($data as $domain) {
+            $name = $domain->getName();
+            $ver = $this->getPrettyVersion($name);
+            $constraint = $domain->getConstraint();
+            $verified = $ver !== '' && Semver::satisfies($ver, $constraint);
+            $rows[$constraint] = [$name, $verified ? $constraint : '<error>' . $constraint . '</error>', $verified ? 'Y' : 'N'];
+            if (!$verified) {
+                $failures++;
+            }
+        }
+
+        $output->writeln(sprintf('%s<info>%s</info>%s', PHP_EOL, 'Dependencies', PHP_EOL));
+
+        $headers = ['Library', 'Constraint', 'Satisfied'];
+        $footers = [
+            '<info>Total</info>',
+            sprintf('<info>[%d]</info>', count($rows)),
+            sprintf('<info>[%d/%d]</info>', count($rows) - $failures, count($rows)),
+        ];
+        $rows[] = new TableSeparator();
+        $rows[] = $footers;
+        $this->tableHelper($output, $headers, $rows);
     }
 }

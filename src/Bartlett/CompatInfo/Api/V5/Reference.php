@@ -109,6 +109,7 @@ class Reference extends Common
      * @param mixed $classes Show classes
      * @param mixed $methods Show methods
      * @param mixed $classConstants Show class constants
+     * @param mixed $dependencies Show dependencies
      * @param ShowHandler $handler
      * @return array
      */
@@ -123,9 +124,10 @@ class Reference extends Common
         $classes,
         $methods,
         $classConstants,
+        $dependencies,
         ShowHandler $handler
     ) {
-        $flags = [$releases, $ini, $constants, $functions, $interfaces, $classes, $methods, $classConstants];
+        $flags = [$releases, $ini, $constants, $functions, $interfaces, $classes, $methods, $classConstants, $dependencies];
         array_walk($flags, function (&$value) {
             if (null === $value) {
                 $value = true;
@@ -192,6 +194,12 @@ class Reference extends Common
         $summary['methods'] = count($raw);
         if ($query->isMethods()) {
             $results['methods'] = $raw;
+        }
+
+        $raw = $reference->getDependencies();
+        $summary['dependencies'] = count($raw);
+        if ($query->isDependencies()) {
+            $results['dependencies'] = $raw;
         }
 
         if (empty($results)) {

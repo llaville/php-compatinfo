@@ -10,6 +10,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - Backport (from branch 6.0) MegaLinter v5 as QA tool for CI
 
+### Fixed
+
+- Backport `reference:show <extension> --dependencies` (feature available since PHP_CompatInfoDB 3.6.0)
+
 ## [5.5.3] - 2021-05-03
 
 ### Fixed
