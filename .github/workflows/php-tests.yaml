@@ -1,73 +1,129 @@
 name: Tests
 
 on:
-    push:
+    # Trigger mega-linter at every push. Action will also be visible from Pull Requests to master
+    push: # Comment this line to trigger action only on pull-requests (not recommended if you don't pay for GH Actions)
+        paths-ignore:
+            - 'docs/**'
+    pull_request:
         branches:
             - master
             - 5.5
-    pull_request:
+        paths-ignore:
+            - 'docs/**'
+
+concurrency:
+    group: ${{ github.ref }}-${{ github.workflow }}
+    cancel-in-progress: true
 
 jobs:
-    php_tests:
+    lint_files:
+        name: Lint Code Base
+
         runs-on: ${{ matrix.os }}
 
         strategy:
             fail-fast: false
-
             matrix:
                 os:
-                    - ubuntu-18.04
+                    - ubuntu-latest
                 php:
-                    - 7.2
-                    - 7.3
                     - 7.4
-                    - 8.0
+
+        steps:
+            -   # Git Checkout
+                name: Checkout Code
+                uses: actions/checkout@v2
+                with:
+                    token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+                    fetch-depth: 0
+
+            -   # Setup PHP runtime
+                name: Setup PHP runtime
+                uses: "shivammathur/setup-php@v2"
+                with:
+                    php-version: ${{ matrix.php }}
+
+            -   # Install Composer dependencies
+                name: Install Composer dependencies
+                uses: "ramsey/composer-install@v1"
+                with:
+                    composer-options: "--prefer-dist"
+
+            -   # Mega-Linter
+                name: Mega-Linter
+                id: ml
+                    # You can override Mega-Linter flavor used to have faster performances
+                    # More info at https://megalinter.github.io/latest/flavors/
+                uses: megalinter/megalinter/flavors/php@v5
+                env:
+                    # All available variables are described in documentation
+                    # https://megalinter.github.io/latest/configuration/
+                    # Validates all source when push on master, else just the git diff with master. Override with true if you always want to lint all sources
+                    VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                    # ADD YOUR CUSTOM ENV VARIABLES HERE OR DEFINE THEM IN A FILE .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
+                    # DISABLE: COPYPASTE,SPELL # Uncomment to disable copy-paste and spell checks
+                    LOG_LEVEL: INFO
+                    TEXT_REPORTER: false
+
+    php_tests:
+        needs: lint_files
+
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
                 include:
-                    -   os: ubuntu-18.04
+                    -
+                        os: ubuntu-18.04
                         php: 7.2
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
                         tools: phpunit:7.5.20
-                    -   os: ubuntu-18.04
+                    -
+                        os: ubuntu-18.04
                         php: 7.3
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
                         tools: phpunit
-                    -   os: ubuntu-18.04
+                    -
+                        os: ubuntu-latest
                         php: 7.4
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
                         tools: phpunit
-                    -   os: ubuntu-18.04
+                    -
+                        os: ubuntu-latest
                         php: 8.0
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
                         tools: phpunit
 
-        name: "CompatInfo on ${{ matrix.os }} with PHP ${{ matrix.php }}"
+        name: Compatibility Info
 
         steps:
-            -
+            -   # Git Checkout
                 name: Checkout
                 uses: actions/checkout@v2
 
-            -
-                name: Setup PHP
+            -   # Setup PHP runtime
+                name: Setup PHP runtime
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php }}
                     extensions: ${{ matrix.extensions }}
                     tools: ${{ matrix.tools }}
 
-            -
+            -   # Install Composer dependencies
                 name: Install Composer dependencies
                 uses: "ramsey/composer-install@v1"
                 with:
-                    dependency-versions: "highest"
                     composer-options: "--prefer-dist"
 
-            -
+            -   # Build Database
                 name: Build Database
                 run: |
                     vendor/bin/doctrine orm:schema-tool:create --ansi
                     vendor/bartlett/php-compatinfo-db/bin/compatinfo-db db:init --ansi
 
-            -
+            -   # Run unit tests
                 name: Unit tests
                 run: phpunit --group features,large,reference,regression,default
