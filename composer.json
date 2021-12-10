@@ -4,10 +4,10 @@
     "keywords": ["compatibility", "version"],
     "type": "library",
     "license": "BSD-3-Clause",
-    "homepage": "http://php5.laurent-laville.org/compatinfo/",
+    "homepage": "https://github.com/llaville/php-compatinfo",
     "support": {
-        "source": "https://github.com/llaville/php-compat-info",
-        "issues": "https://github.com/llaville/php-compat-info/issues"
+        "source": "https://github.com/llaville/php-compatinfo",
+        "issues": "https://github.com/llaville/php-compatinfo/issues"
     },
     "require": {
         "php": "^7.4|^8.0",
@@ -36,7 +36,6 @@
     "authors": [
         {
             "name": "Laurent Laville",
-            "email": "pear@laurent-laville.org",
             "homepage": "https://github.com/llaville",
             "role": "Lead"
         },
