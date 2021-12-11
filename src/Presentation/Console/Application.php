@@ -215,10 +215,6 @@ class Application extends SymfonyApplication implements ApplicationInterface
         if ($input->hasParameterOption('--manifest')) {
             $phar = new Phar('phpcompatinfo.phar');
             $manifest = $phar->getMetadata();
-            // BC if using box version less than 3.10
-            if (is_callable($manifest)) {
-                $manifest = $manifest();
-            }
             $output->writeln($manifest);
             return 0;
         }

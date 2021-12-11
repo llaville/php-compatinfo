@@ -9,7 +9,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ### Added
 
-- Phar manifest (`--manifest` option) is available with Phar version only (build with `box-project/box` [3.10](https://github.com/box-project/box/releases/tag/3.10.0) or greater)
+- Phar manifest (`--manifest` option) is available with Phar version only
 - [Mega-Linter](https://github.com/megalinter/megalinter) v5 support as QA tool to avoid technical debt
 - [#308](https://github.com/llaville/php-compatinfo/issues/308) : Support to PHP 8.1
 

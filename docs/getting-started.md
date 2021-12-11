@@ -60,3 +60,12 @@ If you change database connection, you have to run following commands:
 At dependencies installation, Composer use the sqlite back-end. You need to set up in your environment the `DATABASE_URL` variable.
 
 If you use sqlite default back-end, you MUST run `composer run post-install-cmd` command.
+
+## Build PHAR distribution
+
+Uses the [BOX](https://github.com/box-project/box/) to compile your phar version of application.
+Configuration file (`box.json.dist`) is provided with each release of phpCompatInfo.
+
+**CAUTION** If you want to use the `--manifest` option of phpCompatInfo phar version, you MUST use
+[my fork](https://github.com/llaville/box/tree/show_metadata) (branch `show_metadata`) of Box project.
+All details are given in feature report <https://github.com/box-project/box/issues/576>
