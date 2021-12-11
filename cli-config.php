@@ -4,6 +4,7 @@ use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\Con
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
+
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 require_once __DIR__ . '/config/bootstrap.php';

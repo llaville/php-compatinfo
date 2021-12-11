@@ -7,6 +7,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [6.0.0] - 2021-12-11
+
 ### Added
 
 - Phar manifest (`--manifest` option) is available with Phar version only
