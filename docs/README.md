@@ -87,4 +87,4 @@ Learn what code is consider as conditional, detected or not (with CompatInfo 5.4
 
 Sometimes you don't want to scan a certain directory while analysing data source.
 
-Learn in this chapter how to do from console (CLI) or php script (API).
+Learn how to do from console (CLI) or php script (API).
