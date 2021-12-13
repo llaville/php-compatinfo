@@ -12,7 +12,8 @@
 
 ![GraPHP Composer](./graph-composer.svg)
 
-Generated with [clue/graph-composer](https://github.com/clue/graph-composer)
+Generated with [fork](https://github.com/markuspoerschke/graph-composer/tree/add-options-to-exclude) of [clue/graph-composer](https://github.com/clue/graph-composer).
+Read more on [PR request](https://github.com/clue/graph-composer/pull/45).
 
 ## Installation
 
