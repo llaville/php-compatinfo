@@ -13,7 +13,7 @@ final class Style extends SymfonyStyle implements StyleInterface
     /**
      * {@inheritDoc}
      */
-    public function createProgressBar(int $max = 0)
+    public function createProgressBar($max = 0)
     {
         $progressBar = parent::createProgressBar($max);
 
