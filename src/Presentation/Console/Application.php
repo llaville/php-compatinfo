@@ -139,8 +139,9 @@ class Application extends SymfonyApplication implements ApplicationInterface
             new InputOption(
                 'output',
                 null,
-                InputOption::VALUE_OPTIONAL,
-                'Write results to file'
+                InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED,
+                'Affect output to produce results in different format',
+                ['console']
             )
         );
         $definition->addOption(

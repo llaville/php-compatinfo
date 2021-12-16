@@ -107,9 +107,15 @@ final class Parser
 
         $this->analyser->tearDownAfterVisitor();
 
-        $this->dispatcher->dispatch(new AfterAnalysisEvent($this, ['source' => $source, 'successCount' => $this->filesProceeded]));
+        $profile = $profiler->collect();
+        $this->dispatcher->dispatch(
+            new AfterAnalysisEvent(
+                $this,
+                ['source' => $source, 'successCount' => $this->filesProceeded, 'profile' => $profile]
+            )
+        );
 
-        return $profiler->collect();
+        return $profile;
     }
 
     /**
