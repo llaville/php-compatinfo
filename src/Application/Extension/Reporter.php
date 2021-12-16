@@ -52,7 +52,7 @@ abstract class Reporter implements ExtensionInterface, AfterAnalysisInterface
      */
     public function afterAnalysis(AfterAnalysisEvent $event): void
     {
-        if ($event->hasArgument('profile')) {
+        if ($event->hasArgument('profile') && $this->input->hasOption('output')) {
             $this->format($event->getArgument('profile'));  // @phpstan-ignore-line
         }
     }
