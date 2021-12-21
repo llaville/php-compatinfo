@@ -60,7 +60,7 @@ class FilterVisitor extends FindingVisitor implements NodeVisitor
         ;
 
         return
-            $mappedCollection->filter(function (array $value) {
+            $mappedCollection->filter(function ($value) {
                 return null !== $value;
             })
         ;

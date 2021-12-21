@@ -144,6 +144,6 @@ final class Parser
         $this->traverser->traverse($stmts);
 
         $this->filesProceeded++;
-        $this->dispatcher->dispatch(new AfterFileAnalysisEvent($this, ['file' => $fileInfo]));
+        $this->dispatcher->dispatch(new AfterFileAnalysisEvent($this, ['file' => $fileInfo, 'ast' => $stmts]));
     }
 }

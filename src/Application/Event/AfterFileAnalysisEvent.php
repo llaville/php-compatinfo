@@ -7,6 +7,7 @@
  * The event listener method receives a Symfony\Component\EventDispatcher\GenericEvent
  * instance with following arguments :
  * - `file` an instance of Symfony\Component\Finder\SplFileInfo that identify current file parsed in the data source
+ * - `ast`  the Abstract Syntax Tree result (serialized)
  */
 
 namespace Bartlett\CompatInfo\Application\Event;
