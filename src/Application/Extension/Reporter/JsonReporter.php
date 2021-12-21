@@ -7,6 +7,7 @@ use Bartlett\CompatInfo\Presentation\Console\Style;
 
 use function file_put_contents;
 use function json_encode;
+use function key;
 
 /**
  * @author Laurent Laville

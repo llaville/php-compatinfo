@@ -22,6 +22,7 @@ use Bartlett\CompatInfo\Application\Query\QueryHandlerInterface;
 use Bartlett\CompatInfo\Application\Service\SourceProvider;
 
 use RuntimeException;
+use function realpath;
 
 /**
  * @since Release 6.0.0
