@@ -15,11 +15,16 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
 final class ReturnTypeDeclarationSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA70 = 'CA7001';
+
     /**
      * {@inheritDoc}
      */
@@ -42,7 +47,20 @@ final class ReturnTypeDeclarationSniff extends SniffAbstract
             $min = '7.0.0alpha1';
         }
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min]);
+        $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA70);
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA70 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => 'Return Type Declarations are available since PHP 7.0.0',
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-70',
+        ];
     }
 
     private function hasReturnType(Node $node): bool

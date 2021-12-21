@@ -12,6 +12,7 @@
 namespace Bartlett\CompatInfo\Application\Sniffs;
 
 use Bartlett\CompatInfo\Application\Analyser\SniffVisitorInterface;
+use Bartlett\CompatInfo\Application\DataCollector\RuleUpdater;
 use Bartlett\CompatInfo\Application\DataCollector\VersionUpdater;
 use Bartlett\CompatInfo\Application\Event\AfterInitializeSniffEvent;
 use Bartlett\CompatInfo\Application\Event\AfterProcessNodeEvent;
@@ -20,11 +21,15 @@ use Bartlett\CompatInfo\Application\Event\BeforeInitializeSniffEvent;
 use Bartlett\CompatInfo\Application\Event\BeforeProcessNodeEvent;
 use Bartlett\CompatInfo\Application\Event\BeforeProcessSniffEvent;
 
+use Generator;
 use PhpParser\Node;
 use PhpParser\NodeVisitorAbstract;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
+use function get_class;
+use function strrchr;
+use function substr;
 
 /**
  * @since Release 5.4.0
@@ -53,6 +58,8 @@ abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterfa
     protected $dispatcher;
 
     use VersionUpdater;
+
+    use RuleUpdater;
 
     public function __construct(EventDispatcherInterface $compatibilityEventDispatcher)
     {
@@ -146,6 +153,23 @@ abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterfa
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function getRules(): Generator
+    {
+        // when sniff does not provide any rule
+        yield from [];
+    }
+
+    /**
+     * @see https://stackoverflow.com/questions/19901850/how-do-i-get-an-objects-unqualified-short-class-name
+     */
+    protected function getShortClass(): string
+    {
+        return substr(strrchr(get_class($this), '\\'), 1);
+    }
+
+    /**
      * @param Node $node
      * @return string
      */
@@ -175,5 +199,10 @@ abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterfa
         ];
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, $versions);
+        $this->updateNodeElementRule(
+            $node,
+            $this->attributeKeyStore,
+            sprintf('CA%2d07', str_replace('.', '', $this->forbiddenNames->all()[$name]))
+        );
     }
 }

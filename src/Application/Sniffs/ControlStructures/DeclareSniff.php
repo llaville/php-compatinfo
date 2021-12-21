@@ -16,6 +16,10 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+use function sprintf;
+use function str_replace;
+
 /**
  * @since Release 5.4.0
  */
@@ -53,7 +57,27 @@ final class DeclareSniff extends SniffAbstract
             $key = (string) $declare->key;
 
             $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $this->directives->get($key)]);
+            $this->updateNodeElementRule(
+                $node,
+                $this->attributeKeyStore,
+                sprintf('CA%2d02', str_replace('.', '', $this->directives->all()[$key]))
+            );
         }
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        foreach ($this->directives->all() as $directive => $min) {
+            yield sprintf('CA%2d02', str_replace('.', '', $min)) => [
+                'name' => $this->getShortClass(),
+                'fullDescription' => "Directive '$directive' of declare block is available"
+                    . ' since PHP ' . $this->directives->get($directive),
+                'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+            ];
+        }
     }
 }

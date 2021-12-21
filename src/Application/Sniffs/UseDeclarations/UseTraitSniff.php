@@ -14,11 +14,16 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
 final class UseTraitSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA54 = 'CA5407';
+
     /**
      * {@inheritDoc}
      */
@@ -29,6 +34,19 @@ final class UseTraitSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.4.0']);
+        $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA54);
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA54 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => "Use trait is a feature of PHP 5.4.0",
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-54',
+        ];
     }
 }

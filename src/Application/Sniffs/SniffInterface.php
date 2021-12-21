@@ -15,6 +15,8 @@ use Bartlett\CompatInfo\Application\Analyser\SniffVisitorInterface;
 
 use PhpParser\NodeVisitor;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
@@ -34,4 +36,8 @@ interface SniffInterface extends NodeVisitor
     public function setVisitor(SniffVisitorInterface $visitor): void;
     public function setAttributeParentKeyStore(string $key): void;
     public function setAttributeKeyStore(string $key): void;
+    /**
+     * @return Generator<string, mixed>
+     */
+    public function getRules(): Generator;
 }

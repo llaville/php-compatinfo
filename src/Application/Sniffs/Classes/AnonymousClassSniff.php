@@ -15,11 +15,16 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
 final class AnonymousClassSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA70 = 'CA7009';
+
     /**
      * Process this sniff only on this scope.
      *
@@ -32,7 +37,20 @@ final class AnonymousClassSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '7.0.0alpha1']);
+        $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA70);
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA70 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => "Anonymous classes are available since PHP 7.0.0",
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-70',
+        ];
     }
 
     private function isAnonymousClass(Node $node): bool

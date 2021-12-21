@@ -21,11 +21,16 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
 final class ClosureSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA54 = 'CA5401';
+
     /**
      * {@inheritDoc}
      */
@@ -55,7 +60,20 @@ final class ClosureSniff extends SniffAbstract
         if (in_array($name, ['this', 'self', 'parent', 'static'])) {
             // Use of $this | self | parent | static inside a closure is allowed since PHP 5.4
             $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '5.4.0']);
+            $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA54);
         }
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA54 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => 'Use of this, self, parent or static keywords inside a closure is allowed since PHP 5.4.0',
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-54',
+        ];
     }
 }

@@ -15,11 +15,16 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
 final class ShortTernaryOperatorSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA53 = 'CA5304';
+
     /**
      * {@inheritDoc}
      */
@@ -31,8 +36,21 @@ final class ShortTernaryOperatorSniff extends SniffAbstract
 
         if (null === $node->if) {
             $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.3.0']);
+            $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA53);
         }
 
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA53 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => "Ternary operator ('?:') is allowed since PHP 5.3.0",
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+        ];
     }
 }

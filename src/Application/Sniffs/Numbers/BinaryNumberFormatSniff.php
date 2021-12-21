@@ -14,7 +14,7 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
-use function mb_strlen;
+use Generator;
 use function substr_compare;
 
 /**
@@ -22,6 +22,9 @@ use function substr_compare;
  */
 final class BinaryNumberFormatSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA54 = 'CA5406';
+
     /** @var array<int, mixed> */
     private $tokens;
 
@@ -43,7 +46,20 @@ final class BinaryNumberFormatSniff extends SniffAbstract
             return null;
         }
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['ext.name' => 'core', 'ext.min' => '5.4.0', 'php.min' => '5.4.0']);
+        $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA54);
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA54 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => "Binary Number Format (with 0b prefix) is available since PHP 5.4.0",
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-54',
+        ];
     }
 
     private function isBinaryNumberFormat(Node $node): bool

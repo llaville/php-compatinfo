@@ -22,11 +22,17 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
 final class GeneratorSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA55 = 'CA5503';
+    private const CA70 = 'CA7003';
+
     /**
      * {@inheritDoc}
      */
@@ -35,13 +41,33 @@ final class GeneratorSniff extends SniffAbstract
         if ($node instanceof Node\Expr\Yield_) {
             // introduction
             $min = '5.5.0';
+            $id = self::CA55;
         } elseif ($node instanceof Node\Expr\YieldFrom) {
             // delegation
             $min = '7.0.0';
+            $id = self::CA70;
         } else {
             return null;
         }
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min]);
+        $this->updateNodeElementRule($node, $this->attributeKeyStore, $id);
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA55 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => "Generators was introduced in PHP 5.5.0",
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-55',
+        ];
+        yield self::CA70 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => "Generators delegate operations are available since PHP 7.0.0",
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-70',
+        ];
     }
 }

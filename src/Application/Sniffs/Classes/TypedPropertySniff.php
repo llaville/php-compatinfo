@@ -16,11 +16,16 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
 final class TypedPropertySniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA74 = 'CA7401';
+
     /**
      * {@inheritdoc}
      */
@@ -32,7 +37,20 @@ final class TypedPropertySniff extends SniffAbstract
 
         if (null !== $node->type) {
             $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '7.4.0']);
+            $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA74);
         }
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA74 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => "Typed properties are available since PHP 7.4.0",
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-74',
+        ];
     }
 }

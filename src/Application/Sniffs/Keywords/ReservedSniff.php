@@ -17,6 +17,8 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
@@ -85,6 +87,29 @@ final class ReservedSniff extends SniffAbstract
         }
 
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        $reservedKeywords = ['7.0' => [], '7.1' => [], '7.2' => []];
+        foreach ($this->forbiddenNames->all() as $name => $min) {
+            $reservedKeywords[$min][] = $name;
+        }
+        // php bug (affect all versions) with workaround about void entry
+        $reservedKeywords['7.1'][0] = 'void';
+        unset($reservedKeywords['void']);
+
+        foreach ($reservedKeywords as $min => $keywords) {
+            yield sprintf('CA%2d07', str_replace('.', '', $min)) => [
+                'name' => $this->getShortClass(),
+                'fullDescription' => "You cannot use any of the following words to name classes, interfaces or traits"
+                    . ' since PHP ' . $min . ' : ' . implode(', ', $keywords),
+                'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+            ];
+        }
     }
 
     /**

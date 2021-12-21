@@ -14,11 +14,16 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
 final class ArrayDereferencingSyntaxSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA54 = 'CA5402';
+
     /**
      * {@inheritDoc}
      */
@@ -32,6 +37,19 @@ final class ArrayDereferencingSyntaxSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '5.4.0']);
+        $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA54);
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA54 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => "Array dereferencing syntax is available since PHP 5.4.0",
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-54',
+        ];
     }
 }

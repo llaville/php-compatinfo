@@ -16,11 +16,16 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
 final class UseConstFunctionSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA56 = 'CA5603';
+
     /**
      * {@inheritDoc}
      */
@@ -31,7 +36,20 @@ final class UseConstFunctionSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '5.6.0']);
+        $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA56);
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA56 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => "Use const, use function is allowed since PHP 5.6.0",
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-56',
+        ];
     }
 
     private function isUseConstFunction(Node $node): bool

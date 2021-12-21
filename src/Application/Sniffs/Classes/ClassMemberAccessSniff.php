@@ -17,11 +17,17 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+
 /**
  * @since Release 5.4.0
  */
 final class ClassMemberAccessSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA54 = 'CA5404';
+    private const CA70 = 'CA7004';
+
     /**
      * {@inheritDoc}
      */
@@ -36,14 +42,34 @@ final class ClassMemberAccessSniff extends SniffAbstract
 
         if ($caller instanceof Node\Expr\Clone_) {
             $min = '7.0.0';
+            $id = self::CA70;
         } elseif ($caller instanceof Node\Expr\New_) {
             $min = '5.4.0';
+            $id = self::CA54;
         } else {
             return null;
         }
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min]);
+        $this->updateNodeElementRule($node, $this->attributeKeyStore, $id);
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA54 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => "Class member access on instantiation is available since PHP 5.4.0",
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-54',
+        ];
+        yield self::CA70 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => "Class member access on cloning is available since PHP 7.0.0",
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-70',
+        ];
     }
 
     private function isClassMemberAccess(Node $node): bool
