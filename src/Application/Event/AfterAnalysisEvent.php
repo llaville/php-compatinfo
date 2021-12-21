@@ -7,6 +7,8 @@
  * The event listener method receives a Symfony\Component\EventDispatcher\GenericEvent
  * instance with following arguments :
  * - `source` data source identifier
+ * - `successCount` number of file successfully proceeded
+ * - `profile` an instance of Bartlett\CompatInfo\Application\Profiler\Profile class results
  */
 
 namespace Bartlett\CompatInfo\Application\Event;
