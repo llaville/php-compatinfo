@@ -15,6 +15,7 @@ use Bartlett\CompatInfo\Tests\TestCase;
 use PhpParser\Lexer\Emulative;
 use PhpParser\Node;
 use PhpParser\NodeTraverser;
+use PhpParser\Parser;
 use PhpParser\ParserFactory;
 
 /**
@@ -22,9 +23,9 @@ use PhpParser\ParserFactory;
  */
 final class NameResolverVisitorTest extends TestCase
 {
-    private static $parser;
-    private static $traverser;
-    private static $nodeAttributeNamespacedName;
+    private static Parser $parser;
+    private static NodeTraverser $traverser;
+    private static string $nodeAttributeNamespacedName;
 
     /**
      * {@inheritDoc}

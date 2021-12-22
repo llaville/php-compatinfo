@@ -15,8 +15,7 @@ final class Profiler implements ProfilerInterface
 {
     use CollectorTrait;
 
-    /** @var string */
-    private $token;
+    private string $token;
 
     public function __construct(?string $token)
     {

@@ -14,8 +14,7 @@ abstract class AbstractCommand extends Command
     public const SUCCESS = 0;
     public const FAILURE = 1;
 
-    /** @var QueryBusInterface */
-    protected $queryBus;
+    protected QueryBusInterface $queryBus;
 
     public function __construct(QueryBusInterface $queryBus)
     {

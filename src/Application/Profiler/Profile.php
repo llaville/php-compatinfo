@@ -7,11 +7,9 @@ namespace Bartlett\CompatInfo\Application\Profiler;
  */
 final class Profile implements CollectorInterface
 {
-    /** @var string */
-    private $token;
-
+    private string $token;
     /** @var array<string, mixed> */
-    private $data;
+    private array $data;
 
     use CollectorTrait;
 

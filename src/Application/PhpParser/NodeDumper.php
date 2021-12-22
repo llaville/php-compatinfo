@@ -19,14 +19,10 @@ use PhpParser\Node\Stmt\UseUse;
  */
 final class NodeDumper extends \PhpParser\NodeDumper
 {
-    /** @var bool  */
-    private $dumpAttributes;
-    /** @var bool */
-    private $dumpComments;
-    /** @var bool */
-    private $dumpPositions;
-    /** @var string|null */
-    private $code;
+    private bool $dumpAttributes;
+    private bool $dumpComments;
+    private bool $dumpPositions;
+    private ?string $code;
 
     /**
      * Constructs a NodeDumper.

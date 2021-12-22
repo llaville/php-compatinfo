@@ -29,8 +29,7 @@ use function realpath;
  */
 final class GetCompatibilityHandler implements QueryHandlerInterface
 {
-    /** @var Parser  */
-    private $parser;
+    private Parser $parser;
 
     public function __construct(Parser $parser)
     {

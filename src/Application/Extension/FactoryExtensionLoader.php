@@ -14,7 +14,7 @@ use function sprintf;
 final class FactoryExtensionLoader implements ExtensionLoaderInterface
 {
     /** @var callable[] */
-    private $factories;
+    private array $factories;
 
     /**
      * FactoryExtensionLoader constructor.

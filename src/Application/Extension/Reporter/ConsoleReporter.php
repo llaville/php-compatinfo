@@ -33,7 +33,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
     protected const NAME = 'console';
 
     /** @var array<string, mixed> */
-    private $metrics;
+    private array $metrics;
 
     /**
      * {@inheritDoc}

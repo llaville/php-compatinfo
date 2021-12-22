@@ -48,13 +48,12 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     protected const COLLECTOR_NAME = self::class;
 
     /** @var array<string, string> */
-    private $aliases;
+    private array $aliases;
     /** @var ReferenceCollectionInterface<array>  */
     private $references;
-    /** @var SplFileInfo */
-    private $currentFile;
+    private SplFileInfo $currentFile;
     /** @var array<int, mixed> */
-    private $tokens;
+    private array $tokens;
     /** @var callable */
     private $contextCallback;
 

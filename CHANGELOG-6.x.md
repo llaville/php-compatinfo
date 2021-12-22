@@ -12,6 +12,15 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - improves `output` option by introducing Reporter extension (see [documentation](docs/01_Components/04_Extensions/Reporter.md))
 - [#312](https://github.com/llaville/php-compatinfo/issues/312): Add SARIF output format
 
+### Changed
+
+Support **Typed properties** features, now minimum PHP requirement is 7.4
+
+Read more about this feature at :
+
+- <https://stitcher.io/blog/typed-properties-in-php-74>
+- <https://php.watch/versions/7.4/typed-properties>
+
 ## [6.0.1] - 2021-12-13
 
 ### Fixed

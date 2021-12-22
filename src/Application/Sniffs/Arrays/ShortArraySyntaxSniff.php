@@ -24,9 +24,8 @@ final class ShortArraySyntaxSniff extends SniffAbstract
 {
     // Rules identifiers for SARIF report
     private const CA54 = 'CA5403';
-
     /** @var array<int, mixed> */
-    private $tokens;
+    private array $tokens;
 
     /**
      * {@inheritDoc}

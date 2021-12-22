@@ -26,13 +26,12 @@ final class MagicMethodsSniff extends SniffAbstract
     private const CA51 = 'CA5101';
     private const CA53 = 'CA5301';
     private const CA56 = 'CA5601';
-
     /** @var string[] */
-    private $mm503;
+    private array $mm503;
     /** @var string[] */
-    private $mm506;
+    private array $mm506;
     /** @var string[] */
-    private $mm501;
+    private array $mm501;
 
     /**
      * {@inheritDoc}

@@ -21,19 +21,13 @@ use Symfony\Component\Finder\SplFileInfo;
 abstract class DataCollector implements DataCollectorInterface
 {
     /** @var array<string, mixed> */
-    protected $data = [];
-
-    /** @var string */
-    protected $name;
-
+    protected array $data = [];
+    protected string $name;
     /** @var string[] */
-    protected $files = [];
-
+    protected array $files = [];
     /** @var string[] */
-    protected $errors = [];
-
-    /** @var NodeVisitor */
-    protected $nodeVisitor;
+    protected array $errors = [];
+    protected NodeVisitor $nodeVisitor;
 
     use VersionUpdater;
 

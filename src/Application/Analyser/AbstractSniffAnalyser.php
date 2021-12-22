@@ -30,17 +30,13 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
 {
-    /** @var EventDispatcherInterface  */
-    private $dispatcher;
+    private EventDispatcherInterface $dispatcher;
     /** @var SniffCollectionInterface<SniffInterface>  */
     private $sniffs;
-    /** @var string  */
-    private $attributeParentKey;
-    /** @var string  */
-    private $attributeKey;
+    private string $attributeParentKey;
+    private string $attributeKey;
 
-    /** @var ProfilerInterface  */
-    protected $profiler;
+    protected ProfilerInterface $profiler;
 
     /**
      * @param ProfilerInterface $profiler

@@ -12,12 +12,8 @@ use PhpParser\NodeVisitorAbstract;
 
 final class VersionResolverVisitor extends NodeVisitorAbstract
 {
-    /** @var string */
-    private $attributeKey;
-
-    /** @var string */
-    private $attributeNamespacedName;
-
+    private string $attributeKey;
+    private string $attributeNamespacedName;
     /** @var ReferenceCollectionInterface<string, array> */
     private $references;
 

@@ -16,7 +16,7 @@ use DomainException;
 trait CollectorTrait
 {
     /** @var DataCollectorInterface[] */
-    private $collectors = [];
+    private array $collectors = [];
 
     /**
      * {@inheritDoc}

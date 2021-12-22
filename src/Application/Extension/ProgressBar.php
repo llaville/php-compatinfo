@@ -38,8 +38,7 @@ final class ProgressBar implements
     BeforeFileAnalysisInterface,
     AfterFileAnalysisInterface
 {
-    /** @var SymfonyProgressBar|null  */
-    private $progressBar;
+    private ?SymfonyProgressBar $progressBar;
 
     /**
      * ProgressBar extension constructor.

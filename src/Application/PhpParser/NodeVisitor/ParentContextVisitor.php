@@ -16,10 +16,8 @@ use function array_shift;
 final class ParentContextVisitor extends NodeVisitorAbstract
 {
     /** @var Node[] */
-    private $stack = [];
-
-    /** @var string */
-    private $attributeParentKey;
+    private array $stack = [];
+    private string $attributeParentKey;
 
     /**
      * Constructs a parent path resolution visitor.

@@ -34,8 +34,7 @@ use function strtolower;
  */
 final class ParamTypeDeclarationSniff extends SniffAbstract
 {
-    /** @var KeywordBag */
-    private $paramTypeDeclarations;
+    private KeywordBag $paramTypeDeclarations;
 
     /**
      * {@inheritDoc}

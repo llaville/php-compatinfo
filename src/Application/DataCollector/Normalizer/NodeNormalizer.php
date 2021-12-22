@@ -14,11 +14,8 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
  */
 final class NodeNormalizer implements NormalizerInterface
 {
-    /** @var null|string */
-    private $name;
-
-    /** @var string */
-    private $attributeNamespacedName;
+    private ?string $name;
+    private string $attributeNamespacedName;
 
     /**
      * {@inheritDoc}

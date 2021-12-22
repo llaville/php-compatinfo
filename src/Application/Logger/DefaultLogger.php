@@ -38,7 +38,7 @@ use function strtr;
 class DefaultLogger extends AbstractLogger
 {
     /** @var string[]  */
-    private static $levels = [
+    private static array $levels = [
         100 => 'debug',
         200 => 'info',
         250 => 'notice',

@@ -46,7 +46,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=phpCompatInfo
      * editorconfig-checker-disable
      */
-    protected static $logo = "        _            ____                            _   ___        __
+    protected static string $logo = "        _            ____                            _   ___        __
   _ __ | |__  _ __  / ___|___  _ __ ___  _ __   __ _| |_|_ _|_ __  / _| ___
  | '_ \| '_ \| '_ \| |   / _ \| '_ ` _ \| '_ \ / _` | __|| || '_ \| |_ / _ \
  | |_) | | | | |_) | |__| (_) | | | | | | |_) | (_| | |_ | || | | |  _| (_) |
@@ -56,8 +56,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
 ";
     // editorconfig-checker-enable
 
-    /** @var ContainerInterface  */
-    private $container;
+    private ContainerInterface $container;
 
     /**
      * Application constructor.

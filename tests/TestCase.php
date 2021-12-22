@@ -23,8 +23,8 @@ use function reset;
  */
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
-    protected static $fixtures;
-    protected static $analyserId;
+    protected static string $fixtures;
+    protected static string $analyserId;
 
     /**
      * Sets up the shared fixture.

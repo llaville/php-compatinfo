@@ -24,8 +24,7 @@ use Doctrine\ORM\EntityManagerInterface;
  */
 final class DiagnoseQuery implements QueryInterface
 {
-    /** @var Connection */
-    private $connection;
+    private Connection $connection;
 
     public function __construct(EntityManagerInterface $entityManager)
     {

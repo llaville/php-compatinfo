@@ -20,7 +20,7 @@ use function in_array;
 final class VersionDataCollector extends DataCollector
 {
     /** @var string[] */
-    private $dataKeysAllowed = [];
+    private array $dataKeysAllowed = [];
 
     /**
      * VersionDataCollector constructor.

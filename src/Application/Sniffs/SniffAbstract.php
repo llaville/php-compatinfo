@@ -38,24 +38,12 @@ abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterfa
 {
     /** @var null|callable */
     protected $contextCallback;
-
-    /** @var string */
-    protected $contextIdentifier;
-
-    /** @var KeywordBag */
-    protected $forbiddenNames;
-
-    /** @var SniffVisitorInterface */
-    protected $visitor;
-
-    /** @var string */
-    protected $attributeParentKeyStore;
-
-    /** @var string */
-    protected $attributeKeyStore;
-
-    /** @var EventDispatcherInterface */
-    protected $dispatcher;
+    protected string $contextIdentifier;
+    protected KeywordBag $forbiddenNames;
+    protected SniffVisitorInterface $visitor;
+    protected string $attributeParentKeyStore;
+    protected string $attributeKeyStore;
+    protected EventDispatcherInterface $dispatcher;
 
     use VersionUpdater;
 

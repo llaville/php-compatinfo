@@ -53,11 +53,10 @@ final class Logger implements
     AfterProcessSniffInterface,
     EventSubscriberInterface
 {
-    /** @var LoggerInterface  */
-    private $logger;
+    private LoggerInterface $logger;
 
     /** @var array<string, string>  */
-    private static $events;
+    private static array $events;
 
     /**
      * Logger extension constructor.

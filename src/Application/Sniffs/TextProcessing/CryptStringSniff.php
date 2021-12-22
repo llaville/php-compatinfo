@@ -27,9 +27,7 @@ final class CryptStringSniff extends SniffAbstract
 {
     // Rules identifiers for SARIF report
     private const CA53 = 'CA5305';
-
-    /** @var KeywordBag */
-    private $algorithms;
+    private KeywordBag $algorithms;
 
     /**
      * {@inheritDoc}

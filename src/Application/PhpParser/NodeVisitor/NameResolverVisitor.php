@@ -20,11 +20,8 @@ use function property_exists;
  */
 final class NameResolverVisitor extends NameResolver
 {
-    /** @var string */
-    private $attributeParentKey;
-
-    /** @var string */
-    private $attributeNamespacedName;
+    private string $attributeParentKey;
+    private string $attributeNamespacedName;
 
     /**
      * NameResolverVisitor constructor.

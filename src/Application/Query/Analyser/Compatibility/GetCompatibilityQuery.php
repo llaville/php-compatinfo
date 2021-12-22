@@ -9,12 +9,10 @@ use Bartlett\CompatInfo\Application\Query\QueryInterface;
  */
 final class GetCompatibilityQuery implements QueryInterface
 {
-    /** @var string  */
-    private $source;
+    private string $source;
     /** @var string[] */
-    private $exclude;
-    /** @var bool  */
-    private $stopOnFailure;
+    private array $exclude;
+    private bool $stopOnFailure;
 
     /**
      * GetCompatibilityQuery class constructor.

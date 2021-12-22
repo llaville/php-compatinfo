@@ -49,8 +49,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 final class EventDispatcher extends SymfonyEventDispatcher
 {
-    /** @var ExtensionLoaderInterface  */
-    private $extensionLoader;
+    private ExtensionLoaderInterface $extensionLoader;
 
     public function __construct(
         EventDispatcherInterface $dispatcher,

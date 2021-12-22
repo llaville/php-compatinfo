@@ -24,9 +24,8 @@ final class BinaryNumberFormatSniff extends SniffAbstract
 {
     // Rules identifiers for SARIF report
     private const CA54 = 'CA5406';
-
     /** @var array<int, mixed> */
-    private $tokens;
+    private array $tokens;
 
     /**
      * {@inheritDoc}

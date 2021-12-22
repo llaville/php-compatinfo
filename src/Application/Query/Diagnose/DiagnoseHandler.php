@@ -24,8 +24,7 @@ use Bartlett\CompatInfoDb\Infrastructure\RequirementsInterface;
  */
 final class DiagnoseHandler implements QueryHandlerInterface
 {
-    /** @var CompatInfoDbDiagnoseHandler */
-    private $innerHandler;
+    private CompatInfoDbDiagnoseHandler $innerHandler;
 
     public function __construct(CompatInfoDbDiagnoseHandler $handler)
     {

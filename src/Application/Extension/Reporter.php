@@ -18,12 +18,8 @@ use function in_array;
 abstract class Reporter implements ExtensionInterface, AfterAnalysisInterface
 {
     protected const NAME = 'custom';
-
-    /** @var InputInterface  */
-    protected $input;
-
-    /** @var OutputInterface  */
-    protected $output;
+    protected InputInterface $input;
+    protected OutputInterface $output;
 
     public function __construct(InputInterface $input, OutputInterface $output)
     {

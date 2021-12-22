@@ -32,22 +32,15 @@ use function file_get_contents;
  */
 final class Parser
 {
-    /** @var EventDispatcherInterface  */
-    private $dispatcher;
-    /** @var SniffAnalyserInterface  */
-    private $analyser;
+    private EventDispatcherInterface $dispatcher;
+    private SniffAnalyserInterface $analyser;
     /** @var ReferenceCollectionInterface<string, array>  */
     private $references;
-    /** @var ErrorHandler */
-    private $errorHandler;
-    /** @var \PhpParser\Parser */
-    private $parser;
-    /** @var Lexer */
-    private $lexer;
-    /** @var NodeTraverser */
-    private $traverser;
-    /** @var int */
-    private $filesProceeded;
+    private ErrorHandler $errorHandler;
+    private \PhpParser\Parser $parser;
+    private Lexer $lexer;
+    private NodeTraverser $traverser;
+    private int $filesProceeded;
 
     /**
      * Parser constructor.

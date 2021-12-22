@@ -19,7 +19,7 @@ final class KeywordBag implements IteratorAggregate, Countable
      * Keyword storage
      * @var array<string, string>
      */
-    private $keywords;
+    private array $keywords;
 
     /**
      * KeywordBag constructor.

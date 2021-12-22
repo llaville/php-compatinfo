@@ -62,13 +62,9 @@ final class SarifReporter extends Reporter implements
     AfterFileAnalysisInterface
 {
     protected const NAME = 'sarif';
-
     /** @var Result[] */
-    private $results = [];
-
-    /** @var string */
-    private $source;
-
+    private array $results = [];
+    private string $source;
     /** @var SniffCollectionInterface<SniffInterface> */
     private $sniffs;
 

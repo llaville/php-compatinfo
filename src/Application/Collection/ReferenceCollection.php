@@ -29,12 +29,9 @@ use function strpos;
  */
 final class ReferenceCollection extends AbstractLazyCollection implements ReferenceCollectionInterface
 {
-    /** @var ClassRepository  */
-    private $classRepository;
-    /** @var ConstantRepository  */
-    private $constantRepository;
-    /** @var FunctionRepository  */
-    private $functionRepository;
+    private ClassRepository $classRepository;
+    private ConstantRepository $constantRepository;
+    private FunctionRepository $functionRepository;
 
     /**
      * Creates a new Reference Collection

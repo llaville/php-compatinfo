@@ -16,11 +16,9 @@ use function array_replace;
  */
 class FilterVisitor extends FindingVisitor implements NodeVisitor
 {
-    /** @var NormalizerInterface */
-    protected $normalizer;
-
+    protected NormalizerInterface $normalizer;
     /** @var array<string, string> */
-    protected $context;
+    protected array $context;
 
     /**
      * FilterVisitor constructor.

@@ -12,7 +12,7 @@ use function array_merge;
 trait VersionUpdater
 {
     /** @var array<string, mixed> */
-    protected static $php4 = [
+    protected static array $php4 = [
         'ext.name' => 'user',
         'ext.min'  => '',
         'ext.max'  => '',

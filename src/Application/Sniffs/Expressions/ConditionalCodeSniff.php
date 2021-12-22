@@ -30,12 +30,8 @@ use function ltrim;
  */
 final class ConditionalCodeSniff extends SniffAbstract
 {
-    /** @var string */
-    private $opt;
-
-    /** @var string */
-    private $group;
-
+    private string $opt;
+    private string $group;
     /** @var ReferenceCollectionInterface<string, array> */
     private $references;
 
