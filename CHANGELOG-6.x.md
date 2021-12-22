@@ -14,12 +14,14 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ### Changed
 
-Support **Typed properties** features, now minimum PHP requirement is 7.4
+- moved Doctrine ORM `cli-config.php` file from root folder to `config/` directory (more sense)
 
-Read more about this feature at :
+- Support **Typed properties** features, now minimum PHP requirement is 7.4
 
-- <https://stitcher.io/blog/typed-properties-in-php-74>
-- <https://php.watch/versions/7.4/typed-properties>
+  Read more about this feature at :
+
+  - <https://stitcher.io/blog/typed-properties-in-php-74>
+  - <https://php.watch/versions/7.4/typed-properties>
 
 ## [6.0.1] - 2021-12-13
 
