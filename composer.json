@@ -86,7 +86,8 @@
         "sort-packages": true,
         "optimize-autoloader": true,
         "allow-plugins": {
-            "composer/package-versions-deprecated": true
+            "composer/package-versions-deprecated": true,
+            "cweagans/composer-patches": true
         }
     },
     "extra": {
