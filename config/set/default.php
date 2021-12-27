@@ -32,7 +32,12 @@ use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
  * @return void
  */
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(dirname(__DIR__, 2) . '/vendor/bartlett/php-compatinfo-db/config/set/default.php');
+    if (file_exists(dirname(__DIR__, 2) . '/vendor')) {
+        $configSet = dirname(__DIR__, 2) . '/vendor/bartlett/php-compatinfo-db/config/set/default.php';
+    } else {
+        $configSet = dirname(__DIR__, 3) . '/php-compatinfo-db/config/set/default.php';
+    }
+    $containerConfigurator->import($configSet);
     $containerConfigurator->import(__DIR__ . '/common.php');
 
     $parameters = $containerConfigurator->parameters();

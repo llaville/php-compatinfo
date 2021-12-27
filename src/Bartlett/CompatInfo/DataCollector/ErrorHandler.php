@@ -4,5 +4,4 @@ namespace Bartlett\CompatInfo\DataCollector;
 
 interface ErrorHandler extends \PhpParser\ErrorHandler
 {
-
 }

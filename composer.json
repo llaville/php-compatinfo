@@ -34,7 +34,6 @@
     "authors": [
         {
             "name": "Laurent Laville",
-            "email": "pear@laurent-laville.org",
             "homepage": "https://github.com/llaville",
             "role": "Lead"
         },
@@ -77,6 +76,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     }
 }

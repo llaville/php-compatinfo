@@ -11,5 +11,4 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface;
  */
 interface ApplicationInterface extends ContainerAwareInterface
 {
-
 }
