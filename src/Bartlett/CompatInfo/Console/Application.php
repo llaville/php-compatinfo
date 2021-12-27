@@ -47,7 +47,7 @@ use function substr_count;
 class Application extends BaseApplication implements ApplicationInterface
 {
     public const NAME = 'phpCompatInfo';
-    public const VERSION = '5.5.4';
+    public const VERSION = '5.5.5';
     public const API_NAMESPACE = 'Bartlett\CompatInfo\Api\\';
 
     /**
