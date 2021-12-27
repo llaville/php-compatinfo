@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013 -->
 # PHP CompatInfo
 
 |                                                                                     Stable                                                                                     | Upcoming |
@@ -12,7 +13,7 @@
 **PHP CompatInfo** is a library that
 can find the minimum version and the extensions required for a piece of code to run.
 
-Running on PHP greater than 7.2 for parsing source code in a format PHP 5.2 to PHP 8.0
+Running on PHP greater or equal than 7.2 for parsing source code in a format PHP 5.2 to PHP 8.0
 
 ## Requirements
 
@@ -25,7 +26,7 @@ The recommended way to install this library is [through composer](http://getcomp
 If you don't know yet what is composer, have a look [on introduction](http://getcomposer.org/doc/00-intro.md).
 
 ```bash
-composer require bartlett/php-compatinfo
+composer require bartlett/php-compatinfo ^5.5
 ```
 
 ## Configuring the Database
