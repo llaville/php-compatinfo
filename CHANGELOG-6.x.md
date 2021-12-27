@@ -7,6 +7,15 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [6.0.1] - 2021-12-13
+
+### Fixed
+
+- [#309](https://github.com/llaville/php-compatinfo/issues/309): Composer 2.2 compatibility for plugins (thanks to @remicollet for reporting)
+- [#310](https://github.com/llaville/php-compatinfo/issues/310): Symfony 4 compatibility (thanks to @remicollet for reporting)
+
+## [6.0.0] - 2021-12-11
+
 ### Added
 
 - Phar manifest (`--manifest` option) is available with Phar version only (build with `box-project/box` [3.10](https://github.com/box-project/box/releases/tag/3.10.0) or greater)
