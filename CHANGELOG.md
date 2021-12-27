@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013 MD024 -->
 # Change Log
 
 All notable changes to this project will be documented in this file.
@@ -161,19 +162,19 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [5.2.1] - 2019-10-21
 
-#### Fixed
+### Fixed
 
 - compatibility with CompatInfoDB 1.x and 2.x
 
 ## [5.2.0] - 2019-06-01
 
-#### Fixed
+### Fixed
 
 - compatibility with CompatInfoDB 1.x and 2.x and PHP 7.2
 
 ## [5.1.0] - 2018-11-27
 
-#### Changed
+### Changed
 
 - add support to PHP-Parser 3.1 for running on PHP >= 5.5 and for parsing code PHP 5.2 to PHP 7.2
 
