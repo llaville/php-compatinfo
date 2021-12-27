@@ -7,6 +7,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Fixed
+
+- [GH-313](https://github.com/llaville/php-compatinfo/issues/313) Cannot install CompatInfo as a vendor dependency
+
 ## [6.0.1] - 2021-12-13
 
 ### Fixed
