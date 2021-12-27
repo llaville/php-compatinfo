@@ -9,5 +9,4 @@ use Symfony\Component\EventDispatcher\GenericEvent;
  */
 final class BeforeProcessSniffEvent extends GenericEvent
 {
-
 }

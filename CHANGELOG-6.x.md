@@ -7,6 +7,12 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [6.0.2] - 2021-12-27
+
+### Fixed
+
+- [GH-313](https://github.com/llaville/php-compatinfo/issues/313) Cannot install CompatInfo as a vendor dependency
+
 ## [6.0.1] - 2021-12-13
 
 ### Fixed
@@ -18,7 +24,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ### Added
 
-- Phar manifest (`--manifest` option) is available with Phar version only
+- Phar manifest (`--manifest` option) is available with Phar version only (build with `box-project/box` [3.10](https://github.com/box-project/box/releases/tag/3.10.0) or greater)
 - [Mega-Linter](https://github.com/megalinter/megalinter) v5 support as QA tool to avoid technical debt
 - [#308](https://github.com/llaville/php-compatinfo/issues/308) : Support to PHP 8.1
 
@@ -32,7 +38,3 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - drop support of PHP 7.2
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
-
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.0.1...HEAD
-[6.0.1]: https://github.com/llaville/php-compat-info/compare/6.0.0...6.0.1
-[6.0.0]: https://github.com/llaville/php-compat-info/compare/5.5.4...6.0.0

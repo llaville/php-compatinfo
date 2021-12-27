@@ -20,5 +20,4 @@ use Symfony\Component\EventDispatcher\GenericEvent;
  */
 final class AfterFileAnalysisEvent extends GenericEvent
 {
-
 }

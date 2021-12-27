@@ -18,5 +18,4 @@ use Symfony\Component\EventDispatcher\GenericEvent;
  */
 final class AfterAnalysisEvent extends GenericEvent
 {
-
 }
