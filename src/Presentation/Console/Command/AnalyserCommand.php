@@ -7,6 +7,7 @@
 namespace Bartlett\CompatInfo\Presentation\Console\Command;
 
 use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;
+use Bartlett\CompatInfo\Presentation\Console\ApplicationInterface;
 use Bartlett\CompatInfo\Presentation\Console\Style;
 
 use Symfony\Component\Console\Input\InputArgument;
@@ -48,11 +49,13 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        /** @var ApplicationInterface $app */
+        $app = $this->getApplication();
         $compatibilityQuery = new GetCompatibilityQuery(
             $input->getArgument('source'),
             $input->getOption('exclude'),
             $input->hasOption('stop-on-failure'),
-            $this->getApplication()->getInstalledVersion()
+            $app->getInstalledVersion()
         );
 
         try {
