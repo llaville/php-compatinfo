@@ -23,6 +23,12 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
   - <https://stitcher.io/blog/typed-properties-in-php-74>
   - <https://php.watch/versions/7.4/typed-properties>
 
+## [6.0.2] - 2021-12-27
+
+### Fixed
+
+- [GH-313](https://github.com/llaville/php-compatinfo/issues/313) Cannot install CompatInfo as a vendor dependency
+-
 ## [6.0.1] - 2021-12-13
 
 ### Fixed
@@ -49,6 +55,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.0.1...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.0.2...HEAD
+[6.0.2]: https://github.com/llaville/php-compat-info/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/llaville/php-compat-info/compare/6.0.0...6.0.1
-[6.0.0]: https://github.com/llaville/php-compat-info/compare/5.5.4...6.0.0
+[6.0.0]: https://github.com/llaville/php-compat-info/compare/5.5.5...6.0.0
