@@ -13,6 +13,7 @@ final class GetCompatibilityQuery implements QueryInterface
     /** @var string[] */
     private array $exclude;
     private bool $stopOnFailure;
+    private string $version;
 
     /**
      * GetCompatibilityQuery class constructor.
@@ -20,12 +21,14 @@ final class GetCompatibilityQuery implements QueryInterface
      * @param string $source
      * @param string[] $exclude
      * @param bool $stopOnFailure
+     * @param string $version
      */
-    public function __construct(string $source, array $exclude, bool $stopOnFailure)
+    public function __construct(string $source, array $exclude, bool $stopOnFailure, string $version)
     {
         $this->source = $source;
         $this->exclude = $exclude;
         $this->stopOnFailure = $stopOnFailure;
+        $this->version = $version;
     }
 
     /**
@@ -50,5 +53,13 @@ final class GetCompatibilityQuery implements QueryInterface
     public function isStopOnFailure(): bool
     {
         return $this->stopOnFailure;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVersion(): string
+    {
+        return $this->version;
     }
 }

@@ -13,11 +13,12 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 interface ApplicationInterface extends ContainerAwareInterface
 {
     public const NAME = 'phpCompatInfo';
-    public const VERSION = '6.1.0-dev';
 
     /**
      * @param CommandLoaderInterface $commandLoader
      * @return void
      */
     public function setCommandLoader(CommandLoaderInterface $commandLoader);
+
+    public function getInstalledVersion(bool $withRef = true, string $packageName = 'bartlett/php-compatinfo'): string;
 }

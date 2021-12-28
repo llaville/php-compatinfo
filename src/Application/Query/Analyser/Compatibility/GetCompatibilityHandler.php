@@ -50,6 +50,6 @@ final class GetCompatibilityHandler implements QueryHandlerInterface
 
         $finder = SourceProvider::getFinder($source, $exclude);
 
-        return $this->parser->parse($source, $finder, $errorHandler);
+        return $this->parser->parse($source, $finder, $errorHandler, $query->getVersion());
     }
 }

@@ -67,6 +67,8 @@ final class SarifReporter extends Reporter implements
     private string $source;
     /** @var SniffCollectionInterface<SniffInterface> */
     private $sniffs;
+    /** @var array<string, string>  */
+    private array $applicationVersion;
 
     /**
      * @param SniffCollectionInterface<SniffInterface> $sniffs
@@ -177,6 +179,11 @@ final class SarifReporter extends Reporter implements
             $profile = $event->getArgument('profile');
             $token = key($profile->getData());
             $this->source = $event->getArgument('source');
+            $version = $event->getArgument('applicationVersion');
+            $this->applicationVersion = [
+                'semantic' => explode('@', $version)[0],
+                'raw' => $version,
+            ];
             $this->format(new Profile($token, $this->results));
         }
     }
@@ -232,7 +239,10 @@ final class SarifReporter extends Reporter implements
     {
         $driver = new ToolComponent('PHP_CompatInfo');
         $driver->setInformationUri('https://github.com/llaville/php-compatinfo');
-        $driver->setSemanticVersion(ApplicationInterface::VERSION);
+        if (!empty($this->applicationVersion)) {
+            $driver->setVersion($this->applicationVersion['raw']);
+            $driver->setSemanticVersion($this->applicationVersion['semantic']);
+        }
 
         $rules = [];
         foreach ($this->getRules() as $id => $definition) {

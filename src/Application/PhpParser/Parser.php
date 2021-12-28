@@ -65,11 +65,11 @@ final class Parser
      * @param string $source
      * @param Finder $finder
      * @param ErrorHandler $errorHandler
-     *
+     * @param string $version
      * @return Profile
      * @throws Exception
      */
-    public function parse(string $source, Finder $finder, ErrorHandler $errorHandler): Profile
+    public function parse(string $source, Finder $finder, ErrorHandler $errorHandler, string $version): Profile
     {
         $this->dispatcher->dispatch(new BeforeAnalysisEvent($this, ['source' => $source, 'queue' => $finder]));
 
@@ -104,7 +104,12 @@ final class Parser
         $this->dispatcher->dispatch(
             new AfterAnalysisEvent(
                 $this,
-                ['source' => $source, 'successCount' => $this->filesProceeded, 'profile' => $profile]
+                [
+                    'source' => $source,
+                    'successCount' => $this->filesProceeded,
+                    'profile' => $profile,
+                    'applicationVersion' => $version,
+                ]
             )
         );
 

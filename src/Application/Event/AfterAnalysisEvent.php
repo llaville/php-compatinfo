@@ -9,6 +9,7 @@
  * - `source` data source identifier
  * - `successCount` number of file successfully proceeded
  * - `profile` an instance of Bartlett\CompatInfo\Application\Profiler\Profile class results
+ * - `applicationVersion` current version of application with reference (the latest commit hash)
  */
 
 namespace Bartlett\CompatInfo\Application\Event;

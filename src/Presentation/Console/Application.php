@@ -13,7 +13,7 @@
 
 namespace Bartlett\CompatInfo\Presentation\Console;
 
-use PackageVersions\Versions;
+use Composer\InstalledVersions;
 
 use Symfony\Component\Config\Exception\FileLocatorFileNotFoundException;
 use Symfony\Component\Config\FileLocator;
@@ -31,10 +31,8 @@ use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 
 use Phar;
 use function basename;
-use function explode;
 use function sprintf;
-use function strpos;
-use function substr_count;
+use function substr;
 
 /**
  * @since Release 4.0.0-alpha3+1, 6.0.0
@@ -61,24 +59,11 @@ class Application extends SymfonyApplication implements ApplicationInterface
     /**
      * Application constructor.
      *
-     * @param string $version (optional) auto-detect
+     * @param string|null $version (optional) auto-detect
      */
-    public function __construct(string $version = 'UNKNOWN')
+    public function __construct(?string $version = null)
     {
-        if ('UNKNOWN' === $version) {
-            // composer or git outside world strategy
-            $version = self::VERSION;
-        } elseif (substr_count($version, '.') === 2) {
-            // release is in X.Y.Z format
-        } else {
-            // composer or git strategy
-            $version = Versions::getVersion('bartlett/php-compatinfo');
-            list($ver, ) = explode('@', $version);
-
-            if (strpos($ver, 'dev') === false) {
-                $version = $ver;
-            }
-        }
+        $version = $version ?? $this->getInstalledVersion(false);
         parent::__construct(self::NAME, $version);
     }
 
@@ -96,7 +81,13 @@ class Application extends SymfonyApplication implements ApplicationInterface
      */
     public function getHelp(): string
     {
-        return '<comment>' . static::$logo . '</comment>' . parent::getHelp();
+        return sprintf(
+            '<comment>%s</comment><info>%s</info> version <comment>%s</comment> DB version <comment>%s</comment>',
+            static::$logo,
+            $this->getName(),
+            $this->getVersion(),
+            $this->getInstalledVersion(false, 'bartlett/php-compatinfo-db')
+        );
     }
 
     /**
@@ -107,8 +98,8 @@ class Application extends SymfonyApplication implements ApplicationInterface
         return sprintf(
             '<info>%s</info> version <comment>%s</comment> DB version <comment>%s</comment>',
             $this->getName(),
-            $this->getVersion(),
-            \Bartlett\CompatInfoDb\Presentation\Console\ApplicationInterface::VERSION
+            $this->getInstalledVersion(),
+            $this->getInstalledVersion(true, 'bartlett/php-compatinfo-db')
         );
     }
 
@@ -220,5 +211,15 @@ class Application extends SymfonyApplication implements ApplicationInterface
         }
 
         return parent::run($input, $output);
+    }
+
+    public function getInstalledVersion(bool $withRef = true, string $packageName = 'bartlett/php-compatinfo'): string
+    {
+        $version = InstalledVersions::getPrettyVersion($packageName);
+        if (!$withRef) {
+            return $version;
+        }
+        $commitHash = InstalledVersions::getReference($packageName);
+        return sprintf('%s@%s', $version, substr($commitHash, 0, 7));
     }
 }

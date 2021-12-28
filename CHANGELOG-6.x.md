@@ -23,6 +23,11 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
   - <https://stitcher.io/blog/typed-properties-in-php-74>
   - <https://php.watch/versions/7.4/typed-properties>
 
+### Removed
+
+- `Bartlett\CompatInfo\Presentation\Console\ApplicationInterface::VERSION` constant that identify current version of Application
+- deprecated / End Of Life composer plugin `composer/package-versions-deprecated`, and use Composer 2.2 (LTS) equivalent feature
+
 ## [6.0.2] - 2021-12-27
 
 ### Fixed
