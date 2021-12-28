@@ -50,7 +50,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      */
     protected function executeAnalysis(string $dataSource): array
     {
-        $compatibilityQuery = new GetCompatibilityQuery(self::$fixtures . $dataSource, [], false);
+        $compatibilityQuery = new GetCompatibilityQuery(self::$fixtures . $dataSource, [], false, '');
 
         /** @var ContainerBuilder $container */
         $container = (new ContainerFactory())->create();
