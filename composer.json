@@ -66,13 +66,11 @@
             "export DATABASE_URL=sqlite:///${HOME}/.cache/bartlett/compatinfo-db.sqlite"
         ],
         "post-install-cmd": [
-            "Bartlett\\CompatInfo\\ComposerScripts::preparePharMetadata",
             "@setup-database",
             "vendor/bin/doctrine orm:schema-tool:create",
             "vendor/bartlett/php-compatinfo-db/bin/compatinfo-db db:init"
         ],
         "post-update-cmd": [
-            "Bartlett\\CompatInfo\\ComposerScripts::preparePharMetadata",
             "@setup-database"
         ]
     },
