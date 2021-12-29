@@ -204,7 +204,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
         }
 
         if ($input->hasParameterOption('--manifest')) {
-            $phar = new Phar('phpcompatinfo.phar');
+            $phar = new Phar($_SERVER['argv'][0]);
             $manifest = $phar->getMetadata();
             $output->writeln($manifest);
             return 0;

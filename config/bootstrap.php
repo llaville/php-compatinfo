@@ -3,7 +3,7 @@
 $autoloader = 'vendor/autoload.php';
 
 if (Phar::running()) {
-    $phar = new Phar($argv[0]);
+    $phar = new Phar($_SERVER['argv'][0]);
     $possibleAutoloadPaths = [
         'phar://' . $phar->getAlias(),
     ];
