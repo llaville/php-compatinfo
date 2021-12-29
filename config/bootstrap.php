@@ -35,7 +35,9 @@ if ($isAutoloadFound === false) {
     );
 }
 
-use Bartlett\CompatInfoDb\Presentation\Console\ApplicationInterface;
+use Composer\InstalledVersions;
+
+$version = InstalledVersions::getPrettyVersion('bartlett/php-compatinfo');
 
 putenv('APP_ENV=' . ($_SERVER['APP_ENV'] ?? $_ENV['APP_ENV'] ?? 'prod'));
-putenv('APP_PROXY_DIR=' . ($_SERVER['APP_PROXY_DIR'] ?? $_ENV['APP_PROXY_DIR'] ?? '/tmp/bartlett/php-compatinfo-db/' . ApplicationInterface::VERSION . '/proxies'));
+putenv('APP_PROXY_DIR=' . ($_SERVER['APP_PROXY_DIR'] ?? $_ENV['APP_PROXY_DIR'] ?? '/tmp/bartlett/php-compatinfo-db/' . $version . '/proxies'));
