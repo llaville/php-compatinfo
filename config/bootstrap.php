@@ -1,32 +1,38 @@
 <?php
 
-if (\Phar::running()) {
+$autoloader = 'vendor/autoload.php';
+
+if (Phar::running()) {
+    $phar = new Phar($argv[0]);
     $possibleAutoloadPaths = [
-        'phar://phpcompatinfo.phar/vendor/autoload.php'
+        'phar://' . $phar->getAlias(),
     ];
 } else {
     $possibleAutoloadPaths = [
         // local dev repository
-        __DIR__ . '/../vendor/autoload.php',
+        dirname(__DIR__),
         // dependency
-        __DIR__ . '/../../../../vendor/autoload.php',
+        dirname(__DIR__,4),
     ];
 }
 
 $isAutoloadFound = false;
 foreach ($possibleAutoloadPaths as $possibleAutoloadPath) {
-    if (file_exists($possibleAutoloadPath)) {
-        require_once $possibleAutoloadPath;
+    if (file_exists($possibleAutoloadPath . DIRECTORY_SEPARATOR . $autoloader)) {
+        require_once $possibleAutoloadPath . DIRECTORY_SEPARATOR . $autoloader;
         $isAutoloadFound = true;
         break;
     }
 }
 
 if ($isAutoloadFound === false) {
-    throw new RuntimeException(sprintf(
-        'Unable to find "config/bootstrap.php" in "%s" paths.',
-        implode('", "', $possibleAutoloadPaths)
-    ));
+    throw new RuntimeException(
+        sprintf(
+            'Unable to find "%s" in "%s" paths.',
+            $autoloader,
+            implode('", "', $possibleAutoloadPaths)
+        )
+    );
 }
 
 use Bartlett\CompatInfoDb\Presentation\Console\ApplicationInterface;
