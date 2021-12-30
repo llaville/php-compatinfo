@@ -1,7 +1,23 @@
 <?php declare(strict_types=1);
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+use Generator;
 
 /**
  * Closures are available since PHP 5.3
+ *
+ * @author Laurent Laville
+ * @since Release 5.4.0
  *
  * $this in closure allowed since PHP 5.4
  * Anonymous functions may be declared statically since PHP 5.4
@@ -13,18 +29,6 @@
  * @link https://www.php.net/manual/en/functions.anonymous.php#functions.anonymous-functions.static
  *
  * @see tests/Sniffs/ClosureSniffTest
- */
-
-namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
-use Generator;
-
-/**
- * @since Release 5.4.0
  */
 final class ClosureSniff extends SniffAbstract
 {

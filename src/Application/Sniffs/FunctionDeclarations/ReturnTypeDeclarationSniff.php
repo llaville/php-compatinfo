@@ -1,14 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Return Type Declarations since PHP 7.0.0 alpha1
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://wiki.php.net/rfc/return_types
- * @link https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.return-type-declarations
- *
- * @see tests/Sniffs/ReturnTypeDeclarationSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -18,7 +14,14 @@ use PhpParser\Node;
 use Generator;
 
 /**
+ * Return Type Declarations since PHP 7.0.0 alpha1
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://wiki.php.net/rfc/return_types
+ * @link https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.return-type-declarations
+ * @see tests/Sniffs/ReturnTypeDeclarationSniffTest
  */
 final class ReturnTypeDeclarationSniff extends SniffAbstract
 {

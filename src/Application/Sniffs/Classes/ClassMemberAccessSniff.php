@@ -1,16 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Class member access
- * - on instantiation (since PHP 5.4)
- * - on cloning (since PHP 7.0)
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://wiki.php.net/rfc/instance-method-call
- * @link https://www.php.net/manual/en/migration54.new-features.php
- *
- * @see tests/Sniffs/ClassMemberAccessSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -20,7 +14,16 @@ use PhpParser\Node;
 use Generator;
 
 /**
+ * Class member access
+ * - on instantiation (since PHP 5.4)
+ * - on cloning (since PHP 7.0)
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://wiki.php.net/rfc/instance-method-call
+ * @link https://www.php.net/manual/en/migration54.new-features.php
+ * @see tests/Sniffs/ClassMemberAccessSniffTest
  */
 final class ClassMemberAccessSniff extends SniffAbstract
 {

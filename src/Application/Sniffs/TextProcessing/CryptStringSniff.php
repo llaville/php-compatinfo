@@ -1,13 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Specific text processing with PHP crypt function.
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://www.php.net/manual/en/function.crypt.php
- *
- * @see tests/Sniffs/CryptStringSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\TextProcessing;
 
 use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
@@ -21,7 +18,13 @@ use function sprintf;
 use function substr;
 
 /**
+ * Specific text processing with PHP crypt function.
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://www.php.net/manual/en/function.crypt.php
+ * @see tests/Sniffs/CryptStringSniffTest
  */
 final class CryptStringSniff extends SniffAbstract
 {

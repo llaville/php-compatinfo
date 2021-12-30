@@ -1,17 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Collect and analyse metrics of parsing results.
+ * This file is part of the PHP_CompatInfo package.
  *
- * PHP version 7
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @author     Laurent Laville <pear@laurent-laville.org>
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link       http://bartlett.laurent-laville.org/php-compatinfo/
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Query\Analyser\Compatibility;
 
 use Bartlett\CompatInfo\Application\DataCollector\ErrorHandler\Collecting;
@@ -25,6 +18,9 @@ use RuntimeException;
 use function realpath;
 
 /**
+ * Collect and analyse metrics of parsing results.
+ *
+ * @author Laurent Laville
  * @since Release 6.0.0
  */
 final class GetCompatibilityHandler implements QueryHandlerInterface

@@ -1,22 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Parameters Type Declaration
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://www.php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration
- * @link https://wiki.php.net/rfc/callable
- * @link https://wiki.php.net/rfc/scalar_type_hints_v5
- * @link https://wiki.php.net/rfc/iterable
- * @link https://wiki.php.net/rfc/object-typehint
- * @link https://madewithlove.com/self-and-parent-type-hints/
- *
- * - Nullable Type Declarations since PHP 7.1
- * @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types
- *
- * @see tests/Sniffs/ParamTypeDeclarationSniffTest
- * @since Class available since Release 5.4.0
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
 
 use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
@@ -30,7 +18,20 @@ use function str_replace;
 use function strtolower;
 
 /**
- * @since Release 5.4.0
+ * Parameters Type Declaration
+ *
+ * @author Laurent Laville
+ * @since Class available since Release 5.4.0
+ *
+ * @link https://www.php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration
+ * @link https://wiki.php.net/rfc/callable
+ * @link https://wiki.php.net/rfc/scalar_type_hints_v5
+ * @link https://wiki.php.net/rfc/iterable
+ * @link https://wiki.php.net/rfc/object-typehint
+ * @link https://madewithlove.com/self-and-parent-type-hints/
+ * - Nullable Type Declarations since PHP 7.1
+ * @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types
+ * @see tests/Sniffs/ParamTypeDeclarationSniffTest
  */
 final class ParamTypeDeclarationSniff extends SniffAbstract
 {

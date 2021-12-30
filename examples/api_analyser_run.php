@@ -1,15 +1,20 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Examples of Compatibility Analyser's run.
+ * This file is part of the PHP_CompatInfo package.
  *
- * @category PHP
- * @package  PHP_CompatInfo
- * @author   Laurent Laville <pear@laurent-laville.org>
- * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @since    Example available since Release 4.0.0-alpha3
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
  */
 
 require_once dirname(__DIR__) . '/config/bootstrap.php';
+
+/**
+ * Examples of Compatibility Analyser's run.
+ *
+ * @author Laurent Laville
+ * @since  Release 4.0.0-alpha3
+ */
 
 use Bartlett\CompatInfo\Application\Profiler\Profile;
 use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;

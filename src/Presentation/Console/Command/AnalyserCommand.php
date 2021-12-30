@@ -1,9 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Analyse a data source to find out requirements.
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Presentation\Console\Command;
 
 use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;
@@ -17,6 +18,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 
 /**
+ * Analyse a data source to find out requirements.
+ *
+ * @author Laurent Laville
  * @since Release 6.0.0
  */
 final class AnalyserCommand extends AbstractCommand implements CommandInterface

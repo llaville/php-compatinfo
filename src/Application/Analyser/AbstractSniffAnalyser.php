@@ -1,14 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Base code for all analysers that used sniffs.
+ * This file is part of the PHP_CompatInfo package.
  *
- * @category PHP
- * @package  PHP_CompatInfo
- * @author   Laurent Laville <pear@laurent-laville.org>
- * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Analyser;
 
 use Bartlett\CompatInfo\Application\Collection\SniffCollection;
@@ -26,6 +22,9 @@ use PhpParser\Node;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
+ * Base code for all analysers that used sniffs.
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
  */
 abstract class AbstractSniffAnalyser implements SniffAnalyserInterface

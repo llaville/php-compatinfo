@@ -1,13 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Report use of magic methods
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://www.php.net/manual/en/language.oop5.magic.php
- *
- * @see tests/Sniffs/MagicMethodsSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -18,7 +15,13 @@ use Generator;
 use function implode;
 
 /**
+ * Report use of magic methods
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://www.php.net/manual/en/language.oop5.magic.php
+ * @see tests/Sniffs/MagicMethodsSniffTest
  */
 final class MagicMethodsSniff extends SniffAbstract
 {

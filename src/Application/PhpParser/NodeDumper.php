@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * A bridge to original PhpParser\NodeDumper
- * that allows to dump attributes
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\PhpParser;
 
 use PhpParser\Comment;
@@ -15,6 +15,10 @@ use PhpParser\Node\Stmt\Use_;
 use PhpParser\Node\Stmt\UseUse;
 
 /**
+ * A bridge to original PhpParser\NodeDumper
+ * that allows to dump attributes
+ *
+ * @author Laurent Laville
  * @since Release 6.0.0
  */
 final class NodeDumper extends \PhpParser\NodeDumper

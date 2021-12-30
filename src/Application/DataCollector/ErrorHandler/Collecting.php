@@ -1,9 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Error handler that collects all events/errors into an array.
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\DataCollector\ErrorHandler;
 
 use Bartlett\CompatInfo\Application\DataCollector\ErrorHandler;
@@ -13,7 +14,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use PhpParser\Error;
 
 /**
+ * Error handler that collects all events/errors into an array.
+ *
  * @phpstan-extends ArrayCollection<int, Error>
+ * @author Laurent Laville
  * @since 5.4.0, 6.0.0
  */
 final class Collecting extends ArrayCollection implements ErrorHandler

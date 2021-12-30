@@ -1,17 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Event dispatcher.
+ * This file is part of the PHP_CompatInfo package.
  *
- * PHP version 7
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @author     Laurent Laville <pear@laurent-laville.org>
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link       http://bartlett.laurent-laville.org/php-compatinfo/
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Event\Dispatcher;
 
 use Bartlett\CompatInfo\Application\Event\AfterAnalysisEvent;
@@ -45,6 +38,9 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
+ * Event dispatcher.
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0, 6.0.0
  */
 final class EventDispatcher extends SymfonyEventDispatcher

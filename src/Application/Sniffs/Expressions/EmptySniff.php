@@ -1,15 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Empty expressions
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://wiki.php.net/rfc/empty_isset_exprs
- * @link https://www.php.net/manual/en/migration55.new-features.php#migration55.new-features.empty
- * @link https://www.php.net/manual/en/function.empty.php
- *
- * @see tests/Sniffs/EmptySniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\Expressions;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -19,7 +14,16 @@ use PhpParser\Node;
 use Generator;
 
 /**
+ * Empty expressions
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://wiki.php.net/rfc/empty_isset_exprs
+ * @link https://www.php.net/manual/en/migration55.new-features.php#migration55.new-features.empty
+ * @link https://www.php.net/manual/en/function.empty.php
+ *
+ * @see tests/Sniffs/EmptySniffTest
  */
 final class EmptySniff extends SniffAbstract
 {

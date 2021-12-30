@@ -1,16 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * The CompatInfo CLI version.
+ * This file is part of the PHP_CompatInfo package.
  *
- * PHP version 7
- *
- * @category PHP
- * @package  PHP_CompatInfo
- * @author   Laurent Laville <pear@laurent-laville.org>
- * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Presentation\Console;
 
 use Composer\InstalledVersions;
@@ -35,6 +29,9 @@ use function sprintf;
 use function substr;
 
 /**
+ * The CompatInfo CLI version.
+ *
+ * @author Laurent Laville
  * @since Release 4.0.0-alpha3+1, 6.0.0
  */
 class Application extends SymfonyApplication implements ApplicationInterface

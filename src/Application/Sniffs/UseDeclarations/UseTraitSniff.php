@@ -1,13 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Use trait is PHP 5.4 or greater
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://www.php.net/manual/en/language.oop5.traits.php
- *
- * @see tests/Sniffs/UseTraitSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\UseDeclarations;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -17,7 +14,13 @@ use PhpParser\Node;
 use Generator;
 
 /**
+ * Use trait is PHP 5.4 or greater
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://www.php.net/manual/en/language.oop5.traits.php
+ * @see tests/Sniffs/UseTraitSniffTest
  */
 final class UseTraitSniff extends SniffAbstract
 {

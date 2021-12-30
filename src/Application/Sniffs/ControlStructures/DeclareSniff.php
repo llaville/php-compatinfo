@@ -1,14 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Declare control structures
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://www.php.net/manual/en/control-structures.declare.php
- * @link https://wiki.php.net/rfc/scalar_type_hints_v5#strict_types_declare_directive
- *
- * @see tests/Sniffs/DeclareSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\ControlStructures;
 
 use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
@@ -21,7 +17,14 @@ use function sprintf;
 use function str_replace;
 
 /**
+ * Declare control structures
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://www.php.net/manual/en/control-structures.declare.php
+ * @link https://wiki.php.net/rfc/scalar_type_hints_v5#strict_types_declare_directive
+ * @see tests/Sniffs/DeclareSniffTest
  */
 final class DeclareSniff extends SniffAbstract
 {

@@ -1,9 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Collection of sniffs to proceed for an analyser
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Collection;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffInterface;
@@ -11,8 +12,11 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffInterface;
 use Traversable;
 
 /**
+ * Collection of sniffs to proceed for an analyser
+ *
  * @phpstan-template T of \Bartlett\CompatInfo\Application\Sniffs\SniffInterface
  * @phpstan-implements SniffCollectionInterface<T>
+ * @author Laurent Laville
  * @since Release 5.4.0
  */
 class SniffCollection implements SniffCollectionInterface

@@ -1,13 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Combined Comparison (Spaceship) Operator since PHP 7.0.0 alpha1
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://wiki.php.net/rfc/combined-comparison-operator
- *
- * @see tests/Sniffs/CombinedComparisonOperatorSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\Operators;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -17,7 +14,13 @@ use PhpParser\Node;
 use Generator;
 
 /**
+ * Combined Comparison (Spaceship) Operator since PHP 7.0.0 alpha1
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://wiki.php.net/rfc/combined-comparison-operator
+ * @see tests/Sniffs/CombinedComparisonOperatorSniffTest
  */
 final class CombinedComparisonOperatorSniff extends SniffAbstract
 {

@@ -1,13 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * The Foo\Bar::class syntax has been introduced in PHP 5.5
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://wiki.php.net/rfc/class_name_literal_on_object
- *
- * @see tests/Sniffs/MagicClassConstantSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\Constants;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -17,7 +14,13 @@ use Generator;
 use function strcasecmp;
 
 /**
+ * The Foo\Bar::class syntax has been introduced in PHP 5.5
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://wiki.php.net/rfc/class_name_literal_on_object
+ * @see tests/Sniffs/MagicClassConstantSniffTest
  */
 final class MagicClassConstantSniff extends SniffAbstract
 {

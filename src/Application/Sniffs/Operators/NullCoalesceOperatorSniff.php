@@ -1,14 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Null Coalescing Operator (??) available since PHP 7.0.0alpha1
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://wiki.php.net/rfc/isset_ternary
- * @link https://www.php.net/manual/en/language.operators.comparison.php#language.operators.comparison.coalesce
- *
- * @see tests/Sniffs/NullCoalesceOperatorSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\Operators;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -18,7 +14,14 @@ use PhpParser\Node;
 use Generator;
 
 /**
+ * Null Coalescing Operator (??) available since PHP 7.0.0alpha1
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://wiki.php.net/rfc/isset_ternary
+ * @link https://www.php.net/manual/en/language.operators.comparison.php#language.operators.comparison.coalesce
+ * @see tests/Sniffs/NullCoalesceOperatorSniffTest
  */
 final class NullCoalesceOperatorSniff extends SniffAbstract
 {

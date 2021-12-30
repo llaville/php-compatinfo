@@ -1,13 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Goto operator was added in PHP 5.3
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://www.php.net/manual/en/control-structures.goto.php
- *
- * @see tests/Sniffs/GotoSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\ControlStructures;
 
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
@@ -17,7 +14,13 @@ use PhpParser\Node;
 use Generator;
 
 /**
+ * Goto operator was added in PHP 5.3
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://www.php.net/manual/en/control-structures.goto.php
+ * @see tests/Sniffs/GotoSniffTest
  */
 final class GotoSniff extends SniffAbstract
 {

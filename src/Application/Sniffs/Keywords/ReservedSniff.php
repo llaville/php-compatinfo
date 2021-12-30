@@ -1,15 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * You cannot use any of the following words to name classes, interfaces or traits.
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://www.php.net/manual/en/reserved.other-reserved-words.php
- * @link https://www.php.net/manual/en/migration70.incompatible.php#migration70.incompatible.other.classes
- * @link https://wiki.php.net/rfc/reserve_more_types_in_php_7
- *
- * @see tests/Sniffs/KeywordReservedSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\Keywords;
 
 use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
@@ -20,7 +15,15 @@ use PhpParser\Node;
 use Generator;
 
 /**
+ * You cannot use any of the following words to name classes, interfaces or traits.
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://www.php.net/manual/en/reserved.other-reserved-words.php
+ * @link https://www.php.net/manual/en/migration70.incompatible.php#migration70.incompatible.other.classes
+ * @link https://wiki.php.net/rfc/reserve_more_types_in_php_7
+ * @see tests/Sniffs/KeywordReservedSniffTest
  */
 final class ReservedSniff extends SniffAbstract
 {

@@ -1,14 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Base code for each sniff used to detect PHP features.
+ * This file is part of the PHP_CompatInfo package.
  *
- * @category PHP
- * @package  PHP_CompatInfo
- * @author   Laurent Laville <pear@laurent-laville.org>
- * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs;
 
 use Bartlett\CompatInfo\Application\Analyser\SniffVisitorInterface;
@@ -32,6 +28,9 @@ use function strrchr;
 use function substr;
 
 /**
+ * Base code for each sniff used to detect PHP features.
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
  */
 abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterface

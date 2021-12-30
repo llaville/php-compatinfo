@@ -1,13 +1,19 @@
 <?php declare(strict_types=1);
-
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
 /**
  * Combined Comparison (Spaceship) Operator since PHP 7.0.0 alpha1
  *
- * @link https://wiki.php.net/rfc/combined-comparison-operator
+ * @author Laurent Laville
+ * @since  Class available since Release 5.4.0
  *
- * @since Class available since Release 5.4.0
+ * @link https://wiki.php.net/rfc/combined-comparison-operator
  */
 final class CombinedComparisonOperatorSniffTest extends SniffTestCase
 {

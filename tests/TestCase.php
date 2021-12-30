@@ -1,11 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Common Class TestCase
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://phpunit.readthedocs.io/en/9.3/writing-tests-for-phpunit.html
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Tests;
 
 use Bartlett\CompatInfo\Application\Analyser\CompatibilityAnalyser;
@@ -19,7 +18,11 @@ use Exception;
 use function reset;
 
 /**
+ * Common Class TestCase
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0, 6.0.0
+ * @link https://phpunit.readthedocs.io/en/9.3/writing-tests-for-phpunit.html
  */
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
