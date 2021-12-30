@@ -29,6 +29,10 @@ final class Graph
         /** @var GraphVizGenerator $generator */
         $generator = $generatorFactory->getGenerator();
 
+        $color1 = 'burlywood3';     // Application layer
+        $color2 = 'chartreuse3';    // Infrastructure layer
+        $color3 = 'chocolate3';     // Presentation layer
+
         $renderer = new ClassDiagramRenderer();
         $options = [
             'show_private' => false,
@@ -36,7 +40,46 @@ final class Graph
             'node.fillcolor' => '#FEFECE',
             'node.style' => 'filled',
             'graph.rankdir' => 'LR',
-            'cluster.Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor.graph.bgcolor' => 'lightblue',
+            'cluster.Bartlett\\CompatInfo\\Application\\Analyser.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Collection.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\DataCollector.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\DataCollector\\Normalizer.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Event.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Event\\Dispatcher.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Extension.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Extension\\Reporter.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Logger.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\PhpParser.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\PhpParser\\Node.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\PhpParser\\Node\\Name.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Profiler.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Query.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Query\\Analyser.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Query\\Analyser\\Compatibility.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Query\\Diagnose.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Service.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\Arrays.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\Classes.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\Constants.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\Expression.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\Generators.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\Keywords.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\Numbers.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\Operators.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\TextProcessing.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Application\\Sniffs\\UseDeclarations.graph.bgcolor' => $color1,
+            'cluster.Bartlett\\CompatInfo\\Infrastructure\\Bus\\Query.graph.bgcolor' => $color2,
+            'cluster.Bartlett\\CompatInfo\\Infrastructure\\Framework\\Symfony.graph.bgcolor' => $color2,
+            'cluster.Bartlett\\CompatInfo\\Infrastructure\\Framework\\Symfony\\DependencyInjection.graph.bgcolor' => $color2,
+            'cluster.Bartlett\\CompatInfo\\Presentation\\Console.graph.bgcolor' => $color3,
+            'cluster.Bartlett\\CompatInfo\\Presentation\\Console\\Command.graph.bgcolor' => $color3,
+            'cluster.Bartlett\\CompatInfo\\Presentation\\Console\\Input.graph.bgcolor' => $color3,
+            'cluster.Bartlett\\CompatInfo\\Presentation\\Console\\Output.graph.bgcolor' => $color3,
         ];
 
         try {
@@ -58,5 +101,18 @@ final class Graph
         $graph = $renderer->getGraph();
         $target = $generator->createImageFile($graph, $cmdFormat);
         echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
+    }
+
+    /**
+     * @param string[] $paths
+     */
+    public static function from(string $dataSource, array $paths, string $basename, ?string $target)
+    {
+        foreach ($paths as $path) {
+            $finder = new Finder();
+            $finder->in($dataSource . '/' . $path)->name('*.php');
+            $self = new self($finder, $basename . '_' . strtolower($path), $target);
+            $self();
+        }
     }
 }

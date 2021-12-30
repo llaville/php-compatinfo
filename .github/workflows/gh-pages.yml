@@ -58,7 +58,9 @@ jobs:
             -   # Update diagrams used in documentation
                 name: Update Diagrams
                 run: |
-                    php resources/graph-uml/php-parser.php docs/01_Components/01_PHP-Parser
+                    php resources/graph-uml/application.php docs/99_Architecture/application
+                    php resources/graph-uml/infrastructure.php docs/99_Architecture/infrastructure
+                    php resources/graph-uml/presentation.php docs/99_Architecture/presentation
 
             -   # Setup Python version
                 name: Set up Python runtime
