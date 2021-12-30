@@ -69,8 +69,7 @@ Configuration file (`box.json.dist`) is provided with each release of phpCompatI
 
 **CAUTION** If you want to use the `--manifest` option of phpCompatInfo phar version, you MUST use
 [my fork](https://github.com/llaville/box) (branch `build-metadata`) of Box project,
-and apply the following patch.
-All details are given in feature report since <https://github.com/box-project/box/issues/576#issuecomment-1002519231>
+or apply the following patch to the offical [Box-project](https://github.com/box-project/box).
 
 ```text
 diff --git a/src/Console/Command/Compile.php b/src/Console/Command/Compile.php
@@ -99,3 +98,5 @@ index 837466b..787058a 100644
              }
 
 ```
+
+All details are given in feature report since <https://github.com/box-project/box/issues/576#issuecomment-1002519231>
