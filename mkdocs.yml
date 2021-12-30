@@ -36,13 +36,18 @@ nav:
                 - "Data Collectors": 01_Components/02_Profiler/Collectors.md
           - "Sniffs": 01_Components/03_Sniffs/Features.md
           - "Extensions": 01_Components/04_Extensions/Hooks.md
-          - "Configurations":
-                - "About": 02_Configs/README.md
-                - "Default": 02_Configs/Default.md
-                - "None": 02_Configs/None.md
-          - "Conditional Code":
-                - "Introduction": 03_Conditional_Code/1_Introduction.md
-                - "Indirect Call": 03_Conditional_Code/2_Indirect_Call.md
-                - "Multiple Signature": 03_Conditional_Code/3_Multiple_Signature.md
-                - "Some Limitation": 03_Conditional_Code/100_Limitation.md
-          - "Exclude Directories": 04_Exclude_Folders/README.md
+          - "Output format": 01_Components/04_Extensions/Reporter.md
+    - "Configurations":
+          - "About": 02_Configs/README.md
+          - "Default": 02_Configs/Default.md
+          - "None": 02_Configs/None.md
+    - "Conditional Code":
+          - "Introduction": 03_Conditional_Code/1_Introduction.md
+          - "Indirect Call": 03_Conditional_Code/2_Indirect_Call.md
+          - "Multiple Signature": 03_Conditional_Code/3_Multiple_Signature.md
+          - "Some Limitation": 03_Conditional_Code/100_Limitation.md
+    - "Exclude Directories": 04_Exclude_Folders/README.md
+    - "Architecture":
+          - "Application": 99_Architecture/application/README.md
+          - "Infrastructure": 99_Architecture/infrastructure/README.md
+          - "Presentation": 99_Architecture/presentation/README.md
