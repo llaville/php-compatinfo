@@ -1,7 +1,8 @@
 <!-- markdownlint-disable MD013 -->
 # Output format
 
-**Since version 6.1.0**, PHP CompatInfo supports different output formats through various formatters.
+[Since version 6.1.0](https://github.com/llaville/php-compatinfo/issues/312),
+PHP CompatInfo supports different output formats through various formatters.
 
 You can pass the following keywords to the `--output` CLI option of the `analyser:run` command
 in order to affect the output:
@@ -9,6 +10,7 @@ in order to affect the output:
 - `console`: default table format for human reading.
 - `dump`: raw format (`var_dump`) for debugging purpose only.
 - `json`: creates minified json file format output without whitespaces.
+- `sarif`: creates a **S**tatic **A**nalysis **R**esults **I**nterchange **F**ormat to share results with other tools or applications
 
 You can also implement your own custom formatter by implementing
 the `Bartlett\CompatInfo\Application\Extension\Reporter\FormatterInterface` interface in a new class.
