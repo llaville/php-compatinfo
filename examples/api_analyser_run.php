@@ -33,7 +33,7 @@ $queryBus = $container->get(QueryBusInterface::class);
 $dataSource = dirname(__DIR__) . '/src';
 
 // equivalent to CLI command `phpcompatinfo analyser:run ../src`
-$compatibilityQuery = new GetCompatibilityQuery($dataSource, [], false);
+$compatibilityQuery = new GetCompatibilityQuery($dataSource, [], false, '');
 try {
     /** @var Profile $profile */
     $profile = $queryBus->query($compatibilityQuery);
