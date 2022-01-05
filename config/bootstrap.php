@@ -45,7 +45,7 @@ if ($isAutoloadFound === false) {
 
 use Composer\InstalledVersions;
 
-$version = InstalledVersions::getPrettyVersion('bartlett/php-compatinfo');
+$version = InstalledVersions::getPrettyVersion('bartlett/php-compatinfo-db');
 
 putenv('APP_ENV=' . ($_SERVER['APP_ENV'] ?? $_ENV['APP_ENV'] ?? 'prod'));
 putenv('APP_PROXY_DIR=' . ($_SERVER['APP_PROXY_DIR'] ?? $_ENV['APP_PROXY_DIR'] ?? '/tmp/bartlett/php-compatinfo-db/' . $version . '/proxies'));
