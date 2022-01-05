@@ -11,9 +11,6 @@ vendor/
 ###### PHPUnit ######
 .phpunit.result.cache
 
-###### Box ######
-.box.metadata.cache
-
 ###### Mega-Linter ######
 report/
 
