@@ -27,6 +27,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - `Bartlett\CompatInfo\Presentation\Console\ApplicationInterface::VERSION` constant that identify current version of Application
 - deprecated / End Of Life composer plugin `composer/package-versions-deprecated`, and use Composer 2.2 (LTS) equivalent feature
+- `symfony/phpunit-bridge` dependency (not used)
 
 ## [6.0.3] - 2022-01-05
 

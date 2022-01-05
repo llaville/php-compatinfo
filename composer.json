@@ -31,8 +31,7 @@
     },
     "require-dev": {
         "bartlett/graph-uml": "^1.2",
-        "composer/composer": "^2.0",
-        "symfony/phpunit-bridge": "^5.1"
+        "composer/composer": "^2.0"
     },
     "authors": [
         {
