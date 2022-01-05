@@ -28,6 +28,12 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - `Bartlett\CompatInfo\Presentation\Console\ApplicationInterface::VERSION` constant that identify current version of Application
 - deprecated / End Of Life composer plugin `composer/package-versions-deprecated`, and use Composer 2.2 (LTS) equivalent feature
 
+## [6.0.3] - 2022-01-05
+
+### Fixed
+
+- [incompatibility with PHP CompatInfoDb 3.17](https://github.com/llaville/php-compatinfo-db/issues/105)
+
 ## [6.0.2] - 2021-12-27
 
 ### Fixed
@@ -60,7 +66,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.0.2...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.0.3...HEAD
+[6.0.3]: https://github.com/llaville/php-compat-info/compare/6.0.2...6.0.3
 [6.0.2]: https://github.com/llaville/php-compat-info/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/llaville/php-compat-info/compare/6.0.0...6.0.1
 [6.0.0]: https://github.com/llaville/php-compat-info/compare/5.5.5...6.0.0
