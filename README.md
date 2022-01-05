@@ -2,6 +2,7 @@
 
 |  Stable v5.5.x  |  Stable v6.0.x  |
 |:---------------:|:---------------:|
+|                 | [![Branch Master](https://img.shields.io/badge/branch-master-orange)](https://github.com/llaville/php-compatinfo) |
 | [![Latest Stable Version](https://img.shields.io/badge/packagist-v5.5.5-blue)](https://packagist.org/packages/bartlett/php-compatinfo)      | [![Stable Version](https://img.shields.io/packagist/v/bartlett/php-compatinfo)](https://packagist.org/packages/bartlett/php-compatinfo) |
 | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/5.5.5)](https://www.php.net/supported-versions.php) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo)](https://www.php.net/supported-versions.php)   |
 | [![License](https://img.shields.io/packagist/l/bartlett/php-compatinfo)](https://github.com/llaville/php-compatinfo/blob/master/LICENSE)    | [![License](https://img.shields.io/packagist/l/bartlett/php-compatinfo)](https://github.com/llaville/php-compatinfo/blob/6.0/LICENSE)   |
