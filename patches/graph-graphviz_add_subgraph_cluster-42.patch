@@ -1,11 +1,13 @@
 diff --git a/src/GraphViz.php b/src/GraphViz.php
-index 9d6d8a0..aa1c85f 100644
+index fcddeb0..f97fcdb 100644
 --- a/src/GraphViz.php
 +++ b/src/GraphViz.php
-@@ -281,12 +281,28 @@ class GraphViz
+@@ -273,13 +273,29 @@ class GraphViz
+         }
 
          // only cluster vertices into groups if there are at least 2 different groups
-         if (count($groups) > 1) {
+-        if (count($groups) > 1) {
++        if (count($groups) > 0) {
 +            // add subgraph cluster attributes
 +            $clusters = array(
 +                'graph' => 'graphviz.cluster.%s.graph.',
@@ -33,12 +35,3 @@ index 9d6d8a0..aa1c85f 100644
                  foreach ($vertices as $vertex) {
                      $vid = $vids[\spl_object_hash($vertex)];
                      $layout = $this->getLayoutVertex($vertex, $vid);
-@@ -320,7 +336,7 @@ class GraphViz
-
-         // add all edges as directed edges
-         foreach ($graph->getEdges() as $currentEdge) {
--            $both = $currentEdge->getVertices()->getVector();
-+            $both = $currentEdge->getVertices();
-             $currentStartVertex = $both[0];
-             $currentTargetVertex = $both[1];
-
