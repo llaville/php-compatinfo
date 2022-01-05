@@ -81,6 +81,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
+        "platform": {
+            "php": "7.4.0"
+        },
         "sort-packages": true,
         "optimize-autoloader": true,
         "allow-plugins": {
