@@ -7,6 +7,12 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [6.0.3] - 2022-01-05
+
+### Fixed
+
+- [incompatibility with PHP CompatInfoDb 3.17](https://github.com/llaville/php-compatinfo-db/issues/105)
+
 ## [6.0.2] - 2021-12-27
 
 ### Fixed
