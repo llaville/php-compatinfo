@@ -7,6 +7,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [6.1.0] - 2022-01-06
+
 ### Added
 
 - improves `output` option by introducing Reporter extension (see [documentation](docs/01_Components/04_Extensions/Reporter.md))
@@ -67,7 +69,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.0.3...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.1.0...HEAD
+[6.1.0]: https://github.com/llaville/php-compat-info/compare/6.0.3...6.1.0
 [6.0.3]: https://github.com/llaville/php-compat-info/compare/6.0.2...6.0.3
 [6.0.2]: https://github.com/llaville/php-compat-info/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/llaville/php-compat-info/compare/6.0.0...6.0.1

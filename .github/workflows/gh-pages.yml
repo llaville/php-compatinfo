@@ -78,7 +78,6 @@ jobs:
 
             -   # Deploy Documentation
                 name: Deploy Docs
-                if: ${{ github.ref == 'refs/heads/6.1' }}
                 uses: peaceiris/actions-gh-pages@v3
                 with:
                     github_token: ${{ secrets.GITHUB_TOKEN }}
