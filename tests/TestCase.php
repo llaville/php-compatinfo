@@ -1,11 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Common Class TestCase
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://phpunit.readthedocs.io/en/9.3/writing-tests-for-phpunit.html
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Tests;
 
 use Bartlett\CompatInfo\Application\Analyser\CompatibilityAnalyser;
@@ -19,12 +18,16 @@ use Exception;
 use function reset;
 
 /**
+ * Common Class TestCase
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0, 6.0.0
+ * @link https://phpunit.readthedocs.io/en/9.3/writing-tests-for-phpunit.html
  */
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
-    protected static $fixtures;
-    protected static $analyserId;
+    protected static string $fixtures;
+    protected static string $analyserId;
 
     /**
      * Sets up the shared fixture.
@@ -50,7 +53,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      */
     protected function executeAnalysis(string $dataSource): array
     {
-        $compatibilityQuery = new GetCompatibilityQuery(self::$fixtures . $dataSource, [], false);
+        $compatibilityQuery = new GetCompatibilityQuery(self::$fixtures . $dataSource, [], false, '');
 
         /** @var ContainerBuilder $container */
         $container = (new ContainerFactory())->create();

@@ -1,16 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Default PSR3 compatible logger.
+ * This file is part of the PHP_CompatInfo package.
  *
- * PHP version 7
- *
- * @category PHP
- * @package  PHP_CompatInfo
- * @author   Laurent Laville <pear@laurent-laville.org>
- * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Logger;
 
 use Psr\Log\AbstractLogger;
@@ -33,12 +27,15 @@ use function strtoupper;
 use function strtr;
 
 /**
+ * Default PSR3 compatible logger.
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0, 6.0.0
  */
 class DefaultLogger extends AbstractLogger
 {
     /** @var string[]  */
-    private static $levels = [
+    private static array $levels = [
         100 => 'debug',
         200 => 'info',
         250 => 'notice',

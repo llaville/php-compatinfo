@@ -1,32 +1,24 @@
 <?php declare(strict_types=1);
-
 /**
- * Unit tests for PHP_CompatInfo package, keyword reserved sniff
+ * This file is part of the PHP_CompatInfo package.
  *
- * PHP version 7
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @subpackage Tests
- * @author     Laurent Laville <pear@laurent-laville.org>
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @since      Class available since Release 5.4.0
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
 use Exception;
 
 /**
- * Keywords reserved.
+ * Unit tests for PHP_CompatInfo package, keyword reserved sniff
+ *
+ * @author Laurent Laville
+ * @since  Class available since Release 5.4.0
  *
  * @link http://php.net/manual/en/reserved.keywords.php
  * @link https://www.php.net/manual/en/reserved.other-reserved-words.php
  * @link https://wiki.php.net/rfc/reserve_more_types_in_php_7
  * @link https://wiki.php.net/rfc/reserve_even_more_types_in_php_7
- *
- * @since Release 5.4.0
- *
  * @link https://github.com/llaville/php-compat-info/issues/186
  */
 final class KeywordReservedSniffTest extends SniffTestCase

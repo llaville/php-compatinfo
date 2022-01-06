@@ -10,16 +10,56 @@ on:
     pull_request:
     workflow_dispatch:
 
+concurrency:
+    group: ${{ github.ref }}-${{ github.workflow }}
+    cancel-in-progress: true
+
 jobs:
     deploy:
         name: Deploy to GH Pages
-        runs-on: ubuntu-latest
+
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+                os:
+                    - ubuntu-latest
+                php:
+                    - 7.4
+
         steps:
             -   # Git Checkout
                 name: Checkout Code
                 uses: actions/checkout@v2
                 with:
                     persist-credentials: false
+
+            -   # Setup Libraries
+                name: Setup Libraries
+                run: |
+                    sudo apt-get update
+                    sudo apt-fast install graphviz -y
+
+            -   # Setup PHP runtime
+                name: Setup PHP runtime
+                uses: "shivammathur/setup-php@v2"
+                with:
+                    php-version: ${{ matrix.php }}
+
+            -   # Install Composer dependencies
+                name: Install Composer dependencies
+                uses: "ramsey/composer-install@v2"
+                with:
+                    dependency-versions: "highest"
+                    composer-options: "--prefer-dist --no-scripts"
+
+            -   # Update diagrams used in documentation
+                name: Update Diagrams
+                run: |
+                    php resources/graph-uml/application.php docs/99_Architecture/application
+                    php resources/graph-uml/infrastructure.php docs/99_Architecture/infrastructure
+                    php resources/graph-uml/presentation.php docs/99_Architecture/presentation
 
             -   # Setup Python version
                 name: Set up Python runtime
@@ -37,12 +77,12 @@ jobs:
 
             -   # Deploy Documentation
                 name: Deploy Docs
-                if: ${{ github.ref == 'refs/heads/master' }}
                 uses: peaceiris/actions-gh-pages@v3
                 with:
                     github_token: ${{ secrets.GITHUB_TOKEN }}
                     publish_dir: ./site
+                    destination_dir: 6.x
                     full_commit_message: "Deployed ${{ github.sha }} with MkDocs"
-                    force_orphan: true
+                    force_orphan: false
                     user_name: 'github-actions'
                     user_email: 'github-actions@users.noreply.github.com'

@@ -1,11 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Base class of each DataCollector.
+ * This file is part of the PHP_CompatInfo package.
  *
- * Children of this class must store the collected data in the data property.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\DataCollector;
 
 use Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\NodeVisitor;
@@ -16,24 +15,23 @@ use PhpParser\NodeTraverser;
 use Symfony\Component\Finder\SplFileInfo;
 
 /**
+ * Base class of each DataCollector.
+ *
+ * Children of this class must store the collected data in the data property.
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
  */
 abstract class DataCollector implements DataCollectorInterface
 {
     /** @var array<string, mixed> */
-    protected $data = [];
-
-    /** @var string */
-    protected $name;
-
+    protected array $data = [];
+    protected string $name;
     /** @var string[] */
-    protected $files = [];
-
+    protected array $files = [];
     /** @var string[] */
-    protected $errors = [];
-
-    /** @var NodeVisitor */
-    protected $nodeVisitor;
+    protected array $errors = [];
+    protected NodeVisitor $nodeVisitor;
 
     use VersionUpdater;
 

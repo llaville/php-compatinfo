@@ -1,5 +1,10 @@
 <?php declare(strict_types=1);
-
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Bartlett\CompatInfo\Application\PhpParser;
 
 use Bartlett\CompatInfo\Application\Analyser\SniffAnalyserInterface;
@@ -28,26 +33,20 @@ use Exception;
 use function file_get_contents;
 
 /**
+ * @author Laurent Laville
  * @since Release 5.4.0
  */
 final class Parser
 {
-    /** @var EventDispatcherInterface  */
-    private $dispatcher;
-    /** @var SniffAnalyserInterface  */
-    private $analyser;
+    private EventDispatcherInterface $dispatcher;
+    private SniffAnalyserInterface $analyser;
     /** @var ReferenceCollectionInterface<string, array>  */
     private $references;
-    /** @var ErrorHandler */
-    private $errorHandler;
-    /** @var \PhpParser\Parser */
-    private $parser;
-    /** @var Lexer */
-    private $lexer;
-    /** @var NodeTraverser */
-    private $traverser;
-    /** @var int */
-    private $filesProceeded;
+    private ErrorHandler $errorHandler;
+    private \PhpParser\Parser $parser;
+    private Lexer $lexer;
+    private NodeTraverser $traverser;
+    private int $filesProceeded;
 
     /**
      * Parser constructor.
@@ -72,11 +71,11 @@ final class Parser
      * @param string $source
      * @param Finder $finder
      * @param ErrorHandler $errorHandler
-     *
+     * @param string $version
      * @return Profile
      * @throws Exception
      */
-    public function parse(string $source, Finder $finder, ErrorHandler $errorHandler): Profile
+    public function parse(string $source, Finder $finder, ErrorHandler $errorHandler, string $version): Profile
     {
         $this->dispatcher->dispatch(new BeforeAnalysisEvent($this, ['source' => $source, 'queue' => $finder]));
 
@@ -107,9 +106,20 @@ final class Parser
 
         $this->analyser->tearDownAfterVisitor();
 
-        $this->dispatcher->dispatch(new AfterAnalysisEvent($this, ['source' => $source, 'successCount' => $this->filesProceeded]));
+        $profile = $profiler->collect();
+        $this->dispatcher->dispatch(
+            new AfterAnalysisEvent(
+                $this,
+                [
+                    'source' => $source,
+                    'successCount' => $this->filesProceeded,
+                    'profile' => $profile,
+                    'applicationVersion' => $version,
+                ]
+            )
+        );
 
-        return $profiler->collect();
+        return $profile;
     }
 
     /**
@@ -138,6 +148,6 @@ final class Parser
         $this->traverser->traverse($stmts);
 
         $this->filesProceeded++;
-        $this->dispatcher->dispatch(new AfterFileAnalysisEvent($this, ['file' => $fileInfo]));
+        $this->dispatcher->dispatch(new AfterFileAnalysisEvent($this, ['file' => $fileInfo, 'ast' => $stmts]));
     }
 }

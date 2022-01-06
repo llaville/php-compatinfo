@@ -1,5 +1,10 @@
 <?php declare(strict_types=1);
-
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Bartlett\CompatInfo\Application\PhpParser\NodeVisitor;
 
 use PhpParser\Node;
@@ -11,15 +16,14 @@ use function array_pop;
 use function array_shift;
 
 /**
+ * @author Laurent Laville
  * @since Release 5.4.0
  */
 final class ParentContextVisitor extends NodeVisitorAbstract
 {
     /** @var Node[] */
-    private $stack = [];
-
-    /** @var string */
-    private $attributeParentKey;
+    private array $stack = [];
+    private string $attributeParentKey;
 
     /**
      * Constructs a parent path resolution visitor.

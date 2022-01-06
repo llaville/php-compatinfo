@@ -1,16 +1,21 @@
 <?php declare(strict_types=1);
-
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
 /**
  * Variadic functions
  *
+ * @author Laurent Laville
+ * @since Class available since Release 5.4.0
+ *
  * @link https://wiki.php.net/rfc/variadics
  * @link http://php.net/manual/en/migration56.new-features.php#migration56.new-features.variadics
  * @link https://github.com/llaville/php-compat-info/issues/141
- *
- * @since Class available since Release 5.4.0
- *
  * @link https://github.com/llaville/php-compat-info/issues/141
  */
 final class VariadicFunctionSniffTest extends SniffTestCase

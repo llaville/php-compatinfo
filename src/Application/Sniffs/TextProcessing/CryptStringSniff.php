@@ -1,26 +1,54 @@
 <?php declare(strict_types=1);
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Bartlett\CompatInfo\Application\Sniffs\TextProcessing;
+
+use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+use Generator;
+use function in_array;
+use function sprintf;
+use function substr;
 
 /**
  * Specific text processing with PHP crypt function.
  *
- * @link https://www.php.net/manual/en/function.crypt.php
- *
- * @see tests/Sniffs/CryptStringSniffTest
- */
-
-namespace Bartlett\CompatInfo\Application\Sniffs\TextProcessing;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-use PhpParser\Node;
-
-use function in_array;
-use function substr;
-
-/**
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @link https://www.php.net/manual/en/function.crypt.php
+ * @see tests/Sniffs/CryptStringSniffTest
  */
 final class CryptStringSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA53 = 'CA5305';
+    private KeywordBag $algorithms;
+
+    /**
+     * {@inheritDoc}
+     */
+    public function enterSniff(): void
+    {
+        parent::enterSniff();
+
+        $this->algorithms = new KeywordBag(
+            [
+                'BLOWFISH' => '5.3.7',
+                'SHA-256' => '5.3.2',
+                'SHA-512' => '5.3.2',
+                'MD5' => '5.3.0',
+            ]
+        );
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -53,19 +81,43 @@ final class CryptStringSniff extends SniffAbstract
         }
 
         if (in_array(substr($salt->value, 0, 4), ['$2a$', '$2x$', '$2y$'])) {
-            // Blowfish
-            $min = '5.3.7';
-        } elseif (in_array(substr($salt->value, 0, 3), ['$5$', '$6$'])) {
-            // SHA-256 and SHA-512
-            $min = '5.3.2';
+            $algorithm = 'BLOWFISH';
+            $id = sprintf('%s/%s', self::CA53, $algorithm);
+        } elseif (in_array(substr($salt->value, 0, 3), ['$5$'])) {
+            $algorithm = 'SHA-256';
+            $id = sprintf('%s/%s', self::CA53, $algorithm);
+        } elseif (in_array(substr($salt->value, 0, 3), ['$6$'])) {
+            $algorithm = 'SHA-512';
+            $id = sprintf('%s/%s', self::CA53, $algorithm);
         } elseif (in_array(substr($salt->value, 0, 3), ['$1$'])) {
-            // SHA-256 and SHA-512
-            $min = '5.3.0';
+            $algorithm = 'MD5';
+            $id = sprintf('%s/%s', self::CA53, $algorithm);
         } else {
-            $min = '4.0.0';
+            $algorithm = 'DES';
+            $id = '';
         }
+        $min = $this->algorithms->get($algorithm);
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min, 'ext.name' => 'standard']);
+        $this->updateNodeElementRule($node, $this->attributeKeyStore, $id);
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        foreach ($this->algorithms->all() as $algorithm => $min) {
+            yield self::CA53 => [
+                'name' => $this->getShortClass(),
+                'fullDescription' => sprintf(
+                    "String hashing algorithm '%s' is allowed since PHP %s",
+                    $algorithm,
+                    $min
+                ),
+                'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+            ];
+        }
     }
 }

@@ -1,4 +1,10 @@
 <?php declare(strict_types=1);
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollection;
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
@@ -26,10 +32,9 @@ use function Symfony\Component\DependencyInjection\Loader\Configurator\tagged_it
 /**
  * Build the Container with default parameters and services
  *
- * @link https://symfony.com/doc/current/components/dependency_injection.html#avoiding-your-code-becoming-dependent-on-the-container
+ * @author Laurent Laville
  *
- * @param ContainerConfigurator $containerConfigurator
- * @return void
+ * @link https://symfony.com/doc/current/components/dependency_injection.html#avoiding-your-code-becoming-dependent-on-the-container
  */
 return static function (ContainerConfigurator $containerConfigurator): void {
     if (file_exists(dirname(__DIR__, 2) . '/vendor')) {

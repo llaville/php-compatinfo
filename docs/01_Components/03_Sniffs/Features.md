@@ -75,8 +75,8 @@ Here is the list of features supported and their corresponding sniffs :
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
 | FunctionDeclarations | ParamTypeDeclarationSniff  | [Scalar type declarations](https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.scalar-type-declarations) |
-| Keywords             | ReservedSniff              | [Scalar type declarations](https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.scalar-type-declarations) |
 | FunctionDeclarations | ReturnTypeDeclarationSniff | [Return type declarations](https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.return-type-declarations) |
+| Keywords             | ReservedSniff              | [Scalar type declarations](https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.scalar-type-declarations) |
 | Operators            | NullCoalesceOperatorSniff  | [Null coalescing operator](https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.null-coalesce-op) |
 | Operators            | CombinedComparisonOperatorSniff | [Spaceship operator](https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.spaceship-op) |
 | | | [Constant arrays using define()](https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.define-array) |

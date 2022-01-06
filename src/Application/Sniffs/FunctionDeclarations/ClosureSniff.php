@@ -1,7 +1,23 @@
 <?php declare(strict_types=1);
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
+
+use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
+
+use PhpParser\Node;
+
+use Generator;
 
 /**
  * Closures are available since PHP 5.3
+ *
+ * @author Laurent Laville
+ * @since Release 5.4.0
  *
  * $this in closure allowed since PHP 5.4
  * Anonymous functions may be declared statically since PHP 5.4
@@ -14,18 +30,11 @@
  *
  * @see tests/Sniffs/ClosureSniffTest
  */
-
-namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
-
-use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
-
-use PhpParser\Node;
-
-/**
- * @since Release 5.4.0
- */
 final class ClosureSniff extends SniffAbstract
 {
+    // Rules identifiers for SARIF report
+    private const CA54 = 'CA5401';
+
     /**
      * {@inheritDoc}
      */
@@ -55,7 +64,20 @@ final class ClosureSniff extends SniffAbstract
         if (in_array($name, ['this', 'self', 'parent', 'static'])) {
             // Use of $this | self | parent | static inside a closure is allowed since PHP 5.4
             $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '5.4.0']);
+            $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA54);
         }
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        yield self::CA54 => [
+            'name' => $this->getShortClass(),
+            'fullDescription' => 'Use of this, self, parent or static keywords inside a closure is allowed since PHP 5.4.0',
+            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-54',
+        ];
     }
 }

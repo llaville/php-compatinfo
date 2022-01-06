@@ -7,6 +7,30 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [6.1.0] - 2022-01-06
+
+### Added
+
+- improves `output` option by introducing Reporter extension (see [documentation](docs/01_Components/04_Extensions/Reporter.md))
+- [#312](https://github.com/llaville/php-compatinfo/issues/312): Add SARIF output format
+
+### Changed
+
+- moved Doctrine ORM `cli-config.php` file from root folder to `config/` directory (more sense)
+
+- Support **Typed properties** features, now minimum PHP requirement is 7.4
+
+  Read more about this feature at :
+
+  - <https://stitcher.io/blog/typed-properties-in-php-74>
+  - <https://php.watch/versions/7.4/typed-properties>
+
+### Removed
+
+- `Bartlett\CompatInfo\Presentation\Console\ApplicationInterface::VERSION` constant that identify current version of Application
+- deprecated / End Of Life composer plugin `composer/package-versions-deprecated`, and use Composer 2.2 (LTS) equivalent feature
+- `symfony/phpunit-bridge` dependency (not used)
+
 ## [6.0.3] - 2022-01-05
 
 ### Fixed
@@ -44,3 +68,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - drop support of PHP 7.2
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
+
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.1.0...HEAD
+[6.1.0]: https://github.com/llaville/php-compat-info/compare/6.0.3...6.1.0
+[6.0.3]: https://github.com/llaville/php-compat-info/compare/6.0.2...6.0.3
+[6.0.2]: https://github.com/llaville/php-compat-info/compare/6.0.1...6.0.2
+[6.0.1]: https://github.com/llaville/php-compat-info/compare/6.0.0...6.0.1
+[6.0.0]: https://github.com/llaville/php-compat-info/compare/5.5.5...6.0.0

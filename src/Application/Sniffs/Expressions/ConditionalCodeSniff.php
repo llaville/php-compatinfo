@@ -1,18 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Detect conditional code identified by :
- * - [extension_loaded](https://www.php.net/manual/en/function.extension-loaded.php)
- * - [function_exists](https://www.php.net/manual/en/function.function-exists.php)
- * - [method_exists](https://www.php.net/manual/en/function.method-exists)
- * - [class_exists](https://www.php.net/manual/en/function.class-exists.php)
- * - [interface_exists](https://www.php.net/manual/en/function.interface-exists.php)
- * - [trait_exists](https://www.php.net/manual/en/function.trait-exists.php)
- * - [defined](https://www.php.net/manual/en/function.defined)
+ * This file is part of the PHP_CompatInfo package.
  *
- * @see tests/Sniffs/ConditionalCodeSniffTest
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\Expressions;
 
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
@@ -26,16 +18,24 @@ use function in_array;
 use function ltrim;
 
 /**
+ * Detect conditional code identified by :
+ * - [extension_loaded](https://www.php.net/manual/en/function.extension-loaded.php)
+ * - [function_exists](https://www.php.net/manual/en/function.function-exists.php)
+ * - [method_exists](https://www.php.net/manual/en/function.method-exists)
+ * - [class_exists](https://www.php.net/manual/en/function.class-exists.php)
+ * - [interface_exists](https://www.php.net/manual/en/function.interface-exists.php)
+ * - [trait_exists](https://www.php.net/manual/en/function.trait-exists.php)
+ * - [defined](https://www.php.net/manual/en/function.defined)
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
+ *
+ * @see tests/Sniffs/ConditionalCodeSniffTest
  */
 final class ConditionalCodeSniff extends SniffAbstract
 {
-    /** @var string */
-    private $opt;
-
-    /** @var string */
-    private $group;
-
+    private string $opt;
+    private string $group;
     /** @var ReferenceCollectionInterface<string, array> */
     private $references;
 

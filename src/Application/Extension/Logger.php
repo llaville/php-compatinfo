@@ -1,5 +1,10 @@
 <?php declare(strict_types=1);
-
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Bartlett\CompatInfo\Application\Extension;
 
 use Bartlett\CompatInfo\Application\Event\AfterAnalysisEvent;
@@ -38,6 +43,7 @@ use function json_encode;
 use function sprintf;
 
 /**
+ * @author Laurent Laville
  * @since Release 6.0.0
  */
 final class Logger implements
@@ -53,11 +59,10 @@ final class Logger implements
     AfterProcessSniffInterface,
     EventSubscriberInterface
 {
-    /** @var LoggerInterface  */
-    private $logger;
+    private LoggerInterface $logger;
 
     /** @var array<string, string>  */
-    private static $events;
+    private static array $events;
 
     /**
      * Logger extension constructor.

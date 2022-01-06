@@ -23,7 +23,7 @@ Install the PHP CompatInfo with [Composer](https://getcomposer.org/).
 If you don't know yet what is composer, have a look [on introduction](http://getcomposer.org/doc/00-intro.md).
 
 ```shell
-composer require bartlett/php-compatinfo
+composer require bartlett/php-compatinfo ^6.1
 ```
 
 ### With Git
@@ -32,7 +32,7 @@ The PHP CompatInfo can be directly used from [GitHub](https://github.com/llavill
 by cloning the repository into a directory of your choice.
 
 ```shell
-git clone https://github.com/llaville/php-compatinfo.git
+git clone -b 6.1 https://github.com/llaville/php-compatinfo.git
 ```
 
 ## Configuring the Database
@@ -68,5 +68,35 @@ Uses the [BOX](https://github.com/box-project/box/) to compile your phar version
 Configuration file (`box.json.dist`) is provided with each release of phpCompatInfo.
 
 **CAUTION** If you want to use the `--manifest` option of phpCompatInfo phar version, you MUST use
-[my fork](https://github.com/llaville/box/tree/show_metadata) (branch `show_metadata`) of Box project.
-All details are given in feature report <https://github.com/box-project/box/issues/576>
+[my fork](https://github.com/llaville/box) (branch `build-metadata`) of Box project,
+or apply the following patch to the offical [Box-project](https://github.com/box-project/box).
+
+```text
+diff --git a/src/Console/Command/Compile.php b/src/Console/Command/Compile.php
+index 837466b..787058a 100644
+--- a/src/Console/Command/Compile.php
++++ b/src/Console/Command/Compile.php
+@@ -27,6 +27,8 @@ use function get_class;
+ use Humbug\PhpScoper\Whitelist;
+ use function implode;
+ use function is_callable;
++use function is_file;
++use function is_readable;
+ use function is_string;
+ use KevinGH\Box\Box;
+ use const KevinGH\Box\BOX_ALLOW_XDEBUG;
+@@ -545,6 +547,10 @@ HELP;
+                 'Setting metadata'
+             );
+
++            if (is_file($metadata) && is_readable($metadata)) {
++                $metadata = require $metadata;
++            }
++
+             if (is_callable($metadata)) {
+                 $metadata = $metadata();
+             }
+
+```
+
+All details are given in feature report since <https://github.com/box-project/box/issues/576#issuecomment-1002519231>

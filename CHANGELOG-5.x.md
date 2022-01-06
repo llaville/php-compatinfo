@@ -7,6 +7,12 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [5.5.6] - 2022-01-06
+
+### Fixed
+
+- [incompatibility with PHP CompatInfoDb 3.17](https://github.com/llaville/php-compatinfo-db/issues/105)
+
 ## [5.5.5] - 2021-12-27
 
 ### Fixed
@@ -180,7 +186,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - add support to PHP-Parser 3.1 for running on PHP >= 5.5 and for parsing code PHP 5.2 to PHP 7.2
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/5.5.5...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/5.5.6...HEAD
+[5.5.6]: https://github.com/llaville/php-compat-info/compare/5.5.5...5.5.6
 [5.5.5]: https://github.com/llaville/php-compat-info/compare/5.5.4...5.5.5
 [5.5.4]: https://github.com/llaville/php-compat-info/compare/5.5.3...5.5.4
 [5.5.3]: https://github.com/llaville/php-compat-info/compare/5.5.2...5.5.3

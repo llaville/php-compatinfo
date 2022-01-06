@@ -1,21 +1,19 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Unit tests for PHP_CompatInfo package, issues reported
+ * This file is part of the PHP_CompatInfo package.
  *
- * PHP version 7
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @subpackage Tests
- * @author     Laurent Laville <pear@laurent-laville.org>
- * @author     Remi Collet <Remi@FamilleCollet.com>
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @since      Class available since Release 4.0.0-alpha2+1
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Tests;
 
 /**
+ * Unit tests for PHP_CompatInfo package, issues reported
+ *
+ * @author Laurent Laville
+ * @author Remi Collet
+ * @since  Class available since Release 4.0.0-alpha2+1
+ *
  * @link https://github.com/llaville/php-compat-info/issues/171
  * @link https://github.com/llaville/php-compat-info/issues/199
  */

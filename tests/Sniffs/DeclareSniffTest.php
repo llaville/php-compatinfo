@@ -1,26 +1,20 @@
-<?php
+<?php declare(strict_types=1);
 /**
- * Unit tests for PHP_CompatInfo package, declare sniff
+ * This file is part of the PHP_CompatInfo package.
  *
- * PHP version 7
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @subpackage Tests
- * @author     Laurent Laville <pear@laurent-laville.org>
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @since      Class available since Release 5.4.0
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
 /**
- * Declare
+ * Unit tests for PHP_CompatInfo package, declare sniff
+ *
+ * @author Laurent Laville
+ * @since  Class available since Release 5.4.0
  *
  * @link https://www.php.net/manual/en/control-structures.declare.php
  * @link https://wiki.php.net/rfc/scalar_type_hints_v5#strict_types_declare_directive
- *
- * @since Class available since Release 5.4.0
  */
 final class DeclareSniffTest extends SniffTestCase
 {

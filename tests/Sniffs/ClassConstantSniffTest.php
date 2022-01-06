@@ -1,13 +1,19 @@
 <?php declare(strict_types=1);
-
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
 /**
  * Class constants
  *
- * @link https://github.com/llaville/php-compat-info/issues/215
+ * @author Laurent Laville
+ * @since  Class available since Release 5.4.0
  *
- * @since Class available since Release 5.4.0
+ * @link https://github.com/llaville/php-compat-info/issues/215
  */
 final class ClassConstantSniffTest extends SniffTestCase
 {

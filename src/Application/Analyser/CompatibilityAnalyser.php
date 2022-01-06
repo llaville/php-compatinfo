@@ -1,17 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Compatibility Analyser.
+ * This file is part of the PHP_CompatInfo package.
  *
- * This analyser collects different metrics to find out the minimum version
- * and the extensions required for a piece of code to run.
- *
- * @category PHP
- * @package  PHP_CompatInfo
- * @author   Laurent Laville <pear@laurent-laville.org>
- * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Analyser;
 
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
@@ -38,6 +31,12 @@ use function str_replace;
 use function strtolower;
 
 /**
+ * Compatibility Analyser.
+ *
+ * This analyser collects different metrics to find out the minimum version
+ * and the extensions required for a piece of code to run.
+ *
+ * @author Laurent Laville
  * @since Release 4.0.0-alpha2+1
  */
 final class CompatibilityAnalyser extends AbstractSniffAnalyser
@@ -48,13 +47,12 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     protected const COLLECTOR_NAME = self::class;
 
     /** @var array<string, string> */
-    private $aliases;
+    private array $aliases;
     /** @var ReferenceCollectionInterface<array>  */
     private $references;
-    /** @var SplFileInfo */
-    private $currentFile;
+    private SplFileInfo $currentFile;
     /** @var array<int, mixed> */
-    private $tokens;
+    private array $tokens;
     /** @var callable */
     private $contextCallback;
 

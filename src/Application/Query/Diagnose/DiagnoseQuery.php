@@ -1,17 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Value Object of console diagnose command.
+ * This file is part of the PHP_CompatInfo package.
  *
- * PHP version 7
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @author     Laurent Laville <pear@laurent-laville.org>
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @link       http://bartlett.laurent-laville.org/php-compatinfo/
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Query\Diagnose;
 
 use Bartlett\CompatInfo\Application\Query\QueryInterface;
@@ -20,12 +13,14 @@ use Doctrine\DBAL\Connection;
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
+ * Value Object of console diagnose command.
+ *
+ * @author Laurent Laville
  * @since Release 6.0.0
  */
 final class DiagnoseQuery implements QueryInterface
 {
-    /** @var Connection */
-    private $connection;
+    private Connection $connection;
 
     public function __construct(EntityManagerInterface $entityManager)
     {

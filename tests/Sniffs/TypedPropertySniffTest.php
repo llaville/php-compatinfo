@@ -1,10 +1,16 @@
 <?php declare(strict_types=1);
-
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
 /**
  * Typed properties available since PHP 7.4
  *
+ * @author Laurent Laville
  * @since Class available since Release 5.4.0
  */
 final class TypedPropertySniffTest extends SniffTestCase

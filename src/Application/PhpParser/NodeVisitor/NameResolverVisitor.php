@@ -1,11 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * NameResolver to initialize full qualified name on new attribute specified by option
- * - nodeAttributeNamespacedName
- * rather than use the `namespacedName` property of each node
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\PhpParser\NodeVisitor;
 
 use PhpParser\ErrorHandler;
@@ -16,15 +15,17 @@ use PhpParser\NodeVisitor\NameResolver;
 use function property_exists;
 
 /**
+ * NameResolver to initialize full qualified name on new attribute specified by option
+ * - nodeAttributeNamespacedName
+ * rather than use the `namespacedName` property of each node
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
  */
 final class NameResolverVisitor extends NameResolver
 {
-    /** @var string */
-    private $attributeParentKey;
-
-    /** @var string */
-    private $attributeNamespacedName;
+    private string $attributeParentKey;
+    private string $attributeNamespacedName;
 
     /**
      * NameResolverVisitor constructor.

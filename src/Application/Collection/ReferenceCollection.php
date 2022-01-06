@@ -1,14 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Reference collection that collect information for the compatibility analyser.
+ * This file is part of the PHP_CompatInfo package.
  *
- * @category PHP
- * @package  PHP_CompatInfo
- * @author   Laurent Laville <pear@laurent-laville.org>
- * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Collection;
 
 use Bartlett\CompatInfoDb\Domain\Repository\ClassRepository;
@@ -24,17 +20,17 @@ use function in_array;
 use function strpos;
 
 /**
+ * Reference collection that collect information for the compatibility analyser.
+ *
  * @phpstan-extends AbstractLazyCollection<string, array>
+ * @author Laurent Laville
  * @since Release 4.0.0-alpha3
  */
 final class ReferenceCollection extends AbstractLazyCollection implements ReferenceCollectionInterface
 {
-    /** @var ClassRepository  */
-    private $classRepository;
-    /** @var ConstantRepository  */
-    private $constantRepository;
-    /** @var FunctionRepository  */
-    private $functionRepository;
+    private ClassRepository $classRepository;
+    private ConstantRepository $constantRepository;
+    private FunctionRepository $functionRepository;
 
     /**
      * Creates a new Reference Collection

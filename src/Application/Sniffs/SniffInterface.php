@@ -1,21 +1,22 @@
 <?php declare(strict_types=1);
-
 /**
- * Interface that all sniffs must implement.
+ * This file is part of the PHP_CompatInfo package.
  *
- * @category PHP
- * @package  PHP_CompatInfo
- * @author   Laurent Laville <pear@laurent-laville.org>
- * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs;
 
 use Bartlett\CompatInfo\Application\Analyser\SniffVisitorInterface;
 
 use PhpParser\NodeVisitor;
 
+use Generator;
+
 /**
+ * Interface that all sniffs must implement.
+ *
+ * @author Laurent Laville
  * @since Release 5.4.0
  */
 interface SniffInterface extends NodeVisitor
@@ -34,4 +35,8 @@ interface SniffInterface extends NodeVisitor
     public function setVisitor(SniffVisitorInterface $visitor): void;
     public function setAttributeParentKeyStore(string $key): void;
     public function setAttributeKeyStore(string $key): void;
+    /**
+     * @return Generator<string, mixed>
+     */
+    public function getRules(): Generator;
 }

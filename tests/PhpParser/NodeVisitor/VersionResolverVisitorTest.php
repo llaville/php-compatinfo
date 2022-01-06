@@ -1,17 +1,21 @@
 <?php declare(strict_types=1);
-
+/**
+ * This file is part of the PHP_CompatInfo package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Bartlett\CompatInfo\Tests\PhpParser\NodeVisitor;
 
 /**
  * NodeVisitor Resolver to initialize base php.min version
  * of namespaces, classes, interfaces, traits and functions declaration
  *
+ * @author Laurent Laville
+ * @since Release 5.4.0
+ *
  * @link https://github.com/llaville/php-compat-info/issues/131
  * @link https://github.com/llaville/php-compat-info/issues/166
- */
-
-/**
- * @since Release 5.4.0
  */
 final class VersionResolverVisitorTest extends NodeVisitorTestCase
 {

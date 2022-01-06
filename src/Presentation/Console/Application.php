@@ -1,19 +1,13 @@
 <?php declare(strict_types=1);
-
 /**
- * The CompatInfo CLI version.
+ * This file is part of the PHP_CompatInfo package.
  *
- * PHP version 7
- *
- * @category PHP
- * @package  PHP_CompatInfo
- * @author   Laurent Laville <pear@laurent-laville.org>
- * @license  https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Presentation\Console;
 
-use PackageVersions\Versions;
+use Composer\InstalledVersions;
 
 use Symfony\Component\Config\Exception\FileLocatorFileNotFoundException;
 use Symfony\Component\Config\FileLocator;
@@ -31,12 +25,13 @@ use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 
 use Phar;
 use function basename;
-use function explode;
 use function sprintf;
-use function strpos;
-use function substr_count;
+use function substr;
 
 /**
+ * The CompatInfo CLI version.
+ *
+ * @author Laurent Laville
  * @since Release 4.0.0-alpha3+1, 6.0.0
  */
 class Application extends SymfonyApplication implements ApplicationInterface
@@ -46,7 +41,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=phpCompatInfo
      * editorconfig-checker-disable
      */
-    protected static $logo = "        _            ____                            _   ___        __
+    protected static string $logo = "        _            ____                            _   ___        __
   _ __ | |__  _ __  / ___|___  _ __ ___  _ __   __ _| |_|_ _|_ __  / _| ___
  | '_ \| '_ \| '_ \| |   / _ \| '_ ` _ \| '_ \ / _` | __|| || '_ \| |_ / _ \
  | |_) | | | | |_) | |__| (_) | | | | | | |_) | (_| | |_ | || | | |  _| (_) |
@@ -56,30 +51,16 @@ class Application extends SymfonyApplication implements ApplicationInterface
 ";
     // editorconfig-checker-enable
 
-    /** @var ContainerInterface  */
-    private $container;
+    private ContainerInterface $container;
 
     /**
      * Application constructor.
      *
-     * @param string $version (optional) auto-detect
+     * @param string|null $version (optional) auto-detect
      */
-    public function __construct(string $version = 'UNKNOWN')
+    public function __construct(?string $version = null)
     {
-        if ('UNKNOWN' === $version) {
-            // composer or git outside world strategy
-            $version = self::VERSION;
-        } elseif (substr_count($version, '.') === 2) {
-            // release is in X.Y.Z format
-        } else {
-            // composer or git strategy
-            $version = Versions::getVersion('bartlett/php-compatinfo');
-            list($ver, ) = explode('@', $version);
-
-            if (strpos($ver, 'dev') === false) {
-                $version = $ver;
-            }
-        }
+        $version = $version ?? $this->getInstalledVersion(false);
         parent::__construct(self::NAME, $version);
     }
 
@@ -97,7 +78,13 @@ class Application extends SymfonyApplication implements ApplicationInterface
      */
     public function getHelp(): string
     {
-        return '<comment>' . static::$logo . '</comment>' . parent::getHelp();
+        return sprintf(
+            '<comment>%s</comment><info>%s</info> version <comment>%s</comment> DB version <comment>%s</comment>',
+            static::$logo,
+            $this->getName(),
+            $this->getVersion(),
+            $this->getInstalledVersion(false, 'bartlett/php-compatinfo-db')
+        );
     }
 
     /**
@@ -108,8 +95,8 @@ class Application extends SymfonyApplication implements ApplicationInterface
         return sprintf(
             '<info>%s</info> version <comment>%s</comment> DB version <comment>%s</comment>',
             $this->getName(),
-            $this->getVersion(),
-            \Bartlett\CompatInfoDb\Presentation\Console\ApplicationInterface::VERSION
+            $this->getInstalledVersion(),
+            $this->getInstalledVersion(true, 'bartlett/php-compatinfo-db')
         );
     }
 
@@ -139,8 +126,9 @@ class Application extends SymfonyApplication implements ApplicationInterface
             new InputOption(
                 'output',
                 null,
-                InputOption::VALUE_OPTIONAL,
-                'Write results to file'
+                InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED,
+                'Affect output to produce results in different format',
+                ['console']
             )
         );
         $definition->addOption(
@@ -213,12 +201,22 @@ class Application extends SymfonyApplication implements ApplicationInterface
         }
 
         if ($input->hasParameterOption('--manifest')) {
-            $phar = new Phar('phpcompatinfo.phar');
+            $phar = new Phar($_SERVER['argv'][0]);
             $manifest = $phar->getMetadata();
             $output->writeln($manifest);
             return 0;
         }
 
         return parent::run($input, $output);
+    }
+
+    public function getInstalledVersion(bool $withRef = true, string $packageName = 'bartlett/php-compatinfo'): string
+    {
+        $version = InstalledVersions::getPrettyVersion($packageName);
+        if (!$withRef) {
+            return $version;
+        }
+        $commitHash = InstalledVersions::getReference($packageName);
+        return sprintf('%s@%s', $version, substr($commitHash, 0, 7));
     }
 }

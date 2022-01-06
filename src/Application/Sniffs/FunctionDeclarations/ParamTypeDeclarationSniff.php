@@ -1,22 +1,10 @@
 <?php declare(strict_types=1);
-
 /**
- * Parameters Type Declaration
+ * This file is part of the PHP_CompatInfo package.
  *
- * @link https://www.php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration
- * @link https://wiki.php.net/rfc/callable
- * @link https://wiki.php.net/rfc/scalar_type_hints_v5
- * @link https://wiki.php.net/rfc/iterable
- * @link https://wiki.php.net/rfc/object-typehint
- * @link https://madewithlove.com/self-and-parent-type-hints/
- *
- * - Nullable Type Declarations since PHP 7.1
- * @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types
- *
- * @see tests/Sniffs/ParamTypeDeclarationSniffTest
- * @since Class available since Release 5.4.0
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations;
 
 use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
@@ -24,15 +12,30 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
 
+use Generator;
+use function sprintf;
+use function str_replace;
 use function strtolower;
 
 /**
- * @since Release 5.4.0
+ * Parameters Type Declaration
+ *
+ * @author Laurent Laville
+ * @since Class available since Release 5.4.0
+ *
+ * @link https://www.php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration
+ * @link https://wiki.php.net/rfc/callable
+ * @link https://wiki.php.net/rfc/scalar_type_hints_v5
+ * @link https://wiki.php.net/rfc/iterable
+ * @link https://wiki.php.net/rfc/object-typehint
+ * @link https://madewithlove.com/self-and-parent-type-hints/
+ * - Nullable Type Declarations since PHP 7.1
+ * @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types
+ * @see tests/Sniffs/ParamTypeDeclarationSniffTest
  */
 final class ParamTypeDeclarationSniff extends SniffAbstract
 {
-    /** @var KeywordBag */
-    private $paramTypeDeclarations;
+    private KeywordBag $paramTypeDeclarations;
 
     /**
      * {@inheritDoc}
@@ -89,9 +92,15 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
                 // @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types
                 $this->updateVersion('7.1.0', $versions['php.min']);
             } else {
-                $min = $this->paramTypeDeclarations->get(strtolower((string) $param->type), '');
+                $key = strtolower((string) $param->type);
+                $min = $this->paramTypeDeclarations->get($key, '');
                 if (!empty($min)) {
                     $this->updateVersion($min, $versions['php.min']);
+                    $this->updateNodeElementRule(
+                        $node,
+                        $this->attributeKeyStore,
+                        sprintf('CA%2d08', str_replace('.', '', $this->paramTypeDeclarations->all()[$key]))
+                    );
                 } else {
                     $this->updateElementVersion($versions, $param->type->getAttribute($this->attributeKeyStore, []));
                 }
@@ -100,5 +109,20 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, $versions);
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRules(): Generator
+    {
+        foreach ($this->paramTypeDeclarations->all() as $paramType => $min) {
+            yield sprintf('CA%2d08', str_replace('.', '', $min)) => [
+                'name' => $this->getShortClass(),
+                'fullDescription' => "Parameters Type Declaration '$paramType' is available"
+                    . ' since PHP ' . $this->paramTypeDeclarations->get($paramType),
+                'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/',
+            ];
+        }
     }
 }

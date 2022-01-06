@@ -1,6 +1,8 @@
 <!-- markdownlint-disable MD013 -->
 # Visitors
 
+![GraPHP UML](../../99_Architecture/application/application_phpparser.graphviz.svg)
+
 ## ParentContextVisitor
 
 The AST does not store parent nodes by default. However, the `ParentContextVisitor` is used to achieve this
