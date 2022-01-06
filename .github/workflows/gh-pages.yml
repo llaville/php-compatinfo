@@ -58,9 +58,20 @@ jobs:
             -   # Update diagrams used in documentation
                 name: Update Diagrams
                 run: |
-                    php resources/graph-uml/application.php docs/99_Architecture/application
-                    php resources/graph-uml/infrastructure.php docs/99_Architecture/infrastructure
-                    php resources/graph-uml/presentation.php docs/99_Architecture/presentation
+                    php resources/graph-uml/build.php application-analyser docs/99_Architecture/application
+                    php resources/graph-uml/build.php application-collection docs/99_Architecture/application
+                    php resources/graph-uml/build.php application-datacollector docs/99_Architecture/application
+                    php resources/graph-uml/build.php application-event docs/99_Architecture/application
+                    php resources/graph-uml/build.php application-extension docs/99_Architecture/application
+                    php resources/graph-uml/build.php application-logger docs/99_Architecture/application
+                    php resources/graph-uml/build.php application-parser docs/99_Architecture/application
+                    php resources/graph-uml/build.php application-profiler docs/99_Architecture/application
+                    php resources/graph-uml/build.php application-query docs/99_Architecture/application
+                    php resources/graph-uml/build.php application-service docs/99_Architecture/application
+                    php resources/graph-uml/build.php application-sniffs docs/99_Architecture/application
+                    php resources/graph-uml/build.php infrastructure-bus docs/99_Architecture/infrastructure
+                    php resources/graph-uml/build.php infrastructure-framework docs/99_Architecture/infrastructure
+                    php resources/graph-uml/build.php presentation-console docs/99_Architecture/presentation
 
             -   # Setup Python version
                 name: Set up Python runtime
