@@ -7,6 +7,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Removed
+
+- [drop support of Composer v1](https://github.com/llaville/php-compatinfo/issues/320)
+
 ## [6.1.0] - 2022-01-06
 
 ### Added
