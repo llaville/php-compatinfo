@@ -7,6 +7,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Added
+
+- new environment variable `APP_VENDOR_DIR` to specify `vendor` directory (auto-detection, if not declared)
+
 ### Removed
 
 - [drop support of Composer v1](https://github.com/llaville/php-compatinfo/issues/320)
