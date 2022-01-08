@@ -60,14 +60,6 @@
             "Bartlett\\CompatInfo\\Tests\\": "tests/"
         }
     },
-    "scripts": {
-        "post-install-cmd": [
-            "bin/phpcompatinfo db:create"
-        ],
-        "post-update-cmd": [
-            "bin/phpcompatinfo db:create"
-        ]
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {

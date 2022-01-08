@@ -53,7 +53,7 @@ DATABASE_URL="sqlite:///${HOME}/.cache/bartlett/compatinfo-db.sqlite"
 DATABASE_URL="postgresql://db_user:db_password@127.0.0.1:5432/db_name?serverVersion=11&charset=utf8"
 ```
 
-If you change database connection, you have to run following command(s):
+After installation, or if you change database connection, you have to run following command(s):
 
 * If you have CompatInfoDB 3.17 or lower
     * `vendor/bin/doctrine orm:schema-tool:create`
