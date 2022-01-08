@@ -110,7 +110,7 @@ jobs:
                 name: Install Composer dependencies
                 uses: "ramsey/composer-install@v1"
                 with:
-                    composer-options: "--prefer-dist"
+                    composer-options: "--prefer-dist --no-scripts"
 
             -   # Build Database
                 name: Build Database
