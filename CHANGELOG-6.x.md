@@ -10,6 +10,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Added
 
 - new environment variable `APP_VENDOR_DIR` to specify `vendor` directory (auto-detection, if not declared)
+- [Simplify database initialization processus](https://github.com/llaville/php-compatinfo/issues/321) with bridge to new command `db:create` (from CompatInfoDB)
 
 ### Removed
 
