@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013 -->
 # PHP CompatInfo
 
 **PHP CompatInfo** is a library that can find the minimum version and the extensions required for a piece of code to run.

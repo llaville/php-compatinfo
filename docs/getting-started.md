@@ -56,13 +56,13 @@ DATABASE_URL="postgresql://db_user:db_password@127.0.0.1:5432/db_name?serverVers
 After installation, or if you change database connection, you have to run following command(s):
 
 * If you have CompatInfoDB 3.17 or lower
-    * `vendor/bin/doctrine orm:schema-tool:create`
-    * `vendor/bartlett/php-compatinfo-db/bin/compatinfo-db db:init`
+  * `vendor/bin/doctrine orm:schema-tool:create`
+  * `vendor/bartlett/php-compatinfo-db/bin/compatinfo-db db:init`
 
   At dependencies installation, Composer use the sqlite back-end. You need to set up in your environment the `DATABASE_URL` variable.
 
 * If you have CompatInfoDB 3.18 or greater
-    * `bin/phpcompatinfo db:create`
+  * `bin/phpcompatinfo db:create`
 
   At first run of CompatInfoDB, `DATABASE_URL` will be set to use default SQLite connection
 
