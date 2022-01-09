@@ -10,6 +10,7 @@ namespace Bartlett\CompatInfo\Application\PhpParser\NodeVisitor;
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Application\DataCollector\VersionUpdater;
 use Bartlett\CompatInfo\Application\PhpParser\Node\Name\ClassFullyQualified;
+use Bartlett\CompatInfo\Application\PhpParser\Node\Name\EnumFullyQualified;
 use Bartlett\CompatInfo\Application\PhpParser\Node\Name\InterfaceFullyQualified;
 
 use PhpParser\Node;
@@ -32,7 +33,7 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
      *
      * Options:
      *  * nodeAttributeKeyStore (default "bartlett.compatibility_analyser"): An attribute will be added
-     *    on each namespaces, classes, interfaces, traits, methods, functions, closures or arrow functions
+     *    on each namespaces, classes, interfaces, traits, enumerations, methods, functions, closures or arrow functions
      *    to store the minimum version required.
      *
      * @param ReferenceCollectionInterface<string, array> $referenceCollection
@@ -78,6 +79,8 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
             }
         } elseif ($node instanceof Node\Stmt\Trait_) {
             $currentVersions['php.min'] = '5.4.0';
+        } elseif ($node instanceof Node\Stmt\Enum_) {
+            $currentVersions['php.min'] = '8.1.0';
         } elseif ($node instanceof Node\FunctionLike) {
             if ($node instanceof Node\Expr\ArrowFunction) {
                 // @link https://www.php.net/manual/en/functions.arrow.php
@@ -131,6 +134,8 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
 
                 if ('interfaces' === $group) {
                     $newType = new InterfaceFullyQualified($name, $attributes);
+                } elseif ('enumerations' === $group) {
+                    $newType = new EnumFullyQualified($name, $attributes);
                 } else {
                     $newType = new ClassFullyQualified($name, $attributes);
                 }
@@ -183,7 +188,7 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
      */
     private function resolveTypeVersions(Node $node): string
     {
-        $groups = ['interfaces', 'classes'];
+        $groups = ['enumerations', 'interfaces', 'classes'];
         $name = $node instanceof Node\NullableType ? $node->type : $node;
 
         if ($name instanceof Node\Name || $name instanceof Node\Identifier) {
@@ -196,7 +201,7 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
         }
 
         foreach ($groups as $group) {
-            // not yet known, try to detect for non user elements
+            // not yet known, try to detect for non-user elements
             $versions = $this->references->find($group, $name);
             // arg.max is useless (nonsense) in this context
             unset($versions['arg.max']);

@@ -130,7 +130,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
         $groups = [
             'extensions',
             'namespaces',
-            'interfaces', 'traits', 'classes',
+            'interfaces', 'traits', 'classes', 'enumerations',
             'generators',
             'functions',
             'constants',
