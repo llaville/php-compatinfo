@@ -123,6 +123,7 @@ Here is the list of features supported and their corresponding sniffs :
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
+| Classes      | ReadonlyPropertySniff | [Readonly Properties](https://www.php.net/manual/en/language.oop5.properties.php#language.oop5.properties.readonly-properties) |
 | Enumerations | EnumerationSniff | [Enumerations](https://www.php.net/manual/en/migration81.new-features.php#migration81.new-features.core.enums) |
 
 ## Special cases

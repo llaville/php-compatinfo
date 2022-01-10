@@ -12,6 +12,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - new environment variable `APP_VENDOR_DIR` to specify `vendor` directory (auto-detection, if not declared)
 - [Simplify database initialization processus](https://github.com/llaville/php-compatinfo/issues/321) with bridge to new command `db:create` (from CompatInfoDB)
 - [#322](https://github.com/llaville/php-compatinfo/issues/322) : new sniff to detect PHP (8.1) Enumerations
+- [#323](https://github.com/llaville/php-compatinfo/issues/323) : new sniff to detect PHP (8.1) Readonly Properties
 
 ### Removed
 
