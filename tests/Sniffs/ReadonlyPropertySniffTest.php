@@ -32,11 +32,11 @@ final class ReadonlyPropertySniffTest extends SniffTestCase
     }
 
     /**
-     * Regression test for issue #323
+     * Feature test for Readonly properties
      *
      * @link https://github.com/llaville/php-compatinfo/issues/323
      *       Readonly Properties are detected as PHP 8.1
-     * @group regression
+     * @group features
      * @return void
      * @throws Exception
      */
