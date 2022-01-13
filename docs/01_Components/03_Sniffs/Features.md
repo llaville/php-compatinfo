@@ -124,6 +124,7 @@ Here is the list of features supported and their corresponding sniffs :
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
 | Classes      | ReadonlyPropertySniff | [Readonly Properties](https://www.php.net/manual/en/language.oop5.properties.php#language.oop5.properties.readonly-properties) |
+| Classes      | NewInitializerSniff   | [New initializers](https://www.php.net/manual/en/migration81.new-features.php#migration81.new-features.core.new-in-initializer) |
 | Enumerations | EnumerationSniff | [Enumerations](https://www.php.net/manual/en/migration81.new-features.php#migration81.new-features.core.enums) |
 | FunctionDeclarations | FirstClassCallableSniff | [First class callable](https://www.php.net/manual/en/functions.first_class_callable_syntax.php) |
 
