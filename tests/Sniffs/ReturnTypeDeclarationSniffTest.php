@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use Exception;
+
 /**
  * Unit tests for PHP_CompatInfo package, return type declaration sniff
  *
@@ -38,6 +40,7 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      *       PHP 7 requirement not detected for return type hint
      * @group regression
      * @return void
+     * @throws Exception
      */
     public function testReturnTypeHint()
     {
@@ -63,6 +66,7 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      *       PHP 7.1 Nullable types not being detected
      * @group regression
      * @return void
+     * @throws Exception
      */
     public function testNullableReturnTypeHint()
     {
@@ -98,6 +102,7 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      * @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.void-functions
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testVoidFunctions()
     {
