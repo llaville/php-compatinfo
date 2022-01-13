@@ -117,6 +117,10 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
     private function handleParameters(Node\FunctionLike $node, array $currentVersions): array
     {
         foreach ($node->getParams() as $param) {
+            if ($param->type instanceof Node\IntersectionType) {
+                $this->updateElementVersion($currentVersions, ['php.min' => '8.1.0']);
+                continue;
+            }
             if ($param->type instanceof Node\UnionType) {
                 $this->updateElementVersion($currentVersions, ['php.min' => '8.0.0']);
                 continue;

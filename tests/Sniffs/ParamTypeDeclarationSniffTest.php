@@ -229,4 +229,24 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
             $functions['Number\__construct']['php.min']
         );
     }
+
+    /**
+     * Feature test for intersection types
+     *
+     * @group features
+     * @link https://github.com/llaville/php-compatinfo/issues/326
+     * @return void
+     * @throws Exception
+     */
+    public function testIntersectionTypes()
+    {
+        $dataSource = 'intersection_types.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $functions  = $metrics[self::$analyserId]['functions'];
+
+        $this->assertEquals(
+            '8.1.0',
+            $functions['count_and_iterate']['php.min']
+        );
+    }
 }

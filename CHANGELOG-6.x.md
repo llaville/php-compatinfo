@@ -16,6 +16,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - [#324](https://github.com/llaville/php-compatinfo/issues/324) : new sniff to detect PHP (8.1) First class callable syntax
 - [#325](https://github.com/llaville/php-compatinfo/issues/325) : new sniff to detect PHP (8.1) New in initializers
 
+### Changed
+
+- [#326](https://github.com/llaville/php-compatinfo/issues/326) : update sniffs to detect PHP (8.1) Intersection types
+
 ### Removed
 
 - [drop support of Composer v1](https://github.com/llaville/php-compatinfo/issues/320)
