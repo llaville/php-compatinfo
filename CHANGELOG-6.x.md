@@ -19,6 +19,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Changed
 
 - [#326](https://github.com/llaville/php-compatinfo/issues/326) : update sniffs to detect PHP (8.1) Intersection types
+- [#327](https://github.com/llaville/php-compatinfo/issues/327) : update sniffs to detect PHP (8.1) return never
 
 ### Removed
 

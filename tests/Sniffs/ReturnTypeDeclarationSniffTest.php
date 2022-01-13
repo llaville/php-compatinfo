@@ -152,4 +152,24 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
             $functions['B\test']['php.min']
         );
     }
+
+    /**
+     * Feature test for return never type
+     *
+     * @link https://github.com/llaville/php-compatinfo/issues/327
+     * @group features
+     * @return void
+     * @throws Exception
+     */
+    public function testNeverReturnType()
+    {
+        $dataSource = 'return_never.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $functions  = $metrics[self::$analyserId]['functions'];
+
+        $this->assertEquals(
+            '8.1.0alpha1',
+            $functions['redirect']['php.min']
+        );
+    }
 }
