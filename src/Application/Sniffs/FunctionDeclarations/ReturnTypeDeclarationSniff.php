@@ -44,7 +44,7 @@ final class ReturnTypeDeclarationSniff extends SniffAbstract
         if ($returnType instanceof Node\IntersectionType) {
             // @link https://wiki.php.net/rfc/pure-intersection-types
             $min = '8.1.0alpha3';
-            $ruleId= self::CA81;
+            $ruleId = self::CA81;
         } elseif ($returnType instanceof Node\NullableType) {
             // @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types
             $min = '7.1.0';
