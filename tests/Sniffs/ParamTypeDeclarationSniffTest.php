@@ -41,6 +41,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      * @link https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
      * @group regression
      * @return void
+     * @throws Exception
      */
     public function testRegressionGH142()
     {
@@ -65,6 +66,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *       PHP 7.1 Nullable types not being detected
      * @group regression
      * @return void
+     * @throws Exception
      */
     public function testNullableTypeHint()
     {
@@ -83,6 +85,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testArrayTypeHint()
     {
@@ -101,6 +104,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testSelfParentTypeHint()
     {
@@ -123,6 +127,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testCallableTypeHint()
     {
@@ -141,6 +146,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testScalarTypeHint()
     {
@@ -171,6 +177,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testIterableTypeHint()
     {
@@ -189,6 +196,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testObjectTypeHint()
     {
