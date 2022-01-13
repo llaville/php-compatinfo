@@ -20,6 +20,8 @@ use Exception;
  * @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.void-functions
  * @link https://github.com/llaville/php-compat-info/issues/233
  * @link https://github.com/llaville/php-compat-info/issues/273
+ * @link https://www.php.net/releases/8.1/en.php#pure_intersection_types
+ * @link https://wiki.php.net/rfc/pure-intersection-types
  */
 final class ReturnTypeDeclarationSniffTest extends SniffTestCase
 {
@@ -128,6 +130,26 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
         $this->assertEquals(
             '',
             $functions['voidReturnType']['php.max']
+        );
+    }
+
+    /**
+     * Feature test for return intersection types
+     *
+     * @link https://github.com/llaville/php-compatinfo/issues/326
+     * @group features
+     * @return void
+     * @throws Exception
+     */
+    public function testIntersectionTypes()
+    {
+        $dataSource = 'return_intersection_types.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $functions  = $metrics[self::$analyserId]['methods'];
+
+        $this->assertEquals(
+            '8.1.0alpha3',
+            $functions['B\test']['php.min']
         );
     }
 }
