@@ -33,80 +33,46 @@ final class FirstClassCallableSniffTest extends SniffTestCase
     }
 
     /**
-     * Regression test for issue #324
+     * Data Provider to test First class callable syntax
      *
-     * @link https://github.com/llaville/php-compatinfo/issues/324
-     *       First class callable syntax is detected as PHP 8.1
-     * @group regression
-     * @return void
-     * @throws Exception
+     * @return iterable
      */
-    public function testFuncCall()
+    public function callableExprProvider(): iterable
     {
-        $dataSource = 'callable_expr_function.php';
-        $metrics    = $this->executeAnalysis($dataSource);
-        $versions   = $metrics[self::$analyserId]['versions'];
+        $provides = [
+            'callable_expr_function.php' => [
+                'php.min' => '8.1.0beta1',
+            ],
+            'callable_expr_method.php' => [
+                'php.min' => '8.1.0beta1',
+            ],
+            'callable_expr_static.php' => [
+                'php.min' => '8.1.0beta1',
+            ],
+        ];
 
-        $this->assertEquals(
-            '8.1.0beta1',
-            $versions['php.min']
-        );
-
-        $this->assertEquals(
-            '',
-            $versions['php.max']
-        );
+        foreach ($provides as $filename => $versions) {
+            yield [$filename, $versions];
+        }
     }
 
     /**
-     * Regression test for issue #324
+     * Feature test for First class callable syntax
      *
      * @link https://github.com/llaville/php-compatinfo/issues/324
      *       First class callable syntax is detected as PHP 8.1
-     * @group regression
+     * @group group
+     * @dataProvider callableExprProvider
      * @return void
      * @throws Exception
      */
-    public function testMethodCall()
+    public function testCallableExpr(string $dataSource, array $expectedVersions)
     {
-        $dataSource = 'callable_expr_method.php';
-        $metrics    = $this->executeAnalysis($dataSource);
-        $versions   = $metrics[self::$analyserId]['versions'];
+        $metrics  = $this->executeAnalysis($dataSource);
+        $versions = $metrics[self::$analyserId]['versions'];
 
-        $this->assertEquals(
-            '8.1.0beta1',
-            $versions['php.min']
-        );
-
-        $this->assertEquals(
-            '',
-            $versions['php.max']
-        );
-    }
-
-    /**
-     * Regression test for issue #324
-     *
-     * @link https://github.com/llaville/php-compatinfo/issues/324
-     *       First class callable syntax is detected as PHP 8.1
-     * @group regression
-     * @return void
-     * @throws Exception
-     */
-    public function testStaticCall()
-    {
-        $dataSource = 'callable_expr_static.php';
-        $metrics    = $this->executeAnalysis($dataSource);
-        $versions   = $metrics[self::$analyserId]['versions'];
-
-        $this->assertEquals(
-            '8.1.0beta1',
-            $versions['php.min']
-        );
-
-        $this->assertEquals(
-            '',
-            $versions['php.max']
-        );
+        foreach ($expectedVersions as $key => $value) {
+            $this->assertEquals($value, $versions[$key]);
+        }
     }
 }
