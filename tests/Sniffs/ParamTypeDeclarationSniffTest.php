@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use Exception;
+
 /**
  * Unit tests for PHP_CompatInfo package, parameter type declaration sniff
  *
@@ -197,6 +199,26 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
         $this->assertEquals(
             '7.2.0',
             $functions['objectArg']['php.min']
+        );
+    }
+
+    /**
+     * Feature test for union types
+     *
+     * @group features
+     * @link https://github.com/llaville/php-compatinfo/issues/333
+     * @return void
+     * @throws Exception
+     */
+    public function testUnionTypes()
+    {
+        $dataSource = 'union_types.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $functions  = $metrics[self::$analyserId]['methods'];
+
+        $this->assertEquals(
+            '8.0.0',
+            $functions['Number\__construct']['php.min']
         );
     }
 }

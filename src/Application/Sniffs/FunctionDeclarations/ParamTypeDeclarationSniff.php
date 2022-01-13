@@ -31,6 +31,7 @@ use function strtolower;
  * @link https://madewithlove.com/self-and-parent-type-hints/
  * - Nullable Type Declarations since PHP 7.1
  * @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types
+ * @link https://www.php.net/releases/8.0/en.php#union-types
  * @see tests/Sniffs/ParamTypeDeclarationSniffTest
  */
 final class ParamTypeDeclarationSniff extends SniffAbstract
