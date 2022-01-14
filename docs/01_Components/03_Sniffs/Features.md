@@ -127,6 +127,7 @@ Here is the list of features supported and their corresponding sniffs :
 | Classes      | NewInitializerSniff   | [New initializers](https://www.php.net/manual/en/migration81.new-features.php#migration81.new-features.core.new-in-initializer) |
 | Constants    | ClassConstantSniff    | [Final class constants](https://www.php.net/releases/8.1/en.php#final_class_constants) |
 | Enumerations | EnumerationSniff | [Enumerations](https://www.php.net/manual/en/migration81.new-features.php#migration81.new-features.core.enums) |
+| Fibers       | FiberSniff | [Fibers](https://www.php.net/releases/8.1/en.php#fibers) |
 | FunctionDeclarations | FirstClassCallableSniff | [First class callable](https://www.php.net/manual/en/functions.first_class_callable_syntax.php) |
 | FunctionDeclarations | ParamTypeDeclarationSniff  | [Pure Intersection Types](https://www.php.net/releases/8.1/en.php#pure_intersection_types) |
 | FunctionDeclarations | ReturnTypeDeclarationSniff | [Pure Intersection Types](https://www.php.net/releases/8.1/en.php#pure_intersection_types) |

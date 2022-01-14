@@ -16,6 +16,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - [#324](https://github.com/llaville/php-compatinfo/issues/324) : new sniff to detect PHP (8.1) First class callable syntax
 - [#325](https://github.com/llaville/php-compatinfo/issues/325) : new sniff to detect PHP (8.1) New in initializers
 - [#329](https://github.com/llaville/php-compatinfo/issues/329) : new sniff to detect PHP (8.1) Explicit Octal numeral notation
+- [#330](https://github.com/llaville/php-compatinfo/issues/330) : new sniff to detect PHP (8.1) Fibers
 
 ### Changed
 
