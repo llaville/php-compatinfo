@@ -131,6 +131,7 @@ Here is the list of features supported and their corresponding sniffs :
 | FunctionDeclarations | ParamTypeDeclarationSniff  | [Pure Intersection Types](https://www.php.net/releases/8.1/en.php#pure_intersection_types) |
 | FunctionDeclarations | ReturnTypeDeclarationSniff | [Pure Intersection Types](https://www.php.net/releases/8.1/en.php#pure_intersection_types) |
 | FunctionDeclarations | ReturnTypeDeclarationSniff | [Never return type](https://www.php.net/releases/8.1/en.php#never_return_type) |
+| Numbers | OctalNumberFormatSniff | [Explicit Octal numeral notation](https://www.php.net/releases/8.1/en.php#explicit_octal_numeral_notation) |
 
 ## Special cases
 
