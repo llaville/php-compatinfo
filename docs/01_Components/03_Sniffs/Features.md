@@ -123,6 +123,7 @@ Here is the list of features supported and their corresponding sniffs :
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
+| Arrays   | ArrayUnpackingSyntaxSniff | [Array unpacking support for string-keyed arrays](https://www.php.net/releases/8.1/en.php#array_unpacking_support_for_string_keyed_arrays) |
 | Classes      | ReadonlyPropertySniff | [Readonly Properties](https://www.php.net/manual/en/language.oop5.properties.php#language.oop5.properties.readonly-properties) |
 | Classes      | NewInitializerSniff   | [New initializers](https://www.php.net/manual/en/migration81.new-features.php#migration81.new-features.core.new-in-initializer) |
 | Constants    | ClassConstantSniff    | [Final class constants](https://www.php.net/releases/8.1/en.php#final_class_constants) |
