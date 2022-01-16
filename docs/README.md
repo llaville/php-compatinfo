@@ -38,6 +38,7 @@ the [PHP-Parser](https://github.com/nikic/PHP-Parser) library.
 They are grouped by categories to solve PHP features (from 4.0 to 8.1)
 
 - Arrays (3)
+- Attributes (1)
 - Classes (8)
 - Constants (3)
 - ControlStructures (2)
