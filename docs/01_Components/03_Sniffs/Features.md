@@ -116,6 +116,7 @@ Here is the list of features supported and their corresponding sniffs :
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
+| Arrays   | ArrayUnpackingSyntaxSniff | [Array unpacking support for numeric-keyed arrays](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.unpack-inside-array) |
 | Classes  | TypedPropertySniff  | [Typed properties](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.typed-properties) |
 |   | `VersionResolverVisitor`   | [Arrow functions](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.arrow-functions) |
 
