@@ -120,6 +120,13 @@ Here is the list of features supported and their corresponding sniffs :
 | Classes  | TypedPropertySniff  | [Typed properties](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.typed-properties) |
 |   | `VersionResolverVisitor`   | [Arrow functions](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.arrow-functions) |
 
+## [PHP 8.0](https://www.php.net/manual/en/migration80.php)
+
+| Sniff category | Sniff class name | PHP Feature |
+|---|---|---|
+| FunctionDeclarations | NamedArgumentDeclarationSniff | [Named arguments](https://www.php.net/releases/8.0/en.php#named-arguments) |
+
+
 ## [PHP 8.1](https://www.php.net/manual/en/migration81.php)
 
 | Sniff category | Sniff class name | PHP Feature |
