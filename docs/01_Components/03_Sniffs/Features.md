@@ -129,6 +129,7 @@ Here is the list of features supported and their corresponding sniffs :
 | ControlStructures    | MatchSniff   | [Match expressions](https://www.php.net/releases/8.0/en.php#match-expression) |
 | FunctionDeclarations | NamedArgumentDeclarationSniff | [Named arguments](https://www.php.net/releases/8.0/en.php#named-arguments) |
 | FunctionDeclarations | ParamTypeDeclarationSniff     | [Union types](https://www.php.net/releases/8.0/en.php#union-types) |
+| Operators  | NullsafeOperatorSniff | [Nullsafe operator](https://www.php.net/releases/8.0/en.php#nullsafe-operator) |
 
 
 ## [PHP 8.1](https://www.php.net/manual/en/migration81.php)

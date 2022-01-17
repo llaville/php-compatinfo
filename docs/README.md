@@ -49,7 +49,7 @@ They are grouped by categories to solve PHP features (from 4.0 to 8.1)
 - Generators (1)
 - Keywords (1)
 - Numbers (2)
-- Operators (4)
+- Operators (5)
 - TextProcessing (1)
 - UseDeclarations (2)
 
