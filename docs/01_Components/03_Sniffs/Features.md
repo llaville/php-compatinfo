@@ -127,6 +127,7 @@ Here is the list of features supported and their corresponding sniffs :
 | Classes    | PropertyPromotionSniff | [Constructor property promotion](https://www.php.net/releases/8.0/en.php#constructor-property-promotion) |
 | Attributes | AttributeSniff | [Attributes](https://www.php.net/releases/8.0/en.php#attributes) |
 | FunctionDeclarations | NamedArgumentDeclarationSniff | [Named arguments](https://www.php.net/releases/8.0/en.php#named-arguments) |
+| FunctionDeclarations | ParamTypeDeclarationSniff     | [Union types](https://www.php.net/releases/8.0/en.php#union-types) |
 
 
 ## [PHP 8.1](https://www.php.net/manual/en/migration81.php)
