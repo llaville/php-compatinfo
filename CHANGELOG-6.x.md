@@ -20,6 +20,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - [#331](https://github.com/llaville/php-compatinfo/issues/331) : new sniff to detect PHP (8.1) Array unpacking support
 - [#334](https://github.com/llaville/php-compatinfo/issues/334) : new sniff to detect PHP (8.0) Named arguments
 - [#335](https://github.com/llaville/php-compatinfo/issues/335) : new sniff to detect PHP (8.0) Attributes
+- [#336](https://github.com/llaville/php-compatinfo/issues/336) : new sniff to detect PHP (8.0) Constructor property promotion
 
 ### Changed
 
