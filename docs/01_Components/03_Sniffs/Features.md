@@ -124,8 +124,9 @@ Here is the list of features supported and their corresponding sniffs :
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
-| Classes    | PropertyPromotionSniff | [Constructor property promotion](https://www.php.net/releases/8.0/en.php#constructor-property-promotion) |
 | Attributes | AttributeSniff | [Attributes](https://www.php.net/releases/8.0/en.php#attributes) |
+| Classes    | PropertyPromotionSniff | [Constructor property promotion](https://www.php.net/releases/8.0/en.php#constructor-property-promotion) |
+| ControlStructures    | MatchSniff   | [Match expressions](https://www.php.net/releases/8.0/en.php#match-expression) |
 | FunctionDeclarations | NamedArgumentDeclarationSniff | [Named arguments](https://www.php.net/releases/8.0/en.php#named-arguments) |
 | FunctionDeclarations | ParamTypeDeclarationSniff     | [Union types](https://www.php.net/releases/8.0/en.php#union-types) |
 

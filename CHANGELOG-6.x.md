@@ -21,6 +21,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - [#334](https://github.com/llaville/php-compatinfo/issues/334) : new sniff to detect PHP (8.0) Named arguments
 - [#335](https://github.com/llaville/php-compatinfo/issues/335) : new sniff to detect PHP (8.0) Attributes
 - [#336](https://github.com/llaville/php-compatinfo/issues/336) : new sniff to detect PHP (8.0) Constructor property promotion
+- [#337](https://github.com/llaville/php-compatinfo/issues/337) : new sniff to detect PHP (8.0) Match expressions
 
 ### Changed
 
