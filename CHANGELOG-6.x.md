@@ -7,6 +7,12 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [6.0.4] - 2022-01-18
+
+### Fixed
+
+- [GH-339](https://github.com/llaville/php-compatinfo/issues/339) Stop on empty/broken files during analysis (thanks to @yuri-ccp for reporting)
+
 ## [6.0.3] - 2022-01-05
 
 ### Fixed
