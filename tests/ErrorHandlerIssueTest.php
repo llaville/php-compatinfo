@@ -1,24 +1,18 @@
 <?php
-
 /**
- * Unit tests for PHP_CompatInfo package, ErrorHandler component
+ * This file is part of the PHP_CompatInfo package.
  *
- * PHP version 7
- *
- * @category   PHP
- * @package    PHP_CompatInfo
- * @subpackage Tests
- * @author     Laurent Laville
- * @license    https://opensource.org/licenses/BSD-3-Clause The 3-Clause BSD License
- * @since      Release 6.0.4
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
-
 namespace Bartlett\CompatInfo\Tests;
 
 use Exception;
 use function sprintf;
 
 /**
+ * @author Laurent Laville
+ * @since  Release 6.0.4
  * @link https://github.com/llaville/php-compatinfo/issues/339
  */
 final class ErrorHandlerIssueTest extends TestCase
