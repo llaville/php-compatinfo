@@ -73,7 +73,7 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
         $compatibilityQuery = new GetCompatibilityQuery(
             $input->getArgument('source'),
             $input->getOption('exclude'),
-            $input->hasOption('stop-on-failure')
+            $input->getOption('stop-on-failure')
         );
 
         try {
