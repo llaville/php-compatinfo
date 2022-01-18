@@ -30,9 +30,22 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - [#327](https://github.com/llaville/php-compatinfo/issues/327) : update sniffs to detect PHP (8.1) Never return type
 - [#328](https://github.com/llaville/php-compatinfo/issues/328) : update sniffs to detect PHP (8.1) Final class constants
 
+## [6.1.1] - 2022-01-18
+
+### Changed
+
+- [GH-319](https://github.com/llaville/php-compatinfo/issues/319) Add Platform to composer.json (thanks to @remicollet)
+-  fix `php-compatinfo-db` constraint to avoid conflict with new version feature introduced in 3.17.0
+
 ### Removed
 
 - [drop support of Composer v1](https://github.com/llaville/php-compatinfo/issues/320)
+
+## [6.0.4] - 2022-01-18
+
+### Fixed
+
+- [GH-339](https://github.com/llaville/php-compatinfo/issues/339) Stop on empty/broken files during analysis (thanks to @yuri-ccp for reporting)
 
 ## [6.1.0] - 2022-01-06
 
@@ -96,8 +109,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.1.0...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.1.1...HEAD
+[6.1.1]: https://github.com/llaville/php-compat-info/compare/6.1.0...6.1.1
 [6.1.0]: https://github.com/llaville/php-compat-info/compare/6.0.3...6.1.0
+[6.0.4]: https://github.com/llaville/php-compat-info/compare/6.0.3...6.0.4
 [6.0.3]: https://github.com/llaville/php-compat-info/compare/6.0.2...6.0.3
 [6.0.2]: https://github.com/llaville/php-compat-info/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/llaville/php-compat-info/compare/6.0.0...6.0.1
