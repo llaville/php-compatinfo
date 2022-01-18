@@ -3,4 +3,4 @@
 
 ## Console
 
-![Presentation Console](./presentation_console.graphviz.svg)
+![Graph UML Presentation Console](./presentation-console.graphviz.svg)
