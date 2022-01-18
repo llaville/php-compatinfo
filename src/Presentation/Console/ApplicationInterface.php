@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 interface ApplicationInterface extends ContainerAwareInterface
 {
     public const NAME = 'phpCompatInfo';
-    public const VERSION = '6.0.3';
+    public const VERSION = '6.0.4';
 
     /**
      * @param CommandLoaderInterface $commandLoader
