@@ -37,6 +37,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - [GH-319](https://github.com/llaville/php-compatinfo/issues/319) Add Platform to composer.json (thanks to @remicollet)
 -  fix `php-compatinfo-db` constraint to avoid conflict with new version feature introduced in 3.17.0
 
+### Fixed
+
+- [GH-339](https://github.com/llaville/php-compatinfo/issues/339) Stop on empty/broken files during analysis (thanks to @yuri-ccp for reporting)
+
 ### Removed
 
 - [drop support of Composer v1](https://github.com/llaville/php-compatinfo/issues/320)
@@ -111,7 +115,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 [unreleased]: https://github.com/llaville/php-compat-info/compare/6.1.1...HEAD
 [6.1.1]: https://github.com/llaville/php-compat-info/compare/6.1.0...6.1.1
-[6.1.0]: https://github.com/llaville/php-compat-info/compare/6.0.3...6.1.0
+[6.1.0]: https://github.com/llaville/php-compat-info/compare/6.0.4...6.1.0
 [6.0.4]: https://github.com/llaville/php-compat-info/compare/6.0.3...6.0.4
 [6.0.3]: https://github.com/llaville/php-compat-info/compare/6.0.2...6.0.3
 [6.0.2]: https://github.com/llaville/php-compat-info/compare/6.0.1...6.0.2
