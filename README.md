@@ -5,39 +5,12 @@
 
 Running on PHP greater or equal than 7.4 for parsing source code in a format PHP 5.2 to PHP 8.1
 
-|  Latest         |
-|:---------------:|
-| [![Branch Master](https://img.shields.io/badge/branch-master-orange)](https://github.com/llaville/php-compatinfo)    |
-| [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/php-compatinfo)](https://packagist.org/packages/bartlett/php-compatinfo) |
-| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo)](https://www.php.net/supported-versions.php) |
-| [![License](https://img.shields.io/packagist/l/bartlett/php-compatinfo)](https://github.com/llaville/php-compatinfo/blob/master/LICENSE) |
-| [![GitHub Discussions](https://img.shields.io/github/discussions/llaville/php-compatinfo)](https://github.com/llaville/php-compatinfo/discussions) |
-| [![GitHub-Pages](https://github.com/llaville/php-compatinfo/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/llaville/php-compatinfo/actions/workflows/gh-pages.yml) |
-| [![Tests](https://github.com/llaville/php-compatinfo/actions/workflows/php-tests.yaml/badge.svg)](https://github.com/llaville/php-compatinfo/actions/workflows/php-tests.yaml) |
-
-## Versions
-
-|  Stable v5.5.x  |  Stable v6.0.x  |  Stable v6.1.x  |
-|:---------------:|:---------------:|:---------------:|
-| [![Branch 5.5](https://img.shields.io/badge/branch-5.5-orange)](https://github.com/llaville/php-compatinfo/tree/5.5) | [![Branch 6.0](https://img.shields.io/badge/branch-6.0-orange)](https://github.com/llaville/php-compatinfo/tree/6.0) | [![Branch 6.1](https://img.shields.io/badge/branch-6.1-orange)](https://github.com/llaville/php-compatinfo/tree/6.1) |
-| [![Stable Version 5.5](https://img.shields.io/badge/packagist-v5.5.6-blue)](https://packagist.org/packages/bartlett/php-compatinfo) | [![Stable Version 6.0](https://img.shields.io/badge/packagist-v6.0.3-blue)](https://packagist.org/packages/bartlett/php-compatinfo) | [![Stable Version 6.1](https://img.shields.io/badge/packagist-v6.1.0-blue)](https://packagist.org/packages/bartlett/php-compatinfo) |
-| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/5.5.6)](https://www.php.net/supported-versions.php) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/6.0.3)](https://www.php.net/supported-versions.php) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/6.1.0)](https://www.php.net/supported-versions.php) |
-| [![License 5.5](https://img.shields.io/packagist/l/bartlett/php-compatinfo)](https://github.com/llaville/php-compatinfo/blob/5.5/LICENSE) | [![License 6.0](https://img.shields.io/packagist/l/bartlett/php-compatinfo)](https://github.com/llaville/php-compatinfo/blob/6.0/LICENSE) | [![License 6.1](https://img.shields.io/packagist/l/bartlett/php-compatinfo)](https://github.com/llaville/php-compatinfo/blob/6.1/LICENSE) |
-
 ## Documentation
 
-All the documentation is available on following websites, generated from the docs folder.
+All the documentation is available on [website](https://llaville.github.io/php-compatinfo),
+generated from the [docs](https://github.com/llaville/php-compatinfo/tree/6.2/docs) folder.
 
-| GH Pages v6 |
-|:-----------:|
-| [![Documentation 6.0](https://img.shields.io/badge/documentation-v6.0-green)](https://github.com/llaville/php-compatinfo/tree/6.0/docs) |
-| [![Documentation 6.1](https://img.shields.io/badge/documentation-v6.1-green)](https://github.com/llaville/php-compatinfo/tree/6.1/docs) |
-
-All the documentation is available on following websites generated from the docs folder.
-
-- <http://llaville.github.io/php-compatinfo/6.x/>
-
-For users that still used the unmaintained versions, please visit <http://bartlett.laurent-laville.org/php-compatinfo/> for documentation
+* [Getting Started](docs/getting-started.md).
 
 ## Contributors
 
