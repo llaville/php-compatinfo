@@ -1,6 +1,5 @@
 # PHP CompatInfo
 
-
 **PHP CompatInfo** is a library that can find the minimum version and the extensions required for a piece of code to run.
 
 Running on PHP greater or equal than 7.4 for parsing source code in a format PHP 5.2 to PHP 8.1
@@ -8,7 +7,7 @@ Running on PHP greater or equal than 7.4 for parsing source code in a format PHP
 ## Documentation
 
 All the documentation is available on [website](https://llaville.github.io/php-compatinfo),
-generated from the [docs](https://github.com/llaville/php-compatinfo/tree/master/docs) folder.
+generated from the [docs](https://github.com/llaville/php-compatinfo/tree/6.1/docs) folder.
 
 * [Getting Started](docs/getting-started.md).
 
