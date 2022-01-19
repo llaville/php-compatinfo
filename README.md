@@ -24,8 +24,6 @@ All the documentation is available on following websites generated from the docs
 
 - <http://llaville.github.io/php-compatinfo/6.x/>
 
-For users that still used the unmaintained versions, please visit <> for documentation
-
 ## Contributors
 
 * Laurent Laville (Lead Dev)
