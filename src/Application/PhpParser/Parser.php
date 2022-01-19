@@ -136,9 +136,12 @@ final class Parser
             $this->errorHandler
         );
         if (empty($stmts)) {
-            $this->errorHandler->handleError(
-                new Error('File has no contents', ['startLine' => 1])
-            );
+            if (!$this->errorHandler->hasErrors()) {
+                $this->errorHandler->handleError(
+                    new Error('File has no contents', ['startLine' => 1])
+                );
+            }
+            $stmts = []; // in case PHP-Parser returns NULL
         }
 
         $this->analyser->setCurrentFile($fileInfo);
