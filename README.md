@@ -19,8 +19,6 @@ Running on PHP greater or equal than 7.4 for parsing source code in a format PHP
 
 ## Documentation
 
-All the documentation is available on following websites, generated from the docs folder.
-
 | GH Pages v6 |
 |:-----------:|
 | [![Documentation 6.0](https://img.shields.io/badge/documentation-v6.0-green)](https://github.com/llaville/php-compatinfo/tree/6.0/docs) |
