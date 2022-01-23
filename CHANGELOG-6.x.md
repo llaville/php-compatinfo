@@ -23,6 +23,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - [#336](https://github.com/llaville/php-compatinfo/issues/336) : new sniff to detect PHP (8.0) Constructor property promotion
 - [#337](https://github.com/llaville/php-compatinfo/issues/337) : new sniff to detect PHP (8.0) Match expressions
 - [#338](https://github.com/llaville/php-compatinfo/issues/338) : new sniff to detect PHP (8.0) Nullsafe operator syntax
+- [#340](https://github.com/llaville/php-compatinfo/issues/340) : new sniff to detect PHP (8.0) Trailing comma syntax in parameters list and closure use list
 
 ### Changed
 
@@ -35,7 +36,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Changed
 
 - [GH-319](https://github.com/llaville/php-compatinfo/issues/319) Add Platform to composer.json (thanks to @remicollet)
--  fix `php-compatinfo-db` constraint to avoid conflict with new version feature introduced in 3.17.0
+- fix `php-compatinfo-db` constraint to avoid conflict with new version feature introduced in 3.17.0
 
 ### Fixed
 

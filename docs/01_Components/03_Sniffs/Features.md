@@ -129,6 +129,7 @@ Here is the list of features supported and their corresponding sniffs :
 | ControlStructures    | MatchSniff   | [Match expressions](https://www.php.net/releases/8.0/en.php#match-expression) |
 | FunctionDeclarations | NamedArgumentDeclarationSniff | [Named arguments](https://www.php.net/releases/8.0/en.php#named-arguments) |
 | FunctionDeclarations | ParamTypeDeclarationSniff     | [Union types](https://www.php.net/releases/8.0/en.php#union-types) |
+| FunctionDeclarations | TrailingCommaSniff            | [Trailing comma](https://php.watch/versions/8.0/trailing-comma-parameter-use-list) |
 | Operators  | NullsafeOperatorSniff | [Nullsafe operator](https://www.php.net/releases/8.0/en.php#nullsafe-operator) |
 
 
