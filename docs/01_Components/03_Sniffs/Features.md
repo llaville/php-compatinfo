@@ -127,6 +127,7 @@ Here is the list of features supported and their corresponding sniffs :
 | Attributes | AttributeSniff | [Attributes](https://www.php.net/releases/8.0/en.php#attributes) |
 | Classes    | PropertyPromotionSniff | [Constructor property promotion](https://www.php.net/releases/8.0/en.php#constructor-property-promotion) |
 | ControlStructures    | MatchSniff   | [Match expressions](https://www.php.net/releases/8.0/en.php#match-expression) |
+| ControlStructures    | NonCapturingCatchSniff        | [Non-capturing catches](https://wiki.php.net/rfc/non-capturing_catches) |
 | FunctionDeclarations | NamedArgumentDeclarationSniff | [Named arguments](https://www.php.net/releases/8.0/en.php#named-arguments) |
 | FunctionDeclarations | ParamTypeDeclarationSniff     | [Union types](https://www.php.net/releases/8.0/en.php#union-types) |
 | FunctionDeclarations | TrailingCommaSniff            | [Trailing comma](https://php.watch/versions/8.0/trailing-comma-parameter-use-list) |

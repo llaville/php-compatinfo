@@ -24,6 +24,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - [#337](https://github.com/llaville/php-compatinfo/issues/337) : new sniff to detect PHP (8.0) Match expressions
 - [#338](https://github.com/llaville/php-compatinfo/issues/338) : new sniff to detect PHP (8.0) Nullsafe operator syntax
 - [#340](https://github.com/llaville/php-compatinfo/issues/340) : new sniff to detect PHP (8.0) Trailing comma syntax in parameters list and closure use list
+- [#341](https://github.com/llaville/php-compatinfo/issues/341) : new sniff to detect PHP (8.0) Non-capturing catches syntax
 
 ### Changed
 
