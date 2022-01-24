@@ -31,8 +31,7 @@
         "symfony/stopwatch": "^4.4|^5.0"
     },
     "require-dev": {
-        "bartlett/graph-uml": "^1.2",
-        "composer/composer": "^2.0"
+        "bartlett/graph-uml": "^1.2"
     },
     "authors": [
         {
