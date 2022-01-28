@@ -32,10 +32,19 @@ use Bartlett\CompatInfo\Application\Event\BeforeSetupSniffInterface;
 use Bartlett\CompatInfo\Application\Event\BeforeTraverseAstEvent;
 use Bartlett\CompatInfo\Application\Event\BeforeTraverseAstInterface;
 use Bartlett\CompatInfo\Application\Extension\ExtensionLoaderInterface;
+use Bartlett\CompatInfo\Presentation\Console\Command\AbstractCommand;
+use Bartlett\CompatInfo\Presentation\Console\Style;
 
+use Symfony\Component\Console\ConsoleEvents;
+use Symfony\Component\Console\Event\ConsoleCommandEvent;
+use Symfony\Component\Console\Event\ConsoleTerminateEvent;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\EventDispatcher\EventDispatcher as SymfonyEventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+use function str_starts_with;
 
 /**
  * Event dispatcher.
@@ -56,6 +65,35 @@ final class EventDispatcher extends SymfonyEventDispatcher
         foreach ($dispatcher->getListeners() as $eventName => $listener) {
             $this->addListener($eventName, $listener);
         }
+
+        $this->addListener(ConsoleEvents::COMMAND, function (ConsoleCommandEvent $event) {
+            $command = $event->getCommand();
+
+            if (
+                (str_starts_with($command->getName(), 'db:') && $command->getName() !== 'db:create')
+                || str_starts_with($command->getName(), 'analyser:')
+            ) {
+                $app = $command->getApplication();
+                // launch auto diagnostic
+                $diagnoseCommand = $app->find('diagnose');
+                // and avoid to print results
+                $statusCode = $diagnoseCommand->run(new ArrayInput([]), new NullOutput());
+                if ($statusCode === AbstractCommand::FAILURE) {
+                    $event->disableCommand();
+                }
+            }
+        }, 100); // with a priority highest to default (in case of --profile usage)
+
+        $this->addListener(ConsoleEvents::TERMINATE, function (ConsoleTerminateEvent $event) {
+            $command = $event->getCommand();
+            if (
+                (str_starts_with($command->getName(), 'db:') || str_starts_with($command->getName(), 'analyser:'))
+                && $event->getExitCode() == ConsoleCommandEvent::RETURN_CODE_DISABLED
+            ) {
+                $io = new Style($event->getInput(), $event->getOutput());
+                $io->error('Please run `db:create` to initialize the database.');
+            }
+        }, 100); // with a priority highest to default (in case of --profile usage)
 
         foreach ($extensionLoader->getNames() as $extensionName) {
             $extension = $extensionLoader->get($extensionName);

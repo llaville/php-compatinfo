@@ -53,6 +53,9 @@ final class DiagnoseCommand extends AbstractCommand implements CommandInterface
         $checker->setAppName('PHP CompatInfo');
         $checker->printDiagnostic($projectRequirements);
 
-        return self::SUCCESS;
+        if (count($projectRequirements->getFailedRequirements()) === 0) {
+            return self::SUCCESS;
+        }
+        return self::FAILURE;
     }
 }

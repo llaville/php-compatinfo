@@ -7,7 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Presentation\Console;
 
-use Composer\InstalledVersions;
+use Bartlett\CompatInfo\Presentation\Console\Command\AbstractCommand;
+use Bartlett\CompatInfoDb\Infrastructure\Framework\Composer\InstalledVersions;
 
 use Symfony\Component\Config\Exception\FileLocatorFileNotFoundException;
 use Symfony\Component\Config\FileLocator;
@@ -22,11 +23,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 use Phar;
 use function basename;
 use function sprintf;
-use function substr;
 
 /**
  * The CompatInfo CLI version.
@@ -55,13 +56,14 @@ class Application extends SymfonyApplication implements ApplicationInterface
 
     /**
      * Application constructor.
-     *
-     * @param string|null $version (optional) auto-detect
      */
-    public function __construct(?string $version = null)
+    public function __construct(EventDispatcherInterface $compatibilityEventDispatcher)
     {
-        $version = $version ?? $this->getInstalledVersion(false);
-        parent::__construct(self::NAME, $version);
+        parent::__construct(
+            self::NAME,
+            $this->getInstalledVersion(false)
+        );
+        $this->setDispatcher($compatibilityEventDispatcher);
     }
 
     /**
@@ -93,8 +95,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
     public function getLongVersion(): string
     {
         return sprintf(
-            '<info>%s</info> version <comment>%s</comment> DB version <comment>%s</comment>',
-            $this->getName(),
+            '%s -- %s',
             $this->getInstalledVersion(),
             $this->getInstalledVersion(true, 'bartlett/php-compatinfo-db')
         );
@@ -204,19 +205,14 @@ class Application extends SymfonyApplication implements ApplicationInterface
             $phar = new Phar($_SERVER['argv'][0]);
             $manifest = $phar->getMetadata();
             $output->writeln($manifest);
-            return 0;
+            return AbstractCommand::SUCCESS;
         }
 
         return parent::run($input, $output);
     }
 
-    public function getInstalledVersion(bool $withRef = true, string $packageName = 'bartlett/php-compatinfo'): string
+    public function getInstalledVersion(bool $withRef = true, string $packageName = 'bartlett/php-compatinfo'): ?string
     {
-        $version = InstalledVersions::getPrettyVersion($packageName);
-        if (!$withRef) {
-            return $version;
-        }
-        $commitHash = InstalledVersions::getReference($packageName);
-        return sprintf('%s@%s', $version, substr($commitHash, 0, 7));
+        return InstalledVersions::getPrettyVersion($packageName, $withRef);
     }
 }

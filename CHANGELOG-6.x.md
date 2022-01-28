@@ -9,7 +9,11 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ### Added
 
+- `about` command to display current long version and more information about this package.
 - new environment variable `APP_VENDOR_DIR` that identify `vendor` directory (auto-detection)
+- `APP_DATABASE_URL` contains full path without placeholders for SQLite driver.
+- `APP_CACHE_DIR` identifies directory where you may find the SQLite database version (`compatinfo-db.sqlite`).
+- `APP_HOME_DIR` identifies user home directory (whatever platform).
 - [Simplify database initialization processus](https://github.com/llaville/php-compatinfo/issues/321) with bridge to new command `db:create` (from CompatInfoDB)
 - [#322](https://github.com/llaville/php-compatinfo/issues/322) : new sniff to detect PHP (8.1) Enumerations
 - [#323](https://github.com/llaville/php-compatinfo/issues/323) : new sniff to detect PHP (8.1) Readonly Properties
@@ -31,6 +35,9 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - [#326](https://github.com/llaville/php-compatinfo/issues/326) : update sniffs to detect PHP (8.1) Intersection types
 - [#327](https://github.com/llaville/php-compatinfo/issues/327) : update sniffs to detect PHP (8.1) Never return type
 - [#328](https://github.com/llaville/php-compatinfo/issues/328) : update sniffs to detect PHP (8.1) Final class constants
+- option `--version` display now only long version without application description.
+- Checker service handle now, and print into diagnostic the application environment variables (keys/values).
+- Launch an auto-diagnose on `db:*` commands (excluding `db:create`) or `analyser:run`.
 
 ## [6.1.2] - 2022-01-28
 
