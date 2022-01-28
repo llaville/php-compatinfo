@@ -7,6 +7,12 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [6.1.2] - 2022-01-28
+
+### Changed
+
+- fix `bartlett/php-compatinfo-db` constraint to fix conflict with future versions 3.19 or greater
+
 ## [6.1.1] - 2022-01-18
 
 ### Changed
@@ -86,7 +92,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.1.1...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.1.2...HEAD
+[6.1.2]: https://github.com/llaville/php-compat-info/compare/6.1.1...6.1.2
 [6.1.1]: https://github.com/llaville/php-compat-info/compare/6.1.0...6.1.1
 [6.1.0]: https://github.com/llaville/php-compat-info/compare/6.0.4...6.1.0
 [6.0.4]: https://github.com/llaville/php-compat-info/compare/6.0.3...6.0.4
