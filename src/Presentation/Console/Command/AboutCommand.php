@@ -8,6 +8,7 @@
 namespace Bartlett\CompatInfo\Presentation\Console\Command;
 
 use Bartlett\CompatInfo\Presentation\Console\ApplicationInterface;
+
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
@@ -46,9 +47,10 @@ final class AboutCommand extends AbstractCommand implements CommandInterface
 
         $lines = [
             sprintf(
-                '<info>%s</info> version <comment>%s</comment>',
+                '<info>%s</info> version <comment>%s</comment> DB version <comment>%s</comment>',
                 $app->getName(),
-                $app->getInstalledVersion()
+                $app->getInstalledVersion(),
+                $app->getInstalledVersion(true, 'bartlett/php-compatinfo-db')
             ),
             sprintf(
                 '<comment>Please visit %s for more information.</comment>',
