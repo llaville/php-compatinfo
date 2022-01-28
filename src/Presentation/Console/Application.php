@@ -94,11 +94,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
      */
     public function getLongVersion(): string
     {
-        return sprintf(
-            '%s -- %s',
-            $this->getInstalledVersion(),
-            $this->getInstalledVersion(true, 'bartlett/php-compatinfo-db')
-        );
+        return $this->getInstalledVersion();
     }
 
     /**
