@@ -4,6 +4,9 @@ about: If something isn't working as expected.
 ---
 
 <!---
+The information we ask for below is IMPORTANT. It will help us help you faster.
+Please FOLLOW THE ISSUE TEMPLATE unless you have a good reason not to, and help avoid wasting everyone's time.
+
 1. Verify first that your issue/request is not already reported on GitHub.
 
 2. PLEASE FILL OUT ALL REQUIRED INFORMATION BELOW! Otherwise, it might take more time to properly handle this bug report.
@@ -19,13 +22,16 @@ about: If something isn't working as expected.
 - [ ] PHP extension related issue.
 - [ ] Other. Please specify in `Summary` section
 
-## OS
-<!-- COMPLETE ALL 5 BULLET POINTS BELOW: -->
-**1. Host operating system and version:** `uname --all` (for Linux), `systeminfo` on CMD prompt for Windows (specify only OS name and OS version)
+## Diagnose
 
-**2. PHP version:** `php -v`
+<details>
+<summary>Output of `diagnose` command</summary>
 
-**3. PHP CompatInfo version:** `bin/phpcompatinfo --version`
+```
+...REPLACE ME...
+```
+
+</details>
 
 ## Summary
 <!-- Explain the problem briefly -->
@@ -52,3 +58,12 @@ Or if source code is private, the code snippet that reproduces the problem.
 ## PHP extensions related issue.
 
 - Please specify list of extensions loaded. Uses either `reference:list` or `db:list` command depends on CompatInfo version:**
+
+<details>
+<summary>Output of `*:list` command</summary>
+
+```
+...REPLACE ME...
+```
+
+</details>
