@@ -51,13 +51,24 @@ Explain all steps you've proceeded.
 Which one ? Explain your context
 
 ## Source Code Analysis issue.
-
+<!-- 
 Please specify Repository URL (GitHub), download URL if source code is open-source.
 Or if source code is private, the code snippet that reproduces the problem.
+-->
+
+Source Code reference: `...REPLACE ME BY REPOSITORY SOURCE CODE URL...`
+
+Using this command: `...REPLACE ME...`
+
+<details>
+<summary>Output of `analyser:run` command</summary>
+
+```
+...REPLACE ME...
+```
 
 ## PHP extensions related issue.
-
-- Please specify list of extensions loaded. Uses either `reference:list` or `db:list` command depends on CompatInfo version:**
+<!-- Please specify list of extensions loaded. Uses either `reference:list` or `db:list` command depends on CompatInfo version -->
 
 <details>
 <summary>Output of `*:list` command</summary>
