@@ -36,7 +36,9 @@ final class AttributeSniffTest extends SniffTestCase
      * Feature test for Attributes
      *
      * @link https://github.com/llaville/php-compatinfo/issues/335
+     * @link https://github.com/llaville/php-compatinfo/issues/342
      * @group feature
+     * @group regression
      * @return void
      * @throws Exception
      */
@@ -47,13 +49,16 @@ final class AttributeSniffTest extends SniffTestCase
         $versions   = $metrics[self::$analyserId]['versions'];
 
         $this->assertEquals(
-            '8.0.0alpha1',
+            '4.0.0',
             $versions['php.min']
         );
-
         $this->assertEquals(
             '',
             $versions['php.max']
+        );
+        $this->assertEquals(
+            '8.0.0alpha1',
+            $versions['php.all']
         );
     }
 }

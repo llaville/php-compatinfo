@@ -90,7 +90,7 @@ final class VersionDataCollector extends DataCollector
     public function getData(): array
     {
         $data = array_merge(
-            ['versions' => ['php.min' => '4.0.0', 'php.max' => '']],
+            ['versions' => ['php.min' => '4.0.0', 'php.max' => '', 'php.all' => '']],
             $this->data
         );
 

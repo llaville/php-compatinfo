@@ -39,6 +39,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - Checker service handle now, and print into diagnostic the application environment variables (keys/values).
 - Launch an auto-diagnose on `db:*` commands (excluding `db:create`) or `analyser:run`.
 
+### Fixed
+
+- [#342](https://github.com/llaville/php-compatinfo/issues/342) : Sniff `AttributeSniff` raise `php.min` too much
+
 ## [6.1.2] - 2022-01-28
 
 ### Changed
