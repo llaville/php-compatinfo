@@ -227,7 +227,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
                 isset($versions['ext.name']) ? $versions['ext.name'] : '',
                 self::ext($versions),
                 self::php($versions),
-                $versions['php.all'],
+                $versions['php.all'] ?? '',
             ];
             /*
                 for reference:show command,
@@ -252,7 +252,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
                             isset($version['ext.name']) ? $version['ext.name'] : '',
                             self::ext($version),
                             self::php($version),
-                            $version['php.all'],
+                            $version['php.all'] ?? '',
                         ];
                     }
                 }
