@@ -93,6 +93,10 @@ jobs:
 
         name: Compatibility Info
 
+        env:
+            APP_ENV: dev  # see explains at https://github.com/llaville/php-compatinfo-db/issues/101
+            DATABASE_URL: "sqlite:///${{ github.workspace }}/.cache/compatinfo-db.sqlite"
+
         steps:
             -   # Git Checkout
                 name: Checkout
@@ -116,6 +120,7 @@ jobs:
                 name: Build Database
                 run: |
                     bin/phpcompatinfo db:create --ansi
+                    bin/phpcompatinfo db:init --distribution --installed --ansi
 
             -   # Run unit tests
                 name: Unit tests
