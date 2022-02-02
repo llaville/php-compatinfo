@@ -65,7 +65,7 @@ final class EventDispatcher extends SymfonyEventDispatcher
         foreach ($dispatcher->getListeners() as $eventName => $listener) {
             $this->addListener($eventName, $listener);
         }
-
+/*
         $this->addListener(ConsoleEvents::COMMAND, function (ConsoleCommandEvent $event) {
             $command = $event->getCommand();
 
@@ -101,7 +101,7 @@ final class EventDispatcher extends SymfonyEventDispatcher
                 $this->addSubscriber($extension);
             }
         }
-
+*/
         $this->extensionLoader = $extensionLoader;
     }
 
