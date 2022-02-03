@@ -120,7 +120,7 @@ jobs:
                 name: Build Database
                 run: |
                     bin/phpcompatinfo db:create --ansi
-                    bin/phpcompatinfo db:init --distribution --installed --ansi
+                    bin/phpcompatinfo db:init --ansi
 
             -   # Run unit tests
                 name: Unit tests
