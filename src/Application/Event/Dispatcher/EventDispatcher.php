@@ -39,7 +39,7 @@ use Symfony\Component\Console\ConsoleEvents;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\Console\Event\ConsoleTerminateEvent;
 use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Output\NullOutput;
+use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\EventDispatcher\EventDispatcher as SymfonyEventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -55,6 +55,7 @@ use function str_starts_with;
 final class EventDispatcher extends SymfonyEventDispatcher
 {
     private ExtensionLoaderInterface $extensionLoader;
+    private BufferedOutput $diagnoseOutput;
 
     public function __construct(
         EventDispatcherInterface $dispatcher,
@@ -65,19 +66,20 @@ final class EventDispatcher extends SymfonyEventDispatcher
         foreach ($dispatcher->getListeners() as $eventName => $listener) {
             $this->addListener($eventName, $listener);
         }
-/*
+
         $this->addListener(ConsoleEvents::COMMAND, function (ConsoleCommandEvent $event) {
             $command = $event->getCommand();
-
             if (
-                (str_starts_with($command->getName(), 'db:') && $command->getName() !== 'db:create')
+                (str_starts_with($command->getName(), 'db:') && !in_array($command->getName(), ['db:create', 'db:init']))
                 || str_starts_with($command->getName(), 'analyser:')
             ) {
                 $app = $command->getApplication();
-                // launch auto diagnostic
+                // launch auto diagnose
                 $diagnoseCommand = $app->find('diagnose');
-                // and avoid to print results
-                $statusCode = $diagnoseCommand->run(new ArrayInput([]), new NullOutput());
+                // and print results
+                $this->diagnoseOutput = new BufferedOutput();
+                $this->diagnoseOutput->setDecorated(true);
+                $statusCode = $diagnoseCommand->run(new ArrayInput([]), $this->diagnoseOutput);
                 if ($statusCode === AbstractCommand::FAILURE) {
                     $event->disableCommand();
                 }
@@ -86,12 +88,9 @@ final class EventDispatcher extends SymfonyEventDispatcher
 
         $this->addListener(ConsoleEvents::TERMINATE, function (ConsoleTerminateEvent $event) {
             $command = $event->getCommand();
-            if (
-                (str_starts_with($command->getName(), 'db:') || str_starts_with($command->getName(), 'analyser:'))
-                && $event->getExitCode() == ConsoleCommandEvent::RETURN_CODE_DISABLED
-            ) {
+            if ($event->getExitCode() == ConsoleCommandEvent::RETURN_CODE_DISABLED) {
                 $io = new Style($event->getInput(), $event->getOutput());
-                $io->error('Please run `db:create` to initialize the database.');
+                $io->writeln($this->diagnoseOutput->fetch());
             }
         }, 100); // with a priority highest to default (in case of --profile usage)
 
@@ -101,7 +100,7 @@ final class EventDispatcher extends SymfonyEventDispatcher
                 $this->addSubscriber($extension);
             }
         }
-*/
+
         $this->extensionLoader = $extensionLoader;
     }
 
