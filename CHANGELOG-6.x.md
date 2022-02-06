@@ -7,6 +7,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [6.2.0] - 2022-02-06
+
 ### Added
 
 - `about` command to display current long version and more information about this package.
@@ -134,7 +136,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.1.2...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.2.0...HEAD
+[6.2.0]: https://github.com/llaville/php-compat-info/compare/6.1.2...6.2.0
 [6.1.2]: https://github.com/llaville/php-compat-info/compare/6.1.1...6.1.2
 [6.1.1]: https://github.com/llaville/php-compat-info/compare/6.1.0...6.1.1
 [6.1.0]: https://github.com/llaville/php-compat-info/compare/6.0.4...6.1.0
