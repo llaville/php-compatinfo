@@ -39,6 +39,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - Checker service handle now, and print into diagnostic the application environment variables (keys/values).
 - Launch an auto-diagnose on `db:*` commands (excluding `db:create`) or `analyser:run`.
 - [#343](https://github.com/llaville/php-compatinfo/issues/343) : Allow displaying PHP suggested version on each reporter
+- Adjust Composer constraints to follow logical OR syntax with two pipes (see <https://getcomposer.org/doc/articles/versions.md#version-range>)
 
 ### Fixed
 

@@ -10,7 +10,7 @@
         "issues": "https://github.com/llaville/php-compatinfo/issues"
     },
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.4 || ^8.0",
         "ext-json": "*",
         "ext-libxml": "*",
         "ext-pcre": "*",
@@ -21,14 +21,14 @@
         "doctrine/collections": "^1.4",
         "nikic/php-parser": "^4.10",
         "psr/log": "^1.0",
-        "ramsey/uuid": "^3.9|^4.0",
-        "symfony/config": "^4.4|^5.0",
-        "symfony/console": "^4.4|^5.0",
-        "symfony/event-dispatcher": "^4.4|^5.0",
-        "symfony/finder": "^4.4|^5.0",
-        "symfony/dependency-injection": "^4.4|^5.0",
-        "symfony/serializer": "^4.4|^5.0",
-        "symfony/stopwatch": "^4.4|^5.0"
+        "ramsey/uuid": "^3.9 || ^4.0",
+        "symfony/config": "^4.4 || ^5.0",
+        "symfony/console": "^4.4 || ^5.0",
+        "symfony/event-dispatcher": "^4.4 || ^5.0",
+        "symfony/finder": "^4.4 || ^5.0",
+        "symfony/dependency-injection": "^4.4 || ^5.0",
+        "symfony/serializer": "^4.4 || ^5.0",
+        "symfony/stopwatch": "^4.4 || ^5.0"
     },
     "require-dev": {
         "bartlett/graph-uml": "^1.2"
