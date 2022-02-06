@@ -93,6 +93,10 @@ jobs:
 
         name: Compatibility Info
 
+        env:
+            APP_ENV: dev  # see explains at https://github.com/llaville/php-compatinfo-db/issues/101
+            DATABASE_URL: "sqlite:///${{ github.workspace }}/.cache/compatinfo-db.sqlite"
+
         steps:
             -   # Git Checkout
                 name: Checkout
@@ -110,13 +114,13 @@ jobs:
                 name: Install Composer dependencies
                 uses: "ramsey/composer-install@v1"
                 with:
-                    composer-options: "--prefer-dist"
+                    composer-options: "--prefer-dist --no-scripts"
 
             -   # Build Database
                 name: Build Database
                 run: |
-                    vendor/bin/doctrine orm:schema-tool:create --ansi
-                    vendor/bartlett/php-compatinfo-db/bin/compatinfo-db db:init --ansi
+                    bin/phpcompatinfo db:create --ansi
+                    bin/phpcompatinfo db:init --ansi
 
             -   # Run unit tests
                 name: Unit tests

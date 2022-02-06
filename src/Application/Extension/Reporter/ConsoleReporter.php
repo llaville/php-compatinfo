@@ -130,7 +130,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
         $groups = [
             'extensions',
             'namespaces',
-            'interfaces', 'traits', 'classes',
+            'interfaces', 'traits', 'classes', 'enumerations',
             'generators',
             'functions',
             'constants',
@@ -155,7 +155,11 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
             $max = sprintf(', PHP %s (max)', $metrics['versions']['php.max']);
         }
 
-        $output->success(sprintf('Requires %s%s', $min, $max));
+        $full = sprintf('Requires %s%s', $min, $max);
+        if (!empty($metrics['versions']['php.all'])) {
+            $full .= sprintf('. Recommended %s (min)', $metrics['versions']['php.all']);
+        }
+        $output->success($full);
         $output->comment('Produced by ' . $this->getName());
     }
 
@@ -206,8 +210,6 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
         ksort($args);
 
         foreach ($args as $arg => $versions) {
-            //if ($arg == 'var_dump') var_dump($versions);
-
             $flags = isset($versions['optional']) ? 'C' : ' ';
 
             if (in_array($section, ['classes', 'interfaces', 'traits'])) {
@@ -225,6 +227,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
                 isset($versions['ext.name']) ? $versions['ext.name'] : '',
                 self::ext($versions),
                 self::php($versions),
+                $versions['php.all'] ?? '',
             ];
             /*
                 for reference:show command,
@@ -249,20 +252,22 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
                             isset($version['ext.name']) ? $version['ext.name'] : '',
                             self::ext($version),
                             self::php($version),
+                            $version['php.all'] ?? '',
                         ];
                     }
                 }
             }
         }
 
-        $headers = ['  ', ucfirst($title), 'REF', 'EXT min/Max', 'PHP min/Max'];
+        $headers = ['  ', ucfirst($title), 'REF', 'EXT min/Max', 'PHP min/Max', 'PHP suggest'];
 
         $footers = [
             '',
             sprintf('<info>Total [%d]</info>', count($args)),
             '',
             '',
-            sprintf('<info>%s</info>', $phpRequired)
+            sprintf('<info>%s</info>', $phpRequired),
+            ''
         ];
         $rows[] = new TableSeparator();
         $rows[] = $footers;

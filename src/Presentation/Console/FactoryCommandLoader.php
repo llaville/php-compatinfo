@@ -10,7 +10,6 @@ namespace Bartlett\CompatInfo\Presentation\Console;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\BuildCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\DiagnoseCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\DoctorCommand;
-use Bartlett\CompatInfoDb\Presentation\Console\Command\InitCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\ReleaseCommand;
 
 use Symfony\Component\Console\Command\Command;
@@ -39,7 +38,6 @@ final class FactoryCommandLoader extends SymfonyFactoryCommandLoader implements 
             BuildCommand::class,
             DiagnoseCommand::class,
             DoctorCommand::class,
-            InitCommand::class,
             ReleaseCommand::class,
         ];
 

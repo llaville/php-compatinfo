@@ -21,10 +21,16 @@ interface ApplicationInterface extends ContainerAwareInterface
     public const NAME = 'phpCompatInfo';
 
     /**
-     * @param CommandLoaderInterface $commandLoader
      * @return void
      */
     public function setCommandLoader(CommandLoaderInterface $commandLoader);
 
-    public function getInstalledVersion(bool $withRef = true, string $packageName = 'bartlett/php-compatinfo'): string;
+    /**
+     * Gets the name of the application.
+     *
+     * @return string
+     */
+    public function getName();
+
+    public function getInstalledVersion(bool $withRef = true, string $packageName = 'bartlett/php-compatinfo'): ?string;
 }

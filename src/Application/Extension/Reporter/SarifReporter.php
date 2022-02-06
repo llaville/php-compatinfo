@@ -193,7 +193,7 @@ final class SarifReporter extends Reporter implements
      */
     public function getRules(): Generator
     {
-        foreach (['50', '51', '52', '53', '54', '55', '56', '70', '71', '72', '73', '74'] as $phpVer) {
+        foreach (['50', '51', '52', '53', '54', '55', '56', '70', '71', '72', '73', '74', '80', '81'] as $phpVer) {
             yield sprintf('CA%2d00', $phpVer) => [
                 'name' => substr(strrchr(get_class($this), '\\'), 1),
                 'fullDescription' => 'PHP minimum requirement',

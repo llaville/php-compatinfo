@@ -9,7 +9,8 @@ namespace Bartlett\CompatInfo\Presentation\Console\Command;
 
 use Bartlett\CompatInfo\Application\Query\Diagnose\DiagnoseQuery;
 use Bartlett\CompatInfo\Application\Query\QueryBusInterface;
-use Bartlett\CompatInfoDb\Application\Service\Checker;
+use Bartlett\CompatInfo\Presentation\Console\ApplicationInterface;
+use Bartlett\CompatInfoDb\Presentation\Console\Output\PrintDiagnose;
 use Bartlett\CompatInfoDb\Presentation\Console\Style;
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -23,6 +24,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 final class DiagnoseCommand extends AbstractCommand implements CommandInterface
 {
+    use PrintDiagnose;
+
     public const NAME = 'diagnose';
 
     private EntityManagerInterface $entityManager;
@@ -41,18 +44,28 @@ final class DiagnoseCommand extends AbstractCommand implements CommandInterface
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $diagnoseQuery = new DiagnoseQuery($this->entityManager);
 
         $projectRequirements = $this->queryBus->query($diagnoseQuery);
 
         $io = new Style($input, $output);
+        $this->write($projectRequirements, $io, 'PHP CompatInfo');
+        /** @var ApplicationInterface $app */
+        $app = $this->getApplication();
+        $io->note(
+            sprintf(
+                '%s version %s DB version %s',
+                $app->getName(),
+                $app->getInstalledVersion(),
+                $app->getInstalledVersion(true, 'bartlett/php-compatinfo-db')
+            )
+        );
 
-        $checker = new Checker($io);
-        $checker->setAppName('PHP CompatInfo');
-        $checker->printDiagnostic($projectRequirements);
-
-        return self::SUCCESS;
+        if (count($projectRequirements->getFailedRequirements()) === 0) {
+            return self::SUCCESS;
+        }
+        return self::FAILURE;
     }
 }

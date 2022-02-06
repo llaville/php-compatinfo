@@ -8,6 +8,7 @@
 namespace Bartlett\CompatInfo\Application\DataCollector\Normalizer;
 
 use Bartlett\CompatInfo\Application\PhpParser\Node\Name\ClassFullyQualified;
+use Bartlett\CompatInfo\Application\PhpParser\Node\Name\EnumFullyQualified;
 use Bartlett\CompatInfo\Application\PhpParser\Node\Name\InterfaceFullyQualified;
 
 use PhpParser\Node;
@@ -123,6 +124,7 @@ final class NodeNormalizer implements NormalizerInterface
         } elseif (
             $data instanceof InterfaceFullyQualified
             || $data instanceof ClassFullyQualified
+            || $data instanceof EnumFullyQualified
         ) {
             $this->name = (string) $data;
         } elseif ($data instanceof Node\Expr\StaticCall) {
@@ -167,6 +169,7 @@ final class NodeNormalizer implements NormalizerInterface
             'classes' => ['Stmt_Class', 'Name_ClassFullyQualified', 'Expr_New'],
             'interfaces' => ['Stmt_Interface', 'Name_InterfaceFullyQualified', 'Name_FullyQualified'],
             'traits' => ['Stmt_Trait', 'Stmt_TraitUse'],
+            'enumerations' => ['Stmt_Enum', 'Name_EnumFullyQualified'],
             'methods' => ['Stmt_ClassMethod', 'Expr_MethodCall', 'Expr_StaticCall'],
             'generators' => ['Expr_Yield', 'Expr_YieldFrom'],
             'functions' => ['Stmt_Function', 'Expr_Closure', 'Expr_FuncCall', 'Expr_ArrowFunction'],

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use Exception;
+
 /**
  * Unit tests for PHP_CompatInfo package, parameter type declaration sniff
  *
@@ -39,6 +41,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      * @link https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
      * @group regression
      * @return void
+     * @throws Exception
      */
     public function testRegressionGH142()
     {
@@ -63,6 +66,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *       PHP 7.1 Nullable types not being detected
      * @group regression
      * @return void
+     * @throws Exception
      */
     public function testNullableTypeHint()
     {
@@ -81,6 +85,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testArrayTypeHint()
     {
@@ -99,6 +104,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testSelfParentTypeHint()
     {
@@ -121,6 +127,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testCallableTypeHint()
     {
@@ -139,6 +146,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testScalarTypeHint()
     {
@@ -169,6 +177,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testIterableTypeHint()
     {
@@ -187,6 +196,7 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testObjectTypeHint()
     {
@@ -197,6 +207,46 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
         $this->assertEquals(
             '7.2.0',
             $functions['objectArg']['php.min']
+        );
+    }
+
+    /**
+     * Feature test for union types
+     *
+     * @group features
+     * @link https://github.com/llaville/php-compatinfo/issues/333
+     * @return void
+     * @throws Exception
+     */
+    public function testUnionTypes()
+    {
+        $dataSource = 'union_types.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $functions  = $metrics[self::$analyserId]['methods'];
+
+        $this->assertEquals(
+            '8.0.0',
+            $functions['Number\__construct']['php.min']
+        );
+    }
+
+    /**
+     * Feature test for intersection types
+     *
+     * @group features
+     * @link https://github.com/llaville/php-compatinfo/issues/326
+     * @return void
+     * @throws Exception
+     */
+    public function testIntersectionTypes()
+    {
+        $dataSource = 'intersection_types.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $functions  = $metrics[self::$analyserId]['functions'];
+
+        $this->assertEquals(
+            '8.1.0',
+            $functions['count_and_iterate']['php.min']
         );
     }
 }

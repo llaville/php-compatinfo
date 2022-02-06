@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use Exception;
+
 /**
  * Class constants
  *
@@ -34,6 +36,7 @@ final class ClassConstantSniffTest extends SniffTestCase
      *       Constant expressions with scalar expression not detected
      * @group regression
      * @return void
+     * @throws Exception
      */
     public function testRegressionGH215()
     {
@@ -49,6 +52,32 @@ final class ClassConstantSniffTest extends SniffTestCase
         $this->assertEquals(
             '',
             $constants['C\THREE']['php.max']
+        );
+    }
+
+    /**
+     * Feature test for final class constants
+     *
+     * @link https://github.com/llaville/php-compatinfo/issues/328
+     *       Final class constants are detected as PHP 8.1
+     * @group features
+     * @return void
+     * @throws Exception
+     */
+    public function testFinalClassConstants()
+    {
+        $dataSource = 'final_const.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $constants  = $metrics[self::$analyserId]['constants'];
+
+        $this->assertEquals(
+            '8.1.0beta1',
+            $constants['Foo\XX']['php.min']
+        );
+
+        $this->assertEquals(
+            '',
+            $constants['Foo\XX']['php.max']
         );
     }
 }

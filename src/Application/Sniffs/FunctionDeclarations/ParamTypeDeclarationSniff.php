@@ -31,6 +31,8 @@ use function strtolower;
  * @link https://madewithlove.com/self-and-parent-type-hints/
  * - Nullable Type Declarations since PHP 7.1
  * @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types
+ * @link https://www.php.net/releases/8.0/en.php#union-types
+ * @link https://php.watch/versions/8.1/intersection-types
  * @see tests/Sniffs/ParamTypeDeclarationSniffTest
  */
 final class ParamTypeDeclarationSniff extends SniffAbstract
@@ -86,7 +88,9 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
             // type hint object required at least PHP 5.0
             $this->updateVersion('5.0.0', $versions['php.min']);
 
-            if ($param->type instanceof Node\UnionType) {
+            if ($param->type instanceof Node\IntersectionType) {
+                $this->updateVersion('8.1.0', $versions['php.min']);
+            } elseif ($param->type instanceof Node\UnionType) {
                 $this->updateVersion('8.0.0', $versions['php.min']);
             } elseif ($param->type instanceof Node\NullableType) {
                 // @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types

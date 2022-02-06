@@ -116,8 +116,39 @@ Here is the list of features supported and their corresponding sniffs :
 
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
+| Arrays   | ArrayUnpackingSyntaxSniff | [Array unpacking support for numeric-keyed arrays](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.unpack-inside-array) |
 | Classes  | TypedPropertySniff  | [Typed properties](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.typed-properties) |
 |   | `VersionResolverVisitor`   | [Arrow functions](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.arrow-functions) |
+
+## [PHP 8.0](https://www.php.net/manual/en/migration80.php)
+
+| Sniff category | Sniff class name | PHP Feature |
+|---|---|---|
+| Attributes | AttributeSniff | [Attributes](https://www.php.net/releases/8.0/en.php#attributes) |
+| Classes    | PropertyPromotionSniff | [Constructor property promotion](https://www.php.net/releases/8.0/en.php#constructor-property-promotion) |
+| ControlStructures    | MatchSniff   | [Match expressions](https://www.php.net/releases/8.0/en.php#match-expression) |
+| ControlStructures    | NonCapturingCatchSniff        | [Non-capturing catches](https://wiki.php.net/rfc/non-capturing_catches) |
+| FunctionDeclarations | NamedArgumentDeclarationSniff | [Named arguments](https://www.php.net/releases/8.0/en.php#named-arguments) |
+| FunctionDeclarations | ParamTypeDeclarationSniff     | [Union types](https://www.php.net/releases/8.0/en.php#union-types) |
+| FunctionDeclarations | TrailingCommaSniff            | [Trailing comma](https://php.watch/versions/8.0/trailing-comma-parameter-use-list) |
+| Operators  | NullsafeOperatorSniff | [Nullsafe operator](https://www.php.net/releases/8.0/en.php#nullsafe-operator) |
+
+
+## [PHP 8.1](https://www.php.net/manual/en/migration81.php)
+
+| Sniff category | Sniff class name | PHP Feature |
+|---|---|---|
+| Arrays   | ArrayUnpackingSyntaxSniff | [Array unpacking support for string-keyed arrays](https://www.php.net/releases/8.1/en.php#array_unpacking_support_for_string_keyed_arrays) |
+| Classes      | ReadonlyPropertySniff | [Readonly Properties](https://www.php.net/manual/en/language.oop5.properties.php#language.oop5.properties.readonly-properties) |
+| Classes      | NewInitializerSniff   | [New initializers](https://www.php.net/manual/en/migration81.new-features.php#migration81.new-features.core.new-in-initializer) |
+| Constants    | ClassConstantSniff    | [Final class constants](https://www.php.net/releases/8.1/en.php#final_class_constants) |
+| Enumerations | EnumerationSniff | [Enumerations](https://www.php.net/manual/en/migration81.new-features.php#migration81.new-features.core.enums) |
+| Fibers       | FiberSniff | [Fibers](https://www.php.net/releases/8.1/en.php#fibers) |
+| FunctionDeclarations | FirstClassCallableSniff | [First class callable](https://www.php.net/manual/en/functions.first_class_callable_syntax.php) |
+| FunctionDeclarations | ParamTypeDeclarationSniff  | [Pure Intersection Types](https://www.php.net/releases/8.1/en.php#pure_intersection_types) |
+| FunctionDeclarations | ReturnTypeDeclarationSniff | [Pure Intersection Types](https://www.php.net/releases/8.1/en.php#pure_intersection_types) |
+| FunctionDeclarations | ReturnTypeDeclarationSniff | [Never return type](https://www.php.net/releases/8.1/en.php#never_return_type) |
+| Numbers | OctalNumberFormatSniff | [Explicit Octal numeral notation](https://www.php.net/releases/8.1/en.php#explicit_octal_numeral_notation) |
 
 ## Special cases
 

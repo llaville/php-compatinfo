@@ -80,6 +80,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
             'classes',
             'interfaces',
             'traits',
+            'enumerations',
             'methods',
             'generators',
             'functions',

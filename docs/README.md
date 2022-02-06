@@ -35,18 +35,21 @@ the [PHP-Parser](https://github.com/nikic/PHP-Parser) library.
 
 ### [Sniffs](01_Components/03_Sniffs/Features.md)
 
-They are grouped by categories to solve PHP features (from 4.0 to 7.4)
+They are grouped by categories to solve PHP features (from 4.0 to 8.1)
 
-- Arrays (2)
-- Classes (6)
+- Arrays (3)
+- Attributes (1)
+- Classes (9)
 - Constants (3)
-- ControlStructures (2)
+- ControlStructures (4)
+- Enumerations (1)
 - Expressions (3)
-- FunctionDeclarations (3)
+- Fibers (1)
+- FunctionDeclarations (6)
 - Generators (1)
 - Keywords (1)
-- Numbers (1)
-- Operators (4)
+- Numbers (2)
+- Operators (5)
 - TextProcessing (1)
 - UseDeclarations (2)
 
