@@ -1,9 +1,8 @@
 ---
-name: Tests
+name: Unit Tests
 
 on:
-    # Trigger mega-linter at every push. Action will also be visible from Pull Requests to master
-    push: # Comment this line to trigger action only on pull-requests (not recommended if you don't pay for GH Actions)
+    push:
         paths-ignore:
             - 'docs/**'
     pull_request:
@@ -14,10 +13,10 @@ on:
 
 jobs:
     lint_files:
-        name: Lint Code Base
+        name: ML
         uses: llaville/.github/.github/workflows/mega-linter.yml@master
 
-    php_tests:
+    unit_tests:
         needs: lint_files
 
         runs-on: ${{ matrix.os }}
@@ -63,7 +62,7 @@ jobs:
 
             -   # Install Composer dependencies
                 name: Install Composer dependencies
-                uses: "ramsey/composer-install@v1"
+                uses: ramsey/composer-install@v2
                 with:
                     composer-options: "--prefer-dist --no-scripts"
 
