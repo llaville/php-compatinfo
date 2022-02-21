@@ -12,10 +12,6 @@ on:
         paths-ignore:
             - 'docs/**'
 
-concurrency:
-    group: ${{ github.ref }}-${{ github.workflow }}
-    cancel-in-progress: true
-
 jobs:
     lint_files:
         name: Lint Code Base
