@@ -55,10 +55,10 @@ DATABASE_URL="postgresql://db_user:db_password@127.0.0.1:5432/db_name?serverVers
 
 After installation, or if you change database connection, you have to run following command(s):
 
-  * `bin/phpcompatinfo db:create`
-  * `bin/phpcompatinfo db:init`
+* `bin/phpcompatinfo db:create`
+* `bin/phpcompatinfo db:init`
 
-  At first run of CompatInfoDB, `DATABASE_URL` will be set to use default SQLite connection
+At first run of CompatInfoDB, `DATABASE_URL` will be set to use default SQLite connection
 
 ## Build PHAR distribution
 
