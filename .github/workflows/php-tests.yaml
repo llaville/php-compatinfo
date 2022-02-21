@@ -18,7 +18,7 @@ concurrency:
 jobs:
     lint_files:
         name: Lint Code Base
-        uses: llaville/.github/workflows/mega-linter.yml@master
+        uses: llaville/.github/.github/workflows/mega-linter.yml@master
 
     php_tests:
         needs: lint_files
