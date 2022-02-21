@@ -1,5 +1,6 @@
 {
     "alias": "phpcompatinfo.phar",
     "directories": ["bin", "config", "src", "vendor"],
-    "compression": "GZ"
+    "compression": "GZ",
+    "metadata": "Bartlett\\CompatInfo\\Infrastructure\\ManifestBuilder::toText"
 }
