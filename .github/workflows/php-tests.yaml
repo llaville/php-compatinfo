@@ -18,53 +18,7 @@ concurrency:
 jobs:
     lint_files:
         name: Lint Code Base
-
-        runs-on: ${{ matrix.os }}
-
-        strategy:
-            fail-fast: false
-            matrix:
-                os:
-                    - ubuntu-latest
-                php:
-                    - 7.4
-
-        steps:
-            -   # Git Checkout
-                name: Checkout Code
-                uses: actions/checkout@v2
-                with:
-                    token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
-                    fetch-depth: 0
-
-            -   # Setup PHP runtime
-                name: Setup PHP runtime
-                uses: "shivammathur/setup-php@v2"
-                with:
-                    php-version: ${{ matrix.php }}
-
-            -   # Install Composer dependencies
-                name: Install Composer dependencies
-                uses: "ramsey/composer-install@v1"
-                with:
-                    composer-options: "--prefer-dist"
-
-            -   # Mega-Linter
-                name: Mega-Linter
-                id: ml
-                    # You can override Mega-Linter flavor used to have faster performances
-                    # More info at https://megalinter.github.io/latest/flavors/
-                uses: megalinter/megalinter/flavors/php@v5
-                env:
-                    # All available variables are described in documentation
-                    # https://megalinter.github.io/latest/configuration/
-                    # Validates all source when push on master, else just the git diff with master. Override with true if you always want to lint all sources
-                    VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                    # ADD YOUR CUSTOM ENV VARIABLES HERE OR DEFINE THEM IN A FILE .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
-                    # DISABLE: COPYPASTE,SPELL # Uncomment to disable copy-paste and spell checks
-                    LOG_LEVEL: INFO
-                    TEXT_REPORTER: false
+        uses: llaville/.github/workflows/mega-linter.yml@master
 
     php_tests:
         needs: lint_files
