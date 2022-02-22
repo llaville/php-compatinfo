@@ -13,8 +13,9 @@ on:
 
 jobs:
     lint_files:
-        name: ML
         uses: llaville/.github/.github/workflows/mega-linter.yml@master
+        with:
+            repository: ${{ github.repository }}
 
     unit_tests:
         needs: lint_files
