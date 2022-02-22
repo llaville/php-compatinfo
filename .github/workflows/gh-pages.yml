@@ -10,90 +10,9 @@ on:
     pull_request:
     workflow_dispatch:
 
-concurrency:
-    group: ${{ github.ref }}-${{ github.workflow }}
-    cancel-in-progress: true
-
 jobs:
     deploy:
-        name: Deploy to GH Pages
-
-        runs-on: ${{ matrix.os }}
-
-        strategy:
-            fail-fast: false
-            matrix:
-                os:
-                    - ubuntu-latest
-                php:
-                    - 7.4
-
-        steps:
-            -   # Git Checkout
-                name: Checkout Code
-                uses: actions/checkout@v2
-                with:
-                    persist-credentials: false
-
-            -   # Setup Libraries
-                name: Setup Libraries
-                run: |
-                    sudo apt-get update
-                    sudo apt-fast install graphviz -y
-
-            -   # Setup PHP runtime
-                name: Setup PHP runtime
-                uses: "shivammathur/setup-php@v2"
-                with:
-                    php-version: ${{ matrix.php }}
-
-            -   # Install Composer dependencies
-                name: Install Composer dependencies
-                uses: "ramsey/composer-install@v2"
-                with:
-                    dependency-versions: "highest"
-                    composer-options: "--prefer-dist --no-scripts"
-
-            -   # Update diagrams used in documentation
-                name: Update Diagrams
-                run: |
-                    php resources/graph-uml/build.php application-analyser docs/99_Architecture/application
-                    php resources/graph-uml/build.php application-collection docs/99_Architecture/application
-                    php resources/graph-uml/build.php application-datacollector docs/99_Architecture/application
-                    php resources/graph-uml/build.php application-event docs/99_Architecture/application
-                    php resources/graph-uml/build.php application-extension docs/99_Architecture/application
-                    php resources/graph-uml/build.php application-logger docs/99_Architecture/application
-                    php resources/graph-uml/build.php application-parser docs/99_Architecture/application
-                    php resources/graph-uml/build.php application-profiler docs/99_Architecture/application
-                    php resources/graph-uml/build.php application-query docs/99_Architecture/application
-                    php resources/graph-uml/build.php application-service docs/99_Architecture/application
-                    php resources/graph-uml/build.php application-sniffs docs/99_Architecture/application
-                    php resources/graph-uml/build.php infrastructure-bus docs/99_Architecture/infrastructure
-                    php resources/graph-uml/build.php infrastructure-framework docs/99_Architecture/infrastructure
-                    php resources/graph-uml/build.php presentation-console docs/99_Architecture/presentation
-
-            -   # Setup Python version
-                name: Set up Python runtime
-                uses: actions/setup-python@v2
-                with:
-                    python-version: 3.x
-
-            -   # Install Material for MkDocs
-                name: Install Material for MkDocs
-                run: pip install mkdocs-material
-
-            -   # Build Documentation
-                name: Build Docs
-                run: mkdocs build
-
-            -   # Deploy Documentation
-                name: Deploy Docs
-                uses: peaceiris/actions-gh-pages@v3
-                with:
-                    github_token: ${{ secrets.GITHUB_TOKEN }}
-                    publish_dir: ./site
-                    destination_dir: 6.x
-                    full_commit_message: "Deployed ${{ github.sha }} with MkDocs"
-                    force_orphan: false
-                    user_name: 'github-actions'
-                    user_email: 'github-actions@users.noreply.github.com'
+        uses: llaville/.github/.github/workflows/gh-pages.yml@master
+        with:
+            destination-dir: 6.x
+            hook-script: "resources/gh-pages-hook.sh"
