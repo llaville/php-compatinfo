@@ -55,6 +55,10 @@ final class FiberSniff extends SniffAbstract
             return null;
         }
 
+        if (!$node->class instanceof Node\Name) {
+            return null;
+        }
+
         if ('Fiber' === (string) $node->class) {
             $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '8.1.0alpha1']);
             $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA81);

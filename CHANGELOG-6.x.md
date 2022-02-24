@@ -7,6 +7,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Fixed
+
+- [#345](https://github.com/llaville/php-compatinfo/issues/345) : class `PhpParser\Node\Expr\PropertyFetch` could not be converted to string
+
 ## [6.2.0] - 2022-02-06
 
 ### Added
