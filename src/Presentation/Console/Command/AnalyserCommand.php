@@ -17,6 +17,8 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 
+use function sprintf;
+
 /**
  * Analyse a data source to find out requirements.
  *
@@ -65,8 +67,29 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
         try {
             $this->queryBus->query($compatibilityQuery);
         } catch (HandlerFailedException $e) {
+            $exceptions = [];
+            foreach($e->getNestedExceptions() as $exception) {
+                $exceptions[] = $exception->getMessage()
+                    . sprintf(' from file "%s" at line %d', $exception->getFile(), $exception->getLine());
+            }
             $io = new Style($input, $output);
-            $io->error($e->getMessage());
+            $io->error(
+                sprintf(
+                    'Cannot analyse data source "%s" for following reason(s)',
+                    $compatibilityQuery->getSource()
+                )
+            );
+            $io->listing($exceptions);
+            /** @var ApplicationInterface $app */
+            $app = $this->getApplication();
+            $io->note(
+                sprintf(
+                    'Issue found by %s version %s with DB version %s',
+                    $app->getName(),
+                    $app->getInstalledVersion(),
+                    $app->getInstalledVersion(true, 'bartlett/php-compatinfo-db')
+                )
+            );
             return self::FAILURE;
         }
 
