@@ -68,7 +68,7 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
             $this->queryBus->query($compatibilityQuery);
         } catch (HandlerFailedException $e) {
             $exceptions = [];
-            foreach($e->getNestedExceptions() as $exception) {
+            foreach ($e->getNestedExceptions() as $exception) {
                 $exceptions[] = $exception->getMessage()
                     . sprintf(' from file "%s" at line %d', $exception->getFile(), $exception->getLine());
             }
