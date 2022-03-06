@@ -48,6 +48,12 @@ final class TrailingCommaSniffTest extends SniffTestCase
             'trailing_comma_closure_2.php' => [
                 'php.min' => '8.0.0alpha1',
             ],
+            'gh348_function.php' => [  // test to fix regression on trying to detect trailing comma
+                'php.min' => '7.0.0alpha1',
+            ],
+            'gh348_closure.php' => [  // test to fix regression on trying to detect trailing comma
+                'php.min' => '5.3.0',
+            ],
         ];
 
         foreach ($provides as $filename => $versions) {
