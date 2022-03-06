@@ -1,0 +1,78 @@
+---
+name: Unit Tests
+
+on:
+    push:
+        paths-ignore:
+            - 'docs/**'
+    pull_request:
+        branches:
+            - master
+        paths-ignore:
+            - 'docs/**'
+
+jobs:
+    lint_files:
+        uses: llaville/.github/.github/workflows/mega-linter.yml@master
+        with:
+            repository: ${{ github.repository }}
+
+    unit_tests:
+        needs: lint_files
+
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+                include:
+                    -
+                        os: ubuntu-latest
+                        php: 7.4
+                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
+                        tools: phpstan,phpunit
+                    -
+                        os: ubuntu-latest
+                        php: 8.0
+                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
+                        tools: phpstan,phpunit
+                    -
+                        os: ubuntu-latest
+                        php: 8.1
+                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
+                        tools: phpstan,phpunit
+
+        name: Compatibility Info
+
+        env:
+            APP_ENV: dev  # see explains at https://github.com/llaville/php-compatinfo-db/issues/101
+            DATABASE_URL: "sqlite:///${{ github.workspace }}/.cache/compatinfo-db.sqlite"
+
+        steps:
+            -   # Git Checkout
+                name: Checkout
+                uses: actions/checkout@v2
+
+            -   # Setup PHP runtime
+                name: Setup PHP runtime
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php }}
+                    extensions: ${{ matrix.extensions }}
+                    tools: ${{ matrix.tools }}
+
+            -   # Install Composer dependencies
+                name: Install Composer dependencies
+                uses: ramsey/composer-install@v2
+                with:
+                    composer-options: "--prefer-dist --no-scripts"
+
+            -   # Build Database
+                name: Build Database
+                run: |
+                    bin/phpcompatinfo db:create --ansi
+                    bin/phpcompatinfo db:init --ansi
+
+            -   # Run unit tests
+                name: Unit tests
+                run: phpunit --group features,large,reference,regression,default

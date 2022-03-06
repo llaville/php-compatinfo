@@ -53,7 +53,7 @@ final class MatchSniff extends SniffAbstract
             return null;
         }
         $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '8.0.0alpha3']);
-        $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA80);
+        $this->updateNodeElementRule($parent, $this->attributeKeyStore, self::CA80);
         return null;
     }
 }

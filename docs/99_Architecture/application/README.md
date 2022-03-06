@@ -3,44 +3,44 @@
 
 ## Analyser(s)
 
-![Graph UML Application Analyser](./application-analyser.graphviz.svg)
+![Graph UML Application Analyser](../../assets/images/application-analyser.graphviz.svg)
 
 ## Collection(s)
 
-![Graph UML Application Collection](./application-collection.graphviz.svg)
+![Graph UML Application Collection](../../assets/images/application-collection.graphviz.svg)
 
 ## Data Collector(s)
 
-![Graph UML Application Data Collector](./application-datacollector.graphviz.svg)
+![Graph UML Application Data Collector](../../assets/images/application-datacollector.graphviz.svg)
 
 ## Event(s)
 
-![Graph UML Application Event](./application-event.graphviz.svg)
+![Graph UML Application Event](../../assets/images/application-event.graphviz.svg)
 
 ## Extension(s)
 
-![Graph UML Application Extension](./application-extension.graphviz.svg)
+![Graph UML Application Extension](../../assets/images/application-extension.graphviz.svg)
 
 ## Logger
 
-![Application Logger UML](./application_logger.graphviz.svg)
+![Application Logger UML](../../assets/images/application-logger.graphviz.svg)
 
 ## Parser
 
-![Graph UML Application Parser](./application-parser.graphviz.svg)
+![Graph UML Application Parser](../../assets/images/application-parser.graphviz.svg)
 
 ## Profiler
 
-![Graph UML Application Profiler](./application-profiler.graphviz.svg)
+![Graph UML Application Profiler](../../assets/images/application-profiler.graphviz.svg)
 
 ## Query(s)
 
-![Graph UML Application Query](./application-query.graphviz.svg)
+![Graph UML Application Query](../../assets/images/application-query.graphviz.svg)
 
 ## Service(s)
 
-![Graph UML Application Service](./application-service.graphviz.svg)
+![Graph UML Application Service](../../assets/images/application-service.graphviz.svg)
 
 ## Sniff(s)
 
-![Graph UML Application Sniff](./application-sniffs.graphviz.svg)
+![Graph UML Application Sniff](../../assets/images/application-sniffs.graphviz.svg)

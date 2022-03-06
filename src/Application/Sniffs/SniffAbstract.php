@@ -17,12 +17,12 @@ use Bartlett\CompatInfo\Application\Event\BeforeInitializeSniffEvent;
 use Bartlett\CompatInfo\Application\Event\BeforeProcessNodeEvent;
 use Bartlett\CompatInfo\Application\Event\BeforeProcessSniffEvent;
 
-use Generator;
 use PhpParser\Node;
 use PhpParser\NodeVisitorAbstract;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\EventDispatcher\GenericEvent;
+
+use Generator;
 use function get_class;
 use function strrchr;
 use function substr;

@@ -15,7 +15,6 @@ use Bartlett\CompatInfoDb\Presentation\Console\Command\ReleaseCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\CommandLoader\FactoryCommandLoader as SymfonyFactoryCommandLoader;
 
-use Phar;
 use function get_class;
 use function in_array;
 

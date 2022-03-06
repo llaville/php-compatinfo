@@ -62,38 +62,89 @@ final class TrailingCommaSniff extends SniffAbstract
     public function enterNode(Node $node)
     {
         if ($node instanceof Node\Stmt\Function_) {
-            $argCount = count($node->params);
-            if (!$this->isTrailingComma($node, $argCount)) {
-                return null;
-            }
+            $trailingCommaFound = $this->checkParamsList($node);
         } elseif ($node instanceof Node\Expr\Closure) {
-            $argCount = count($node->params);
             // first attempt with closure parameters
-            if (!$this->isTrailingComma($node, $argCount)) {
-                $argCount = count($node->uses);
+            $trailingCommaFound = $this->checkParamsList($node);
+            if (!$trailingCommaFound) {
                 // second attempt with closure use list
-                if (!$this->isTrailingComma($node, $argCount)) {
-                    return null;
-                }
+                $trailingCommaFound = $this->checkUsesList($node);
             }
         } else {
+            $trailingCommaFound = false;
+        }
+        if (!$trailingCommaFound) {
             return null;
         }
+
         if (!$parent = $node->getAttribute($this->attributeParentKeyStore)) {
             return null;
         }
 
         $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '8.0.0alpha1']);
-        $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA80);
+        $this->updateNodeElementRule($parent, $this->attributeKeyStore, self::CA80);
         return null;
     }
 
-    private function isTrailingComma(Node $node, int $argCount): bool
+    private function checkParamsList(Node\FunctionLike $node): bool
     {
-        $i = $node->getAttribute('startTokenPos');
-        $l = $node->getAttribute('endTokenPos');
+        $params = $node->getParams();
+        $argCount = count($params);
+        if ($argCount === 0) {
+            // without parameters, no need to check
+            return false;
+        }
+        $returnType = $node->getReturnType();
 
-        $tokens = array_slice($this->tokens, $i, $l - $i);
+        $startTokenPos = $params[0]->getAttribute('startTokenPos');
+        // CAUTION: depending on code context, this position is probably wrong
+        $endTokenPos = $params[$argCount - 1]->getAttribute('endTokenPos');
+        // fallback strategy follows
+        if ($node instanceof Node\Expr\Closure && !empty($node->uses)) {
+            $endTokenPos = $node->uses[0]->getAttribute('startTokenPos');
+        } elseif ($returnType !== null) {
+            // function or closure with return type
+            $endTokenPos = $returnType->getAttribute('startTokenPos');
+        } elseif (!empty($node->stmts)) {
+            // function or closure with body
+            $endTokenPos = $node->stmts[0]->getAttribute('startTokenPos');
+        } else {
+            // function or closure without body
+            $endTokenPos = $node->getAttribute('endTokenPos');
+        }
+
+        return $this->isTrailingComma($startTokenPos, $endTokenPos, $argCount);
+    }
+
+    private function checkUsesList(Node\Expr\Closure $node): bool
+    {
+        $argCount = count($node->uses);
+        if ($argCount === 0) {
+            // without use list, no need to check
+            return false;
+        }
+
+        $startTokenPos = $node->uses[0]->getAttribute('startTokenPos');
+        // CAUTION: depending on code context, this position may be wrong
+        $endTokenPos = $node->uses[$argCount - 1]->getAttribute('endTokenPos');
+        // fallback strategy follows
+        if ($node->returnType !== null) {
+            // function or closure with return type
+            $endTokenPos = $node->returnType->getAttribute('startTokenPos');
+        } elseif (!empty($node->stmts)) {
+            // function or closure with body
+            $endTokenPos = $node->stmts[0]->getAttribute('startTokenPos');
+        } else {
+            // function or closure without body
+            $endTokenPos = $node->getAttribute('endTokenPos');
+        }
+
+        return $this->isTrailingComma($startTokenPos, $endTokenPos, $argCount);
+    }
+
+    private function isTrailingComma(int $startTokenPos, int $endTokenPos, int $argCount): bool
+    {
+        $tokens = array_slice($this->tokens, $startTokenPos, $endTokenPos - $startTokenPos);
 
         $commas = array_filter($tokens, function ($token) {
             return (is_string($token) && ',' == $token);

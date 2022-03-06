@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD013 -->
 # Visitors
 
-![GraPHP UML](../../99_Architecture/application/application_phpparser.graphviz.svg)
+![GraPHP UML](../../assets/images/application-parser.graphviz.svg)
 
 ## ParentContextVisitor
 

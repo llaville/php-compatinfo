@@ -64,7 +64,7 @@ final class ClosureSniff extends SniffAbstract
         if (in_array($name, ['this', 'self', 'parent', 'static'])) {
             // Use of $this | self | parent | static inside a closure is allowed since PHP 5.4
             $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '5.4.0']);
-            $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA54);
+            $this->updateNodeElementRule($parent, $this->attributeKeyStore, self::CA54);
         }
         return null;
     }

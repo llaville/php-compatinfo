@@ -9,6 +9,8 @@ namespace Bartlett\CompatInfo\Application\DataCollector;
 
 use PhpParser\Node;
 
+use function iterator_to_array;
+
 /**
  * @author Laurent Laville
  * @since Release 6.1.0
@@ -21,7 +23,16 @@ trait RuleUpdater
             return;
         }
         $nodeStore = $node->getAttribute($attributeKey);
-        $nodeStore['rule'] = $ruleId;
+        $nodeStore['rules'][$ruleId] = $this->getRule($ruleId);
         $node->setAttribute($attributeKey, $nodeStore);
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    protected function getRule(string $id): array
+    {
+        $rules = iterator_to_array(static::getRules(), true);
+        return [$rules[$id]['name'] => $rules[$id]['fullDescription']];
     }
 }

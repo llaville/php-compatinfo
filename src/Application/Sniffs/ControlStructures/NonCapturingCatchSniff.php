@@ -53,7 +53,7 @@ final class NonCapturingCatchSniff extends SniffAbstract
         }
         if (null === $node->var) {
             $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '8.0.0alpha1']);
-            $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA80);
+            $this->updateNodeElementRule($parent, $this->attributeKeyStore, self::CA80);
         }
         return null;
     }

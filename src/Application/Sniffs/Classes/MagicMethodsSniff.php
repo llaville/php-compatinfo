@@ -7,6 +7,7 @@
  */
 namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
 
+use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
@@ -36,16 +37,20 @@ final class MagicMethodsSniff extends SniffAbstract
     /** @var string[] */
     private array $mm501;
 
+    private function initialize(): void
+    {
+        $this->mm501 = ['__isset', '__unset', '__set_state'];
+        $this->mm503 = ['__callStatic', '__invoke'];
+        $this->mm506 = ['__debugInfo'];
+    }
+
     /**
      * {@inheritDoc}
      */
     public function enterSniff(): void
     {
         parent::enterSniff();
-
-        $this->mm501 = ['__isset', '__unset', '__set_state'];
-        $this->mm503 = ['__callStatic', '__invoke'];
-        $this->mm506 = ['__debugInfo'];
+        $this->initialize();
     }
 
     /**
@@ -83,6 +88,8 @@ final class MagicMethodsSniff extends SniffAbstract
      */
     public function getRules(): Generator
     {
+        $this->initialize();
+
         yield self::CA51 => [
             'name' => $this->getShortClass(),
             'fullDescription' => 'The following method names are considered magical'
