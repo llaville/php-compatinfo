@@ -31,13 +31,8 @@ final class DeclareSniff extends SniffAbstract
     /** @var KeywordBag */
     private $directives;
 
-    /**
-     * {@inheritDoc}
-     */
-    public function enterSniff(): void
+    private function initialize(): void
     {
-        parent::enterSniff();
-
         $this->directives = new KeywordBag(
             [
                 'ticks' => '4.0',
@@ -45,6 +40,15 @@ final class DeclareSniff extends SniffAbstract
                 'strict_types' => '7.0',
             ]
         );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function enterSniff(): void
+    {
+        parent::enterSniff();
+        $this->initialize();
     }
 
     /**
@@ -74,6 +78,8 @@ final class DeclareSniff extends SniffAbstract
      */
     public function getRules(): Generator
     {
+        $this->initialize();
+
         foreach ($this->directives->all() as $directive => $min) {
             yield sprintf('CA%2d02', str_replace('.', '', $min)) => [
                 'name' => $this->getShortClass(),

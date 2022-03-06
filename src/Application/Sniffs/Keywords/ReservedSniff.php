@@ -27,13 +27,8 @@ use Generator;
  */
 final class ReservedSniff extends SniffAbstract
 {
-    /**
-     * {@inheritDoc}
-     */
-    public function enterSniff(): void
+    private function initialize(): void
     {
-        parent::enterSniff();
-
         /**
          * The following words cannot be used to name a class, interface or trait,
          * and they are also prohibited from being used in namespaces.
@@ -70,6 +65,15 @@ final class ReservedSniff extends SniffAbstract
     /**
      * {@inheritDoc}
      */
+    public function enterSniff(): void
+    {
+        parent::enterSniff();
+        $this->initialize();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function enterNode(Node $node)
     {
         $this->contextIdentifier = $this->getNameContext($node);
@@ -97,6 +101,8 @@ final class ReservedSniff extends SniffAbstract
      */
     public function getRules(): Generator
     {
+        $this->initialize();
+
         $reservedKeywords = ['7.0' => [], '7.1' => [], '7.2' => []];
         foreach ($this->forbiddenNames->all() as $name => $min) {
             $reservedKeywords[$min][] = $name;

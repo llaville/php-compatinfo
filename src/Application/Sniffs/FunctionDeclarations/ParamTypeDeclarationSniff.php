@@ -39,13 +39,8 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
 {
     private KeywordBag $paramTypeDeclarations;
 
-    /**
-     * {@inheritDoc}
-     */
-    public function enterSniff(): void
+    private function initialize(): void
     {
-        parent::enterSniff();
-
         // Type declarations were not present in PHP 4.4 or earlier.
         $this->paramTypeDeclarations = new KeywordBag([
             'array' => '5.1',
@@ -59,6 +54,15 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
             'iterable' => '7.1',
             'object' => '7.2',
         ]);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function enterSniff(): void
+    {
+        parent::enterSniff();
+        $this->initialize();
     }
 
     /**
@@ -120,6 +124,8 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
      */
     public function getRules(): Generator
     {
+        $this->initialize();
+
         foreach ($this->paramTypeDeclarations->all() as $paramType => $min) {
             yield sprintf('CA%2d08', str_replace('.', '', $min)) => [
                 'name' => $this->getShortClass(),

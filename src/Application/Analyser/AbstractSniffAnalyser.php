@@ -7,7 +7,6 @@
  */
 namespace Bartlett\CompatInfo\Application\Analyser;
 
-use Bartlett\CompatInfo\Application\Collection\SniffCollection;
 use Bartlett\CompatInfo\Application\Collection\SniffCollectionInterface;
 use Bartlett\CompatInfo\Application\DataCollector\ErrorHandler;
 use Bartlett\CompatInfo\Application\Event\AfterProcessNodeEvent;

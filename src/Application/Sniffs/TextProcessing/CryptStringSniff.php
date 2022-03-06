@@ -32,13 +32,8 @@ final class CryptStringSniff extends SniffAbstract
     private const CA53 = 'CA5305';
     private KeywordBag $algorithms;
 
-    /**
-     * {@inheritDoc}
-     */
-    public function enterSniff(): void
+    private function initialize(): void
     {
-        parent::enterSniff();
-
         $this->algorithms = new KeywordBag(
             [
                 'BLOWFISH' => '5.3.7',
@@ -47,6 +42,15 @@ final class CryptStringSniff extends SniffAbstract
                 'MD5' => '5.3.0',
             ]
         );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function enterSniff(): void
+    {
+        parent::enterSniff();
+        $this->initialize();
     }
 
     /**
@@ -99,7 +103,7 @@ final class CryptStringSniff extends SniffAbstract
         $min = $this->algorithms->get($algorithm);
 
         $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => $min, 'ext.name' => 'standard']);
-        $this->updateNodeElementRule($node, $this->attributeKeyStore, $id);
+        $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA53);
         return null;
     }
 
@@ -108,6 +112,8 @@ final class CryptStringSniff extends SniffAbstract
      */
     public function getRules(): Generator
     {
+        $this->initialize();
+
         foreach ($this->algorithms->all() as $algorithm => $min) {
             yield self::CA53 => [
                 'name' => $this->getShortClass(),

@@ -12,6 +12,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - [#347](https://github.com/llaville/php-compatinfo/issues/347) : Automate creation of new GitHub Release with PHAR version as asset
 
+Experimental
+
+- new `Bartlett\CompatInfo\Application\Extension\Reporter\RuleReporter` to display Compatibility Analyser by feature rules (see `sarif` format)
+
 ### Fixed
 
 - [#345](https://github.com/llaville/php-compatinfo/issues/345) : class `PhpParser\Node\Expr\PropertyFetch` could not be converted to string

@@ -57,7 +57,7 @@ final class NullsafeOperatorSniff extends SniffAbstract
         }
 
         $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '8.0.0beta1']);
-        $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA80);
+        $this->updateNodeElementRule($parent, $this->attributeKeyStore, self::CA80);
         return null;
     }
 }

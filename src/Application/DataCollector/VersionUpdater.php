@@ -28,6 +28,7 @@ trait VersionUpdater
         'php.all'  => '',
         'matches'  => 0,
         'declared' => false,
+        'rules'    => [],
     ];
 
     /**
