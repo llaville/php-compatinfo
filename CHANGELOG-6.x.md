@@ -7,9 +7,15 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+<!-- MARKDOWN-RELEASE:START -->
+### Added
+
+- new `rule:list` command to display Compatibility Analyser rules supported
+
+<!-- MARKDOWN-RELEASE:END -->
+
 ## [6.3.0] - 2022-03-06
 
-<!-- MARKDOWN-RELEASE:START -->
 ### Added
 
 - [#347](https://github.com/llaville/php-compatinfo/issues/347) : Automate creation of new GitHub Release with PHAR version as asset
@@ -23,7 +29,6 @@ Experimental
 - [#345](https://github.com/llaville/php-compatinfo/issues/345) : class `PhpParser\Node\Expr\PropertyFetch` could not be converted to string
 - [#346](https://github.com/llaville/php-compatinfo/issues/346) : Improves displaying Error in Datasource Analysis
 - [#348](https://github.com/llaville/php-compatinfo/issues/348) : TrailingCommaSniff give wrong results
-<!-- MARKDOWN-RELEASE:END -->
 
 ## [6.2.0] - 2022-02-06
 
