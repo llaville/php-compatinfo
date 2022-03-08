@@ -12,8 +12,8 @@ use Bartlett\CompatInfo\Application\Collection\SniffCollectionInterface;
 use Bartlett\CompatInfo\Application\DataCollector\VersionDataCollector;
 use Bartlett\CompatInfo\Application\DataCollector\VersionUpdater;
 use Bartlett\CompatInfo\Application\Profiler\ProfilerInterface;
-
 use Bartlett\CompatInfo\Application\Sniffs\SniffInterface;
+
 use PhpParser\Node;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -295,9 +295,8 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     private function leaveExprStaticCall(Node\Expr\StaticCall $node): void
     {
         if ($node->class instanceof Node\Expr\Variable) {
-            // Dynamic access to static methods is now possible since PHP 5.3
-            // @link https://www.php.net/manual/en/migration53.new-features.php
-            $this->updateNodeElementVersion($node, self::ANALYSER_NODE_ATTRIBUTE, ['php.min' => '5.3.0']);
+            // Dynamic access to static methods/properties is now possible since PHP 5.3
+            // @see Bartlett\CompatInfo\Application\Sniffs\Classes\DynamicAccessSniff
             return;
         }
 

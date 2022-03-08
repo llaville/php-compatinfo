@@ -9,7 +9,10 @@ namespace Bartlett\CompatInfo\Application\DataCollector;
 
 use PhpParser\Node;
 
+use function get_class;
 use function iterator_to_array;
+use function strrchr;
+use function substr;
 
 /**
  * @author Laurent Laville
@@ -34,5 +37,13 @@ trait RuleUpdater
     {
         $rules = iterator_to_array(static::getRules(), true);
         return [$rules[$id]['name'] => $rules[$id]['fullDescription']];
+    }
+
+    /**
+     * @see https://stackoverflow.com/questions/19901850/how-do-i-get-an-objects-unqualified-short-class-name
+     */
+    protected function getShortClass(): string
+    {
+        return substr(strrchr(get_class($this), '\\'), 1);
     }
 }

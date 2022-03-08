@@ -67,31 +67,6 @@ final class PhpFeaturesIssueTest extends TestCase
     }
 
     /**
-     * Regression test for feature #213
-     *
-     * @link https://github.com/llaville/php-compat-info/issues/213
-     *       Dynamic access to static methods and properties are not detected
-     * @link http://php.net/manual/en/migration53.new-features.php
-     * @group features
-     * @return void
-     */
-    public function testFeatureGH213()
-    {
-        $dataSource = 'gh213.php';
-        $metrics    = $this->executeAnalysis($dataSource);
-        $versions   = $metrics[self::$analyserId]['versions'];
-
-        $this->assertEquals(
-            '5.3.0',
-            $versions['php.min']
-        );
-        $this->assertEquals(
-            '',
-            $versions['php.max']
-        );
-    }
-
-    /**
      * Regression test for feature #222
      *
      * @link https://github.com/llaville/php-compat-info/issues/222

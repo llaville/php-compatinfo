@@ -33,6 +33,8 @@ Here is the list of features supported and their corresponding sniffs :
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
 | Classes  | MagicMethodsSniff  | [Magic Methods](https://www.php.net/manual/en/language.oop5.magic.php) |
+| Classes  | DynamicAccessSniff | Dynamic Static Method access
+| Classes  | DynamicAccessSniff | Dynamic Static Property access
 | ControlStructures    | DeclareSniff | [declare](https://www.php.net/manual/en/control-structures.declare.php) |
 | ControlStructures    | GotoSniff    | [goto](https://www.php.net/manual/en/control-structures.goto.php) |
 | FunctionDeclarations | ClosureSniff | [Anonymous functions](https://www.php.net/manual/en/functions.anonymous.php) |

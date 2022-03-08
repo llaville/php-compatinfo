@@ -39,7 +39,7 @@ They are grouped by categories to solve PHP features (from 4.0 to 8.1)
 
 - Arrays (3)
 - Attributes (1)
-- Classes (9)
+- Classes (10)
 - Constants (3)
 - ControlStructures (4)
 - Enumerations (1)
