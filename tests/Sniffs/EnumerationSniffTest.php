@@ -32,29 +32,24 @@ final class EnumerationSniffTest extends SniffTestCase
     }
 
     /**
-     * Regression test for issue #322
+     * Data Source Provider to test enumerations
      *
-     * @link https://github.com/llaville/php-compatinfo/issues/322
-     *       Enumeration is detected as PHP 8.1
-     * @group regression
-     * @return void
-     * @throws Exception
+     * @return iterable
      */
-    public function testBasicEnumerations()
+    public function dataSourceProvider(): iterable
     {
-        $dataSource = 'basic.php';
-        $metrics    = $this->executeAnalysis($dataSource);
-        $versions   = $metrics[self::$analyserId]['versions'];
+        $provides = [
+            'basic.php' => [
+                'php.min' => '8.1.0alpha1',
+            ],
+            'backed.php' => [
+                'php.min' => '8.1.0alpha1',
+            ],
+        ];
 
-        $this->assertEquals(
-            '8.1.0',
-            $versions['php.min']
-        );
-
-        $this->assertEquals(
-            '',
-            $versions['php.max']
-        );
+        foreach ($provides as $filename => $versions) {
+            yield [$filename, $versions];
+        }
     }
 
     /**
@@ -62,24 +57,19 @@ final class EnumerationSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/322
      *       Enumeration is detected as PHP 8.1
+     * @group features
      * @group regression
+     * @dataProvider dataSourceProvider
      * @return void
      * @throws Exception
      */
-    public function testBackedEnumerations()
+    public function testEnumerations(string $dataSource, array $expectedVersions)
     {
-        $dataSource = 'backed.php';
         $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];
 
-        $this->assertEquals(
-            '8.1.0',
-            $versions['php.min']
-        );
-
-        $this->assertEquals(
-            '',
-            $versions['php.max']
-        );
+        foreach ($expectedVersions as $key => $value) {
+            $this->assertEquals($value, $versions[$key]);
+        }
     }
 }
