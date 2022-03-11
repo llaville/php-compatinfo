@@ -245,7 +245,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
 
         $name = (string) $node->name;
         if (in_array($name, $conditions)) {
-            // conditional code must not be compute to `php.min`
+            // conditional code must not be computed to `php.min`
             return;
         }
 
@@ -409,6 +409,10 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
             $argc     = isset($node->args) ? count($node->args) : 0;
             $versions = $this->references->find($context, $element, $argc, $extra);
             $versions['ext.all'] = $versions['php.all'] = '';
+            if (isset($versions['polyfill'])) {
+                $versions['php.all'] = $versions['php.min'];
+                $versions['php.min'] = '4.0.0';
+            }
 
             // cache to speed-up later uses
             $node->setAttribute(self::ANALYSER_NODE_ATTRIBUTE, $versions);

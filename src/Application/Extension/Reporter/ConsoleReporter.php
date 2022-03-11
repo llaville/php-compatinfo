@@ -135,6 +135,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
             'functions',
             'constants',
             'conditions',
+            'polyfills',
         ];
         foreach ($groups as $section) {
             $this->formatSection($section, $output);
@@ -189,6 +190,9 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
             if (isset($base['optional'])) {
                 // do not compute conditional elements
                 continue;
+            }
+            if (isset($base['polyfill'])) {
+                $this->metrics['polyfills'][$name] = $base;
             }
             foreach ($base as $id => $version) {
                 if (
