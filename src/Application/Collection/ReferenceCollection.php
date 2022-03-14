@@ -7,7 +7,6 @@
  */
 namespace Bartlett\CompatInfo\Application\Collection;
 
-use Bartlett\CompatInfo\Infrastructure\Framework\Composer\InstalledPackages;
 use Bartlett\CompatInfoDb\Domain\Repository\ClassRepository;
 use Bartlett\CompatInfoDb\Domain\Repository\ConstantRepository;
 use Bartlett\CompatInfoDb\Domain\Repository\FunctionRepository;
@@ -16,10 +15,8 @@ use Doctrine\Common\Collections\AbstractLazyCollection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use function array_pop;
-use function array_replace;
 use function array_slice;
 use function in_array;
-use function is_array;
 use function strpos;
 
 /**
@@ -57,17 +54,7 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
      */
     public function find(string $group, string $key, int $argc = 0, ?string $extra = null): array
     {
-        static $polyfills;
-
         $this->initialize();
-
-        if (!is_array($polyfills)) {
-            $polyfills = ['constants' => [], 'functions' => []];
-            foreach (InstalledPackages::getInstalledPolyfills() as $vendor => $ref) {
-                $polyfills['constants'] = array_replace($polyfills['constants'], $ref['constants']);
-                $polyfills['functions'] = array_replace($polyfills['functions'], $ref['functions']);
-            }
-        }
 
         if ($this->containsKey($key)) {
             $result = $this->get($key);
@@ -85,6 +72,7 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
                         'php.max'      => $function->getPhpMax(),
                         'parameters'   => $function->getParameters(),
                         'php.excludes' => $function->getExcludes(),
+                        'polyfill'     => $function->getPolyfill(),
                     ];
                 }
             } elseif ('constants' === $group) {
@@ -98,6 +86,7 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
                         'ext.max'  => $constant->getExtMax(),
                         'php.min'  => $constant->getPhpMin(),
                         'php.max'  => $constant->getPhpMax(),
+                        'polyfill' => $constant->getPolyfill(),
                     ];
                 }
             } elseif (in_array($group, ['classes', 'interfaces'])) {
@@ -132,9 +121,6 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
                     'php.min'  => $min,
                     'php.max'  => '',
                 ];
-            }
-            if (in_array($key, $polyfills[$group] ?? [])) {
-                $result['polyfill'] = true;
             }
             // cache to speed-up later uses
             $this->set($key, $result);
