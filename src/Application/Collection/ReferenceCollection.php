@@ -123,7 +123,9 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
                 ];
             }
             // cache to speed-up later uses
-            $this->set($key, $result);
+            if ('user' !== $result['ext.name']) {
+                $this->set($key, $result);
+            }
         }
 
         // compute the right version depending on number of arguments used
