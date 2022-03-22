@@ -12,6 +12,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - new `rule:list` command to display Compatibility Analyser rules supported
 
+### Changed
+
+- raise `bartlett/php-compatinfo-db` constraint to 4.2 minimum to support polyfill feature
+
 <!-- MARKDOWN-RELEASE:END -->
 
 ## [6.3.0] - 2022-03-06
