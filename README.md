@@ -1,6 +1,8 @@
 <!-- markdownlint-disable MD013 -->
 # PHP CompatInfo
 
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
+
 **PHP CompatInfo** is a library that can find the minimum version and the extensions required for a piece of code to run.
 
 Running on PHP greater or equal than 7.4 for parsing source code in a format PHP 5.2 to PHP 8.1
