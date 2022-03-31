@@ -109,9 +109,15 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->public()
     ;
 
-    $services->set(PolyfillCollectionInterface::class, PolyfillCollection::class)
-        ->arg('$polyfills', tagged_iterator('phpcompatinfo.polyfill'))
-    ;
+    if (in_array(getenv('APP_ENV'), ['dev', 'prod'])) {
+        $services->set(PolyfillCollectionInterface::class, PolyfillCollection::class)
+            ->arg('$polyfills', tagged_iterator('phpcompatinfo.polyfill'))
+        ;
+    } else {
+        $services->set(PolyfillCollectionInterface::class, PolyfillCollection::class)
+            ->arg('$polyfills', [])
+        ;
+    }
 
     $services->set(ReferenceCollectionInterface::class, ReferenceCollection::class);
 };

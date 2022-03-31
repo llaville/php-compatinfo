@@ -41,9 +41,9 @@ final class PolyfillCollection implements PolyfillCollectionInterface
     /**
      * {@inheritDoc}
      */
-    public function getVersion(array $whitelist): string
+    public function getVersion(array $whitelist, string $default = '4.0.0'): string
     {
-        $min = '4.0.0';
+        $min = $default;
         foreach ($this->polyfills as $polyfill) {
             if (!in_array($polyfill->getName(), $whitelist)) {
                 continue;

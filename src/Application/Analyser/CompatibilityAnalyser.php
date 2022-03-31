@@ -425,7 +425,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
                 array_map(fn($item) => trim($item), $packages);
 
                 try {
-                    $versions['php.min'] = $this->polyfillCollection->getVersion($packages);
+                    $versions['php.min'] = $this->polyfillCollection->getVersion($packages, $versions['php.min']);
                 } catch (OutOfBoundsException $e) {
                     // polyfill package not installed
                     $versions['php.all'] = '';

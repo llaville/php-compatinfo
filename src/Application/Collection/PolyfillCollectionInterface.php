@@ -20,5 +20,5 @@ interface PolyfillCollectionInterface extends IteratorAggregate
     /**
      * @param string[] $whitelist
      */
-    public function getVersion(array $whitelist): string;
+    public function getVersion(array $whitelist, string $default): string;
 }

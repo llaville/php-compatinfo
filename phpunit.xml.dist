@@ -37,4 +37,7 @@
             <group>not_implemented</group>
         </exclude>
     </groups>
+    <php>
+        <env name="APP_ENV" value="tests" />
+    </php>
 </phpunit>
