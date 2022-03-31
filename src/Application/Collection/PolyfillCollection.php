@@ -12,6 +12,8 @@ use function in_array;
 use function version_compare;
 
 /**
+ * @phpstan-template T of \Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface
+ * @phpstan-implements PolyfillCollectionInterface<T>
  * @author Laurent Laville
  * @since Release 6.4.0
  */

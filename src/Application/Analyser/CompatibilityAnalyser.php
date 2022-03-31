@@ -12,6 +12,7 @@ use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Application\Collection\SniffCollectionInterface;
 use Bartlett\CompatInfo\Application\DataCollector\VersionDataCollector;
 use Bartlett\CompatInfo\Application\DataCollector\VersionUpdater;
+use Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface;
 use Bartlett\CompatInfo\Application\Profiler\ProfilerInterface;
 use Bartlett\CompatInfo\Application\Sniffs\SniffInterface;
 
@@ -54,7 +55,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     private array $aliases;
     /** @var ReferenceCollectionInterface<array>  */
     private $references;
-    /** @var PolyfillCollectionInterface  */
+    /** @var PolyfillCollectionInterface<PolyfillInterface>  */
     private $polyfillCollection;
     private SplFileInfo $currentFile;
     /** @var array<int, mixed> */
@@ -70,14 +71,14 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
      * @param ProfilerInterface $profiler
      * @param SniffCollectionInterface<SniffInterface> $sniffCollection
      * @param ReferenceCollectionInterface<array> $referenceCollection
-     * @param PolyfillCollectionInterface $polyfillCollection
+     * @param PolyfillCollectionInterface<PolyfillInterface> $polyfillCollection
      * @param EventDispatcherInterface $compatibilityEventDispatcher
      */
     public function __construct(
         ProfilerInterface $profiler,
         SniffCollectionInterface $sniffCollection,
         ReferenceCollectionInterface $referenceCollection,
-        PolyfillCollectionInterface  $polyfillCollection,
+        PolyfillCollectionInterface $polyfillCollection,
         EventDispatcherInterface $compatibilityEventDispatcher
     ) {
         $this->references = $referenceCollection;
