@@ -7,6 +7,7 @@
  */
 namespace Bartlett\CompatInfo\Application\Analyser;
 
+use Bartlett\CompatInfo\Application\Collection\PolyfillCollectionInterface;
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Application\Collection\SniffCollectionInterface;
 use Bartlett\CompatInfo\Application\DataCollector\VersionDataCollector;
@@ -19,6 +20,8 @@ use PhpParser\Node;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Finder\SplFileInfo;
 
+use OutOfBoundsException;
+use function array_map;
 use function array_pop;
 use function array_slice;
 use function call_user_func;
@@ -29,6 +32,7 @@ use function in_array;
 use function property_exists;
 use function str_replace;
 use function strtolower;
+use function trim;
 
 /**
  * Compatibility Analyser.
@@ -50,6 +54,8 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     private array $aliases;
     /** @var ReferenceCollectionInterface<array>  */
     private $references;
+    /** @var PolyfillCollectionInterface  */
+    private $polyfillCollection;
     private SplFileInfo $currentFile;
     /** @var array<int, mixed> */
     private array $tokens;
@@ -64,16 +70,18 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
      * @param ProfilerInterface $profiler
      * @param SniffCollectionInterface<SniffInterface> $sniffCollection
      * @param ReferenceCollectionInterface<array> $referenceCollection
+     * @param PolyfillCollectionInterface $polyfillCollection
      * @param EventDispatcherInterface $compatibilityEventDispatcher
      */
     public function __construct(
         ProfilerInterface $profiler,
         SniffCollectionInterface $sniffCollection,
         ReferenceCollectionInterface $referenceCollection,
+        PolyfillCollectionInterface  $polyfillCollection,
         EventDispatcherInterface $compatibilityEventDispatcher
     ) {
         $this->references = $referenceCollection;
-
+        $this->polyfillCollection = $polyfillCollection;
         $keysAllowed = [
             'extensions',
             'namespaces',
@@ -410,8 +418,17 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
             $versions = $this->references->find($context, $element, $argc, $extra);
             $versions['ext.all'] = $versions['php.all'] = '';
             if (isset($versions['polyfill'])) {
-                $versions['php.all'] = $versions['php.min'];
-                $versions['php.min'] = '4.0.0';
+                $versions['php.all'] = $versions['php.min'] . ' without ' . $versions['polyfill'];
+
+                $packages = explode(',', $versions['polyfill']);
+                array_map(fn($item) => trim($item), $packages);
+
+                try {
+                    $versions['php.min'] = $this->polyfillCollection->getVersion($packages);
+                } catch (OutOfBoundsException $e) {
+                    // polyfill package not installed
+                    $versions['php.all'] = '';
+                }
             }
 
             // cache to speed-up later uses

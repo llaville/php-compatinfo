@@ -157,9 +157,6 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
         }
 
         $full = sprintf('Requires %s%s', $min, $max);
-        if (!empty($metrics['versions']['php.all'])) {
-            $full .= sprintf('. Recommended %s (min)', $metrics['versions']['php.all']);
-        }
         $output->success($full);
         $output->comment('Produced by ' . $this->getName());
     }
@@ -224,6 +221,10 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
                     $flags .= 'U';
                 }
             }
+            $suggest = $all = $versions['php.all'] ?? '';
+            if ($length = strpos($all, 'without')) {
+                $suggest = $section == 'polyfills' ? $all : substr($all, 0, $length);
+            }
 
             $row = [
                 $flags,
@@ -231,7 +232,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
                 isset($versions['ext.name']) ? $versions['ext.name'] : '',
                 self::ext($versions),
                 self::php($versions),
-                $versions['php.all'] ?? '',
+                $suggest,
             ];
             /*
                 for reference:show command,
@@ -250,13 +251,19 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
                 foreach ($this->metrics['methods'] as $method => $version) {
                     if (strpos($method, "$arg\\") === 0) {
                         $flags = isset($version['optional']) ? 'C' : ' ';
+
+                        $suggest = $all = $versions['php.all'] ?? '';
+                        if ($length = strpos($all, 'without')) {
+                            $suggest = substr($all, 0, $length);
+                        }
+
                         $rows[] = [
                             $flags,
                             sprintf('<info>function</info> %s', str_replace("$arg\\", '', $method)),
                             isset($version['ext.name']) ? $version['ext.name'] : '',
                             self::ext($version),
                             self::php($version),
-                            $version['php.all'] ?? '',
+                            $suggest,
                         ];
                     }
                 }
