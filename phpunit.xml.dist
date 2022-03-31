@@ -38,6 +38,6 @@
         </exclude>
     </groups>
     <php>
-        <env name="APP_ENV" value="tests" />
+        <env name="APP_ENV" value="tests" force="true" />
     </php>
 </phpunit>
