@@ -7,8 +7,11 @@
  */
 namespace Bartlett\CompatInfo\Application\Collection;
 
+use ArrayIterator;
 use Traversable;
 use function in_array;
+use function is_array;
+use function iterator_count;
 use function version_compare;
 
 /**
@@ -27,7 +30,7 @@ final class PolyfillCollection implements PolyfillCollectionInterface
      */
     public function __construct(iterable $polyfills)
     {
-        $this->polyfills = $polyfills;
+        $this->polyfills = is_array($polyfills) ? new ArrayIterator($polyfills) : $polyfills;
     }
 
     /**
@@ -41,9 +44,9 @@ final class PolyfillCollection implements PolyfillCollectionInterface
     /**
      * {@inheritDoc}
      */
-    public function getVersion(array $whitelist, string $default = '4.0.0'): string
+    public function getVersion(array $whitelist, string $default): string
     {
-        $min = $default;
+        $min = iterator_count($this->polyfills) ? '4.0.0' : $default;
         foreach ($this->polyfills as $polyfill) {
             if (!in_array($polyfill->getName(), $whitelist)) {
                 continue;
