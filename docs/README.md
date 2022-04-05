@@ -72,6 +72,10 @@ PHPCompatInfo can be extended by registering objects that implement one or more 
 
 Furthermore, extensions may implement the `Symfony\Component\EventDispatcher\EventSubscriberInterface` in order to have its event handlers automatically registered with the EventDispatcher when the extension is loaded.
 
+### [Polyfills](01_Components/05_Polyfills/Features.md)
+
+They are identified by services that implements the `Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface`.
+
 ## [Configuration(s)](02_Configs/README.md)
 
 Load a config for CLI Application with the `--config` option.
