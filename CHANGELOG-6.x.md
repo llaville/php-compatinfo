@@ -15,6 +15,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Changed
 
 - raise `bartlett/php-compatinfo-db` constraint to 4.2 minimum to support polyfill feature
+- [#237](https://github.com/llaville/php-compatinfo/issues/237) : Awareness of compatibility packages
 
 <!-- MARKDOWN-RELEASE:END -->
 
