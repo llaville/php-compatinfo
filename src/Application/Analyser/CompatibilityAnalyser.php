@@ -7,18 +7,22 @@
  */
 namespace Bartlett\CompatInfo\Application\Analyser;
 
+use Bartlett\CompatInfo\Application\Collection\PolyfillCollectionInterface;
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Application\Collection\SniffCollectionInterface;
 use Bartlett\CompatInfo\Application\DataCollector\VersionDataCollector;
 use Bartlett\CompatInfo\Application\DataCollector\VersionUpdater;
+use Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface;
 use Bartlett\CompatInfo\Application\Profiler\ProfilerInterface;
-
 use Bartlett\CompatInfo\Application\Sniffs\SniffInterface;
+
 use PhpParser\Node;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Finder\SplFileInfo;
 
+use OutOfBoundsException;
+use function array_map;
 use function array_pop;
 use function array_slice;
 use function call_user_func;
@@ -29,6 +33,7 @@ use function in_array;
 use function property_exists;
 use function str_replace;
 use function strtolower;
+use function trim;
 
 /**
  * Compatibility Analyser.
@@ -50,6 +55,8 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     private array $aliases;
     /** @var ReferenceCollectionInterface<array>  */
     private $references;
+    /** @var PolyfillCollectionInterface<PolyfillInterface>  */
+    private $polyfillCollection;
     private SplFileInfo $currentFile;
     /** @var array<int, mixed> */
     private array $tokens;
@@ -64,16 +71,18 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
      * @param ProfilerInterface $profiler
      * @param SniffCollectionInterface<SniffInterface> $sniffCollection
      * @param ReferenceCollectionInterface<array> $referenceCollection
+     * @param PolyfillCollectionInterface<PolyfillInterface> $polyfillCollection
      * @param EventDispatcherInterface $compatibilityEventDispatcher
      */
     public function __construct(
         ProfilerInterface $profiler,
         SniffCollectionInterface $sniffCollection,
         ReferenceCollectionInterface $referenceCollection,
+        PolyfillCollectionInterface $polyfillCollection,
         EventDispatcherInterface $compatibilityEventDispatcher
     ) {
         $this->references = $referenceCollection;
-
+        $this->polyfillCollection = $polyfillCollection;
         $keysAllowed = [
             'extensions',
             'namespaces',
@@ -245,7 +254,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
 
         $name = (string) $node->name;
         if (in_array($name, $conditions)) {
-            // conditional code must not be compute to `php.min`
+            // conditional code must not be computed to `php.min`
             return;
         }
 
@@ -295,9 +304,8 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     private function leaveExprStaticCall(Node\Expr\StaticCall $node): void
     {
         if ($node->class instanceof Node\Expr\Variable) {
-            // Dynamic access to static methods is now possible since PHP 5.3
-            // @link https://www.php.net/manual/en/migration53.new-features.php
-            $this->updateNodeElementVersion($node, self::ANALYSER_NODE_ATTRIBUTE, ['php.min' => '5.3.0']);
+            // Dynamic access to static methods/properties is now possible since PHP 5.3
+            // @see Bartlett\CompatInfo\Application\Sniffs\Classes\DynamicAccessSniff
             return;
         }
 
@@ -410,6 +418,19 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
             $argc     = isset($node->args) ? count($node->args) : 0;
             $versions = $this->references->find($context, $element, $argc, $extra);
             $versions['ext.all'] = $versions['php.all'] = '';
+            if (isset($versions['polyfill'])) {
+                $versions['php.all'] = $versions['php.min'] . ' without ' . $versions['polyfill'];
+
+                $packages = explode(',', $versions['polyfill']);
+                array_map(fn($item) => trim($item), $packages);
+
+                try {
+                    $versions['php.min'] = $this->polyfillCollection->getVersion($packages, $versions['php.min']);
+                } catch (OutOfBoundsException $e) {
+                    // polyfill package not installed
+                    $versions['php.all'] = '';
+                }
+            }
 
             // cache to speed-up later uses
             $node->setAttribute(self::ANALYSER_NODE_ATTRIBUTE, $versions);

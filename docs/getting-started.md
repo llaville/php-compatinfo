@@ -23,7 +23,7 @@ Install the PHP CompatInfo with [Composer](https://getcomposer.org/).
 If you don't know yet what is composer, have a look [on introduction](http://getcomposer.org/doc/00-intro.md).
 
 ```shell
-composer require bartlett/php-compatinfo ^6.3
+composer require bartlett/php-compatinfo ^6.4
 ```
 
 ### With Git
@@ -32,7 +32,7 @@ The PHP CompatInfo can be directly used from [GitHub](https://github.com/llavill
 by cloning the repository into a directory of your choice.
 
 ```shell
-git clone -b 6.3 https://github.com/llaville/php-compatinfo.git
+git clone -b 6.4 https://github.com/llaville/php-compatinfo.git
 ```
 
 ## Configuring the Database

@@ -39,13 +39,13 @@ They are grouped by categories to solve PHP features (from 4.0 to 8.1)
 
 - Arrays (3)
 - Attributes (1)
-- Classes (9)
+- Classes (10)
 - Constants (3)
 - ControlStructures (4)
 - Enumerations (1)
 - Expressions (3)
 - Fibers (1)
-- FunctionDeclarations (6)
+- FunctionDeclarations (7)
 - Generators (1)
 - Keywords (1)
 - Numbers (2)
@@ -71,6 +71,10 @@ PHPCompatInfo can be extended by registering objects that implement one or more 
 - `AfterProcessSniffInterface`
 
 Furthermore, extensions may implement the `Symfony\Component\EventDispatcher\EventSubscriberInterface` in order to have its event handlers automatically registered with the EventDispatcher when the extension is loaded.
+
+### [Polyfills](01_Components/05_Polyfills/Features.md)
+
+They are identified by services that implements the `Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface`.
 
 ## [Configuration(s)](02_Configs/README.md)
 

@@ -5,21 +5,21 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Bartlett\CompatInfo\Tests\Sniffs;
+namespace Bartlett\CompatInfo\Tests\PhpFeatures;
+
+use Bartlett\CompatInfo\Tests\TestCase;
 
 use Exception;
 
 /**
- * Enumerations.
+ * Unit tests for PHP_CompatInfo package, issues reported
  *
  * @author Laurent Laville
- * @since  Class available since Release 6.2.0
+ * @since  Class available since Release 6.4.0
  *
- * @link https://wiki.php.net/rfc/enumerations
- * @link https://www.php.net/manual/en/language.enumerations.php
- * @link https://github.com/llaville/php-compatinfo/issues/322
+ * @link https://github.com/llaville/php-compatinfo/issues/213
  */
-final class EnumerationSniffTest extends SniffTestCase
+final class Php53IssueTest extends TestCase
 {
     /**
      * {@inheritDoc}
@@ -28,22 +28,22 @@ final class EnumerationSniffTest extends SniffTestCase
     {
         parent::setUpBeforeClass();
 
-        self::$fixtures .= 'enumerations' . DIRECTORY_SEPARATOR;
+        self::$fixtures .= 'features' . DIRECTORY_SEPARATOR . 'php53' . DIRECTORY_SEPARATOR;
     }
 
     /**
-     * Data Source Provider to test enumerations
+     * Data Source Provider to test some PHP 5.3 features
      *
      * @return iterable
      */
     public function dataSourceProvider(): iterable
     {
         $provides = [
-            'basic.php' => [
-                'php.min' => '8.1.0alpha1',
+            'gh213_static_method.php' => [
+                'php.min' => '5.3.0',
             ],
-            'backed.php' => [
-                'php.min' => '8.1.0alpha1',
+            'gh213_static_property.php' => [
+                'php.min' => '5.3.0',
             ],
         ];
 
@@ -53,17 +53,17 @@ final class EnumerationSniffTest extends SniffTestCase
     }
 
     /**
-     * Regression test for issue #322
+     * Regression test for feature #213
      *
-     * @link https://github.com/llaville/php-compatinfo/issues/322
-     *       Enumeration is detected as PHP 8.1
+     * @link https://github.com/llaville/php-compat-info/issues/213
+     *       Dynamic access to static methods and properties are not detected
      * @group features
      * @group regression
      * @dataProvider dataSourceProvider
      * @return void
      * @throws Exception
      */
-    public function testEnumerations(string $dataSource, array $expectedVersions)
+    public function testRegressionGH213(string $dataSource, array $expectedVersions)
     {
         $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];

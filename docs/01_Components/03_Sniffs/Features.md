@@ -33,6 +33,8 @@ Here is the list of features supported and their corresponding sniffs :
 | Sniff category | Sniff class name | PHP Feature |
 |---|---|---|
 | Classes  | MagicMethodsSniff  | [Magic Methods](https://www.php.net/manual/en/language.oop5.magic.php) |
+| Classes  | DynamicAccessSniff | Dynamic Static Method access
+| Classes  | DynamicAccessSniff | Dynamic Static Property access
 | ControlStructures    | DeclareSniff | [declare](https://www.php.net/manual/en/control-structures.declare.php) |
 | ControlStructures    | GotoSniff    | [goto](https://www.php.net/manual/en/control-structures.goto.php) |
 | FunctionDeclarations | ClosureSniff | [Anonymous functions](https://www.php.net/manual/en/functions.anonymous.php) |
@@ -118,6 +120,7 @@ Here is the list of features supported and their corresponding sniffs :
 |---|---|---|
 | Arrays   | ArrayUnpackingSyntaxSniff | [Array unpacking support for numeric-keyed arrays](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.unpack-inside-array) |
 | Classes  | TypedPropertySniff  | [Typed properties](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.typed-properties) |
+| FunctionDeclarations | ArrowFunctionSniff | [Arrow functions](https://www.php.net/manual/en/functions.arrow.php) |
 |   | `VersionResolverVisitor`   | [Arrow functions](https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.arrow-functions) |
 
 ## [PHP 8.0](https://www.php.net/manual/en/migration80.php)

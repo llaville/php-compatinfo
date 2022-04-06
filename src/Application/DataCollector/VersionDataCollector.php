@@ -67,6 +67,10 @@ final class VersionDataCollector extends DataCollector
             }
             if (isset($this->data[$group][$name])) {
                 $this->updateElementVersion($this->data[$group][$name], $versions);
+                $this->data[$group][$name]['rules'] = array_merge(
+                    $this->data[$group][$name]['rules'] ?? [],
+                    $versions['rules']
+                );
             } else {
                 $this->data[$group][$name] = $versions;
             }

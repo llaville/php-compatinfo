@@ -7,9 +7,25 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
-## [6.3.0] - 2022-03-06
+## [6.4.0] - 2022-04-06
 
 <!-- MARKDOWN-RELEASE:START -->
+### Added
+
+- new `rule:list` command to display Compatibility Analyser rules supported
+
+### Changed
+
+- raise `bartlett/php-compatinfo-db` constraint to 4.2 minimum to support polyfill feature
+- [#237](https://github.com/llaville/php-compatinfo/issues/237) : Awareness of compatibility packages
+
+### Fixed
+
+- [#213](https://github.com/llaville/php-compatinfo/issues/213) : Static properties accessed through a variable are not detected
+<!-- MARKDOWN-RELEASE:END -->
+
+## [6.3.0] - 2022-03-06
+
 ### Added
 
 - [#347](https://github.com/llaville/php-compatinfo/issues/347) : Automate creation of new GitHub Release with PHAR version as asset
@@ -23,7 +39,6 @@ Experimental
 - [#345](https://github.com/llaville/php-compatinfo/issues/345) : class `PhpParser\Node\Expr\PropertyFetch` could not be converted to string
 - [#346](https://github.com/llaville/php-compatinfo/issues/346) : Improves displaying Error in Datasource Analysis
 - [#348](https://github.com/llaville/php-compatinfo/issues/348) : TrailingCommaSniff give wrong results
-<!-- MARKDOWN-RELEASE:END -->
 
 ## [6.2.0] - 2022-02-06
 
@@ -154,7 +169,8 @@ Experimental
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.3.0...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.4.0...HEAD
+[6.4.0]: https://github.com/llaville/php-compat-info/compare/6.3.0...6.4.0
 [6.3.0]: https://github.com/llaville/php-compat-info/compare/6.2.0...6.3.0
 [6.2.0]: https://github.com/llaville/php-compat-info/compare/6.1.2...6.2.0
 [6.1.2]: https://github.com/llaville/php-compat-info/compare/6.1.1...6.1.2

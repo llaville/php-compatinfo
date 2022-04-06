@@ -79,8 +79,6 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
             }
         } elseif ($node instanceof Node\Stmt\Trait_) {
             $currentVersions['php.min'] = '5.4.0';
-        } elseif ($node instanceof Node\Stmt\Enum_) {
-            $currentVersions['php.min'] = '8.1.0';
         } elseif ($node instanceof Node\FunctionLike) {
             if ($node instanceof Node\Expr\ArrowFunction) {
                 // @link https://www.php.net/manual/en/functions.arrow.php

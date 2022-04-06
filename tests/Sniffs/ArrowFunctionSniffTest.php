@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use Exception;
+
 /**
  * No specific sniff defined. This is the "VersionResolverVisitor" that initialize base min version.
  *
@@ -35,6 +37,7 @@ final class ArrowFunctionSniffTest extends SniffTestCase
      *
      * @group features
      * @return void
+     * @throws Exception
      */
     public function testArrowFunctionInObjectContext()
     {

@@ -72,6 +72,7 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
                         'php.max'      => $function->getPhpMax(),
                         'parameters'   => $function->getParameters(),
                         'php.excludes' => $function->getExcludes(),
+                        'polyfill'     => $function->getPolyfill(),
                     ];
                 }
             } elseif ('constants' === $group) {
@@ -85,6 +86,7 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
                         'ext.max'  => $constant->getExtMax(),
                         'php.min'  => $constant->getPhpMin(),
                         'php.max'  => $constant->getPhpMax(),
+                        'polyfill' => $constant->getPolyfill(),
                     ];
                 }
             } elseif (in_array($group, ['classes', 'interfaces'])) {
@@ -121,7 +123,9 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
                 ];
             }
             // cache to speed-up later uses
-            $this->set($key, $result);
+            if ('user' !== $result['ext.name']) {
+                $this->set($key, $result);
+            }
         }
 
         // compute the right version depending on number of arguments used

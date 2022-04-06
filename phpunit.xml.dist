@@ -28,6 +28,7 @@
         </testsuite>
         <testsuite name="features">
             <directory suffix="IssueTest.php">tests/</directory>
+            <directory suffix="IssueTest.php">tests/PhpFeatures/</directory>
         </testsuite>
     </testsuites>
     <groups>
@@ -36,4 +37,7 @@
             <group>not_implemented</group>
         </exclude>
     </groups>
+    <php>
+        <env name="APP_ENV" value="tests" force="true" />
+    </php>
 </phpunit>

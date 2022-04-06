@@ -149,14 +149,6 @@ abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterfa
     }
 
     /**
-     * @see https://stackoverflow.com/questions/19901850/how-do-i-get-an-objects-unqualified-short-class-name
-     */
-    protected function getShortClass(): string
-    {
-        return substr(strrchr(get_class($this), '\\'), 1);
-    }
-
-    /**
      * @param Node $node
      * @return string
      */

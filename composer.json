@@ -15,9 +15,9 @@
         "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
-        "bartlett/php-compatinfo-db": "^4.0",
+        "bartlett/php-compatinfo-db": "^4.2",
         "bartlett/sarif-php-sdk": "^1.0",
-        "composer-runtime-api": "^2.0",
+        "composer-runtime-api": "^2.1",
         "doctrine/collections": "^1.4",
         "nikic/php-parser": "^4.10",
         "psr/log": "^1.0",
@@ -74,7 +74,7 @@
     "extra": {
         "enable-patching": true,
         "branch-alias": {
-            "dev-master": "6.3.x-dev"
+            "dev-master": "6.4.x-dev"
         }
     }
 }

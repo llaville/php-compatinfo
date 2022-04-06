@@ -6,12 +6,15 @@
  * file that was distributed with this source code.
  */
 
+use Bartlett\CompatInfo\Application\Collection\PolyfillCollection;
+use Bartlett\CompatInfo\Application\Collection\PolyfillCollectionInterface;
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollection;
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Application\Collection\SniffCollection;
 use Bartlett\CompatInfo\Application\Collection\SniffCollectionInterface;
 use Bartlett\CompatInfo\Application\Extension\ExtensionInterface;
 use Bartlett\CompatInfo\Application\Logger\DefaultLogger;
+use Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface;
 use Bartlett\CompatInfo\Application\Profiler\Profiler;
 use Bartlett\CompatInfo\Application\Profiler\ProfilerInterface;
 use Bartlett\CompatInfo\Application\Query\QueryBusInterface;
@@ -93,6 +96,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->instanceof(SniffInterface::class)
         ->tag('phpcompatinfo.sniff')
     ;
+    $services->instanceof(PolyfillInterface::class)
+        ->tag('phpcompatinfo.polyfill')
+    ;
 
     $services->load('Bartlett\CompatInfo\\', __DIR__ . '/../../src');
 
@@ -102,6 +108,16 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         // for unit tests
         ->public()
     ;
+
+    if (in_array(getenv('APP_ENV'), ['dev', 'prod'])) {
+        $services->set(PolyfillCollectionInterface::class, PolyfillCollection::class)
+            ->arg('$polyfills', tagged_iterator('phpcompatinfo.polyfill'))
+        ;
+    } else {
+        $services->set(PolyfillCollectionInterface::class, PolyfillCollection::class)
+            ->arg('$polyfills', [])
+        ;
+    }
 
     $services->set(ReferenceCollectionInterface::class, ReferenceCollection::class);
 };
