@@ -1,14 +1,11 @@
 <!-- markdownlint-disable MD013 -->
 # Polyfills
 
-Before version 6.4, PHP CompatInfo and its compatibility analyser was not able to detect packages 
-that provides compatibility layers for some extensions and functions.
+Before version 6.4, PHP CompatInfo and its compatibility analyser was not able to detect packages that provides compatibility layers for some extensions and functions.
 
-Since version 6.4, PHP CompatInfo used a polyfill architecture to detect such packages 
-that backports features found in the latest PHP versions.
+Since version 6.4, PHP CompatInfo used a polyfill architecture to detect such packages that backports features found in the latest PHP versions.
 
-Each polyfill package must be supported both with [PHP CompatInfoDB](https://github.com/llaville/php-compatinfo-db) (since release 4.2.0) 
-to identify PHP features (classes, constants, functions), and CompatInfo itself by services implementing the `Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface`
+Each polyfill package must be supported both with [PHP CompatInfoDB](https://github.com/llaville/php-compatinfo-db) (since release 4.2.0) to identify PHP features (classes, constants, functions), and CompatInfo itself by services implementing the `Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface`
 
 Here is the list of available polyfill services supported (namespace `Bartlett\CompatInfo\Application\Polyfills`) :
 
