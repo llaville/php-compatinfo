@@ -9,7 +9,7 @@ Running on PHP greater or equal than 7.4 for parsing source code in a format PHP
 
 [![GitHub Discussions](https://img.shields.io/github/discussions/llaville/php-compatinfo)](https://github.com/llaville/php-compatinfo/discussions)
 [![GitHub-Pages](https://github.com/llaville/php-compatinfo/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/llaville/php-compatinfo/actions/workflows/gh-pages.yml)
-[![Tests](https://github.com/llaville/php-compatinfo/actions/workflows/php-tests.yaml/badge.svg)](https://github.com/llaville/php-compatinfo/actions/workflows/php-tests.yaml)
+[![Unit Tests](https://github.com/llaville/php-compatinfo/actions/workflows/unit-tests.yaml/badge.svg)](https://github.com/llaville/php-compatinfo/actions/workflows/unit-tests.yaml)
 
 ## Versions
 
