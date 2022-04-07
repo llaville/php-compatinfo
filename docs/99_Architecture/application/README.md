@@ -29,6 +29,10 @@
 
 ![Graph UML Application Parser](../../assets/images/application-parser.graphviz.svg)
 
+## Polyfill(s)
+
+![Graph UML Application Polyfill](../../assets/images/application-polyfills.graphviz.svg)
+
 ## Profiler
 
 ![Graph UML Application Profiler](../../assets/images/application-profiler.graphviz.svg)
@@ -44,3 +48,4 @@
 ## Sniff(s)
 
 ![Graph UML Application Sniff](../../assets/images/application-sniffs.graphviz.svg)
+
