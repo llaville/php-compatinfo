@@ -7,9 +7,17 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
-## [6.4.0] - 2022-04-06
+## [6.4.1] - 2022-04-07
 
 <!-- MARKDOWN-RELEASE:START -->
+### Fixed
+
+- `progress_bar` extension : did not work since release 6.0.0
+- `logger` extension : did not work since release 6.0.0
+<!-- MARKDOWN-RELEASE:END -->
+
+## [6.4.0] - 2022-04-06
+
 ### Added
 
 - new `rule:list` command to display Compatibility Analyser rules supported
@@ -22,7 +30,6 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Fixed
 
 - [#213](https://github.com/llaville/php-compatinfo/issues/213) : Static properties accessed through a variable are not detected
-<!-- MARKDOWN-RELEASE:END -->
 
 ## [6.3.0] - 2022-03-06
 
@@ -169,7 +176,8 @@ Experimental
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.4.0...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.4.1...HEAD
+[6.4.1]: https://github.com/llaville/php-compat-info/compare/6.4.0...6.4.1
 [6.4.0]: https://github.com/llaville/php-compat-info/compare/6.3.0...6.4.0
 [6.3.0]: https://github.com/llaville/php-compat-info/compare/6.2.0...6.3.0
 [6.2.0]: https://github.com/llaville/php-compat-info/compare/6.1.2...6.2.0

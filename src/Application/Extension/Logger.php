@@ -61,28 +61,14 @@ final class Logger implements
 {
     private LoggerInterface $logger;
 
-    /** @var array<string, string>  */
-    private static array $events;
-
     /**
      * Logger extension constructor.
      *
      * @param LoggerInterface $logger
-     * @param InputInterface $input
      */
-    public function __construct(LoggerInterface $logger, InputInterface $input)
+    public function __construct(LoggerInterface $logger)
     {
-        if ($input->hasOption('debug') && $input->getOption('debug')) {
-            $this->logger = $logger;
-            self::$events = [
-                ConsoleEvents::COMMAND => 'onConsoleCommand',
-                ConsoleEvents::TERMINATE => 'onConsoleTerminate',
-                ErrorEvent::class => 'onError',
-            ];
-        } else {
-            $this->logger = new NullLogger();
-            self::$events = [];
-        }
+        $this->logger = $logger;
     }
 
     /**
@@ -95,19 +81,31 @@ final class Logger implements
 
     /**
      * {@inheritDoc}
-     * @return array<string, string>
      */
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
-        return self::$events;
+        return [
+            ConsoleEvents::COMMAND => 'onConsoleCommand',
+            ConsoleEvents::TERMINATE => 'onConsoleTerminate',
+            ErrorEvent::class => 'onError',
+        ];
     }
 
     /**
+     * Initialize logger extension, by `analyser:run --debug` command
+     *
      * @param ConsoleCommandEvent $event
      * @return void
      */
     public function onConsoleCommand(ConsoleCommandEvent $event): void
     {
+        $input = $event->getInput();
+        $withDebug = $input->hasOption('debug') && $input->getOption('debug');
+
+        if (!$withDebug) {
+            $this->logger = new NullLogger();
+        }
+
         $context = ['command' => $event->getCommand()->getName()];
         $this->logger->info('Start {command} command.', $context);
     }

@@ -17,9 +17,10 @@ use Bartlett\CompatInfo\Application\Event\BeforeFileAnalysisEvent;
 use Bartlett\CompatInfo\Application\Event\BeforeFileAnalysisInterface;
 use Bartlett\CompatInfo\Presentation\Console\Style;
 
+use Symfony\Component\Console\ConsoleEvents;
+use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\Console\Helper\ProgressBar as SymfonyProgressBar;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Extension that inject progress display at execution.
@@ -32,21 +33,31 @@ final class ProgressBar implements
     BeforeAnalysisInterface,
     AfterAnalysisInterface,
     BeforeFileAnalysisInterface,
-    AfterFileAnalysisInterface
+    AfterFileAnalysisInterface,
+    EventSubscriberInterface
 {
-    private ?SymfonyProgressBar $progressBar;
+    private ?SymfonyProgressBar $progressBar = null;
 
     /**
-     * ProgressBar extension constructor.
-     *
-     * @param InputInterface $input
-     * @param OutputInterface $output
+     * {@inheritDoc}
      */
-    public function __construct(InputInterface $input, OutputInterface $output)
+    public static function getSubscribedEvents(): array
     {
-        $io = new Style($input, $output);
+        return [
+            ConsoleEvents::COMMAND => 'initProgress',
+        ];
+    }
+
+    /**
+     * Initialize progress bar extension, by `analyser:run --progress` command
+     */
+    public function initProgress(ConsoleCommandEvent $event): void
+    {
+        $input = $event->getInput();
 
         if ($input->hasOption('progress') && $input->getOption('progress')) {
+            $output = $event->getOutput();
+            $io = new Style($input, $output);
             $this->progressBar = $io->createProgressBar();
         } else {
             $this->progressBar = null;
