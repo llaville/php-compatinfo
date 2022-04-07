@@ -11,6 +11,7 @@ php $SCRIPT_DIR/graph-uml/build.php application-event $ASSETS_IMAGE_DIR
 php $SCRIPT_DIR/graph-uml/build.php application-extension $ASSETS_IMAGE_DIR
 php $SCRIPT_DIR/graph-uml/build.php application-logger $ASSETS_IMAGE_DIR
 php $SCRIPT_DIR/graph-uml/build.php application-parser $ASSETS_IMAGE_DIR
+php $SCRIPT_DIR/graph-uml/build.php application-polyfills $ASSETS_IMAGE_DIR
 php $SCRIPT_DIR/graph-uml/build.php application-profiler $ASSETS_IMAGE_DIR
 php $SCRIPT_DIR/graph-uml/build.php application-query $ASSETS_IMAGE_DIR
 php $SCRIPT_DIR/graph-uml/build.php application-service $ASSETS_IMAGE_DIR
