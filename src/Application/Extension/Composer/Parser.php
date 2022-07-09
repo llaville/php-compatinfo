@@ -19,12 +19,10 @@ final class Parser
      */
     public function __construct(string $path)
     {
-        if (!file_exists($path))
-        {
+        if (!file_exists($path)) {
             throw new \RuntimeException(sprintf('composer.json file not found at %s', $path));
         }
-        if (!is_readable($path))
-        {
+        if (!is_readable($path)) {
             throw new \RuntimeException(sprintf('composer.json file not readable at %s', $path));
         }
 
@@ -51,8 +49,7 @@ final class Parser
     {
         $extensions = [];
 
-        if (array_key_exists('require', $this->_composerData))
-        {
+        if (array_key_exists('require', $this->_composerData)) {
             foreach ($this->_composerData['require'] as $name => $value) {
                 if (strpos($name, 'ext-') === 0) {
                     $extensions[substr($name, 4)] = $value;

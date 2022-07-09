@@ -14,25 +14,25 @@ use Bartlett\CompatInfo\Application\Analyser\CompatibilityAnalyser;
  */
 final class MinimalAnalyserResult
 {
-    private $_versions;
-    private $_extensions;
+    private array $_versions = [];
+    private array $_extensions = [];
 
-    public function setVersions($versions)
+    public function setVersions($versions): void
     {
         $this->_versions = $versions;
     }
 
-    public function getVersions()
+    public function getVersions(): array
     {
         return $this->_versions;
     }
 
-    public function setExtensions($extensions)
+    public function setExtensions($extensions): void
     {
         $this->_extensions = $extensions;
     }
 
-    public function getExtensions()
+    public function getExtensions(): array
     {
         return $this->_extensions;
     }
@@ -47,8 +47,7 @@ final class MinimalAnalyserResult
 
         $data = reset($profileData);
 
-        if (!array_key_exists(CompatibilityAnalyser::class, $data))
-        {
+        if (!array_key_exists(CompatibilityAnalyser::class, $data)) {
             throw new \RuntimeException('unable to collect compatibilityData from compatinfo queryResult');
         }
 

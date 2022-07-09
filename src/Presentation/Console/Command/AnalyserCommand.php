@@ -134,8 +134,7 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
                 }
             }
 
-            if (!$verificationResult)
-            {
+            if (!$verificationResult) {
                 $io->error('composer.json verification failed!');
                 return self::FAILURE;
             }

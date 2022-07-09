@@ -62,7 +62,8 @@ final class Verifier
                         'configured php platform version %s in composer.json does not match the required php version constraint %s',
                         $this->_composerPhpVersion,
                         $this->_composerRequire['php']
-                    ));
+                    )
+                );
             } else {
                 $this->addMessage(
                     self::MESSAGE_TYPE_INFO,
@@ -70,7 +71,8 @@ final class Verifier
                         'configured php platform version %s in composer.json matches the required php version constraint %s',
                         $this->_composerPhpVersion,
                         $this->_composerRequire['php']
-                    ));
+                    )
+                );
             }
         }
 
@@ -86,7 +88,8 @@ final class Verifier
                             'minimal required php version %s from analysis does not match the required php version constraint in composer.json %s',
                             $this->_minimalAnalyserResult->getVersions()['php.min'],
                             $this->_composerRequire['php']
-                        ));
+                        )
+                    );
                 } else {
                     $this->addMessage(
                         self::MESSAGE_TYPE_INFO,
@@ -94,7 +97,8 @@ final class Verifier
                             'minimal required php version %s from analysis matches the required php version constraint in composer.json %s',
                             $this->_minimalAnalyserResult->getVersions()['php.min'],
                             $this->_composerRequire['php']
-                        ));
+                        )
+                    );
                 }
             }
 
@@ -107,7 +111,8 @@ final class Verifier
                             'maximal required php version %s from analysis does not match the required php version constraint in composer.json %s',
                             $this->_minimalAnalyserResult->getVersions()['php.max'],
                             $this->_composerRequire['php']
-                        ));
+                        )
+                    );
                 } else {
                     $this->addMessage(
                         self::MESSAGE_TYPE_INFO,
@@ -115,7 +120,8 @@ final class Verifier
                             'maximal required php version %s from analysis matches the required php version constraint in composer.json %s',
                             $this->_minimalAnalyserResult->getVersions()['php.max'],
                             $this->_composerRequire['php']
-                        ));
+                        )
+                    );
                 }
             }
         } else {
@@ -152,7 +158,8 @@ final class Verifier
                             'the composer.json platform-php config %s is not >= the required php minimal version %s from analysis',
                             $this->_composerPhpVersion,
                             $this->_minimalAnalyserResult->getVersions()['php.min']
-                        ));
+                        )
+                    );
                 } else {
                     $this->addMessage(
                         self::MESSAGE_TYPE_INFO,
@@ -160,7 +167,8 @@ final class Verifier
                             'the composer.json platform-php config %s is >= the required php minimal version %s from analysis',
                             $this->_composerPhpVersion,
                             $this->_minimalAnalyserResult->getVersions()['php.min']
-                        ));
+                        )
+                    );
                 }
             }
             if (isset($this->_minimalAnalyserResult->getVersions()['php.max']) && !empty($this->_minimalAnalyserResult->getVersions()['php.max'])) {
@@ -172,7 +180,8 @@ final class Verifier
                             'the composer.json platform-php config %s is not <= the required php maximal version %s from analysis',
                             $this->_composerPhpVersion,
                             $this->_minimalAnalyserResult->getVersions()['php.max']
-                        ));
+                        )
+                    );
                 } else {
                     $this->addMessage(
                         self::MESSAGE_TYPE_INFO,
@@ -180,7 +189,8 @@ final class Verifier
                             'the composer.json platform-php config %s is <= the required php maximal version %s from analysis',
                             $this->_composerPhpVersion,
                             $this->_minimalAnalyserResult->getVersions()['php.max']
-                        ));
+                        )
+                    );
                 }
             }
         }
@@ -202,9 +212,10 @@ final class Verifier
                         'the required extension %s (>= version %s) is listed in composer.json %s (version %s)',
                         $extension,
                         $data['ext.min'],
-                        'ext-'.$extension,
+                        'ext-' . $extension,
                         $composerRequiredPhpExtensions[$extension]
-                    ));
+                    )
+                );
             } else {
                 if (self::getExtensionIsOptionalInfo($extension)) {
                     $this->addMessage(
@@ -213,7 +224,8 @@ final class Verifier
                             'the required extension %s (>= version %s) is optional and not listed in composer.json',
                             $extension,
                             $data['ext.min']
-                        ));
+                        )
+                    );
                 } else {
                     $this->addMessage(
                         self::MESSAGE_TYPE_INFO,
@@ -221,7 +233,8 @@ final class Verifier
                             'the required extension %s (>= version %s) is not listed in composer.json but bundled',
                             $extension,
                             $data['ext.min']
-                        ));
+                        )
+                    );
                 }
             }
         }
@@ -238,7 +251,8 @@ final class Verifier
                         'the extension %s (version %s) which is listed in composer.json was not found by the analyser, might be removed from the requirements (make sure you also check your dependencies before removing)',
                         $requiredExtensionName,
                         $requiredExtensionVersion
-                    ));
+                    )
+                );
             }
         }
 
@@ -260,7 +274,7 @@ final class Verifier
         // crude way to not allow unwanted directory traversal
         $sanitizedName = str_replace(['/', '.'], ['', ''], $extensionName);
 
-        $jsonPath = __DIR__.'/../../../../vendor/bartlett/php-compatinfo-db/data/reference/extension/'.$sanitizedName.'/extensions.json';
+        $jsonPath = __DIR__ . '/../../../../vendor/bartlett/php-compatinfo-db/data/reference/extension/' . $sanitizedName . '/extensions.json';
 
         if (file_exists($jsonPath)) {
             $jsonContent = json_decode(file_get_contents($jsonPath), true);
