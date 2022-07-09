@@ -30,6 +30,9 @@
             <directory suffix="IssueTest.php">tests/</directory>
             <directory suffix="IssueTest.php">tests/PhpFeatures/</directory>
         </testsuite>
+        <testsuite name="composer">
+            <directory suffix="Test.php">tests/Composer/</directory>
+        </testsuite>
     </testsuites>
     <groups>
         <exclude>

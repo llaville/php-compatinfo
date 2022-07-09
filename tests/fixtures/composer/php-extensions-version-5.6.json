@@ -1,0 +1,14 @@
+{
+    "require": {
+        "php": "^5.6",
+        "ext-json": "*",
+        "ext-libxml": "*",
+        "ext-pcre": "*",
+        "ext-spl": "*"
+    },
+    "config": {
+        "platform": {
+            "php": "5.6.0"
+        }
+    }
+}

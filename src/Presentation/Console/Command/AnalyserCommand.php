@@ -7,6 +7,10 @@
  */
 namespace Bartlett\CompatInfo\Presentation\Console\Command;
 
+use Bartlett\CompatInfo\Application\Extension\Composer\MinimalAnalyserResult;
+use Bartlett\CompatInfo\Application\Extension\Composer\Parser;
+use Bartlett\CompatInfo\Application\Extension\Composer\Verifier;
+use Bartlett\CompatInfo\Application\Profiler\Profile;
 use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;
 use Bartlett\CompatInfo\Presentation\Console\ApplicationInterface;
 use Bartlett\CompatInfo\Presentation\Console\Style;
@@ -50,6 +54,12 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
                 null,
                 'Stop execution upon first error generated during lexing, parsing or some other operation'
             )
+            ->addOption(
+                'verify-composer-json',
+                null,
+                null,
+                'verifies a composer.json file; expected in the working path'
+            )
         ;
     }
 
@@ -65,7 +75,8 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
         );
 
         try {
-            $this->queryBus->query($compatibilityQuery);
+            /** @var Profile $profile */
+            $profile = $this->queryBus->query($compatibilityQuery);
         } catch (HandlerFailedException $e) {
             $exceptions = [];
             foreach ($e->getNestedExceptions() as $exception) {
@@ -91,6 +102,45 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
                 )
             );
             return self::FAILURE;
+        }
+
+        if ($input->getOption('verify-composer-json')) {
+            $io = new Style($input, $output);
+            $io->info('starting composer.json verification');
+
+            // @TODO: not sure if we need to provide a path besides the current working directory
+            //        for a composer.json to check against?
+
+            $composerPath = 'composer.json';
+
+            $composerJsonParser = new Parser($composerPath);
+
+            $minimalAnalyserResult = MinimalAnalyserResult::fromProfileFactory($profile->getData());
+
+            $verifier = new Verifier($minimalAnalyserResult, $composerJsonParser);
+            $verificationResult = $verifier->verify();
+
+            foreach ($verifier->getMessages() as $message) {
+                switch ($message['type']) {
+                    case Verifier::MESSAGE_TYPE_INFO:
+                        $io->info($message['message']);
+                        break;
+                    case Verifier::MESSAGE_TYPE_WARNING:
+                        $io->warning($message['message']);
+                        break;
+                    case Verifier::MESSAGE_TYPE_ERROR:
+                        $io->error($message['message']);
+                        break;
+                }
+            }
+
+            if (!$verificationResult)
+            {
+                $io->error('composer.json verification failed!');
+                return self::FAILURE;
+            }
+
+            $io->success('composer.json verification successful!');
         }
 
         return self::SUCCESS;

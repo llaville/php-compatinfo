@@ -1,0 +1,7 @@
+{
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*",
+        "ext-libxml": "*"
+    }
+}
