@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+bin/phpcompatinfo db:create --ansi || echo "skipping exit code"
+bin/phpcompatinfo db:init -f --ansi || echo "skipping exit code"
+
+if [ ! -f "phpunit" ]; then
+    wget -O phpunit https://phar.phpunit.de/phpunit-9.phar
+    chmod +x phpunit
+fi
+
+./phpunit $@
