@@ -202,8 +202,6 @@ final class Verifier
         $traversedAnalyserExtensions = [];
 
         foreach ($this->_minimalAnalyserResult->getExtensions() as $extension => $data) {
-            var_export($extension, true);
-            var_export($data, true);
             $traversedAnalyserExtensions[] = $extension;
             if (array_key_exists($extension, $composerRequiredPhpExtensions)) {
                 $this->addMessage(
