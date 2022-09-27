@@ -7,14 +7,20 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [6.4.2] - 2022-09-27
+<!-- MARKDOWN-RELEASE:START -->
+
+### Fixed
+
+- PHP CompatInfoDB 4.4 or greater is not supported by CompatInfo 6.4.x
+<!-- MARKDOWN-RELEASE:END -->
+
 ## [6.4.1] - 2022-04-07
 
-<!-- MARKDOWN-RELEASE:START -->
 ### Fixed
 
 - `progress_bar` extension : did not work since release 6.0.0
 - `logger` extension : did not work since release 6.0.0
-<!-- MARKDOWN-RELEASE:END -->
 
 ## [6.4.0] - 2022-04-06
 
@@ -176,7 +182,8 @@ Experimental
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.4.1...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.4.2...HEAD
+[6.4.2]: https://github.com/llaville/php-compat-info/compare/6.4.1...6.4.2
 [6.4.1]: https://github.com/llaville/php-compat-info/compare/6.4.0...6.4.1
 [6.4.0]: https://github.com/llaville/php-compat-info/compare/6.3.0...6.4.0
 [6.3.0]: https://github.com/llaville/php-compat-info/compare/6.2.0...6.3.0
