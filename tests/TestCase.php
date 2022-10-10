@@ -16,6 +16,9 @@ use Symfony\Component\Console\Input\ArrayInput;
 
 use Exception;
 use function reset;
+use function sprintf;
+use const PHP_MAJOR_VERSION;
+use const PHP_MINOR_VERSION;
 
 /**
  * Common Class TestCase
@@ -55,7 +58,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     {
         $compatibilityQuery = new GetCompatibilityQuery(self::$fixtures . $dataSource, [], false, '');
 
-        $input = new ArrayInput(['--no-polyfills' => true, '--php' => '8.1']);
+        $input = new ArrayInput(['--no-polyfills' => true, '--php' => sprintf('%d.%d', PHP_MAJOR_VERSION, PHP_MINOR_VERSION)]);
         $container = (new ConsoleKernel('dev', true))->createFromInput($input);
 
         $queryBus = $container->get(QueryBusInterface::class);
