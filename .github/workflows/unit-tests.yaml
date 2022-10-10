@@ -41,6 +41,11 @@ jobs:
                         php: 8.1
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
                         tools: phpunit
+                    -
+                        os: ubuntu-latest
+                        php: 8.2
+                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
+                        tools: phpunit
 
         name: Compatibility Info
 
