@@ -33,4 +33,14 @@ interface ApplicationInterface extends ContainerAwareInterface
     public function getName();
 
     public function getInstalledVersion(bool $withRef = true, string $packageName = 'bartlett/php-compatinfo'): ?string;
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function getApplicationParameters(): array;
+
+    /**
+     * Gets the current light kernel used by this application.
+     */
+    public function getKernel(): object;
 }

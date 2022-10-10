@@ -15,7 +15,7 @@
         "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
-        "bartlett/php-compatinfo-db": "^4.2",
+        "bartlett/php-compatinfo-db": "4.6.x-dev",
         "bartlett/sarif-php-sdk": "^1.0",
         "composer-runtime-api": "^2.1",
         "doctrine/collections": "^1.4",
@@ -31,7 +31,8 @@
         "symfony/stopwatch": "^4.4 || ^5.0"
     },
     "require-dev": {
-        "bartlett/graph-uml": "^1.2"
+        "bartlett/graph-uml": "^1.2",
+        "symfony/framework-bundle": "^4.4 || ^5.0"
     },
     "authors": [
         {

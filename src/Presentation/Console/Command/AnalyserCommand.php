@@ -50,6 +50,12 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
                 null,
                 'Stop execution upon first error generated during lexing, parsing or some other operation'
             )
+            ->addOption(
+                'no-polyfills',
+                null,
+                null,
+                'Whether to disable polyfills'
+            )
         ;
     }
 

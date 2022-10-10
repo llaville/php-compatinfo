@@ -8,7 +8,6 @@
 namespace Bartlett\CompatInfo\Presentation\Console;
 
 use Bartlett\CompatInfoDb\Presentation\Console\Command\BuildCommand;
-use Bartlett\CompatInfoDb\Presentation\Console\Command\DiagnoseCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\DoctorCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\PolyfillCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\ReleaseCommand;
@@ -36,7 +35,6 @@ final class FactoryCommandLoader extends SymfonyFactoryCommandLoader implements 
 
         $blacklist = [
             BuildCommand::class,
-            DiagnoseCommand::class,
             DoctorCommand::class,
             PolyfillCommand::class,
             ReleaseCommand::class,

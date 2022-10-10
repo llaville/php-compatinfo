@@ -50,10 +50,12 @@ final class DiagnoseCommand extends AbstractCommand implements CommandInterface
 
         $projectRequirements = $this->queryBus->query($diagnoseQuery);
 
-        $io = new Style($input, $output);
-        $this->write($projectRequirements, $io, 'PHP CompatInfo');
         /** @var ApplicationInterface $app */
         $app = $this->getApplication();
+
+        $io = new Style($input, $output);
+
+        $this->write($projectRequirements, $io, 'PHP CompatInfo', $app->getApplicationParameters());
         $io->note(
             sprintf(
                 '%s version %s DB version %s',

@@ -6,15 +6,21 @@
  * file that was distributed with this source code.
  */
 
+use Bartlett\CompatInfo\Application\Collection\PolyfillCollection;
+use Bartlett\CompatInfo\Application\Collection\PolyfillCollectionInterface;
+
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 /**
- * Build the Container with none parameters and services (excluding Sniffs and console Application)
+ * Build the Container with standard polyfills
  *
  * @author Laurent Laville
-
- * @link https://symfony.com/doc/current/components/dependency_injection.html#avoiding-your-code-becoming-dependent-on-the-container
+ * @since Release 6.5.0
  */
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(__DIR__ . '/common.php');
+    $services = $containerConfigurator->services();
+
+    $services->set(PolyfillCollectionInterface::class, PolyfillCollection::class)
+        ->arg('$polyfills', [])
+    ;
 };

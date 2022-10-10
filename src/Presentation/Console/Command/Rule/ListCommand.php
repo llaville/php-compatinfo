@@ -71,7 +71,7 @@ final class ListCommand extends AbstractCommand implements CommandInterface
         $this->setName(self::NAME)
             ->setDescription('Display list of Compatibility Analyser rules supported')
             ->addOption(
-                'php',
+                'php-runtime',
                 null,
                 InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED,
                 'Restrict rule list to one or more PHP version (format: major.minor)'
@@ -86,7 +86,7 @@ final class ListCommand extends AbstractCommand implements CommandInterface
     {
         $io = new SymfonyStyle($input, $output);
 
-        $phpFilters = $input->getOption('php');
+        $phpFilters = $input->getOption('php-runtime');
 
         if (!empty($phpFilters)) {
             $rows = array_filter($this->rules, function ($value, $key) use ($phpFilters) {

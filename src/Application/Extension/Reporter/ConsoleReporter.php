@@ -138,7 +138,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
             'polyfills',
         ];
         foreach ($groups as $section) {
-            $this->formatSection($section, $output);
+           $this->formatSection($section, $output);
         }
 
         if (

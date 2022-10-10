@@ -7,26 +7,22 @@
  */
 namespace Bartlett\CompatInfo\Presentation\Console;
 
+use Bartlett\CompatInfo\Application\Kernel;
 use Bartlett\CompatInfo\Presentation\Console\Command\AbstractCommand;
 use Bartlett\CompatInfoDb\Infrastructure\Framework\Composer\InstalledVersions;
 
-use Symfony\Component\Config\Exception\FileLocatorFileNotFoundException;
-use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Console\Application as SymfonyApplication;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
+use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 use Phar;
-use function basename;
 use function sprintf;
 
 /**
@@ -37,6 +33,8 @@ use function sprintf;
  */
 class Application extends SymfonyApplication implements ApplicationInterface
 {
+    use ContainerAwareTrait;
+
     /**
      * @var string
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=phpCompatInfo
@@ -52,8 +50,6 @@ class Application extends SymfonyApplication implements ApplicationInterface
 ";
     // editorconfig-checker-enable
 
-    private ContainerInterface $container;
-
     /**
      * Application constructor.
      */
@@ -64,15 +60,6 @@ class Application extends SymfonyApplication implements ApplicationInterface
             $this->getInstalledVersion(false)
         );
         $this->setDispatcher($compatibilityEventDispatcher);
-    }
-
-    /**
-     * {@inheritDoc}
-     * @return void
-     */
-    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->container = $container;
     }
 
     /**
@@ -155,6 +142,14 @@ class Application extends SymfonyApplication implements ApplicationInterface
                 )
             );
         }
+        $definition->addOption(
+            new InputOption(
+                'php',
+                null,
+                InputOption::VALUE_REQUIRED,
+                'PHP feature version (format Major.Minor)'
+            )
+        );
         return $definition;
     }
 
@@ -179,24 +174,6 @@ class Application extends SymfonyApplication implements ApplicationInterface
             }
         }
 
-        $configFile = $input->getParameterOption('-c');
-        if (false === $configFile) {
-            $configFile = $input->getParameterOption('--config');
-        }
-        if (false !== $configFile) {
-            $containerBuilder = new ContainerBuilder();
-            try {
-                $loader = new PhpFileLoader($containerBuilder, new FileLocator(dirname($configFile)));
-                $loader->load(basename($configFile));
-            } catch (FileLocatorFileNotFoundException $e) {
-                $output = new ConsoleOutput();
-                $this->renderThrowable($e, $output);
-                return Command::FAILURE;
-            }
-            $containerBuilder->compile(); // mandatory or the sniffCollection won't be populated
-            $this->setContainer($containerBuilder);
-        }
-
         if ($input->hasParameterOption('--manifest')) {
             $phar = new Phar($_SERVER['argv'][0]);
             $manifest = $phar->getMetadata();
@@ -210,5 +187,23 @@ class Application extends SymfonyApplication implements ApplicationInterface
     public function getInstalledVersion(bool $withRef = true, string $packageName = 'bartlett/php-compatinfo'): ?string
     {
         return InstalledVersions::getPrettyVersion($packageName, $withRef);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getApplicationParameters(): array
+    {
+        /** @var Container $container */
+        $container = $this->container;
+        return $container->getParameterBag()->all();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getKernel(): object
+    {
+        return $this->container->get('kernel');
     }
 }

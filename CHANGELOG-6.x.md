@@ -7,14 +7,18 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+<!-- MARKDOWN-RELEASE:START -->
+### Added
+
+- support to light Kernel introduced since PHP CompatInfoDB 4.4 and finalized with CompatInfoDB 4.6
+<!-- MARKDOWN-RELEASE:END -->
+
 ## [6.4.1] - 2022-04-07
 
-<!-- MARKDOWN-RELEASE:START -->
 ### Fixed
 
 - `progress_bar` extension : did not work since release 6.0.0
 - `logger` extension : did not work since release 6.0.0
-<!-- MARKDOWN-RELEASE:END -->
 
 ## [6.4.0] - 2022-04-06
 
