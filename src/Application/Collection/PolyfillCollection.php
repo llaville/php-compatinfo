@@ -26,7 +26,7 @@ final class PolyfillCollection implements PolyfillCollectionInterface
     private $polyfills;
 
     /**
-     * param iterable<T> $polyfills
+     * @param iterable<T> $polyfills
      */
     public function __construct(iterable $polyfills)
     {
