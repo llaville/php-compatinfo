@@ -19,8 +19,8 @@ use Bartlett\CompatInfo\Application\Polyfills\SymfonyPhp73;
 use Bartlett\CompatInfo\Application\Polyfills\SymfonyPhp74;
 use Bartlett\CompatInfo\Application\Polyfills\SymfonyPhp80;
 use Bartlett\CompatInfo\Application\Polyfills\SymfonyPhp81;
-
 use Bartlett\CompatInfo\Application\Polyfills\SymfonyPhp82;
+
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\tagged_iterator;
 

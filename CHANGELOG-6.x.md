@@ -11,6 +11,11 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Added
 
 - support to light Kernel introduced since PHP CompatInfoDB 4.4 and finalized with CompatInfoDB 4.6
+- Composer `symfony/framework-bundle` dev constraint for `debug:container` and `debug:event-dispatcher` commands (helper for developers)
+
+### Changed
+
+- raise `bartlett/php-compatinfo-db` constraint to 4.6 minimum to support all features of light Kernel
 <!-- MARKDOWN-RELEASE:END -->
 
 ## [6.4.1] - 2022-04-07
