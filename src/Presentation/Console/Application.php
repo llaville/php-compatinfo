@@ -7,7 +7,6 @@
  */
 namespace Bartlett\CompatInfo\Presentation\Console;
 
-use Bartlett\CompatInfo\Application\Kernel;
 use Bartlett\CompatInfo\Presentation\Console\Command\AbstractCommand;
 use Bartlett\CompatInfoDb\Infrastructure\Framework\Composer\InstalledVersions;
 
