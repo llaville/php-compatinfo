@@ -59,7 +59,7 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         /** @var ApplicationInterface $app */
         $app = $this->getApplication();

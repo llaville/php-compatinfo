@@ -7,6 +7,7 @@
  */
 namespace Bartlett\CompatInfo\Presentation\Console;
 
+use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
@@ -19,7 +20,7 @@ final class Style extends SymfonyStyle implements StyleInterface
     /**
      * {@inheritDoc}
      */
-    public function createProgressBar($max = 0)
+    public function createProgressBar($max = 0): ProgressBar
     {
         $progressBar = parent::createProgressBar($max);
 
