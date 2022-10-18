@@ -22,12 +22,14 @@ use Bartlett\CompatInfo\Application\Sniffs\SniffInterface;
 use Bartlett\CompatInfo\Infrastructure\Bus\Query\MessengerQueryBus;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\Debug\ContainerDebugCommand;
 
+use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 
 use Ramsey\Uuid\Uuid;
 
 use Symfony\Bundle\FrameworkBundle\Command\EventDispatcherDebugCommand;
+use Symfony\Component\DependencyInjection\ContainerInterface as SymfonyContainerInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\EventDispatcher\EventDispatcher as SymfonyEventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -95,6 +97,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         // for debug:event-dispatcher command
         ->public()
     ;
+
+    // @see https://github.com/symfony/dependency-injection/commit/9591cba6e215ce688fcc301cc6eef1e39daa5ad9 since Symfony 5.1
+    $services->alias(ContainerInterface::class, 'service_container');
+    $services->alias(SymfonyContainerInterface::class, 'service_container');
 
     // @link https://symfony.com/doc/current/service_container/tags.html
     $services->set(ExtensionLoaderInterface::class, FactoryExtensionLoader::class)
