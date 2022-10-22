@@ -48,10 +48,6 @@ final class ConfigResolver
             $configFiles[] = sprintf('up-to-php%d%d.php', $major, $minor);
         }
 
-        if ($input->hasParameterOption('--debug', true)) {
-            $configFiles[] = 'default-logger.php';
-        }
-
         if ($input->hasParameterOption('--no-polyfills', true)) {
             $configFiles[] = 'without-polyfill.php';
         } else {
@@ -63,6 +59,10 @@ final class ConfigResolver
             $configFiles[] = $configFile;
         } else {
             $configFiles[] = 'default.php';
+
+            if ($input->hasParameterOption('--debug', true)) {
+                $configFiles[] = 'default-logger.php';
+            }
         }
 
         return $configFiles;

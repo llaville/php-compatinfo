@@ -16,11 +16,12 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Changed
 
 - raise `bartlett/php-compatinfo-db` constraint to 4.6 minimum to support all features of light Kernel
-<!-- MARKDOWN-RELEASE:END -->
 
 ### Fixed
 
 - Autowiring alias is deprecated since Symfony 5.1
+- Avoid to override default logger when invoke `analyser:run` command with `--debug` option
+<!-- MARKDOWN-RELEASE:END -->
 
 ## [6.4.1] - 2022-04-07
 
