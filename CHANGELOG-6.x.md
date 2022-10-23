@@ -16,6 +16,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Changed
 
 - raise `bartlett/php-compatinfo-db` constraint to 4.6 minimum to support all features of light Kernel
+- Default Logger set log level (debug or info) accordingly to `APP_DEBUG` setting
 
 ### Fixed
 

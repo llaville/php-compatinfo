@@ -24,7 +24,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $parameters->set('compatinfo.log_stream_path', sprintf('%%kernel.logs_dir%%/compatinfo-%s.log', date('YmdHi')));
     $parameters->set('compatinfo.log_channel', 'App');
-    $parameters->set('compatinfo.log_level', LogLevel::DEBUG);
+    if ((bool) getenv('APP_DEBUG')) {
+        $parameters->set('compatinfo.log_level', LogLevel::DEBUG);
+    } else {
+        $parameters->set('compatinfo.log_level', LogLevel::INFO);
+    }
 
     $services = $containerConfigurator->services();
 
