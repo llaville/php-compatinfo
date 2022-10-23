@@ -92,6 +92,9 @@ final class ConsoleKernel extends AbstractKernel implements ConsoleKernelInterfa
         } else {
             $class = str_replace('Container', 'PolyfillContainer', parent::getContainerClass());
         }
+        if (array_search('default-logger.php', $this->configFiles)) {
+            $class = str_replace('Container', 'LoggerContainer', $class);
+        }
         return $class;
     }
 }
