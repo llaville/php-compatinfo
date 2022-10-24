@@ -7,6 +7,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [6.5.0] - 2022-10-24
+
 <!-- MARKDOWN-RELEASE:START -->
 ### Added
 
@@ -198,7 +200,8 @@ Experimental
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.4.2...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.5.0...HEAD
+[6.5.0]: https://github.com/llaville/php-compat-info/compare/6.4.2...6.5.0
 [6.4.2]: https://github.com/llaville/php-compat-info/compare/6.4.1...6.4.2
 [6.4.1]: https://github.com/llaville/php-compat-info/compare/6.4.0...6.4.1
 [6.4.0]: https://github.com/llaville/php-compat-info/compare/6.3.0...6.4.0
