@@ -7,12 +7,15 @@
  */
 namespace Bartlett\CompatInfo\Tests\Reference;
 
-use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\ContainerFactory;
+use Bartlett\CompatInfo\Application\Kernel\ConsoleKernel;
 use Bartlett\CompatInfo\Tests\Sniffs\SniffTestCase;
 use Bartlett\CompatInfoDb\Infrastructure\Persistence\Doctrine\Entity\Function_ as FunctionEntity;
 
 use Doctrine\ORM\EntityManagerInterface;
 
+use Symfony\Component\Console\Input\ArrayInput;
+
+use Exception;
 use Generator;
 
 /**
@@ -37,11 +40,13 @@ final class ParameterTest extends SniffTestCase
     /**
      * Data Provider to test functions with default and optional arguments.
      *
-     * @return Generator
+     * @throws Exception
      */
     public function functionProvider(): Generator
     {
-        $container = (new ContainerFactory())->create();
+        $input = new ArrayInput(['--no-polyfills' => true]);
+        $container = (new ConsoleKernel('dev', true))->createFromInput($input);
+
         $entityManager = $container->get(EntityManagerInterface::class);
         $repository = $entityManager->getRepository(FunctionEntity::class);
 
@@ -62,6 +67,7 @@ final class ParameterTest extends SniffTestCase
      * @group  reference
      * @large
      * @dataProvider functionProvider
+     * @throws Exception
      */
     public function testGetFunctionsWithDefaultArguments(string $fctname, string $extname)
     {
@@ -103,6 +109,7 @@ final class ParameterTest extends SniffTestCase
      * @group  reference
      * @large
      * @dataProvider functionProvider
+     * @throws Exception
      */
     public function testGetFunctionsWithOptionalArguments(string $fctname, string $extname)
     {

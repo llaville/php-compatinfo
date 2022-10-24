@@ -7,6 +7,7 @@
  */
 namespace Bartlett\CompatInfo\Presentation\Console;
 
+use Bartlett\CompatInfoDb\Presentation\Console\Command\AboutCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\BuildCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\DiagnoseCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\DoctorCommand;
@@ -35,6 +36,7 @@ final class FactoryCommandLoader extends SymfonyFactoryCommandLoader implements 
         $factories = [];
 
         $blacklist = [
+            AboutCommand::class,
             BuildCommand::class,
             DiagnoseCommand::class,
             DoctorCommand::class,

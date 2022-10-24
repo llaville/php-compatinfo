@@ -30,23 +30,28 @@ jobs:
                         os: ubuntu-latest
                         php: 7.4
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpstan,phpunit
+                        tools: phpunit
                     -
                         os: ubuntu-latest
                         php: 8.0
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpstan,phpunit
+                        tools: phpunit
                     -
                         os: ubuntu-latest
                         php: 8.1
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpstan,phpunit
+                        tools: phpunit
+                    -
+                        os: ubuntu-latest
+                        php: 8.2
+                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
+                        tools: phpunit
 
         name: Compatibility Info
 
         env:
             APP_ENV: dev  # see explains at https://github.com/llaville/php-compatinfo-db/issues/101
-            DATABASE_URL: "sqlite:///${{ github.workspace }}/.cache/compatinfo-db.sqlite"
+            DATABASE_URL: "sqlite:///%kernel.cache_dir%/compatinfo-db.sqlite"
 
         steps:
             -   # Git Checkout

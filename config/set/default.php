@@ -6,29 +6,33 @@
  * file that was distributed with this source code.
  */
 
-use Bartlett\CompatInfo\Application\Collection\PolyfillCollection;
-use Bartlett\CompatInfo\Application\Collection\PolyfillCollectionInterface;
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollection;
 use Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface;
 use Bartlett\CompatInfo\Application\Collection\SniffCollection;
 use Bartlett\CompatInfo\Application\Collection\SniffCollectionInterface;
+use Bartlett\CompatInfo\Application\Event\Dispatcher\EventDispatcher;
 use Bartlett\CompatInfo\Application\Extension\ExtensionInterface;
-use Bartlett\CompatInfo\Application\Logger\DefaultLogger;
-use Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface;
+use Bartlett\CompatInfo\Application\Extension\ExtensionLoaderInterface;
+use Bartlett\CompatInfo\Application\Extension\FactoryExtensionLoader;
 use Bartlett\CompatInfo\Application\Profiler\Profiler;
 use Bartlett\CompatInfo\Application\Profiler\ProfilerInterface;
 use Bartlett\CompatInfo\Application\Query\QueryBusInterface;
 use Bartlett\CompatInfo\Application\Query\QueryHandlerInterface;
 use Bartlett\CompatInfo\Application\Sniffs\SniffInterface;
 use Bartlett\CompatInfo\Infrastructure\Bus\Query\MessengerQueryBus;
-use Bartlett\CompatInfo\Presentation\Console\Command\CommandInterface;
+use Bartlett\CompatInfoDb\Presentation\Console\Command\Debug\ContainerDebugCommand;
 
+use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
-use Psr\Log\LogLevel;
+use Psr\Log\NullLogger;
 
 use Ramsey\Uuid\Uuid;
 
+use Symfony\Bundle\FrameworkBundle\Command\EventDispatcherDebugCommand;
+use Symfony\Component\DependencyInjection\ContainerInterface as SymfonyContainerInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\EventDispatcher\EventDispatcher as SymfonyEventDispatcher;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Messenger\Command\DebugCommand;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\tagged_iterator;
 
@@ -40,51 +44,24 @@ use function Symfony\Component\DependencyInjection\Loader\Configurator\tagged_it
  * @link https://symfony.com/doc/current/components/dependency_injection.html#avoiding-your-code-becoming-dependent-on-the-container
  */
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $configSet = getenv('APP_VENDOR_DIR') . '/bartlett/php-compatinfo-db/config/set/default.php';
-    $containerConfigurator->import($configSet);
-    $containerConfigurator->import(__DIR__ . '/common.php');
-    $containerConfigurator->import(__DIR__ . '/../packages/messenger.php');
-
-    $parameters = $containerConfigurator->parameters();
-
-    $parameters->set('app.log_stream_path', sprintf('/tmp/compatinfo-%s.log', date('YmdHi')));
-    $parameters->set('app.log_channel', 'App');
-    $parameters->set('app.log_level', LogLevel::DEBUG);
-
     $services = $containerConfigurator->services();
 
     $services->defaults()
         ->autowire()
     ;
 
-    $services->set(LoggerInterface::class, DefaultLogger::class)
-        ->args(['%app.log_stream_path%', '%app.log_channel%', '%app.log_level%'])
-    ;
-
-    // @link https://symfony.com/doc/current/service_container/tags.html#autoconfiguring-tags
-    $services->instanceof(CommandInterface::class)
-        ->tag('console.command')
-    ;
-    $services->instanceof(ExtensionInterface::class)
-        ->tag('app.extension')
-    ;
-
-    $services->set(QueryBusInterface::class, MessengerQueryBus::class)
-        // for unit tests
-        ->public()
-    ;
-
-    // @link https://symfony.com/doc/current/service_container/tags.html#autoconfiguring-tags
     $services->instanceof(QueryHandlerInterface::class)
         ->tag('messenger.message_handler', ['bus' => 'query.bus'])
     ;
 
-    if (getenv('APP_ENV') === 'dev') {
-        $services->set('console.command.messenger_debug', DebugCommand::class)
-            ->args([[]])
-            ->tag('console.command')
-        ;
-    }
+    $services->instanceof(ExtensionInterface::class)
+        ->tag('app.extension')
+    ;
+
+    // @link https://symfony.com/doc/current/service_container/tags.html#autoconfiguring-tags
+    $services->instanceof(SniffInterface::class)
+        ->tag('app.sniff')
+    ;
 
     $services->set(ProfilerInterface::class, Profiler::class)
         ->arg('$token', Uuid::uuid4()->toString())
@@ -92,32 +69,54 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->public()
     ;
 
-    // @link https://symfony.com/doc/current/service_container/tags.html#autoconfiguring-tags
-    $services->instanceof(SniffInterface::class)
-        ->tag('phpcompatinfo.sniff')
-    ;
-    $services->instanceof(PolyfillInterface::class)
-        ->tag('phpcompatinfo.polyfill')
-    ;
-
-    $services->load('Bartlett\CompatInfo\\', __DIR__ . '/../../src');
-
-    // @link https://symfony.com/doc/current/service_container/tags.html#reference-tagged-services
-    $services->set(SniffCollectionInterface::class, SniffCollection::class)
-        ->arg('$sniffs', tagged_iterator('phpcompatinfo.sniff'))
+    $services->set(QueryBusInterface::class, MessengerQueryBus::class)
         // for unit tests
         ->public()
     ;
 
-    if (in_array(getenv('APP_ENV'), ['dev', 'prod'])) {
-        $services->set(PolyfillCollectionInterface::class, PolyfillCollection::class)
-            ->arg('$polyfills', tagged_iterator('phpcompatinfo.polyfill'))
+    if (getenv('APP_ENV') === 'dev') {
+        $services->set('console.command.messenger_debug', DebugCommand::class)
+            ->args([[]])
+            ->tag('console.command')
         ;
-    } else {
-        $services->set(PolyfillCollectionInterface::class, PolyfillCollection::class)
-            ->arg('$polyfills', [])
+
+        $services->set('console.command.container_debug', ContainerDebugCommand::class)
+            ->tag('console.command')
+        ;
+
+        $services->set('console.command.eventdispatcher_debug', EventDispatcherDebugCommand::class)
+            ->tag('console.command')
         ;
     }
+
+    $services->set(LoggerInterface::class, NullLogger::class);
+
+    $services->set(EventDispatcherInterface::class, SymfonyEventDispatcher::class);
+    $services->alias(EventDispatcherInterface::class . ' $compatibilityEventDispatcher', EventDispatcher::class);
+    $services->alias('event_dispatcher', EventDispatcher::class)
+        // for debug:event-dispatcher command
+        ->public()
+    ;
+
+    // @see https://github.com/symfony/dependency-injection/commit/9591cba6e215ce688fcc301cc6eef1e39daa5ad9 since Symfony 5.1
+    $services->alias(ContainerInterface::class, 'service_container');
+    $services->alias(SymfonyContainerInterface::class, 'service_container');
+
+    // @link https://symfony.com/doc/current/service_container/tags.html
+    $services->set(ExtensionLoaderInterface::class, FactoryExtensionLoader::class)
+        ->arg('$extensions', tagged_iterator('app.extension'))
+    ;
+
+    $services->load('Bartlett\\CompatInfo\\Application\\', __DIR__ . '/../../src/Application')
+        ->exclude(__DIR__ . '/../../src/Application/Polyfills')
+    ;
+
+    // @link https://symfony.com/doc/current/service_container/tags.html#reference-tagged-services
+    $services->set(SniffCollectionInterface::class, SniffCollection::class)
+        ->arg('$sniffs', tagged_iterator('app.sniff'))
+        // for unit tests
+        ->public()
+    ;
 
     $services->set(ReferenceCollectionInterface::class, ReferenceCollection::class);
 };

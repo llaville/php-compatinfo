@@ -10,6 +10,8 @@ namespace Bartlett\CompatInfo\Application\Query\Analyser\Compatibility;
 use Bartlett\CompatInfo\Application\Query\QueryInterface;
 
 /**
+ * Value Object of console analyser:run command.
+ *
  * @author Laurent Laville
  * @since Release 6.0.0
  */

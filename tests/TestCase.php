@@ -8,14 +8,17 @@
 namespace Bartlett\CompatInfo\Tests;
 
 use Bartlett\CompatInfo\Application\Analyser\CompatibilityAnalyser;
+use Bartlett\CompatInfo\Application\Kernel\ConsoleKernel;
 use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;
 use Bartlett\CompatInfo\Application\Query\QueryBusInterface;
-use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\ContainerFactory;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\Console\Input\ArrayInput;
 
 use Exception;
 use function reset;
+use function sprintf;
+use const PHP_MAJOR_VERSION;
+use const PHP_MINOR_VERSION;
 
 /**
  * Common Class TestCase
@@ -55,8 +58,9 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     {
         $compatibilityQuery = new GetCompatibilityQuery(self::$fixtures . $dataSource, [], false, '');
 
-        /** @var ContainerBuilder $container */
-        $container = (new ContainerFactory())->create();
+        $input = new ArrayInput(['--no-polyfills' => true, '--php' => sprintf('%d.%d', PHP_MAJOR_VERSION, PHP_MINOR_VERSION)]);
+        $container = (new ConsoleKernel('dev', true))->createFromInput($input);
+
         $queryBus = $container->get(QueryBusInterface::class);
 
         $profile = $queryBus->query($compatibilityQuery);

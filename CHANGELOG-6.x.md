@@ -7,13 +7,29 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
-## [6.4.2] - 2022-09-27
 <!-- MARKDOWN-RELEASE:START -->
+### Added
+
+- support to light Kernel introduced since PHP CompatInfoDB 4.4 and finalized with CompatInfoDB 4.6
+- Composer `symfony/framework-bundle` dev constraint for `debug:container` and `debug:event-dispatcher` commands (helper for developers)
+
+### Changed
+
+- raise `bartlett/php-compatinfo-db` constraint to 4.6 minimum to support all features of light Kernel
+- Default Logger set log level (debug or info) accordingly to `APP_DEBUG` setting
+
+### Fixed
+
+- Autowiring alias is deprecated since Symfony 5.1
+- Avoid to override default logger when invoke `analyser:run` command with `--debug` option
+- Display timing and memory usage information, that won't show since release 6.2 (see `--profile` option)
+<!-- MARKDOWN-RELEASE:END -->
+
+## [6.4.2] - 2022-09-27
 
 ### Fixed
 
 - PHP CompatInfoDB 4.4 or greater is not supported by CompatInfo 6.4.x
-<!-- MARKDOWN-RELEASE:END -->
 
 ## [6.4.1] - 2022-04-07
 

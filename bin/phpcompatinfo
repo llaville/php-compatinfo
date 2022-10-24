@@ -19,19 +19,12 @@ gc_disable(); // performance boost
 
 require_once dirname(__DIR__) . '/config/bootstrap.php';
 
-use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\ContainerFactory;
-use Bartlett\CompatInfo\Presentation\Console\ApplicationInterface;
-use Bartlett\CompatInfo\Presentation\Console\CommandLoaderInterface;
+use Bartlett\CompatInfo\Application\Kernel\ConsoleKernel;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+$environment = $_SERVER['APP_ENV'] ?? $_ENV['APP_ENV'] ?? 'prod';
 
-/** @var ContainerBuilder $container */
-$container = (new ContainerFactory())->create();
-
-$app = $container->get(ApplicationInterface::class);
-$app->setContainer($container);
-
-// @link https://symfony.com/doc/current/console/lazy_commands.html
-$app->setCommandLoader($container->get(CommandLoaderInterface::class));
-
-exit($app->run());
+$kernel = new ConsoleKernel(
+    $environment,
+    (bool)($_SERVER['APP_DEBUG'] ?? $_ENV['APP_DEBUG'] ?? ('prod' !== $environment))
+);
+exit($kernel->handle());

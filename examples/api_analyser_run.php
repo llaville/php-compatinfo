@@ -16,16 +16,17 @@ require_once dirname(__DIR__) . '/config/bootstrap.php';
  * @since  Release 4.0.0-alpha3
  */
 
+use Bartlett\CompatInfo\Application\Kernel\ConsoleKernel;
 use Bartlett\CompatInfo\Application\Profiler\Profile;
 use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;
 use Bartlett\CompatInfo\Application\Query\QueryBusInterface;
-use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\ContainerFactory;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 
-/** @var ContainerBuilder $container */
-$container = (new ContainerFactory())->create();
+
+$kernel = new ConsoleKernel('prod', false);
+$container = $kernel->createFromInput(new ArgvInput());
 
 $queryBus = $container->get(QueryBusInterface::class);
 
@@ -42,6 +43,6 @@ try {
     var_export($dump);
 } catch (HandlerFailedException $e) {
     foreach ($e->getNestedExceptions() as $ex) {
-        printf('Exception -- %s >> %s%s' . $ex->getMessage(), $ex->getTraceAsString(), PHP_EOL);
+        printf('Exception -- %s%s%s%s', $ex->getMessage(), PHP_EOL, $ex->getTraceAsString(), PHP_EOL);
     };
 }

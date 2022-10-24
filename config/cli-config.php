@@ -8,17 +8,14 @@
  * @author Laurent Laville
  */
 
-use Bartlett\CompatInfo\Infrastructure\Framework\Symfony\DependencyInjection\ContainerFactory;
+use Bartlett\CompatInfo\Application\Kernel\ConsoleKernel;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-
 require_once __DIR__ . '/bootstrap.php';
 
-/** @var ContainerBuilder $container */
-$container = (new ContainerFactory())->create();
+$container = (new ConsoleKernel('dev', false))->createFromConfigs([]);
 
 /** @var EntityManagerInterface $entityManager */
 $entityManager = $container->get(EntityManagerInterface::class);

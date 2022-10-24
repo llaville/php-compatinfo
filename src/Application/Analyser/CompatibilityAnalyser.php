@@ -54,9 +54,9 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     /** @var array<string, string> */
     private array $aliases;
     /** @var ReferenceCollectionInterface<array>  */
-    private $references;
+    private ReferenceCollectionInterface $references;
     /** @var PolyfillCollectionInterface<PolyfillInterface>  */
-    private $polyfillCollection;
+    private PolyfillCollectionInterface $polyfillCollection;
     private SplFileInfo $currentFile;
     /** @var array<int, mixed> */
     private array $tokens;

@@ -39,6 +39,7 @@ use Symfony\Component\Console\ConsoleEvents;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\Console\Event\ConsoleTerminateEvent;
 use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\EventDispatcher\EventDispatcher as SymfonyEventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -58,13 +59,14 @@ final class EventDispatcher extends SymfonyEventDispatcher
     private BufferedOutput $diagnoseOutput;
 
     public function __construct(
-        EventDispatcherInterface $dispatcher,
+        InputInterface $input,
+        EventSubscriberInterface $profileEventSubscriber,
         ExtensionLoaderInterface $extensionLoader
     ) {
         parent::__construct();
 
-        foreach ($dispatcher->getListeners() as $eventName => $listener) {
-            $this->addListener($eventName, $listener);
+        if ($input->hasParameterOption('--profile')) {
+            $this->addSubscriber($profileEventSubscriber);
         }
 
         $this->addListener(ConsoleEvents::COMMAND, function (ConsoleCommandEvent $event) {
