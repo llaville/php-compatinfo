@@ -7,9 +7,16 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
-## [6.5.0] - 2022-10-24
+## [6.5.1] - 2022-10-24
 
 <!-- MARKDOWN-RELEASE:START -->
+### Fixed
+
+- Paths for configuration files on PHAR distribution
+<!-- MARKDOWN-RELEASE:END -->
+
+## [6.5.0] - 2022-10-24
+
 ### Added
 
 - support to light Kernel introduced since PHP CompatInfoDB 4.4 and finalized with CompatInfoDB 4.6
@@ -25,7 +32,6 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - Autowiring alias is deprecated since Symfony 5.1
 - Avoid to override default logger when invoke `analyser:run` command with `--debug` option
 - Display timing and memory usage information, that won't show since release 6.2 (see `--profile` option)
-<!-- MARKDOWN-RELEASE:END -->
 
 ## [6.4.2] - 2022-09-27
 
@@ -200,7 +206,8 @@ Experimental
 - drop support for PHP 7.3 has ended 6th December 2021.
 - file `config/container.php` replaced by `src/Infrastructure/Framework/Symfony/DependencyInjection/ContainerFactory.php`
 
-[unreleased]: https://github.com/llaville/php-compat-info/compare/6.5.0...HEAD
+[unreleased]: https://github.com/llaville/php-compat-info/compare/6.5.1...HEAD
+[6.5.1]: https://github.com/llaville/php-compat-info/compare/6.5.0...6.5.1
 [6.5.0]: https://github.com/llaville/php-compat-info/compare/6.4.2...6.5.0
 [6.4.2]: https://github.com/llaville/php-compat-info/compare/6.4.1...6.4.2
 [6.4.1]: https://github.com/llaville/php-compat-info/compare/6.4.0...6.4.1
