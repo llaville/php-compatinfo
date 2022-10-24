@@ -22,6 +22,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - Autowiring alias is deprecated since Symfony 5.1
 - Avoid to override default logger when invoke `analyser:run` command with `--debug` option
+- Display timing and memory usage information, that won't show since release 6.2 (see `--profile` option)
 <!-- MARKDOWN-RELEASE:END -->
 
 ## [6.4.1] - 2022-04-07
