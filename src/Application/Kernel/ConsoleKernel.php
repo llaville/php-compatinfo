@@ -73,8 +73,8 @@ final class ConsoleKernel extends AbstractKernel implements ConsoleKernelInterfa
 
         $configFiles = array_merge(
             [
-                '../packages/messenger.php',
-                '../packages/console.php',
+                $this->getConfigDir() . '/packages/messenger.php',
+                $this->getConfigDir() . '/packages/console.php',
             ],
             $configResolver->provide(),
         );
