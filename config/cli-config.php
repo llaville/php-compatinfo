@@ -11,7 +11,7 @@
 use Bartlett\CompatInfo\Application\Kernel\ConsoleKernel;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Tools\Console\ConsoleRunner;
+use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
 
 require_once __DIR__ . '/bootstrap.php';
 
@@ -20,4 +20,5 @@ $container = (new ConsoleKernel('dev', false))->createFromConfigs([]);
 /** @var EntityManagerInterface $entityManager */
 $entityManager = $container->get(EntityManagerInterface::class);
 
-return ConsoleRunner::createHelperSet($entityManager);
+// @link https://www.doctrine-project.org/projects/doctrine-orm/en/current/reference/tools.html#doctrine-console
+return new SingleManagerProvider($entityManager);
