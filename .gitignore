@@ -13,7 +13,7 @@ vendor/
 
 ###### Mega-Linter ######
 report/
-
+megalinter-reports/
 
 ######################################
 # GENERIC
