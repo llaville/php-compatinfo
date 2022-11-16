@@ -1,6 +1,6 @@
 PRINT_ALPACA: false
 SHOW_ELAPSED_TIME: true
-EXCLUDED_DIRECTORIES: [".git"]
+EXCLUDED_DIRECTORIES: [".git", ".changes"]
 IGNORE_GITIGNORED_FILES: true
 ENABLE:
     - ACTION
@@ -24,7 +24,7 @@ PHP_PHPCS_CLI_LINT_MODE: project
 PHP_PHPCS_CONFIG_FILE: ".phpcs.xml.dist"
 PHP_PHPCS_ARGUMENTS: "-n"
 PHP_PHPLINT_CLI_LINT_MODE: project
-YAML_PRETTIER_FILTER_REGEX_EXCLUDE: "(mkdocs\\.yml|\\.github)" # As it cannot be added in .gitignore for ML actionlint linter
+YAML_PRETTIER_FILTER_REGEX_EXCLUDE: "(mkdocs\\.yml|\\.github|\\.changie\\.yaml)" # As it cannot be added in .gitignore for ML actionlint linter
 YAML_YAMLLINT_FILTER_REGEX_EXCLUDE: "(\\.github)" # As it cannot be added in .gitignore for ML actionlint linter
 CONFIG_REPORTER: false
 UPDATED_SOURCES_REPORTER: false
