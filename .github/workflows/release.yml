@@ -24,3 +24,4 @@ jobs:
             release-draft: true
             release-prerelease: ${{ github.ref_type == 'branch' }}
             legacy: false
+            changie-changesDir: ".changes/6.x"
