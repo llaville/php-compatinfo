@@ -1,4 +1,0 @@
-kind: Changed
-body: '[#358](https://github.com/llaville/php-compatinfo/issues/358) : build CHANGELOG
-  automation - migrate from legacy script to changie tool'
-time: 2022-11-16T09:45:02.1601602Z

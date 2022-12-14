@@ -1,3 +1,0 @@
-kind: Changed
-body: we use the new `toHighlight` manifest builder available since v2.1.0 (see https://github.com/llaville/box-manifest/releases/tag/2.1.0)
-time: 2022-12-14T08:22:48.4391054Z
