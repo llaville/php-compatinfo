@@ -2,5 +2,5 @@
     "alias": "phpcompatinfo.phar",
     "directories": ["bin", "config", "src", "vendor"],
     "compression": "GZ",
-    "metadata": "Bartlett\\CompatInfo\\Infrastructure\\ManifestBuilder::toText"
+    "metadata": "Bartlett\\BoxManifest\\Composer\\ManifestFactory::toHighlight"
 }
