@@ -25,3 +25,4 @@ jobs:
             release-prerelease: ${{ github.ref_type == 'branch' }}
             legacy: false
             changie-changesDir: ".changes/6.x"
+            changie-command-args: "batch --keep --prerelease snapshot patch"
