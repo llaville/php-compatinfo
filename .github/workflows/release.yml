@@ -20,6 +20,7 @@ jobs:
         uses: llaville/.github/.github/workflows/release.yml@master
         with:
             repository: ${{ github.repository }}
+            php-version: "8.0"
             box-output: bin/phpcompatinfo.phar
             release-draft: true
             release-prerelease: ${{ github.ref_type == 'branch' }}
