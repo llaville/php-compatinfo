@@ -29,7 +29,7 @@ jobs:
                         os: ubuntu-latest
                         php: 8.0
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit
+                        tools: phpunit:9.6
                     -
                         os: ubuntu-latest
                         php: 8.1
@@ -73,5 +73,10 @@ jobs:
                     bin/phpcompatinfo db:init --ansi
 
             -   # Run unit tests
-                name: Unit tests
-                run: phpunit --group features,large,reference,regression,default
+                name: Unit tests with PHPUnit 9
+                if: ${{ matrix.php == '8.0' }}
+                run: phpunit --group features,large,reference,regression,default --configuration ./phpunit-9.xml --testdox --do-not-cache-result
+            -
+                name: Unit tests with PHPUnit 10
+                if: ${{ matrix.php != '8.0' }}
+                run: phpunit --group features,large,reference,regression,default --testdox --do-not-cache-result
