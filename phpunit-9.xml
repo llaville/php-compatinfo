@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    backupGlobals="false"
+    bootstrap="config/bootstrap.php"
+    colors="true"
+    stopOnError="false"
+    stopOnFailure="false"
+    stopOnIncomplete="false"
+    stopOnRisky="false"
+    stopOnSkipped="false"
+>
+    <testsuites>
+        <testsuite name="parser">
+            <directory suffix="Test.php">tests/PhpParser/</directory>
+        </testsuite>
+        <testsuite name="reference">
+            <directory suffix="Test.php">tests/Reference/</directory>
+        </testsuite>
+        <testsuite name="sniffs">
+            <directory suffix="Test.php">tests/Sniffs/</directory>
+        </testsuite>
+        <testsuite name="features">
+            <directory suffix="IssueTest.php">tests/</directory>
+            <directory suffix="IssueTest.php">tests/PhpFeatures/</directory>
+        </testsuite>
+    </testsuites>
+    <groups>
+        <exclude>
+            <group>large</group>
+            <group>not_implemented</group>
+        </exclude>
+    </groups>
+    <php>
+        <env name="APP_ENV" value="tests" force="true"/>
+    </php>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
