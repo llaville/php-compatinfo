@@ -52,7 +52,7 @@ final class DeclareSniffTest extends SniffTestCase
      *
      * @return iterable
      */
-    public function directivesProvider(): iterable
+    public static function directivesProvider(): iterable
     {
         $provides = [
             'ticks.php' => [

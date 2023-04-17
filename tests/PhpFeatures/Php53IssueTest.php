@@ -36,7 +36,7 @@ final class Php53IssueTest extends TestCase
      *
      * @return iterable
      */
-    public function dataSourceProvider(): iterable
+    public static function dataSourceProvider(): iterable
     {
         $provides = [
             'gh213_static_method.php' => [

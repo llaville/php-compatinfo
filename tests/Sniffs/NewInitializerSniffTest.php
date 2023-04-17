@@ -37,7 +37,7 @@ final class NewInitializerSniffTest extends SniffTestCase
      *
      * @return iterable
      */
-    public function initializersProvider(): iterable
+    public static function initializersProvider(): iterable
     {
         $provides = [
             'constant_initializers.php' => [
