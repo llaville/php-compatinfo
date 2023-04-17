@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.1/phpunit.xsd"
     backupGlobals="false"
-    backupStaticAttributes="false"
     bootstrap="config/bootstrap.php"
     colors="true"
     stopOnError="false"
@@ -9,13 +10,10 @@
     stopOnIncomplete="false"
     stopOnRisky="false"
     stopOnSkipped="false"
-    verbose="true"
+    cacheDirectory=".phpunit.cache"
+    backupStaticProperties="false"
 >
-    <filter>
-        <whitelist>
-            <directory suffix=".php">src/</directory>
-        </whitelist>
-    </filter>
+    <coverage/>
     <testsuites>
         <testsuite name="parser">
             <directory suffix="Test.php">tests/PhpParser/</directory>
@@ -38,6 +36,11 @@
         </exclude>
     </groups>
     <php>
-        <env name="APP_ENV" value="tests" force="true" />
+        <env name="APP_ENV" value="tests" force="true"/>
     </php>
+    <source>
+        <include>
+            <directory suffix=".php">src/</directory>
+        </include>
+    </source>
 </phpunit>
