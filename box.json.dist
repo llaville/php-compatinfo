@@ -1,6 +1,11 @@
 {
+    "stub": "stub.php",
     "alias": "phpcompatinfo.phar",
     "directories": ["bin", "config", "src", "vendor"],
-    "compression": "GZ",
-    "metadata": "Bartlett\\BoxManifest\\Composer\\ManifestFactory::toHighlight"
+    "files-bin": ["sbom.json", "console.txt"],
+    "map": [
+        { "console.txt": ".box.manifests/console.txt" },
+        { "sbom.json": ".box.manifests/sbom.json" }
+    ],
+    "compression": "GZ"
 }
