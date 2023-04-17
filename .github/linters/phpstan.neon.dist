@@ -4,3 +4,11 @@ parameters:
         - ../../src/
     excludePaths:
         - ../../src/Infrastructure/ManifestBuilder.php
+    treatPhpDocTypesAsCertain: false
+    ignoreErrors:
+        -
+            message: "#^Method Bartlett\\\\CompatInfo\\\\Application\\\\Analyser\\\\CompatibilityAnalyser\\:\\:leave[a-zA-Z0-9\\_]+\\(\\) is unused\\.$#"
+            path: ../../src/Application/Analyser/CompatibilityAnalyser.php
+        -
+            message: "#^Method Bartlett\\\\CompatInfo\\\\Application\\\\Sniffs\\\\Keywords\\\\ReservedSniff\\:\\:enter[a-zA-Z0-9\\_]+\\(\\) is unused\\.$#"
+            path: ../../src/Application/Sniffs/Keywords/ReservedSniff.php
