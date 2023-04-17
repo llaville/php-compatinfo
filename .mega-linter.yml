@@ -32,3 +32,4 @@ UPDATED_SOURCES_REPORTER: false
 CONSOLE_REPORTER: true
 LOG_LEVEL: INFO
 PRINT_ALL_FILES: false
+PARALLEL: false  # to avoid issue with MegaLinter v6.20.x (see https://github.com/oxsecurity/megalinter/issues/2425)
