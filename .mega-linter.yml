@@ -24,7 +24,8 @@ PHP_PHPCS_CLI_LINT_MODE: project
 PHP_PHPCS_CONFIG_FILE: ".phpcs.xml.dist"
 PHP_PHPCS_ARGUMENTS: "-n"
 PHP_PHPLINT_CLI_LINT_MODE: project
-YAML_PRETTIER_FILTER_REGEX_EXCLUDE: "(mkdocs\\.yml|\\.github|\\.changie\\.yaml)" # As it cannot be added in .gitignore for ML actionlint linter
+PHP_PHPLINT_ARGUMENTS: "--no-cache"
+YAML_PRETTIER_FILTER_REGEX_EXCLUDE: "(mkdocs\\.yml|\\.github|\\.mega-linter\\.yml|\\.changie\\.yaml)" # As it cannot be added in .gitignore for ML actionlint linter
 YAML_YAMLLINT_FILTER_REGEX_EXCLUDE: "(\\.github)" # As it cannot be added in .gitignore for ML actionlint linter
 CONFIG_REPORTER: false
 UPDATED_SOURCES_REPORTER: false
@@ -33,3 +34,4 @@ CONSOLE_REPORTER: true
 LOG_FILE: mega-linter-v6.log
 LOG_LEVEL: INFO
 PRINT_ALL_FILES: false
+PARALLEL: false  # to avoid issue with MegaLinter v6.20.0 (see https://github.com/oxsecurity/megalinter/issues/2425)
