@@ -1,0 +1,541 @@
+digraph {
+  graph [rankdir="LR" bgcolor="transparent"]
+  node [fillcolor="#FEFECE" style="filled"]
+  subgraph cluster_0 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Arrays"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Arrays\\ArrayDereferencingSyntaxSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ArrayDereferencingSyntaxSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA54 : string = "CA5402" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ leaveNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Arrays\\ShortArraySyntaxSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ShortArraySyntaxSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA54 : string = "CA5403" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterSniff() : void</td></tr>
+    <tr><td align="left">+ leaveNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_1 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>SniffAbstract</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(compatibilityEventDispatcher : Symfony\\Component\\EventDispatcher\\EventDispatcherInterface)</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ leaveNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ setUpBeforeSniff() : void</td></tr>
+    <tr><td align="left">+ enterSniff() : void</td></tr>
+    <tr><td align="left">+ leaveSniff() : void</td></tr>
+    <tr><td align="left">+ tearDownAfterSniff() : void</td></tr>
+    <tr><td align="left">+ setVisitor(visitor : Bartlett\\CompatInfo\\Application\\Analyser\\SniffVisitorInterface) : void</td></tr>
+    <tr><td align="left">+ setAttributeParentKeyStore(key : string) : void</td></tr>
+    <tr><td align="left">+ setAttributeKeyStore(key : string) : void</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>SniffInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» setUpBeforeSniff() : void</td></tr>
+    <tr><td align="left">+ «abstract» enterSniff() : void</td></tr>
+    <tr><td align="left">+ «abstract» leaveSniff() : void</td></tr>
+    <tr><td align="left">+ «abstract» tearDownAfterSniff() : void</td></tr>
+    <tr><td align="left">+ «abstract» setVisitor(visitor : Bartlett\\CompatInfo\\Application\\Analyser\\SniffVisitorInterface) : void</td></tr>
+    <tr><td align="left">+ «abstract» setAttributeParentKeyStore(key : string) : void</td></tr>
+    <tr><td align="left">+ «abstract» setAttributeKeyStore(key : string) : void</td></tr>
+    <tr><td align="left">+ «abstract» getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\KeywordBag" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>KeywordBag</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(keywords : array = [])</td></tr>
+    <tr><td align="left">+ getIterator() : Traversable</td></tr>
+    <tr><td align="left">+ count() : int</td></tr>
+    <tr><td align="left">+ all() : array</td></tr>
+    <tr><td align="left">+ add(keywords : array = []) : void</td></tr>
+    <tr><td align="left">+ remove(word : string) : bool</td></tr>
+    <tr><td align="left">+ clear() : void</td></tr>
+    <tr><td align="left">+ has(word : string) : bool</td></tr>
+    <tr><td align="left">+ get(word : string, default : string = '4\.0\.0') : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_2 {
+    label = "PhpParser"
+    "PhpParser\\NodeVisitorAbstract" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>NodeVisitorAbstract</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ beforeTraverse(nodes : array)</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ leaveNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ afterTraverse(nodes : array)</td></tr>
+</table></td></tr>
+</table>>]
+    "PhpParser\\NodeVisitor" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>NodeVisitor</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» beforeTraverse(nodes : array)</td></tr>
+    <tr><td align="left">+ «abstract» enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ «abstract» leaveNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ «abstract» afterTraverse(nodes : array)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_3 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\AnonymousClassSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>AnonymousClassSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA70 : string = "CA7009" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\ClassMemberAccessSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ClassMemberAccessSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA54 : string = "CA5404" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» CA70 : string = "CA7004" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ leaveNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\MagicMethodsSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>MagicMethodsSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA51 : string = "CA5101" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» CA53 : string = "CA5301" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» CA56 : string = "CA5601" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterSniff() : void</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\MethodDeclarationSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>MethodDeclarationSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA40 : string = "CA4001" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\PropertyDeclarationSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>PropertyDeclarationSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA40 : string = "CA4003" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\TypedPropertySniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>TypedPropertySniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA74 : string = "CA7401" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_4 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\ClassConstantSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ClassConstantSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA81 : string = "CA8107" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\ConstSyntaxSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ConstSyntaxSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA53 : string = "CA5306" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» CA56 : string = "CA5606" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\MagicClassConstantSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>MagicClassConstantSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA55 : string = "CA5501" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_5 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures\\DeclareSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>DeclareSniff</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterSniff() : void</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures\\GotoSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>GotoSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA53 : string = "CA5303" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_6 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\ClassExprSyntaxSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ClassExprSyntaxSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA54 : string = "CA5405" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ leaveNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\ConditionalCodeSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ConditionalCodeSniff</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(compatibilityEventDispatcher : Symfony\\Component\\EventDispatcher\\EventDispatcherInterface, referenceCollection : Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollectionInterface)</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\EmptySniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>EmptySniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA55 : string = "CA5502" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_7 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations\\ClosureSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ClosureSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA54 : string = "CA5401" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations\\ParamTypeDeclarationSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ParamTypeDeclarationSniff</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterSniff() : void</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations\\ReturnTypeDeclarationSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ReturnTypeDeclarationSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA70 : string = "CA7001" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» CA8105 : string = "CA8105" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» CA8106 : string = "CA8106" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_8 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Generators"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Generators\\GeneratorSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>GeneratorSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA55 : string = "CA5503" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» CA70 : string = "CA7003" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_9 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Keywords"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Keywords\\ReservedSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ReservedSniff</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterSniff() : void</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_10 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Numbers"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Numbers\\BinaryNumberFormatSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>BinaryNumberFormatSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA54 : string = "CA5406" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterSniff() : void</td></tr>
+    <tr><td align="left">+ leaveNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_11 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators\\CombinedComparisonOperatorSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>CombinedComparisonOperatorSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA70 : string = "CA7006" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators\\NullCoalesceOperatorSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>NullCoalesceOperatorSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA70 : string = "CA7005" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators\\PowOperatorSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>PowOperatorSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA56 : string = "CA5602" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators\\ShortTernaryOperatorSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ShortTernaryOperatorSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA53 : string = "CA5304" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ leaveNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_12 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\TextProcessing"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\TextProcessing\\CryptStringSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>CryptStringSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA53 : string = "CA5305" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterSniff() : void</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_13 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\UseDeclarations"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\UseDeclarations\\UseConstFunctionSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>UseConstFunctionSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA56 : string = "CA5603" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\UseDeclarations\\UseTraitSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>UseTraitSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA54 : string = "CA5407" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_14 {
+    label = 0
+    "IteratorAggregate" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>IteratorAggregate</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getIterator()</td></tr>
+</table></td></tr>
+</table>>]
+    "Traversable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Traversable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+    "Countable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Countable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» count()</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "PhpParser\\NodeVisitorAbstract" -> "PhpParser\\NodeVisitor" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" -> "PhpParser\\NodeVisitorAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffInterface" -> "PhpParser\\NodeVisitor" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Arrays\\ArrayDereferencingSyntaxSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Arrays\\ShortArraySyntaxSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\AnonymousClassSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\ClassMemberAccessSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\MagicMethodsSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\MethodDeclarationSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\PropertyDeclarationSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\TypedPropertySniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\ClassConstantSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\ConstSyntaxSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\MagicClassConstantSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures\\DeclareSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures\\GotoSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\ClassExprSyntaxSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\ConditionalCodeSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\EmptySniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations\\ClosureSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations\\ParamTypeDeclarationSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations\\ReturnTypeDeclarationSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Generators\\GeneratorSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Keywords\\ReservedSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Numbers\\BinaryNumberFormatSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators\\CombinedComparisonOperatorSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators\\NullCoalesceOperatorSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators\\PowOperatorSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators\\ShortTernaryOperatorSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\TextProcessing\\CryptStringSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\UseDeclarations\\UseConstFunctionSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\UseDeclarations\\UseTraitSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "IteratorAggregate" -> "Traversable" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\KeywordBag" -> "IteratorAggregate" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\KeywordBag" -> "Countable" [arrowhead="empty" style="dashed"]
+}

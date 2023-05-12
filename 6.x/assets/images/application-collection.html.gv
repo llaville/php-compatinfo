@@ -1,0 +1,168 @@
+digraph {
+  graph [rankdir="TB" bgcolor="transparent"]
+  node [fillcolor="#FEFECE" style="filled"]
+  subgraph cluster_0 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Collection"
+    "Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollection" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ReferenceCollection</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(classRepository : Bartlett\\CompatInfoDb\\Domain\\Repository\\ClassRepository, constantRepository : Bartlett\\CompatInfoDb\\Domain\\Repository\\ConstantRepository, functionRepository : Bartlett\\CompatInfoDb\\Domain\\Repository\\FunctionRepository)</td></tr>
+    <tr><td align="left">+ find(group : string, key : string, argc : int = 0, extra : string = «unknown») : array</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollectionInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ReferenceCollectionInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» find(group : string, key : string, argc : int = 0, extra : string = «unknown») : array</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Collection\\SniffCollection" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SniffCollection</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(sniffs : iterable)</td></tr>
+    <tr><td align="left">+ getIterator() : Traversable</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Collection\\SniffCollectionInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>SniffCollectionInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+  }
+  subgraph cluster_1 {
+    label = "Doctrine\\Common\\Collections"
+    "Doctrine\\Common\\Collections\\AbstractLazyCollection" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>AbstractLazyCollection</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ count()</td></tr>
+    <tr><td align="left">+ add(element)</td></tr>
+    <tr><td align="left">+ clear()</td></tr>
+    <tr><td align="left">+ contains(element)</td></tr>
+    <tr><td align="left">+ isEmpty()</td></tr>
+    <tr><td align="left">+ remove(key)</td></tr>
+    <tr><td align="left">+ removeElement(element)</td></tr>
+    <tr><td align="left">+ containsKey(key)</td></tr>
+    <tr><td align="left">+ get(key)</td></tr>
+    <tr><td align="left">+ getKeys()</td></tr>
+    <tr><td align="left">+ getValues()</td></tr>
+    <tr><td align="left">+ set(key, value)</td></tr>
+    <tr><td align="left">+ toArray()</td></tr>
+    <tr><td align="left">+ first()</td></tr>
+    <tr><td align="left">+ last()</td></tr>
+    <tr><td align="left">+ key()</td></tr>
+    <tr><td align="left">+ current()</td></tr>
+    <tr><td align="left">+ next()</td></tr>
+    <tr><td align="left">+ exists(p : Closure)</td></tr>
+    <tr><td align="left">+ filter(p : Closure)</td></tr>
+    <tr><td align="left">+ forAll(p : Closure)</td></tr>
+    <tr><td align="left">+ map(func : Closure)</td></tr>
+    <tr><td align="left">+ partition(p : Closure)</td></tr>
+    <tr><td align="left">+ indexOf(element)</td></tr>
+    <tr><td align="left">+ slice(offset, length = «unknown»)</td></tr>
+    <tr><td align="left">+ getIterator()</td></tr>
+    <tr><td align="left">+ offsetExists(offset : TKey)</td></tr>
+    <tr><td align="left">+ offsetGet(offset : TKey)</td></tr>
+    <tr><td align="left">+ offsetSet(offset : mixed, value : T)</td></tr>
+    <tr><td align="left">+ offsetUnset(offset : TKey)</td></tr>
+    <tr><td align="left">+ isInitialized()</td></tr>
+</table></td></tr>
+</table>>]
+    "Doctrine\\Common\\Collections\\Collection" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Collection</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» add(element : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» clear()</td></tr>
+    <tr><td align="left">+ «abstract» remove(key : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» removeElement(element : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» set(key : mixed, value : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» filter(p : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» partition(p : Closure)</td></tr>
+</table></td></tr>
+</table>>]
+    "Doctrine\\Common\\Collections\\ReadableCollection" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ReadableCollection</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» contains(element : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» isEmpty()</td></tr>
+    <tr><td align="left">+ «abstract» containsKey(key : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» get(key : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» getKeys()</td></tr>
+    <tr><td align="left">+ «abstract» getValues()</td></tr>
+    <tr><td align="left">+ «abstract» toArray()</td></tr>
+    <tr><td align="left">+ «abstract» first()</td></tr>
+    <tr><td align="left">+ «abstract» last()</td></tr>
+    <tr><td align="left">+ «abstract» key()</td></tr>
+    <tr><td align="left">+ «abstract» current()</td></tr>
+    <tr><td align="left">+ «abstract» next()</td></tr>
+    <tr><td align="left">+ «abstract» slice(offset : int, length : mixed = «unknown»)</td></tr>
+    <tr><td align="left">+ «abstract» exists(p : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» filter(p : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» map(func : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» partition(p : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» forAll(p : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» indexOf(element : mixed)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_2 {
+    label = 0
+    "Countable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Countable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» count()</td></tr>
+</table></td></tr>
+</table>>]
+    "IteratorAggregate" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>IteratorAggregate</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getIterator()</td></tr>
+</table></td></tr>
+</table>>]
+    "Traversable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Traversable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+    "ArrayAccess" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ArrayAccess</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» offsetExists(offset)</td></tr>
+    <tr><td align="left">+ «abstract» offsetGet(offset)</td></tr>
+    <tr><td align="left">+ «abstract» offsetSet(offset, value)</td></tr>
+    <tr><td align="left">+ «abstract» offsetUnset(offset)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "Doctrine\\Common\\Collections\\ReadableCollection" -> "Countable" [arrowhead="empty" style="dashed"]
+  "IteratorAggregate" -> "Traversable" [arrowhead="empty" style="dashed"]
+  "Doctrine\\Common\\Collections\\ReadableCollection" -> "IteratorAggregate" [arrowhead="empty" style="dashed"]
+  "Doctrine\\Common\\Collections\\Collection" -> "Doctrine\\Common\\Collections\\ReadableCollection" [arrowhead="empty" style="dashed"]
+  "Doctrine\\Common\\Collections\\Collection" -> "ArrayAccess" [arrowhead="empty" style="dashed"]
+  "Doctrine\\Common\\Collections\\AbstractLazyCollection" -> "Doctrine\\Common\\Collections\\Collection" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollection" -> "Doctrine\\Common\\Collections\\AbstractLazyCollection" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollectionInterface" -> "Doctrine\\Common\\Collections\\Collection" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollection" -> "Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollectionInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Collection\\SniffCollectionInterface" -> "IteratorAggregate" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Collection\\SniffCollection" -> "Bartlett\\CompatInfo\\Application\\Collection\\SniffCollectionInterface" [arrowhead="empty" style="dashed"]
+}

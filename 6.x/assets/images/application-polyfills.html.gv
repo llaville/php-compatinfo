@@ -1,0 +1,127 @@
+digraph {
+  graph [rankdir="TB" bgcolor="transparent"]
+  node [fillcolor="#FEFECE" style="filled"]
+  subgraph cluster_0 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Polyfills"
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\PolyfillInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>PolyfillInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getName() : string</td></tr>
+    <tr><td align="left">+ «abstract» getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyCtype" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SymfonyCtype</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>AbstractPolyfillInstalled</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getName() : string</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyIconv" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SymfonyIconv</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyMbstring" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SymfonyMbstring</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp70" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SymfonyPhp70</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp71" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SymfonyPhp71</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp72" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SymfonyPhp72</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp73" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SymfonyPhp73</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp74" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SymfonyPhp74</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp80" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SymfonyPhp80</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp81" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SymfonyPhp81</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" -> "Bartlett\\CompatInfo\\Application\\Polyfills\\PolyfillInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyCtype" -> "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyIconv" -> "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyMbstring" -> "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp70" -> "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp71" -> "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp72" -> "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp73" -> "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp74" -> "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp80" -> "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Polyfills\\SymfonyPhp81" -> "Bartlett\\CompatInfo\\Application\\Polyfills\\AbstractPolyfillInstalled" [arrowhead="empty" style="filled"]
+}

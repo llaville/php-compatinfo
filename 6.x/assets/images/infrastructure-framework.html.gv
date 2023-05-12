@@ -1,0 +1,16 @@
+graph {
+  graph [rankdir="LR" bgcolor="transparent"]
+  node [fillcolor="#FEFECE" style="filled"]
+  subgraph cluster_0 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Infrastructure\\Framework\\Symfony"
+    "Bartlett\\CompatInfo\\Infrastructure\\Framework\\Symfony\\Polyfill" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Polyfill</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» service(serviceId : string) : Symfony\\Component\\DependencyInjection\\Loader\\Configurator\\ReferenceConfigurator</td></tr>
+</table></td></tr>
+</table>>]
+  }
+}
