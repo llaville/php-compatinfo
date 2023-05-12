@@ -10,29 +10,28 @@
         "issues": "https://github.com/llaville/php-compatinfo/issues"
     },
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.0",
         "ext-json": "*",
-        "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
-        "bartlett/php-compatinfo-db": "^4.8",
+        "bartlett/php-compatinfo-db": "^5.0",
         "bartlett/sarif-php-sdk": "^1.0",
         "composer-runtime-api": "^2.1",
         "doctrine/collections": "^1.4",
         "nikic/php-parser": "^4.10",
-        "psr/log": "^1.0",
+        "psr/log": "^3.0",
         "ramsey/uuid": "^3.9 || ^4.0",
-        "symfony/config": "^4.4 || ^5.0",
-        "symfony/console": "^4.4 || ^5.0",
-        "symfony/event-dispatcher": "^4.4 || ^5.0",
-        "symfony/finder": "^4.4 || ^5.0",
-        "symfony/dependency-injection": "^4.4 || ^5.0",
-        "symfony/serializer": "^4.4 || ^5.0",
-        "symfony/stopwatch": "^4.4 || ^5.0"
+        "symfony/config": "^5.4 || ^6.0",
+        "symfony/console": "^5.4 || ^6.0",
+        "symfony/event-dispatcher": "^5.4 || ^6.0",
+        "symfony/finder": "^5.4 || ^6.0",
+        "symfony/dependency-injection": "^5.4 || ^6.0",
+        "symfony/serializer": "^5.4 || ^6.0",
+        "symfony/stopwatch": "^5.4 || ^6.0"
     },
     "require-dev": {
         "bartlett/graph-uml": "^1.2",
-        "symfony/framework-bundle": "^4.4 || ^5.0"
+        "symfony/framework-bundle": "^5.4 || ^6.0"
     },
     "authors": [
         {
@@ -52,8 +51,7 @@
     "autoload": {
         "psr-4": {
             "Bartlett\\CompatInfo\\": "src/"
-        },
-        "files": ["src/Infrastructure/Framework/Symfony/Polyfill.php"]
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -63,9 +61,6 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "platform": {
-            "php": "7.4.0"
-        },
         "sort-packages": true,
         "optimize-autoloader": true,
         "allow-plugins": {
@@ -75,7 +70,7 @@
     "extra": {
         "enable-patching": true,
         "branch-alias": {
-            "dev-master": "6.5.x-dev"
+            "dev-master": "7.0.x-dev"
         }
     }
 }

@@ -14,5 +14,7 @@ jobs:
     deploy:
         uses: llaville/.github/.github/workflows/gh-pages.yml@master
         with:
-            destination-dir: 6.x
+            destination-dir: 7.x
+            force-orphan: false
             hook-script: "resources/gh-pages-hook.sh"
+            php-version: "8.0"

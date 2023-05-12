@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
     backupGlobals="false"
-    backupStaticAttributes="false"
     bootstrap="config/bootstrap.php"
     colors="true"
     stopOnError="false"
@@ -9,13 +8,7 @@
     stopOnIncomplete="false"
     stopOnRisky="false"
     stopOnSkipped="false"
-    verbose="true"
 >
-    <filter>
-        <whitelist>
-            <directory suffix=".php">src/</directory>
-        </whitelist>
-    </filter>
     <testsuites>
         <testsuite name="parser">
             <directory suffix="Test.php">tests/PhpParser/</directory>
@@ -38,6 +31,11 @@
         </exclude>
     </groups>
     <php>
-        <env name="APP_ENV" value="tests" force="true" />
+        <env name="APP_ENV" value="tests" force="true"/>
     </php>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
 </phpunit>

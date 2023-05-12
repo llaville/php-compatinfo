@@ -108,12 +108,9 @@ class DefaultLogger extends AbstractLogger
      * Adds a log record at an arbitrary level.
      *
      * @param mixed  $level   The log level
-     * @param string $message The log message
      * @param array<string, mixed> $context The log context
-     *
-     * @return void
      */
-    public function log($level, $message, array $context = [])
+    public function log($level, string|\Stringable $message, array $context = []): void
     {
         $record = [
             'channel'  => $this->channel,

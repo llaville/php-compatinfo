@@ -3,17 +3,11 @@
 
 ## Requirements
 
-* PHP 7.4 or greater
+* PHP 8.0 or greater
 * ext-json
-* ext-libxml
 * ext-pcre
 * ext-spl
 * PHPUnit 9 or greater (if you want to run unit tests)
-
-![GraPHP Composer](./graph-composer.svg)
-
-Generated with [fork](https://github.com/markuspoerschke/graph-composer/tree/add-options-to-exclude) of [clue/graph-composer](https://github.com/clue/graph-composer).
-Read more on [PR request](https://github.com/clue/graph-composer/pull/45).
 
 ## Installation
 
@@ -23,7 +17,7 @@ Install the PHP CompatInfo with [Composer](https://getcomposer.org/).
 If you don't know yet what is composer, have a look [on introduction](http://getcomposer.org/doc/00-intro.md).
 
 ```shell
-composer require bartlett/php-compatinfo ^6.5
+composer require bartlett/php-compatinfo ^7
 ```
 
 ### With Git
@@ -32,7 +26,7 @@ The PHP CompatInfo can be directly used from [GitHub](https://github.com/llavill
 by cloning the repository into a directory of your choice.
 
 ```shell
-git clone -b 6.5 https://github.com/llaville/php-compatinfo.git
+git clone -b 7.0 https://github.com/llaville/php-compatinfo.git
 ```
 
 ## Configuring the Database

@@ -65,7 +65,7 @@ jobs:
                 with:  # https://github.com/softprops/action-gh-release#-customizing
                     prerelease: false
                     draft: true
-                    body_path: ${{ github.workspace }}/.changes/6.x/${{ github.ref_name }}.md
+                    body_path: ${{ github.workspace }}/.changes/7.x/${{ github.ref_name }}.md
                     # https://github.com/softprops/action-gh-release#%EF%B8%8F-uploading-release-assets
                     files: |
                         ${{ github.workspace }}/bin/phpcompatinfo.phar

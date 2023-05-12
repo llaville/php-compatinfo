@@ -12,13 +12,13 @@ use Bartlett\CompatInfo\Presentation\Console\Command\CommandInterface;
 use Bartlett\CompatInfo\Presentation\Console\FactoryCommandLoader;
 use Bartlett\CompatInfo\Presentation\Console\Input\Input;
 use Bartlett\CompatInfo\Presentation\Console\Output\Output;
-use function Bartlett\CompatInfo\Infrastructure\Framework\Symfony\service;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\tagged_iterator;
 
 /**

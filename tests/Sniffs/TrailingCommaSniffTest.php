@@ -36,7 +36,7 @@ final class TrailingCommaSniffTest extends SniffTestCase
      *
      * @return iterable
      */
-    public function trailingCommaProvider(): iterable
+    public static function trailingCommaProvider(): iterable
     {
         $provides = [
             'trailing_comma_parameters.php' => [

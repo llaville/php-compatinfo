@@ -60,7 +60,7 @@ final class KeywordReservedSniffTest extends SniffTestCase
      *
      * @return iterable
      */
-    public function forbiddenNamesProvider(): iterable
+    public static function forbiddenNamesProvider(): iterable
     {
         $provides = [
             'reserved_names_in_objects.php' => [

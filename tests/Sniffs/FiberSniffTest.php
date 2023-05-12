@@ -36,7 +36,7 @@ final class FiberSniffTest extends SniffTestCase
      *
      * @return iterable
      */
-    public function fibersProvider(): iterable
+    public static function fibersProvider(): iterable
     {
         $provides = [
             'fiber_class.php' => [

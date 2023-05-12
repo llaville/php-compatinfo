@@ -14,6 +14,7 @@ jobs:
         uses: llaville/.github/.github/workflows/mega-linter.yml@master
         with:
             repository: ${{ github.repository }}
+            php-version: "8.0"
 
     unit_tests:
         needs: lint_files
@@ -24,11 +25,6 @@ jobs:
             fail-fast: false
             matrix:
                 include:
-                    -
-                        os: ubuntu-latest
-                        php: 7.4
-                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit:9.6
                     -
                         os: ubuntu-latest
                         php: 8.0
@@ -80,7 +76,6 @@ jobs:
             -   # Run unit tests
                 name: Unit tests with PHPUnit 9
                 if: |
-                    ${{ matrix.php == '7.4' }} ||
                     ${{ matrix.php == '8.0' }}
                 run: phpunit --group features,large,reference,regression,default --testdox --do-not-cache-result --configuration ./phpunit-9.xml
             -

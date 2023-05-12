@@ -37,7 +37,7 @@ final class FirstClassCallableSniffTest extends SniffTestCase
      *
      * @return iterable
      */
-    public function callableExprProvider(): iterable
+    public static function callableExprProvider(): iterable
     {
         $provides = [
             'callable_expr_function.php' => [

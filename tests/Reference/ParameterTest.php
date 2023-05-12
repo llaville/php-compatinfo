@@ -42,7 +42,7 @@ final class ParameterTest extends SniffTestCase
      *
      * @throws Exception
      */
-    public function functionProvider(): Generator
+    public static function functionProvider(): Generator
     {
         $input = new ArrayInput(['--no-polyfills' => true]);
         $container = (new ConsoleKernel('dev', true))->createFromInput($input);

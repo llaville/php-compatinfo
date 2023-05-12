@@ -36,7 +36,7 @@ final class EnumerationSniffTest extends SniffTestCase
      *
      * @return iterable
      */
-    public function dataSourceProvider(): iterable
+    public static function dataSourceProvider(): iterable
     {
         $provides = [
             'basic.php' => [
