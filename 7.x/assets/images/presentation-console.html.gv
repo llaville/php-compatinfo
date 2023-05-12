@@ -1,0 +1,602 @@
+digraph {
+  graph [rankdir="LR" bgcolor="transparent"]
+  node [fillcolor="#FEFECE" style="filled"]
+  subgraph cluster_0 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Presentation\\Console\\Command"
+    "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AnalyserCommand" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>AnalyserCommand</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» NAME : string = "analyser\:run" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AbstractCommand" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>AbstractCommand</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(queryBus : Bartlett\\CompatInfo\\Application\\Query\\QueryBusInterface)</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\CommandInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>CommandInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\DiagnoseCommand" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>DiagnoseCommand</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» NAME : string = "diagnose" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(queryBus : Bartlett\\CompatInfo\\Application\\Query\\QueryBusInterface, entityManager : Doctrine\\ORM\\EntityManagerInterface)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_1 {
+    label = "Symfony\\Component\\Console\\Command"
+    "Symfony\\Component\\Console\\Command\\Command" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Command</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» SUCCESS : int = 0 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» FAILURE : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» INVALID : int = 2 {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» getDefaultName() : ?string</td></tr>
+    <tr><td align="left">+ «static» getDefaultDescription() : ?string</td></tr>
+    <tr><td align="left">+ __construct(name : string = «unknown»)</td></tr>
+    <tr><td align="left">+ ignoreValidationErrors()</td></tr>
+    <tr><td align="left">+ setApplication(application : Symfony\\Component\\Console\\Application = «unknown»)</td></tr>
+    <tr><td align="left">+ setHelperSet(helperSet : Symfony\\Component\\Console\\Helper\\HelperSet)</td></tr>
+    <tr><td align="left">+ getHelperSet() : ?Symfony\\Component\\Console\\Helper\\HelperSet</td></tr>
+    <tr><td align="left">+ getApplication() : ?Symfony\\Component\\Console\\Application</td></tr>
+    <tr><td align="left">+ isEnabled()</td></tr>
+    <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface) : int</td></tr>
+    <tr><td align="left">+ complete(input : Symfony\\Component\\Console\\Completion\\CompletionInput, suggestions : Symfony\\Component\\Console\\Completion\\CompletionSuggestions) : void</td></tr>
+    <tr><td align="left">+ setCode(code : callable) : static</td></tr>
+    <tr><td align="left">+ mergeApplicationDefinition(mergeArgs : bool = true)</td></tr>
+    <tr><td align="left">+ setDefinition(definition) : static</td></tr>
+    <tr><td align="left">+ getDefinition() : Symfony\\Component\\Console\\Input\\InputDefinition</td></tr>
+    <tr><td align="left">+ getNativeDefinition() : Symfony\\Component\\Console\\Input\\InputDefinition</td></tr>
+    <tr><td align="left">+ addArgument(name : string, mode : int = «unknown», description : string = '', default : mixed = «unknown») : static</td></tr>
+    <tr><td align="left">+ addOption(name : string, shortcut = «unknown», mode : int = «unknown», description : string = '', default : mixed = «unknown») : static</td></tr>
+    <tr><td align="left">+ setName(name : string) : static</td></tr>
+    <tr><td align="left">+ setProcessTitle(title : string) : static</td></tr>
+    <tr><td align="left">+ getName() : ?string</td></tr>
+    <tr><td align="left">+ setHidden(hidden : bool = true) : static</td></tr>
+    <tr><td align="left">+ isHidden() : bool</td></tr>
+    <tr><td align="left">+ setDescription(description : string) : static</td></tr>
+    <tr><td align="left">+ getDescription() : string</td></tr>
+    <tr><td align="left">+ setHelp(help : string) : static</td></tr>
+    <tr><td align="left">+ getHelp() : string</td></tr>
+    <tr><td align="left">+ getProcessedHelp() : string</td></tr>
+    <tr><td align="left">+ setAliases(aliases : iterable) : static</td></tr>
+    <tr><td align="left">+ getAliases() : array</td></tr>
+    <tr><td align="left">+ getSynopsis(short : bool = false) : string</td></tr>
+    <tr><td align="left">+ addUsage(usage : string) : static</td></tr>
+    <tr><td align="left">+ getUsages() : array</td></tr>
+    <tr><td align="left">+ getHelper(name : string) : ?mixed</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_2 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Presentation\\Console\\Input"
+    "Bartlett\\CompatInfo\\Presentation\\Console\\Input\\Input" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Input</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+  }
+  subgraph cluster_3 {
+    label = "Symfony\\Component\\Console\\Input"
+    "Symfony\\Component\\Console\\Input\\ArgvInput" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ArgvInput</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(argv : array = «unknown», definition : Symfony\\Component\\Console\\Input\\InputDefinition = «unknown»)</td></tr>
+    <tr><td align="left">+ getFirstArgument() : ?string</td></tr>
+    <tr><td align="left">+ hasParameterOption(values, onlyParams : bool = false) : bool</td></tr>
+    <tr><td align="left">+ getParameterOption(values, default = false, onlyParams : bool = false) : ?mixed</td></tr>
+    <tr><td align="left">+ __toString() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Console\\Input\\Input" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>Input</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(definition : Symfony\\Component\\Console\\Input\\InputDefinition = «unknown»)</td></tr>
+    <tr><td align="left">+ bind(definition : Symfony\\Component\\Console\\Input\\InputDefinition)</td></tr>
+    <tr><td align="left">+ validate()</td></tr>
+    <tr><td align="left">+ isInteractive() : bool</td></tr>
+    <tr><td align="left">+ setInteractive(interactive : bool)</td></tr>
+    <tr><td align="left">+ getArguments() : array</td></tr>
+    <tr><td align="left">+ getArgument(name : string) : ?mixed</td></tr>
+    <tr><td align="left">+ setArgument(name : string, value : mixed)</td></tr>
+    <tr><td align="left">+ hasArgument(name : string) : bool</td></tr>
+    <tr><td align="left">+ getOptions() : array</td></tr>
+    <tr><td align="left">+ getOption(name : string) : ?mixed</td></tr>
+    <tr><td align="left">+ setOption(name : string, value : mixed)</td></tr>
+    <tr><td align="left">+ hasOption(name : string) : bool</td></tr>
+    <tr><td align="left">+ escapeToken(token : string) : string</td></tr>
+    <tr><td align="left">+ setStream(stream)</td></tr>
+    <tr><td align="left">+ getStream()</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Console\\Input\\StreamableInputInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>StreamableInputInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» setStream(stream : resource)</td></tr>
+    <tr><td align="left">+ «abstract» getStream()</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Console\\Input\\InputInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>InputInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getFirstArgument() : ?string</td></tr>
+    <tr><td align="left">+ «abstract» hasParameterOption(values : mixed, onlyParams : bool = false) : bool</td></tr>
+    <tr><td align="left">+ «abstract» getParameterOption(values : mixed, default : mixed = false, onlyParams : bool = false)</td></tr>
+    <tr><td align="left">+ «abstract» bind(definition : Symfony\\Component\\Console\\Input\\InputDefinition)</td></tr>
+    <tr><td align="left">+ «abstract» validate()</td></tr>
+    <tr><td align="left">+ «abstract» getArguments() : array</td></tr>
+    <tr><td align="left">+ «abstract» getArgument(name : string)</td></tr>
+    <tr><td align="left">+ «abstract» setArgument(name : string, value : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» hasArgument(name : string) : bool</td></tr>
+    <tr><td align="left">+ «abstract» getOptions() : array</td></tr>
+    <tr><td align="left">+ «abstract» getOption(name : string)</td></tr>
+    <tr><td align="left">+ «abstract» setOption(name : string, value : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» hasOption(name : string) : bool</td></tr>
+    <tr><td align="left">+ «abstract» isInteractive() : bool</td></tr>
+    <tr><td align="left">+ «abstract» setInteractive(interactive : bool)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_4 {
+    label = 0
+    "Stringable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Stringable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» __toString() : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_5 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Presentation\\Console\\Output"
+    "Bartlett\\CompatInfo\\Presentation\\Console\\Output\\Output" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Output</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+  }
+  subgraph cluster_6 {
+    label = "Symfony\\Component\\Console\\Output"
+    "Symfony\\Component\\Console\\Output\\ConsoleOutput" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ConsoleOutput</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(verbosity : int = VERBOSITY_NORMAL, decorated : bool = «unknown», formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface = «unknown»)</td></tr>
+    <tr><td align="left">+ section() : Symfony\\Component\\Console\\Output\\ConsoleSectionOutput</td></tr>
+    <tr><td align="left">+ setDecorated(decorated : bool)</td></tr>
+    <tr><td align="left">+ setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface)</td></tr>
+    <tr><td align="left">+ setVerbosity(level : int)</td></tr>
+    <tr><td align="left">+ getErrorOutput() : Symfony\\Component\\Console\\Output\\OutputInterface</td></tr>
+    <tr><td align="left">+ setErrorOutput(error : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Console\\Output\\StreamOutput" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>StreamOutput</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(stream : resource, verbosity : int = VERBOSITY_NORMAL, decorated : bool = «unknown», formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface = «unknown»)</td></tr>
+    <tr><td align="left">+ getStream()</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Console\\Output\\Output" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>Output</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_VERY_VERBOSE : int = 128 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_DEBUG : int = 256 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_NORMAL : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_RAW : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_PLAIN : int = 4 {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(verbosity : int = VERBOSITY_NORMAL, decorated : bool = false, formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface = «unknown»)</td></tr>
+    <tr><td align="left">+ setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface)</td></tr>
+    <tr><td align="left">+ getFormatter() : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface</td></tr>
+    <tr><td align="left">+ setDecorated(decorated : bool)</td></tr>
+    <tr><td align="left">+ isDecorated() : bool</td></tr>
+    <tr><td align="left">+ setVerbosity(level : int)</td></tr>
+    <tr><td align="left">+ getVerbosity() : int</td></tr>
+    <tr><td align="left">+ isQuiet() : bool</td></tr>
+    <tr><td align="left">+ isVerbose() : bool</td></tr>
+    <tr><td align="left">+ isVeryVerbose() : bool</td></tr>
+    <tr><td align="left">+ isDebug() : bool</td></tr>
+    <tr><td align="left">+ writeln(messages, options : int = OUTPUT_NORMAL)</td></tr>
+    <tr><td align="left">+ write(messages, newline : bool = false, options : int = OUTPUT_NORMAL)</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Console\\Output\\OutputInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>OutputInterface</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_VERY_VERBOSE : int = 128 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_DEBUG : int = 256 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_NORMAL : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_RAW : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_PLAIN : int = 4 {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» write(messages, newline : bool = false, options : int = 0)</td></tr>
+    <tr><td align="left">+ «abstract» writeln(messages, options : int = 0)</td></tr>
+    <tr><td align="left">+ «abstract» setVerbosity(level : int)</td></tr>
+    <tr><td align="left">+ «abstract» getVerbosity() : int</td></tr>
+    <tr><td align="left">+ «abstract» isQuiet() : bool</td></tr>
+    <tr><td align="left">+ «abstract» isVerbose() : bool</td></tr>
+    <tr><td align="left">+ «abstract» isVeryVerbose() : bool</td></tr>
+    <tr><td align="left">+ «abstract» isDebug() : bool</td></tr>
+    <tr><td align="left">+ «abstract» setDecorated(decorated : bool)</td></tr>
+    <tr><td align="left">+ «abstract» isDecorated() : bool</td></tr>
+    <tr><td align="left">+ «abstract» setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface)</td></tr>
+    <tr><td align="left">+ «abstract» getFormatter() : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Console\\Output\\ConsoleOutputInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ConsoleOutputInterface</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_VERY_VERBOSE : int = 128 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_DEBUG : int = 256 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_NORMAL : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_RAW : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_PLAIN : int = 4 {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getErrorOutput() : Symfony\\Component\\Console\\Output\\OutputInterface</td></tr>
+    <tr><td align="left">+ «abstract» setErrorOutput(error : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
+    <tr><td align="left">+ «abstract» section() : Symfony\\Component\\Console\\Output\\ConsoleSectionOutput</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_7 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Presentation\\Console"
+    "Bartlett\\CompatInfo\\Presentation\\Console\\Application" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Application</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» NAME : string = "phpCompatInfo" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(compatibilityEventDispatcher : Symfony\\Component\\EventDispatcher\\EventDispatcherInterface)</td></tr>
+    <tr><td align="left">+ getHelp() : string</td></tr>
+    <tr><td align="left">+ getLongVersion() : string</td></tr>
+    <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface = «unknown», output : Symfony\\Component\\Console\\Output\\OutputInterface = «unknown») : int</td></tr>
+    <tr><td align="left">+ getInstalledVersion(withRef : bool = true, packageName : string = 'bartlett\/php\-compatinfo') : ?string</td></tr>
+    <tr><td align="left">+ getApplicationParameters() : array</td></tr>
+    <tr><td align="left">+ getKernel() : object</td></tr>
+    <tr><td align="left">+ setContainer(container : Symfony\\Component\\DependencyInjection\\ContainerInterface = «unknown»)</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Presentation\\Console\\ApplicationInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ApplicationInterface</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» NAME : string = "phpCompatInfo" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» setCommandLoader(commandLoader : Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface)</td></tr>
+    <tr><td align="left">+ «abstract» getName()</td></tr>
+    <tr><td align="left">+ «abstract» getInstalledVersion(withRef : bool = true, packageName : string = 'bartlett\/php\-compatinfo') : ?string</td></tr>
+    <tr><td align="left">+ «abstract» getApplicationParameters() : array</td></tr>
+    <tr><td align="left">+ «abstract» getKernel() : object</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Presentation\\Console\\CommandLoaderInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>CommandLoaderInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Presentation\\Console\\FactoryCommandLoader" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>FactoryCommandLoader</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(commands : iterable)</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Presentation\\Console\\Style" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Style</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ createProgressBar(max = 0) : Symfony\\Component\\Console\\Helper\\ProgressBar</td></tr>
+    <tr><td align="left">+ table(headers : array, rows : array, style : string = 'compact') : void</td></tr>
+    <tr><td align="left">+ columns(lines, format : string) : void</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>StyleInterface</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_VERY_VERBOSE : int = 128 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_DEBUG : int = 256 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_NORMAL : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_RAW : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_PLAIN : int = 4 {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» columns(lines : mixed, format : string) : void</td></tr>
+    <tr><td align="left">+ «abstract» createProgressBar(max : int = 0)</td></tr>
+    <tr><td align="left">+ «abstract» table(headers : array, rows : array, style : string = 'compact') : void</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_8 {
+    label = "Symfony\\Component\\Console"
+    "Symfony\\Component\\Console\\Application" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Application</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(name : string = 'UNKNOWN', version : string = 'UNKNOWN')</td></tr>
+    <tr><td align="left">+ setDispatcher(dispatcher : Symfony\\Contracts\\EventDispatcher\\EventDispatcherInterface)</td></tr>
+    <tr><td align="left">+ setCommandLoader(commandLoader : Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface)</td></tr>
+    <tr><td align="left">+ getSignalRegistry() : Symfony\\Component\\Console\\SignalRegistry\\SignalRegistry</td></tr>
+    <tr><td align="left">+ setSignalsToDispatchEvent(signalsToDispatchEvent : int = «unknown»)</td></tr>
+    <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface = «unknown», output : Symfony\\Component\\Console\\Output\\OutputInterface = «unknown») : int</td></tr>
+    <tr><td align="left">+ doRun(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
+    <tr><td align="left">+ reset()</td></tr>
+    <tr><td align="left">+ setHelperSet(helperSet : Symfony\\Component\\Console\\Helper\\HelperSet)</td></tr>
+    <tr><td align="left">+ getHelperSet() : Symfony\\Component\\Console\\Helper\\HelperSet</td></tr>
+    <tr><td align="left">+ setDefinition(definition : Symfony\\Component\\Console\\Input\\InputDefinition)</td></tr>
+    <tr><td align="left">+ getDefinition() : Symfony\\Component\\Console\\Input\\InputDefinition</td></tr>
+    <tr><td align="left">+ complete(input : Symfony\\Component\\Console\\Completion\\CompletionInput, suggestions : Symfony\\Component\\Console\\Completion\\CompletionSuggestions) : void</td></tr>
+    <tr><td align="left">+ getHelp() : string</td></tr>
+    <tr><td align="left">+ areExceptionsCaught() : bool</td></tr>
+    <tr><td align="left">+ setCatchExceptions(boolean : bool)</td></tr>
+    <tr><td align="left">+ isAutoExitEnabled() : bool</td></tr>
+    <tr><td align="left">+ setAutoExit(boolean : bool)</td></tr>
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ setName(name : string)</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+    <tr><td align="left">+ setVersion(version : string)</td></tr>
+    <tr><td align="left">+ getLongVersion()</td></tr>
+    <tr><td align="left">+ register(name : string) : Symfony\\Component\\Console\\Command\\Command</td></tr>
+    <tr><td align="left">+ addCommands(commands : array)</td></tr>
+    <tr><td align="left">+ add(command : Symfony\\Component\\Console\\Command\\Command)</td></tr>
+    <tr><td align="left">+ get(name : string)</td></tr>
+    <tr><td align="left">+ has(name : string) : bool</td></tr>
+    <tr><td align="left">+ getNamespaces() : array</td></tr>
+    <tr><td align="left">+ findNamespace(namespace : string) : string</td></tr>
+    <tr><td align="left">+ find(name : string)</td></tr>
+    <tr><td align="left">+ all(namespace : string = «unknown»)</td></tr>
+    <tr><td align="left">+ «static» getAbbreviations(names : array) : array</td></tr>
+    <tr><td align="left">+ renderThrowable(e : Throwable, output : Symfony\\Component\\Console\\Output\\OutputInterface) : void</td></tr>
+    <tr><td align="left">+ extractNamespace(name : string, limit : int = «unknown») : string</td></tr>
+    <tr><td align="left">+ setDefaultCommand(commandName : string, isSingleCommand : bool = false) : static</td></tr>
+    <tr><td align="left">+ isSingleCommand() : bool</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_9 {
+    label = "Symfony\\Contracts\\Service"
+    "Symfony\\Contracts\\Service\\ResetInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ResetInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» reset()</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_10 {
+    label = "Symfony\\Component\\DependencyInjection"
+    "Symfony\\Component\\DependencyInjection\\ContainerAwareInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ContainerAwareInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» setContainer(container : Symfony\\Component\\DependencyInjection\\ContainerInterface = «unknown»)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_11 {
+    label = "Symfony\\Component\\Console\\CommandLoader"
+    "Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>CommandLoaderInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» get(name : string) : Symfony\\Component\\Console\\Command\\Command</td></tr>
+    <tr><td align="left">+ «abstract» has(name : string) : bool</td></tr>
+    <tr><td align="left">+ «abstract» getNames() : array</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Console\\CommandLoader\\FactoryCommandLoader" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>FactoryCommandLoader</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(factories : array)</td></tr>
+    <tr><td align="left">+ has(name : string) : bool</td></tr>
+    <tr><td align="left">+ get(name : string) : Symfony\\Component\\Console\\Command\\Command</td></tr>
+    <tr><td align="left">+ getNames() : array</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_12 {
+    label = "Symfony\\Component\\Console\\Style"
+    "Symfony\\Component\\Console\\Style\\SymfonyStyle" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SymfonyStyle</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» MAX_LINE_LENGTH : int = 120 {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
+    <tr><td align="left">+ block(messages, type : string = «unknown», style : string = «unknown», prefix : string = '\ ', padding : bool = false, escape : bool = true)</td></tr>
+    <tr><td align="left">+ title(message : string)</td></tr>
+    <tr><td align="left">+ section(message : string)</td></tr>
+    <tr><td align="left">+ listing(elements : array)</td></tr>
+    <tr><td align="left">+ text(message)</td></tr>
+    <tr><td align="left">+ comment(message)</td></tr>
+    <tr><td align="left">+ success(message)</td></tr>
+    <tr><td align="left">+ error(message)</td></tr>
+    <tr><td align="left">+ warning(message)</td></tr>
+    <tr><td align="left">+ note(message)</td></tr>
+    <tr><td align="left">+ info(message)</td></tr>
+    <tr><td align="left">+ caution(message)</td></tr>
+    <tr><td align="left">+ table(headers : array, rows : array)</td></tr>
+    <tr><td align="left">+ horizontalTable(headers : array, rows : array)</td></tr>
+    <tr><td align="left">+ definitionList(list = «unknown»)</td></tr>
+    <tr><td align="left">+ ask(question : string, default : string = «unknown», validator : callable = «unknown») : ?mixed</td></tr>
+    <tr><td align="left">+ askHidden(question : string, validator : callable = «unknown») : ?mixed</td></tr>
+    <tr><td align="left">+ confirm(question : string, default : bool = true) : bool</td></tr>
+    <tr><td align="left">+ choice(question : string, choices : array, default : mixed = «unknown») : ?mixed</td></tr>
+    <tr><td align="left">+ progressStart(max : int = 0)</td></tr>
+    <tr><td align="left">+ progressAdvance(step : int = 1)</td></tr>
+    <tr><td align="left">+ progressFinish()</td></tr>
+    <tr><td align="left">+ createProgressBar(max : int = 0) : Symfony\\Component\\Console\\Helper\\ProgressBar</td></tr>
+    <tr><td align="left">+ progressIterate(iterable : iterable, max : int = «unknown») : iterable</td></tr>
+    <tr><td align="left">+ askQuestion(question : Symfony\\Component\\Console\\Question\\Question) : ?mixed</td></tr>
+    <tr><td align="left">+ writeln(messages, type : int = OUTPUT_NORMAL)</td></tr>
+    <tr><td align="left">+ write(messages, newline : bool = false, type : int = OUTPUT_NORMAL)</td></tr>
+    <tr><td align="left">+ newLine(count : int = 1)</td></tr>
+    <tr><td align="left">+ getErrorStyle() : self</td></tr>
+    <tr><td align="left">+ createTable() : Symfony\\Component\\Console\\Helper\\Table</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Console\\Style\\OutputStyle" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>OutputStyle</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_VERY_VERBOSE : int = 128 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERBOSITY_DEBUG : int = 256 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_NORMAL : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_RAW : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» OUTPUT_PLAIN : int = 4 {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
+    <tr><td align="left">+ newLine(count : int = 1)</td></tr>
+    <tr><td align="left">+ createProgressBar(max : int = 0) : Symfony\\Component\\Console\\Helper\\ProgressBar</td></tr>
+    <tr><td align="left">+ write(messages, newline : bool = false, type : int = OUTPUT_NORMAL)</td></tr>
+    <tr><td align="left">+ writeln(messages, type : int = OUTPUT_NORMAL)</td></tr>
+    <tr><td align="left">+ setVerbosity(level : int)</td></tr>
+    <tr><td align="left">+ getVerbosity() : int</td></tr>
+    <tr><td align="left">+ setDecorated(decorated : bool)</td></tr>
+    <tr><td align="left">+ isDecorated() : bool</td></tr>
+    <tr><td align="left">+ setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface)</td></tr>
+    <tr><td align="left">+ getFormatter() : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface</td></tr>
+    <tr><td align="left">+ isQuiet() : bool</td></tr>
+    <tr><td align="left">+ isVerbose() : bool</td></tr>
+    <tr><td align="left">+ isVeryVerbose() : bool</td></tr>
+    <tr><td align="left">+ isDebug() : bool</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Console\\Style\\StyleInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>StyleInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» title(message : string)</td></tr>
+    <tr><td align="left">+ «abstract» section(message : string)</td></tr>
+    <tr><td align="left">+ «abstract» listing(elements : array)</td></tr>
+    <tr><td align="left">+ «abstract» text(message)</td></tr>
+    <tr><td align="left">+ «abstract» success(message)</td></tr>
+    <tr><td align="left">+ «abstract» error(message)</td></tr>
+    <tr><td align="left">+ «abstract» warning(message)</td></tr>
+    <tr><td align="left">+ «abstract» note(message)</td></tr>
+    <tr><td align="left">+ «abstract» caution(message)</td></tr>
+    <tr><td align="left">+ «abstract» table(headers : array, rows : array)</td></tr>
+    <tr><td align="left">+ «abstract» ask(question : string, default : string = «unknown», validator : callable = «unknown») : ?mixed</td></tr>
+    <tr><td align="left">+ «abstract» askHidden(question : string, validator : callable = «unknown») : ?mixed</td></tr>
+    <tr><td align="left">+ «abstract» confirm(question : string, default : bool = true) : bool</td></tr>
+    <tr><td align="left">+ «abstract» choice(question : string, choices : array, default : mixed = «unknown») : ?mixed</td></tr>
+    <tr><td align="left">+ «abstract» newLine(count : int = 1)</td></tr>
+    <tr><td align="left">+ «abstract» progressStart(max : int = 0)</td></tr>
+    <tr><td align="left">+ «abstract» progressAdvance(step : int = 1)</td></tr>
+    <tr><td align="left">+ «abstract» progressFinish()</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AbstractCommand" -> "Symfony\\Component\\Console\\Command\\Command" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AnalyserCommand" -> "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AbstractCommand" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AnalyserCommand" -> "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\CommandInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\DiagnoseCommand" -> "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AbstractCommand" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\DiagnoseCommand" -> "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\CommandInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Console\\Input\\StreamableInputInterface" -> "Symfony\\Component\\Console\\Input\\InputInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Console\\Input\\Input" -> "Symfony\\Component\\Console\\Input\\StreamableInputInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Console\\Input\\ArgvInput" -> "Symfony\\Component\\Console\\Input\\Input" [arrowhead="empty" style="filled"]
+  "Symfony\\Component\\Console\\Input\\ArgvInput" -> "Stringable" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\Input\\Input" -> "Symfony\\Component\\Console\\Input\\ArgvInput" [arrowhead="empty" style="filled"]
+  "Symfony\\Component\\Console\\Output\\Output" -> "Symfony\\Component\\Console\\Output\\OutputInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Console\\Output\\StreamOutput" -> "Symfony\\Component\\Console\\Output\\Output" [arrowhead="empty" style="filled"]
+  "Symfony\\Component\\Console\\Output\\ConsoleOutput" -> "Symfony\\Component\\Console\\Output\\StreamOutput" [arrowhead="empty" style="filled"]
+  "Symfony\\Component\\Console\\Output\\ConsoleOutputInterface" -> "Symfony\\Component\\Console\\Output\\OutputInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Console\\Output\\ConsoleOutput" -> "Symfony\\Component\\Console\\Output\\ConsoleOutputInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\Output\\Output" -> "Symfony\\Component\\Console\\Output\\ConsoleOutput" [arrowhead="empty" style="filled"]
+  "Symfony\\Component\\Console\\Application" -> "Symfony\\Contracts\\Service\\ResetInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\Application" -> "Symfony\\Component\\Console\\Application" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\ApplicationInterface" -> "Symfony\\Component\\DependencyInjection\\ContainerAwareInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\Application" -> "Bartlett\\CompatInfo\\Presentation\\Console\\ApplicationInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\CommandLoaderInterface" -> "Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Console\\CommandLoader\\FactoryCommandLoader" -> "Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\FactoryCommandLoader" -> "Symfony\\Component\\Console\\CommandLoader\\FactoryCommandLoader" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\FactoryCommandLoader" -> "Bartlett\\CompatInfo\\Presentation\\Console\\CommandLoaderInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Console\\Style\\OutputStyle" -> "Symfony\\Component\\Console\\Output\\OutputInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Console\\Style\\OutputStyle" -> "Symfony\\Component\\Console\\Style\\StyleInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Console\\Style\\SymfonyStyle" -> "Symfony\\Component\\Console\\Style\\OutputStyle" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\Style" -> "Symfony\\Component\\Console\\Style\\SymfonyStyle" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface" -> "Symfony\\Component\\Console\\Style\\StyleInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface" -> "Symfony\\Component\\Console\\Output\\OutputInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Presentation\\Console\\Style" -> "Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface" [arrowhead="empty" style="dashed"]
+}

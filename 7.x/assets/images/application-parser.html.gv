@@ -1,0 +1,284 @@
+digraph {
+  graph [rankdir="LR" bgcolor="transparent"]
+  node [fillcolor="#FEFECE" style="filled"]
+  subgraph cluster_0 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\PhpParser\\Node\\Name"
+    "Bartlett\\CompatInfo\\Application\\PhpParser\\Node\\Name\\ClassFullyQualified" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ClassFullyQualified</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getType() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\PhpParser\\Node\\Name\\InterfaceFullyQualified" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>InterfaceFullyQualified</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getType() : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_1 {
+    label = "PhpParser\\Node\\Name"
+    "PhpParser\\Node\\Name\\FullyQualified" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>FullyQualified</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ isUnqualified() : bool</td></tr>
+    <tr><td align="left">+ isQualified() : bool</td></tr>
+    <tr><td align="left">+ isFullyQualified() : bool</td></tr>
+    <tr><td align="left">+ isRelative() : bool</td></tr>
+    <tr><td align="left">+ toCodeString() : string</td></tr>
+    <tr><td align="left">+ getType() : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_2 {
+    label = "PhpParser\\Node"
+    "PhpParser\\Node\\Name" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Name</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ parts : mixed</td></tr>
+</table></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(name : mixed, attributes : array = [])</td></tr>
+    <tr><td align="left">+ getSubNodeNames() : array</td></tr>
+    <tr><td align="left">+ getFirst() : string</td></tr>
+    <tr><td align="left">+ getLast() : string</td></tr>
+    <tr><td align="left">+ isUnqualified() : bool</td></tr>
+    <tr><td align="left">+ isQualified() : bool</td></tr>
+    <tr><td align="left">+ isFullyQualified() : bool</td></tr>
+    <tr><td align="left">+ isRelative() : bool</td></tr>
+    <tr><td align="left">+ toString() : string</td></tr>
+    <tr><td align="left">+ toCodeString() : string</td></tr>
+    <tr><td align="left">+ toLowerString() : string</td></tr>
+    <tr><td align="left">+ isSpecialClassName() : bool</td></tr>
+    <tr><td align="left">+ __toString() : string</td></tr>
+    <tr><td align="left">+ slice(offset : int, length : int = «unknown»)</td></tr>
+    <tr><td align="left">+ «static» concat(name1 : mixed, name2 : mixed, attributes : array = [])</td></tr>
+    <tr><td align="left">+ getType() : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_3 {
+    label = "PhpParser"
+    "PhpParser\\NodeAbstract" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>NodeAbstract</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(attributes : array = [])</td></tr>
+    <tr><td align="left">+ getLine() : int</td></tr>
+    <tr><td align="left">+ getStartLine() : int</td></tr>
+    <tr><td align="left">+ getEndLine() : int</td></tr>
+    <tr><td align="left">+ getStartTokenPos() : int</td></tr>
+    <tr><td align="left">+ getEndTokenPos() : int</td></tr>
+    <tr><td align="left">+ getStartFilePos() : int</td></tr>
+    <tr><td align="left">+ getEndFilePos() : int</td></tr>
+    <tr><td align="left">+ getComments() : array</td></tr>
+    <tr><td align="left">+ getDocComment()</td></tr>
+    <tr><td align="left">+ setDocComment(docComment : PhpParser\\Comment\\Doc)</td></tr>
+    <tr><td align="left">+ setAttribute(key : string, value)</td></tr>
+    <tr><td align="left">+ hasAttribute(key : string) : bool</td></tr>
+    <tr><td align="left">+ getAttribute(key : string, default = «unknown»)</td></tr>
+    <tr><td align="left">+ getAttributes() : array</td></tr>
+    <tr><td align="left">+ setAttributes(attributes : array)</td></tr>
+    <tr><td align="left">+ jsonSerialize() : array</td></tr>
+</table></td></tr>
+</table>>]
+    "PhpParser\\Node" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Node</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getType() : string</td></tr>
+    <tr><td align="left">+ «abstract» getSubNodeNames() : array</td></tr>
+    <tr><td align="left">+ «abstract» getLine() : int</td></tr>
+    <tr><td align="left">+ «abstract» getStartLine() : int</td></tr>
+    <tr><td align="left">+ «abstract» getEndLine() : int</td></tr>
+    <tr><td align="left">+ «abstract» getStartTokenPos() : int</td></tr>
+    <tr><td align="left">+ «abstract» getEndTokenPos() : int</td></tr>
+    <tr><td align="left">+ «abstract» getStartFilePos() : int</td></tr>
+    <tr><td align="left">+ «abstract» getEndFilePos() : int</td></tr>
+    <tr><td align="left">+ «abstract» getComments() : array</td></tr>
+    <tr><td align="left">+ «abstract» getDocComment()</td></tr>
+    <tr><td align="left">+ «abstract» setDocComment(docComment : PhpParser\\Comment\\Doc)</td></tr>
+    <tr><td align="left">+ «abstract» setAttribute(key : string, value : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» hasAttribute(key : string) : bool</td></tr>
+    <tr><td align="left">+ «abstract» getAttribute(key : string, default : mixed = «unknown»)</td></tr>
+    <tr><td align="left">+ «abstract» getAttributes() : array</td></tr>
+    <tr><td align="left">+ «abstract» setAttributes(attributes : array)</td></tr>
+</table></td></tr>
+</table>>]
+    "PhpParser\\NodeVisitorAbstract" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>NodeVisitorAbstract</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ beforeTraverse(nodes : array)</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ leaveNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ afterTraverse(nodes : array)</td></tr>
+</table></td></tr>
+</table>>]
+    "PhpParser\\NodeVisitor" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>NodeVisitor</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» beforeTraverse(nodes : array)</td></tr>
+    <tr><td align="left">+ «abstract» enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ «abstract» leaveNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ «abstract» afterTraverse(nodes : array)</td></tr>
+</table></td></tr>
+</table>>]
+    "PhpParser\\NodeDumper" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>NodeDumper</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(options : array = [])</td></tr>
+    <tr><td align="left">+ dump(node : mixed, code : string = «unknown») : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_4 {
+    label = 0
+    "JsonSerializable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>JsonSerializable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» jsonSerialize()</td></tr>
+</table></td></tr>
+</table>>]
+    "Stringable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Stringable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» __toString() : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_5 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor"
+    "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\FilterVisitor" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>FilterVisitor</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(normalizer : Symfony\\Component\\Serializer\\Normalizer\\NormalizerInterface, context : array = [])</td></tr>
+    <tr><td align="left">+ getCollection() : Doctrine\\Common\\Collections\\ArrayCollection</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\NodeVisitor" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>NodeVisitor</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getCollection() : Doctrine\\Common\\Collections\\ArrayCollection</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\NameResolverVisitor" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>NameResolverVisitor</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(errorHandler : PhpParser\\ErrorHandler = «unknown», options : array = [])</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\ParentContextVisitor" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ParentContextVisitor</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(options : array = [])</td></tr>
+    <tr><td align="left">+ beforeTraverse(nodes : array)</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ leaveNode(node : PhpParser\\Node)</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\VersionResolverVisitor" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>VersionResolverVisitor</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(referenceCollection : Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollectionInterface, options : array = [])</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_6 {
+    label = "PhpParser\\NodeVisitor"
+    "PhpParser\\NodeVisitor\\FindingVisitor" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>FindingVisitor</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(filterCallback : callable)</td></tr>
+    <tr><td align="left">+ getFoundNodes() : array</td></tr>
+    <tr><td align="left">+ beforeTraverse(nodes : array)</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+</table></td></tr>
+</table>>]
+    "PhpParser\\NodeVisitor\\NameResolver" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>NameResolver</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(errorHandler : PhpParser\\ErrorHandler = «unknown», options : array = [])</td></tr>
+    <tr><td align="left">+ getNameContext() : PhpParser\\NameContext</td></tr>
+    <tr><td align="left">+ beforeTraverse(nodes : array)</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_7 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\PhpParser"
+    "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeDumper" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>NodeDumper</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(options : array = [])</td></tr>
+    <tr><td align="left">+ dump(node : mixed, code : string = «unknown») : string</td></tr>
+    <tr><td align="left">+ dumpPosition(node : PhpParser\\Node)</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\PhpParser\\Parser" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Parser</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(compatibilityEventDispatcher : Symfony\\Component\\EventDispatcher\\EventDispatcherInterface, compatibilityAnalyser : Bartlett\\CompatInfo\\Application\\Analyser\\SniffAnalyserInterface, referenceCollection : Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollectionInterface)</td></tr>
+    <tr><td align="left">+ parse(source : string, finder : Symfony\\Component\\Finder\\Finder, errorHandler : Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler, version : string) : Bartlett\\CompatInfo\\Application\\Profiler\\Profile</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "PhpParser\\NodeAbstract" -> "PhpParser\\Node" [arrowhead="empty" style="dashed"]
+  "PhpParser\\NodeAbstract" -> "JsonSerializable" [arrowhead="empty" style="dashed"]
+  "PhpParser\\Node\\Name" -> "PhpParser\\NodeAbstract" [arrowhead="empty" style="filled"]
+  "PhpParser\\Node\\Name" -> "Stringable" [arrowhead="empty" style="dashed"]
+  "PhpParser\\Node\\Name\\FullyQualified" -> "PhpParser\\Node\\Name" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\PhpParser\\Node\\Name\\ClassFullyQualified" -> "PhpParser\\Node\\Name\\FullyQualified" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\PhpParser\\Node\\Name\\InterfaceFullyQualified" -> "PhpParser\\Node\\Name\\FullyQualified" [arrowhead="empty" style="filled"]
+  "PhpParser\\NodeVisitorAbstract" -> "PhpParser\\NodeVisitor" [arrowhead="empty" style="dashed"]
+  "PhpParser\\NodeVisitor\\FindingVisitor" -> "PhpParser\\NodeVisitorAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\FilterVisitor" -> "PhpParser\\NodeVisitor\\FindingVisitor" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\NodeVisitor" -> "PhpParser\\NodeVisitor" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\FilterVisitor" -> "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\NodeVisitor" [arrowhead="empty" style="dashed"]
+  "PhpParser\\NodeVisitor\\NameResolver" -> "PhpParser\\NodeVisitorAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\NameResolverVisitor" -> "PhpParser\\NodeVisitor\\NameResolver" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\ParentContextVisitor" -> "PhpParser\\NodeVisitorAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\VersionResolverVisitor" -> "PhpParser\\NodeVisitorAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeDumper" -> "PhpParser\\NodeDumper" [arrowhead="empty" style="filled"]
+}
