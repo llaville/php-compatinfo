@@ -110,9 +110,9 @@ Here is the list of features supported and their corresponding sniffs :
 
 ## [PHP 7.3](https://www.php.net/manual/en/migration73.php)
 
-| Sniff category | Sniff class name | PHP Feature |
-|---|---|---|
-|   |   |   |
+| Sniff category | Sniff class name | PHP Feature                                                                                                                                |
+|----------------|---|--------------------------------------------------------------------------------------------------------------------------------------------|
+| FunctionCalls  | SameSiteCookieSniff  | [SetCookie accept $options argument](https://www.php.net/manual/en/migration73.other-changes.php#migration73.other-changes.core.setcookie) |
 
 ## [PHP 7.4](https://www.php.net/manual/en/migration74.php)
 

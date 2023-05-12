@@ -1,0 +1,5 @@
+{
+    "alias": "phpcompatinfo.phar",
+    "directories": ["bin", "config", "src", "vendor"],
+    "compression": "GZ"
+}

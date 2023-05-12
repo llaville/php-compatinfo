@@ -28,12 +28,12 @@ jobs:
                         os: ubuntu-latest
                         php: 7.4
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit
+                        tools: phpunit:9.6
                     -
                         os: ubuntu-latest
                         php: 8.0
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit
+                        tools: phpunit:9.6
                     -
                         os: ubuntu-latest
                         php: 8.1
@@ -68,6 +68,7 @@ jobs:
                 name: Install Composer dependencies
                 uses: ramsey/composer-install@v2
                 with:
+                    dependency-versions: "highest"
                     composer-options: "--prefer-dist --no-scripts"
 
             -   # Build Database
@@ -77,5 +78,14 @@ jobs:
                     bin/phpcompatinfo db:init --ansi
 
             -   # Run unit tests
-                name: Unit tests
-                run: phpunit --group features,large,reference,regression,default
+                name: Unit tests with PHPUnit 9
+                if: |
+                    ${{ matrix.php == '7.4' }} ||
+                    ${{ matrix.php == '8.0' }}
+                run: phpunit --group features,large,reference,regression,default --testdox --do-not-cache-result --configuration ./phpunit-9.xml
+            -
+                name: Unit tests with PHPUnit 10
+                if: |
+                    ${{ matrix.php == '8.1' }} ||
+                    ${{ matrix.php == '8.2' }}
+                run: phpunit --group features,large,reference,regression,default --testdox --do-not-cache-result

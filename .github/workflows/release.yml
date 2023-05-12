@@ -3,11 +3,12 @@ name: Release
 
 on:
     push:
-        branches:
-            - "[0-9]+.[0-9]+"
         tags:
             - "[0-9]+.[0-9]+.[0-9]+"
     workflow_dispatch:
+
+permissions:
+    contents: write
 
 jobs:
     tests:
@@ -16,13 +17,57 @@ jobs:
     build:
         needs: tests
 
-        name: Create Release
-        uses: llaville/.github/.github/workflows/release.yml@master
-        with:
-            repository: ${{ github.repository }}
-            box-output: bin/phpcompatinfo.phar
-            release-draft: true
-            release-prerelease: ${{ github.ref_type == 'branch' }}
-            legacy: false
-            changie-changesDir: ".changes/6.x"
-            changie-command-args: "batch --keep --prerelease snapshot patch"
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+                os:
+                    - ubuntu-22.04
+                php:
+                    - 8.1
+
+        steps:
+            -   # Git Checkout
+                name: Checkout
+                uses: actions/checkout@v3
+
+            -   # Setup PHP runtime
+                name: Setup PHP runtime
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php }}
+
+            -   # Install Composer dependencies
+                name: Install Composer dependencies
+                uses: ramsey/composer-install@v2
+                with:
+                    composer-options: "--prefer-dist"
+
+            -   # Prepare binary BOX Manifest commands
+                name: Download BOX Manifest Artifact
+                run: |
+                    curl -Ls https://github.com/llaville/box-manifest/releases/latest/download/box-manifest.phar -o /usr/local/bin/box-manifest
+                    chmod +x /usr/local/bin/box-manifest
+
+            -   # Build the current release with artifacts (php archive)
+                name: Build Release Artifact
+                run: |
+                    box-manifest manifest:build --ansi -vv -c box.json --output-file=sbom.json
+                    box-manifest manifest:build --ansi -vv -c box.json --output-file=console.txt --format console
+                    box-manifest manifest:stub  --ansi -vv -c box.json --output-file=stub.php --resource console.txt --resource sbom.json
+                    box-manifest box:compile    --ansi -vv -c box.json.dist
+
+            -   # Create a new Release (from a tag)
+                name: Create Release from current tag
+                if: github.ref_type == 'tag'
+                uses: softprops/action-gh-release@v1
+                with:  # https://github.com/softprops/action-gh-release#-customizing
+                    prerelease: false
+                    draft: true
+                    body_path: ${{ github.workspace }}/.changes/6.x/${{ github.ref_name }}.md
+                    # https://github.com/softprops/action-gh-release#%EF%B8%8F-uploading-release-assets
+                    files: |
+                        ${{ github.workspace }}/bin/phpcompatinfo.phar
+                    fail_on_unmatched_files: true
+                    tag_name: ${{ github.ref_name }}

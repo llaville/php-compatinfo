@@ -6,6 +6,8 @@
  * file that was distributed with this source code.
  */
 
+use Bartlett\CompatInfo\Application\Sniffs\FunctionCalls\SameSiteCookieSniff;
+
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 /**
@@ -15,4 +17,11 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
  * @since Release 6.5.0
  */
 return static function (ContainerConfigurator $containerConfigurator): void {
+    $services = $containerConfigurator->services();
+
+    $services->defaults()
+        ->autowire()
+    ;
+
+    $services->set(SameSiteCookieSniff::class);
 };
