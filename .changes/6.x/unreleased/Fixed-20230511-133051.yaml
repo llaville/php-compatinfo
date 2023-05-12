@@ -1,4 +1,0 @@
-kind: Fixed
-body: '- [#359](https://github.com/llaville/php-compatinfo/issues/359) : new `setcookie`
-  signature not recognized'
-time: 2023-05-11T13:30:51.352740424Z
