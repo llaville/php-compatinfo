@@ -33,6 +33,8 @@ function dataSource(): Generator
         \Bartlett\CompatInfo\Application\Sniffs\Expressions\ConditionalCodeSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\Expressions\EmptySniff::class,
 
+        \Bartlett\CompatInfo\Application\Sniffs\FunctionCalls\SameSiteCookieSniff::class,
+
         \Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations\ClosureSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations\ParamTypeDeclarationSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\FunctionDeclarations\ReturnTypeDeclarationSniff::class,
