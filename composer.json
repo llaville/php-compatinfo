@@ -12,7 +12,6 @@
     "require": {
         "php": "^8.0",
         "ext-json": "*",
-        "ext-libxml": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
         "bartlett/php-compatinfo-db": "^5.0",
