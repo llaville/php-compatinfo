@@ -1,7 +1,7 @@
 {
     "alias": "phpcompatinfo.phar",
     "directories": ["bin", "config", "src", "vendor"],
-    "compression": "GZ"
+    "compression": "GZ",
     "stub": "stub.php",
     "files-bin": ["sbom.json", "console.txt"],
     "map": [

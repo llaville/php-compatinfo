@@ -173,13 +173,6 @@ class Application extends SymfonyApplication implements ApplicationInterface
             }
         }
 
-        if ($input->hasParameterOption('--manifest')) {
-            $phar = new Phar($_SERVER['argv'][0]);
-            $manifest = $phar->getMetadata();
-            $output->writeln($manifest);
-            return AbstractCommand::SUCCESS;
-        }
-
         return parent::run($input, $output);
     }
 
