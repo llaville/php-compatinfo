@@ -40,12 +40,6 @@ final class SameSiteCookieSniffTest extends SniffTestCase
     public static function dataSourceProvider(): iterable
     {
         $provides = [
-            'gh359_same-site-cookies.php' => [
-                'php.min' => '7.3.0beta1',
-            ],
-            'gh359_same-site-cookies_raw.php' => [
-                'php.min' => '7.3.0beta1',
-            ],
             'gh359_setcookie-options.php' => [
                 'php.min' => '7.3.0beta1',
             ],

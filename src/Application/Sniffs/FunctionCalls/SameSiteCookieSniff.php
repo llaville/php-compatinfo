@@ -24,6 +24,8 @@ use function strtolower;
  * @link https://www.php.net/manual/en/migration73.other-changes.php
  * @link https://github.com/llaville/php-compatinfo/issues/359
  *
+ * @see tests/Sniffs/SameSiteCookieSniffTest.php
+ *
  * @author Laurent Laville
  * @since  Class available since Release 6.5.5
  */
@@ -69,7 +71,7 @@ final class SameSiteCookieSniff extends SniffAbstract
                 $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA73);
             }
         } else {
-            if (count($arguments) > 7 || (count($arguments) > 2 && $arguments[2]->value instanceof Node\Expr\Array_)) {
+            if (count($arguments) > 2 && $arguments[2]->value instanceof Node\Expr\Array_) {
                 $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '7.3.0beta1']);
                 $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA73);
             }
