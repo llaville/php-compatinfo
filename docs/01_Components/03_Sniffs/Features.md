@@ -153,6 +153,12 @@ Here is the list of features supported and their corresponding sniffs :
 | FunctionDeclarations | ReturnTypeDeclarationSniff | [Never return type](https://www.php.net/releases/8.1/en.php#never_return_type) |
 | Numbers | OctalNumberFormatSniff | [Explicit Octal numeral notation](https://www.php.net/releases/8.1/en.php#explicit_octal_numeral_notation) |
 
+## [PHP 8.2](https://www.php.net/manual/en/migration82.php)
+
+| Sniff category | Sniff class name   | PHP Feature                                                                                                  |
+|----------------|--------------------|--------------------------------------------------------------------------------------------------------------|
+| Classes        | ReadonlyClassSniff | [Readonly Classes](https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.readonly) |
+
 ## Special cases
 
 * **Namespaces** declaration have no sniff, because its detected by the `VersionResolverVisitor`
