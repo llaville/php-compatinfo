@@ -95,7 +95,14 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
             if ($param->type instanceof Node\IntersectionType) {
                 $this->updateVersion('8.1.0', $versions['php.min']);
             } elseif ($param->type instanceof Node\UnionType) {
-                $this->updateVersion('8.0.0', $versions['php.min']);
+                $unionTypes = $param->type->types;
+                $current = '8.0.0';
+                foreach ($unionTypes as $type) {
+                    if ($type instanceof Node\IntersectionType) {
+                        $current = '8.2.0';
+                    }
+                }
+                $this->updateVersion($current, $versions['php.min']);
             } elseif ($param->type instanceof Node\NullableType) {
                 // @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types
                 $this->updateVersion('7.1.0', $versions['php.min']);

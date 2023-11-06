@@ -18,6 +18,7 @@ use Exception;
  * @link https://www.php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration
  * @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types
  * @link https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
+ * @link https://www.php.net/manual/en/migration82.new-features.php#migration82.new-features.core.type-system
  * @link https://github.com/llaville/php-compat-info/issues/142
  * @link https://github.com/llaville/php-compat-info/issues/273
  */
@@ -247,6 +248,26 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
         $this->assertEquals(
             '8.1.0',
             $functions['count_and_iterate']['php.min']
+        );
+    }
+
+    /**
+     * Feature test for Disjunctive Normal Form types
+     *
+     * @group features
+     * @link https://github.com/llaville/php-compatinfo/issues/363
+     * @return void
+     * @throws Exception
+     */
+    public function testDisjunctiveNormalFormTypes()
+    {
+        $dataSource = 'dnf_types.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $functions  = $metrics[self::$analyserId]['methods'];
+
+        $this->assertEquals(
+            '8.2.0',
+            $functions['Foo\bar']['php.min']
         );
     }
 }
