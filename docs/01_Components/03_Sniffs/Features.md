@@ -155,10 +155,11 @@ Here is the list of features supported and their corresponding sniffs :
 
 ## [PHP 8.2](https://www.php.net/manual/en/migration82.php)
 
-| Sniff category       | Sniff class name          | PHP Feature                                                                                                                           |
-|----------------------|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| Classes              | ReadonlyClassSniff        | [Readonly Classes](https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.readonly)                          |
-| FunctionDeclarations | ParamTypeDeclarationSniff | [Disjunctive Normal Form Types](https://www.php.net/manual/en/migration82.new-features.php#migration82.new-features.core.type-system) |
+| Sniff category       | Sniff class name            | PHP Feature                                                                                                                           |
+|----------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| Classes              | ReadonlyClassSniff          | [Readonly Classes](https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.readonly)                          |
+| FunctionDeclarations | ParamTypeDeclarationSniff   | [Disjunctive Normal Form Types](https://www.php.net/manual/en/migration82.new-features.php#migration82.new-features.core.type-system) |
+| FunctionDeclarations | ReturnTypeDeclarationSniff  | [Allow null, false, and true as stand-alone types](https://wiki.php.net/rfc/true-type)                                                |
 
 ## Special cases
 

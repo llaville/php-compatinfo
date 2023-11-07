@@ -22,6 +22,8 @@ use Exception;
  * @link https://github.com/llaville/php-compat-info/issues/273
  * @link https://www.php.net/releases/8.1/en.php#pure_intersection_types
  * @link https://wiki.php.net/rfc/pure-intersection-types
+ * @link https://wiki.php.net/rfc/null-false-standalone-types
+ * @link https://wiki.php.net/rfc/true-type
  */
 final class ReturnTypeDeclarationSniffTest extends SniffTestCase
 {
@@ -170,6 +172,36 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
         $this->assertEquals(
             '8.1.0alpha1',
             $functions['redirect']['php.min']
+        );
+    }
+
+    /**
+     * Feature test for return null, false or true type
+     *
+     * @link https://github.com/llaville/php-compatinfo/issues/363
+     * @link https://wiki.php.net/rfc/null-false-standalone-types
+     * @link https://wiki.php.net/rfc/true-type
+     * @group features
+     * @return void
+     * @throws Exception
+     */
+    public function testNullOrBooleanReturnType()
+    {
+        $dataSource = 'return_null_bool.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $functions  = $metrics[self::$analyserId]['methods'];
+
+        $this->assertEquals(
+            '8.2.0alpha1',
+            $functions['Falsy\alwaysFalse']['php.min']
+        );
+        $this->assertEquals(
+            '8.2.0alpha1',
+            $functions['Falsy\alwaysTrue']['php.min']
+        );
+        $this->assertEquals(
+            '8.2.0alpha1',
+            $functions['Falsy\alwaysNull']['php.min']
         );
     }
 }
