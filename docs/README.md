@@ -51,7 +51,7 @@ They are grouped by categories to solve PHP features (from 4.0 to 8.2)
 - Keywords (1)
 - Numbers (2)
 - Operators (5)
-- TextProcessing (1)
+- TextProcessing (2)
 - UseDeclarations (2)
 
 ### [Extensions](01_Components/04_Extensions/Hooks.md)

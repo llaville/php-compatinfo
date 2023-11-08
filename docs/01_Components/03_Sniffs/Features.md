@@ -155,14 +155,15 @@ Here is the list of features supported and their corresponding sniffs :
 
 ## [PHP 8.2](https://www.php.net/manual/en/migration82.php)
 
-| Sniff category       | Sniff class name                 | PHP Feature                                                                                                                           |
-|----------------------|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| Attributes           | AllowDynamicPropertiesSniff      | [AllowDynamicProperties attribute](https://www.php.net/manual/en/class.allow-dynamic-properties.php)                                  |
-| Attributes           | SensitiveParameterAttributeSniff | [SensitiveParameter attribute](https://www.php.net/manual/en/class.sensitive-parameter.php)                                           |
-| Classes              | ReadonlyClassSniff               | [Readonly Classes](https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.readonly)                          |
-| Constants            | ConstantsInTraitsSniff           | [Constants in Traits](https://www.php.net/manual/en/migration82.new-features.php#migration82.new-features.core.constant-in-traits)    |
-| FunctionDeclarations | ParamTypeDeclarationSniff        | [Disjunctive Normal Form Types](https://www.php.net/manual/en/migration82.new-features.php#migration82.new-features.core.type-system) |
-| FunctionDeclarations | ReturnTypeDeclarationSniff       | [Allow null, false, and true as stand-alone types](https://wiki.php.net/rfc/true-type)                                                |
+| Sniff category       | Sniff class name                             | PHP Feature                                                                                                                           |
+|----------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| Attributes           | AllowDynamicPropertiesSniff                  | [AllowDynamicProperties attribute](https://www.php.net/manual/en/class.allow-dynamic-properties.php)                                  |
+| Attributes           | SensitiveParameterAttributeSniff             | [SensitiveParameter attribute](https://www.php.net/manual/en/class.sensitive-parameter.php)                                           |
+| Classes              | ReadonlyClassSniff                           | [Readonly Classes](https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.readonly)                          |
+| Constants            | ConstantsInTraitsSniff                       | [Constants in Traits](https://www.php.net/manual/en/migration82.new-features.php#migration82.new-features.core.constant-in-traits)    |
+| FunctionDeclarations | ParamTypeDeclarationSniff                    | [Disjunctive Normal Form Types](https://www.php.net/manual/en/migration82.new-features.php#migration82.new-features.core.type-system) |
+| FunctionDeclarations | ReturnTypeDeclarationSniff                   | [Allow null, false, and true as stand-alone types](https://wiki.php.net/rfc/true-type)                                                |
+| TextProcessing       | DeprecateDollarBraceStringInterpolationSniff | [Deprecated \${} string interpolation](https://wiki.php.net/rfc/deprecate_dollar_brace_string_interpolation)                          |
 
 ## Special cases
 
