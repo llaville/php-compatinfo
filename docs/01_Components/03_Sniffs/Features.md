@@ -157,7 +157,7 @@ Here is the list of features supported and their corresponding sniffs :
 
 | Sniff category       | Sniff class name                             | PHP Feature                                                                                                                           |
 |----------------------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| Attributes           | AllowDynamicPropertiesSniff                  | [AllowDynamicProperties attribute](https://www.php.net/manual/en/class.allow-dynamic-properties.php)                                  |
+| Attributes           | AllowDynamicPropertiesAttributeSniff         | [AllowDynamicProperties attribute](https://www.php.net/manual/en/class.allow-dynamic-properties.php)                                  |
 | Attributes           | SensitiveParameterAttributeSniff             | [SensitiveParameter attribute](https://www.php.net/manual/en/class.sensitive-parameter.php)                                           |
 | Classes              | ReadonlyClassSniff                           | [Readonly Classes](https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.readonly)                          |
 | Constants            | ConstantsInTraitsSniff                       | [Constants in Traits](https://www.php.net/manual/en/migration82.new-features.php#migration82.new-features.core.constant-in-traits)    |
