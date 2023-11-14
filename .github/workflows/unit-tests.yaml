@@ -8,6 +8,7 @@ on:
         paths-ignore:
             - 'docs/**'
     workflow_call:
+    workflow_dispatch:
 
 jobs:
     lint_files:
@@ -26,20 +27,20 @@ jobs:
             matrix:
                 include:
                     -
-                        os: ubuntu-latest
+                        os: ubuntu-20.04
                         php: 8.0
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
                         tools: phpunit:9.6
                     -
-                        os: ubuntu-latest
+                        os: ubuntu-20.04
                         php: 8.1
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit
+                        tools: phpunit:10.4
                     -
-                        os: ubuntu-latest
+                        os: ubuntu-20.04
                         php: 8.2
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit
+                        tools: phpunit:10.4
 
         name: Compatibility Info
 
@@ -48,11 +49,11 @@ jobs:
             DATABASE_URL: "sqlite:///%kernel.cache_dir%/compatinfo-db.sqlite"
 
         steps:
-            -   # Git Checkout
+            -   # https://github.com/actions/checkout
                 name: Checkout
-                uses: actions/checkout@v3
+                uses: actions/checkout@v4
 
-            -   # Setup PHP runtime
+            -   # https://github.com/shivammathur/setup-php
                 name: Setup PHP runtime
                 uses: shivammathur/setup-php@v2
                 with:
@@ -60,25 +61,25 @@ jobs:
                     extensions: ${{ matrix.extensions }}
                     tools: ${{ matrix.tools }}
 
-            -   # Install Composer dependencies
+            -   # https://github.com/ramsey/composer-install
                 name: Install Composer dependencies
                 uses: ramsey/composer-install@v2
                 with:
                     dependency-versions: "highest"
                     composer-options: "--prefer-dist --no-scripts"
 
-            -   # Build Database
+            -   # https://github.com/llaville/php-compatinfo-db
                 name: Build Database
                 run: |
                     bin/phpcompatinfo db:create --ansi
                     bin/phpcompatinfo db:init --ansi
 
-            -   # Run unit tests
+            -   # https://github.com/sebastianbergmann/phpunit/tree/9.6
                 name: Unit tests with PHPUnit 9
                 if: |
                     ${{ matrix.php == '8.0' }}
                 run: phpunit --group features,large,reference,regression,default --testdox --do-not-cache-result --configuration ./phpunit-9.xml
-            -
+            -   # https://github.com/sebastianbergmann/phpunit/tree/10.4
                 name: Unit tests with PHPUnit 10
                 if: |
                     ${{ matrix.php == '8.1' }} ||
