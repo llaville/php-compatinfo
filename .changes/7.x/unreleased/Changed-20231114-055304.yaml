@@ -1,4 +1,0 @@
-kind: Changed
-body: tests/bootstrap.php file to prevent PHPUnit to failed with error if database
-  is not built and populate (launch auto diagnose)
-time: 2023-11-14T05:53:04.123965016Z
