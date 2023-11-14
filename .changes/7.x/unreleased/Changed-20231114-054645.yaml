@@ -1,0 +1,4 @@
+kind: Changed
+body: CompatInfo 7.0.1 will be the last version to support PHP 8.0; 8.1 and 8.2 will
+  be accepted but not 8.3
+time: 2023-11-14T05:46:45.665647264Z
