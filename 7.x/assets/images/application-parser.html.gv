@@ -48,6 +48,7 @@ digraph {
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(name : mixed, attributes : array = [])</td></tr>
     <tr><td align="left">+ getSubNodeNames() : array</td></tr>
+    <tr><td align="left">+ getParts() : array</td></tr>
     <tr><td align="left">+ getFirst() : string</td></tr>
     <tr><td align="left">+ getLast() : string</td></tr>
     <tr><td align="left">+ isUnqualified() : bool</td></tr>

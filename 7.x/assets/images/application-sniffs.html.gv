@@ -340,6 +340,7 @@ digraph {
     <tr><td align="left">+ «static» CA70 : string = "CA7001" {readOnly}</td></tr>
     <tr><td align="left">+ «static» CA8105 : string = "CA8105" {readOnly}</td></tr>
     <tr><td align="left">+ «static» CA8106 : string = "CA8106" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» CA8202 : string = "CA8202" {readOnly}</td></tr>
 </table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
