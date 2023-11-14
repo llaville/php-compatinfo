@@ -12,13 +12,32 @@ Running on PHP greater or equal than 7.4 for parsing source code in a format PHP
 
 ## Versions
 
-|  Stable v5.5.x  |  Stable v6.5.x  |
-|:---------------:|:---------------:|
-| [![Branch 5.5](https://img.shields.io/badge/branch-5.5-orange)](https://github.com/llaville/php-compatinfo/tree/5.5) | [![Branch 6.5](https://img.shields.io/badge/branch-6.5-orange)](https://github.com/llaville/php-compatinfo/tree/6.5) / [![Master Branch](https://img.shields.io/badge/branch-master-orange)](https://github.com/llaville/php-compatinfo/) |
-| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/5.5.6)](https://www.php.net/supported-versions.php) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/6.5.4)](https://www.php.net/supported-versions.php) |
-| [![Stable Version 5.5](https://img.shields.io/badge/packagist-v5.5.6-blue)](https://packagist.org/packages/bartlett/php-compatinfo) | [![Stable Version 6.5](https://img.shields.io/badge/packagist-v6.5.5-blue)](https://packagist.org/packages/bartlett/php-compatinfo) |
-| [![License 5.5](https://img.shields.io/packagist/l/bartlett/php-compatinfo)](https://github.com/llaville/php-compatinfo/blob/5.5/LICENSE) | [![License 6.5](https://img.shields.io/packagist/l/bartlett/php-compatinfo)](https://github.com/llaville/php-compatinfo/blob/6.5/LICENSE) |
-| [![Documentation 5.5](https://img.shields.io/badge/documentation-v5.5-green)](http://bartlett.laurent-laville.org/php-compatinfo/) | [![Documentation 6.5](https://img.shields.io/badge/documentation-v6.5-green)](https://github.com/llaville/php-compatinfo/tree/6.5/docs) |
+| Releases | Branch | PHP | Packagist | License | Documentation |
+|:------------- |:---------------:|:---------------:|:---------------:|:---------------:|:---------------:|
+| Stable v5.5.x | [![Branch 5.5][Branch_55x-img]][Branch_55x] | [![Minimum PHP Version)][PHPVersion_55x-img]][PHPVersion_55x] | [![Stable Version 5.5][Packagist_55x-img]][Packagist_55x] | [![License 5.5][License_55x-img]][License_55x] | [![Documentation 5.5][Documentation_55x-img]][Documentation_55x] |
+| Stable v6.5.x | [![Branch 6.5][Branch_65x-img]][Branch_65x] | [![Minimum PHP Version)][PHPVersion_65x-img]][PHPVersion_65x] | [![Stable Version 5.5][Packagist_65x-img]][Packagist_65x] | [![License 5.5][License_65x-img]][License_65x] | [![Documentation 5.5][Documentation_65x-img]][Documentation_65x] |
+
+[Branch_55x-img]: https://img.shields.io/badge/branch-5.5-orange
+[Branch_55x]: https://github.com/llaville/php-compatinfo/tree/5.5
+[PHPVersion_55x-img]: https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/5.5.6
+[PHPVersion_55x]: https://www.php.net/supported-versions.php
+[Packagist_55x-img]: https://img.shields.io/badge/packagist-v5.5.6-blue
+[Packagist_55x]: https://packagist.org/packages/bartlett/php-compatinfo
+[License_55x-img]: https://img.shields.io/packagist/l/bartlett/php-compatinfo
+[License_55x]: https://github.com/llaville/php-compatinfo/blob/5.5/LICENSE
+[Documentation_55x-img]: https://img.shields.io/badge/documentation-v5.5-green
+[Documentation_55x]: https://github.com/llaville/php-compatinfo/tree/5.5/docs
+
+[Branch_65x-img]: https://img.shields.io/badge/branch-6.5-orange
+[Branch_65x]: https://github.com/llaville/php-compatinfo/tree/6.5
+[PHPVersion_65x-img]: https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/6.5.5
+[PHPVersion_65x]: https://www.php.net/supported-versions.php
+[Packagist_65x-img]: https://img.shields.io/badge/packagist-v6.5.5-blue
+[Packagist_65x]: https://packagist.org/packages/bartlett/php-compatinfo
+[License_65x-img]: https://img.shields.io/packagist/l/bartlett/php-compatinfo
+[License_65x]: https://github.com/llaville/php-compatinfo/blob/6.5/LICENSE
+[Documentation_65x-img]: https://img.shields.io/badge/documentation-v6.5-green
+[Documentation_65x]: https://github.com/llaville/php-compatinfo/tree/6.5/docs
 
 ## Documentation
 
