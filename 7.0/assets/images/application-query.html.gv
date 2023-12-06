@@ -1,0 +1,79 @@
+digraph {
+  graph [rankdir="LR" bgcolor="transparent"]
+  node [fillcolor="#FEFECE" style="filled"]
+  subgraph cluster_0 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Query\\Analyser\\Compatibility"
+    "Bartlett\\CompatInfo\\Application\\Query\\Analyser\\Compatibility\\GetCompatibilityHandler" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>GetCompatibilityHandler</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(parser : Bartlett\\CompatInfo\\Application\\PhpParser\\Parser)</td></tr>
+    <tr><td align="left">+ __invoke(query : Bartlett\\CompatInfo\\Application\\Query\\Analyser\\Compatibility\\GetCompatibilityQuery) : Bartlett\\CompatInfo\\Application\\Profiler\\Profile</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Query\\Analyser\\Compatibility\\GetCompatibilityQuery" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>GetCompatibilityQuery</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(source : string, exclude : array, stopOnFailure : bool, version : string)</td></tr>
+    <tr><td align="left">+ getSource() : string</td></tr>
+    <tr><td align="left">+ getExclude() : array</td></tr>
+    <tr><td align="left">+ isStopOnFailure() : bool</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_1 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Query"
+    "Bartlett\\CompatInfo\\Application\\Query\\QueryHandlerInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>QueryHandlerInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Query\\QueryInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>QueryInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Query\\QueryBusInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>QueryBusInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» query(query : Bartlett\\CompatInfo\\Application\\Query\\QueryInterface)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_2 {
+    graph [bgcolor="burlywood3"]
+    label = "Bartlett\\CompatInfo\\Application\\Query\\Diagnose"
+    "Bartlett\\CompatInfo\\Application\\Query\\Diagnose\\DiagnoseHandler" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>DiagnoseHandler</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(handler : Bartlett\\CompatInfoDb\\Application\\Query\\Diagnose\\DiagnoseHandler)</td></tr>
+    <tr><td align="left">+ __invoke(query : Bartlett\\CompatInfo\\Application\\Query\\Diagnose\\DiagnoseQuery) : Bartlett\\CompatInfoDb\\Infrastructure\\RequirementsInterface</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\Query\\Diagnose\\DiagnoseQuery" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>DiagnoseQuery</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(entityManager : Doctrine\\ORM\\EntityManagerInterface)</td></tr>
+    <tr><td align="left">+ getDatabaseConnection() : Doctrine\\DBAL\\Connection</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "Bartlett\\CompatInfo\\Application\\Query\\Analyser\\Compatibility\\GetCompatibilityHandler" -> "Bartlett\\CompatInfo\\Application\\Query\\QueryHandlerInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Query\\Analyser\\Compatibility\\GetCompatibilityQuery" -> "Bartlett\\CompatInfo\\Application\\Query\\QueryInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Query\\Diagnose\\DiagnoseHandler" -> "Bartlett\\CompatInfo\\Application\\Query\\QueryHandlerInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Query\\Diagnose\\DiagnoseQuery" -> "Bartlett\\CompatInfo\\Application\\Query\\QueryInterface" [arrowhead="empty" style="dashed"]
+}

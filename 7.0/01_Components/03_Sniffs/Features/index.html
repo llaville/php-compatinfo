@@ -1,0 +1,2107 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Laurent Laville">
+      
+      
+        <link rel="canonical" href="https://llaville.github.io/php-compatinfo/01_Components/03_Sniffs/Features/">
+      
+      
+        <link rel="prev" href="../../02_Profiler/Collectors/">
+      
+      
+        <link rel="next" href="../../04_Extensions/Hooks/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
+    
+    
+      
+        <title>Sniffs - PHP Compatinfo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fad675c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="lime" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sniffs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="PHP Compatinfo" class="md-header__button md-logo" aria-label="PHP Compatinfo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PHP Compatinfo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sniffs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="lime" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/llaville/php-compatinfo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../getting-started/" class="md-tabs__link">
+        
+  
+    
+  
+  Getting-Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../01_PHP-Parser/Visitors/" class="md-tabs__link">
+          
+  
+    
+  
+  Components
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../02_Configs/" class="md-tabs__link">
+          
+  
+    
+  
+  Configurations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../03_Conditional_Code/1_Introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Conditional Code
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../04_Exclude_Folders/" class="md-tabs__link">
+        
+  
+    
+  
+  Exclude Directories
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../99_Architecture/application/" class="md-tabs__link">
+          
+  
+    
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="PHP Compatinfo" class="md-nav__button md-logo" aria-label="PHP Compatinfo" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    PHP Compatinfo
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/llaville/php-compatinfo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting-Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PHP Parser
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            PHP Parser
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_PHP-Parser/Visitors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visitors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Profiler
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Profiler
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Profiler/Collectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Collectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sniffs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Sniffs
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#php-50" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-51" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-53" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-54" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-55" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-56" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-70" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 7.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-71" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 7.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-72" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 7.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-73" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 7.3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-74" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 7.4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-80" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 8.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-81" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 8.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-82" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 8.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special cases
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_Extensions/Hooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extensions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_Extensions/Reporter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Output format
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../02_Configs/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Configurations
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Configurations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_Configs/Default/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Default
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_Configs/None/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Conditional Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Conditional Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03_Conditional_Code/1_Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03_Conditional_Code/2_Indirect_Call/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Indirect Call
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03_Conditional_Code/3_Multiple_Signature/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiple Signature
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03_Conditional_Code/100_Limitation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Some Limitation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_Exclude_Folders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exclude Directories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../99_Architecture/application/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../99_Architecture/infrastructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../99_Architecture/presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Presentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#php-50" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-51" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-53" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-54" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-55" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-56" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 5.6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-70" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 7.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-71" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 7.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-72" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 7.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-73" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 7.3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-74" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 7.4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-80" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 8.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-81" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 8.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-82" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP 8.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special cases
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<!-- markdownlint-disable MD013 -->
+<h1 id="sniffs">Sniffs</h1>
+<p>Before version 5.4, PHP CompatInfo and its compatibility analyser was monolithic code.</p>
+<p>Since version 5.4, PHP CompatInfo used a sniff architecture that simplify maintainability of existing code
+and allows to extend it more easily.</p>
+<p>Each sniff, is in charge to detect a PHP language feature.
+Here is the list of features supported and their corresponding sniffs :</p>
+<h2 id="php-50"><a href="https://www.php.net/manual/en/migration50.php">PHP 5.0</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classes</td>
+<td>MethodDeclarationSniff</td>
+<td><a href="https://www.php.net/manual/en/language.oop5.visibility.php#language.oop5.visiblity-methods">Method Visibility</a></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>PropertyDeclarationSniff</td>
+<td><a href="https://www.php.net/manual/en/language.oop5.properties.php">Properties</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-51"><a href="https://www.php.net/manual/en/migration51.php">PHP 5.1</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classes</td>
+<td>MagicMethodsSniff</td>
+<td><a href="https://www.php.net/manual/en/language.oop5.magic.php">Magic Methods</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-52"><a href="https://www.php.net/manual/en/migration52.php">PHP 5.2</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-53"><a href="https://www.php.net/manual/en/migration53.php">PHP 5.3</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classes</td>
+<td>MagicMethodsSniff</td>
+<td><a href="https://www.php.net/manual/en/language.oop5.magic.php">Magic Methods</a></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>DynamicAccessSniff</td>
+<td>Dynamic Static Method access</td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>DynamicAccessSniff</td>
+<td>Dynamic Static Property access</td>
+</tr>
+<tr>
+<td>ControlStructures</td>
+<td>DeclareSniff</td>
+<td><a href="https://www.php.net/manual/en/control-structures.declare.php">Declare</a></td>
+</tr>
+<tr>
+<td>ControlStructures</td>
+<td>GotoSniff</td>
+<td><a href="https://www.php.net/manual/en/control-structures.goto.php">Goto</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ClosureSniff</td>
+<td><a href="https://www.php.net/manual/en/functions.anonymous.php">Anonymous functions</a></td>
+</tr>
+<tr>
+<td></td>
+<td><code>VersionResolverVisitor</code></td>
+<td><a href="https://www.php.net/manual/en/functions.anonymous.php">Closures</a></td>
+</tr>
+<tr>
+<td>Operators</td>
+<td>ShortTernaryOperatorSniff</td>
+<td><a href="https://www.php.net/manual/en/language.operators.comparison.php#language.operators.comparison.ternary">Ternary Operator</a></td>
+</tr>
+<tr>
+<td></td>
+<td><code>VersionResolverVisitor</code></td>
+<td><a href="https://www.php.net/manual/en/language.namespaces.php">Namespaces</a></td>
+</tr>
+<tr>
+<td>TextProcessing</td>
+<td>CryptStringSniff</td>
+<td><a href="https://www.php.net/security/crypt_blowfish.php">CRYPT_BLOWFISH security fix details</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-54"><a href="https://www.php.net/manual/en/migration54.php">PHP 5.4</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrays</td>
+<td>ArrayDereferencingSyntaxSniff</td>
+<td><a href="https://www.php.net/manual/en/migration54.new-features.php">Array dereferencing</a></td>
+</tr>
+<tr>
+<td>Arrays</td>
+<td>ShortArraySyntaxSniff</td>
+<td><a href="https://www.php.net/manual/en/migration54.new-features.php">Short array syntax</a></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>ClassMemberAccessSniff</td>
+<td><a href="https://wiki.php.net/rfc/instance-method-call">Class member access on instantiation</a></td>
+</tr>
+<tr>
+<td>Expressions</td>
+<td>ClassExprSyntaxSniff</td>
+<td><a href="https://www.php.net/manual/en/migration54.new-features.php">Class::{expr}() syntax</a></td>
+</tr>
+<tr>
+<td>Numbers</td>
+<td>BinaryNumberFormatSniff</td>
+<td><a href="https://www.php.net/manual/en/migration54.new-features.php">Binary number format</a></td>
+</tr>
+<tr>
+<td>UseDeclarations</td>
+<td>UseTraitSniff</td>
+<td><a href="https://www.php.net/manual/en/language.oop5.traits.php">Traits</a></td>
+</tr>
+<tr>
+<td></td>
+<td><code>VersionResolverVisitor</code></td>
+<td><a href="https://www.php.net/manual/en/language.oop5.traits.php">Traits</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-55"><a href="https://www.php.net/manual/en/migration55.php">PHP 5.5</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constants</td>
+<td>MagicClassConstantSniff</td>
+<td><a href="https://wiki.php.net/rfc/class_name_literal_on_object">::class syntax</a></td>
+</tr>
+<tr>
+<td>Expressions</td>
+<td>EmptySniff</td>
+<td><a href="https://www.php.net/manual/en/migration55.new-features.php#migration55.new-features.empty">empty() supports arbitrary expressions</a></td>
+</tr>
+<tr>
+<td>Generators</td>
+<td>GeneratorSniff</td>
+<td><a href="https://www.php.net/manual/en/language.generators.php">Generators</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-56"><a href="https://www.php.net/manual/en/migration56.php">PHP 5.6</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classes</td>
+<td>MagicMethodsSniff</td>
+<td><a href="https://www.php.net/manual/en/language.oop5.magic.php">Magic Methods</a></td>
+</tr>
+<tr>
+<td>Constants</td>
+<td>ConstSyntaxSniff</td>
+<td><a href="https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.const-scalar-exprs">Contant Expressions</a></td>
+</tr>
+<tr>
+<td>Operators</td>
+<td>PowOperatorSniff</td>
+<td><a href="https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation">Exponentiation</a></td>
+</tr>
+<tr>
+<td>UseDeclarations</td>
+<td>UseConstFunctionSniff</td>
+<td><a href="https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.use">use function and use const</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-70"><a href="https://www.php.net/manual/en/migration70.php">PHP 7.0</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ParamTypeDeclarationSniff</td>
+<td><a href="https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.scalar-type-declarations">Scalar type declarations</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ReturnTypeDeclarationSniff</td>
+<td><a href="https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.return-type-declarations">Return type declarations</a></td>
+</tr>
+<tr>
+<td>Keywords</td>
+<td>ReservedSniff</td>
+<td><a href="https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.scalar-type-declarations">Scalar type declarations</a></td>
+</tr>
+<tr>
+<td>Operators</td>
+<td>NullCoalesceOperatorSniff</td>
+<td><a href="https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.null-coalesce-op">Null coalescing operator</a></td>
+</tr>
+<tr>
+<td>Operators</td>
+<td>CombinedComparisonOperatorSniff</td>
+<td><a href="https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.spaceship-op">Spaceship operator</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.define-array">Constant arrays using define()</a></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>AnonymousClassSniff</td>
+<td><a href="https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.anonymous-classes">Anonymous classes</a></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>ClassMemberAccessSniff</td>
+<td>Class member access on cloning</td>
+</tr>
+<tr>
+<td>ControlStructures</td>
+<td>DeclareSniff</td>
+<td><a href="https://www.php.net/manual/en/control-structures.declare.php">Declare</a></td>
+</tr>
+<tr>
+<td>Generators</td>
+<td>GeneratorSniff</td>
+<td><a href="https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.generator-return-expressions">Generator Return Expressions</a></td>
+</tr>
+<tr>
+<td>Generators</td>
+<td>GeneratorSniff</td>
+<td><a href="https://www.php.net/manual/en/language.generators.syntax.php#control-structures.yield.from">Generator Delegation</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-71"><a href="https://www.php.net/manual/en/migration71.php">PHP 7.1</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ParamTypeDeclarationSniff</td>
+<td><a href="https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types">Nullable types</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ReturnTypeDeclarationSniff</td>
+<td><a href="https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types">Nullable types</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ReturnTypeDeclarationSniff</td>
+<td><a href="https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.void-functions">Void functions</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.symmetric-array-destructuring">Symmetric array destructuring</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="(https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.class-constant-visibility)">Class constant visibility</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ParamTypeDeclarationSniff</td>
+<td><a href="https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.iterable-pseudo-type">iterable pseudo-type</a></td>
+</tr>
+<tr>
+<td>Keywords</td>
+<td>ReservedSniff</td>
+<td><a href="https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.iterable-pseudo-type">iterable pseudo-type</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.mulit-catch-exception-handling">Multi catch exception handling</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.support-for-keys-in-list">Support for keys in list()</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-72"><a href="https://www.php.net/manual/en/migration72.php">PHP 7.2</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keywords</td>
+<td>ReservedSniff</td>
+<td><a href="https://www.php.net/manual/en/migration72.new-features.php#migration72.new-features.object-type">New object type</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-73"><a href="https://www.php.net/manual/en/migration73.php">PHP 7.3</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FunctionCalls</td>
+<td>SameSiteCookieSniff</td>
+<td><a href="https://www.php.net/manual/en/migration73.other-changes.php#migration73.other-changes.core.setcookie">SetCookie accept $options argument</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-74"><a href="https://www.php.net/manual/en/migration74.php">PHP 7.4</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrays</td>
+<td>ArrayUnpackingSyntaxSniff</td>
+<td><a href="https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.unpack-inside-array">Array unpacking support for numeric-keyed arrays</a></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>TypedPropertySniff</td>
+<td><a href="https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.typed-properties">Typed properties</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ArrowFunctionSniff</td>
+<td><a href="https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.arrow-functions">Arrow functions</a></td>
+</tr>
+<tr>
+<td></td>
+<td><code>VersionResolverVisitor</code></td>
+<td><a href="https://www.php.net/manual/en/migration74.new-features.php#migration74.new-features.core.arrow-functions">Arrow functions</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-80"><a href="https://www.php.net/manual/en/migration80.php">PHP 8.0</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attributes</td>
+<td>AttributeSniff</td>
+<td><a href="https://www.php.net/releases/8.0/en.php#attributes">Attributes</a></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>PropertyPromotionSniff</td>
+<td><a href="https://www.php.net/releases/8.0/en.php#constructor-property-promotion">Constructor property promotion</a></td>
+</tr>
+<tr>
+<td>ControlStructures</td>
+<td>MatchSniff</td>
+<td><a href="https://www.php.net/releases/8.0/en.php#match-expression">Match expressions</a></td>
+</tr>
+<tr>
+<td>ControlStructures</td>
+<td>NonCapturingCatchSniff</td>
+<td><a href="https://wiki.php.net/rfc/non-capturing_catches">Non-capturing catches</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>NamedArgumentDeclarationSniff</td>
+<td><a href="https://www.php.net/releases/8.0/en.php#named-arguments">Named arguments</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ParamTypeDeclarationSniff</td>
+<td><a href="https://www.php.net/releases/8.0/en.php#union-types">Union types</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>TrailingCommaSniff</td>
+<td><a href="https://php.watch/versions/8.0/trailing-comma-parameter-use-list">Trailing comma</a></td>
+</tr>
+<tr>
+<td>Operators</td>
+<td>NullsafeOperatorSniff</td>
+<td><a href="https://www.php.net/releases/8.0/en.php#nullsafe-operator">Nullsafe operator</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-81"><a href="https://www.php.net/manual/en/migration81.php">PHP 8.1</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrays</td>
+<td>ArrayUnpackingSyntaxSniff</td>
+<td><a href="https://www.php.net/releases/8.1/en.php#array_unpacking_support_for_string_keyed_arrays">Array unpacking support for string-keyed arrays</a></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>ReadonlyPropertySniff</td>
+<td><a href="https://www.php.net/manual/en/language.oop5.properties.php#language.oop5.properties.readonly-properties">Readonly Properties</a></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>NewInitializerSniff</td>
+<td><a href="https://www.php.net/manual/en/migration81.new-features.php#migration81.new-features.core.new-in-initializer">New initializers</a></td>
+</tr>
+<tr>
+<td>Constants</td>
+<td>ClassConstantSniff</td>
+<td><a href="https://www.php.net/releases/8.1/en.php#final_class_constants">Final class constants</a></td>
+</tr>
+<tr>
+<td>Enumerations</td>
+<td>EnumerationSniff</td>
+<td><a href="https://www.php.net/manual/en/migration81.new-features.php#migration81.new-features.core.enums">Enumerations</a></td>
+</tr>
+<tr>
+<td>Fibers</td>
+<td>FiberSniff</td>
+<td><a href="https://www.php.net/releases/8.1/en.php#fibers">Fibers</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>FirstClassCallableSniff</td>
+<td><a href="https://www.php.net/manual/en/functions.first_class_callable_syntax.php">First class callable</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ParamTypeDeclarationSniff</td>
+<td><a href="https://www.php.net/releases/8.1/en.php#pure_intersection_types">Pure Intersection Types</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ReturnTypeDeclarationSniff</td>
+<td><a href="https://www.php.net/releases/8.1/en.php#pure_intersection_types">Pure Intersection Types</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ReturnTypeDeclarationSniff</td>
+<td><a href="https://www.php.net/releases/8.1/en.php#never_return_type">Never return type</a></td>
+</tr>
+<tr>
+<td>Numbers</td>
+<td>OctalNumberFormatSniff</td>
+<td><a href="https://www.php.net/releases/8.1/en.php#explicit_octal_numeral_notation">Explicit Octal numeral notation</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-82"><a href="https://www.php.net/manual/en/migration82.php">PHP 8.2</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sniff category</th>
+<th>Sniff class name</th>
+<th>PHP Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attributes</td>
+<td>AllowDynamicPropertiesAttributeSniff</td>
+<td><a href="https://www.php.net/manual/en/class.allow-dynamic-properties.php">AllowDynamicProperties attribute</a></td>
+</tr>
+<tr>
+<td>Attributes</td>
+<td>SensitiveParameterAttributeSniff</td>
+<td><a href="https://www.php.net/manual/en/class.sensitive-parameter.php">SensitiveParameter attribute</a></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>ReadonlyClassSniff</td>
+<td><a href="https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.readonly">Readonly Classes</a></td>
+</tr>
+<tr>
+<td>Constants</td>
+<td>ConstantsInTraitsSniff</td>
+<td><a href="https://www.php.net/manual/en/migration82.new-features.php#migration82.new-features.core.constant-in-traits">Constants in Traits</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ParamTypeDeclarationSniff</td>
+<td><a href="https://www.php.net/manual/en/migration82.new-features.php#migration82.new-features.core.type-system">Disjunctive Normal Form Types</a></td>
+</tr>
+<tr>
+<td>FunctionDeclarations</td>
+<td>ReturnTypeDeclarationSniff</td>
+<td><a href="https://wiki.php.net/rfc/true-type">Allow null, false, and true as stand-alone types</a></td>
+</tr>
+<tr>
+<td>TextProcessing</td>
+<td>DeprecateDollarBraceStringInterpolationSniff</td>
+<td><a href="https://wiki.php.net/rfc/deprecate_dollar_brace_string_interpolation">Deprecated \${} string interpolation</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="special-cases">Special cases</h2>
+<ul>
+<li><strong>Namespaces</strong> declaration have no sniff, because its detected by the <code>VersionResolverVisitor</code></li>
+<li><strong>Classes</strong> declaration have no sniff, because its detected by the <code>VersionResolverVisitor</code></li>
+<li><strong>Interfaces</strong> declaration have no sniff, because its detected by the <code>VersionResolverVisitor</code></li>
+<li><strong>Traits</strong> declaration have no sniff, because its detected by the <code>VersionResolverVisitor</code></li>
+<li><strong>Closures</strong> are initialized by the <code>VersionResolverVisitor</code> and keywords (this, self, parent, static) are detected with <code>ClosureSniff</code></li>
+<li><strong>Arrow functions</strong> have no sniff, because its detected by the <code>VersionResolverVisitor</code>, but has its test case with <code>ArrowFunctionSniffTest</code></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.cd18aaf1.min.js"></script>
+      
+    
+  </body>
+</html>
