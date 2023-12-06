@@ -69,6 +69,6 @@ final class DeprecateDollarBraceStringInterpolationSniff extends SniffAbstract
     private function isStringInterpolationSyntax(Node $node): bool
     {
         $i = $node->getAttribute('startTokenPos');
-        return ($node instanceof Node\Scalar\Encapsed && $this->tokens[$i+1][1] == '${');
+        return ($node instanceof Node\Scalar\Encapsed && $this->tokens[$i + 1][1] == '${');
     }
 }
