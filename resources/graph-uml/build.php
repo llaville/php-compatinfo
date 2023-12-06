@@ -9,7 +9,21 @@
  * @author Laurent Laville
  */
 
-require_once dirname(__DIR__, 2) . '/vendor/autoload.php';
+$autoloader = 'vendor/autoload.php';
+$pharAutoloadPath = 'phar://' . dirname(__DIR__) . '/graph-uml.phar';
+
+if (!file_exists($pharAutoloadPath . DIRECTORY_SEPARATOR . $autoloader)) {
+    throw new RuntimeException(
+        sprintf(
+            'Unable to find "%s" autoloader in "%s".',
+            $autoloader,
+            $pharAutoloadPath
+        )
+    );
+}
+
+require_once $pharAutoloadPath . DIRECTORY_SEPARATOR . $autoloader;
+require_once dirname(__DIR__, 2) . '/config/bootstrap.php';
 
 use Bartlett\GraphUml\ClassDiagramBuilder;
 use Bartlett\GraphUml\Generator\GraphVizGenerator;

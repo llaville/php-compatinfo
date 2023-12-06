@@ -30,7 +30,6 @@
         "symfony/stopwatch": "^5.4 || ^6.0"
     },
     "require-dev": {
-        "bartlett/graph-uml": "^1.2",
         "symfony/framework-bundle": "^5.4 || ^6.0"
     },
     "authors": [
@@ -58,17 +57,12 @@
             "Bartlett\\CompatInfo\\Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "sort-packages": true,
-        "optimize-autoloader": true,
-        "allow-plugins": {
-            "cweagans/composer-patches": true
-        }
+        "optimize-autoloader": true
     },
     "extra": {
-        "enable-patching": true,
         "branch-alias": {
             "dev-master": "7.0.x-dev"
         }
