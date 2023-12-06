@@ -45,6 +45,8 @@ final class AboutCommand extends AbstractCommand implements CommandInterface
         /** @var ApplicationInterface $app */
         $app = $this->getApplication();
 
+        $defaultVersion = '7.0';
+
         $lines = [
             sprintf(
                 '<info>%s</info> version <comment>%s</comment> DB version <comment>%s</comment>',
@@ -53,8 +55,9 @@ final class AboutCommand extends AbstractCommand implements CommandInterface
                 $app->getInstalledVersion(true, 'bartlett/php-compatinfo-db')
             ),
             sprintf(
-                '<comment>Please visit %s for more information.</comment>',
-                'https://llaville.github.io/php-compatinfo/6.x/'
+                '<comment>Please visit %s/%s/ for more information.</comment>',
+                'https://llaville.github.io/php-compatinfo',
+                $defaultVersion
             ),
         ];
         $io->text($lines);
