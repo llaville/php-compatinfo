@@ -13,7 +13,6 @@ vendor/
 .phpunit.cache/
 
 ###### Mega-Linter ######
-report/
 megalinter-reports/
 
 ######################################

@@ -1,4 +1,0 @@
-kind: Changed
-body: bartlett/graph-uml dev dependency was removed and replaced by phar artifact
-  version download with the GH gh-pages workflow
-time: 2023-12-06T06:40:57.691147752Z
