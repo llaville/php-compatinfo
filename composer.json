@@ -30,7 +30,8 @@
         "symfony/stopwatch": "^5.4 || ^6.0"
     },
     "require-dev": {
-        "symfony/framework-bundle": "^5.4 || ^6.0"
+        "symfony/framework-bundle": "^5.4 || ^6.0",
+        "bamarni/composer-bin-plugin": "^1.8"
     },
     "authors": [
         {
@@ -60,11 +61,28 @@
     "prefer-stable": true,
     "config": {
         "sort-packages": true,
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true
+        }
     },
     "extra": {
         "branch-alias": {
             "dev-master": "7.0.x-dev"
+        },
+        "bamarni-bin": {
+            "bin-links": true,
+            "target-directory": "vendor-bin",
+            "forward-command": true
         }
+    },
+    "scripts": {
+        "bin": "echo 'bin not installed'",
+        "post-update-cmd": [
+            "@composer bin all update --ansi"
+        ],
+        "post-install-cmd": [
+            "@composer bin all install --ansi"
+        ]
     }
 }
