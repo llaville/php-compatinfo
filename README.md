@@ -44,7 +44,7 @@ Running on PHP greater or equal than 7.4 for parsing source code in a format PHP
 [Branch_70x]: https://github.com/llaville/php-compatinfo/tree/7.0
 [PHPVersion_70x-img]: https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/7.0.1
 [PHPVersion_70x]: https://www.php.net/supported-versions.php
-[Packagist_70x-img]: https://img.shields.io/badge/packagist-v7.0.1-blue
+[Packagist_70x-img]: https://img.shields.io/badge/packagist-v7.0.2-blue
 [Packagist_70x]: https://packagist.org/packages/bartlett/php-compatinfo
 [License_70x-img]: https://img.shields.io/packagist/l/bartlett/php-compatinfo
 [License_70x]: https://github.com/llaville/php-compatinfo/blob/7.0/LICENSE
@@ -53,9 +53,8 @@ Running on PHP greater or equal than 7.4 for parsing source code in a format PHP
 
 ## Documentation
 
-All the documentation is available on following websites generated from the docs folder.
-
-- <http://llaville.github.io/php-compatinfo/7.0/>
+All the documentation is available on [website](https://llaville.github.io/php-compatinfo/7.0),
+generated from the [docs](https://github.com/llaville/php-compatinfo/tree/7.0/docs) folder.
 
 ## Contributors
 
