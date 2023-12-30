@@ -2,11 +2,16 @@
 # CUSTOM
 ######################################
 
+docs/assets/images/
+site/
+
 ###### Composer dependencies ######
 vendor/
+###### Composer bin plugin ######
+vendor-bin/**/vendor/
 
 ###### PHPLint ######
-.phplint-cache
+.phplint.cache/
 
 ###### PHPUnit ######
 .phpunit.result.cache
@@ -55,7 +60,6 @@ ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 *.lnk
-
 
 ######################################
 # Editors
