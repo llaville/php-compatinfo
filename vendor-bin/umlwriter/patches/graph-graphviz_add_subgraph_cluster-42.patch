@@ -1,0 +1,37 @@
+diff --git a/src/GraphViz.php b/src/GraphViz.php
+index fcddeb0..f97fcdb 100644
+--- a/src/GraphViz.php
++++ b/src/GraphViz.php
+@@ -273,13 +273,29 @@ class GraphViz
+         }
+
+         // only cluster vertices into groups if there are at least 2 different groups
+-        if (count($groups) > 1) {
++        if (count($groups) > 0) {
++            // add subgraph cluster attributes
++            $clusters = array(
++                'graph' => 'graphviz.cluster.%s.graph.',
++                'node'  => 'graphviz.cluster.%s.node.',
++                'edge'  => 'graphviz.cluster.%s.edge.',
++            );
+             $indent = str_repeat($this->formatIndent, 2);
+             $gid = 0;
+             // put each group of vertices in a separate subgraph cluster
+             foreach ($groups as $group => $vertices) {
+-                $script .= $this->formatIndent . 'subgraph cluster_' . $gid++ . ' {' . self::EOL .
+-                           $indent . 'label = ' . $this->escape($group) . self::EOL;
++                $script .= $this->formatIndent . 'subgraph cluster_' . $gid . ' {' . self::EOL;
++                foreach ($clusters as $key => $prefix) {
++                    foreach (array($group, $gid) as $clusterId) {
++                        $layout = $this->getAttributesPrefixed($graph, sprintf($prefix, $clusterId));
++                        if (!empty($layout)) {
++                            $script .= $indent . $key . ' ' . $this->escapeAttributes($layout) . self::EOL;
++                            break;
++                        }
++                    }
++                }
++                $script .= $indent . 'label = ' . $this->escape($group) . self::EOL;
++                $gid++;
+                 foreach ($vertices as $vertex) {
+                     $vid = $vids[\spl_object_hash($vertex)];
+                     $layout = $this->getLayoutVertex($vertex, $vid);

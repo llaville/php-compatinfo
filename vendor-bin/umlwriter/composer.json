@@ -1,0 +1,14 @@
+{
+    "minimum-stability": "dev",
+    "require-dev": {
+        "bartlett/umlwriter": "^4.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "cweagans/composer-patches": true
+        }
+    },
+    "extra": {
+        "enable-patching": true
+    }
+}
