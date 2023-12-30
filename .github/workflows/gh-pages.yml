@@ -20,3 +20,4 @@ jobs:
             hook-script: "resources/gh-pages-hook.sh"
             php-version: "8.1"
             graph-uml: true
+            graph-composer: true
