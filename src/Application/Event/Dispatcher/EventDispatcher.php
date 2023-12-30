@@ -72,7 +72,7 @@ final class EventDispatcher extends SymfonyEventDispatcher
         $this->addListener(ConsoleEvents::COMMAND, function (ConsoleCommandEvent $event) {
             $command = $event->getCommand();
             if (
-                (str_starts_with($command->getName(), 'db:') && !in_array($command->getName(), ['db:create', 'db:init']))
+                (str_starts_with($command->getName(), 'db:') && !in_array($command->getName(), ['db:create', 'db:init', 'db:new']))
                 || str_starts_with($command->getName(), 'analyser:')
             ) {
                 $app = $command->getApplication();
