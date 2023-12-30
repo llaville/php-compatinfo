@@ -1,14 +1,12 @@
 <!-- markdownlint-disable MD013 -->
 # PHP CompatInfo
 
+[![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
+[![GitHub Discussions](https://img.shields.io/github/discussions/llaville/php-compatinfo)](https://github.com/llaville/php-compatinfo/discussions)
+
 **PHP CompatInfo** is a library that can find the minimum version and the extensions required for a piece of code to run.
 
-Running on PHP greater or equal than 7.4 for parsing source code in a format PHP 5.2 to PHP 8.2
-
-[![GitHub Discussions](https://img.shields.io/github/discussions/llaville/php-compatinfo)](https://github.com/llaville/php-compatinfo/discussions)
-[![GitHub-Pages](https://github.com/llaville/php-compatinfo/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/llaville/php-compatinfo/actions/workflows/gh-pages.yml)
-[![Unit Tests](https://github.com/llaville/php-compatinfo/actions/workflows/unit-tests.yaml/badge.svg)](https://github.com/llaville/php-compatinfo/actions/workflows/unit-tests.yaml)
-[![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
+Running on PHP greater or equal than 7.2 for parsing source code in a format PHP 5.2 to PHP 8.2
 
 ## Versions
 
