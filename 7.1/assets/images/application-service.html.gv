@@ -1,0 +1,17 @@
+graph {
+  graph [name="G" overlap="false" rankdir="TB" bgcolor="transparent"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
+  subgraph cluster_0 {
+    graph [bgcolor="BurlyWood"]
+    label = "Bartlett\\CompatInfo\\Application\\Service"
+    "Bartlett\\CompatInfo\\Application\\Service\\SourceProvider" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>SourceProvider</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» getFinder(source : string, exclude : array) : Symfony\\Component\\Finder\\Finder</td></tr>
+</table></td></tr>
+</table>>]
+  }
+}

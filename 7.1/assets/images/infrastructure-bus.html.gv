@@ -1,0 +1,30 @@
+digraph {
+  graph [name="G" overlap="false" rankdir="TB" bgcolor="transparent"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
+  subgraph cluster_0 {
+    graph [bgcolor="BurlyWood"]
+    label = "Bartlett\\CompatInfo\\Infrastructure\\Bus\\Query"
+    "Bartlett\\CompatInfo\\Infrastructure\\Bus\\Query\\MessengerQueryBus" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>MessengerQueryBus</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(queryBus : Symfony\\Component\\Messenger\\MessageBusInterface)</td></tr>
+    <tr><td align="left">+ query(query : Bartlett\\CompatInfo\\Application\\Query\\QueryInterface)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_1 {
+    label = "Bartlett\\CompatInfo\\Application\\Query"
+    "Bartlett\\CompatInfo\\Application\\Query\\QueryBusInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>QueryBusInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» query(query : Bartlett\\CompatInfo\\Application\\Query\\QueryInterface)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "Bartlett\\CompatInfo\\Infrastructure\\Bus\\Query\\MessengerQueryBus" -> "Bartlett\\CompatInfo\\Application\\Query\\QueryBusInterface" [arrowhead="empty" style="dashed"]
+}
