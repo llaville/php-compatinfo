@@ -1,8 +1,9 @@
 digraph {
-  graph [rankdir="LR" bgcolor="transparent"]
-  node [fillcolor="#FEFECE" style="filled"]
+  graph [name="G" overlap="false" rankdir="LR" bgcolor="transparent"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
   subgraph cluster_0 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\PhpParser\\Node\\Name"
     "Bartlett\\CompatInfo\\Application\\PhpParser\\Node\\Name\\ClassFullyQualified" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -168,7 +169,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_5 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor"
     "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\FilterVisitor" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -243,7 +244,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_7 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="BurlyWood"]
     label = "Bartlett\\CompatInfo\\Application\\PhpParser"
     "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeDumper" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">

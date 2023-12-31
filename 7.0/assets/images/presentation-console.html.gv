@@ -1,8 +1,9 @@
 digraph {
-  graph [rankdir="LR" bgcolor="transparent"]
-  node [fillcolor="#FEFECE" style="filled"]
+  graph [name="G" overlap="false" rankdir="LR" bgcolor="transparent"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
   subgraph cluster_0 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Presentation\\Console\\Command"
     "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AnalyserCommand" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -89,7 +90,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_2 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Presentation\\Console\\Input"
     "Bartlett\\CompatInfo\\Presentation\\Console\\Input\\Input" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -179,7 +180,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_5 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Presentation\\Console\\Output"
     "Bartlett\\CompatInfo\\Presentation\\Console\\Output\\Output" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -294,7 +295,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_7 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="BurlyWood"]
     label = "Bartlett\\CompatInfo\\Presentation\\Console"
     "Bartlett\\CompatInfo\\Presentation\\Console\\Application" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">

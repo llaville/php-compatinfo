@@ -1,8 +1,9 @@
 digraph {
-  graph [rankdir="LR" bgcolor="transparent"]
-  node [fillcolor="#FEFECE" style="filled"]
+  graph [name="G" overlap="false" rankdir="LR" bgcolor="transparent"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
   subgraph cluster_0 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Arrays"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Arrays\\ArrayDereferencingSyntaxSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -31,7 +32,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_1 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="BurlyWood"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -109,7 +110,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_3 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\AnonymousClassSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -189,7 +190,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_4 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\ClassConstantSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -230,7 +231,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_5 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures\\DeclareSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -256,7 +257,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_6 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\ClassExprSyntaxSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -293,7 +294,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_7 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionCalls"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionCalls\\SameSiteCookieSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -309,7 +310,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_8 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations\\ClosureSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -350,7 +351,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_9 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Generators"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Generators\\GeneratorSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -367,7 +368,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_10 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Keywords"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Keywords\\ReservedSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -381,7 +382,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_11 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Numbers"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Numbers\\BinaryNumberFormatSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -398,7 +399,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_12 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators\\CombinedComparisonOperatorSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -450,7 +451,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_13 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\TextProcessing"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\TextProcessing\\CryptStringSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -467,7 +468,7 @@ digraph {
 </table>>]
   }
   subgraph cluster_14 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\UseDeclarations"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\UseDeclarations\\UseConstFunctionSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">

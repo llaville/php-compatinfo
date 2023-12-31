@@ -14,7 +14,7 @@
       
       
       
-        <link rel="next" href="getting-started/">
+        <link rel="next" href="installation/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -234,7 +234,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="getting-started/" class="md-tabs__link">
+      <a href="installation/" class="md-tabs__link">
         
   
     
@@ -259,7 +259,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="01_Components/01_PHP-Parser/Visitors/" class="md-tabs__link">
+        <a href="components/parser/" class="md-tabs__link">
           
   
     
@@ -279,19 +279,16 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="02_Configs/" class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="configs/" class="md-tabs__link">
+        
   
     
   
   Configurations
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -302,7 +299,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="03_Conditional_Code/1_Introduction/" class="md-tabs__link">
+        <a href="conditional-code/introduction/" class="md-tabs__link">
           
   
     
@@ -320,12 +317,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="04_Exclude_Folders/" class="md-tabs__link">
+      <a href="exclusions/" class="md-tabs__link">
         
   
     
   
-  Exclude Directories
+  Exclusions
 
       </a>
     </li>
@@ -336,19 +333,16 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="99_Architecture/application/" class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="architecture/" class="md-tabs__link">
+        
   
     
   
   Architecture
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -459,69 +453,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Components
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#php-parser-node-visitors" class="md-nav__link">
-    <span class="md-ellipsis">
-      PHP-Parser Node Visitors
+      Installation
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#profiler" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Profiler
+      Architecture
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sniffs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sniffs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#extensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Extensions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#polyfills" class="md-nav__link">
-    <span class="md-ellipsis">
-      Polyfills
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#configurations" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration(s)
+      Configurations
     </span>
   </a>
   
@@ -537,9 +489,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exclude-folders" class="md-nav__link">
+  <a href="#exclusions" class="md-nav__link">
     <span class="md-ellipsis">
-      Exclude folder(s)
+      Exclusions
     </span>
   </a>
   
@@ -560,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/" class="md-nav__link">
+      <a href="installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -587,9 +539,17 @@
         
       
         
+          
+        
+      
+        
+          
+        
       
         
       
+        
+          
         
       
     
@@ -607,16 +567,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="components/sniffs/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Components
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -635,6 +603,8 @@
     
       
         
+          
+        
       
     
     
@@ -648,16 +618,19 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="components/parser/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     PHP Parser
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
@@ -666,25 +639,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="01_Components/01_PHP-Parser/Visitors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Visitors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
           </ul>
@@ -704,6 +658,8 @@
     
     
       
+        
+          
         
       
     
@@ -718,16 +674,19 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="components/profiler/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Profiler
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
@@ -736,25 +695,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="01_Components/02_Profiler/Collectors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Data Collectors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
           </ul>
@@ -766,25 +706,6 @@
               
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="01_Components/03_Sniffs/Features/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Sniffs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -793,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="01_Components/04_Extensions/Hooks/" class="md-nav__link">
+      <a href="components/extensions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -814,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="01_Components/04_Extensions/Reporter/" class="md-nav__link">
+      <a href="components/extensions/reporter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -828,6 +749,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="components/polyfills/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Polyfills
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -841,105 +783,16 @@
   
   
   
-    
-    
-      
+    <li class="md-nav__item">
+      <a href="configs/" class="md-nav__link">
         
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="02_Configs/" class="md-nav__link ">
-              
   
   <span class="md-ellipsis">
     Configurations
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Configurations
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="02_Configs/Default/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Default
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="02_Configs/None/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    None
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1001,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="03_Conditional_Code/1_Introduction/" class="md-nav__link">
+      <a href="conditional-code/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1022,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="03_Conditional_Code/2_Indirect_Call/" class="md-nav__link">
+      <a href="conditional-code/indirect-call/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1043,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="03_Conditional_Code/3_Multiple_Signature/" class="md-nav__link">
+      <a href="conditional-code/multiple-signature/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1064,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="03_Conditional_Code/100_Limitation/" class="md-nav__link">
+      <a href="conditional-code/limitation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1092,11 +945,11 @@
   
   
     <li class="md-nav__item">
-      <a href="04_Exclude_Folders/" class="md-nav__link">
+      <a href="exclusions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Exclude Directories
+    Exclusions
   </span>
   
 
@@ -1111,109 +964,16 @@
   
   
   
-    
-    
-      
+    <li class="md-nav__item">
+      <a href="architecture/" class="md-nav__link">
         
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="99_Architecture/application/" class="md-nav__link ">
-              
   
   <span class="md-ellipsis">
     Architecture
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            Architecture
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="99_Architecture/infrastructure/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Infrastructure
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="99_Architecture/presentation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Presentation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1254,69 +1014,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Components
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#php-parser-node-visitors" class="md-nav__link">
-    <span class="md-ellipsis">
-      PHP-Parser Node Visitors
+      Installation
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#profiler" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Profiler
+      Architecture
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sniffs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sniffs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#extensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Extensions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#polyfills" class="md-nav__link">
-    <span class="md-ellipsis">
-      Polyfills
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#configurations" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration(s)
+      Configurations
     </span>
   </a>
   
@@ -1332,9 +1050,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exclude-folders" class="md-nav__link">
+  <a href="#exclusions" class="md-nav__link">
     <span class="md-ellipsis">
-      Exclude folder(s)
+      Exclusions
     </span>
   </a>
   
@@ -1360,6 +1078,7 @@
 <p><strong>PHP CompatInfo</strong> is a library that
 can find the minimum version and the extensions required for a piece of code to run.</p>
 <p>Running on PHP greater or equal than 8.0 for parsing source code in a format PHP 5.2 to PHP 8.2</p>
+<p><img alt="Graph Composer" src="./assets/images/graph-composer.svg" /></p>
 <h2 id="features">Features</h2>
 <ul>
 <li>Parse source code in format PHP 5.2 to PHP 8.2</li>
@@ -1367,81 +1086,33 @@ can find the minimum version and the extensions required for a piece of code to 
 <li>Detect versions of all directives, constants, functions, classes, interfaces of 100 extensions and more</li>
 <li>Display/Inspect list of extensions, and their versions supported</li>
 </ul>
-<h2 id="components"><a href="01_Components">Components</a></h2>
-<ul>
-<li>
-<p>Parsing PHP 5, PHP 7 or PHP 8 code into an abstract syntax tree (AST) is provided by
-the <a href="https://github.com/nikic/PHP-Parser">PHP-Parser</a> library.</p>
-</li>
-<li>
-<p>Contextual elements and minimum PHP versions detection provided by following node visitors.</p>
-</li>
-</ul>
-<h3 id="php-parser-node-visitors">PHP-Parser <a href="01_Components/01_PHP-Parser/Visitors/">Node Visitors</a></h3>
-<ul>
-<li>Parent references with the <code>ParentContextVisitor</code></li>
-<li>Name Resolution with the <code>NameResolverVisitor</code></li>
-<li>Version Resolution with the <code>VersionResolverVisitor</code></li>
-</ul>
-<h3 id="profiler"><a href="01_Components/02_Profiler/Collectors/">Profiler</a></h3>
-<ul>
-<li>Data Collector(s) with common <code>DataCollector</code> and specialized <code>VersionDataCollector</code> classes</li>
-<li>Data Collector(s) contract with the <code>CollectorInterface</code></li>
-<li>Collector Handler for both Profile and Profiler with <code>CollectorTrait</code></li>
-<li>Profile information for a single data source with <code>Profile</code></li>
-</ul>
-<h3 id="sniffs"><a href="01_Components/03_Sniffs/Features/">Sniffs</a></h3>
-<p>They are grouped by categories to solve PHP features (from 4.0 to 8.2)</p>
-<ul>
-<li>Arrays (3)</li>
-<li>Attributes (3)</li>
-<li>Classes (11)</li>
-<li>Constants (4)</li>
-<li>ControlStructures (4)</li>
-<li>Enumerations (1)</li>
-<li>Expressions (3)</li>
-<li>Fibers (1)</li>
-<li>FunctionCalls (1)</li>
-<li>FunctionDeclarations (7)</li>
-<li>Generators (1)</li>
-<li>Keywords (1)</li>
-<li>Numbers (2)</li>
-<li>Operators (5)</li>
-<li>TextProcessing (2)</li>
-<li>UseDeclarations (2)</li>
-</ul>
-<h3 id="extensions"><a href="01_Components/04_Extensions/Hooks/">Extensions</a></h3>
-<p>PHPCompatInfo can be extended by registering objects that implement one or more of the following interfaces:</p>
-<ul>
-<li><code>BeforeAnalysisInterface</code></li>
-<li><code>AfterAnalysisInterface</code></li>
-<li><code>BeforeFileAnalysisInterface</code></li>
-<li><code>AfterFileAnalysisInterface</code></li>
-<li><code>BeforeTraverseAstInterface</code></li>
-<li><code>AfterTraverseAstInterface</code></li>
-<li><code>BeforeProcessNodeInterface</code></li>
-<li><code>AfterProcessNodeInterface</code></li>
-<li><code>BeforeSetupSniffInterface</code></li>
-<li><code>AfterTearDownSniffInterface</code></li>
-<li><code>BeforeProcessSniffInterface</code></li>
-<li><code>AfterProcessSniffInterface</code></li>
-</ul>
-<p>Furthermore, extensions may implement the <code>Symfony\Component\EventDispatcher\EventSubscriberInterface</code> in order to have its event handlers automatically registered with the EventDispatcher when the extension is loaded.</p>
-<h3 id="polyfills"><a href="01_Components/05_Polyfills/Features/">Polyfills</a></h3>
-<p>They are identified by services that implements the <code>Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface</code>.</p>
-<h2 id="configurations"><a href="02_Configs/">Configuration(s)</a></h2>
-<p>Load a config for CLI Application with the <code>--config</code> option.</p>
-<p>Read <a href="https://tomasvotruba.com/blog/2018/05/14/how-to-load-config-with-services-in-symfony-console/">How to Load --config With Services in Symfony Console</a> to learn more.</p>
-<h2 id="conditional-code"><a href="03_Conditional_Code/1_Introduction/">Conditional Code</a></h2>
-<p>Learn what code is consider as conditional, detected or not (with CompatInfo 5.4)</p>
-<ul>
-<li><a href="03_Conditional_Code/2_Indirect_Call/">Indirect calls</a></li>
-<li><a href="03_Conditional_Code/3_Multiple_Signature/">Multiple signatures</a></li>
-<li><a href="03_Conditional_Code/100_Limitation/">Other limitations</a></li>
-</ul>
-<h2 id="exclude-folders"><a href="04_Exclude_Folders/">Exclude folder(s)</a></h2>
+<h2 id="installation">Installation</h2>
+<blockquote>
+<p>Learn how to install <code>CompatInfo</code> application in different way.</p>
+</blockquote>
+<p>See <a href="installation/">Installation Guide</a></p>
+<h2 id="architecture">Architecture</h2>
+<blockquote>
+<p>As a developer you want to learn more about CompatInfo architecture.</p>
+</blockquote>
+<p>See <a href="architecture/">Architecture's Guide</a></p>
+<h2 id="configurations">Configurations</h2>
+<blockquote>
+<p>Load a configuration for CLI Application with the <code>--config</code> option.</p>
+</blockquote>
+<p>See <a href="configs/">Configuration(s)</a></p>
+<p><strong>TIP</strong> Read <a href="https://tomasvotruba.com/blog/2018/05/14/how-to-load-config-with-services-in-symfony-console/">How to Load --config With Services in Symfony Console</a> to learn more.</p>
+<h2 id="conditional-code">Conditional Code</h2>
+<blockquote>
+<p>Learn what code is consider as conditional, detected or not (since CompatInfo 5.4)</p>
+</blockquote>
+<p>See <a href="conditional-code/">Conditional Code</a></p>
+<h2 id="exclusions">Exclusions</h2>
+<blockquote>
 <p>Sometimes you don't want to scan a certain directory while analysing data source.</p>
 <p>Learn how to do from console (CLI) or php script (API).</p>
+</blockquote>
+<p>See <a href="exclusions/">Exclude folder(s)</a></p>
 
 
 

@@ -2,97 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://llaville.github.io/php-compatinfo/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/getting-started/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/installation/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/01_Components/01_PHP-Parser/Visitors/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/architecture/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/01_Components/02_Profiler/Collectors/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/components/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/01_Components/03_Sniffs/Features/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/components/extensions/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/01_Components/04_Extensions/Hooks/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/components/extensions/reporter/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/01_Components/04_Extensions/Reporter/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/components/parser/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/01_Components/05_Polyfills/Features/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/components/polyfills/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/02_Configs/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/components/profiler/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/02_Configs/Default/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/components/sniffs/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/02_Configs/None/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/conditional-code/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/03_Conditional_Code/100_Limitation/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/conditional-code/indirect-call/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/03_Conditional_Code/1_Introduction/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/conditional-code/introduction/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/03_Conditional_Code/2_Indirect_Call/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/conditional-code/limitation/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/03_Conditional_Code/3_Multiple_Signature/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/conditional-code/multiple-signature/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/04_Exclude_Folders/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/configs/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://llaville.github.io/php-compatinfo/99_Architecture/application/</loc>
-         <lastmod>2023-12-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://llaville.github.io/php-compatinfo/99_Architecture/infrastructure/</loc>
-         <lastmod>2023-12-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://llaville.github.io/php-compatinfo/99_Architecture/presentation/</loc>
-         <lastmod>2023-12-30</lastmod>
+         <loc>https://llaville.github.io/php-compatinfo/exclusions/</loc>
+         <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

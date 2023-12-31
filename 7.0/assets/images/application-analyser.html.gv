@@ -1,8 +1,9 @@
 digraph {
-  graph [rankdir="TB" bgcolor="transparent"]
-  node [fillcolor="#FEFECE" style="filled"]
+  graph [name="G" overlap="false" rankdir="TB" bgcolor="transparent"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
   subgraph cluster_0 {
-    graph [bgcolor="burlywood3"]
+    graph [bgcolor="BurlyWood"]
     label = "Bartlett\\CompatInfo\\Application\\Analyser"
     "Bartlett\\CompatInfo\\Application\\Analyser\\AbstractSniffAnalyser" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
