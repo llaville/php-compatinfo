@@ -15,6 +15,8 @@ return function (): Generator
         \Bartlett\CompatInfo\Application\Sniffs\Arrays\ArrayDereferencingSyntaxSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\Arrays\ShortArraySyntaxSniff::class,
 
+        \Bartlett\CompatInfo\Application\Sniffs\Attributes\OverrideAttributeSniff::class,
+
         \Bartlett\CompatInfo\Application\Sniffs\Classes\AnonymousClassSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\Classes\ClassMemberAccessSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\Classes\MagicMethodsSniff::class,
@@ -24,7 +26,9 @@ return function (): Generator
 
         \Bartlett\CompatInfo\Application\Sniffs\Constants\ClassConstantSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\Constants\ConstSyntaxSniff::class,
+        \Bartlett\CompatInfo\Application\Sniffs\Constants\DynamicClassConstantFetchSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\Constants\MagicClassConstantSniff::class,
+        \Bartlett\CompatInfo\Application\Sniffs\Constants\TypedClassConstantSniff::class,
 
         \Bartlett\CompatInfo\Application\Sniffs\ControlStructures\DeclareSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\ControlStructures\GotoSniff::class,
@@ -32,6 +36,7 @@ return function (): Generator
         \Bartlett\CompatInfo\Application\Sniffs\Expressions\ClassExprSyntaxSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\Expressions\ConditionalCodeSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\Expressions\EmptySniff::class,
+        \Bartlett\CompatInfo\Application\Sniffs\Expressions\StaticVarInitializerSniff::class,
 
         \Bartlett\CompatInfo\Application\Sniffs\FunctionCalls\SameSiteCookieSniff::class,
 
