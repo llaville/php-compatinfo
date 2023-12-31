@@ -248,6 +248,11 @@ Here is the list of features supported and their corresponding sniffs :
 [AllowNullFalseTrueAsStandaloneTypes]: https://wiki.php.net/rfc/true-type
 [DeprecateDollarBraceStringInterpolation]: https://wiki.php.net/rfc/deprecate_dollar_brace_string_interpolation
 
+## [PHP 8.3](https://www.php.net/manual/en/migration83.php)
+
+| Sniff category       | Sniff class name                             | PHP Feature                                                                             |
+|----------------------|----------------------------------------------|-----------------------------------------------------------------------------------------|
+
 ## Special cases
 
 * **Namespaces** declaration have no sniff, because its detected by the `VersionResolverVisitor`
