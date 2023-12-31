@@ -250,8 +250,11 @@ Here is the list of features supported and their corresponding sniffs :
 
 ## [PHP 8.3](https://www.php.net/manual/en/migration83.php)
 
-| Sniff category       | Sniff class name                             | PHP Feature                                                                             |
-|----------------------|----------------------------------------------|-----------------------------------------------------------------------------------------|
+| Sniff category | Sniff class name        | PHP Feature                                 |
+|----------------|-------------------------|---------------------------------------------|
+| Constants      | TypedClassConstantSniff | [Typed Class Constants][TypedClassConstant] |
+
+[TypedClassConstant]: https://www.php.net/releases/8.3/en.php#typed_class_constants
 
 ## Special cases
 
