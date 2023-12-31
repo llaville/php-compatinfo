@@ -85,4 +85,24 @@
          <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://llaville.github.io/php-compatinfo/usage/</loc>
+         <lastmod>2023-12-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://llaville.github.io/php-compatinfo/usage/console/</loc>
+         <lastmod>2023-12-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://llaville.github.io/php-compatinfo/usage/docker/</loc>
+         <lastmod>2023-12-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://llaville.github.io/php-compatinfo/usage/programmatically/</loc>
+         <lastmod>2023-12-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
