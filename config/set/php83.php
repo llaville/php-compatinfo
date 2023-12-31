@@ -6,6 +6,11 @@
  * file that was distributed with this source code.
  */
 
+use Bartlett\CompatInfo\Application\Sniffs\Attributes\OverrideAttributeSniff;
+use Bartlett\CompatInfo\Application\Sniffs\Constants\DynamicClassConstantFetchSniff;
+use Bartlett\CompatInfo\Application\Sniffs\Constants\TypedClassConstantSniff;
+use Bartlett\CompatInfo\Application\Sniffs\Expressions\StaticVarInitializerSniff;
+
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 /**
@@ -20,4 +25,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->defaults()
         ->autowire()
     ;
+
+    $services->set(OverrideAttributeSniff::class);
+    $services->set(DynamicClassConstantFetchSniff::class);
+    $services->set(TypedClassConstantSniff::class);
+    $services->set(StaticVarInitializerSniff::class);
 };
