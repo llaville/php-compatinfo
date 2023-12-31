@@ -15,6 +15,12 @@ Running on PHP greater or equal than 8.0 for parsing source code in a format PHP
 - Detect versions of all directives, constants, functions, classes, interfaces of 100 extensions and more
 - Display/Inspect list of extensions, and their versions supported
 
+## Usage
+
+> Learn more about different usages with console, Docker and programmatically.
+
+See [Getting-Started's Guide](usage/README.md) to know how to use it.
+
 ## Installation
 
 > Learn how to install `CompatInfo` application in different way.
