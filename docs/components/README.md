@@ -21,7 +21,7 @@
 
 ### [Sniffs](./sniffs/README.md)
 
-They are grouped by categories to solve PHP features (from 4.0 to 8.2)
+They are grouped by categories to solve PHP features (from 4.0 to 8.3)
 
 - Arrays (3)
 - Attributes (4)
