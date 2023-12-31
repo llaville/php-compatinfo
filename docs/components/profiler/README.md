@@ -8,7 +8,7 @@ to the User.
 
 ## Data Collectors
 
-While walking the AST, different [visitors](../01_PHP-Parser/Visitors.md) will initialize context and capture results
+While walking the AST, different [visitors](../parser/README.md) will initialize context and capture results
 of the PHP versions detected of all elements (namespaces, classes, interfaces, traits, methods, functions, constants).
 
 At the end of parsing a source file, the `afterTraverse()` method calls the `Profiler` and each collector attached to it.

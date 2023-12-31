@@ -145,7 +145,7 @@ Here is the list of features supported and their corresponding sniffs :
 [NullableTypes]: https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.nullable-types
 [VoidFunctions]: https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.void-functions
 [SymmetricArrayDestructuring]: https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.symmetric-array-destructuring
-[ClassConstantVisibility]: (https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.class-constant-visibility)
+[ClassConstantVisibility]: https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.class-constant-visibility
 [IterableType]: https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.iterable-pseudo-type
 [MultiCatchException]: https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.mulit-catch-exception-handling
 [SupportKeysInList]: https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.support-for-keys-in-list

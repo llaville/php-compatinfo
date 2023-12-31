@@ -40,6 +40,6 @@ interface FormatterInterface
 ```
 
 Before you can start using your custom output formatter, you have to include it in a new class that implement
-the `Bartlett\CompatInfo\Application\Extension\ExtensionInterface` interface (see [Registering Extensions](Hooks.md) chapter for details).
+the `Bartlett\CompatInfo\Application\Extension\ExtensionInterface` interface (see [Registering Extensions](README.md) chapter for details).
 
 `ConsoleReporter` is a good first example to follow.

@@ -73,10 +73,10 @@ $renderer = new ClassDiagramRenderer();
 $graph = $renderer($datasource(), $generator, $options ?? []);
 
 // writes graph statements to file
-$output = rtrim($folder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $script . '_archi.html.gv';
+$output = rtrim($folder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $script . '.html.gv';
 file_put_contents($output, $generator->createScript($graph));
 
-$output = rtrim($folder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $script . '_archi.graphviz.' . $format;
+$output = rtrim($folder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $script . '.graphviz.' . $format;
 $cmdFormat = '%E -T%F %t -o ' . $output;
 $target = $generator->createImageFile($graph, $cmdFormat);
 echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;

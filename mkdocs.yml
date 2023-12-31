@@ -28,26 +28,21 @@ markdown_extensions:
     - pymdownx.superfences  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences
 nav:
     - "Home": README.md
-    - "Getting-Started": getting-started.md
+    - "Getting-Started": installation.md
     - "Components":
           - "PHP Parser":
-                - "Visitors": 01_Components/01_PHP-Parser/Visitors.md
+                - "Visitors": components/parser/README.md
           - "Profiler":
-                - "Data Collectors": 01_Components/02_Profiler/Collectors.md
-          - "Sniffs": 01_Components/03_Sniffs/Features.md
-          - "Extensions": 01_Components/04_Extensions/Hooks.md
-          - "Output format": 01_Components/04_Extensions/Reporter.md
-    - "Configurations":
-          - "About": 02_Configs/README.md
-          - "Default": 02_Configs/Default.md
-          - "None": 02_Configs/None.md
+                - "Data Collectors": components/profiler/README.md
+          - "Sniffs": components/sniffs/README.md
+          - "Extensions": components/extensions/README.md
+          - "Output format": components/extensions/reporter.md
+          - "Polyfills": components/polyfills/README.md
+    - "Configurations": configs/README.md
     - "Conditional Code":
-          - "Introduction": 03_Conditional_Code/1_Introduction.md
-          - "Indirect Call": 03_Conditional_Code/2_Indirect_Call.md
-          - "Multiple Signature": 03_Conditional_Code/3_Multiple_Signature.md
-          - "Some Limitation": 03_Conditional_Code/100_Limitation.md
-    - "Exclude Directories": 04_Exclude_Folders/README.md
-    - "Architecture":
-          - "Application": 99_Architecture/application/README.md
-          - "Infrastructure": 99_Architecture/infrastructure/README.md
-          - "Presentation": 99_Architecture/presentation/README.md
+          - "Introduction": conditional-code/introduction.md
+          - "Indirect Call": conditional-code/indirect-call.md
+          - "Multiple Signature": conditional-code/multiple-signature.md
+          - "Some Limitation": conditional-code/limitation.md
+    - "Exclusions": exclusions/README.md
+    - "Architecture": architecture/README.md

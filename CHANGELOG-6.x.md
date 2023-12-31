@@ -191,7 +191,7 @@ Experimental
 
 ### Added
 
-- improves `output` option by introducing Reporter extension (see [documentation](docs/01_Components/04_Extensions/Reporter.md))
+- improves `output` option by introducing Reporter extension (see [documentation](docs/components/extensions/Reporter.md))
 - [#312](https://github.com/llaville/php-compatinfo/issues/312): Add SARIF output format
 
 ### Changed

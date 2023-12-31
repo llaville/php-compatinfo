@@ -15,86 +15,36 @@ Running on PHP greater or equal than 8.0 for parsing source code in a format PHP
 - Detect versions of all directives, constants, functions, classes, interfaces of 100 extensions and more
 - Display/Inspect list of extensions, and their versions supported
 
-## [Components](01_Components)
+## Installation
 
-- Parsing PHP 5, PHP 7 or PHP 8 code into an abstract syntax tree (AST) is provided by
-the [PHP-Parser](https://github.com/nikic/PHP-Parser) library.
+> Learn how to install `CompatInfo` application in different way.
 
-- Contextual elements and minimum PHP versions detection provided by following node visitors.
+See [Installation Guide](installation.md)
 
-### PHP-Parser [Node Visitors](01_Components/01_PHP-Parser/Visitors.md)
+## Architecture
 
-- Parent references with the `ParentContextVisitor`
-- Name Resolution with the `NameResolverVisitor`
-- Version Resolution with the `VersionResolverVisitor`
+> As a developer you want to learn more about CompatInfo architecture.
 
-### [Profiler](01_Components/02_Profiler/Collectors.md)
+See [Architecture's Guide](architecture/README.md)
 
-- Data Collector(s) with common `DataCollector` and specialized `VersionDataCollector` classes
-- Data Collector(s) contract with the `CollectorInterface`
-- Collector Handler for both Profile and Profiler with `CollectorTrait`
-- Profile information for a single data source with `Profile`
+## Configurations
 
-### [Sniffs](01_Components/03_Sniffs/Features.md)
+> Load a configuration for CLI Application with the `--config` option.
 
-They are grouped by categories to solve PHP features (from 4.0 to 8.2)
+See [Configuration(s)](configs/README.md)
 
-- Arrays (3)
-- Attributes (3)
-- Classes (11)
-- Constants (4)
-- ControlStructures (4)
-- Enumerations (1)
-- Expressions (3)
-- Fibers (1)
-- FunctionCalls (1)
-- FunctionDeclarations (7)
-- Generators (1)
-- Keywords (1)
-- Numbers (2)
-- Operators (5)
-- TextProcessing (2)
-- UseDeclarations (2)
+**TIP** Read [How to Load --config With Services in Symfony Console](https://tomasvotruba.com/blog/2018/05/14/how-to-load-config-with-services-in-symfony-console/) to learn more.
 
-### [Extensions](01_Components/04_Extensions/Hooks.md)
+## Conditional Code
 
-PHPCompatInfo can be extended by registering objects that implement one or more of the following interfaces:
+> Learn what code is consider as conditional, detected or not (since CompatInfo 5.4)
 
-- `BeforeAnalysisInterface`
-- `AfterAnalysisInterface`
-- `BeforeFileAnalysisInterface`
-- `AfterFileAnalysisInterface`
-- `BeforeTraverseAstInterface`
-- `AfterTraverseAstInterface`
-- `BeforeProcessNodeInterface`
-- `AfterProcessNodeInterface`
-- `BeforeSetupSniffInterface`
-- `AfterTearDownSniffInterface`
-- `BeforeProcessSniffInterface`
-- `AfterProcessSniffInterface`
+See [Conditional Code](conditional-code/README.md)
 
-Furthermore, extensions may implement the `Symfony\Component\EventDispatcher\EventSubscriberInterface` in order to have its event handlers automatically registered with the EventDispatcher when the extension is loaded.
+## Exclusions
 
-### [Polyfills](01_Components/05_Polyfills/Features.md)
+> Sometimes you don't want to scan a certain directory while analysing data source.
+>
+> Learn how to do from console (CLI) or php script (API).
 
-They are identified by services that implements the `Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface`.
-
-## [Configuration(s)](02_Configs/README.md)
-
-Load a config for CLI Application with the `--config` option.
-
-Read [How to Load --config With Services in Symfony Console](https://tomasvotruba.com/blog/2018/05/14/how-to-load-config-with-services-in-symfony-console/) to learn more.
-
-## [Conditional Code](03_Conditional_Code/1_Introduction.md)
-
-Learn what code is consider as conditional, detected or not (with CompatInfo 5.4)
-
-- [Indirect calls](03_Conditional_Code/2_Indirect_Call.md)
-- [Multiple signatures](03_Conditional_Code/3_Multiple_Signature.md)
-- [Other limitations](03_Conditional_Code/100_Limitation.md)
-
-## [Exclude folder(s)](04_Exclude_Folders/README.md)
-
-Sometimes you don't want to scan a certain directory while analysing data source.
-
-Learn how to do from console (CLI) or php script (API).
+See [Exclude folder(s)](exclusions/README.md)
