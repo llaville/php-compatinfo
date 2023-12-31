@@ -110,6 +110,21 @@ digraph {
 </table>>]
   }
   subgraph cluster_3 {
+    label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Attributes"
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Attributes\\OverrideAttributeSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>OverrideAttributeSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA83 : string = "CA8302" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_4 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\AnonymousClassSniff" [shape="none" label=<
@@ -189,7 +204,7 @@ digraph {
 </table></td></tr>
 </table>>]
   }
-  subgraph cluster_4 {
+  subgraph cluster_5 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\ClassConstantSniff" [shape="none" label=<
@@ -217,6 +232,18 @@ digraph {
     <tr><td align="left">+ getRules() : Generator</td></tr>
 </table></td></tr>
 </table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\DynamicClassConstantFetchSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>DynamicClassConstantFetchSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA83 : string = "CA8304" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+</table></td></tr>
+</table>>]
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\MagicClassConstantSniff" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>MagicClassConstantSniff</b></td></tr>
@@ -229,8 +256,20 @@ digraph {
     <tr><td align="left">+ getRules() : Generator</td></tr>
 </table></td></tr>
 </table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\TypedClassConstantSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>TypedClassConstantSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA83 : string = "CA8301" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+</table></td></tr>
+</table>>]
   }
-  subgraph cluster_5 {
+  subgraph cluster_6 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures\\DeclareSniff" [shape="none" label=<
@@ -256,7 +295,7 @@ digraph {
 </table></td></tr>
 </table>>]
   }
-  subgraph cluster_6 {
+  subgraph cluster_7 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\ClassExprSyntaxSniff" [shape="none" label=<
@@ -292,8 +331,20 @@ digraph {
     <tr><td align="left">+ getRules() : Generator</td></tr>
 </table></td></tr>
 </table>>]
+    "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\StaticVarInitializerSniff" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>StaticVarInitializerSniff</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CA83 : string = "CA8303" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getRules() : Generator</td></tr>
+    <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
+</table></td></tr>
+</table>>]
   }
-  subgraph cluster_7 {
+  subgraph cluster_8 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionCalls"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionCalls\\SameSiteCookieSniff" [shape="none" label=<
@@ -309,7 +360,7 @@ digraph {
 </table></td></tr>
 </table>>]
   }
-  subgraph cluster_8 {
+  subgraph cluster_9 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations\\ClosureSniff" [shape="none" label=<
@@ -350,7 +401,7 @@ digraph {
 </table></td></tr>
 </table>>]
   }
-  subgraph cluster_9 {
+  subgraph cluster_10 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Generators"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Generators\\GeneratorSniff" [shape="none" label=<
@@ -367,7 +418,7 @@ digraph {
 </table></td></tr>
 </table>>]
   }
-  subgraph cluster_10 {
+  subgraph cluster_11 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Keywords"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Keywords\\ReservedSniff" [shape="none" label=<
@@ -381,7 +432,7 @@ digraph {
 </table></td></tr>
 </table>>]
   }
-  subgraph cluster_11 {
+  subgraph cluster_12 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Numbers"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Numbers\\BinaryNumberFormatSniff" [shape="none" label=<
@@ -398,7 +449,7 @@ digraph {
 </table></td></tr>
 </table>>]
   }
-  subgraph cluster_12 {
+  subgraph cluster_13 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\Operators\\CombinedComparisonOperatorSniff" [shape="none" label=<
@@ -450,7 +501,7 @@ digraph {
 </table></td></tr>
 </table>>]
   }
-  subgraph cluster_13 {
+  subgraph cluster_14 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\TextProcessing"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\TextProcessing\\CryptStringSniff" [shape="none" label=<
@@ -467,7 +518,7 @@ digraph {
 </table></td></tr>
 </table>>]
   }
-  subgraph cluster_14 {
+  subgraph cluster_15 {
     graph [bgcolor="Bisque"]
     label = "Bartlett\\CompatInfo\\Application\\Sniffs\\UseDeclarations"
     "Bartlett\\CompatInfo\\Application\\Sniffs\\UseDeclarations\\UseConstFunctionSniff" [shape="none" label=<
@@ -495,7 +546,7 @@ digraph {
 </table></td></tr>
 </table>>]
   }
-  subgraph cluster_15 {
+  subgraph cluster_16 {
     label = 0
     "IteratorAggregate" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -526,6 +577,7 @@ digraph {
   "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffInterface" [arrowhead="empty" style="dashed"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Arrays\\ArrayDereferencingSyntaxSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Arrays\\ShortArraySyntaxSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Attributes\\OverrideAttributeSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\AnonymousClassSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\ClassMemberAccessSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\MagicMethodsSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
@@ -534,12 +586,15 @@ digraph {
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Classes\\TypedPropertySniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\ClassConstantSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\ConstSyntaxSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\DynamicClassConstantFetchSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\MagicClassConstantSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Constants\\TypedClassConstantSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures\\DeclareSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\ControlStructures\\GotoSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\ClassExprSyntaxSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\ConditionalCodeSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\EmptySniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\Sniffs\\Expressions\\StaticVarInitializerSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionCalls\\SameSiteCookieSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations\\ClosureSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Sniffs\\FunctionDeclarations\\ParamTypeDeclarationSniff" -> "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffAbstract" [arrowhead="empty" style="filled"]
