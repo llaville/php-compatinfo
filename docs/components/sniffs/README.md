@@ -252,8 +252,10 @@ Here is the list of features supported and their corresponding sniffs :
 
 | Sniff category | Sniff class name        | PHP Feature                                 |
 |----------------|-------------------------|---------------------------------------------|
+| Attributes     | OverrideAttributeSniff  | [Override attribute][OverrideAttribute]     |
 | Constants      | TypedClassConstantSniff | [Typed Class Constants][TypedClassConstant] |
 
+[OverrideAttribute]: https://www.php.net/releases/8.3/en.php#override_attribute
 [TypedClassConstant]: https://www.php.net/releases/8.3/en.php#typed_class_constants
 
 ## Special cases

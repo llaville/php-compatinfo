@@ -24,7 +24,7 @@
 They are grouped by categories to solve PHP features (from 4.0 to 8.2)
 
 - Arrays (3)
-- Attributes (3)
+- Attributes (4)
 - Classes (11)
 - Constants (5)
 - ControlStructures (4)
