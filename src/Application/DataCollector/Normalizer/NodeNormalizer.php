@@ -15,6 +15,8 @@ use PhpParser\Node;
 
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
+use ArrayObject;
+
 /**
  * @author Laurent Laville
  * @since Release 5.4.0
@@ -27,9 +29,9 @@ final class NodeNormalizer implements NormalizerInterface
     /**
      * {@inheritDoc}
      * @param array<string, string> $context
-     * @return null|array<string, mixed>
+     * @return float|array<string, mixed>|ArrayObject|bool|int|string|null
      */
-    public function normalize($object, $format = null, array $context = [])
+    public function normalize($object, $format = null, array $context = []): float|array|ArrayObject|bool|int|string|null
     {
         $node = $object;
         $this->attributeNamespacedName = $context['nodeAttributeNamespacedName'] ?? 'bartlett.name';
@@ -74,8 +76,9 @@ final class NodeNormalizer implements NormalizerInterface
 
     /**
      * {@inheritDoc}
+     * @phpstan-ignore-next-line
      */
-    public function supportsNormalization($data, $format = null)
+    public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
     {
         if ($data instanceof Node\Expr\New_) {
             $this->name = $data->class instanceof Node\Stmt\Class_ ? 'class' : (string) $data->class;
@@ -153,6 +156,15 @@ final class NodeNormalizer implements NormalizerInterface
         }
 
         return true;
+    }
+
+    /**
+     * @link https://symfony.com/blog/new-in-symfony-6-3-performance-improvements#improved-performance-of-serializer-normalizers-denormalizers
+     * @return array<string, bool>
+     */
+    public function getSupportedTypes(?string $format): array
+    {
+        return [];
     }
 
     private function getType(Node $node): string

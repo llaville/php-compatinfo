@@ -29,20 +29,8 @@ markdown_extensions:
 nav:
     - "Home": README.md
     - "Getting-Started": installation.md
-    - "Components":
-          - "PHP Parser":
-                - "Visitors": components/parser/README.md
-          - "Profiler":
-                - "Data Collectors": components/profiler/README.md
-          - "Sniffs": components/sniffs/README.md
-          - "Extensions": components/extensions/README.md
-          - "Output format": components/extensions/reporter.md
-          - "Polyfills": components/polyfills/README.md
+    - "Components": components/README.md
     - "Configurations": configs/README.md
-    - "Conditional Code":
-          - "Introduction": conditional-code/introduction.md
-          - "Indirect Call": conditional-code/indirect-call.md
-          - "Multiple Signature": conditional-code/multiple-signature.md
-          - "Some Limitation": conditional-code/limitation.md
+    - "Conditional Code": conditional-code/README.md
     - "Exclusions": exclusions/README.md
     - "Architecture": architecture/README.md

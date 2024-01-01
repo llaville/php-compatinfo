@@ -4,16 +4,22 @@
 **PHP CompatInfo** is a library that
 can find the minimum version and the extensions required for a piece of code to run.
 
-Running on PHP greater or equal than 8.0 for parsing source code in a format PHP 5.2 to PHP 8.2
+Running on PHP greater or equal than 8.0 for parsing source code in a format PHP 5.2 to PHP 8.3
 
 ![Graph Composer](./assets/images/graph-composer.svg)
 
 ## Features
 
-- Parse source code in format PHP 5.2 to PHP 8.2
+- Parse source code in format PHP 5.2 to PHP 8.3
 - Detect PHP features for each Major/minor versions
 - Detect versions of all directives, constants, functions, classes, interfaces of 100 extensions and more
 - Display/Inspect list of extensions, and their versions supported
+
+## Usage
+
+> Learn more about different usages with console, Docker and programmatically.
+
+See [Getting-Started's Guide](usage/README.md) to know how to use it.
 
 ## Installation
 
