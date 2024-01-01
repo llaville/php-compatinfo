@@ -74,20 +74,9 @@ jobs:
 
             -   # https://github.com/llaville/php-compatinfo-db
                 name: Build Database
-                if: |
-                    ${{ matrix.php == '8.0' }}
                 run: |
                     bin/phpcompatinfo db:create --ansi
                     bin/phpcompatinfo db:init --ansi
-
-            -   # https://github.com/llaville/php-compatinfo-db
-                name: Build Database
-                if: |
-                    ${{ matrix.php == '8.1' }} ||
-                    ${{ matrix.php == '8.2' }} ||
-                    ${{ matrix.php == '8.3' }}
-                run: |
-                    bin/phpcompatinfo db:new --ansi
 
             -   # https://github.com/sebastianbergmann/phpunit/tree/9.6
                 name: Unit tests with PHPUnit 9
