@@ -35,13 +35,13 @@
 </g>
 <g id="clust6" class="cluster">
 <title>cluster_5</title>
-<polygon fill="transparent" stroke="black" points="1277,-1253 1277,-1352 1710,-1352 1710,-1253 1277,-1253"/>
-<text text-anchor="middle" x="1493.5" y="-1336.8" font-family="Times,serif" font-size="14.00">Bartlett\CompatInfo\Application\DataCollector\Normalizer</text>
+<polygon fill="transparent" stroke="black" points="1277,-1246.5 1277,-1358.5 1710,-1358.5 1710,-1246.5 1277,-1246.5"/>
+<text text-anchor="middle" x="1493.5" y="-1343.3" font-family="Times,serif" font-size="14.00">Bartlett\CompatInfo\Application\DataCollector\Normalizer</text>
 </g>
 <g id="clust7" class="cluster">
 <title>cluster_6</title>
-<polygon fill="transparent" stroke="black" points="1272,-931.5 1272,-1030.5 1660,-1030.5 1660,-931.5 1272,-931.5"/>
-<text text-anchor="middle" x="1466" y="-1015.3" font-family="Times,serif" font-size="14.00">Symfony\Component\Serializer\Normalizer</text>
+<polygon fill="transparent" stroke="black" points="1299,-931.5 1299,-1030.5 1687,-1030.5 1687,-931.5 1299,-931.5"/>
+<text text-anchor="middle" x="1493" y="-1015.3" font-family="Times,serif" font-size="14.00">Symfony\Component\Serializer\Normalizer</text>
 </g>
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Collecting -->
 <g id="node1" class="node">
@@ -331,8 +331,8 @@
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler&#45;&gt;PhpParser\\ErrorHandler -->
 <g id="edge10" class="edge">
 <title>Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler&#45;&gt;PhpParser\\ErrorHandler</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1171.45,-932.99C1190.86,-886.71 1227.63,-803.9 1268,-738 1286.88,-707.18 1312.1,-674.66 1330.88,-651.74"/>
-<polygon fill="none" stroke="black" points="1333.8,-653.7 1337.48,-643.76 1328.41,-649.24 1333.8,-653.7"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1177.46,-932.94C1216.56,-865.02 1301.29,-717.79 1338.66,-652.86"/>
+<polygon fill="none" stroke="black" points="1341.87,-654.31 1343.82,-643.89 1335.8,-650.82 1341.87,-654.31"/>
 </g>
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\DataCollector -->
 <g id="node13" class="node">
@@ -436,33 +436,34 @@
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\Normalizer\\NodeNormalizer -->
 <g id="node19" class="node">
 <title>Bartlett\\CompatInfo\\Application\\DataCollector\\Normalizer\\NodeNormalizer</title>
-<polygon fill="#fefece" stroke="transparent" points="1597.5,-1321 1334.5,-1321 1334.5,-1261 1597.5,-1261 1597.5,-1321"/>
-<polygon fill="#eeeeee" stroke="transparent" points="1335,-1299 1335,-1321 1598,-1321 1598,-1299 1335,-1299"/>
-<polygon fill="none" stroke="black" points="1335,-1299 1335,-1321 1598,-1321 1598,-1299 1335,-1299"/>
-<text text-anchor="start" x="1430" y="-1304.6" font-family="Verdana" font-weight="bold" font-size="8.00">NodeNormalizer</text>
-<polygon fill="none" stroke="black" points="1335,-1293 1335,-1299 1598,-1299 1598,-1293 1335,-1293"/>
-<polygon fill="none" stroke="black" points="1335,-1261 1335,-1293 1598,-1293 1598,-1261 1335,-1261"/>
-<text text-anchor="start" x="1340" y="-1281.6" font-family="Verdana" font-size="8.00">+ normalize(object, format = «unknown», context : array = [])</text>
-<text text-anchor="start" x="1340" y="-1268.6" font-family="Verdana" font-size="8.00">+ supportsNormalization(data, format = «unknown»)</text>
+<polygon fill="#fefece" stroke="transparent" points="1691.5,-1327.5 1294.5,-1327.5 1294.5,-1254.5 1691.5,-1254.5 1691.5,-1327.5"/>
+<polygon fill="#eeeeee" stroke="transparent" points="1295,-1305 1295,-1327 1692,-1327 1692,-1305 1295,-1305"/>
+<polygon fill="none" stroke="black" points="1295,-1305 1295,-1327 1692,-1327 1692,-1305 1295,-1305"/>
+<text text-anchor="start" x="1457" y="-1310.6" font-family="Verdana" font-weight="bold" font-size="8.00">NodeNormalizer</text>
+<polygon fill="none" stroke="black" points="1295,-1299 1295,-1305 1692,-1305 1692,-1299 1295,-1299"/>
+<polygon fill="none" stroke="black" points="1295,-1254 1295,-1299 1692,-1299 1692,-1254 1295,-1254"/>
+<text text-anchor="start" x="1300" y="-1287.6" font-family="Verdana" font-size="8.00">+ normalize(object, format = «unknown», context : array = [])</text>
+<text text-anchor="start" x="1300" y="-1274.6" font-family="Verdana" font-size="8.00">+ supportsNormalization(data : mixed, format : string = «unknown», context : array = []) : bool</text>
+<text text-anchor="start" x="1300" y="-1261.6" font-family="Verdana" font-size="8.00">+ getSupportedTypes(format : string) : array</text>
 </g>
 <!-- Symfony\\Component\\Serializer\\Normalizer\\NormalizerInterface -->
 <g id="node20" class="node">
 <title>Symfony\\Component\\Serializer\\Normalizer\\NormalizerInterface</title>
-<polygon fill="#fefece" stroke="transparent" points="1652,-999.5 1280,-999.5 1280,-939.5 1652,-939.5 1652,-999.5"/>
-<polygon fill="#eeeeee" stroke="transparent" points="1280,-977.5 1280,-999.5 1652,-999.5 1652,-977.5 1280,-977.5"/>
-<polygon fill="none" stroke="black" points="1280,-977.5 1280,-999.5 1652,-999.5 1652,-977.5 1280,-977.5"/>
-<text text-anchor="start" x="1440" y="-991.1" font-family="Verdana" font-weight="bold" font-size="8.00">«interface»</text>
-<text text-anchor="start" x="1421" y="-983.1" font-family="Verdana" font-weight="bold" font-size="8.00">NormalizerInterface</text>
-<polygon fill="none" stroke="black" points="1280,-971.5 1280,-977.5 1652,-977.5 1652,-971.5 1280,-971.5"/>
-<polygon fill="none" stroke="black" points="1280,-939.5 1280,-971.5 1652,-971.5 1652,-939.5 1280,-939.5"/>
-<text text-anchor="start" x="1285" y="-960.1" font-family="Verdana" font-size="8.00">+ «abstract» normalize(object : mixed, format : string = «unknown», context : array = [])</text>
-<text text-anchor="start" x="1285" y="-947.1" font-family="Verdana" font-size="8.00">+ «abstract» supportsNormalization(data : mixed, format : string = «unknown»)</text>
+<polygon fill="#fefece" stroke="transparent" points="1679,-999.5 1307,-999.5 1307,-939.5 1679,-939.5 1679,-999.5"/>
+<polygon fill="#eeeeee" stroke="transparent" points="1307,-977.5 1307,-999.5 1679,-999.5 1679,-977.5 1307,-977.5"/>
+<polygon fill="none" stroke="black" points="1307,-977.5 1307,-999.5 1679,-999.5 1679,-977.5 1307,-977.5"/>
+<text text-anchor="start" x="1467" y="-991.1" font-family="Verdana" font-weight="bold" font-size="8.00">«interface»</text>
+<text text-anchor="start" x="1448" y="-983.1" font-family="Verdana" font-weight="bold" font-size="8.00">NormalizerInterface</text>
+<polygon fill="none" stroke="black" points="1307,-971.5 1307,-977.5 1679,-977.5 1679,-971.5 1307,-971.5"/>
+<polygon fill="none" stroke="black" points="1307,-939.5 1307,-971.5 1679,-971.5 1679,-939.5 1307,-939.5"/>
+<text text-anchor="start" x="1312" y="-960.1" font-family="Verdana" font-size="8.00">+ «abstract» normalize(object : mixed, format : string = «unknown», context : array = [])</text>
+<text text-anchor="start" x="1312" y="-947.1" font-family="Verdana" font-size="8.00">+ «abstract» supportsNormalization(data : mixed, format : string = «unknown»)</text>
 </g>
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\Normalizer\\NodeNormalizer&#45;&gt;Symfony\\Component\\Serializer\\Normalizer\\NormalizerInterface -->
 <g id="edge13" class="edge">
 <title>Bartlett\\CompatInfo\\Application\\DataCollector\\Normalizer\\NodeNormalizer&#45;&gt;Symfony\\Component\\Serializer\\Normalizer\\NormalizerInterface</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1466,-1260.8C1466,-1203.16 1466,-1074.73 1466,-1009.75"/>
-<polygon fill="none" stroke="black" points="1469.5,-1009.52 1466,-999.52 1462.5,-1009.52 1469.5,-1009.52"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1493,-1254.28C1493,-1194.09 1493,-1072.91 1493,-1010.17"/>
+<polygon fill="none" stroke="black" points="1496.5,-1009.89 1493,-999.89 1489.5,-1009.89 1496.5,-1009.89"/>
 </g>
 </g>
 </svg>

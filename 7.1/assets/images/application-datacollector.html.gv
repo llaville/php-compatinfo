@@ -263,7 +263,8 @@ digraph {
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ normalize(object, format = «unknown», context : array = [])</td></tr>
-    <tr><td align="left">+ supportsNormalization(data, format = «unknown»)</td></tr>
+    <tr><td align="left">+ supportsNormalization(data : mixed, format : string = «unknown», context : array = []) : bool</td></tr>
+    <tr><td align="left">+ getSupportedTypes(format : string) : array</td></tr>
 </table></td></tr>
 </table>>]
   }

@@ -669,7 +669,7 @@
 <span class="x">    $dump = reset($data);</span>
 <span class="x">    var_export($dump);</span>
 <span class="x">} catch (HandlerFailedException $e) {</span>
-<span class="x">    foreach ($e-&gt;getNestedExceptions() as $ex) {</span>
+<span class="x">    foreach ($e-&gt;getWrappedExceptions() as $ex) {</span>
 <span class="x">        printf(&#39;Exception -- %s &gt;&gt; %s%s&#39; . $ex-&gt;getMessage(), $ex-&gt;getTraceAsString(), PHP_EOL);</span>
 <span class="x">    };</span>
 <span class="x">}</span>

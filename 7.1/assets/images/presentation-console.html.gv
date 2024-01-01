@@ -305,6 +305,7 @@ digraph {
 </table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ setContainer(container : Symfony\\Component\\DependencyInjection\\ContainerInterface = «unknown») : void</td></tr>
     <tr><td align="left">+ __construct(compatibilityEventDispatcher : Symfony\\Component\\EventDispatcher\\EventDispatcherInterface)</td></tr>
     <tr><td align="left">+ getHelp() : string</td></tr>
     <tr><td align="left">+ getLongVersion() : string</td></tr>
@@ -312,7 +313,6 @@ digraph {
     <tr><td align="left">+ getInstalledVersion(withRef : bool = true, packageName : string = 'bartlett\/php\-compatinfo') : ?string</td></tr>
     <tr><td align="left">+ getApplicationParameters() : array</td></tr>
     <tr><td align="left">+ getKernel() : object</td></tr>
-    <tr><td align="left">+ setContainer(container : Symfony\\Component\\DependencyInjection\\ContainerInterface = «unknown»)</td></tr>
 </table></td></tr>
 </table>>]
     "Bartlett\\CompatInfo\\Presentation\\Console\\ApplicationInterface" [shape="none" label=<
@@ -323,8 +323,9 @@ digraph {
 </table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» setContainer(container : Symfony\\Component\\DependencyInjection\\ContainerInterface = «unknown») : void</td></tr>
     <tr><td align="left">+ «abstract» setCommandLoader(commandLoader : Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface)</td></tr>
-    <tr><td align="left">+ «abstract» getName()</td></tr>
+    <tr><td align="left">+ «abstract» getName() : string</td></tr>
     <tr><td align="left">+ «abstract» getInstalledVersion(withRef : bool = true, packageName : string = 'bartlett\/php\-compatinfo') : ?string</td></tr>
     <tr><td align="left">+ «abstract» getApplicationParameters() : array</td></tr>
     <tr><td align="left">+ «abstract» getKernel() : object</td></tr>
@@ -435,17 +436,6 @@ digraph {
 </table>>]
   }
   subgraph cluster_10 {
-    label = "Symfony\\Component\\DependencyInjection"
-    "Symfony\\Component\\DependencyInjection\\ContainerAwareInterface" [shape="none" label=<
-<table cellspacing="0" border="0" cellborder="1">
-    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ContainerAwareInterface</b></td></tr>
-    <tr><td></td></tr>
-    <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ «abstract» setContainer(container : Symfony\\Component\\DependencyInjection\\ContainerInterface)</td></tr>
-</table></td></tr>
-</table>>]
-  }
-  subgraph cluster_11 {
     label = "Symfony\\Component\\Console\\CommandLoader"
     "Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -469,7 +459,7 @@ digraph {
 </table></td></tr>
 </table>>]
   }
-  subgraph cluster_12 {
+  subgraph cluster_11 {
     label = "Symfony\\Component\\Console\\Style"
     "Symfony\\Component\\Console\\Style\\SymfonyStyle" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
@@ -588,7 +578,6 @@ digraph {
   "Bartlett\\CompatInfo\\Presentation\\Console\\Output\\Output" -> "Symfony\\Component\\Console\\Output\\ConsoleOutput" [arrowhead="empty" style="filled"]
   "Symfony\\Component\\Console\\Application" -> "Symfony\\Contracts\\Service\\ResetInterface" [arrowhead="empty" style="dashed"]
   "Bartlett\\CompatInfo\\Presentation\\Console\\Application" -> "Symfony\\Component\\Console\\Application" [arrowhead="empty" style="filled"]
-  "Bartlett\\CompatInfo\\Presentation\\Console\\ApplicationInterface" -> "Symfony\\Component\\DependencyInjection\\ContainerAwareInterface" [arrowhead="empty" style="dashed"]
   "Bartlett\\CompatInfo\\Presentation\\Console\\Application" -> "Bartlett\\CompatInfo\\Presentation\\Console\\ApplicationInterface" [arrowhead="empty" style="dashed"]
   "Bartlett\\CompatInfo\\Presentation\\Console\\CommandLoaderInterface" -> "Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface" [arrowhead="empty" style="dashed"]
   "Symfony\\Component\\Console\\CommandLoader\\FactoryCommandLoader" -> "Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface" [arrowhead="empty" style="dashed"]
