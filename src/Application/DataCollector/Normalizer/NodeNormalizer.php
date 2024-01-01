@@ -160,6 +160,7 @@ final class NodeNormalizer implements NormalizerInterface
 
     /**
      * @link https://symfony.com/blog/new-in-symfony-6-3-performance-improvements#improved-performance-of-serializer-normalizers-denormalizers
+     * @return array<string, bool>
      */
     public function getSupportedTypes(?string $format): array
     {
