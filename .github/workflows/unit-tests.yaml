@@ -46,7 +46,7 @@ jobs:
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
                         tools: phpunit:10.5
 
-        name: Compatibility Info
+        name: Unit Tests
 
         env:
             APP_ENV: dev  # see explains at https://github.com/llaville/php-compatinfo-db/issues/101
