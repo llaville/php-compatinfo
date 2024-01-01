@@ -29,6 +29,7 @@ final class NodeNormalizer implements NormalizerInterface
     /**
      * {@inheritDoc}
      * @param array<string, string> $context
+     * @return float|array<string, mixed>|ArrayObject|bool|int|string|null
      */
     public function normalize($object, $format = null, array $context = []): float|array|ArrayObject|bool|int|string|null
     {
@@ -75,9 +76,7 @@ final class NodeNormalizer implements NormalizerInterface
 
     /**
      * {@inheritDoc}
-     * @param mixed $data
-     * @param string|null $format
-     * @param array $context
+     * @phpstan-ignore-next-line
      */
     public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool
     {

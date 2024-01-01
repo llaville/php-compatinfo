@@ -5,6 +5,7 @@ parameters:
     excludePaths:
         - ../../src/Infrastructure/ManifestBuilder.php
     treatPhpDocTypesAsCertain: false
+    checkGenericClassInNonGenericObjectType: false
     ignoreErrors:
         -
             message: "#^Method Bartlett\\\\CompatInfo\\\\Application\\\\Analyser\\\\CompatibilityAnalyser\\:\\:leave[a-zA-Z0-9\\_]+\\(\\) is unused\\.$#"
