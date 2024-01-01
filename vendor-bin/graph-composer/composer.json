@@ -1,0 +1,12 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/llaville/graph-composer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "clue/graph-composer": "v2.x-dev"
+    }
+}

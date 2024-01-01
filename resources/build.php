@@ -25,12 +25,12 @@ $script = $_SERVER['argv'][1] ?? null;
 $folder = $_SERVER['argv'][2] ?? sys_get_temp_dir();
 $format = $_SERVER['argv'][3] ?? 'svg';
 
-$graphComposer = 'phar://' . __DIR__ . '/graph-composer.phar';
+$graphComposer = dirname(__DIR__) . '/vendor-bin/graph-composer/vendor/autoload.php';
 if ('graph-composer' == $script) {
     if (!file_exists($graphComposer)) {
         exit(1);
     }
-    require_once $graphComposer . '/vendor/autoload.php';
+    require_once $graphComposer;
 
     $export = new Export('export');
     $target = $folder . '/graph-composer.svg';
