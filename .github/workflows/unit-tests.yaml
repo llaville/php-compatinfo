@@ -15,7 +15,6 @@ jobs:
         uses: llaville/.github/.github/workflows/mega-linter.yml@master
         with:
             repository: ${{ github.repository }}
-            php-version: "8.0"
 
     unit_tests:
         needs: lint_files
@@ -35,14 +34,19 @@ jobs:
                         os: ubuntu-20.04
                         php: 8.1
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit:10.4
+                        tools: phpunit:10.5
                     -
                         os: ubuntu-20.04
                         php: 8.2
                         extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit:10.4
+                        tools: phpunit:10.5
+                    -
+                        os: ubuntu-22.04
+                        php: 8.3
+                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
+                        tools: phpunit:10.5
 
-        name: Compatibility Info
+        name: Unit Tests
 
         env:
             APP_ENV: dev  # see explains at https://github.com/llaville/php-compatinfo-db/issues/101
@@ -70,18 +74,30 @@ jobs:
 
             -   # https://github.com/llaville/php-compatinfo-db
                 name: Build Database
+                if: |
+                    ${{ matrix.php == '8.0' }}
                 run: |
                     bin/phpcompatinfo db:create --ansi
                     bin/phpcompatinfo db:init --ansi
+
+            -   # https://github.com/llaville/php-compatinfo-db
+                name: Build Database
+                if: |
+                    ${{ matrix.php == '8.1' }} ||
+                    ${{ matrix.php == '8.2' }} ||
+                    ${{ matrix.php == '8.3' }}
+                run: |
+                    bin/phpcompatinfo db:new --ansi
 
             -   # https://github.com/sebastianbergmann/phpunit/tree/9.6
                 name: Unit tests with PHPUnit 9
                 if: |
                     ${{ matrix.php == '8.0' }}
                 run: phpunit --group features,large,reference,regression,default --testdox --do-not-cache-result --configuration ./phpunit-9.xml
-            -   # https://github.com/sebastianbergmann/phpunit/tree/10.4
+            -   # https://github.com/sebastianbergmann/phpunit/tree/10.5
                 name: Unit tests with PHPUnit 10
                 if: |
                     ${{ matrix.php == '8.1' }} ||
-                    ${{ matrix.php == '8.2' }}
+                    ${{ matrix.php == '8.2' }} ||
+                    ${{ matrix.php == '8.3' }}
                 run: phpunit --group features,large,reference,regression,default --testdox --do-not-cache-result
