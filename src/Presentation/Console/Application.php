@@ -7,7 +7,6 @@
  */
 namespace Bartlett\CompatInfo\Presentation\Console;
 
-use Bartlett\CompatInfo\Presentation\Console\Command\AbstractCommand;
 use Bartlett\CompatInfoDb\Infrastructure\Framework\Composer\InstalledVersions;
 
 use Symfony\Component\Console\Application as SymfonyApplication;
@@ -18,7 +17,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\Container;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 use Phar;
@@ -32,7 +31,12 @@ use function sprintf;
  */
 class Application extends SymfonyApplication implements ApplicationInterface
 {
-    use ContainerAwareTrait;
+    protected ?ContainerInterface $container;
+
+    public function setContainer(ContainerInterface $container = null): void
+    {
+        $this->container = $container;
+    }
 
     /**
      * @var string

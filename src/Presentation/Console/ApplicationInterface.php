@@ -8,7 +8,7 @@
 namespace Bartlett\CompatInfo\Presentation\Console;
 
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Console Application contract.
@@ -16,9 +16,11 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface;
  * @since Release 6.0.0
  * @author Laurent Laville
  */
-interface ApplicationInterface extends ContainerAwareInterface
+interface ApplicationInterface
 {
     public const NAME = 'phpCompatInfo';
+
+    public function setContainer(ContainerInterface $container = null): void;
 
     /**
      * @return void
@@ -27,10 +29,8 @@ interface ApplicationInterface extends ContainerAwareInterface
 
     /**
      * Gets the name of the application.
-     *
-     * @return string
      */
-    public function getName();
+    public function getName(): string;
 
     public function getInstalledVersion(bool $withRef = true, string $packageName = 'bartlett/php-compatinfo'): ?string;
 

@@ -40,7 +40,7 @@ try {
     $dump = reset($data);
     var_export($dump);
 } catch (HandlerFailedException $e) {
-    foreach ($e->getNestedExceptions() as $ex) {
+    foreach ($e->getWrappedExceptions() as $ex) {
         printf('Exception -- %s >> %s%s' . $ex->getMessage(), $ex->getTraceAsString(), PHP_EOL);
     };
 }
