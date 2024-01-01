@@ -24,27 +24,16 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                include:
-                    -
-                        os: ubuntu-20.04
-                        php: 8.0
-                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit:9.6
-                    -
-                        os: ubuntu-20.04
-                        php: 8.1
-                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit:10.5
-                    -
-                        os: ubuntu-20.04
-                        php: 8.2
-                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit:10.5
-                    -
-                        os: ubuntu-22.04
-                        php: 8.3
-                        extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                        tools: phpunit:10.5
+                os:
+                    - "ubuntu-22.04"
+                php:
+                    - "8.0"
+                    - "8.1"
+                    - "8.2"
+                    - "8.3"
+                tools:
+                    - phpunit:9.6
+                    - phpunit:10.5
 
         name: Unit Tests
 
@@ -62,7 +51,7 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php }}
-                    extensions: ${{ matrix.extensions }}
+                    extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
                     tools: ${{ matrix.tools }}
 
             -   # https://github.com/ramsey/composer-install
@@ -80,13 +69,9 @@ jobs:
 
             -   # https://github.com/sebastianbergmann/phpunit/tree/9.6
                 name: Unit tests with PHPUnit 9
-                if: |
-                    ${{ matrix.php == '8.0' }}
-                run: phpunit --group features,large,reference,regression,default --testdox --do-not-cache-result --configuration ./phpunit-9.xml
+                if: matrix.tools == 'phpunit:9.6'
+                run: phpunit --group features,large,reference,regression,default --do-not-cache-result --configuration ./phpunit-9.xml
             -   # https://github.com/sebastianbergmann/phpunit/tree/10.5
                 name: Unit tests with PHPUnit 10
-                if: |
-                    ${{ matrix.php == '8.1' }} ||
-                    ${{ matrix.php == '8.2' }} ||
-                    ${{ matrix.php == '8.3' }}
-                run: phpunit --group features,large,reference,regression,default --testdox --do-not-cache-result
+                if: matrix.tools == 'phpunit:10.5' && matrix.php != '8.0'
+                run: phpunit --group features,large,reference,regression,default --do-not-cache-result --no-progress
