@@ -13,7 +13,8 @@
 
 * PHP 8.0 or greater
 * ext-json
-* ext-pcre
+* ext-pcre (required by: bartlett/php-compatinfo-db)
+* ext-pdo (required by: bartlett/php-compatinfo-db)
 * ext-spl
 * PHPUnit 9 or greater (if you want to run unit tests)
 
