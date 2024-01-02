@@ -25,7 +25,7 @@ Please FOLLOW THE ISSUE TEMPLATE unless you have a good reason not to, and help 
 ## Diagnose
 
 <details>
-<summary>Output of `diagnose` command</summary>
+<summary>Output of `phpcompatinfo diagnose` command</summary>
 
 ```
 ...REPLACE ME...
