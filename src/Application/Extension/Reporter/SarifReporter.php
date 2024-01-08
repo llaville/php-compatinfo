@@ -71,8 +71,14 @@ final class SarifReporter extends Reporter implements
     private array $results = [];
     private string $source;
     /** @var SniffCollectionInterface<SniffInterface> */
-    private $sniffs;
+    private SniffCollectionInterface $sniffs;
     private string $applicationVersion;
+
+    private const PHP_VERSIONS = [
+        '50', '51', '52', '53', '54', '55', '56',
+        '70', '71', '72', '73', '74',
+        '80', '81', '82', '83',
+    ];
 
     /**
      * @param SniffCollectionInterface<SniffInterface> $sniffs
@@ -193,7 +199,7 @@ final class SarifReporter extends Reporter implements
      */
     public function getRules(): Generator
     {
-        foreach (['50', '51', '52', '53', '54', '55', '56', '70', '71', '72', '73', '74', '80', '81'] as $phpVer) {
+        foreach (self::PHP_VERSIONS as $phpVer) {
             yield sprintf('CA%2d00', $phpVer) => [
                 'name' => substr(strrchr(get_class($this), '\\'), 1),
                 'fullDescription' => 'PHP minimum requirement',
