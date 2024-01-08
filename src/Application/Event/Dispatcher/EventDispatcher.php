@@ -42,7 +42,6 @@ use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\EventDispatcher\EventDispatcher as SymfonyEventDispatcher;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 use function str_starts_with;
@@ -89,7 +88,6 @@ final class EventDispatcher extends SymfonyEventDispatcher
         }, 100); // with a priority highest to default (in case of --profile usage)
 
         $this->addListener(ConsoleEvents::TERMINATE, function (ConsoleTerminateEvent $event) {
-            $command = $event->getCommand();
             if ($event->getExitCode() == ConsoleCommandEvent::RETURN_CODE_DISABLED) {
                 $io = new Style($event->getInput(), $event->getOutput());
                 $io->writeln($this->diagnoseOutput->fetch());
@@ -107,7 +105,7 @@ final class EventDispatcher extends SymfonyEventDispatcher
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function dispatch($event, string $eventName = null): object
     {
