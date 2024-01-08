@@ -45,7 +45,6 @@ final class NodeDumper extends \PhpParser\NodeDumper
     /**
      * @param Node[]|Node $node
      * @param string|null $code
-     * @return string
      */
     public function dump($node, string $code = null): string
     {
@@ -57,18 +56,17 @@ final class NodeDumper extends \PhpParser\NodeDumper
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function dumpPosition(Node $node)
+    public function dumpPosition(Node $node): ?string
     {
         return parent::dumpPosition($node);
     }
 
     /**
-     * @param mixed $node Node or array to dump
-     * @return string
+     * One node or list of nodes to dump
      */
-    protected function dumpRecursiveAttributes($node): string
+    protected function dumpRecursiveAttributes(mixed $node): string
     {
         if ($node instanceof Node) {
             $r = $node->getType();
@@ -109,9 +107,7 @@ final class NodeDumper extends \PhpParser\NodeDumper
                 $r .= "\n    comments: " . str_replace("\n", "\n    ", $this->dumpRecursiveAttributes($comments));
             }
 
-            if ($this->dumpAttributes && $attrs = $node->getAttributes()) {
-                $attributes = $node->getAttributes();
-
+            if ($this->dumpAttributes && $attributes = $node->getAttributes()) {
                 foreach ($attributes as $key => $attr) {
                     if ($attr instanceof Node) {
                         $attributes[$key] = ['type' => $attr->getType()];

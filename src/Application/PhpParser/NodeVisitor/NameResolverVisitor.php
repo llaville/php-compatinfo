@@ -42,7 +42,7 @@ final class NameResolverVisitor extends NameResolver
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function enterNode(Node $node)
     {
@@ -72,9 +72,6 @@ final class NameResolverVisitor extends NameResolver
 
     /**
      * Resolves the full parent path recursively.
-     *
-     * @param Node $node Start context
-     * @return null|Name Fully Qualified
      */
     private function concatParentRecursive(Node $node): ?Name
     {

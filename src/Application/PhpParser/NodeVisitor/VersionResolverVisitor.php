@@ -24,7 +24,7 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
     private string $attributeKey;
     private string $attributeNamespacedName;
     /** @var ReferenceCollectionInterface<string, array> */
-    private $references;
+    private ReferenceCollectionInterface $references;
 
     use VersionUpdater;
 
@@ -47,7 +47,7 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function enterNode(Node $node)
     {
@@ -108,7 +108,6 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
     /**
      * Handles all arguments of function like.
      *
-     * @param Node\FunctionLike $node
      * @param array<string, string> $currentVersions
      * @return array<string, string>
      */
@@ -156,8 +155,6 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
     /**
      * Checks for extension's class or interface in database if referenced.
      *
-     * @param Node\Name $name
-     * @param string $group
      * @return array<string, string>
      */
     private function resolveClassVersions(Node\Name $name, string $group): array
@@ -184,9 +181,6 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
 
     /**
      * Checks for extension's class or interface, used as type hinting, if referenced in database.
-     *
-     * @param Node $node
-     * @return string
      */
     private function resolveTypeVersions(Node $node): string
     {

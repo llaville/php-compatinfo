@@ -40,9 +40,9 @@ final class ParentContextVisitor extends NodeVisitorAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function beforeTraverse(array $nodes)
+    public function beforeTraverse(array $nodes): ?array
     {
         $this->stack = [];
 
@@ -75,7 +75,7 @@ final class ParentContextVisitor extends NodeVisitorAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function enterNode(Node $node)
     {
@@ -96,7 +96,7 @@ final class ParentContextVisitor extends NodeVisitorAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function leaveNode(Node $node)
     {

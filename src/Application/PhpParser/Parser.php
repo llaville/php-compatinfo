@@ -41,7 +41,7 @@ final class Parser
     private EventDispatcherInterface $dispatcher;
     private SniffAnalyserInterface $analyser;
     /** @var ReferenceCollectionInterface<string, array>  */
-    private $references;
+    private ReferenceCollectionInterface $references;
     private ErrorHandler $errorHandler;
     private \PhpParser\Parser $parser;
     private Lexer $lexer;
@@ -51,8 +51,6 @@ final class Parser
     /**
      * Parser constructor.
      *
-     * @param EventDispatcherInterface $compatibilityEventDispatcher
-     * @param SniffAnalyserInterface $compatibilityAnalyser
      * @param ReferenceCollectionInterface<string, array> $referenceCollection
      */
     public function __construct(
@@ -68,11 +66,6 @@ final class Parser
     /**
      * Analyse a data source and return all analyser metrics.
      *
-     * @param string $source
-     * @param Finder $finder
-     * @param ErrorHandler $errorHandler
-     * @param string $version
-     * @return Profile
      * @throws Exception
      */
     public function parse(string $source, Finder $finder, ErrorHandler $errorHandler, string $version): Profile
@@ -124,8 +117,6 @@ final class Parser
 
     /**
      * Procedure that analyse one file of the data source
-     *
-     * @param SplFileInfo $fileInfo
      */
     private function processFile(SplFileInfo $fileInfo): void
     {
