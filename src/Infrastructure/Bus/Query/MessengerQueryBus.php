@@ -25,18 +25,13 @@ final class MessengerQueryBus implements QueryBusInterface
 
     /**
      * MessengerQueryBus constructor.
-     *
-     * @param MessageBusInterface $queryBus
      */
     public function __construct(MessageBusInterface $queryBus)
     {
         $this->messageBus = $queryBus;
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function query(QueryInterface $query)
+    public function query(QueryInterface $query): mixed
     {
         return $this->handle($query);
     }

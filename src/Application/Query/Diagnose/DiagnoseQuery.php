@@ -29,8 +29,6 @@ final class DiagnoseQuery implements QueryInterface
 
     /**
      * Returns Doctrine database connection.
-     *
-     * @return Connection
      */
     public function getDatabaseConnection(): Connection
     {

@@ -14,6 +14,7 @@ use Bartlett\CompatInfo\Application\Profiler\Profile;
 use Bartlett\CompatInfo\Application\Query\QueryHandlerInterface;
 use Bartlett\CompatInfo\Application\Service\SourceProvider;
 
+use Exception;
 use RuntimeException;
 use function realpath;
 
@@ -32,6 +33,9 @@ final class GetCompatibilityHandler implements QueryHandlerInterface
         $this->parser = $parser;
     }
 
+    /**
+     * @throws Exception
+     */
     public function __invoke(GetCompatibilityQuery $query): Profile
     {
         $dataSource = $query->getSource();
