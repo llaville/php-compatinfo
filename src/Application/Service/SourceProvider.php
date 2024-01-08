@@ -12,6 +12,7 @@ use Symfony\Component\Finder\Finder;
 use function is_dir;
 use function pathinfo;
 use function realpath;
+use function str_starts_with;
 use function substr;
 use const PATH_SEPARATOR;
 
@@ -22,9 +23,7 @@ use const PATH_SEPARATOR;
 class SourceProvider
 {
     /**
-     * @param string $source
      * @param string[] $exclude
-     * @return Finder
      */
     public static function getFinder(string $source, array $exclude): Finder
     {
@@ -48,7 +47,7 @@ class SourceProvider
             }
         }
 
-        if (substr($provider['in'], 0, 1) == '.') {
+        if (str_starts_with($provider['in'], '.')) {
             // relative local file
             $provider['in'] = realpath($provider['in']);
         }
