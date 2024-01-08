@@ -77,7 +77,7 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
         } catch (HandlerFailedException $e) {
             $exceptions = [];
             if (version_compare(PHP_VERSION, '8.1', 'ge')) {
-                $failures = $e->getWrappedExceptions(); // @phpstan-ignore-line
+                $failures = $e->getWrappedExceptions();
             } else {
                 // still keep compatibility with Symfony Messenger Component 6.0
                 $failures = $e->getNestedExceptions();
