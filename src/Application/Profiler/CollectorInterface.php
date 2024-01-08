@@ -27,16 +27,12 @@ interface CollectorInterface
     /**
      * Gets a Collector by name.
      *
-     * @param string $name
-     * @return DataCollectorInterface
      * @throws DomainException if the Collector does not exist
      */
     public function getCollector(string $name): DataCollectorInterface;
 
     /**
      * Adds a Collector.
-     *
-     * @param DataCollectorInterface $collector
      */
     public function addCollector(DataCollectorInterface $collector): void;
 
@@ -49,9 +45,6 @@ interface CollectorInterface
 
     /**
      * Checks if a Collector identified by its name exists.
-     *
-     * @param string $name
-     * @return bool
      */
     public function hasCollector(string $name): bool;
 }

@@ -22,7 +22,6 @@ final class Profile implements CollectorInterface
     /**
      * Profile constructor.
      *
-     * @param string $token
      * @param array<string, mixed> $data
      */
     public function __construct(string $token, iterable $data)

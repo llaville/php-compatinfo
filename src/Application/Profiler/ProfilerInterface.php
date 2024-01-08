@@ -23,7 +23,6 @@ interface ProfilerInterface extends CollectorInterface
     /**
      * Collects all data from each Collector attached to this Profiler.
      *
-     * @return Profile
      * @throws Exception
      */
     public function collect(): Profile;

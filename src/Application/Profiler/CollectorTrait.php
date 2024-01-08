@@ -23,7 +23,7 @@ trait CollectorTrait
     private array $collectors = [];
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getCollectors(): array
     {
@@ -31,7 +31,7 @@ trait CollectorTrait
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getCollector(string $name): DataCollectorInterface
     {
@@ -42,7 +42,7 @@ trait CollectorTrait
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function addCollector(DataCollectorInterface $collector): void
     {
@@ -50,7 +50,7 @@ trait CollectorTrait
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function setCollectors(array $collectors): void
     {
@@ -61,7 +61,7 @@ trait CollectorTrait
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function hasCollector(string $name): bool
     {

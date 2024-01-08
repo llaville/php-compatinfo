@@ -33,7 +33,7 @@ final class Profiler implements ProfilerInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function reset(): void
     {
@@ -43,7 +43,7 @@ final class Profiler implements ProfilerInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function collect(): Profile
     {
