@@ -15,17 +15,11 @@ use function version_compare;
  */
 final class SymfonyPhp71 extends AbstractPolyfillInstalled
 {
-    /**
-     * {@inheritDoc}
-     */
     public function getName(): string
     {
         return 'symfony/polyfill-php71';
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getVersion(): string
     {
         $installed = parent::getVersion();

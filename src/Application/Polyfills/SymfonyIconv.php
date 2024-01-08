@@ -15,17 +15,11 @@ use function version_compare;
  */
 final class SymfonyIconv extends AbstractPolyfillInstalled
 {
-    /**
-     * {@inheritDoc}
-     */
     public function getName(): string
     {
         return 'symfony/polyfill-iconv';
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getVersion(): string
     {
         $installed = parent::getVersion();

@@ -15,17 +15,11 @@ use function version_compare;
  */
 final class SymfonyCtype extends AbstractPolyfillInstalled
 {
-    /**
-     * {@inheritDoc}
-     */
     public function getName(): string
     {
         return 'symfony/polyfill-ctype';
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getVersion(): string
     {
         $installed = parent::getVersion();

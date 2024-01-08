@@ -15,17 +15,11 @@ use function version_compare;
  */
 final class SymfonyMbstring extends AbstractPolyfillInstalled
 {
-    /**
-     * {@inheritDoc}
-     */
     public function getName(): string
     {
         return 'symfony/polyfill-mbstring';
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getVersion(): string
     {
         $installed = parent::getVersion();

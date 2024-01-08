@@ -13,17 +13,11 @@ namespace Bartlett\CompatInfo\Application\Polyfills;
  */
 final class SymfonyPhp81 extends AbstractPolyfillInstalled
 {
-    /**
-     * {@inheritDoc}
-     */
     public function getName(): string
     {
         return 'symfony/polyfill-php81';
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getVersion(): string
     {
         // since release v1.22.0

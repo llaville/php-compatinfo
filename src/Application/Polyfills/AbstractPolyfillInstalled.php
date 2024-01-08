@@ -17,14 +17,8 @@ use Composer\InstalledVersions;
  */
 abstract class AbstractPolyfillInstalled implements PolyfillInterface
 {
-    /**
-     * {@inheritDoc}
-     */
     abstract public function getName(): string;
 
-    /**
-     * {@inheritDoc}
-     */
     public function getVersion(): string
     {
         return InstalledVersions::getVersion($this->getName());
