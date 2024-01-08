@@ -68,11 +68,9 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     /**
      * Initializes the compatibility analyser
      *
-     * @param ProfilerInterface $profiler
      * @param SniffCollectionInterface<SniffInterface> $sniffCollection
      * @param ReferenceCollectionInterface<array> $referenceCollection
      * @param PolyfillCollectionInterface<PolyfillInterface> $polyfillCollection
-     * @param EventDispatcherInterface $compatibilityEventDispatcher
      */
     public function __construct(
         ProfilerInterface $profiler,
@@ -142,7 +140,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function beforeTraverse(array $nodes): ?array
     {
@@ -153,7 +151,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterTraverse(array $nodes): ?array
     {
@@ -176,9 +174,9 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         $this->contextCallback = [$this, 'enter' . str_replace('_', '', $node->getType())];
 
@@ -190,9 +188,9 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): array|int|Node|null
     {
         if ($node instanceof Node\Scalar\MagicConst) {
             $this->contextCallback = [$this, 'leaveScalarMagicConst'];
@@ -218,9 +216,6 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
 
     /**
      * Compute the version of the class called.
-     *
-     * @param Node\Expr\New_ $node
-     * @return void
      */
     private function leaveExprNew(Node\Expr\New_ $node): void
     {
@@ -232,9 +227,6 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
 
     /**
      * Compute the version of the function called (user or internal).
-     *
-     * @param Node\Expr\FuncCall $node
-     * @return void
      */
     private function leaveExprFuncCall(Node\Expr\FuncCall $node): void
     {
@@ -263,9 +255,6 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
 
     /**
      * Compute the version of the method called (user or internal).
-     *
-     * @param Node\Expr\MethodCall $node
-     * @return void
      */
     private function leaveExprMethodCall(Node\Expr\MethodCall $node): void
     {
@@ -297,9 +286,6 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
 
     /**
      * Compute the version of the method statically called (user or internal).
-     *
-     * @param Node\Expr\StaticCall $node
-     * @return void
      */
     private function leaveExprStaticCall(Node\Expr\StaticCall $node): void
     {
@@ -315,7 +301,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
         }
 
         if (!$node->class instanceof Node\Name) {
-            // cannot resolved indirect call
+            // cannot resolve indirect call
             return;
         }
 
@@ -327,9 +313,6 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
 
     /**
      * Compute the version of magic constants fetch (internal).
-     *
-     * @param Node\Scalar\MagicConst $node
-     * @return void
      */
     private function leaveScalarMagicConst(Node\Scalar\MagicConst $node): void
     {
@@ -338,9 +321,6 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
 
     /**
      * Compute the version of standard constants fetch (user or internal).
-     *
-     * @param Node\Expr\ConstFetch $node
-     * @return void
      */
     private function leaveExprConstFetch(Node\Expr\ConstFetch $node): void
     {
@@ -359,10 +339,6 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
 
     /**
      * Creates an alias that identify the original class.
-     *
-     * @param Node\Expr\Assign $node
-     *
-     * @return void
      */
     private function initClassAliasResolver(Node\Expr\Assign $node): void
     {
@@ -402,13 +378,6 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
 
     /**
      * Compute the version of an internal function.
-     *
-     * @param Node $node
-     * @param string $element
-     * @param string $context
-     * @param string|null $extra
-     *
-     * @return void
      */
     private function computeInternalVersions(Node $node, string $element, string $context, ?string $extra = null): void
     {
@@ -426,7 +395,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
 
                 try {
                     $versions['php.min'] = $this->polyfillCollection->getVersion($packages, $versions['php.min']);
-                } catch (OutOfBoundsException $e) {
+                } catch (OutOfBoundsException) {
                     // polyfill package not installed
                     $versions['php.all'] = '';
                 }

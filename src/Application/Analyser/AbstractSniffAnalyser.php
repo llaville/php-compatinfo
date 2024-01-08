@@ -30,18 +30,14 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
 {
     private EventDispatcherInterface $dispatcher;
     /** @var SniffCollectionInterface<SniffInterface>  */
-    private $sniffs;
+    private SniffCollectionInterface $sniffs;
     private string $attributeParentKey;
     private string $attributeKey;
 
     protected ProfilerInterface $profiler;
 
     /**
-     * @param ProfilerInterface $profiler
-     * @param EventDispatcherInterface $dispatcher
      * @param SniffCollectionInterface<SniffInterface> $sniffs
-     * @param string $attributeParentKey
-     * @param string $attributeKey
      */
     public function __construct(
         ProfilerInterface $profiler,
@@ -57,17 +53,11 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
         $this->attributeKey = $attributeKey;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getProfiler(): ProfilerInterface
     {
         return $this->profiler;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setErrorHandler(ErrorHandler $errorHandler): void
     {
         foreach ($this->profiler->getCollectors() as $collector) {
@@ -76,9 +66,6 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setUpBeforeVisitor(): void
     {
         foreach ($this->sniffs as $sniff) {
@@ -89,9 +76,6 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function tearDownAfterVisitor(): void
     {
         foreach ($this->sniffs as $sniff) {
@@ -100,7 +84,7 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function beforeTraverse(array $nodes): ?array
     {
@@ -113,9 +97,9 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         $this->dispatcher->dispatch(new BeforeProcessNodeEvent($this, ['node' => $node]));
 
@@ -126,9 +110,9 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): int|Node|array|null
     {
         foreach ($this->sniffs as $sniff) {
             $sniff->leaveNode($node);
@@ -139,7 +123,7 @@ abstract class AbstractSniffAnalyser implements SniffAnalyserInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterTraverse(array $nodes): ?array
     {
