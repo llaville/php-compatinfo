@@ -11,6 +11,7 @@ use Psr\Log\AbstractLogger;
 use Psr\Log\LogLevel;
 
 use DateTime;
+use Stringable;
 use function array_search;
 use function call_user_func;
 use function error_log;
@@ -22,7 +23,7 @@ use function is_object;
 use function is_scalar;
 use function method_exists;
 use function sprintf;
-use function strpos;
+use function str_contains;
 use function strtoupper;
 use function strtr;
 
@@ -46,31 +47,27 @@ class DefaultLogger extends AbstractLogger
         600 => 'emergency',
     ];
 
-    /** @var string  */
-    private $destination;
-    /** @var string  */
-    private $channel;
-    /** @var string  */
-    private $level;
-    /** @var DefaultLogger|object  */
-    private $handler;
+    private string $destination;
+    private string $channel;
+    private string|int|false $level;
+    private object $handler;
     /** @var callable[]  */
-    private $processors;
+    private array $processors;
 
     /**
      * Initialize the default log handler
      *
-     * @param string $stream     The stream path
-     * @param string $name       The logging channel
-     * @param string $level      The minimum logging level
-     * @param DefaultLogger|object $handler Optional handler
+     * @param string $stream The stream path
+     * @param string $name The logging channel
+     * @param string $level The minimum logging level
+     * @param object|null $handler Optional handler
      * @param callable[] $processors Optional array of processors
      */
     public function __construct(
         string $stream,
         string $name = 'DefaultLoggerChannel',
         string $level = LogLevel::INFO,
-        $handler = null,
+        object $handler = null,
         array $processors = []
     ) {
         $this->destination = $stream;
@@ -79,7 +76,6 @@ class DefaultLogger extends AbstractLogger
 
         if (
             isset($handler)
-            && is_object($handler)
             && method_exists($handler, 'handle')
             && is_callable([$handler, 'handle'])
         ) {
@@ -95,8 +91,6 @@ class DefaultLogger extends AbstractLogger
      * Checks whether the given record will be handled by this handler.
      *
      * @param array<string, mixed> $record The record to handle
-     *
-     * @return bool
      */
     public function isHandling(array $record): bool
     {
@@ -110,7 +104,7 @@ class DefaultLogger extends AbstractLogger
      * @param mixed  $level   The log level
      * @param array<string, mixed> $context The log context
      */
-    public function log($level, string|\Stringable $message, array $context = []): void
+    public function log($level, string|Stringable $message, array $context = []): void
     {
         $record = [
             'channel'  => $this->channel,
@@ -133,8 +127,6 @@ class DefaultLogger extends AbstractLogger
      * Handles a record.
      *
      * @param array<string, mixed> $record The record to handle
-     *
-     * @return void
      */
     public function handle(array $record): void
     {
@@ -164,7 +156,7 @@ class DefaultLogger extends AbstractLogger
      */
     public function interpolate(array $record): array
     {
-        if (false === strpos($record['message'], '{')) {
+        if (!str_contains($record['message'], '{')) {
             return $record;
         }
 
