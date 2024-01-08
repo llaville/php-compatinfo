@@ -27,7 +27,7 @@ final class NodeNormalizer implements NormalizerInterface
     private string $attributeNamespacedName;
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      * @param array<string, string> $context
      * @return float|array<string, mixed>|ArrayObject|bool|int|string|null
      */
@@ -63,7 +63,7 @@ final class NodeNormalizer implements NormalizerInterface
                 $parents[] = [$this->getType($parentNode) => $parentId];
             }
 
-            $parentNode = $parentNode->getAttribute($attributeParentKey, null);
+            $parentNode = $parentNode->getAttribute($attributeParentKey);
         }
 
         return [
@@ -75,7 +75,7 @@ final class NodeNormalizer implements NormalizerInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      * @phpstan-ignore-next-line
      */
     public function supportsNormalization(mixed $data, string $format = null, array $context = []): bool

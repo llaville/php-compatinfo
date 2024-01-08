@@ -41,7 +41,7 @@ abstract class DataCollector implements DataCollectorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function reset(): void
     {
@@ -51,7 +51,7 @@ abstract class DataCollector implements DataCollectorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getData(): array
     {
@@ -59,7 +59,7 @@ abstract class DataCollector implements DataCollectorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function collect(array $nodes): array
     {
@@ -71,7 +71,7 @@ abstract class DataCollector implements DataCollectorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function setName(string $name): DataCollectorInterface
     {
@@ -80,7 +80,7 @@ abstract class DataCollector implements DataCollectorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getName(): string
     {
@@ -88,7 +88,7 @@ abstract class DataCollector implements DataCollectorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function addFile(SplFileInfo $file): void
     {
@@ -96,7 +96,7 @@ abstract class DataCollector implements DataCollectorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getFiles(): array
     {
@@ -104,7 +104,7 @@ abstract class DataCollector implements DataCollectorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function addErrors(array $errors): void
     {
@@ -116,7 +116,7 @@ abstract class DataCollector implements DataCollectorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getErrors(): array
     {

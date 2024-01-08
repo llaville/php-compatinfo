@@ -20,16 +20,15 @@ use PhpParser\Error;
 final class Throwing implements ErrorHandler
 {
     /**
-     * {@inheritDoc}
-     * @return void
+     * @inheritDoc
      */
-    public function handleError(Error $error)
+    public function handleError(Error $error): void
     {
         throw $error;
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function hasErrors(): bool
     {
@@ -37,7 +36,7 @@ final class Throwing implements ErrorHandler
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getErrors(): array
     {
@@ -45,7 +44,7 @@ final class Throwing implements ErrorHandler
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function clearErrors(): void
     {

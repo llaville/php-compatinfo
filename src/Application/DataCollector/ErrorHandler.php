@@ -24,15 +24,11 @@ interface ErrorHandler extends \PhpParser\ErrorHandler
 
     /**
      * Check whether there are any errors.
-     *
-     * @return bool
      */
     public function hasErrors(): bool;
 
     /**
      * Reset/clear collected errors.
-     *
-     * @return void
      */
     public function clearErrors(): void;
 }

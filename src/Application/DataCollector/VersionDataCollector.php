@@ -26,7 +26,7 @@ use function in_array;
 final class VersionDataCollector extends DataCollector
 {
     /** @var string[] */
-    private array $dataKeysAllowed = [];
+    private array $dataKeysAllowed;
 
     /**
      * VersionDataCollector constructor.
@@ -44,7 +44,7 @@ final class VersionDataCollector extends DataCollector
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function collect(array $nodes): array
     {
@@ -80,7 +80,7 @@ final class VersionDataCollector extends DataCollector
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function reset(): void
     {
@@ -89,7 +89,7 @@ final class VersionDataCollector extends DataCollector
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getData(): array
     {
@@ -104,7 +104,7 @@ final class VersionDataCollector extends DataCollector
                 continue;
             }
 
-            foreach ($elements as $name => $versions) {
+            foreach ($elements as $versions) {
                 $optional = ($versions['optional'] ?? false) === true;
 
                 $extName = $versions['ext.name'];
@@ -240,7 +240,6 @@ final class VersionDataCollector extends DataCollector
     }
 
     /**
-     * @param string $id
      * @param array<string, mixed> $condition
      */
     private function handleCodeWithCondition(string $id, array $condition): void

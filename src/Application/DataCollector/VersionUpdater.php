@@ -10,6 +10,8 @@ namespace Bartlett\CompatInfo\Application\DataCollector;
 use PhpParser\Node;
 
 use function array_merge;
+use function in_array;
+use function version_compare;
 
 /**
  * @author Laurent Laville
@@ -33,10 +35,6 @@ trait VersionUpdater
 
     /**
      * Updates the base version if current ref version is greater
-     *
-     * @param string $current Current version
-     * @param string $base    Base version
-     * @return bool
      */
     protected function updateVersion(string $current, string &$base): bool
     {
@@ -52,7 +50,6 @@ trait VersionUpdater
      *
      * @param array<string, mixed> $target
      * @param array<string, string> $versions
-     * @return bool
      */
     protected function updateElementVersion(array &$target, array $versions): bool
     {
@@ -82,8 +79,6 @@ trait VersionUpdater
     /**
      * Updates the version of a specific element in a node of the AST.
      *
-     * @param Node $node
-     * @param string $attributeKey
      * @param array<string, string> $versions
      */
     protected function updateNodeElementVersion(Node $node, string $attributeKey, array $versions): void
@@ -96,10 +91,8 @@ trait VersionUpdater
     /**
      * Updates versions of an Extension.
      *
-     * @param string $name
      * @param array<string, string> $target
      * @param array<string, string> $versions
-     * @return bool
      */
     protected function updateExtension(string $name, array &$target, array $versions): bool
     {

@@ -23,16 +23,15 @@ use PhpParser\Error;
 final class Collecting extends ArrayCollection implements ErrorHandler
 {
     /**
-     * {@inheritDoc}
-     * @return void
+     * @inheritDoc
      */
-    public function handleError(Error $error)
+    public function handleError(Error $error): void
     {
         $this->add($error);
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getErrors(): array
     {
@@ -40,7 +39,7 @@ final class Collecting extends ArrayCollection implements ErrorHandler
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function hasErrors(): bool
     {
@@ -48,7 +47,7 @@ final class Collecting extends ArrayCollection implements ErrorHandler
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function clearErrors(): void
     {

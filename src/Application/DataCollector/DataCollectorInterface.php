@@ -40,23 +40,16 @@ interface DataCollectorInterface
 
     /**
      * Identify the data collector by a unique name.
-     *
-     * @param string $name
-     * @return DataCollectorInterface
      */
     public function setName(string $name): DataCollectorInterface;
 
     /**
      * Returns the name of the collector.
-     *
-     * @return string The collector name
      */
     public function getName(): string;
 
     /**
      * Collects file analysed.
-     *
-     * @param SplFileInfo $file
      */
     public function addFile(SplFileInfo $file): void;
 
