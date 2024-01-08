@@ -7,10 +7,12 @@
  */
 namespace Bartlett\CompatInfo\Application\Collection;
 
+use Bartlett\CompatInfo\Application\Sniffs\SniffInterface;
+
 use IteratorAggregate;
 
 /**
- * @phpstan-template T of \Bartlett\CompatInfo\Application\Sniffs\SniffInterface
+ * @phpstan-template T of SniffInterface
  * @phpstan-extends  IteratorAggregate<T>
  * @author Laurent Laville
  * @since Release 6.0.0

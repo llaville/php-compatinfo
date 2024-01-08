@@ -17,7 +17,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use function array_pop;
 use function array_slice;
 use function in_array;
-use function strpos;
+use function str_contains;
 
 /**
  * Reference collection that collect information for the compatibility analyser.
@@ -34,10 +34,6 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
 
     /**
      * Creates a new Reference Collection
-     *
-     * @param ClassRepository $classRepository
-     * @param ConstantRepository $constantRepository
-     * @param FunctionRepository $functionRepository
      */
     public function __construct(
         ClassRepository $classRepository,
@@ -50,7 +46,7 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function find(string $group, string $key, int $argc = 0, ?string $extra = null): array
     {
@@ -108,7 +104,7 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
 
             if (!$result) {
                 // when not found in database, should be a user or an unknown extension element
-                if (strpos($key, '\\') === false) {
+                if (!str_contains($key, '\\')) {
                     // not qualified
                     $min = '4.0.0';
                 } else {
@@ -129,7 +125,7 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
         }
 
         // compute the right version depending on number of arguments used
-        if (isset($result['parameters']) && !empty($result['parameters'])) {
+        if (!empty($result['parameters'])) {
             $parameters = array_slice($result['parameters'], 0, $argc);
             if (!empty($parameters)) {
                 $result['php.min'] = array_pop($parameters);
@@ -144,7 +140,7 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     protected function doInitialize(): void
     {

@@ -14,7 +14,7 @@ use Traversable;
 /**
  * Collection of sniffs to proceed for an analyser
  *
- * @phpstan-template T of \Bartlett\CompatInfo\Application\Sniffs\SniffInterface
+ * @phpstan-template T of SniffInterface
  * @phpstan-implements SniffCollectionInterface<T>
  * @author Laurent Laville
  * @since Release 5.4.0
@@ -22,7 +22,7 @@ use Traversable;
 class SniffCollection implements SniffCollectionInterface
 {
     /** @var Traversable<T> */
-    protected $sniffs;
+    protected Traversable $sniffs;
 
     /**
      * SniffCollection constructor.
@@ -35,7 +35,7 @@ class SniffCollection implements SniffCollectionInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getIterator(): Traversable
     {

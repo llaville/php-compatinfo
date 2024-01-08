@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Application\Collection;
 
+use Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface;
+
 use ArrayIterator;
 use Traversable;
 use function in_array;
@@ -15,7 +17,7 @@ use function iterator_count;
 use function version_compare;
 
 /**
- * @phpstan-template T of \Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface
+ * @phpstan-template T of PolyfillInterface
  * @phpstan-implements PolyfillCollectionInterface<T>
  * @author Laurent Laville
  * @since Release 6.4.0
@@ -23,7 +25,7 @@ use function version_compare;
 final class PolyfillCollection implements PolyfillCollectionInterface
 {
     /** @var Traversable<T> */
-    private $polyfills;
+    private Traversable $polyfills;
 
     /**
      * @param iterable<T> $polyfills
@@ -34,7 +36,7 @@ final class PolyfillCollection implements PolyfillCollectionInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getIterator(): Traversable
     {
@@ -42,7 +44,7 @@ final class PolyfillCollection implements PolyfillCollectionInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getVersion(array $whitelist, string $default): string
     {
