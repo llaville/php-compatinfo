@@ -35,7 +35,6 @@ use Psr\Log\NullLogger;
 use Symfony\Component\Console\ConsoleEvents;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\Console\Event\ConsoleTerminateEvent;
-use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 use function get_class;
@@ -63,8 +62,6 @@ final class Logger implements
 
     /**
      * Logger extension constructor.
-     *
-     * @param LoggerInterface $logger
      */
     public function __construct(LoggerInterface $logger)
     {
@@ -72,7 +69,7 @@ final class Logger implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getName(): string
     {
@@ -80,7 +77,7 @@ final class Logger implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function getSubscribedEvents(): array
     {
@@ -93,9 +90,6 @@ final class Logger implements
 
     /**
      * Initialize logger extension, by `analyser:run --debug` command
-     *
-     * @param ConsoleCommandEvent $event
-     * @return void
      */
     public function onConsoleCommand(ConsoleCommandEvent $event): void
     {
@@ -110,10 +104,6 @@ final class Logger implements
         $this->logger->info('Start {command} command.', $context);
     }
 
-    /**
-     * @param ConsoleTerminateEvent $event
-     * @return void
-     */
     public function onConsoleTerminate(ConsoleTerminateEvent $event): void
     {
         $context = ['command' => $event->getCommand()->getName()];
@@ -121,7 +111,7 @@ final class Logger implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function beforeAnalyzeFile(BeforeFileAnalysisEvent $event): void
     {
@@ -129,7 +119,7 @@ final class Logger implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterAnalyzeFile(AfterFileAnalysisEvent $event): void
     {
@@ -138,7 +128,6 @@ final class Logger implements
 
     /**
      * @param ErrorEvent<string, string> $event
-     * @return void
      */
     public function onError(ErrorEvent $event): void
     {
@@ -146,7 +135,7 @@ final class Logger implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterAnalysis(AfterAnalysisEvent $event): void
     {
@@ -157,7 +146,7 @@ final class Logger implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function beforeEnterNode(BeforeProcessNodeEvent $event): void
     {
@@ -174,7 +163,7 @@ final class Logger implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterLeaveNode(AfterProcessNodeEvent $event): void
     {
@@ -191,7 +180,7 @@ final class Logger implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function beforeSetupSniff(BeforeInitializeSniffEvent $event): void
     {
@@ -199,7 +188,7 @@ final class Logger implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterTearDownSniff(AfterInitializeSniffEvent $event): void
     {
@@ -207,7 +196,7 @@ final class Logger implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function beforeEnterSniff(BeforeProcessSniffEvent $event): void
     {
@@ -215,7 +204,7 @@ final class Logger implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterLeaveSniff(AfterProcessSniffEvent $event): void
     {

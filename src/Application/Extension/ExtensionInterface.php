@@ -15,8 +15,6 @@ interface ExtensionInterface
 {
     /**
      * Returns name of extension (must be unique)
-     *
-     * @return string
      */
     public function getName(): string;
 }

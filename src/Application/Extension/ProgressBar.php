@@ -39,7 +39,7 @@ final class ProgressBar implements
     private ?SymfonyProgressBar $progressBar = null;
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function getSubscribedEvents(): array
     {
@@ -65,7 +65,7 @@ final class ProgressBar implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getName(): string
     {
@@ -73,17 +73,15 @@ final class ProgressBar implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function beforeAnalysis(BeforeAnalysisEvent $event): void
     {
-        if ($this->progressBar) {
-            $this->progressBar->start(count($event->getArgument('queue')));
-        }
+        $this->progressBar?->start(count($event->getArgument('queue')));
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterAnalysis(AfterAnalysisEvent $event): void
     {
@@ -94,7 +92,7 @@ final class ProgressBar implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function beforeAnalyzeFile(BeforeFileAnalysisEvent $event): void
     {
@@ -105,12 +103,10 @@ final class ProgressBar implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterAnalyzeFile(AfterFileAnalysisEvent $event): void
     {
-        if ($this->progressBar) {
-            $this->progressBar->advance();
-        }
+        $this->progressBar?->advance();
     }
 }

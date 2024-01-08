@@ -47,23 +47,20 @@ final class FactoryExtensionLoader implements ExtensionLoaderInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getNames(): array
     {
         return array_keys($this->factories);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function has(string $name): bool
     {
         return isset($this->factories[$name]);
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function get(string $name): ExtensionInterface
     {
