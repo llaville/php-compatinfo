@@ -13,7 +13,7 @@ digraph {
 </table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ format(data) : void</td></tr>
+    <tr><td align="left">+ format(data : mixed) : void</td></tr>
 </table></td></tr>
 </table>>]
     "Bartlett\\CompatInfo\\Application\\Extension\\Reporter\\FormatterInterface" [shape="none" label=<
@@ -33,7 +33,7 @@ digraph {
 </table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ format(data) : void</td></tr>
+    <tr><td align="left">+ format(data : mixed) : void</td></tr>
 </table></td></tr>
 </table>>]
     "Bartlett\\CompatInfo\\Application\\Extension\\Reporter\\JsonReporter" [shape="none" label=<
@@ -44,7 +44,7 @@ digraph {
 </table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ format(data) : void</td></tr>
+    <tr><td align="left">+ format(data : mixed) : void</td></tr>
 </table></td></tr>
 </table>>]
     "Bartlett\\CompatInfo\\Application\\Extension\\Reporter\\SarifReporter" [shape="none" label=<
@@ -52,11 +52,12 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>SarifReporter</b></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ «static» NAME : string = "sarif" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» PHP_VERSIONS : array = […] {readOnly}</td></tr>
 </table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(sniffs : Bartlett\\CompatInfo\\Application\\Collection\\SniffCollectionInterface, input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
-    <tr><td align="left">+ format(data) : void</td></tr>
+    <tr><td align="left">+ format(data : mixed) : void</td></tr>
     <tr><td align="left">+ afterAnalyzeFile(event : Bartlett\\CompatInfo\\Application\\Event\\AfterFileAnalysisEvent) : void</td></tr>
     <tr><td align="left">+ afterAnalysis(event : Bartlett\\CompatInfo\\Application\\Event\\AfterAnalysisEvent) : void</td></tr>
     <tr><td align="left">+ getRules() : Generator</td></tr>

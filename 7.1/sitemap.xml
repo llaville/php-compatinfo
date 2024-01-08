@@ -2,107 +2,107 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://llaville.github.io/php-compatinfo/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/installation/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/architecture/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/components/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/components/extensions/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/components/extensions/reporter/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/components/parser/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/components/polyfills/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/components/profiler/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/components/sniffs/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/conditional-code/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/conditional-code/indirect-call/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/conditional-code/introduction/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/conditional-code/limitation/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/conditional-code/multiple-signature/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/configs/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/exclusions/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/usage/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/usage/console/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/usage/docker/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/usage/programmatically/</loc>
-         <lastmod>2024-01-02</lastmod>
+         <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

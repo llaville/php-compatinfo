@@ -162,7 +162,7 @@
 <g id="node23" class="node">
 <title>bartlett/sarif&#45;php&#45;sdk</title>
 <path fill="#eeeeee" stroke="black" d="M603.08,-2186C603.08,-2186 414.08,-2186 414.08,-2186 408.08,-2186 402.08,-2180 402.08,-2174 402.08,-2174 402.08,-2162 402.08,-2162 402.08,-2156 408.08,-2150 414.08,-2150 414.08,-2150 603.08,-2150 603.08,-2150 609.08,-2150 615.08,-2156 615.08,-2162 615.08,-2162 615.08,-2174 615.08,-2174 615.08,-2180 609.08,-2186 603.08,-2186"/>
-<text text-anchor="middle" x="508.58" y="-2164.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">bartlett/sarif&#45;php&#45;sdk: 1.0.1</text>
+<text text-anchor="middle" x="508.58" y="-2164.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">bartlett/sarif&#45;php&#45;sdk: 1.1.0</text>
 </g>
 <!-- bartlett/php&#45;compatinfo&#45;&gt;bartlett/sarif&#45;php&#45;sdk -->
 <g id="edge30" class="edge">
@@ -480,7 +480,7 @@
 <title>bartlett/sarif&#45;php&#45;sdk&#45;&gt;php</title>
 <path fill="none" stroke="#1a2833" d="M556.5,-2186.05C586.25,-2196.52 625.83,-2208.65 662.08,-2214 764.69,-2229.14 1116.87,-2201.67 1122.08,-2197 1214.84,-2113.72 1216.68,-1167.94 1216.2,-990.57"/>
 <polygon fill="#1a2833" stroke="#1a2833" points="1219.7,-990.45 1216.17,-980.46 1212.7,-990.47 1219.7,-990.45"/>
-<text text-anchor="middle" x="976.58" y="-2220" font-family="Times,serif" font-size="10.00" fill="#767676">^7.1|^8.0</text>
+<text text-anchor="middle" x="976.58" y="-2220" font-family="Times,serif" font-size="10.00" fill="#767676">^7.4 || ^8.0</text>
 </g>
 <!-- bartlett/sarif&#45;php&#45;sdk&#45;&gt;ext&#45;json -->
 <g id="edge26" class="edge">
