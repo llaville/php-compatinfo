@@ -14,15 +14,9 @@ namespace Bartlett\CompatInfo\Application\Extension\Reporter;
 interface FormatterInterface
 {
     /**
-     * @param object $object
      * @param string[] $formats
-     * @return bool
      */
     public function supportsFormatting(object $object, array $formats): bool;
 
-    /**
-     * @param mixed $data Data to format
-     * @return void
-     */
-    public function format($data): void;
+    public function format(mixed $data): void;
 }

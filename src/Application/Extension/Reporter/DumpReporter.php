@@ -20,10 +20,7 @@ final class DumpReporter extends Reporter implements FormatterInterface
 {
     protected const NAME = 'dump';
 
-    /**
-     * {@inheritDoc}
-     */
-    public function format($data): void
+    public function format(mixed $data): void
     {
         /** @var string[] $format */
         $format = $this->input->getOption('output');

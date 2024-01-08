@@ -22,10 +22,7 @@ final class JsonReporter extends Reporter implements FormatterInterface
 {
     protected const NAME = 'json';
 
-    /**
-     * {@inheritDoc}
-     */
-    public function format($data): void
+    public function format(mixed $data): void
     {
         /** @var string[] $format */
         $format = $this->input->getOption('output');

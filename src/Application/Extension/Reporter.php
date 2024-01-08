@@ -33,7 +33,7 @@ abstract class Reporter implements ExtensionInterface, AfterAnalysisInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getName(): string
     {
@@ -49,7 +49,7 @@ abstract class Reporter implements ExtensionInterface, AfterAnalysisInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterAnalysis(AfterAnalysisEvent $event): void
     {

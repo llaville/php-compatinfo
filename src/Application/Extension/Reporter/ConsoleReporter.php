@@ -24,6 +24,7 @@ use function in_array;
 use function ksort;
 use function sprintf;
 use function str_replace;
+use function str_starts_with;
 use function strpos;
 use function substr;
 use function ucfirst;
@@ -40,10 +41,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
     /** @var array<string, mixed> */
     private array $metrics;
 
-    /**
-     * {@inheritDoc}
-     */
-    public function format($data): void
+    public function format(mixed $data): void
     {
         /** @var string[] $format */
         $format = $this->input->getOption('output');
@@ -229,7 +227,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
             $row = [
                 $flags,
                 $arg,
-                isset($versions['ext.name']) ? $versions['ext.name'] : '',
+                $versions['ext.name'] ?? '',
                 self::ext($versions),
                 self::php($versions),
                 $suggest,
@@ -249,7 +247,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
                 && !in_array($arg, ['parent', 'self', 'static'])
             ) {
                 foreach ($this->metrics['methods'] as $method => $version) {
-                    if (strpos($method, "$arg\\") === 0) {
+                    if (str_starts_with($method, "$arg\\")) {
                         $flags = isset($version['optional']) ? 'C' : ' ';
 
                         $suggest = $all = $versions['php.all'] ?? '';
@@ -260,7 +258,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
                         $rows[] = [
                             $flags,
                             sprintf('<info>function</info> %s', str_replace("$arg\\", '', $method)),
-                            isset($version['ext.name']) ? $version['ext.name'] : '',
+                            $version['ext.name'] ?? '',
                             self::ext($version),
                             self::php($version),
                             $suggest,
@@ -288,7 +286,6 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
 
     /**
      * @param array<string> $domain
-     * @return string
      */
     private function ext(array $domain): string
     {
@@ -300,7 +297,6 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
 
     /**
      * @param array<string> $domain
-     * @return string
      */
     private function php(array $domain): string
     {

@@ -13,7 +13,9 @@ use Bartlett\CompatInfo\Presentation\Console\Style;
 
 use function array_keys;
 use function count;
+use function current;
 use function is_array;
+use function key;
 use function ksort;
 use function sprintf;
 use function sscanf;
@@ -26,10 +28,7 @@ final class RuleReporter extends Reporter implements FormatterInterface
 {
     protected const NAME = 'rule';
 
-    /**
-     * {@inheritDoc}
-     */
-    public function format($data): void
+    public function format(mixed $data): void
     {
         /** @var string[] $format */
         $format = $this->input->getOption('output');
@@ -65,8 +64,8 @@ final class RuleReporter extends Reporter implements FormatterInterface
                     foreach ($values['rules'] as $ruleId => $ruleDetails) {
                         if (!isset($rules[$ruleId])) {
                             $rules[$ruleId] = [
-                                'description' => \current($ruleDetails),
-                                'sniff' => \key($ruleDetails),
+                                'description' => current($ruleDetails),
+                                'sniff' => key($ruleDetails),
                             ];
                         }
                         if (!isset($rules[$ruleId][$section])) {

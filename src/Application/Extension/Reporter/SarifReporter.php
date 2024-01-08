@@ -15,7 +15,6 @@ use Bartlett\CompatInfo\Application\Event\AfterFileAnalysisInterface;
 use Bartlett\CompatInfo\Application\Extension\Reporter;
 use Bartlett\CompatInfo\Application\Profiler\Profile;
 use Bartlett\CompatInfo\Application\Sniffs\SniffInterface;
-use Bartlett\CompatInfo\Presentation\Console\ApplicationInterface;
 use Bartlett\CompatInfo\Presentation\Console\Style;
 use Bartlett\Sarif\Definition\ArtifactLocation;
 use Bartlett\Sarif\Definition\Invocation;
@@ -51,6 +50,7 @@ use function realpath;
 use function rtrim;
 use function sprintf;
 use function str_replace;
+use function str_starts_with;
 use function strlen;
 use function strrchr;
 use function substr;
@@ -82,8 +82,6 @@ final class SarifReporter extends Reporter implements
 
     /**
      * @param SniffCollectionInterface<SniffInterface> $sniffs
-     * @param InputInterface $input
-     * @param OutputInterface $output
      */
     public function __construct(SniffCollectionInterface $sniffs, InputInterface $input, OutputInterface $output)
     {
@@ -91,10 +89,7 @@ final class SarifReporter extends Reporter implements
         parent::__construct($input, $output);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function format($data): void
+    public function format(mixed $data): void
     {
         /** @var string[] $format */
         $format = $this->input->getOption('output');
@@ -115,7 +110,7 @@ final class SarifReporter extends Reporter implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterAnalyzeFile(AfterFileAnalysisEvent $event): void
     {
@@ -181,7 +176,7 @@ final class SarifReporter extends Reporter implements
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function afterAnalysis(AfterAnalysisEvent $event): void
     {
@@ -213,9 +208,7 @@ final class SarifReporter extends Reporter implements
     }
 
     /**
-     * @param string $id
      * @param array<string, mixed> $definition
-     * @return ReportingDescriptor
      */
     private function buildRulesList(string $id, array $definition): ReportingDescriptor
     {
@@ -239,7 +232,6 @@ final class SarifReporter extends Reporter implements
 
     /**
      * @param Result[] $results
-     * @return SarifLog
      */
     private function generateReport(array $results): SarifLog
     {
@@ -313,9 +305,6 @@ final class SarifReporter extends Reporter implements
 
     /**
      * Returns path to resource (file) scanned.
-     *
-     * @param string $path
-     * @return string
      */
     private function pathToArtifactLocation(string $path): string
     {
@@ -323,7 +312,7 @@ final class SarifReporter extends Reporter implements
         if ($workingDir === false) {
             $workingDir = '.';
         }
-        if (substr($path, 0, strlen($workingDir)) === $workingDir) {
+        if (str_starts_with($path, $workingDir)) {
             // relative path
             return substr($path, strlen($workingDir) + 1);
         }
@@ -333,9 +322,6 @@ final class SarifReporter extends Reporter implements
 
     /**
      * Returns path to resource (file) scanned with protocol.
-     *
-     * @param string $path
-     * @return string
      */
     private function pathToUri(string $path): string
     {
@@ -347,7 +333,7 @@ final class SarifReporter extends Reporter implements
         $path = str_replace(DIRECTORY_SEPARATOR, '/', $path);
 
         // file:///C:/... on Windows systems
-        if (substr($path, 0, 1) !== '/') {
+        if (!str_starts_with($path, '/')) {
             $path = realpath($path);
         }
         $path = rtrim($path, '/') . '/';
@@ -358,7 +344,6 @@ final class SarifReporter extends Reporter implements
     /**
      * @param string[] $command
      * @param string|null $cwd
-     * @return string
      */
     private function runProcess(array $command, string $cwd = null): string
     {
