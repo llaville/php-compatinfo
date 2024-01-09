@@ -37,9 +37,9 @@ final class GeneratorSniff extends SniffAbstract
     private const CA70 = 'CA7003';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if ($node instanceof Node\Expr\Yield_) {
             // introduction
@@ -57,9 +57,6 @@ final class GeneratorSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA55 => [

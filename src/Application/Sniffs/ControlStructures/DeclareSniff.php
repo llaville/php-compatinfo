@@ -28,8 +28,7 @@ use function str_replace;
  */
 final class DeclareSniff extends SniffAbstract
 {
-    /** @var KeywordBag */
-    private $directives;
+    private KeywordBag $directives;
 
     private function initialize(): void
     {
@@ -42,9 +41,6 @@ final class DeclareSniff extends SniffAbstract
         );
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function enterSniff(): void
     {
         parent::enterSniff();
@@ -52,9 +48,9 @@ final class DeclareSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Stmt\Declare_) {
             return null;
@@ -73,9 +69,6 @@ final class DeclareSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         $this->initialize();

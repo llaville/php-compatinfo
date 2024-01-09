@@ -31,9 +31,9 @@ final class ConstSyntaxSniff extends SniffAbstract
     private const CA56 = 'CA5606';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Stmt\Const_) {
             return null;
@@ -56,9 +56,6 @@ final class ConstSyntaxSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA53 => [

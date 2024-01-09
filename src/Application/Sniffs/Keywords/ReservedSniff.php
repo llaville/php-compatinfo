@@ -32,7 +32,7 @@ final class ReservedSniff extends SniffAbstract
         /**
          * The following words cannot be used to name a class, interface or trait,
          * and they are also prohibited from being used in namespaces.
-         * @var array<string, string>
+         * @var array<string, string> $forbiddenNames
          */
         $forbiddenNames = [
             'bool' => '7.0',
@@ -62,9 +62,6 @@ final class ReservedSniff extends SniffAbstract
         );
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function enterSniff(): void
     {
         parent::enterSniff();
@@ -72,9 +69,9 @@ final class ReservedSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         $this->contextIdentifier = $this->getNameContext($node);
         if (empty($this->contextIdentifier)) {
@@ -96,9 +93,6 @@ final class ReservedSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         $this->initialize();
@@ -124,8 +118,6 @@ final class ReservedSniff extends SniffAbstract
     /**
      * Checks that reserved word can not be used as class, interface or trait names
      *
-     * @param Node\Stmt\ClassLike $node
-     * @return void
      * @see enterNode
      */
     private function enterObject(Node\Stmt\ClassLike $node): void
@@ -136,8 +128,6 @@ final class ReservedSniff extends SniffAbstract
     /**
      * Checks that reserved word is prohibited from being used in part of a namespace
      *
-     * @param Node\Stmt\Namespace_ $node
-     * @return void
      * @see enterNode
      */
     private function enterStmtNamespace(Node\Stmt\Namespace_ $node): void

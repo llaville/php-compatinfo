@@ -25,9 +25,6 @@ final class DynamicAccessSniff extends SniffAbstract
     private const CA53M = 'CA5307';
     private const CA53P = 'CA5308';
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA53M => [
@@ -43,9 +40,9 @@ final class DynamicAccessSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): array|int|Node|null
     {
         $parent = $node->getAttribute($this->attributeParentKeyStore);
 

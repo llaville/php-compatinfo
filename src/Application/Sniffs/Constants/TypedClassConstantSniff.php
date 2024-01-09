@@ -29,7 +29,7 @@ final class TypedClassConstantSniff extends SniffAbstract
     /**
      * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Stmt\ClassConst) {
             return null;
@@ -42,9 +42,6 @@ final class TypedClassConstantSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getRules(): Generator
     {
         yield self::CA83 => [

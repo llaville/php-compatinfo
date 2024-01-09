@@ -28,9 +28,9 @@ final class UseTraitSniff extends SniffAbstract
     private const CA54 = 'CA5407';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Stmt\TraitUse) {
             return null;
@@ -41,9 +41,6 @@ final class UseTraitSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA54 => [

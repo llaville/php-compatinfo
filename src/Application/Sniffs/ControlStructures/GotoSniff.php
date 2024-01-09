@@ -28,9 +28,9 @@ final class GotoSniff extends SniffAbstract
     private const CA53 = 'CA5303';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Stmt\Goto_) {
             return null;
@@ -40,9 +40,6 @@ final class GotoSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA53 => [

@@ -28,9 +28,6 @@ final class DynamicClassConstantFetchSniff extends SniffAbstract
     // Rules identifiers for SARIF report
     private const CA83 = 'CA8304';
 
-    /**
-     * @inheritDoc
-     */
     public function getRules(): Generator
     {
         yield self::CA83 => [
@@ -43,7 +40,7 @@ final class DynamicClassConstantFetchSniff extends SniffAbstract
     /**
      * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Expr\ClassConstFetch) {
             return null;

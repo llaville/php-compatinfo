@@ -23,9 +23,6 @@ use PhpParser\NodeVisitorAbstract;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 use Generator;
-use function get_class;
-use function strrchr;
-use function substr;
 
 /**
  * Base code for each sniff used to detect PHP features.
@@ -57,9 +54,9 @@ abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterfa
     // public function beforeTraverse(array $nodes)    { }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         $this->dispatcher->dispatch(new BeforeProcessNodeEvent($this, ['node' => $node]));
 
@@ -71,9 +68,9 @@ abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterfa
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): int|Node|array|null
     {
         $this->dispatcher->dispatch(new AfterProcessNodeEvent($this, ['node' => $node]));
         return null;
@@ -83,75 +80,47 @@ abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterfa
 
     // SniffInterface implements
 
-    /**
-     * {@inheritDoc}
-     */
     public function setUpBeforeSniff(): void
     {
         $this->dispatcher->dispatch(new BeforeInitializeSniffEvent($this));
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function enterSniff(): void
     {
         $this->dispatcher->dispatch(new BeforeProcessSniffEvent($this));
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function leaveSniff(): void
     {
         $this->dispatcher->dispatch(new AfterProcessSniffEvent($this));
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function tearDownAfterSniff(): void
     {
         $this->dispatcher->dispatch(new AfterInitializeSniffEvent($this));
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setVisitor(SniffVisitorInterface $visitor): void
     {
         $this->visitor = $visitor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setAttributeParentKeyStore(string $key): void
     {
         $this->attributeParentKeyStore = $key;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setAttributeKeyStore(string $key): void
     {
         $this->attributeKeyStore = $key;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         // when sniff does not provide any rule
         yield from [];
     }
 
-    /**
-     * @param Node $node
-     * @return string
-     */
     protected function getNameContext(Node $node): string
     {
         if (!property_exists($node, 'name')) {
@@ -160,11 +129,6 @@ abstract class SniffAbstract extends NodeVisitorAbstract implements SniffInterfa
         return ($node->name instanceof Node\Name || $node->name instanceof Node\Identifier) ? (string) $node->name : '';
     }
 
-    /**
-     * @param Node $node
-     * @param string $name
-     * @return void
-     */
     protected function checkForbiddenNames(Node $node, string $name): void
     {
         $name = strtolower($name);

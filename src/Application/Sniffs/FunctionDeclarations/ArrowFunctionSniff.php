@@ -28,9 +28,6 @@ final class ArrowFunctionSniff extends SniffAbstract
     // Rules identifiers for SARIF report
     private const CA74 = 'CA7403';
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA74 => [
@@ -41,9 +38,9 @@ final class ArrowFunctionSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if ($node instanceof Node\Expr\ArrowFunction) {
             $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '7.4.0']);

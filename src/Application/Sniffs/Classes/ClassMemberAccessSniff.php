@@ -32,9 +32,9 @@ final class ClassMemberAccessSniff extends SniffAbstract
     private const CA70 = 'CA7004';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): array|int|Node|null
     {
         if (!$this->isClassMemberAccess($node)) {
             return null;
@@ -58,9 +58,6 @@ final class ClassMemberAccessSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA54 => [

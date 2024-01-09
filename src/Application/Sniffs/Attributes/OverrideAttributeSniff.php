@@ -28,9 +28,6 @@ final class OverrideAttributeSniff extends SniffAbstract
     // Rules identifiers for SARIF report
     private const CA83 = 'CA8302';
 
-    /**
-     * @inheritDoc
-     */
     public function getRules(): Generator
     {
         yield self::CA83 => [
@@ -40,10 +37,7 @@ final class OverrideAttributeSniff extends SniffAbstract
         ];
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\AttributeGroup) {
             return null;

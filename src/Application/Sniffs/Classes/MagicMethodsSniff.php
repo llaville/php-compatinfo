@@ -7,7 +7,6 @@
  */
 namespace Bartlett\CompatInfo\Application\Sniffs\Classes;
 
-use Bartlett\CompatInfo\Application\Sniffs\KeywordBag;
 use Bartlett\CompatInfo\Application\Sniffs\SniffAbstract;
 
 use PhpParser\Node;
@@ -44,9 +43,6 @@ final class MagicMethodsSniff extends SniffAbstract
         $this->mm506 = ['__debugInfo'];
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function enterSniff(): void
     {
         parent::enterSniff();
@@ -54,9 +50,9 @@ final class MagicMethodsSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         parent::enterNode($node);
 
@@ -83,9 +79,6 @@ final class MagicMethodsSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         $this->initialize();

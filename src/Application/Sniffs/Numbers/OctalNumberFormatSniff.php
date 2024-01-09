@@ -31,9 +31,6 @@ final class OctalNumberFormatSniff extends SniffAbstract
     /** @var array<int, mixed> */
     private array $tokens;
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA81 => [
@@ -43,9 +40,6 @@ final class OctalNumberFormatSniff extends SniffAbstract
         ];
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function enterSniff(): void
     {
         parent::enterSniff();
@@ -53,9 +47,9 @@ final class OctalNumberFormatSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): array|int|Node|null
     {
         if (!$this->isOctalNumberFormat($node)) {
             return null;

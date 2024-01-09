@@ -29,10 +29,7 @@ final class UseConstFunctionSniff extends SniffAbstract
     // Rules identifiers for SARIF report
     private const CA56 = 'CA5603';
 
-    /**
-     * {@inheritDoc}
-     */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$this->isUseConstFunction($node)) {
             return null;
@@ -43,9 +40,6 @@ final class UseConstFunctionSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA56 => [

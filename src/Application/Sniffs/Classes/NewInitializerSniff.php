@@ -30,9 +30,6 @@ final class NewInitializerSniff extends SniffAbstract
     // Rules identifiers for SARIF report
     private const CA81 = 'CA8104';
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA81 => [
@@ -43,9 +40,9 @@ final class NewInitializerSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         $newExpr = $this->getNewInInitializers($node);
         if ($newExpr instanceof New_) {

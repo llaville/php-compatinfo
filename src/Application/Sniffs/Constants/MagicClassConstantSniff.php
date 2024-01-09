@@ -28,9 +28,9 @@ final class MagicClassConstantSniff extends SniffAbstract
     private const CA55 = 'CA5501';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Expr\ClassConstFetch) {
             return null;
@@ -45,9 +45,6 @@ final class MagicClassConstantSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA55 => [

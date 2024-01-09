@@ -28,9 +28,9 @@ final class MethodDeclarationSniff extends SniffAbstract
     private const CA40 = 'CA4001';
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Stmt\ClassMethod) {
             return null;
@@ -49,9 +49,6 @@ final class MethodDeclarationSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA40 => [

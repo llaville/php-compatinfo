@@ -13,6 +13,7 @@ use PhpParser\Node;
 use PhpParser\NodeFinder;
 
 use Generator;
+use function is_string;
 
 /**
  * Array unpacking support :
@@ -35,9 +36,6 @@ final class ArrayUnpackingSyntaxSniff extends SniffAbstract
     private const CA74 = 'CA7402';
     private const CA81 = 'CA8110';
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA74 => [
@@ -53,9 +51,9 @@ final class ArrayUnpackingSyntaxSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Expr\ArrayItem) {
             return null;
@@ -67,7 +65,7 @@ final class ArrayUnpackingSyntaxSniff extends SniffAbstract
             return null;
         }
 
-        if (!($node->value instanceof Node\Expr\Variable && \is_string($node->value->name))) {
+        if (!($node->value instanceof Node\Expr\Variable && is_string($node->value->name))) {
             return null;
         }
 
@@ -119,7 +117,7 @@ final class ArrayUnpackingSyntaxSniff extends SniffAbstract
             return $node instanceof Node\Expr\Assign
                 && $node->expr instanceof Node\Expr\Array_
                 && $node->var instanceof Node\Expr\Variable
-                && \is_string($node->var->name)
+                && is_string($node->var->name)
                 && $node->var->name === $name;
         });
     }

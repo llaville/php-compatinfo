@@ -28,9 +28,6 @@ final class NonCapturingCatchSniff extends SniffAbstract
     // Rules identifiers for SARIF report
     private const CA80 = 'CA8007';
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA80 => [
@@ -41,9 +38,9 @@ final class NonCapturingCatchSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Stmt\Catch_) {
             return null;

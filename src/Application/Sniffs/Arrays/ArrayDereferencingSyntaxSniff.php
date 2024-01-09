@@ -28,9 +28,9 @@ final class ArrayDereferencingSyntaxSniff extends SniffAbstract
     private const CA54 = 'CA5402';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): int|Node|array|null
     {
         if (($node instanceof Node\Expr\ArrayDimFetch && $node->var instanceof Node\Expr\FuncCall) === false) {
             return null;
@@ -44,9 +44,6 @@ final class ArrayDereferencingSyntaxSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA54 => [

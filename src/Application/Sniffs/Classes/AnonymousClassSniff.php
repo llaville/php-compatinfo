@@ -31,9 +31,9 @@ final class AnonymousClassSniff extends SniffAbstract
     /**
      * Process this sniff only on this scope.
      *
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$this->isAnonymousClass($node)) {
             return null;
@@ -44,9 +44,6 @@ final class AnonymousClassSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA70 => [

@@ -30,9 +30,6 @@ final class ShortArraySyntaxSniff extends SniffAbstract
     /** @var array<int, mixed> */
     private array $tokens;
 
-    /**
-     * {@inheritDoc}
-     */
     public function enterSniff(): void
     {
         parent::enterSniff();
@@ -40,9 +37,9 @@ final class ShortArraySyntaxSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): array|int|Node|null
     {
         if (!$this->isShortArraySyntax($node)) {
             return null;

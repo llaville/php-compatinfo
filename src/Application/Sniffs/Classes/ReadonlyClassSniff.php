@@ -25,9 +25,6 @@ final class ReadonlyClassSniff extends SniffAbstract
 {
     private const CA82 = 'CA8201';
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA82 => [
@@ -38,9 +35,9 @@ final class ReadonlyClassSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Stmt\Class_) {
             return null;

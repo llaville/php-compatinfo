@@ -29,9 +29,9 @@ final class ShortTernaryOperatorSniff extends SniffAbstract
     private const CA53 = 'CA5304';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): array|int|Node|null
     {
         if (!$node instanceof Node\Expr\Ternary) {
             return null;
@@ -45,9 +45,6 @@ final class ShortTernaryOperatorSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA53 => [

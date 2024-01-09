@@ -27,9 +27,6 @@ final class DeprecateDollarBraceStringInterpolationSniff extends SniffAbstract
     /** @var array<int, mixed> */
     private array $tokens;
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA82 => [
@@ -39,9 +36,6 @@ final class DeprecateDollarBraceStringInterpolationSniff extends SniffAbstract
         ];
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function enterSniff(): void
     {
         parent::enterSniff();
@@ -49,9 +43,9 @@ final class DeprecateDollarBraceStringInterpolationSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): array|int|Node|null
     {
         if (!$this->isStringInterpolationSyntax($node)) {
             return null;

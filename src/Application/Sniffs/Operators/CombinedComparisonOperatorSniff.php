@@ -28,9 +28,9 @@ final class CombinedComparisonOperatorSniff extends SniffAbstract
     private const CA70 = 'CA7006';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Expr\BinaryOp\Spaceship) {
             return null;
@@ -41,9 +41,6 @@ final class CombinedComparisonOperatorSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA70 => [

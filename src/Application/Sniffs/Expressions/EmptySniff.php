@@ -31,9 +31,9 @@ final class EmptySniff extends SniffAbstract
     private const CA55 = 'CA5502';
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Expr\Empty_) {
             return null;
@@ -54,9 +54,6 @@ final class EmptySniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA55 => [

@@ -28,9 +28,9 @@ final class ClassExprSyntaxSniff extends SniffAbstract
     private const CA54 = 'CA5405';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function leaveNode(Node $node)
+    public function leaveNode(Node $node): array|int|Node|null
     {
         if (!$this->isClassExprSyntax($node)) {
             return null;
@@ -40,9 +40,6 @@ final class ClassExprSyntaxSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA54 => [

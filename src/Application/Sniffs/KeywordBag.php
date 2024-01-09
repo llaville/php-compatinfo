@@ -38,7 +38,7 @@ final class KeywordBag implements IteratorAggregate, Countable
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getIterator(): Traversable
     {
@@ -46,7 +46,7 @@ final class KeywordBag implements IteratorAggregate, Countable
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function count(): int
     {

@@ -36,9 +36,9 @@ final class ClosureSniff extends SniffAbstract
     private const CA54 = 'CA5401';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         $parent = $node->getAttribute($this->attributeParentKeyStore);
 
@@ -69,9 +69,6 @@ final class ClosureSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA54 => [

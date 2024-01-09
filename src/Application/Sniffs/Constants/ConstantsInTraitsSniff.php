@@ -27,9 +27,6 @@ final class ConstantsInTraitsSniff extends SniffAbstract
     // Rules identifiers for SARIF report
     private const CA82 = 'CA8203';
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA82 => [
@@ -40,9 +37,9 @@ final class ConstantsInTraitsSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Stmt\ClassConst) {
             return null;

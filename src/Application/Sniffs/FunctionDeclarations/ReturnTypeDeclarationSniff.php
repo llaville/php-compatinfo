@@ -37,9 +37,9 @@ final class ReturnTypeDeclarationSniff extends SniffAbstract
     private const CA8202 = 'CA8202';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$this->hasReturnType($node)) {
             return null;
@@ -78,9 +78,6 @@ final class ReturnTypeDeclarationSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA70 => [

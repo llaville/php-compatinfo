@@ -29,9 +29,9 @@ final class NullCoalesceOperatorSniff extends SniffAbstract
     private const CA70 = 'CA7005';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Expr\BinaryOp\Coalesce) {
             return null;
@@ -42,9 +42,6 @@ final class NullCoalesceOperatorSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA70 => [

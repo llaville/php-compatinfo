@@ -29,9 +29,6 @@ final class FiberSniff extends SniffAbstract
     // Rules identifiers for SARIF report
     private const CA81 = 'CA8109';
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA81 => [
@@ -42,9 +39,9 @@ final class FiberSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Expr\New_) {
             return null;

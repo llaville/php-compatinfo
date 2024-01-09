@@ -56,9 +56,6 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
         ]);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function enterSniff(): void
     {
         parent::enterSniff();
@@ -66,9 +63,9 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\FunctionLike) {
             return null;
@@ -126,9 +123,6 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         $this->initialize();

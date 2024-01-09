@@ -35,9 +35,6 @@ final class TrailingCommaSniff extends SniffAbstract
     /** @var array<int, mixed> */
     private array $tokens;
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA80 => [
@@ -47,9 +44,6 @@ final class TrailingCommaSniff extends SniffAbstract
         ];
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function enterSniff(): void
     {
         parent::enterSniff();
@@ -57,9 +51,9 @@ final class TrailingCommaSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if ($node instanceof Node\Stmt\Function_) {
             $trailingCommaFound = $this->checkParamsList($node);

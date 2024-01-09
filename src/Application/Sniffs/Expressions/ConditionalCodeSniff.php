@@ -37,12 +37,11 @@ final class ConditionalCodeSniff extends SniffAbstract
     private string $opt;
     private string $group;
     /** @var ReferenceCollectionInterface<string, array> */
-    private $references;
+    private ReferenceCollectionInterface $references;
 
     /**
      * ConditionalCodeSniff constructor.
      *
-     * @param EventDispatcherInterface $compatibilityEventDispatcher
      * @param ReferenceCollectionInterface<string, array> $referenceCollection
      */
     public function __construct(
@@ -54,9 +53,9 @@ final class ConditionalCodeSniff extends SniffAbstract
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$this->isConditionalCode($node)) {
             return null;
@@ -87,9 +86,6 @@ final class ConditionalCodeSniff extends SniffAbstract
 
     /**
      * Checks if node match a conditional code.
-     *
-     * @param Node $node
-     * @return bool
      */
     private function isConditionalCode(Node $node): bool
     {

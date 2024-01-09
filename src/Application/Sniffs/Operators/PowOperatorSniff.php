@@ -30,9 +30,9 @@ final class PowOperatorSniff extends SniffAbstract
     private const CA56 = 'CA5602';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$this->isPowOperator($node)) {
             return null;
@@ -50,9 +50,6 @@ final class PowOperatorSniff extends SniffAbstract
         );
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA56 => [

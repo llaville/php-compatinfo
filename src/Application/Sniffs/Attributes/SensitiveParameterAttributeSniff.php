@@ -27,9 +27,6 @@ final class SensitiveParameterAttributeSniff extends SniffAbstract
     // Rules identifiers for SARIF report
     private const CA82 = 'CA8205';
 
-    /**
-     * {@inheritDoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA82 => [
@@ -39,7 +36,7 @@ final class SensitiveParameterAttributeSniff extends SniffAbstract
         ];
     }
 
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\AttributeGroup) {
             return null;

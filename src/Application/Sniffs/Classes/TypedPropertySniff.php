@@ -30,9 +30,9 @@ final class TypedPropertySniff extends SniffAbstract
     private const CA74 = 'CA7401';
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
-    public function enterNode(Node $node)
+    public function enterNode(Node $node): int|Node|null
     {
         if (!$node instanceof Node\Stmt\Property) {
             return null;
@@ -45,9 +45,6 @@ final class TypedPropertySniff extends SniffAbstract
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA74 => [
