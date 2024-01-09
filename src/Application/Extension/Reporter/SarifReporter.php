@@ -34,6 +34,9 @@ use Bartlett\Sarif\SarifLog;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 use Generator;
 use function array_shift;
@@ -43,7 +46,6 @@ use function get_class;
 use function getcwd;
 use function implode;
 use function is_array;
-use function json_encode;
 use function key;
 use function parse_url;
 use function realpath;
@@ -56,6 +58,8 @@ use function strrchr;
 use function substr;
 use function trim;
 use const DIRECTORY_SEPARATOR;
+use const JSON_PRETTY_PRINT;
+use const JSON_UNESCAPED_SLASHES;
 use const PHP_URL_SCHEME;
 
 /**
@@ -101,8 +105,16 @@ final class SarifReporter extends Reporter implements
         $token = key($data);
         $data = current($data);
         $target = '/tmp/' . $token . '-compatinfo.sarif';
-        $sarifLog = $this->generateReport($data)->jsonSerialize();
-        @file_put_contents($target, json_encode($sarifLog));
+        $sarifLog = $this->generateReport($data);
+
+        $normalizer = new JsonSerializableNormalizer ();
+        $encoder = new JsonEncoder();
+        $serializer = new Serializer([$normalizer], [$encoder]);
+
+        $jsonEncodeOptions = (JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        $jsonString = $serializer->serialize($sarifLog, 'json', ['json_encode_options' => $jsonEncodeOptions]);
+
+        @file_put_contents($target, $jsonString);
 
         $output = new Style($this->input, $this->output);
         $output->note('Profile results are being formatted as SARIF to file ' . $target);
