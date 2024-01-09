@@ -18,17 +18,9 @@ use Symfony\Component\Console\Style\StyleInterface as SymfonyStyleInterface;
  */
 interface StyleInterface extends SymfonyStyleInterface, OutputInterface
 {
-    /**
-     * @param mixed $lines
-     * @param string $format
-     */
-    public function columns($lines, string $format): void;
+    public function columns(mixed $lines, string $format): void;
 
-    /**
-     * @param int $max
-     * @return ProgressBar
-     */
-    public function createProgressBar(int $max = 0);
+    public function createProgressBar(int $max = 0): ProgressBar;
 
     /**
      * @param array<string> $headers

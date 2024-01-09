@@ -39,7 +39,6 @@ class Application extends SymfonyApplication implements ApplicationInterface
     }
 
     /**
-     * @var string
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=phpCompatInfo
      * editorconfig-checker-disable
      */
@@ -66,7 +65,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getHelp(): string
     {
@@ -80,7 +79,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getLongVersion(): string
     {
@@ -88,7 +87,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     protected function getDefaultInputDefinition(): InputDefinition
     {
@@ -157,7 +156,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function run(InputInterface $input = null, OutputInterface $output = null): int
     {
@@ -185,9 +184,6 @@ class Application extends SymfonyApplication implements ApplicationInterface
         return InstalledVersions::getPrettyVersion($packageName, $withRef);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function getApplicationParameters(): array
     {
         /** @var Container $container */
@@ -196,7 +192,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getKernel(): object
     {

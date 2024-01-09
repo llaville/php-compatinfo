@@ -17,10 +17,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  */
 final class Style extends SymfonyStyle implements StyleInterface
 {
-    /**
-     * {@inheritDoc}
-     */
-    public function createProgressBar($max = 0): ProgressBar
+    public function createProgressBar(int $max = 0): ProgressBar
     {
         $progressBar = parent::createProgressBar($max);
 
@@ -40,7 +37,7 @@ final class Style extends SymfonyStyle implements StyleInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function table(array $headers, array $rows, string $style = 'compact'): void
     {
@@ -56,10 +53,7 @@ final class Style extends SymfonyStyle implements StyleInterface
         $this->newLine();
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function columns($lines, string $format): void
+    public function columns(mixed $lines, string $format): void
     {
         if (!is_array($lines)) {
             $lines = [$lines];

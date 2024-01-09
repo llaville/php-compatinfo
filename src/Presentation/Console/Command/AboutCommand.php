@@ -26,7 +26,7 @@ final class AboutCommand extends AbstractCommand implements CommandInterface
     public const NAME = 'about';
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     protected function configure(): void
     {
@@ -36,7 +36,7 @@ final class AboutCommand extends AbstractCommand implements CommandInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {

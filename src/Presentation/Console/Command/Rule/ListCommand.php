@@ -39,8 +39,9 @@ final class ListCommand extends AbstractCommand implements CommandInterface
     /** @var array<int, mixed> */
     private array $rules;
 
+    private const MAX_LENGTH_DESCRIPTION = 66;
+
     /**
-     * @param QueryBusInterface $queryBus
      * @param SniffCollectionInterface<SniffInterface> $sniffCollection
      */
     public function __construct(QueryBusInterface $queryBus, SniffCollectionInterface $sniffCollection)
@@ -51,10 +52,9 @@ final class ListCommand extends AbstractCommand implements CommandInterface
         /** @var SniffInterface $sniff */
         foreach ($sniffCollection as $sniff) {
             foreach ($sniff->getRules() as $ruleId => $ruleValues) {
-                if (strlen($ruleValues['fullDescription']) > 66) {
-                    $ruleDesc = substr($ruleValues['fullDescription'], 0, 66) . ' <comment>...</comment>';
-                } else {
-                    $ruleDesc = $ruleValues['fullDescription'];
+                $ruleDesc = $ruleValues['fullDescription'];
+                if (strlen($ruleDesc) > self::MAX_LENGTH_DESCRIPTION) {
+                    $ruleDesc = substr($ruleDesc, 0, self::MAX_LENGTH_DESCRIPTION) . ' <comment>...</comment>';
                 }
                 $this->rules[$ruleId] = [$ruleId, $ruleValues['name'], $ruleDesc];
             }
@@ -64,7 +64,7 @@ final class ListCommand extends AbstractCommand implements CommandInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     protected function configure(): void
     {
@@ -80,25 +80,24 @@ final class ListCommand extends AbstractCommand implements CommandInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
 
+        $rows = $this->rules;
         $phpFilters = $input->getOption('php-runtime');
 
         if (!empty($phpFilters)) {
-            $rows = array_filter($this->rules, function ($value, $key) use ($phpFilters) {
+            $rows = array_filter($this->rules, function ($value) use ($phpFilters) {
                 foreach ($phpFilters as $phpVersion) {
                     if (str_starts_with($value[0], 'CA' . str_replace('.', '', $phpVersion))) {
                         return true;
                     }
                 }
                 return false;
-            }, \ARRAY_FILTER_USE_BOTH);
-        } else {
-            $rows = $this->rules;
+            });
         }
 
         $headers = ['Rule id.', 'From Sniff', 'Description'];
