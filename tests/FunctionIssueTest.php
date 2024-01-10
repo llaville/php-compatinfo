@@ -19,7 +19,7 @@ namespace Bartlett\CompatInfo\Tests;
 final class FunctionIssueTest extends TestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -34,9 +34,8 @@ final class FunctionIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/130
      *       "Conditionally called function is reported as interface"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH130()
+    public function testRegressionGH130(): void
     {
         $dataSource = 'gh130.php';
         $metrics    = $this->executeAnalysis($dataSource);

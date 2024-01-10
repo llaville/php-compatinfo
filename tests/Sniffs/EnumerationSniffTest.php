@@ -22,7 +22,7 @@ use Exception;
 final class EnumerationSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -33,8 +33,6 @@ final class EnumerationSniffTest extends SniffTestCase
 
     /**
      * Data Source Provider to test enumerations
-     *
-     * @return iterable
      */
     public static function dataSourceProvider(): iterable
     {
@@ -60,10 +58,9 @@ final class EnumerationSniffTest extends SniffTestCase
      * @group features
      * @group regression
      * @dataProvider dataSourceProvider
-     * @return void
      * @throws Exception
      */
-    public function testEnumerations(string $dataSource, array $expectedVersions)
+    public function testEnumerations(string $dataSource, array $expectedVersions): void
     {
         $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];

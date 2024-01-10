@@ -20,7 +20,7 @@ use Exception;
 final class DeprecateDollarBraceStringInterpolationSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -34,10 +34,9 @@ final class DeprecateDollarBraceStringInterpolationSniffTest extends SniffTestCa
      *
      * @link https://github.com/llaville/php-compatinfo/issues/363
      * @group feature
-     * @return void
      * @throws Exception
      */
-    public function testDeprecation()
+    public function testDeprecation(): void
     {
         $dataSource = 'dollar_brace_string_interpolation.php';
         $metrics    = $this->executeAnalysis($dataSource);

@@ -11,7 +11,6 @@ use Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\NameResolverVisitor;
 use Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\ParentContextVisitor;
 use Bartlett\CompatInfo\Tests\TestCase;
 
-use PhpParser\Lexer\Emulative;
 use PhpParser\Node;
 use PhpParser\NodeTraverser;
 use PhpParser\Parser;
@@ -32,7 +31,7 @@ final class NameResolverVisitorTest extends TestCase
     private static string $nodeAttributeNamespacedName;
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -42,22 +41,16 @@ final class NameResolverVisitorTest extends TestCase
 
         self::$nodeAttributeNamespacedName = 'bartlett.name';
 
-        $lexer = new Emulative([
-            'usedAttributes' => [
-                'comments', 'startLine', 'endLine', 'startTokenPos', 'endTokenPos'
-            ]
-        ]);
-        self::$parser = (new ParserFactory)->create(ParserFactory::PREFER_PHP7, $lexer);
+        self::$parser = (new ParserFactory)->createForNewestSupportedVersion();
         self::$traverser = new NodeTraverser();
         self::$traverser->addVisitor(new ParentContextVisitor());
         self::$traverser->addVisitor(new NameResolverVisitor());
     }
 
-    public function testNamespace()
+    public function testNamespace(): Node\Stmt\Namespace_
     {
         $stmts = $this->parseAndResolve('namespaces.php');
 
-        /** @var Node\Stmt\Namespace_ $namespace */
         $namespace = $stmts[0];
         $this->assertInstanceOf(Node\Stmt\Namespace_::class, $namespace);
 
@@ -67,7 +60,7 @@ final class NameResolverVisitorTest extends TestCase
     /**
      * @depends testNamespace
      */
-    public function testConstantInNamespace(Node\Stmt\Namespace_ $namespace)
+    public function testConstantInNamespace(Node\Stmt\Namespace_ $namespace): void
     {
         /** @var Node\Stmt\Const_ $constOne */
         $constOne = $namespace->stmts[0];
@@ -81,9 +74,8 @@ final class NameResolverVisitorTest extends TestCase
     /**
      * @depends testNamespace
      */
-    public function testClassInNamespace(Node\Stmt\Namespace_ $namespace)
+    public function testClassInNamespace(Node\Stmt\Namespace_ $namespace): Node\Stmt\Class_
     {
-        /** @var Node\Stmt\Class_ $class */
         $class = $namespace->stmts[2];
         $this->assertInstanceOf(Node\Stmt\Class_::class, $class);
         $this->assertEquals('C', (string) $class->name);
@@ -95,7 +87,7 @@ final class NameResolverVisitorTest extends TestCase
     /**
      * @depends testClassInNamespace
      */
-    public function testClassConstInNamespace(Node\Stmt\Class_ $class)
+    public function testClassConstInNamespace(Node\Stmt\Class_ $class): void
     {
         foreach ($class->getConstants() as $constants) {
             foreach ($constants->consts as $const) {
@@ -108,7 +100,7 @@ final class NameResolverVisitorTest extends TestCase
     /**
      * @depends testClassInNamespace
      */
-    public function testMethodInNamespace(Node\Stmt\Class_ $class)
+    public function testMethodInNamespace(Node\Stmt\Class_ $class): void
     {
         foreach ($class->getMethods() as $index => $method) {
             if (0 === $index) {
@@ -124,7 +116,7 @@ final class NameResolverVisitorTest extends TestCase
     /**
      * @depends testNamespace
      */
-    public function testFunctionInNamespace(Node\Stmt\Namespace_ $namespace)
+    public function testFunctionInNamespace(Node\Stmt\Namespace_ $namespace): void
     {
         /** @var Node\Stmt\Function_ $class */
         $function = $namespace->stmts[3];
@@ -134,8 +126,7 @@ final class NameResolverVisitorTest extends TestCase
     /**
      * Build and resolve AST corresponding to $fixture source code.
      *
-     * @param string $fixture
-     * @return array
+     * @return Node[]
      */
     private function parseAndResolve(string $fixture): array
     {

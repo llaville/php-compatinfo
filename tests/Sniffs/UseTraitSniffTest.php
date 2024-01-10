@@ -18,7 +18,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class UseTraitSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -33,9 +33,8 @@ final class UseTraitSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/227
      *       Does not detect Use traits
      * @group regression
-     * @return void
      */
-    public function testRegressionGH227()
+    public function testRegressionGH227(): void
     {
         $dataSource = 'gh227.php';
         $metrics    = $this->executeAnalysis($dataSource);

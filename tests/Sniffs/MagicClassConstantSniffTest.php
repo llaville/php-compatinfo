@@ -18,7 +18,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class MagicClassConstantSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -31,9 +31,8 @@ final class MagicClassConstantSniffTest extends SniffTestCase
      * Feature test for fetching class name on objects (::class) detection
      *
      * @group features
-     * @return void
      */
-    public function testFetchingClassNameOnObjects()
+    public function testFetchingClassNameOnObjects(): void
     {
         $dataSource = 'class.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -56,9 +55,8 @@ final class MagicClassConstantSniffTest extends SniffTestCase
      *       "::class" not detected as php 5.5
      * @link https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class
      * @group regression
-     * @return void
      */
-    public function testRegressionGH218()
+    public function testRegressionGH218(): void
     {
         $dataSource = 'gh218.php';
         $metrics    = $this->executeAnalysis($dataSource);

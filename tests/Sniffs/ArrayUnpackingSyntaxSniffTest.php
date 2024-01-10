@@ -26,7 +26,7 @@ use Exception;
 final class ArrayUnpackingSyntaxSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -40,10 +40,9 @@ final class ArrayUnpackingSyntaxSniffTest extends SniffTestCase
      *
      * @link https://wiki.php.net/rfc/spread_operator_for_array
      * @group feature
-     * @return void
      * @throws Exception
      */
-    public function testArrayUnpackingSupportForNumericKeyed()
+    public function testArrayUnpackingSupportForNumericKeyed(): void
     {
         $dataSource = 'unpacking_support_array_numeric_keyed.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -66,10 +65,9 @@ final class ArrayUnpackingSyntaxSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compatinfo/issues/331
      *       Array unpacking support is detected as PHP 8.1
      * @group feature
-     * @return void
      * @throws Exception
      */
-    public function testArrayUnpackingSupportForStringKeyed()
+    public function testArrayUnpackingSupportForStringKeyed(): void
     {
         $dataSource = 'unpacking_support_array_string_keyed.php';
         $metrics    = $this->executeAnalysis($dataSource);

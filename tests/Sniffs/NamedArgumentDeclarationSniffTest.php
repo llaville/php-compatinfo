@@ -23,7 +23,7 @@ use Exception;
 final class NamedArgumentDeclarationSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -37,10 +37,9 @@ final class NamedArgumentDeclarationSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/334
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testNamedArguments()
+    public function testNamedArguments(): void
     {
         $dataSource = 'named_arguments.php';
         $metrics    = $this->executeAnalysis($dataSource);

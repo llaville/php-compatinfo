@@ -21,7 +21,7 @@ use Exception;
 final class ConstantsInTraitsSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -33,10 +33,9 @@ final class ConstantsInTraitsSniffTest extends SniffTestCase
     /**
      * Constants in Traits are available since PHP 8.2
      *
-     * @return void
      * @throws Exception
      */
-    public function testPhp82Feature()
+    public function testPhp82Feature(): void
     {
         $dataSource = 'constants.php';
         $metrics    = $this->executeAnalysis($dataSource);

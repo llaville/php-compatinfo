@@ -21,7 +21,7 @@ namespace Bartlett\CompatInfo\Tests;
 final class DependencyIssueTest extends TestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -36,9 +36,8 @@ final class DependencyIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/100
      *       Reports "5.2.0 (min)" on DateTime::diff (which requires 5.3)
      * @group regression
-     * @return void
      */
-    public function testRegressionGH100()
+    public function testRegressionGH100(): void
     {
         $dataSource = 'gh100.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -66,9 +65,8 @@ final class DependencyIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/165
      *       Find undeclared elements
      * @group features
-     * @return void
      */
-    public function testFeatureGH165()
+    public function testFeatureGH165(): void
     {
         $dataSource = 'gh165.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -95,9 +93,8 @@ final class DependencyIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/194
      *       Static method calls don't properly adjust total requirements
      * @group regression
-     * @return void
      */
-    public function testRegressionGH194()
+    public function testRegressionGH194(): void
     {
         $dataSource = 'gh194.php';
         $metrics    = $this->executeAnalysis($dataSource);

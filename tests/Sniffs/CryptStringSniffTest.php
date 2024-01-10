@@ -16,7 +16,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class CryptStringSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -31,9 +31,8 @@ final class CryptStringSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/220
      *       "Did not detect Blowfish on crypt"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH220()
+    public function testRegressionGH220(): void
     {
         $dataSource = 'gh220.php';
         $metrics    = $this->executeAnalysis($dataSource);

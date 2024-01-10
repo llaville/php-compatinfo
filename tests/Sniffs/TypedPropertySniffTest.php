@@ -16,7 +16,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class TypedPropertySniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -29,9 +29,8 @@ final class TypedPropertySniffTest extends SniffTestCase
      * Feature test on types properties declaration
      *
      * @group features
-     * @return void
      */
-    public function testTypedProperties()
+    public function testTypedProperties(): void
     {
         $dataSource = 'typed_properties.php';
         $metrics    = $this->executeAnalysis($dataSource);

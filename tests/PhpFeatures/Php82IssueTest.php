@@ -22,7 +22,7 @@ use Exception;
 final class Php82IssueTest extends TestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -33,8 +33,6 @@ final class Php82IssueTest extends TestCase
 
     /**
      * Data Source Provider to test some PHP 8.2 features
-     *
-     * @return iterable
      */
     public static function dataSourceProvider(): iterable
     {
@@ -54,10 +52,9 @@ final class Php82IssueTest extends TestCase
      *
      * @group features
      * @dataProvider dataSourceProvider
-     * @return void
      * @throws Exception
      */
-    public function testPhp82Features(string $dataSource, array $expectedVersions)
+    public function testPhp82Features(string $dataSource, array $expectedVersions): void
     {
         $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];

@@ -23,7 +23,7 @@ use Exception;
 final class AttributeSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -39,10 +39,9 @@ final class AttributeSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compatinfo/issues/342
      * @group feature
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testAttributes()
+    public function testAttributes(): void
     {
         $dataSource = 'basic.php';
         $metrics    = $this->executeAnalysis($dataSource);

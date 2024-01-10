@@ -19,7 +19,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class PowOperatorSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -35,9 +35,8 @@ final class PowOperatorSniffTest extends SniffTestCase
      *       Exponentiation is 5.6+
      * @link https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
      * @group regression
-     * @return void
      */
-    public function testRegressionGH142()
+    public function testRegressionGH142(): void
     {
         $dataSource = 'gh142.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -69,9 +68,8 @@ final class PowOperatorSniffTest extends SniffTestCase
      *       PHP 5.6 **-Operator not recognized
      * @link https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
      * @group regression
-     * @return void
      */
-    public function testFeatureGH211()
+    public function testFeatureGH211(): void
     {
         $dataSource = 'gh211.php';
         $metrics    = $this->executeAnalysis($dataSource);

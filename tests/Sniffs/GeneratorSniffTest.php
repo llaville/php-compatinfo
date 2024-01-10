@@ -18,7 +18,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class GeneratorSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -31,9 +31,8 @@ final class GeneratorSniffTest extends SniffTestCase
      * Feature test for yielding Fibonacci generator
      *
      * @group features
-     * @return void
      */
-    public function testYieldingFibonacciGenerator()
+    public function testYieldingFibonacciGenerator(): void
     {
         $dataSource = 'fibonacci.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -54,9 +53,8 @@ final class GeneratorSniffTest extends SniffTestCase
      * Feature test for yielding delegate generator
      *
      * @group features
-     * @return void
      */
-    public function testGeneratorDelegation()
+    public function testGeneratorDelegation(): void
     {
         $dataSource = 'delegation.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -88,9 +86,8 @@ final class GeneratorSniffTest extends SniffTestCase
      *
      * @group features
      * @group not_implemented
-     * @return void
      */
-    public function testGeneratorReturnExpressions()
+    public function testGeneratorReturnExpressions(): void
     {
         $dataSource = 'return_expression.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -113,9 +110,8 @@ final class GeneratorSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/226
      *       Does not detect Generators
      * @group regression
-     * @return void
      */
-    public function testRegressionGH226()
+    public function testRegressionGH226(): void
     {
         $dataSource = 'gh226.php';
         $metrics    = $this->executeAnalysis($dataSource);

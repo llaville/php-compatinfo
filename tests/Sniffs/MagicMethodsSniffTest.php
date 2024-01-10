@@ -18,7 +18,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class MagicMethodsSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -31,9 +31,8 @@ final class MagicMethodsSniffTest extends SniffTestCase
      * Feature test to detect magic methods since PHP 5.1
      *
      * @group features
-     * @return void
      */
-    public function testMagicMethodsInPHP51()
+    public function testMagicMethodsInPHP51(): void
     {
         $dataSource = 'magic_methods_501.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -54,9 +53,8 @@ final class MagicMethodsSniffTest extends SniffTestCase
      * Feature test to detect magic methods since PHP 5.3
      *
      * @group features
-     * @return void
      */
-    public function testMagicMethodsInPHP53()
+    public function testMagicMethodsInPHP53(): void
     {
         $dataSource = 'magic_methods_503.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -77,9 +75,8 @@ final class MagicMethodsSniffTest extends SniffTestCase
      * Feature test to detect magic methods since PHP 5.6
      *
      * @group features
-     * @return void
      */
-    public function testMagicMethodsInPHP56()
+    public function testMagicMethodsInPHP56(): void
     {
         $dataSource = 'magic_methods_506.php';
         $metrics    = $this->executeAnalysis($dataSource);

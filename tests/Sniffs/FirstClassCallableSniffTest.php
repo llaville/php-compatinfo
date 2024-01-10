@@ -23,7 +23,7 @@ use Exception;
 final class FirstClassCallableSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -34,8 +34,6 @@ final class FirstClassCallableSniffTest extends SniffTestCase
 
     /**
      * Data Provider to test First class callable syntax
-     *
-     * @return iterable
      */
     public static function callableExprProvider(): iterable
     {
@@ -63,10 +61,9 @@ final class FirstClassCallableSniffTest extends SniffTestCase
      *       First class callable syntax is detected as PHP 8.1
      * @group group
      * @dataProvider callableExprProvider
-     * @return void
      * @throws Exception
      */
-    public function testCallableExpr(string $dataSource, array $expectedVersions)
+    public function testCallableExpr(string $dataSource, array $expectedVersions): void
     {
         $metrics  = $this->executeAnalysis($dataSource);
         $versions = $metrics[self::$analyserId]['versions'];

@@ -29,7 +29,7 @@ use function version_compare;
 final class ConditionIssueTest extends TestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -45,10 +45,9 @@ final class ConditionIssueTest extends TestCase
      *       Detection of conditional code
      * @link https://www.php.net/manual/en/function.idn-to-ascii.php
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testRegressionGH128()
+    public function testRegressionGH128(): void
     {
         $dataSource = 'gh128.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -70,10 +69,9 @@ final class ConditionIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/159
      *       Conditionally used class is reported as required
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testRegressionGH159()
+    public function testRegressionGH159(): void
     {
         $dataSource = 'gh159.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -119,10 +117,9 @@ final class ConditionIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/160
      *       Depending on parsing file order, some code conditions are not detected
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testRegressionGH160()
+    public function testRegressionGH160(): void
     {
         $dataSource = 'gh160';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -144,10 +141,9 @@ final class ConditionIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/195
      *       Absolutely namespaced classes not properly detected with class_exists()
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testRegressionGH195()
+    public function testRegressionGH195(): void
     {
         $dataSource = 'gh195.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -193,10 +189,9 @@ final class ConditionIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/301
      *       Multiple conditions not displayed
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testRegressionGH301()
+    public function testRegressionGH301(): void
     {
         $dataSource = 'gh301';
         $metrics = $this->executeAnalysis($dataSource);

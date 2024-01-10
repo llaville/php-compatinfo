@@ -25,9 +25,8 @@ final class VersionResolverVisitorTest extends NodeVisitorTestCase
      * @link https://github.com/llaville/php-compat-info/issues/131
      *       "Classes in extends clause are not recognized"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH131()
+    public function testRegressionGH131(): void
     {
         $dataSource = 'gh131.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -50,9 +49,8 @@ final class VersionResolverVisitorTest extends NodeVisitorTestCase
      * @link https://github.com/llaville/php-compat-info/issues/166
      *       "Type hinting and objects"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH166()
+    public function testRegressionGH166(): void
     {
         $dataSource = 'gh166.php';
         $metrics    = $this->executeAnalysis($dataSource);

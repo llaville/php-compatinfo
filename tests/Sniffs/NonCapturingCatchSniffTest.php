@@ -21,7 +21,7 @@ use Exception;
 final class NonCapturingCatchSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -36,10 +36,9 @@ final class NonCapturingCatchSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compatinfo/issues/341
      *       Catch exceptions without capturing them to variables
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testCatchExceptionOnlyByType()
+    public function testCatchExceptionOnlyByType(): void
     {
         $dataSource = 'non-capturing_catches.php';
         $metrics    = $this->executeAnalysis($dataSource);

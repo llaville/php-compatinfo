@@ -28,7 +28,7 @@ use Generator;
 final class ParameterTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -63,13 +63,12 @@ final class ParameterTest extends SniffTestCase
      * @param string $fctname Function name that have optional arguments
      * @param string $extname Extension name that provide the $fctname
      *
-     * @return void
      * @group  reference
      * @large
      * @dataProvider functionProvider
      * @throws Exception
      */
-    public function testGetFunctionsWithDefaultArguments(string $fctname, string $extname)
+    public function testGetFunctionsWithDefaultArguments(string $fctname, string $extname): void
     {
         $this->assertFileExists(
             self::$fixtures . $fctname . '.18881d.php',
@@ -105,13 +104,12 @@ final class ParameterTest extends SniffTestCase
      * @param string $fctname Function name that have optional arguments
      * @param string $extname Extension name that provide the $fctname
      *
-     * @return void
      * @group  reference
      * @large
      * @dataProvider functionProvider
      * @throws Exception
      */
-    public function testGetFunctionsWithOptionalArguments(string $fctname, string $extname)
+    public function testGetFunctionsWithOptionalArguments(string $fctname, string $extname): void
     {
         $this->assertFileExists(
             self::$fixtures . $fctname . '.18881o.php',

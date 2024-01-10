@@ -21,7 +21,7 @@ use Exception;
 final class ReadonlyClassSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -32,8 +32,6 @@ final class ReadonlyClassSniffTest extends SniffTestCase
 
     /**
      * Data Provider to test Readonly classes syntax
-     *
-     * @return iterable
      */
     public static function readonlyClassProvider(): iterable
     {
@@ -63,10 +61,9 @@ final class ReadonlyClassSniffTest extends SniffTestCase
      *       Readonly Class Syntax is detected as PHP 8.2
      * @group features
      * @dataProvider readonlyClassProvider
-     * @return void
      * @throws Exception
      */
-    public function testReadonlyClassSyntax(string $dataSource, array $expectedVersions)
+    public function testReadonlyClassSyntax(string $dataSource, array $expectedVersions): void
     {
         $metrics = $this->executeAnalysis($dataSource);
         $classes = $metrics[self::$analyserId]['classes'];

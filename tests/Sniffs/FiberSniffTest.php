@@ -22,7 +22,7 @@ use Exception;
 final class FiberSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -33,8 +33,6 @@ final class FiberSniffTest extends SniffTestCase
 
     /**
      * Data Provider to test Fibers syntax
-     *
-     * @return iterable
      */
     public static function fibersProvider(): iterable
     {
@@ -62,10 +60,9 @@ final class FiberSniffTest extends SniffTestCase
      *       Fibers are detected as PHP 8.1
      * @group group
      * @dataProvider fibersProvider
-     * @return void
      * @throws Exception
      */
-    public function testFiberClasses(string $dataSource, array $expectedVersions)
+    public function testFiberClasses(string $dataSource, array $expectedVersions): void
     {
         $metrics  = $this->executeAnalysis($dataSource);
         $versions = $metrics[self::$analyserId]['versions'];

@@ -22,7 +22,7 @@ use Exception;
 final class TrailingCommaSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -33,8 +33,6 @@ final class TrailingCommaSniffTest extends SniffTestCase
 
     /**
      * Data Provider to test Trailing comma syntax
-     *
-     * @return iterable
      */
     public static function trailingCommaProvider(): iterable
     {
@@ -68,10 +66,9 @@ final class TrailingCommaSniffTest extends SniffTestCase
      *       Trailing comma syntax is detected as PHP 8.0
      * @group group
      * @dataProvider trailingCommaProvider
-     * @return void
      * @throws Exception
      */
-    public function testTrailingCommaSyntax(string $dataSource, array $expectedVersions)
+    public function testTrailingCommaSyntax(string $dataSource, array $expectedVersions): void
     {
         $metrics  = $this->executeAnalysis($dataSource);
         $versions = $metrics[self::$analyserId]['versions'];

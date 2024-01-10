@@ -24,7 +24,7 @@ use Exception;
 final class KeywordReservedSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -40,9 +40,6 @@ final class KeywordReservedSniffTest extends SniffTestCase
      *       Add sniff for new reserved words in PHP7
      * @group regression
      * @dataProvider forbiddenNamesProvider
-     * @param string $dataSource
-     * @param array $expectedVersions
-     * @return void
      * @throws Exception
      */
     public function testForbiddenNamesInClassInterfaceTraitNamespace(string $dataSource, array $expectedVersions): void
@@ -57,8 +54,6 @@ final class KeywordReservedSniffTest extends SniffTestCase
 
     /**
      * Data Provider to test keyword reserved to names classes, interfaces, traits and namespaces
-     *
-     * @return iterable
      */
     public static function forbiddenNamesProvider(): iterable
     {

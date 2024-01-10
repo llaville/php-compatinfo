@@ -18,7 +18,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class PropertyDeclarationSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -33,9 +33,8 @@ final class PropertyDeclarationSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/119
      *       "private" keyword reports as "Required PHP 4.0.0 (min)"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH119()
+    public function testRegressionGH119(): void
     {
         $dataSource = 'gh119.php';
         $metrics    = $this->executeAnalysis($dataSource);

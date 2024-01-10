@@ -19,7 +19,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class ShortArraySyntaxSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -34,9 +34,8 @@ final class ShortArraySyntaxSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/148
      *       Array short syntax and array dereferencing not detected
      * @group regression
-     * @return void
      */
-    public function testRegressionGH148()
+    public function testRegressionGH148(): void
     {
         $dataSource = 'gh148.php';
         $metrics    = $this->executeAnalysis($dataSource);

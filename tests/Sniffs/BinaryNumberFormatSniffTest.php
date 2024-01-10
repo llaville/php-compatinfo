@@ -16,7 +16,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class BinaryNumberFormatSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -29,9 +29,8 @@ final class BinaryNumberFormatSniffTest extends SniffTestCase
      * Feature test to detect Binary Number Format syntax
      *
      * @group features
-     * @return void
      */
-    public function testBinaryNumberFormatSyntax()
+    public function testBinaryNumberFormatSyntax(): void
     {
         $dataSource = 'binary_number_format.php';
         $metrics    = $this->executeAnalysis($dataSource);

@@ -18,7 +18,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class UseConstFunctionSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -31,9 +31,8 @@ final class UseConstFunctionSniffTest extends SniffTestCase
      * Feature test for "use const" syntax to import constant from namespace.
      *
      * @group features
-     * @return void
      */
-    public function testUseConstSyntax()
+    public function testUseConstSyntax(): void
     {
         $dataSource = 'use_const.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -62,9 +61,8 @@ final class UseConstFunctionSniffTest extends SniffTestCase
      * Feature test for "use function" syntax to import function from namespace.
      *
      * @group features
-     * @return void
      */
-    public function testUseFunctionSyntax()
+    public function testUseFunctionSyntax(): void
     {
         $dataSource = 'use_function.php';
         $metrics    = $this->executeAnalysis($dataSource);

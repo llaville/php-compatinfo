@@ -33,8 +33,6 @@ class TypedClassConstantSniffTest extends SniffTestCase
 
     /**
      * Data Provider to test Typed Class Constants
-     *
-     * @return iterable
      */
     public static function  typedConstantsProvider(): iterable
     {
@@ -65,10 +63,9 @@ class TypedClassConstantSniffTest extends SniffTestCase
      * @link https://github.com/php/php-src/commit/414f71a90254cc33896bb3ba953f979f743c198c
      * @group features
      * @dataProvider typedConstantsProvider
-     * @return void
      * @throws Exception
      */
-    public function testTypedClassConstants(string $dataSource, array $expectedVersions)
+    public function testTypedClassConstants(string $dataSource, array $expectedVersions): void
     {
         $metrics    = $this->executeAnalysis($dataSource);
         $constants  = $metrics[self::$analyserId]['constants'];

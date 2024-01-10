@@ -33,10 +33,9 @@ final class StaticVarInitializerSniffTest extends SniffTestCase
      * Feature test to detect static variable initializers
      *
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testStaticVariableInitializer()
+    public function testStaticVariableInitializer(): void
     {
         $dataSource = 'static_var_initializer.php';
         $metrics    = $this->executeAnalysis($dataSource);

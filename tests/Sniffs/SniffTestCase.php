@@ -18,7 +18,7 @@ use Bartlett\CompatInfo\Tests\TestCase;
 abstract class SniffTestCase extends TestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {

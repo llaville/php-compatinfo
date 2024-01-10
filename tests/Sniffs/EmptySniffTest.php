@@ -19,7 +19,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class EmptySniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -35,9 +35,8 @@ final class EmptySniffTest extends SniffTestCase
      *       Prior to PHP 5.5, empty() only supports variables
      * @link https://www.php.net/manual/en/migration55.new-features.php#migration55.new-features.empty
      * @group regression
-     * @return void
      */
-    public function testRegressionGH207()
+    public function testRegressionGH207(): void
     {
         $dataSource = 'gh207.php';
         $metrics    = $this->executeAnalysis($dataSource);

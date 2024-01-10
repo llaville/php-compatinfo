@@ -35,10 +35,9 @@ final class DynamicClassConstantFetchSniffTest extends SniffTestCase
      * Feature test for dynamic class constant fetch syntax
      *
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testDynamicClassConstantFetch()
+    public function testDynamicClassConstantFetch(): void
     {
         $dataSource = 'dynamic_class_const_fetch.php';
         $metrics    = $this->executeAnalysis($dataSource);

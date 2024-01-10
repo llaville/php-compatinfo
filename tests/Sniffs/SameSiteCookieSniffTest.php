@@ -23,7 +23,7 @@ use Exception;
 final class SameSiteCookieSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -34,8 +34,6 @@ final class SameSiteCookieSniffTest extends SniffTestCase
 
     /**
      * Data Provider to test First class callable syntax
-     *
-     * @return iterable
      */
     public static function dataSourceProvider(): iterable
     {
@@ -64,10 +62,9 @@ final class SameSiteCookieSniffTest extends SniffTestCase
      * @group features
      * @group regression
      * @dataProvider dataSourceProvider
-     * @return void
      * @throws Exception
      */
-    public function testSignatureWithOptionsOrSameSiteArgument(string $dataSource, array $expectedVersions)
+    public function testSignatureWithOptionsOrSameSiteArgument(string $dataSource, array $expectedVersions): void
     {
         $metrics  = $this->executeAnalysis($dataSource);
         $versions = $metrics[self::$analyserId]['versions'];

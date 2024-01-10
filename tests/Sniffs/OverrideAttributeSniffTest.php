@@ -35,10 +35,9 @@ final class OverrideAttributeSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/366
      * @group feature
-     * @return void
      * @throws Exception
      */
-    public function testAttributes()
+    public function testAttributes(): void
     {
         $dataSource = 'override.php';
         $metrics    = $this->executeAnalysis($dataSource);

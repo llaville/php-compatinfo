@@ -20,7 +20,7 @@ namespace Bartlett\CompatInfo\Tests;
 final class NamespaceIssueTest extends TestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -35,9 +35,8 @@ final class NamespaceIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/153
      *       "global namespace reports higher requirements than everything else"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH153()
+    public function testRegressionGH153(): void
     {
         $dataSource = 'gh153.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -59,9 +58,8 @@ final class NamespaceIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/155
      *       Results depend on lexical order of fallback implementations
      * @group regression
-     * @return void
      */
-    public function testRegressionGH155()
+    public function testRegressionGH155(): void
     {
         $dataSource = 'gh155.php';
         $metrics    = $this->executeAnalysis($dataSource);

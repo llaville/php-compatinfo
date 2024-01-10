@@ -18,7 +18,7 @@ use function sprintf;
 final class ErrorHandlerIssueTest extends TestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -33,10 +33,9 @@ final class ErrorHandlerIssueTest extends TestCase
      * @link https://github.com/llaville/php-compatinfo/issues/339
      *       Stop on empty/broken files during analysis
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testEmptyDir()
+    public function testEmptyDir(): void
     {
         $dataSource = 'emptyDir' . DIRECTORY_SEPARATOR;
         $metrics    = $this->executeAnalysis($dataSource);
@@ -54,10 +53,9 @@ final class ErrorHandlerIssueTest extends TestCase
      * @link https://github.com/llaville/php-compatinfo/issues/339
      *       Stop on empty/broken files during analysis
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testEmptyFile()
+    public function testEmptyFile(): void
     {
         $dataSource = 'emptyFile.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -83,10 +81,9 @@ final class ErrorHandlerIssueTest extends TestCase
      * @link https://github.com/llaville/php-compatinfo/issues/339
      *       Stop on empty/broken files during analysis
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testWithoutOpenTag()
+    public function testWithoutOpenTag(): void
     {
         $dataSource = 'withoutOpenTag.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -112,10 +109,9 @@ final class ErrorHandlerIssueTest extends TestCase
      * @link https://github.com/llaville/php-compatinfo/issues/339
      *       Stop on empty/broken files during analysis
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testParseError()
+    public function testParseError(): void
     {
         $dataSource = 'parseError.php';
         $metrics    = $this->executeAnalysis($dataSource);

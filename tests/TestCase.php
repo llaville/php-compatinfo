@@ -35,7 +35,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * Sets up the shared fixture.
      *
-     * @return void
      * @throws Exception
      */
     public static function setUpBeforeClass(): void
@@ -50,8 +49,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * Execute a single test case and return metrics
      *
-     * @param string $dataSource
-     * @return array
      * @throws Exception
      */
     protected function executeAnalysis(string $dataSource): array

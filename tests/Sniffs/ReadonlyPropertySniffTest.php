@@ -22,7 +22,7 @@ use Exception;
 final class ReadonlyPropertySniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -37,10 +37,9 @@ final class ReadonlyPropertySniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compatinfo/issues/323
      *       Readonly Properties are detected as PHP 8.1
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testReadonlyProperties()
+    public function testReadonlyProperties(): void
     {
         $dataSource = 'readonly_properties.php';
         $metrics    = $this->executeAnalysis($dataSource);

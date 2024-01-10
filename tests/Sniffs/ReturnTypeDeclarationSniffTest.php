@@ -28,7 +28,7 @@ use Exception;
 final class ReturnTypeDeclarationSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -43,10 +43,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/233
      *       PHP 7 requirement not detected for return type hint
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testReturnTypeHint()
+    public function testReturnTypeHint(): void
     {
         $dataSource = 'return_types.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -69,10 +68,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/273
      *       PHP 7.1 Nullable types not being detected
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testNullableReturnTypeHint()
+    public function testNullableReturnTypeHint(): void
     {
         $dataSource = 'gh273.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -105,10 +103,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      *
      * @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.void-functions
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testVoidFunctions()
+    public function testVoidFunctions(): void
     {
         $dataSource = 'void_functions.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -140,10 +137,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/326
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testIntersectionTypes()
+    public function testIntersectionTypes(): void
     {
         $dataSource = 'return_intersection_types.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -160,10 +156,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/327
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testNeverReturnType()
+    public function testNeverReturnType(): void
     {
         $dataSource = 'return_never.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -182,10 +177,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      * @link https://wiki.php.net/rfc/null-false-standalone-types
      * @link https://wiki.php.net/rfc/true-type
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testNullOrBooleanReturnType()
+    public function testNullOrBooleanReturnType(): void
     {
         $dataSource = 'return_null_bool.php';
         $metrics    = $this->executeAnalysis($dataSource);

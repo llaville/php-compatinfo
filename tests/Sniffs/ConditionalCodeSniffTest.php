@@ -23,7 +23,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 class ConditionalCodeSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -36,9 +36,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
      * Feature test for conditional code `extension_loaded` usage
      *
      * @group features
-     * @return void
      */
-    public function testExtensionLoadedCondition()
+    public function testExtensionLoadedCondition(): void
     {
         $dataSource = 'extension_loaded.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -51,9 +50,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
      * Feature test for conditional code `function_exists` usage
      *
      * @group features
-     * @return void
      */
-    public function testFunctionExistsCondition()
+    public function testFunctionExistsCondition(): void
     {
         $dataSource = 'function_exists.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -66,9 +64,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
      * Feature test for conditional code `method_exists` usage
      *
      * @group features
-     * @return void
      */
-    public function testMethodExistsCondition()
+    public function testMethodExistsCondition(): void
     {
         $dataSource = 'method_exists.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -81,9 +78,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
      * Feature test for conditional code `class_exists` usage
      *
      * @group features
-     * @return void
      */
-    public function testClassExistsCondition()
+    public function testClassExistsCondition(): void
     {
         $dataSource = 'class_exists.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -96,9 +92,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
      * Feature test for conditional code `interface_exists` usage
      *
      * @group features
-     * @return void
      */
-    public function testInterfaceExistsCondition()
+    public function testInterfaceExistsCondition(): void
     {
         $dataSource = 'interface_exists.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -111,9 +106,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
      * Feature test for conditional code `trait_exists` usage
      *
      * @group features
-     * @return void
      */
-    public function testTraitExistsCondition()
+    public function testTraitExistsCondition(): void
     {
         $dataSource = 'trait_exists.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -126,9 +120,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
      * Feature test for conditional code `defined` usage
      *
      * @group features
-     * @return void
      */
-    public function testDefinedCondition()
+    public function testDefinedCondition(): void
     {
         $dataSource = 'defined.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -136,5 +129,4 @@ class ConditionalCodeSniffTest extends SniffTestCase
 
         $this->assertArrayHasKey('defined', $functions);
     }
-
 }

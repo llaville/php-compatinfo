@@ -18,7 +18,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class CombinedComparisonOperatorSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -31,9 +31,8 @@ final class CombinedComparisonOperatorSniffTest extends SniffTestCase
      * Feature test for Combined Comparison (Spaceship) Operator
      *
      * @group features
-     * @return void
      */
-    public function testSpaceshipSyntax()
+    public function testSpaceshipSyntax(): void
     {
         $dataSource = 'spaceship_syntax.php';
         $metrics    = $this->executeAnalysis($dataSource);

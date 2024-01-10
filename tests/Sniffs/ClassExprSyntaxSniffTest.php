@@ -16,7 +16,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class ClassExprSyntaxSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -29,9 +29,8 @@ final class ClassExprSyntaxSniffTest extends SniffTestCase
      * Feature test to detect Class::{expr}() syntax
      *
      * @group features
-     * @return void
      */
-    public function testClassExprSyntax()
+    public function testClassExprSyntax(): void
     {
         $dataSource = 'class_expr.php';
         $metrics    = $this->executeAnalysis($dataSource);

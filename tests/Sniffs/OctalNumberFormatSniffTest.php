@@ -22,7 +22,7 @@ use Exception;
 final class OctalNumberFormatSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -35,10 +35,9 @@ final class OctalNumberFormatSniffTest extends SniffTestCase
      * Feature test to detect Explicit Octal numeral notation
      *
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testExplicitOctalNotation()
+    public function testExplicitOctalNotation(): void
     {
         $dataSource = 'explicit_octal_number_format.php';
         $metrics    = $this->executeAnalysis($dataSource);

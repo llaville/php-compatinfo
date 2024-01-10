@@ -18,7 +18,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class MethodDeclarationSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -31,9 +31,8 @@ final class MethodDeclarationSniffTest extends SniffTestCase
      * Feature test for PHP 4 syntax class method visibility
      *
      * @group features
-     * @return void
      */
-    public function testClassMethodVisibilityPHP4Syntax()
+    public function testClassMethodVisibilityPHP4Syntax(): void
     {
         $dataSource = 'php4_public_method_visibility.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -53,9 +52,8 @@ final class MethodDeclarationSniffTest extends SniffTestCase
      * Feature test for PHP 5+ syntax class method visibility
      *
      * @group features
-     * @return void
      */
-    public function testClassMethodVisibilityPHP5OrGreater()
+    public function testClassMethodVisibilityPHP5OrGreater(): void
     {
         $dataSource = 'php5_public_method_visibility.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -77,9 +75,8 @@ final class MethodDeclarationSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/129
      *       "Non-empty classes are reported to require PHP 5.0.0"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH129()
+    public function testRegressionGH129(): void
     {
         $dataSource = 'gh129.php';
         $metrics    = $this->executeAnalysis($dataSource);

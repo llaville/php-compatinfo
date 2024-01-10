@@ -24,7 +24,7 @@ use Bartlett\CompatInfo\Tests\Sniffs\SniffTestCase;
 final class IssueTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -39,9 +39,8 @@ final class IssueTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/127
      *       "Interface Serializable is reported to require PHP 5.3"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH127()
+    public function testRegressionGH127(): void
     {
         $dataSource = 'gh127.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -64,9 +63,8 @@ final class IssueTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/162
      *       "ReflectionClass::newInstanceWithoutConstructor require PHP 5.4"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH162()
+    public function testRegressionGH162(): void
     {
         $dataSource = 'gh162.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -90,9 +88,8 @@ final class IssueTest extends SniffTestCase
      *       "Regression in 4.5 : missing extensions"
      * @group regression
      * @group large
-     * @return void
      */
-    public function testRegressionGH210()
+    public function testRegressionGH210(): void
     {
         $dataSource = 'vfsStream-1.6.0.zip';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -125,9 +122,8 @@ final class IssueTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/275
      *       "Missing extension when class name FQN is resolved under user namespace"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH275()
+    public function testRegressionGH275(): void
     {
         $dataSource = 'vfsStreamZipTestCase.php';
         $metrics    = $this->executeAnalysis($dataSource);

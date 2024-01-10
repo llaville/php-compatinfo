@@ -22,7 +22,7 @@ use Exception;
 final class MatchSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -36,10 +36,9 @@ final class MatchSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/337
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testMatchExpressions()
+    public function testMatchExpressions(): void
     {
         $dataSource = 'match_expr.php';
         $metrics    = $this->executeAnalysis($dataSource);

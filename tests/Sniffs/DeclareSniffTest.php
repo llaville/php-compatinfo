@@ -19,7 +19,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class DeclareSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -33,9 +33,6 @@ final class DeclareSniffTest extends SniffTestCase
      *
      * @group features
      * @dataProvider directivesProvider
-     * @param string $dataSource
-     * @param array $expectedVersions
-     * @return void
      */
     public function testDirectiveDeclarations(string $dataSource, array $expectedVersions): void
     {
@@ -49,8 +46,6 @@ final class DeclareSniffTest extends SniffTestCase
 
     /**
      * Data Provider to test directive declarations
-     *
-     * @return iterable
      */
     public static function directivesProvider(): iterable
     {

@@ -21,7 +21,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class VariadicFunctionSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -34,9 +34,8 @@ final class VariadicFunctionSniffTest extends SniffTestCase
      * Feature test for variadic functions
      *
      * @group features
-     * @return void
      */
-    public function testVariadicFunctions()
+    public function testVariadicFunctions(): void
     {
         $dataSource = 'variadic_functions.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -80,9 +79,8 @@ final class VariadicFunctionSniffTest extends SniffTestCase
      *       Variadic functions are 5.6+
      * @link http://php.net/manual/en/migration56.new-features.php#migration56.new-features.variadics
      * @group regression
-     * @return void
      */
-    public function testRegressionGH141()
+    public function testRegressionGH141(): void
     {
         $dataSource = 'gh141.php';
         $metrics    = $this->executeAnalysis($dataSource);

@@ -22,7 +22,7 @@ use Exception;
 final class Php53IssueTest extends TestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -33,8 +33,6 @@ final class Php53IssueTest extends TestCase
 
     /**
      * Data Source Provider to test some PHP 5.3 features
-     *
-     * @return iterable
      */
     public static function dataSourceProvider(): iterable
     {
@@ -60,10 +58,9 @@ final class Php53IssueTest extends TestCase
      * @group features
      * @group regression
      * @dataProvider dataSourceProvider
-     * @return void
      * @throws Exception
      */
-    public function testRegressionGH213(string $dataSource, array $expectedVersions)
+    public function testRegressionGH213(string $dataSource, array $expectedVersions): void
     {
         $metrics    = $this->executeAnalysis($dataSource);
         $versions   = $metrics[self::$analyserId]['versions'];

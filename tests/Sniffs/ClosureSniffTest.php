@@ -19,7 +19,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class ClosureSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -34,9 +34,8 @@ final class ClosureSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/229
      *       $this in closures not properly detected
      * @group regression
-     * @return void
      */
-    public function testRegressionGH229()
+    public function testRegressionGH229(): void
     {
         $dataSource = 'gh229.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -59,9 +58,8 @@ final class ClosureSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/231
      *       Closures that work in PHP 5.3 are reported as requiring 5.4
      * @group regression
-     * @return void
      */
-    public function testRegressionGH231()
+    public function testRegressionGH231(): void
     {
         $dataSource = 'gh231.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -82,9 +80,8 @@ final class ClosureSniffTest extends SniffTestCase
      * Feature test to detect self keyword in a closure
      *
      * @group features
-     * @return void
      */
-    public function testSelfKeyword()
+    public function testSelfKeyword(): void
     {
         $dataSource = 'self_parent_static_closure_oop.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -105,9 +102,8 @@ final class ClosureSniffTest extends SniffTestCase
      * Feature test to detect static keyword in a closure
      *
      * @group features
-     * @return void
      */
-    public function testStaticKeyword()
+    public function testStaticKeyword(): void
     {
         $dataSource = 'self_parent_static_closure_oop.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -128,9 +124,8 @@ final class ClosureSniffTest extends SniffTestCase
      * Feature test to detect parent keyword in a closure
      *
      * @group features
-     * @return void
      */
-    public function testParentKeyword()
+    public function testParentKeyword(): void
     {
         $dataSource = 'self_parent_static_closure_oop.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -151,9 +146,8 @@ final class ClosureSniffTest extends SniffTestCase
      * Feature test to detect static closure
      *
      * @group features
-     * @return void
      */
-    public function testStaticAnonymousFunction()
+    public function testStaticAnonymousFunction(): void
     {
         $dataSource = 'self_parent_static_closure_oop.php';
         $metrics    = $this->executeAnalysis($dataSource);

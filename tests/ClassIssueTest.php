@@ -20,7 +20,7 @@ namespace Bartlett\CompatInfo\Tests;
 final class ClassIssueTest extends TestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -35,9 +35,8 @@ final class ClassIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/171
      *       "Missing extension on class inheritance"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH171()
+    public function testRegressionGH171(): void
     {
         $dataSource = 'gh171.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -64,9 +63,8 @@ final class ClassIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/199
      *       "Class inheritance lifts requirements to >= PHP 5.3.0"
      * @group regression
-     * @return void
      */
-    public function testRegressionGH199()
+    public function testRegressionGH199(): void
     {
         $dataSource = 'gh199.php';
         $metrics    = $this->executeAnalysis($dataSource);

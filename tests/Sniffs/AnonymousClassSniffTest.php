@@ -20,7 +20,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class AnonymousClassSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -35,9 +35,8 @@ final class AnonymousClassSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/269
      *       Anonymous class is detected as PHP 5.4
      * @group regression
-     * @return void
      */
-    public function testAnonymousClassInProceduralContext()
+    public function testAnonymousClassInProceduralContext(): void
     {
         $dataSource = 'anonymous_classes.php';
         $metrics    = $this->executeAnalysis($dataSource);

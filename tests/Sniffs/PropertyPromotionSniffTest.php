@@ -23,7 +23,7 @@ use Exception;
 final class PropertyPromotionSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -37,10 +37,9 @@ final class PropertyPromotionSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/336
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testConstructorPromotion()
+    public function testConstructorPromotion(): void
     {
         $dataSource = 'constructor_promotion.php';
         $metrics    = $this->executeAnalysis($dataSource);

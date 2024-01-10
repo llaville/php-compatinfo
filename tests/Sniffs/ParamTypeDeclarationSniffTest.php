@@ -25,7 +25,7 @@ use Exception;
 final class ParamTypeDeclarationSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -41,10 +41,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *       Exponentiation is 5.6+
      * @link https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testRegressionGH142()
+    public function testRegressionGH142(): void
     {
         $dataSource = 'gh142.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -66,10 +65,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/273
      *       PHP 7.1 Nullable types not being detected
      * @group regression
-     * @return void
      * @throws Exception
      */
-    public function testNullableTypeHint()
+    public function testNullableTypeHint(): void
     {
         $dataSource = 'gh273.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -85,10 +83,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      * Feature test for array type hint declaration detection
      *
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testArrayTypeHint()
+    public function testArrayTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -104,10 +101,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      * Feature test for self and parent type hint declaration detection
      *
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testSelfParentTypeHint()
+    public function testSelfParentTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -127,10 +123,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      * Feature test for callable type hint declaration detection
      *
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testCallableTypeHint()
+    public function testCallableTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -146,10 +141,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      * Feature test for scalar (bool, float, int, string) type hint declaration detection
      *
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testScalarTypeHint()
+    public function testScalarTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -177,10 +171,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      * Feature test for iterable type hint declaration detection
      *
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testIterableTypeHint()
+    public function testIterableTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -196,10 +189,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      * Feature test for object type hint declaration detection
      *
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testObjectTypeHint()
+    public function testObjectTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -216,10 +208,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @link https://github.com/llaville/php-compatinfo/issues/333
-     * @return void
      * @throws Exception
      */
-    public function testUnionTypes()
+    public function testUnionTypes(): void
     {
         $dataSource = 'union_types.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -236,10 +227,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @link https://github.com/llaville/php-compatinfo/issues/326
-     * @return void
      * @throws Exception
      */
-    public function testIntersectionTypes()
+    public function testIntersectionTypes(): void
     {
         $dataSource = 'intersection_types.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -256,10 +246,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @group features
      * @link https://github.com/llaville/php-compatinfo/issues/363
-     * @return void
      * @throws Exception
      */
-    public function testDisjunctiveNormalFormTypes()
+    public function testDisjunctiveNormalFormTypes(): void
     {
         $dataSource = 'dnf_types.php';
         $metrics    = $this->executeAnalysis($dataSource);

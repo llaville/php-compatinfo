@@ -16,7 +16,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class ShortTernaryOperatorSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -29,9 +29,8 @@ final class ShortTernaryOperatorSniffTest extends SniffTestCase
      * Feature test for short ternary operator (Elvis syntax)
      *
      * @group features
-     * @return void
      */
-    public function testElvisSyntax()
+    public function testElvisSyntax(): void
     {
         $dataSource = 'elvis_syntax.php';
         $metrics    = $this->executeAnalysis($dataSource);

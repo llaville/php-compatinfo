@@ -18,7 +18,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class GotoSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -34,9 +34,8 @@ final class GotoSniffTest extends SniffTestCase
      *       goto statement is not checked
      * @link https://www.php.net/manual/en/control-structures.goto.php
      * @group regression
-     * @return void
      */
-    public function testRegressionGH200()
+    public function testRegressionGH200(): void
     {
         $dataSource = 'gh200.php';
         $metrics    = $this->executeAnalysis($dataSource);

@@ -24,7 +24,7 @@ namespace Bartlett\CompatInfo\Tests;
 final class PhpFeaturesIssueTest extends TestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -39,9 +39,8 @@ final class PhpFeaturesIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/168
      *       Wrong version on global const variable definition
      * @group regression
-     * @return void
      */
-    public function testRegressionGH168()
+    public function testRegressionGH168(): void
     {
         $dataSource = 'gh168.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -72,9 +71,8 @@ final class PhpFeaturesIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/222
      *       Negative constant marked as PHP 5.6
      * @group features
-     * @return void
      */
-    public function testFeatureGH222()
+    public function testFeatureGH222(): void
     {
         $dataSource = 'gh222.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -96,9 +94,8 @@ final class PhpFeaturesIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/228
      *       `const FOO = null;` does not require PHP 5.6.0
      * @group features
-     * @return void
      */
-    public function testFeatureGH228()
+    public function testFeatureGH228(): void
     {
         $dataSource = 'gh228.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -121,9 +118,8 @@ final class PhpFeaturesIssueTest extends TestCase
      *       list short syntax available since PHP 7.1
      * @link https://wiki.php.net/rfc/short_list_syntax
      * @group features
-     * @return void
      */
-    public function testFeatureGH239()
+    public function testFeatureGH239(): void
     {
         $dataSource = 'gh239.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -140,9 +136,8 @@ final class PhpFeaturesIssueTest extends TestCase
      *       Uncaught Error: Object of class PhpParser\Node\UnionType could not be converted to string
      * @link https://wiki.php.net/rfc/union_types_v2
      * @group features
-     * @return void
      */
-    public function testFeatureGH292()
+    public function testFeatureGH292(): void
     {
         $dataSource = 'gh292.php';
         $metrics    = $this->executeAnalysis($dataSource);

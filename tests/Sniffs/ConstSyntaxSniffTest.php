@@ -19,7 +19,7 @@ namespace Bartlett\CompatInfo\Tests\Sniffs;
 final class ConstSyntaxSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -32,9 +32,8 @@ final class ConstSyntaxSniffTest extends SniffTestCase
      * Feature test for const keyword usage outside of object context
      *
      * @group features
-     * @return void
      */
-    public function testConstantOutsideObjectContext()
+    public function testConstantOutsideObjectContext(): void
     {
         $dataSource = 'const_keyword.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -57,9 +56,8 @@ final class ConstSyntaxSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/140
      *       Constant scalar expressions are 5.6+
      * @group regression
-     * @return void
      */
-    public function testConstantScalarExpressions()
+    public function testConstantScalarExpressions(): void
     {
         $dataSource = 'gh140.php';
         $metrics    = $this->executeAnalysis($dataSource);
@@ -82,9 +80,8 @@ final class ConstSyntaxSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/158
      *       Total requirements do not include Constants
      * @group regression
-     * @return void
      */
-    public function testTotalRequirementsWithConstant()
+    public function testTotalRequirementsWithConstant(): void
     {
         $dataSource = 'gh158.php';
         $metrics    = $this->executeAnalysis($dataSource);

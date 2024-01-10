@@ -23,7 +23,7 @@ use Exception;
 final class NewInitializerSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -34,8 +34,6 @@ final class NewInitializerSniffTest extends SniffTestCase
 
     /**
      * Data Provider to test new in initializers
-     *
-     * @return iterable
      */
     public static function initializersProvider(): iterable
     {
@@ -66,10 +64,9 @@ final class NewInitializerSniffTest extends SniffTestCase
      *       New in Initializers is detected as PHP 8.1
      * @group features
      * @dataProvider initializersProvider
-     * @return void
      * @throws Exception
      */
-    public function testNewInitializerBy(string $dataSource, array $expectedVersions)
+    public function testNewInitializerBy(string $dataSource, array $expectedVersions): void
     {
         $metrics  = $this->executeAnalysis($dataSource);
         $versions = $metrics[self::$analyserId]['versions'];

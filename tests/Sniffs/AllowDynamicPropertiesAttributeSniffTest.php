@@ -20,7 +20,7 @@ use Exception;
 final class AllowDynamicPropertiesAttributeSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -34,10 +34,9 @@ final class AllowDynamicPropertiesAttributeSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/363
      * @group feature
-     * @return void
      * @throws Exception
      */
-    public function testAttributes()
+    public function testAttributes(): void
     {
         $dataSource = 'allow_dynamic_properties.php';
         $metrics    = $this->executeAnalysis($dataSource);

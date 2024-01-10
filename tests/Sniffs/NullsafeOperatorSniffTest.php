@@ -21,7 +21,7 @@ use Exception;
 final class NullsafeOperatorSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -35,10 +35,9 @@ final class NullsafeOperatorSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/338
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testNullsafeOperator()
+    public function testNullsafeOperator(): void
     {
         $dataSource = 'nullsafe_syntax.php';
         $metrics    = $this->executeAnalysis($dataSource);

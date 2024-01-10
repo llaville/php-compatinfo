@@ -23,7 +23,7 @@ use Exception;
 final class ArrowFunctionSniffTest extends SniffTestCase
 {
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public static function setUpBeforeClass(): void
     {
@@ -36,10 +36,9 @@ final class ArrowFunctionSniffTest extends SniffTestCase
      * Feature test to detect Arrow functions in OOP
      *
      * @group features
-     * @return void
      * @throws Exception
      */
-    public function testArrowFunctionInObjectContext()
+    public function testArrowFunctionInObjectContext(): void
     {
         $dataSource = 'arrow_functions.php';
         $metrics    = $this->executeAnalysis($dataSource);
