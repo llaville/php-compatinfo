@@ -44,7 +44,6 @@ final class Parser
     private ReferenceCollectionInterface $references;
     private ErrorHandler $errorHandler;
     private \PhpParser\Parser $parser;
-    private Lexer $lexer;
     private NodeTraverser $traverser;
     private int $filesProceeded;
 
@@ -78,12 +77,7 @@ final class Parser
 
         $profiler = $this->analyser->getProfiler();
 
-        $this->lexer = new Emulative([
-                'usedAttributes' => [
-                    'comments', 'startLine', 'endLine', 'startTokenPos', 'endTokenPos'
-                ]
-            ]);
-        $this->parser = (new ParserFactory())->create(ParserFactory::PREFER_PHP7, $this->lexer);
+        $this->parser = (new ParserFactory())->createForNewestSupportedVersion();
 
         $this->traverser = new NodeTraverser();
         $this->traverser->addVisitor(new ParentContextVisitor());
@@ -137,7 +131,7 @@ final class Parser
 
         $this->analyser->setCurrentFile($fileInfo);
         $this->analyser->setErrorHandler($this->errorHandler);
-        $this->analyser->setTokens($this->lexer->getTokens());
+        $this->analyser->setTokens($this->parser->getTokens());
 
         $this->traverser->traverse($stmts);
 

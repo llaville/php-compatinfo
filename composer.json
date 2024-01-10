@@ -18,7 +18,7 @@
         "bartlett/sarif-php-sdk": "^1.0",
         "composer-runtime-api": "^2.1",
         "doctrine/collections": "^1.4",
-        "nikic/php-parser": "^4.10",
+        "nikic/php-parser": "^5.0",
         "psr/log": "^3.0",
         "ramsey/uuid": "^3.9 || ^4.0",
         "symfony/config": "^5.4 || ^6.0 || ^7.0",

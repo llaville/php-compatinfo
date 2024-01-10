@@ -55,13 +55,13 @@ final class ShortArraySyntaxSniff extends SniffAbstract
 
     private function isShortArraySyntax(Node $node): bool
     {
+        if (!$node instanceof Node\Expr\Array_) {
+            return false;
+        }
         $i = $node->getAttribute('startTokenPos');
-        return ($node instanceof Node\Expr\Array_ && is_string($this->tokens[$i]));
+        return '[' == $this->tokens[$i]->text;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRules(): Generator
     {
         yield self::CA54 => [

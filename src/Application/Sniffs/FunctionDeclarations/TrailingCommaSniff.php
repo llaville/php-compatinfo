@@ -15,7 +15,6 @@ use Generator;
 use function array_filter;
 use function array_slice;
 use function count;
-use function is_string;
 
 /**
  * Trailing comma in parameters list and closure use list (available since PHP 8.0)
@@ -141,7 +140,7 @@ final class TrailingCommaSniff extends SniffAbstract
         $tokens = array_slice($this->tokens, $startTokenPos, $endTokenPos - $startTokenPos);
 
         $commas = array_filter($tokens, function ($token) {
-            return (is_string($token) && ',' == $token);
+            return (',' == $token->text);
         });
 
         return (count($commas) && count($commas) == $argCount);

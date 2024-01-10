@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Application\Analyser;
 
+use PhpParser\Token;
+
 use Symfony\Component\Finder\SplFileInfo;
 
 /**
@@ -25,7 +27,7 @@ interface AnalyserInterface
     public function getTokens(): array;
 
     /**
-     * @param array<int, mixed> $tokens
+     * @param array<int, Token> $tokens
      */
     public function setTokens(array $tokens): void;
 

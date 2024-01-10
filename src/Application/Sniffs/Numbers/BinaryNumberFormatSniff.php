@@ -62,8 +62,8 @@ final class BinaryNumberFormatSniff extends SniffAbstract
     {
         $i = $node->getAttribute('startTokenPos');
 
-        if ($node instanceof Node\Scalar\LNumber && isset($this->tokens[$i][1])) {
-            return (substr_compare($this->tokens[$i][1], '0b', 0, 2, true) === 0);
+        if ($node instanceof Node\Scalar\LNumber && isset($this->tokens[$i]->text)) {
+            return (substr_compare($this->tokens[$i]->text, '0b', 0, 2, true) === 0);
         }
         return false;
     }

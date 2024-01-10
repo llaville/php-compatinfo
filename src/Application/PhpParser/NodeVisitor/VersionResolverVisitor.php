@@ -141,7 +141,7 @@ final class VersionResolverVisitor extends NodeVisitorAbstract
                     $newType = new ClassFullyQualified($name, $attributes);
                 }
                 $param->type = $param->type instanceof Node\NullableType
-                    ? new Node\NullableType((string) $newType)
+                    ? new Node\NullableType($newType)
                     : $newType
                 ;
 
