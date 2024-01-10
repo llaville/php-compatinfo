@@ -107,7 +107,7 @@ final class SarifReporter extends Reporter implements
         $target = '/tmp/' . $token . '-compatinfo.sarif';
         $sarifLog = $this->generateReport($data);
 
-        $normalizer = new JsonSerializableNormalizer ();
+        $normalizer = new JsonSerializableNormalizer();
         $encoder = new JsonEncoder();
         $serializer = new Serializer([$normalizer], [$encoder]);
 
