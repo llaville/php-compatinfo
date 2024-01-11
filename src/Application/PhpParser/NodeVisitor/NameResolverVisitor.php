@@ -30,10 +30,15 @@ final class NameResolverVisitor extends NameResolver
     /**
      * NameResolverVisitor constructor.
      *
-     * @param ErrorHandler|null $errorHandler
-     * @param array<string, string> $options
+     * @inheritDoc
+     * @param array{
+     *     preserveOriginalNames?: bool,
+     *     replaceNodes?: bool,
+     *     nodeAttributeParentKeyStore?: string,
+     *     nodeAttributeNamespacedName?: string
+     * } $options Options
      */
-    public function __construct(ErrorHandler $errorHandler = null, array $options = [])
+    public function __construct(?ErrorHandler $errorHandler = null, array $options = [])
     {
         $this->attributeParentKey = $options['nodeAttributeParentKeyStore'] ?? 'bartlett.parent';
         $this->attributeNamespacedName = $options['nodeAttributeNamespacedName'] ?? 'bartlett.name';
