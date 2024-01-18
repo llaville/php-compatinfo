@@ -28,7 +28,7 @@ use Generator;
 final class ReservedSniff extends SniffAbstract
 {
     // Reserved for future usage in next CompatInfo versions
-    private KeywordBag $softReserved;
+    private KeywordBag $softReserved;   // @phpstan-ignore-line
 
     private function initialize(): void
     {
