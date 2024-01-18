@@ -19,7 +19,6 @@ return function (): Generator
         \Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\NodeVisitor::class,
         \Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\ParentContextVisitor::class,
         \Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\VersionResolverVisitor::class,
-        \Bartlett\CompatInfo\Application\PhpParser\NodeDumper::class,
         \Bartlett\CompatInfo\Application\PhpParser\Parser::class,
     ];
     foreach ($classes as $class) {

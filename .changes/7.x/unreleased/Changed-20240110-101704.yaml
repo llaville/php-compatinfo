@@ -1,4 +1,0 @@
-kind: Changed
-body: Add PHP-Parser 5.0 support (migrate code following https://github.com/nikic/PHP-Parser/blob/master/UPGRADE-5.0.md
-  guide)
-time: 2024-01-10T10:17:04.230220245Z

@@ -1,4 +1,0 @@
-kind: Fixed
-body: '[#368](https://github.com/llaville/php-compatinfo/issues/368) : clarify documentation
-  about `ext-pdo` requirement'
-time: 2024-01-02T14:40:34.195297678Z
