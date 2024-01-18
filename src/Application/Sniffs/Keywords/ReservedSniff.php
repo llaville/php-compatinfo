@@ -27,6 +27,9 @@ use Generator;
  */
 final class ReservedSniff extends SniffAbstract
 {
+    // Reserved for future usage in next CompatInfo versions
+    private KeywordBag $softReserved;
+
     private function initialize(): void
     {
         /**
@@ -45,18 +48,19 @@ final class ReservedSniff extends SniffAbstract
             'void', '7.1',
             'iterable' => '7.1',
             'object' => '7.2',
+            'mixed' => '8.0',
+            'never' => '8.1',
         ];
         $this->forbiddenNames = new KeywordBag($forbiddenNames);
 
         /**
-         * Furthermore, the following names should not be used.
-         * Although they will not generate an error in PHP 7.0,
-         * they are reserved for future use and should be considered deprecated.
+         * The following list of words have had soft reservations placed on them.
+         * Whilst they may still be used as class, interface, and trait names
+         * usage of them is highly discouraged since they may be used in future versions of PHP.
          */
-        $this->forbiddenNames->add(
-            [
+        $this->softReserved = new KeywordBag([
+                'enum' => '8.1',
                 'resource' => '7.0',
-                'mixed' => '7.0',
                 'numeric' => '7.0',
             ]
         );

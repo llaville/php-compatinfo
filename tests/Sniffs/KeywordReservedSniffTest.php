@@ -60,11 +60,11 @@ final class KeywordReservedSniffTest extends SniffTestCase
         $provides = [
             'reserved_names_in_objects.php' => [
                 'php.min'      => '5.4.0',
-                'php.max'      => '7.2.0',
+                'php.max'      => '8.1.0',
             ],
             'reserved_names_in_namespaces.php' => [
                 'php.min'      => '5.3.0',
-                'php.max'      => '7.2.0',
+                'php.max'      => '8.1.0',
             ]
         ];
 

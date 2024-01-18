@@ -37,6 +37,7 @@ class obJeCt {}  // Check case-insensitivity.
 class mixed {}
 class numeric {}
 class iterable {}
+class never {}
 
 interface null {}
 interface true {}
@@ -50,6 +51,7 @@ interface object {}
 interface mixed {}
 interface numeric {}
 interface iterable {}
+interface never {}
 
 // These have to be at the end of the file for PHP 5.2 not to fail on them...
 trait null {}
@@ -64,3 +66,4 @@ trait object {}
 trait mixed {}
 trait numeric {}
 trait iterable {}
+trait never {}

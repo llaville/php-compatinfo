@@ -17,6 +17,7 @@ namespace object;
 namespace mixed;
 namespace numeric;
 namespace iterable;
+namespace never;
 
 // Multi-level namespaces.
 namespace MyProject\null\Level;
@@ -31,3 +32,4 @@ namespace MyProject\object\Level;
 namespace MyProject\Sub\mixed;
 namespace MyProject\numeric\Level;
 namespace MyProject\Sub\Iterable;
+namespace MyProject\Sub\Never;
