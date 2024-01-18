@@ -10,7 +10,7 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>DefaultLogger</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ __construct(stream : string, name : string = 'DefaultLoggerChannel', level : string = Psr\\Log\\LogLevel\:\:INFO, handler : mixed = «unknown», processors : array = [])</td></tr>
+    <tr><td align="left">+ __construct(stream : string, name : string = 'DefaultLoggerChannel', level : string = Psr\\Log\\LogLevel\:\:INFO, handler : object = «unknown», processors : array = [])</td></tr>
     <tr><td align="left">+ isHandling(record : array) : bool</td></tr>
     <tr><td align="left">+ log(level, message, context : array = []) : void</td></tr>
     <tr><td align="left">+ handle(record : array) : void</td></tr>

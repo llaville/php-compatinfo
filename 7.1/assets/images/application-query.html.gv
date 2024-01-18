@@ -47,7 +47,7 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>QueryBusInterface</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ «abstract» query(query : Bartlett\\CompatInfo\\Application\\Query\\QueryInterface)</td></tr>
+    <tr><td align="left">+ «abstract» query(query : Bartlett\\CompatInfo\\Application\\Query\\QueryInterface) : ?mixed</td></tr>
 </table></td></tr>
 </table>>]
   }

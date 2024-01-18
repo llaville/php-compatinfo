@@ -139,15 +139,6 @@ digraph {
     <tr><td align="left">+ «abstract» afterTraverse(nodes : array)</td></tr>
 </table></td></tr>
 </table>>]
-    "PhpParser\\NodeDumper" [shape="none" label=<
-<table cellspacing="0" border="0" cellborder="1">
-    <tr><td bgcolor="#eeeeee"><b><br/>NodeDumper</b></td></tr>
-    <tr><td></td></tr>
-    <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ __construct(options : array = [])</td></tr>
-    <tr><td align="left">+ dump(node : mixed, code : string = «unknown») : string</td></tr>
-</table></td></tr>
-</table>>]
   }
   subgraph cluster_4 {
     label = 0
@@ -203,7 +194,7 @@ digraph {
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(options : array = [])</td></tr>
-    <tr><td align="left">+ beforeTraverse(nodes : array)</td></tr>
+    <tr><td align="left">+ beforeTraverse(nodes : array) : ?array</td></tr>
     <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
     <tr><td align="left">+ leaveNode(node : PhpParser\\Node)</td></tr>
 </table></td></tr>
@@ -246,16 +237,6 @@ digraph {
   subgraph cluster_7 {
     graph [bgcolor="BurlyWood"]
     label = "Bartlett\\CompatInfo\\Application\\PhpParser"
-    "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeDumper" [shape="none" label=<
-<table cellspacing="0" border="0" cellborder="1">
-    <tr><td bgcolor="#eeeeee"><b><br/>NodeDumper</b></td></tr>
-    <tr><td></td></tr>
-    <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ __construct(options : array = [])</td></tr>
-    <tr><td align="left">+ dump(node : mixed, code : string = «unknown») : string</td></tr>
-    <tr><td align="left">+ dumpPosition(node : PhpParser\\Node)</td></tr>
-</table></td></tr>
-</table>>]
     "Bartlett\\CompatInfo\\Application\\PhpParser\\Parser" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>Parser</b></td></tr>
@@ -282,5 +263,4 @@ digraph {
   "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\NameResolverVisitor" -> "PhpParser\\NodeVisitor\\NameResolver" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\ParentContextVisitor" -> "PhpParser\\NodeVisitorAbstract" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\VersionResolverVisitor" -> "PhpParser\\NodeVisitorAbstract" [arrowhead="empty" style="filled"]
-  "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeDumper" -> "PhpParser\\NodeDumper" [arrowhead="empty" style="filled"]
 }

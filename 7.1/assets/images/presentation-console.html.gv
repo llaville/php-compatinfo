@@ -350,9 +350,9 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>Style</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ createProgressBar(max = 0) : Symfony\\Component\\Console\\Helper\\ProgressBar</td></tr>
+    <tr><td align="left">+ createProgressBar(max : int = 0) : Symfony\\Component\\Console\\Helper\\ProgressBar</td></tr>
     <tr><td align="left">+ table(headers : array, rows : array, style : string = 'compact') : void</td></tr>
-    <tr><td align="left">+ columns(lines, format : string) : void</td></tr>
+    <tr><td align="left">+ columns(lines : mixed, format : string) : void</td></tr>
 </table></td></tr>
 </table>>]
     "Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface" [shape="none" label=<
@@ -371,7 +371,7 @@ digraph {
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ «abstract» columns(lines : mixed, format : string) : void</td></tr>
-    <tr><td align="left">+ «abstract» createProgressBar(max : int = 0)</td></tr>
+    <tr><td align="left">+ «abstract» createProgressBar(max : int = 0) : Symfony\\Component\\Console\\Helper\\ProgressBar</td></tr>
     <tr><td align="left">+ «abstract» table(headers : array, rows : array, style : string = 'compact') : void</td></tr>
 </table></td></tr>
 </table>>]

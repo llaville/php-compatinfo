@@ -9,7 +9,7 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>Collecting</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ handleError(error : PhpParser\\Error)</td></tr>
+    <tr><td align="left">+ handleError(error : PhpParser\\Error) : void</td></tr>
     <tr><td align="left">+ getErrors() : array</td></tr>
     <tr><td align="left">+ hasErrors() : bool</td></tr>
     <tr><td align="left">+ clearErrors() : void</td></tr>
@@ -20,7 +20,7 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>Throwing</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ handleError(error : PhpParser\\Error)</td></tr>
+    <tr><td align="left">+ handleError(error : PhpParser\\Error) : void</td></tr>
     <tr><td align="left">+ hasErrors() : bool</td></tr>
     <tr><td align="left">+ getErrors() : array</td></tr>
     <tr><td align="left">+ clearErrors() : void</td></tr>

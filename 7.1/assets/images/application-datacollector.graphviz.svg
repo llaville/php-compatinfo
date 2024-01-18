@@ -46,16 +46,16 @@
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Collecting -->
 <g id="node1" class="node">
 <title>Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Collecting</title>
-<polygon fill="#fefece" stroke="transparent" points="1035,-1334 871,-1334 871,-1248 1035,-1248 1035,-1334"/>
-<polygon fill="#eeeeee" stroke="transparent" points="871,-1312 871,-1334 1035,-1334 1035,-1312 871,-1312"/>
-<polygon fill="none" stroke="black" points="871,-1312 871,-1334 1035,-1334 1035,-1312 871,-1312"/>
-<text text-anchor="start" x="930" y="-1317.6" font-family="Verdana" font-weight="bold" font-size="8.00">Collecting</text>
-<polygon fill="none" stroke="black" points="871,-1306 871,-1312 1035,-1312 1035,-1306 871,-1306"/>
-<polygon fill="none" stroke="black" points="871,-1248 871,-1306 1035,-1306 1035,-1248 871,-1248"/>
-<text text-anchor="start" x="876" y="-1294.6" font-family="Verdana" font-size="8.00">+ handleError(error : PhpParser\Error)</text>
-<text text-anchor="start" x="876" y="-1281.6" font-family="Verdana" font-size="8.00">+ getErrors() : array</text>
-<text text-anchor="start" x="876" y="-1268.6" font-family="Verdana" font-size="8.00">+ hasErrors() : bool</text>
-<text text-anchor="start" x="876" y="-1255.6" font-family="Verdana" font-size="8.00">+ clearErrors() : void</text>
+<polygon fill="#fefece" stroke="transparent" points="1035,-1334 847,-1334 847,-1248 1035,-1248 1035,-1334"/>
+<polygon fill="#eeeeee" stroke="transparent" points="847,-1312 847,-1334 1035,-1334 1035,-1312 847,-1312"/>
+<polygon fill="none" stroke="black" points="847,-1312 847,-1334 1035,-1334 1035,-1312 847,-1312"/>
+<text text-anchor="start" x="918" y="-1317.6" font-family="Verdana" font-weight="bold" font-size="8.00">Collecting</text>
+<polygon fill="none" stroke="black" points="847,-1306 847,-1312 1035,-1312 1035,-1306 847,-1306"/>
+<polygon fill="none" stroke="black" points="847,-1248 847,-1306 1035,-1306 1035,-1248 847,-1248"/>
+<text text-anchor="start" x="852" y="-1294.6" font-family="Verdana" font-size="8.00">+ handleError(error : PhpParser\Error) : void</text>
+<text text-anchor="start" x="852" y="-1281.6" font-family="Verdana" font-size="8.00">+ getErrors() : array</text>
+<text text-anchor="start" x="852" y="-1268.6" font-family="Verdana" font-size="8.00">+ hasErrors() : bool</text>
+<text text-anchor="start" x="852" y="-1255.6" font-family="Verdana" font-size="8.00">+ clearErrors() : void</text>
 </g>
 <!-- Doctrine\\Common\\Collections\\ArrayCollection -->
 <g id="node3" class="node">
@@ -103,8 +103,8 @@
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Collecting&#45;&gt;Doctrine\\Common\\Collections\\ArrayCollection -->
 <g id="edge9" class="edge">
 <title>Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Collecting&#45;&gt;Doctrine\\Common\\Collections\\ArrayCollection</title>
-<path fill="none" stroke="black" d="M870.96,-1279C826.4,-1270.61 771.47,-1256.21 727,-1232 673.43,-1202.84 622.13,-1161.28 578.26,-1119.85"/>
-<polygon fill="none" stroke="black" points="580.66,-1117.3 571.01,-1112.93 575.83,-1122.37 580.66,-1117.3"/>
+<path fill="none" stroke="black" d="M846.93,-1274.74C808.16,-1265.9 763.8,-1252.36 727,-1232 673.63,-1202.48 622.38,-1160.81 578.51,-1119.4"/>
+<polygon fill="none" stroke="black" points="580.91,-1116.85 571.25,-1112.49 576.08,-1121.92 580.91,-1116.85"/>
 </g>
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler -->
 <g id="node12" class="node">
@@ -123,22 +123,22 @@
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Collecting&#45;&gt;Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler -->
 <g id="edge11" class="edge">
 <title>Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Collecting&#45;&gt;Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1035.06,-1254.63C1055.83,-1245.06 1073.36,-1236.19 1077,-1232 1130.63,-1170.24 1148.31,-1073.18 1154.13,-1016.3"/>
-<polygon fill="none" stroke="black" points="1157.64,-1016.45 1155.09,-1006.16 1150.67,-1015.79 1157.64,-1016.45"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1034.48,-1247.93C1041.06,-1245.19 1047.61,-1242.52 1054,-1240 1064.07,-1236.03 1069.49,-1239.8 1077,-1232 1133.89,-1172.92 1150.43,-1074.5 1155.17,-1016.73"/>
+<polygon fill="none" stroke="black" points="1158.68,-1016.67 1155.92,-1006.44 1151.7,-1016.16 1158.68,-1016.67"/>
 </g>
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Throwing -->
 <g id="node2" class="node">
 <title>Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Throwing</title>
-<polygon fill="#fefece" stroke="transparent" points="1239,-1334 1075,-1334 1075,-1248 1239,-1248 1239,-1334"/>
-<polygon fill="#eeeeee" stroke="transparent" points="1075,-1312 1075,-1334 1239,-1334 1239,-1312 1075,-1312"/>
-<polygon fill="none" stroke="black" points="1075,-1312 1075,-1334 1239,-1334 1239,-1312 1075,-1312"/>
+<polygon fill="#fefece" stroke="transparent" points="1251,-1334 1063,-1334 1063,-1248 1251,-1248 1251,-1334"/>
+<polygon fill="#eeeeee" stroke="transparent" points="1063,-1312 1063,-1334 1251,-1334 1251,-1312 1063,-1312"/>
+<polygon fill="none" stroke="black" points="1063,-1312 1063,-1334 1251,-1334 1251,-1312 1063,-1312"/>
 <text text-anchor="start" x="1135.5" y="-1317.6" font-family="Verdana" font-weight="bold" font-size="8.00">Throwing</text>
-<polygon fill="none" stroke="black" points="1075,-1306 1075,-1312 1239,-1312 1239,-1306 1075,-1306"/>
-<polygon fill="none" stroke="black" points="1075,-1248 1075,-1306 1239,-1306 1239,-1248 1075,-1248"/>
-<text text-anchor="start" x="1080" y="-1294.6" font-family="Verdana" font-size="8.00">+ handleError(error : PhpParser\Error)</text>
-<text text-anchor="start" x="1080" y="-1281.6" font-family="Verdana" font-size="8.00">+ hasErrors() : bool</text>
-<text text-anchor="start" x="1080" y="-1268.6" font-family="Verdana" font-size="8.00">+ getErrors() : array</text>
-<text text-anchor="start" x="1080" y="-1255.6" font-family="Verdana" font-size="8.00">+ clearErrors() : void</text>
+<polygon fill="none" stroke="black" points="1063,-1306 1063,-1312 1251,-1312 1251,-1306 1063,-1306"/>
+<polygon fill="none" stroke="black" points="1063,-1248 1063,-1306 1251,-1306 1251,-1248 1063,-1248"/>
+<text text-anchor="start" x="1068" y="-1294.6" font-family="Verdana" font-size="8.00">+ handleError(error : PhpParser\Error) : void</text>
+<text text-anchor="start" x="1068" y="-1281.6" font-family="Verdana" font-size="8.00">+ hasErrors() : bool</text>
+<text text-anchor="start" x="1068" y="-1268.6" font-family="Verdana" font-size="8.00">+ getErrors() : array</text>
+<text text-anchor="start" x="1068" y="-1255.6" font-family="Verdana" font-size="8.00">+ clearErrors() : void</text>
 </g>
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Throwing&#45;&gt;Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler -->
 <g id="edge12" class="edge">

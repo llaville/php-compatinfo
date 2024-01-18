@@ -660,44 +660,44 @@
 <!-- Bartlett\\CompatInfo\\Presentation\\Console\\Style -->
 <g id="node22" class="node">
 <title>Bartlett\\CompatInfo\\Presentation\\Console\\Style</title>
-<polygon fill="#fefece" stroke="transparent" points="1169,-1573.5 824,-1573.5 824,-1500.5 1169,-1500.5 1169,-1573.5"/>
-<polygon fill="#eeeeee" stroke="transparent" points="824.5,-1551 824.5,-1573 1169.5,-1573 1169.5,-1551 824.5,-1551"/>
-<polygon fill="none" stroke="black" points="824.5,-1551 824.5,-1573 1169.5,-1573 1169.5,-1551 824.5,-1551"/>
+<polygon fill="#fefece" stroke="transparent" points="1178,-1573.5 815,-1573.5 815,-1500.5 1178,-1500.5 1178,-1573.5"/>
+<polygon fill="#eeeeee" stroke="transparent" points="815.5,-1551 815.5,-1573 1178.5,-1573 1178.5,-1551 815.5,-1551"/>
+<polygon fill="none" stroke="black" points="815.5,-1551 815.5,-1573 1178.5,-1573 1178.5,-1551 815.5,-1551"/>
 <text text-anchor="start" x="985" y="-1556.6" font-family="Verdana" font-weight="bold" font-size="8.00">Style</text>
-<polygon fill="none" stroke="black" points="824.5,-1545 824.5,-1551 1169.5,-1551 1169.5,-1545 824.5,-1545"/>
-<polygon fill="none" stroke="black" points="824.5,-1500 824.5,-1545 1169.5,-1545 1169.5,-1500 824.5,-1500"/>
-<text text-anchor="start" x="829.5" y="-1533.6" font-family="Verdana" font-size="8.00">+ createProgressBar(max = 0) : Symfony\Component\Console\Helper\ProgressBar</text>
-<text text-anchor="start" x="829.5" y="-1520.6" font-family="Verdana" font-size="8.00">+ table(headers : array, rows : array, style : string = &#39;compact&#39;) : void</text>
-<text text-anchor="start" x="829.5" y="-1507.6" font-family="Verdana" font-size="8.00">+ columns(lines, format : string) : void</text>
+<polygon fill="none" stroke="black" points="815.5,-1545 815.5,-1551 1178.5,-1551 1178.5,-1545 815.5,-1545"/>
+<polygon fill="none" stroke="black" points="815.5,-1500 815.5,-1545 1178.5,-1545 1178.5,-1500 815.5,-1500"/>
+<text text-anchor="start" x="820.5" y="-1533.6" font-family="Verdana" font-size="8.00">+ createProgressBar(max : int = 0) : Symfony\Component\Console\Helper\ProgressBar</text>
+<text text-anchor="start" x="820.5" y="-1520.6" font-family="Verdana" font-size="8.00">+ table(headers : array, rows : array, style : string = &#39;compact&#39;) : void</text>
+<text text-anchor="start" x="820.5" y="-1507.6" font-family="Verdana" font-size="8.00">+ columns(lines : mixed, format : string) : void</text>
 </g>
 <!-- Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface -->
 <g id="node23" class="node">
 <title>Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface</title>
-<polygon fill="#fefece" stroke="transparent" points="1972.5,-1655.5 1634.5,-1655.5 1634.5,-1472.5 1972.5,-1472.5 1972.5,-1655.5"/>
-<polygon fill="#eeeeee" stroke="transparent" points="1634.5,-1633 1634.5,-1655 1972.5,-1655 1972.5,-1633 1634.5,-1633"/>
-<polygon fill="none" stroke="black" points="1634.5,-1633 1634.5,-1655 1972.5,-1655 1972.5,-1633 1634.5,-1633"/>
+<polygon fill="#fefece" stroke="transparent" points="2008.5,-1655.5 1598.5,-1655.5 1598.5,-1472.5 2008.5,-1472.5 2008.5,-1655.5"/>
+<polygon fill="#eeeeee" stroke="transparent" points="1598.5,-1633 1598.5,-1655 2008.5,-1655 2008.5,-1633 1598.5,-1633"/>
+<polygon fill="none" stroke="black" points="1598.5,-1633 1598.5,-1655 2008.5,-1655 2008.5,-1633 1598.5,-1633"/>
 <text text-anchor="start" x="1777.5" y="-1646.6" font-family="Verdana" font-weight="bold" font-size="8.00">«interface»</text>
 <text text-anchor="start" x="1771.5" y="-1638.6" font-family="Verdana" font-weight="bold" font-size="8.00">StyleInterface</text>
-<polygon fill="none" stroke="black" points="1634.5,-1523 1634.5,-1633 1972.5,-1633 1972.5,-1523 1634.5,-1523"/>
-<text text-anchor="start" x="1639.5" y="-1621.6" font-family="Verdana" font-size="8.00">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</text>
-<text text-anchor="start" x="1639.5" y="-1608.6" font-family="Verdana" font-size="8.00">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</text>
-<text text-anchor="start" x="1639.5" y="-1595.6" font-family="Verdana" font-size="8.00">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</text>
-<text text-anchor="start" x="1639.5" y="-1582.6" font-family="Verdana" font-size="8.00">+ «static» VERBOSITY_VERY_VERBOSE : int = 128 {readOnly}</text>
-<text text-anchor="start" x="1639.5" y="-1569.6" font-family="Verdana" font-size="8.00">+ «static» VERBOSITY_DEBUG : int = 256 {readOnly}</text>
-<text text-anchor="start" x="1639.5" y="-1556.6" font-family="Verdana" font-size="8.00">+ «static» OUTPUT_NORMAL : int = 1 {readOnly}</text>
-<text text-anchor="start" x="1639.5" y="-1543.6" font-family="Verdana" font-size="8.00">+ «static» OUTPUT_RAW : int = 2 {readOnly}</text>
-<text text-anchor="start" x="1639.5" y="-1530.6" font-family="Verdana" font-size="8.00">+ «static» OUTPUT_PLAIN : int = 4 {readOnly}</text>
-<polygon fill="none" stroke="black" points="1634.5,-1517 1634.5,-1523 1972.5,-1523 1972.5,-1517 1634.5,-1517"/>
-<polygon fill="none" stroke="black" points="1634.5,-1472 1634.5,-1517 1972.5,-1517 1972.5,-1472 1634.5,-1472"/>
-<text text-anchor="start" x="1639.5" y="-1505.6" font-family="Verdana" font-size="8.00">+ «abstract» columns(lines : mixed, format : string) : void</text>
-<text text-anchor="start" x="1639.5" y="-1492.6" font-family="Verdana" font-size="8.00">+ «abstract» createProgressBar(max : int = 0)</text>
-<text text-anchor="start" x="1639.5" y="-1479.6" font-family="Verdana" font-size="8.00">+ «abstract» table(headers : array, rows : array, style : string = &#39;compact&#39;) : void</text>
+<polygon fill="none" stroke="black" points="1598.5,-1523 1598.5,-1633 2008.5,-1633 2008.5,-1523 1598.5,-1523"/>
+<text text-anchor="start" x="1603.5" y="-1621.6" font-family="Verdana" font-size="8.00">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</text>
+<text text-anchor="start" x="1603.5" y="-1608.6" font-family="Verdana" font-size="8.00">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</text>
+<text text-anchor="start" x="1603.5" y="-1595.6" font-family="Verdana" font-size="8.00">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</text>
+<text text-anchor="start" x="1603.5" y="-1582.6" font-family="Verdana" font-size="8.00">+ «static» VERBOSITY_VERY_VERBOSE : int = 128 {readOnly}</text>
+<text text-anchor="start" x="1603.5" y="-1569.6" font-family="Verdana" font-size="8.00">+ «static» VERBOSITY_DEBUG : int = 256 {readOnly}</text>
+<text text-anchor="start" x="1603.5" y="-1556.6" font-family="Verdana" font-size="8.00">+ «static» OUTPUT_NORMAL : int = 1 {readOnly}</text>
+<text text-anchor="start" x="1603.5" y="-1543.6" font-family="Verdana" font-size="8.00">+ «static» OUTPUT_RAW : int = 2 {readOnly}</text>
+<text text-anchor="start" x="1603.5" y="-1530.6" font-family="Verdana" font-size="8.00">+ «static» OUTPUT_PLAIN : int = 4 {readOnly}</text>
+<polygon fill="none" stroke="black" points="1598.5,-1517 1598.5,-1523 2008.5,-1523 2008.5,-1517 1598.5,-1517"/>
+<polygon fill="none" stroke="black" points="1598.5,-1472 1598.5,-1517 2008.5,-1517 2008.5,-1472 1598.5,-1472"/>
+<text text-anchor="start" x="1603.5" y="-1505.6" font-family="Verdana" font-size="8.00">+ «abstract» columns(lines : mixed, format : string) : void</text>
+<text text-anchor="start" x="1603.5" y="-1492.6" font-family="Verdana" font-size="8.00">+ «abstract» createProgressBar(max : int = 0) : Symfony\Component\Console\Helper\ProgressBar</text>
+<text text-anchor="start" x="1603.5" y="-1479.6" font-family="Verdana" font-size="8.00">+ «abstract» table(headers : array, rows : array, style : string = &#39;compact&#39;) : void</text>
 </g>
 <!-- Bartlett\\CompatInfo\\Presentation\\Console\\Style&#45;&gt;Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface -->
 <g id="edge30" class="edge">
 <title>Bartlett\\CompatInfo\\Presentation\\Console\\Style&#45;&gt;Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1169.21,-1542.76C1303.11,-1547.25 1488.49,-1553.47 1624.08,-1558.02"/>
-<polygon fill="none" stroke="black" points="1624.05,-1561.52 1634.16,-1558.35 1624.29,-1554.52 1624.05,-1561.52"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1178.16,-1543.06C1299.57,-1547.13 1460.14,-1552.52 1588.03,-1556.81"/>
+<polygon fill="none" stroke="black" points="1588.24,-1560.32 1598.35,-1557.15 1588.48,-1553.32 1588.24,-1560.32"/>
 </g>
 <!-- Symfony\\Component\\Console\\Style\\SymfonyStyle -->
 <g id="node28" class="node">
@@ -751,7 +751,7 @@
 <!-- Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface&#45;&gt;Symfony\\Component\\Console\\Output\\OutputInterface -->
 <g id="edge29" class="edge">
 <title>Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface&#45;&gt;Symfony\\Component\\Console\\Output\\OutputInterface</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1972.53,-1564.03C2220.93,-1573.46 2685.13,-1628.5 2949,-1895 3139.66,-2087.56 3192.25,-2413.22 3206.18,-2607.69"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M2008.57,-1565.66C2263.7,-1579.04 2697.41,-1640.9 2949,-1895 3139.66,-2087.56 3192.25,-2413.22 3206.18,-2607.69"/>
 <polygon fill="none" stroke="black" points="3202.69,-2607.98 3206.87,-2617.72 3209.68,-2607.5 3202.69,-2607.98"/>
 </g>
 <!-- Symfony\\Component\\Console\\Style\\StyleInterface -->
@@ -786,7 +786,7 @@
 <!-- Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface&#45;&gt;Symfony\\Component\\Console\\Style\\StyleInterface -->
 <g id="edge28" class="edge">
 <title>Bartlett\\CompatInfo\\Presentation\\Console\\StyleInterface&#45;&gt;Symfony\\Component\\Console\\Style\\StyleInterface</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1972.97,-1567.5C2200.71,-1567.22 2616.55,-1548.79 2949,-1434 2967.02,-1427.78 2985.12,-1420.15 3002.9,-1411.63"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M2008.58,-1567.31C2242.17,-1565.13 2633.21,-1543.04 2949,-1434 2967.02,-1427.78 2985.12,-1420.15 3002.9,-1411.63"/>
 <polygon fill="none" stroke="black" points="3004.73,-1414.64 3012.18,-1407.1 3001.66,-1408.35 3004.73,-1414.64"/>
 </g>
 <!-- Symfony\\Contracts\\Service\\ResetInterface -->
