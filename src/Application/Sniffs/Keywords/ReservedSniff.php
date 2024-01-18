@@ -59,11 +59,10 @@ final class ReservedSniff extends SniffAbstract
          * usage of them is highly discouraged since they may be used in future versions of PHP.
          */
         $this->softReserved = new KeywordBag([
-                'enum' => '8.1',
-                'resource' => '7.0',
-                'numeric' => '7.0',
-            ]
-        );
+            'enum' => '8.1',
+            'resource' => '7.0',
+            'numeric' => '7.0',
+        ]);
     }
 
     public function enterSniff(): void
