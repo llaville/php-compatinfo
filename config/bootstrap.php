@@ -35,11 +35,11 @@ foreach ($possibleAutoloadPaths as $possibleAutoloadPath) {
 }
 
 if ($isAutoloadFound === false) {
-    throw new RuntimeException(
-        sprintf(
-            'Unable to find "%s" in "%s" paths.',
-            $autoloader,
-            implode('", "', $possibleAutoloadPaths)
-        )
+    fwrite(
+        STDERR,
+        'You need to set up the project dependencies using Composer:' . PHP_EOL . PHP_EOL .
+        '    composer install' . PHP_EOL . PHP_EOL .
+        'You can learn all about Composer on https://getcomposer.org/.' . PHP_EOL
     );
+    exit(1);
 }
