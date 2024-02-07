@@ -8,13 +8,11 @@
  * @author Laurent Laville
  */
 
-$autoloader = 'vendor/autoload.php';
-
-if (Phar::running()) {
-    $phar = new Phar($_SERVER['argv'][0]);
+if (isset($_composer_autoload_path)) {
     $possibleAutoloadPaths = [
-        'phar://' . $phar->getAlias(),
+        dirname($_composer_autoload_path)
     ];
+    $autoloader = basename($_composer_autoload_path);
 } else {
     $possibleAutoloadPaths = [
         // local dev repository
@@ -22,6 +20,7 @@ if (Phar::running()) {
         // dependency
         dirname(__DIR__, 4),
     ];
+    $autoloader = 'vendor/autoload.php';
 }
 
 $isAutoloadFound = false;
