@@ -1,4 +1,0 @@
-kind: Changed
-body: '[#369](https://github.com/llaville/php-compatinfo/issues/369) : Add support
-  to $_composer_autoload_path global Composer variable'
-time: 2024-02-07T08:13:47.825015923Z
