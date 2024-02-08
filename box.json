@@ -1,5 +1,6 @@
 {
     "alias": "phpcompatinfo.phar",
-    "directories": ["bin", "config", "src", "vendor"],
+    "force-autodiscovery": true,
+    "directories": ["config"],
     "compression": "GZ"
 }
