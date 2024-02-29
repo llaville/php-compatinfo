@@ -38,9 +38,13 @@ final class TypedPropertySniff extends SniffAbstract
             return null;
         }
 
+        if (!$parent = $node->getAttribute($this->attributeParentKeyStore)) {
+            return null;
+        }
+
         if (null !== $node->type) {
-            $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '7.4.0']);
-            $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA74);
+            $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '7.4.0']);
+            $this->updateNodeElementRule($parent, $this->attributeKeyStore, self::CA74);
         }
         return null;
     }
