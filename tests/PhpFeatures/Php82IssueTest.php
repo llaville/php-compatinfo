@@ -36,9 +36,16 @@ final class Php82IssueTest extends TestCase
      */
     public static function dataSourceProvider(): iterable
     {
+        if (extension_loaded('random')) {
+            $phpMin = '8.2.0beta1';
+        } else {
+            // @see Bartlett\CompatInfo\Application\Sniffs\ControlStructures\NonCapturingCatchSniff for details
+            $phpMin = '8.0.0alpha1';
+        }
+
         $provides = [
             'random_extension.php' => [
-                'php.min' => '8.2.0beta1',
+                'php.min' => $phpMin,
             ],
         ];
 
