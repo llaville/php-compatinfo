@@ -1,0 +1,3 @@
+kind: Fixed
+body: Constructor readonly properties not detected as a PHP 8.1 feature
+time: 2024-04-23T14:58:31.032104573Z

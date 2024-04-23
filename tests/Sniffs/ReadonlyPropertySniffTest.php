@@ -55,4 +55,29 @@ final class ReadonlyPropertySniffTest extends SniffTestCase
             $versions['php.max']
         );
     }
+
+    /**
+     * Feature test for Constructor Readonly properties
+     *
+     * @link https://github.com/llaville/php-compatinfo/issues/374
+     *       Constructor Readonly Properties are detected as PHP 8.1
+     * @group features
+     * @throws Exception
+     */
+    public function testConstructorReadonlyProperties(): void
+    {
+        $dataSource = 'constructor_readonly_properties.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $versions   = $metrics[self::$analyserId]['versions'];
+
+        $this->assertEquals(
+            '8.1.0beta1',
+            $versions['php.min']
+        );
+
+        $this->assertEquals(
+            '',
+            $versions['php.max']
+        );
+    }
 }
