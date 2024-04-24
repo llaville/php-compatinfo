@@ -52,7 +52,7 @@ You can also install application locally to your project with [Phive][phive] and
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <phive xmlns="https://phar.io/phive">
-    <phar name="llaville/php-compatinfo" version="^7.0" copy="false" />
+    <phar name="llaville/php-compatinfo" version="^7.1" copy="false" />
 </phive>
 ```
 
@@ -66,7 +66,7 @@ The recommended way to install this library is [through composer][composer].
 If you don't know yet what is composer, have a look [on introduction][composer-intro].
 
 ```shell
-composer require bartlett/php-compatinfo ^7.0
+composer require bartlett/php-compatinfo ^7.1
 ```
 
 If you cannot install it because of a dependency conflict, or you prefer to install it for your project, we recommend
@@ -84,7 +84,7 @@ vendor/bin/phpcompatinfo
 The PHP CompatInfo can be directly used from [GitHub][github-repo] by cloning the repository into a directory of your choice.
 
 ```shell
-git clone -b 7.0 https://github.com/llaville/php-compatinfo.git
+git clone -b 7.1 https://github.com/llaville/php-compatinfo.git
 ```
 
 ## Configuring the Database

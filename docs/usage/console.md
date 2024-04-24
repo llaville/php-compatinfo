@@ -7,7 +7,7 @@
 > adding the `db:new` command that combine `db:create` and `db:init` actions.
 
 ```text
-phpCompatInfo version 7.1.0 DB version 5.14.1
+phpCompatInfo version 7.1.4 DB version 6.5.0
 
 Usage:
   command [options] [arguments]
@@ -35,9 +35,10 @@ Available commands:
  analyser
   analyser:run  Analyse a data source to find out requirements
  db
-  db:create     Create the database schema and load its contents from JSON files
+  db:create     Create the database schema
   db:init       Load JSON file(s) into database
   db:list       List all references supported in the Database
+  db:new        Create the database schema and load its contents from JSON files
   db:show       Show details of a reference supported in the Database
  rule
   rule:list     Display list of Compatibility Analyser rules supported
