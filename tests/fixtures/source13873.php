@@ -99,7 +99,7 @@ function get_forum_data()
         }else {
 
             // Check #2: Try and select a default webtag from
-            // the databse
+            // the database
 
             $sql = "SELECT FORUMS.FID, FORUMS.WEBTAG, FORUMS.ACCESS_LEVEL, ";
             $sql.= "CONCAT(FORUMS.DATABASE_NAME, '.', FORUMS.WEBTAG, '_') AS PREFIX ";
@@ -958,7 +958,7 @@ function forum_create($webtag, $forum_name, $owner_uid, $database_name, $access,
     if (!is_numeric($owner_uid)) $owner_uid = 0;
     if (!is_numeric($access)) $access = 0;
 
-    // Only users with acces to the forum tools can create / delete forums.
+    // Only users with access to the forum tools can create / delete forums.
 
     if (bh_session_check_perm(USER_PERM_FORUM_TOOLS, 0)) {
 
@@ -2030,7 +2030,7 @@ function forum_delete_tables($webtag, $database_name)
     if (!preg_match("/^[A-Z0-9_]+$/", $webtag)) return false;
     if (!preg_match("/^[A-Z0-9_]+$/i", $database_name)) return false;
 
-    // Only users with acces to the forum tools can create / delete forums.
+    // Only users with access to the forum tools can create / delete forums.
 
     if (bh_session_check_perm(USER_PERM_FORUM_TOOLS, 0)) {
 

@@ -433,7 +433,7 @@ class PEAR_PackageUpdate
      * Checks to see if an update is available.
      *
      * Respects the user preferences when determining if an
-     * update is avaiable. Returns true if an update is available
+     * update is available. Returns true if an update is available
      * and the user may want to update the package.
      *
      * @access public
@@ -540,7 +540,7 @@ class PEAR_PackageUpdate
     /**
      * Returns the preferences associated with the given package.
      *
-     * The preferences returned are an array with the folling values:
+     * The preferences returned are an array with the following values:
      * - don't ask again
      * - don't ask until next version
      * - only ask for state x
@@ -560,7 +560,7 @@ class PEAR_PackageUpdate
     }
 
     /**
-     * Saves the current prefernces to the RC file.
+     * Saves the current preferences to the RC file.
      *
      * @access public
      * @return boolean true on success, false on error

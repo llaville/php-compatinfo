@@ -70,7 +70,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ### Added
 
-- [GH-271](https://github.com/llaville/php-compat-info/issues/271) CI with Github Actions Workflow
+- [GH-271](https://github.com/llaville/php-compat-info/issues/271) CI with GitHub Actions Workflow
 
 ### Removed
 
