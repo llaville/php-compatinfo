@@ -93,7 +93,7 @@ Here is the list of features supported and their corresponding sniffs :
 | Sniff category  | Sniff class name      | PHP Feature                                    |
 |-----------------|-----------------------|------------------------------------------------|
 | Classes         | MagicMethodsSniff     | [Magic Methods][MagicMethods56]                |
-| Constants       | ConstSyntaxSniff      | [Contant Expressions][ConstScalar]             |
+| Constants       | ConstSyntaxSniff      | [Constant Expressions][ConstScalar]            |
 | Operators       | PowOperatorSniff      | [Exponentiation][PowOperator]                  |
 | UseDeclarations | UseConstFunctionSniff | [use function and use const][UseConstFunction] |
 

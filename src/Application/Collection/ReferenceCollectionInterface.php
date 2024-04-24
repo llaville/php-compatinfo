@@ -17,7 +17,7 @@ use Doctrine\Common\Collections\Collection;
 interface ReferenceCollectionInterface extends Collection
 {
     /**
-     * Fetch the database to retrieve, when possible, element informations.
+     * Fetch the database to retrieve, when possible, element information.
      *
      * @param string $group May be either 'classes', 'methods', 'functions',
      *                       'constants', 'traits', 'interfaces'
