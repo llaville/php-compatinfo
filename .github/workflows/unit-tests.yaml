@@ -24,15 +24,19 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                os:
-                    - "ubuntu-22.04"
-                php:
-                    - "8.1"
-                    - "8.2"
-                    - "8.3"
-                tools:
-                    - phpunit:9.6
-                    - phpunit:10.5
+                include:
+                    -   os: ubuntu-22.04
+                        php: 8.1
+                        tools: phpunit:10.5
+                        continue-on-error: false
+                    -   os: ubuntu-22.04
+                        php: 8.2
+                        tools: phpunit:10.5
+                        continue-on-error: false
+                    -   os: ubuntu-22.04
+                        php: 8.3
+                        tools: phpunit:10.5
+                        continue-on-error: false
 
         name: Unit Tests
 
@@ -55,7 +59,7 @@ jobs:
 
             -   # https://github.com/ramsey/composer-install
                 name: Install Composer dependencies
-                uses: ramsey/composer-install@v2
+                uses: ramsey/composer-install@v3
                 with:
                     dependency-versions: "highest"
                     composer-options: "--prefer-dist --no-scripts"
@@ -63,14 +67,9 @@ jobs:
             -   # https://github.com/llaville/php-compatinfo-db
                 name: Build Database
                 run: |
-                    bin/phpcompatinfo db:create --ansi
-                    bin/phpcompatinfo db:init --ansi
+                    bin/phpcompatinfo db:new --ansi
 
-            -   # https://github.com/sebastianbergmann/phpunit/tree/9.6
-                name: Unit tests with PHPUnit 9
-                if: matrix.tools == 'phpunit:9.6'
-                run: phpunit --group features,large,reference,regression,default --do-not-cache-result --configuration ./phpunit-9.xml
             -   # https://github.com/sebastianbergmann/phpunit/tree/10.5
                 name: Unit tests with PHPUnit 10
-                if: matrix.tools == 'phpunit:10.5' && matrix.php != '8.0'
                 run: phpunit --group features,large,reference,regression,default --do-not-cache-result --no-progress
+                continue-on-error: ${{ matrix.continue-on-error }}
