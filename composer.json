@@ -10,27 +10,27 @@
         "issues": "https://github.com/llaville/php-compatinfo/issues"
     },
     "require": {
-        "php": "~8.0 || ~8.1 || ~8.2 || ~8.3",
+        "php": "^8.1",
         "ext-json": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
-        "bartlett/php-compatinfo-db": "^5.12 || ^6.4.2",
+        "bartlett/php-compatinfo-db": "^6.4.2",
         "bartlett/sarif-php-sdk": "^1.0",
         "composer-runtime-api": "^2.1",
         "doctrine/collections": "^1.4",
         "nikic/php-parser": "^5.0",
         "psr/log": "^3.0",
-        "ramsey/uuid": "^3.9 || ^4.0",
-        "symfony/config": "^5.4 || ^6.0 || ^7.0",
-        "symfony/console": "^5.4 || ^6.0 || ^7.0",
-        "symfony/event-dispatcher": "^5.4 || ^6.0 || ^7.0",
-        "symfony/finder": "^5.4 || ^6.0 || ^7.0",
-        "symfony/dependency-injection": "^5.4 || ^6.0 || ^7.0",
-        "symfony/serializer": "^5.4 || ^6.0 || ^7.0",
-        "symfony/stopwatch": "^5.4 || ^6.0 || ^7.0"
+        "ramsey/uuid": "^4.0",
+        "symfony/config": "^6.0 || ^7.0",
+        "symfony/console": "^6.0 || ^7.0",
+        "symfony/event-dispatcher": "^6.0 || ^7.0",
+        "symfony/finder": "^6.0 || ^7.0",
+        "symfony/dependency-injection": "^6.0 || ^7.0",
+        "symfony/serializer": "^6.0 || ^7.0",
+        "symfony/stopwatch": "^6.0 || ^7.0"
     },
     "require-dev": {
-        "symfony/framework-bundle": "^5.4 || ^6.0 || ^7.0",
+        "symfony/framework-bundle": "^6.0 || ^7.0",
         "bamarni/composer-bin-plugin": "^1.8"
     },
     "authors": [

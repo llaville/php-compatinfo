@@ -1,0 +1,3 @@
+kind: Removed
+body: Drop support to PHP 8.0. Minimumn requirement is now PHP 8.1
+time: 2024-11-04T07:17:42.995716428Z
