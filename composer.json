@@ -84,9 +84,11 @@
         "post-install-cmd": [
             "@composer bin all install --ansi"
         ],
+        "code:check": "vendor/bin/phpstan analyse --configuration .github/linters/phpstan.neon.dist --ansi",
         "code:lint": "vendor/bin/phplint --configuration .github/linters/.phplint.yml --verbose --progress=indicator --ansi"
     },
     "scripts-descriptions" : {
+        "code:check": "Run PHPStan code analysis on project source code",
         "code:lint": "Run PHPLint on project source code"
     }
 }
