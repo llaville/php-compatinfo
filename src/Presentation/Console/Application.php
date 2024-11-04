@@ -33,7 +33,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
 {
     protected ?ContainerInterface $container;
 
-    public function setContainer(ContainerInterface $container = null): void
+    public function setContainer(?ContainerInterface $container = null): void
     {
         $this->container = $container;
     }
@@ -158,7 +158,7 @@ class Application extends SymfonyApplication implements ApplicationInterface
     /**
      * @inheritDoc
      */
-    public function run(InputInterface $input = null, OutputInterface $output = null): int
+    public function run(?InputInterface $input = null, ?OutputInterface $output = null): int
     {
         if (null === $input) {
             if ($this->container->has(InputInterface::class)) {

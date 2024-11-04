@@ -107,7 +107,7 @@ final class EventDispatcher extends SymfonyEventDispatcher
     /**
      * @inheritDoc
      */
-    public function dispatch($event, string $eventName = null): object
+    public function dispatch($event, ?string $eventName = null): object
     {
         $triggered = false;
         foreach ($this->extensionLoader->getNames() as $extensionName) {

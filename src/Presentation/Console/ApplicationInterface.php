@@ -20,7 +20,7 @@ interface ApplicationInterface
 {
     public const NAME = 'phpCompatInfo';
 
-    public function setContainer(ContainerInterface $container = null): void;
+    public function setContainer(?ContainerInterface $container = null): void;
 
     /**
      * @return void

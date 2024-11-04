@@ -355,9 +355,8 @@ final class SarifReporter extends Reporter implements
 
     /**
      * @param string[] $command
-     * @param string|null $cwd
      */
-    private function runProcess(array $command, string $cwd = null): string
+    private function runProcess(array $command, ?string $cwd = null): string
     {
         $process = new Process($command, $cwd);
         $process->start();

@@ -67,7 +67,7 @@ class DefaultLogger extends AbstractLogger
         string $stream,
         string $name = 'DefaultLoggerChannel',
         string $level = LogLevel::INFO,
-        object $handler = null,
+        ?object $handler = null,
         array $processors = []
     ) {
         $this->destination = $stream;

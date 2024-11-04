@@ -35,7 +35,7 @@ final class ConsoleKernel extends AbstractKernel implements ConsoleKernelInterfa
     /**
      * @inheritDoc
      */
-    public function getCacheDir(string $default = null): string
+    public function getCacheDir(?string $default = null): string
     {
         $default = $default ?? implode(DIRECTORY_SEPARATOR, [$this->getHomeDir(), '.cache', 'bartlett']);
         return parent::getCacheDir($default) . DIRECTORY_SEPARATOR . $this->environment;
@@ -44,7 +44,7 @@ final class ConsoleKernel extends AbstractKernel implements ConsoleKernelInterfa
     /**
      * @inheritDoc
      */
-    public function handle(InputInterface $input = null): int
+    public function handle(?InputInterface $input = null): int
     {
         if (null === $input) {
             $input = new ArgvInput();
@@ -65,7 +65,7 @@ final class ConsoleKernel extends AbstractKernel implements ConsoleKernelInterfa
     /**
      * @inheritDoc
      */
-    public function createFromInput(InputInterface $input = null): ContainerInterface
+    public function createFromInput(?InputInterface $input = null): ContainerInterface
     {
         if (null === $input) {
             $input = new ArgvInput();
