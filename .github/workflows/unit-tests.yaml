@@ -27,15 +27,12 @@ jobs:
                 include:
                     -   os: ubuntu-22.04
                         php: 8.1
-                        tools: phpunit:10.5
                         continue-on-error: false
                     -   os: ubuntu-22.04
                         php: 8.2
-                        tools: phpunit:10.5
                         continue-on-error: false
                     -   os: ubuntu-22.04
                         php: 8.3
-                        tools: phpunit:10.5
                         continue-on-error: false
 
         name: Unit Tests
@@ -55,14 +52,13 @@ jobs:
                 with:
                     php-version: ${{ matrix.php }}
                     extensions: json,pcre,pdo,phar,spl,mbstring,sqlite
-                    tools: ${{ matrix.tools }}
 
             -   # https://github.com/ramsey/composer-install
                 name: Install Composer dependencies
                 uses: ramsey/composer-install@v3
                 with:
                     dependency-versions: "highest"
-                    composer-options: "--prefer-dist --no-scripts"
+                    composer-options: "--prefer-dist"
 
             -   # https://github.com/llaville/php-compatinfo-db
                 name: Build Database
@@ -71,5 +67,5 @@ jobs:
 
             -   # https://github.com/sebastianbergmann/phpunit/tree/10.5
                 name: Unit tests with PHPUnit 10
-                run: phpunit --group features,large,reference,regression,default --do-not-cache-result --no-progress
+                run: vendor/bin/phpunit --group features,large,reference,regression,default --do-not-cache-result --no-progress
                 continue-on-error: ${{ matrix.continue-on-error }}
