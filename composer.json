@@ -68,7 +68,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "7.1.x-dev"
+            "dev-master": "7.2.x-dev"
         },
         "bamarni-bin": {
             "bin-links": true,
@@ -83,6 +83,10 @@
         ],
         "post-install-cmd": [
             "@composer bin all install --ansi"
-        ]
+        ],
+        "code:lint": "vendor/bin/phplint --configuration .github/linters/.phplint.yml --verbose --progress=indicator --ansi"
+    },
+    "scripts-descriptions" : {
+        "code:lint": "Run PHPLint on project source code"
     }
 }
