@@ -84,7 +84,7 @@
         "post-install-cmd": [
             "@composer bin all install --ansi"
         ],
-        "code:check": "vendor/bin/phpstan analyse --configuration .github/linters/phpstan.neon.dist --ansi",
+        "code:check": "vendor/bin/phpstan analyse --configuration .github/linters/phpstan.neon.dist --ansi --verbose",
         "code:lint": "vendor/bin/phplint --configuration .github/linters/.phplint.yml --verbose --progress=indicator --ansi",
         "style:check": "vendor/bin/phpcs --standard=.github/linters/.phpcs.xml.dist --warning-severity=0 --colors",
         "tests:unit": "vendor/bin/phpunit --configuration phpunit.xml.dist"
