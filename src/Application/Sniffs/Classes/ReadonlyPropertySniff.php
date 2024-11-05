@@ -42,14 +42,24 @@ final class ReadonlyPropertySniff extends SniffAbstract
      */
     public function enterNode(Node $node): int|Node|null
     {
-        if (!$node instanceof Node\Stmt\Property) {
+        if ($node instanceof Node\Stmt\Property) {
+            if ($node->flags & Node\Stmt\Class_::MODIFIER_READONLY) {
+                $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '8.1.0beta1']);
+                $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA81);
+            }
             return null;
         }
 
-        if ($node->flags & Node\Stmt\Class_::MODIFIER_READONLY) {
-            $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '8.1.0beta1']);
-            $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA81);
+        if ($node instanceof Node\FunctionLike) {
+            foreach ($node->getParams() as $param) {
+                if ($param->isReadonly()) {
+                    $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '8.1.0beta1']);
+                    $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA81);
+                    break;
+                }
+            }
         }
+
         return null;
     }
 }
