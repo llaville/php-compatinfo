@@ -14,3 +14,4 @@ parameters:
             path: ../../src/Application/Sniffs/Keywords/ReservedSniff.php
         -
             identifier: missingType.generics
+    reportUnmatchedIgnoredErrors: true
