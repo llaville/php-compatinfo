@@ -1,0 +1,3 @@
+kind: Changed
+body: raise symfony components to min version 6.4.0 (LTS compatible with PHP 8.1)
+time: 2024-11-05T15:35:03.683638769Z
