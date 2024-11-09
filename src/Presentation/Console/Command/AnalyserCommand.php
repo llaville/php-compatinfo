@@ -18,8 +18,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 
 use function sprintf;
-use function version_compare;
-use const PHP_VERSION;
 
 /**
  * Analyse a data source to find out requirements.
@@ -76,12 +74,7 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
             $this->queryBus->query($compatibilityQuery);
         } catch (HandlerFailedException $e) {
             $exceptions = [];
-            if (version_compare(PHP_VERSION, '8.1', 'ge')) {
-                $failures = $e->getWrappedExceptions();
-            } else {
-                // still keep compatibility with Symfony Messenger Component 6.0
-                $failures = $e->getNestedExceptions();
-            }
+            $failures = $e->getWrappedExceptions();
             foreach ($failures as $exception) {
                 $exceptions[] = $exception->getMessage()
                     . sprintf(' from file "%s" at line %d', $exception->getFile(), $exception->getLine());
