@@ -14,7 +14,7 @@
         "ext-json": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
-        "bartlett/php-compatinfo-db": "^6.4.2",
+        "bartlett/php-compatinfo-db": "6.13.x-dev",
         "bartlett/sarif-php-sdk": "^2.1",
         "composer-runtime-api": "^2.1",
         "doctrine/collections": "^2.1",
@@ -78,12 +78,6 @@
     },
     "scripts": {
         "bin": "echo 'bin not installed'",
-        "post-update-cmd": [
-            "@composer bin all update --ansi"
-        ],
-        "post-install-cmd": [
-            "@composer bin all install --ansi"
-        ],
         "code:check": "vendor/bin/phpstan analyse --configuration .github/linters/phpstan.neon.dist --ansi --verbose",
         "code:lint": "vendor/bin/phplint --configuration .github/linters/.phplint.yml --verbose --progress=indicator --ansi",
         "style:check": "vendor/bin/phpcs --standard=.github/linters/.phpcs.xml.dist --warning-severity=0 --colors",
