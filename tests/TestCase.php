@@ -55,8 +55,10 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     {
         $compatibilityQuery = new GetCompatibilityQuery(self::$fixtures . $dataSource, [], false, '');
 
+        $environment = $_SERVER['APP_ENV'] ?? $_ENV['APP_ENV'] ?? 'dev';
+
         $input = new ArrayInput(['--no-polyfills' => true, '--php' => sprintf('%d.%d', PHP_MAJOR_VERSION, PHP_MINOR_VERSION)]);
-        $container = (new ConsoleKernel('dev', true))->createFromInput($input);
+        $container = (new ConsoleKernel($environment, true))->createFromInput($input);
 
         $queryBus = $container->get(QueryBusInterface::class);
 
