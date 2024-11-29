@@ -1,12 +1,27 @@
 {
     "alias": "phpcompatinfo.phar",
     "force-autodiscovery": true,
-    "directories": ["config"],
+    "directories": [
+        "config"
+    ],
     "compression": "GZ",
-    "stub": "stub.php",
-    "files-bin": ["sbom.json", "console.txt"],
+    "dump-autoload": false,
+    "files-bin": [
+        "console-table.txt",
+        "plain.txt",
+        "sbom.json",
+        ".box.manifests.bin"
+    ],
     "map": [
-        { "console.txt": ".box.manifests/console.txt" },
-        { "sbom.json": ".box.manifests/sbom.json" }
-    ]
+        {
+            "console-table.txt": ".box.manifests/console-table.txt"
+        },
+        {
+            "plain.txt": ".box.manifests/plain.txt"
+        },
+        {
+            "sbom.json": ".box.manifests/sbom.json"
+        }
+    ],
+    "stub": "stub.php"
 }
