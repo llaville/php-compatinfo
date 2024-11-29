@@ -18,7 +18,7 @@ use Exception;
  * @link https://www.php.net/manual/en/functions.first_class_callable_syntax.php
  * @link https://wiki.php.net/rfc/first_class_callable_syntax
  * @link https://php.watch/versions/8.1/first-class-callable-syntax
- * @see tests/Sniffs/FirstClassCallableSniffTest.php
+ * @see src/Application/Sniffs/FunctionDeclarations/FirstClassCallableSniff.php
  */
 final class FirstClassCallableSniffTest extends SniffTestCase
 {
@@ -45,6 +45,9 @@ final class FirstClassCallableSniffTest extends SniffTestCase
                 'php.min' => '8.1.0beta1',
             ],
             'callable_expr_static.php' => [
+                'php.min' => '8.1.0beta1',
+            ],
+            'callable_expr_anonymous.php' => [
                 'php.min' => '8.1.0beta1',
             ],
         ];

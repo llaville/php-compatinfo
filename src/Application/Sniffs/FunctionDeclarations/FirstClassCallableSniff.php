@@ -50,8 +50,12 @@ final class FirstClassCallableSniff extends SniffAbstract
             return null;
         }
 
-        $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '8.1.0beta1']);
-        $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA81);
+        if (!$parent = $node->getAttribute($this->attributeParentKeyStore)) {
+            return null;
+        }
+
+        $this->updateNodeElementVersion($parent, $this->attributeKeyStore, ['php.min' => '8.1.0beta1']);
+        $this->updateNodeElementRule($parent, $this->attributeKeyStore, self::CA81);
         return null;
     }
 }

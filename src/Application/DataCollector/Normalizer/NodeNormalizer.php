@@ -148,8 +148,11 @@ final class NodeNormalizer implements NormalizerInterface
             }
         } elseif ($data->hasAttribute($this->attributeNamespacedName)) {
             $this->name = (string) $data->getAttribute($this->attributeNamespacedName);
-        } elseif (property_exists($data, 'name')) {
-            $this->name = (string) $data->name;
+        } elseif (
+            property_exists($data, 'name')
+            && ($data->name instanceof Node\Name || $data->name instanceof Node\Identifier)
+        ) {
+            $this->name = $data->name->name;
         } else {
             return false;
         }
