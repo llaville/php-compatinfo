@@ -87,8 +87,10 @@ final class RuleReporter extends Reporter implements FormatterInterface
                     $messages[] = sprintf('<info>%12s</info> : %s', $title, $value);
                 } else {
                     $messages[] = sprintf('<info>%12s</info> : (%d)', $title, count($value));
-                    foreach ($value as $line) {
-                        $messages[] = $line;
+                    if ($this->output->isVerbose()) {
+                        foreach ($value as $line) {
+                            $messages[] = $line;
+                        }
                     }
                 }
             }
