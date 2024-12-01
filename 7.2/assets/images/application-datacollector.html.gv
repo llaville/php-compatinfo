@@ -1,0 +1,303 @@
+digraph {
+  graph [name="G" overlap="false" rankdir="TB" bgcolor="transparent"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
+  subgraph cluster_0 {
+    label = "Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler"
+    "Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Collecting" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Collecting</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ handleError(error : PhpParser\\Error) : void</td></tr>
+    <tr><td align="left">+ getErrors() : array</td></tr>
+    <tr><td align="left">+ hasErrors() : bool</td></tr>
+    <tr><td align="left">+ clearErrors() : void</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Throwing" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Throwing</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ handleError(error : PhpParser\\Error) : void</td></tr>
+    <tr><td align="left">+ hasErrors() : bool</td></tr>
+    <tr><td align="left">+ getErrors() : array</td></tr>
+    <tr><td align="left">+ clearErrors() : void</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_1 {
+    label = "Doctrine\\Common\\Collections"
+    "Doctrine\\Common\\Collections\\ArrayCollection" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ArrayCollection</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(elements : array = [])</td></tr>
+    <tr><td align="left">+ toArray()</td></tr>
+    <tr><td align="left">+ first()</td></tr>
+    <tr><td align="left">+ last()</td></tr>
+    <tr><td align="left">+ key()</td></tr>
+    <tr><td align="left">+ next()</td></tr>
+    <tr><td align="left">+ current()</td></tr>
+    <tr><td align="left">+ remove(key)</td></tr>
+    <tr><td align="left">+ removeElement(element : mixed)</td></tr>
+    <tr><td align="left">+ offsetExists(offset : mixed)</td></tr>
+    <tr><td align="left">+ offsetGet(offset : mixed)</td></tr>
+    <tr><td align="left">+ offsetSet(offset : mixed, value : mixed)</td></tr>
+    <tr><td align="left">+ offsetUnset(offset : mixed)</td></tr>
+    <tr><td align="left">+ containsKey(key)</td></tr>
+    <tr><td align="left">+ contains(element : mixed)</td></tr>
+    <tr><td align="left">+ exists(p : Closure)</td></tr>
+    <tr><td align="left">+ indexOf(element)</td></tr>
+    <tr><td align="left">+ get(key)</td></tr>
+    <tr><td align="left">+ getKeys()</td></tr>
+    <tr><td align="left">+ getValues()</td></tr>
+    <tr><td align="left">+ count()</td></tr>
+    <tr><td align="left">+ set(key, value : mixed)</td></tr>
+    <tr><td align="left">+ add(element : mixed)</td></tr>
+    <tr><td align="left">+ isEmpty()</td></tr>
+    <tr><td align="left">+ getIterator()</td></tr>
+    <tr><td align="left">+ map(func : Closure)</td></tr>
+    <tr><td align="left">+ reduce(func : Closure, initial = «unknown»)</td></tr>
+    <tr><td align="left">+ filter(p : Closure)</td></tr>
+    <tr><td align="left">+ findFirst(p : Closure)</td></tr>
+    <tr><td align="left">+ forAll(p : Closure)</td></tr>
+    <tr><td align="left">+ partition(p : Closure)</td></tr>
+    <tr><td align="left">+ __toString() : string</td></tr>
+    <tr><td align="left">+ clear()</td></tr>
+    <tr><td align="left">+ slice(offset : int, length : int = «unknown»)</td></tr>
+    <tr><td align="left">+ matching(criteria : Doctrine\\Common\\Collections\\Criteria)</td></tr>
+</table></td></tr>
+</table>>]
+    "Doctrine\\Common\\Collections\\Collection" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Collection</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» add(element : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» clear()</td></tr>
+    <tr><td align="left">+ «abstract» remove(key : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» removeElement(element : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» set(key : mixed, value : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» map(func : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» filter(p : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» partition(p : Closure)</td></tr>
+</table></td></tr>
+</table>>]
+    "Doctrine\\Common\\Collections\\ReadableCollection" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ReadableCollection</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» contains(element : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» isEmpty()</td></tr>
+    <tr><td align="left">+ «abstract» containsKey(key : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» get(key : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» getKeys()</td></tr>
+    <tr><td align="left">+ «abstract» getValues()</td></tr>
+    <tr><td align="left">+ «abstract» toArray()</td></tr>
+    <tr><td align="left">+ «abstract» first()</td></tr>
+    <tr><td align="left">+ «abstract» last()</td></tr>
+    <tr><td align="left">+ «abstract» key()</td></tr>
+    <tr><td align="left">+ «abstract» current()</td></tr>
+    <tr><td align="left">+ «abstract» next()</td></tr>
+    <tr><td align="left">+ «abstract» slice(offset : int, length : int = «unknown»)</td></tr>
+    <tr><td align="left">+ «abstract» exists(p : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» filter(p : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» map(func : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» partition(p : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» forAll(p : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» indexOf(element : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» findFirst(p : Closure)</td></tr>
+    <tr><td align="left">+ «abstract» reduce(func : Closure, initial : mixed = «unknown»)</td></tr>
+</table></td></tr>
+</table>>]
+    "Doctrine\\Common\\Collections\\Selectable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Selectable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» matching(criteria : Doctrine\\Common\\Collections\\Criteria)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_2 {
+    label = 0
+    "Countable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Countable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» count()</td></tr>
+</table></td></tr>
+</table>>]
+    "IteratorAggregate" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>IteratorAggregate</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getIterator()</td></tr>
+</table></td></tr>
+</table>>]
+    "Traversable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Traversable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+    "ArrayAccess" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ArrayAccess</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» offsetExists(offset : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» offsetGet(offset : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» offsetSet(offset : mixed, value : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» offsetUnset(offset : mixed)</td></tr>
+</table></td></tr>
+</table>>]
+    "Stringable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Stringable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» __toString() : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_3 {
+    graph [bgcolor="BurlyWood"]
+    label = "Bartlett\\CompatInfo\\Application\\DataCollector"
+    "Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ErrorHandler</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getErrors() : array</td></tr>
+    <tr><td align="left">+ «abstract» hasErrors() : bool</td></tr>
+    <tr><td align="left">+ «abstract» clearErrors() : void</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\DataCollector\\DataCollector" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>DataCollector</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(visitor : Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\NodeVisitor)</td></tr>
+    <tr><td align="left">+ reset() : void</td></tr>
+    <tr><td align="left">+ getData() : array</td></tr>
+    <tr><td align="left">+ collect(nodes : array) : array</td></tr>
+    <tr><td align="left">+ setName(name : string) : Bartlett\\CompatInfo\\Application\\DataCollector\\DataCollectorInterface</td></tr>
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ addFile(file : Symfony\\Component\\Finder\\SplFileInfo) : void</td></tr>
+    <tr><td align="left">+ getFiles() : array</td></tr>
+    <tr><td align="left">+ addErrors(errors : array) : void</td></tr>
+    <tr><td align="left">+ getErrors() : array</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\DataCollector\\DataCollectorInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>DataCollectorInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» reset() : void</td></tr>
+    <tr><td align="left">+ «abstract» getData() : array</td></tr>
+    <tr><td align="left">+ «abstract» collect(nodes : array) : array</td></tr>
+    <tr><td align="left">+ «abstract» setName(name : string) : Bartlett\\CompatInfo\\Application\\DataCollector\\DataCollectorInterface</td></tr>
+    <tr><td align="left">+ «abstract» getName() : string</td></tr>
+    <tr><td align="left">+ «abstract» addFile(file : Symfony\\Component\\Finder\\SplFileInfo) : void</td></tr>
+    <tr><td align="left">+ «abstract» getFiles() : array</td></tr>
+    <tr><td align="left">+ «abstract» addErrors(errors : array) : void</td></tr>
+    <tr><td align="left">+ «abstract» getErrors() : array</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\DataCollector\\RuleUpdater" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>RuleUpdater</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\DataCollector\\VersionDataCollector" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>VersionDataCollector</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(keysAllowed : array)</td></tr>
+    <tr><td align="left">+ collect(nodes : array) : array</td></tr>
+    <tr><td align="left">+ reset() : void</td></tr>
+    <tr><td align="left">+ getData() : array</td></tr>
+    <tr><td align="left">+ getVersions() : array</td></tr>
+    <tr><td align="left">+ getExtensions() : array</td></tr>
+    <tr><td align="left">+ getNamespaces() : array</td></tr>
+    <tr><td align="left">+ getClasses() : array</td></tr>
+    <tr><td align="left">+ getInterfaces() : array</td></tr>
+    <tr><td align="left">+ getTraits() : array</td></tr>
+    <tr><td align="left">+ getMethods() : array</td></tr>
+    <tr><td align="left">+ getGenerators() : array</td></tr>
+    <tr><td align="left">+ getFunctions() : array</td></tr>
+    <tr><td align="left">+ getConstants() : array</td></tr>
+    <tr><td align="left">+ getDirectives() : array</td></tr>
+    <tr><td align="left">+ getConditions() : array</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\CompatInfo\\Application\\DataCollector\\VersionUpdater" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>VersionUpdater</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+  }
+  subgraph cluster_4 {
+    label = "PhpParser"
+    "PhpParser\\ErrorHandler" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ErrorHandler</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» handleError(error : PhpParser\\Error)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_5 {
+    label = "Bartlett\\CompatInfo\\Application\\DataCollector\\Normalizer"
+    "Bartlett\\CompatInfo\\Application\\DataCollector\\Normalizer\\NodeNormalizer" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>NodeNormalizer</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ normalize(object, format = «unknown», context : array = [])</td></tr>
+    <tr><td align="left">+ supportsNormalization(data : mixed, format : string = «unknown») : bool</td></tr>
+    <tr><td align="left">+ getSupportedTypes(format : string) : array</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_6 {
+    label = "Symfony\\Component\\Serializer\\Normalizer"
+    "Symfony\\Component\\Serializer\\Normalizer\\NormalizerInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>NormalizerInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» normalize(object : mixed, format : string = «unknown», context : array = [])</td></tr>
+    <tr><td align="left">+ «abstract» supportsNormalization(data : mixed, format : string = «unknown»)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "Doctrine\\Common\\Collections\\ReadableCollection" -> "Countable" [arrowhead="empty" style="dashed"]
+  "IteratorAggregate" -> "Traversable" [arrowhead="empty" style="dashed"]
+  "Doctrine\\Common\\Collections\\ReadableCollection" -> "IteratorAggregate" [arrowhead="empty" style="dashed"]
+  "Doctrine\\Common\\Collections\\Collection" -> "Doctrine\\Common\\Collections\\ReadableCollection" [arrowhead="empty" style="dashed"]
+  "Doctrine\\Common\\Collections\\Collection" -> "ArrayAccess" [arrowhead="empty" style="dashed"]
+  "Doctrine\\Common\\Collections\\ArrayCollection" -> "Doctrine\\Common\\Collections\\Collection" [arrowhead="empty" style="dashed"]
+  "Doctrine\\Common\\Collections\\ArrayCollection" -> "Doctrine\\Common\\Collections\\Selectable" [arrowhead="empty" style="dashed"]
+  "Doctrine\\Common\\Collections\\ArrayCollection" -> "Stringable" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Collecting" -> "Doctrine\\Common\\Collections\\ArrayCollection" [arrowhead="empty" style="filled"]
+  "Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler" -> "PhpParser\\ErrorHandler" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Collecting" -> "Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler\\Throwing" -> "Bartlett\\CompatInfo\\Application\\DataCollector\\ErrorHandler" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\DataCollector\\Normalizer\\NodeNormalizer" -> "Symfony\\Component\\Serializer\\Normalizer\\NormalizerInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\DataCollector\\DataCollector" -> "Bartlett\\CompatInfo\\Application\\DataCollector\\DataCollectorInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\DataCollector\\VersionDataCollector" -> "Bartlett\\CompatInfo\\Application\\DataCollector\\DataCollector" [arrowhead="empty" style="filled"]
+}
