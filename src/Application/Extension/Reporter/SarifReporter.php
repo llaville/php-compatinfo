@@ -81,7 +81,7 @@ final class SarifReporter extends Reporter implements
     private const PHP_VERSIONS = [
         '50', '51', '52', '53', '54', '55', '56',
         '70', '71', '72', '73', '74',
-        '80', '81', '82', '83',
+        '80', '81', '82', '83', '84',
     ];
 
     /**
@@ -213,7 +213,7 @@ final class SarifReporter extends Reporter implements
             yield sprintf('CA%2d00', $phpVer) => [
                 'name' => substr(strrchr(get_class($this), '\\'), 1),
                 'fullDescription' => 'PHP minimum requirement',
-                'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-' . $phpVer,
+                'helpUri' => '%baseHelpUri%/components/sniffs/PHP' . $phpVer,
                 'messages' => [
                     'default' => "File '{0}' requires at least PHP "
                         . sprintf('%1s.%1s', $phpVer[0], $phpVer[1])
@@ -227,7 +227,7 @@ final class SarifReporter extends Reporter implements
      */
     private function buildRulesList(string $id, array $definition): ReportingDescriptor
     {
-        $baseHelpUri = 'https://llaville.github.io/php-compatinfo';
+        $baseHelpUri = 'https://llaville.github.io/php-compatinfo/7.2/';
 
         $rule = new ReportingDescriptor();
         $rule->setId($id);
