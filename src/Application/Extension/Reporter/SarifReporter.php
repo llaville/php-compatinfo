@@ -227,7 +227,7 @@ final class SarifReporter extends Reporter implements
      */
     private function buildRulesList(string $id, array $definition): ReportingDescriptor
     {
-        $baseHelpUri = 'https://llaville.github.io/php-compatinfo/7.2/';
+        $baseHelpUri = 'https://llaville.github.io/php-compatinfo/7.2';
 
         $rule = new ReportingDescriptor();
         $rule->setId($id);
