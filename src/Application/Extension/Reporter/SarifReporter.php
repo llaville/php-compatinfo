@@ -129,16 +129,19 @@ final class SarifReporter extends Reporter implements
         $fileInfo = $event->getArgument('file');
         $file = $fileInfo->getRelativePathname();
 
-        $message = new Message('', 'default');
+        $message = new Message();
+        $message->setId('default');
         $message->addArguments([$file]);
-        $result = new Result($message);
+        $result = new Result();
+        $result->setMessage($message);
 
         $artifactLocation = new ArtifactLocation();
         $artifactLocation->setUri($this->pathToArtifactLocation($file));
         $artifactLocation->setUriBaseId('PROJECT_DIR');
 
         $location = new Location();
-        $physicalLocation = new PhysicalLocation($artifactLocation);
+        $physicalLocation = new PhysicalLocation();
+        $physicalLocation->setArtifactLocation($artifactLocation);
         $location->setPhysicalLocation($physicalLocation);
         $result->addLocations([$location]);
 
@@ -226,17 +229,21 @@ final class SarifReporter extends Reporter implements
     {
         $baseHelpUri = 'https://llaville.github.io/php-compatinfo';
 
-        $rule = new ReportingDescriptor($id);
+        $rule = new ReportingDescriptor();
+        $rule->setId($id);
         $rule->setName($definition['name']);
         if (isset($definition['fullDescription'])) {
-            $rule->setFullDescription(new MultiformatMessageString($definition['fullDescription']));
+            $text = new MultiformatMessageString();
+            $text->setText($definition['fullDescription']);
+            $rule->setFullDescription($text);
         }
         $rule->setHelpUri(str_replace('%baseHelpUri%', $baseHelpUri, $definition['helpUri']));
         $messages = $definition['messages'] ?? [];
         foreach ($messages as $key => $text) {
             // Express plain text result messages as complete sentences and end each sentence with a period
             $text = rtrim($text, '.') . '.';
-            $messages[$key] = new MultiformatMessageString($text);
+            $messages[$key] = new MultiformatMessageString();
+            $messages[$key]->setText($text);
         }
         $rule->addMessageStrings($messages);
         return $rule;
@@ -247,7 +254,8 @@ final class SarifReporter extends Reporter implements
      */
     private function generateReport(array $results): SarifLog
     {
-        $driver = new ToolComponent('PHP_CompatInfo');
+        $driver = new ToolComponent();
+        $driver->setName('PHP_CompatInfo');
         $driver->setInformationUri('https://github.com/llaville/php-compatinfo');
         if (!empty($this->applicationVersion)) {
             $driver->setVersion($this->applicationVersion);
@@ -265,11 +273,13 @@ final class SarifReporter extends Reporter implements
         }
         $driver->addRules($rules);
 
-        $tool = new Tool($driver);
+        $tool = new Tool();
+        $tool->setDriver($driver);
 
         $argv = $_SERVER['argv'];
 
-        $run = new Run($tool);
+        $run = new Run();
+        $run->setTool($tool);
         $workingDir = new ArtifactLocation();
         $workingDir->setUri($this->pathToUri($this->source));
         $appDir = new ArtifactLocation();
@@ -284,7 +294,8 @@ final class SarifReporter extends Reporter implements
         $cwd = dirname($this->source);
         $repositoryUri = $this->runProcess(['git', 'config', '--get', 'remote.origin.url'], $cwd);
         if (!empty($repositoryUri)) {
-            $vcsDetails = new VersionControlDetails($repositoryUri);
+            $vcsDetails = new VersionControlDetails();
+            $vcsDetails->setRepositoryUri($repositoryUri);
 
             $revisionId = $this->runProcess(['git', 'rev-parse', '--short', 'HEAD'], $cwd);
             $vcsDetails->setRevisionId($revisionId);
@@ -299,7 +310,8 @@ final class SarifReporter extends Reporter implements
             $run->addVersionControlDetails([$vcsDetails]);
         }
 
-        $invocation = new Invocation(true);
+        $invocation = new Invocation();
+        $invocation->setExecutionSuccessful(true);
         $invocation->setCommandLine(implode(' ', $argv));
         // strip the application name
         $app = array_shift($argv);
