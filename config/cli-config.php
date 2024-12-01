@@ -13,7 +13,7 @@ use Bartlett\CompatInfo\Application\Kernel\ConsoleKernel;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
 
-require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/../autoload.php';
 
 $container = (new ConsoleKernel('dev', false))->createFromConfigs([]);
 

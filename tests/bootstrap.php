@@ -16,7 +16,7 @@ use Bartlett\CompatInfo\Presentation\Console\Command\AbstractCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 
-require_once dirname(__DIR__) . '/config/bootstrap.php';
+require_once dirname(__DIR__) . '/autoload.php';
 
 $kernel = new ConsoleKernel($_SERVER['APP_ENV'] ?? $_ENV['APP_ENV'] ?? 'tests', false);
 

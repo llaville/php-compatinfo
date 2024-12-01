@@ -18,7 +18,7 @@ use Clue\GraphComposer\Command\Export;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 
-require_once dirname(__DIR__) . '/config/bootstrap.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 require_once dirname(__DIR__) . '/vendor-bin/umlwriter/vendor/autoload.php';
 
 $script = $_SERVER['argv'][1] ?? null;
