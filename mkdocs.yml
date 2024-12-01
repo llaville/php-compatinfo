@@ -1,6 +1,6 @@
 ---
 site_name: PHP Compatinfo
-site_url: https://llaville.github.io/php-compatinfo
+site_url: https://llaville.github.io/php-compatinfo/7.2
 repo_url: https://github.com/llaville/php-compatinfo  # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#repository
 site_author: Laurent Laville
 edit_uri: ""  # hide edit button -- https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#edit-button
