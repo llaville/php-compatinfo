@@ -21,6 +21,7 @@ EDITORCONFIG_EDITORCONFIG_CHECKER_CLI_LINT_MODE: project
 JSON_PRETTIER_FILTER_REGEX_EXCLUDE: "(composer.json)"
 MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: "(\\.github)"
 PHP_PHPSTAN_CLI_LINT_MODE: project # to avoid https://github.com/nvuillam/mega-linter/issues/725
+PHP_PHPSTAN_DISABLE_ERRORS: true # because this project is not yet compatible with PHPStan 2.0 embedded with MegaLinter 8.2.0 or greater
 PHP_PHPCS_CLI_LINT_MODE: project
 PHP_PHPCS_CONFIG_FILE: ".phpcs.xml.dist"
 PHP_PHPCS_ARGUMENTS: "-n"
@@ -30,7 +31,6 @@ YAML_PRETTIER_FILTER_REGEX_EXCLUDE: "(mkdocs\\.yml|\\.github|\\.mega-linter\\.ym
 YAML_YAMLLINT_FILTER_REGEX_EXCLUDE: "(\\.github)" # As it cannot be added in .gitignore for ML actionlint linter
 CONFIG_REPORTER: false
 UPDATED_SOURCES_REPORTER: false
-#TEXT_REPORTER: true # cannot be set to true, and should use default value (true), otherwise TAP REPORTER is also generated. See https://github.com/nvuillam/mega-linter/issues/744
 CONSOLE_REPORTER: true
 LOG_LEVEL: INFO
 PRINT_ALL_FILES: false
