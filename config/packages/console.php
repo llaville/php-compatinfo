@@ -44,6 +44,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // @link https://symfony.com/doc/current/console/lazy_commands.html#factorycommandloader
     $services->set(CommandLoaderInterface::class, FactoryCommandLoader::class)
         ->arg('$commands', tagged_iterator('console.command'))
+        ->arg('$environment', '%kernel.environment%')
     ;
 
     $services->set(InputInterface::class, Input::class);

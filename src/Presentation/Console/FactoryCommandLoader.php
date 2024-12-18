@@ -7,16 +7,22 @@
  */
 namespace Bartlett\CompatInfo\Presentation\Console;
 
-use Bartlett\CompatInfoDb\Presentation\Console\Command\AboutCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\BuildCommand;
-use Bartlett\CompatInfoDb\Presentation\Console\Command\DiagnoseCommand;
-use Bartlett\CompatInfoDb\Presentation\Console\Command\DoctorCommand;
+use Bartlett\CompatInfoDb\Presentation\Console\Command\Debug\ContainerDebugCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\PolyfillCommand;
 use Bartlett\CompatInfoDb\Presentation\Console\Command\ReleaseCommand;
 
+use Doctrine\DBAL\Tools\Console\Command\RunSqlCommand;
+use Doctrine\ORM\Tools\Console\Command\InfoCommand;
+use Doctrine\ORM\Tools\Console\Command\MappingDescribeCommand;
+use Doctrine\ORM\Tools\Console\Command\ValidateSchemaCommand;
+
+use Symfony\Bundle\FrameworkBundle\Command\EventDispatcherDebugCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\CommandLoader\FactoryCommandLoader as SymfonyFactoryCommandLoader;
+use Symfony\Component\Messenger\Command\DebugCommand;
 
+use Phar;
 use function get_class;
 use function in_array;
 
@@ -31,18 +37,32 @@ final class FactoryCommandLoader extends SymfonyFactoryCommandLoader implements 
      *
      * @param Command[] $commands
      */
-    public function __construct(iterable $commands)
+    public function __construct(iterable $commands, string $environment)
     {
         $factories = [];
+        $blacklist = [];
 
-        $blacklist = [
-            AboutCommand::class,
-            BuildCommand::class,
-            DiagnoseCommand::class,
-            DoctorCommand::class,
-            PolyfillCommand::class,
-            ReleaseCommand::class,
-        ];
+        if ('prod' === $environment) {
+            // these commands are disallowed in production environment
+            $blacklist = [
+                // Debug commands
+                ContainerDebugCommand::class,
+                EventDispatcherDebugCommand::class,
+                DebugCommand::class,
+                // Doctrine commands
+                RunSqlCommand::class,
+                InfoCommand::class,
+                MappingDescribeCommand::class,
+                ValidateSchemaCommand::class,
+            ];
+        }
+
+        if (Phar::running()) {
+            // these commands are disallowed in PHAR distribution
+            $blacklist[] = ReleaseCommand::class;
+            $blacklist[] = BuildCommand::class;
+            $blacklist[] = PolyfillCommand::class;
+        }
 
         foreach ($commands as $command) {
             if (in_array(get_class($command), $blacklist)) {
