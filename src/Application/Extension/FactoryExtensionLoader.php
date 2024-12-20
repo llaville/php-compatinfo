@@ -40,9 +40,7 @@ final class FactoryExtensionLoader implements ExtensionLoaderInterface
                     )
                 );
             }
-            $this->factories[$extension->getName()] = function () use ($extension) {
-                return $extension;
-            };
+            $this->factories[$extension->getName()] = static fn(): ExtensionInterface => $extension;
         }
     }
 
