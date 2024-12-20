@@ -342,7 +342,7 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>FactoryCommandLoader</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ __construct(commands : iterable)</td></tr>
+    <tr><td align="left">+ __construct(commands : iterable, environment : string)</td></tr>
 </table></td></tr>
 </table>>]
     "Bartlett\\CompatInfo\\Presentation\\Console\\Style" [shape="none" label=<

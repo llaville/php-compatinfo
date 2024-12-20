@@ -2,154 +2,154 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/installation/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/architecture/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/extensions/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/extensions/reporter/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/parser/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/polyfills/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/profiler/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP50/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP51/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP52/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP53/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP54/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP55/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP56/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP70/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP71/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP72/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP73/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP74/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP80/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP81/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP82/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP83/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/components/sniffs/PHP84/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/conditional-code/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/conditional-code/indirect-call/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/conditional-code/introduction/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/conditional-code/limitation/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/conditional-code/multiple-signature/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/configs/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/exclusions/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/usage/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/usage/console/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/usage/docker/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://llaville.github.io/php-compatinfo/7.2/usage/programmatically/</loc>
-         <lastmod>2024-12-01</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
 </urlset>

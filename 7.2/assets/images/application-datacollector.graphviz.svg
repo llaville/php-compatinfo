@@ -25,8 +25,8 @@
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_3</title>
-<polygon fill="BurlyWood" stroke="black" points="723,-291 723,-1160.5 1228,-1160.5 1228,-291 723,-291"/>
-<text text-anchor="middle" x="975.5" y="-1145.3" font-family="Times,serif" font-size="14.00">Bartlett\CompatInfo\Application\DataCollector</text>
+<polygon fill="BurlyWood" stroke="black" points="723,-291 723,-1167 1228,-1167 1228,-291 723,-291"/>
+<text text-anchor="middle" x="975.5" y="-1151.8" font-family="Times,serif" font-size="14.00">Bartlett\CompatInfo\Application\DataCollector</text>
 </g>
 <g id="clust5" class="cluster">
 <title>cluster_4</title>
@@ -399,34 +399,35 @@
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\VersionDataCollector -->
 <g id="node16" class="node">
 <title>Bartlett\\CompatInfo\\Application\\DataCollector\\VersionDataCollector</title>
-<polygon fill="#fefece" stroke="transparent" points="977.5,-1129.5 826.5,-1129.5 826.5,-887.5 977.5,-887.5 977.5,-1129.5"/>
-<polygon fill="#eeeeee" stroke="transparent" points="827,-1107.5 827,-1129.5 978,-1129.5 978,-1107.5 827,-1107.5"/>
-<polygon fill="none" stroke="black" points="827,-1107.5 827,-1129.5 978,-1129.5 978,-1107.5 827,-1107.5"/>
-<text text-anchor="start" x="855" y="-1113.1" font-family="Verdana" font-weight="bold" font-size="8.00">VersionDataCollector</text>
-<polygon fill="none" stroke="black" points="827,-1101.5 827,-1107.5 978,-1107.5 978,-1101.5 827,-1101.5"/>
-<polygon fill="none" stroke="black" points="827,-887.5 827,-1101.5 978,-1101.5 978,-887.5 827,-887.5"/>
-<text text-anchor="start" x="832" y="-1090.1" font-family="Verdana" font-size="8.00">+ __construct(keysAllowed : array)</text>
-<text text-anchor="start" x="832" y="-1077.1" font-family="Verdana" font-size="8.00">+ collect(nodes : array) : array</text>
-<text text-anchor="start" x="832" y="-1064.1" font-family="Verdana" font-size="8.00">+ reset() : void</text>
-<text text-anchor="start" x="832" y="-1051.1" font-family="Verdana" font-size="8.00">+ getData() : array</text>
-<text text-anchor="start" x="832" y="-1038.1" font-family="Verdana" font-size="8.00">+ getVersions() : array</text>
-<text text-anchor="start" x="832" y="-1025.1" font-family="Verdana" font-size="8.00">+ getExtensions() : array</text>
-<text text-anchor="start" x="832" y="-1012.1" font-family="Verdana" font-size="8.00">+ getNamespaces() : array</text>
-<text text-anchor="start" x="832" y="-999.1" font-family="Verdana" font-size="8.00">+ getClasses() : array</text>
-<text text-anchor="start" x="832" y="-986.1" font-family="Verdana" font-size="8.00">+ getInterfaces() : array</text>
-<text text-anchor="start" x="832" y="-973.1" font-family="Verdana" font-size="8.00">+ getTraits() : array</text>
-<text text-anchor="start" x="832" y="-960.1" font-family="Verdana" font-size="8.00">+ getMethods() : array</text>
-<text text-anchor="start" x="832" y="-947.1" font-family="Verdana" font-size="8.00">+ getGenerators() : array</text>
-<text text-anchor="start" x="832" y="-934.1" font-family="Verdana" font-size="8.00">+ getFunctions() : array</text>
-<text text-anchor="start" x="832" y="-921.1" font-family="Verdana" font-size="8.00">+ getConstants() : array</text>
-<text text-anchor="start" x="832" y="-908.1" font-family="Verdana" font-size="8.00">+ getDirectives() : array</text>
-<text text-anchor="start" x="832" y="-895.1" font-family="Verdana" font-size="8.00">+ getConditions() : array</text>
+<polygon fill="#fefece" stroke="transparent" points="977.5,-1136 826.5,-1136 826.5,-881 977.5,-881 977.5,-1136"/>
+<polygon fill="#eeeeee" stroke="transparent" points="827,-1113.5 827,-1135.5 978,-1135.5 978,-1113.5 827,-1113.5"/>
+<polygon fill="none" stroke="black" points="827,-1113.5 827,-1135.5 978,-1135.5 978,-1113.5 827,-1113.5"/>
+<text text-anchor="start" x="855" y="-1119.1" font-family="Verdana" font-weight="bold" font-size="8.00">VersionDataCollector</text>
+<polygon fill="none" stroke="black" points="827,-1107.5 827,-1113.5 978,-1113.5 978,-1107.5 827,-1107.5"/>
+<polygon fill="none" stroke="black" points="827,-880.5 827,-1107.5 978,-1107.5 978,-880.5 827,-880.5"/>
+<text text-anchor="start" x="832" y="-1096.1" font-family="Verdana" font-size="8.00">+ __construct(keysAllowed : array)</text>
+<text text-anchor="start" x="832" y="-1083.1" font-family="Verdana" font-size="8.00">+ collect(nodes : array) : array</text>
+<text text-anchor="start" x="832" y="-1070.1" font-family="Verdana" font-size="8.00">+ reset() : void</text>
+<text text-anchor="start" x="832" y="-1057.1" font-family="Verdana" font-size="8.00">+ getData() : array</text>
+<text text-anchor="start" x="832" y="-1044.1" font-family="Verdana" font-size="8.00">+ getVersions() : array</text>
+<text text-anchor="start" x="832" y="-1031.1" font-family="Verdana" font-size="8.00">+ getExtensions() : array</text>
+<text text-anchor="start" x="832" y="-1018.1" font-family="Verdana" font-size="8.00">+ getNamespaces() : array</text>
+<text text-anchor="start" x="832" y="-1005.1" font-family="Verdana" font-size="8.00">+ getClasses() : array</text>
+<text text-anchor="start" x="832" y="-992.1" font-family="Verdana" font-size="8.00">+ getInterfaces() : array</text>
+<text text-anchor="start" x="832" y="-979.1" font-family="Verdana" font-size="8.00">+ getTraits() : array</text>
+<text text-anchor="start" x="832" y="-966.1" font-family="Verdana" font-size="8.00">+ getMethods() : array</text>
+<text text-anchor="start" x="832" y="-953.1" font-family="Verdana" font-size="8.00">+ getGenerators() : array</text>
+<text text-anchor="start" x="832" y="-940.1" font-family="Verdana" font-size="8.00">+ getFunctions() : array</text>
+<text text-anchor="start" x="832" y="-927.1" font-family="Verdana" font-size="8.00">+ getConstants() : array</text>
+<text text-anchor="start" x="832" y="-914.1" font-family="Verdana" font-size="8.00">+ getDirectives() : array</text>
+<text text-anchor="start" x="832" y="-901.1" font-family="Verdana" font-size="8.00">+ getConditions() : array</text>
+<text text-anchor="start" x="832" y="-888.1" font-family="Verdana" font-size="8.00">+ getHooks() : array</text>
 </g>
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\VersionDataCollector&#45;&gt;Bartlett\\CompatInfo\\Application\\DataCollector\\DataCollector -->
 <g id="edge15" class="edge">
 <title>Bartlett\\CompatInfo\\Application\\DataCollector\\VersionDataCollector&#45;&gt;Bartlett\\CompatInfo\\Application\\DataCollector\\DataCollector</title>
-<path fill="none" stroke="black" d="M916.65,-887.46C922.59,-838.81 929.33,-783.54 934.86,-738.27"/>
-<polygon fill="none" stroke="black" points="938.35,-738.53 936.09,-728.18 931.41,-737.68 938.35,-738.53"/>
+<path fill="none" stroke="black" d="M917.45,-880.91C923.19,-833.85 929.59,-781.43 934.87,-738.16"/>
+<polygon fill="none" stroke="black" points="938.35,-738.57 936.09,-728.22 931.4,-737.72 938.35,-738.57"/>
 </g>
 <!-- Bartlett\\CompatInfo\\Application\\DataCollector\\VersionUpdater -->
 <g id="node17" class="node">

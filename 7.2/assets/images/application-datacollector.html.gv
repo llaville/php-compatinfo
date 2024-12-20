@@ -240,6 +240,7 @@ digraph {
     <tr><td align="left">+ getConstants() : array</td></tr>
     <tr><td align="left">+ getDirectives() : array</td></tr>
     <tr><td align="left">+ getConditions() : array</td></tr>
+    <tr><td align="left">+ getHooks() : array</td></tr>
 </table></td></tr>
 </table>>]
     "Bartlett\\CompatInfo\\Application\\DataCollector\\VersionUpdater" [shape="none" label=<

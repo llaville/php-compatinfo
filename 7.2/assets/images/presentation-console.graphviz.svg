@@ -623,19 +623,19 @@
 <!-- Bartlett\\CompatInfo\\Presentation\\Console\\FactoryCommandLoader -->
 <g id="node21" class="node">
 <title>Bartlett\\CompatInfo\\Presentation\\Console\\FactoryCommandLoader</title>
-<polygon fill="#fefece" stroke="transparent" points="1074,-1684.5 919,-1684.5 919,-1637.5 1074,-1637.5 1074,-1684.5"/>
-<polygon fill="#eeeeee" stroke="transparent" points="919.5,-1662 919.5,-1684 1074.5,-1684 1074.5,-1662 919.5,-1662"/>
-<polygon fill="none" stroke="black" points="919.5,-1662 919.5,-1684 1074.5,-1684 1074.5,-1662 919.5,-1662"/>
-<text text-anchor="start" x="942.5" y="-1667.6" font-family="Verdana" font-weight="bold" font-size="8.00">FactoryCommandLoader</text>
-<polygon fill="none" stroke="black" points="919.5,-1656 919.5,-1662 1074.5,-1662 1074.5,-1656 919.5,-1656"/>
-<polygon fill="none" stroke="black" points="919.5,-1637 919.5,-1656 1074.5,-1656 1074.5,-1637 919.5,-1637"/>
-<text text-anchor="start" x="924.5" y="-1644.6" font-family="Verdana" font-size="8.00">+ __construct(commands : iterable)</text>
+<polygon fill="#fefece" stroke="transparent" points="1117.5,-1684.5 875.5,-1684.5 875.5,-1637.5 1117.5,-1637.5 1117.5,-1684.5"/>
+<polygon fill="#eeeeee" stroke="transparent" points="875.5,-1662 875.5,-1684 1117.5,-1684 1117.5,-1662 875.5,-1662"/>
+<polygon fill="none" stroke="black" points="875.5,-1662 875.5,-1684 1117.5,-1684 1117.5,-1662 875.5,-1662"/>
+<text text-anchor="start" x="942" y="-1667.6" font-family="Verdana" font-weight="bold" font-size="8.00">FactoryCommandLoader</text>
+<polygon fill="none" stroke="black" points="875.5,-1656 875.5,-1662 1117.5,-1662 1117.5,-1656 875.5,-1656"/>
+<polygon fill="none" stroke="black" points="875.5,-1637 875.5,-1656 1117.5,-1656 1117.5,-1637 875.5,-1637"/>
+<text text-anchor="start" x="880.5" y="-1644.6" font-family="Verdana" font-size="8.00">+ __construct(commands : iterable, environment : string)</text>
 </g>
 <!-- Bartlett\\CompatInfo\\Presentation\\Console\\FactoryCommandLoader&#45;&gt;Bartlett\\CompatInfo\\Presentation\\Console\\CommandLoaderInterface -->
 <g id="edge23" class="edge">
 <title>Bartlett\\CompatInfo\\Presentation\\Console\\FactoryCommandLoader&#45;&gt;Bartlett\\CompatInfo\\Presentation\\Console\\CommandLoaderInterface</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1074.32,-1663.96C1230.1,-1669.96 1581.13,-1683.48 1731.72,-1689.27"/>
-<polygon fill="none" stroke="black" points="1731.65,-1692.77 1741.77,-1689.66 1731.92,-1685.78 1731.65,-1692.77"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1117.58,-1665.62C1287.77,-1672.18 1593.74,-1683.96 1731.66,-1689.27"/>
+<polygon fill="none" stroke="black" points="1731.57,-1692.77 1741.7,-1689.66 1731.84,-1685.78 1731.57,-1692.77"/>
 </g>
 <!-- Symfony\\Component\\Console\\CommandLoader\\FactoryCommandLoader -->
 <g id="node27" class="node">
@@ -654,7 +654,7 @@
 <!-- Bartlett\\CompatInfo\\Presentation\\Console\\FactoryCommandLoader&#45;&gt;Symfony\\Component\\Console\\CommandLoader\\FactoryCommandLoader -->
 <g id="edge22" class="edge">
 <title>Bartlett\\CompatInfo\\Presentation\\Console\\FactoryCommandLoader&#45;&gt;Symfony\\Component\\Console\\CommandLoader\\FactoryCommandLoader</title>
-<path fill="none" stroke="black" d="M1074.21,-1643.56C1156.46,-1629.78 1285.61,-1623.08 1363,-1694 1429.91,-1755.32 1333.5,-1832.18 1399,-1895 1461.21,-1954.66 1555.68,-1969.97 1637.57,-1969.64"/>
+<path fill="none" stroke="black" d="M1117.56,-1637.71C1197.03,-1629.65 1298.18,-1634.6 1363,-1694 1429.91,-1755.32 1333.5,-1832.18 1399,-1895 1461.21,-1954.66 1555.68,-1969.97 1637.57,-1969.64"/>
 <polygon fill="none" stroke="black" points="1637.79,-1973.14 1647.75,-1969.52 1637.71,-1966.14 1637.79,-1973.14"/>
 </g>
 <!-- Bartlett\\CompatInfo\\Presentation\\Console\\Style -->
