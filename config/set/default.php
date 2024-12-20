@@ -74,21 +74,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->public()
     ;
 
-    if (getenv('APP_ENV') === 'dev') {
-        $services->set('console.command.messenger_debug', DebugCommand::class)
-            ->args([[]])
-            ->tag('console.command')
-        ;
-
-        $services->set('console.command.container_debug', ContainerDebugCommand::class)
-            ->tag('console.command')
-        ;
-
-        $services->set('console.command.eventdispatcher_debug', EventDispatcherDebugCommand::class)
-            ->tag('console.command')
-        ;
-    }
-
     $services->set(LoggerInterface::class, NullLogger::class);
 
     $services->set(EventDispatcherInterface::class, SymfonyEventDispatcher::class);
