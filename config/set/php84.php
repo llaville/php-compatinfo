@@ -6,6 +6,8 @@
  * file that was distributed with this source code.
  */
 
+use Bartlett\CompatInfo\Application\Sniffs\Classes\PropertyHooksSniff;
+
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 /**
@@ -20,4 +22,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->defaults()
         ->autowire()
     ;
+
+    $services->set(PropertyHooksSniff::class);
 };

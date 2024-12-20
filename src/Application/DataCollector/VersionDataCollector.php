@@ -240,6 +240,14 @@ final class VersionDataCollector extends DataCollector
     }
 
     /**
+     * @return array<string, mixed>
+     */
+    public function getHooks(): array
+    {
+        return $this->data['hooks'] ?? [];
+    }
+
+    /**
      * @param array<string, mixed> $condition
      */
     private function handleCodeWithCondition(string $id, array $condition): void
