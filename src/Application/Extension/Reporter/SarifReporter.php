@@ -227,8 +227,6 @@ final class SarifReporter extends Reporter implements
      */
     private function buildRulesList(string $id, array $definition): ReportingDescriptor
     {
-        $baseHelpUri = 'https://llaville.github.io/php-compatinfo/7.2';
-
         $rule = new ReportingDescriptor();
         $rule->setId($id);
         $rule->setName($definition['name']);
@@ -237,7 +235,9 @@ final class SarifReporter extends Reporter implements
             $text->setText($definition['fullDescription']);
             $rule->setFullDescription($text);
         }
-        $rule->setHelpUri(str_replace('%baseHelpUri%', $baseHelpUri, $definition['helpUri']));
+        $rule->setHelpUri(
+            str_replace('%baseHelpUri%', SniffCollectionInterface::BASE_HELP_URI, $definition['helpUri'])
+        );
         $messages = $definition['messages'] ?? [];
         foreach ($messages as $key => $text) {
             // Express plain text result messages as complete sentences and end each sentence with a period

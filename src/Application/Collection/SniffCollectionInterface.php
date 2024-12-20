@@ -19,4 +19,5 @@ use IteratorAggregate;
  */
 interface SniffCollectionInterface extends IteratorAggregate
 {
+    public const BASE_HELP_URI = 'https://llaville.github.io/php-compatinfo/7.2';
 }

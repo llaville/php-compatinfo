@@ -8,6 +8,7 @@
 namespace Bartlett\CompatInfo\Application\Extension\Reporter;
 
 use Bartlett\CompatInfo\Application\Analyser\CompatibilityAnalyser;
+use Bartlett\CompatInfo\Application\Collection\SniffCollectionInterface;
 use Bartlett\CompatInfo\Application\Extension\Reporter;
 use Bartlett\CompatInfo\Presentation\Console\Style;
 
@@ -19,6 +20,7 @@ use function key;
 use function ksort;
 use function sprintf;
 use function sscanf;
+use function str_replace;
 
 /**
  * @author Laurent Laville
@@ -63,9 +65,15 @@ final class RuleReporter extends Reporter implements FormatterInterface
                 if (!empty($values['rules'])) {
                     foreach ($values['rules'] as $ruleId => $ruleDetails) {
                         if (!isset($rules[$ruleId])) {
+                            $helpUri = str_replace(
+                                '%baseHelpUri%',
+                                SniffCollectionInterface::BASE_HELP_URI,
+                                $ruleDetails['helpUri']
+                            );
                             $rules[$ruleId] = [
-                                'description' => current($ruleDetails),
-                                'sniff' => key($ruleDetails),
+                                'description' => $ruleDetails['fullDescription'],
+                                'sniff' => $ruleDetails['name'],
+                                'help' => $helpUri,
                             ];
                         }
                         if (!isset($rules[$ruleId][$section])) {

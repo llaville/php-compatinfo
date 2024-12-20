@@ -26,17 +26,8 @@ trait RuleUpdater
             return;
         }
         $nodeStore = $node->getAttribute($attributeKey);
-        $nodeStore['rules'][$ruleId] = $this->getRule($ruleId);
+        $nodeStore['rules'][$ruleId] = iterator_to_array(static::getRules(), true)[$ruleId];
         $node->setAttribute($attributeKey, $nodeStore);
-    }
-
-    /**
-     * @return array<string, string>
-     */
-    protected function getRule(string $id): array
-    {
-        $rules = iterator_to_array(static::getRules(), true);
-        return [$rules[$id]['name'] => $rules[$id]['fullDescription']];
     }
 
     /**
