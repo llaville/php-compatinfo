@@ -47,7 +47,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->arg('$environment', '%kernel.environment%')
     ;
 
-    $services->set(InputInterface::class, Input::class);
+    $services->set(InputInterface::class, Input::class)
+        // for \Bartlett\CompatInfo\Application\Kernel\ConsoleKernel::handle
+        ->public()
+    ;
     $services->set(OutputInterface::class, Output::class);
 
     $services->set(ApplicationInterface::class, Application::class)
