@@ -39,7 +39,7 @@ final class SameSiteCookieSniff extends SniffAbstract
         yield self::CA73 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Set(raw)cookie alternative signature is allowed since PHP 7.3.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-73',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP73',
         ];
     }
 

@@ -33,7 +33,7 @@ final class ArrowFunctionSniff extends SniffAbstract
         yield self::CA74 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Arrow functions were introduced in PHP 7.4.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-74',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP74',
         ];
     }
 

@@ -62,12 +62,12 @@ final class GeneratorSniff extends SniffAbstract
         yield self::CA55 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Generators was introduced in PHP 5.5.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-55',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP55',
         ];
         yield self::CA70 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Generators delegate operations are available since PHP 7.0.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-70',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP70',
         ];
     }
 }

@@ -50,7 +50,7 @@ final class MagicClassConstantSniff extends SniffAbstract
         yield self::CA55 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "The Foo\Bar::class syntax has been introduced in PHP 5.5.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-55',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP55',
         ];
     }
 }

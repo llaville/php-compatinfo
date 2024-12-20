@@ -50,7 +50,7 @@ final class ShortTernaryOperatorSniff extends SniffAbstract
         yield self::CA53 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Ternary operator ('?:') is allowed since PHP 5.3.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP53',
         ];
     }
 }

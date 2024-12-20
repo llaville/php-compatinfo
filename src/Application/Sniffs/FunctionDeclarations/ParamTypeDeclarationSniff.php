@@ -128,11 +128,12 @@ final class ParamTypeDeclarationSniff extends SniffAbstract
         $this->initialize();
 
         foreach ($this->paramTypeDeclarations->all() as $paramType => $min) {
-            yield sprintf('CA%2d08', str_replace('.', '', $min)) => [
+            $since = str_replace('.', '', $min);
+            yield sprintf('CA%2d08', $since) => [
                 'name' => $this->getShortClass(),
                 'fullDescription' => "Parameters Type Declaration '$paramType' is available"
-                    . ' since PHP ' . $this->paramTypeDeclarations->get($paramType),
-                'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/',
+                    . ' since PHP ' . $min,
+                'helpUri' => '%baseHelpUri%/components/sniffs/PHP' . $since,
             ];
         }
     }

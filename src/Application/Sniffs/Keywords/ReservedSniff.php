@@ -113,7 +113,7 @@ final class ReservedSniff extends SniffAbstract
                 'name' => $this->getShortClass(),
                 'fullDescription' => "You cannot use any of the following words to name classes, interfaces or traits"
                     . ' since PHP ' . $min . ' : ' . implode(', ', $keywords),
-                'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+                'helpUri' => '%baseHelpUri%/components/sniffs/PHP53',
             ];
         }
     }

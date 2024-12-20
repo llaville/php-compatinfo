@@ -33,7 +33,7 @@ final class ReadonlyPropertySniff extends SniffAbstract
         yield self::CA81 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Readonly Properties is available since PHP 8.1.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-81',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP81',
         ];
     }
 

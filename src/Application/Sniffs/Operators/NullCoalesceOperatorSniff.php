@@ -47,7 +47,7 @@ final class NullCoalesceOperatorSniff extends SniffAbstract
         yield self::CA70 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Null Coalescing Operator ('??') is available since PHP 7.0.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-70',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP70',
         ];
     }
 }

@@ -87,19 +87,19 @@ final class MagicMethodsSniff extends SniffAbstract
             'name' => $this->getShortClass(),
             'fullDescription' => 'The following method names are considered magical'
                 . ' since PHP 5.1: ' . implode(', ', $this->mm501),
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-51',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP51',
         ];
         yield self::CA53 => [
             'name' => $this->getShortClass(),
             'fullDescription' => 'The following method names are considered magical'
                 . ' since PHP 5.3: ' . implode(', ', $this->mm503),
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP53',
         ];
         yield self::CA56 => [
             'name' => $this->getShortClass(),
             'fullDescription' => 'The following method names are considered magical'
                 . ' since PHP 5.6: ' . implode(', ', $this->mm506),
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-56',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP56',
         ];
     }
 }

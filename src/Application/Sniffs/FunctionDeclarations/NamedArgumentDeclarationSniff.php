@@ -35,7 +35,7 @@ final class NamedArgumentDeclarationSniff extends SniffAbstract
         yield self::CA80 => [
             'name' => $this->getShortClass(),
             'fullDescription' => 'Named arguments is available since PHP 8.0.0',
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-80',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP80',
         ];
     }
 

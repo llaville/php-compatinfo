@@ -83,22 +83,22 @@ final class ReturnTypeDeclarationSniff extends SniffAbstract
         yield self::CA70 => [
             'name' => $this->getShortClass(),
             'fullDescription' => 'Return Type Declarations are available since PHP 7.0.0',
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-70',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP70',
         ];
         yield self::CA8105 => [
             'name' => $this->getShortClass(),
             'fullDescription' => 'Return Intersection Type Declarations are available since PHP 8.1.0',
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-81',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP81',
         ];
         yield self::CA8106 => [
             'name' => $this->getShortClass(),
             'fullDescription' => 'Return Never Type Declaration is available since PHP 8.1.0',
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-81',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP81',
         ];
         yield self::CA8202 => [
             'name' => $this->getShortClass(),
             'fullDescription' => 'Null False and True Type Declaration are available since PHP 8.2.0',
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-82',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP82',
         ];
     }
 

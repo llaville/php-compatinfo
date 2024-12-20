@@ -67,7 +67,7 @@ final class ShortArraySyntaxSniff extends SniffAbstract
         yield self::CA54 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Short array syntax is available since PHP 5.4.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-54',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP54',
         ];
     }
 }

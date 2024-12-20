@@ -30,12 +30,12 @@ final class DynamicAccessSniff extends SniffAbstract
         yield self::CA53M => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Dynamic access to static methods is now possible since PHP 5.3.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP53',
         ];
         yield self::CA53P => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Dynamic access to static properties is now possible since PHP 5.3.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP53',
         ];
     }
 

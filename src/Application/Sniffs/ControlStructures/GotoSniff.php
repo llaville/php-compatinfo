@@ -45,7 +45,7 @@ final class GotoSniff extends SniffAbstract
         yield self::CA53 => [
             'name' => $this->getShortClass(),
             'fullDescription' => 'The goto operator is available since PHP 5.3.0',
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP53',
         ];
     }
 }

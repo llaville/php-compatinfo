@@ -47,7 +47,7 @@ final class TypedClassConstantSniff extends SniffAbstract
         yield self::CA83 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Type hinting class constants has been introduced in PHP 8.3.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-83',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP83',
         ];
     }
 }

@@ -41,12 +41,12 @@ final class ArrayUnpackingSyntaxSniff extends SniffAbstract
         yield self::CA74 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Array unpacking support is available since PHP 7.4.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-74',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP74',
         ];
         yield self::CA81 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Array unpacking support for string keys is available since PHP 8.1.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-81',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP81',
         ];
     }
 

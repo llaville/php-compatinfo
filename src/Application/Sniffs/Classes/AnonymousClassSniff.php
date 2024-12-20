@@ -49,7 +49,7 @@ final class AnonymousClassSniff extends SniffAbstract
         yield self::CA70 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Anonymous classes are available since PHP 7.0.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-70',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP70',
         ];
     }
 

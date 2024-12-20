@@ -55,7 +55,7 @@ final class PropertyDeclarationSniff extends SniffAbstract
         yield self::CA40 => [
             'name' => $this->getShortClass(),
             'fullDescription' => 'Checks if a property is implicitly public (PHP 4 syntax)',
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-50',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP50',
         ];
     }
 }

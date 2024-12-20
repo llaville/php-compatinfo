@@ -45,7 +45,7 @@ final class UseConstFunctionSniff extends SniffAbstract
         yield self::CA56 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Use const, use function is allowed since PHP 5.6.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-56',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP56',
         ];
     }
 

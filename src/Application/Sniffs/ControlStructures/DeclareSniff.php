@@ -78,7 +78,7 @@ final class DeclareSniff extends SniffAbstract
                 'name' => $this->getShortClass(),
                 'fullDescription' => "Directive '$directive' of declare block is available"
                     . ' since PHP ' . $this->directives->get($directive),
-                'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+                'helpUri' => '%baseHelpUri%/components/sniffs/PHP53',
             ];
         }
     }

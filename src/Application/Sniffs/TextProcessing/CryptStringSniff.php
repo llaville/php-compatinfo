@@ -116,7 +116,7 @@ final class CryptStringSniff extends SniffAbstract
                     $algorithm,
                     $min
                 ),
-                'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+                'helpUri' => '%baseHelpUri%/components/sniffs/PHP53',
             ];
         }
     }

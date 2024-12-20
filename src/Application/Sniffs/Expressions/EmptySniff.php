@@ -59,7 +59,7 @@ final class EmptySniff extends SniffAbstract
         yield self::CA55 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Empty expressions are available since PHP 5.5.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-55',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP55',
         ];
     }
 }

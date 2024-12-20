@@ -33,7 +33,7 @@ final class OverrideAttributeSniff extends SniffAbstract
         yield self::CA83 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Override attribute is available since PHP 8.3.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-83',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP83',
         ];
     }
 

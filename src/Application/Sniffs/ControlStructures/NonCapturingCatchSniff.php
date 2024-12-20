@@ -33,7 +33,7 @@ final class NonCapturingCatchSniff extends SniffAbstract
         yield self::CA80 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Catching exceptions without capturing them to variables is only possible since PHP 8.0.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-80',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP80',
         ];
     }
 

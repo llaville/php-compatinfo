@@ -32,7 +32,7 @@ final class SensitiveParameterAttributeSniff extends SniffAbstract
         yield self::CA82 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "SensitiveParameter attribute is available since PHP 8.2.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-82',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP82',
         ];
     }
 

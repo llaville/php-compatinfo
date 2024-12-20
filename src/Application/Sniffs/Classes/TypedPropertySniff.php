@@ -54,7 +54,7 @@ final class TypedPropertySniff extends SniffAbstract
         yield self::CA74 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Typed properties are available since PHP 7.4.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-74',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP74',
         ];
     }
 }

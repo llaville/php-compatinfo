@@ -46,7 +46,7 @@ final class CombinedComparisonOperatorSniff extends SniffAbstract
         yield self::CA70 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Combined Comparison (Spaceship) Operator is available since PHP 7.0.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-70',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP70',
         ];
     }
 }

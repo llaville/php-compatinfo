@@ -61,12 +61,12 @@ final class ConstSyntaxSniff extends SniffAbstract
         yield self::CA53 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Use of CONST keyword outside a class is available since PHP 5.3.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-53',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP53',
         ];
         yield self::CA56 => [
             'name' => $this->getShortClass(),
             'fullDescription' => "Constant scalar expressions are available since PHP 5.6.0",
-            'helpUri' => '%baseHelpUri%/01_Components/03_Sniffs/Features/#php-56',
+            'helpUri' => '%baseHelpUri%/components/sniffs/PHP56',
         ];
     }
 }
