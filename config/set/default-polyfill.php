@@ -20,6 +20,7 @@ use Bartlett\CompatInfo\Application\Polyfills\SymfonyPhp74;
 use Bartlett\CompatInfo\Application\Polyfills\SymfonyPhp80;
 use Bartlett\CompatInfo\Application\Polyfills\SymfonyPhp81;
 use Bartlett\CompatInfo\Application\Polyfills\SymfonyPhp82;
+use Bartlett\CompatInfo\Application\Polyfills\SymfonyPhp83;
 
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\tagged_iterator;
@@ -52,6 +53,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(SymfonyPhp80::class);
     $services->set(SymfonyPhp81::class);
     $services->set(SymfonyPhp82::class);
+    $services->set(SymfonyPhp83::class);
 
     $services->load('Bartlett\\CompatInfo\\Application\\Polyfills\\', __DIR__ . '/../../src/Application/Polyfills');
 
