@@ -34,6 +34,9 @@ jobs:
                     -   os: ubuntu-22.04
                         php: 8.3
                         continue-on-error: false
+                    -   os: ubuntu-22.04
+                        php: 8.4
+                        continue-on-error: false
 
         name: Unit Tests
 
