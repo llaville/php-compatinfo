@@ -56,6 +56,7 @@ final class RuleReporter extends Reporter implements FormatterInterface
             'functions', 'methods',
             'constants',
             'conditions',
+            'hooks',
         ];
         foreach ($groups as $section) {
             if (empty($metrics[$section])) {

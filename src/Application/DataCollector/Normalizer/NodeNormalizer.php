@@ -202,7 +202,7 @@ final class NodeNormalizer implements NormalizerInterface
                 'Scalar_MagicConst_Trait',
             ],
             'directives' => ['Stmt_Declare'],
-            'hooks' => ['PropertyHook'],
+            'hooks' => ['PropertyHook', 'Scalar_MagicConst_Property'],
         ];
 
         foreach ($groups as $group => $types) {
