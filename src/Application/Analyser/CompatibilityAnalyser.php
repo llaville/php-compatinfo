@@ -94,6 +94,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
             'constants',
             'directives',
             'conditions',
+            'hooks',
         ];
 
         $profiler->addCollector(

@@ -157,6 +157,7 @@ final class SarifReporter extends Reporter implements
             'constants',
             'directives',
             'conditions',
+            'hooks',
         ];
 
         if ($event->hasArgument('ast')) {

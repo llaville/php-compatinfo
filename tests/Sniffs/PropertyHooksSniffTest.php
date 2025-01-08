@@ -47,4 +47,23 @@ final class PropertyHooksSniffTest extends SniffTestCase
             $classes['Person']['php.max']
         );
     }
+
+    /**
+     * @throws Exception
+     */
+    public function testMagicConstantPropertyHooks(): void
+    {
+        $dataSource = 'magic_property_804.php';
+        $metrics    = $this->executeAnalysis($dataSource);
+        $classes    = $metrics[self::$analyserId]['classes'];
+
+        $this->assertEquals(
+            '8.4.0',
+            $classes['User']['php.min']
+        );
+        $this->assertEquals(
+            '',
+            $classes['User']['php.max']
+        );
+    }
 }

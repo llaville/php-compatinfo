@@ -20,8 +20,10 @@ use Generator;
  * @since Release 7.2.0
  *
  * @link https://wiki.php.net/rfc/property-hooks
+ * @link https://www.php.net/manual/en/language.oop5.property-hooks.php
  * @link https://www.php.net/manual/en/migration84.new-features.php#migration84.new-features.core.property-hooks
  * @link https://www.zend.com/blog/php-8-4-property-hooks
+ * @link https://ashallendesign.co.uk/blog/php-84-property-hooks
  * @see tests/Sniffs/PropertyHooksSniffTest
  */
 final class PropertyHooksSniff extends SniffAbstract
@@ -42,6 +44,12 @@ final class PropertyHooksSniff extends SniffAbstract
      */
     public function enterNode(Node $node): int|Node|null
     {
+        if ($node instanceof Node\Scalar\MagicConst\Property) {
+            $this->updateNodeElementVersion($node, $this->attributeKeyStore, ['php.min' => '8.4.0']);
+            $this->updateNodeElementRule($node, $this->attributeKeyStore, self::CA84);
+            return null;
+        }
+
         if (!$node instanceof Node\Stmt\Property) {
             return null;
         }
