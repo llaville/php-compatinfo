@@ -11,7 +11,7 @@
         "LICENSE",
         "vendor",
         "mkdocs\\.yml",
-        "tests/fixtures/**",
+        "tests\/fixtures",
         "\\.changes"
     ],
     "AllowedContentTypes": [],
