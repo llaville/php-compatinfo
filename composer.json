@@ -14,7 +14,7 @@
         "ext-json": "*",
         "ext-pcre": "*",
         "ext-spl": "*",
-        "bartlett/php-compatinfo-db": "6.14.x-dev",
+        "bartlett/php-compatinfo-db": "^6.4.2",
         "bartlett/sarif-php-sdk": "^2.1",
         "composer-runtime-api": "^2.1",
         "doctrine/collections": "^2.1",
