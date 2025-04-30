@@ -20,6 +20,7 @@ The second goal of `ParentContextVisitor` is to add this node at top of node lis
 That will allow the `CompatibilityAnalyser` to show PHP versions required of full code in global namespace context.
 
 For example with such script:
+
 ```php
 <?php declare(strict_types=1);
 
@@ -78,8 +79,8 @@ This collection referenced all information in the SQLite database.
 
 The `FilterVisitor` is applied to retrieve all AST nodes that have attributes identified by `nodeAttributeKeyStore` option.
 
-* Data in final format are retrieved by the `FilterVisitor::getCollection()` method.
-* Data are normalized with the normalizer of the Symfony Serializer component, and transformed from internal format to final format
+- Data in final format are retrieved by the `FilterVisitor::getCollection()` method.
+- Data are normalized with the normalizer of the Symfony Serializer component, and transformed from internal format to final format
 by the `NodeNormalizer` of DataCollector.
 
 This visitor is used by the `VersionDataCollector`.

@@ -12,4 +12,3 @@ if (extension_loaded($ext)) {
 ```
 
 `extension_loaded` is well detected but not the extension name.
-

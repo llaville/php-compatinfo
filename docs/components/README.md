@@ -62,4 +62,3 @@ Furthermore, extensions may implement the `Symfony\Component\EventDispatcher\Eve
 ## [Polyfills](./polyfills/README.md)
 
 They are identified by services that implements the `Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface`.
-

@@ -23,7 +23,6 @@ The closure returned by `config/set/default.php` file allows loading the followi
 | `Psr\Log\LoggerInterface`                                     | `Bartlett\CompatInfo\Logger\DefaultLogger`                    | Provides a default PSR3 compatible logger                        |
 | `Symfony\Component\EventDispatcher\EventDispatcherInterface`  | `Bartlett\CompatInfo\Event\Dispatcher\EventDispatcher`        | Dispatcher that handle all listeners attached by two subscribers |
 
-
 The closure returned by `config/set/default-logger.php` file provides also some parameters for the PSR3 logger:
 
 | Parameter ID                 | Description                                |
