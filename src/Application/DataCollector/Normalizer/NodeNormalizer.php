@@ -76,8 +76,9 @@ final class NodeNormalizer implements NormalizerInterface
 
     /**
      * @inheritDoc
+     * @param array<string, string> $context
      */
-    public function supportsNormalization(mixed $data, ?string $format = null /* , array $context = [] */): bool
+    public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
     {
         if ($data instanceof Node\Expr\New_) {
             $this->name = $data->class instanceof Node\Stmt\Class_ ? 'class' : (string) $data->class;
