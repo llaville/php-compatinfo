@@ -1,4 +1,0 @@
-kind: Fixed
-body: '[#370](https://github.com/llaville/php-compatinfo/issues/370) : Typed properties
-  PHP 7.4 feature not displayed by rule reporter'
-time: 2024-02-29T09:41:21.893195897Z

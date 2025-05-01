@@ -1,3 +1,0 @@
-kind: Removed
-body: removed config/bootstrap.php file and use directly the new autoloader introduced by commit f54bacf
-time: 2024-12-01T04:46:32.663498099Z

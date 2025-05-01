@@ -1,3 +1,0 @@
-kind: Fixed
-body: '[#378](https://github.com/llaville/php-compatinfo/issues/378) : Cannot detect First-class Callable (anonymous functions) syntax'
-time: 2024-11-29T07:52:48.038570082Z
