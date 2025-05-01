@@ -15,6 +15,7 @@ use Bartlett\CompatInfoDb\Presentation\Console\Style;
 
 use Doctrine\ORM\EntityManagerInterface;
 
+use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -51,7 +52,7 @@ final class DiagnoseCommand extends AbstractCommand implements CommandInterface
         $projectRequirements = $this->queryBus->query($diagnoseQuery);
 
         /** @var ApplicationInterface $app */
-        $app = $this->getApplication();
+        $app = $this->getApplication(); // @phpstan-ignore varTag.nativeType
 
         $io = new Style($input, $output);
 

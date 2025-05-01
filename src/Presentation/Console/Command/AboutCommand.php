@@ -43,7 +43,7 @@ final class AboutCommand extends AbstractCommand implements CommandInterface
         $io = new SymfonyStyle($input, $output);
 
         /** @var ApplicationInterface $app */
-        $app = $this->getApplication();
+        $app = $this->getApplication(); // @phpstan-ignore varTag.nativeType
 
         $defaultVersion = '7.1';
 

@@ -17,7 +17,6 @@ use function call_user_func;
 use function error_log;
 use function get_class;
 use function gettype;
-use function is_callable;
 use function is_null;
 use function is_object;
 use function is_scalar;
@@ -77,7 +76,6 @@ class DefaultLogger extends AbstractLogger
         if (
             isset($handler)
             && method_exists($handler, 'handle')
-            && is_callable([$handler, 'handle'])
         ) {
             $this->handler = $handler;
         } else {

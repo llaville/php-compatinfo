@@ -62,7 +62,7 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         /** @var ApplicationInterface $app */
-        $app = $this->getApplication();
+        $app = $this->getApplication(); // @phpstan-ignore varTag.nativeType
         $compatibilityQuery = new GetCompatibilityQuery(
             $input->getArgument('source'),
             $input->getOption('exclude'),
@@ -87,8 +87,6 @@ final class AnalyserCommand extends AbstractCommand implements CommandInterface
                 )
             );
             $io->listing($exceptions);
-            /** @var ApplicationInterface $app */
-            $app = $this->getApplication();
             $io->note(
                 sprintf(
                     'Issue found by %s version %s with DB version %s',

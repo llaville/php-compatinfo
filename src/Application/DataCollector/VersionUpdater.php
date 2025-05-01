@@ -91,7 +91,7 @@ trait VersionUpdater
     /**
      * Updates versions of an Extension.
      *
-     * @param array<string, string> $target
+     * @param array<string, array<string, mixed>|string> $target
      * @param array<string, string> $versions
      */
     protected function updateExtension(string $name, array &$target, array $versions): bool
