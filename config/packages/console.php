@@ -12,6 +12,7 @@ use Bartlett\CompatInfo\Presentation\Console\Command\CommandInterface;
 use Bartlett\CompatInfo\Presentation\Console\FactoryCommandLoader;
 use Bartlett\CompatInfo\Presentation\Console\Input\Input;
 use Bartlett\CompatInfo\Presentation\Console\Output\Output;
+use Bartlett\CompatInfoDb\Presentation\Console\Command\AboutCommand;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
@@ -43,7 +44,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     // @link https://symfony.com/doc/current/console/lazy_commands.html#factorycommandloader
     $services->set(CommandLoaderInterface::class, FactoryCommandLoader::class)
-        ->arg('$commands', tagged_iterator('console.command'))
+        ->arg('$commands', tagged_iterator(tag: 'console.command', exclude: [AboutCommand::class]))
         ->arg('$environment', '%kernel.environment%')
     ;
 

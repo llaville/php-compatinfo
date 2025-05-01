@@ -20,6 +20,7 @@ use function sprintf;
  *
  * @since Release 6.2.0
  * @author Laurent Laville
+ * @deprecated Since release 7.2.0 and will be removed in major version 8.0
  */
 final class AboutCommand extends AbstractCommand implements CommandInterface
 {
@@ -45,7 +46,7 @@ final class AboutCommand extends AbstractCommand implements CommandInterface
         /** @var ApplicationInterface $app */
         $app = $this->getApplication(); // @phpstan-ignore varTag.nativeType
 
-        $defaultVersion = '7.1';
+        $defaultVersion = '7.2';
 
         $lines = [
             sprintf(
