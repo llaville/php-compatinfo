@@ -5,13 +5,14 @@
         "config"
     ],
     "compression": "GZ",
-    "dump-autoload": false,
     "files-bin": [
+        "autoload.php",
         "console-table.txt",
         "plain.txt",
         "sbom.json",
         ".box.manifests.bin"
     ],
+    "exclude-dev-files": false,
     "map": [
         {
             "console-table.txt": ".box.manifests/console-table.txt"

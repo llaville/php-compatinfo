@@ -2,5 +2,9 @@
     "alias": "phpcompatinfo.phar",
     "force-autodiscovery": true,
     "directories": ["config"],
-    "compression": "GZ"
+    "compression": "GZ",
+    "files-bin": [
+        "autoload.php"
+    ],
+    "exclude-dev-files": false
 }
