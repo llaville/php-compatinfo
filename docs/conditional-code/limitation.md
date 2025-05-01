@@ -2,6 +2,7 @@
 # Limitation
 
 ```php
+<?php
 // @link https://github.com/nikic/PHP-Parser/blob/v4.10.0/lib/PhpParser/Lexer.php#L413-L433
 
 $compatTokens = [
@@ -33,6 +34,7 @@ but it's not the reality.
 Example with
 
 ```php
+<?php
 // @link https://github.com/nikic/PHP-Parser/blob/v4.10.0/lib/PhpParser/Lexer.php#L110
 $tokens[] = [\T_BAD_CHARACTER, $chr, $line];
 ```

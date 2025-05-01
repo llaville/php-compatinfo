@@ -1,13 +1,12 @@
 <!-- markdownlint-disable MD013 -->
 # Console CLI
 
-> **WARNING** Depending on your PHP version, with 8.0 you won't have usage of the most up-to-date Database version of `CompatInfoDB`
+> [!TIP]
 >
-> With PHP 8.1 or greater `CompatInfoDB` 6.1+ is supported,
-> adding the `db:new` command that combine `db:create` and `db:init` actions.
+> the `db:new` command combines `db:create` and `db:init` actions.
 
 ```text
-phpCompatInfo version 7.1.4 DB version 6.5.0
+phpCompatInfo version 7.2.0 DB version 6.16.0
 
 Usage:
   command [options] [arguments]

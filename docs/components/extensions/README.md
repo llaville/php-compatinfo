@@ -46,6 +46,6 @@ CompatInfo Extensions may implement one or more of these interfaces:
 
 * `AfterProcessSniffInterface` - called after leaving a sniff.
 
-Furthermore extensions may implement the `Symfony\Component\EventDispatcher\EventSubscriberInterface`.
+Furthermore, extensions may implement the `Symfony\Component\EventDispatcher\EventSubscriberInterface`.
 
 See built-in extensions `Application\Extension\Logger` and `Application\Extension\ProgressBar` as examples.

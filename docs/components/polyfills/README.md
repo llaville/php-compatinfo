@@ -96,3 +96,19 @@ Available since release 6.4.0
 | `SymfonyPhp82`      | This polyfill detects features unavailable in releases prior to PHP 8.2 |
 
 Available since release 6.5.0
+
+## [PHP 8.3](https://github.com/symfony/polyfill-php83)
+
+| Polyfill class name | Description                                                             |
+|---------------------|-------------------------------------------------------------------------|
+| `SymfonyPhp83`      | This polyfill detects features unavailable in releases prior to PHP 8.3 |
+
+Available since release 7.2.0
+
+## [PHP 8.4](https://github.com/symfony/polyfill-php84)
+
+| Polyfill class name | Description                                                             |
+|---------------------|-------------------------------------------------------------------------|
+| `SymfonyPhp84`      | This polyfill detects features unavailable in releases prior to PHP 8.4 |
+
+Available since release 7.2.0

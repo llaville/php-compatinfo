@@ -14,7 +14,7 @@ bin/phpcompatinfo analyser:run . --exclude vendor --exclude tests
 ## With php script (API)
 
 ```php
-require_once 'config/bootstrap.php';
+require_once 'autoload.php';
 
 use Bartlett\CompatInfo\Application\Profiler\Profile;
 use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;
