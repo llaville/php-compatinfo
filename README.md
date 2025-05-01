@@ -4,6 +4,7 @@ Here are the links to the documentation for versions that are still supported :
 
 - [PHP CompatInfo 7.0](https://llaville.github.io/php-compatinfo/7.0/)
 - [PHP CompatInfo 7.1](https://llaville.github.io/php-compatinfo/7.1/)
+- [PHP CompatInfo 7.2](https://llaville.github.io/php-compatinfo/7.2/)
 
 Full documentation may be found in `docs` folder into this repository, and may be read online without to do anything else.
 
