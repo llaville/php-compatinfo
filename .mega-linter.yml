@@ -17,3 +17,4 @@ DISABLE_LINTERS:
     - PHP_PHPCSFIXER
     - YAML_V8R
 PRINT_ALL_FILES: false
+PHP_PHPSTAN_DISABLE_ERRORS: false # this project is now PHPStan 2.x compatible
