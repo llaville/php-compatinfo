@@ -448,7 +448,7 @@
 <text text-anchor="start" x="1436" y="-1362.6" font-family="Verdana" font-weight="bold" font-size="8.00">NodeNormalizer</text>
 <polygon fill="none" stroke="black" points="1314,-1351 1314,-1357 1631,-1357 1631,-1351 1314,-1351"/>
 <polygon fill="none" stroke="black" points="1314,-1306 1314,-1351 1631,-1351 1631,-1306 1314,-1306"/>
-<text text-anchor="start" x="1319" y="-1339.6" font-family="Verdana" font-size="8.00">+ normalize(object, format = «unknown», context : array = [])</text>
+<text text-anchor="start" x="1319" y="-1339.6" font-family="Verdana" font-size="8.00">+ normalize(object, format = «unknown», context : array = []) : ?array</text>
 <text text-anchor="start" x="1319" y="-1326.6" font-family="Verdana" font-size="8.00">+ supportsNormalization(data : mixed, format : string = «unknown») : bool</text>
 <text text-anchor="start" x="1319" y="-1313.6" font-family="Verdana" font-size="8.00">+ getSupportedTypes(format : string) : array</text>
 </g>

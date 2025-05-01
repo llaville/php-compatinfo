@@ -677,7 +677,7 @@
 <div class="highlight"><pre><span></span><code>bin/phpcompatinfo<span class="w"> </span>analyser:run<span class="w"> </span>.<span class="w"> </span>--exclude<span class="w"> </span>vendor<span class="w"> </span>--exclude<span class="w"> </span>tests
 </code></pre></div>
 <h2 id="with-php-script-api">With php script (API)</h2>
-<div class="highlight"><pre><span></span><code><span class="x">require_once &#39;config/bootstrap.php&#39;;</span>
+<div class="highlight"><pre><span></span><code><span class="x">require_once &#39;autoload.php&#39;;</span>
 
 <span class="x">use Bartlett\CompatInfo\Application\Profiler\Profile;</span>
 <span class="x">use Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery;</span>

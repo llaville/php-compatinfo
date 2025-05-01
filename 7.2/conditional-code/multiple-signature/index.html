@@ -580,13 +580,15 @@
 <!-- markdownlint-disable MD013 -->
 <h1 id="multiple-signatures">Multiple signatures</h1>
 <p>Face to this source code, CompatInfo is unable to know what <code>idn_to_ascii</code> signature is the minimum.</p>
-<div class="highlight"><pre><span></span><code><span class="x">if (function_exists(&#39;idn_to_ascii&#39;)) {</span>
-<span class="x">    if (defined(&#39;INTL_IDNA_VARIANT_UTS46&#39;)) {</span>
-<span class="x">        $domain = idn_to_ascii($domain, 0, INTL_IDNA_VARIANT_UTS46);</span>
-<span class="x">    } else {</span>
-<span class="x">        $domain = idn_to_ascii($domain);</span>
-<span class="x">    }</span>
-<span class="x">}</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="s1">&#39;idn_to_ascii&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;INTL_IDNA_VARIANT_UTS46&#39;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$domain</span> <span class="o">=</span> <span class="nb">idn_to_ascii</span><span class="p">(</span><span class="nv">$domain</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">INTL_IDNA_VARIANT_UTS46</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nv">$domain</span> <span class="o">=</span> <span class="nb">idn_to_ascii</span><span class="p">(</span><span class="nv">$domain</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>We know (<a href="https://www.php.net/manual/en/function.idn-to-ascii.php#refsect1-function.idn-to-ascii-changelog">idn_to_ascii changelog</a>)
 that by using <code>$variant</code> parameter, the minimum PHP version required is <strong>7.4.0</strong>, otherwise it's only <strong>5.2.4</strong></p>

@@ -579,34 +579,36 @@
 
 <!-- markdownlint-disable MD013 -->
 <h1 id="limitation">Limitation</h1>
-<div class="highlight"><pre><span></span><code><span class="x">// @link https://github.com/nikic/PHP-Parser/blob/v4.10.0/lib/PhpParser/Lexer.php#L413-L433</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// @link https://github.com/nikic/PHP-Parser/blob/v4.10.0/lib/PhpParser/Lexer.php#L413-L433</span>
 
-<span class="x">$compatTokens = [</span>
-<span class="x">    // PHP 7.4</span>
-<span class="x">    &#39;T_BAD_CHARACTER&#39;,</span>
-<span class="x">    &#39;T_FN&#39;,</span>
-<span class="x">    &#39;T_COALESCE_EQUAL&#39;,</span>
-<span class="x">    // PHP 8.0</span>
-<span class="x">    &#39;T_NAME_QUALIFIED&#39;,</span>
-<span class="x">    &#39;T_NAME_FULLY_QUALIFIED&#39;,</span>
-<span class="x">    &#39;T_NAME_RELATIVE&#39;,</span>
-<span class="x">    &#39;T_MATCH&#39;,</span>
-<span class="x">    &#39;T_NULLSAFE_OBJECT_OPERATOR&#39;,</span>
-<span class="x">    &#39;T_ATTRIBUTE&#39;,</span>
-<span class="x">];</span>
+<span class="nv">$compatTokens</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1">// PHP 7.4</span>
+    <span class="s1">&#39;T_BAD_CHARACTER&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;T_FN&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;T_COALESCE_EQUAL&#39;</span><span class="p">,</span>
+    <span class="c1">// PHP 8.0</span>
+    <span class="s1">&#39;T_NAME_QUALIFIED&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;T_NAME_FULLY_QUALIFIED&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;T_NAME_RELATIVE&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;T_MATCH&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;T_NULLSAFE_OBJECT_OPERATOR&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;T_ATTRIBUTE&#39;</span><span class="p">,</span>
+<span class="p">];</span>
 
-<span class="x">foreach ($compatTokens as $token) {</span>
-<span class="x">    if (\defined($token)) {</span>
-<span class="x">        $tokenId = \constant($token);</span>
-<span class="x">    }</span>
-<span class="x">}</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$compatTokens</span> <span class="k">as</span> <span class="nv">$token</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">\defined</span><span class="p">(</span><span class="nv">$token</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$tokenId</span> <span class="o">=</span> <span class="nx">\constant</span><span class="p">(</span><span class="nv">$token</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Here we cannot detect that constants listed in <code>$compatTokens</code> array are perhaps condition code.</p>
 <p>Later, in another script or even the same one, if we used these constants we will detect them as PHP 7.4 or PHP 8.0 versions,
 but it's not the reality.</p>
 <p>Example with</p>
-<div class="highlight"><pre><span></span><code><span class="x">// @link https://github.com/nikic/PHP-Parser/blob/v4.10.0/lib/PhpParser/Lexer.php#L110</span>
-<span class="x">$tokens[] = [\T_BAD_CHARACTER, $chr, $line];</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// @link https://github.com/nikic/PHP-Parser/blob/v4.10.0/lib/PhpParser/Lexer.php#L110</span>
+<span class="nv">$tokens</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">\T_BAD_CHARACTER</span><span class="p">,</span> <span class="nv">$chr</span><span class="p">,</span> <span class="nv">$line</span><span class="p">];</span>
 </code></pre></div>
 <p>Console output tell us</p>
 <div class="highlight"><pre><span></span><code>Constants Analysis

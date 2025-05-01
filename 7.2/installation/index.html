@@ -772,12 +772,12 @@
 </ol>
 <h2 id="requirements">Requirements</h2>
 <ul>
-<li>PHP 8.0 or greater</li>
+<li>PHP 8.1 or greater</li>
 <li>ext-json</li>
 <li>ext-pcre (required by: bartlett/php-compatinfo-db)</li>
 <li>ext-pdo (required by: bartlett/php-compatinfo-db)</li>
 <li>ext-spl</li>
-<li>PHPUnit 9 or greater (if you want to run unit tests)</li>
+<li>PHPUnit 10.5 or greater (if you want to run unit tests)</li>
 </ul>
 <h2 id="phar">PHAR</h2>
 <p>The preferred method of installation is to use the CompatInfo PHAR version which can be downloaded from the most recent
@@ -798,7 +798,7 @@ docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/llaville/php-c
 <p>You can also install application locally to your project with <a href="https://github.com/phar-io/phive">Phive</a> and configuration file <code>.phive/phars.xml</code></p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;phive</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;https://phar.io/phive&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;phar</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;llaville/php-compatinfo&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;^7.1&quot;</span><span class="w"> </span><span class="na">copy=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;phar</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;llaville/php-compatinfo&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;^7.2&quot;</span><span class="w"> </span><span class="na">copy=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/phive&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>phive<span class="w"> </span>install<span class="w"> </span>--force-accept-unsigned
@@ -806,7 +806,7 @@ docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/llaville/php-c
 <h2 id="composer">Composer</h2>
 <p>The recommended way to install this library is <a href="https://getcomposer.org">through composer</a>.
 If you don't know yet what is composer, have a look <a href="http://getcomposer.org/doc/00-intro.md">on introduction</a>.</p>
-<div class="highlight"><pre><span></span><code>composer<span class="w"> </span>require<span class="w"> </span>bartlett/php-compatinfo<span class="w"> </span>^7.1
+<div class="highlight"><pre><span></span><code>composer<span class="w"> </span>require<span class="w"> </span>bartlett/php-compatinfo<span class="w"> </span>^7.2
 </code></pre></div>
 <p>If you cannot install it because of a dependency conflict, or you prefer to install it for your project, we recommend
 you to take a look at <a href="https://github.com/bamarni/composer-bin-plugin">bamarni/composer-bin-plugin</a>. Example:</p>
@@ -817,7 +817,7 @@ vendor/bin/phpcompatinfo
 </code></pre></div>
 <h2 id="git">Git</h2>
 <p>The PHP CompatInfo can be directly used from <a href="https://github.com/llaville/php-compatinfo.git">GitHub</a> by cloning the repository into a directory of your choice.</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span><span class="m">7</span>.1<span class="w"> </span>https://github.com/llaville/php-compatinfo.git
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span><span class="m">7</span>.2<span class="w"> </span>https://github.com/llaville/php-compatinfo.git
 </code></pre></div>
 <h2 id="configuring-the-database">Configuring the Database</h2>
 <p>The database connection information is stored as an environment variable called <code>DATABASE_URL</code>.</p>
@@ -833,10 +833,9 @@ vendor/bin/phpcompatinfo
 <span class="c1"># to use postgresql:</span>
 <span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s2">&quot;postgresql://db_user:db_password@127.0.0.1:5432/db_name?serverVersion=11&amp;charset=utf8&quot;</span>
 </code></pre></div>
-<p>After installation, or if you change database connection, you have to run following command(s):</p>
+<p>After installation, or if you change database connection, you have to run following command:</p>
 <ul>
-<li><code>bin/phpcompatinfo db:create</code></li>
-<li><code>bin/phpcompatinfo db:init</code></li>
+<li><code>bin/phpcompatinfo db:new</code></li>
 </ul>
 <p>At first run of CompatInfo, <code>DATABASE_URL</code> will be set to use default SQLite connection</p>
 
