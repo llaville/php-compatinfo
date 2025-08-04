@@ -1,10 +1,23 @@
 {
     "alias": "phpcompatinfo.phar",
-    "force-autodiscovery": true,
-    "directories": ["config"],
     "compression": "GZ",
+    "blacklist": [
+        "tests",
+        "Test",
+        "dist",
+        "vendor-bin"
+    ],
+    "directories": [
+        "bin",
+        "src",
+        "config",
+        "vendor"
+    ],
+    "directories-bin": [
+        "resources"
+    ],
     "files-bin": [
         "autoload.php"
     ],
-    "exclude-dev-files": false
+    "dump-autoload": false
 }

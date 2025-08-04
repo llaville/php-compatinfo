@@ -1,10 +1,21 @@
 {
     "alias": "phpcompatinfo.phar",
-    "force-autodiscovery": true,
-    "directories": [
-        "config"
-    ],
     "compression": "GZ",
+    "blacklist": [
+        "tests",
+        "Test",
+        "dist",
+        "vendor-bin"
+    ],
+    "directories": [
+        "bin",
+        "src",
+        "config",
+        "vendor"
+    ],
+    "directories-bin": [
+        "resources"
+    ],
     "files-bin": [
         "autoload.php",
         "console-table.txt",
@@ -12,7 +23,7 @@
         "sbom.json",
         ".box.manifests.bin"
     ],
-    "exclude-dev-files": false,
+    "dump-autoload": false,
     "map": [
         {
             "console-table.txt": ".box.manifests/console-table.txt"
