@@ -1,9 +1,14 @@
 {
-    "minimum-stability": "dev",
     "require-dev": {
-        "bartlett/umlwriter": "^3.4 || ^4.0"
+        "bartlett/umlwriter": "^4.0"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
+        "preferred-install": {
+            "graphp/graph": "source",
+            "*": "dist"
+        },
         "allow-plugins": {
             "cweagans/composer-patches": true
         }
