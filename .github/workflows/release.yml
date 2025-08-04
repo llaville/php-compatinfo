@@ -2,20 +2,68 @@
 name: Release
 
 on:
-    push:
-        tags:
-            - "[0-9]+.[0-9]+.[0-9]+"
     workflow_dispatch:
+        # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
+        inputs:
+            operating-system:
+                description: "OS name and version runtime"
+                required: false
+                default: "ubuntu-latest"
+                type: string
+            php-version:
+                description: "PHP runtime version in format Major.minor"
+                required: false
+                default: "8.2"
+                type: string
+            composer-options:
+                description: "Composer options for ramsey/composer-install GitHub Action"
+                required: false
+                default: "--prefer-dist --no-scripts"
+                type: string
+            box-output:
+                description: "Path to the PHP Archive made by the BOX"
+                required: true
+                default: "bin/phpcompatinfo.phar"
+                type: string
+            box-manifest-version:
+                # https://github.com/llaville/box-manifest
+                description: "BOX Manifest runtime version in semver format"
+                required: false
+                default: "4.2.0"
+                type: string
+            box-manifest-options:
+                description: "Additional options to pass to BOX Manifest (e.g. `--bootstrap bootstrap.php -r plain.txt -r sbom.json`)"
+                required: false
+                default: "-r console-table.txt -r plain.txt -r sbom.json"
+                type: string
+            tag-name:
+                description: "New Release Tag"
+                required: false
+                default: ""
+                type: string
 
 permissions:
     contents: write
 
 jobs:
-    tests:
-        uses: ./.github/workflows/unit-tests.yaml
+    lint_files:
+        uses: ./.github/workflows/mega-linter.yml
+        with:
+            operating-system: ${{ inputs.operating-system }}
+            php-version: ${{ inputs.php-version }}
+            composer-options: ${{ inputs.composer-options }}
 
-    build:
-        needs: tests
+    unit_tests:
+        uses: ./.github/workflows/unit-tests.yml
+        with:
+            operating-system: ${{ inputs.operating-system }}
+            composer-options: ${{ inputs.composer-options }}
+
+    create_release:
+        if: inputs.tag-name != ''
+        needs:
+            - lint_files
+            - unit_tests
 
         runs-on: ${{ matrix.os }}
 
@@ -23,20 +71,23 @@ jobs:
             fail-fast: false
             matrix:
                 os:
-                    - ubuntu-22.04
+                    - ${{ inputs.operating-system }}
                 php:
-                    - 8.2
+                    - ${{ inputs.php-version }}
                 tools:
                     - box:4.6  # available since https://github.com/shivammathur/setup-php/releases/tag/2.27.0
 
         steps:
             -   # https://github.com/actions/checkout
                 name: Checkout
-                uses: actions/checkout@v4
+                uses: actions/checkout@v4.2.2
+                with:
+                    # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
+                    persist-credentials: false
 
             -   # https://github.com/shivammathur/setup-php
                 name: Setup PHP runtime
-                uses: shivammathur/setup-php@v2
+                uses: shivammathur/setup-php@2.35.2
                 with:
                     php-version: ${{ matrix.php }}
                     coverage: "none"
@@ -49,14 +100,15 @@ jobs:
 
             -   # https://github.com/ramsey/composer-install
                 name: Install Composer dependencies
-                uses: ramsey/composer-install@v3
+                uses: ramsey/composer-install@3.1.1
                 with:
-                    composer-options: "--prefer-dist"
+                    dependency-versions: "highest"
+                    composer-options: ${{ inputs.composer-options }}
 
             -   # https://github.com/llaville/box-manifest
                 name: Download BOX Manifest Artifact
                 env:
-                    BOX_MANIFEST_VERSION: ${{ vars.BOX_MANIFEST_VERSION || '4.1.4' }}
+                    BOX_MANIFEST_VERSION: ${{ inputs.box-manifest-version }}
                 run: |
                     curl -Ls "https://github.com/llaville/box-manifest/releases/download/$BOX_MANIFEST_VERSION/box-manifest.phar" -o /usr/local/bin/box-manifest
                     chmod +x /usr/local/bin/box-manifest
@@ -64,19 +116,18 @@ jobs:
             -   # https://github.com/llaville/box-manifest
                 name: Build Release Artifact
                 run: |
-                    box-manifest make build stub configure -r console-table.txt -r plain.txt -r sbom.json --output-stub stub.php --output-conf box.json.dist -vvv --ansi
+                    box-manifest make build stub configure ${{ inputs.box-manifest-options }} --output-stub stub.php --output-conf box.json.dist -vvv --ansi
                     box compile -c box.json.dist -vvv --ansi
 
-            -   # https://github.com/softprops/action-gh-release
+            - # https://github.com/softprops/action-gh-release
                 name: Create Release from current tag
-                if: github.ref_type == 'tag'
-                uses: softprops/action-gh-release@v2
-                with:  # https://github.com/softprops/action-gh-release#-customizing
+                uses: softprops/action-gh-release@v2.3.2
+                with:
+                    # https://github.com/softprops/action-gh-release#-customizing
                     prerelease: false
                     draft: false
-                    body_path: ${{ github.workspace }}/.changes/7.x/${{ github.ref_name }}.md
+                    body_path: ${{ github.workspace }}/.changes/7.x/${{ inputs.tag-name }}.md
                     # https://github.com/softprops/action-gh-release#%EF%B8%8F-uploading-release-assets
-                    files: |
-                        ${{ github.workspace }}/bin/phpcompatinfo.phar
+                    files: ${{ github.workspace }}/${{ inputs.box-output }}
                     fail_on_unmatched_files: true
-                    tag_name: ${{ github.ref_name }}
+                    tag_name: ${{ inputs.tag-name }}

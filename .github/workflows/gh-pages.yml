@@ -2,20 +2,143 @@
 name: GitHub-Pages
 
 on:
-    push:
-        branches:
-            - master
-            - "7.2"
-        paths:
-            - docs/**
-    pull_request:
     workflow_dispatch:
+        # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
+        inputs:
+            operating-system:
+                description: "OS name and version runtime"
+                required: false
+                default: "ubuntu-22.04"
+                type: string
+            php-version:
+                description: "PHP runtime version in format Major.minor"
+                required: false
+                default: "8.2"
+                type: string
+            php-extensions:
+                description: "PHP runtime extensions you want to add or disable"
+                default: ""
+                required: false
+                type: string
+            destination-dir:
+                description: "Path where to store documentation on gh-pages branch"
+                required: false
+                default: "7.2"
+                type: string
+            force-orphan:
+                description: "Allows you to make your publish branch with only the latest commit"
+                required: false
+                default: false
+                type: boolean
+            hook-script:
+                description: "Hook script to run custom project task before deploying documentation"
+                required: false
+                default: "resources/gh-pages-hook.sh"
+                type: string
+            composer-options:
+                description: "Composer options for ramsey/composer-install GitHub Action"
+                default: "--prefer-dist --no-scripts"
+                required: false
+                type: string
+
+concurrency:
+    group: ${{ github.ref }}-${{ github.workflow }}
+    cancel-in-progress: true
+
+permissions:
+    contents: write
 
 jobs:
-    deploy:
-        uses: llaville/.github/.github/workflows/gh-pages.yml@master
-        with:
-            destination-dir: "7.2"
-            force-orphan: false
-            hook-script: "resources/gh-pages-hook.sh"
-            graph-uml: true
+    deploy_to_pages:
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+                os:
+                    - ${{ inputs.operating-system }}
+                php:
+                    - ${{ inputs.php-version }}
+                extensions:
+                    - ${{ inputs.php-extensions }}
+
+        steps:
+            -   # https://github.com/actions/checkout
+                name: Checkout Code
+                uses: actions/checkout@v4.2.2
+                with:
+                    # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
+                    persist-credentials: false
+                    # uncomment if you want to retrieve all history for all branches and tags
+                    #  fetch-depth: 0
+
+            -   # Setup Libraries
+                name: Setup Libraries
+                run: |
+                    sudo apt-get update
+                    sudo apt-fast install graphviz -y
+
+            -   # https://github.com/shivammathur/setup-php
+                name: Setup PHP runtime
+                uses: shivammathur/setup-php@2.35.2
+                with:
+                    php-version: ${{ matrix.php }}
+                    extensions: ${{ matrix.extensions }}
+                    coverage: "none"
+
+            -   # https://getcomposer.org/doc/06-config.md#platform
+                # https://github.com/bamarni/composer-bin-plugin?tab=readme-ov-file#forward-command-forward-command
+                name: Setup Composer Platform
+                run: |
+                    composer config --json extra.bamarni-bin.forward-command true
+
+            -   # https://github.com/ramsey/composer-install
+                name: Install Composer dependencies
+                uses: ramsey/composer-install@3.1.1
+                with:
+                    dependency-versions: "highest"
+                    composer-options: ${{ inputs.composer-options }}
+                env:
+                    COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
+
+            -   # Hook to run custom project task before deploying documentation
+                name: Hook to run custom project task
+                if: endsWith(inputs.hook-script, '.sh')
+                shell: bash
+                run: |
+                    "${GITHUB_WORKSPACE}/${{ inputs.hook-script }}"
+
+            -   # https://github.com/actions/setup-python
+                name: Set up Python runtime
+                uses: actions/setup-python@v5
+                with:
+                    python-version: 3.x
+
+            -   # https://github.com/squidfunk/mkdocs-material
+                name: Install Material for MkDocs
+                run: pip install mkdocs-material
+
+            -   # https://github.com/oprypin/markdown-callouts
+                name: Install Markdown Callouts
+                run: pip install markdown-callouts
+
+            -   # https://github.com/pa-decarvalho/mkdocs-asciinema-player
+                # https://github.com/asciinema/asciinema-player
+                name: Install Mkdocs asciinema player
+                run: pip install mkdocs-asciinema-player
+
+            -   # https://github.com/squidfunk/mkdocs-material
+                name: Build Docs
+                run: mkdocs build
+
+            -   # https://github.com/peaceiris/actions-gh-pages
+                name: Deploy Docs
+                uses: peaceiris/actions-gh-pages@v4.0.0
+                with:
+                    github_token: ${{ secrets.GITHUB_TOKEN }}
+                    publish_dir: ./site
+                    destination_dir: ${{ inputs.destination-dir }}
+                    full_commit_message: "Deployed ${{ github.sha }} with MkDocs"
+                    force_orphan: ${{ inputs.force-orphan }}
+                    user_name: 'github-actions'
+                    user_email: 'github-actions@users.noreply.github.com'

@@ -1,0 +1,85 @@
+---
+# Mega-Linter GitHub Action configuration file
+# More info at https://github.com/oxsecurity/megalinter
+name: Mega-Linter
+
+on:
+    workflow_call:
+        # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_callinputs
+        inputs:
+            operating-system:
+                description: "OS name and version runtime"
+                required: false
+                default: "ubuntu-latest"
+                type: string
+            php-version:
+                description: "PHP runtime version in format Major.minor"
+                required: false
+                default: "8.1"
+                type: string
+            composer-options:
+                description: "Composer options for ramsey/composer-install GitHub Action"
+                required: false
+                default: "--prefer-dist --no-scripts"
+                type: string
+
+concurrency:
+    group: ${{ github.ref }}-${{ github.workflow }}
+    cancel-in-progress: true
+
+jobs:
+    lint_files:
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+                os:
+                    - ${{ inputs.operating-system }}
+                php:
+                    - ${{ inputs.php-version }}
+
+        steps:
+            -   # https://github.com/actions/checkout
+                name: Checkout Code
+                uses: actions/checkout@v4.2.2
+                with:
+                    # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
+                    persist-credentials: false
+
+            -   # https://github.com/shivammathur/setup-php
+                name: Setup PHP runtime
+                uses: shivammathur/setup-php@2.35.2
+                with:
+                    php-version: ${{ matrix.php }}
+                    coverage: "none"
+
+            -   # https://getcomposer.org/doc/06-config.md#platform
+                # https://github.com/bamarni/composer-bin-plugin?tab=readme-ov-file#forward-command-forward-command
+                name: Setup Composer Platform
+                run: |
+                    composer config --json extra.bamarni-bin.forward-command true
+
+            -   # https://github.com/ramsey/composer-install
+                name: Install Composer dependencies
+                uses: ramsey/composer-install@3.1.1
+                with:
+                    dependency-versions: "highest"
+                    composer-options: ${{ inputs.composer-options }}
+
+            -   # https://github.com/oxsecurity/megalinter/
+                name: Mega-Linter
+                id: ml
+                    # You can override Mega-Linter flavor used to have faster performances
+                    # More info at https://megalinter.github.io/latest/flavors/
+                uses: oxsecurity/megalinter/flavors/php@v8.8.0
+                env:
+                    # All available variables are described in documentation
+                    # https://megalinter.github.io/latest/configuration/
+                    # Validates all source when push on master, else just the git diff with master. Override with true if you always want to lint all sources
+                    #VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                    # ADD YOUR CUSTOM ENV VARIABLES HERE OR DEFINE THEM IN A FILE .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
+                    # DISABLE: COPYPASTE,SPELL # Uncomment to disable copy-paste and spell checks
+                    #LOG_LEVEL: INFO
+                    #TEXT_REPORTER: false
