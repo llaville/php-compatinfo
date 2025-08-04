@@ -1,0 +1,13 @@
+{
+    "pre-push": {
+        "enabled": true,
+        "actions": [
+            {
+                "action": "{$CONFIG|value-of:custom>>vendor-bin-dir}phpstan analyse --configuration .github/linters/phpstan.neon.dist --verbose --ansi",
+                "config": {
+                    "label": "Static Analysis (with PHPStan)"
+                }
+            }
+        ]
+    }
+}

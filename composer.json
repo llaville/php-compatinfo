@@ -78,15 +78,9 @@
     },
     "scripts": {
         "bin": "echo 'bin not installed'",
-        "code:check": "vendor/bin/phpstan analyse --configuration .github/linters/phpstan.neon.dist --ansi --verbose",
-        "code:lint": "vendor/bin/phplint --configuration .github/linters/.phplint.yml --verbose --progress=indicator --ansi",
-        "style:check": "vendor/bin/phpcs --standard=.github/linters/.phpcs.xml.dist --warning-severity=0 --colors",
-        "tests:unit": "vendor/bin/phpunit --configuration phpunit.xml.dist"
-    },
-    "scripts-descriptions" : {
-        "code:check": "Run PHPStan code analysis on project source code",
-        "code:lint": "Run PHPLint on project source code",
-        "style:check": "Run PHP CodeSniffer on project source code",
-        "tests:unit": "Run unit tests"
+        "post-autoload-dump": [
+            "@composer bin captainhook update",
+            "vendor/bin/captainhook install --configuration=captainhook.json --only-enabled"
+        ]
     }
 }
