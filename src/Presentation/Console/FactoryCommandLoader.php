@@ -23,6 +23,7 @@ use Symfony\Component\Console\CommandLoader\FactoryCommandLoader as SymfonyFacto
 use Symfony\Component\Messenger\Command\DebugCommand;
 
 use Phar;
+use function class_exists;
 use function get_class;
 use function in_array;
 
@@ -46,8 +47,6 @@ final class FactoryCommandLoader extends SymfonyFactoryCommandLoader implements 
             // these commands are disallowed in production environment
             $blacklist = [
                 // Debug commands
-                ContainerDebugCommand::class,
-                EventDispatcherDebugCommand::class,
                 DebugCommand::class,
                 // Doctrine commands
                 RunSqlCommand::class,
@@ -55,6 +54,14 @@ final class FactoryCommandLoader extends SymfonyFactoryCommandLoader implements 
                 MappingDescribeCommand::class,
                 ValidateSchemaCommand::class,
             ];
+            if (class_exists(ContainerDebugCommand::class)) {
+                // TRUE when symfony/framework-bundle is installed
+                $blacklist[] = ContainerDebugCommand::class;
+            }
+            if (class_exists(EventDispatcherDebugCommand::class)) {
+                // TRUE when symfony/framework-bundle is installed
+                $blacklist[] = EventDispatcherDebugCommand::class;
+            }
         }
 
         if (Phar::running()) {
