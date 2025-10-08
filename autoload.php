@@ -24,37 +24,46 @@ if (class_exists(__NAMESPACE__ . '\Autoload', false) === false) {
     {
         /**
          * The composer autoloader.
-         *
-         * @var \Composer\Autoload\ClassLoader
          */
-        private static $composerAutoloader = null;
+        private static ?\Composer\Autoload\ClassLoader $composerAutoloader = null;
 
         public static function load(string $class): void
         {
             if (self::$composerAutoloader === null) {
-                self::$composerAutoloader = require self::getAutoloadFile();
+                if (isset($GLOBALS['_composer_autoload_path'])) {
+                    $possibleAutoloadPaths = [
+                        dirname($GLOBALS['_composer_autoload_path'])
+                    ];
+                    $autoloader = basename($GLOBALS['_composer_autoload_path']);
+                } else {
+                    $possibleAutoloadPaths = [
+                        // local dev repository
+                        __DIR__,
+                        // dependency
+                        dirname(__DIR__, 3),
+                    ];
+                    $autoloader = 'vendor/autoload.php';
+                }
+
+                self::$composerAutoloader = require self::getAutoloadFile($possibleAutoloadPaths, $autoloader);
+
+                $possibleAutoloadPaths = [
+                    // local dependencies for dev
+                    __DIR__ . '/vendor-bin/sf-framework-bundle/',
+                ];
+                $autoloader = 'vendor/autoload.php';
+                try {
+                    require_once self::getAutoloadFile($possibleAutoloadPaths, $autoloader);
+                } catch (RuntimeException $e) {
+                    // unable to find additional/optional dev deps: it's not an error
+                }
             }
 
             self::$composerAutoloader->loadClass($class);
         }
 
-        private static function getAutoloadFile(): string
+        private static function getAutoloadFile(array $possibleAutoloadPaths, string $autoloader): string
         {
-            if (isset($GLOBALS['_composer_autoload_path'])) {
-                $possibleAutoloadPaths = [
-                    dirname($GLOBALS['_composer_autoload_path'])
-                ];
-                $autoloader = basename($GLOBALS['_composer_autoload_path']);
-            } else {
-                $possibleAutoloadPaths = [
-                    // local dev repository
-                    __DIR__,
-                    // dependency
-                    dirname(__DIR__, 3),
-                ];
-                $autoloader = 'vendor/autoload.php';
-            }
-
             foreach ($possibleAutoloadPaths as $possibleAutoloadPath) {
                 if (file_exists($possibleAutoloadPath . DIRECTORY_SEPARATOR . $autoloader)) {
                     return $possibleAutoloadPath . DIRECTORY_SEPARATOR . $autoloader;

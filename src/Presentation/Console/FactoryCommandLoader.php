@@ -17,13 +17,13 @@ use Doctrine\ORM\Tools\Console\Command\InfoCommand;
 use Doctrine\ORM\Tools\Console\Command\MappingDescribeCommand;
 use Doctrine\ORM\Tools\Console\Command\ValidateSchemaCommand;
 
+use Symfony\Bundle\FrameworkBundle\Command\ContainerDebugCommand as ContainerDebugCommandSymfonyFrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Command\EventDispatcherDebugCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\CommandLoader\FactoryCommandLoader as SymfonyFactoryCommandLoader;
 use Symfony\Component\Messenger\Command\DebugCommand;
 
 use Phar;
-use function class_exists;
 use function get_class;
 use function in_array;
 
@@ -54,14 +54,11 @@ final class FactoryCommandLoader extends SymfonyFactoryCommandLoader implements 
                 MappingDescribeCommand::class,
                 ValidateSchemaCommand::class,
             ];
-            if (class_exists(ContainerDebugCommand::class)) {
-                // TRUE when symfony/framework-bundle is installed
-                $blacklist[] = ContainerDebugCommand::class;
-            }
-            if (class_exists(EventDispatcherDebugCommand::class)) {
-                // TRUE when symfony/framework-bundle is installed
-                $blacklist[] = EventDispatcherDebugCommand::class;
-            }
+        }
+
+        if ('prod' === $environment || Phar::running()) {
+            $blacklist[] = ContainerDebugCommand::class;
+            $blacklist[] = EventDispatcherDebugCommand::class;  // @phpstan-ignore class.notFound
         }
 
         if (Phar::running()) {
