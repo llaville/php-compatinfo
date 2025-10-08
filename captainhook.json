@@ -4,7 +4,7 @@
         "allow-failure": false,
         "ansi-colors": true,
         "git-directory": ".git",
-        "fail-on-first-error": false,
+        "fail-on-first-error": true,
         "plugins": [],
         "includes": [
             ".config/captainhook/pre-push.phpstan.json",
