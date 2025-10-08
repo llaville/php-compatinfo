@@ -3,7 +3,7 @@
         "enabled": true,
         "actions": [
             {
-                "action": "{$CONFIG|value-of:custom>>vendor-bin-dir}phplint --configuration=.github/linters/.phplint.yml --ansi {$STAGED_FILES|of-type:php|separated-by: }",
+                "action": "{$ENV|value-of:VENDOR_BIN_DIR|default:vendor/bin/}phplint --configuration=.github/linters/.phplint.yml --ansi {$STAGED_FILES|of-type:php|separated-by: }",
                 "config": {
                     "label": "Lint Files (with PHPLint)"
                 }

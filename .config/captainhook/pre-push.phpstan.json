@@ -3,7 +3,7 @@
         "enabled": true,
         "actions": [
             {
-                "action": "{$CONFIG|value-of:custom>>vendor-bin-dir}phpstan analyse --configuration .github/linters/phpstan.neon.dist --verbose --ansi",
+                "action": "{$ENV|value-of:VENDOR_BIN_DIR|default:vendor/bin/}phpstan analyse --configuration .github/linters/phpstan.neon.dist --verbose --ansi",
                 "config": {
                     "label": "Static Analysis (with PHPStan)"
                 }

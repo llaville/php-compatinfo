@@ -3,7 +3,7 @@
         "enabled": true,
         "actions": [
             {
-                "action": "{$CONFIG|value-of:custom>>vendor-bin-dir}phpcs --standard=.github/linters/.phpcs.xml.dist --warning-severity=0 --colors {$STAGED_FILES|of-type:php|separated-by: }",
+                "action": "{$ENV|value-of:VENDOR_BIN_DIR|default:vendor/bin/}phpcs --standard=.github/linters/.phpcs.xml.dist --warning-severity=0 --colors {$STAGED_FILES|of-type:php|separated-by: }",
                 "config": {
                     "label": "Checks Coding Standard (with PHP_CodeSniffer)"
                 }

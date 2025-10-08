@@ -3,7 +3,7 @@
         "enabled": true,
         "actions": [
             {
-                "action": "{$CONFIG|value-of:custom>>vendor-bin-dir}phpunit --configuration phpunit.xml.dist",
+                "action": "{$ENV|value-of:VENDOR_BIN_DIR|default:vendor/bin/}phpunit --configuration phpunit.xml.dist",
                 "config": {
                     "label": "Unit Tests (with PHPUnit)"
                 }

@@ -11,9 +11,6 @@
             ".config/captainhook/pre-push.phpunit.json",
             ".config/captainhook/pre-commit.phplint.json",
             ".config/captainhook/pre-commit.phpcs.json"
-        ],
-        "custom": {
-            "vendor-bin-dir": "vendor/bin/"
-        }
+        ]
     }
 }
