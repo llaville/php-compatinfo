@@ -65,7 +65,7 @@ jobs:
         steps:
             -   # https://github.com/actions/checkout
                 name: Checkout Code
-                uses: actions/checkout@v4.2.2
+                uses: actions/checkout@v4.3.0
                 with:
                     # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
                     persist-credentials: false
@@ -80,7 +80,7 @@ jobs:
 
             -   # https://github.com/shivammathur/setup-php
                 name: Setup PHP runtime
-                uses: shivammathur/setup-php@2.35.2
+                uses: shivammathur/setup-php@2.35.5
                 with:
                     php-version: ${{ matrix.php }}
                     extensions: ${{ matrix.extensions }}

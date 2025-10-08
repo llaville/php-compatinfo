@@ -10,7 +10,7 @@ on:
             operating-system:
                 description: "OS name and version runtime"
                 required: false
-                default: "ubuntu-latest"
+                default: "ubuntu-22.04"
                 type: string
             php-version:
                 description: "PHP runtime version in format Major.minor"
@@ -42,14 +42,14 @@ jobs:
         steps:
             -   # https://github.com/actions/checkout
                 name: Checkout Code
-                uses: actions/checkout@v4.2.2
+                uses: actions/checkout@v4.3.0
                 with:
                     # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
                     persist-credentials: false
 
             -   # https://github.com/shivammathur/setup-php
                 name: Setup PHP runtime
-                uses: shivammathur/setup-php@2.35.2
+                uses: shivammathur/setup-php@2.35.5
                 with:
                     php-version: ${{ matrix.php }}
                     coverage: "none"
@@ -72,7 +72,7 @@ jobs:
                 id: ml
                     # You can override Mega-Linter flavor used to have faster performances
                     # More info at https://megalinter.github.io/latest/flavors/
-                uses: oxsecurity/megalinter/flavors/php@v8.8.0
+                uses: oxsecurity/megalinter/flavors/php@v9.1.0
                 env:
                     # All available variables are described in documentation
                     # https://megalinter.github.io/latest/configuration/
