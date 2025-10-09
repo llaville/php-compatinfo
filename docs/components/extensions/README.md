@@ -18,7 +18,7 @@ return static function (ContainerConfigurator $containerConfigurator): void
 }
 ```
 
-# Hooks
+## Hooks
 
 CompatInfo Extensions may implement one or more of these interfaces:
 

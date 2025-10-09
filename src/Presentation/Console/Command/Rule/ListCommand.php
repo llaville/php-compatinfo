@@ -47,7 +47,8 @@ final class ListCommand extends AbstractCommand implements CommandInterface
     public function __construct(QueryBusInterface $queryBus, SniffCollectionInterface $sniffCollection)
     {
         parent::__construct($queryBus);
-        $this->rules = [];
+        /** @var array<string, array<int, mixed>> $rules */
+        $rules = [];
 
         /** @var SniffInterface $sniff */
         foreach ($sniffCollection as $sniff) {
@@ -56,11 +57,11 @@ final class ListCommand extends AbstractCommand implements CommandInterface
                 if (strlen($ruleDesc) > self::MAX_LENGTH_DESCRIPTION) {
                     $ruleDesc = substr($ruleDesc, 0, self::MAX_LENGTH_DESCRIPTION) . ' <comment>...</comment>';
                 }
-                $this->rules[$ruleId] = [$ruleId, $ruleValues['name'], $ruleDesc];
+                $rules[$ruleId] = [$ruleId, $ruleValues['name'], $ruleDesc];
             }
         }
-        ksort($this->rules);
-        $this->rules = array_values($this->rules);
+        ksort($rules);
+        $this->rules = array_values($rules);
     }
 
     /**
