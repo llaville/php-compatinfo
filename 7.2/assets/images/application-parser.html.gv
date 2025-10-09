@@ -44,7 +44,7 @@ digraph {
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>Name</b></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ parts : mixed</td></tr>
+    <tr><td align="left">+ name : string</td></tr>
 </table></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(name : mixed, attributes : array = [])</td></tr>
@@ -83,13 +83,13 @@ digraph {
     <tr><td align="left">+ getStartFilePos() : int</td></tr>
     <tr><td align="left">+ getEndFilePos() : int</td></tr>
     <tr><td align="left">+ getComments() : array</td></tr>
-    <tr><td align="left">+ getDocComment()</td></tr>
-    <tr><td align="left">+ setDocComment(docComment : PhpParser\\Comment\\Doc)</td></tr>
-    <tr><td align="left">+ setAttribute(key : string, value)</td></tr>
+    <tr><td align="left">+ getDocComment() : ?PhpParser\\Comment\\Doc</td></tr>
+    <tr><td align="left">+ setDocComment(docComment : PhpParser\\Comment\\Doc) : void</td></tr>
+    <tr><td align="left">+ setAttribute(key : string, value) : void</td></tr>
     <tr><td align="left">+ hasAttribute(key : string) : bool</td></tr>
     <tr><td align="left">+ getAttribute(key : string, default = «unknown»)</td></tr>
     <tr><td align="left">+ getAttributes() : array</td></tr>
-    <tr><td align="left">+ setAttributes(attributes : array)</td></tr>
+    <tr><td align="left">+ setAttributes(attributes : array) : void</td></tr>
     <tr><td align="left">+ jsonSerialize() : array</td></tr>
 </table></td></tr>
 </table>>]
@@ -108,18 +108,25 @@ digraph {
     <tr><td align="left">+ «abstract» getStartFilePos() : int</td></tr>
     <tr><td align="left">+ «abstract» getEndFilePos() : int</td></tr>
     <tr><td align="left">+ «abstract» getComments() : array</td></tr>
-    <tr><td align="left">+ «abstract» getDocComment()</td></tr>
-    <tr><td align="left">+ «abstract» setDocComment(docComment : PhpParser\\Comment\\Doc)</td></tr>
-    <tr><td align="left">+ «abstract» setAttribute(key : string, value : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» getDocComment() : ?PhpParser\\Comment\\Doc</td></tr>
+    <tr><td align="left">+ «abstract» setDocComment(docComment : PhpParser\\Comment\\Doc) : void</td></tr>
+    <tr><td align="left">+ «abstract» setAttribute(key : string, value) : void</td></tr>
     <tr><td align="left">+ «abstract» hasAttribute(key : string) : bool</td></tr>
-    <tr><td align="left">+ «abstract» getAttribute(key : string, default : mixed = «unknown»)</td></tr>
+    <tr><td align="left">+ «abstract» getAttribute(key : string, default = «unknown»)</td></tr>
     <tr><td align="left">+ «abstract» getAttributes() : array</td></tr>
-    <tr><td align="left">+ «abstract» setAttributes(attributes : array)</td></tr>
+    <tr><td align="left">+ «abstract» setAttributes(attributes : array) : void</td></tr>
 </table></td></tr>
 </table>>]
     "PhpParser\\NodeVisitorAbstract" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
-    <tr><td bgcolor="#eeeeee"><b><br/>NodeVisitorAbstract</b></td></tr>
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>NodeVisitorAbstract</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CHILDREN : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» STOP_TRAVERSAL : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REMOVE_NODE : int = 3 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CURRENT_AND_CHILDREN : int = 4 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REPLACE_WITH_NULL : int = 5 {readOnly}</td></tr>
+</table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ beforeTraverse(nodes : array)</td></tr>
@@ -131,6 +138,13 @@ digraph {
     "PhpParser\\NodeVisitor" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>NodeVisitor</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CHILDREN : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» STOP_TRAVERSAL : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REMOVE_NODE : int = 3 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CURRENT_AND_CHILDREN : int = 4 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REPLACE_WITH_NULL : int = 5 {readOnly}</td></tr>
+</table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ «abstract» beforeTraverse(nodes : array)</td></tr>
@@ -174,6 +188,13 @@ digraph {
     "Bartlett\\CompatInfo\\Application\\PhpParser\\NodeVisitor\\NodeVisitor" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>NodeVisitor</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CHILDREN : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» STOP_TRAVERSAL : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REMOVE_NODE : int = 3 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CURRENT_AND_CHILDREN : int = 4 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REPLACE_WITH_NULL : int = 5 {readOnly}</td></tr>
+</table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ «abstract» getCollection() : Doctrine\\Common\\Collections\\ArrayCollection</td></tr>
@@ -218,7 +239,7 @@ digraph {
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(filterCallback : callable)</td></tr>
     <tr><td align="left">+ getFoundNodes() : array</td></tr>
-    <tr><td align="left">+ beforeTraverse(nodes : array)</td></tr>
+    <tr><td align="left">+ beforeTraverse(nodes : array) : ?array</td></tr>
     <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
 </table></td></tr>
 </table>>]
@@ -229,7 +250,7 @@ digraph {
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(errorHandler : PhpParser\\ErrorHandler = «unknown», options : array = [])</td></tr>
     <tr><td align="left">+ getNameContext() : PhpParser\\NameContext</td></tr>
-    <tr><td align="left">+ beforeTraverse(nodes : array)</td></tr>
+    <tr><td align="left">+ beforeTraverse(nodes : array) : ?array</td></tr>
     <tr><td align="left">+ enterNode(node : PhpParser\\Node)</td></tr>
 </table></td></tr>
 </table>>]

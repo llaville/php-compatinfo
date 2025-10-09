@@ -55,12 +55,12 @@ digraph {
     <tr><td align="left">+ «static» getDefaultName() : ?string</td></tr>
     <tr><td align="left">+ «static» getDefaultDescription() : ?string</td></tr>
     <tr><td align="left">+ __construct(name : string = «unknown»)</td></tr>
-    <tr><td align="left">+ ignoreValidationErrors()</td></tr>
-    <tr><td align="left">+ setApplication(application : Symfony\\Component\\Console\\Application = «unknown»)</td></tr>
-    <tr><td align="left">+ setHelperSet(helperSet : Symfony\\Component\\Console\\Helper\\HelperSet)</td></tr>
+    <tr><td align="left">+ ignoreValidationErrors() : void</td></tr>
+    <tr><td align="left">+ setApplication(application : Symfony\\Component\\Console\\Application) : void</td></tr>
+    <tr><td align="left">+ setHelperSet(helperSet : Symfony\\Component\\Console\\Helper\\HelperSet) : void</td></tr>
     <tr><td align="left">+ getHelperSet() : ?Symfony\\Component\\Console\\Helper\\HelperSet</td></tr>
     <tr><td align="left">+ getApplication() : ?Symfony\\Component\\Console\\Application</td></tr>
-    <tr><td align="left">+ isEnabled()</td></tr>
+    <tr><td align="left">+ isEnabled() : bool</td></tr>
     <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface) : int</td></tr>
     <tr><td align="left">+ complete(input : Symfony\\Component\\Console\\Completion\\CompletionInput, suggestions : Symfony\\Component\\Console\\Completion\\CompletionSuggestions) : void</td></tr>
     <tr><td align="left">+ setCode(code : callable) : static</td></tr>
@@ -68,8 +68,8 @@ digraph {
     <tr><td align="left">+ setDefinition(definition) : static</td></tr>
     <tr><td align="left">+ getDefinition() : Symfony\\Component\\Console\\Input\\InputDefinition</td></tr>
     <tr><td align="left">+ getNativeDefinition() : Symfony\\Component\\Console\\Input\\InputDefinition</td></tr>
-    <tr><td align="left">+ addArgument(name : string, mode : int = «unknown», description : string = '', default : mixed = «unknown») : static</td></tr>
-    <tr><td align="left">+ addOption(name : string, shortcut = «unknown», mode : int = «unknown», description : string = '', default : mixed = «unknown») : static</td></tr>
+    <tr><td align="left">+ addArgument(name : string, mode : int = «unknown», description : string = '', default : mixed = «unknown», suggestedValues = []) : static</td></tr>
+    <tr><td align="left">+ addOption(name : string, shortcut = «unknown», mode : int = «unknown», description : string = '', default : mixed = «unknown», suggestedValues = []) : static</td></tr>
     <tr><td align="left">+ setName(name : string) : static</td></tr>
     <tr><td align="left">+ setProcessTitle(title : string) : static</td></tr>
     <tr><td align="left">+ getName() : ?string</td></tr>
@@ -85,7 +85,18 @@ digraph {
     <tr><td align="left">+ getSynopsis(short : bool = false) : string</td></tr>
     <tr><td align="left">+ addUsage(usage : string) : static</td></tr>
     <tr><td align="left">+ getUsages() : array</td></tr>
-    <tr><td align="left">+ getHelper(name : string) : ?mixed</td></tr>
+    <tr><td align="left">+ getHelper(name : string) : Symfony\\Component\\Console\\Helper\\HelperInterface</td></tr>
+    <tr><td align="left">+ getSubscribedSignals() : array</td></tr>
+    <tr><td align="left">+ handleSignal(signal : int, previousExitCode = 0)</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Console\\Command\\SignalableCommandInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>SignalableCommandInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getSubscribedSignals() : array</td></tr>
+    <tr><td align="left">+ «abstract» handleSignal(signal : int, previousExitCode = 0)</td></tr>
 </table></td></tr>
 </table>>]
   }
@@ -110,6 +121,7 @@ digraph {
     <tr><td align="left">+ getFirstArgument() : ?string</td></tr>
     <tr><td align="left">+ hasParameterOption(values, onlyParams : bool = false) : bool</td></tr>
     <tr><td align="left">+ getParameterOption(values, default = false, onlyParams : bool = false) : ?mixed</td></tr>
+    <tr><td align="left">+ getRawTokens(strip : bool = false) : array</td></tr>
     <tr><td align="left">+ __toString() : string</td></tr>
 </table></td></tr>
 </table>>]
@@ -119,20 +131,20 @@ digraph {
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(definition : Symfony\\Component\\Console\\Input\\InputDefinition = «unknown»)</td></tr>
-    <tr><td align="left">+ bind(definition : Symfony\\Component\\Console\\Input\\InputDefinition)</td></tr>
-    <tr><td align="left">+ validate()</td></tr>
+    <tr><td align="left">+ bind(definition : Symfony\\Component\\Console\\Input\\InputDefinition) : void</td></tr>
+    <tr><td align="left">+ validate() : void</td></tr>
     <tr><td align="left">+ isInteractive() : bool</td></tr>
-    <tr><td align="left">+ setInteractive(interactive : bool)</td></tr>
+    <tr><td align="left">+ setInteractive(interactive : bool) : void</td></tr>
     <tr><td align="left">+ getArguments() : array</td></tr>
     <tr><td align="left">+ getArgument(name : string) : ?mixed</td></tr>
-    <tr><td align="left">+ setArgument(name : string, value : mixed)</td></tr>
+    <tr><td align="left">+ setArgument(name : string, value : mixed) : void</td></tr>
     <tr><td align="left">+ hasArgument(name : string) : bool</td></tr>
     <tr><td align="left">+ getOptions() : array</td></tr>
     <tr><td align="left">+ getOption(name : string) : ?mixed</td></tr>
-    <tr><td align="left">+ setOption(name : string, value : mixed)</td></tr>
+    <tr><td align="left">+ setOption(name : string, value : mixed) : void</td></tr>
     <tr><td align="left">+ hasOption(name : string) : bool</td></tr>
     <tr><td align="left">+ escapeToken(token : string) : string</td></tr>
-    <tr><td align="left">+ setStream(stream : resource)</td></tr>
+    <tr><td align="left">+ setStream(stream : resource) : void</td></tr>
     <tr><td align="left">+ getStream()</td></tr>
 </table></td></tr>
 </table>>]
@@ -141,7 +153,7 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>StreamableInputInterface</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ «abstract» setStream(stream : resource)</td></tr>
+    <tr><td align="left">+ «abstract» setStream(stream : resource) : void</td></tr>
     <tr><td align="left">+ «abstract» getStream()</td></tr>
 </table></td></tr>
 </table>>]
@@ -152,19 +164,20 @@ digraph {
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ «abstract» getFirstArgument() : ?string</td></tr>
     <tr><td align="left">+ «abstract» hasParameterOption(values : mixed, onlyParams : bool = false) : bool</td></tr>
-    <tr><td align="left">+ «abstract» getParameterOption(values : mixed, default : mixed = false, onlyParams : bool = false)</td></tr>
-    <tr><td align="left">+ «abstract» bind(definition : Symfony\\Component\\Console\\Input\\InputDefinition)</td></tr>
-    <tr><td align="left">+ «abstract» validate()</td></tr>
+    <tr><td align="left">+ «abstract» getParameterOption(values : mixed, default : mixed = false, onlyParams : bool = false) : ?mixed</td></tr>
+    <tr><td align="left">+ «abstract» bind(definition : Symfony\\Component\\Console\\Input\\InputDefinition) : void</td></tr>
+    <tr><td align="left">+ «abstract» validate() : void</td></tr>
     <tr><td align="left">+ «abstract» getArguments() : array</td></tr>
-    <tr><td align="left">+ «abstract» getArgument(name : string)</td></tr>
-    <tr><td align="left">+ «abstract» setArgument(name : string, value : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» getArgument(name : string) : ?mixed</td></tr>
+    <tr><td align="left">+ «abstract» setArgument(name : string, value : mixed) : void</td></tr>
     <tr><td align="left">+ «abstract» hasArgument(name : string) : bool</td></tr>
     <tr><td align="left">+ «abstract» getOptions() : array</td></tr>
-    <tr><td align="left">+ «abstract» getOption(name : string)</td></tr>
-    <tr><td align="left">+ «abstract» setOption(name : string, value : mixed)</td></tr>
+    <tr><td align="left">+ «abstract» getOption(name : string) : ?mixed</td></tr>
+    <tr><td align="left">+ «abstract» setOption(name : string, value : mixed) : void</td></tr>
     <tr><td align="left">+ «abstract» hasOption(name : string) : bool</td></tr>
     <tr><td align="left">+ «abstract» isInteractive() : bool</td></tr>
-    <tr><td align="left">+ «abstract» setInteractive(interactive : bool)</td></tr>
+    <tr><td align="left">+ «abstract» setInteractive(interactive : bool) : void</td></tr>
+    <tr><td align="left">+ «abstract» __toString() : string</td></tr>
 </table></td></tr>
 </table>>]
   }
@@ -198,11 +211,11 @@ digraph {
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(verbosity : int = VERBOSITY_NORMAL, decorated : bool = «unknown», formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface = «unknown»)</td></tr>
     <tr><td align="left">+ section() : Symfony\\Component\\Console\\Output\\ConsoleSectionOutput</td></tr>
-    <tr><td align="left">+ setDecorated(decorated : bool)</td></tr>
-    <tr><td align="left">+ setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface)</td></tr>
-    <tr><td align="left">+ setVerbosity(level : int)</td></tr>
+    <tr><td align="left">+ setDecorated(decorated : bool) : void</td></tr>
+    <tr><td align="left">+ setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface) : void</td></tr>
+    <tr><td align="left">+ setVerbosity(level : int) : void</td></tr>
     <tr><td align="left">+ getErrorOutput() : Symfony\\Component\\Console\\Output\\OutputInterface</td></tr>
-    <tr><td align="left">+ setErrorOutput(error : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
+    <tr><td align="left">+ setErrorOutput(error : Symfony\\Component\\Console\\Output\\OutputInterface) : void</td></tr>
 </table></td></tr>
 </table>>]
     "Symfony\\Component\\Console\\Output\\StreamOutput" [shape="none" label=<
@@ -218,6 +231,7 @@ digraph {
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>Output</b></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» VERBOSITY_SILENT : int = 8 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</td></tr>
@@ -230,24 +244,26 @@ digraph {
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(verbosity : int = VERBOSITY_NORMAL, decorated : bool = false, formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface = «unknown»)</td></tr>
-    <tr><td align="left">+ setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface)</td></tr>
+    <tr><td align="left">+ setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface) : void</td></tr>
     <tr><td align="left">+ getFormatter() : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface</td></tr>
-    <tr><td align="left">+ setDecorated(decorated : bool)</td></tr>
+    <tr><td align="left">+ setDecorated(decorated : bool) : void</td></tr>
     <tr><td align="left">+ isDecorated() : bool</td></tr>
-    <tr><td align="left">+ setVerbosity(level : int)</td></tr>
+    <tr><td align="left">+ setVerbosity(level : int) : void</td></tr>
     <tr><td align="left">+ getVerbosity() : int</td></tr>
+    <tr><td align="left">+ isSilent() : bool</td></tr>
     <tr><td align="left">+ isQuiet() : bool</td></tr>
     <tr><td align="left">+ isVerbose() : bool</td></tr>
     <tr><td align="left">+ isVeryVerbose() : bool</td></tr>
     <tr><td align="left">+ isDebug() : bool</td></tr>
-    <tr><td align="left">+ writeln(messages, options : int = OUTPUT_NORMAL)</td></tr>
-    <tr><td align="left">+ write(messages, newline : bool = false, options : int = OUTPUT_NORMAL)</td></tr>
+    <tr><td align="left">+ writeln(messages, options : int = OUTPUT_NORMAL) : void</td></tr>
+    <tr><td align="left">+ write(messages, newline : bool = false, options : int = OUTPUT_NORMAL) : void</td></tr>
 </table></td></tr>
 </table>>]
     "Symfony\\Component\\Console\\Output\\OutputInterface" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>OutputInterface</b></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» VERBOSITY_SILENT : int = 8 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</td></tr>
@@ -259,17 +275,17 @@ digraph {
 </table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ «abstract» write(messages, newline : bool = false, options : int = 0)</td></tr>
-    <tr><td align="left">+ «abstract» writeln(messages, options : int = 0)</td></tr>
-    <tr><td align="left">+ «abstract» setVerbosity(level : int)</td></tr>
+    <tr><td align="left">+ «abstract» write(messages, newline : bool = false, options : int = 0) : void</td></tr>
+    <tr><td align="left">+ «abstract» writeln(messages, options : int = 0) : void</td></tr>
+    <tr><td align="left">+ «abstract» setVerbosity(level : int) : void</td></tr>
     <tr><td align="left">+ «abstract» getVerbosity() : int</td></tr>
     <tr><td align="left">+ «abstract» isQuiet() : bool</td></tr>
     <tr><td align="left">+ «abstract» isVerbose() : bool</td></tr>
     <tr><td align="left">+ «abstract» isVeryVerbose() : bool</td></tr>
     <tr><td align="left">+ «abstract» isDebug() : bool</td></tr>
-    <tr><td align="left">+ «abstract» setDecorated(decorated : bool)</td></tr>
+    <tr><td align="left">+ «abstract» setDecorated(decorated : bool) : void</td></tr>
     <tr><td align="left">+ «abstract» isDecorated() : bool</td></tr>
-    <tr><td align="left">+ «abstract» setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface)</td></tr>
+    <tr><td align="left">+ «abstract» setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface) : void</td></tr>
     <tr><td align="left">+ «abstract» getFormatter() : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface</td></tr>
 </table></td></tr>
 </table>>]
@@ -277,6 +293,7 @@ digraph {
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ConsoleOutputInterface</b></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» VERBOSITY_SILENT : int = 8 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</td></tr>
@@ -289,7 +306,7 @@ digraph {
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ «abstract» getErrorOutput() : Symfony\\Component\\Console\\Output\\OutputInterface</td></tr>
-    <tr><td align="left">+ «abstract» setErrorOutput(error : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
+    <tr><td align="left">+ «abstract» setErrorOutput(error : Symfony\\Component\\Console\\Output\\OutputInterface) : void</td></tr>
     <tr><td align="left">+ «abstract» section() : Symfony\\Component\\Console\\Output\\ConsoleSectionOutput</td></tr>
 </table></td></tr>
 </table>>]
@@ -359,6 +376,7 @@ digraph {
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>StyleInterface</b></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» VERBOSITY_SILENT : int = 8 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</td></tr>
@@ -385,37 +403,39 @@ digraph {
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(name : string = 'UNKNOWN', version : string = 'UNKNOWN')</td></tr>
     <tr><td align="left">+ setDispatcher(dispatcher : Symfony\\Contracts\\EventDispatcher\\EventDispatcherInterface) : void</td></tr>
-    <tr><td align="left">+ setCommandLoader(commandLoader : Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface)</td></tr>
+    <tr><td align="left">+ setCommandLoader(commandLoader : Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface) : void</td></tr>
     <tr><td align="left">+ getSignalRegistry() : Symfony\\Component\\Console\\SignalRegistry\\SignalRegistry</td></tr>
-    <tr><td align="left">+ setSignalsToDispatchEvent(signalsToDispatchEvent : int = «unknown»)</td></tr>
+    <tr><td align="left">+ setSignalsToDispatchEvent(signalsToDispatchEvent : int = «unknown») : void</td></tr>
+    <tr><td align="left">+ setAlarmInterval(seconds : int) : void</td></tr>
+    <tr><td align="left">+ getAlarmInterval() : ?int</td></tr>
     <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface = «unknown», output : Symfony\\Component\\Console\\Output\\OutputInterface = «unknown») : int</td></tr>
-    <tr><td align="left">+ doRun(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
-    <tr><td align="left">+ reset()</td></tr>
-    <tr><td align="left">+ setHelperSet(helperSet : Symfony\\Component\\Console\\Helper\\HelperSet)</td></tr>
+    <tr><td align="left">+ doRun(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface) : int</td></tr>
+    <tr><td align="left">+ reset() : void</td></tr>
+    <tr><td align="left">+ setHelperSet(helperSet : Symfony\\Component\\Console\\Helper\\HelperSet) : void</td></tr>
     <tr><td align="left">+ getHelperSet() : Symfony\\Component\\Console\\Helper\\HelperSet</td></tr>
-    <tr><td align="left">+ setDefinition(definition : Symfony\\Component\\Console\\Input\\InputDefinition)</td></tr>
+    <tr><td align="left">+ setDefinition(definition : Symfony\\Component\\Console\\Input\\InputDefinition) : void</td></tr>
     <tr><td align="left">+ getDefinition() : Symfony\\Component\\Console\\Input\\InputDefinition</td></tr>
     <tr><td align="left">+ complete(input : Symfony\\Component\\Console\\Completion\\CompletionInput, suggestions : Symfony\\Component\\Console\\Completion\\CompletionSuggestions) : void</td></tr>
     <tr><td align="left">+ getHelp() : string</td></tr>
     <tr><td align="left">+ areExceptionsCaught() : bool</td></tr>
-    <tr><td align="left">+ setCatchExceptions(boolean : bool)</td></tr>
+    <tr><td align="left">+ setCatchExceptions(boolean : bool) : void</td></tr>
     <tr><td align="left">+ setCatchErrors(catchErrors : bool = true) : void</td></tr>
     <tr><td align="left">+ isAutoExitEnabled() : bool</td></tr>
-    <tr><td align="left">+ setAutoExit(boolean : bool)</td></tr>
+    <tr><td align="left">+ setAutoExit(boolean : bool) : void</td></tr>
     <tr><td align="left">+ getName() : string</td></tr>
-    <tr><td align="left">+ setName(name : string)</td></tr>
+    <tr><td align="left">+ setName(name : string) : void</td></tr>
     <tr><td align="left">+ getVersion() : string</td></tr>
-    <tr><td align="left">+ setVersion(version : string)</td></tr>
-    <tr><td align="left">+ getLongVersion()</td></tr>
+    <tr><td align="left">+ setVersion(version : string) : void</td></tr>
+    <tr><td align="left">+ getLongVersion() : string</td></tr>
     <tr><td align="left">+ register(name : string) : Symfony\\Component\\Console\\Command\\Command</td></tr>
-    <tr><td align="left">+ addCommands(commands : array)</td></tr>
-    <tr><td align="left">+ add(command : Symfony\\Component\\Console\\Command\\Command)</td></tr>
-    <tr><td align="left">+ get(name : string)</td></tr>
+    <tr><td align="left">+ addCommands(commands : array) : void</td></tr>
+    <tr><td align="left">+ add(command : Symfony\\Component\\Console\\Command\\Command) : ?Symfony\\Component\\Console\\Command\\Command</td></tr>
+    <tr><td align="left">+ get(name : string) : Symfony\\Component\\Console\\Command\\Command</td></tr>
     <tr><td align="left">+ has(name : string) : bool</td></tr>
     <tr><td align="left">+ getNamespaces() : array</td></tr>
     <tr><td align="left">+ findNamespace(namespace : string) : string</td></tr>
-    <tr><td align="left">+ find(name : string)</td></tr>
-    <tr><td align="left">+ all(namespace : string = «unknown»)</td></tr>
+    <tr><td align="left">+ find(name : string) : Symfony\\Component\\Console\\Command\\Command</td></tr>
+    <tr><td align="left">+ all(namespace : string = «unknown») : array</td></tr>
     <tr><td align="left">+ «static» getAbbreviations(names : array) : array</td></tr>
     <tr><td align="left">+ renderThrowable(e : Throwable, output : Symfony\\Component\\Console\\Output\\OutputInterface) : void</td></tr>
     <tr><td align="left">+ extractNamespace(name : string, limit : int = «unknown») : string</td></tr>
@@ -470,42 +490,45 @@ digraph {
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
-    <tr><td align="left">+ block(messages, type : string = «unknown», style : string = «unknown», prefix : string = '\ ', padding : bool = false, escape : bool = true)</td></tr>
-    <tr><td align="left">+ title(message : string)</td></tr>
-    <tr><td align="left">+ section(message : string)</td></tr>
-    <tr><td align="left">+ listing(elements : array)</td></tr>
-    <tr><td align="left">+ text(message)</td></tr>
-    <tr><td align="left">+ comment(message)</td></tr>
-    <tr><td align="left">+ success(message)</td></tr>
-    <tr><td align="left">+ error(message)</td></tr>
-    <tr><td align="left">+ warning(message)</td></tr>
-    <tr><td align="left">+ note(message)</td></tr>
-    <tr><td align="left">+ info(message)</td></tr>
-    <tr><td align="left">+ caution(message)</td></tr>
-    <tr><td align="left">+ table(headers : array, rows : array)</td></tr>
-    <tr><td align="left">+ horizontalTable(headers : array, rows : array)</td></tr>
-    <tr><td align="left">+ definitionList(list = «unknown»)</td></tr>
+    <tr><td align="left">+ block(messages, type : string = «unknown», style : string = «unknown», prefix : string = '\ ', padding : bool = false, escape : bool = true) : void</td></tr>
+    <tr><td align="left">+ title(message : string) : void</td></tr>
+    <tr><td align="left">+ section(message : string) : void</td></tr>
+    <tr><td align="left">+ listing(elements : array) : void</td></tr>
+    <tr><td align="left">+ text(message) : void</td></tr>
+    <tr><td align="left">+ comment(message) : void</td></tr>
+    <tr><td align="left">+ success(message) : void</td></tr>
+    <tr><td align="left">+ error(message) : void</td></tr>
+    <tr><td align="left">+ warning(message) : void</td></tr>
+    <tr><td align="left">+ note(message) : void</td></tr>
+    <tr><td align="left">+ info(message) : void</td></tr>
+    <tr><td align="left">+ caution(message) : void</td></tr>
+    <tr><td align="left">+ table(headers : array, rows : array) : void</td></tr>
+    <tr><td align="left">+ horizontalTable(headers : array, rows : array) : void</td></tr>
+    <tr><td align="left">+ definitionList(list = «unknown») : void</td></tr>
     <tr><td align="left">+ ask(question : string, default : string = «unknown», validator : callable = «unknown») : ?mixed</td></tr>
     <tr><td align="left">+ askHidden(question : string, validator : callable = «unknown») : ?mixed</td></tr>
     <tr><td align="left">+ confirm(question : string, default : bool = true) : bool</td></tr>
     <tr><td align="left">+ choice(question : string, choices : array, default : mixed = «unknown», multiSelect : bool = false) : ?mixed</td></tr>
-    <tr><td align="left">+ progressStart(max : int = 0)</td></tr>
-    <tr><td align="left">+ progressAdvance(step : int = 1)</td></tr>
-    <tr><td align="left">+ progressFinish()</td></tr>
+    <tr><td align="left">+ progressStart(max : int = 0) : void</td></tr>
+    <tr><td align="left">+ progressAdvance(step : int = 1) : void</td></tr>
+    <tr><td align="left">+ progressFinish() : void</td></tr>
     <tr><td align="left">+ createProgressBar(max : int = 0) : Symfony\\Component\\Console\\Helper\\ProgressBar</td></tr>
     <tr><td align="left">+ progressIterate(iterable : iterable, max : int = «unknown») : iterable</td></tr>
     <tr><td align="left">+ askQuestion(question : Symfony\\Component\\Console\\Question\\Question) : ?mixed</td></tr>
-    <tr><td align="left">+ writeln(messages, type : int = OUTPUT_NORMAL)</td></tr>
-    <tr><td align="left">+ write(messages, newline : bool = false, type : int = OUTPUT_NORMAL)</td></tr>
-    <tr><td align="left">+ newLine(count : int = 1)</td></tr>
+    <tr><td align="left">+ writeln(messages, type : int = OUTPUT_NORMAL) : void</td></tr>
+    <tr><td align="left">+ write(messages, newline : bool = false, type : int = OUTPUT_NORMAL) : void</td></tr>
+    <tr><td align="left">+ newLine(count : int = 1) : void</td></tr>
     <tr><td align="left">+ getErrorStyle() : self</td></tr>
     <tr><td align="left">+ createTable() : Symfony\\Component\\Console\\Helper\\Table</td></tr>
+    <tr><td align="left">+ tree(nodes : iterable, root : string = '') : void</td></tr>
+    <tr><td align="left">+ createTree(nodes : iterable, root : string = '') : Symfony\\Component\\Console\\Helper\\TreeHelper</td></tr>
 </table></td></tr>
 </table>>]
     "Symfony\\Component\\Console\\Style\\OutputStyle" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>OutputStyle</b></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» VERBOSITY_SILENT : int = 8 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_QUIET : int = 16 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_NORMAL : int = 32 {readOnly}</td></tr>
     <tr><td align="left">+ «static» VERBOSITY_VERBOSE : int = 64 {readOnly}</td></tr>
@@ -518,16 +541,17 @@ digraph {
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
-    <tr><td align="left">+ newLine(count : int = 1)</td></tr>
+    <tr><td align="left">+ newLine(count : int = 1) : void</td></tr>
     <tr><td align="left">+ createProgressBar(max : int = 0) : Symfony\\Component\\Console\\Helper\\ProgressBar</td></tr>
-    <tr><td align="left">+ write(messages, newline : bool = false, type : int = OUTPUT_NORMAL)</td></tr>
-    <tr><td align="left">+ writeln(messages, type : int = OUTPUT_NORMAL)</td></tr>
-    <tr><td align="left">+ setVerbosity(level : int)</td></tr>
+    <tr><td align="left">+ write(messages, newline : bool = false, type : int = OUTPUT_NORMAL) : void</td></tr>
+    <tr><td align="left">+ writeln(messages, type : int = OUTPUT_NORMAL) : void</td></tr>
+    <tr><td align="left">+ setVerbosity(level : int) : void</td></tr>
     <tr><td align="left">+ getVerbosity() : int</td></tr>
-    <tr><td align="left">+ setDecorated(decorated : bool)</td></tr>
+    <tr><td align="left">+ setDecorated(decorated : bool) : void</td></tr>
     <tr><td align="left">+ isDecorated() : bool</td></tr>
-    <tr><td align="left">+ setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface)</td></tr>
+    <tr><td align="left">+ setFormatter(formatter : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface) : void</td></tr>
     <tr><td align="left">+ getFormatter() : Symfony\\Component\\Console\\Formatter\\OutputFormatterInterface</td></tr>
+    <tr><td align="left">+ isSilent() : bool</td></tr>
     <tr><td align="left">+ isQuiet() : bool</td></tr>
     <tr><td align="left">+ isVerbose() : bool</td></tr>
     <tr><td align="left">+ isVeryVerbose() : bool</td></tr>
@@ -539,36 +563,37 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>StyleInterface</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ «abstract» title(message : string)</td></tr>
-    <tr><td align="left">+ «abstract» section(message : string)</td></tr>
-    <tr><td align="left">+ «abstract» listing(elements : array)</td></tr>
-    <tr><td align="left">+ «abstract» text(message)</td></tr>
-    <tr><td align="left">+ «abstract» success(message)</td></tr>
-    <tr><td align="left">+ «abstract» error(message)</td></tr>
-    <tr><td align="left">+ «abstract» warning(message)</td></tr>
-    <tr><td align="left">+ «abstract» note(message)</td></tr>
-    <tr><td align="left">+ «abstract» caution(message)</td></tr>
-    <tr><td align="left">+ «abstract» table(headers : array, rows : array)</td></tr>
+    <tr><td align="left">+ «abstract» title(message : string) : void</td></tr>
+    <tr><td align="left">+ «abstract» section(message : string) : void</td></tr>
+    <tr><td align="left">+ «abstract» listing(elements : array) : void</td></tr>
+    <tr><td align="left">+ «abstract» text(message) : void</td></tr>
+    <tr><td align="left">+ «abstract» success(message) : void</td></tr>
+    <tr><td align="left">+ «abstract» error(message) : void</td></tr>
+    <tr><td align="left">+ «abstract» warning(message) : void</td></tr>
+    <tr><td align="left">+ «abstract» note(message) : void</td></tr>
+    <tr><td align="left">+ «abstract» caution(message) : void</td></tr>
+    <tr><td align="left">+ «abstract» table(headers : array, rows : array) : void</td></tr>
     <tr><td align="left">+ «abstract» ask(question : string, default : string = «unknown», validator : callable = «unknown») : ?mixed</td></tr>
     <tr><td align="left">+ «abstract» askHidden(question : string, validator : callable = «unknown») : ?mixed</td></tr>
     <tr><td align="left">+ «abstract» confirm(question : string, default : bool = true) : bool</td></tr>
     <tr><td align="left">+ «abstract» choice(question : string, choices : array, default : mixed = «unknown») : ?mixed</td></tr>
-    <tr><td align="left">+ «abstract» newLine(count : int = 1)</td></tr>
-    <tr><td align="left">+ «abstract» progressStart(max : int = 0)</td></tr>
-    <tr><td align="left">+ «abstract» progressAdvance(step : int = 1)</td></tr>
-    <tr><td align="left">+ «abstract» progressFinish()</td></tr>
+    <tr><td align="left">+ «abstract» newLine(count : int = 1) : void</td></tr>
+    <tr><td align="left">+ «abstract» progressStart(max : int = 0) : void</td></tr>
+    <tr><td align="left">+ «abstract» progressAdvance(step : int = 1) : void</td></tr>
+    <tr><td align="left">+ «abstract» progressFinish() : void</td></tr>
 </table></td></tr>
 </table>>]
   }
+  "Symfony\\Component\\Console\\Command\\Command" -> "Symfony\\Component\\Console\\Command\\SignalableCommandInterface" [arrowhead="empty" style="dashed"]
   "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AbstractCommand" -> "Symfony\\Component\\Console\\Command\\Command" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AnalyserCommand" -> "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AbstractCommand" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AnalyserCommand" -> "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\CommandInterface" [arrowhead="empty" style="dashed"]
   "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\DiagnoseCommand" -> "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\AbstractCommand" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\DiagnoseCommand" -> "Bartlett\\CompatInfo\\Presentation\\Console\\Command\\CommandInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Console\\Input\\InputInterface" -> "Stringable" [arrowhead="empty" style="dashed"]
   "Symfony\\Component\\Console\\Input\\StreamableInputInterface" -> "Symfony\\Component\\Console\\Input\\InputInterface" [arrowhead="empty" style="dashed"]
   "Symfony\\Component\\Console\\Input\\Input" -> "Symfony\\Component\\Console\\Input\\StreamableInputInterface" [arrowhead="empty" style="dashed"]
   "Symfony\\Component\\Console\\Input\\ArgvInput" -> "Symfony\\Component\\Console\\Input\\Input" [arrowhead="empty" style="filled"]
-  "Symfony\\Component\\Console\\Input\\ArgvInput" -> "Stringable" [arrowhead="empty" style="dashed"]
   "Bartlett\\CompatInfo\\Presentation\\Console\\Input\\Input" -> "Symfony\\Component\\Console\\Input\\ArgvInput" [arrowhead="empty" style="filled"]
   "Symfony\\Component\\Console\\Output\\Output" -> "Symfony\\Component\\Console\\Output\\OutputInterface" [arrowhead="empty" style="dashed"]
   "Symfony\\Component\\Console\\Output\\StreamOutput" -> "Symfony\\Component\\Console\\Output\\Output" [arrowhead="empty" style="filled"]

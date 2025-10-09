@@ -8,6 +8,13 @@ digraph {
     "Bartlett\\CompatInfo\\Application\\Analyser\\AbstractSniffAnalyser" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>AbstractSniffAnalyser</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CHILDREN : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» STOP_TRAVERSAL : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REMOVE_NODE : int = 3 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CURRENT_AND_CHILDREN : int = 4 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REPLACE_WITH_NULL : int = 5 {readOnly}</td></tr>
+</table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(profiler : Bartlett\\CompatInfo\\Application\\Profiler\\ProfilerInterface, dispatcher : Symfony\\Component\\EventDispatcher\\EventDispatcherInterface, sniffs : Bartlett\\CompatInfo\\Application\\Collection\\SniffCollectionInterface, attributeParentKey : string, attributeKey : string)</td></tr>
@@ -24,6 +31,13 @@ digraph {
     "Bartlett\\CompatInfo\\Application\\Analyser\\SniffAnalyserInterface" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>SniffAnalyserInterface</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CHILDREN : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» STOP_TRAVERSAL : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REMOVE_NODE : int = 3 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CURRENT_AND_CHILDREN : int = 4 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REPLACE_WITH_NULL : int = 5 {readOnly}</td></tr>
+</table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ «abstract» getProfiler() : Bartlett\\CompatInfo\\Application\\Profiler\\ProfilerInterface</td></tr>
@@ -85,6 +99,13 @@ digraph {
     "PhpParser\\NodeVisitor" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>NodeVisitor</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CHILDREN : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» STOP_TRAVERSAL : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REMOVE_NODE : int = 3 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CURRENT_AND_CHILDREN : int = 4 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REPLACE_WITH_NULL : int = 5 {readOnly}</td></tr>
+</table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ «abstract» beforeTraverse(nodes : array)</td></tr>

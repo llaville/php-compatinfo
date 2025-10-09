@@ -55,6 +55,13 @@ digraph {
     "Bartlett\\CompatInfo\\Application\\Sniffs\\SniffInterface" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>SniffInterface</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CHILDREN : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» STOP_TRAVERSAL : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REMOVE_NODE : int = 3 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CURRENT_AND_CHILDREN : int = 4 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REPLACE_WITH_NULL : int = 5 {readOnly}</td></tr>
+</table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ «abstract» setUpBeforeSniff() : void</td></tr>
@@ -88,7 +95,14 @@ digraph {
     label = "PhpParser"
     "PhpParser\\NodeVisitorAbstract" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
-    <tr><td bgcolor="#eeeeee"><b><br/>NodeVisitorAbstract</b></td></tr>
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>NodeVisitorAbstract</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CHILDREN : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» STOP_TRAVERSAL : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REMOVE_NODE : int = 3 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CURRENT_AND_CHILDREN : int = 4 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REPLACE_WITH_NULL : int = 5 {readOnly}</td></tr>
+</table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ beforeTraverse(nodes : array)</td></tr>
@@ -100,6 +114,13 @@ digraph {
     "PhpParser\\NodeVisitor" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>NodeVisitor</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CHILDREN : int = 1 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» STOP_TRAVERSAL : int = 2 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REMOVE_NODE : int = 3 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» DONT_TRAVERSE_CURRENT_AND_CHILDREN : int = 4 {readOnly}</td></tr>
+    <tr><td align="left">+ «static» REPLACE_WITH_NULL : int = 5 {readOnly}</td></tr>
+</table></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ «abstract» beforeTraverse(nodes : array)</td></tr>

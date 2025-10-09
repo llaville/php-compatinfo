@@ -257,7 +257,7 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ErrorHandler</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ «abstract» handleError(error : PhpParser\\Error)</td></tr>
+    <tr><td align="left">+ «abstract» handleError(error : PhpParser\\Error) : void</td></tr>
 </table></td></tr>
 </table>>]
   }
@@ -269,7 +269,7 @@ digraph {
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ normalize(object, format = «unknown», context : array = []) : ?array</td></tr>
-    <tr><td align="left">+ supportsNormalization(data : mixed, format : string = «unknown») : bool</td></tr>
+    <tr><td align="left">+ supportsNormalization(data : mixed, format : string = «unknown», context : array = []) : bool</td></tr>
     <tr><td align="left">+ getSupportedTypes(format : string) : array</td></tr>
 </table></td></tr>
 </table>>]
@@ -281,8 +281,9 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>NormalizerInterface</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ «abstract» normalize(object : mixed, format : string = «unknown», context : array = [])</td></tr>
-    <tr><td align="left">+ «abstract» supportsNormalization(data : mixed, format : string = «unknown»)</td></tr>
+    <tr><td align="left">+ «abstract» normalize(data : mixed, format : string = «unknown», context : array = [])</td></tr>
+    <tr><td align="left">+ «abstract» supportsNormalization(data : mixed, format : string = «unknown», context : array = []) : bool</td></tr>
+    <tr><td align="left">+ «abstract» getSupportedTypes(format : string) : array</td></tr>
 </table></td></tr>
 </table>>]
   }

@@ -27,10 +27,10 @@ digraph {
     <tr><td align="left">+ getListeners(eventName : string = «unknown») : array</td></tr>
     <tr><td align="left">+ getListenerPriority(eventName : string, listener) : ?int</td></tr>
     <tr><td align="left">+ hasListeners(eventName : string = «unknown») : bool</td></tr>
-    <tr><td align="left">+ addListener(eventName : string, listener, priority : int = 0)</td></tr>
-    <tr><td align="left">+ removeListener(eventName : string, listener)</td></tr>
-    <tr><td align="left">+ addSubscriber(subscriber : Symfony\\Component\\EventDispatcher\\EventSubscriberInterface)</td></tr>
-    <tr><td align="left">+ removeSubscriber(subscriber : Symfony\\Component\\EventDispatcher\\EventSubscriberInterface)</td></tr>
+    <tr><td align="left">+ addListener(eventName : string, listener, priority : int = 0) : void</td></tr>
+    <tr><td align="left">+ removeListener(eventName : string, listener) : void</td></tr>
+    <tr><td align="left">+ addSubscriber(subscriber : Symfony\\Component\\EventDispatcher\\EventSubscriberInterface) : void</td></tr>
+    <tr><td align="left">+ removeSubscriber(subscriber : Symfony\\Component\\EventDispatcher\\EventSubscriberInterface) : void</td></tr>
 </table></td></tr>
 </table>>]
     "Symfony\\Component\\EventDispatcher\\EventDispatcherInterface" [shape="none" label=<
@@ -38,10 +38,10 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>EventDispatcherInterface</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ «abstract» addListener(eventName : string, listener : callable, priority : int = 0)</td></tr>
-    <tr><td align="left">+ «abstract» addSubscriber(subscriber : Symfony\\Component\\EventDispatcher\\EventSubscriberInterface)</td></tr>
-    <tr><td align="left">+ «abstract» removeListener(eventName : string, listener : callable)</td></tr>
-    <tr><td align="left">+ «abstract» removeSubscriber(subscriber : Symfony\\Component\\EventDispatcher\\EventSubscriberInterface)</td></tr>
+    <tr><td align="left">+ «abstract» addListener(eventName : string, listener : callable, priority : int = 0) : void</td></tr>
+    <tr><td align="left">+ «abstract» addSubscriber(subscriber : Symfony\\Component\\EventDispatcher\\EventSubscriberInterface) : void</td></tr>
+    <tr><td align="left">+ «abstract» removeListener(eventName : string, listener : callable) : void</td></tr>
+    <tr><td align="left">+ «abstract» removeSubscriber(subscriber : Symfony\\Component\\EventDispatcher\\EventSubscriberInterface) : void</td></tr>
     <tr><td align="left">+ «abstract» getListeners(eventName : string = «unknown») : array</td></tr>
     <tr><td align="left">+ «abstract» getListenerPriority(eventName : string, listener : callable) : ?int</td></tr>
     <tr><td align="left">+ «abstract» hasListeners(eventName : string = «unknown») : bool</td></tr>
