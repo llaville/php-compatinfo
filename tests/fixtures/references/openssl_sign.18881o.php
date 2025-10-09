@@ -14,4 +14,4 @@ $details = openssl_pkey_get_details($new_key_pair);
 $public_key_pem = $details['key'];
 
 //create signature
-openssl_sign($data, $signature, $private_key_pem, OPENSSL_ALGO_SHA256);
+openssl_sign($data, $signature, $private_key_pem, OPENSSL_ALGO_SHA256, OPENSSL_PKCS1_PSS_PADDING);
