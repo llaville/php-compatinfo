@@ -64,9 +64,9 @@ Running on PHP greater or equal than 7.4 for parsing source code in a format PHP
 
 [Branch_72x-img]: https://img.shields.io/badge/branch-7.2-orange
 [Branch_72x]: https://github.com/llaville/php-compatinfo/tree/7.2
-[PHPVersion_72x-img]: https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/7.2.4
+[PHPVersion_72x-img]: https://img.shields.io/packagist/php-v/bartlett/php-compatinfo/7.2.5
 [PHPVersion_72x]: https://www.php.net/supported-versions.php
-[Packagist_72x-img]: https://img.shields.io/badge/packagist-v7.2.4-blue
+[Packagist_72x-img]: https://img.shields.io/badge/packagist-v7.2.5-blue
 [Packagist_72x]: https://packagist.org/packages/bartlett/php-compatinfo
 [License_72x-img]: https://img.shields.io/packagist/l/bartlett/php-compatinfo
 [License_72x]: https://github.com/llaville/php-compatinfo/blob/7.2/LICENSE
