@@ -32,6 +32,11 @@ interface ApplicationInterface
      */
     public function getName(): string;
 
+    /**
+     * Returns the long version of the application.
+     */
+    public function getLongVersion(): string;
+
     public function getInstalledVersion(bool $withRef = true, string $packageName = 'bartlett/php-compatinfo'): ?string;
 
     /**
