@@ -343,6 +343,7 @@ digraph {
     <tr><td align="left">+ «abstract» setContainer(container : Symfony\\Component\\DependencyInjection\\ContainerInterface = «unknown») : void</td></tr>
     <tr><td align="left">+ «abstract» setCommandLoader(commandLoader : Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface)</td></tr>
     <tr><td align="left">+ «abstract» getName() : string</td></tr>
+    <tr><td align="left">+ «abstract» getLongVersion() : string</td></tr>
     <tr><td align="left">+ «abstract» getInstalledVersion(withRef : bool = true, packageName : string = 'bartlett\/php\-compatinfo') : ?string</td></tr>
     <tr><td align="left">+ «abstract» getApplicationParameters() : array</td></tr>
     <tr><td align="left">+ «abstract» getKernel() : object</td></tr>
