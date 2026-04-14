@@ -9,6 +9,7 @@ namespace Bartlett\CompatInfo\Presentation\Console;
 
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Helper\Table;
+use Symfony\Component\Console\Helper\TableSeparator;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
@@ -37,7 +38,9 @@ final class Style extends SymfonyStyle implements StyleInterface
     }
 
     /**
-     * @inheritDoc
+     * @param array<string> $headers
+     * @param array<string>|array<TableSeparator> $rows
+     * @param string $style default to 'compact' rather than 'symfony-style-guide'
      */
     public function table(array $headers, array $rows, string $style = 'compact'): void
     {
