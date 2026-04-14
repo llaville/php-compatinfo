@@ -3,9 +3,22 @@
         "enabled": true,
         "actions": [
             {
-                "action": "{$ENV|value-of:VENDOR_BIN_DIR|default:vendor/bin/}phpcs --standard=.github/linters/.phpcs.xml.dist --warning-severity=0 --colors {$STAGED_FILES|of-type:php|separated-by: }",
+                "action": [
+                    "{$ENV|value-of:XDG_BIN_HOME}phpcs",
+                    "--standard={$ENV|value-of:\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.config-file|cache:false}",
+                    "--warning-severity=0",
+                    "--colors",
+                    "{$STAGED_FILES|of-type:php|separated-by: }"
+                ],
                 "config": {
                     "label": "Checks Coding Standard (with PHP_CodeSniffer)"
+                },
+                "options": {
+                    "config-file": "{$ENV|value-of:XDG_CONFIG_HOME}/.phpcs.xml.dist",
+                    "package-require": [
+                        "squizlabs/php_codesniffer",
+                        "^3.3 || ^4.0"
+                    ]
                 }
             }
         ]
