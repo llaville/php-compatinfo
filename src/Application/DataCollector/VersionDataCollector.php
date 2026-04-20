@@ -124,7 +124,7 @@ final class VersionDataCollector extends DataCollector
                 foreach ($versions['parents'] ?? [] as $parent) {
                     $type = key($parent);
                     $id = reset($parent);
-                    if (isset($data[$type][$id]) || array_key_exists($id, $data[$type])) {
+                    if (isset($data[$type]) && (isset($data[$type][$id]) || array_key_exists($id, $data[$type]))) {
                         $this->updateElementVersion($data[$type][$id], $versions);
                     }
                 }
