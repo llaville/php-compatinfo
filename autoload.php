@@ -20,6 +20,10 @@ use function spl_autoload_register;
 use function sprintf;
 use const DIRECTORY_SEPARATOR;
 
+foreach (glob(__DIR__ . '/vendor-bin/*/vendor/autoload.php') as $autoloadFile) {
+    require $autoloadFile;
+}
+
 if (class_exists(__NAMESPACE__ . '\Autoload', false) === false) {
     class Autoload
     {
@@ -73,8 +77,4 @@ if (class_exists(__NAMESPACE__ . '\Autoload', false) === false) {
     }
 
     spl_autoload_register(__NAMESPACE__ . '\Autoload::load', true, true);
-}
-
-foreach (glob(__DIR__ . '/vendor-bin/*/vendor/autoload.php') as $autoloadFile) {
-    require $autoloadFile;
 }
