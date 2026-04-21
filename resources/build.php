@@ -18,8 +18,13 @@ use Clue\GraphComposer\Command\Export;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 
-require_once dirname(__DIR__) . '/vendor/autoload.php';
-require_once dirname(__DIR__) . '/vendor-bin/umlwriter/vendor/autoload.php';
+require_once dirname(__DIR__) . '/autoload.php';
+
+$umlWriter = dirname(__DIR__) . '/vendor-bin/umlwriter/vendor/autoload.php';
+if (!file_exists($umlWriter) || !class_exists(GeneratorFactory::class)) {
+    echo sprintf("[warning] Unable to produce UML graph: %s, package 'bartlett/umlwriter' 4.3 or greater is not installed", $_SERVER['argv'][1] ?? ''), PHP_EOL;
+    exit(1);
+}
 
 $script = $_SERVER['argv'][1] ?? null;
 $folder = $_SERVER['argv'][2] ?? sys_get_temp_dir();
@@ -30,7 +35,6 @@ if ('graph-composer' == $script) {
     if (!file_exists($graphComposer)) {
         exit(1);
     }
-    require_once $graphComposer;
 
     $export = new Export('export');
     $target = $folder . '/graph-composer.svg';
@@ -41,7 +45,7 @@ if ('graph-composer' == $script) {
         '--orientation' => 'LR',
     ]);
     $status = $export->run($input, new NullOutput());
-    echo ($status != 0 ? 'no' : $target) . ' file generated' . PHP_EOL;
+    echo "[info] " . ($status != 0 ? 'no' : $target) . ' file generated' . PHP_EOL;
     exit($status);
 }
 
@@ -79,4 +83,4 @@ file_put_contents($output, $generator->createScript($graph));
 $output = rtrim($folder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $script . '.graphviz.' . $format;
 $cmdFormat = '%E -T%F %t -o ' . $output;
 $target = $generator->createImageFile($graph, $cmdFormat);
-echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
+echo "[info] " . (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
