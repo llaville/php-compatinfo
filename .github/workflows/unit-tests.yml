@@ -8,7 +8,7 @@ on:
             operating-system:
                 description: "OS name and version runtime"
                 required: false
-                default: "ubuntu-22.04"
+                default: "ubuntu-24.04"
                 type: string
             composer-options:
                 description: "Composer options for ramsey/composer-install GitHub Action"
@@ -44,14 +44,14 @@ jobs:
         steps:
             -   # https://github.com/actions/checkout
                 name: Checkout
-                uses: actions/checkout@v4.3.0
+                uses: actions/checkout@v6.0.2
                 with:
                     # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
                     persist-credentials: false
 
             -   # https://github.com/shivammathur/setup-php
                 name: Setup PHP runtime
-                uses: shivammathur/setup-php@2.35.5
+                uses: shivammathur/setup-php@2.37.0
                 with:
                     php-version: ${{ matrix.php }}
                     tools: ${{ matrix.tools }}
@@ -59,7 +59,7 @@ jobs:
 
             -   # https://github.com/ramsey/composer-install
                 name: Install Composer dependencies
-                uses: ramsey/composer-install@3.1.1
+                uses: ramsey/composer-install@4.0.0
                 with:
                     dependency-versions: "highest"
                     composer-options: ${{ inputs.composer-options }}
