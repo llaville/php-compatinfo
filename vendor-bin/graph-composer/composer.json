@@ -7,6 +7,8 @@
     ],
     "minimum-stability": "stable",
     "require-dev": {
-        "clue/graph-composer": "v2.x-dev"
+        "clue/graph-composer": "v2.x-dev",
+        "graphp/graph": "1.x-dev#0adb04d as 1.0.0",
+        "graphp/graphviz": "1.x-dev#686f747 as 1.0.0"
     }
 }
