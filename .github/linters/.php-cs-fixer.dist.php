@@ -1,7 +1,12 @@
 <?php
 
+$projectDir = dirname(__DIR__, 2);
+
 $finder = (new PhpCsFixer\Finder())
-    ->in('.')
+    ->in([
+        $projectDir . '/resources',
+        $projectDir . '/src',
+    ])
 ;
 
 return (new PhpCsFixer\Config())
