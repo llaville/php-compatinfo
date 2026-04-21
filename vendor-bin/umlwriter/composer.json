@@ -1,6 +1,6 @@
 {
     "require-dev": {
-        "bartlett/umlwriter": "^4.0"
+        "bartlett/umlwriter": "^4.3"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
