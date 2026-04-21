@@ -18,6 +18,7 @@ use function array_replace;
 use function explode;
 use function implode;
 use function in_array;
+use function is_array;
 
 /**
  * @author Laurent Laville
@@ -124,7 +125,7 @@ final class VersionDataCollector extends DataCollector
                 foreach ($versions['parents'] ?? [] as $parent) {
                     $type = key($parent);
                     $id = reset($parent);
-                    if (isset($data[$type][$id]) || array_key_exists($id, $data[$type])) {
+                    if (is_array($data[$type]) && array_key_exists($id, $data[$type])) {
                         $this->updateElementVersion($data[$type][$id], $versions);
                     }
                 }
