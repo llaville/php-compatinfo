@@ -54,7 +54,7 @@ digraph {
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ «static» getDefaultName() : ?string</td></tr>
     <tr><td align="left">+ «static» getDefaultDescription() : ?string</td></tr>
-    <tr><td align="left">+ __construct(name : string = «unknown»)</td></tr>
+    <tr><td align="left">+ __construct(name : string = «unknown», code : callable = «unknown»)</td></tr>
     <tr><td align="left">+ ignoreValidationErrors() : void</td></tr>
     <tr><td align="left">+ setApplication(application : Symfony\\Component\\Console\\Application) : void</td></tr>
     <tr><td align="left">+ setHelperSet(helperSet : Symfony\\Component\\Console\\Helper\\HelperSet) : void</td></tr>
@@ -63,6 +63,7 @@ digraph {
     <tr><td align="left">+ isEnabled() : bool</td></tr>
     <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface) : int</td></tr>
     <tr><td align="left">+ complete(input : Symfony\\Component\\Console\\Completion\\CompletionInput, suggestions : Symfony\\Component\\Console\\Completion\\CompletionSuggestions) : void</td></tr>
+    <tr><td align="left">+ getCode() : ?callable</td></tr>
     <tr><td align="left">+ setCode(code : callable) : static</td></tr>
     <tr><td align="left">+ mergeApplicationDefinition(mergeArgs : bool = true) : void</td></tr>
     <tr><td align="left">+ setDefinition(definition) : static</td></tr>
@@ -431,6 +432,7 @@ digraph {
     <tr><td align="left">+ register(name : string) : Symfony\\Component\\Console\\Command\\Command</td></tr>
     <tr><td align="left">+ addCommands(commands : array) : void</td></tr>
     <tr><td align="left">+ add(command : Symfony\\Component\\Console\\Command\\Command) : ?Symfony\\Component\\Console\\Command\\Command</td></tr>
+    <tr><td align="left">+ addCommand(command) : ?Symfony\\Component\\Console\\Command\\Command</td></tr>
     <tr><td align="left">+ get(name : string) : Symfony\\Component\\Console\\Command\\Command</td></tr>
     <tr><td align="left">+ has(name : string) : bool</td></tr>
     <tr><td align="left">+ getNamespaces() : array</td></tr>

@@ -84,6 +84,7 @@ digraph {
     <tr><td align="left">+ offsetSet(offset : mixed, value : mixed)</td></tr>
     <tr><td align="left">+ offsetUnset(offset : mixed)</td></tr>
     <tr><td align="left">+ isInitialized()</td></tr>
+    <tr><td align="left">+ matching(criteria : Doctrine\\Common\\Collections\\Criteria)</td></tr>
 </table></td></tr>
 </table>>]
     "Doctrine\\Common\\Collections\\Collection" [shape="none" label=<
@@ -129,6 +130,14 @@ digraph {
     <tr><td align="left">+ «abstract» reduce(func : Closure, initial : mixed = «unknown»)</td></tr>
 </table></td></tr>
 </table>>]
+    "Doctrine\\Common\\Collections\\Selectable" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>Selectable</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» matching(criteria : Doctrine\\Common\\Collections\\Criteria)</td></tr>
+</table></td></tr>
+</table>>]
   }
   subgraph cluster_2 {
     label = 0
@@ -172,6 +181,7 @@ digraph {
   "Doctrine\\Common\\Collections\\Collection" -> "Doctrine\\Common\\Collections\\ReadableCollection" [arrowhead="empty" style="dashed"]
   "Doctrine\\Common\\Collections\\Collection" -> "ArrayAccess" [arrowhead="empty" style="dashed"]
   "Doctrine\\Common\\Collections\\AbstractLazyCollection" -> "Doctrine\\Common\\Collections\\Collection" [arrowhead="empty" style="dashed"]
+  "Doctrine\\Common\\Collections\\AbstractLazyCollection" -> "Doctrine\\Common\\Collections\\Selectable" [arrowhead="empty" style="dashed"]
   "Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollection" -> "Doctrine\\Common\\Collections\\AbstractLazyCollection" [arrowhead="empty" style="filled"]
   "Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollectionInterface" -> "Doctrine\\Common\\Collections\\Collection" [arrowhead="empty" style="dashed"]
   "Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollection" -> "Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollectionInterface" [arrowhead="empty" style="dashed"]
