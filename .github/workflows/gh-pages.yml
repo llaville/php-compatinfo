@@ -23,7 +23,7 @@ on:
             destination-dir:
                 description: "Path where to store documentation on gh-pages branch"
                 required: false
-                default: "7.2"
+                default: "7.3"
                 type: string
             force-orphan:
                 description: "Allows you to make your publish branch with only the latest commit"
