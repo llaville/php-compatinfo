@@ -18,7 +18,7 @@
                     "config-file": "./phpunit.xml.dist",
                     "package-require": [
                         "phpunit/phpunit",
-                        "^10.5 || ^11.5 || ^12.5 || ^13.0"
+                        "^11.5 || ^12.5 || ^13.0"
                     ]
                 }
             }

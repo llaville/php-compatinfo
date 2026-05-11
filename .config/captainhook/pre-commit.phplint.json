@@ -18,7 +18,7 @@
                     "config-file": "{$ENV|value-of:XDG_CONFIG_HOME}/.phplint.yml",
                     "package-require": [
                         "overtrue/phplint",
-                        "^9.6"
+                        "^9.7"
                     ]
                 }
             }
