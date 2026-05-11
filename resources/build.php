@@ -36,6 +36,12 @@ if ('graph-composer' == $script) {
         exit(1);
     }
 
+    /**
+     * Because my fork of `clue/graph-composer`
+     * still used `jms/composer-deps-analyzer` that don't have any version PHP 8.4+ compatible
+     */
+    error_reporting(E_ALL & ~E_DEPRECATED);
+
     $export = new Export('export');
     $target = $folder . '/graph-composer.svg';
     $input = new ArrayInput([
