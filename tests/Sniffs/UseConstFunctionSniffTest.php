@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Use function and use const
  *
@@ -29,9 +31,8 @@ final class UseConstFunctionSniffTest extends SniffTestCase
 
     /**
      * Feature test for "use const" syntax to import constant from namespace.
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testUseConstSyntax(): void
     {
         $dataSource = 'use_const.php';
@@ -59,9 +60,8 @@ final class UseConstFunctionSniffTest extends SniffTestCase
 
     /**
      * Feature test for "use function" syntax to import function from namespace.
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testUseFunctionSyntax(): void
     {
         $dataSource = 'use_function.php';

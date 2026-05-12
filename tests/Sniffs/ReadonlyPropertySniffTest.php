@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -36,9 +38,9 @@ final class ReadonlyPropertySniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/323
      *       Readonly Properties are detected as PHP 8.1
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testReadonlyProperties(): void
     {
         $dataSource = 'readonly_properties.php';
@@ -61,9 +63,9 @@ final class ReadonlyPropertySniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/374
      *       Constructor Readonly Properties are detected as PHP 8.1
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testConstructorReadonlyProperties(): void
     {
         $dataSource = 'constructor_readonly_properties.php';

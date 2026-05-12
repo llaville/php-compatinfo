@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -34,9 +36,9 @@ final class OctalNumberFormatSniffTest extends SniffTestCase
     /**
      * Feature test to detect Explicit Octal numeral notation
      *
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testExplicitOctalNotation(): void
     {
         $dataSource = 'explicit_octal_number_format.php';

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Unit tests for PHP_CompatInfo package, issues reported
  *
@@ -35,8 +37,8 @@ final class DependencyIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/100
      *       Reports "5.2.0 (min)" on DateTime::diff (which requires 5.3)
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH100(): void
     {
         $dataSource = 'gh100.php';
@@ -64,8 +66,8 @@ final class DependencyIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/165
      *       Find undeclared elements
-     * @group features
      */
+    #[Group('features')]
     public function testFeatureGH165(): void
     {
         $dataSource = 'gh165.php';
@@ -92,8 +94,8 @@ final class DependencyIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/194
      *       Static method calls don't properly adjust total requirements
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH194(): void
     {
         $dataSource = 'gh194.php';

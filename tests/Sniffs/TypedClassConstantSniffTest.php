@@ -7,6 +7,9 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\DataProvider;
+
 use Exception;
 
 /**
@@ -61,10 +64,10 @@ class TypedClassConstantSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compatinfo/issues/366
      *       Typed class constants are detected as PHP 8.3
      * @link https://github.com/php/php-src/commit/414f71a90254cc33896bb3ba953f979f743c198c
-     * @group features
-     * @dataProvider typedConstantsProvider
      * @throws Exception
      */
+    #[Group('features')]
+    #[DataProvider('typedConstantsProvider')]
     public function testTypedClassConstants(string $dataSource, array $expectedVersions): void
     {
         $metrics    = $this->executeAnalysis($dataSource);

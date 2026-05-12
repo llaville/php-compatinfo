@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Closures
  *
@@ -33,8 +35,8 @@ final class ClosureSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/229
      *       $this in closures not properly detected
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH229(): void
     {
         $dataSource = 'gh229.php';
@@ -57,8 +59,8 @@ final class ClosureSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/231
      *       Closures that work in PHP 5.3 are reported as requiring 5.4
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH231(): void
     {
         $dataSource = 'gh231.php';
@@ -78,9 +80,8 @@ final class ClosureSniffTest extends SniffTestCase
 
     /**
      * Feature test to detect self keyword in a closure
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testSelfKeyword(): void
     {
         $dataSource = 'self_parent_static_closure_oop.php';
@@ -100,9 +101,8 @@ final class ClosureSniffTest extends SniffTestCase
 
     /**
      * Feature test to detect static keyword in a closure
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testStaticKeyword(): void
     {
         $dataSource = 'self_parent_static_closure_oop.php';
@@ -122,9 +122,8 @@ final class ClosureSniffTest extends SniffTestCase
 
     /**
      * Feature test to detect parent keyword in a closure
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testParentKeyword(): void
     {
         $dataSource = 'self_parent_static_closure_oop.php';
@@ -144,9 +143,8 @@ final class ClosureSniffTest extends SniffTestCase
 
     /**
      * Feature test to detect static closure
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testStaticAnonymousFunction(): void
     {
         $dataSource = 'self_parent_static_closure_oop.php';

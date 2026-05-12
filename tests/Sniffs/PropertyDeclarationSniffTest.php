@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Property declaration
  *
@@ -32,8 +34,8 @@ final class PropertyDeclarationSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/119
      *       "private" keyword reports as "Required PHP 4.0.0 (min)"
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH119(): void
     {
         $dataSource = 'gh119.php';

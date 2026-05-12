@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -33,9 +35,9 @@ final class SensitiveParameterAttributeSniffTest extends SniffTestCase
      * Feature test for SensitiveParameter attribute
      *
      * @link https://github.com/llaville/php-compatinfo/issues/363
-     * @group feature
      * @throws Exception
      */
+    #[Group('feature')]
     public function testAttributes(): void
     {
         $dataSource = 'sensitive_parameter.php';

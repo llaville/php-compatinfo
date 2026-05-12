@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -35,9 +37,9 @@ final class NonCapturingCatchSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/341
      *       Catch exceptions without capturing them to variables
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testCatchExceptionOnlyByType(): void
     {
         $dataSource = 'non-capturing_catches.php';

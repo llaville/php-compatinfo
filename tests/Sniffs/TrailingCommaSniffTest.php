@@ -7,6 +7,9 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\DataProvider;
+
 use Exception;
 
 /**
@@ -64,10 +67,10 @@ final class TrailingCommaSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/340
      *       Trailing comma syntax is detected as PHP 8.0
-     * @group group
-     * @dataProvider trailingCommaProvider
      * @throws Exception
      */
+    #[Group('group')]
+    #[DataProvider('trailingCommaProvider')]
     public function testTrailingCommaSyntax(string $dataSource, array $expectedVersions): void
     {
         $metrics  = $this->executeAnalysis($dataSource);

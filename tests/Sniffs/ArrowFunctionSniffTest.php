@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -35,9 +37,9 @@ final class ArrowFunctionSniffTest extends SniffTestCase
     /**
      * Feature test to detect Arrow functions in OOP
      *
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testArrowFunctionInObjectContext(): void
     {
         $dataSource = 'arrow_functions.php';

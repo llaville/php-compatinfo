@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Unit tests for PHP_CompatInfo package, issues reported
  *
@@ -34,8 +36,8 @@ final class NamespaceIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/153
      *       "global namespace reports higher requirements than everything else"
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH153(): void
     {
         $dataSource = 'gh153.php';
@@ -57,8 +59,8 @@ final class NamespaceIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/155
      *       Results depend on lexical order of fallback implementations
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH155(): void
     {
         $dataSource = 'gh155.php';

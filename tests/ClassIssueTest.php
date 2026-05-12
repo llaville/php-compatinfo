@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Unit tests for PHP_CompatInfo package, issues reported
  *
@@ -34,8 +36,8 @@ final class ClassIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/171
      *       "Missing extension on class inheritance"
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH171(): void
     {
         $dataSource = 'gh171.php';
@@ -62,8 +64,8 @@ final class ClassIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/199
      *       "Class inheritance lifts requirements to >= PHP 5.3.0"
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH199(): void
     {
         $dataSource = 'gh199.php';

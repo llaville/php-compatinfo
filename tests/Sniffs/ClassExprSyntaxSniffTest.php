@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Class::{expr}() syntax
  *
@@ -27,9 +29,8 @@ final class ClassExprSyntaxSniffTest extends SniffTestCase
 
     /**
      * Feature test to detect Class::{expr}() syntax
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testClassExprSyntax(): void
     {
         $dataSource = 'class_expr.php';

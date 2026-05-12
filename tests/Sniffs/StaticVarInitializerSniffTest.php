@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -32,9 +34,9 @@ final class StaticVarInitializerSniffTest extends SniffTestCase
     /**
      * Feature test to detect static variable initializers
      *
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testStaticVariableInitializer(): void
     {
         $dataSource = 'static_var_initializer.php';

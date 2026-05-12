@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -39,9 +41,9 @@ final class ArrayUnpackingSyntaxSniffTest extends SniffTestCase
      * Feature test for Array unpacking support for numeric-keyed arrays
      *
      * @link https://wiki.php.net/rfc/spread_operator_for_array
-     * @group feature
      * @throws Exception
      */
+    #[Group('feature')]
     public function testArrayUnpackingSupportForNumericKeyed(): void
     {
         $dataSource = 'unpacking_support_array_numeric_keyed.php';
@@ -64,9 +66,9 @@ final class ArrayUnpackingSyntaxSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/331
      *       Array unpacking support is detected as PHP 8.1
-     * @group feature
      * @throws Exception
      */
+    #[Group('feature')]
     public function testArrayUnpackingSupportForStringKeyed(): void
     {
         $dataSource = 'unpacking_support_array_string_keyed.php';

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 use function array_diff;
 use function array_filter;
@@ -44,9 +46,9 @@ final class ConditionIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/128
      *       Detection of conditional code
      * @link https://www.php.net/manual/en/function.idn-to-ascii.php
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testRegressionGH128(): void
     {
         $dataSource = 'gh128.php';
@@ -68,9 +70,9 @@ final class ConditionIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/159
      *       Conditionally used class is reported as required
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testRegressionGH159(): void
     {
         $dataSource = 'gh159.php';
@@ -116,9 +118,9 @@ final class ConditionIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/160
      *       Depending on parsing file order, some code conditions are not detected
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testRegressionGH160(): void
     {
         $dataSource = 'gh160';
@@ -140,9 +142,9 @@ final class ConditionIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/195
      *       Absolutely namespaced classes not properly detected with class_exists()
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testRegressionGH195(): void
     {
         $dataSource = 'gh195.php';
@@ -188,9 +190,9 @@ final class ConditionIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/301
      *       Multiple conditions not displayed
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testRegressionGH301(): void
     {
         $dataSource = 'gh301';

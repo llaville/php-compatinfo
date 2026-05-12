@@ -7,6 +7,9 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\DataProvider;
+
 use Exception;
 
 /**
@@ -55,11 +58,11 @@ final class EnumerationSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/322
      *       Enumeration is detected as PHP 8.1
-     * @group features
-     * @group regression
-     * @dataProvider dataSourceProvider
      * @throws Exception
      */
+    #[Group('features')]
+    #[Group('regression')]
+    #[DataProvider('dataSourceProvider')]
     public function testEnumerations(string $dataSource, array $expectedVersions): void
     {
         $metrics    = $this->executeAnalysis($dataSource);

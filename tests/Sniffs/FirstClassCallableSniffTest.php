@@ -7,6 +7,9 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\DataProvider;
+
 use Exception;
 
 /**
@@ -62,10 +65,10 @@ final class FirstClassCallableSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/324
      *       First class callable syntax is detected as PHP 8.1
-     * @group group
-     * @dataProvider callableExprProvider
      * @throws Exception
      */
+    #[Group('group')]
+    #[DataProvider('callableExprProvider')]
     public function testCallableExpr(string $dataSource, array $expectedVersions): void
     {
         $metrics  = $this->executeAnalysis($dataSource);

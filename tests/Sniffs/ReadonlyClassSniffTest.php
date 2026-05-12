@@ -7,6 +7,9 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\DataProvider;
+
 use Exception;
 
 /**
@@ -59,10 +62,10 @@ final class ReadonlyClassSniffTest extends SniffTestCase
      *
      * @link https://php.watch/versions/8.2/readonly-classes
      *       Readonly Class Syntax is detected as PHP 8.2
-     * @group features
-     * @dataProvider readonlyClassProvider
      * @throws Exception
      */
+    #[Group('features')]
+    #[DataProvider('readonlyClassProvider')]
     public function testReadonlyClassSyntax(string $dataSource, array $expectedVersions): void
     {
         $metrics = $this->executeAnalysis($dataSource);

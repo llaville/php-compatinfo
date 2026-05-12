@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Short array syntax
  *
@@ -33,8 +35,8 @@ final class ShortArraySyntaxSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/148
      *       Array short syntax and array dereferencing not detected
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH148(): void
     {
         $dataSource = 'gh148.php';

@@ -7,6 +7,9 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\DataProvider;
+
 use Exception;
 
 /**
@@ -62,10 +65,10 @@ final class NewInitializerSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/325
      *       New in Initializers is detected as PHP 8.1
-     * @group features
-     * @dataProvider initializersProvider
      * @throws Exception
      */
+    #[Group('features')]
+    #[DataProvider('initializersProvider')]
     public function testNewInitializerBy(string $dataSource, array $expectedVersions): void
     {
         $metrics  = $this->executeAnalysis($dataSource);

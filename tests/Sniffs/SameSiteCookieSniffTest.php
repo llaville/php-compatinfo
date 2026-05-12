@@ -7,6 +7,9 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\DataProvider;
+
 use Exception;
 
 /**
@@ -59,11 +62,11 @@ final class SameSiteCookieSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/359
      *       new secookie signature not recognized
-     * @group features
-     * @group regression
-     * @dataProvider dataSourceProvider
      * @throws Exception
      */
+    #[Group('features')]
+    #[Group('regression')]
+    #[DataProvider('dataSourceProvider')]
     public function testSignatureWithOptionsOrSameSiteArgument(string $dataSource, array $expectedVersions): void
     {
         $metrics  = $this->executeAnalysis($dataSource);

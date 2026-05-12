@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Detect all of these conditional code signatures:
  * - [extension_loaded](https://www.php.net/manual/en/function.extension-loaded.php)
@@ -34,9 +36,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
 
     /**
      * Feature test for conditional code `extension_loaded` usage
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testExtensionLoadedCondition(): void
     {
         $dataSource = 'extension_loaded.php';
@@ -48,9 +49,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
 
     /**
      * Feature test for conditional code `function_exists` usage
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testFunctionExistsCondition(): void
     {
         $dataSource = 'function_exists.php';
@@ -62,9 +62,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
 
     /**
      * Feature test for conditional code `method_exists` usage
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testMethodExistsCondition(): void
     {
         $dataSource = 'method_exists.php';
@@ -76,9 +75,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
 
     /**
      * Feature test for conditional code `class_exists` usage
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testClassExistsCondition(): void
     {
         $dataSource = 'class_exists.php';
@@ -90,9 +88,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
 
     /**
      * Feature test for conditional code `interface_exists` usage
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testInterfaceExistsCondition(): void
     {
         $dataSource = 'interface_exists.php';
@@ -104,9 +101,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
 
     /**
      * Feature test for conditional code `trait_exists` usage
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testTraitExistsCondition(): void
     {
         $dataSource = 'trait_exists.php';
@@ -118,9 +114,8 @@ class ConditionalCodeSniffTest extends SniffTestCase
 
     /**
      * Feature test for conditional code `defined` usage
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testDefinedCondition(): void
     {
         $dataSource = 'defined.php';

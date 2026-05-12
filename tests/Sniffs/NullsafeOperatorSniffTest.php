@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -34,9 +36,9 @@ final class NullsafeOperatorSniffTest extends SniffTestCase
      * Feature test to detect Nullsafe operator syntax
      *
      * @link https://github.com/llaville/php-compatinfo/issues/338
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testNullsafeOperator(): void
     {
         $dataSource = 'nullsafe_syntax.php';

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -36,9 +38,9 @@ final class NamedArgumentDeclarationSniffTest extends SniffTestCase
      * Feature test to detect Named arguments syntax
      *
      * @link https://github.com/llaville/php-compatinfo/issues/334
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testNamedArguments(): void
     {
         $dataSource = 'named_arguments.php';

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -37,10 +39,10 @@ final class AttributeSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/335
      * @link https://github.com/llaville/php-compatinfo/issues/342
-     * @group feature
-     * @group regression
      * @throws Exception
      */
+    #[Group('feature')]
+    #[Group('regression')]
     public function testAttributes(): void
     {
         $dataSource = 'basic.php';

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -34,9 +36,9 @@ final class OverrideAttributeSniffTest extends SniffTestCase
      * Feature test for Override attribute
      *
      * @link https://github.com/llaville/php-compatinfo/issues/366
-     * @group feature
      * @throws Exception
      */
+    #[Group('feature')]
     public function testAttributes(): void
     {
         $dataSource = 'override.php';

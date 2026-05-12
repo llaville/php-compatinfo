@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -33,9 +35,9 @@ final class DeprecateDollarBraceStringInterpolationSniffTest extends SniffTestCa
      * Feature test for ${} interpolation deprecation
      *
      * @link https://github.com/llaville/php-compatinfo/issues/363
-     * @group feature
      * @throws Exception
      */
+    #[Group('feature')]
     public function testDeprecation(): void
     {
         $dataSource = 'dollar_brace_string_interpolation.php';

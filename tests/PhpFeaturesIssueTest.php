@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Unit tests for PHP_CompatInfo package, issues reported
  *
@@ -38,8 +40,8 @@ final class PhpFeaturesIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/168
      *       Wrong version on global const variable definition
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH168(): void
     {
         $dataSource = 'gh168.php';
@@ -70,8 +72,8 @@ final class PhpFeaturesIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/222
      *       Negative constant marked as PHP 5.6
-     * @group features
      */
+    #[Group('features')]
     public function testFeatureGH222(): void
     {
         $dataSource = 'gh222.php';
@@ -93,8 +95,8 @@ final class PhpFeaturesIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/228
      *       `const FOO = null;` does not require PHP 5.6.0
-     * @group features
      */
+    #[Group('features')]
     public function testFeatureGH228(): void
     {
         $dataSource = 'gh228.php';
@@ -117,8 +119,8 @@ final class PhpFeaturesIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/239
      *       list short syntax available since PHP 7.1
      * @link https://wiki.php.net/rfc/short_list_syntax
-     * @group features
      */
+    #[Group('features')]
     public function testFeatureGH239(): void
     {
         $dataSource = 'gh239.php';
@@ -135,8 +137,8 @@ final class PhpFeaturesIssueTest extends TestCase
      * @link https://github.com/llaville/php-compat-info/issues/292
      *       Uncaught Error: Object of class PhpParser\Node\UnionType could not be converted to string
      * @link https://wiki.php.net/rfc/union_types_v2
-     * @group features
      */
+    #[Group('features')]
     public function testFeatureGH292(): void
     {
         $dataSource = 'gh292.php';

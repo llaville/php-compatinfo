@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -40,9 +42,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/142
      *       Exponentiation is 5.6+
      * @link https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testRegressionGH142(): void
     {
         $dataSource = 'gh142.php';
@@ -64,9 +66,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/273
      *       PHP 7.1 Nullable types not being detected
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testNullableTypeHint(): void
     {
         $dataSource = 'gh273.php';
@@ -82,9 +84,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
     /**
      * Feature test for array type hint declaration detection
      *
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testArrayTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
@@ -100,9 +102,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
     /**
      * Feature test for self and parent type hint declaration detection
      *
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testSelfParentTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
@@ -122,9 +124,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
     /**
      * Feature test for callable type hint declaration detection
      *
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testCallableTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
@@ -140,9 +142,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
     /**
      * Feature test for scalar (bool, float, int, string) type hint declaration detection
      *
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testScalarTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
@@ -170,9 +172,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
     /**
      * Feature test for iterable type hint declaration detection
      *
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testIterableTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
@@ -188,9 +190,9 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
     /**
      * Feature test for object type hint declaration detection
      *
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testObjectTypeHint(): void
     {
         $dataSource = 'function_arguments.php';
@@ -206,10 +208,10 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
     /**
      * Feature test for union types
      *
-     * @group features
      * @link https://github.com/llaville/php-compatinfo/issues/333
      * @throws Exception
      */
+    #[Group('features')]
     public function testUnionTypes(): void
     {
         $dataSource = 'union_types.php';
@@ -225,10 +227,10 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
     /**
      * Feature test for intersection types
      *
-     * @group features
      * @link https://github.com/llaville/php-compatinfo/issues/326
      * @throws Exception
      */
+    #[Group('features')]
     public function testIntersectionTypes(): void
     {
         $dataSource = 'intersection_types.php';
@@ -244,10 +246,10 @@ final class ParamTypeDeclarationSniffTest extends SniffTestCase
     /**
      * Feature test for Disjunctive Normal Form types
      *
-     * @group features
      * @link https://github.com/llaville/php-compatinfo/issues/363
      * @throws Exception
      */
+    #[Group('features')]
     public function testDisjunctiveNormalFormTypes(): void
     {
         $dataSource = 'dnf_types.php';

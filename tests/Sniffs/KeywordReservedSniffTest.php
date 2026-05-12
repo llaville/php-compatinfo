@@ -7,6 +7,9 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\DataProvider;
+
 use Exception;
 
 /**
@@ -38,10 +41,10 @@ final class KeywordReservedSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/186
      *       Add sniff for new reserved words in PHP7
-     * @group regression
-     * @dataProvider forbiddenNamesProvider
      * @throws Exception
      */
+    #[Group('regression')]
+    #[DataProvider('forbiddenNamesProvider')]
     public function testForbiddenNamesInClassInterfaceTraitNamespace(string $dataSource, array $expectedVersions): void
     {
         $metrics  = $this->executeAnalysis($dataSource);

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 use function sprintf;
 
@@ -32,9 +34,9 @@ final class ErrorHandlerIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/339
      *       Stop on empty/broken files during analysis
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testEmptyDir(): void
     {
         $dataSource = 'emptyDir' . DIRECTORY_SEPARATOR;
@@ -52,9 +54,9 @@ final class ErrorHandlerIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/339
      *       Stop on empty/broken files during analysis
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testEmptyFile(): void
     {
         $dataSource = 'emptyFile.php';
@@ -80,9 +82,9 @@ final class ErrorHandlerIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/339
      *       Stop on empty/broken files during analysis
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testWithoutOpenTag(): void
     {
         $dataSource = 'withoutOpenTag.php';
@@ -108,9 +110,9 @@ final class ErrorHandlerIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/339
      *       Stop on empty/broken files during analysis
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testParseError(): void
     {
         $dataSource = 'parseError.php';

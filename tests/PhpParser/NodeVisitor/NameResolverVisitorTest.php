@@ -7,6 +7,13 @@
  */
 namespace Bartlett\CompatInfo\Tests\PhpParser\NodeVisitor;
 
+use PhpParser\Node\Stmt\Namespace_;
+use PhpParser\Node\Stmt\Const_;
+use PhpParser\Node\Stmt\Class_;
+use PhpParser\Node\Stmt\Function_;
+
+use PHPUnit\Framework\Attributes\Depends;
+
 use Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\NameResolverVisitor;
 use Bartlett\CompatInfo\Application\PhpParser\NodeVisitor\ParentContextVisitor;
 use Bartlett\CompatInfo\Tests\TestCase;
@@ -47,47 +54,41 @@ final class NameResolverVisitorTest extends TestCase
         self::$traverser->addVisitor(new NameResolverVisitor());
     }
 
-    public function testNamespace(): Node\Stmt\Namespace_
+    public function testNamespace(): Namespace_
     {
         $stmts = $this->parseAndResolve('namespaces.php');
 
         $namespace = $stmts[0];
-        $this->assertInstanceOf(Node\Stmt\Namespace_::class, $namespace);
+        $this->assertInstanceOf(Namespace_::class, $namespace);
 
         return $namespace;
     }
 
-    /**
-     * @depends testNamespace
-     */
-    public function testConstantInNamespace(Node\Stmt\Namespace_ $namespace): void
+    #[Depends('testNamespace')]
+    public function testConstantInNamespace(Namespace_ $namespace): void
     {
-        /** @var Node\Stmt\Const_ $constOne */
+        /** @var Const_ $constOne */
         $constOne = $namespace->stmts[0];
-        $this->assertInstanceOf(Node\Stmt\Const_::class, $constOne);
+        $this->assertInstanceOf(Const_::class, $constOne);
         foreach ($constOne->consts as $const) {
             $this->assertEquals('ONE', (string) $const->name);
             $this->assertEquals('NS\ONE', (string) $const->getAttribute(self::$nodeAttributeNamespacedName));
         }
     }
 
-    /**
-     * @depends testNamespace
-     */
-    public function testClassInNamespace(Node\Stmt\Namespace_ $namespace): Node\Stmt\Class_
+    #[Depends('testNamespace')]
+    public function testClassInNamespace(Namespace_ $namespace): Class_
     {
         $class = $namespace->stmts[2];
-        $this->assertInstanceOf(Node\Stmt\Class_::class, $class);
+        $this->assertInstanceOf(Class_::class, $class);
         $this->assertEquals('C', (string) $class->name);
         $this->assertEquals('NS\C', (string) $class->getAttribute(self::$nodeAttributeNamespacedName));
 
         return $class;
     }
 
-    /**
-     * @depends testClassInNamespace
-     */
-    public function testClassConstInNamespace(Node\Stmt\Class_ $class): void
+    #[Depends('testClassInNamespace')]
+    public function testClassConstInNamespace(Class_ $class): void
     {
         foreach ($class->getConstants() as $constants) {
             foreach ($constants->consts as $const) {
@@ -97,10 +98,8 @@ final class NameResolverVisitorTest extends TestCase
         }
     }
 
-    /**
-     * @depends testClassInNamespace
-     */
-    public function testMethodInNamespace(Node\Stmt\Class_ $class): void
+    #[Depends('testClassInNamespace')]
+    public function testMethodInNamespace(Class_ $class): void
     {
         foreach ($class->getMethods() as $index => $method) {
             if (0 === $index) {
@@ -113,14 +112,12 @@ final class NameResolverVisitorTest extends TestCase
         }
     }
 
-    /**
-     * @depends testNamespace
-     */
-    public function testFunctionInNamespace(Node\Stmt\Namespace_ $namespace): void
+    #[Depends('testNamespace')]
+    public function testFunctionInNamespace(Namespace_ $namespace): void
     {
-        /** @var Node\Stmt\Function_ $class */
+        /** @var Function_ $class */
         $function = $namespace->stmts[3];
-        $this->assertInstanceOf(Node\Stmt\Function_::class, $function);
+        $this->assertInstanceOf(Function_::class, $function);
     }
 
     /**

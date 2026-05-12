@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\PhpParser\NodeVisitor;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * NodeVisitor Resolver to initialize base php.min version
  * of namespaces, classes, interfaces, traits and functions declaration
@@ -24,8 +26,8 @@ final class VersionResolverVisitorTest extends NodeVisitorTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/131
      *       "Classes in extends clause are not recognized"
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH131(): void
     {
         $dataSource = 'gh131.php';
@@ -48,8 +50,8 @@ final class VersionResolverVisitorTest extends NodeVisitorTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/166
      *       "Type hinting and objects"
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH166(): void
     {
         $dataSource = 'gh166.php';

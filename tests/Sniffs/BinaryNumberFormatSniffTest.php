@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Binary Number Format (with 0b prefix)
  *
@@ -27,9 +29,8 @@ final class BinaryNumberFormatSniffTest extends SniffTestCase
 
     /**
      * Feature test to detect Binary Number Format syntax
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testBinaryNumberFormatSyntax(): void
     {
         $dataSource = 'binary_number_format.php';

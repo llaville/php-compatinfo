@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Class member access.
  *
@@ -32,8 +34,8 @@ final class ClassMemberAccessSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/154
      *       Class member access on instantiation
-     * @group regression
      */
+    #[Group('regression')]
     public function testClassMemberAccessOnInstantiation(): void
     {
         $dataSource = 'gh154.php';
@@ -52,9 +54,8 @@ final class ClassMemberAccessSniffTest extends SniffTestCase
 
     /**
      * Feature test for Class member access on cloning detection
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testClassMemberAccessOnCloning(): void
     {
         $dataSource = 'member_access_on_cloning.php';

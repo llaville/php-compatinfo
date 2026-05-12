@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -14,9 +16,9 @@ use Exception;
  *
  * @author Laurent Laville
  * @since  Class available since Release 7.2.0
- * @group features
  * @see src/Application/Sniffs/Classes/PropertyHooksSniff
  */
+#[Group('features')]
 final class PropertyHooksSniffTest extends SniffTestCase
 {
     /**

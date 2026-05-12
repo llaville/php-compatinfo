@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Short ternary operator (Elvis syntax)
  *
@@ -27,9 +29,8 @@ final class ShortTernaryOperatorSniffTest extends SniffTestCase
 
     /**
      * Feature test for short ternary operator (Elvis syntax)
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testElvisSyntax(): void
     {
         $dataSource = 'elvis_syntax.php';

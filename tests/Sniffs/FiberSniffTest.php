@@ -7,6 +7,9 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\DataProvider;
+
 use Exception;
 
 /**
@@ -58,10 +61,10 @@ final class FiberSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/330
      *       Fibers are detected as PHP 8.1
-     * @group group
-     * @dataProvider fibersProvider
      * @throws Exception
      */
+    #[Group('group')]
+    #[DataProvider('fibersProvider')]
     public function testFiberClasses(string $dataSource, array $expectedVersions): void
     {
         $metrics  = $this->executeAnalysis($dataSource);
