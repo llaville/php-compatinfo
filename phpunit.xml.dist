@@ -26,7 +26,7 @@
         </testsuite>
         <testsuite name="features">
             <directory suffix="IssueTest.php">tests/</directory>
-            <directory suffix="IssueTest.php">tests/PhpFeatures/</directory>
+            <exclude>tests/Reference/IssueTest.php</exclude>
         </testsuite>
     </testsuites>
     <groups>
