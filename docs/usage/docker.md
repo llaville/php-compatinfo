@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD013 -->
 # Docker CLI
 
-**IMPORTANT** : Docker image with `latest` tag use the PHP 8.1 runtime !
+**IMPORTANT** : Docker image with `latest` tag use the PHP 8.5 runtime !
 
 > Please mount your system temporary folder to `/home/appuser/.cache/bartlett` in the container.
 >

@@ -6,7 +6,7 @@
 > the `db:new` command combines `db:create` and `db:init` actions.
 
 ```text
-phpCompatInfo version 7.2.6 DB version 6.31.0
+phpCompatInfo version 7.3.0 DB version 6.32.1
 
 Usage:
   command [options] [arguments]

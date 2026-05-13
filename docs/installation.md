@@ -11,12 +11,12 @@
 
 ## Requirements
 
-* PHP 8.1 or greater
+* PHP 8.2 or greater
 * ext-json
 * ext-pcre (required by: bartlett/php-compatinfo-db)
 * ext-pdo (required by: bartlett/php-compatinfo-db)
 * ext-spl
-* PHPUnit 10.5 or greater (if you want to run unit tests)
+* PHPUnit 11.5 or greater (if you want to run unit tests)
 
 ## PHAR
 
