@@ -1,0 +1,58 @@
+digraph {
+  graph [name="G" overlap="false" rankdir="TB" bgcolor="transparent"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
+  subgraph cluster_0 {
+    graph [bgcolor="BurlyWood"]
+    label = "Bartlett\\CompatInfo\\Application\\Logger"
+    "Bartlett\\CompatInfo\\Application\\Logger\\DefaultLogger" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>DefaultLogger</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(stream : string, name : string = 'DefaultLoggerChannel', level : string = Psr\\Log\\LogLevel\:\:INFO, handler : object = «unknown», processors : array = [])</td></tr>
+    <tr><td align="left">+ isHandling(record : array) : bool</td></tr>
+    <tr><td align="left">+ log(level, message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ handle(record : array) : void</td></tr>
+    <tr><td align="left">+ interpolate(record : array) : array</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_1 {
+    label = "Psr\\Log"
+    "Psr\\Log\\AbstractLogger" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>AbstractLogger</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ emergency(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ alert(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ critical(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ error(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ warning(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ notice(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ info(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ debug(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ «abstract» log(level, message, context : array = []) : void</td></tr>
+</table></td></tr>
+</table>>]
+    "Psr\\Log\\LoggerInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>LoggerInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» emergency(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ «abstract» alert(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ «abstract» critical(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ «abstract» error(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ «abstract» warning(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ «abstract» notice(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ «abstract» info(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ «abstract» debug(message, context : array = []) : void</td></tr>
+    <tr><td align="left">+ «abstract» log(level, message, context : array = []) : void</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "Psr\\Log\\AbstractLogger" -> "Psr\\Log\\LoggerInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\CompatInfo\\Application\\Logger\\DefaultLogger" -> "Psr\\Log\\AbstractLogger" [arrowhead="empty" style="filled"]
+}
