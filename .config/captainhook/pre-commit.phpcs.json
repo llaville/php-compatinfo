@@ -17,7 +17,7 @@
                     "config-file": "{$ENV|value-of:XDG_CONFIG_HOME}/.phpcs.xml.dist",
                     "package-require": [
                         "squizlabs/php_codesniffer",
-                        "^3.3 || ^4.0"
+                        "^4.0"
                     ]
                 }
             }
