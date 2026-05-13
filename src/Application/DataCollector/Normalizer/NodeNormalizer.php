@@ -31,7 +31,7 @@ final class NodeNormalizer implements NormalizerInterface
      * @param array<string, string> $context
      * @return array{type: mixed, id: mixed, versions: mixed, parents: mixed}|null
      */
-    public function normalize($object, $format = null, array $context = []): array|null
+    public function normalize($object, $format = null, array $context = []): ?array
     {
         $node = $object;
         $this->attributeNamespacedName = $context['nodeAttributeNamespacedName'] ?? 'bartlett.name';
