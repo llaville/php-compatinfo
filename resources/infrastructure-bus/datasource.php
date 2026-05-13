@@ -9,8 +9,7 @@
  * @author Laurent Laville
  */
 
-return function (): Generator
-{
+return function (): Generator {
     $classes = [
         \Bartlett\CompatInfo\Infrastructure\Bus\Query\MessengerQueryBus::class,
     ];

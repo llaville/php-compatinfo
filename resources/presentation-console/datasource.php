@@ -9,8 +9,7 @@
  * @author Laurent Laville
  */
 
-return function (): Generator
-{
+return function (): Generator {
     $classes = [
         \Bartlett\CompatInfo\Presentation\Console\Command\AnalyserCommand::class,
         \Bartlett\CompatInfo\Presentation\Console\Command\DiagnoseCommand::class,

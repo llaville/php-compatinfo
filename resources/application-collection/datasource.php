@@ -9,8 +9,7 @@
  * @author Laurent Laville
  */
 
-return function (): Generator
-{
+return function (): Generator {
     $classes = [
         \Bartlett\CompatInfo\Application\Collection\ReferenceCollection::class,
         \Bartlett\CompatInfo\Application\Collection\ReferenceCollectionInterface::class,

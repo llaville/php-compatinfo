@@ -9,8 +9,7 @@
  * @author Laurent Laville
  */
 
-return function (): Generator
-{
+return function (): Generator {
     $classes = [
         \Bartlett\CompatInfo\Application\PhpParser\Node\Name\ClassFullyQualified::class,
         \Bartlett\CompatInfo\Application\PhpParser\Node\Name\InterfaceFullyQualified::class,

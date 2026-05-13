@@ -9,8 +9,7 @@
  * @author Laurent Laville
  */
 
-return function (): Generator
-{
+return function (): Generator {
     $classes = [
         \Bartlett\CompatInfo\Application\Sniffs\Arrays\ArrayDereferencingSyntaxSniff::class,
         \Bartlett\CompatInfo\Application\Sniffs\Arrays\ShortArraySyntaxSniff::class,

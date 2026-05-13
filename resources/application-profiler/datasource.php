@@ -9,8 +9,7 @@
  * @author Laurent Laville
  */
 
-return function (): Generator
-{
+return function (): Generator {
     $classes = [
         \Bartlett\CompatInfo\Application\Profiler\CollectorInterface::class,
         \Bartlett\CompatInfo\Application\Profiler\CollectorTrait::class,

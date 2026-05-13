@@ -10,8 +10,7 @@
  * @author Laurent Laville
  */
 
-return function (): Generator
-{
+return function (): Generator {
     $classes = [
         \Bartlett\CompatInfo\Application\Event\Dispatcher\EventDispatcher::class,
         \Bartlett\CompatInfo\Application\Event\AfterAnalysisEvent::class,
