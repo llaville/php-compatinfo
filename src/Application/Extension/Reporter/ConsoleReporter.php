@@ -292,7 +292,7 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
         return empty($domain['ext.max'])
             ? $domain['ext.min']
             : $domain['ext.min'] . ' => ' . $domain['ext.max']
-            ;
+        ;
     }
 
     /**
@@ -303,6 +303,6 @@ final class ConsoleReporter extends Reporter implements FormatterInterface
         return empty($domain['php.max'])
             ? $domain['php.min']
             : $domain['php.min'] . ' => ' . $domain['php.max']
-            ;
+        ;
     }
 }
