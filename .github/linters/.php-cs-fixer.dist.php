@@ -28,6 +28,7 @@ return (new PhpCsFixer\Config())
         'ternary_operator_spaces' => false,
         'single_space_around_construct' => false,
         'operator_linebreak' => false,
+        'ordered_class_elements' => false,
     ])
     // default source code to scan
     ->setFinder($finder)
