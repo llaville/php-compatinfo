@@ -1,0 +1,49 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Method Bartlett\\CompatInfo\\Application\\Analyser\\CompatibilityAnalyser\:\:leaveExprAssign\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: ../../src/Application/Analyser/CompatibilityAnalyser.php
+
+		-
+			message: '#^Method Bartlett\\CompatInfo\\Application\\Analyser\\CompatibilityAnalyser\:\:leaveExprConstFetch\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: ../../src/Application/Analyser/CompatibilityAnalyser.php
+
+		-
+			message: '#^Method Bartlett\\CompatInfo\\Application\\Analyser\\CompatibilityAnalyser\:\:leaveExprFuncCall\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: ../../src/Application/Analyser/CompatibilityAnalyser.php
+
+		-
+			message: '#^Method Bartlett\\CompatInfo\\Application\\Analyser\\CompatibilityAnalyser\:\:leaveExprMethodCall\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: ../../src/Application/Analyser/CompatibilityAnalyser.php
+
+		-
+			message: '#^Method Bartlett\\CompatInfo\\Application\\Analyser\\CompatibilityAnalyser\:\:leaveExprNew\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: ../../src/Application/Analyser/CompatibilityAnalyser.php
+
+		-
+			message: '#^Method Bartlett\\CompatInfo\\Application\\Analyser\\CompatibilityAnalyser\:\:leaveExprStaticCall\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: ../../src/Application/Analyser/CompatibilityAnalyser.php
+
+		-
+			message: '#^Method Bartlett\\CompatInfo\\Application\\Collection\\ReferenceCollection\:\:find\(\) should return array\<string\> but returns array\.$#'
+			identifier: return.type
+			count: 1
+			path: ../../src/Application/Collection/ReferenceCollection.php
+
+		-
+			message: '#^Method Bartlett\\CompatInfo\\Application\\Sniffs\\Keywords\\ReservedSniff\:\:enterStmtNamespace\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: ../../src/Application/Sniffs/Keywords/ReservedSniff.php
