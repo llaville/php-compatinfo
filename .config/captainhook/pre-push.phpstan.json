@@ -15,7 +15,7 @@
                 },
                 "options": {
                     "colors": "ansi",
-                    "config-file": "{$ENV|value-of:XDG_CONFIG_HOME}/phpstan.neon.dist",
+                    "config-file": "{$ENV|value-of:XDG_CONFIG_HOME}/phpstan.neon",
                     "package-require": [
                         "phpstan/phpstan",
                         "^2.0"
