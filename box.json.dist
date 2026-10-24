@@ -11,7 +11,8 @@
         "bin",
         "src",
         "config",
-        "vendor"
+        "vendor",
+        "vendor-bin/sf-framework-bundle"
     ],
     "directories-bin": [
         "resources"
