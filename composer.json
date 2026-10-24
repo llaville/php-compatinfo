@@ -15,7 +15,6 @@
         "ext-pcre": "*",
         "ext-spl": "*",
         "bartlett/php-compatinfo-db": "^6.32",
-        "bartlett/sarif-php-sdk": "^2.1",
         "composer-runtime-api": "^2.1",
         "doctrine/collections": "^2.1",
         "nikic/php-parser": "^5.0",

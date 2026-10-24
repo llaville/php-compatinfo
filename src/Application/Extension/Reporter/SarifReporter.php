@@ -31,6 +31,8 @@ use Bartlett\Sarif\Definition\ToolComponent;
 use Bartlett\Sarif\Definition\VersionControlDetails;
 use Bartlett\Sarif\SarifLog;
 
+use Composer\InstalledVersions;
+
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
@@ -39,6 +41,7 @@ use Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
 use Generator;
+
 use function array_shift;
 use function explode;
 use function file_put_contents;
@@ -57,6 +60,7 @@ use function strlen;
 use function strrchr;
 use function substr;
 use function trim;
+
 use const DIRECTORY_SEPARATOR;
 use const JSON_PRETTY_PRINT;
 use const JSON_UNESCAPED_SLASHES;
@@ -77,6 +81,7 @@ final class SarifReporter extends Reporter implements
     /** @var SniffCollectionInterface<SniffInterface> */
     private SniffCollectionInterface $sniffs;
     private string $applicationVersion;
+    private bool $reporterAllowed;
 
     private const PHP_VERSIONS = [
         '50', '51', '52', '53', '54', '55', '56',
@@ -91,6 +96,9 @@ final class SarifReporter extends Reporter implements
     {
         $this->sniffs = $sniffs;
         parent::__construct($input, $output);
+
+        // @see https://getcomposer.org/doc/07-runtime.md#installed-versions
+        $this->reporterAllowed = InstalledVersions::isInstalled('bartlett/sarif-php-sdk');
     }
 
     public function format(mixed $data): void
@@ -126,6 +134,10 @@ final class SarifReporter extends Reporter implements
      */
     public function afterAnalyzeFile(AfterFileAnalysisEvent $event): void
     {
+        if (!$this->reporterAllowed) {
+            return;
+        }
+
         $fileInfo = $event->getArgument('file');
         $file = $fileInfo->getRelativePathname();
 
@@ -197,6 +209,9 @@ final class SarifReporter extends Reporter implements
     public function afterAnalysis(AfterAnalysisEvent $event): void
     {
         if ($event->hasArgument('profile') && $this->input->hasOption('output')) {
+            if (!$this->reporterAllowed) {
+                return;
+            }
             $profile = $event->getArgument('profile');
             $token = key($profile->getData());
             $this->source = $event->getArgument('source');
