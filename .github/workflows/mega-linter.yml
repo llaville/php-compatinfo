@@ -75,7 +75,7 @@ jobs:
                 id: ml
                     # You can override Mega-Linter flavor used to have faster performances
                     # More info at https://megalinter.github.io/latest/flavors/
-                uses: oxsecurity/megalinter/flavors/php@v9.4.0
+                uses: oxsecurity/megalinter/flavors/php@v9.6.0
                 env:
                     # All available variables are described in documentation
                     # https://megalinter.github.io/latest/configuration/
