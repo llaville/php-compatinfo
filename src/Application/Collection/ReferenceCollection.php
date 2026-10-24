@@ -136,7 +136,7 @@ final class ReferenceCollection extends AbstractLazyCollection implements Refere
             }
         }
         $result['arg.max'] = $argc;
-        return $result;  // @phpstan-ignore return.type
+        return $result;
     }
 
     /**
