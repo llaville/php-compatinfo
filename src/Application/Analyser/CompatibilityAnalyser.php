@@ -392,7 +392,7 @@ final class CompatibilityAnalyser extends AbstractSniffAnalyser
                 $versions['php.all'] = $versions['php.min'] . ' without ' . $versions['polyfill'];
 
                 $packages = explode(',', $versions['polyfill']);
-                array_map(fn($item) => trim($item), $packages);
+                array_map(fn($item) => trim($item), $packages);  // @phpstan-ignore function.resultUnused
 
                 try {
                     $versions['php.min'] = $this->polyfillCollection->getVersion($packages, $versions['php.min']);
