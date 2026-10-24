@@ -7,6 +7,7 @@
  */
 namespace Bartlett\CompatInfo\Presentation\Console;
 
+use Bartlett\CompatInfo\Application\Extension\Reporter\ReportFormat;
 use Bartlett\CompatInfoDb\Infrastructure\Framework\Composer\InstalledVersions;
 
 use Symfony\Component\Console\Application as SymfonyApplication;
@@ -21,6 +22,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 use Phar;
+use function array_column;
+use function implode;
 use function sprintf;
 
 /**
@@ -113,8 +116,8 @@ class Application extends SymfonyApplication implements ApplicationInterface
                 'output',
                 null,
                 InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED,
-                'Affect output to produce results in different format',
-                ['console']
+                'Format of the output: <comment>' . implode(', ', ReportFormat::values()) . '</comment>',
+                [ReportFormat::console->value]
             )
         );
         $definition->addOption(
