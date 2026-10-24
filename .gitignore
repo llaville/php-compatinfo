@@ -5,6 +5,14 @@
 docs/assets/images/
 site/
 
+###### BOX Manifest ######
+.box.manifests.bin
+console-table.txt
+plain.txt
+pkg.composer.txt
+sbom.json
+stub.php
+
 ###### Composer dependencies ######
 vendor/
 ###### Composer bin plugin ######
