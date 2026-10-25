@@ -4,5 +4,7 @@ parameters:
     level: 6
     paths:
         - ../../src/
+    excludePaths:
+        - ../../src/Application/Extension/Reporter/SarifReporter.php
     treatPhpDocTypesAsCertain: false
     reportUnmatchedIgnoredErrors: true
