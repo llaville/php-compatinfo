@@ -71,4 +71,4 @@ jobs:
 
             -   # https://github.com/sebastianbergmann/phpunit
                 name: Unit tests with PHPUnit
-                run: phpunit --group features,large,reference,regression,default --do-not-cache-result --no-progress
+                run: phpunit --display-all-issues --exclude-group not_implemented --do-not-cache-result --no-progress
