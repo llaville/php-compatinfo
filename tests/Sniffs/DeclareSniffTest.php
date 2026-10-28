@@ -7,6 +7,9 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Unit tests for PHP_CompatInfo package, declare sniff
  *
@@ -30,10 +33,9 @@ final class DeclareSniffTest extends SniffTestCase
 
     /**
      * Feature test for directives detection
-     *
-     * @group features
-     * @dataProvider directivesProvider
      */
+    #[Group('features')]
+    #[DataProvider('directivesProvider')]
     public function testDirectiveDeclarations(string $dataSource, array $expectedVersions): void
     {
         $metrics    = $this->executeAnalysis($dataSource);

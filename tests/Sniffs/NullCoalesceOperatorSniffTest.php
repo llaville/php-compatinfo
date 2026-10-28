@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Null Coalescing Operator (??)
  *
@@ -32,8 +34,8 @@ final class NullCoalesceOperatorSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/260
      *       PHP7 null coalesce operator not detected
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH260(): void
     {
         $dataSource = 'gh260.php';

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Magic class constant (::class)
  *
@@ -29,9 +31,8 @@ final class MagicClassConstantSniffTest extends SniffTestCase
 
     /**
      * Feature test for fetching class name on objects (::class) detection
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testFetchingClassNameOnObjects(): void
     {
         $dataSource = 'class.php';
@@ -54,8 +55,8 @@ final class MagicClassConstantSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/218
      *       "::class" not detected as php 5.5
      * @link https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH218(): void
     {
         $dataSource = 'gh218.php';

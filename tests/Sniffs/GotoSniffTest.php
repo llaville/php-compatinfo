@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Goto operator
  *
@@ -33,8 +35,8 @@ final class GotoSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/200
      *       goto statement is not checked
      * @link https://www.php.net/manual/en/control-structures.goto.php
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH200(): void
     {
         $dataSource = 'gh200.php';

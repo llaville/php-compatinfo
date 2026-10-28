@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -34,9 +36,9 @@ final class ClassConstantSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/215
      *       Constant expressions with scalar expression not detected
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testRegressionGH215(): void
     {
         $dataSource = 'gh215.php';
@@ -59,9 +61,9 @@ final class ClassConstantSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compatinfo/issues/328
      *       Final class constants are detected as PHP 8.1
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testFinalClassConstants(): void
     {
         $dataSource = 'final_const.php';

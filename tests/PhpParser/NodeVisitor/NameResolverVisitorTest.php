@@ -16,6 +16,8 @@ use PhpParser\NodeTraverser;
 use PhpParser\Parser;
 use PhpParser\ParserFactory;
 
+use PHPUnit\Framework\Attributes\Depends;
+
 /**
  * NameResolver to initialize full qualified name on new attribute specified by option
  * - nodeAttributeNamespacedName
@@ -57,9 +59,7 @@ final class NameResolverVisitorTest extends TestCase
         return $namespace;
     }
 
-    /**
-     * @depends testNamespace
-     */
+    #[Depends('testNamespace')]
     public function testConstantInNamespace(Node\Stmt\Namespace_ $namespace): void
     {
         /** @var Node\Stmt\Const_ $constOne */
@@ -71,9 +71,7 @@ final class NameResolverVisitorTest extends TestCase
         }
     }
 
-    /**
-     * @depends testNamespace
-     */
+    #[Depends('testNamespace')]
     public function testClassInNamespace(Node\Stmt\Namespace_ $namespace): Node\Stmt\Class_
     {
         $class = $namespace->stmts[2];
@@ -84,9 +82,7 @@ final class NameResolverVisitorTest extends TestCase
         return $class;
     }
 
-    /**
-     * @depends testClassInNamespace
-     */
+    #[Depends('testClassInNamespace')]
     public function testClassConstInNamespace(Node\Stmt\Class_ $class): void
     {
         foreach ($class->getConstants() as $constants) {
@@ -97,9 +93,7 @@ final class NameResolverVisitorTest extends TestCase
         }
     }
 
-    /**
-     * @depends testClassInNamespace
-     */
+    #[Depends('testClassInNamespace')]
     public function testMethodInNamespace(Node\Stmt\Class_ $class): void
     {
         foreach ($class->getMethods() as $index => $method) {
@@ -113,9 +107,7 @@ final class NameResolverVisitorTest extends TestCase
         }
     }
 
-    /**
-     * @depends testNamespace
-     */
+    #[Depends('testNamespace')]
     public function testFunctionInNamespace(Node\Stmt\Namespace_ $namespace): void
     {
         /** @var Node\Stmt\Function_ $class */

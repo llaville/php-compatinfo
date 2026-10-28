@@ -7,6 +7,10 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
+use Exception;
+
 /**
  * Empty expressions
  *
@@ -34,8 +38,8 @@ final class EmptySniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/pull/207
      *       Prior to PHP 5.5, empty() only supports variables
      * @link https://www.php.net/manual/en/migration55.new-features.php#migration55.new-features.empty
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH207(): void
     {
         $dataSource = 'gh207.php';
@@ -57,10 +61,10 @@ final class EmptySniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/238
      *       empty( self::$x ) reports 5.5.0
-     * @group regression
-     * @return void
+     * @throws Exception
      */
-    public function testRegressionGH238()
+    #[Group('regression')]
+    public function testRegressionGH238(): void
     {
         $dataSource = 'gh238.php';
         $metrics    = $this->executeAnalysis($dataSource);

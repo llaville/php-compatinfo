@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Anonymous classes.
  *
@@ -34,8 +36,8 @@ final class AnonymousClassSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/269
      *       Anonymous class is detected as PHP 5.4
-     * @group regression
      */
+    #[Group('regression')]
     public function testAnonymousClassInProceduralContext(): void
     {
         $dataSource = 'anonymous_classes.php';

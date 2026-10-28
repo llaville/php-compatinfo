@@ -9,6 +9,9 @@ namespace Bartlett\CompatInfo\Tests\PhpFeatures;
 
 use Bartlett\CompatInfo\Tests\TestCase;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -57,10 +60,10 @@ final class Php82IssueTest extends TestCase
     /**
      * Regression test for some PHP 8.2 features
      *
-     * @group features
-     * @dataProvider dataSourceProvider
      * @throws Exception
      */
+    #[Group('features')]
+    #[DataProvider('dataSourceProvider')]
     public function testPhp82Features(string $dataSource, array $expectedVersions): void
     {
         $metrics    = $this->executeAnalysis($dataSource);

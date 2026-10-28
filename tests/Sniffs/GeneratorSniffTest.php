@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Generators were introduced in PHP 5.5
  *
@@ -29,9 +31,8 @@ final class GeneratorSniffTest extends SniffTestCase
 
     /**
      * Feature test for yielding Fibonacci generator
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testYieldingFibonacciGenerator(): void
     {
         $dataSource = 'fibonacci.php';
@@ -51,9 +52,8 @@ final class GeneratorSniffTest extends SniffTestCase
 
     /**
      * Feature test for yielding delegate generator
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testGeneratorDelegation(): void
     {
         $dataSource = 'delegation.php';
@@ -83,10 +83,9 @@ final class GeneratorSniffTest extends SniffTestCase
 
     /**
      * Feature test for generator that return expressions
-     *
-     * @group features
-     * @group not_implemented
      */
+    #[Group('features')]
+    #[Group('not_implemented')]
     public function testGeneratorReturnExpressions(): void
     {
         $dataSource = 'return_expression.php';
@@ -109,8 +108,8 @@ final class GeneratorSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/226
      *       Does not detect Generators
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH226(): void
     {
         $dataSource = 'gh226.php';

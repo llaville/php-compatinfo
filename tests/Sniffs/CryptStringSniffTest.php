@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * @author Laurent Laville
  * @since  Class available since Release 5.4.0
@@ -30,8 +32,8 @@ final class CryptStringSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/220
      *       "Did not detect Blowfish on crypt"
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH220(): void
     {
         $dataSource = 'gh220.php';

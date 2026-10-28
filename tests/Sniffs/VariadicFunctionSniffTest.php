@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Variadic functions
  *
@@ -32,9 +34,8 @@ final class VariadicFunctionSniffTest extends SniffTestCase
 
     /**
      * Feature test for variadic functions
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testVariadicFunctions(): void
     {
         $dataSource = 'variadic_functions.php';
@@ -78,8 +79,8 @@ final class VariadicFunctionSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/141
      *       Variadic functions are 5.6+
      * @link http://php.net/manual/en/migration56.new-features.php#migration56.new-features.variadics
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH141(): void
     {
         $dataSource = 'gh141.php';

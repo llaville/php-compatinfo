@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -42,9 +44,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/233
      *       PHP 7 requirement not detected for return type hint
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testReturnTypeHint(): void
     {
         $dataSource = 'return_types.php';
@@ -67,9 +69,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/273
      *       PHP 7.1 Nullable types not being detected
-     * @group regression
      * @throws Exception
      */
+    #[Group('regression')]
     public function testNullableReturnTypeHint(): void
     {
         $dataSource = 'gh273.php';
@@ -102,9 +104,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      * Feature test for return type void functions detection
      *
      * @link https://www.php.net/manual/en/migration71.new-features.php#migration71.new-features.void-functions
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testVoidFunctions(): void
     {
         $dataSource = 'void_functions.php';
@@ -136,9 +138,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      * Feature test for return intersection types
      *
      * @link https://github.com/llaville/php-compatinfo/issues/326
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testIntersectionTypes(): void
     {
         $dataSource = 'return_intersection_types.php';
@@ -155,9 +157,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      * Feature test for return never type
      *
      * @link https://github.com/llaville/php-compatinfo/issues/327
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testNeverReturnType(): void
     {
         $dataSource = 'return_never.php';
@@ -176,9 +178,9 @@ final class ReturnTypeDeclarationSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compatinfo/issues/363
      * @link https://wiki.php.net/rfc/null-false-standalone-types
      * @link https://wiki.php.net/rfc/true-type
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testNullOrBooleanReturnType(): void
     {
         $dataSource = 'return_null_bool.php';

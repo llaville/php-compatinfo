@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Typed properties available since PHP 7.4
  *
@@ -27,9 +29,8 @@ final class TypedPropertySniffTest extends SniffTestCase
 
     /**
      * Feature test on types properties declaration
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testTypedProperties(): void
     {
         $dataSource = 'typed_properties.php';

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Traits
  *
@@ -32,8 +34,8 @@ final class UseTraitSniffTest extends SniffTestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/227
      *       Does not detect Use traits
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH227(): void
     {
         $dataSource = 'gh227.php';

@@ -9,6 +9,9 @@ namespace Bartlett\CompatInfo\Tests\PhpFeatures;
 
 use Bartlett\CompatInfo\Tests\TestCase;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -55,11 +58,11 @@ final class Php53IssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/213
      *       Dynamic access to static methods and properties are not detected
-     * @group features
-     * @group regression
-     * @dataProvider dataSourceProvider
      * @throws Exception
      */
+    #[Group('features')]
+    #[Group('regression')]
+    #[DataProvider('dataSourceProvider')]
     public function testRegressionGH213(string $dataSource, array $expectedVersions): void
     {
         $metrics    = $this->executeAnalysis($dataSource);

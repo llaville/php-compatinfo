@@ -13,6 +13,10 @@ use Bartlett\CompatInfoDb\Infrastructure\Persistence\Doctrine\Entity\Function_ a
 
 use Doctrine\ORM\EntityManagerInterface;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\Large;
+
 use Symfony\Component\Console\Input\ArrayInput;
 
 use Exception;
@@ -25,6 +29,7 @@ use Generator;
  * @author Remi Collet
  * @since  Class available since Release 3.5.0
  */
+#[Large]
 final class ParameterTest extends SniffTestCase
 {
     /**
@@ -63,11 +68,10 @@ final class ParameterTest extends SniffTestCase
      * @param string $fctname Function name that have optional arguments
      * @param string $extname Extension name that provide the $fctname
      *
-     * @group  reference
-     * @large
-     * @dataProvider functionProvider
      * @throws Exception
      */
+    #[Group('reference')]
+    #[DataProvider('functionProvider')]
     public function testGetFunctionsWithDefaultArguments(string $fctname, string $extname): void
     {
         $this->assertFileExists(
@@ -104,11 +108,10 @@ final class ParameterTest extends SniffTestCase
      * @param string $fctname Function name that have optional arguments
      * @param string $extname Extension name that provide the $fctname
      *
-     * @group  reference
-     * @large
-     * @dataProvider functionProvider
      * @throws Exception
      */
+    #[Group('reference')]
+    #[DataProvider('functionProvider')]
     public function testGetFunctionsWithOptionalArguments(string $fctname, string $extname): void
     {
         $this->assertFileExists(

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -35,6 +37,7 @@ final class ConstantsInTraitsSniffTest extends SniffTestCase
      *
      * @throws Exception
      */
+    #[Group('features')]
     public function testPhp82Feature(): void
     {
         $dataSource = 'constants.php';

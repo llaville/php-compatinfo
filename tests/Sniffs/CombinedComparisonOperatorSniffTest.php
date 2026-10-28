@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Combined Comparison (Spaceship) Operator since PHP 7.0.0 alpha1
  *
@@ -29,9 +31,8 @@ final class CombinedComparisonOperatorSniffTest extends SniffTestCase
 
     /**
      * Feature test for Combined Comparison (Spaceship) Operator
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testSpaceshipSyntax(): void
     {
         $dataSource = 'spaceship_syntax.php';

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -35,9 +37,9 @@ final class MatchSniffTest extends SniffTestCase
      * Feature test to detect Match expressions
      *
      * @link https://github.com/llaville/php-compatinfo/issues/337
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testMatchExpressions(): void
     {
         $dataSource = 'match_expr.php';

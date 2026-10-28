@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Exception;
 
 /**
@@ -34,9 +36,9 @@ final class DynamicClassConstantFetchSniffTest extends SniffTestCase
     /**
      * Feature test for dynamic class constant fetch syntax
      *
-     * @group features
      * @throws Exception
      */
+    #[Group('features')]
     public function testDynamicClassConstantFetch(): void
     {
         $dataSource = 'dynamic_class_const_fetch.php';

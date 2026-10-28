@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Unit tests for PHP_CompatInfo package, issues reported
  *
@@ -33,8 +35,8 @@ final class FunctionIssueTest extends TestCase
      *
      * @link https://github.com/llaville/php-compat-info/issues/130
      *       "Conditionally called function is reported as interface"
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH130(): void
     {
         $dataSource = 'gh130.php';

@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Exponentiation
  *
@@ -34,8 +36,8 @@ final class PowOperatorSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/142
      *       Exponentiation is 5.6+
      * @link https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
-     * @group regression
      */
+    #[Group('regression')]
     public function testRegressionGH142(): void
     {
         $dataSource = 'gh142.php';
@@ -67,8 +69,8 @@ final class PowOperatorSniffTest extends SniffTestCase
      * @link https://github.com/llaville/php-compat-info/issues/211
      *       PHP 5.6 **-Operator not recognized
      * @link https://www.php.net/manual/en/migration56.new-features.php#migration56.new-features.exponentiation
-     * @group regression
      */
+    #[Group('regression')]
     public function testFeatureGH211(): void
     {
         $dataSource = 'gh211.php';

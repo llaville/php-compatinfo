@@ -7,6 +7,8 @@
  */
 namespace Bartlett\CompatInfo\Tests\Sniffs;
 
+use PHPUnit\Framework\Attributes\Group;
+
 /**
  * Report use of magic methods
  *
@@ -29,9 +31,8 @@ final class MagicMethodsSniffTest extends SniffTestCase
 
     /**
      * Feature test to detect magic methods since PHP 5.1
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testMagicMethodsInPHP51(): void
     {
         $dataSource = 'magic_methods_501.php';
@@ -51,9 +52,8 @@ final class MagicMethodsSniffTest extends SniffTestCase
 
     /**
      * Feature test to detect magic methods since PHP 5.3
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testMagicMethodsInPHP53(): void
     {
         $dataSource = 'magic_methods_503.php';
@@ -73,9 +73,8 @@ final class MagicMethodsSniffTest extends SniffTestCase
 
     /**
      * Feature test to detect magic methods since PHP 5.6
-     *
-     * @group features
      */
+    #[Group('features')]
     public function testMagicMethodsInPHP56(): void
     {
         $dataSource = 'magic_methods_506.php';
