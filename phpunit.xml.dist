@@ -22,10 +22,10 @@
             <directory suffix="Test.php">tests/Reference/</directory>
         </testsuite>
         <testsuite name="sniffs">
-            <directory suffix="Test.php">tests/Sniffs/</directory>
+            <directory suffix="SniffTest.php">tests/Sniffs/</directory>
         </testsuite>
         <testsuite name="features">
-            <directory suffix="IssueTest.php">tests/</directory>
+            <file>tests/PhpFeaturesIssueTest.php</file>
             <directory suffix="IssueTest.php">tests/PhpFeatures/</directory>
         </testsuite>
     </testsuites>
