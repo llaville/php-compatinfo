@@ -24,6 +24,9 @@ vendor-bin/**/vendor/
 ###### PHPUnit ######
 .phpunit.cache/
 
+###### PHP-CS-Fixer ######
+.php-cs-fixer.cache
+
 ###### Mega-Linter ######
 megalinter-reports/
 
