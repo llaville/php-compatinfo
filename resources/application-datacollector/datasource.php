@@ -9,8 +9,7 @@
  * @author Laurent Laville
  */
 
-return function (): Generator
-{
+return function (): Generator {
     $classes = [
         \Bartlett\CompatInfo\Application\DataCollector\ErrorHandler\Collecting::class,
         \Bartlett\CompatInfo\Application\DataCollector\ErrorHandler\Throwing::class,

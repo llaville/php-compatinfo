@@ -200,7 +200,7 @@ final class ConditionIssueTest extends TestCase
         $metrics = $this->executeAnalysis($dataSource);
 
         $functions = $metrics[self::$analyserId]['functions'];
-        $functions = array_filter($functions, function($function) {
+        $functions = array_filter($functions, function ($function) {
             return ($function['optional'] ?? false) && version_compare($function['ext.min'], '8.0.0alpha1', 'eq');
         });
         $diff = array_diff(
@@ -218,7 +218,7 @@ final class ConditionIssueTest extends TestCase
         $this->assertCount(0, $diff, 'Conditional functions analysis does not match');
 
         $constants = $metrics[self::$analyserId]['constants'];
-        $constants = array_filter($constants, function($constant) {
+        $constants = array_filter($constants, function ($constant) {
             return ($constant['optional'] ?? false) && version_compare($constant['ext.min'], '8.0.0alpha1', 'eq');
         });
         $diff = array_diff(

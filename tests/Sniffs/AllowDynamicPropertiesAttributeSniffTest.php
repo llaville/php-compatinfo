@@ -45,7 +45,7 @@ final class AllowDynamicPropertiesAttributeSniffTest extends SniffTestCase
         $classes    = $metrics[self::$analyserId]['classes'];
 
         $this->assertEquals(
-        '8.2.0alpha1',  // due to native AllowDynamicProperties attribute
+            '8.2.0alpha1',  // due to native AllowDynamicProperties attribute
             $classes['ClassAllowsDynamicProperties']['php.all']
         );
     }

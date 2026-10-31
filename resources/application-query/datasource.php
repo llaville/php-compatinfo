@@ -9,8 +9,7 @@
  * @author Laurent Laville
  */
 
-return function (): Generator
-{
+return function (): Generator {
     $classes = [
         \Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityHandler::class,
         \Bartlett\CompatInfo\Application\Query\Analyser\Compatibility\GetCompatibilityQuery::class,

@@ -43,7 +43,7 @@ final class NameResolverVisitorTest extends TestCase
 
         self::$nodeAttributeNamespacedName = 'bartlett.name';
 
-        self::$parser = (new ParserFactory)->createForNewestSupportedVersion();
+        self::$parser = (new ParserFactory())->createForNewestSupportedVersion();
         self::$traverser = new NodeTraverser();
         self::$traverser->addVisitor(new ParentContextVisitor());
         self::$traverser->addVisitor(new NameResolverVisitor());

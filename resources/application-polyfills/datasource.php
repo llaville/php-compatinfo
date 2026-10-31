@@ -9,8 +9,7 @@
  * @author Laurent Laville
  */
 
-return function (): Generator
-{
+return function (): Generator {
     $classes = [
         \Bartlett\CompatInfo\Application\Polyfills\PolyfillInterface::class,
         \Bartlett\CompatInfo\Application\Polyfills\SymfonyCtype::class,

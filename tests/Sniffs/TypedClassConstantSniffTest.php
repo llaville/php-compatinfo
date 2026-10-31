@@ -37,7 +37,7 @@ class TypedClassConstantSniffTest extends SniffTestCase
     /**
      * Data Provider to test Typed Class Constants
      */
-    public static function  typedConstantsProvider(): iterable
+    public static function typedConstantsProvider(): iterable
     {
         $provides = [
             'typed_const.php' => [
