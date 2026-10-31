@@ -2,13 +2,6 @@
 
 $projectDir = dirname(__DIR__, 2);
 
-$finder = (new PhpCsFixer\Finder())
-    ->in([
-        $projectDir . '/resources',
-        $projectDir . '/src',
-    ])
-;
-
 return (new PhpCsFixer\Config())
     // allow to run on unsupported PHP Versions
     // {@link https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/master/README.md#supported-php-versions}
@@ -30,5 +23,9 @@ return (new PhpCsFixer\Config())
         'operator_linebreak' => false,
     ])
     // default source code to scan
-    ->setFinder($finder)
+    ->setFinder(
+        PhpCsFixer\Finder::create()
+            ->exclude('fixtures')
+            ->in([$projectDir . '/src/', $projectDir . '/resources', $projectDir . '/tests/'])
+    )
 ;
