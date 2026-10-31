@@ -13,7 +13,7 @@ on:
             php-version:
                 description: "PHP runtime version in format Major.minor"
                 required: false
-                default: "8.2"
+                default: "8.3"
                 type: string
             composer-options:
                 description: "Composer options for ramsey/composer-install GitHub Action"
@@ -96,7 +96,7 @@ jobs:
             -   # https://getcomposer.org/doc/06-config.md#platform
                 name: Setup Composer Platform
                 run: |
-                    composer config platform.php 8.1
+                    composer config platform.php 8.3
 
             -   # https://github.com/ramsey/composer-install
                 name: Install Composer dependencies

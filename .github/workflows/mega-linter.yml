@@ -15,7 +15,7 @@ on:
             php-version:
                 description: "PHP runtime version in format Major.minor"
                 required: false
-                default: "8.1"
+                default: "8.3"
                 type: string
             composer-options:
                 description: "Composer options for ramsey/composer-install GitHub Action"

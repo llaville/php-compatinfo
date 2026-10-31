@@ -1,5 +1,5 @@
 {
     "require-dev": {
-        "symfony/framework-bundle": "^6.4 || ^7.0"
+        "symfony/framework-bundle": "^7.4 || ^8.0"
     }
 }
